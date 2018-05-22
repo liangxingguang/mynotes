@@ -2,14 +2,14 @@
 
 ---
 
-##基本用法
+## 基本用法
  > valitile是轻量级的synchronized,它在多处理器开发中保证了共享变量的可见性。所谓可见性，是指
    当一个线程修改一个共享变量时,另外一个线程能读到这个线程的修改值.在多线程编程中,根据JMM模型,
    一个线程修改了共享变量,另外一个线程不一定能看到该共享变量,这样一来,就会导致与预期不符的情况
    发生.例如：
    ```java
    public class test {   
-         boolean flag = false;  
+         private boolean flag = false;  
          public setFlag() {  
             flag=true;  
          }  
