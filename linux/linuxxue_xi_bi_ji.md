@@ -50,6 +50,26 @@
 PS1='[\u@\h \W]\$'  
 可以通过设置~/.bashrc或者/etc/profile文件中的PS1来改变终端的显示方式
 
+##设置ubuntu开机自动挂载window的盘符
+在装有ubuntu和windows双系统的机器上面，ubuntu在系统启动的时候默认是没有挂载windows的盘符的，例如C盘。在图形界面的可以手动选择加载的
+默认是挂载在/media/当前用户名的目录下面，而且挂载的目录默认是该分区的UUID，这个给我们在命令行选择目录带来很多不便。为此，我们可以手动
+设置这些盘符的加载目录，并且在系统启动的时候就进行挂载，省得每次要手动的挂载。具体的步骤如下：
+> * 在要挂载的目录下面建立对应的目录。如建立/media/C目录，就是将windows下面的c盘挂载到/media/C这个目录下面，这样我们就可以用cd /media/C
+  来访问windows C 盘下面的内容了。
+  * 运行sudo blkid 来查看磁盘类型。一般linux分区为ext4,windows分区为ntfs.所以找出类型为ntfs对应的uuid,要是不知道哪个uuid对应哪个盘符。
+    可以先在图形界面中手动挂载对应的盘符，然后到/media/用户/ 这个目录下面去看对应的目录名称。默认windows的盘符挂载到ubuntu的目录下面都是以
+    uuid 作为挂载目录的名称.记录好对应的uuid和windows下面盘符名称的对应关系。
+  * 修改配置文件。打开/etc/fstab这个文件文件。配置文件包含一下几项：   
+    <file system> <mount point> <type> <options> <dump> <pass>    
+    * <file system> 分区定位, 可以给盘符号，UUID或者LABEL
+    * <mount point> 具体挂载点的位置,如 /media/C
+    * <type> 挂载磁盘类型,linux分区一般为ext4,windows 一般为ntfs
+    * <options> 挂载参数, 一般为defaults
+    * <dump> 磁盘备份 默认为0, 不备份
+    * <pass> 磁盘检查， 默认为0, 不检查
+    然后在配置文件后面加上对应的配置项。最好是copy现有的配置来修改。
+  * 保存配置之后，执行sudo mount -a.这个命令会将配置文件中的所有项都加载。如果有错，则根据错误信息来修改就行了  
+
 
 
 
