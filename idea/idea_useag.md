@@ -1,10 +1,8 @@
 # IDEA 常用Tips记录
 
 ---
+## 内存优化
 
-##内存优化
-
----
 >/iead安装目录/bin/*.vmoptions 文件  
 -Xms64m 
 -Xmx256m  
@@ -14,7 +12,9 @@
 -Dsun.awt.keepWorkingSetOnMinimize=true  
 
 
-##快捷键整理
+## 快捷键整理
+
+
 ### 1.查询快捷键
 > CTRL+N           查找类  
   CTRL+SHIFT+N     查找文件  
