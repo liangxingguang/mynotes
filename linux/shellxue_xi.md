@@ -1,4 +1,7 @@
-#shell学习
+#shell学习  
+
+
+
 ##shell变量$#,$@等变量的含义解释
 
 > $$ Shell本身进程的id  
