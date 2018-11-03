@@ -69,6 +69,12 @@ PS1='[\u@\h \W]\$'
     * <pass> 磁盘检查， 默认为0, 不检查
     然后在配置文件后面加上对应的配置项。最好是copy现有的配置来修改。
   * 保存配置之后，执行sudo mount -a.这个命令会将配置文件中的所有项都加载。如果有错，则根据错误信息来修改就行了  
+  
+##解决 “无法获得锁 /var/lib/dpkg/lock - open”问题
+在运行命令 sudo apt upgrade 进行系统更新的时候，会经常遇到“无法获得锁 /var/lib/dpkg/lock - open”的问题，这个是由于有另外进程在运行更新
+操作或者上次的更新操作没有成功，导致锁没有被释放。解决的办法就是将对应的锁记录文件删掉。命令如下:  
+* sudo rm /var/cache/apt/archives/lock  
+* sudo rm /var/lib/dpkg/lock  
 
 
 
