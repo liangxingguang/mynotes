@@ -15,6 +15,6 @@
 > $1-$n第一个到第ｎ个参数
 
 
-## 一个命令杀掉特定进程
+## 一个命令杀掉特定进程 
 > ps -ef | grep ${content} | grep -v grep | awk '{print $2}' | xargs kill -9
 
