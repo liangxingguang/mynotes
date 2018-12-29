@@ -8,3 +8,4 @@
 * [java valitile的使用](java/java_valitile.md)
 * [rocketMQ的源码调试环境搭建](java/java_rocketmq_sourcecode_degub.md)
 * [IDEA常用Tips备忘录](idea/idea_useag.md)
+* [如何防止短信验证码被刷](other/如何防止短信验证码被刷.md)
