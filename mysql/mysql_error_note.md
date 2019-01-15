@@ -1,4 +1,4 @@
-##mysql5.7.23运行sql语句报错:of ORDER BY clause is not in SELECT list, references column this is incompatible with DISTINCT
+## mysql5.7.23运行sql语句报错:of ORDER BY clause is not in SELECT list, references column this is incompatible with DISTINCT  
 
 今天在mysql5.7.23上面运行以下sql报错：
 ```sql
