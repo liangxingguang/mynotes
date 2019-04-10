@@ -10,3 +10,5 @@
 * [IDEA常用Tips备忘录](idea/idea_useag.md)
 * [如何防止短信验证码被刷](other/如何防止短信验证码被刷.md)
 * [mysql报错:references column this is incompatible with DISTINCT](mysql/mysql_error_note.md)
+* 缓存
+    * [缓存更新总结](cache/cache_update_summary.md)
