@@ -46,4 +46,4 @@ Write Back套路，一句说就是，在更新数据的时候，只更新缓存�
 [缓存更新的套路](https://coolshell.cn/articles/17416.html/comment-page-1?tdsourcetag=s_pcqq_aiomsg#comments)  
 [A beginner’s guide to Cache synchronization strategies](https://vladmihalcea.com/a-beginners-guide-to-cache-synchronization-strategies/)  
 [后端系统的缓存使用浅谈](http://hack.xingren.com/index.php/2017/12/14/backend-cache/)  
-[分布式之数据库和缓存双写一致性方案解析](https://xiujie.cn/?p=174)
+[分布式之数据库和缓存双写一致性方案解析](https://www.cnblogs.com/rjzheng/p/9041659.html)
