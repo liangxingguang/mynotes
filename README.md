@@ -12,3 +12,7 @@
 * [mysql报错:references column this is incompatible with DISTINCT](mysql/mysql_error_note.md)
 * 缓存
     * [缓存更新总结](cache/cache_update_summary.md)
+* 微服务相关
+    * 服务与发现
+        * [服务注册与发现中负载方案选型](microservice/servicediscovery/service_discovery_plan.md)
+   
