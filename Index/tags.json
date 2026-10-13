@@ -1,0 +1,78 @@
+{
+  "updated_at": "2026-10-13 15:28",
+  "tags": [
+    {
+      "name": "AI",
+      "aliases": [
+        "人工智能",
+        "大模型",
+        "LLM"
+      ],
+      "category": "技术",
+      "count": 1,
+      "status": "active"
+    },
+    {
+      "name": "工程实践",
+      "aliases": [
+        "架构",
+        "最佳实践"
+      ],
+      "category": "技术",
+      "count": 1,
+      "status": "active"
+    },
+    {
+      "name": "工具",
+      "aliases": [
+        "效率工具"
+      ],
+      "category": "技术",
+      "count": 0,
+      "status": "active"
+    },
+    {
+      "name": "阅读",
+      "aliases": [
+        "读书"
+      ],
+      "category": "学习",
+      "count": 0,
+      "status": "active"
+    },
+    {
+      "name": "课程",
+      "aliases": [
+        "教程"
+      ],
+      "category": "学习",
+      "count": 0,
+      "status": "active"
+    },
+    {
+      "name": "行业动态",
+      "aliases": [
+        "资讯"
+      ],
+      "category": "资讯",
+      "count": 0,
+      "status": "active"
+    },
+    {
+      "name": "灵感",
+      "aliases": [
+        "闪念"
+      ],
+      "category": "随笔",
+      "count": 0,
+      "status": "active"
+    },
+    {
+      "name": "生活",
+      "aliases": [],
+      "category": "生活",
+      "count": 0,
+      "status": "active"
+    }
+  ]
+}
