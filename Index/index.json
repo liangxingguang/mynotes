@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13 23:55",
+  "updated_at": "2026-10-13 23:58",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -57,6 +57,20 @@
       "source_url": "https://weibo.com/2876544642/5352518867747589",
       "source_type": "post",
       "platform": "微博",
+      "summary": "",
+      "summary_status": ""
+    },
+    {
+      "id": "2026-10-14-jd-haibo-ai-knowledge-base",
+      "title": "拆解京东海博 AI-Native 落地保障：海博团队 AI 知识库能力建设",
+      "path": "Inbox/2026-10-14-jd-haibo-ai-knowledge-base.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [],
+      "source": "京东云开发者（微信公众号）",
+      "source_url": "https://mp.weixin.qq.com/s/rNox2XcWvgt2zdwGlVmfAg",
+      "source_type": "article",
+      "platform": "微信公众号",
       "summary": "",
       "summary_status": ""
     },
