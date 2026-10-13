@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13 23:31",
+  "updated_at": "2026-10-13 23:54",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -69,6 +69,20 @@
       "tags": [],
       "source": "flyflywang（微信公众号文章）",
       "source_url": "https://mp.weixin.qq.com/s/j5b3OokW552SM3iNLMoXkQ",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "",
+      "summary_status": ""
+    },
+    {
+      "id": "2026-10-14-state-of-ai-report-2026",
+      "title": "今年最全面的 AI 行业报告来了（State of AI Report 2026 中文要点）",
+      "path": "Inbox/2026-10-14-state-of-ai-report-2026.md",
+      "created": "2026-10-14",
+      "category": "资讯",
+      "tags": [],
+      "source": "Datawhale（微信公众号）",
+      "source_url": "https://mp.weixin.qq.com/s/6M4UtLeECfjBF3JRE4h1Qw",
       "source_type": "article",
       "platform": "微信公众号",
       "summary": "",
