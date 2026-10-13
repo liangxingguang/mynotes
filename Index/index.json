@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13 16:07",
+  "updated_at": "2026-10-13 16:14",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -57,6 +57,20 @@
       "source_url": "https://weibo.com/2876544642/5352518867747589",
       "source_type": "post",
       "platform": "微博",
+      "summary": "",
+      "summary_status": ""
+    },
+    {
+      "id": "2026-10-14-llm-from-scratch-primer",
+      "title": "三万字长文：大语言模型从零入门",
+      "path": "Inbox/2026-10-14-llm-from-scratch-primer.md",
+      "created": "2026-10-14",
+      "category": "学习",
+      "tags": [],
+      "source": "flyflywang（微信公众号文章）",
+      "source_url": "https://mp.weixin.qq.com/s/j5b3OokW552SM3iNLMoXkQ",
+      "source_type": "article",
+      "platform": "微信公众号",
       "summary": "",
       "summary_status": ""
     }
