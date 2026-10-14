@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14 00:19",
+  "updated_at": "2026-10-14 00:22",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -125,6 +125,20 @@
       "tags": [],
       "source": "京东云开发者（微信公众号）",
       "source_url": "https://mp.weixin.qq.com/s/rNox2XcWvgt2zdwGlVmfAg",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "",
+      "summary_status": ""
+    },
+    {
+      "id": "2026-10-14-jvm-tuning-core-approach",
+      "title": "一文掌握 JVM 调优核心思路",
+      "path": "Inbox/2026-10-14-jvm-tuning-core-approach.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/WbvAxdkPoUYWzRPSZdK-gw",
       "source_type": "article",
       "platform": "微信公众号",
       "summary": "",
