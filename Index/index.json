@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14 02:04",
+  "updated_at": "2026-10-14 04:17",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -125,6 +125,20 @@
       "tags": [],
       "source": "京东云开发者（微信公众号）",
       "source_url": "https://mp.weixin.qq.com/s/9xTFLXnCZIzU6mdYy1VFng",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "",
+      "summary_status": ""
+    },
+    {
+      "id": "2026-10-14-huolala-agent-eval-platform",
+      "title": "货拉拉业务 Agent 评测平台的工程实践与深度思考",
+      "path": "Inbox/2026-10-14-huolala-agent-eval-platform.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/KnPWPfb6YEKmbGNgLniAMg",
       "source_type": "article",
       "platform": "微信公众号",
       "summary": "",
