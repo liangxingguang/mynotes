@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14 19:17",
+  "updated_at": "2026-10-15 07:52",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -477,6 +477,23 @@
       "source_type": "article",
       "platform": "GitHub",
       "summary": "个人开源项目（v0.6.1，仅 Windows 安装包）：把学习从线性聊天做成一张知识 DAG——从一个想弄懂的目标出发逐层拆成节点，每个节点带一份教学文档和多份笔记，由\"超级导师\"模型通过 JS 沙箱 api 直接改写文档来教学。数据全部本机存储（`%APPDATA%\\unyra`，干净 Markdown 可脱离应用读写），AI 请求主进程直发用户自配服务商（默认 DeepSeek，兼容 OpenAI/Anthropic/Responses 协议，内置 Kimi/GLM/通义/豆包/SiliconFlow 等）。",
+      "summary_status": ""
+    },
+    {
+      "id": "2026-10-15-agent-loop-production-boundaries",
+      "title": "从 Chatbot 到 AI Agent：为什么一个 while 循环撑不起生产系统",
+      "path": "Inbox/2026-10-15-agent-loop-production-boundaries.md",
+      "created": "2026-10-15",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/lmO8xyKxJ2ckFEclxwrw3Q",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "文章以 Go 实现的运维诊断 Agent 原型 Aegis（W01 阶段，全部本地合成 Mock）为例，论证\"模型 while 循环 + 调工具\"的 Chatbot 骨架撑不起生产系统：模型不结束、工具挂住、用户取消、预算耗尽都必须成为明确且可查询的结果。关键设计：HTTP 与 Agent Loop 解耦（容量 32 的有限队列 + 单消费者后台 runtime + 内存仓储）；拆出 LLMProvider / ToolExecutor / AgentRuntime 三个可替换契约；任务走 PENDING→RUNNING→SUCCEEDED/FAILED/CANCELLED 状态机，取消先在仓储落终态再通知 worker，锁内排序保证终态不可被迟到结果覆盖；每类停止都有独立错误码；许可只来自服务端，模型输出不是授权凭据。",
       "summary_status": ""
     }
   ]
