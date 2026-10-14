@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14 00:13",
+  "updated_at": "2026-10-14 00:14",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -41,6 +41,20 @@
       "tags": [],
       "source": "Cloud Native（微信公众号）",
       "source_url": "https://mp.weixin.qq.com/s/kW6C4nE_s_mT43Bs93pNzw",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "",
+      "summary_status": ""
+    },
+    {
+      "id": "2026-10-14-claude-code-to-pi-6-extensions",
+      "title": "从 Claude Code 搬到 Pi：装这 6 个扩展把熟悉的体验补回来",
+      "path": "Inbox/2026-10-14-claude-code-to-pi-6-extensions.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/hniMbQDpHgbzuNQGTYJ3rA",
       "source_type": "article",
       "platform": "微信公众号",
       "summary": "",
