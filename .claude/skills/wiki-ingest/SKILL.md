@@ -1,0 +1,69 @@
+---
+name: wiki-ingest
+description: 把原始材料摄入为结构化 Wiki 知识：按 AGENTS.md 的 13 阶段契约只读 raw、写 wiki/、更新 index/log/manifest 与交叉链接。绝不修改或删除既有 raw。用户说"摄入/整理进 wiki/沉淀为知识"时使用。
+---
+
+## 何时使用
+
+- 用户要求把一条采集内容（Inbox 笔记、链接、文档）沉淀为 Wiki 知识
+- 需要对已有 wiki 页面做增量编译（新信源印证/更新/矛盾已有知识）
+- 用户说"摄入""整理进 wiki""编进知识库"
+
+## 第 0 步（强制前置）
+
+先读取以下文件并严格遵守，缺一不可：
+
+1. `AGENTS.md`（运行契约，尤其第 3 节不变量、第 9-10 节摄入契约、附录 A 权限边界、附录 B 硬规则）
+2. `schemas/Wiki_Page_Schema.md`（页面结构与 8 类页面骨架）
+3. `schemas/Frontmatter_Schema.yaml` 与 `config/settings.yaml`（字段与取值）
+4. `templates/<type>.md`（对应页面模板）
+
+## 13 阶段执行契约
+
+1. **接收（Intake）**：确定待摄入对象（`Inbox/` 笔记或用户指定材料），记录其来源。
+2. **规范化（Normalize）**：转成 Markdown、统一换行与编码；不改变原始语义。
+3. **登记原始信源（Register Raw Source）**：写入 `raw/sources/<域>/YYYY-MM-DD-<slug>.md`（域取 ai/architecture/enterprise/products/research/misc）；二进制证据放 `raw/assets/{images,pdf,attachments}`。**只新增，不修改既有文件**。
+4. **分诊（Triage）**：判断这批材料值得编译出哪些页面类型；给出候选清单。
+5. **证据抽取（Evidence Extraction）**：抽出承重性事实（数字、日期、人名、引语、规格、决策等）并绑定到 `raw/` 路径。
+6. **已有知识分析（Existing Knowledge Analysis）**：**绝对不得跳过**。逐项判断新增/印证/更新/矛盾/重复，并列出涉及的实体与概念。先检索已有 `wiki/` 页面，命中则**更新**而非新建。
+7. **变更规划（Change Planning）**：列出将要新建/更新的页面，以及 index/log/manifest 的变更点。
+8. **Wiki 编译（Wiki Compilation）**：按 `Wiki_Page_Schema.md` 与 `templates/<type>.md` 写页面；frontmatter 必填字段齐全；解读必须显式标注为「解读」；证据不足则写「未知」，绝不编造。
+9. **交叉链接（Cross-Linking）**：建立 `related`/`depends-on`/`derived-from`/`contradicts`/`supersedes`/`part-of` 等关系；`[[链接]]` 必须指向真实存在的页面。
+10. **索引更新（Index Update）**：把新页面写入 `wiki/index.md` 对应分组；archived 页面移出活跃索引。
+11. **检查（Lint）**：执行 `node scripts/skills/wiki-lint.js`，修掉确定性错误后再收尾。
+12. **记录日志（Log）**：向 `wiki/log.md` **追加**一行（格式见该文件说明），不得改写历史条目。
+13. **汇报（Report）**：输出写入清单、更新项、需人工复核项（IM 精简，≤10 条）。
+
+## 台账
+
+在 `state/manifest.json` 的 `entries` 追加记录（含 `path`、`sha256`、`registered_at`、`inbox_ref`、`pages`），供 lint 校验 raw 未被改动。
+
+## 写入边界（严禁）
+
+- **不得修改、删除、覆盖 `raw/` 中既有文件**；信源实质变更只能新增文件
+- 不得把互不相关的信源合并成一个文件
+- 同名概念命中时更新已有页面，不得近乎重复地新建
+- 不删除任何 Wiki 页面（归档按 AGENTS.md 第 15 节，只移动不删除）
+- 不创建指向不存在页面的链接
+
+## 输出
+
+- 新增/更新的页面路径清单（`wikilink` 可点击）
+- `wiki/index.md` / `wiki/log.md` / `state/manifest.json` 的变更摘要
+- 需人工复核项（矛盾裁决、概念合并、重大重构）
+
+## 权限边界（Ingest 行）
+
+| 能力 | 是否允许 |
+|------|------|
+| 读取 Raw | ✅ |
+| 修改 Raw | ❌ |
+| 创建 Wiki | ✅ |
+| 修改 Wiki | ✅ |
+| 修改 Index | ✅ |
+| 修改 Log | ✅ |
+| 语义判断 | ✅ |
+| 删除知识 | ❌ |
+| Archive | ✅（移动，不删除） |
+
+完整边界表见 `AGENTS.md` 附录 A。

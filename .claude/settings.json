@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Grep",
+      "Glob",
+      "Write",
+      "Edit",
+      "Skill",
+      "mcp__filesystem__read_file",
+      "mcp__filesystem__write_file",
+      "mcp__filesystem__list_directory",
+      "mcp__jina-reader__*",
+      "mcp__lark-cli__*",
+      "Bash(node:*)"
+    ],
+    "deny": [
+      "mcp__filesystem__delete_file"
+    ]
+  }
+}

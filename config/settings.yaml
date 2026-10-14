@@ -1,0 +1,45 @@
+# LLM Wiki 运行配置（骨架）
+# 取值只固化 AGENTS.md / Wiki_Page_Schema.md 已明确的部分；其余标 TODO，不得凭空发明。
+
+version: 1
+
+# 目录映射（大写 Inbox 为兼容现有采集层，见 AGENTS.md 附录 B）
+paths:
+  inbox: Inbox
+  raw: raw
+  wiki: wiki
+  schemas: schemas
+  templates: templates
+  reports: reports
+  state: state
+
+# 规范页面类型（AGENTS.md 第 4 节）
+page_types: [source, concept, entity, topic, decision, comparison, synthesis, timeline]
+
+# 可信度取值（AGENTS.md 第 6 节）
+confidence_levels: [high, medium, low, unknown]
+
+# 关系类型（Wiki_Page_Schema 第 13 节）
+relation_types: [related, depends-on, derived-from, contradicts, supersedes, part-of, example-of, alternative-to]
+
+lint:
+  # 确定性检查（AGENTS.md 13.1）
+  deterministic_checks: [links, index, evidence, frontmatter, page_type, duplicate_id, duplicate_slug, empty_page, dates, metadata, raw_integrity]
+  # 语义检查（AGENTS.md 13.2，由模型判定，脚本只给候选）
+  semantic_checks: [unsupported_claims, contradictions, duplicate_concepts, stale_pages, missing_links, weak_evidence, overly_broad_topics, split_candidates, merge_candidates, missing_pages]
+  # 安全自动修复白名单（AGENTS.md 第 14 节）
+  autofix_whitelist: [index, backlinks, format, paths, stats, coverage]
+  # 需人工／智能体复核（AGENTS.md 第 14 节）
+  require_human_review: [contradiction_resolution, concept_merge, historical_conclusion, architecture_decision, delete_page]
+
+# 信源优先级（AGENTS.md 第 8 节）
+source_priority:
+  - primary_source
+  - official_docs
+  - official_announcement
+  - peer_reviewed
+  - reliable_secondary
+  - tertiary_commentary
+
+# TODO: 归档策略的自动化阈值（AGENTS.md 第 15 节只定义"应当归档"的条件，未给自动判定规则）
+# TODO: 检索/外部检索的开关与范围（AGENTS.md 第 11 节第 5 条"被明确允许或确有必要"未量化）

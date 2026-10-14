@@ -1,0 +1,22 @@
+# .gitignore（Vault 根目录）
+# 临时产物
+.tmp/
+logs/
+node_modules/
+
+# LLM Wiki 瞬时产物（本地，不入库）
+reports/
+state/runs/
+
+# 含密钥/本地配置，禁止入库
+config.toml
+mcp.json
+.env
+
+# 锁文件与安装备份残留（非内容，不入库）
+*.lock
+*.bak.*
+
+# 系统文件
+.DS_Store
+Thumbs.db

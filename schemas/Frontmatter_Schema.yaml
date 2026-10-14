@@ -1,0 +1,32 @@
+# Frontmatter Schema（机器可读定义）
+# 取值来源：AGENTS.md 第 6 节 + Wiki_Page_Schema.md 第 2/12/13 节
+# 凡文章未明确给出取值的字段，一律标 TODO，不得凭空发明。
+
+version: 1
+
+page:
+  required: [id, type, title, status, created, updated, confidence, tags, sources]
+  optional: [related]
+  fields:
+    id:         { type: string, pattern: '^wiki-(source|concept|entity|topic|decision|comparison|synthesis|timeline)-[a-z0-9-]+$' }
+    type:       { type: enum }
+    title:      { type: string }
+    status:     { type: enum }              # TODO: 取值以 AGENTS.md 第 6 节为准
+    created:    { type: date, format: YYYY-MM-DD }
+    updated:    { type: date, format: YYYY-MM-DD }
+    confidence: { type: enum }
+    tags:       { type: list<string> }
+    sources:    { type: list<string>, must_exist_under: raw/ }
+    related:    { type: list<string>, must_exist_under: wiki/ }
+
+enums:
+  type: [source, concept, entity, topic, decision, comparison, synthesis, timeline]
+  confidence: [high, medium, low, unknown]   # AGENTS.md 第 6 节
+  # status: [active, draft, deprecated, archived]  # TODO: 以文章原文为准
+
+relations:
+  allowed: [related, depends-on, derived-from, contradicts, supersedes, part-of, example-of, alternative-to]
+
+paths:
+  raw: raw
+  wiki: wiki
