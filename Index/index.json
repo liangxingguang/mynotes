@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14 04:28",
+  "updated_at": "2026-10-14 04:31",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -55,6 +55,20 @@
       "tags": [],
       "source": "H中文精读（微信公众号，译自 Anthropic 博客，Louis Claxton）",
       "source_url": "https://mp.weixin.qq.com/s/Uu8-ZOswKKa8VE4sLh9uZw",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "",
+      "summary_status": ""
+    },
+    {
+      "id": "2026-10-14-archunit-java-architecture-guardrails",
+      "title": "架构图不会报警，但 ArchUnit 会：给 Java 项目装一套架构门禁",
+      "path": "Inbox/2026-10-14-archunit-java-architecture-guardrails.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [],
+      "source": "架构师Beata（微信公众号）",
+      "source_url": "https://mp.weixin.qq.com/s/eCRR1w1AWg1TvcNAnL21GA",
       "source_type": "article",
       "platform": "微信公众号",
       "summary": "",
@@ -223,6 +237,20 @@
       "tags": [],
       "source": "微信公众号",
       "source_url": "https://mp.weixin.qq.com/s/HTp72kpUvbylh7hOrwpKbQ",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "",
+      "summary_status": ""
+    },
+    {
+      "id": "2026-10-14-pi-sandbox-two-layer-isolation",
+      "title": "Pi 支持沙箱吗：从什么是沙箱，到 Pi 的两层隔离",
+      "path": "Inbox/2026-10-14-pi-sandbox-two-layer-isolation.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/rR5o7kLZIUgkDUVAfjfgbA",
       "source_type": "article",
       "platform": "微信公众号",
       "summary": "",
