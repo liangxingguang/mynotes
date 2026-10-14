@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14 18:58",
+  "updated_at": "2026-10-14 19:01",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -459,6 +459,23 @@
       "source_type": "post",
       "platform": "知乎",
       "summary": "知乎想法推荐开源项目 liquidslr/system-design-notes（近 2 万 Star）：按 Alex Xu《System Design Interview》两卷体系整理的 28 个系统设计主题，每个主题围绕真实系统拆解核心架构与设计思路，作者还为部分主题补充了真实工程案例作为延伸阅读，适合不想啃厚原书、想实践式学习系统设计的人收藏。",
+      "summary_status": ""
+    },
+    {
+      "id": "2026-10-14-unyra-local-first-ai-learning-app",
+      "title": "归一 Unyra：本地优先的探索式学习 AI 桌面应用（Electron + React）",
+      "path": "Inbox/2026-10-14-unyra-local-first-ai-learning-app.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工具"
+      ],
+      "source": "GitHub（maplexrain/unyra README）",
+      "source_url": "https://github.com/maplexrain/unyra",
+      "source_type": "article",
+      "platform": "GitHub",
+      "summary": "个人开源项目（v0.6.1，仅 Windows 安装包）：把学习从线性聊天做成一张知识 DAG——从一个想弄懂的目标出发逐层拆成节点，每个节点带一份教学文档和多份笔记，由\"超级导师\"模型通过 JS 沙箱 api 直接改写文档来教学。数据全部本机存储（`%APPDATA%\\unyra`，干净 Markdown 可脱离应用读写），AI 请求主进程直发用户自配服务商（默认 DeepSeek，兼容 OpenAI/Anthropic/Responses 协议，内置 Kimi/GLM/通义/豆包/SiliconFlow 等）。",
       "summary_status": ""
     }
   ]
