@@ -7,8 +7,7 @@ source_type: article
 platform: 微信公众号
 created: 2026-10-14
 category: 技术
-tags:
-  - 工程实践
+tags: [工程实践]
 ---
 
 # 打造高性能、低 CPU 消耗系统——36 种编码实战技巧（上篇）

@@ -12,7 +12,7 @@ tags: [AI, 行业动态, Pi]
 
 # Pi 抛出全新 Agent Harness，还把自己骂了一年的 MCP 装进了核心
 
-> 摘要：Pi 升级至 1.0，Code Mode 与原生 MCP 进入稳定版，同时推出持久化 Agent 框架 Pi Durable；Mario Zechner 与 Armin Ronacher 在播客中详谈 Durable 架构设计、AI 编程的能力边界及 Pi 未来方向。
+> Pi 升级至 1.0，Code Mode 与原生 MCP 进入稳定版，同时推出持久化 Agent 框架 Pi Durable；Mario Zechner 与 Armin Ronacher 在播客中详谈 Durable 架构设计、AI 编程的能力边界及 Pi 未来方向。
 
 ## 核心要点
 

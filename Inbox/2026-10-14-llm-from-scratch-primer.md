@@ -7,9 +7,7 @@ source_type: article
 platform: 微信公众号
 created: 2026-10-14
 category: 学习
-tags:
-  - AI
-  - 课程
+tags: [AI, 课程]
 ---
 
 # 三万字长文：大语言模型从零入门

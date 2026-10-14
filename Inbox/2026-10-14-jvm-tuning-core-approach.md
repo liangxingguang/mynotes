@@ -7,8 +7,7 @@ source_type: article
 platform: 微信公众号
 created: 2026-10-14
 category: 技术
-tags:
-  - 工程实践
+tags: [工程实践]
 ---
 
 # 一文掌握 JVM 调优核心思路

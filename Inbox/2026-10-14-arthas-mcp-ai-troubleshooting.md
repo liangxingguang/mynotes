@@ -7,9 +7,7 @@ source_type: article
 platform: 微信公众号
 created: 2026-10-14
 category: 技术
-tags:
-  - AI
-  - 工程实践
+tags: [AI, 工程实践]
 ---
 
 # 让 AI 调 Arthas，Java 排障会快多少？

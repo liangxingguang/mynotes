@@ -7,10 +7,7 @@ source_type: article
 platform: 微信公众号
 created: 2026-10-14
 category: 技术
-tags:
-  - AI
-  - 工程实践
-  - Pi
+tags: [AI, 工程实践, Pi]
 ---
 
 # Pi 支持沙箱吗：从什么是沙箱，到 Pi 的两层隔离

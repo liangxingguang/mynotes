@@ -7,8 +7,7 @@ source_type: post
 platform: 微博
 created: 2026-10-14
 category: 技术
-tags:
-  - 工具
+tags: [工具]
 ---
 
 # 三个小众但实用的 GitHub 用法（zread / Deepwiki / gitingest）

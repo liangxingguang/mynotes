@@ -7,9 +7,7 @@ source_type: article
 platform: 微博
 created: 2026-10-14
 category: 技术
-tags:
-  - 工具
-  - 工程实践
+tags: [工具, 工程实践]
 ---
 
 # drawio-skill：把代码与配置变成可编辑架构图的开源 Skill

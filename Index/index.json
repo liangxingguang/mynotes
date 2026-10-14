@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14 18:34",
+  "updated_at": "2026-10-14 18:38",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -15,7 +15,7 @@
       "source_url": "https://mp.weixin.qq.com/s/6YKXGTJaZSwHDtQqjv9j-A",
       "source_type": "article",
       "platform": "微信公众号",
-      "summary": "",
+      "summary": "尼恩《A2A 学习圣经》第 13 章。讲解 Google 于 2025 年 4 月开源的 A2A（Agent-to-Agent）协议：用标准化 Task 工单、任务状态机和 AgentCard 服务发现解决异构 Agent 互联互通问题，并基于 python-a2a + LangChain + LangGraph 从零实现一个\"天气 + 票务\"多 Agent 旅行规划系统（总控意图路由、异步并发调度、异常容错），最后辨析 A2A 与 MCP 的互补关系：MCP 让单个 AI 接工具变强，A2A 让多个 AI 组队协作。",
       "summary_status": ""
     },
     {
@@ -31,7 +31,7 @@
       "source_url": "https://mp.weixin.qq.com/s/jdLNsvfW3Dvnchah90MO7g",
       "source_type": "article",
       "platform": "微信公众号",
-      "summary": "",
+      "summary": "系统设计决定整体架构及组件协作方式，直接影响可扩展性、可靠性与运行效率。文章梳理了分布式系统中 12 个核心组件：消息队列、DNS、负载均衡、分布式缓存、数据库、任务调度、可观测性、非结构化存储、服务扩展、发布-订阅、唯一 ID 生成与限流。",
       "summary_status": ""
     },
     {
@@ -48,7 +48,7 @@
       "source_url": "https://mp.weixin.qq.com/s/kW6C4nE_s_mT43Bs93pNzw",
       "source_type": "article",
       "platform": "微信公众号",
-      "summary": "",
+      "summary": "云栖大会《AI 原生研发组织论坛》回顾：阿里云 CTO 线三个月 AI Native 组织探索的阶段性观察、\"人与 AI 新契约\"圆桌观点，以及 7 个进入生产的\"样板间\"实践与数据。核心结论：Agent 进入生产链路才是分水岭，重点从单点提效转向组织、流程与责任的重构。",
       "summary_status": ""
     },
     {
@@ -65,7 +65,7 @@
       "source_url": "https://mp.weixin.qq.com/s/Uu8-ZOswKKa8VE4sLh9uZw",
       "source_type": "article",
       "platform": "微信公众号",
-      "summary": "",
+      "summary": "Anthropic Applied AI 团队的落地手册：代码不再是瓶颈后，SDLC 六阶段（规划/设计/构建/测试/部署/维护）围绕「制品提交链」intent.md→spec.md→plan.md→diff/PR→故障记录重构为闭环，AI 嵌入每一环、自动触发下一阶段，人只守在需要判断的闸门处。",
       "summary_status": ""
     },
     {
@@ -82,7 +82,7 @@
       "source_url": "https://mp.weixin.qq.com/s/eCRR1w1AWg1TvcNAnL21GA",
       "source_type": "article",
       "platform": "微信公众号",
-      "summary": "",
+      "summary": "基于 ArchUnit 1.5.1（2026-09-25 发布）的系统教程：把团队的架构约定写成 JUnit 测试，工具读取编译后字节码构建依赖图，违规即测试变红、CI 拦截。涵盖规则 DSL、分层/洋葱/切片/模块规则、PlantUML 图即规则、自定义条件、老项目冻结快照落地与多服务规则 SDK 化。核心理念：架构约束不能只活在人脑子里——Checkstyle 管\"字写得工不工整\"，ArchUnit 管\"承重墙有没有被打掉\"。",
       "summary_status": ""
     },
     {
@@ -99,7 +99,7 @@
       "source_url": "https://mp.weixin.qq.com/s/tWBk2pgmO5fIU6Qfc2Jk9Q",
       "source_type": "article",
       "platform": "微信公众号",
-      "summary": "",
+      "summary": "Arthas 4.3.5（2026 年 10 月）官方把 MCP Server 标为实验性模块：通过 HTTP/Netty 暴露 JSON-RPC 2.0（Streamable HTTP），把 dashboard/thread/trace/watch/heapdump 等 29 个诊断命令变成 AI 可发现、可调用的标准工具。价值不在替你敲一条命令，而在 AI 能保留上一步输出、把多次诊断串成一条会话；但它不是\"把线上 JVM 交给 AI 自动处理\"——危险命令、字节码增强开销与敏感数据都需要外加管控。",
       "summary_status": ""
     },
     {
@@ -117,7 +117,7 @@
       "source_url": "https://mp.weixin.qq.com/s/hniMbQDpHgbzuNQGTYJ3rA",
       "source_type": "article",
       "platform": "微信公众号",
-      "summary": "",
+      "summary": "Claude Code 老用户因账号反复被封三周迁移 Pi 的实录：Pi 默认只有 read/write/edit/bash 四个工具、像毛坯房，但扩展目录有 5000+ 包，Claude Code 的核心习惯（MCP、联网、子代理、澄清提问、待办、写完诊断）基本都能一个命令装回。文章按迁移顺序给了 6 个扩展、安装命令、配置搬迁方法和三条安全原则。下载量为 2026 年 8 月 npm 月数据。",
       "summary_status": ""
     },
     {
@@ -134,7 +134,7 @@
       "source_url": "https://mp.weixin.qq.com/s/NMvxgqUhH4vBaYyrdFLQgQ",
       "source_type": "article",
       "platform": "微信公众号",
-      "summary": "",
+      "summary": "DeepSeek Harness v0.2 预览版（9.29 发布，提供 macOS/Windows 桌面端）7 天系列教程的第 1 天，专治\"装好了不敢下手\"：认识界面五站、申请并填入 DeepSeek API key、选对模式，三件事走完即可开工。后续六天为派活、分身、排错、插件、换脑、造扳手（本文不含）。",
       "summary_status": ""
     },
     {
@@ -151,7 +151,7 @@
       "source_url": "https://weibo.com/5648162302/5353819917255535",
       "source_type": "article",
       "platform": "微博",
-      "summary": "",
+      "summary": "微博推荐开源项目 drawio-skill（github.com/Agents365-ai/drawio-skill）：把自然语言、代码和基础设施配置转换成可编辑的 .drawio 架构图，支持增量同步、差异对比与 CI 架构规则检查，适合需要持续维护架构文档的项目。",
       "summary_status": ""
     },
     {
@@ -167,7 +167,7 @@
       "source_url": "https://weibo.com/2876544642/5352518867747589",
       "source_type": "post",
       "platform": "微博",
-      "summary": "",
+      "summary": "博主分享了三个借助 AI 快速读懂 GitHub 仓库的小众工具：zread 把项目变成中文知识库，Deepwiki 直接向 AI 提问定位代码，gitingest 把仓库打包成 AI 可读文本。",
       "summary_status": ""
     },
     {
@@ -183,7 +183,7 @@
       "source_url": "https://mp.weixin.qq.com/s/B-IPbwcQr3yp8_BJMKvdbA",
       "source_type": "article",
       "platform": "微信公众号",
-      "summary": "",
+      "summary": "基于百万 QPS 高并发系统经验的 Java 编码手册，上篇讲前 18 个技巧（共 36 个、100+ 案例）。主线思想是\"CPU 漏斗\"：砍掉一切多余的类型转换、对象创建、字符串操作与无效分支，让 CPU 只做核心运算——核心手段是全链路统一原生类型、相同数据只取一次、快速失败、用 O(1) 查找替代 O(n) 判断、用原生类型集合降低 GC。作者强调仅适用于有性能痛点的高并发场景，否则应优先可读性与可维护性。",
       "summary_status": ""
     },
     {
@@ -199,7 +199,7 @@
       "source_url": "https://mp.weixin.qq.com/s/9xTFLXnCZIzU6mdYy1VFng",
       "source_type": "article",
       "platform": "微信公众号",
-      "summary": "",
+      "summary": "百万 QPS 经验编码手册的下篇（技巧 19–36）。重心从上篇的\"少转换、少对象\"转向 API 契约、内存布局与 JIT 友好：方法不返回 void/null 而返回空集合或统一响应体；嵌套压平、条件正向化；高频方法用 static/final 让 JIT 内联；集合预估容量、用完 clear、只读用不可变集合；固定错误码的业务异常用单例并关闭堆栈；字段按从大到小声明减少对齐填充；能用批量就不单条循环。同样只适用于有性能痛点的高并发场景。",
       "summary_status": ""
     },
     {
@@ -216,7 +216,7 @@
       "source_url": "https://mp.weixin.qq.com/s/KnPWPfb6YEKmbGNgLniAMg",
       "source_type": "article",
       "platform": "微信公众号",
-      "summary": "",
+      "summary": "货拉拉质量保障部介绍自研的业务 Agent 全生命周期自动化评测平台。针对 LLM 概率输出、工具调用链长、性能维度跃迁导致传统断言与单点打分失效，平台经\"人工盲测→离线数据集+单一 LLM 裁判→全生命周期平台\"三代演进，落地六大工程支柱：多协议资产纳管、测试数据合规准入、多模复合智能裁判、评测计划与全景报告、LLM 性能压测、CI/CD 门禁闭环。已接入 114 个智能体、沉淀 16,337 个黄金用例，回归提效 5~10 倍，上线合格率 98.5%，线上缺陷率下降 85%。",
       "summary_status": ""
     },
     {
@@ -233,7 +233,7 @@
       "source_url": "https://mp.weixin.qq.com/s/rNox2XcWvgt2zdwGlVmfAg",
       "source_type": "article",
       "platform": "微信公众号",
-      "summary": "",
+      "summary": "京东本地生活即时零售 SaaS\"海博\"（覆盖 780+ 商家、10 万+门店）的 AI 知识库实践。核心判断：AI 用不好的瓶颈不在模型、也不在运行时检索，而在知识生产——历史业务知识沉在人脑和零散文档里。解法是把\"知识编译\"前移到维护期，采纳 Google OKF 规范，用 Skill 从代码自动生成结构化互链 Markdown 知识树，织入研发流水线双向闭环；AB 实验显示带知识库需求分析快约 44%，并能发现只读代码触达不到的隐藏阻塞点。",
       "summary_status": ""
     },
     {
@@ -249,7 +249,7 @@
       "source_url": "https://mp.weixin.qq.com/s/WbvAxdkPoUYWzRPSZdK-gw",
       "source_type": "article",
       "platform": "微信公众号",
-      "summary": "",
+      "summary": "JVM 调优方法论短文：不要从参数开始、在参数里迷路（慢了调 -Xmx、FGC 多了换收集器、OOMKilled 又缩堆），而要把顺序反过来——先定可测目标、留基线，再用 JFR 和 GC 日志定位时间与内存去向，证据指向 JVM 后才动堆大小、收集器与 GC 参数。每轮只改一个变量并备好回退，延迟、吞吐、占用不可同时无限优化。",
       "summary_status": ""
     },
     {
@@ -267,7 +267,7 @@
       "source_url": "https://mp.weixin.qq.com/s/wwl8q1LAguHp2GP_lQAINQ",
       "source_type": "article",
       "platform": "微信公众号",
-      "summary": "",
+      "summary": "learn-pi-agent 系列第一章，回答\"会答题的大模型怎样变成能完成任务的 Agent\"。增加的不是新模型，而是一套围绕模型持续运行的程序：模型负责判断，宿主（Runtime）负责执行被允许的动作并把结果喂回下一轮。文章用一次天气查询走完整条链路，厘清 Message/Context/State/Session 四个概念，给出 Pi 核心 Agent Loop 的教学版代码，并区分 Runtime 与 Harness。",
       "summary_status": ""
     },
     {
@@ -284,7 +284,7 @@
       "source_url": "https://mp.weixin.qq.com/s/j5b3OokW552SM3iNLMoXkQ",
       "source_type": "article",
       "platform": "微信公众号",
-      "summary": "",
+      "summary": "一篇面向零基础读者的 LLM 系统教程：用\"预测下一个 token\"一条主线串起信息论、神经网络、Transformer 到 ChatGPT 后训练与局限，只用加减乘除和对数，配手算例子。结论：把预测下一个 token 做到极致就是在通过图灵测试；模型的能力与幻觉等局限同源于此。",
       "summary_status": ""
     },
     {
@@ -301,7 +301,7 @@
       "source_url": "https://mp.weixin.qq.com/s/HTp72kpUvbylh7hOrwpKbQ",
       "source_type": "article",
       "platform": "微信公众号",
-      "summary": "",
+      "summary": "系列教程第二篇：把上篇验证用的纯 Markdown Wiki 升级为可持续维护的完整 LLM Wiki 系统。业界已形成共同模式——`raw/` 存不可变原始资料、`wiki/` 存 LLM 编译后的知识、AGENTS.md/Schema 定规则，核心操作为 Ingest、Query、Lint。四原则：Raw 是证据、Wiki 是知识、Schema 是规则、Agent 是执行器。本篇定架构与边界，下篇才用编程工具实操三个工作流。",
       "summary_status": ""
     },
     {
@@ -337,7 +337,7 @@
       "source_url": "https://mp.weixin.qq.com/s/rR5o7kLZIUgkDUVAfjfgbA",
       "source_type": "article",
       "platform": "微信公众号",
-      "summary": "",
+      "summary": "Pi 没有 `--sandbox` 开关——隔离改变的是\"Pi 在哪跑\"（进程边界/工具后端）而非\"怎么跑\"。本文基于 Pi 官方文档与源码（2026-10）讲清沙箱原理与 Pi 的两层隔离：脚本级沙箱把模型写的编排代码关进\"只有工具、没有操作系统\"的运行时；进程级隔离有五种做法（Plain Docker、Docker Sandboxes、OpenShell、Gondolin 微虚拟机扩展、命令沙箱示例扩展），只有把整个 Pi 放进容器/虚拟机才能覆盖扩展与 MCP 工具。核心心法：沙箱是\"能力限制\"不是\"行为审查\"，你暴露什么它就能碰什么。相关：[[2026-10-14-pi-setup-mcp-codemode-guide]]",
       "summary_status": ""
     },
     {
@@ -355,7 +355,7 @@
       "source_url": "https://mp.weixin.qq.com/s/D6stDyVwJJXG4j4LI-x0Og",
       "source_type": "article",
       "platform": "微信公众号",
-      "summary": "",
+      "summary": "一门 15 节免费 Pi 课程的体验推荐：上课方式很特别——第一节自己装好 Pi，第二节起\"老师\"就是 Pi 本身，网站只给一段提示词，复制给 Pi 后由它带着讲解和操作。作者认为它本质是一门 Agent 入门课，Pi 只是教材，真正可迁移到 Claude Code、Codex 的知识是：上下文怎么管、工具什么时候加、走错了怎么退、何时放手让 Agent 自己解决。",
       "summary_status": ""
     },
     {
@@ -373,7 +373,7 @@
       "source_url": "https://mp.weixin.qq.com/s/3XcWGXiMmyNVCABTgfX6UQ",
       "source_type": "article",
       "platform": "微信公众号",
-      "summary": "",
+      "summary": "开源终端 Agent Pi（GitHub 11 万+星，作者 Mario Zechner，哲学是\"让 Pi 适配你的工作流\"）的二开指南。Pi 内核薄到一个下午能读完（LLM+工具+循环，默认仅 read/write/edit/bash 四个工具），四个独立包分层干净，并提供五个官方扩展点。文章按成本从低到高讲透 Prompt 模板 → AGENTS.md → Skill → Extension → SDK 五层定制，并给出选型判断、分发方式与两个必踩坑。",
       "summary_status": ""
     },
     {
@@ -391,7 +391,7 @@
       "source_url": "https://mp.weixin.qq.com/s/k0SlcxzvHf0QMLd8Qa83Bw",
       "source_type": "article",
       "platform": "微信公众号",
-      "summary": "",
+      "summary": "Pi 0.99.1 实操指南（模型 GLM-5.3/GPT-5.5，MCP 用 context7/brave-search/magpie-image）。核心结论：接了 MCP 就自动开启 Codemode，无需改 settings.json；它稳定省的是工具说明的固定开销（11 个工具实测 12,878→6,956 token），但单次任务省不省取决于 MCP 返回格式与模型第一次猜得准不准。",
       "summary_status": ""
     },
     {
@@ -407,7 +407,7 @@
       "source_url": "https://mp.weixin.qq.com/s/Uj3Rgw-VQgmVWaybPWT9ag",
       "source_type": "article",
       "platform": "微信公众号",
-      "summary": "",
+      "summary": "作者称在腾讯/字节/美团观察 3 位总监总结的 4 个可复用产品决策框架，分别解决：功能该不该砍、与老板意见相左怎么沟通、多需求抢资源怎么排序、用户反馈该信谁。核心主张：普通 PM 与总监的差距不在经验而在决策框架——把\"我觉得\"换成明确标准；每个框架都附了让 AI 做趋势分析/风险推演/打分排序/反馈过滤的提示词用法。",
       "summary_status": ""
     },
     {
@@ -424,7 +424,7 @@
       "source_url": "https://mp.weixin.qq.com/s/6M4UtLeECfjBF3JRE4h1Qw",
       "source_type": "article",
       "platform": "微信公众号",
-      "summary": "",
+      "summary": "Air Street Capital 发布第九期年度《State of AI Report 2026》，Datawhale 译出要点：前沿竞争收敛为 Anthropic / OpenAI / Google 三家；智能体靠工具与上下文而非堆权重快速变强，并开始反哺 AI 研发；机器人接近\"GPT-2 时刻\"、AI 药物进入 III 期临床；推理成本年降约 13 倍，OpenAI+Anthropic 合计年化营收冲到 1050 亿美元；与此同时出口管制、主权 AI、智能体真实攻击事件促使政府收紧控制，实验室自己开始呼吁放慢脚步。",
       "summary_status": ""
     }
   ]

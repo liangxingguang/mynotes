@@ -7,10 +7,7 @@ source_type: article
 platform: 微信公众号
 created: 2026-10-14
 category: 技术
-tags:
-  - AI
-  - 工具
-  - Pi
+tags: [AI, 工具, Pi]
 ---
 
 # Pi Agent 入门指南：安装 + MCP + Codemode

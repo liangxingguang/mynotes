@@ -7,8 +7,7 @@ source_type: article
 platform: 微信公众号
 created: 2026-10-14
 category: 学习
-tags:
-  - 产品
+tags: [产品]
 ---
 
 # 大厂产品总监私藏的 4 个决策框架

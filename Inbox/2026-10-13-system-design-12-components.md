@@ -7,8 +7,7 @@ source_type: article
 platform: 微信公众号
 created: 2026-10-13
 category: 技术
-tags:
-  - 工程实践
+tags: [工程实践]
 ---
 
 # 一次讲清 12 个系统设计核心组件
