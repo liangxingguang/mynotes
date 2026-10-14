@@ -10,6 +10,7 @@ category: 技术
 tags:
   - AI
   - 工具
+  - Pi
 ---
 
 # 从 Claude Code 搬到 Pi：装这 6 个扩展把熟悉的体验补回来

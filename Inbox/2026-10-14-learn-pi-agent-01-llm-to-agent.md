@@ -10,6 +10,7 @@ category: 学习
 tags:
   - AI
   - 课程
+  - Pi
 ---
 
 # Learn Pi Agent 01｜大模型如何一步步变成 Agent

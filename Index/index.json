@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14 10:30",
+  "updated_at": "2026-10-14 18:34",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -24,7 +24,9 @@
       "path": "Inbox/2026-10-13-system-design-12-components.md",
       "created": "2026-10-13",
       "category": "技术",
-      "tags": [],
+      "tags": [
+        "工程实践"
+      ],
       "source": "码农有道 coding",
       "source_url": "https://mp.weixin.qq.com/s/jdLNsvfW3Dvnchah90MO7g",
       "source_type": "article",
@@ -38,7 +40,10 @@
       "path": "Inbox/2026-10-14-ai-native-rd-org-alibaba.md",
       "created": "2026-10-14",
       "category": "技术",
-      "tags": [],
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
       "source": "Cloud Native（微信公众号）",
       "source_url": "https://mp.weixin.qq.com/s/kW6C4nE_s_mT43Bs93pNzw",
       "source_type": "article",
@@ -52,7 +57,10 @@
       "path": "Inbox/2026-10-14-anthropic-ai-native-sdlc-handbook.md",
       "created": "2026-10-14",
       "category": "技术",
-      "tags": [],
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
       "source": "H中文精读（微信公众号，译自 Anthropic 博客，Louis Claxton）",
       "source_url": "https://mp.weixin.qq.com/s/Uu8-ZOswKKa8VE4sLh9uZw",
       "source_type": "article",
@@ -66,7 +74,10 @@
       "path": "Inbox/2026-10-14-archunit-java-architecture-guardrails.md",
       "created": "2026-10-14",
       "category": "技术",
-      "tags": [],
+      "tags": [
+        "工程实践",
+        "工具"
+      ],
       "source": "架构师Beata（微信公众号）",
       "source_url": "https://mp.weixin.qq.com/s/eCRR1w1AWg1TvcNAnL21GA",
       "source_type": "article",
@@ -80,7 +91,10 @@
       "path": "Inbox/2026-10-14-arthas-mcp-ai-troubleshooting.md",
       "created": "2026-10-14",
       "category": "技术",
-      "tags": [],
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
       "source": "微信公众号",
       "source_url": "https://mp.weixin.qq.com/s/tWBk2pgmO5fIU6Qfc2Jk9Q",
       "source_type": "article",
@@ -94,7 +108,11 @@
       "path": "Inbox/2026-10-14-claude-code-to-pi-6-extensions.md",
       "created": "2026-10-14",
       "category": "技术",
-      "tags": [],
+      "tags": [
+        "AI",
+        "工具",
+        "Pi"
+      ],
       "source": "微信公众号",
       "source_url": "https://mp.weixin.qq.com/s/hniMbQDpHgbzuNQGTYJ3rA",
       "source_type": "article",
@@ -108,7 +126,10 @@
       "path": "Inbox/2026-10-14-deepseek-harness-7day-day1.md",
       "created": "2026-10-14",
       "category": "技术",
-      "tags": [],
+      "tags": [
+        "AI",
+        "课程"
+      ],
       "source": "微信公众号",
       "source_url": "https://mp.weixin.qq.com/s/NMvxgqUhH4vBaYyrdFLQgQ",
       "source_type": "article",
@@ -122,7 +143,10 @@
       "path": "Inbox/2026-10-14-drawio-skill-arch-diagram.md",
       "created": "2026-10-14",
       "category": "技术",
-      "tags": [],
+      "tags": [
+        "工具",
+        "工程实践"
+      ],
       "source": "微博",
       "source_url": "https://weibo.com/5648162302/5353819917255535",
       "source_type": "article",
@@ -136,7 +160,9 @@
       "path": "Inbox/2026-10-14-github-niche-usage-tips.md",
       "created": "2026-10-14",
       "category": "技术",
-      "tags": [],
+      "tags": [
+        "工具"
+      ],
       "source": "z派大鑫（微博）",
       "source_url": "https://weibo.com/2876544642/5352518867747589",
       "source_type": "post",
@@ -150,7 +176,9 @@
       "path": "Inbox/2026-10-14-high-perf-low-cpu-coding-tips-part1.md",
       "created": "2026-10-14",
       "category": "技术",
-      "tags": [],
+      "tags": [
+        "工程实践"
+      ],
       "source": "京东云开发者（微信公众号）",
       "source_url": "https://mp.weixin.qq.com/s/B-IPbwcQr3yp8_BJMKvdbA",
       "source_type": "article",
@@ -164,7 +192,9 @@
       "path": "Inbox/2026-10-14-high-perf-low-cpu-coding-tips-part2.md",
       "created": "2026-10-14",
       "category": "技术",
-      "tags": [],
+      "tags": [
+        "工程实践"
+      ],
       "source": "京东云开发者（微信公众号）",
       "source_url": "https://mp.weixin.qq.com/s/9xTFLXnCZIzU6mdYy1VFng",
       "source_type": "article",
@@ -178,7 +208,10 @@
       "path": "Inbox/2026-10-14-huolala-agent-eval-platform.md",
       "created": "2026-10-14",
       "category": "技术",
-      "tags": [],
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
       "source": "微信公众号",
       "source_url": "https://mp.weixin.qq.com/s/KnPWPfb6YEKmbGNgLniAMg",
       "source_type": "article",
@@ -192,7 +225,10 @@
       "path": "Inbox/2026-10-14-jd-haibo-ai-knowledge-base.md",
       "created": "2026-10-14",
       "category": "技术",
-      "tags": [],
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
       "source": "京东云开发者（微信公众号）",
       "source_url": "https://mp.weixin.qq.com/s/rNox2XcWvgt2zdwGlVmfAg",
       "source_type": "article",
@@ -206,7 +242,9 @@
       "path": "Inbox/2026-10-14-jvm-tuning-core-approach.md",
       "created": "2026-10-14",
       "category": "技术",
-      "tags": [],
+      "tags": [
+        "工程实践"
+      ],
       "source": "微信公众号",
       "source_url": "https://mp.weixin.qq.com/s/WbvAxdkPoUYWzRPSZdK-gw",
       "source_type": "article",
@@ -220,7 +258,11 @@
       "path": "Inbox/2026-10-14-learn-pi-agent-01-llm-to-agent.md",
       "created": "2026-10-14",
       "category": "学习",
-      "tags": [],
+      "tags": [
+        "AI",
+        "课程",
+        "Pi"
+      ],
       "source": "微信公众号",
       "source_url": "https://mp.weixin.qq.com/s/wwl8q1LAguHp2GP_lQAINQ",
       "source_type": "article",
@@ -234,7 +276,10 @@
       "path": "Inbox/2026-10-14-llm-from-scratch-primer.md",
       "created": "2026-10-14",
       "category": "学习",
-      "tags": [],
+      "tags": [
+        "AI",
+        "课程"
+      ],
       "source": "flyflywang（微信公众号文章）",
       "source_url": "https://mp.weixin.qq.com/s/j5b3OokW552SM3iNLMoXkQ",
       "source_type": "article",
@@ -248,7 +293,10 @@
       "path": "Inbox/2026-10-14-llm-wiki-advanced-four-steps.md",
       "created": "2026-10-14",
       "category": "技术",
-      "tags": [],
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
       "source": "微信公众号",
       "source_url": "https://mp.weixin.qq.com/s/HTp72kpUvbylh7hOrwpKbQ",
       "source_type": "article",
@@ -264,8 +312,8 @@
       "category": "资讯",
       "tags": [
         "AI",
-        "工程实践",
-        "行业动态"
+        "行业动态",
+        "Pi"
       ],
       "source": "微信公众号·InfoQ",
       "source_url": "https://mp.weixin.qq.com/s/s4EyfKFau-eq3-XGMuBVeQ",
@@ -280,7 +328,11 @@
       "path": "Inbox/2026-10-14-pi-sandbox-two-layer-isolation.md",
       "created": "2026-10-14",
       "category": "技术",
-      "tags": [],
+      "tags": [
+        "AI",
+        "工程实践",
+        "Pi"
+      ],
       "source": "微信公众号",
       "source_url": "https://mp.weixin.qq.com/s/rR5o7kLZIUgkDUVAfjfgbA",
       "source_type": "article",
@@ -294,7 +346,11 @@
       "path": "Inbox/2026-10-14-pi-school-agent-course.md",
       "created": "2026-10-14",
       "category": "学习",
-      "tags": [],
+      "tags": [
+        "AI",
+        "课程",
+        "Pi"
+      ],
       "source": "微信公众号",
       "source_url": "https://mp.weixin.qq.com/s/D6stDyVwJJXG4j4LI-x0Og",
       "source_type": "article",
@@ -308,7 +364,11 @@
       "path": "Inbox/2026-10-14-pi-secondary-dev-5-layers.md",
       "created": "2026-10-14",
       "category": "技术",
-      "tags": [],
+      "tags": [
+        "AI",
+        "工程实践",
+        "Pi"
+      ],
       "source": "微信公众号（nephen）",
       "source_url": "https://mp.weixin.qq.com/s/3XcWGXiMmyNVCABTgfX6UQ",
       "source_type": "article",
@@ -322,7 +382,11 @@
       "path": "Inbox/2026-10-14-pi-setup-mcp-codemode-guide.md",
       "created": "2026-10-14",
       "category": "技术",
-      "tags": [],
+      "tags": [
+        "AI",
+        "工具",
+        "Pi"
+      ],
       "source": "宇辰AI编程（微信公众号）",
       "source_url": "https://mp.weixin.qq.com/s/k0SlcxzvHf0QMLd8Qa83Bw",
       "source_type": "article",
@@ -336,7 +400,9 @@
       "path": "Inbox/2026-10-14-pm-director-4-decision-frameworks.md",
       "created": "2026-10-14",
       "category": "学习",
-      "tags": [],
+      "tags": [
+        "产品"
+      ],
       "source": "微信公众号",
       "source_url": "https://mp.weixin.qq.com/s/Uj3Rgw-VQgmVWaybPWT9ag",
       "source_type": "article",
@@ -350,7 +416,10 @@
       "path": "Inbox/2026-10-14-state-of-ai-report-2026.md",
       "created": "2026-10-14",
       "category": "资讯",
-      "tags": [],
+      "tags": [
+        "AI",
+        "行业动态"
+      ],
       "source": "Datawhale（微信公众号）",
       "source_url": "https://mp.weixin.qq.com/s/6M4UtLeECfjBF3JRE4h1Qw",
       "source_type": "article",

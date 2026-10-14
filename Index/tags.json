@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14 10:30",
+  "updated_at": "2026-10-14 18:34",
   "tags": [
     {
       "name": "AI",
@@ -9,7 +9,7 @@
         "LLM"
       ],
       "category": "技术",
-      "count": 2,
+      "count": 17,
       "status": "active"
     },
     {
@@ -19,7 +19,7 @@
         "最佳实践"
       ],
       "category": "技术",
-      "count": 2,
+      "count": 15,
       "status": "active"
     },
     {
@@ -28,7 +28,7 @@
         "效率工具"
       ],
       "category": "技术",
-      "count": 0,
+      "count": 5,
       "status": "active"
     },
     {
@@ -46,7 +46,7 @@
         "教程"
       ],
       "category": "学习",
-      "count": 0,
+      "count": 4,
       "status": "active"
     },
     {
@@ -55,7 +55,7 @@
         "资讯"
       ],
       "category": "资讯",
-      "count": 1,
+      "count": 2,
       "status": "active"
     },
     {
@@ -65,7 +65,7 @@
         "决策框架"
       ],
       "category": "学习",
-      "count": 0,
+      "count": 1,
       "status": "new"
     },
     {
@@ -83,6 +83,15 @@
       "category": "生活",
       "count": 0,
       "status": "active"
+    },
+    {
+      "name": "Pi",
+      "aliases": [
+        "Pi Agent"
+      ],
+      "category": "技术",
+      "count": 7,
+      "status": "new"
     }
   ]
 }

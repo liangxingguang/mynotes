@@ -10,6 +10,7 @@ category: 学习
 tags:
   - AI
   - 课程
+  - Pi
 ---
 
 # 这门免费课表面在教 Pi，其实在教你 Agent 到底怎么工作

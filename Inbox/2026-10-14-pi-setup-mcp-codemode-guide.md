@@ -10,6 +10,7 @@ category: 技术
 tags:
   - AI
   - 工具
+  - Pi
 ---
 
 # Pi Agent 入门指南：安装 + MCP + Codemode
