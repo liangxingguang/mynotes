@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14 09:45",
+  "updated_at": "2026-10-14 10:04",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -262,12 +262,16 @@
       "path": "Inbox/2026-10-14-pi-durable-mcp-1-0-update.md",
       "created": "2026-10-14",
       "category": "资讯",
-      "tags": [],
+      "tags": [
+        "AI",
+        "工程实践",
+        "行业动态"
+      ],
       "source": "微信公众号·InfoQ",
       "source_url": "https://mp.weixin.qq.com/s/s4EyfKFau-eq3-XGMuBVeQ",
       "source_type": "article",
-      "platform": "wechat",
-      "summary": "",
+      "platform": "微信公众号",
+      "summary": "Pi 升级至 1.0，Code Mode 与原生 MCP 进入稳定版，同时推出持久化 Agent 框架 Pi Durable；Mario Zechner 与 Armin Ronacher 在播客中详谈 Durable 架构设计、AI 编程的能力边界及 Pi 未来方向。",
       "summary_status": ""
     },
     {

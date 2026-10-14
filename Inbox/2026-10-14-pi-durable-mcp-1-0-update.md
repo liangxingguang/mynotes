@@ -4,18 +4,15 @@ title: Pi 抛出全新 Agent Harness，还把自己骂了一年的 MCP 装进了
 source: 微信公众号·InfoQ
 source_url: https://mp.weixin.qq.com/s/s4EyfKFau-eq3-XGMuBVeQ
 source_type: article
-platform: wechat
+platform: 微信公众号
 created: 2026-10-14
 category: 资讯
-tags:
-  - AI
-  - 工程实践
-  - 行业动态
+tags: [AI, 工程实践, 行业动态]
 ---
 
 # Pi 抛出全新 Agent Harness，还把自己骂了一年的 MCP 装进了核心
 
-> Pi 升级至 1.0，Code Mode 与原生 MCP 进入稳定版，同时推出持久化 Agent 框架 Pi Durable；Mario Zechner 与 Armin Ronacher 在播客中详谈 Durable 架构设计、AI 编程的能力边界及 Pi 未来方向。
+> 摘要：Pi 升级至 1.0，Code Mode 与原生 MCP 进入稳定版，同时推出持久化 Agent 框架 Pi Durable；Mario Zechner 与 Armin Ronacher 在播客中详谈 Durable 架构设计、AI 编程的能力边界及 Pi 未来方向。
 
 ## 核心要点
 
