@@ -18,6 +18,19 @@ description: 把原始材料摄入为结构化 Wiki 知识：按 AGENTS.md 的 1
 3. `schemas/Frontmatter_Schema.yaml` 与 `config/settings.yaml`（字段与取值）
 4. `templates/<type>.md`（对应页面模板）
 
+## 批量约束（强制）
+
+**单轮只处理 1–3 篇**（默认 1 篇）。待处理对象超过 3 篇时，只取最早的 1–3 篇；处理完成后如实报出剩余数量，由用户再次发起。**不得单轮跑完整个 `Inbox/`。**
+
+原因：本仓库接入的模型端点单次响应可达分钟级，且客户端请求侧无超时；单轮串行几十次调用会长时间无响应，表现为「卡死」。
+
+## 反原样复制（强制）
+
+`raw/sources/<域>/<slug>.md` 必须是**按 `Source_Schema.md` 加工过的信源**，不是 `Inbox/` 笔记的字节副本。
+
+- 禁止把 `Inbox/` 笔记原样复制进 `raw/`：既没有产生知识，又会在 Obsidian 全局 basename 解析下制造同名冲突（见 `AGENTS.md` 附录 B 第 3 条）。
+- 处理完一篇后，`Inbox/` 原件应移出（归档到 `Archive/`，`AGENTS.md` 2.1 允许摄入过程中移除），不得与 `raw/` 中信源同名共存。
+
 ## 13 阶段执行契约
 
 1. **接收（Intake）**：确定待摄入对象（`Inbox/` 笔记或用户指定材料），记录其来源。
