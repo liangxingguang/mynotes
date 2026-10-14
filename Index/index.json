@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14 00:06",
+  "updated_at": "2026-10-14 00:09",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -103,6 +103,20 @@
       "summary_status": ""
     },
     {
+      "id": "2026-10-14-learn-pi-agent-01-llm-to-agent",
+      "title": "Learn Pi Agent 01｜大模型如何一步步变成 Agent",
+      "path": "Inbox/2026-10-14-learn-pi-agent-01-llm-to-agent.md",
+      "created": "2026-10-14",
+      "category": "学习",
+      "tags": [],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/wwl8q1LAguHp2GP_lQAINQ",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "",
+      "summary_status": ""
+    },
+    {
       "id": "2026-10-14-llm-from-scratch-primer",
       "title": "三万字长文：大语言模型从零入门",
       "path": "Inbox/2026-10-14-llm-from-scratch-primer.md",
@@ -139,6 +153,20 @@
       "tags": [],
       "source": "微信公众号",
       "source_url": "https://mp.weixin.qq.com/s/D6stDyVwJJXG4j4LI-x0Og",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "",
+      "summary_status": ""
+    },
+    {
+      "id": "2026-10-14-pi-secondary-dev-5-layers",
+      "title": "Pi 二次开发一篇讲透：5 层定制，把极简 Agent 变成你自己的产品",
+      "path": "Inbox/2026-10-14-pi-secondary-dev-5-layers.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [],
+      "source": "微信公众号（nephen）",
+      "source_url": "https://mp.weixin.qq.com/s/3XcWGXiMmyNVCABTgfX6UQ",
       "source_type": "article",
       "platform": "微信公众号",
       "summary": "",
