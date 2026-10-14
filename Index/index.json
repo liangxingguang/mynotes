@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14 04:31",
+  "updated_at": "2026-10-14 04:38",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -113,6 +113,20 @@
       "source_url": "https://mp.weixin.qq.com/s/NMvxgqUhH4vBaYyrdFLQgQ",
       "source_type": "article",
       "platform": "微信公众号",
+      "summary": "",
+      "summary_status": ""
+    },
+    {
+      "id": "2026-10-14-drawio-skill-arch-diagram",
+      "title": "drawio-skill：把代码与配置变成可编辑架构图的开源 Skill",
+      "path": "Inbox/2026-10-14-drawio-skill-arch-diagram.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [],
+      "source": "微博",
+      "source_url": "https://weibo.com/5648162302/5353819917255535",
+      "source_type": "article",
+      "platform": "微博",
       "summary": "",
       "summary_status": ""
     },
