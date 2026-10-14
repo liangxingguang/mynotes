@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14 00:10",
+  "updated_at": "2026-10-14 00:12",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -167,6 +167,20 @@
       "tags": [],
       "source": "微信公众号（nephen）",
       "source_url": "https://mp.weixin.qq.com/s/3XcWGXiMmyNVCABTgfX6UQ",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "",
+      "summary_status": ""
+    },
+    {
+      "id": "2026-10-14-pm-director-4-decision-frameworks",
+      "title": "大厂产品总监私藏的 4 个决策框架",
+      "path": "Inbox/2026-10-14-pm-director-4-decision-frameworks.md",
+      "created": "2026-10-14",
+      "category": "学习",
+      "tags": [],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/Uj3Rgw-VQgmVWaybPWT9ag",
       "source_type": "article",
       "platform": "微信公众号",
       "summary": "",
