@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14 18:47",
+  "updated_at": "2026-10-14 18:49",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -425,6 +425,23 @@
       "source_type": "article",
       "platform": "微信公众号",
       "summary": "Air Street Capital 发布第九期年度《State of AI Report 2026》，Datawhale 译出要点：前沿竞争收敛为 Anthropic / OpenAI / Google 三家；智能体靠工具与上下文而非堆权重快速变强，并开始反哺 AI 研发；机器人接近\"GPT-2 时刻\"、AI 药物进入 III 期临床；推理成本年降约 13 倍，OpenAI+Anthropic 合计年化营收冲到 1050 亿美元；与此同时出口管制、主权 AI、智能体真实攻击事件促使政府收紧控制，实验室自己开始呼吁放慢脚步。",
+      "summary_status": ""
+    },
+    {
+      "id": "2026-10-14-system-design-notes-28-cases",
+      "title": "system-design-notes：把系统设计面试浓缩成 28 个经典架构案例的开源笔记",
+      "path": "Inbox/2026-10-14-system-design-notes-28-cases.md",
+      "created": "2026-10-14",
+      "category": "学习",
+      "tags": [
+        "工程实践",
+        "阅读"
+      ],
+      "source": "知乎想法",
+      "source_url": "https://www.zhihu.com/pin/2081679710862559169",
+      "source_type": "post",
+      "platform": "知乎",
+      "summary": "知乎想法推荐开源项目 liquidslr/system-design-notes（近 2 万 Star）：按 Alex Xu《System Design Interview》两卷体系整理的 28 个系统设计主题，每个主题围绕真实系统拆解核心架构与设计思路，作者还为部分主题补充了真实工程案例作为延伸阅读，适合不想啃厚原书、想实践式学习系统设计的人收藏。",
       "summary_status": ""
     }
   ]
