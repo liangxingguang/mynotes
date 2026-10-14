@@ -7,7 +7,7 @@ source_type: article
 platform: GitHub
 created: 2026-10-14
 category: 技术
-tags: [AI, 工具]
+tags: [AI, 工具, github]
 ---
 
 # 归一 Unyra：本地优先的探索式学习 AI 桌面应用（Electron + React）

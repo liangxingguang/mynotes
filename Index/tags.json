@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14 19:01",
+  "updated_at": "2026-10-14 19:02",
   "tags": [
     {
       "name": "AI",
@@ -91,6 +91,16 @@
       ],
       "category": "技术",
       "count": 7,
+      "status": "new"
+    },
+    {
+      "name": "github",
+      "aliases": [
+        "GitHub",
+        "开源项目"
+      ],
+      "category": "技术",
+      "count": 1,
       "status": "new"
     }
   ]
