@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13 23:59",
+  "updated_at": "2026-10-14 00:01",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -57,6 +57,20 @@
       "source_url": "https://weibo.com/2876544642/5352518867747589",
       "source_type": "post",
       "platform": "微博",
+      "summary": "",
+      "summary_status": ""
+    },
+    {
+      "id": "2026-10-14-high-perf-low-cpu-coding-tips-part1",
+      "title": "打造高性能、低 CPU 消耗系统——36 种编码实战技巧（上篇）",
+      "path": "Inbox/2026-10-14-high-perf-low-cpu-coding-tips-part1.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [],
+      "source": "京东云开发者（微信公众号）",
+      "source_url": "https://mp.weixin.qq.com/s/B-IPbwcQr3yp8_BJMKvdbA",
+      "source_type": "article",
+      "platform": "微信公众号",
       "summary": "",
       "summary_status": ""
     },
