@@ -248,3 +248,18 @@ test('backfill：无 frontmatter 的文件不崩溃且按 skipped 处理（无 u
   const plan = await planBackfill({ vault })
   assert.deepEqual(plan.skipped, ['Inbox/broken.md'])
 })
+
+test('回归：index-rebuild 能解析新队列字段并写入 index.json', async () => {
+  const vault = await makeVault()
+  await fs.mkdir(path.join(vault, 'Index'), { recursive: true })
+  await writeInboxNote(vault, 'a.md', {
+    id: 'a', title: 'A', wiki_status: 'ingesting',
+    ingest_claimed_at: '2026-10-15T11:00:00Z', ingest_attempts: 1
+  })
+  await pexec(process.execPath, [path.join(process.cwd(), 'scripts/skills/index-rebuild.js')], {
+    env: { ...process.env, VAULT_PATH: vault }
+  })
+  const idx = JSON.parse(await fs.readFile(path.join(vault, 'Index/index.json'), 'utf8'))
+  assert.equal(idx.notes[0].wiki_status, 'ingesting')
+  assert.equal(idx.notes[0].asset_ref, '')
+})
