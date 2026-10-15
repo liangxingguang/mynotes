@@ -23,3 +23,5 @@ Thumbs.db
 
 # Superpowers SDD 工作区（计划执行台账，本地临时）
 .superpowers/
+# 原子写残留（writeNote 的 *.tmp）
+*.tmp

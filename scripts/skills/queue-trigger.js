@@ -16,6 +16,11 @@ const pexec = promisify(execFile)
 const pexecShell = promisify(exec)
 const COOLDOWN_MS = 10 * 60 * 1000
 
+export function sanitizeMessage(s) {
+  // cmd 双引号内仍会展开 %VAR%、" 可脱出引号、控制字符可断行；& 等在引号内为字面量
+  return String(s).replace(/[%"]/g, '').replace(/[\x00-\x1f\x7f]/g, '')
+}
+
 export async function evaluate({ vault, now = new Date() } = {}) {
   const notes = await listInboxNotes(vault)
   const hasWork = notes.some(
@@ -43,9 +48,9 @@ export async function trigger({ vault, now = new Date(), sender } = {}) {
     sender ||
     (async () => {
       const bin = process.env.CC_CONNECT_BIN || 'cc-connect'
-      // 取值只允许安全字符（均为本机配置，非用户输入）：Windows 经 cmd 解析，消除注入面
+      // 取值均为本机配置（非 IM 用户输入）：Windows 经 cmd 解析，收窄字符面
       const project = (process.env.CC_PROJECT || 'obsidian-knowledge').replace(/[^\w.-]/g, '')
-      const message = (process.env.INGEST_TRIGGER_MESSAGE || '/ingest').replace(/["'`$\\]/g, '')
+      const message = sanitizeMessage(process.env.INGEST_TRIGGER_MESSAGE || '/ingest')
       if (process.platform === 'win32') {
         // cc-connect 在 Windows 是 .cmd shim，需经 shell；单字符串形式避免 DEP0190
         await pexecShell(`"${bin}" send -p ${project} -m "${message}"`)

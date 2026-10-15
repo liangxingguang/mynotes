@@ -33,7 +33,7 @@ description: 把原始材料摄入为结构化 Wiki 知识：按 AGENTS.md 的 1
 
 ## 13 阶段执行契约
 
-1. **接收（Intake）**：用户显式指定材料时处理该材料（指定的是 Inbox 笔记时仍先 claim 该篇）；否则运行 `node scripts/skills/queue-claim.js claim` 认领最早 1 篇，JSON 的 `claimed[]`（含 `path` 与 `claim_id`）即本轮对象；空队列则汇报“队列为空”并结束。每日兜底场景用 `claim --include-failed`（failed 排在 pending 之后、认领时 attempts 归零）。单轮至多 3 篇（每篇各 claim 一次）。
+1. **接收（Intake）**：用户显式指定 Inbox 笔记时，运行 `node scripts/skills/queue-claim.js claim --target <path|id>` 定向认领该篇（仅 pending/failed 可认领，failed 时 attempts 归零）；用户直接给链接/文档等新材料时，先按采集规范写入 Inbox（pending）再定向 claim。未指定时运行 `node scripts/skills/queue-claim.js claim` 认领最早 1 篇，JSON 的 `claimed[]`（含 `path` 与 `claim_id`）即本轮对象；空队列则汇报“队列为空”并结束。每日兜底场景用 `claim --include-failed`（failed 排在 pending 之后、认领时 attempts 归零）。单轮至多 3 篇（每篇各 claim 一次）。
 2. **规范化（Normalize）**：转成 Markdown、统一换行与编码；不改变原始语义。
 3. **登记原始信源（Register Raw Source）**：写入 `raw/sources/<域>/YYYY-MM-DD-<slug>.md`（域取 ai/architecture/enterprise/products/research/misc）；二进制证据放 `raw/assets/{images,pdf,attachments}`。**只新增，不修改既有文件**。优先取笔记 frontmatter `asset_ref` 指向的 `Assets/` 采集态原件做规范化，raw 信源页 frontmatter 写 `asset_ref` 指回该原件；不复制原件正文以外的内容、不把 `Assets/` 已有二进制再归档一份（附录 B 第 3、7 条）。
 4. **分诊（Triage）**：判断这批材料值得编译出哪些页面类型；给出候选清单。

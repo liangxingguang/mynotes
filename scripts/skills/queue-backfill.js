@@ -3,6 +3,7 @@
  * queue-backfill：存量 Inbox 笔记一次性回填 wiki_status（幂等）
  *   无状态且有 source_url/asset_ref → pending；否则 → skipped；已有状态不动
  *   默认 dry-run；--apply 才写回。
+ * 一次性人工脚本，不加队列锁：不要在摄入会话运行期间执行 --apply。
  */
 import { pathToFileURL } from 'node:url'
 import { listInboxNotes, setFrontmatterFields, writeNote } from './lib/frontmatter.js'

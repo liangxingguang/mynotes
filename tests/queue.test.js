@@ -3,13 +3,16 @@ import assert from 'node:assert/strict'
 import fs from 'node:fs/promises'
 import os from 'node:os'
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { parseFrontmatter, setFrontmatterFields, isIngestStale } from '../scripts/skills/lib/frontmatter.js'
 import { execFile } from 'node:child_process'
 import { promisify } from 'node:util'
 import { claim, finish, failNote, queueStatus } from '../scripts/skills/queue-claim.js'
 
 const pexec = promisify(execFile)
-const CLAIM_JS = path.join(process.cwd(), 'scripts/skills/queue-claim.js')
+const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
+const SKILLS = path.join(REPO_ROOT, 'scripts', 'skills')
+const CLAIM_JS = path.join(SKILLS, 'queue-claim.js')
 
 async function makeVault() {
   return fs.mkdtemp(path.join(os.tmpdir(), 'vault-queue-'))
@@ -211,7 +214,7 @@ test('trigger CLI：cc-connect 不存在也退出 0（钩子不能报错）', as
   const vault = await makeVault()
   await writeInboxNote(vault, 'a.md', { id: 'a', title: 'A', wiki_status: 'pending' })
   const env = { ...process.env, VAULT_PATH: vault, CC_CONNECT_BIN: 'cc-connect-does-not-exist-xyz' }
-  const r = await pexec(process.execPath, [path.join(process.cwd(), 'scripts/skills/queue-trigger.js')], { env })
+  const r = await pexec(process.execPath, [path.join(SKILLS, 'queue-trigger.js')], { env })
   const out = JSON.parse(r.stdout)
   assert.equal(out.ok, true)
   assert.equal(out.triggered, false)
@@ -256,10 +259,102 @@ test('回归：index-rebuild 能解析新队列字段并写入 index.json', asyn
     id: 'a', title: 'A', wiki_status: 'ingesting',
     ingest_claimed_at: '2026-10-15T11:00:00Z', ingest_attempts: 1
   })
-  await pexec(process.execPath, [path.join(process.cwd(), 'scripts/skills/index-rebuild.js')], {
+  await pexec(process.execPath, [path.join(SKILLS, 'index-rebuild.js')], {
     env: { ...process.env, VAULT_PATH: vault }
   })
   const idx = JSON.parse(await fs.readFile(path.join(vault, 'Index/index.json'), 'utf8'))
   assert.equal(idx.notes[0].wiki_status, 'ingesting')
   assert.equal(idx.notes[0].asset_ref, '')
+})
+
+// ---- 最终评审修复 ----
+
+test('CLI：--reason 在前 --claim-id 在后时参数不被吞；错误 claim-id 必须被拒绝', async () => {
+  const vault = await makeVault()
+  await writeInboxNote(vault, 'a.md', { id: 'a', title: 'A', wiki_status: 'pending' })
+  const env = { ...process.env, VAULT_PATH: vault }
+  const claimed = JSON.parse((await pexec(process.execPath, [CLAIM_JS, 'claim'], { env })).stdout).claimed[0]
+
+  await assert.rejects(
+    pexec(process.execPath, [CLAIM_JS, 'fail', claimed.path, '--reason', 'boom msg', '--claim-id', 'wrong'], { env })
+  )
+  assert.equal((await readFm(vault, claimed.path)).wiki_status, 'ingesting')
+
+  const ok = JSON.parse(
+    (await pexec(process.execPath, [CLAIM_JS, 'fail', claimed.path, '--reason', 'boom msg', '--claim-id', claimed.claim_id], { env })).stdout
+  )
+  assert.equal(ok.status, 'pending')
+  assert.equal((await readFm(vault, claimed.path)).ingest_error, 'boom msg')
+})
+
+test('done/fail fail-closed：笔记带 claim_id 但未提供 claim-id 时拒绝', async () => {
+  const vault = await makeVault()
+  await writeInboxNote(vault, 'z.md', { id: 'z', title: 'Z', wiki_status: 'pending' })
+  const claimed = (await claim({ vault })).claimed[0]
+  await assert.rejects(() => finish({ target: claimed.path, vault }), /claim id required/)
+  await assert.rejects(() => failNote({ reason: 'x', target: claimed.path, vault }), /claim id required/)
+})
+
+test('定向 claim：--target 跳过更早的其他 pending；failed 可直接定向；ingesting/skipped 拒绝', async () => {
+  const vault = await makeVault()
+  await writeInboxNote(vault, '2026-10-13-old.md', { id: 'old', title: 'Old', wiki_status: 'pending' })
+  await writeInboxNote(vault, '2026-10-20-new.md', { id: 'new', title: 'New', wiki_status: 'pending' })
+  await writeInboxNote(vault, 'gone.md', { id: 'gone', title: 'Gone', wiki_status: 'skipped' })
+  await writeInboxNote(vault, 'dead.md', { id: 'dead', title: 'Dead', wiki_status: 'failed', ingest_attempts: 3, ingest_error: 'x' })
+
+  const r = await claim({ target: 'new', vault })
+  assert.deepEqual(r.claimed.map((c) => c.file), ['2026-10-20-new.md'])
+
+  const rf = await claim({ target: 'dead', vault })
+  assert.equal(rf.claimed[0].file, 'dead.md')
+  const deadFm = await readFm(vault, 'Inbox/dead.md')
+  assert.equal(deadFm.ingest_attempts, '0')
+  assert.equal(deadFm.ingest_error, undefined)
+
+  await writeInboxNote(vault, 'held.md', {
+    id: 'held', title: 'Held', wiki_status: 'ingesting',
+    ingest_claimed_at: new Date().toISOString(), ingest_claim_id: 'someone-else'
+  })
+  await assert.rejects(() => claim({ target: 'held', vault }), /held by another session/)
+  await assert.rejects(() => claim({ target: 'gone', vault }), /not eligible/)
+})
+
+test('CLI：claim 的 N 必须是正整数（0/-1/abc 拒绝）；done 缺 target 给可读错误', async () => {
+  const vault = await makeVault()
+  await writeInboxNote(vault, 'a.md', { id: 'a', title: 'A', wiki_status: 'pending' })
+  const env = { ...process.env, VAULT_PATH: vault }
+  for (const bad of ['0', '-1', 'abc']) {
+    const e = await pexec(process.execPath, [CLAIM_JS, 'claim', bad], { env }).then(
+      () => new Error('should have failed'),
+      (err) => err
+    )
+    const out = JSON.parse(e.stdout.toString().trim())
+    assert.match(out.error, /positive integer/)
+  }
+  const err = await pexec(process.execPath, [CLAIM_JS, 'done'], { env }).then(
+    () => null,
+    (e) => JSON.parse(e.stdout.toString().trim())
+  )
+  assert.match(err.error, /usage|target/i)
+})
+
+test('done：成功归档时清算 ingest_attempts/ingest_error/claim 字段', async () => {
+  const vault = await makeVault()
+  await fs.mkdir(path.join(vault, 'Archive'), { recursive: true })
+  await writeInboxNote(vault, 'x.md', {
+    id: 'x', title: 'X', wiki_status: 'failed', ingest_attempts: 3, ingest_error: 'old boom'
+  })
+  const r = await claim({ includeFailed: true, target: 'x', vault })
+  await finish({ claimId: r.claimed[0].claim_id, target: 'x', vault })
+  const fm = parseFrontmatter(await fs.readFile(path.join(vault, 'Archive', 'x.md'), 'utf8')).fm
+  assert.equal(fm.wiki_status, 'ingested')
+  assert.equal(fm.ingest_attempts, undefined)
+  assert.equal(fm.ingest_error, undefined)
+  assert.equal(fm.ingest_claim_id, undefined)
+  assert.equal(fm.ingest_claimed_at, undefined)
+})
+
+test('trigger：sanitizeMessage 去除 %、引号与控制字符（防 cmd 变量展开/断行）', async () => {
+  const { sanitizeMessage } = await import('../scripts/skills/queue-trigger.js')
+  assert.equal(sanitizeMessage('/ingest %COMSPEC%\r\n& whoami"'), '/ingest COMSPEC& whoami')
 })
