@@ -29,11 +29,11 @@ description: 把原始材料摄入为结构化 Wiki 知识：按 AGENTS.md 的 1
 `raw/sources/<域>/<slug>.md` 必须是**按 `Source_Schema.md` 加工过的信源**，不是 `Inbox/` 笔记的字节副本。
 
 - 禁止把 `Inbox/` 笔记原样复制进 `raw/`：既没有产生知识，又会在 Obsidian 全局 basename 解析下制造同名冲突（见 `AGENTS.md` 附录 B 第 3 条）。
-- 处理完一篇后，把笔记 frontmatter 的 `wiki_status` 置为 `ingested`，再将其移出（归档到 `Archive/`，`AGENTS.md` 2.1 允许摄入过程中移除），并把 manifest entry 的 `inbox_ref` 更新为 `Archive/` 新路径；不得与 `raw/` 中信源同名共存。
+- 处理完一篇后运行 `node scripts/skills/queue-claim.js done <path> --claim-id <id>` 收尾（脚本置 `ingested` 并移入 `Archive/`，返回 `Archive/` 新路径），并把 manifest entry 的 `inbox_ref` 更新为该路径；失败用 `fail <path> --claim-id <id> --reason <简述>`。不得手写 `wiki_status`、不得自行 mv、不得与 `raw/` 中信源同名共存。
 
 ## 13 阶段执行契约
 
-1. **接收（Intake）**：确定待摄入对象：用户指定材料优先；未指定时默认取 `Index/index.json` 中 `wiki_status: pending` 的最早 1 篇（受 1–3 篇批量约束）。记录其来源。
+1. **接收（Intake）**：用户显式指定材料时处理该材料（指定的是 Inbox 笔记时仍先 claim 该篇）；否则运行 `node scripts/skills/queue-claim.js claim` 认领最早 1 篇，JSON 的 `claimed[]`（含 `path` 与 `claim_id`）即本轮对象；空队列则汇报“队列为空”并结束。每日兜底场景用 `claim --include-failed`（failed 排在 pending 之后、认领时 attempts 归零）。单轮至多 3 篇（每篇各 claim 一次）。
 2. **规范化（Normalize）**：转成 Markdown、统一换行与编码；不改变原始语义。
 3. **登记原始信源（Register Raw Source）**：写入 `raw/sources/<域>/YYYY-MM-DD-<slug>.md`（域取 ai/architecture/enterprise/products/research/misc）；二进制证据放 `raw/assets/{images,pdf,attachments}`。**只新增，不修改既有文件**。优先取笔记 frontmatter `asset_ref` 指向的 `Assets/` 采集态原件做规范化，raw 信源页 frontmatter 写 `asset_ref` 指回该原件；不复制原件正文以外的内容、不把 `Assets/` 已有二进制再归档一份（附录 B 第 3、7 条）。
 4. **分诊（Triage）**：判断这批材料值得编译出哪些页面类型；给出候选清单。
@@ -44,7 +44,7 @@ description: 把原始材料摄入为结构化 Wiki 知识：按 AGENTS.md 的 1
 9. **交叉链接（Cross-Linking）**：建立 `related`/`depends-on`/`derived-from`/`contradicts`/`supersedes`/`part-of` 等关系；`[[链接]]` 必须指向真实存在的页面。
 10. **索引更新（Index Update）**：把新页面写入 `wiki/index.md` 对应分组；archived 页面移出活跃索引。
 11. **检查（Lint）**：执行 `node scripts/skills/wiki-lint.js`，修掉确定性错误后再收尾。
-12. **记录日志（Log）**：向 `wiki/log.md` **追加**一行（格式见该文件说明），不得改写历史条目。
+12. **记录日志（Log）**：向 `wiki/log.md` **追加**一行（格式见该文件说明），不得改写历史条目。随后逐篇收尾：成功者 `queue-claim.js done <path> --claim-id <id>`（用返回的 `Archive/` 路径回填 manifest 的 `inbox_ref`）；失败者 `queue-claim.js fail <path> --claim-id <id> --reason <简述>`（回退 pending，第 3 次转 failed），并在汇报中列出。
 13. **汇报（Report）**：输出写入清单、更新项、需人工复核项（IM 精简，≤10 条）。
 
 ## 台账

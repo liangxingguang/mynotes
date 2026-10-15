@@ -37,7 +37,7 @@
 
 收件箱不具备权威性。
 
-采集层笔记以 frontmatter `wiki_status` 标记摄入队列状态：`pending`（待摄入）、`ingested`（已摄入，随后移入 `Archive/`）、`skipped`（闪念等不入 wiki）。`wiki-ingest` 默认消费最早的 pending 笔记。
+采集层笔记以 frontmatter `wiki_status` 标记摄入队列状态：`pending`（待摄入）、`ingesting`（已被摄入会话认领，附 `ingest_claim_id` / `ingest_claimed_at`）、`ingested`（已摄入，随后移入 `Archive/`）、`failed`（自动重试 3 次仍失败，仅每日 cron 或人工介入）、`skipped`（闪念等不入 wiki）。状态机由 `scripts/skills/queue-claim.js` 唯一执行（`claim` / `done` / `fail`；`ingesting` 超 30 分钟自动回收为 pending）。`wiki-ingest` 默认消费最早的 pending 笔记；近实时由 `queue-trigger.js` 经 `cc-connect send` 异步触发独立会话，每日 21:20 cron 兜底失败与存量。
 
 ### 2.2 Raw（原始层）
 
@@ -352,3 +352,4 @@ Lint 包含两个阶段。
 5. **瞬时产物不入库**：`reports/` 与 `state/runs/` 已列入 `.gitignore`；`state/manifest.json` 入库（它是 raw 完整性的校验依据）。
 6. **不建 `Inbox/` 子目录**：`scripts/skills/index-rebuild.js` 对 `Inbox/` 的扫描是非递归的，笔记放入子目录会被 `/search` `/today` 静默漏掉。要保持扁平。
 7. **采集→摄入衔接**：链接/文档采集时，抓取正文与文档原件必须落 `Assets/YYYY/MM/`（不得只放 `.tmp/`）作为采集态证据；Inbox 笔记以 `asset_ref` 指回该文件并标 `wiki_status: pending`。`wiki-ingest` 是 pending 队列的唯一消费者：登记 raw 时在 manifest entry 写 `source_url` 与 `asset_ref`，raw 信源页 frontmatter 以 `asset_ref` 引用 Assets 原件（不复制正文、不重复存二进制）；完成后笔记置 `ingested` 并移 `Archive/`，同步更新 entry 的 `inbox_ref`。采集前的重复检测须同时比对 manifest 的 `source_url`（规范化 URL）。
+8. **队列异步消费**：采集会话不内联摄入。`message.sent` 钩子追加 `node scripts/skills/queue-trigger.js`——队列存在 pending/stale 且 10 分钟冷却过期时，经 `cc-connect send` 异步发起独立会话执行 `/ingest`；投递失败静默，由每日 21:20 cron 兜底。`wiki-ingest` 收尾必须用 `queue-claim` 的 `done`/`fail`（带 claim_id），不得手写 `wiki_status`、不得自行 mv 文件。存量笔记由 `scripts/skills/queue-backfill.js`（默认 dry-run，`--apply` 写回，幂等）一次性回填队列状态。手动 `/ingest` 入口始终保留，行为与自动触发一致。

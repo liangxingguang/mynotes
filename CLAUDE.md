@@ -47,6 +47,8 @@
 ⑥ 是普通文字 → 直接生成闪念笔记（`wiki_status: skipped`）
 ⑦ 未知 `/xxx` → 返回指令提示
 
+**异步衔接**：采集只写 Inbox/Assets（链接/文档落 `wiki_status: pending`），不在采集会话内摄入；`message.sent` 钩子的 `queue-trigger.js` 在冷却过期后异步发起独立 `/ingest` 会话（约 10 分钟一篇自节流），每日 21:20 cron 兜底失败与存量；手动 `/ingest` 始终保留。
+
 ## 指令规则
 1. `/search 关键词`：按关键词匹配标题/标签/正文，返回精简结果，提示用 `/read` 查看全文
 2. `/read 笔记名称`：读取笔记，精简排版输出，适合 IM 阅读
@@ -63,7 +65,7 @@
   - `category` 从 技术/生活/随笔/资讯/学习 中选 **1 个**
   - `tags` 从 `Index/tags.json` 的 `active` 词表中选 1~3 个；**无匹配不要自由造词**，用最接近的 category 保底并把新词以 `status=new` 登记进 tags.json
   - `source_url` 必须保留原始出处（链接=网页 URL，文档=原始下载地址；IM 文件链接有时效，须同时归档原件并注明）
-  - 链接/文档类采集加 `asset_ref: Assets/YYYY/MM/<slug>.md`（采集态正文/原件）与 `wiki_status: pending`（进入待摄入队列）；闪念用 `skipped`；`ingested` 只由 wiki-ingest 收尾时置位
+  - 链接/文档类采集加 `asset_ref: Assets/YYYY/MM/<slug>.md`（采集态正文/原件）与 `wiki_status: pending`（进入待摄入队列）；闪念用 `skipped`。队列五态（pending/ingesting/failed/ingested/skipped）由 `scripts/skills/queue-claim.js` 唯一维护：`ingested`/移动 Archive 只能经 `done`，失败经 `fail`（3 次转 failed），不要手写状态或自行 mv 文件
   - 有原件时在正文 `## 附件` 区以 `[[Assets/...]]` 引用 asset_ref
 - 正文模板：`# 标题` → `> 摘要` → `## 核心要点` → `## 正文` → `## 来源`（固定，含可点击链接）→ `## 附件`
 - **正文内不要写 `#标签`**，标签只放 frontmatter
