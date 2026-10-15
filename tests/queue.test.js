@@ -171,3 +171,49 @@ test('CLI：空队列 claim 输出空数组且退出 0；done 不存在目标退
   assert.deepEqual(JSON.parse(r.stdout).claimed, [])
   await assert.rejects(pexec(process.execPath, [CLAIM_JS, 'done', 'ghost'], { env }))
 })
+
+test('trigger：空队列不投递；冷却中不重复投递；有活且冷却过期→投递并写冷却；sender 抛错→no-socket 且不写冷却', async () => {
+  const { trigger } = await import('../scripts/skills/queue-trigger.js')
+  const now = new Date('2026-10-15T12:00:00Z')
+  const vault = await makeVault()
+
+  let r = await trigger({ now, sender: async () => { throw new Error('socket not found') }, vault })
+  assert.equal(r.reason, 'empty')
+
+  await writeInboxNote(vault, 'a.md', { id: 'a', title: 'A', wiki_status: 'pending' })
+  const calls = []
+  const sender = async () => { calls.push('sent') }
+  r = await trigger({ now, sender, vault })
+  assert.deepEqual(r, { reason: 'sent', triggered: true })
+  assert.equal(calls.length, 1)
+
+  r = await trigger({ now, sender, vault })
+  assert.equal(r.reason, 'cooldown')
+  assert.equal(calls.length, 1)
+
+  // 冷却过期后可再次投递
+  r = await trigger({ now: new Date('2026-10-15T12:15:00Z'), sender, vault })
+  assert.equal(r.reason, 'sent')
+  assert.equal(calls.length, 2)
+
+  // stale ingesting 也算有活
+  const vault2 = await makeVault()
+  await writeInboxNote(vault2, 's.md', {
+    id: 's', title: 'S', wiki_status: 'ingesting', ingest_claimed_at: '2026-10-15T11:00:00Z'
+  })
+  r = await trigger({ now, sender: async () => { throw new Error('down') }, vault: vault2 })
+  assert.equal(r.triggered, false)
+  assert.equal(r.reason, 'no-socket')
+  await assert.rejects(fs.readFile(path.join(vault2, '.tmp', 'ingest-cooldown'), 'utf8'))
+})
+
+test('trigger CLI：cc-connect 不存在也退出 0（钩子不能报错）', async () => {
+  const vault = await makeVault()
+  await writeInboxNote(vault, 'a.md', { id: 'a', title: 'A', wiki_status: 'pending' })
+  const env = { ...process.env, VAULT_PATH: vault, CC_CONNECT_BIN: 'cc-connect-does-not-exist-xyz' }
+  const r = await pexec(process.execPath, [path.join(process.cwd(), 'scripts/skills/queue-trigger.js')], { env })
+  const out = JSON.parse(r.stdout)
+  assert.equal(out.ok, true)
+  assert.equal(out.triggered, false)
+  assert.equal(out.reason, 'no-socket')
+})
