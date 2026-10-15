@@ -217,3 +217,34 @@ test('trigger CLI：cc-connect 不存在也退出 0（钩子不能报错）', as
   assert.equal(out.triggered, false)
   assert.equal(out.reason, 'no-socket')
 })
+
+test('backfill：按 source_url/asset_ref 分类，已有状态不动，--apply 幂等', async () => {
+  const { planBackfill, applyBackfill } = await import('../scripts/skills/queue-backfill.js')
+  const vault = await makeVault()
+  await writeInboxNote(vault, 'with-url.md', { id: 'u', title: 'U', source_url: 'https://example.com/a' })
+  await writeInboxNote(vault, 'with-asset.md', { id: 'a', title: 'A', asset_ref: 'Assets/2026/10/a.md' })
+  await writeInboxNote(vault, 'plain.md', { id: 'p', title: 'P' })
+  await writeInboxNote(vault, 'done.md', { id: 'd', title: 'D', wiki_status: 'ingested' })
+
+  const plan = await planBackfill({ vault })
+  assert.deepEqual(plan.pending.sort(), ['Inbox/with-asset.md', 'Inbox/with-url.md'].sort())
+  assert.deepEqual(plan.skipped, ['Inbox/plain.md'])
+  assert.deepEqual(plan.untouched, ['Inbox/done.md'])
+
+  const applied = await applyBackfill({ vault })
+  assert.equal(applied.pending.length, 2)
+  assert.equal((await readFm(vault, 'Inbox/with-url.md')).wiki_status, 'pending')
+  assert.equal((await readFm(vault, 'Inbox/plain.md')).wiki_status, 'skipped')
+
+  const again = await applyBackfill({ vault })
+  assert.deepEqual(again, { pending: [], skipped: [], untouched: ['Inbox/done.md', 'Inbox/plain.md', 'Inbox/with-asset.md', 'Inbox/with-url.md'] })
+})
+
+test('backfill：无 frontmatter 的文件不崩溃且按 skipped 处理（无 url/asset）', async () => {
+  const { planBackfill } = await import('../scripts/skills/queue-backfill.js')
+  const vault = await makeVault()
+  await fs.mkdir(path.join(vault, 'Inbox'), { recursive: true })
+  await fs.writeFile(path.join(vault, 'Inbox', 'broken.md'), '完全没有 frontmatter')
+  const plan = await planBackfill({ vault })
+  assert.deepEqual(plan.skipped, ['Inbox/broken.md'])
+})
