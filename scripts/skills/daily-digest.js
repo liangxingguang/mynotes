@@ -60,6 +60,7 @@ try {
 } catch {
   /* ignore */
 }
+const pending = (index.notes || []).filter((n) => n.wiki_status === 'pending').length
 
 const lines = [
   `📊 今日采集 ${today}：共 ${notes.length} 条`,
@@ -67,6 +68,7 @@ const lines = [
   `类型：${fmt(countBy(notes, 'source_type'))}`,
   Object.keys(tagCounter).length ? `标签：${fmt(tagCounter)}` : '',
   `Inbox 待整理：${backlog} 篇`,
+  `待摄入 wiki：${pending} 篇`,
   '',
   ...notes.slice(0, 10).map((n, i) => `${i + 1}. 《${n.title}》${n.category ? '#' + n.category : ''} — ${n.summary || ''}`),
   '',

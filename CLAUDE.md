@@ -5,7 +5,7 @@
 ## Vault 规范
 - `Inbox/`：采集的笔记，待人工整理（**采集链路只写这里**）
 - `Archive/`：已归档成熟笔记（人工整理后移入，你不写）
-- `Assets/YYYY/MM/`：附件与文档原件（**采集链路只写这里**）
+- `Assets/YYYY/MM/`：附件、文档原件与抓取正文/转换稿（**采集链路只写这里**；长期留证供 wiki 摄入，原件不得只放 `.tmp/`）
 - `Index/`：索引与标签词表（**你不写**，由 index-rebuild skill 维护）
 - `.tmp/`：临时产物，任务结束清理
 - `raw/`：不可变证据层（**append-only：只可新增，绝不修改或删除既有文件**）
@@ -40,11 +40,11 @@
 
 ## 决策顺序
 ① 是已知指令（`/search` `/read` `/tag` `/last` `/today` `/ingest` `/ask` `/lint`）→ 直接检索并回答
-② 是网页链接 → `web-fetch` skill 抓取（失败才用 jina-reader MCP）
-③ 是文档附件 → `anydoc` skill 转换 → 自己通读并生成摘要（长文分段提炼）
+② 是网页链接 → `web-fetch` skill 抓取，正文直接落 `Assets/YYYY/MM/<slug>.md`（失败才用 jina-reader MCP）
+③ 是文档附件 → `anydoc` skill 转换，原件与转换稿均落 `Assets/YYYY/MM/` → 自己通读并生成摘要（长文分段提炼）
 ④ 是语音 → 已是文本（cc-connect 已转写），按文字处理
 ⑤ 是 LLM Wiki 请求（摄入到 wiki / 查询知识库 / 巡检 wiki）→ **先读 `AGENTS.md`**，再按 `wiki-ingest` / `wiki-query` / `wiki-lint` 执行
-⑥ 是普通文字 → 直接生成闪念笔记
+⑥ 是普通文字 → 直接生成闪念笔记（`wiki_status: skipped`）
 ⑦ 未知 `/xxx` → 返回指令提示
 
 ## 指令规则
@@ -53,7 +53,7 @@
 3. `/tag 标签名`：检索指定标签（忽略 `#` 前缀）
 4. `/last N`：最近 N 条（按 created 倒序）
 5. `/today`：读 `Index/index.json` 统计今日采集：总数、来源平台分布、类型分布、标签分布、异常条目，再列出当天笔记；无采集回复"今日暂无采集"
-6. `/ingest 材料`：先读 `AGENTS.md`，按其中 13 阶段契约摄入为 Wiki 知识（不跳过"已有知识分析"）
+6. `/ingest [材料]`：先读 `AGENTS.md`，按其中 13 阶段契约摄入为 Wiki 知识（不跳过"已有知识分析"）；不带材料时默认消费 `wiki_status: pending` 队列中最早的 1 篇（至多 3 篇）
 7. `/ask 问题`：只读检索 Wiki 并作答；覆盖不足时显式说明并回退 raw，绝不编造
 8. `/lint`：执行 `node scripts/skills/wiki-lint.js`；仅在白名单内做安全修复，归档/删除/合并只建议
 
@@ -63,10 +63,12 @@
   - `category` 从 技术/生活/随笔/资讯/学习 中选 **1 个**
   - `tags` 从 `Index/tags.json` 的 `active` 词表中选 1~3 个；**无匹配不要自由造词**，用最接近的 category 保底并把新词以 `status=new` 登记进 tags.json
   - `source_url` 必须保留原始出处（链接=网页 URL，文档=原始下载地址；IM 文件链接有时效，须同时归档原件并注明）
+  - 链接/文档类采集加 `asset_ref: Assets/YYYY/MM/<slug>.md`（采集态正文/原件）与 `wiki_status: pending`（进入待摄入队列）；闪念用 `skipped`；`ingested` 只由 wiki-ingest 收尾时置位
+  - 有原件时在正文 `## 附件` 区以 `[[Assets/...]]` 引用 asset_ref
 - 正文模板：`# 标题` → `> 摘要` → `## 核心要点` → `## 正文` → `## 来源`（固定，含可点击链接）→ `## 附件`
 - **正文内不要写 `#标签`**，标签只放 frontmatter
 - 只写 `Inbox/` 与 `Assets/`，单次任务写入文件不超过 3 个
-- 自动检测重复：按规范化 URL（去 utm/fragment、host 小写）或文件名比对，重复则跳过并提示
+- 自动检测重复：按规范化 URL（去 utm/fragment、host 小写）或文件名比对 `Index/index.json`，并同时比对 `state/manifest.json` 各 entry 的 `source_url`（已摄入信源）；重复则跳过并提示，已摄入的回复其 wiki 页面
 
 ## 反馈规则
 - 长任务（文档/长文）用 `cc-connect send --message` 推一次进度（"正在抓取…"/"正在生成摘要…"），最多 2 条

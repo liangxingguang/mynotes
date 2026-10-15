@@ -81,7 +81,9 @@ for (const dir of DIRS) {
       platform: fm.platform || '',
       // 取第一条引用块作为摘要，兼容「> 摘要：xxx」与「> xxx」两种写法
       summary: (md.match(/^>\s*(?:摘要[：:]\s*)?(.+)$/m)?.[1] || '').trim(),
-      summary_status: fm.summary_status || ''
+      summary_status: fm.summary_status || '',
+      asset_ref: fm.asset_ref || '',
+      wiki_status: fm.wiki_status || ''
     })
   }
 }

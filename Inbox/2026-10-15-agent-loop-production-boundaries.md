@@ -8,6 +8,8 @@ platform: 微信公众号
 created: 2026-10-15
 category: 技术
 tags: [AI, 工程实践]
+asset_ref: Assets/2026/10/agent-loop-production-boundaries.md
+wiki_status: pending
 ---
 
 # 从 Chatbot 到 AI Agent：为什么一个 while 循环撑不起生产系统
@@ -64,4 +66,4 @@ W02 在 ToolExecutor 后接 MCP 只读查询并验证 Schema/协议/跨进程失
 
 ## 附件
 
-无
+- 抓取正文原件（采集态证据）：[[Assets/2026/10/agent-loop-production-boundaries.md]]

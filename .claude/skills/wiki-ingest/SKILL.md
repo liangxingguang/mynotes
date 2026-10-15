@@ -29,13 +29,13 @@ description: 把原始材料摄入为结构化 Wiki 知识：按 AGENTS.md 的 1
 `raw/sources/<域>/<slug>.md` 必须是**按 `Source_Schema.md` 加工过的信源**，不是 `Inbox/` 笔记的字节副本。
 
 - 禁止把 `Inbox/` 笔记原样复制进 `raw/`：既没有产生知识，又会在 Obsidian 全局 basename 解析下制造同名冲突（见 `AGENTS.md` 附录 B 第 3 条）。
-- 处理完一篇后，`Inbox/` 原件应移出（归档到 `Archive/`，`AGENTS.md` 2.1 允许摄入过程中移除），不得与 `raw/` 中信源同名共存。
+- 处理完一篇后，把笔记 frontmatter 的 `wiki_status` 置为 `ingested`，再将其移出（归档到 `Archive/`，`AGENTS.md` 2.1 允许摄入过程中移除），并把 manifest entry 的 `inbox_ref` 更新为 `Archive/` 新路径；不得与 `raw/` 中信源同名共存。
 
 ## 13 阶段执行契约
 
-1. **接收（Intake）**：确定待摄入对象（`Inbox/` 笔记或用户指定材料），记录其来源。
+1. **接收（Intake）**：确定待摄入对象：用户指定材料优先；未指定时默认取 `Index/index.json` 中 `wiki_status: pending` 的最早 1 篇（受 1–3 篇批量约束）。记录其来源。
 2. **规范化（Normalize）**：转成 Markdown、统一换行与编码；不改变原始语义。
-3. **登记原始信源（Register Raw Source）**：写入 `raw/sources/<域>/YYYY-MM-DD-<slug>.md`（域取 ai/architecture/enterprise/products/research/misc）；二进制证据放 `raw/assets/{images,pdf,attachments}`。**只新增，不修改既有文件**。
+3. **登记原始信源（Register Raw Source）**：写入 `raw/sources/<域>/YYYY-MM-DD-<slug>.md`（域取 ai/architecture/enterprise/products/research/misc）；二进制证据放 `raw/assets/{images,pdf,attachments}`。**只新增，不修改既有文件**。优先取笔记 frontmatter `asset_ref` 指向的 `Assets/` 采集态原件做规范化，raw 信源页 frontmatter 写 `asset_ref` 指回该原件；不复制原件正文以外的内容、不把 `Assets/` 已有二进制再归档一份（附录 B 第 3、7 条）。
 4. **分诊（Triage）**：判断这批材料值得编译出哪些页面类型；给出候选清单。
 5. **证据抽取（Evidence Extraction）**：抽出承重性事实（数字、日期、人名、引语、规格、决策等）并绑定到 `raw/` 路径。
 6. **已有知识分析（Existing Knowledge Analysis）**：**绝对不得跳过**。逐项判断新增/印证/更新/矛盾/重复，并列出涉及的实体与概念。先检索已有 `wiki/` 页面，命中则**更新**而非新建。
@@ -49,7 +49,7 @@ description: 把原始材料摄入为结构化 Wiki 知识：按 AGENTS.md 的 1
 
 ## 台账
 
-在 `state/manifest.json` 的 `entries` 追加记录（含 `path`、`sha256`、`registered_at`、`inbox_ref`、`pages`），供 lint 校验 raw 未被改动。
+在 `state/manifest.json` 的 `entries` 追加记录（含 `path`、`sha256`、`registered_at`、`inbox_ref`、`pages`，以及 `source_url`（规范化 URL，供采集层跨层去重）与 `asset_ref`（采集态原件路径）），供 lint 校验 raw 未被改动。
 
 ## 写入边界（严禁）
 

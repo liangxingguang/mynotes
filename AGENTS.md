@@ -37,6 +37,8 @@
 
 收件箱不具备权威性。
 
+采集层笔记以 frontmatter `wiki_status` 标记摄入队列状态：`pending`（待摄入）、`ingested`（已摄入，随后移入 `Archive/`）、`skipped`（闪念等不入 wiki）。`wiki-ingest` 默认消费最早的 pending 笔记。
+
 ### 2.2 Raw（原始层）
 
 `raw/` 是不可变的「事实来源层」。
@@ -349,3 +351,4 @@ Lint 包含两个阶段。
 4. **不做静态 deny 权限**：`raw/` 的不可变由本契约 + `state/manifest.json` 的 sha256 校验（见 13.1）保证，不通过 `.claude/settings.json` 的 `deny` 规则实现（宽泛 deny 会锁死模型导致任务静默失败）。
 5. **瞬时产物不入库**：`reports/` 与 `state/runs/` 已列入 `.gitignore`；`state/manifest.json` 入库（它是 raw 完整性的校验依据）。
 6. **不建 `Inbox/` 子目录**：`scripts/skills/index-rebuild.js` 对 `Inbox/` 的扫描是非递归的，笔记放入子目录会被 `/search` `/today` 静默漏掉。要保持扁平。
+7. **采集→摄入衔接**：链接/文档采集时，抓取正文与文档原件必须落 `Assets/YYYY/MM/`（不得只放 `.tmp/`）作为采集态证据；Inbox 笔记以 `asset_ref` 指回该文件并标 `wiki_status: pending`。`wiki-ingest` 是 pending 队列的唯一消费者：登记 raw 时在 manifest entry 写 `source_url` 与 `asset_ref`，raw 信源页 frontmatter 以 `asset_ref` 引用 Assets 原件（不复制正文、不重复存二进制）；完成后笔记置 `ingested` 并移 `Archive/`，同步更新 entry 的 `inbox_ref`。采集前的重复检测须同时比对 manifest 的 `source_url`（规范化 URL）。

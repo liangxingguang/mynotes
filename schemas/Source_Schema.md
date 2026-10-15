@@ -50,12 +50,16 @@ sources:
   "sha256": "<文件内容的 sha256>",
   "registered_at": "YYYY-MM-DD",
   "inbox_ref": "Inbox/YYYY-MM-DD-slug.md",
-  "pages": ["wiki/sources/example.md"]
+  "pages": ["wiki/sources/example.md"],
+  "source_url": "https://example.com/post",
+  "asset_ref": "Assets/2026/10/example.md"
 }
 ```
 
 - `path` 为相对 Vault 根目录的路径。
 - `sha256` 用于确定性检查 `raw` 是否被改动（`AGENTS.md` 13.1）。
+- `source_url`：信源原始网址（规范化：去 utm/fragment、host 小写），供采集层跨层去重；非网络信源可省略。
+- `asset_ref`：采集态正文/原件路径（`Assets/YYYY/MM/...`）；raw 信源页 frontmatter 用同名字段指回它，只引用不复制，避免二进制双份（附录 B 第 3、7 条）。
 - 其余字段可扩展，新增字段须同步更新本文件。
 
 ---
