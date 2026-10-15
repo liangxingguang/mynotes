@@ -19,7 +19,7 @@ const STALE_MS = 120000
 const PATHS = [
   'Inbox', 'Archive', 'Assets', 'Index',
   'raw', 'wiki', 'schemas', 'config', 'templates', 'state',
-  'scripts', '.claude',
+  'scripts', '.claude', 'docs',
   'AGENTS.md', 'CLAUDE.md', 'package.json', 'package-lock.json', '.gitignore'
 ]
 

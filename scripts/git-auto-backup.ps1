@@ -9,7 +9,7 @@ Set-Location $VAULT_PATH
 $Paths = @(
   'Inbox','Archive','Assets','Index',
   'raw','wiki','schemas','config','templates','state',
-  'scripts','.claude',
+  'scripts','.claude','docs',
   'AGENTS.md','CLAUDE.md','package.json','package-lock.json','.gitignore'
 )
 $status = git status --porcelain -- $Paths

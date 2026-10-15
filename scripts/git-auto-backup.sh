@@ -10,7 +10,7 @@ BRANCH="${BACKUP_BRANCH:-$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo m
 
 # git diff 只覆盖已跟踪文件，会漏掉新增的未跟踪笔记，故用 git status --porcelain
 # 采集层 + LLM Wiki 四层（raw/wiki/schemas/config/templates/state/scripts/.claude）+ 运行契约与工程文件
-PATHS="Inbox Archive Assets Index raw wiki schemas config templates state scripts .claude AGENTS.md CLAUDE.md package.json package-lock.json .gitignore"
+PATHS="Inbox Archive Assets Index raw wiki schemas config templates state scripts .claude docs AGENTS.md CLAUDE.md package.json package-lock.json .gitignore"
 if [ -z "$(git status --porcelain -- $PATHS)" ]; then
   echo "no changes, skip backup"
   exit 0
