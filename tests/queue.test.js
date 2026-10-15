@@ -372,3 +372,18 @@ test('trigger：投递参数默认带 --work-dir 指向 vault（强制新会话�
     else process.env.CC_TRIGGER_REUSE = prev
   }
 })
+
+test('trigger：环境带 CC_SESSION_KEY 时透传 -s 路由到来源 IM 会话', () => {
+  const prev = process.env.CC_SESSION_KEY
+  process.env.CC_SESSION_KEY = 'obsidian-knowledge_b1fee3da'
+  try {
+    const args = buildSendArgs('/vault')
+    assert.deepEqual(args, [
+      'send', '-p', 'obsidian-knowledge', '-m', '/ingest',
+      '-s', 'obsidian-knowledge_b1fee3da', '--work-dir', '/vault'
+    ])
+  } finally {
+    if (prev === undefined) delete process.env.CC_SESSION_KEY
+    else process.env.CC_SESSION_KEY = prev
+  }
+})

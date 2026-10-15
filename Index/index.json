@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15 23:40",
+  "updated_at": "2026-10-16 01:11",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -572,6 +572,26 @@
       "summary": "得物技术介绍基于开源 Multica 二次开发的团队级 Agent 工作系统 EP-Harness：把 Agent 当作有身份、任务、状态、执行记录与权限边界的\"团队成员\"纳入平台管理（server 管 Issue 队列，daemon 驻开发者本机调本地 AI CLI，Backend.Execute 统一各 Runtime 契约）。核心判断：AI Coding 正沿 Prompt→Context→Harness→Loop 四层从工具使用走向工程系统，个人工具只解决前两层，团队平台补齐结构化上下文、可观测可治理的执行环境与\"发现-派发-执行-验证-记录-决策\"闭环。已实现决策追溯、多 Agent 分阶段协作，累计自动修复 100+ 异常日志问题，典型高频问题从每 4 小时 2400+ 条降至个位数。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/ep-harness-team-agent-workflow.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-16-distributed-systems-introduction",
+      "title": "第一章：分布式系统概述",
+      "path": "Inbox/2026-10-16-distributed-systems-introduction.md",
+      "created": "2026-10-16",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "工程实践",
+        "课程"
+      ],
+      "source": "codedump（分布式系统中文教程）",
+      "source_url": "https://www.codedump.info/dist-system-cn/introduction/",
+      "source_type": "article",
+      "platform": "codedump.info",
+      "summary": "分布式系统教程开篇。以集中式单机系统为对照建立分布式系统定义（多节点经网络消息传递协同、无共享内存），剖析四大核心挑战——网络不可靠（丢包/乱序/延迟无上限，TCP 只给\"可靠流\"幻觉）、无全局时钟（物理时间戳会排出\"来自未来的消息\"）、部分失效（无法区分宕机、慢、丢消息，可引发级联故障与脑裂）、副本一致性（真理变成\"流言\"，一致性是频谱而非布尔值）；并总结工程师四点心智转变：二态→三态逻辑（成功/失败/超时+幂等设计）、绝对时间→因果顺序、完美主义→CAP 权衡、防御故障→拥抱故障（熔断/降级/隔离）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/distributed-systems-introduction.md",
       "wiki_status": "pending"
     }
   ]

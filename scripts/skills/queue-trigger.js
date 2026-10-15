@@ -25,6 +25,9 @@ export function buildSendArgs(vault) {
   const project = (process.env.CC_PROJECT || 'obsidian-knowledge').replace(/[^\w.-]/g, '')
   const message = sanitizeMessage(process.env.INGEST_TRIGGER_MESSAGE || '/ingest')
   const args = ['send', '-p', project, '-m', message]
+  // hook 子进程注入 CC_SESSION_KEY：透传 -s 把消息路由回来源 IM 会话
+  const sessionKey = (process.env.CC_SESSION_KEY || '').replace(/[^\w.-]/g, '')
+  if (sessionKey) args.push('-s', sessionKey)
   // 默认强制新会话：连续自消化时不累积采集会话上下文（token 随篇数膨胀）；
   // CC_TRIGGER_REUSE=1 时退回同会话投递
   if (process.env.CC_TRIGGER_REUSE !== '1') args.push('--work-dir', vault)

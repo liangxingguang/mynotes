@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15 23:40",
+  "updated_at": "2026-10-16 01:11",
   "tags": [
     {
       "name": "AI",
@@ -19,7 +19,7 @@
         "最佳实践"
       ],
       "category": "技术",
-      "count": 19,
+      "count": 20,
       "status": "active"
     },
     {
@@ -46,7 +46,7 @@
         "教程"
       ],
       "category": "学习",
-      "count": 4,
+      "count": 5,
       "status": "active"
     },
     {
@@ -132,6 +132,16 @@
       ],
       "category": "学习",
       "count": 0,
+      "status": "new"
+    },
+    {
+      "name": "分布式系统",
+      "aliases": [
+        "分布式",
+        "Distributed Systems"
+      ],
+      "category": "技术",
+      "count": 1,
       "status": "new"
     }
   ]
