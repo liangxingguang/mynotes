@@ -20,3 +20,6 @@ mcp.json
 # 系统文件
 .DS_Store
 Thumbs.db
+
+# Superpowers SDD 工作区（计划执行台账，本地临时）
+.superpowers/
