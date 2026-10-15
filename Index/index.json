@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15 08:23",
+  "updated_at": "2026-10-15 08:57",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -552,6 +552,25 @@
       "summary": "文章以 Go 实现的运维诊断 Agent 原型 Aegis（W01 阶段，全部本地合成 Mock）为例，论证\"模型 while 循环 + 调工具\"的 Chatbot 骨架撑不起生产系统：模型不结束、工具挂住、用户取消、预算耗尽都必须成为明确且可查询的结果。关键设计：HTTP 与 Agent Loop 解耦（容量 32 的有限队列 + 单消费者后台 runtime + 内存仓储）；拆出 LLMProvider / ToolExecutor / AgentRuntime 三个可替换契约；任务走 PENDING→RUNNING→SUCCEEDED/FAILED/CANCELLED 状态机，取消先在仓储落终态再通知 worker，锁内排序保证终态不可被迟到结果覆盖；每类停止都有独立错误码；许可只来自服务端，模型输出不是授权凭据。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/agent-loop-production-boundaries.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-15-ep-harness-team-agent-workflow",
+      "title": "如何从个人 AI Coding 到构建团队级 Agent 工作流？（得物 EP-Harness）",
+      "path": "Inbox/2026-10-15-ep-harness-team-agent-workflow.md",
+      "created": "2026-10-15",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
+      "source": "得物技术（微信公众号，作者：方舟；dbaplus 社群转载）",
+      "source_url": "https://mp.weixin.qq.com/s/yd68Wzm3za4m47LuRhMzYw",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "得物技术介绍基于开源 Multica 二次开发的团队级 Agent 工作系统 EP-Harness：把 Agent 当作有身份、任务、状态、执行记录与权限边界的\"团队成员\"纳入平台管理（server 管 Issue 队列，daemon 驻开发者本机调本地 AI CLI，Backend.Execute 统一各 Runtime 契约）。核心判断：AI Coding 正沿 Prompt→Context→Harness→Loop 四层从工具使用走向工程系统，个人工具只解决前两层，团队平台补齐结构化上下文、可观测可治理的执行环境与\"发现-派发-执行-验证-记录-决策\"闭环。已实现决策追溯、多 Agent 分阶段协作，累计自动修复 100+ 异常日志问题，典型高频问题从每 4 小时 2400+ 条降至个位数。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/ep-harness-team-agent-workflow.md",
       "wiki_status": "pending"
     }
   ]
