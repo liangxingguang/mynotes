@@ -9,7 +9,7 @@
         "LLM"
       ],
       "category": "技术",
-      "count": 21,
+      "count": 20,
       "status": "active"
     },
     {
@@ -98,6 +98,25 @@
       "aliases": [
         "GitHub",
         "开源项目"
+      ],
+      "category": "技术",
+      "count": 1,
+      "status": "new"
+    },
+    {
+      "name": "Harness",
+      "aliases": [
+        "Agent Harness"
+      ],
+      "category": "技术",
+      "count": 1,
+      "status": "new"
+    },
+    {
+      "name": "AI Coding",
+      "aliases": [
+        "ai coding",
+        "AI 编程"
       ],
       "category": "技术",
       "count": 1,

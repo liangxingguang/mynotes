@@ -7,7 +7,7 @@ source_type: article
 platform: 微信公众号
 created: 2026-10-15
 category: 技术
-tags: [AI, 工程实践]
+tags: [AI Coding, Harness, 工程实践]
 asset_ref: Assets/2026/10/ep-harness-team-agent-workflow.md
 wiki_status: pending
 ---
