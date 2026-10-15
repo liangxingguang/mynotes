@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15 08:59",
+  "updated_at": "2026-10-15 09:03",
   "tags": [
     {
       "name": "AI",
@@ -120,6 +120,18 @@
       ],
       "category": "技术",
       "count": 1,
+      "status": "new"
+    },
+    {
+      "name": "算法",
+      "aliases": [
+        "动态规划",
+        "DP",
+        "LeetCode",
+        "刷题"
+      ],
+      "category": "学习",
+      "count": 0,
       "status": "new"
     }
   ]
