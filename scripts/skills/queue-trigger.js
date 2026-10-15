@@ -21,6 +21,16 @@ export function sanitizeMessage(s) {
   return String(s).replace(/[%"]/g, '').replace(/[\x00-\x1f\x7f]/g, '')
 }
 
+export function buildSendArgs(vault) {
+  const project = (process.env.CC_PROJECT || 'obsidian-knowledge').replace(/[^\w.-]/g, '')
+  const message = sanitizeMessage(process.env.INGEST_TRIGGER_MESSAGE || '/ingest')
+  const args = ['send', '-p', project, '-m', message]
+  // 默认强制新会话：连续自消化时不累积采集会话上下文（token 随篇数膨胀）；
+  // CC_TRIGGER_REUSE=1 时退回同会话投递
+  if (process.env.CC_TRIGGER_REUSE !== '1') args.push('--work-dir', vault)
+  return args
+}
+
 export async function evaluate({ vault, now = new Date() } = {}) {
   const notes = await listInboxNotes(vault)
   const hasWork = notes.some(
@@ -48,14 +58,13 @@ export async function trigger({ vault, now = new Date(), sender } = {}) {
     sender ||
     (async () => {
       const bin = process.env.CC_CONNECT_BIN || 'cc-connect'
-      // 取值均为本机配置（非 IM 用户输入）：Windows 经 cmd 解析，收窄字符面
-      const project = (process.env.CC_PROJECT || 'obsidian-knowledge').replace(/[^\w.-]/g, '')
-      const message = sanitizeMessage(process.env.INGEST_TRIGGER_MESSAGE || '/ingest')
+      const args = buildSendArgs(vault)
       if (process.platform === 'win32') {
         // cc-connect 在 Windows 是 .cmd shim，需经 shell；单字符串形式避免 DEP0190
-        await pexecShell(`"${bin}" send -p ${project} -m "${message}"`)
+        const quoted = args.map((a) => (/[\s\\]/.test(a) ? `"${a}"` : a)).join(' ')
+        await pexecShell(`"${bin}" ${quoted}`)
       } else {
-        await pexec(bin, ['send', '-p', project, '-m', message])
+        await pexec(bin, args)
       }
     })
   try {

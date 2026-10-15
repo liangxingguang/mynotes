@@ -8,6 +8,7 @@ import { parseFrontmatter, setFrontmatterFields, isIngestStale } from '../script
 import { execFile } from 'node:child_process'
 import { promisify } from 'node:util'
 import { claim, finish, failNote, queueStatus } from '../scripts/skills/queue-claim.js'
+import { buildSendArgs } from '../scripts/skills/queue-trigger.js'
 
 const pexec = promisify(execFile)
 const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
@@ -357,4 +358,17 @@ test('done：成功归档时清算 ingest_attempts/ingest_error/claim 字段', a
 test('trigger：sanitizeMessage 去除 %、引号与控制字符（防 cmd 变量展开/断行）', async () => {
   const { sanitizeMessage } = await import('../scripts/skills/queue-trigger.js')
   assert.equal(sanitizeMessage('/ingest %COMSPEC%\r\n& whoami"'), '/ingest COMSPEC& whoami')
+})
+
+test('trigger：投递参数默认带 --work-dir 指向 vault（强制新会话）；CC_TRIGGER_REUSE=1 时不带', () => {
+  const argsWith = buildSendArgs('D:\Obsidian\Vault1')
+  assert.deepEqual(argsWith, ['send', '-p', 'obsidian-knowledge', '-m', '/ingest', '--work-dir', 'D:\Obsidian\Vault1'])
+  const prev = process.env.CC_TRIGGER_REUSE
+  process.env.CC_TRIGGER_REUSE = '1'
+  try {
+    assert.deepEqual(buildSendArgs('/opt/vault'), ['send', '-p', 'obsidian-knowledge', '-m', '/ingest'])
+  } finally {
+    if (prev === undefined) delete process.env.CC_TRIGGER_REUSE
+    else process.env.CC_TRIGGER_REUSE = prev
+  }
 })

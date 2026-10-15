@@ -11,12 +11,13 @@ description: 把原始材料摄入为结构化 Wiki 知识：按 AGENTS.md 的 1
 
 ## 第 0 步（强制前置）
 
-先读取以下文件并严格遵守，缺一不可：
+先读取以下文件并严格遵守：
 
 1. `AGENTS.md`（运行契约，尤其第 3 节不变量、第 9-10 节摄入契约、附录 A 权限边界、附录 B 硬规则）
 2. `schemas/Wiki_Page_Schema.md`（页面结构与 8 类页面骨架）
 3. `schemas/Frontmatter_Schema.yaml` 与 `config/settings.yaml`（字段与取值）
-4. `templates/<type>.md`（对应页面模板）
+
+`templates/<type>.md` **按阶段 4 分诊结果按需读取**——只读本轮确定要创建/更新的页面类型模板（通常 1–2 个），不要一次读全部模板。同一会话连续摄入多篇时，第 0 步文件只读一次。
 
 ## 批量约束（强制）
 
@@ -36,11 +37,11 @@ description: 把原始材料摄入为结构化 Wiki 知识：按 AGENTS.md 的 1
 1. **接收（Intake）**：用户显式指定 Inbox 笔记时，运行 `node scripts/skills/queue-claim.js claim --target <path|id>` 定向认领该篇（仅 pending/failed 可认领，failed 时 attempts 归零）；用户直接给链接/文档等新材料时，先按采集规范写入 Inbox（pending）再定向 claim。未指定时运行 `node scripts/skills/queue-claim.js claim` 认领最早 1 篇，JSON 的 `claimed[]`（含 `path` 与 `claim_id`）即本轮对象；空队列则汇报“队列为空”并结束。每日兜底场景用 `claim --include-failed`（failed 排在 pending 之后、认领时 attempts 归零）。单轮至多 3 篇（每篇各 claim 一次）。
 2. **规范化（Normalize）**：转成 Markdown、统一换行与编码；不改变原始语义。
 3. **登记原始信源（Register Raw Source）**：写入 `raw/sources/<域>/YYYY-MM-DD-<slug>.md`（域取 ai/architecture/enterprise/products/research/misc）；二进制证据放 `raw/assets/{images,pdf,attachments}`。**只新增，不修改既有文件**。优先取笔记 frontmatter `asset_ref` 指向的 `Assets/` 采集态原件做规范化，raw 信源页 frontmatter 写 `asset_ref` 指回该原件；不复制原件正文以外的内容、不把 `Assets/` 已有二进制再归档一份（附录 B 第 3、7 条）。
-4. **分诊（Triage）**：判断这批材料值得编译出哪些页面类型；给出候选清单。
-5. **证据抽取（Evidence Extraction）**：抽出承重性事实（数字、日期、人名、引语、规格、决策等）并绑定到 `raw/` 路径。
+4. **分诊（Triage）**：只依据笔记标题、frontmatter、摘要与「核心要点」判断值得编译哪些页面类型，给出候选清单；**此阶段不读 Assets 原文**。候选从严：没有承重证据支撑的概念/实体不开页面，不为「完整」凑页。
+5. **证据抽取（Evidence Extraction）**：**此时才读** `asset_ref` 指向的 Assets 原文（无 `asset_ref` 时读笔记正文），抽出承重性事实（数字、日期、人名、引语、规格、决策等）并绑定到 `raw/` 路径。长原件按分诊候选只精读相关章节、分段提炼，不通读全文。
 6. **已有知识分析（Existing Knowledge Analysis）**：**绝对不得跳过**。逐项判断新增/印证/更新/矛盾/重复，并列出涉及的实体与概念。先检索已有 `wiki/` 页面，命中则**更新**而非新建。
 7. **变更规划（Change Planning）**：列出将要新建/更新的页面，以及 index/log/manifest 的变更点。
-8. **Wiki 编译（Wiki Compilation）**：按 `Wiki_Page_Schema.md` 与 `templates/<type>.md` 写页面；frontmatter 必填字段齐全；解读必须显式标注为「解读」；证据不足则写「未知」，绝不编造。
+8. **Wiki 编译（Wiki Compilation）**：按 `Wiki_Page_Schema.md` 与 `templates/<type>.md` 写页面；frontmatter 必填字段齐全；解读必须显式标注为「解读」；证据不足则写「未知」，绝不编造。只写分诊清单内、且证据抽取阶段拿到承重事实的页面——一个信源不强求多页，可长期维护的少量页面优于一次性大而全。
 9. **交叉链接（Cross-Linking）**：建立 `related`/`depends-on`/`derived-from`/`contradicts`/`supersedes`/`part-of` 等关系；`[[链接]]` 必须指向真实存在的页面。
 10. **索引更新（Index Update）**：把新页面写入 `wiki/index.md` 对应分组；archived 页面移出活跃索引。
 11. **检查（Lint）**：执行 `node scripts/skills/wiki-lint.js`，修掉确定性错误后再收尾。
