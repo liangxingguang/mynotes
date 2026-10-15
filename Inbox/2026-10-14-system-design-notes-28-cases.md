@@ -8,6 +8,7 @@ platform: 知乎
 created: 2026-10-14
 category: 学习
 tags: [工程实践, 阅读]
+wiki_status: pending
 ---
 
 # system-design-notes：把系统设计面试浓缩成 28 个经典架构案例的开源笔记

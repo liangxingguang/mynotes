@@ -8,6 +8,7 @@ platform: 微信公众号
 created: 2026-10-14
 category: 技术
 tags: [AI, 课程]
+wiki_status: pending
 ---
 
 # 7天学懂 DeepSeek Harness 实操手册（Day 1：装好之后的第一小时）

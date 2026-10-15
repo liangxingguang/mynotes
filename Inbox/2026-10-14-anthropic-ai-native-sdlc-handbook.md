@@ -8,6 +8,7 @@ platform: 微信公众号
 created: 2026-10-14
 category: 技术
 tags: [AI, 工程实践]
+wiki_status: pending
 ---
 
 # Anthropic AI 原生 SDLC 实施手册

@@ -8,6 +8,7 @@ platform: 微信公众号
 created: 2026-10-13
 category: 技术
 tags: [AI, 工程实践]
+wiki_status: pending
 ---
 
 # A2A 实战：从零搭建工业级多 Agent 协作系统

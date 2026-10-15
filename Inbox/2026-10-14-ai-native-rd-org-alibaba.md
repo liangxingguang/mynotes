@@ -8,6 +8,7 @@ platform: 微信公众号
 created: 2026-10-14
 category: 技术
 tags: [AI, 工程实践]
+wiki_status: pending
 ---
 
 # AI 进入生产后，研发组织怎么变（阿里云 AI 原生研发组织论坛回顾）

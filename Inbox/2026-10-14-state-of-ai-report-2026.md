@@ -8,6 +8,7 @@ platform: 微信公众号
 created: 2026-10-14
 category: 资讯
 tags: [AI, 行业动态]
+wiki_status: pending
 ---
 
 # 今年最全面的 AI 行业报告来了（State of AI Report 2026 中文要点）

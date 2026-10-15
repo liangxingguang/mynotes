@@ -8,6 +8,7 @@ platform: 知乎
 created: 2026-10-14
 category: 技术
 tags: [AI, 工程实践]
+wiki_status: pending
 ---
 
 # 微软开源 Agent Lightning：3500 行强化学习框架，让 Agent 在真实工具链里自己练级

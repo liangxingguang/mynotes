@@ -8,6 +8,7 @@ platform: GitHub
 created: 2026-10-14
 category: 技术
 tags: [AI, 工具, github]
+wiki_status: pending
 ---
 
 # 归一 Unyra：本地优先的探索式学习 AI 桌面应用（Electron + React）
