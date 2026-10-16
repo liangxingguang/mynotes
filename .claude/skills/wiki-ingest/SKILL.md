@@ -27,7 +27,7 @@ description: 把原始材料摄入为结构化 Wiki 知识：按 AGENTS.md 的 1
 
 ## 反原样复制（强制）
 
-`raw/sources/<域>/<slug>.md` 必须是**按 `Source_Schema.md` 加工过的信源**，不是 `Inbox/` 笔记的字节副本。
+`raw/sources/<域>/<slug>.md` 必须是**按 `Source_Schema.md` 登记的信源**（登记 frontmatter + 原文全文），不是 `Inbox/` 笔记的字节副本；笔记的摘要/核心要点属于采集层产物，**不得**写入 raw 正文，raw 正文只能是原文全文（见阶段 3）。
 
 - 禁止把 `Inbox/` 笔记原样复制进 `raw/`：既没有产生知识，又会在 Obsidian 全局 basename 解析下制造同名冲突（见 `AGENTS.md` 附录 B 第 3 条）。
 - 处理完一篇后运行 `node scripts/skills/queue-claim.js done <path> --claim-id <id>` 收尾（脚本置 `ingested` 并移入 `Archive/`，返回 `Archive/` 新路径），并把 manifest entry 的 `inbox_ref` 更新为该路径；失败用 `fail <path> --claim-id <id> --reason <简述>`。不得手写 `wiki_status`、不得自行 mv、不得与 `raw/` 中信源同名共存。
@@ -36,7 +36,7 @@ description: 把原始材料摄入为结构化 Wiki 知识：按 AGENTS.md 的 1
 
 1. **接收（Intake）**：用户显式指定 Inbox 笔记时，运行 `node scripts/skills/queue-claim.js claim --target <path|id>` 定向认领该篇（仅 pending/failed 可认领，failed 时 attempts 归零）；用户直接给链接/文档等新材料时，先按采集规范写入 Inbox（pending）再定向 claim。未指定时运行 `node scripts/skills/queue-claim.js claim` 认领最早 1 篇，JSON 的 `claimed[]`（含 `path` 与 `claim_id`）即本轮对象；空队列则汇报“队列为空”并结束。每日兜底场景用 `claim --include-failed`（failed 排在 pending 之后、认领时 attempts 归零）。单轮至多 3 篇（每篇各 claim 一次）。
 2. **规范化（Normalize）**：转成 Markdown、统一换行与编码；不改变原始语义。
-3. **登记原始信源（Register Raw Source）**：写入 `raw/sources/<域>/YYYY-MM-DD-<slug>.md`（域取 ai/architecture/enterprise/products/research/misc）；二进制证据放 `raw/assets/{images,pdf,attachments}`。**只新增，不修改既有文件**。优先取笔记 frontmatter `asset_ref` 指向的 `Assets/` 采集态原件做规范化，raw 信源页 frontmatter 写 `asset_ref` 指回该原件；不复制原件正文以外的内容、不把 `Assets/` 已有二进制再归档一份（附录 B 第 3、7 条）。
+3. **登记原始信源（Register Raw Source）**：写入 `raw/sources/<域>/YYYY-MM-DD-<slug>.md`（域取 ai/architecture/enterprise/products/research/misc）；二进制证据放 `raw/assets/{images,pdf,attachments}`。**只新增，不修改既有文件**。raw 信源页 = 登记 frontmatter + **原文全文**（结构见 `Source_Schema.md` 第 2 节）：全文取笔记 frontmatter `asset_ref` 指向的 `Assets/` 采集稿**逐字复制**——不得压缩、改写、节选，只允许换行/编码规范化；无 `asset_ref` 或采集稿缺失时，按 `source_url` 用 web-fetch 重抓原文全文收录，重抓失败则该篇 `fail` 并说明，**禁止用 Inbox 笔记的摘要/正文浓缩稿充当全文**。frontmatter 写 `asset_ref` 指回 Assets 原件；二进制原件不重复归档、仍只存 `Assets/`（附录 B 第 3、7 条）。
 4. **分诊（Triage）**：只依据笔记标题、frontmatter、摘要与「核心要点」判断值得编译哪些页面类型，给出候选清单；**此阶段不读 Assets 原文**。候选从严：没有承重证据支撑的概念/实体不开页面，不为「完整」凑页。
 5. **证据抽取（Evidence Extraction）**：**此时才读** `asset_ref` 指向的 Assets 原文（无 `asset_ref` 时读笔记正文），抽出承重性事实（数字、日期、人名、引语、规格、决策等）并绑定到 `raw/` 路径。长原件按分诊候选只精读相关章节、分段提炼，不通读全文。
 6. **已有知识分析（Existing Knowledge Analysis）**：**绝对不得跳过**。逐项判断新增/印证/更新/矛盾/重复，并列出涉及的实体与概念。先检索已有 `wiki/` 页面，命中则**更新**而非新建。

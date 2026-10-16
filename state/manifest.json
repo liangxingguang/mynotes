@@ -1,11 +1,11 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-10-16",
+  "updated_at": "2026-10-16T15:30:26.347Z",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
-      "sha256": "13183750bb7cade1c6dd5158e5e9e42b93079fe4b4e88bede5f834c2403533b1",
+      "sha256": "4f51f71fad76100942cd58c4441802836cc74b3a035f26f776279d585a50931a",
       "registered_at": "2026-10-16",
       "inbox_ref": "Archive/2026-10-13-a2a-multi-agent-langgraph.md",
       "pages": [
@@ -19,7 +19,7 @@
     },
     {
       "path": "raw/sources/architecture/2026-10-13-system-design-12-components.md",
-      "sha256": "dd935853031f9ea6c678af523e729b853c4eea818e2c8e59c60fd85bc0fe0ffd",
+      "sha256": "cb30da9d2810f780dd64accb7538e2d9cd1f982ec538c94de2705b6816908b36",
       "registered_at": "2026-10-16",
       "inbox_ref": "Archive/2026-10-13-system-design-12-components.md",
       "pages": [
@@ -31,7 +31,7 @@
     },
     {
       "path": "raw/sources/enterprise/2026-10-14-ai-native-rd-org-alibaba.md",
-      "sha256": "75aa44a28f4f189df230366c648c1efcb2775babf2eb137ab79a5e51a58e5f7f",
+      "sha256": "21db588f63983566b8c0d13b968ab547354ec3564e4fd84360f77fb7b6ff0c7b",
       "registered_at": "2026-10-16",
       "inbox_ref": "Archive/2026-10-14-ai-native-rd-org-alibaba.md",
       "pages": [
