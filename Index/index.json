@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16 08:54",
+  "updated_at": "2026-10-16 08:56",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -649,6 +649,25 @@
       "summary": "微博观察：AI 热潮把 ESP32 开发板从创客圈带进 AI 圈——很多人晒用它做的小玩意（控制手机、小机器人、插路由器做 DNS 广告过滤，参考项目 M-Abozaid/esp32-c3-adblock）；近日曝出的 OpenAI 窃听案中窃听器同样基于 ESP32。带屏幕的板子只要几十元。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/esp32-dev-board-ai-trend.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-16-tcp-retransmission-visualized",
+      "title": "可视化 TCP 重传：终于有人将 TCP 传输讲明白了",
+      "path": "Inbox/2026-10-16-tcp-retransmission-visualized.md",
+      "created": "2026-10-16",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "课程"
+      ],
+      "source": "微信公众号（码农有道 coding）",
+      "source_url": "https://mp.weixin.qq.com/s/DFUJU3mU2h4Znm7XvvqxLA",
+      "source_type": "article",
+      "platform": "mp.weixin.qq.com",
+      "summary": "图解 TCP 可靠传输四件套：MSS 分段（以太网 MTU 1500 − IP/TCP 头各 20 = 1460，三次握手协商 SMSS/RMSS，避免 IP 层分片）；超时重传以字节序列号编号（32 位回绕），时间戳选项解决回绕后新旧段歧义；快速重传规定接收方对乱序段反复回同一 ACK、发送方连续收到 3 个重复 ACK 即不等超时立即重传；SACK 选项携带非连续已收区间，让发送方只重传真正丢失的段。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/tcp-retransmission-visualized.md",
       "wiki_status": "pending"
     }
   ]
