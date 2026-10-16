@@ -4,7 +4,8 @@
  *   一级：HTTP GET + Readability + Turndown -> Markdown
  *   二级：正文过短判定为 SPA -> Playwright Chromium 渲染后重试
  * 用法：node scripts/skills/web-fetch.js <url> [输出.md]
- * 输出：JSON { url, title, markdown_path, fetch_level, chars, status }
+ * 输出：JSON { url, title, markdown_path, fetch_level(http|browser|jina), chars, status }
+ * 三级策略：HTTP 直取 → Playwright 渲染 → r.jina.ai 阅读器（反爬兜底，JINA_API_KEY 可提额）
  */
 import fs from 'node:fs/promises'
 import path from 'node:path'
@@ -122,6 +123,39 @@ async function fetchBrowser(target, proxy) {
   }
 }
 
+// 第三级兜底：r.jina.ai 阅读器（返回现成 Markdown；对知乎等反爬站点有效）
+// 免费档无需 key（限流 20rpm）；设 JINA_API_KEY 提额
+let jinaTitle = ''
+async function fetchJina(target, proxy) {
+  const ctrl = new AbortController()
+  const timer = setTimeout(() => ctrl.abort(), 90000) // jina 渲染较慢，给足 90s
+  try {
+    const headers = {}
+    if (process.env.JINA_API_KEY) headers['authorization'] = `Bearer ${process.env.JINA_API_KEY}`
+    const jinaUrl = `https://r.jina.ai/${target}`
+    let text
+    if (proxy) {
+      const { fetch: undiciFetch, ProxyAgent } = await import('undici')
+      const res = await undiciFetch(jinaUrl, { signal: ctrl.signal, headers, dispatcher: new ProxyAgent(proxy) })
+      if (!res.ok) throw new Error(`jina http ${res.status}`)
+      text = await res.text()
+    } else {
+      const res = await fetch(jinaUrl, { signal: ctrl.signal, headers, redirect: 'follow' })
+      if (!res.ok) throw new Error(`jina http ${res.status}`)
+      text = await res.text()
+    }
+    // jina 输出格式：Title: ...\n\nURL Source: ...\n\nMarkdown Content:\n<正文>
+    const m = text.match(/^Title:\s*(.+)\r?\n[\s\S]*?Markdown Content:\r?\n([\s\S]*)$/)
+    if (m) {
+      jinaTitle = m[1].trim()
+      return m[2]
+    }
+    return text
+  } finally {
+    clearTimeout(timer)
+  }
+}
+
 const result = {
   url,
   title: '',
@@ -161,6 +195,20 @@ try {
       }
     } catch {
       /* 浏览器不可用则保留 HTTP 结果 */
+    }
+  }
+
+  // 仍过短（反爬壳/登录墙）→ jina 阅读器兜底（FORCE_BROWSER 模式同样生效）
+  if (md.trim().length < MIN_CHARS) {
+    try {
+      const jmd = await fetchWithFallback(fetchJina)
+      if (jmd && jmd.trim().length > md.trim().length) {
+        md = jmd
+        title = jinaTitle || title
+        result.fetch_level = 'jina'
+      }
+    } catch {
+      /* jina 不可用则保留现有结果 */
     }
   }
 
