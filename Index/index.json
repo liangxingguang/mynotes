@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16 10:24",
+  "updated_at": "2026-10-16 10:32",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -668,6 +668,26 @@
       "summary": "文章梳理知识库技术的能力地图（非线性替代关系）：关键词检索匹配词面、向量检索匹配语义、RAG 把检索结果交给模型作答、混合检索+重排优化召回、知识图谱/GraphRAG 沿实体关系查找、LLM Wiki 持续编译可复用知识页面、本体论统一跨系统业务概念、Agent 在权限与规则约束下调工具执行流程。强调各技术解决不同问题、生产中常并行组合，选型应从问题类型出发，并盯住来源可追溯、权限、版本冲突与执行校验。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/knowledge-base-tech-evolution.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-16-pi-practice-06-daily-patterns-selection",
+      "title": "Pi实战 06：日常实战 · 模式 · 选型篇",
+      "path": "Inbox/2026-10-16-pi-practice-06-daily-patterns-selection.md",
+      "created": "2026-10-16",
+      "category": "技术",
+      "tags": [
+        "Pi",
+        "AI Coding",
+        "工程实践"
+      ],
+      "source": "微信公众号「九幺一铭 Ai修行手记」",
+      "source_url": "https://mp.weixin.qq.com/s/H5jMdYhJXR3QxdFBsy9QHA",
+      "source_type": "article",
+      "platform": "mp.weixin.qq.com",
+      "summary": "Pi Coding Agent 系列第 6 篇，汇总社区实战经验与选型对照：按任务分工切模型（便宜模型日常、强模型啃硬骨头）、固定系统开销 <1k tokens 的省 token 优势与五个节流技巧、四种运行模式（interactive/print/RPC/SDK）、高频快捷键与会话树习惯；并诚实对照 Pi / Claude Code / OpenCode / Codex CLI——Pi 是可无限 hack 的\"Emacs 式骨架\"，把 Agent 定义权交给工程师，代价是自建自维护，受监管行业可借其本地端点与可审计性获益。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/pi-practice-06-daily-patterns-selection.md",
       "wiki_status": "pending"
     },
     {

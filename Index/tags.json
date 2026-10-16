@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16 10:24",
+  "updated_at": "2026-10-16 10:32",
   "tags": [
     {
       "name": "AI",
@@ -19,7 +19,7 @@
         "最佳实践"
       ],
       "category": "技术",
-      "count": 23,
+      "count": 24,
       "status": "active"
     },
     {
@@ -90,7 +90,7 @@
         "Pi Agent"
       ],
       "category": "技术",
-      "count": 7,
+      "count": 8,
       "status": "new"
     },
     {
@@ -119,7 +119,7 @@
         "AI 编程"
       ],
       "category": "技术",
-      "count": 1,
+      "count": 2,
       "status": "new"
     },
     {
