@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17 00:54",
+  "updated_at": "2026-10-17 00:56",
   "notes": [
     {
       "id": "2026-10-14-anthropic-ai-native-sdlc-handbook",
@@ -749,6 +749,26 @@
       "summary": "Pi 是 OpenClaw 内核的极简 coding agent，默认只有 read/write/edit/bash 四个工具。本文给出一套分层定制方案：项目规范写成 skill（按需加载、不占上下文），常用指令固化成 prompt 模板，必须强制执行的行为（如\"改完代码必评审\"）用 extension 挂事件钩子，复杂任务交给 subagent 并行处理，定时任务按\"Pi 开着/关着\"分别选 pi-schedule-prompt 或系统调度器调 headless 模式。核心原则：能用轻方案就别上重的，关键在知道需求该放哪一层。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/pi-custom-agent-setup.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-17-pi-durable-architecture",
+      "title": "开源 Pi-durable：把持久化做进协议的 Agent 应用框架",
+      "path": "Inbox/2026-10-17-pi-durable-architecture.md",
+      "created": "2026-10-17",
+      "category": "技术",
+      "tags": [
+        "Pi",
+        "Harness",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/x1G9t7b8M1hrR370f4DW4Q",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "pi-durable 是构建\"随处运行、可崩溃恢复、多端协同、无限长\"Agent 应用的框架（library，不带 UI）。核心公理：Session 原子提交不可变条目、任务和文档，只有已提交状态可观察——先落盘后可见，进程任意时刻死掉都能从上个检查点继续。五层架构（Storage/Session/Documents/Tasks/Harness）各司其职，一次 run 是一条 generation 持久任务链。与 Pi coding agent 共享 pi-ai 模型层，但定位是天级长程运行、多端在场的 Agent 应用底座，等于把 Temporal 的 durable execution 搬进 agent 框架。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/pi-durable-architecture.md",
       "wiki_status": "pending"
     },
     {
