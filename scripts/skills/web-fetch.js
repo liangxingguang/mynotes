@@ -39,6 +39,32 @@ function assertSafe(u) {
   if (m && Number(m[1]) >= 16 && Number(m[1]) <= 31) throw new Error('private address not allowed')
 }
 
+// ---------- 代理解析：环境变量优先，Windows 下回退读取系统代理 ----------
+async function resolveProxy() {
+  const env = process.env.HTTPS_PROXY || process.env.https_proxy || process.env.HTTP_PROXY || process.env.http_proxy
+  if (env) return env
+  if (process.platform !== 'win32') return null
+  try {
+    const { execFileSync } = await import('node:child_process')
+    const key = 'HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings'
+    const en = execFileSync('reg', ['query', key, '/v', 'ProxyEnable'], { encoding: 'utf8', timeout: 3000 })
+    if (!/ProxyEnable\s+REG_DWORD\s+0x1/i.test(en)) return null
+    const out = execFileSync('reg', ['query', key, '/v', 'ProxyServer'], { encoding: 'utf8', timeout: 3000 })
+    const m = out.match(/ProxyServer\s+REG_SZ\s+(\S+)/i)
+    if (!m) return null
+    let server = m[1]
+    if (server.includes('=')) {
+      const entry = server.split(';').map(s => s.trim()).find(s => s.startsWith('https=')) ||
+                    server.split(';').map(s => s.trim()).find(s => s.startsWith('http='))
+      if (!entry) return null
+      server = entry.split('=')[1]
+    }
+    return /^[a-z]+:\/\//i.test(server) ? server : `http://${server}`
+  } catch {
+    return null
+  }
+}
+
 async function loadDeps() {
   const [{ JSDOM }, { Readability }, TurndownModule] = await Promise.all([
     import('jsdom'),
@@ -58,24 +84,31 @@ function toMarkdown(deps, html, url) {
   return { title: article?.title || '', md: td.turndown(body) }
 }
 
-async function fetchHttp(target) {
+async function fetchHttp(target, proxy) {
   const ctrl = new AbortController()
   const timer = setTimeout(() => ctrl.abort(), TIMEOUT)
   try {
-    const res = await fetch(target, {
+    const opts = {
       signal: ctrl.signal,
       redirect: 'follow',
       headers: { 'user-agent': 'Mozilla/5.0 (compatible; obsidian-kb/1.0)' }
-    })
+    }
+    if (proxy) {
+      // 必须用同一个 undici 副本的 fetch + ProxyAgent（与 Node 内置 fetch 不兼容）
+      const { fetch: undiciFetch, ProxyAgent } = await import('undici')
+      const res = await undiciFetch(target, { ...opts, dispatcher: new ProxyAgent(proxy) })
+      return await res.text()
+    }
+    const res = await fetch(target, opts)
     return await res.text()
   } finally {
     clearTimeout(timer)
   }
 }
 
-async function fetchBrowser(target) {
+async function fetchBrowser(target, proxy) {
   const { chromium } = await import('playwright')
-  const browser = await chromium.launch()
+  const browser = await chromium.launch(proxy ? { proxy: { server: proxy } } : {})
   try {
     const page = await browser.newPage()
     await page.route('**/*', (route) => {
@@ -102,12 +135,24 @@ try {
   assertSafe(url)
   const deps = await loadDeps()
 
-  let html = FORCE_BROWSER ? await fetchBrowser(url) : await fetchHttp(url)
+  const proxy = await resolveProxy()
+
+  // 直连失败且有可用代理时，经代理重试
+  async function fetchWithFallback(fn) {
+    try {
+      return await fn(url, null)
+    } catch (e) {
+      if (!proxy) throw e
+      return await fn(url, proxy)
+    }
+  }
+
+  let html = FORCE_BROWSER ? await fetchWithFallback(fetchBrowser) : await fetchWithFallback(fetchHttp)
   let { title, md } = toMarkdown(deps, html, url)
 
   if (!FORCE_BROWSER && md.trim().length < MIN_CHARS) {
     try {
-      html = await fetchBrowser(url)
+      html = await fetchWithFallback(fetchBrowser)
       const rendered = toMarkdown(deps, html, url)
       if (rendered.md.trim().length > md.trim().length) {
         md = rendered.md
@@ -131,7 +176,7 @@ try {
   await fs.writeFile(OUT, md, 'utf8')
 } catch (e) {
   result.status = 'failed'
-  result.reason = String(e.message || e).slice(0, 200)
+  result.reason = String(e.cause ? `${e.message} (${e.cause.code || e.cause.message || e.cause})` : (e.message || e)).slice(0, 200)
 }
 
 console.log(JSON.stringify(result))

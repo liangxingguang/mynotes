@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16 19:19",
+  "updated_at": "2026-10-16 19:28",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -572,6 +572,26 @@
       "summary": "得物技术介绍基于开源 Multica 二次开发的团队级 Agent 工作系统 EP-Harness：把 Agent 当作有身份、任务、状态、执行记录与权限边界的\"团队成员\"纳入平台管理（server 管 Issue 队列，daemon 驻开发者本机调本地 AI CLI，Backend.Execute 统一各 Runtime 契约）。核心判断：AI Coding 正沿 Prompt→Context→Harness→Loop 四层从工具使用走向工程系统，个人工具只解决前两层，团队平台补齐结构化上下文、可观测可治理的执行环境与\"发现-派发-执行-验证-记录-决策\"闭环。已实现决策追溯、多 Agent 分阶段协作，累计自动修复 100+ 异常日志问题，典型高频问题从每 4 小时 2400+ 条降至个位数。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/ep-harness-team-agent-workflow.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-16-ai-coding-workflow-skill-prompt",
+      "title": "一位 Agent 开发者的 AI Coding 工作流：轻 Skill、方法论 Prompt 与端到端测试",
+      "path": "Inbox/2026-10-16-ai-coding-workflow-skill-prompt.md",
+      "created": "2026-10-16",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践",
+        "工具"
+      ],
+      "source": "X（黄同学h）",
+      "source_url": "https://x.com/huangtongxueh/status/2108577165306687938",
+      "source_type": "article",
+      "platform": "X",
+      "summary": "作者（大厂 Agent 开发）分享数月实践：重型 Skill（如 Superpowers 的固定 Workflow）在强模型时代变成噪声且费 Token，趋势是\"做减法\"——用 grill/implement/handoff 等轻 Skill 组织流程，用\"第一性原理/对抗性审查/消融实验/奥卡姆剃刀/高内聚低耦合\"这类方法论短 Prompt 当模型的\"思维快捷键\"；工作流上靠 Spec 沉淀上下文、subagent worktree 并行、小 MR + 端到端测试兜底；核心瓶颈是 Review 速度，解法是搭建 Agent 友好的端到端测试环境（CLI + 只读 DB MCP + 日志 Skill），让问题在交到人之前被发现。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/x-ai-coding-workflow-huangtongxueh.md",
       "wiki_status": "pending"
     },
     {
