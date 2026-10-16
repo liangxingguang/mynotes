@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16 23:03",
+  "updated_at": "2026-10-17 00:52",
   "notes": [
     {
       "id": "2026-10-14-anthropic-ai-native-sdlc-handbook",
@@ -709,6 +709,26 @@
       "summary": "图解 TCP 可靠传输四件套：MSS 分段（以太网 MTU 1500 − IP/TCP 头各 20 = 1460，三次握手协商 SMSS/RMSS，避免 IP 层分片）；超时重传以字节序列号编号（32 位回绕），时间戳选项解决回绕后新旧段歧义；快速重传规定接收方对乱序段反复回同一 ACK、发送方连续收到 3 个重复 ACK 即不等超时立即重传；SACK 选项携带非连续已收区间，让发送方只重传真正丢失的段。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/tcp-retransmission-visualized.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-17-pi-custom-agent-setup",
+      "title": "用 Pi 搭一个自己的 Agent：Skills、Extensions、Subagents 和定时任务",
+      "path": "Inbox/2026-10-17-pi-custom-agent-setup.md",
+      "created": "2026-10-17",
+      "category": "技术",
+      "tags": [
+        "Pi",
+        "AI Coding",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/uZrIlXZMq8Rz8cYRN1J5sQ",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "Pi 是 OpenClaw 内核的极简 coding agent，默认只有 read/write/edit/bash 四个工具。本文给出一套分层定制方案：项目规范写成 skill（按需加载、不占上下文），常用指令固化成 prompt 模板，必须强制执行的行为（如\"改完代码必评审\"）用 extension 挂事件钩子，复杂任务交给 subagent 并行处理，定时任务按\"Pi 开着/关着\"分别选 pi-schedule-prompt 或系统调度器调 headless 模式。核心原则：能用轻方案就别上重的，关键在知道需求该放哪一层。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/pi-custom-agent-setup.md",
       "wiki_status": "pending"
     },
     {
