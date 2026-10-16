@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16 10:33",
+  "updated_at": "2026-10-16 19:11",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -688,6 +688,26 @@
       "summary": "Pi Coding Agent 系列第 6 篇，汇总社区实战经验与选型对照：按任务分工切模型（便宜模型日常、强模型啃硬骨头）、固定系统开销 <1k tokens 的省 token 优势与五个节流技巧、四种运行模式（interactive/print/RPC/SDK）、高频快捷键与会话树习惯；并诚实对照 Pi / Claude Code / OpenCode / Codex CLI——Pi 是可无限 hack 的\"Emacs 式骨架\"，把 Agent 定义权交给工程师，代价是自建自维护，受监管行业可借其本地端点与可审计性获益。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/pi-practice-06-daily-patterns-selection.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-16-pi-school-official-course",
+      "title": "Pi School 官方课程主页：在 Pi 里边用边学的免费 Agent 入门课",
+      "path": "Inbox/2026-10-16-pi-school-official-course.md",
+      "created": "2026-10-16",
+      "category": "学习",
+      "tags": [
+        "AI",
+        "课程",
+        "工具"
+      ],
+      "source": "Pi School",
+      "source_url": "https://pi-school.ziki.boo",
+      "source_type": "article",
+      "platform": "网页",
+      "summary": "Pi School 是 Pi（开源终端 Agent harness）的官方免费课程：无需账号、不收集数据。独特之处在于「课在 Agent 里上」——只有安装课在浏览器完成，之后每节课给一段提示词贴进 Pi，由 Pi 本人带着你学并回传完成状态。面向有命令行基础的普通用户和资深开发者。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/pi-school-official.md",
       "wiki_status": "pending"
     },
     {
