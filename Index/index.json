@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16 08:02",
+  "updated_at": "2026-10-16 08:04",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -611,6 +611,25 @@
       "summary": "分布式系统教程开篇。以集中式单机系统为对照建立分布式系统定义（多节点经网络消息传递协同、无共享内存），剖析四大核心挑战——网络不可靠（丢包/乱序/延迟无上限，TCP 只给\"可靠流\"幻觉）、无全局时钟（物理时间戳会排出\"来自未来的消息\"）、部分失效（无法区分宕机、慢、丢消息，可引发级联故障与脑裂）、副本一致性（真理变成\"流言\"，一致性是频谱而非布尔值）；并总结工程师四点心智转变：二态→三态逻辑（成功/失败/超时+幂等设计）、绝对时间→因果顺序、完美主义→CAP 权衡、防御故障→拥抱故障（熔断/降级/隔离）。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/distributed-systems-introduction.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-16-esp32-dev-board-ai-trend",
+      "title": "ESP32 开发板借 AI 出圈：从创客玩具到 OpenAI 窃听器",
+      "path": "Inbox/2026-10-16-esp32-dev-board-ai-trend.md",
+      "created": "2026-10-16",
+      "category": "技术",
+      "tags": [
+        "行业动态",
+        "工具"
+      ],
+      "source": "微博",
+      "source_url": "https://weibo.com/2194035935/5354015136680392",
+      "source_type": "post",
+      "platform": "微博",
+      "summary": "微博观察：AI 热潮把 ESP32 开发板从创客圈带进 AI 圈——很多人晒用它做的小玩意（控制手机、小机器人、插路由器做 DNS 广告过滤，参考项目 M-Abozaid/esp32-c3-adblock）；近日曝出的 OpenAI 窃听案中窃听器同样基于 ESP32。带屏幕的板子只要几十元。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/esp32-dev-board-ai-trend.md",
       "wiki_status": "pending"
     }
   ]
