@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16 07:58",
+  "updated_at": "2026-10-16 08:02",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -572,6 +572,25 @@
       "summary": "得物技术介绍基于开源 Multica 二次开发的团队级 Agent 工作系统 EP-Harness：把 Agent 当作有身份、任务、状态、执行记录与权限边界的\"团队成员\"纳入平台管理（server 管 Issue 队列，daemon 驻开发者本机调本地 AI CLI，Backend.Execute 统一各 Runtime 契约）。核心判断：AI Coding 正沿 Prompt→Context→Harness→Loop 四层从工具使用走向工程系统，个人工具只解决前两层，团队平台补齐结构化上下文、可观测可治理的执行环境与\"发现-派发-执行-验证-记录-决策\"闭环。已实现决策追溯、多 Agent 分阶段协作，累计自动修复 100+ 异常日志问题，典型高频问题从每 4 小时 2400+ 条降至个位数。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/ep-harness-team-agent-workflow.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-16-awesome-design-md",
+      "title": "用 DESIGN.md 治 AI 生成的丑 UI：awesome-design-md 仓库",
+      "path": "Inbox/2026-10-16-awesome-design-md.md",
+      "created": "2026-10-16",
+      "category": "技术",
+      "tags": [
+        "工具",
+        "工程实践"
+      ],
+      "source": "知乎想法",
+      "source_url": "https://www.zhihu.com/pin/2093703116751369059",
+      "source_type": "post",
+      "platform": "知乎",
+      "summary": "知乎想法推荐 GitHub 仓库 VoltAgent/awesome-design-md：沿用 Google Stitch 的 DESIGN.md 思路，用一份纯文本设计规范文件约束 AI 生成的 UI 风格。仓库收录 73 个知名网站（Claude、Cursor、Vercel、Notion、Figma、Linear 等）的设计配置，复制对应 md 到项目根目录并提示 AI 遵循即可，无需导 Figma 或写配置。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/awesome-design-md.md",
       "wiki_status": "pending"
     },
     {
