@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17 00:52",
+  "updated_at": "2026-10-17 00:54",
   "notes": [
     {
       "id": "2026-10-14-anthropic-ai-native-sdlc-handbook",
@@ -709,6 +709,26 @@
       "summary": "图解 TCP 可靠传输四件套：MSS 分段（以太网 MTU 1500 − IP/TCP 头各 20 = 1460，三次握手协商 SMSS/RMSS，避免 IP 层分片）；超时重传以字节序列号编号（32 位回绕），时间戳选项解决回绕后新旧段歧义；快速重传规定接收方对乱序段反复回同一 ACK、发送方连续收到 3 个重复 ACK 即不等超时立即重传；SACK 选项携带非连续已收区间，让发送方只重传真正丢失的段。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/tcp-retransmission-visualized.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-17-ai-coding-delivery-evolution",
+      "title": "AI 写代码越来越快，研发交付系统该怎么演进？",
+      "path": "Inbox/2026-10-17-ai-coding-delivery-evolution.md",
+      "created": "2026-10-17",
+      "category": "技术",
+      "tags": [
+        "AI Coding",
+        "工程实践",
+        "Harness"
+      ],
+      "source": "微信公众号「架构师」",
+      "source_url": "https://mp.weixin.qq.com/s/cUvvE5eiIc2KlB3SZ-WQhg",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "AI Coding 拓宽了编码环节，交付瓶颈随之搬家：需求澄清、变更审查、环境验证、上线确认开始排队。文章主张把交付建模为状态机（意图→候选→持久化→合并→验证→可部署→已生效），让规格随事实更新、Harness 留住执行现场、证据绑定不可变版本、知识库当作带有效期的缓存，人退到\"on the loop\"守住风险分叉口。落地建议：先跑通一类边界清楚的变更，用交付质量指标代替生成量衡量成败。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/ai-coding-delivery-evolution.md",
       "wiki_status": "pending"
     },
     {
