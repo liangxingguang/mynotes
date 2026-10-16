@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16 08:56",
+  "updated_at": "2026-10-16 10:24",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -649,6 +649,25 @@
       "summary": "微博观察：AI 热潮把 ESP32 开发板从创客圈带进 AI 圈——很多人晒用它做的小玩意（控制手机、小机器人、插路由器做 DNS 广告过滤，参考项目 M-Abozaid/esp32-c3-adblock）；近日曝出的 OpenAI 窃听案中窃听器同样基于 ESP32。带屏幕的板子只要几十元。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/esp32-dev-board-ai-trend.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-16-knowledge-base-tech-evolution",
+      "title": "一文搞懂知识库的技术演进：从关键词检索、向量 RAG 到 GraphRAG、LLM Wiki、本体论与 Agent",
+      "path": "Inbox/2026-10-16-knowledge-base-tech-evolution.md",
+      "created": "2026-10-16",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/p5DFqPrvMkf8y6kpiGmBKw",
+      "source_type": "article",
+      "platform": "mp.weixin.qq.com",
+      "summary": "文章梳理知识库技术的能力地图（非线性替代关系）：关键词检索匹配词面、向量检索匹配语义、RAG 把检索结果交给模型作答、混合检索+重排优化召回、知识图谱/GraphRAG 沿实体关系查找、LLM Wiki 持续编译可复用知识页面、本体论统一跨系统业务概念、Agent 在权限与规则约束下调工具执行流程。强调各技术解决不同问题、生产中常并行组合，选型应从问题类型出发，并盯住来源可追溯、权限、版本冲突与执行校验。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/knowledge-base-tech-evolution.md",
       "wiki_status": "pending"
     },
     {
