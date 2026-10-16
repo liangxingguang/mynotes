@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16 08:04",
+  "updated_at": "2026-10-16 08:53",
   "notes": [
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -591,6 +591,25 @@
       "summary": "知乎想法推荐 GitHub 仓库 VoltAgent/awesome-design-md：沿用 Google Stitch 的 DESIGN.md 思路，用一份纯文本设计规范文件约束 AI 生成的 UI 风格。仓库收录 73 个知名网站（Claude、Cursor、Vercel、Notion、Figma、Linear 等）的设计配置，复制对应 md 到项目根目录并提示 AI 遵循即可，无需导 Figma 或写配置。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/awesome-design-md.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-16-db-table-sharding-practice",
+      "title": "大表治理之分表实践：手搓一个简单的数据库分表组件",
+      "path": "Inbox/2026-10-16-db-table-sharding-practice.md",
+      "created": "2026-10-16",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "分布式系统"
+      ],
+      "source": "微信公众号（京东零售技术）",
+      "source_url": "https://mp.weixin.qq.com/s/q9EaCqqHxXtdZKjU_n6W1w",
+      "source_type": "article",
+      "platform": "mp.weixin.qq.com",
+      "summary": "京东库存流水表（日增 3400 万行/31GB）大表治理实战。因 Sharding-JDBC/Mycat 等中间件 SQL 语法限制多，团队基于 MyBatis 插件机制自研轻量分表拦截器（策略模式 + 责任链），按仓号分 128 表，核心是五种读写策略（双写读旧/双写读新/单写读旧/单写读新/单写双读）支撑单表→分表的不停机平滑迁移与回滚；双写靠分号拼接双 SQL + 复制参数映射，双读靠 UNION ALL 合并新旧表并对 COUNT/SUM 外层再聚合、ORDER BY/LIMIT 特殊重写；路由按\"配置优先 + 最少仓负载均衡 + 分布式锁\"分配后缀。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/db-table-sharding-practice.md",
       "wiki_status": "pending"
     },
     {
