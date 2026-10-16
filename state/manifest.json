@@ -1,6 +1,45 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": null,
-  "entries": []
+  "updated_at": "2026-10-16",
+  "entries": [
+    {
+      "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
+      "sha256": "13183750bb7cade1c6dd5158e5e9e42b93079fe4b4e88bede5f834c2403533b1",
+      "registered_at": "2026-10-16",
+      "inbox_ref": "Archive/2026-10-13-a2a-multi-agent-langgraph.md",
+      "pages": [
+        "wiki/sources/a2a-multi-agent-langgraph.md",
+        "wiki/concepts/a2a-protocol.md",
+        "wiki/concepts/mcp.md",
+        "wiki/comparisons/a2a-vs-mcp.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/6YKXGTJaZSwHDtQqjv9j-A",
+      "asset_ref": null
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-13-system-design-12-components.md",
+      "sha256": "dd935853031f9ea6c678af523e729b853c4eea818e2c8e59c60fd85bc0fe0ffd",
+      "registered_at": "2026-10-16",
+      "inbox_ref": "Archive/2026-10-13-system-design-12-components.md",
+      "pages": [
+        "wiki/sources/system-design-12-components.md",
+        "wiki/topics/system-design-core-components.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/jdLNsvfW3Dvnchah90MO7g",
+      "asset_ref": null
+    },
+    {
+      "path": "raw/sources/enterprise/2026-10-14-ai-native-rd-org-alibaba.md",
+      "sha256": "75aa44a28f4f189df230366c648c1efcb2775babf2eb137ab79a5e51a58e5f7f",
+      "registered_at": "2026-10-16",
+      "inbox_ref": "Archive/2026-10-14-ai-native-rd-org-alibaba.md",
+      "pages": [
+        "wiki/sources/ai-native-rd-org-forum.md",
+        "wiki/concepts/ai-native-organization.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/kW6C4nE_s_mT43Bs93pNzw",
+      "asset_ref": null
+    }
+  ]
 }

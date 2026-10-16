@@ -16,3 +16,7 @@
 - （暂无记录）
 - 2026-10-15 08:10 | migration | 采集→wiki 衔接契约（留证+pending 队列+跨层去重） | AGENTS.md §2.1/附录B.7, schemas/Source_Schema.md, .claude/skills/wiki-ingest/SKILL.md, CLAUDE.md, scripts/skills/index-rebuild.js, scripts/skills/daily-digest.js
 - 2026-10-15 23:37 | migration | 采集→wiki 异步贯通（队列状态机+queue-trigger/cron+存量回填） | AGENTS.md §2.1/附录B.8, CLAUDE.md, .claude/skills/wiki-ingest/SKILL.md, .claude/skills/git-backup/SKILL.md, scripts/skills/queue-claim.js, scripts/skills/queue-trigger.js, scripts/skills/queue-backfill.js, scripts/skills/lib/frontmatter.js
+- 2026-10-16 15:02 | ingest | raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md | wiki/sources/a2a-multi-agent-langgraph.md, wiki/concepts/a2a-protocol.md, wiki/concepts/mcp.md, wiki/comparisons/a2a-vs-mcp.md
+- 2026-10-16 15:02 | ingest | raw/sources/architecture/2026-10-13-system-design-12-components.md | wiki/sources/system-design-12-components.md, wiki/topics/system-design-core-components.md
+- 2026-10-16 15:02 | ingest | raw/sources/enterprise/2026-10-14-ai-native-rd-org-alibaba.md | wiki/sources/ai-native-rd-org-forum.md, wiki/concepts/ai-native-organization.md
+- 2026-10-16 15:02 | lint | wiki | findings=0 fixed=0 needs_human=0（骨架期，检查项未实现）
