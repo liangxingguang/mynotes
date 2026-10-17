@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17 10:09",
+  "updated_at": "2026-10-17 10:11",
   "notes": [
     {
       "id": "2026-10-14-anthropic-ai-native-sdlc-handbook",
@@ -788,6 +788,25 @@
       "summary": "pi-durable 是构建\"随处运行、可崩溃恢复、多端协同、无限长\"Agent 应用的框架（library，不带 UI）。核心公理：Session 原子提交不可变条目、任务和文档，只有已提交状态可观察——先落盘后可见，进程任意时刻死掉都能从上个检查点继续。五层架构（Storage/Session/Documents/Tasks/Harness）各司其职，一次 run 是一条 generation 持久任务链。与 Pi coding agent 共享 pi-ai 模型层，但定位是天级长程运行、多端在场的 Agent 应用底座，等于把 Temporal 的 durable execution 搬进 agent 框架。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/pi-durable-architecture.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-17-pi-embedded-sdk-agent-engine",
+      "title": "Pi Embedded SDK：把 Agent 引擎塞进自己的 Node.js 系统",
+      "path": "Inbox/2026-10-17-pi-embedded-sdk-agent-engine.md",
+      "created": "2026-10-17",
+      "category": "技术",
+      "tags": [
+        "Pi",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/7L73s43MRwrvCRMMCoJD1Q",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "《拆解 Pi》专栏终篇。Pi 本质是纯粹的 Node.js 原生类库（`@earendil-works/pi-coding-agent`），业务系统若是 Node.js/TypeScript，无需 spawn 子进程，直接 import 即可在同进程内存里拉起工业级智能体。三大接入通道选型：人机交互用 CLI、跨语言用 RPC 管道、Node.js 同构自动化首选 Embedded SDK（零 IPC、编译期类型守卫、持久化自由定制）。核心实践：`SessionManager.inMemory()` 纯内存会话完事即焚、`tools:[\"read\"]` 构造期物理裁权防注入、`session.subscribe` 原生对象直连流式事件。落地蓝图：CI/CD 门禁机器人、告警驱动的只读运维排障 Agent、Promise.all 并发多仓审查。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/pi-embedded-sdk-agent-engine.md",
       "wiki_status": "pending"
     },
     {
