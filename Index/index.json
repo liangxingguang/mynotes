@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17 00:59",
+  "updated_at": "2026-10-17 10:09",
   "notes": [
     {
       "id": "2026-10-14-anthropic-ai-native-sdlc-handbook",
@@ -729,6 +729,25 @@
       "summary": "AI Coding 拓宽了编码环节，交付瓶颈随之搬家：需求澄清、变更审查、环境验证、上线确认开始排队。文章主张把交付建模为状态机（意图→候选→持久化→合并→验证→可部署→已生效），让规格随事实更新、Harness 留住执行现场、证据绑定不可变版本、知识库当作带有效期的缓存，人退到\"on the loop\"守住风险分叉口。落地建议：先跑通一类边界清楚的变更，用交付质量指标代替生成量衡量成败。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/ai-coding-delivery-evolution.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-17-langchain4j-multimodal-rag",
+      "title": "LangChain4j 多模态 RAG：图片+表格检索实战",
+      "path": "Inbox/2026-10-17-langchain4j-multimodal-rag.md",
+      "created": "2026-10-17",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/AJmVoaODjF5SAzPQnJF72Q",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "企业文档中图片/表格等非纯文本内容平均占比超 40%，传统 RAG 管线只处理文本，知识大量丢失。本文用 LangChain4j 实现两种多模态 RAG 方案：①图片描述法——用 VLM（GPT-4o）给图片生成文字描述，复用纯文本管线，成本低、可解释但受 VLM 质量制约；②多模态向量法——用 Cohere Embed v4 把图片和文本映射到同一向量空间，无损但调用成本高。表格处理是最大翻车点：禁止拍平/按段落切块/Markdown 直接 Embedding，正确做法是每个 chunk 保留完整表头、以\"列名=值\"描述行数据、小表整块大表逐行，并用 Metadata 过滤做双通道检索（向量处理开放问题、结构化查询处理精确问题）。最后整合文本/图片/表格三条管线构建完整问答 Agent，并总结 4 个坑：多模态模型贵、描述质量瓶颈、切分丢表头、上下文窗口超限。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/langchain4j-multimodal-rag.md",
       "wiki_status": "pending"
     },
     {
