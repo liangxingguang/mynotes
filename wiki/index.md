@@ -6,17 +6,22 @@
 
 - [[a2a-multi-agent-langgraph|A2A 实战：从零搭建工业级多 Agent 协作系统]]（2026-10-13，AI/多 Agent）
 - [[ai-native-rd-org-forum|AI 进入生产后，研发组织怎么变（阿里云 AI 原生研发组织论坛回顾）]]（2026-10-14，AI/组织）
+- [[ai-native-sdlc-playbook|Anthropic AI 原生 SDLC 实施手册]]（2026-10-14，AI/SDLC）
+- [[archunit-java-architecture-guardrails|架构图不会报警，但 ArchUnit 会：给 Java 项目装一套架构门禁]]（2026-10-14，Java/架构治理）
+- [[arthas-mcp-ai-troubleshooting|让 AI 调 Arthas，Java 排障会快多少？]]（2026-10-14，AI/MCP/Java 诊断）
 - [[system-design-12-components|一次讲清 12 个系统设计核心组件]]（2026-10-13，系统设计）
 
 ## concept（概念）
 
 - [[a2a-protocol|A2A 协议]]（Agent↔Agent 横向协作协议，Google 2025）
 - [[ai-native-organization|AI 原生研发组织]]（工具原生→工作流原生→组织原生）
+- [[ai-native-sdlc|AI 原生 SDLC]]（制品提交链驱动的六阶段闭环，Anthropic 2026）
 - [[mcp|MCP]]（LLM↔工具/数据纵向协议，Anthropic 2024）
 
 ## entity（实体）
 
-（暂无）
+- [[archunit|ArchUnit]]（Java 架构约束即测试，TNG，当前 1.5.1）
+- [[arthas|Arthas]]（Java 线上诊断工具，4.3.5 起含实验性 MCP Server）
 
 ## topic（主题）
 

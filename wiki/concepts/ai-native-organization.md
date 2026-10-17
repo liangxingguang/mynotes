@@ -4,7 +4,7 @@ type: concept
 title: AI 原生研发组织
 status: active
 created: 2026-10-16
-updated: 2026-10-16
+updated: 2026-10-17
 confidence: medium
 tags:
   - concept
@@ -12,6 +12,9 @@ tags:
   - organization
 sources:
   - raw/sources/enterprise/2026-10-14-ai-native-rd-org-alibaba.md
+related:
+  - wiki/concepts/ai-native-sdlc.md
+  - wiki/concepts/mcp.md
 ---
 # AI 原生研发组织
 
@@ -43,6 +46,7 @@ AI Native 的首要价值是降本，但更被强调的是竞争维度跃迁：�
 ### Related Concepts（相关概念）
 
 - [[mcp|MCP]]：信源将 Skill/MCP 资产化列为平台"经验持续积累"需求的组成部分
+- [[ai-native-sdlc|AI 原生 SDLC]]：流程层对应物——本概念回答"组织与责任怎么变"，AI 原生 SDLC 回答"流程与制品怎么转"；后者的制品提交链审计机制可部分回应本概念"目标、权限、验收、追责无统一做法"的开放问题
 
 ### Distinctions（区分）
 
@@ -65,3 +69,4 @@ AI Native 的首要价值是降本，但更被强调的是竞争维度跃迁：�
 ## Related Knowledge（相关知识）
 
 - [[ai-native-rd-org-forum|AI 进入生产后，研发组织怎么变（阿里云 AI 原生研发组织论坛回顾）]]
+- [[ai-native-sdlc|AI 原生 SDLC]]

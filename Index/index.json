@@ -1,63 +1,6 @@
 {
-  "updated_at": "2026-10-17 10:14",
+  "updated_at": "2026-10-17 21:36",
   "notes": [
-    {
-      "id": "2026-10-14-anthropic-ai-native-sdlc-handbook",
-      "title": "Anthropic AI 原生 SDLC 实施手册",
-      "path": "Inbox/2026-10-14-anthropic-ai-native-sdlc-handbook.md",
-      "created": "2026-10-14",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "工程实践"
-      ],
-      "source": "H中文精读（微信公众号，译自 Anthropic 博客，Louis Claxton）",
-      "source_url": "https://mp.weixin.qq.com/s/Uu8-ZOswKKa8VE4sLh9uZw",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "Anthropic Applied AI 团队的落地手册：代码不再是瓶颈后，SDLC 六阶段（规划/设计/构建/测试/部署/维护）围绕「制品提交链」intent.md→spec.md→plan.md→diff/PR→故障记录重构为闭环，AI 嵌入每一环、自动触发下一阶段，人只守在需要判断的闸门处。",
-      "summary_status": "",
-      "asset_ref": "",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-14-archunit-java-architecture-guardrails",
-      "title": "架构图不会报警，但 ArchUnit 会：给 Java 项目装一套架构门禁",
-      "path": "Inbox/2026-10-14-archunit-java-architecture-guardrails.md",
-      "created": "2026-10-14",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "工具"
-      ],
-      "source": "架构师Beata（微信公众号）",
-      "source_url": "https://mp.weixin.qq.com/s/eCRR1w1AWg1TvcNAnL21GA",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "基于 ArchUnit 1.5.1（2026-09-25 发布）的系统教程：把团队的架构约定写成 JUnit 测试，工具读取编译后字节码构建依赖图，违规即测试变红、CI 拦截。涵盖规则 DSL、分层/洋葱/切片/模块规则、PlantUML 图即规则、自定义条件、老项目冻结快照落地与多服务规则 SDK 化。核心理念：架构约束不能只活在人脑子里——Checkstyle 管\"字写得工不工整\"，ArchUnit 管\"承重墙有没有被打掉\"。",
-      "summary_status": "",
-      "asset_ref": "",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-14-arthas-mcp-ai-troubleshooting",
-      "title": "让 AI 调 Arthas，Java 排障会快多少？",
-      "path": "Inbox/2026-10-14-arthas-mcp-ai-troubleshooting.md",
-      "created": "2026-10-14",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/tWBk2pgmO5fIU6Qfc2Jk9Q",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "Arthas 4.3.5（2026 年 10 月）官方把 MCP Server 标为实验性模块：通过 HTTP/Netty 暴露 JSON-RPC 2.0（Streamable HTTP），把 dashboard/thread/trace/watch/heapdump 等 29 个诊断命令变成 AI 可发现、可调用的标准工具。价值不在替你敲一条命令，而在 AI 能保留上一步输出、把多次诊断串成一条会话；但它不是\"把线上 JVM 交给 AI 自动处理\"——危险命令、字节码增强开销与敏感数据都需要外加管控。",
-      "summary_status": "",
-      "asset_ref": "",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-14-claude-code-to-pi-6-extensions",
       "title": "从 Claude Code 搬到 Pi：装这 6 个扩展把熟悉的体验补回来",
@@ -861,6 +804,63 @@
       "source_type": "article",
       "platform": "微信公众号",
       "summary": "云栖大会《AI 原生研发组织论坛》回顾：阿里云 CTO 线三个月 AI Native 组织探索的阶段性观察、\"人与 AI 新契约\"圆桌观点，以及 7 个进入生产的\"样板间\"实践与数据。核心结论：Agent 进入生产链路才是分水岭，重点从单点提效转向组织、流程与责任的重构。",
+      "summary_status": "",
+      "asset_ref": "",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-14-anthropic-ai-native-sdlc-handbook",
+      "title": "Anthropic AI 原生 SDLC 实施手册",
+      "path": "Archive/2026-10-14-anthropic-ai-native-sdlc-handbook.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
+      "source": "H中文精读（微信公众号，译自 Anthropic 博客，Louis Claxton）",
+      "source_url": "https://mp.weixin.qq.com/s/Uu8-ZOswKKa8VE4sLh9uZw",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "Anthropic Applied AI 团队的落地手册：代码不再是瓶颈后，SDLC 六阶段（规划/设计/构建/测试/部署/维护）围绕「制品提交链」intent.md→spec.md→plan.md→diff/PR→故障记录重构为闭环，AI 嵌入每一环、自动触发下一阶段，人只守在需要判断的闸门处。",
+      "summary_status": "",
+      "asset_ref": "",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-14-archunit-java-architecture-guardrails",
+      "title": "架构图不会报警，但 ArchUnit 会：给 Java 项目装一套架构门禁",
+      "path": "Archive/2026-10-14-archunit-java-architecture-guardrails.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "工具"
+      ],
+      "source": "架构师Beata（微信公众号）",
+      "source_url": "https://mp.weixin.qq.com/s/eCRR1w1AWg1TvcNAnL21GA",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "基于 ArchUnit 1.5.1（2026-09-25 发布）的系统教程：把团队的架构约定写成 JUnit 测试，工具读取编译后字节码构建依赖图，违规即测试变红、CI 拦截。涵盖规则 DSL、分层/洋葱/切片/模块规则、PlantUML 图即规则、自定义条件、老项目冻结快照落地与多服务规则 SDK 化。核心理念：架构约束不能只活在人脑子里——Checkstyle 管\"字写得工不工整\"，ArchUnit 管\"承重墙有没有被打掉\"。",
+      "summary_status": "",
+      "asset_ref": "",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-14-arthas-mcp-ai-troubleshooting",
+      "title": "让 AI 调 Arthas，Java 排障会快多少？",
+      "path": "Archive/2026-10-14-arthas-mcp-ai-troubleshooting.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/tWBk2pgmO5fIU6Qfc2Jk9Q",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "Arthas 4.3.5（2026 年 10 月）官方把 MCP Server 标为实验性模块：通过 HTTP/Netty 暴露 JSON-RPC 2.0（Streamable HTTP），把 dashboard/thread/trace/watch/heapdump 等 29 个诊断命令变成 AI 可发现、可调用的标准工具。价值不在替你敲一条命令，而在 AI 能保留上一步输出、把多次诊断串成一条会话；但它不是\"把线上 JVM 交给 AI 自动处理\"——危险命令、字节码增强开销与敏感数据都需要外加管控。",
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "ingested"

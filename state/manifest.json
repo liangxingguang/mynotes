@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-10-16T15:30:26.347Z",
+  "updated_at": "2026-10-17T13:34:42.349Z",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -39,6 +39,44 @@
         "wiki/concepts/ai-native-organization.md"
       ],
       "source_url": "https://mp.weixin.qq.com/s/kW6C4nE_s_mT43Bs93pNzw",
+      "asset_ref": null
+    },
+    {
+      "path": "raw/sources/ai/2026-10-14-anthropic-ai-native-sdlc-handbook.md",
+      "sha256": "80db3315257a2791d9354f3b5339266c0808e9c6a517ec1867000192c9801bcd",
+      "registered_at": "2026-10-17",
+      "inbox_ref": "Archive/2026-10-14-anthropic-ai-native-sdlc-handbook.md",
+      "pages": [
+        "wiki/sources/ai-native-sdlc-playbook.md",
+        "wiki/concepts/ai-native-sdlc.md",
+        "wiki/concepts/ai-native-organization.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/Uu8-ZOswKKa8VE4sLh9uZw",
+      "asset_ref": null
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-14-archunit-java-architecture-guardrails.md",
+      "sha256": "a72a376bf1891cd980d04fae2bcc52b264d192710ce774cda687bdb09b641fab",
+      "registered_at": "2026-10-17",
+      "inbox_ref": "Archive/2026-10-14-archunit-java-architecture-guardrails.md",
+      "pages": [
+        "wiki/sources/archunit-java-architecture-guardrails.md",
+        "wiki/entities/archunit.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/eCRR1w1AWg1TvcNAnL21GA",
+      "asset_ref": null
+    },
+    {
+      "path": "raw/sources/ai/2026-10-14-arthas-mcp-ai-troubleshooting.md",
+      "sha256": "27bf49bc85e6bc663c5623f30a85a39c0343750a4dfc1ee8d733429ccc5173b0",
+      "registered_at": "2026-10-17",
+      "inbox_ref": "Archive/2026-10-14-arthas-mcp-ai-troubleshooting.md",
+      "pages": [
+        "wiki/sources/arthas-mcp-ai-troubleshooting.md",
+        "wiki/entities/arthas.md",
+        "wiki/concepts/mcp.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/tWBk2pgmO5fIU6Qfc2Jk9Q",
       "asset_ref": null
     }
   ]

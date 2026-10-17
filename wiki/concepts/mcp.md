@@ -4,7 +4,7 @@ type: concept
 title: MCP
 status: active
 created: 2026-10-16
-updated: 2026-10-16
+updated: 2026-10-17
 confidence: medium
 tags:
   - concept
@@ -12,9 +12,11 @@ tags:
   - protocol
 sources:
   - raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md
+  - raw/sources/ai/2026-10-14-arthas-mcp-ai-troubleshooting.md
 related:
   - wiki/concepts/a2a-protocol.md
   - wiki/comparisons/a2a-vs-mcp.md
+  - wiki/entities/arthas.md
 ---
 # MCP
 
@@ -39,7 +41,7 @@ MCP 把"LLM 调用外部工具、数据库、文件、API"的方式协议化，�
 
 ## How It Works（运作方式）
 
-当前信源未确立具体工作机制；已知其承担"工具发现 + 上下文注入 + 数据读取"三类职能。
+已知其承担"工具发现 + 上下文注入 + 数据读取"三类职能。个案证据（[[arthas|Arthas]] MCP Server，4.3.5 实验性模块）：MCP Server 可经 HTTP 提供 JSON-RPC 2.0 接口，采用 Streamable HTTP 传输并保留会话状态（适合持续输出类工具），亦支持 STATELESS 一次性查询模式；工具以"命令名 + 参数 + 返回结果"标准化暴露，使 AI 能保留上一步输出、把多次调用串成一条会话。认证可简单到密码 + Bearer Token，但工具级权限管控不在协议内，需客户端或网关另加。
 
 ## Relationships（关系）
 
@@ -54,16 +56,20 @@ MCP 把"LLM 调用外部工具、数据库、文件、API"的方式协议化，�
 ## Evolution（演进）
 
 - 2024：Anthropic 提出 MCP（当前信源未确立更详细沿革）。
+- 2026-10：[[arthas|Arthas]] 4.3.5 官方文档将 MCP Server 标为实验性模块（29 个诊断工具）——MCP 生态向运维诊断工具扩展的个案。
 
 ## Open Questions（开放问题）
 
-- MCP 的规范细节、传输方式、Server/Client 模型与生态现状：当前信源未确立，需专门信源补充。
+- MCP 的规范细节与 Server/Client 模型的完整定义：当前信源未确立，需专门信源补充（传输方式已有个案证据：Streamable HTTP / JSON-RPC 2.0）。
+- 工具级权限分级（RBAC）在 MCP 生态中的通行做法：当前信源仅表明 Arthas 官方未提供，需客户端/网关自建。
 
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md`
+- Source: `raw/sources/ai/2026-10-14-arthas-mcp-ai-troubleshooting.md`
 
 ## Related Knowledge（相关知识）
 
 - [[a2a-vs-mcp|A2A vs MCP]]
 - [[a2a-multi-agent-langgraph|A2A 实战：从零搭建工业级多 Agent 协作系统]]
+- [[arthas-mcp-ai-troubleshooting|让 AI 调 Arthas，Java 排障会快多少？（信源页）]]

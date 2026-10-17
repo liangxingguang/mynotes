@@ -22,3 +22,7 @@
 - 2026-10-16 15:02 | ingest | raw/sources/architecture/2026-10-13-system-design-12-components.md | wiki/sources/system-design-12-components.md, wiki/topics/system-design-core-components.md
 - 2026-10-16 15:02 | ingest | raw/sources/enterprise/2026-10-14-ai-native-rd-org-alibaba.md | wiki/sources/ai-native-rd-org-forum.md, wiki/concepts/ai-native-organization.md
 - 2026-10-16 15:02 | lint | wiki | findings=0 fixed=0 needs_human=0（骨架期，检查项未实现）
+- 2026-10-17 13:35 | ingest | raw/sources/ai/2026-10-14-anthropic-ai-native-sdlc-handbook.md | wiki/sources/ai-native-sdlc-playbook.md, wiki/concepts/ai-native-sdlc.md, wiki/concepts/ai-native-organization.md（更新交叉链接）
+- 2026-10-17 13:35 | ingest | raw/sources/architecture/2026-10-14-archunit-java-architecture-guardrails.md | wiki/sources/archunit-java-architecture-guardrails.md, wiki/entities/archunit.md
+- 2026-10-17 13:35 | ingest | raw/sources/ai/2026-10-14-arthas-mcp-ai-troubleshooting.md | wiki/sources/arthas-mcp-ai-troubleshooting.md, wiki/entities/arthas.md, wiki/concepts/mcp.md（更新）
+- 2026-10-17 13:35 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
