@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20 00:42",
+  "updated_at": "2026-10-20 00:44",
   "tags": [
     {
       "name": "AI",
@@ -19,7 +19,7 @@
         "最佳实践"
       ],
       "category": "技术",
-      "count": 31,
+      "count": 32,
       "status": "active"
     },
     {
@@ -132,6 +132,17 @@
       ],
       "category": "学习",
       "count": 0,
+      "status": "new"
+    },
+    {
+      "name": "Java",
+      "aliases": [
+        "java",
+        "JVM",
+        "并发编程"
+      ],
+      "category": "技术",
+      "count": 1,
       "status": "new"
     },
     {

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20 00:42",
+  "updated_at": "2026-10-20 00:44",
   "notes": [
     {
       "id": "2026-10-14-claude-code-to-pi-6-extensions",
@@ -750,6 +750,25 @@
       "summary": "《拆解 Pi》专栏终篇。Pi 本质是纯粹的 Node.js 原生类库（`@earendil-works/pi-coding-agent`），业务系统若是 Node.js/TypeScript，无需 spawn 子进程，直接 import 即可在同进程内存里拉起工业级智能体。三大接入通道选型：人机交互用 CLI、跨语言用 RPC 管道、Node.js 同构自动化首选 Embedded SDK（零 IPC、编译期类型守卫、持久化自由定制）。核心实践：`SessionManager.inMemory()` 纯内存会话完事即焚、`tools:[\"read\"]` 构造期物理裁权防注入、`session.subscribe` 原生对象直连流式事件。落地蓝图：CI/CD 门禁机器人、告警驱动的只读运维排障 Agent、Promise.all 并发多仓审查。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/pi-embedded-sdk-agent-engine.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-20-completablefuture-async-orchestration",
+      "title": "CompletableFuture：异步编排的正确写法",
+      "path": "Inbox/2026-10-20-completablefuture-async-orchestration.md",
+      "created": "2026-10-20",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/qr1AojU66kbWv43wsMDghg",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "CompletableFuture 三条红线：① 永远显式传自定义线程池，别用 commonPool（为 CPU 密集设计，跑 IO 会被慢下游占满、拖垮所有共用业务）；② 异常必须 exceptionally/handle 接住，否则不调 get() 就静默吞掉；③ 必须加超时（Java 9+ 用 orTimeout，Java 8 用 get(timeout)+cancel）。串行异步用 thenCompose 扁平化，聚合用 allOf/anyOf，别 for 循环串行 get。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/completablefuture-async-orchestration.md",
       "wiki_status": "pending"
     },
     {
