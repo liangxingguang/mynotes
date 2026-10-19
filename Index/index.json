@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20 00:44",
+  "updated_at": "2026-10-20 07:57",
   "notes": [
     {
       "id": "2026-10-14-claude-code-to-pi-6-extensions",
@@ -788,6 +788,26 @@
       "summary": "微信视频号「疯狂的Rust库」发布的短视频，主题为\"设计一个查询系统\"，发布于 2026-10-19。视频形式无文字稿，页面仅含标题与封面，具体内容需前往微信观看。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/design-a-query-system.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-20-huolala-ai-coding-workflow",
+      "title": "个人提效到团队提效：货拉拉AI Coding流程化落地实践",
+      "path": "Inbox/2026-10-20-huolala-ai-coding-workflow.md",
+      "created": "2026-10-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "AI Coding",
+        "工程实践"
+      ],
+      "source": "微信公众号（货拉拉技术）",
+      "source_url": "https://mp.weixin.qq.com/s/Rb-TrUkuLLuRjRsqii3XTg",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "货拉拉千人研发团队的 AI Coding 落地复盘：个人提效攒不成组织提效，解法是三阶段推进——先用统一工作台（AiBox）和培训抬升 80% 普通用户的下限，再走 Spec 驱动（五步产线 + spec 召回/打分/淘汰）让 AI 按规范写，最终走向全生命周期闭环的 AI Native。度量上自建三层签名的 AI 代码占比、全链路 Trace 与 FPY（首次正确率），并坦承三个坑：简单任务别上完整 Agent 流程、上下文要精准召回而非全量塞、幻觉需独立第二 Agent 对抗审查。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/huolala-ai-coding-workflow.md",
       "wiki_status": "pending"
     },
     {
