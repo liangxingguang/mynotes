@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19 19:25",
+  "updated_at": "2026-10-20 00:41",
   "tags": [
     {
       "name": "AI",
@@ -19,7 +19,7 @@
         "最佳实践"
       ],
       "category": "技术",
-      "count": 30,
+      "count": 31,
       "status": "active"
     },
     {
@@ -132,6 +132,16 @@
       ],
       "category": "学习",
       "count": 0,
+      "status": "new"
+    },
+    {
+      "name": "Rust",
+      "aliases": [
+        "rust",
+        "Rust语言"
+      ],
+      "category": "技术",
+      "count": 1,
       "status": "new"
     },
     {
