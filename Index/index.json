@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20 08:14",
+  "updated_at": "2026-10-20 08:16",
   "notes": [
     {
       "id": "2026-10-14-claude-code-to-pi-6-extensions",
@@ -788,6 +788,24 @@
       "summary": "微信视频号「疯狂的Rust库」发布的短视频，主题为\"设计一个查询系统\"，发布于 2026-10-19。视频形式无文字稿，页面仅含标题与封面，具体内容需前往微信观看。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/design-a-query-system.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-20-eight-fields-booklist",
+      "title": "一定要大量读书：八大领域通识书单",
+      "path": "Inbox/2026-10-20-eight-fields-booklist.md",
+      "created": "2026-10-20",
+      "category": "学习",
+      "tags": [
+        "阅读"
+      ],
+      "source": "微信公众号（李子会）",
+      "source_url": "https://mp.weixin.qq.com/s/6fjflB6zsiSZsQakch7xnw",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "八大领域、32 部通识书单：历史、经济、政治、社会、心理、哲学、科学、文学各 4 本，入门读物与经典搭配，每本附阅读切入点建议。主旨是打破阅读偏好茧房——不同领域的书会给同一个问题带来不同解释，读得广，理解事情就多一些参考角度。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/eight-fields-booklist.md",
       "wiki_status": "pending"
     },
     {
