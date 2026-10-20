@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20 08:34",
+  "updated_at": "2026-10-20 08:35",
   "tags": [
     {
       "name": "思维方式",
@@ -19,6 +19,17 @@
         "认知升级"
       ],
       "category": "学习",
+      "count": 1,
+      "status": "new"
+    },
+    {
+      "name": "spring",
+      "aliases": [
+        "Spring",
+        "Spring Boot",
+        "SpringBoot"
+      ],
+      "category": "技术",
       "count": 1,
       "status": "new"
     },

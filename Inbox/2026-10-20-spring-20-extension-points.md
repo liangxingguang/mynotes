@@ -7,7 +7,7 @@ source_type: link
 platform: 微信
 created: 2026-10-20
 category: 技术
-tags: [Java, 工程实践]
+tags: [Java, spring, 工程实践]
 asset_ref: Assets/2026/10/spring-20-extension-points.md
 wiki_status: pending
 ---
