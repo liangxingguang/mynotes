@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20 19:28",
+  "updated_at": "2026-10-20 19:35",
   "notes": [
     {
       "id": "2026-10-14-claude-code-to-pi-6-extensions",
@@ -900,6 +900,25 @@
       "summary": "八大领域、32 部通识书单：历史、经济、政治、社会、心理、哲学、科学、文学各 4 本，入门读物与经典搭配，每本附阅读切入点建议。主旨是打破阅读偏好茧房——不同领域的书会给同一个问题带来不同解释，读得广，理解事情就多一些参考角度。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/eight-fields-booklist.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-20-game-server-elastic-scaling",
+      "title": "游戏开发：服务器弹性伸缩",
+      "path": "Inbox/2026-10-20-game-server-elastic-scaling.md",
+      "created": "2026-10-20",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "游戏开发"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2095121870475485746",
+      "source_type": "link",
+      "platform": "知乎",
+      "summary": "游戏服务器弹性伸缩的理论笔记：从登录负载均衡的\"信息滞后\"问题讲起，给出虚拟负载/动态权重两种解法与防炸服清单；主体部分讨论有状态公会服如何平滑伸缩——引入固定数量的路由服维护路由表，扩容时旧服先存档、压队列、经路由服把数据与积压请求转交新服，用路由切换状态机保证时序；最后指出路由 Key 的本质是\"时序的容器\"而非数据身份。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/game-server-elastic-scaling.md",
       "wiki_status": "pending"
     },
     {

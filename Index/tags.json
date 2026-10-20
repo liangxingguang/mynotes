@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20 19:28",
+  "updated_at": "2026-10-20 19:35",
   "tags": [
     {
       "name": "思维方式",
@@ -73,7 +73,7 @@
         "最佳实践"
       ],
       "category": "技术",
-      "count": 37,
+      "count": 38,
       "status": "active"
     },
     {
@@ -217,6 +217,16 @@
       ],
       "category": "技术",
       "count": 3,
+      "status": "new"
+    },
+    {
+      "name": "游戏开发",
+      "aliases": [
+        "游戏服务器",
+        "game server"
+      ],
+      "category": "技术",
+      "count": 1,
       "status": "new"
     }
   ]
