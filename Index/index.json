@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20 08:28",
+  "updated_at": "2026-10-20 08:30",
   "notes": [
     {
       "id": "2026-10-14-claude-code-to-pi-6-extensions",
@@ -750,6 +750,24 @@
       "summary": "《拆解 Pi》专栏终篇。Pi 本质是纯粹的 Node.js 原生类库（`@earendil-works/pi-coding-agent`），业务系统若是 Node.js/TypeScript，无需 spawn 子进程，直接 import 即可在同进程内存里拉起工业级智能体。三大接入通道选型：人机交互用 CLI、跨语言用 RPC 管道、Node.js 同构自动化首选 Embedded SDK（零 IPC、编译期类型守卫、持久化自由定制）。核心实践：`SessionManager.inMemory()` 纯内存会话完事即焚、`tools:[\"read\"]` 构造期物理裁权防注入、`session.subscribe` 原生对象直连流式事件。落地蓝图：CI/CD 门禁机器人、告警驱动的只读运维排障 Agent、Promise.all 并发多仓审查。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/pi-embedded-sdk-agent-engine.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-20-15-books-understand-world",
+      "title": "看懂世界运转的 15 本书",
+      "path": "Inbox/2026-10-20-15-books-understand-world.md",
+      "created": "2026-10-20",
+      "category": "学习",
+      "tags": [
+        "阅读"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/oZPb7241VoRvw5wMgRNYgg",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "覆盖政治、财富、人性、社会、认知、健康六个维度的 15 本通识书单，每本附简介、推荐理由与金句。主旨：世界运行的底层逻辑不在新闻和短视频碎片里，而被前人写进了书；真正的信息差是\"书就摆在那里，大多数人懒得翻\"。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/15-books-understand-world.md",
       "wiki_status": "pending"
     },
     {
