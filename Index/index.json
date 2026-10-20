@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20 08:16",
+  "updated_at": "2026-10-20 08:19",
   "notes": [
     {
       "id": "2026-10-14-claude-code-to-pi-6-extensions",
@@ -826,6 +826,25 @@
       "summary": "货拉拉千人研发团队的 AI Coding 落地复盘：个人提效攒不成组织提效，解法是三阶段推进——先用统一工作台（AiBox）和培训抬升 80% 普通用户的下限，再走 Spec 驱动（五步产线 + spec 召回/打分/淘汰）让 AI 按规范写，最终走向全生命周期闭环的 AI Native。度量上自建三层签名的 AI 代码占比、全链路 Trace 与 FPY（首次正确率），并坦承三个坑：简单任务别上完整 Agent 流程、上下文要精准召回而非全量塞、幻觉需独立第二 Agent 对抗审查。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/huolala-ai-coding-workflow.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-20-pi-tips-4-web-parallel",
+      "title": "Pi 实用技巧系列（四）：联网与并行的实战方案",
+      "path": "Inbox/2026-10-20-pi-tips-4-web-parallel.md",
+      "created": "2026-10-20",
+      "category": "技术",
+      "tags": [
+        "Pi",
+        "AI Coding"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/5ZRpRUFVM3DtudXweQHCRA",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "Pi 核心只有 read/write/edit/bash 四个工具，默认离线——联网是扩展的事，这是设计立场而非缺陷。本文梳理 Pi 连接外界的四条路线：MCP（0.99 起原生内置，接外部工具/系统）、pi-web-access（联网搜索与网页抓取）、自建 Skill + CDP（Armin 的浏览器自动化路线）、pi-side-agents（子代理并行），并给出场景化选型表与安全注意事项。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/pi-tips-4-web-parallel.md",
       "wiki_status": "pending"
     },
     {
