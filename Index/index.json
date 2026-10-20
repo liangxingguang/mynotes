@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20 08:35",
+  "updated_at": "2026-10-20 08:38",
   "notes": [
     {
       "id": "2026-10-14-claude-code-to-pi-6-extensions",
@@ -939,6 +939,26 @@
       "summary": "一次滚动发布让跑了 12 分钟的大文件任务彻底消失——@Async 的执行状态只在 JVM 线程里。改造为\"任务表 + Worker\"：Controller 只落库（WAITING/PROCESSING/SUCCESS/FAILED），Worker 定时扫描 + 条件 UPDATE 抢占解决多实例竞争，heartbeat_time + Recovery Job 解决 Worker 中途死亡，retry_count 区分\"值得重试\"与\"重试无意义\"，协作式取消替代杀线程，幂等设计接受\"至少执行一次\"。线程池管\"同时执行几个\"，数据库管\"有哪些任务、什么状态\"。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/spring-async-to-task-table.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-20-spring-cloud-gateway-advanced",
+      "title": "Spring Cloud Gateway 高级玩法：动态路由、请求日志、限流、灰度发布",
+      "path": "Inbox/2026-10-20-spring-cloud-gateway-advanced.md",
+      "created": "2026-10-20",
+      "category": "技术",
+      "tags": [
+        "spring",
+        "Java",
+        "分布式系统"
+      ],
+      "source": "微信公众号（服务端技术精选）",
+      "source_url": "https://mp.weixin.qq.com/s/FrrdoqLzrRCCa04JgtDGLQ",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "Spring Cloud Gateway 四大高级能力实战方案：动态路由（RouteDefinitionWriter + RefreshRoutesEvent + 数据库持久化，免重启改路由）、请求日志（GlobalFilter 记录请求/耗时，DataBufferUtils.join 缓存 body 解决流只能读一次）、限流（Redis + Lua 原子计数器，或集成 Sentinel GatewayFlowRule）、灰度发布（请求头强制灰度 + 权重随机分流 + 用户标签灰度）。附完整配置、Prometheus 监控告警、性能与安全加固、常见问题。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/spring-cloud-gateway-advanced.md",
       "wiki_status": "pending"
     },
     {
