@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20 08:39",
+  "updated_at": "2026-10-20 08:40",
   "notes": [
     {
       "id": "2026-10-14-claude-code-to-pi-6-extensions",
@@ -900,6 +900,25 @@
       "summary": "一位年读 126 本的全职上班族的二十年读书方法论：阅读速度的本质是\"熟练\"，时间靠拆解而非硬挤（日均 4.5 小时、全年 1644 小时）；计划用四步法（知识分类→年度专题→分配数量→必读/选读 70%/30%）；速度从默读到视读、心流加速、听读结合；理解靠输出——笔记、单主题文章、融会贯通三层递进；AI 只用于优化原创和查资料，绝不替代原创。前提是三个自检原则：无不适感、无内卷感、无压力感。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/reading-100-books-a-year.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-20-reading-system-sop",
+      "title": "阅读体系 SOP：挖需求 → 搭结构 → 四步读书法",
+      "path": "Inbox/2026-10-20-reading-system-sop.md",
+      "created": "2026-10-20",
+      "category": "学习",
+      "tags": [
+        "阅读",
+        "个人成长"
+      ],
+      "source": "微信公众号（是凯西呀）",
+      "source_url": "https://mp.weixin.qq.com/s/Y-IgwEgw-YhnBB2A0JNnsg",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "面向自媒体输出者的阅读体系三步法：Step 1 用\"三层痛点法\"挖需求（表层困扰/中层能力缺口/深层要长出的能力），Step 2 借 AI 助手结合微信读书书架搭建阅读结构，Step 3 参考 SQ3R 的四步 SOP——预览建认知地图、带 3 个问题读、边读边问 AI、输出 1 篇笔记 + 1 个行动清单。主旨：用阅读体系拉开输入差距，\"用 10 本书读出 300 本的价值\"。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/reading-system-sop.md",
       "wiki_status": "pending"
     },
     {
