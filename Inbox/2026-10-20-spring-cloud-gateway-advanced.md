@@ -7,7 +7,7 @@ source_type: link
 platform: 微信
 created: 2026-10-20
 category: 技术
-tags: [spring, Java, 分布式系统]
+tags: [spring gateway, spring, Java]
 asset_ref: Assets/2026/10/spring-cloud-gateway-advanced.md
 wiki_status: pending
 ---

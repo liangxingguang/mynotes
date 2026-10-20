@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20 08:38",
+  "updated_at": "2026-10-20 08:39",
   "tags": [
     {
       "name": "思维方式",
@@ -31,6 +31,17 @@
       ],
       "category": "技术",
       "count": 2,
+      "status": "new"
+    },
+    {
+      "name": "spring gateway",
+      "aliases": [
+        "Spring Cloud Gateway",
+        "SCG",
+        "网关"
+      ],
+      "category": "技术",
+      "count": 1,
       "status": "new"
     },
     {
@@ -194,7 +205,7 @@
         "Distributed Systems"
       ],
       "category": "技术",
-      "count": 4,
+      "count": 3,
       "status": "new"
     }
   ]
