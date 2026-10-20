@@ -26,3 +26,7 @@
 - 2026-10-17 13:35 | ingest | raw/sources/architecture/2026-10-14-archunit-java-architecture-guardrails.md | wiki/sources/archunit-java-architecture-guardrails.md, wiki/entities/archunit.md
 - 2026-10-17 13:35 | ingest | raw/sources/ai/2026-10-14-arthas-mcp-ai-troubleshooting.md | wiki/sources/arthas-mcp-ai-troubleshooting.md, wiki/entities/arthas.md, wiki/concepts/mcp.md（更新）
 - 2026-10-17 13:35 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
+- 2026-10-20 21:30 | ingest | raw/sources/products/2026-10-14-pi-6-extensions-from-claude-code.md | wiki/sources/pi-6-extensions.md, wiki/entities/pi.md, wiki/concepts/mcp.md（更新：MCP 生态个案）
+- 2026-10-20 21:30 | ingest | raw/sources/products/2026-10-14-deepseek-harness-7day-day1.md | wiki/sources/deepseek-harness-7day-day1.md, wiki/entities/deepseek-harness.md
+- 2026-10-20 21:30 | ingest-fail | Inbox/2026-10-14-drawio-skill-arch-diagram.md | 微博反爬（Sina Visitor System）重抓失败，回退 pending（attempts=1）
+- 2026-10-20 21:30 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）

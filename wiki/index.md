@@ -9,6 +9,8 @@
 - [[ai-native-sdlc-playbook|Anthropic AI 原生 SDLC 实施手册]]（2026-10-14，AI/SDLC）
 - [[archunit-java-architecture-guardrails|架构图不会报警，但 ArchUnit 会：给 Java 项目装一套架构门禁]]（2026-10-14，Java/架构治理）
 - [[arthas-mcp-ai-troubleshooting|让 AI 调 Arthas，Java 排障会快多少？]]（2026-10-14，AI/MCP/Java 诊断）
+- [[deepseek-harness-7day-day1|7天学懂 DeepSeek Harness 实操手册（Day 1）]]（2026-10-14，AI/教程）
+- [[pi-6-extensions|从 Claude Code 搬到 Pi：6 个扩展补回熟悉体验]]（2026-10-14，AI/Agent CLI）
 - [[system-design-12-components|一次讲清 12 个系统设计核心组件]]（2026-10-13，系统设计）
 
 ## concept（概念）
@@ -22,6 +24,8 @@
 
 - [[archunit|ArchUnit]]（Java 架构约束即测试，TNG，当前 1.5.1）
 - [[arthas|Arthas]]（Java 线上诊断工具，4.3.5 起含实验性 MCP Server）
+- [[deepseek-harness|DeepSeek Harness]]（DeepSeek 模型的桌面 Agent 客户端，v0.2 预览版）
+- [[pi|Pi]]（极简 Agent CLI，毛坯房 + 5000+ 扩展生态）
 
 ## topic（主题）
 

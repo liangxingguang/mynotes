@@ -4,7 +4,7 @@ type: concept
 title: MCP
 status: active
 created: 2026-10-16
-updated: 2026-10-17
+updated: 2026-10-20
 confidence: medium
 tags:
   - concept
@@ -13,10 +13,12 @@ tags:
 sources:
   - raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md
   - raw/sources/ai/2026-10-14-arthas-mcp-ai-troubleshooting.md
+  - raw/sources/products/2026-10-14-pi-6-extensions-from-claude-code.md
 related:
   - wiki/concepts/a2a-protocol.md
   - wiki/comparisons/a2a-vs-mcp.md
   - wiki/entities/arthas.md
+  - wiki/entities/pi.md
 ---
 # MCP
 
@@ -57,6 +59,7 @@ MCP 把"LLM 调用外部工具、数据库、文件、API"的方式协议化，�
 
 - 2024：Anthropic 提出 MCP（当前信源未确立更详细沿革）。
 - 2026-10：[[arthas|Arthas]] 4.3.5 官方文档将 MCP Server 标为实验性模块（29 个诊断工具）——MCP 生态向运维诊断工具扩展的个案。
+- 2026-10：[[pi|Pi]] 生态的 pi-mcp-adapter（月下载约 76 万，2026-08 npm 数据）以约 200 token 的代理工具替代全量工具定义、server 按需启动，并可直接读取 Claude Code 的 `.mcp.json`——MCP 配置跨客户端可移植、且工具定义的上下文成本可被代理式设计大幅压缩的个案。
 
 ## Open Questions（开放问题）
 
@@ -67,6 +70,7 @@ MCP 把"LLM 调用外部工具、数据库、文件、API"的方式协议化，�
 
 - Source: `raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md`
 - Source: `raw/sources/ai/2026-10-14-arthas-mcp-ai-troubleshooting.md`
+- Source: `raw/sources/products/2026-10-14-pi-6-extensions-from-claude-code.md`
 
 ## Related Knowledge（相关知识）
 

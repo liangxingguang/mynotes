@@ -78,6 +78,29 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/tWBk2pgmO5fIU6Qfc2Jk9Q",
       "asset_ref": null
+    },
+    {
+      "path": "raw/sources/products/2026-10-14-pi-6-extensions-from-claude-code.md",
+      "sha256": "b116651c7024696b08005d66563dd19504351a89e132f0567469f94d65026d61",
+      "registered_at": "2026-10-20",
+      "inbox_ref": "Archive/2026-10-14-claude-code-to-pi-6-extensions.md",
+      "pages": [
+        "wiki/sources/pi-6-extensions.md",
+        "wiki/entities/pi.md",
+        "wiki/concepts/mcp.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/hniMbQDpHgbzuNQGTYJ3rA"
+    },
+    {
+      "path": "raw/sources/products/2026-10-14-deepseek-harness-7day-day1.md",
+      "sha256": "ea305c6afbb9b80d8527b53c9f5b1714c06fc9711e30a1e15df650c46e2df98b",
+      "registered_at": "2026-10-20",
+      "inbox_ref": "Archive/2026-10-14-deepseek-harness-7day-day1.md",
+      "pages": [
+        "wiki/sources/deepseek-harness-7day-day1.md",
+        "wiki/entities/deepseek-harness.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/NMvxgqUhH4vBaYyrdFLQgQ"
     }
   ]
 }

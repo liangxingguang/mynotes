@@ -1,45 +1,6 @@
 {
-  "updated_at": "2026-10-20 19:38",
+  "updated_at": "2026-10-20 21:31",
   "notes": [
-    {
-      "id": "2026-10-14-claude-code-to-pi-6-extensions",
-      "title": "从 Claude Code 搬到 Pi：装这 6 个扩展把熟悉的体验补回来",
-      "path": "Inbox/2026-10-14-claude-code-to-pi-6-extensions.md",
-      "created": "2026-10-14",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "工具",
-        "Pi"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/hniMbQDpHgbzuNQGTYJ3rA",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "Claude Code 老用户因账号反复被封三周迁移 Pi 的实录：Pi 默认只有 read/write/edit/bash 四个工具、像毛坯房，但扩展目录有 5000+ 包，Claude Code 的核心习惯（MCP、联网、子代理、澄清提问、待办、写完诊断）基本都能一个命令装回。文章按迁移顺序给了 6 个扩展、安装命令、配置搬迁方法和三条安全原则。下载量为 2026 年 8 月 npm 月数据。",
-      "summary_status": "",
-      "asset_ref": "",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-14-deepseek-harness-7day-day1",
-      "title": "7天学懂 DeepSeek Harness 实操手册（Day 1：装好之后的第一小时）",
-      "path": "Inbox/2026-10-14-deepseek-harness-7day-day1.md",
-      "created": "2026-10-14",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/NMvxgqUhH4vBaYyrdFLQgQ",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "DeepSeek Harness v0.2 预览版（9.29 发布，提供 macOS/Windows 桌面端）7 天系列教程的第 1 天，专治\"装好了不敢下手\"：认识界面五站、申请并填入 DeepSeek API key、选对模式，三件事走完即可开工。后续六天为派活、分身、排错、插件、换脑、造扳手（本文不含）。",
-      "summary_status": "",
-      "asset_ref": "",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-14-drawio-skill-arch-diagram",
       "title": "drawio-skill：把代码与配置变成可编辑架构图的开源 Skill",
@@ -1221,6 +1182,45 @@
       "source_type": "article",
       "platform": "微信公众号",
       "summary": "Arthas 4.3.5（2026 年 10 月）官方把 MCP Server 标为实验性模块：通过 HTTP/Netty 暴露 JSON-RPC 2.0（Streamable HTTP），把 dashboard/thread/trace/watch/heapdump 等 29 个诊断命令变成 AI 可发现、可调用的标准工具。价值不在替你敲一条命令，而在 AI 能保留上一步输出、把多次诊断串成一条会话；但它不是\"把线上 JVM 交给 AI 自动处理\"——危险命令、字节码增强开销与敏感数据都需要外加管控。",
+      "summary_status": "",
+      "asset_ref": "",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-14-claude-code-to-pi-6-extensions",
+      "title": "从 Claude Code 搬到 Pi：装这 6 个扩展把熟悉的体验补回来",
+      "path": "Archive/2026-10-14-claude-code-to-pi-6-extensions.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工具",
+        "Pi"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/hniMbQDpHgbzuNQGTYJ3rA",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "Claude Code 老用户因账号反复被封三周迁移 Pi 的实录：Pi 默认只有 read/write/edit/bash 四个工具、像毛坯房，但扩展目录有 5000+ 包，Claude Code 的核心习惯（MCP、联网、子代理、澄清提问、待办、写完诊断）基本都能一个命令装回。文章按迁移顺序给了 6 个扩展、安装命令、配置搬迁方法和三条安全原则。下载量为 2026 年 8 月 npm 月数据。",
+      "summary_status": "",
+      "asset_ref": "",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-14-deepseek-harness-7day-day1",
+      "title": "7天学懂 DeepSeek Harness 实操手册（Day 1：装好之后的第一小时）",
+      "path": "Archive/2026-10-14-deepseek-harness-7day-day1.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/NMvxgqUhH4vBaYyrdFLQgQ",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "DeepSeek Harness v0.2 预览版（9.29 发布，提供 macOS/Windows 桌面端）7 天系列教程的第 1 天，专治\"装好了不敢下手\"：认识界面五站、申请并填入 DeepSeek API key、选对模式，三件事走完即可开工。后续六天为派活、分身、排错、插件、换脑、造扳手（本文不含）。",
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "ingested"
