@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20 09:05",
+  "updated_at": "2026-10-20 19:13",
   "notes": [
     {
       "id": "2026-10-14-claude-code-to-pi-6-extensions",
@@ -825,6 +825,25 @@
       "summary": "深度思考 = 主动加工信息 + 建立逻辑关系 + 允许结论迭代，思考回路为\"提问—拆解—假设—证据—行动—修正\"。先养成三个习惯（追问定义、5Why 追因果链、区分事实/观点/假设），再练四个方法（费曼学习法、反向思考、系统思考、输出复盘），融入工作拆问题、生活决策清单、社交深度提问三类日常场景，避开\"时长=深度\"\"急求唯一答案\"\"只输入不输出\"三个误区。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/deep-thinking-training.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-20-deepseek-v41-flash-inference-deployment",
+      "title": "DeepSeek V4.1 Flash 大规模推理部署实践",
+      "path": "Inbox/2026-10-20-deepseek-v41-flash-inference-deployment.md",
+      "created": "2026-10-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2095560295930508953",
+      "source_type": "link",
+      "platform": "知乎",
+      "summary": "DeepSeek 官方披露 V4.1 Flash 推理系统设计，并开源推理框架 DeepInfer 与 Token 编解码组件 deepseek-recipe。围绕多芯片兼容、Prefill/Decode 分离部署、KVCache 留存 72h+ 三大目标，用四层负载均衡、3FS 上的 Block KVCache、SWA Bounded Replay、DSpark 变长投机解码与零开销异步调度，做到单集群 155 万亿 Tokens/天、每卡每小时 38 美金（谷价）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/deepseek-v41-flash-inference-deployment.md",
       "wiki_status": "pending"
     },
     {

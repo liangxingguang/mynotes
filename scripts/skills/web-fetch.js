@@ -169,7 +169,8 @@ try {
   assertSafe(url)
   const deps = await loadDeps()
 
-  const proxy = await resolveProxy()
+  // 环境变量/系统代理均不可用时，兜底本地代理端口（Clash 7890）
+  const proxy = await resolveProxy() || 'http://127.0.0.1:7890'
 
   // 直连失败且有可用代理时，经代理重试
   async function fetchWithFallback(fn) {
@@ -207,8 +208,8 @@ try {
         title = jinaTitle || title
         result.fetch_level = 'jina'
       }
-    } catch {
-      /* jina 不可用则保留现有结果 */
+    } catch (e) {
+      console.error(`[web-fetch] jina 兜底失败: ${e && e.message}`)
     }
   }
 
