@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20 08:48",
+  "updated_at": "2026-10-20 09:05",
   "notes": [
     {
       "id": "2026-10-14-claude-code-to-pi-6-extensions",
@@ -769,6 +769,25 @@
       "summary": "覆盖政治、财富、人性、社会、认知、健康六个维度的 15 本通识书单，每本附简介、推荐理由与金句。主旨：世界运行的底层逻辑不在新闻和短视频碎片里，而被前人写进了书；真正的信息差是\"书就摆在那里，大多数人懒得翻\"。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/15-books-understand-world.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-20-475-claude-opus-demos-repo",
+      "title": "GitHub 仓库收录 475 个 Claude Opus 5.5 生成的视频演示",
+      "path": "Inbox/2026-10-20-475-claude-opus-demos-repo.md",
+      "created": "2026-10-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "github"
+      ],
+      "source": "微博",
+      "source_url": "https://weibo.com/1912085257/5355789153733341",
+      "source_type": "link",
+      "platform": "微博",
+      "summary": "微博分享的一个 GitHub 仓库，收录 475 个用 Claude Opus 5.5 构建的视频演示——动态图形、解说视频、3D 场景乃至游戏，全部用 HTML、Canvas、SVG 和 Three.js 实现。每个演示都附带原始提示词和来源帖子，可直接挑选示例自行复现，适合学习与实验。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/weibo-1912085257-5355789153733341.md",
       "wiki_status": "pending"
     },
     {
