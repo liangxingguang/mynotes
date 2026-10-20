@@ -1,6 +1,17 @@
 {
-  "updated_at": "2026-10-20 08:21",
+  "updated_at": "2026-10-20 08:28",
   "tags": [
+    {
+      "name": "思维方式",
+      "aliases": [
+        "深度思考",
+        "思考方法",
+        "思维模型"
+      ],
+      "category": "学习",
+      "count": 1,
+      "status": "new"
+    },
     {
       "name": "AI",
       "aliases": [

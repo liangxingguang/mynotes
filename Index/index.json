@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20 08:21",
+  "updated_at": "2026-10-20 08:28",
   "notes": [
     {
       "id": "2026-10-14-claude-code-to-pi-6-extensions",
@@ -769,6 +769,24 @@
       "summary": "CompletableFuture 三条红线：① 永远显式传自定义线程池，别用 commonPool（为 CPU 密集设计，跑 IO 会被慢下游占满、拖垮所有共用业务）；② 异常必须 exceptionally/handle 接住，否则不调 get() 就静默吞掉；③ 必须加超时（Java 9+ 用 orTimeout，Java 8 用 get(timeout)+cancel）。串行异步用 thenCompose 扁平化，聚合用 allOf/anyOf，别 for 循环串行 get。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/completablefuture-async-orchestration.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-20-deep-thinking-training",
+      "title": "如何锻炼深度思考能力？",
+      "path": "Inbox/2026-10-20-deep-thinking-training.md",
+      "created": "2026-10-20",
+      "category": "学习",
+      "tags": [
+        "思维方式"
+      ],
+      "source": "微信公众号（给思考留点时间）",
+      "source_url": "https://mp.weixin.qq.com/s/xbkGmXwf9WqVqTnjGq7dRg",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "深度思考 = 主动加工信息 + 建立逻辑关系 + 允许结论迭代，思考回路为\"提问—拆解—假设—证据—行动—修正\"。先养成三个习惯（追问定义、5Why 追因果链、区分事实/观点/假设），再练四个方法（费曼学习法、反向思考、系统思考、输出复盘），融入工作拆问题、生活决策清单、社交深度提问三类日常场景，避开\"时长=深度\"\"急求唯一答案\"\"只输入不输出\"三个误区。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/deep-thinking-training.md",
       "wiki_status": "pending"
     },
     {
