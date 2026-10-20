@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20 08:41",
+  "updated_at": "2026-10-20 08:42",
   "tags": [
     {
       "name": "思维方式",
@@ -41,6 +41,17 @@
         "网关"
       ],
       "category": "技术",
+      "count": 1,
+      "status": "new"
+    },
+    {
+      "name": "写作",
+      "aliases": [
+        "写作方法",
+        "写作技巧",
+        "writing"
+      ],
+      "category": "学习",
       "count": 1,
       "status": "new"
     },

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20 08:41",
+  "updated_at": "2026-10-20 08:42",
   "notes": [
     {
       "id": "2026-10-14-claude-code-to-pi-6-extensions",
@@ -978,6 +978,24 @@
       "summary": "Spring Cloud Gateway 四大高级能力实战方案：动态路由（RouteDefinitionWriter + RefreshRoutesEvent + 数据库持久化，免重启改路由）、请求日志（GlobalFilter 记录请求/耗时，DataBufferUtils.join 缓存 body 解决流只能读一次）、限流（Redis + Lua 原子计数器，或集成 Sentinel GatewayFlowRule）、灰度发布（请求头强制灰度 + 权重随机分流 + 用户标签灰度）。附完整配置、Prometheus 监控告警、性能与安全加固、常见问题。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/spring-cloud-gateway-advanced.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-20-writing-8-frameworks",
+      "title": "21天学写作 Day10：8 种常见写作框架",
+      "path": "Inbox/2026-10-20-writing-8-frameworks.md",
+      "created": "2026-10-20",
+      "category": "学习",
+      "tags": [
+        "写作"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/HTpMrrVl-vyAGeUUosgQIg",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "写作没思路时先垒框架——8 种常见框架：干货三件套（what/why/how，可分层嵌套）、观点三步法（总-分-总，分论点是核心）、同维度并列拆分、逻辑递进拆分、不同维度并列拆分、清单体罗列、同一点多案例罗列、人物故事时间顺序法。实际写作是多种框架的综合运用，搭框架能力是写作最重要的能力之一。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/writing-8-frameworks.md",
       "wiki_status": "pending"
     },
     {
