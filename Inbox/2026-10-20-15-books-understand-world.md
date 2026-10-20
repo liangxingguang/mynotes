@@ -7,7 +7,7 @@ source_type: link
 platform: 微信
 created: 2026-10-20
 category: 学习
-tags: [阅读]
+tags: [阅读, 个人成长]
 asset_ref: Assets/2026/10/15-books-understand-world.md
 wiki_status: pending
 ---

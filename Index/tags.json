@@ -13,6 +13,16 @@
       "status": "new"
     },
     {
+      "name": "个人成长",
+      "aliases": [
+        "自我成长",
+        "认知升级"
+      ],
+      "category": "学习",
+      "count": 1,
+      "status": "new"
+    },
+    {
       "name": "AI",
       "aliases": [
         "人工智能",
