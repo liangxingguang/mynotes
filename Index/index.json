@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20 19:13",
+  "updated_at": "2026-10-20 19:27",
   "notes": [
     {
       "id": "2026-10-14-claude-code-to-pi-6-extensions",
@@ -788,6 +788,25 @@
       "summary": "微博分享的一个 GitHub 仓库，收录 475 个用 Claude Opus 5.5 构建的视频演示——动态图形、解说视频、3D 场景乃至游戏，全部用 HTML、Canvas、SVG 和 Three.js 实现。每个演示都附带原始提示词和来源帖子，可直接挑选示例自行复现，适合学习与实验。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/weibo-1912085257-5355789153733341.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-20-ai-agents-definitive-guide-notebooks",
+      "title": "O'Reilly《AI Agents - The Definitive Guide》配套代码全开源",
+      "path": "Inbox/2026-10-20-ai-agents-definitive-guide-notebooks.md",
+      "created": "2026-10-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "课程"
+      ],
+      "source": "知乎想法",
+      "source_url": "https://www.zhihu.com/pin/2088989044751520212",
+      "source_type": "link",
+      "platform": "知乎",
+      "summary": "知乎想法推荐：O'Reilly《AI Agents - The Definitive Guide》作者把整套配套代码放上 GitHub（Nicolepcx/ai-agents-the-definitive-guide），12 章 35 个 Jupyter notebook，全部带 Colab 一键运行，无需买书、无需本地环境即可从第一章跑到最后一章。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/ai-agents-definitive-guide-notebooks.md",
       "wiki_status": "pending"
     },
     {
