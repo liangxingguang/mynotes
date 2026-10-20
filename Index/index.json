@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20 08:19",
+  "updated_at": "2026-10-20 08:21",
   "notes": [
     {
       "id": "2026-10-14-claude-code-to-pi-6-extensions",
@@ -863,6 +863,25 @@
       "summary": "一位年读 126 本的全职上班族的二十年读书方法论：阅读速度的本质是\"熟练\"，时间靠拆解而非硬挤（日均 4.5 小时、全年 1644 小时）；计划用四步法（知识分类→年度专题→分配数量→必读/选读 70%/30%）；速度从默读到视读、心流加速、听读结合；理解靠输出——笔记、单主题文章、融会贯通三层递进；AI 只用于优化原创和查资料，绝不替代原创。前提是三个自检原则：无不适感、无内卷感、无压力感。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/reading-100-books-a-year.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-20-spring-async-to-task-table",
+      "title": "Spring Boot：从 @Async 到\"任务表 + Worker\"",
+      "path": "Inbox/2026-10-20-spring-async-to-task-table.md",
+      "created": "2026-10-20",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/DxS0YQAlpbFpP3sJVFUhKw",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "一次滚动发布让跑了 12 分钟的大文件任务彻底消失——@Async 的执行状态只在 JVM 线程里。改造为\"任务表 + Worker\"：Controller 只落库（WAITING/PROCESSING/SUCCESS/FAILED），Worker 定时扫描 + 条件 UPDATE 抢占解决多实例竞争，heartbeat_time + Recovery Job 解决 Worker 中途死亡，retry_count 区分\"值得重试\"与\"重试无意义\"，协作式取消替代杀线程，幂等设计接受\"至少执行一次\"。线程池管\"同时执行几个\"，数据库管\"有哪些任务、什么状态\"。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/spring-async-to-task-table.md",
       "wiki_status": "pending"
     },
     {
