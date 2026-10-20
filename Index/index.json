@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20 08:42",
+  "updated_at": "2026-10-20 08:48",
   "notes": [
     {
       "id": "2026-10-14-claude-code-to-pi-6-extensions",
@@ -863,6 +863,25 @@
       "summary": "货拉拉千人研发团队的 AI Coding 落地复盘：个人提效攒不成组织提效，解法是三阶段推进——先用统一工作台（AiBox）和培训抬升 80% 普通用户的下限，再走 Spec 驱动（五步产线 + spec 召回/打分/淘汰）让 AI 按规范写，最终走向全生命周期闭环的 AI Native。度量上自建三层签名的 AI 代码占比、全链路 Trace 与 FPY（首次正确率），并坦承三个坑：简单任务别上完整 Agent 流程、上下文要精准召回而非全量塞、幻觉需独立第二 Agent 对抗审查。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/huolala-ai-coding-workflow.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-20-netty-three-skills-high-performance",
+      "title": "Netty 三大技能：少量线程 + 零拷贝 + 无锁串行化",
+      "path": "Inbox/2026-10-20-netty-three-skills-high-performance.md",
+      "created": "2026-10-20",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/wZ5L22_CHLj9mEFe5Rz5kw",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "Netty 高性能 = 主从 Reactor 摊薄\"等 IO\"成本 + 堆外内存/零拷贝砍掉\"搬数据\"成本 + Channel 终身绑定 EventLoop 消掉\"抢锁\"成本。文章算清 BIO 万连接成本账（线程栈 10GB），拆 EventLoop 三段循环、ByteBuf 引用计数与内存池、零拷贝三层含义（OS sendfile / JVM 堆外 / 应用层组合切片），覆盖 Selector 空轮询自愈（阈值 512）、粘包拆包、原生 epoll ET/LT，附参数调优清单与 4.0/4.1/4.2 版本分水岭（4.2 默认自适应分配器、EventLoopGroup 与传输解耦、io_uring 毕业）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-three-skills-high-performance.md",
       "wiki_status": "pending"
     },
     {
