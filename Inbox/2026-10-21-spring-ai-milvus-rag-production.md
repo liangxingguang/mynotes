@@ -7,7 +7,7 @@ source_type: link
 platform: 微信
 created: 2026-10-21
 category: 技术
-tags: [AI, spring, 工程实践]
+tags: [spring ai, RAG, AI, 工程实践]
 asset_ref: Assets/2026/10/spring-ai-milvus-rag-production.md
 wiki_status: pending
 ---

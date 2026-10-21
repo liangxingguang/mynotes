@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21 19:11",
+  "updated_at": "2026-10-21 19:12",
   "tags": [
     {
       "name": "思维方式",
@@ -30,7 +30,7 @@
         "SpringBoot"
       ],
       "category": "技术",
-      "count": 6,
+      "count": 5,
       "status": "new"
     },
     {
@@ -267,6 +267,27 @@
         "ES",
         "es",
         "搜索引擎"
+      ],
+      "category": "技术",
+      "count": 1,
+      "status": "new"
+    },
+    {
+      "name": "spring ai",
+      "aliases": [
+        "Spring AI",
+        "spring-ai"
+      ],
+      "category": "技术",
+      "count": 1,
+      "status": "new"
+    },
+    {
+      "name": "RAG",
+      "aliases": [
+        "rag",
+        "检索增强生成",
+        "Retrieval-Augmented Generation"
       ],
       "category": "技术",
       "count": 1,
