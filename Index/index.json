@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21 19:30",
+  "updated_at": "2026-10-21 19:34",
   "notes": [
     {
       "id": "2026-10-14-drawio-skill-arch-diagram",
@@ -1151,6 +1151,25 @@
       "summary": "一条能经受消息重复、索引重建、热点缓存失效、ES 降级、大促并发考验的完整链路。核心原则：MySQL 保存事实、Kafka 传播已提交变更、ES 保存可重建读模型、Redis 保存有边界的热点与短期特征、应用层只在有限候选集内做重排。关键设计：Outbox+Debezium 传播 searchVersion 单调事件 → Kafka 至少一次 + ES external_gte 版本约束收敛 → 前台 size=20 与内部候选 200 分离 → 缓存存\"带 baseScore 的共享候选\"（key 不含 userId）→ PIT 签名 cursor 翻页（个性化分页是另一种问题）→ 索引升级双写+栅栏消 alias 切换窗口 → ES 故障三级降级绝不 LIKE 回源 MySQL。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/ecommerce-search-realtime-personalization.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-21-elasticsearch-interview-deep-dive",
+      "title": "Elasticsearch 面试万字长文（七大模块）",
+      "path": "Inbox/2026-10-21-elasticsearch-interview-deep-dive.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "Elasticsearch",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/4K_8IJ8DFwPbO8Dwz_OSJg",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "体系化 ES 面试题库，七大模块：倒排索引（Term Dictionary/Posting List/Term Index 三层结构，FST 内存仅哈希表 1/10，跳表加速 AND/OR 合并）、集群架构（Master/Data/Coordinating/Ingest 角色分离，路由公式 hash(_routing)%主分片数=主分片不可改的根源）、写入三机制（refresh 只到 OS Cache 不落盘、translog 先写顺序日志保命、flush 刷盘清 translog）、Query Then Fetch 两阶段（深分页=每分片回传 from+size 条的根源）、IK 分词（ik_max_word 索引/ik_smart 搜索，远程词典+MySQL 热更新方案）、三种分页选型（浅 from+size / 导出 scroll / 实时 search_after 必须唯一排序字段）、四维索引优化清单。核心一句话：查词翻词典→倒排列表取文档→排序查列存 Doc Values。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/elasticsearch-interview-deep-dive.md",
       "wiki_status": "pending"
     },
     {
