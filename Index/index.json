@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21 19:01",
+  "updated_at": "2026-10-21 19:06",
   "notes": [
     {
       "id": "2026-10-14-drawio-skill-arch-diagram",
@@ -1111,6 +1111,26 @@
       "summary": "针对 AI 能力调用（OCR/语音测评等烧钱接口）的业务风控需求，自研轻量计数限流组件。计数选 Redis+Lua（脚本原子性替代事务，放弃精确计数与持久化换简单）；规则支持自然日、自然小时及二者组合——组合规则关键是**回退逻辑**：日通过但小时不通过时，两边计数都要 DECR 回退，不能各记各的。接入方式用 `@Detect(eventId, contentSpel)` 注解 + AOP 切面，SpEL 从方法参数（arg1/arg2…）解析出限流维度 content，业务代码零侵入。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/business-risk-control-redis-lua-annotation.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-21-elasticsearch-search-tuning-production",
+      "title": "Elasticsearch 生产级搜索性能调优实战",
+      "path": "Inbox/2026-10-21-elasticsearch-search-tuning-production.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "Elasticsearch",
+        "工程实践",
+        "分布式系统"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/3PwUQZX2BwoI3jQoIjn9zA",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "基于 20 亿+ 文档、峰值 5000 QPS 的订单搜索系统，系统讲清 ES 从秒级到毫秒级的调优路径：慢的根源在 query/fetch 两阶段与协调节点合并成本，优化优先级是**减分片→filter→缩时间→限字段→search_after 替代深分页→关 track_total_hits→routing**，而不是先调 JVM 参数。索引建模是生死线（dynamic strict、scaled_float、sort.field、慎用 nested），写入用 Kafka+Bulk 幂等链路，高并发靠线程池隔离+熔断降级+热点租户复合路由，长期演进靠 ILM 冷热分层与多集群拆分。完整方法论五步走：定位→砍不合理请求→重做索引模型→补治理→最后调参数。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/elasticsearch-search-tuning-production.md",
       "wiki_status": "pending"
     },
     {

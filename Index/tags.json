@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21 19:01",
+  "updated_at": "2026-10-21 19:06",
   "tags": [
     {
       "name": "思维方式",
@@ -73,7 +73,7 @@
         "最佳实践"
       ],
       "category": "技术",
-      "count": 46,
+      "count": 47,
       "status": "active"
     },
     {
@@ -227,7 +227,7 @@
         "Distributed Systems"
       ],
       "category": "技术",
-      "count": 6,
+      "count": 7,
       "status": "new"
     },
     {
@@ -259,6 +259,17 @@
       ],
       "category": "技术",
       "count": 2,
+      "status": "new"
+    },
+    {
+      "name": "Elasticsearch",
+      "aliases": [
+        "ES",
+        "es",
+        "搜索引擎"
+      ],
+      "category": "技术",
+      "count": 1,
       "status": "new"
     }
   ]
