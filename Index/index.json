@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21 18:47",
+  "updated_at": "2026-10-21 18:50",
   "notes": [
     {
       "id": "2026-10-14-drawio-skill-arch-diagram",
@@ -1132,6 +1132,26 @@
       "summary": "Kafka 排障痛点是\"找不到该看什么\"而非\"看不到问题\"。2026 年推荐组合：Kafka UI（日常看，可视化全覆盖、KRaft 友好）+ kafka-topics.sh（动手改，脚本化资产）+ Burrow（Lag 智能告警，基线判定抓\"假活\" STOP 状态）；Kafka Manager/CMAK 是 ZK 时代遗产（KRaft 支持不完整，新集群不再引入）。附 --describe 三个风险分区过滤参数、Burrow 五种状态语义、安全部署三件套与高频命令速查表。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/kafka-ops-tools-five-essentials.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-21-raft-membership-log-barrier",
+      "title": "Raft 成员变更：何时需要先提交 leader 的当前 term 日志",
+      "path": "Inbox/2026-10-21-raft-membership-log-barrier.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "Raft",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/SMKqvXf5P8s1MA6sI_KJTQ",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "openacid 张炎泼的分布式硬核文，给出成员变更日志 barrier 的完整结论：**标准 joint 变更两步都无需额外的 noop 提交**（joint config `C01=[C0,C1]` 的每个 quorum 都包含 `C0` 的 quorum，config 日志本身构成 barrier）；**单步变更必须先提交当前 term 日志**（`Cu`/`Cv` 虽各自与 `C0` 相交，但彼此可不相交，缺 barrier 时未提交的 `Cu` 可覆盖已提交的 `Cv`——Ongaro 修正条件）；**若扩展允许 joint 回退，完成与回退两个方向都需先提交当前 term 日志**。核心机制：在公共 config 的 quorum 上提交一条当前 term 日志，即登记新 leader 的 term，排除旧 term 遗留的冲突变更。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/raft-membership-log-barrier.md",
       "wiki_status": "pending"
     },
     {
