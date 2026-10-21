@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21 18:50",
+  "updated_at": "2026-10-21 18:53",
   "notes": [
     {
       "id": "2026-10-14-drawio-skill-arch-diagram",
@@ -1071,6 +1071,26 @@
       "summary": "写作没思路时先垒框架——8 种常见框架：干货三件套（what/why/how，可分层嵌套）、观点三步法（总-分-总，分论点是核心）、同维度并列拆分、逻辑递进拆分、不同维度并列拆分、清单体罗列、同一点多案例罗列、人物故事时间顺序法。实际写作是多种框架的综合运用，搭框架能力是写作最重要的能力之一。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/writing-8-frameworks.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-21-agent-2026-midyear-architecture-review",
+      "title": "2026 Agent 年中总结：从整体架构到关键细节",
+      "path": "Inbox/2026-10-21-agent-2026-midyear-architecture-review.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Harness",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/cX3-i0N7HmV5aS3zNsCTsg",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "叶小钗的 Agent 系统设计全景文。核心命题：Agent 系统设计的本质是把模型运行中的判断接到**可验证、可恢复**的执行过程里——模型负责理解探索，程序保证执行规则，人承担关键决策。架构主线是\"薄 Harness 厚 Skills\"：Harness 管执行与控制（上下文装配、工具调用、循环控制、暂停恢复），Runtime 管资源，业务系统保存落地事实。围绕工具反馈、上下文管理、Skill 沉淀、多 Agent 分工、生命周期与评测六大块展开，主线思想是\"从 Workflow 到 Agent 是为提升泛化能力，架构演进全程为保证执行稳定性\"。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/agent-2026-midyear-architecture-review.md",
       "wiki_status": "pending"
     },
     {
