@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21 19:39",
+  "updated_at": "2026-10-21 19:41",
   "notes": [
     {
       "id": "2026-10-14-drawio-skill-arch-diagram",
@@ -1408,6 +1408,26 @@
       "summary": "以多租户电商客服知识库为例的可评审、可压测、可回滚 RAG 工程方法。核心立场：Spring AI/Milvus 不替你保证权限、发布生效时机、证据充分性与故障收敛——企业 RAG 的目标是「在给定权限、知识版本、模型配额和 SLO 下稳定产生可追溯回答，无法满足时安全拒答」。四条主线贯穿全文：容量（入口 QPS≠生成能力，用 Little 定律算在途）、证据（模型调用前的证据门禁，无证据短路拒答）、权限（AccessScope 服务端构造、过滤条件只能由适配层生成）、恢复（写入 ACK≠全局可见，发布目录原子切换）。附缓存键安全语义、SSE 取消协议、故障实验矩阵与第一周最小闭环清单。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/spring-ai-milvus-rag-production.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-21-spring-insight-lightweight-monitoring",
+      "title": "轻量级 Spring 监测工具——Spring Insight 正式发布",
+      "path": "Inbox/2026-10-21-spring-insight-lightweight-monitoring.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "spring",
+        "工具",
+        "分布式系统"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/ULrVnGzWaGv-Ypx3ROyGAQ",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "面向中小项目/本地联调的轻量 Spring 链路追踪工具，0.1.0 已发 Maven Central + GHCR 镜像。只回答三件事：谁调了谁、耗时卡在哪、哪里报错了。业务侧加一个 Starter、Docker 起一个监测中心（:9966），浏览器直接看拓扑和链路。明确不替代 SkyWalking/OTel——没有采样/告警/鉴权/多租户，存储仅内存或 JSON 文件。覆盖 Servlet MVC、OpenFeign、WebFlux/WebClient、Gateway 及线程池 Trace 透传，可选导出指标给 Micrometer/Prometheus。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/spring-insight-lightweight-monitoring.md",
       "wiki_status": "pending"
     },
     {
