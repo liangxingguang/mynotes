@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21 19:06",
+  "updated_at": "2026-10-21 19:08",
   "notes": [
     {
       "id": "2026-10-14-drawio-skill-arch-diagram",
@@ -1152,6 +1152,25 @@
       "summary": "游戏服务器架构可拆解为四层骨架，各回答一个核心问题：**连接层**（客户端怎么连进来：长连接管理、会话绑定、心跳、编解码、鉴权限流、断线重连）；**实体层**（游戏对象怎么存在：有状态实体的生命周期、消息按序投递、状态隔离、AOI、持久化与迁移）；**RPC 约束层**（服务间怎么可靠调用：服务发现、按 entityId/shardId 路由、超时熔断重试、幂等、可观测性）；**协调层**（分布式下对象放在哪里：分片分配、再平衡、故障转移、迁移协调、防脑裂租约）。四层以纯接口隔离，演进路线先单机闭环再上分布式。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/game-server-architecture-four-layers.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-21-gc-log-tuning-practice",
+      "title": "GC 日志分析与调优实战",
+      "path": "Inbox/2026-10-21-gc-log-tuning-practice.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/Owc57OzkgLibnuUd1ZiZ9w",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "JVM 调优系列第 9 篇。调优不是拍脑袋改 -Xmx，而是「开日志→读指标→定假设→压测验证」的闭环：JDK9+ 用 `-Xlog:gc*` 滚动日志，Minor GC 看 Eden/Heap/Times（real 才是真实停顿），Full GC 看触发原因与停顿秒数；量化三指标=吞吐量（>95~99%）、最大停顿、停顿频率。附 G1（MaxGCPauseMillis 是目标不是保证、IHOP 调低让 Mixed GC 提前）与 ZGC（基本不用调，只看 Pause 行验证 <10ms）参数模板、jstat 实时观测技巧、内存泄漏早期信号（老年代锯齿上移、FGC 单调递增）、Prometheus 告警规则与完整调优案例。核心纪律：一次只动一个参数，用前后压测对比说话。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/gc-log-tuning-practice.md",
       "wiki_status": "pending"
     },
     {
