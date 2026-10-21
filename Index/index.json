@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21 19:41",
+  "updated_at": "2026-10-21 19:43",
   "notes": [
     {
       "id": "2026-10-14-drawio-skill-arch-diagram",
@@ -1328,6 +1328,25 @@
       "summary": "Kafka 排障痛点是\"找不到该看什么\"而非\"看不到问题\"。2026 年推荐组合：Kafka UI（日常看，可视化全覆盖、KRaft 友好）+ kafka-topics.sh（动手改，脚本化资产）+ Burrow（Lag 智能告警，基线判定抓\"假活\" STOP 状态）；Kafka Manager/CMAK 是 ZK 时代遗产（KRaft 支持不完整，新集群不再引入）。附 --describe 三个风险分区过滤参数、Burrow 五种状态语义、安全部署三件套与高频命令速查表。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/kafka-ops-tools-five-essentials.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-21-linked-list-vs-array-cache",
+      "title": "链表已死？C++ 之父：O(1) 不一定比 O(N) 快",
+      "path": "Inbox/2026-10-21-linked-list-vs-array-cache.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "算法",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/M-FKnd1kvdwvRtRNdsDK6g",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "「数组查询快、链表插入快」的教科书结论有个隐藏前提：访问内存免费。现代 CPU 的内存墙让这条前提崩塌——链表节点散落堆中，pointer chasing 每跳一次可能就是一次缓存未命中，预取器完全失效；数组搬移是连续 memcpy，预取友好快得惊人。Stroustrup 实测 std::list 完败于 std::vector，建议「默认用 vector」；Carruth 更直言「非连续数据结构是万恶之源」。但链表没死：内核侵入式链表、大对象+密集增删场景、跳表/B+树/LRU 等新形态里它仍是幕后支柱。核心教训：大 O 之上，还站着缓存行、预取器和内存墙。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/linked-list-vs-array-cache.md",
       "wiki_status": "pending"
     },
     {

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21 19:41",
+  "updated_at": "2026-10-21 19:43",
   "tags": [
     {
       "name": "思维方式",
@@ -73,7 +73,7 @@
         "最佳实践"
       ],
       "category": "技术",
-      "count": 55,
+      "count": 56,
       "status": "active"
     },
     {
@@ -185,7 +185,7 @@
         "刷题"
       ],
       "category": "学习",
-      "count": 0,
+      "count": 1,
       "status": "new"
     },
     {
