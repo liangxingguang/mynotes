@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20 21:31",
+  "updated_at": "2026-10-21 18:41",
   "tags": [
     {
       "name": "思维方式",
@@ -73,7 +73,7 @@
         "最佳实践"
       ],
       "category": "技术",
-      "count": 38,
+      "count": 39,
       "status": "active"
     },
     {
@@ -216,7 +216,18 @@
         "Distributed Systems"
       ],
       "category": "技术",
-      "count": 3,
+      "count": 4,
+      "status": "new"
+    },
+    {
+      "name": "Kafka",
+      "aliases": [
+        "kafka",
+        "消息队列",
+        "MQ"
+      ],
+      "category": "技术",
+      "count": 1,
       "status": "new"
     },
     {

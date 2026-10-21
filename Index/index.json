@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20 21:31",
+  "updated_at": "2026-10-21 18:41",
   "notes": [
     {
       "id": "2026-10-14-drawio-skill-arch-diagram",
@@ -1071,6 +1071,26 @@
       "summary": "写作没思路时先垒框架——8 种常见框架：干货三件套（what/why/how，可分层嵌套）、观点三步法（总-分-总，分论点是核心）、同维度并列拆分、逻辑递进拆分、不同维度并列拆分、清单体罗列、同一点多案例罗列、人物故事时间顺序法。实际写作是多种框架的综合运用，搭框架能力是写作最重要的能力之一。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/writing-8-frameworks.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-21-kafka-fast-four-mechanisms",
+      "title": "Kafka 为什么这么快？——顺序写+页缓存+零拷贝+批量，四板斧拆解",
+      "path": "Inbox/2026-10-21-kafka-fast-four-mechanisms.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "Kafka",
+        "分布式系统",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/MDAgNT5ir7Ts79vMyaYshQ",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "Kafka 单机百万级吞吐不是单点黑科技，而是\"四板斧\"联动消除每一跳的浪费：磁盘只做顺序追加写（HDD 上比随机写快 375 倍）、热数据全走 PageCache（write() 进内存即返回、磁盘 util <30%）、consumer 拉取走 sendfile 零拷贝（CPU 拷贝开销降 ~65%，SSL 下失效）、producer 批量+压缩（RPC 次数 ÷ 批大小，zstd 压缩比 ~3.3x）。生产实测单 Broker 80 万 msg/s @ CPU<40%，瓶颈在副本同步网络而非磁盘。附 JVM 堆与 PageCache 配比（6GB/32GB）、swappiness=1、batch.size=64KB 等调优基线与排障对照表。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/kafka-fast-four-mechanisms.md",
       "wiki_status": "pending"
     },
     {
