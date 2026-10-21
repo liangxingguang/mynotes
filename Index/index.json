@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21 19:34",
+  "updated_at": "2026-10-21 19:39",
   "notes": [
     {
       "id": "2026-10-14-drawio-skill-arch-diagram",
@@ -1269,6 +1269,25 @@
       "summary": "Full GC 频繁的七步排查法（Arthas 优先，比 jstat/jmap 效率高一个量级）：dashboard 看全局趋势 → jvm/memory 看配置 → 按「OU 降幅 vs 持续上涨」判定根因（晋升过快/内存泄漏/CMS 碎片/元空间类泄漏/堆太小）→ 分场景处理 → 验证修复。关键判定表：OU 每次 FGC 后降幅>50%=提前晋升，OU 持续涨 FGC 后不降=内存泄漏，OU 不高却 FGC=CMS 碎片，Metaspace>90%+Metadata GCThreshold=类泄漏。附 MAT 三步定位大对象（Leak Suspects→Dominator Tree→Path to GC Roots）、classloader 命令判类泄漏、五大常见泄漏点与分场景参数处方。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/jvm-gc-troubleshooting-arthas.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-21-jvm-troubleshooting-six-tools",
+      "title": "JVM 排查别乱试：6 个工具各管什么",
+      "path": "Inbox/2026-10-21-jvm-troubleshooting-six-tools.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/9eAlETU99LUBabyJ892kGQ",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "JDK 自带诊断工具的分工图谱与排障顺序：jps 找进程 PID、jcmd 综合诊断入口（先 `jcmd <pid> help`）、jstat -gcutil 连续采样看 GC 趋势（\"感觉像 GC\"不算证据）、jstack -l 取线程现场找锁等待/死锁、jinfo 查启动配置（不适合乱改线上参数）、VisualVM 看 CPU/GC/堆/线程趋势关联。核心原则：排障不是工具越多越专业，每次只拿能回答当前问题的那一个；把进程、配置、GC、线程几份证据放到同一条时间线上，定位才快。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jvm-troubleshooting-six-tools.md",
       "wiki_status": "pending"
     },
     {
