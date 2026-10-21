@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21 19:12",
+  "updated_at": "2026-10-21 19:16",
   "notes": [
     {
       "id": "2026-10-14-drawio-skill-arch-diagram",
@@ -1171,6 +1171,26 @@
       "summary": "JVM 调优系列第 9 篇。调优不是拍脑袋改 -Xmx，而是「开日志→读指标→定假设→压测验证」的闭环：JDK9+ 用 `-Xlog:gc*` 滚动日志，Minor GC 看 Eden/Heap/Times（real 才是真实停顿），Full GC 看触发原因与停顿秒数；量化三指标=吞吐量（>95~99%）、最大停顿、停顿频率。附 G1（MaxGCPauseMillis 是目标不是保证、IHOP 调低让 Mixed GC 提前）与 ZGC（基本不用调，只看 Pause 行验证 <10ms）参数模板、jstat 实时观测技巧、内存泄漏早期信号（老年代锯齿上移、FGC 单调递增）、Prometheus 告警规则与完整调优案例。核心纪律：一次只动一个参数，用前后压测对比说话。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/gc-log-tuning-practice.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-21-jenkins-gitlab-cicd-pipeline",
+      "title": "Jenkins + GitLab CI/CD 流水线落地实战",
+      "path": "Inbox/2026-10-21-jenkins-gitlab-cicd-pipeline.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "CI/CD",
+        "工程实践",
+        "工具"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/OkT4w402xVI9RJjf3E_8vA",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "两套可直接落地的完整流水线：声明式 Jenkinsfile（约 130 行）与 .gitlab-ci.yml（约 90 行），覆盖 push 触发→lint→pytest→docker build/push→SSH 部署→健康检查失败自动回滚全链路，配 deploy.sh（releases/current 软链模式，保留最近 5 版）与 6 个避坑点。三个核心认知：流水线是代码（进仓库走评审）、失败要早要自动（lint 5 秒能拦的别等半夜报警）、一切可追溯（TAG=commit 前 8 位+构建号，不用 latest）。版本基准 Jenkins 2.452 LTS / GitLab 16.10 / Docker 27。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jenkins-gitlab-cicd-pipeline.md",
       "wiki_status": "pending"
     },
     {

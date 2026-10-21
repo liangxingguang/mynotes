@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21 19:12",
+  "updated_at": "2026-10-21 19:16",
   "tags": [
     {
       "name": "思维方式",
@@ -73,7 +73,7 @@
         "最佳实践"
       ],
       "category": "技术",
-      "count": 49,
+      "count": 50,
       "status": "active"
     },
     {
@@ -82,7 +82,7 @@
         "效率工具"
       ],
       "category": "技术",
-      "count": 12,
+      "count": 13,
       "status": "active"
     },
     {
@@ -288,6 +288,20 @@
         "rag",
         "检索增强生成",
         "Retrieval-Augmented Generation"
+      ],
+      "category": "技术",
+      "count": 1,
+      "status": "new"
+    },
+    {
+      "name": "CI/CD",
+      "aliases": [
+        "cicd",
+        "持续集成",
+        "持续部署",
+        "Jenkins",
+        "GitLab CI",
+        "DevOps"
       ],
       "category": "技术",
       "count": 1,
