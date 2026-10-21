@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21 19:23",
+  "updated_at": "2026-10-21 19:25",
   "notes": [
     {
       "id": "2026-10-14-drawio-skill-arch-diagram",
@@ -1270,6 +1270,25 @@
       "summary": "Kafka 排障痛点是\"找不到该看什么\"而非\"看不到问题\"。2026 年推荐组合：Kafka UI（日常看，可视化全覆盖、KRaft 友好）+ kafka-topics.sh（动手改，脚本化资产）+ Burrow（Lag 智能告警，基线判定抓\"假活\" STOP 状态）；Kafka Manager/CMAK 是 ZK 时代遗产（KRaft 支持不完整，新集群不再引入）。附 --describe 三个风险分区过滤参数、Burrow 五种状态语义、安全部署三件套与高频命令速查表。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/kafka-ops-tools-five-essentials.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-21-lovart-2-arti-design-agent",
+      "title": "Lovart 2.0：设计界的 Personal Agent Arti",
+      "path": "Inbox/2026-10-21-lovart-2-arti-design-agent.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工具"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/Oia5kjVMOMzn9713XICDzA",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "Lovart 2.0（10 月 19 日上线，国内可用）推出设计 Personal Agent「Arti」：不只生成，还主动调研、找参考、巡检画布、处理修改，并把重复工作沉淀成 Skill。作者用两个真实委托（办公室万圣节周边 + 游戏直播间月度主题）验证：写 brief 建委托计划 → Arti 先出调研报告推荐风格 → 5 分钟出首版 → 画布巡检后台对照要求查错提醒 → 分享画布同事评论直接对应元素、交给 Arti 出新版 → 一句话把整套流程沉淀成室内主题设计 skill，两句话生成圣诞全套物料。核心模式转变：从\"一句句指挥\"到\"整件事委托\"——定时委托+到点收货，节日营销素材不求人。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/lovart-2-arti-design-agent.md",
       "wiki_status": "pending"
     },
     {
