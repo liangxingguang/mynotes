@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21 19:18",
+  "updated_at": "2026-10-21 19:22",
   "notes": [
     {
       "id": "2026-10-14-drawio-skill-arch-diagram",
@@ -1091,6 +1091,26 @@
       "summary": "叶小钗的 Agent 系统设计全景文。核心命题：Agent 系统设计的本质是把模型运行中的判断接到**可验证、可恢复**的执行过程里——模型负责理解探索，程序保证执行规则，人承担关键决策。架构主线是\"薄 Harness 厚 Skills\"：Harness 管执行与控制（上下文装配、工具调用、循环控制、暂停恢复），Runtime 管资源，业务系统保存落地事实。围绕工具反馈、上下文管理、Skill 沉淀、多 Agent 分工、生命周期与评测六大块展开，主线思想是\"从 Workflow 到 Agent 是为提升泛化能力，架构演进全程为保证执行稳定性\"。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/agent-2026-midyear-architecture-review.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-21-agent-long-task-reliable-execution",
+      "title": "AI Agent 长任务可靠执行：状态机、Checkpoint、Fencing 与可对账副作用",
+      "path": "Inbox/2026-10-21-agent-long-task-reliable-execution.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "分布式系统",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/UpJRHy-PN1iEg1KxHXgTAw",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "单进程 Agent Loop 的根因问题：把工作流进度和执行权隐式绑定到进程生命周期。方案=七态状态机（QUEUED/RUNNING/WAITING_TOOL/PAUSED_INDOUBT/PAUSED_HUMAN/终态）+ PostgreSQL 事务协议：Claim 用 SKIP LOCKED+fencing_token 代际递增领取可失效执行权；Checkpoint 主表 version+快照+Outbox 事件同一事务原子提交；工具副作用三段式（Tx1 持久化 OUTBOUND_INTENT→出网→Tx2 结果与进度同事务）；结果未知一律冻结 PAUSED_INDOUBT 走对账，绝不盲目重发。核心认知：Fencing 只挡旧 Worker 写库、挡不住它出网；Outbox 保证至少一次不是 exactly-once；LLM 决策必须先持久化再执行，恢复时不得重新采样工具参数。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/agent-long-task-reliable-execution.md",
       "wiki_status": "pending"
     },
     {
