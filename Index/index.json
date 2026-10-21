@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21 18:41",
+  "updated_at": "2026-10-21 18:44",
   "notes": [
     {
       "id": "2026-10-14-drawio-skill-arch-diagram",
@@ -1091,6 +1091,26 @@
       "summary": "Kafka 单机百万级吞吐不是单点黑科技，而是\"四板斧\"联动消除每一跳的浪费：磁盘只做顺序追加写（HDD 上比随机写快 375 倍）、热数据全走 PageCache（write() 进内存即返回、磁盘 util <30%）、consumer 拉取走 sendfile 零拷贝（CPU 拷贝开销降 ~65%，SSL 下失效）、producer 批量+压缩（RPC 次数 ÷ 批大小，zstd 压缩比 ~3.3x）。生产实测单 Broker 80 万 msg/s @ CPU<40%，瓶颈在副本同步网络而非磁盘。附 JVM 堆与 PageCache 配比（6GB/32GB）、swappiness=1、batch.size=64KB 等调优基线与排障对照表。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/kafka-fast-four-mechanisms.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-21-kafka-ops-tools-five-essentials",
+      "title": "Kafka 运维必备工具清单：这 5 个工具让排障快 10 倍",
+      "path": "Inbox/2026-10-21-kafka-ops-tools-five-essentials.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "Kafka",
+        "工具",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/g2xStkIY7ap8EVAnJPlA1A",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "Kafka 排障痛点是\"找不到该看什么\"而非\"看不到问题\"。2026 年推荐组合：Kafka UI（日常看，可视化全覆盖、KRaft 友好）+ kafka-topics.sh（动手改，脚本化资产）+ Burrow（Lag 智能告警，基线判定抓\"假活\" STOP 状态）；Kafka Manager/CMAK 是 ZK 时代遗产（KRaft 支持不完整，新集群不再引入）。附 --describe 三个风险分区过滤参数、Burrow 五种状态语义、安全部署三件套与高频命令速查表。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/kafka-ops-tools-five-essentials.md",
       "wiki_status": "pending"
     },
     {
