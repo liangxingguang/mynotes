@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21 19:25",
+  "updated_at": "2026-10-21 19:30",
   "notes": [
     {
       "id": "2026-10-14-drawio-skill-arch-diagram",
@@ -1131,6 +1131,26 @@
       "summary": "针对 AI 能力调用（OCR/语音测评等烧钱接口）的业务风控需求，自研轻量计数限流组件。计数选 Redis+Lua（脚本原子性替代事务，放弃精确计数与持久化换简单）；规则支持自然日、自然小时及二者组合——组合规则关键是**回退逻辑**：日通过但小时不通过时，两边计数都要 DECR 回退，不能各记各的。接入方式用 `@Detect(eventId, contentSpel)` 注解 + AOP 切面，SpEL 从方法参数（arg1/arg2…）解析出限流维度 content，业务代码零侵入。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/business-risk-control-redis-lua-annotation.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-21-ecommerce-search-realtime-personalization",
+      "title": "搜索即推荐：百毫秒级电商搜索与实时个性化系统",
+      "path": "Inbox/2026-10-21-ecommerce-search-realtime-personalization.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "Elasticsearch",
+        "Kafka",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/g6VUWmW-QAAbvwbqorjF9A",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "一条能经受消息重复、索引重建、热点缓存失效、ES 降级、大促并发考验的完整链路。核心原则：MySQL 保存事实、Kafka 传播已提交变更、ES 保存可重建读模型、Redis 保存有边界的热点与短期特征、应用层只在有限候选集内做重排。关键设计：Outbox+Debezium 传播 searchVersion 单调事件 → Kafka 至少一次 + ES external_gte 版本约束收敛 → 前台 size=20 与内部候选 200 分离 → 缓存存\"带 baseScore 的共享候选\"（key 不含 userId）→ PIT 签名 cursor 翻页（个性化分页是另一种问题）→ 索引升级双写+栅栏消 alias 切换窗口 → ES 故障三级降级绝不 LIKE 回源 MySQL。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/ecommerce-search-realtime-personalization.md",
       "wiki_status": "pending"
     },
     {
