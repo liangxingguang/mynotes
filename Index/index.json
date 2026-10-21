@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21 18:53",
+  "updated_at": "2026-10-21 18:56",
   "notes": [
     {
       "id": "2026-10-14-drawio-skill-arch-diagram",
@@ -1172,6 +1172,26 @@
       "summary": "openacid 张炎泼的分布式硬核文，给出成员变更日志 barrier 的完整结论：**标准 joint 变更两步都无需额外的 noop 提交**（joint config `C01=[C0,C1]` 的每个 quorum 都包含 `C0` 的 quorum，config 日志本身构成 barrier）；**单步变更必须先提交当前 term 日志**（`Cu`/`Cv` 虽各自与 `C0` 相交，但彼此可不相交，缺 barrier 时未提交的 `Cu` 可覆盖已提交的 `Cv`——Ongaro 修正条件）；**若扩展允许 joint 回退，完成与回退两个方向都需先提交当前 term 日志**。核心机制：在公共 config 的 quorum 上提交一条当前 term 日志，即登记新 leader 的 term，排除旧 term 遗留的冲突变更。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/raft-membership-log-barrier.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-21-springboot-disruptor-event-bus",
+      "title": "Spring Boot 集成 Disruptor 无锁事件总线：RingBuffer 原理到百万级吞吐",
+      "path": "Inbox/2026-10-21-springboot-disruptor-event-bus.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "spring",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/AUGXjm9kh07lDUGdoUME1g",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "BlockingQueue 上生产露馅的四根因：锁竞争（cs 10w+/s）、GC 抖动（每事件 new 对象）、阻塞唤醒延迟毛刺、环满无降级空间。Disruptor 以预分配数组灭 GC、CAS+内存屏障灭锁、缓存行填充灭伪共享、序号代指针。JMH 实测 1P1C 比 ArrayBlockingQueue 快 4.5 倍、4P4C 快 10 倍+，P99.9 优于对方 P50；端到端埋点链路 11.2w→72.6w QPS、P99 48ms→4.1ms。含 Spring Boot 工程化封装（EventBus 门面 + SmartLifecycle + 配置化）与生产避坑清单。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/springboot-disruptor-event-bus.md",
       "wiki_status": "pending"
     },
     {
