@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21 19:08",
+  "updated_at": "2026-10-21 19:11",
   "notes": [
     {
       "id": "2026-10-14-drawio-skill-arch-diagram",
@@ -1251,6 +1251,26 @@
       "summary": "SCG 基于 WebFlux 响应式，请求处理不绑定固定线程，传统 ThreadLocal+MDC 方案直接失效——这是照搬 Servlet 写法导致 traceId 时有时无的根因。正解：GlobalFilter 中用 **Reactor Context** 作载体（contextWrite 写入 / deferContextual 读取），靠 **doOnEach 钩子**在每个信号发出时同步 MDC 保证日志稳定打印，**doFinally 清除**防线程复用串号；经 request.mutate() 透传 X-Trace-Id 请求头并写响应头返给前端。下游 Servlet 用 Filter+MDC、WebFlux 用 WebFilter+Context；异步靠 TaskDecorator/Runnable 包装；MQ 走消息属性。附与 Sleuth/SkyWalking 的选型对比。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/scg-traceid-full-chain.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-21-spring-ai-milvus-rag-production",
+      "title": "Spring AI + Milvus 企业级 RAG 生产工程实践",
+      "path": "Inbox/2026-10-21-spring-ai-milvus-rag-production.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "spring",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/HgQxSmTRD--3QLTWR7c4wQ",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "以多租户电商客服知识库为例的可评审、可压测、可回滚 RAG 工程方法。核心立场：Spring AI/Milvus 不替你保证权限、发布生效时机、证据充分性与故障收敛——企业 RAG 的目标是「在给定权限、知识版本、模型配额和 SLO 下稳定产生可追溯回答，无法满足时安全拒答」。四条主线贯穿全文：容量（入口 QPS≠生成能力，用 Little 定律算在途）、证据（模型调用前的证据门禁，无证据短路拒答）、权限（AccessScope 服务端构造、过滤条件只能由适配层生成）、恢复（写入 ACK≠全局可见，发布目录原子切换）。附缓存键安全语义、SSE 取消协议、故障实验矩阵与第一周最小闭环清单。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/spring-ai-milvus-rag-production.md",
       "wiki_status": "pending"
     },
     {
