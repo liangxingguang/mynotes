@@ -1,61 +1,6 @@
 {
-  "updated_at": "2026-10-21 19:43",
+  "updated_at": "2026-10-21 21:33",
   "notes": [
-    {
-      "id": "2026-10-14-drawio-skill-arch-diagram",
-      "title": "drawio-skill：把代码与配置变成可编辑架构图的开源 Skill",
-      "path": "Inbox/2026-10-14-drawio-skill-arch-diagram.md",
-      "created": "2026-10-14",
-      "category": "技术",
-      "tags": [
-        "工具",
-        "工程实践"
-      ],
-      "source": "微博",
-      "source_url": "https://weibo.com/5648162302/5353819917255535",
-      "source_type": "article",
-      "platform": "微博",
-      "summary": "微博推荐开源项目 drawio-skill（github.com/Agents365-ai/drawio-skill）：把自然语言、代码和基础设施配置转换成可编辑的 .drawio 架构图，支持增量同步、差异对比与 CI 架构规则检查，适合需要持续维护架构文档的项目。",
-      "summary_status": "",
-      "asset_ref": "",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-14-github-niche-usage-tips",
-      "title": "三个小众但实用的 GitHub 用法（zread / Deepwiki / gitingest）",
-      "path": "Inbox/2026-10-14-github-niche-usage-tips.md",
-      "created": "2026-10-14",
-      "category": "技术",
-      "tags": [
-        "工具"
-      ],
-      "source": "z派大鑫（微博）",
-      "source_url": "https://weibo.com/2876544642/5352518867747589",
-      "source_type": "post",
-      "platform": "微博",
-      "summary": "博主分享了三个借助 AI 快速读懂 GitHub 仓库的小众工具：zread 把项目变成中文知识库，Deepwiki 直接向 AI 提问定位代码，gitingest 把仓库打包成 AI 可读文本。",
-      "summary_status": "",
-      "asset_ref": "",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-14-high-perf-low-cpu-coding-tips-part1",
-      "title": "打造高性能、低 CPU 消耗系统——36 种编码实战技巧（上篇）",
-      "path": "Inbox/2026-10-14-high-perf-low-cpu-coding-tips-part1.md",
-      "created": "2026-10-14",
-      "category": "技术",
-      "tags": [
-        "工程实践"
-      ],
-      "source": "京东云开发者（微信公众号）",
-      "source_url": "https://mp.weixin.qq.com/s/B-IPbwcQr3yp8_BJMKvdbA",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "基于百万 QPS 高并发系统经验的 Java 编码手册，上篇讲前 18 个技巧（共 36 个、100+ 案例）。主线思想是\"CPU 漏斗\"：砍掉一切多余的类型转换、对象创建、字符串操作与无效分支，让 CPU 只做核心运算——核心手段是全链路统一原生类型、相同数据只取一次、快速失败、用 O(1) 查找替代 O(n) 判断、用原生类型集合降低 GC。作者强调仅适用于有性能痛点的高并发场景，否则应优先可读性与可维护性。",
-      "summary_status": "",
-      "asset_ref": "",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-14-high-perf-low-cpu-coding-tips-part2",
       "title": "打造高性能、低 CPU 消耗系统——36 种编码实战技巧（下篇）",
@@ -1617,6 +1562,61 @@
       "source_type": "article",
       "platform": "微信公众号",
       "summary": "DeepSeek Harness v0.2 预览版（9.29 发布，提供 macOS/Windows 桌面端）7 天系列教程的第 1 天，专治\"装好了不敢下手\"：认识界面五站、申请并填入 DeepSeek API key、选对模式，三件事走完即可开工。后续六天为派活、分身、排错、插件、换脑、造扳手（本文不含）。",
+      "summary_status": "",
+      "asset_ref": "",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-14-drawio-skill-arch-diagram",
+      "title": "drawio-skill：把代码与配置变成可编辑架构图的开源 Skill",
+      "path": "Archive/2026-10-14-drawio-skill-arch-diagram.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [
+        "工具",
+        "工程实践"
+      ],
+      "source": "微博",
+      "source_url": "https://weibo.com/5648162302/5353819917255535",
+      "source_type": "article",
+      "platform": "微博",
+      "summary": "微博推荐开源项目 drawio-skill（github.com/Agents365-ai/drawio-skill）：把自然语言、代码和基础设施配置转换成可编辑的 .drawio 架构图，支持增量同步、差异对比与 CI 架构规则检查，适合需要持续维护架构文档的项目。",
+      "summary_status": "",
+      "asset_ref": "",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-14-github-niche-usage-tips",
+      "title": "三个小众但实用的 GitHub 用法（zread / Deepwiki / gitingest）",
+      "path": "Archive/2026-10-14-github-niche-usage-tips.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [
+        "工具"
+      ],
+      "source": "z派大鑫（微博）",
+      "source_url": "https://weibo.com/2876544642/5352518867747589",
+      "source_type": "post",
+      "platform": "微博",
+      "summary": "博主分享了三个借助 AI 快速读懂 GitHub 仓库的小众工具：zread 把项目变成中文知识库，Deepwiki 直接向 AI 提问定位代码，gitingest 把仓库打包成 AI 可读文本。",
+      "summary_status": "",
+      "asset_ref": "",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-14-high-perf-low-cpu-coding-tips-part1",
+      "title": "打造高性能、低 CPU 消耗系统——36 种编码实战技巧（上篇）",
+      "path": "Archive/2026-10-14-high-perf-low-cpu-coding-tips-part1.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [
+        "工程实践"
+      ],
+      "source": "京东云开发者（微信公众号）",
+      "source_url": "https://mp.weixin.qq.com/s/B-IPbwcQr3yp8_BJMKvdbA",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "基于百万 QPS 高并发系统经验的 Java 编码手册，上篇讲前 18 个技巧（共 36 个、100+ 案例）。主线思想是\"CPU 漏斗\"：砍掉一切多余的类型转换、对象创建、字符串操作与无效分支，让 CPU 只做核心运算——核心手段是全链路统一原生类型、相同数据只取一次、快速失败、用 O(1) 查找替代 O(n) 判断、用原生类型集合降低 GC。作者强调仅适用于有性能痛点的高并发场景，否则应优先可读性与可维护性。",
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "ingested"

@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-10-17T13:34:42.349Z",
+  "updated_at": "2026-10-21T13:32:26.659Z",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -101,6 +101,42 @@
         "wiki/entities/deepseek-harness.md"
       ],
       "source_url": "https://mp.weixin.qq.com/s/NMvxgqUhH4vBaYyrdFLQgQ"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-14-drawio-skill-arch-diagram.md",
+      "sha256": "3f0f9c886e497e64ed15a4c66f5ef6bd34b219696a3968c903884727effaf217",
+      "registered_at": "2026-10-21",
+      "inbox_ref": "Archive/2026-10-14-drawio-skill-arch-diagram.md",
+      "pages": [
+        "wiki/sources/drawio-skill-arch-diagram.md",
+        "wiki/entities/drawio-skill.md",
+        "wiki/entities/archunit.md"
+      ],
+      "source_url": "https://weibo.com/5648162302/5353819917255535",
+      "asset_ref": null
+    },
+    {
+      "path": "raw/sources/misc/2026-10-14-github-niche-usage-tips.md",
+      "sha256": "37408923541cd71f33d8788c061f88d6825fc22bd6e9fc8e5d5d3202e1cec643",
+      "registered_at": "2026-10-21",
+      "inbox_ref": "Archive/2026-10-14-github-niche-usage-tips.md",
+      "pages": [
+        "wiki/sources/github-niche-usage-tips.md"
+      ],
+      "source_url": "https://weibo.com/2876544642/5352518867747589",
+      "asset_ref": null
+    },
+    {
+      "path": "raw/sources/misc/2026-10-14-high-perf-low-cpu-coding-tips-part1.md",
+      "sha256": "4d64463d7e66336602ab374a8d8c48925cf3b6e223fe1dc8a820fb8962544908",
+      "registered_at": "2026-10-21",
+      "inbox_ref": "Archive/2026-10-14-high-perf-low-cpu-coding-tips-part1.md",
+      "pages": [
+        "wiki/sources/java-perf-low-cpu-coding-tips-part1.md",
+        "wiki/concepts/cpu-funnel-coding.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/B-IPbwcQr3yp8_BJMKvdbA",
+      "asset_ref": null
     }
   ]
 }

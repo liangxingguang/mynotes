@@ -8,7 +8,7 @@ platform: 微博
 created: 2026-10-14
 category: 技术
 tags: [工具]
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 三个小众但实用的 GitHub 用法（zread / Deepwiki / gitingest）

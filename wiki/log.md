@@ -30,3 +30,7 @@
 - 2026-10-20 21:30 | ingest | raw/sources/products/2026-10-14-deepseek-harness-7day-day1.md | wiki/sources/deepseek-harness-7day-day1.md, wiki/entities/deepseek-harness.md
 - 2026-10-20 21:30 | ingest-fail | Inbox/2026-10-14-drawio-skill-arch-diagram.md | 微博反爬（Sina Visitor System）重抓失败，回退 pending（attempts=1）
 - 2026-10-20 21:30 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
+- 2026-10-21 13:32 | ingest | raw/sources/architecture/2026-10-14-drawio-skill-arch-diagram.md | wiki/sources/drawio-skill-arch-diagram.md, wiki/entities/drawio-skill.md, wiki/entities/archunit.md（更新交叉链接）
+- 2026-10-21 13:32 | ingest | raw/sources/misc/2026-10-14-github-niche-usage-tips.md | wiki/sources/github-niche-usage-tips.md
+- 2026-10-21 13:32 | ingest | raw/sources/misc/2026-10-14-high-perf-low-cpu-coding-tips-part1.md | wiki/sources/java-perf-low-cpu-coding-tips-part1.md, wiki/concepts/cpu-funnel-coding.md
+- 2026-10-21 13:32 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）

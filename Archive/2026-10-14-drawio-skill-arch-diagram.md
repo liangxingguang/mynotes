@@ -8,9 +8,7 @@ platform: 微博
 created: 2026-10-14
 category: 技术
 tags: [工具, 工程实践]
-wiki_status: pending
-ingest_attempts: 1
-ingest_error: 微博正文重抓失败：Sina Visitor System 反爬登录墙（HTTP/移动页均返回访客跳转脚本），本会话无权强制 browser 级抓取
+wiki_status: ingested
 ---
 
 # drawio-skill：把代码与配置变成可编辑架构图的开源 Skill

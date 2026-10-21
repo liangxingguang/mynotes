@@ -4,7 +4,7 @@ type: entity
 title: ArchUnit
 status: active
 created: 2026-10-17
-updated: 2026-10-17
+updated: 2026-10-21
 confidence: high
 tags:
   - entity
@@ -13,6 +13,8 @@ tags:
   - testing
 sources:
   - raw/sources/architecture/2026-10-14-archunit-java-architecture-guardrails.md
+related:
+  - wiki/entities/drawio-skill.md
 ---
 # ArchUnit
 
@@ -45,6 +47,7 @@ ArchUnit 是 TNG Technology Consulting 维护的开源 Java 库（Apache 2.0）�
 
 - 上游概念：架构适应度函数（《演进式架构》）——ArchUnit 是其在 Java 的最低成本实现之一。
 - 互补工具：Checkstyle/PMD（代码风格）、Sonar 类平台（通用指标）、Maven 多模块/JPMS（编译期强隔离）——ArchUnit 补"团队自有架构约定"的执行缝。
+- [[drawio-skill]]：同为"架构约定进 CI"，drawio-skill 在图模型层做规则检查与差异评审，ArchUnit 在字节码层做架构门禁。
 
 ## Timeline（时间线）
 

@@ -10,6 +10,9 @@
 - [[archunit-java-architecture-guardrails|架构图不会报警，但 ArchUnit 会：给 Java 项目装一套架构门禁]]（2026-10-14，Java/架构治理）
 - [[arthas-mcp-ai-troubleshooting|让 AI 调 Arthas，Java 排障会快多少？]]（2026-10-14，AI/MCP/Java 诊断）
 - [[deepseek-harness-7day-day1|7天学懂 DeepSeek Harness 实操手册（Day 1）]]（2026-10-14，AI/教程）
+- [[drawio-skill-arch-diagram|drawio-skill：把代码与配置变成可编辑架构图的开源 Skill]]（2026-10-14，架构/工具）
+- [[github-niche-usage-tips|三个小众但实用的 GitHub 用法（zread / Deepwiki / gitingest）]]（2026-10-14，工具）
+- [[java-perf-low-cpu-coding-tips-part1|打造高性能、低CPU消耗系统—36种编码实战技巧（上篇）]]（2026-10-14，Java/性能）
 - [[pi-6-extensions|从 Claude Code 搬到 Pi：6 个扩展补回熟悉体验]]（2026-10-14，AI/Agent CLI）
 - [[system-design-12-components|一次讲清 12 个系统设计核心组件]]（2026-10-13，系统设计）
 
@@ -18,6 +21,7 @@
 - [[a2a-protocol|A2A 协议]]（Agent↔Agent 横向协作协议，Google 2025）
 - [[ai-native-organization|AI 原生研发组织]]（工具原生→工作流原生→组织原生）
 - [[ai-native-sdlc|AI 原生 SDLC]]（制品提交链驱动的六阶段闭环，Anthropic 2026）
+- [[cpu-funnel-coding|CPU 漏斗（编码级性能模型）]]（砍掉无效解析/转换/对象，让 CPU 只做核心运算）
 - [[mcp|MCP]]（LLM↔工具/数据纵向协议，Anthropic 2024）
 
 ## entity（实体）
@@ -25,6 +29,7 @@
 - [[archunit|ArchUnit]]（Java 架构约束即测试，TNG，当前 1.5.1）
 - [[arthas|Arthas]]（Java 线上诊断工具，4.3.5 起含实验性 MCP Server）
 - [[deepseek-harness|DeepSeek Harness]]（DeepSeek 模型的桌面 Agent 客户端，v0.2 预览版）
+- [[drawio-skill|drawio-skill]]（代码/配置→可编辑 .drawio 架构图，增量同步 + CI 架构检查）
 - [[pi|Pi]]（极简 Agent CLI，毛坯房 + 5000+ 扩展生态）
 
 ## topic（主题）
