@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21 18:57",
+  "updated_at": "2026-10-21 18:58",
   "notes": [
     {
       "id": "2026-10-14-drawio-skill-arch-diagram",
@@ -1091,6 +1091,26 @@
       "summary": "叶小钗的 Agent 系统设计全景文。核心命题：Agent 系统设计的本质是把模型运行中的判断接到**可验证、可恢复**的执行过程里——模型负责理解探索，程序保证执行规则，人承担关键决策。架构主线是\"薄 Harness 厚 Skills\"：Harness 管执行与控制（上下文装配、工具调用、循环控制、暂停恢复），Runtime 管资源，业务系统保存落地事实。围绕工具反馈、上下文管理、Skill 沉淀、多 Agent 分工、生命周期与评测六大块展开，主线思想是\"从 Workflow 到 Agent 是为提升泛化能力，架构演进全程为保证执行稳定性\"。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/agent-2026-midyear-architecture-review.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-21-business-risk-control-redis-lua-annotation",
+      "title": "业务风控组件设计：Redis+Lua 计数 + 注解接入",
+      "path": "Inbox/2026-10-21-business-risk-control-redis-lua-annotation.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "spring",
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/dbNxVwwHG9YxAE4oquGaSA",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "针对 AI 能力调用（OCR/语音测评等烧钱接口）的业务风控需求，自研轻量计数限流组件。计数选 Redis+Lua（脚本原子性替代事务，放弃精确计数与持久化换简单）；规则支持自然日、自然小时及二者组合——组合规则关键是**回退逻辑**：日通过但小时不通过时，两边计数都要 DECR 回退，不能各记各的。接入方式用 `@Detect(eventId, contentSpel)` 注解 + AOP 切面，SpEL 从方法参数（arg1/arg2…）解析出限流维度 content，业务代码零侵入。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/business-risk-control-redis-lua-annotation.md",
       "wiki_status": "pending"
     },
     {
