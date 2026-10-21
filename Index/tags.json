@@ -231,6 +231,16 @@
       "status": "new"
     },
     {
+      "name": "游戏架构",
+      "aliases": [
+        "游戏服务器架构",
+        "game server architecture"
+      ],
+      "category": "技术",
+      "count": 1,
+      "status": "new"
+    },
+    {
       "name": "游戏开发",
       "aliases": [
         "游戏服务器",

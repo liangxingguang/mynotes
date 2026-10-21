@@ -7,7 +7,7 @@ source_type: link
 platform: 微信
 created: 2026-10-21
 category: 技术
-tags: [游戏开发, 工程实践, 分布式系统]
+tags: [游戏开发, 工程实践, 分布式系统, 游戏架构]
 asset_ref: Assets/2026/10/game-server-architecture-four-layers.md
 wiki_status: pending
 ---
