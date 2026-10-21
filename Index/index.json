@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21 18:58",
+  "updated_at": "2026-10-21 19:01",
   "notes": [
     {
       "id": "2026-10-14-drawio-skill-arch-diagram",
@@ -1192,6 +1192,26 @@
       "summary": "openacid 张炎泼的分布式硬核文，给出成员变更日志 barrier 的完整结论：**标准 joint 变更两步都无需额外的 noop 提交**（joint config `C01=[C0,C1]` 的每个 quorum 都包含 `C0` 的 quorum，config 日志本身构成 barrier）；**单步变更必须先提交当前 term 日志**（`Cu`/`Cv` 虽各自与 `C0` 相交，但彼此可不相交，缺 barrier 时未提交的 `Cu` 可覆盖已提交的 `Cv`——Ongaro 修正条件）；**若扩展允许 joint 回退，完成与回退两个方向都需先提交当前 term 日志**。核心机制：在公共 config 的 quorum 上提交一条当前 term 日志，即登记新 leader 的 term，排除旧 term 遗留的冲突变更。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/raft-membership-log-barrier.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-21-scg-traceid-full-chain",
+      "title": "Spring Cloud Gateway 全链路 traceId 传递方案",
+      "path": "Inbox/2026-10-21-scg-traceid-full-chain.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "spring gateway",
+        "spring",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/pcDs7bKa75MSLcpHUY3W1g",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "SCG 基于 WebFlux 响应式，请求处理不绑定固定线程，传统 ThreadLocal+MDC 方案直接失效——这是照搬 Servlet 写法导致 traceId 时有时无的根因。正解：GlobalFilter 中用 **Reactor Context** 作载体（contextWrite 写入 / deferContextual 读取），靠 **doOnEach 钩子**在每个信号发出时同步 MDC 保证日志稳定打印，**doFinally 清除**防线程复用串号；经 request.mutate() 透传 X-Trace-Id 请求头并写响应头返给前端。下游 Servlet 用 Filter+MDC、WebFlux 用 WebFilter+Context；异步靠 TaskDecorator/Runnable 包装；MQ 走消息属性。附与 Sleuth/SkyWalking 的选型对比。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/scg-traceid-full-chain.md",
       "wiki_status": "pending"
     },
     {
