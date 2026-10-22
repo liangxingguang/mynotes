@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22 08:35",
+  "updated_at": "2026-10-22 17:21",
   "notes": [
     {
       "id": "2026-10-14-high-perf-low-cpu-coding-tips-part2",
@@ -1412,6 +1412,25 @@
       "summary": "BlockingQueue 上生产露馅的四根因：锁竞争（cs 10w+/s）、GC 抖动（每事件 new 对象）、阻塞唤醒延迟毛刺、环满无降级空间。Disruptor 以预分配数组灭 GC、CAS+内存屏障灭锁、缓存行填充灭伪共享、序号代指针。JMH 实测 1P1C 比 ArrayBlockingQueue 快 4.5 倍、4P4C 快 10 倍+，P99.9 优于对方 P50；端到端埋点链路 11.2w→72.6w QPS、P99 48ms→4.1ms。含 Spring Boot 工程化封装（EventBus 门面 + SmartLifecycle + 配置化）与生产避坑清单。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/springboot-disruptor-event-bus.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-22-architect-road-2025-digest",
+      "title": "架构师之路：25年干货精选（1年，261.3W）",
+      "path": "Inbox/2026-10-22-architect-road-2025-digest.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "阅读"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/qfm8oA0v6gwUz6Uok_lYCg",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "公众号「架构师之路」的 2025 年度文章精选索引。作者离职单干后全年更新 343 篇、261 万阅读，本文按四大方向（DeepSeek、数据库、架构、OPC 创业）汇总了全年优质文章链接，是一份架构与分布式系统主题的资源清单，适合收藏按需查阅。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/architect-road-2025-digest.md",
       "wiki_status": "pending"
     },
     {
