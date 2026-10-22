@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22 19:33",
+  "updated_at": "2026-10-22 19:38",
   "notes": [
     {
       "id": "2026-10-14-high-perf-low-cpu-coding-tips-part2",
@@ -1608,6 +1608,26 @@
       "summary": "RediSearch 入门文章：介绍这个 Redis 模块的全文搜索/二次索引能力、与 Elasticsearch 的官方基准对比（索引构建快 58%、查询吞吐 4 倍）、安装方式与 ft.* 命令行实操（建索引、增删文档、中文查询、模糊匹配、别名）。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/redisearch-vs-elasticsearch.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-22-rocketmq-advanced-reliability-idempotency",
+      "title": "RocketMQ 进阶：消息可靠性、幂等、顺序消息、延时消息与高可用，一篇彻底搞懂",
+      "path": "Inbox/2026-10-22-rocketmq-advanced-reliability-idempotency.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "RocketMQ",
+        "分布式事务",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/oG2MVFFHiLeMgeDimbyt-w",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "RocketMQ 进阶九问通关：可靠性三阶段保障、幂等四种落地方案、消息积压扩容策略、局部顺序选队列、Tag/SQL 过滤、18 级延时实现、半消息事务八步、死信队列、主从集群读写高可用。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/rocketmq-advanced-reliability-idempotency.md",
       "wiki_status": "pending"
     },
     {

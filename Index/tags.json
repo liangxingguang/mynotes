@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22 19:33",
+  "updated_at": "2026-10-22 19:38",
   "tags": [
     {
       "name": "思维方式",
@@ -73,7 +73,7 @@
         "最佳实践"
       ],
       "category": "技术",
-      "count": 68,
+      "count": 69,
       "status": "active"
     },
     {
@@ -348,7 +348,7 @@
         "事务消息"
       ],
       "category": "技术",
-      "count": 3,
+      "count": 4,
       "status": "new"
     },
     {
@@ -360,6 +360,16 @@
       ],
       "category": "技术",
       "count": 1,
+      "status": "new"
+    },
+    {
+      "name": "RocketMQ",
+      "aliases": [
+        "rocketmq",
+        "消息中间件"
+      ],
+      "category": "技术",
+      "count": 2,
       "status": "new"
     }
   ]
