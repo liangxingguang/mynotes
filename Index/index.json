@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23 07:24",
+  "updated_at": "2026-10-23 07:26",
   "notes": [
     {
       "id": "2026-10-14-llm-wiki-advanced-four-steps",
@@ -1533,6 +1533,25 @@
       "summary": "深度思考是围绕具体问题弄清概念与事实、分析原因条件、再用证据检查判断的过程；它可以通过五个日常习惯刻意练习形成。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/deep-thinking-training.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-23-logical-thinking-models",
+      "title": "分析问题的逻辑思考方法（14个模型）",
+      "path": "Inbox/2026-10-23-logical-thinking-models.md",
+      "created": "2026-10-23",
+      "category": "学习",
+      "tags": [
+        "思维方式",
+        "个人成长"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/FMdD6D9B_jES4SLO0QMmow",
+      "source_type": "link",
+      "platform": "weixin",
+      "summary": "一套由 14 个经典模型组成的逻辑思考流程：界定拆解 → 归因 → 对比关联 → 评估验证 → 综合迭代，每个模型都强调\"有证据、可检查\"。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/logical-thinking-models.md",
       "wiki_status": "pending"
     },
     {
