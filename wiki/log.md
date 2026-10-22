@@ -38,6 +38,8 @@
 - 2026-10-22 13:32 | ingest | raw/sources/ai/2026-10-14-huolala-agent-eval-platform.md | wiki/sources/huolala-agent-eval-platform.md, wiki/concepts/agent-evaluation.md
 - 2026-10-22 13:32 | ingest | raw/sources/ai/2026-10-14-jd-haibo-ai-knowledge-base.md | wiki/sources/jd-haibo-ai-knowledge-base.md, wiki/entities/jd-haibo.md, wiki/concepts/okf-knowledge-format.md
 - 2026-10-22 13:32 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
+- 2026-10-23 09:10 | ingest | raw/sources/architecture/2026-10-14-system-design-notes-28-cases.md, raw/sources/architecture/2026-10-23-github-liquidslr-system-design-notes.md | wiki/sources/system-design-notes-28-cases.md, wiki/entities/system-design-notes.md
+- 2026-10-23 09:12 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
 - 2026-10-22 14:45 | ingest | raw/sources/misc/2026-10-14-jvm-tuning-core-approach.md | wiki/sources/jvm-tuning-core-approach.md, wiki/concepts/evidence-first-jvm-tuning.md, wiki/concepts/cpu-funnel-coding.md（互链更新）
 - 2026-10-22 14:43 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
 - 2026-10-22 15:50 | ingest | raw/sources/ai/2026-10-14-learn-pi-agent-01-llm-to-agent.md | wiki/sources/learn-pi-agent-01-llm-to-agent.md, wiki/concepts/agent-loop.md, wiki/entities/pi.md（更新：三包结构与 Harness 定位）

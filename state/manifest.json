@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-10-22T16:45:45.469Z",
+  "updated_at": "2026-10-22T22:45:43.754Z",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -301,6 +301,29 @@
       "source_url": "https://mp.weixin.qq.com/s/Uj3Rgw-VQgmVWaybPWT9ag",
       "sha256": "ceae2771c16908ac1266df18ed06d0e424aa09cdf004d265dfb87cdfb40f9998",
       "registered_at": "2026-10-23",
+      "asset_ref": null
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-14-system-design-notes-28-cases.md",
+      "sha256": "16d0e47d6f7992869aa022bf1b5679e6788baa068a8a1813b288286473007dde",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-14-system-design-notes-28-cases.md",
+      "pages": [
+        "wiki/sources/system-design-notes-28-cases.md",
+        "wiki/entities/system-design-notes.md"
+      ],
+      "source_url": "https://www.zhihu.com/pin/2081679710862559169",
+      "asset_ref": null
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-github-liquidslr-system-design-notes.md",
+      "sha256": "2bd4cda30f1f4486d3a41ea4dbd1990150699d704b1c0f17db63c43da094bc1f",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-14-system-design-notes-28-cases.md",
+      "pages": [
+        "wiki/entities/system-design-notes.md"
+      ],
+      "source_url": "https://github.com/liquidslr/system-design-notes",
       "asset_ref": null
     }
   ]
