@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22 19:20",
+  "updated_at": "2026-10-22 19:26",
   "notes": [
     {
       "id": "2026-10-14-high-perf-low-cpu-coding-tips-part2",
@@ -1647,6 +1647,26 @@
       "summary": "一个 Spring Boot 3.2 订单服务的启动优化实录：从 8.2s 压到 2~3.6s。核心思路是\"启动慢 = 容器替你做了太多没要的事\"，通过关闭多余自动配置、收窄类扫描、容器选型、JVM AOT、懒加载五步逐一清零浪费，每步附实测耗时与适用场景决策。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/spring-boot-startup-speedup.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-22-stress-test-capacity-planning",
+      "title": "第二十课：高并发系统压测与容量规划",
+      "path": "Inbox/2026-10-22-stress-test-capacity-planning.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "课程",
+        "工程实践",
+        "分布式系统"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/BhCRjKjsYNftqmQQP9pT-Q",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "架构师之路系列第 20 课。从\"拍脑袋估流量\"到科学容量体系：峰值 QPS 估算公式、压测三板斧、影子库数据隔离、wrk2 恒定速率、性能曲线拐点解读、机器数公式与 70/80/90 水位线管理，附 5 个压测失真坑与自检脚本。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/stress-test-capacity-planning.md",
       "wiki_status": "pending"
     },
     {
