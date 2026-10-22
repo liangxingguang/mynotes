@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22 19:07",
+  "updated_at": "2026-10-22 19:14",
   "notes": [
     {
       "id": "2026-10-14-high-perf-low-cpu-coding-tips-part2",
@@ -1568,6 +1568,26 @@
       "summary": "RediSearch 入门文章：介绍这个 Redis 模块的全文搜索/二次索引能力、与 Elasticsearch 的官方基准对比（索引构建快 58%、查询吞吐 4 倍）、安装方式与 ft.* 命令行实操（建索引、增删文档、中文查询、模糊匹配、别名）。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/redisearch-vs-elasticsearch.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-22-rocketmq-interview-8-topics",
+      "title": "RocketMQ 面试连环炮：8 大核心题一篇讲透",
+      "path": "Inbox/2026-10-22-rocketmq-interview-8-topics.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "RocketMQ",
+        "分布式事务",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/0C8U2RrwoXbhzSy_Hl2jqw",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "RocketMQ 八模块通关地图：架构四组件、CommitLog+ConsumeQueue 存储、三种发送/消费模式、事务消息半消息+回查、刷盘与主从复制可靠性组合、At-Least-Once 幂等设计、消息堆积治理流程。每题按\"标准答案→原理→生产坑点→加分项\"展开。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/rocketmq-interview-8-topics.md",
       "wiki_status": "pending"
     },
     {
