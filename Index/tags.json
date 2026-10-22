@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22 18:54",
+  "updated_at": "2026-10-22 18:55",
   "tags": [
     {
       "name": "思维方式",
@@ -313,6 +313,27 @@
         "mysql",
         "数据库",
         "主从同步"
+      ],
+      "category": "技术",
+      "count": 1,
+      "status": "new"
+    },
+    {
+      "name": "nginx",
+      "aliases": [
+        "Nginx",
+        "反向代理"
+      ],
+      "category": "技术",
+      "count": 1,
+      "status": "new"
+    },
+    {
+      "name": "WebSocket",
+      "aliases": [
+        "websocket",
+        "ws",
+        "长连接"
       ],
       "category": "技术",
       "count": 1,

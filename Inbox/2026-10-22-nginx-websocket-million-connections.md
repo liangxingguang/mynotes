@@ -10,6 +10,8 @@ category: 技术
 tags:
   - 工程实践
   - 分布式系统
+  - nginx
+  - WebSocket
 asset_ref: Assets/2026/10/nginx-websocket-million-connections.md
 wiki_status: pending
 ---
