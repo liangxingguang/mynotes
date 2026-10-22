@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22 18:45",
+  "updated_at": "2026-10-22 18:50",
   "notes": [
     {
       "id": "2026-10-14-high-perf-low-cpu-coding-tips-part2",
@@ -1489,6 +1489,25 @@
       "summary": "以智能充电桩平台（常态 60 万、峰值百万设备，上行 5~10 万条/秒）为主线，讲清 IoT 长连接接入平台的生产级架构：Netty 负责连接收发、Redis 做会话路由中心、Kafka 解耦上下行，并补齐连接风暴治理、背压、幂等、离线补偿、无损下线等工程化细节与完整代码骨架。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-redis-kafka-iot-gateway.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-22-redisearch-vs-elasticsearch",
+      "title": "换掉 ES！Redis 官方搜索引擎 RediSearch 介绍与实操",
+      "path": "Inbox/2026-10-22-redisearch-vs-elasticsearch.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "Elasticsearch"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/L5VrkgzkEGWrsWOgX9aCHA",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "RediSearch 入门文章：介绍这个 Redis 模块的全文搜索/二次索引能力、与 Elasticsearch 的官方基准对比（索引构建快 58%、查询吞吐 4 倍）、安装方式与 ft.* 命令行实操（建索引、增删文档、中文查询、模糊匹配、别名）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/redisearch-vs-elasticsearch.md",
       "wiki_status": "pending"
     },
     {
