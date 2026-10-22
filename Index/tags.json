@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22 18:35",
+  "updated_at": "2026-10-22 18:38",
   "tags": [
     {
       "name": "思维方式",
@@ -73,7 +73,7 @@
         "最佳实践"
       ],
       "category": "技术",
-      "count": 58,
+      "count": 59,
       "status": "active"
     },
     {
@@ -302,6 +302,17 @@
         "Jenkins",
         "GitLab CI",
         "DevOps"
+      ],
+      "category": "技术",
+      "count": 1,
+      "status": "new"
+    },
+    {
+      "name": "MySQL",
+      "aliases": [
+        "mysql",
+        "数据库",
+        "主从同步"
       ],
       "category": "技术",
       "count": 1,

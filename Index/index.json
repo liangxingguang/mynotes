@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22 18:35",
+  "updated_at": "2026-10-22 18:38",
   "notes": [
     {
       "id": "2026-10-14-high-perf-low-cpu-coding-tips-part2",
@@ -1431,6 +1431,25 @@
       "summary": "公众号「架构师之路」的 2025 年度文章精选索引。作者离职单干后全年更新 343 篇、261 万阅读，本文按四大方向（DeepSeek、数据库、架构、OPC 创业）汇总了全年优质文章链接，是一份架构与分布式系统主题的资源清单，适合收藏按需查阅。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/architect-road-2025-digest.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-22-mysql-replication-lag-optimization",
+      "title": "数据库主从同步延迟，业务还能稳吗？一线优化实战全解析！",
+      "path": "Inbox/2026-10-22-mysql-replication-lag-optimization.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "MySQL"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/HTI_FoM1PT1jSKo0ZCqurQ",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "MySQL 主从同步延迟的系统性优化指南：从延迟成因（写入压力、网络、从库性能、大事务）出发，给出监控诊断（Seconds_Behind_Master/GTID 差距）、五个层面的优化方案（主库写入/网络/从库/复制架构/应用层），以及 Spring Boot 读写分离 + 延迟感知路由的实战代码。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/mysql-replication-lag-optimization.md",
       "wiki_status": "pending"
     },
     {
