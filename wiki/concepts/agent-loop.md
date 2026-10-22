@@ -4,7 +4,7 @@ type: concept
 title: Agent Loop
 status: active
 created: 2026-10-22
-updated: 2026-10-22
+updated: 2026-10-23
 confidence: high
 tags:
   - concept
@@ -14,6 +14,7 @@ sources:
 related:
   - wiki/entities/pi.md
   - wiki/concepts/mcp.md
+  - wiki/concepts/next-token-prediction.md
 ---
 # Agent Loop
 
@@ -73,6 +74,7 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 
 - [[mcp|MCP]]：模型↔工具/数据的纵向协议，属于扩展 Runtime 工具能力的机制。
 - [[agent-evaluation|业务 Agent 全生命周期评测]]：对 Agent Loop 运行质量的评测框架（解读：评测对象正是 Loop 各轮的行为与结果）。
+- [[next-token-prediction|下一 token 预测]]：模型侧视角——工具调用本质是模型写结构化文本、外部执行后拼回上下文，Agent Loop 是该机制的多轮工程化。
 
 ### Dependencies（依赖项）
 

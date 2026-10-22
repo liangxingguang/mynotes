@@ -8,7 +8,7 @@ platform: 微信公众号
 created: 2026-10-14
 category: 学习
 tags: [AI, 课程]
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 三万字长文：大语言模型从零入门

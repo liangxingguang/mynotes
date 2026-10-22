@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-10-22T15:51:26.012Z",
+  "updated_at": "2026-10-22T16:45:45.469Z",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -198,6 +198,31 @@
         "wiki/entities/pi.md"
       ],
       "source_url": "https://mp.weixin.qq.com/s/wwl8q1LAguHp2GP_lQAINQ",
+      "asset_ref": null
+    },
+    {
+      "path": "raw/sources/ai/2026-10-14-llm-from-scratch-primer.md",
+      "sha256": "15845e43fbefeca1746bac9276bd2203c3a7fac3fd8d7f4cf188d884fe3da519",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-14-llm-from-scratch-primer.md",
+      "pages": [
+        "wiki/sources/llm-from-scratch-primer.md",
+        "wiki/concepts/next-token-prediction.md",
+        "wiki/concepts/agent-loop.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/j5b3OokW552SM3iNLMoXkQ",
+      "asset_ref": null
+    },
+    {
+      "path": "raw/sources/products/2026-10-14-ms-agent-lightning-rl-framework.md",
+      "sha256": "b632e8cbd5deb886f1b5a6b9aa3d4755fb6a0d80abfc655fd540a1823ff414f5",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-14-ms-agent-lightning-rl-framework.md",
+      "pages": [
+        "wiki/sources/ms-agent-lightning-rl-framework.md",
+        "wiki/entities/agent-lightning.md"
+      ],
+      "source_url": "https://www.zhihu.com/pin/2083978910019204286",
       "asset_ref": null
     }
   ]

@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-10-22 23:52",
+  "updated_at": "2026-10-23 00:46",
   "notes": [
-    {
-      "id": "2026-10-14-llm-from-scratch-primer",
-      "title": "三万字长文：大语言模型从零入门",
-      "path": "Inbox/2026-10-14-llm-from-scratch-primer.md",
-      "created": "2026-10-14",
-      "category": "学习",
-      "tags": [
-        "AI",
-        "课程"
-      ],
-      "source": "flyflywang（微信公众号文章）",
-      "source_url": "https://mp.weixin.qq.com/s/j5b3OokW552SM3iNLMoXkQ",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "一篇面向零基础读者的 LLM 系统教程：用\"预测下一个 token\"一条主线串起信息论、神经网络、Transformer 到 ChatGPT 后训练与局限，只用加减乘除和对数，配手算例子。结论：把预测下一个 token 做到极致就是在通过图灵测试；模型的能力与幻觉等局限同源于此。",
-      "summary_status": "",
-      "asset_ref": "",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-14-llm-wiki-advanced-four-steps",
       "title": "LLM Wiki 知识库搭建深度教程 2·进阶篇一：四步搭建完整的 LLM Wiki 知识库系统",
@@ -35,25 +16,6 @@
       "source_type": "article",
       "platform": "微信公众号",
       "summary": "系列教程第二篇：把上篇验证用的纯 Markdown Wiki 升级为可持续维护的完整 LLM Wiki 系统。业界已形成共同模式——`raw/` 存不可变原始资料、`wiki/` 存 LLM 编译后的知识、AGENTS.md/Schema 定规则，核心操作为 Ingest、Query、Lint。四原则：Raw 是证据、Wiki 是知识、Schema 是规则、Agent 是执行器。本篇定架构与边界，下篇才用编程工具实操三个工作流。",
-      "summary_status": "",
-      "asset_ref": "",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-14-ms-agent-lightning-rl-framework",
-      "title": "微软开源 Agent Lightning：3500 行强化学习框架，让 Agent 在真实工具链里自己练级",
-      "path": "Inbox/2026-10-14-ms-agent-lightning-rl-framework.md",
-      "created": "2026-10-14",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "工程实践"
-      ],
-      "source": "知乎想法",
-      "source_url": "https://www.zhihu.com/pin/2083978910019204286",
-      "source_type": "post",
-      "platform": "知乎",
-      "summary": "知乎想法推荐微软研究院开源的轻量级 RL 框架 Agent Lightning（约 3500 行），专门训练 AI Agent：不在模拟器里\"打游戏\"，而是让 Agent 直接在真实工具链、代码环境、浏览器中执行，用真实交互数据训练。现有 LangChain/AutoGen/手写 Agent 代码零改动接入，核心仅 Trainer、API Gateway、Rollout Controller 三组件；官方 Coding Agent 案例用 6K 样本训练 Qwen3.5-9B，SWE-bench Verified 从 41.8% 升到 56.4%（+14.6pp）。",
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "pending"
@@ -1988,6 +1950,44 @@
       "source_type": "article",
       "platform": "微信公众号",
       "summary": "learn-pi-agent 系列第一章，回答\"会答题的大模型怎样变成能完成任务的 Agent\"。增加的不是新模型，而是一套围绕模型持续运行的程序：模型负责判断，宿主（Runtime）负责执行被允许的动作并把结果喂回下一轮。文章用一次天气查询走完整条链路，厘清 Message/Context/State/Session 四个概念，给出 Pi 核心 Agent Loop 的教学版代码，并区分 Runtime 与 Harness。",
+      "summary_status": "",
+      "asset_ref": "",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-14-llm-from-scratch-primer",
+      "title": "三万字长文：大语言模型从零入门",
+      "path": "Archive/2026-10-14-llm-from-scratch-primer.md",
+      "created": "2026-10-14",
+      "category": "学习",
+      "tags": [
+        "AI",
+        "课程"
+      ],
+      "source": "flyflywang（微信公众号文章）",
+      "source_url": "https://mp.weixin.qq.com/s/j5b3OokW552SM3iNLMoXkQ",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "一篇面向零基础读者的 LLM 系统教程：用\"预测下一个 token\"一条主线串起信息论、神经网络、Transformer 到 ChatGPT 后训练与局限，只用加减乘除和对数，配手算例子。结论：把预测下一个 token 做到极致就是在通过图灵测试；模型的能力与幻觉等局限同源于此。",
+      "summary_status": "",
+      "asset_ref": "",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-14-ms-agent-lightning-rl-framework",
+      "title": "微软开源 Agent Lightning：3500 行强化学习框架，让 Agent 在真实工具链里自己练级",
+      "path": "Archive/2026-10-14-ms-agent-lightning-rl-framework.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
+      "source": "知乎想法",
+      "source_url": "https://www.zhihu.com/pin/2083978910019204286",
+      "source_type": "post",
+      "platform": "知乎",
+      "summary": "知乎想法推荐微软研究院开源的轻量级 RL 框架 Agent Lightning（约 3500 行），专门训练 AI Agent：不在模拟器里\"打游戏\"，而是让 Agent 直接在真实工具链、代码环境、浏览器中执行，用真实交互数据训练。现有 LangChain/AutoGen/手写 Agent 代码零改动接入，核心仅 Trainer、API Gateway、Rollout Controller 三组件；官方 Coding Agent 案例用 6K 样本训练 Qwen3.5-9B，SWE-bench Verified 从 41.8% 升到 56.4%（+14.6pp）。",
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "ingested"

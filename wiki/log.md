@@ -42,3 +42,7 @@
 - 2026-10-22 14:43 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
 - 2026-10-22 15:50 | ingest | raw/sources/ai/2026-10-14-learn-pi-agent-01-llm-to-agent.md | wiki/sources/learn-pi-agent-01-llm-to-agent.md, wiki/concepts/agent-loop.md, wiki/entities/pi.md（更新：三包结构与 Harness 定位）
 - 2026-10-22 15:51 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
+- 2026-10-23 16:50 | ingest | raw/sources/ai/2026-10-14-llm-from-scratch-primer.md | wiki/sources/llm-from-scratch-primer.md, wiki/concepts/next-token-prediction.md, wiki/concepts/agent-loop.md（更新交叉链接）
+- 2026-10-23 16:50 | ingest | raw/sources/products/2026-10-14-ms-agent-lightning-rl-framework.md | wiki/sources/ms-agent-lightning-rl-framework.md, wiki/entities/agent-lightning.md
+- 2026-10-23 16:50 | ingest-fail | Inbox/2026-10-14-llm-wiki-advanced-four-steps.md | 微信反爬致重抓正文不完整（浏览器渲染时代码块被截断、jina 兜底遇验证码），回退 pending
+- 2026-10-23 16:50 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
