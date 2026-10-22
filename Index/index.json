@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22 19:01",
+  "updated_at": "2026-10-22 19:07",
   "notes": [
     {
       "id": "2026-10-14-high-perf-low-cpu-coding-tips-part2",
@@ -1568,6 +1568,26 @@
       "summary": "RediSearch 入门文章：介绍这个 Redis 模块的全文搜索/二次索引能力、与 Elasticsearch 的官方基准对比（索引构建快 58%、查询吞吐 4 倍）、安装方式与 ft.* 命令行实操（建索引、增删文档、中文查询、模糊匹配、别名）。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/redisearch-vs-elasticsearch.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-22-signin-system-distributed-evolution",
+      "title": "从 0 到 1 亿：Spring Boot 签到打卡系统的分布式架构演进与生产级避坑指南",
+      "path": "Inbox/2026-10-22-signin-system-distributed-evolution.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "工程实践",
+        "Kafka"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/Ig7Y4uOQWzBe97p51udlHQ",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "以 1 亿账户、500 万日签到、30K QPS 峰值的内容 App 签到系统为案例，给出生产级方案：Redis 按日期+用户分桶 Bitmap 做热判定，DB Command Outbox 做恢复锚点，Stream+Dispatcher+Kafka 做异步投递，签到/积分双 Ledger 唯一键幂等，配故障复盘与压测清单。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/signin-system-distributed-evolution.md",
       "wiki_status": "pending"
     },
     {
