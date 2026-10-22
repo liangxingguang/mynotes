@@ -8,9 +8,7 @@ platform: 微信公众号
 created: 2026-10-14
 category: 技术
 tags: [工程实践]
-wiki_status: ingesting
-ingest_claimed_at: "2026-10-22T13:34:06.618Z"
-ingest_claim_id: 46616-1792676046618-0
+wiki_status: ingested
 ---
 
 # 一文掌握 JVM 调优核心思路

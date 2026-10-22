@@ -1,24 +1,6 @@
 {
-  "updated_at": "2026-10-22 21:35",
+  "updated_at": "2026-10-22 22:43",
   "notes": [
-    {
-      "id": "2026-10-14-jvm-tuning-core-approach",
-      "title": "一文掌握 JVM 调优核心思路",
-      "path": "Inbox/2026-10-14-jvm-tuning-core-approach.md",
-      "created": "2026-10-14",
-      "category": "技术",
-      "tags": [
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/WbvAxdkPoUYWzRPSZdK-gw",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "JVM 调优方法论短文：不要从参数开始、在参数里迷路（慢了调 -Xmx、FGC 多了换收集器、OOMKilled 又缩堆），而要把顺序反过来——先定可测目标、留基线，再用 JFR 和 GC 日志定位时间与内存去向，证据指向 JVM 后才动堆大小、收集器与 GC 参数。每轮只改一个变量并备好回退，延迟、吞吐、占用不可同时无限优化。",
-      "summary_status": "",
-      "asset_ref": "",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-10-14-learn-pi-agent-01-llm-to-agent",
       "title": "Learn Pi Agent 01｜大模型如何一步步变成 Agent",
@@ -1969,6 +1951,24 @@
       "source_type": "article",
       "platform": "微信公众号",
       "summary": "京东本地生活即时零售 SaaS\"海博\"（覆盖 780+ 商家、10 万+门店）的 AI 知识库实践。核心判断：AI 用不好的瓶颈不在模型、也不在运行时检索，而在知识生产——历史业务知识沉在人脑和零散文档里。解法是把\"知识编译\"前移到维护期，采纳 Google OKF 规范，用 Skill 从代码自动生成结构化互链 Markdown 知识树，织入研发流水线双向闭环；AB 实验显示带知识库需求分析快约 44%，并能发现只读代码触达不到的隐藏阻塞点。",
+      "summary_status": "",
+      "asset_ref": "",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-14-jvm-tuning-core-approach",
+      "title": "一文掌握 JVM 调优核心思路",
+      "path": "Archive/2026-10-14-jvm-tuning-core-approach.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/WbvAxdkPoUYWzRPSZdK-gw",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "JVM 调优方法论短文：不要从参数开始、在参数里迷路（慢了调 -Xmx、FGC 多了换收集器、OOMKilled 又缩堆），而要把顺序反过来——先定可测目标、留基线，再用 JFR 和 GC 日志定位时间与内存去向，证据指向 JVM 后才动堆大小、收集器与 GC 参数。每轮只改一个变量并备好回退，延迟、吞吐、占用不可同时无限优化。",
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "ingested"

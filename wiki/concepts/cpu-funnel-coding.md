@@ -16,6 +16,7 @@ sources:
 related:
   - wiki/sources/java-perf-low-cpu-coding-tips-part1.md
   - wiki/sources/java-perf-low-cpu-coding-tips-part2.md
+  - wiki/concepts/evidence-first-jvm-tuning.md
 ---
 # CPU 漏斗（编码级性能模型）
 
@@ -50,7 +51,7 @@ related:
 
 ### Related Concepts（相关概念）
 
-- （暂无已建页的相关概念）
+- [[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]：JVM 侧的方法论印证——证据指向对象分配时先改代码，调参殿后。
 
 ### Distinctions（区分）
 
@@ -60,6 +61,7 @@ related:
 
 - 2026-10-14 — 随"36 种编码实战技巧（上篇）"提出，贯穿前 18 种技巧。
 - 2026-10-22 — 下篇（技巧 19–36）摄入：模型从"少转换、少对象"扩展到 API 返回值契约、JIT 友好形态、异常纪律与内存对齐布局（见特征 6–8）。
+- 2026-10-22 — 与 [[evidence-first-jvm-tuning]] 建立交叉链接（互相印证"代码优先、参数殿后"）。
 
 ## Open Questions（开放问题）
 
@@ -74,3 +76,4 @@ related:
 
 - [[java-perf-low-cpu-coding-tips-part1]]
 - [[java-perf-low-cpu-coding-tips-part2]]
+- [[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]
