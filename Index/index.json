@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22 19:38",
+  "updated_at": "2026-10-22 19:39",
   "notes": [
     {
       "id": "2026-10-14-high-perf-low-cpu-coding-tips-part2",
@@ -1431,6 +1431,25 @@
       "summary": "公众号「架构师之路」的 2025 年度文章精选索引。作者离职单干后全年更新 343 篇、261 万阅读，本文按四大方向（DeepSeek、数据库、架构、OPC 创业）汇总了全年优质文章链接，是一份架构与分布式系统主题的资源清单，适合收藏按需查阅。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/architect-road-2025-digest.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-22-async-task-system-design",
+      "title": "异步任务系统怎么设计？从提交、排队、执行到幂等和重试",
+      "path": "Inbox/2026-10-22-async-task-system-design.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "分布式系统"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/AfZ-w5215Bbi4HS6v1fsFA",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "线程池≠异步任务系统。可靠系统需要任务身份、持久化队列、状态机、租约、幂等、分级重试、协作式取消与可观测性——线程池只是执行环节的一个零件。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/async-task-system-design.md",
       "wiki_status": "pending"
     },
     {
