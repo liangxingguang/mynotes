@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21 21:33",
+  "updated_at": "2026-10-22 08:35",
   "notes": [
     {
       "id": "2026-10-14-high-perf-low-cpu-coding-tips-part2",
@@ -1412,6 +1412,25 @@
       "summary": "BlockingQueue 上生产露馅的四根因：锁竞争（cs 10w+/s）、GC 抖动（每事件 new 对象）、阻塞唤醒延迟毛刺、环满无降级空间。Disruptor 以预分配数组灭 GC、CAS+内存屏障灭锁、缓存行填充灭伪共享、序号代指针。JMH 实测 1P1C 比 ArrayBlockingQueue 快 4.5 倍、4P4C 快 10 倍+，P99.9 优于对方 P50；端到端埋点链路 11.2w→72.6w QPS、P99 48ms→4.1ms。含 Spring Boot 工程化封装（EventBus 门面 + SmartLifecycle + 配置化）与生产避坑清单。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/springboot-disruptor-event-bus.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-22-weibo-gpt2-to-llama-tutorial",
+      "title": "从零手写大模型进阶教程：从 GPT-2 到 LLaMA 的 4 个关键零件",
+      "path": "Inbox/2026-10-22-weibo-gpt2-to-llama-tutorial.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "课程"
+      ],
+      "source": "微博",
+      "source_url": "https://weibo.com/2194035935/5356368037153150",
+      "source_type": "link",
+      "platform": "微博",
+      "summary": "微博博主「蚁工厂」推荐纳米AI（nano-ai.tech）的免费教程《从 GPT-2 到 LLaMA》：回答「2019 年的 GPT-2 与今天的 LLaMA/Qwen/DeepSeek 到底差在哪」。结论是骨架仍是 Transformer，真正演进的是 4 个关键零件——RMSNorm（归一化简化）、SwiGLU（前馈网络升级）、RoPE（旋转位置编码）、GQA（分组查询注意力）。教程共 5 篇，用「猫吃鱼」同一个小例子贯穿，数字可手算、代码可直接跑，适合手写完 GPT-2 后进阶。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/weibo-gpt2-to-llama-tutorial.md",
       "wiki_status": "pending"
     },
     {
