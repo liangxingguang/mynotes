@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23 07:23",
+  "updated_at": "2026-10-23 07:24",
   "notes": [
     {
       "id": "2026-10-14-llm-wiki-advanced-four-steps",
@@ -1533,6 +1533,25 @@
       "summary": "深度思考是围绕具体问题弄清概念与事实、分析原因条件、再用证据检查判断的过程；它可以通过五个日常习惯刻意练习形成。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/deep-thinking-training.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-23-proposal-logic-structures",
+      "title": "写方案的人，一定要掌握这6种逻辑结构",
+      "path": "Inbox/2026-10-23-proposal-logic-structures.md",
+      "created": "2026-10-23",
+      "category": "学习",
+      "tags": [
+        "写作",
+        "思维方式"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/RlqmqwGPM3dpHyTS1I1nlA",
+      "source_type": "link",
+      "platform": "weixin",
+      "summary": "多数方案输在结构而非内容：6 种逻辑结构覆盖 90% 方案场景，让读者顺着你的思路走，不用费力就能同意。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/proposal-logic-structures.md",
       "wiki_status": "pending"
     },
     {
