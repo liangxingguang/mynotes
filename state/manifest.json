@@ -325,6 +325,17 @@
       ],
       "source_url": "https://github.com/liquidslr/system-design-notes",
       "asset_ref": null
+    },
+    {
+      "path": "raw/sources/ai/2026-10-14-state-of-ai-report-2026.md",
+      "sha256": "0fdf3116067def428426f702ffd31f778272212fea31ed7cc310323996e45796",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-14-state-of-ai-report-2026.md",
+      "pages": [
+        "wiki/sources/state-of-ai-report-2026.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/6M4UtLeECfjBF3JRE4h1Qw",
+      "asset_ref": "Assets/2026/10/state-of-ai-report-2026.md"
     }
   ]
 }

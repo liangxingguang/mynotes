@@ -27,6 +27,7 @@
 - [[pi-setup-mcp-codemode-guide|Pi Agent 入门指南：安装 + MCP + Codemode]]（2026-10-14，AI/MCP）
 - [[pm-director-4-decision-frameworks|大厂产品总监私藏的 4 个决策框架]]（2026-10-14，产品/方法论）
 - [[pi-school-agent-course|这门免费课表面在教 Pi，其实在教你 Agent 到底怎么工作]]（2026-10-14，AI/教程）
+- [[state-of-ai-report-2026|State of AI Report 2026 中文要点（Datawhale 译）]]（2026-10-14，AI/行业报告）
 - [[system-design-12-components|一次讲清 12 个系统设计核心组件]]（2026-10-13，系统设计）
 - [[system-design-notes-28-cases|知乎想法：system-design-notes——把系统设计面试浓缩成 28 个经典架构案例的开源笔记]]（2026-10-14，系统设计/学习资源）
 

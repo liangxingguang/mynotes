@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23 07:27",
+  "updated_at": "2026-10-23 07:29",
   "tags": [
     {
       "name": "思维方式",
@@ -30,7 +30,7 @@
         "SpringBoot"
       ],
       "category": "技术",
-      "count": 7,
+      "count": 8,
       "status": "new"
     },
     {
@@ -73,7 +73,7 @@
         "最佳实践"
       ],
       "category": "技术",
-      "count": 72,
+      "count": 73,
       "status": "active"
     },
     {
@@ -196,7 +196,7 @@
         "并发编程"
       ],
       "category": "技术",
-      "count": 12,
+      "count": 13,
       "status": "new"
     },
     {

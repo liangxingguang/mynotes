@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23 07:27",
+  "updated_at": "2026-10-23 07:29",
   "notes": [
     {
       "id": "2026-10-14-llm-wiki-advanced-four-steps",
@@ -19,25 +19,6 @@
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "failed"
-    },
-    {
-      "id": "2026-10-14-state-of-ai-report-2026",
-      "title": "今年最全面的 AI 行业报告来了（State of AI Report 2026 中文要点）",
-      "path": "Inbox/2026-10-14-state-of-ai-report-2026.md",
-      "created": "2026-10-14",
-      "category": "资讯",
-      "tags": [
-        "AI",
-        "行业动态"
-      ],
-      "source": "Datawhale（微信公众号）",
-      "source_url": "https://mp.weixin.qq.com/s/6M4UtLeECfjBF3JRE4h1Qw",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "Air Street Capital 发布第九期年度《State of AI Report 2026》，Datawhale 译出要点：前沿竞争收敛为 Anthropic / OpenAI / Google 三家；智能体靠工具与上下文而非堆权重快速变强，并开始反哺 AI 研发；机器人接近\"GPT-2 时刻\"、AI 药物进入 III 期临床；推理成本年降约 13 倍，OpenAI+Anthropic 合计年化营收冲到 1050 亿美元；与此同时出口管制、主权 AI、智能体真实攻击事件促使政府收紧控制，实验室自己开始呼吁放慢脚步。",
-      "summary_status": "",
-      "asset_ref": "",
-      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-14-unyra-local-first-ai-learning-app",
@@ -1574,6 +1555,26 @@
       "wiki_status": "pending"
     },
     {
+      "id": "2026-10-23-springboot-global-exception-handling",
+      "title": "Spring Boot 3.x 全局异常处理最佳实践：从入门到生产级方案",
+      "path": "Inbox/2026-10-23-springboot-global-exception-handling.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "spring",
+        "工程实践",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/jmeVH93lmJBVRdjl-cqdTg",
+      "source_type": "link",
+      "platform": "weixin",
+      "summary": "用 `@RestControllerAdvice` + `@ExceptionHandler` 一处配置全局生效，配合统一响应体、异常码枚举与断言工具，替代 Controller 里散落的 try-catch。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/springboot-global-exception-handling.md",
+      "wiki_status": "pending"
+    },
+    {
       "id": "2026-10-23-springboot-structured-logging",
       "title": "SpringBoot 结构化日志实战",
       "path": "Inbox/2026-10-23-springboot-structured-logging.md",
@@ -2046,6 +2047,25 @@
       "source_type": "article",
       "platform": "微信公众号",
       "summary": "作者称在腾讯/字节/美团观察 3 位总监总结的 4 个可复用产品决策框架，分别解决：功能该不该砍、与老板意见相左怎么沟通、多需求抢资源怎么排序、用户反馈该信谁。核心主张：普通 PM 与总监的差距不在经验而在决策框架——把\"我觉得\"换成明确标准；每个框架都附了让 AI 做趋势分析/风险推演/打分排序/反馈过滤的提示词用法。",
+      "summary_status": "",
+      "asset_ref": "",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-14-state-of-ai-report-2026",
+      "title": "今年最全面的 AI 行业报告来了（State of AI Report 2026 中文要点）",
+      "path": "Archive/2026-10-14-state-of-ai-report-2026.md",
+      "created": "2026-10-14",
+      "category": "资讯",
+      "tags": [
+        "AI",
+        "行业动态"
+      ],
+      "source": "Datawhale（微信公众号）",
+      "source_url": "https://mp.weixin.qq.com/s/6M4UtLeECfjBF3JRE4h1Qw",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "Air Street Capital 发布第九期年度《State of AI Report 2026》，Datawhale 译出要点：前沿竞争收敛为 Anthropic / OpenAI / Google 三家；智能体靠工具与上下文而非堆权重快速变强，并开始反哺 AI 研发；机器人接近\"GPT-2 时刻\"、AI 药物进入 III 期临床；推理成本年降约 13 倍，OpenAI+Anthropic 合计年化营收冲到 1050 亿美元；与此同时出口管制、主权 AI、智能体真实攻击事件促使政府收紧控制，实验室自己开始呼吁放慢脚步。",
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "ingested"

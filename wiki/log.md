@@ -59,3 +59,4 @@
 - 2026-10-23 22:35 | ingest | raw/sources/ai/2026-10-14-pi-setup-mcp-codemode-guide.md | wiki/sources/pi-setup-mcp-codemode-guide.md, wiki/concepts/codemode.md（新建）, wiki/entities/pi.md（更新：0.99/MCP/exposure）, wiki/concepts/mcp.md（演进更新）
 - 2026-10-23 22:35 | ingest | raw/sources/misc/2026-10-14-pm-director-4-decision-frameworks.md | wiki/sources/pm-director-4-decision-frameworks.md, wiki/concepts/pm-decision-frameworks.md（新建，confidence=low）
 - 2026-10-23 22:35 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
+- 2026-10-23 07:28 | ingest | raw/sources/ai/2026-10-14-state-of-ai-report-2026.md | wiki/sources/state-of-ai-report-2026.md（新建，confidence=medium）
