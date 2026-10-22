@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22 19:14",
+  "updated_at": "2026-10-22 19:20",
   "notes": [
     {
       "id": "2026-10-14-high-perf-low-cpu-coding-tips-part2",
@@ -1508,6 +1508,26 @@
       "summary": "MySQL 主从同步延迟的系统性优化指南：从延迟成因（写入压力、网络、从库性能、大事务）出发，给出监控诊断（Seconds_Behind_Master/GTID 差距）、五个层面的优化方案（主库写入/网络/从库/复制架构/应用层），以及 Spring Boot 读写分离 + 延迟感知路由的实战代码。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/mysql-replication-lag-optimization.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-22-netty-iot-gateway-resilient-design",
+      "title": "百万 IoT 设备并发接入：把 Netty 网关做成可恢复、可验证的连接系统",
+      "path": "Inbox/2026-10-22-netty-iot-gateway-resilient-design.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "Netty",
+        "IoT",
+        "分布式系统"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/Ymasw1q6aL5JGcIvv4y04w",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "百万设备长连接接入层的硬核工程指南：不堆组件而是从不变量出发——EventLoop 不阻塞、会话只被所有者删除、内存队列有界、commandId 幂等。覆盖协议设计、会话路由原子性、命令状态机、Drain 发布、压测验收全流程。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-iot-gateway-resilient-design.md",
       "wiki_status": "pending"
     },
     {
