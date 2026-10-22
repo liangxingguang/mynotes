@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23 07:21",
+  "updated_at": "2026-10-23 07:22",
   "notes": [
     {
       "id": "2026-10-14-llm-wiki-advanced-four-steps",
@@ -1514,6 +1514,25 @@
       "summary": "微博博主「蚁工厂」推荐纳米AI（nano-ai.tech）的免费教程《从 GPT-2 到 LLaMA》：回答「2019 年的 GPT-2 与今天的 LLaMA/Qwen/DeepSeek 到底差在哪」。结论是骨架仍是 Transformer，真正演进的是 4 个关键零件——RMSNorm（归一化简化）、SwiGLU（前馈网络升级）、RoPE（旋转位置编码）、GQA（分组查询注意力）。教程共 5 篇，用「猫吃鱼」同一个小例子贯穿，数字可手算、代码可直接跑，适合手写完 GPT-2 后进阶。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/weibo-gpt2-to-llama-tutorial.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-23-deep-thinking-training",
+      "title": "如何锻炼出强悍的深度思考能力？",
+      "path": "Inbox/2026-10-23-deep-thinking-training.md",
+      "created": "2026-10-23",
+      "category": "学习",
+      "tags": [
+        "思维方式",
+        "个人成长"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/846BxF4GkiMtwXC1_tFssQ",
+      "source_type": "link",
+      "platform": "weixin",
+      "summary": "深度思考是围绕具体问题弄清概念与事实、分析原因条件、再用证据检查判断的过程；它可以通过五个日常习惯刻意练习形成。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/deep-thinking-training.md",
       "wiki_status": "pending"
     },
     {
