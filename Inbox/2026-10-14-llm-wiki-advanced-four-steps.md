@@ -9,8 +9,8 @@ created: 2026-10-14
 category: 技术
 tags: [AI, 工程实践]
 wiki_status: pending
-ingest_attempts: 1
-ingest_error: 重抓正文不完整：微信反爬（浏览器渲染代码块被截断，jina 兜底遇验证码）
+ingest_attempts: 2
+ingest_error: 微信反爬重抓仍不完整：代码块（架构图/目录树/契约与Schema全文）仅渲染首行，jina兜底前次遇验证码，Wayback无快照；需人工补全采集稿
 ---
 
 # LLM Wiki 知识库搭建深度教程 2·进阶篇一：四步搭建完整的 LLM Wiki 知识库系统

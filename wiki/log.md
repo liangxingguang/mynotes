@@ -45,4 +45,5 @@
 - 2026-10-23 16:50 | ingest | raw/sources/ai/2026-10-14-llm-from-scratch-primer.md | wiki/sources/llm-from-scratch-primer.md, wiki/concepts/next-token-prediction.md, wiki/concepts/agent-loop.md（更新交叉链接）
 - 2026-10-23 16:50 | ingest | raw/sources/products/2026-10-14-ms-agent-lightning-rl-framework.md | wiki/sources/ms-agent-lightning-rl-framework.md, wiki/entities/agent-lightning.md
 - 2026-10-23 16:50 | ingest-fail | Inbox/2026-10-14-llm-wiki-advanced-four-steps.md | 微信反爬致重抓正文不完整（浏览器渲染时代码块被截断、jina 兜底遇验证码），回退 pending
+- 2026-10-23 17:20 | ingest-fail | Inbox/2026-10-14-llm-wiki-advanced-four-steps.md | 第2次失败：微信反爬重抓仍不完整（代码块仅渲染首行；jina 前次遇验证码；Wayback 无快照），回退 pending（attempts=2）
 - 2026-10-23 16:50 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
