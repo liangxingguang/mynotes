@@ -224,6 +224,33 @@
       ],
       "source_url": "https://www.zhihu.com/pin/2083978910019204286",
       "asset_ref": null
+    },
+    {
+      "path": "raw/sources/ai/2026-10-14-pi-1-0-durable-mcp-update.md",
+      "sha256": "ef5b84aa9924d8b9734e2034aaa4b818f48a400a4629ff8843095d72b8d2bdd1",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-14-pi-durable-mcp-1-0-update.md",
+      "pages": [
+        "wiki/sources/pi-1-0-durable-mcp-update.md",
+        "wiki/concepts/durable-execution.md",
+        "wiki/entities/pi.md",
+        "wiki/concepts/mcp.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/s4EyfKFau-eq3-XGMuBVeQ",
+      "asset_ref": null
+    },
+    {
+      "path": "raw/sources/ai/2026-10-14-pi-sandbox-two-layer-isolation.md",
+      "sha256": "f8c91c32bb5b4060816c134410df18b6655ad4093d1a563947f4f4da536d03d6",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-14-pi-sandbox-two-layer-isolation.md",
+      "pages": [
+        "wiki/sources/pi-sandbox-two-layer-isolation.md",
+        "wiki/concepts/agent-sandboxing.md",
+        "wiki/entities/pi.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/rR5o7kLZIUgkDUVAfjfgbA",
+      "asset_ref": null
     }
   ]
 }

@@ -47,3 +47,7 @@
 - 2026-10-23 16:50 | ingest-fail | Inbox/2026-10-14-llm-wiki-advanced-four-steps.md | 微信反爬致重抓正文不完整（浏览器渲染时代码块被截断、jina 兜底遇验证码），回退 pending
 - 2026-10-23 17:20 | ingest-fail | Inbox/2026-10-14-llm-wiki-advanced-four-steps.md | 第2次失败：微信反爬重抓仍不完整（代码块仅渲染首行；jina 前次遇验证码；Wayback 无快照），回退 pending（attempts=2）
 - 2026-10-23 16:50 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
+- 2026-10-23 03:30 | ingest-fail | Inbox/2026-10-14-llm-wiki-advanced-four-steps.md | 第3次失败转 failed：微信反爬重抓仍不完整（代码块仅渲染首行，jina MCP 不可用），需人工补全采集稿
+- 2026-10-23 03:30 | ingest | raw/sources/ai/2026-10-14-pi-1-0-durable-mcp-update.md | wiki/sources/pi-1-0-durable-mcp-update.md, wiki/concepts/durable-execution.md, wiki/entities/pi.md（更新：1.0/Durable/Code Mode）, wiki/concepts/mcp.md（演进更新）
+- 2026-10-23 03:30 | ingest | raw/sources/ai/2026-10-14-pi-sandbox-two-layer-isolation.md | wiki/sources/pi-sandbox-two-layer-isolation.md, wiki/concepts/agent-sandboxing.md, wiki/entities/pi.md（更新：安全姿态）
+- 2026-10-23 03:30 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）

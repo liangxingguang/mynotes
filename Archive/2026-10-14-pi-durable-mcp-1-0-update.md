@@ -8,7 +8,7 @@ platform: 微信公众号
 created: 2026-10-14
 category: 资讯
 tags: [AI, 行业动态, Pi]
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Pi 抛出全新 Agent Harness，还把自己骂了一年的 MCP 装进了核心

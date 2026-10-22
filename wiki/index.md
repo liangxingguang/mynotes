@@ -21,6 +21,8 @@
 - [[llm-from-scratch-primer|三万字长文：大语言模型从零入门]]（2026-10-14，AI/教程）
 - [[ms-agent-lightning-rl-framework|知乎想法：微软开源 Agent Lightning——3500 行框架让 AI 自己练级]]（2026-10-14，AI/Agent RL）
 - [[pi-6-extensions|从 Claude Code 搬到 Pi：6 个扩展补回熟悉体验]]（2026-10-14，AI/Agent CLI）
+- [[pi-1-0-durable-mcp-update|Pi 1.0：原生 MCP + Code Mode 稳定版与 Pi Durable 持久执行框架]]（2026-10-14，AI/Agent 基础设施）
+- [[pi-sandbox-two-layer-isolation|Pi 支持沙箱吗：从什么是沙箱，到 Pi 的两层隔离]]（2026-10-14，AI/安全）
 - [[system-design-12-components|一次讲清 12 个系统设计核心组件]]（2026-10-13，系统设计）
 
 ## concept（概念）
@@ -28,9 +30,11 @@
 - [[a2a-protocol|A2A 协议]]（Agent↔Agent 横向协作协议，Google 2025）
 - [[agent-evaluation|业务 Agent 全生命周期评测]]（规则+LLM 裁判+人工复核，覆盖准入/门禁/压测/巡检，货拉拉实践）
 - [[agent-loop|Agent Loop]]（Runtime 驱动的模型-工具循环；Tool Call/Result、Message/Context/State/Session、Runtime vs Harness）
+- [[agent-sandboxing|Agent 沙箱隔离]]（能力限制而非行为审查；四条路径收窄可达面；脚本级/命令级/工具级/整体隔离）
 - [[ai-native-organization|AI 原生研发组织]]（工具原生→工作流原生→组织原生）
 - [[ai-native-sdlc|AI 原生 SDLC]]（制品提交链驱动的六阶段闭环，Anthropic 2026）
 - [[cpu-funnel-coding|CPU 漏斗（编码级性能模型）]]（砍掉无效解析/转换/对象，让 CPU 只做核心运算）
+- [[durable-execution|持久执行（Durable Execution）]]（崩溃后断点精确恢复；效应三明治 + 版本化文档存储，非事件溯源）
 - [[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]（先目标基线、JFR/GC 日志归因，证据指向 JVM 才动参数，单变量实验）
 - [[mcp|MCP]]（LLM↔工具/数据纵向协议，Anthropic 2024）
 - [[next-token-prediction|下一 token 预测]]（LLM 的统一目标：交叉熵训练、自回归生成，能力与幻觉同根）
@@ -44,7 +48,7 @@
 - [[deepseek-harness|DeepSeek Harness]]（DeepSeek 模型的桌面 Agent 客户端，v0.2 预览版）
 - [[drawio-skill|drawio-skill]]（代码/配置→可编辑 .drawio 架构图，增量同步 + CI 架构检查）
 - [[jd-haibo|京东海博]]（京东本地生活即时零售 SaaS，780+ 商家/10 万+ 门店，AI 知识库实践标杆）
-- [[pi|Pi]]（极简 Agent CLI，毛坯房 + 5000+ 扩展生态）
+- [[pi|Pi]]（极简 Agent CLI/Harness，1.0 起原生 MCP + Code Mode + Pi Durable，5000+ 扩展生态）
 
 ## topic（主题）
 
