@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22 18:59",
+  "updated_at": "2026-10-22 19:01",
   "notes": [
     {
       "id": "2026-10-14-high-perf-low-cpu-coding-tips-part2",
@@ -1470,6 +1470,25 @@
       "summary": "消息堆积（生产快于消费导致队列积压）的排查与解决指南：分别给出 RabbitMQ 与 RocketMQ 的消费者/队列/生产者优化代码，以及应急处理三板斧（临时扩容、消息分流、消息清理），并按电商/金融/内容三类业务场景给出差异化策略。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/mq-message-backlog-solutions.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-22-mq-transaction-idempotency-design",
+      "title": "消息队列架构设计（中篇）：事务消息、业务幂等，保障单据数据一致性",
+      "path": "Inbox/2026-10-22-mq-transaction-idempotency-design.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "分布式事务",
+        "Kafka"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/mR9XYzUnXQaEn2aW9X5nJA",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "大宗商品销采运储系统架构连载中篇。解决\"数据库事务和消息发送的原子性\"与\"消息重复投递脏数据\"两大难题：RocketMQ 事务消息保发送、业务幂等保消费，两板斧配合让单据流转不丢不重。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/mq-transaction-idempotency-design.md",
       "wiki_status": "pending"
     },
     {

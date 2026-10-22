@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22 18:59",
+  "updated_at": "2026-10-22 19:01",
   "tags": [
     {
       "name": "思维方式",
@@ -238,7 +238,7 @@
         "MQ"
       ],
       "category": "技术",
-      "count": 5,
+      "count": 6,
       "status": "new"
     },
     {
@@ -348,7 +348,7 @@
         "事务消息"
       ],
       "category": "技术",
-      "count": 1,
+      "count": 2,
       "status": "new"
     }
   ]
