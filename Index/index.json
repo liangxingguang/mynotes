@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22 22:43",
+  "updated_at": "2026-10-22 23:02",
   "notes": [
     {
       "id": "2026-10-14-learn-pi-agent-01-llm-to-agent",
@@ -1395,6 +1395,25 @@
       "summary": "批判性思维≠逻辑规则+谬误清单。十年教学经验提炼六个重点：愿意反省、澄清问题、评价证据、积累并善用知识、提出备选方案、用程序与反馈养成习惯。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/critical-thinking-six-priorities.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-22-database-high-availability",
+      "title": "当我谈数据库高可用时是在谈些什么",
+      "path": "Inbox/2026-10-22-database-high-availability.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "数据库"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/x6c6RSYUdivoou1a6-NV6A",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "京东技术团队出品的数据库高可用体系科普。以五层主线串起完整图景：单机崩溃可恢复（WAL/2PC/双1）→ 主备复制（异步/半同步/RPO）→ GTID 全局事务身份证 → 主备安全切换（fencing/PRS/ERS）→ Orchestrator 自动化容错，最后延伸到应用侧协同降级，点出\"高可用是数据库与应用双向奔赴\"。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/database-high-availability.md",
       "wiki_status": "pending"
     },
     {
