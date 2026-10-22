@@ -4,7 +4,7 @@ type: entity
 title: Pi
 status: active
 created: 2026-10-20
-updated: 2026-10-20
+updated: 2026-10-22
 confidence: medium
 tags:
   - entity
@@ -12,8 +12,10 @@ tags:
   - cli
 sources:
   - raw/sources/products/2026-10-14-pi-6-extensions-from-claude-code.md
+  - raw/sources/ai/2026-10-14-learn-pi-agent-01-llm-to-agent.md
 related:
   - wiki/concepts/mcp.md
+  - wiki/concepts/agent-loop.md
 ---
 # Pi
 
@@ -23,8 +25,8 @@ Pi 是一款极简风格的 Agent CLI：默认只内置 read、write、edit、ba
 
 ## Identity（身份信息）
 
-- Type（类型）: Agent CLI（终端智能体工具）
-- Organization（所属组织）: 未知（当前信源未确立）
+- Type（类型）: Agent CLI（终端智能体工具）；官方自称 **Pi Agent Harness**（完整 Agent 运行层）
+- Organization（所属组织）: earendil-works（npm 包命名空间 `@earendil-works/*`）
 - Role（角色）: 以"毛坯房 + 扩展生态"模式提供可自定义能力清单的编码/工作 Agent
 - Status（状态）: 活跃（扩展目录 5000+ 包，头部扩展月下载数十万级，2026-08 npm 数据）
 
@@ -39,6 +41,7 @@ Pi 是一款极简风格的 Agent CLI：默认只内置 read、write、edit、ba
 ## Products / Projects（产品／项目）
 
 - 扩展目录（5000+ 包）；pi-cc-plugins（把 Claude Code 插件仓的 skills/agents/MCP 配置转成 Pi 原生格式）。
+- 三个核心包：`@earendil-works/pi-ai`（连接不同模型服务，统一模型、消息、工具和逐步返回的响应）、`@earendil-works/pi-agent-core`（维护 [[agent-loop|Agent Loop]] 与 State，执行工具并报告运行变化）、`@earendil-works/pi-coding-agent`（装配 Session、工具和命令行，形成可用的编程 Agent）。核心循环保持小，定制（新工具/命令/界面行为/运行钩子）走扩展入口接入 Harness，而非改 Loop。
 
 ## Relationships（关系）
 
@@ -48,7 +51,8 @@ Pi 是一款极简风格的 Agent CLI：默认只内置 read、write、edit、ba
 ## Timeline（时间线）
 
 - 2026-08 — npm 月下载数据显示 pi-mcp-adapter 约 76 万，居扩展生态第一
-- 2026-10-14 — 微信公众号迁移实录发布（本信源），记录三周从 Claude Code 整体迁移的工作流
+- 2026-10-14 — 微信公众号迁移实录发布，记录三周从 Claude Code 整体迁移的工作流
+- 2026-10-14 — learn-pi-agent 系列第一章发布，以 Pi 为主线讲解 Agent Loop，并揭示三包结构与 Pi Agent Harness 定位
 
 ## Current Understanding（当前认知）
 
@@ -57,3 +61,4 @@ Pi 代表了 Agent CLI 的另一种产品哲学：内核极简、能力清单交
 ## Evidence（证据）
 
 - `raw/sources/products/2026-10-14-pi-6-extensions-from-claude-code.md`
+- `raw/sources/ai/2026-10-14-learn-pi-agent-01-llm-to-agent.md`

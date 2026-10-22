@@ -47,7 +47,7 @@
 ⑥ 是普通文字 → 直接生成闪念笔记（`wiki_status: skipped`）
 ⑦ 未知 `/xxx` → 返回指令提示
 
-**异步衔接**：采集只写 Inbox/Assets（链接/文档落 `wiki_status: pending`），不在采集会话内摄入；`message.sent` 钩子的 `queue-trigger.js` 在冷却过期后异步发起独立 `/ingest` 会话（约 10 分钟一篇自节流），每日 21:20 cron 兜底失败与存量；手动 `/ingest` 始终保留。
+**异步衔接**：采集只写 Inbox/Assets（链接/文档落 `wiki_status: pending`），不在采集会话内摄入；`message.sent` 钩子的 `queue-trigger.js` 在冷却过期后经一次性 timer 异步发起独立 `/ingest` 会话（约 10 分钟一篇自节流），每 3 小时 cron 兜底失败与存量；手动 `/ingest` 始终保留。
 
 ## 指令规则
 1. `/search 关键词`：按关键词匹配标题/标签/正文，返回精简结果，提示用 `/read` 查看全文

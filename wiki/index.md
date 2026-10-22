@@ -17,6 +17,7 @@
 - [[java-perf-low-cpu-coding-tips-part2|打造高性能、低CPU消耗系统—36种编码实战技巧（下篇）]]（2026-10-14，Java/性能）
 - [[jd-haibo-ai-knowledge-base|拆解京东海博 AI-Native 落地保障：海博团队 AI 知识库能力建设]]（2026-10-14，AI/知识库）
 - [[jvm-tuning-core-approach|一文掌握 JVM 调优核心思路]]（2026-10-14，Java/性能）
+- [[learn-pi-agent-01-llm-to-agent|Learn Pi Agent 01｜大模型如何一步步变成 Agent]]（2026-10-14，AI/教程）
 - [[pi-6-extensions|从 Claude Code 搬到 Pi：6 个扩展补回熟悉体验]]（2026-10-14，AI/Agent CLI）
 - [[system-design-12-components|一次讲清 12 个系统设计核心组件]]（2026-10-13，系统设计）
 
@@ -24,6 +25,7 @@
 
 - [[a2a-protocol|A2A 协议]]（Agent↔Agent 横向协作协议，Google 2025）
 - [[agent-evaluation|业务 Agent 全生命周期评测]]（规则+LLM 裁判+人工复核，覆盖准入/门禁/压测/巡检，货拉拉实践）
+- [[agent-loop|Agent Loop]]（Runtime 驱动的模型-工具循环；Tool Call/Result、Message/Context/State/Session、Runtime vs Harness）
 - [[ai-native-organization|AI 原生研发组织]]（工具原生→工作流原生→组织原生）
 - [[ai-native-sdlc|AI 原生 SDLC]]（制品提交链驱动的六阶段闭环，Anthropic 2026）
 - [[cpu-funnel-coding|CPU 漏斗（编码级性能模型）]]（砍掉无效解析/转换/对象，让 CPU 只做核心运算）

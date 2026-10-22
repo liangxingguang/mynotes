@@ -2,7 +2,9 @@
 /**
  * queue-trigger：采集→摄入的近实时异步触发器（message.sent 钩子调用）
  * 队列存在 pending 或 stale ingesting，且 10 分钟冷却已过
- *   → cc-connect send 异步发起新会话执行 /ingest
+ *   → cc-connect timer add 注册一次性定时器，到期由 daemon 以新会话执行 /ingest
+ * 注意：不能用 cc-connect send —— 它只是把文本作为机器人消息发到 IM（出站），
+ * 并不会让 agent 执行（2026-10-22 投递黑洞的根因）；timer/cron 的 prompt 才会真正跑 agent。
  * 任何投递失败都静默退出 0：钩子报错会向 IM 发错误回执，且每日 cron 会兜底。
  */
 import fs from 'node:fs/promises'
@@ -21,16 +23,18 @@ export function sanitizeMessage(s) {
   return String(s).replace(/[%"]/g, '').replace(/[\x00-\x1f\x7f]/g, '')
 }
 
-export function buildSendArgs(vault) {
+export function buildTimerArgs() {
   const project = (process.env.CC_PROJECT || 'obsidian-knowledge').replace(/[^\w.-]/g, '')
-  const message = sanitizeMessage(process.env.INGEST_TRIGGER_MESSAGE || '/ingest')
-  const args = ['send', '-p', project, '-m', message]
-  // hook 子进程注入 CC_SESSION_KEY：透传 -s 把消息路由回来源 IM 会话
-  const sessionKey = (process.env.CC_SESSION_KEY || '').replace(/[^\w.-]/g, '')
+  const prompt = sanitizeMessage(process.env.INGEST_TRIGGER_MESSAGE || '/ingest')
+  const delay = (process.env.INGEST_TRIGGER_DELAY || '10s').replace(/[^\w.]/g, '')
+  // new-per-run：连续自消化时不累积来源会话上下文（token 随篇数膨胀）
+  const args = ['timer', 'add', '-p', project, '--delay', delay, '--prompt', prompt, '--session-mode', 'new-per-run']
+  // hook 子进程注入 CC_SESSION_KEY：透传 -s 让 timer 结果路由回来源 IM 会话
+  // 会话键真实格式含冒号（feishu:oc_...:ou_...），清洗必须保留 : 与 #，否则键被毁形匹配不到会话
+  const rawKey = (process.env.CC_SESSION_KEY || '').replace(/[^\w.:#-]/g, '')
+  // #cron:xxx 等 per-run 子会话随本轮结束即销毁，回路由会落空；剥掉后缀路由到基础 IM 会话
+  const sessionKey = rawKey.replace(/#.*$/, '')
   if (sessionKey) args.push('-s', sessionKey)
-  // 默认强制新会话：连续自消化时不累积采集会话上下文（token 随篇数膨胀）；
-  // CC_TRIGGER_REUSE=1 时退回同会话投递
-  if (process.env.CC_TRIGGER_REUSE !== '1') args.push('--work-dir', vault)
   return args
 }
 
@@ -53,15 +57,34 @@ export async function evaluate({ vault, now = new Date() } = {}) {
   return { hasWork, inCooldown }
 }
 
+// 诊断日志：追加到 .tmp/queue-trigger.log（一次性 JSON 行），失败不影响主流程
+async function logResult(vault, entry) {
+  try {
+    await fs.mkdir(path.join(vault, '.tmp'), { recursive: true })
+    await fs.appendFile(
+      path.join(vault, '.tmp', 'queue-trigger.log'),
+      JSON.stringify({ ts: new Date().toISOString(), ...entry }) + '\n'
+    )
+  } catch {
+    /* 诊断日志失败静默 */
+  }
+}
+
 export async function trigger({ vault, now = new Date(), sender } = {}) {
   const { hasWork, inCooldown } = await evaluate({ vault, now })
-  if (!hasWork) return { triggered: false, reason: 'empty' }
-  if (inCooldown) return { triggered: false, reason: 'cooldown' }
+  if (!hasWork) {
+    await logResult(vault, { triggered: false, reason: 'empty' })
+    return { triggered: false, reason: 'empty' }
+  }
+  if (inCooldown) {
+    await logResult(vault, { triggered: false, reason: 'cooldown' })
+    return { triggered: false, reason: 'cooldown' }
+  }
   const send =
     sender ||
     (async () => {
       const bin = process.env.CC_CONNECT_BIN || 'cc-connect'
-      const args = buildSendArgs(vault)
+      const args = buildTimerArgs()
       if (process.platform === 'win32') {
         // cc-connect 在 Windows 是 .cmd shim，需经 shell；单字符串形式避免 DEP0190
         const quoted = args.map((a) => (/[\s\\]/.test(a) ? `"${a}"` : a)).join(' ')
@@ -73,10 +96,13 @@ export async function trigger({ vault, now = new Date(), sender } = {}) {
   try {
     await send()
   } catch (e) {
-    return { triggered: false, reason: 'no-socket', error: String(e.message || e).slice(0, 120) }
+    const err = String(e.message || e).slice(0, 120)
+    await logResult(vault, { triggered: false, reason: 'no-socket', error: err })
+    return { triggered: false, reason: 'no-socket', error: err }
   }
   await fs.mkdir(path.join(vault, '.tmp'), { recursive: true })
   await fs.writeFile(path.join(vault, '.tmp', 'ingest-cooldown'), String(now.getTime()))
+  await logResult(vault, { triggered: true, reason: 'sent', args: buildTimerArgs().slice(1) })
   return { triggered: true, reason: 'sent' }
 }
 

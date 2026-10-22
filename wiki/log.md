@@ -40,3 +40,5 @@
 - 2026-10-22 13:32 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
 - 2026-10-22 14:45 | ingest | raw/sources/misc/2026-10-14-jvm-tuning-core-approach.md | wiki/sources/jvm-tuning-core-approach.md, wiki/concepts/evidence-first-jvm-tuning.md, wiki/concepts/cpu-funnel-coding.md（互链更新）
 - 2026-10-22 14:43 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
+- 2026-10-22 15:50 | ingest | raw/sources/ai/2026-10-14-learn-pi-agent-01-llm-to-agent.md | wiki/sources/learn-pi-agent-01-llm-to-agent.md, wiki/concepts/agent-loop.md, wiki/entities/pi.md（更新：三包结构与 Harness 定位）
+- 2026-10-22 15:51 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）

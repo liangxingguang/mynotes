@@ -37,7 +37,7 @@
 
 收件箱不具备权威性。
 
-采集层笔记以 frontmatter `wiki_status` 标记摄入队列状态：`pending`（待摄入）、`ingesting`（已被摄入会话认领，附 `ingest_claim_id` / `ingest_claimed_at`）、`ingested`（已摄入，随后移入 `Archive/`）、`failed`（自动重试 3 次仍失败，仅每日 cron 或人工介入）、`skipped`（闪念等不入 wiki）。状态机由 `scripts/skills/queue-claim.js` 唯一执行（`claim` / `done` / `fail`；`ingesting` 超 30 分钟自动回收为 pending）。`wiki-ingest` 默认消费最早的 pending 笔记；近实时由 `queue-trigger.js` 经 `cc-connect send` 异步触发独立会话，每日 21:20 cron 兜底失败与存量。
+采集层笔记以 frontmatter `wiki_status` 标记摄入队列状态：`pending`（待摄入）、`ingesting`（已被摄入会话认领，附 `ingest_claim_id` / `ingest_claimed_at`）、`ingested`（已摄入，随后移入 `Archive/`）、`failed`（自动重试 3 次仍失败，仅每日 cron 或人工介入）、`skipped`（闪念等不入 wiki）。状态机由 `scripts/skills/queue-claim.js` 唯一执行（`claim` / `done` / `fail`；`ingesting` 超 30 分钟自动回收为 pending）。`wiki-ingest` 默认消费最早的 pending 笔记；近实时由 `queue-trigger.js` 经 `cc-connect timer add`（一次性定时器 prompt）异步触发独立会话，每 3 小时 cron 兜底失败与存量。
 
 ### 2.2 Raw（原始层）
 
@@ -352,4 +352,4 @@ Lint 包含两个阶段。
 5. **瞬时产物不入库**：`reports/` 与 `state/runs/` 已列入 `.gitignore`；`state/manifest.json` 入库（它是 raw 完整性的校验依据）。
 6. **不建 `Inbox/` 子目录**：`scripts/skills/index-rebuild.js` 对 `Inbox/` 的扫描是非递归的，笔记放入子目录会被 `/search` `/today` 静默漏掉。要保持扁平。
 7. **采集→摄入衔接**：链接/文档采集时，抓取正文与文档原件必须落 `Assets/YYYY/MM/`（不得只放 `.tmp/`）作为采集态证据；Inbox 笔记以 `asset_ref` 指回该文件并标 `wiki_status: pending`。`wiki-ingest` 是 pending 队列的唯一消费者：登记 raw 时在 manifest entry 写 `source_url` 与 `asset_ref`；raw 信源页 = 登记 frontmatter + **原文全文**（自 `asset_ref` 指向的 Assets 采集稿**逐字复制**，不得压缩/改写/节选；采集稿缺失时按 `source_url` 用 web-fetch 重抓全文收录，抓不到则该篇 fail，禁止用笔记摘要充当全文），frontmatter 写 `asset_ref` 指回 Assets 原件，二进制原件不重复归档（仍只存 Assets）；完成后笔记置 `ingested` 并移 `Archive/`，同步更新 entry 的 `inbox_ref`。采集前的重复检测须同时比对 manifest 的 `source_url`（规范化 URL）。
-8. **队列异步消费**：采集会话不内联摄入。`message.sent` 钩子追加 `node scripts/skills/queue-trigger.js`——队列存在 pending/stale 且 10 分钟冷却过期时，经 `cc-connect send --work-dir <vault>` 在**独立新会话**执行 `/ingest`（不累积采集会话上下文；`CC_TRIGGER_REUSE=1` 可退回同会话）；投递失败静默，由每日 21:20 cron 兜底。`wiki-ingest` 收尾必须用 `queue-claim` 的 `done`/`fail`（带 claim_id；笔记已持 claim_id 时缺省或不符一律拒绝），不得手写 `wiki_status`、不得自行 mv 文件。手动 `/ingest <笔记>` 用 `claim --target <path|id>` 定向认领。存量笔记由 `scripts/skills/queue-backfill.js`（默认 dry-run，`--apply` 写回，幂等）一次性回填队列状态。手动 `/ingest` 入口始终保留，行为与自动触发一致。
+8. **队列异步消费**：采集会话不内联摄入。`message.sent` 钩子追加 `node scripts/skills/queue-trigger.js`——队列存在 pending/stale 且 10 分钟冷却过期时，经 `cc-connect timer add --delay 10s --prompt /ingest --session-mode new-per-run` 注册一次性定时器，由 daemon 在**独立新会话**执行（不累积采集会话上下文）。注意：`cc-connect send` 只是把文本作为机器人消息发到 IM（出站），不会让 agent 执行，严禁用作触发器（2026-10-22 投递黑洞根因）。投递失败静默并记 `.tmp/queue-trigger.log`，由每 3 小时 cron 兜底。`wiki-ingest` 收尾必须用 `queue-claim` 的 `done`/`fail`（带 claim_id；笔记已持 claim_id 时缺省或不符一律拒绝），不得手写 `wiki_status`、不得自行 mv 文件。手动 `/ingest <笔记>` 用 `claim --target <path|id>` 定向认领。存量笔记由 `scripts/skills/queue-backfill.js`（默认 dry-run，`--apply` 写回，幂等）一次性回填队列状态。手动 `/ingest` 入口始终保留，行为与自动触发一致。

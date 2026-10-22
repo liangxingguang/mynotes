@@ -1,26 +1,6 @@
 {
-  "updated_at": "2026-10-22 23:02",
+  "updated_at": "2026-10-22 23:52",
   "notes": [
-    {
-      "id": "2026-10-14-learn-pi-agent-01-llm-to-agent",
-      "title": "Learn Pi Agent 01｜大模型如何一步步变成 Agent",
-      "path": "Inbox/2026-10-14-learn-pi-agent-01-llm-to-agent.md",
-      "created": "2026-10-14",
-      "category": "学习",
-      "tags": [
-        "AI",
-        "课程",
-        "Pi"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/wwl8q1LAguHp2GP_lQAINQ",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "learn-pi-agent 系列第一章，回答\"会答题的大模型怎样变成能完成任务的 Agent\"。增加的不是新模型，而是一套围绕模型持续运行的程序：模型负责判断，宿主（Runtime）负责执行被允许的动作并把结果喂回下一轮。文章用一次天气查询走完整条链路，厘清 Message/Context/State/Session 四个概念，给出 Pi 核心 Agent Loop 的教学版代码，并区分 Runtime 与 Harness。",
-      "summary_status": "",
-      "asset_ref": "",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-14-llm-from-scratch-primer",
       "title": "三万字长文：大语言模型从零入门",
@@ -1988,6 +1968,26 @@
       "source_type": "article",
       "platform": "微信公众号",
       "summary": "JVM 调优方法论短文：不要从参数开始、在参数里迷路（慢了调 -Xmx、FGC 多了换收集器、OOMKilled 又缩堆），而要把顺序反过来——先定可测目标、留基线，再用 JFR 和 GC 日志定位时间与内存去向，证据指向 JVM 后才动堆大小、收集器与 GC 参数。每轮只改一个变量并备好回退，延迟、吞吐、占用不可同时无限优化。",
+      "summary_status": "",
+      "asset_ref": "",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-14-learn-pi-agent-01-llm-to-agent",
+      "title": "Learn Pi Agent 01｜大模型如何一步步变成 Agent",
+      "path": "Archive/2026-10-14-learn-pi-agent-01-llm-to-agent.md",
+      "created": "2026-10-14",
+      "category": "学习",
+      "tags": [
+        "AI",
+        "课程",
+        "Pi"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/wwl8q1LAguHp2GP_lQAINQ",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "learn-pi-agent 系列第一章，回答\"会答题的大模型怎样变成能完成任务的 Agent\"。增加的不是新模型，而是一套围绕模型持续运行的程序：模型负责判断，宿主（Runtime）负责执行被允许的动作并把结果喂回下一轮。文章用一次天气查询走完整条链路，厘清 Message/Context/State/Session 四个概念，给出 Pi 核心 Agent Loop 的教学版代码，并区分 Runtime 与 Harness。",
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "ingested"

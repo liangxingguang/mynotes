@@ -8,7 +8,7 @@ platform: 微信公众号
 created: 2026-10-14
 category: 学习
 tags: [AI, 课程, Pi]
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Learn Pi Agent 01｜大模型如何一步步变成 Agent
