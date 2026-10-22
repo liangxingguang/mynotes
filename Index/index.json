@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22 18:55",
+  "updated_at": "2026-10-22 18:58",
   "notes": [
     {
       "id": "2026-10-14-high-perf-low-cpu-coding-tips-part2",
@@ -1431,6 +1431,25 @@
       "summary": "公众号「架构师之路」的 2025 年度文章精选索引。作者离职单干后全年更新 343 篇、261 万阅读，本文按四大方向（DeepSeek、数据库、架构、OPC 创业）汇总了全年优质文章链接，是一份架构与分布式系统主题的资源清单，适合收藏按需查阅。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/architect-road-2025-digest.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-22-distributed-transaction-six-solutions",
+      "title": "分布式事务最全图解（6种方案）：从强一致的2PC到最终对账",
+      "path": "Inbox/2026-10-22-distributed-transaction-six-solutions.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/iefb1PSKWHDdfnE_QKDwIQ",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "分布式事务六种方案的完整梳理：2PC（及致命伤）、本地消息表、RocketMQ 事务消息、TCC、事务状态表+补偿、同步双写+异步对账。从强一致到最终一致，覆盖从理论到落地的全路径。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/distributed-transaction-six-solutions.md",
       "wiki_status": "pending"
     },
     {
