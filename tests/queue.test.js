@@ -8,7 +8,7 @@ import { parseFrontmatter, setFrontmatterFields, isIngestStale } from '../script
 import { execFile } from 'node:child_process'
 import { promisify } from 'node:util'
 import { claim, finish, failNote, queueStatus } from '../scripts/skills/queue-claim.js'
-import { buildSendArgs } from '../scripts/skills/queue-trigger.js'
+import { buildTimerArgs } from '../scripts/skills/queue-trigger.js'
 
 const pexec = promisify(execFile)
 const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
@@ -360,28 +360,39 @@ test('trigger：sanitizeMessage 去除 %、引号与控制字符（防 cmd 变�
   assert.equal(sanitizeMessage('/ingest %COMSPEC%\r\n& whoami"'), '/ingest COMSPEC& whoami')
 })
 
-test('trigger：投递参数默认带 --work-dir 指向 vault（强制新会话）；CC_TRIGGER_REUSE=1 时不带', () => {
-  const argsWith = buildSendArgs('D:\Obsidian\Vault1')
-  assert.deepEqual(argsWith, ['send', '-p', 'obsidian-knowledge', '-m', '/ingest', '--work-dir', 'D:\Obsidian\Vault1'])
-  const prev = process.env.CC_TRIGGER_REUSE
-  process.env.CC_TRIGGER_REUSE = '1'
-  try {
-    assert.deepEqual(buildSendArgs('/opt/vault'), ['send', '-p', 'obsidian-knowledge', '-m', '/ingest'])
-  } finally {
-    if (prev === undefined) delete process.env.CC_TRIGGER_REUSE
-    else process.env.CC_TRIGGER_REUSE = prev
-  }
+test('trigger：投递走 timer add 一次性定时器（prompt 驱动 agent，非 send 出站文本）', () => {
+  const args = buildTimerArgs()
+  assert.deepEqual(args, [
+    'timer', 'add', '-p', 'obsidian-knowledge',
+    '--delay', '10s', '--prompt', '/ingest', '--session-mode', 'new-per-run'
+  ])
 })
 
 test('trigger：环境带 CC_SESSION_KEY 时透传 -s 路由到来源 IM 会话', () => {
   const prev = process.env.CC_SESSION_KEY
   process.env.CC_SESSION_KEY = 'obsidian-knowledge_b1fee3da'
   try {
-    const args = buildSendArgs('/vault')
+    const args = buildTimerArgs()
     assert.deepEqual(args, [
-      'send', '-p', 'obsidian-knowledge', '-m', '/ingest',
-      '-s', 'obsidian-knowledge_b1fee3da', '--work-dir', '/vault'
+      'timer', 'add', '-p', 'obsidian-knowledge',
+      '--delay', '10s', '--prompt', '/ingest', '--session-mode', 'new-per-run',
+      '-s', 'obsidian-knowledge_b1fee3da'
     ])
+  } finally {
+    if (prev === undefined) delete process.env.CC_SESSION_KEY
+    else process.env.CC_SESSION_KEY = prev
+  }
+})
+
+test('trigger：真实会话键（含冒号）清洗后不毁形；#cron 等 per-run 子会话后缀被剥离', () => {
+  const prev = process.env.CC_SESSION_KEY
+  try {
+    process.env.CC_SESSION_KEY = 'feishu:oc_abc123:ou_def456'
+    assert.ok(buildTimerArgs().includes('feishu:oc_abc123:ou_def456'))
+    process.env.CC_SESSION_KEY = 'feishu:oc_abc123:ou_def456#cron:s33'
+    const args = buildTimerArgs()
+    assert.ok(args.includes('feishu:oc_abc123:ou_def456'))
+    assert.ok(!args.some((a) => a.includes('#cron')))
   } finally {
     if (prev === undefined) delete process.env.CC_SESSION_KEY
     else process.env.CC_SESSION_KEY = prev
