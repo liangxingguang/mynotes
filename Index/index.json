@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22 17:21",
+  "updated_at": "2026-10-22 18:35",
   "notes": [
     {
       "id": "2026-10-14-high-perf-low-cpu-coding-tips-part2",
@@ -1431,6 +1431,25 @@
       "summary": "公众号「架构师之路」的 2025 年度文章精选索引。作者离职单干后全年更新 343 篇、261 万阅读，本文按四大方向（DeepSeek、数据库、架构、OPC 创业）汇总了全年优质文章链接，是一份架构与分布式系统主题的资源清单，适合收藏按需查阅。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/architect-road-2025-digest.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-22-spring-boot-startup-speedup",
+      "title": "Spring Boot 启动加速实战：从 8 秒到 2 秒的 5 个优化点",
+      "path": "Inbox/2026-10-22-spring-boot-startup-speedup.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/QnH9PyiwXgf-0OdAb19GOQ",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "一个 Spring Boot 3.2 订单服务的启动优化实录：从 8.2s 压到 2~3.6s。核心思路是\"启动慢 = 容器替你做了太多没要的事\"，通过关闭多余自动配置、收窄类扫描、容器选型、JVM AOT、懒加载五步逐一清零浪费，每步附实测耗时与适用场景决策。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/spring-boot-startup-speedup.md",
       "wiki_status": "pending"
     },
     {
