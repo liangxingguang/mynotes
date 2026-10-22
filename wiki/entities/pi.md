@@ -15,6 +15,7 @@ sources:
   - raw/sources/ai/2026-10-14-learn-pi-agent-01-llm-to-agent.md
   - raw/sources/ai/2026-10-14-pi-1-0-durable-mcp-update.md
   - raw/sources/ai/2026-10-14-pi-sandbox-two-layer-isolation.md
+  - raw/sources/ai/2026-10-14-pi-school-agent-course.md
 related:
   - wiki/concepts/mcp.md
   - wiki/concepts/agent-loop.md
@@ -44,6 +45,8 @@ Pi 是一款极简风格的 Agent CLI：默认只内置 read、write、edit、ba
 - 头部扩展（2026-08 npm 月下载）：pi-mcp-adapter ≈76 万、pi-web-access ≈40 万、pi-subagents ≈36 万、rpiv-ask-user-question ≈12 万、rpiv-todo ≈10 万、pi-lens ≈6 万。
 - pi-mcp-adapter 通过约 200 token 的代理工具按需启动 MCP server，可直接读取 Claude Code 的 `.mcp.json` 配置（1.0 前的 MCP 接入方式；1.0 起 MCP 进入核心）。
 - 扩展以完整系统权限运行，官方生态依赖用户自行甄别可信源。
+- **会话树设计**（第三方课程描述口径）：Pi 把一段对话看作一棵树而非直线，走错可退回任意节点重走且原尝试保留，类似版本控制的存档点。
+- **Pi School**：社区免费课程（15 节 + 11 个练习，pi-school.ziki.boo），形式为"由 Pi 自己当老师"——网站每节只给一段提示词，讲解与操作由 Pi 引导；因 Pi 默认能力极简，被用作 Agent 入门教材。
 
 ## Products / Projects（产品／项目）
 
@@ -64,6 +67,7 @@ Pi 是一款极简风格的 Agent CLI：默认只内置 read、write、edit、ba
 - 2026-10-14 — learn-pi-agent 系列第一章发布，以 Pi 为主线讲解 Agent Loop，并揭示三包结构与 Pi Agent Harness 定位
 - 2026-10 — Pi 升级 1.0：Code Mode 与原生 MCP 进稳定版，同日发布 Pi Durable（播客访谈，InfoQ 编译）
 - 2026-10 — 官方文档与示例源码梳理的两层隔离方案公开（脚本级沙箱 + 进程级五种做法）
+- 2026-10-14 — Pi School 课程推荐文发布，揭示其"Pi 自己当老师"的教学形式与树状会话设计
 
 ## Current Understanding（当前认知）
 
@@ -75,3 +79,4 @@ Pi 代表了 Agent CLI 的另一种产品哲学：内核极简、能力清单交
 - `raw/sources/ai/2026-10-14-learn-pi-agent-01-llm-to-agent.md`
 - `raw/sources/ai/2026-10-14-pi-1-0-durable-mcp-update.md`
 - `raw/sources/ai/2026-10-14-pi-sandbox-two-layer-isolation.md`
+- `raw/sources/ai/2026-10-14-pi-school-agent-course.md`

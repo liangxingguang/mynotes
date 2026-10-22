@@ -51,3 +51,5 @@
 - 2026-10-23 03:30 | ingest | raw/sources/ai/2026-10-14-pi-1-0-durable-mcp-update.md | wiki/sources/pi-1-0-durable-mcp-update.md, wiki/concepts/durable-execution.md, wiki/entities/pi.md（更新：1.0/Durable/Code Mode）, wiki/concepts/mcp.md（演进更新）
 - 2026-10-23 03:30 | ingest | raw/sources/ai/2026-10-14-pi-sandbox-two-layer-isolation.md | wiki/sources/pi-sandbox-two-layer-isolation.md, wiki/concepts/agent-sandboxing.md, wiki/entities/pi.md（更新：安全姿态）
 - 2026-10-23 03:30 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
+- 2026-10-23 19:40 | ingest | raw/sources/ai/2026-10-14-pi-school-agent-course.md | wiki/sources/pi-school-agent-course.md, wiki/entities/pi.md（更新：会话树设计/Pi School）
+- 2026-10-23 19:40 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）

@@ -8,7 +8,7 @@ platform: 微信公众号
 created: 2026-10-14
 category: 学习
 tags: [AI, 课程, Pi]
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 这门免费课表面在教 Pi，其实在教你 Agent 到底怎么工作

@@ -23,6 +23,7 @@
 - [[pi-6-extensions|从 Claude Code 搬到 Pi：6 个扩展补回熟悉体验]]（2026-10-14，AI/Agent CLI）
 - [[pi-1-0-durable-mcp-update|Pi 1.0：原生 MCP + Code Mode 稳定版与 Pi Durable 持久执行框架]]（2026-10-14，AI/Agent 基础设施）
 - [[pi-sandbox-two-layer-isolation|Pi 支持沙箱吗：从什么是沙箱，到 Pi 的两层隔离]]（2026-10-14，AI/安全）
+- [[pi-school-agent-course|这门免费课表面在教 Pi，其实在教你 Agent 到底怎么工作]]（2026-10-14，AI/教程）
 - [[system-design-12-components|一次讲清 12 个系统设计核心组件]]（2026-10-13，系统设计）
 
 ## concept（概念）
