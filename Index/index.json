@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23 07:29",
+  "updated_at": "2026-10-23 07:56",
   "notes": [
     {
       "id": "2026-10-14-llm-wiki-advanced-four-steps",
@@ -1495,6 +1495,25 @@
       "summary": "微博博主「蚁工厂」推荐纳米AI（nano-ai.tech）的免费教程《从 GPT-2 到 LLaMA》：回答「2019 年的 GPT-2 与今天的 LLaMA/Qwen/DeepSeek 到底差在哪」。结论是骨架仍是 Transformer，真正演进的是 4 个关键零件——RMSNorm（归一化简化）、SwiGLU（前馈网络升级）、RoPE（旋转位置编码）、GQA（分组查询注意力）。教程共 5 篇，用「猫吃鱼」同一个小例子贯穿，数字可手算、代码可直接跑，适合手写完 GPT-2 后进阶。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/weibo-gpt2-to-llama-tutorial.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-23-ai-engineering-interview-questions",
+      "title": "AI Engineering Interview Questions：公开 AI 工程面试题库",
+      "path": "Inbox/2026-10-23-ai-engineering-interview-questions.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "课程"
+      ],
+      "source": "微博",
+      "source_url": "https://weibo.com/5648162302/5356356632055233",
+      "source_type": "link",
+      "platform": "weibo",
+      "summary": "开源项目 ai-engineering-interview-questions，按主题收录 AI 工程面试问题并附讲解入口，覆盖 LLM 基础到生产部署全链路，适合面试前自查知识覆盖。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/weibo-5356356632055233.md",
       "wiki_status": "pending"
     },
     {
