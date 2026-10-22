@@ -4,7 +4,7 @@ type: concept
 title: CPU 漏斗（编码级性能模型）
 status: active
 created: 2026-10-21
-updated: 2026-10-21
+updated: 2026-10-22
 confidence: medium
 tags:
   - concept
@@ -12,8 +12,10 @@ tags:
   - performance
 sources:
   - raw/sources/misc/2026-10-14-high-perf-low-cpu-coding-tips-part1.md
+  - raw/sources/misc/2026-10-14-high-perf-low-cpu-coding-tips-part2.md
 related:
   - wiki/sources/java-perf-low-cpu-coding-tips-part1.md
+  - wiki/sources/java-perf-low-cpu-coding-tips-part2.md
 ---
 # CPU 漏斗（编码级性能模型）
 
@@ -32,6 +34,9 @@ related:
 3. 快速失败：校验前置、有序、独立，非法请求尽早 return，不走无效主干。
 4. O(1) 替代 O(n) 分支：Set.contains 替代链式 equals，初始化期建 Map 替代多层 if-else。
 5. 零临时对象：数组/ArrayList 遍历、原生 for、StringBuilder、fastutil 原生类型集合，降低 GC。
+6. 契约级零开销（下篇扩展）：禁 void/null 出参，空集合返回 JVM 单例 `Collections.emptyList()`；固定错误码业务异常 static final 单例化并关闭堆栈填充。
+7. 为 JIT 让路（下篇扩展）：高频方法 static/final 保证内联、嵌套压平、try 块最小化、正则 Pattern 全局静态化。
+8. 内存布局优化（下篇扩展）：集合按预估容量初始化、用完 clear() 切断强引用；字段按从大到小声明消除对齐 Padding。
 
 ## Structure（结构）
 
@@ -53,7 +58,8 @@ related:
 
 ## Evolution（演进）
 
-- 2026-10-14 — 随"36 种编码实战技巧（上篇）"提出，贯穿前 18 种技巧；下篇尚未采集。
+- 2026-10-14 — 随"36 种编码实战技巧（上篇）"提出，贯穿前 18 种技巧。
+- 2026-10-22 — 下篇（技巧 19–36）摄入：模型从"少转换、少对象"扩展到 API 返回值契约、JIT 友好形态、异常纪律与内存对齐布局（见特征 6–8）。
 
 ## Open Questions（开放问题）
 
@@ -62,7 +68,9 @@ related:
 ## Evidence（证据）
 
 - Source: `raw/sources/misc/2026-10-14-high-perf-low-cpu-coding-tips-part1.md`
+- Source: `raw/sources/misc/2026-10-14-high-perf-low-cpu-coding-tips-part2.md`
 
 ## Related Knowledge（相关知识）
 
 - [[java-perf-low-cpu-coding-tips-part1]]
+- [[java-perf-low-cpu-coding-tips-part2]]

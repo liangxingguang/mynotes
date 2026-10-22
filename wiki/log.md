@@ -34,3 +34,7 @@
 - 2026-10-21 13:32 | ingest | raw/sources/misc/2026-10-14-github-niche-usage-tips.md | wiki/sources/github-niche-usage-tips.md
 - 2026-10-21 13:32 | ingest | raw/sources/misc/2026-10-14-high-perf-low-cpu-coding-tips-part1.md | wiki/sources/java-perf-low-cpu-coding-tips-part1.md, wiki/concepts/cpu-funnel-coding.md
 - 2026-10-21 13:32 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
+- 2026-10-22 13:32 | ingest | raw/sources/misc/2026-10-14-high-perf-low-cpu-coding-tips-part2.md | wiki/sources/java-perf-low-cpu-coding-tips-part2.md, wiki/concepts/cpu-funnel-coding.md（更新：下篇扩展）, wiki/sources/java-perf-low-cpu-coding-tips-part1.md（互链更新）
+- 2026-10-22 13:32 | ingest | raw/sources/ai/2026-10-14-huolala-agent-eval-platform.md | wiki/sources/huolala-agent-eval-platform.md, wiki/concepts/agent-evaluation.md
+- 2026-10-22 13:32 | ingest | raw/sources/ai/2026-10-14-jd-haibo-ai-knowledge-base.md | wiki/sources/jd-haibo-ai-knowledge-base.md, wiki/entities/jd-haibo.md, wiki/concepts/okf-knowledge-format.md
+- 2026-10-22 13:32 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）

@@ -4,7 +4,7 @@ type: source
 title: 打造高性能、低CPU消耗系统—36种编码实战技巧（上篇）
 status: active
 created: 2026-10-21
-updated: 2026-10-21
+updated: 2026-10-22
 confidence: high
 tags:
   - source
@@ -56,7 +56,7 @@ sources:
 
 ## Implications（影响／启示）
 
-高并发 Java 服务的性能问题大头在编码习惯（类型转换、字符串、临时对象、分支结构）而非 JVM 调参；本文提供可逐条对照的检查清单。下篇（后 18 种）尚未采集。
+高并发 Java 服务的性能问题大头在编码习惯（类型转换、字符串、临时对象、分支结构）而非 JVM 调参；本文提供可逐条对照的检查清单。下篇（后 18 种）已摄入：[[java-perf-low-cpu-coding-tips-part2]]。
 
 ## Limitations（局限）
 

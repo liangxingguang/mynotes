@@ -8,7 +8,7 @@ platform: 微信公众号
 created: 2026-10-14
 category: 技术
 tags: [工程实践]
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 打造高性能、低 CPU 消耗系统——36 种编码实战技巧（下篇）

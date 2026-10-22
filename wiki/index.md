@@ -12,17 +12,22 @@
 - [[deepseek-harness-7day-day1|7天学懂 DeepSeek Harness 实操手册（Day 1）]]（2026-10-14，AI/教程）
 - [[drawio-skill-arch-diagram|drawio-skill：把代码与配置变成可编辑架构图的开源 Skill]]（2026-10-14，架构/工具）
 - [[github-niche-usage-tips|三个小众但实用的 GitHub 用法（zread / Deepwiki / gitingest）]]（2026-10-14，工具）
+- [[huolala-agent-eval-platform|货拉拉业务 Agent 评测平台的工程实践与深度思考]]（2026-10-14，AI/Agent 评测）
 - [[java-perf-low-cpu-coding-tips-part1|打造高性能、低CPU消耗系统—36种编码实战技巧（上篇）]]（2026-10-14，Java/性能）
+- [[java-perf-low-cpu-coding-tips-part2|打造高性能、低CPU消耗系统—36种编码实战技巧（下篇）]]（2026-10-14，Java/性能）
+- [[jd-haibo-ai-knowledge-base|拆解京东海博 AI-Native 落地保障：海博团队 AI 知识库能力建设]]（2026-10-14，AI/知识库）
 - [[pi-6-extensions|从 Claude Code 搬到 Pi：6 个扩展补回熟悉体验]]（2026-10-14，AI/Agent CLI）
 - [[system-design-12-components|一次讲清 12 个系统设计核心组件]]（2026-10-13，系统设计）
 
 ## concept（概念）
 
 - [[a2a-protocol|A2A 协议]]（Agent↔Agent 横向协作协议，Google 2025）
+- [[agent-evaluation|业务 Agent 全生命周期评测]]（规则+LLM 裁判+人工复核，覆盖准入/门禁/压测/巡检，货拉拉实践）
 - [[ai-native-organization|AI 原生研发组织]]（工具原生→工作流原生→组织原生）
 - [[ai-native-sdlc|AI 原生 SDLC]]（制品提交链驱动的六阶段闭环，Anthropic 2026）
 - [[cpu-funnel-coding|CPU 漏斗（编码级性能模型）]]（砍掉无效解析/转换/对象，让 CPU 只做核心运算）
 - [[mcp|MCP]]（LLM↔工具/数据纵向协议，Anthropic 2024）
+- [[okf-knowledge-format|OKF（面向 AI Agent 的知识包装规范）]]（入库时编译为互链 Markdown 树，运行时只做导航+摘录）
 
 ## entity（实体）
 
@@ -30,6 +35,7 @@
 - [[arthas|Arthas]]（Java 线上诊断工具，4.3.5 起含实验性 MCP Server）
 - [[deepseek-harness|DeepSeek Harness]]（DeepSeek 模型的桌面 Agent 客户端，v0.2 预览版）
 - [[drawio-skill|drawio-skill]]（代码/配置→可编辑 .drawio 架构图，增量同步 + CI 架构检查）
+- [[jd-haibo|京东海博]]（京东本地生活即时零售 SaaS，780+ 商家/10 万+ 门店，AI 知识库实践标杆）
 - [[pi|Pi]]（极简 Agent CLI，毛坯房 + 5000+ 扩展生态）
 
 ## topic（主题）

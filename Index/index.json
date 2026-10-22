@@ -1,62 +1,6 @@
 {
-  "updated_at": "2026-10-22 19:41",
+  "updated_at": "2026-10-22 21:35",
   "notes": [
-    {
-      "id": "2026-10-14-high-perf-low-cpu-coding-tips-part2",
-      "title": "打造高性能、低 CPU 消耗系统——36 种编码实战技巧（下篇）",
-      "path": "Inbox/2026-10-14-high-perf-low-cpu-coding-tips-part2.md",
-      "created": "2026-10-14",
-      "category": "技术",
-      "tags": [
-        "工程实践"
-      ],
-      "source": "京东云开发者（微信公众号）",
-      "source_url": "https://mp.weixin.qq.com/s/9xTFLXnCZIzU6mdYy1VFng",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "百万 QPS 经验编码手册的下篇（技巧 19–36）。重心从上篇的\"少转换、少对象\"转向 API 契约、内存布局与 JIT 友好：方法不返回 void/null 而返回空集合或统一响应体；嵌套压平、条件正向化；高频方法用 static/final 让 JIT 内联；集合预估容量、用完 clear、只读用不可变集合；固定错误码的业务异常用单例并关闭堆栈；字段按从大到小声明减少对齐填充；能用批量就不单条循环。同样只适用于有性能痛点的高并发场景。",
-      "summary_status": "",
-      "asset_ref": "",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-14-huolala-agent-eval-platform",
-      "title": "货拉拉业务 Agent 评测平台的工程实践与深度思考",
-      "path": "Inbox/2026-10-14-huolala-agent-eval-platform.md",
-      "created": "2026-10-14",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/KnPWPfb6YEKmbGNgLniAMg",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "货拉拉质量保障部介绍自研的业务 Agent 全生命周期自动化评测平台。针对 LLM 概率输出、工具调用链长、性能维度跃迁导致传统断言与单点打分失效，平台经\"人工盲测→离线数据集+单一 LLM 裁判→全生命周期平台\"三代演进，落地六大工程支柱：多协议资产纳管、测试数据合规准入、多模复合智能裁判、评测计划与全景报告、LLM 性能压测、CI/CD 门禁闭环。已接入 114 个智能体、沉淀 16,337 个黄金用例，回归提效 5~10 倍，上线合格率 98.5%，线上缺陷率下降 85%。",
-      "summary_status": "",
-      "asset_ref": "",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-14-jd-haibo-ai-knowledge-base",
-      "title": "拆解京东海博 AI-Native 落地保障：海博团队 AI 知识库能力建设",
-      "path": "Inbox/2026-10-14-jd-haibo-ai-knowledge-base.md",
-      "created": "2026-10-14",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "工程实践"
-      ],
-      "source": "京东云开发者（微信公众号）",
-      "source_url": "https://mp.weixin.qq.com/s/rNox2XcWvgt2zdwGlVmfAg",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "京东本地生活即时零售 SaaS\"海博\"（覆盖 780+ 商家、10 万+门店）的 AI 知识库实践。核心判断：AI 用不好的瓶颈不在模型、也不在运行时检索，而在知识生产——历史业务知识沉在人脑和零散文档里。解法是把\"知识编译\"前移到维护期，采纳 Google OKF 规范，用 Skill 从代码自动生成结构化互链 Markdown 知识树，织入研发流水线双向闭环；AB 实验显示带知识库需求分析快约 44%，并能发现只读代码触达不到的隐藏阻塞点。",
-      "summary_status": "",
-      "asset_ref": "",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-14-jvm-tuning-core-approach",
       "title": "一文掌握 JVM 调优核心思路",
@@ -73,7 +17,7 @@
       "summary": "JVM 调优方法论短文：不要从参数开始、在参数里迷路（慢了调 -Xmx、FGC 多了换收集器、OOMKilled 又缩堆），而要把顺序反过来——先定可测目标、留基线，再用 JFR 和 GC 日志定位时间与内存去向，证据指向 JVM 后才动堆大小、收集器与 GC 参数。每轮只改一个变量并备好回退，延迟、吞吐、占用不可同时无限优化。",
       "summary_status": "",
       "asset_ref": "",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-14-learn-pi-agent-01-llm-to-agent",
@@ -1969,6 +1913,62 @@
       "source_type": "article",
       "platform": "微信公众号",
       "summary": "基于百万 QPS 高并发系统经验的 Java 编码手册，上篇讲前 18 个技巧（共 36 个、100+ 案例）。主线思想是\"CPU 漏斗\"：砍掉一切多余的类型转换、对象创建、字符串操作与无效分支，让 CPU 只做核心运算——核心手段是全链路统一原生类型、相同数据只取一次、快速失败、用 O(1) 查找替代 O(n) 判断、用原生类型集合降低 GC。作者强调仅适用于有性能痛点的高并发场景，否则应优先可读性与可维护性。",
+      "summary_status": "",
+      "asset_ref": "",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-14-high-perf-low-cpu-coding-tips-part2",
+      "title": "打造高性能、低 CPU 消耗系统——36 种编码实战技巧（下篇）",
+      "path": "Archive/2026-10-14-high-perf-low-cpu-coding-tips-part2.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [
+        "工程实践"
+      ],
+      "source": "京东云开发者（微信公众号）",
+      "source_url": "https://mp.weixin.qq.com/s/9xTFLXnCZIzU6mdYy1VFng",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "百万 QPS 经验编码手册的下篇（技巧 19–36）。重心从上篇的\"少转换、少对象\"转向 API 契约、内存布局与 JIT 友好：方法不返回 void/null 而返回空集合或统一响应体；嵌套压平、条件正向化；高频方法用 static/final 让 JIT 内联；集合预估容量、用完 clear、只读用不可变集合；固定错误码的业务异常用单例并关闭堆栈；字段按从大到小声明减少对齐填充；能用批量就不单条循环。同样只适用于有性能痛点的高并发场景。",
+      "summary_status": "",
+      "asset_ref": "",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-14-huolala-agent-eval-platform",
+      "title": "货拉拉业务 Agent 评测平台的工程实践与深度思考",
+      "path": "Archive/2026-10-14-huolala-agent-eval-platform.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/KnPWPfb6YEKmbGNgLniAMg",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "货拉拉质量保障部介绍自研的业务 Agent 全生命周期自动化评测平台。针对 LLM 概率输出、工具调用链长、性能维度跃迁导致传统断言与单点打分失效，平台经\"人工盲测→离线数据集+单一 LLM 裁判→全生命周期平台\"三代演进，落地六大工程支柱：多协议资产纳管、测试数据合规准入、多模复合智能裁判、评测计划与全景报告、LLM 性能压测、CI/CD 门禁闭环。已接入 114 个智能体、沉淀 16,337 个黄金用例，回归提效 5~10 倍，上线合格率 98.5%，线上缺陷率下降 85%。",
+      "summary_status": "",
+      "asset_ref": "",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-14-jd-haibo-ai-knowledge-base",
+      "title": "拆解京东海博 AI-Native 落地保障：海博团队 AI 知识库能力建设",
+      "path": "Archive/2026-10-14-jd-haibo-ai-knowledge-base.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
+      "source": "京东云开发者（微信公众号）",
+      "source_url": "https://mp.weixin.qq.com/s/rNox2XcWvgt2zdwGlVmfAg",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "京东本地生活即时零售 SaaS\"海博\"（覆盖 780+ 商家、10 万+门店）的 AI 知识库实践。核心判断：AI 用不好的瓶颈不在模型、也不在运行时检索，而在知识生产——历史业务知识沉在人脑和零散文档里。解法是把\"知识编译\"前移到维护期，采纳 Google OKF 规范，用 Skill 从代码自动生成结构化互链 Markdown 知识树，织入研发流水线双向闭环；AB 实验显示带知识库需求分析快约 44%，并能发现只读代码触达不到的隐藏阻塞点。",
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "ingested"

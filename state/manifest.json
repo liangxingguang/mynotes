@@ -137,6 +137,43 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/B-IPbwcQr3yp8_BJMKvdbA",
       "asset_ref": null
+    },
+    {
+      "path": "raw/sources/misc/2026-10-14-high-perf-low-cpu-coding-tips-part2.md",
+      "sha256": "5abbbe33c715bf4639c21821bb6bcce9857d0b99d357e108aed560e370e1ce51",
+      "registered_at": "2026-10-22",
+      "inbox_ref": "Archive/2026-10-14-high-perf-low-cpu-coding-tips-part2.md",
+      "pages": [
+        "wiki/sources/java-perf-low-cpu-coding-tips-part2.md",
+        "wiki/concepts/cpu-funnel-coding.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/9xTFLXnCZIzU6mdYy1VFng",
+      "asset_ref": null
+    },
+    {
+      "path": "raw/sources/ai/2026-10-14-huolala-agent-eval-platform.md",
+      "sha256": "a39ce53d555070d924a1cadc49fdad8ac071cdf20c9e25b412cf2f02b69b7908",
+      "registered_at": "2026-10-22",
+      "inbox_ref": "Archive/2026-10-14-huolala-agent-eval-platform.md",
+      "pages": [
+        "wiki/sources/huolala-agent-eval-platform.md",
+        "wiki/concepts/agent-evaluation.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/KnPWPfb6YEKmbGNgLniAMg",
+      "asset_ref": null
+    },
+    {
+      "path": "raw/sources/ai/2026-10-14-jd-haibo-ai-knowledge-base.md",
+      "sha256": "aba96841a687a6b4280191a13dc396ff1e3707d0ad479df2d0281eea53027ddb",
+      "registered_at": "2026-10-22",
+      "inbox_ref": "Archive/2026-10-14-jd-haibo-ai-knowledge-base.md",
+      "pages": [
+        "wiki/sources/jd-haibo-ai-knowledge-base.md",
+        "wiki/entities/jd-haibo.md",
+        "wiki/concepts/okf-knowledge-format.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/rNox2XcWvgt2zdwGlVmfAg",
+      "asset_ref": null
     }
   ]
 }
