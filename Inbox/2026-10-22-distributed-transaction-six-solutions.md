@@ -10,6 +10,7 @@ category: 技术
 tags:
   - 分布式系统
   - 工程实践
+  - 分布式事务
 asset_ref: Assets/2026/10/distributed-transaction-six-solutions.md
 wiki_status: pending
 ---

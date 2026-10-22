@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22 18:58",
+  "updated_at": "2026-10-22 18:59",
   "tags": [
     {
       "name": "思维方式",
@@ -334,6 +334,18 @@
         "websocket",
         "ws",
         "长连接"
+      ],
+      "category": "技术",
+      "count": 1,
+      "status": "new"
+    },
+    {
+      "name": "分布式事务",
+      "aliases": [
+        "distributed transaction",
+        "2PC",
+        "TCC",
+        "事务消息"
       ],
       "category": "技术",
       "count": 1,

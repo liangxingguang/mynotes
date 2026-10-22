@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22 18:58",
+  "updated_at": "2026-10-22 18:59",
   "notes": [
     {
       "id": "2026-10-14-high-perf-low-cpu-coding-tips-part2",
@@ -1441,7 +1441,8 @@
       "category": "技术",
       "tags": [
         "分布式系统",
-        "工程实践"
+        "工程实践",
+        "分布式事务"
       ],
       "source": "微信公众号",
       "source_url": "https://mp.weixin.qq.com/s/iefb1PSKWHDdfnE_QKDwIQ",
