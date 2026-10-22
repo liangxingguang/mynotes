@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22 18:38",
+  "updated_at": "2026-10-22 18:40",
   "notes": [
     {
       "id": "2026-10-14-high-perf-low-cpu-coding-tips-part2",
@@ -1431,6 +1431,25 @@
       "summary": "公众号「架构师之路」的 2025 年度文章精选索引。作者离职单干后全年更新 343 篇、261 万阅读，本文按四大方向（DeepSeek、数据库、架构、OPC 创业）汇总了全年优质文章链接，是一份架构与分布式系统主题的资源清单，适合收藏按需查阅。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/architect-road-2025-digest.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-22-mq-message-backlog-solutions",
+      "title": "RabbitMQ vs RocketMQ，消息堆积了怎么办？一线解决方案全解析！",
+      "path": "Inbox/2026-10-22-mq-message-backlog-solutions.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "Kafka"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/nXNdub_DSqJSnf73PWLLRg",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "消息堆积（生产快于消费导致队列积压）的排查与解决指南：分别给出 RabbitMQ 与 RocketMQ 的消费者/队列/生产者优化代码，以及应急处理三板斧（临时扩容、消息分流、消息清理），并按电商/金融/内容三类业务场景给出差异化策略。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/mq-message-backlog-solutions.md",
       "wiki_status": "pending"
     },
     {
