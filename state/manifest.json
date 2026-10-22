@@ -263,6 +263,45 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/D6stDyVwJJXG4j4LI-x0Og",
       "asset_ref": null
+    },
+    {
+      "path": "raw/sources/ai/2026-10-14-pi-secondary-dev-5-layers.md",
+      "inbox_ref": "Archive/2026-10-14-pi-secondary-dev-5-layers.md",
+      "pages": [
+        "wiki/sources/pi-secondary-dev-5-layers.md",
+        "wiki/concepts/pi-customization-layers.md",
+        "wiki/entities/pi.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/3XcWGXiMmyNVCABTgfX6UQ",
+      "sha256": "9eb97ca1062a2ebc66b28942e6cd928601d7b9bca1b657ef3707d23e37450193",
+      "registered_at": "2026-10-23",
+      "asset_ref": null
+    },
+    {
+      "path": "raw/sources/ai/2026-10-14-pi-setup-mcp-codemode-guide.md",
+      "inbox_ref": "Archive/2026-10-14-pi-setup-mcp-codemode-guide.md",
+      "pages": [
+        "wiki/sources/pi-setup-mcp-codemode-guide.md",
+        "wiki/concepts/codemode.md",
+        "wiki/entities/pi.md",
+        "wiki/concepts/mcp.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/k0SlcxzvHf0QMLd8Qa83Bw",
+      "sha256": "e9862edb1498698bb502ae741fd729f8b8900f72c969ee37729d6465ad998633",
+      "registered_at": "2026-10-23",
+      "asset_ref": null
+    },
+    {
+      "path": "raw/sources/misc/2026-10-14-pm-director-4-decision-frameworks.md",
+      "inbox_ref": "Archive/2026-10-14-pm-director-4-decision-frameworks.md",
+      "pages": [
+        "wiki/sources/pm-director-4-decision-frameworks.md",
+        "wiki/concepts/pm-decision-frameworks.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/Uj3Rgw-VQgmVWaybPWT9ag",
+      "sha256": "ceae2771c16908ac1266df18ed06d0e424aa09cdf004d265dfb87cdfb40f9998",
+      "registered_at": "2026-10-23",
+      "asset_ref": null
     }
   ]
 }

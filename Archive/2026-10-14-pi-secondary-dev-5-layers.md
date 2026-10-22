@@ -8,7 +8,7 @@ platform: 微信公众号
 created: 2026-10-14
 category: 技术
 tags: [AI, 工程实践, Pi]
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Pi 二次开发一篇讲透：5 层定制，把极简 Agent 变成你自己的产品

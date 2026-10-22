@@ -8,7 +8,9 @@ platform: 微信公众号
 created: 2026-10-14
 category: 资讯
 tags: [AI, 行业动态]
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-22T22:36:02.973Z"
+ingest_claim_id: 26660-1792708562973-0
 ---
 
 # 今年最全面的 AI 行业报告来了（State of AI Report 2026 中文要点）

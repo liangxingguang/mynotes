@@ -53,3 +53,7 @@
 - 2026-10-23 03:30 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
 - 2026-10-23 19:40 | ingest | raw/sources/ai/2026-10-14-pi-school-agent-course.md | wiki/sources/pi-school-agent-course.md, wiki/entities/pi.md（更新：会话树设计/Pi School）
 - 2026-10-23 19:40 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
+- 2026-10-23 22:35 | ingest | raw/sources/ai/2026-10-14-pi-secondary-dev-5-layers.md | wiki/sources/pi-secondary-dev-5-layers.md, wiki/concepts/pi-customization-layers.md（新建）, wiki/entities/pi.md（更新：作者/星数/四包/五层定制/Node 门槛）
+- 2026-10-23 22:35 | ingest | raw/sources/ai/2026-10-14-pi-setup-mcp-codemode-guide.md | wiki/sources/pi-setup-mcp-codemode-guide.md, wiki/concepts/codemode.md（新建）, wiki/entities/pi.md（更新：0.99/MCP/exposure）, wiki/concepts/mcp.md（演进更新）
+- 2026-10-23 22:35 | ingest | raw/sources/misc/2026-10-14-pm-director-4-decision-frameworks.md | wiki/sources/pm-director-4-decision-frameworks.md, wiki/concepts/pm-decision-frameworks.md（新建，confidence=low）
+- 2026-10-23 22:35 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）

@@ -15,11 +15,13 @@ sources:
   - raw/sources/ai/2026-10-14-arthas-mcp-ai-troubleshooting.md
   - raw/sources/products/2026-10-14-pi-6-extensions-from-claude-code.md
   - raw/sources/ai/2026-10-14-pi-1-0-durable-mcp-update.md
+  - raw/sources/ai/2026-10-14-pi-setup-mcp-codemode-guide.md
 related:
   - wiki/concepts/a2a-protocol.md
   - wiki/comparisons/a2a-vs-mcp.md
   - wiki/entities/arthas.md
   - wiki/entities/pi.md
+  - wiki/concepts/codemode.md
 ---
 # MCP
 
@@ -61,7 +63,9 @@ MCP 把"LLM 调用外部工具、数据库、文件、API"的方式协议化，�
 - 2024：Anthropic 提出 MCP（当前信源未确立更详细沿革）。
 - 2026-10：[[arthas|Arthas]] 4.3.5 官方文档将 MCP Server 标为实验性模块（29 个诊断工具）——MCP 生态向运维诊断工具扩展的个案。
 - 2026-10：[[pi|Pi]] 生态的 pi-mcp-adapter（月下载约 76 万，2026-08 npm 数据）以约 200 token 的代理工具替代全量工具定义、server 按需启动，并可直接读取 Claude Code 的 `.mcp.json`——MCP 配置跨客户端可移植、且工具定义的上下文成本可被代理式设计大幅压缩的个案。
-- 2026-10：Pi 1.0 将原生 MCP 纳入稳定版——其团队曾公开批评 MCP 臃肿、官网写"不支持 MCP"，因协议成熟（一年六七轮调整）与模型训练改善而转变；接入方式为工具搜索 + 渐进式披露按需加载，避免上下文膨胀——"批评者转向采纳"可作为 MCP 协议成熟度的一个信号。
+- 2026-09-30：[[pi|Pi]] v0.99.0/0.99.1 将 MCP 做进核心（Armin Ronacher PR #10040），但换了个接法——MCP 工具默认不直接给模型，藏在 [[codemode|Codemode]] 后面，五档 exposure 按需选择；配置 `~/.pi/agent/mcp.json` 与 Claude Code/Cursor 格式一致可直接复制。背景账：Pi 作者 2025-11 博客称 Playwright MCP 21 个工具仅工具说明就 1.37 万 token/请求（二手转述）。
+- 2026-10：Pi 1.0 将原生 MCP 纳入稳定版（0.99 引入、1.0 稳定）——其团队曾公开批评 MCP 臃肿、官网写"不支持 MCP"，因协议成熟（一年六七轮调整）与模型训练改善而转变；接入方式为工具搜索 + 渐进式披露按需加载，避免上下文膨胀——"批评者转向采纳"可作为 MCP 协议成熟度的一个信号。
+- 2026-10：Pi 0.99.1 实测为 MCP 的上下文成本提供定量个案（GLM-5.3，3 个 MCP 共 11 工具）：工具说明固定开销 direct 12,878 → codemode 6,956 → deferred 1,780 token；但单次任务收益取决于 MCP 返回格式是否结构化（brave 非结构化 JSON 文本致模型试错，GPT-5.5 反多 63%）——MCP 服务端返回格式设计直接影响 Agent 侧成本。
 
 ## Open Questions（开放问题）
 
@@ -73,6 +77,8 @@ MCP 把"LLM 调用外部工具、数据库、文件、API"的方式协议化，�
 - Source: `raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md`
 - Source: `raw/sources/ai/2026-10-14-arthas-mcp-ai-troubleshooting.md`
 - Source: `raw/sources/products/2026-10-14-pi-6-extensions-from-claude-code.md`
+- Source: `raw/sources/ai/2026-10-14-pi-1-0-durable-mcp-update.md`
+- Source: `raw/sources/ai/2026-10-14-pi-setup-mcp-codemode-guide.md`
 
 ## Related Knowledge（相关知识）
 

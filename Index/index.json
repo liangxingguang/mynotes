@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23 03:38",
+  "updated_at": "2026-10-23 06:37",
   "notes": [
     {
       "id": "2026-10-14-llm-wiki-advanced-four-steps",
@@ -21,64 +21,6 @@
       "wiki_status": "failed"
     },
     {
-      "id": "2026-10-14-pi-secondary-dev-5-layers",
-      "title": "Pi 二次开发一篇讲透：5 层定制，把极简 Agent 变成你自己的产品",
-      "path": "Inbox/2026-10-14-pi-secondary-dev-5-layers.md",
-      "created": "2026-10-14",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "工程实践",
-        "Pi"
-      ],
-      "source": "微信公众号（nephen）",
-      "source_url": "https://mp.weixin.qq.com/s/3XcWGXiMmyNVCABTgfX6UQ",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "开源终端 Agent Pi（GitHub 11 万+星，作者 Mario Zechner，哲学是\"让 Pi 适配你的工作流\"）的二开指南。Pi 内核薄到一个下午能读完（LLM+工具+循环，默认仅 read/write/edit/bash 四个工具），四个独立包分层干净，并提供五个官方扩展点。文章按成本从低到高讲透 Prompt 模板 → AGENTS.md → Skill → Extension → SDK 五层定制，并给出选型判断、分发方式与两个必踩坑。",
-      "summary_status": "",
-      "asset_ref": "",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-14-pi-setup-mcp-codemode-guide",
-      "title": "Pi Agent 入门指南：安装 + MCP + Codemode",
-      "path": "Inbox/2026-10-14-pi-setup-mcp-codemode-guide.md",
-      "created": "2026-10-14",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "工具",
-        "Pi"
-      ],
-      "source": "宇辰AI编程（微信公众号）",
-      "source_url": "https://mp.weixin.qq.com/s/k0SlcxzvHf0QMLd8Qa83Bw",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "Pi 0.99.1 实操指南（模型 GLM-5.3/GPT-5.5，MCP 用 context7/brave-search/magpie-image）。核心结论：接了 MCP 就自动开启 Codemode，无需改 settings.json；它稳定省的是工具说明的固定开销（11 个工具实测 12,878→6,956 token），但单次任务省不省取决于 MCP 返回格式与模型第一次猜得准不准。",
-      "summary_status": "",
-      "asset_ref": "",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-14-pm-director-4-decision-frameworks",
-      "title": "大厂产品总监私藏的 4 个决策框架",
-      "path": "Inbox/2026-10-14-pm-director-4-decision-frameworks.md",
-      "created": "2026-10-14",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/Uj3Rgw-VQgmVWaybPWT9ag",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "作者称在腾讯/字节/美团观察 3 位总监总结的 4 个可复用产品决策框架，分别解决：功能该不该砍、与老板意见相左怎么沟通、多需求抢资源怎么排序、用户反馈该信谁。核心主张：普通 PM 与总监的差距不在经验而在决策框架——把\"我觉得\"换成明确标准；每个框架都附了让 AI 做趋势分析/风险推演/打分排序/反馈过滤的提示词用法。",
-      "summary_status": "",
-      "asset_ref": "",
-      "wiki_status": "pending"
-    },
-    {
       "id": "2026-10-14-state-of-ai-report-2026",
       "title": "今年最全面的 AI 行业报告来了（State of AI Report 2026 中文要点）",
       "path": "Inbox/2026-10-14-state-of-ai-report-2026.md",
@@ -95,7 +37,7 @@
       "summary": "Air Street Capital 发布第九期年度《State of AI Report 2026》，Datawhale 译出要点：前沿竞争收敛为 Anthropic / OpenAI / Google 三家；智能体靠工具与上下文而非堆权重快速变强，并开始反哺 AI 研发；机器人接近\"GPT-2 时刻\"、AI 药物进入 III 期临床；推理成本年降约 13 倍，OpenAI+Anthropic 合计年化营收冲到 1050 亿美元；与此同时出口管制、主权 AI、智能体真实攻击事件促使政府收紧控制，实验室自己开始呼吁放慢脚步。",
       "summary_status": "",
       "asset_ref": "",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-14-system-design-notes-28-cases",
@@ -1988,6 +1930,64 @@
       "source_type": "article",
       "platform": "微信公众号",
       "summary": "一门 15 节免费 Pi 课程的体验推荐：上课方式很特别——第一节自己装好 Pi，第二节起\"老师\"就是 Pi 本身，网站只给一段提示词，复制给 Pi 后由它带着讲解和操作。作者认为它本质是一门 Agent 入门课，Pi 只是教材，真正可迁移到 Claude Code、Codex 的知识是：上下文怎么管、工具什么时候加、走错了怎么退、何时放手让 Agent 自己解决。",
+      "summary_status": "",
+      "asset_ref": "",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-14-pi-secondary-dev-5-layers",
+      "title": "Pi 二次开发一篇讲透：5 层定制，把极简 Agent 变成你自己的产品",
+      "path": "Archive/2026-10-14-pi-secondary-dev-5-layers.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践",
+        "Pi"
+      ],
+      "source": "微信公众号（nephen）",
+      "source_url": "https://mp.weixin.qq.com/s/3XcWGXiMmyNVCABTgfX6UQ",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "开源终端 Agent Pi（GitHub 11 万+星，作者 Mario Zechner，哲学是\"让 Pi 适配你的工作流\"）的二开指南。Pi 内核薄到一个下午能读完（LLM+工具+循环，默认仅 read/write/edit/bash 四个工具），四个独立包分层干净，并提供五个官方扩展点。文章按成本从低到高讲透 Prompt 模板 → AGENTS.md → Skill → Extension → SDK 五层定制，并给出选型判断、分发方式与两个必踩坑。",
+      "summary_status": "",
+      "asset_ref": "",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-14-pi-setup-mcp-codemode-guide",
+      "title": "Pi Agent 入门指南：安装 + MCP + Codemode",
+      "path": "Archive/2026-10-14-pi-setup-mcp-codemode-guide.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工具",
+        "Pi"
+      ],
+      "source": "宇辰AI编程（微信公众号）",
+      "source_url": "https://mp.weixin.qq.com/s/k0SlcxzvHf0QMLd8Qa83Bw",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "Pi 0.99.1 实操指南（模型 GLM-5.3/GPT-5.5，MCP 用 context7/brave-search/magpie-image）。核心结论：接了 MCP 就自动开启 Codemode，无需改 settings.json；它稳定省的是工具说明的固定开销（11 个工具实测 12,878→6,956 token），但单次任务省不省取决于 MCP 返回格式与模型第一次猜得准不准。",
+      "summary_status": "",
+      "asset_ref": "",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-14-pm-director-4-decision-frameworks",
+      "title": "大厂产品总监私藏的 4 个决策框架",
+      "path": "Archive/2026-10-14-pm-director-4-decision-frameworks.md",
+      "created": "2026-10-14",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/Uj3Rgw-VQgmVWaybPWT9ag",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "作者称在腾讯/字节/美团观察 3 位总监总结的 4 个可复用产品决策框架，分别解决：功能该不该砍、与老板意见相左怎么沟通、多需求抢资源怎么排序、用户反馈该信谁。核心主张：普通 PM 与总监的差距不在经验而在决策框架——把\"我觉得\"换成明确标准；每个框架都附了让 AI 做趋势分析/风险推演/打分排序/反馈过滤的提示词用法。",
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "ingested"

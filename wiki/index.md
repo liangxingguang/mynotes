@@ -23,6 +23,9 @@
 - [[pi-6-extensions|从 Claude Code 搬到 Pi：6 个扩展补回熟悉体验]]（2026-10-14，AI/Agent CLI）
 - [[pi-1-0-durable-mcp-update|Pi 1.0：原生 MCP + Code Mode 稳定版与 Pi Durable 持久执行框架]]（2026-10-14，AI/Agent 基础设施）
 - [[pi-sandbox-two-layer-isolation|Pi 支持沙箱吗：从什么是沙箱，到 Pi 的两层隔离]]（2026-10-14，AI/安全）
+- [[pi-secondary-dev-5-layers|Pi 二次开发一篇讲透：5 层定制，把极简 Agent 变成你自己的产品]]（2026-10-14，AI/二次开发）
+- [[pi-setup-mcp-codemode-guide|Pi Agent 入门指南：安装 + MCP + Codemode]]（2026-10-14，AI/MCP）
+- [[pm-director-4-decision-frameworks|大厂产品总监私藏的 4 个决策框架]]（2026-10-14，产品/方法论）
 - [[pi-school-agent-course|这门免费课表面在教 Pi，其实在教你 Agent 到底怎么工作]]（2026-10-14，AI/教程）
 - [[system-design-12-components|一次讲清 12 个系统设计核心组件]]（2026-10-13，系统设计）
 
@@ -34,12 +37,15 @@
 - [[agent-sandboxing|Agent 沙箱隔离]]（能力限制而非行为审查；四条路径收窄可达面；脚本级/命令级/工具级/整体隔离）
 - [[ai-native-organization|AI 原生研发组织]]（工具原生→工作流原生→组织原生）
 - [[ai-native-sdlc|AI 原生 SDLC]]（制品提交链驱动的六阶段闭环，Anthropic 2026）
+- [[codemode|Codemode（代码模式工具编排）]]（模型写 JS 沙箱脚本编排工具调用，只回筛选结果；固定开销约减半，单次收益看返回格式）
 - [[cpu-funnel-coding|CPU 漏斗（编码级性能模型）]]（砍掉无效解析/转换/对象，让 CPU 只做核心运算）
 - [[durable-execution|持久执行（Durable Execution）]]（崩溃后断点精确恢复；效应三明治 + 版本化文档存储，非事件溯源）
 - [[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]（先目标基线、JFR/GC 日志归因，证据指向 JVM 才动参数，单变量实验）
 - [[mcp|MCP]]（LLM↔工具/数据纵向协议，Anthropic 2024）
 - [[next-token-prediction|下一 token 预测]]（LLM 的统一目标：交叉熵训练、自回归生成，能力与幻觉同根）
 - [[okf-knowledge-format|OKF（面向 AI Agent 的知识包装规范）]]（入库时编译为互链 Markdown 树，运行时只做导航+摘录）
+- [[pi-customization-layers|Pi 五层定制模型]]（Prompt 模板→AGENTS.md→Skill→Extension→SDK，官方扩展点成本阶梯）
+- [[pm-decision-frameworks|产品决策四框架]]（3步止损/反向假设/杠杆率排序/信号噪音过滤；单一自媒体信源，置信度低）
 
 ## entity（实体）
 
