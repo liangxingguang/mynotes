@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22 19:26",
+  "updated_at": "2026-10-22 19:33",
   "notes": [
     {
       "id": "2026-10-14-high-perf-low-cpu-coding-tips-part2",
@@ -1451,6 +1451,26 @@
       "summary": "分布式事务六种方案的完整梳理：2PC（及致命伤）、本地消息表、RocketMQ 事务消息、TCC、事务状态表+补偿、同步双写+异步对账。从强一致到最终一致，覆盖从理论到落地的全路径。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/distributed-transaction-six-solutions.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-22-k8s-ha-cluster-setup-guide",
+      "title": "K8s从零搭建高可用集群：保姆级图文实战教程（3 Master + 2 Worker）",
+      "path": "Inbox/2026-10-22-k8s-ha-cluster-setup-guide.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "Kubernetes",
+        "课程",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/_o_wiC0G8xaqdWWgMjbJLw",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "从裸机到可\"拔电源\"演练的生产级 K8s：3 控制面堆叠 etcd（Raft 三成员）+ HAProxy/Keepalived 统一 VIP + Calico VXLAN 组网。全量脚本/YAML 可复制，含国内镜像拉取失败四大场景解法与三个故障演练。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/k8s-ha-cluster-setup-guide.md",
       "wiki_status": "pending"
     },
     {

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22 19:26",
+  "updated_at": "2026-10-22 19:33",
   "tags": [
     {
       "name": "思维方式",
@@ -73,7 +73,7 @@
         "最佳实践"
       ],
       "category": "技术",
-      "count": 67,
+      "count": 68,
       "status": "active"
     },
     {
@@ -100,7 +100,7 @@
         "教程"
       ],
       "category": "学习",
-      "count": 10,
+      "count": 11,
       "status": "active"
     },
     {
@@ -349,6 +349,17 @@
       ],
       "category": "技术",
       "count": 3,
+      "status": "new"
+    },
+    {
+      "name": "Kubernetes",
+      "aliases": [
+        "k8s",
+        "K8s",
+        "容器编排"
+      ],
+      "category": "技术",
+      "count": 1,
       "status": "new"
     }
   ]
