@@ -149,3 +149,4 @@
 - 2026-10-23 11:05 | ingest | raw/sources/ai/2026-10-23-agent-software-architecture-task-run-step-event.md | wiki/sources/agent-software-architecture-task-run-step-event.md（新建，confidence=high）+ wiki/concepts/task-run-step-event-model.md（新建概念页，confidence=medium：四元分离/Run 聚合根+守卫/纯函数投影/OCC/事件溯源取舍）+ wiki/concepts/agent-loop.md、wiki/concepts/durable-execution.md（升级互证：Loop 控制平面化、三种 replay 区分与六步生产化路径）
 - 2026-10-23 11:10 | ingest | raw/sources/ai/2026-10-23-github-open-source-ai-books-6.md | wiki/sources/github-open-source-ai-books-6.md（新建，confidence=low，知乎开源 AI 书单，按书单先例不立实体页）
 - 2026-10-23 11:10 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
+- 2026-10-23 19:22 | ingest | raw/sources/architecture/2026-10-23-im-group-chat-write-fanout-cost.md | wiki/sources/im-group-chat-write-fanout-cost.md（新建，confidence=high，IM 写扩散成本账与大厂选型）+ wiki/concepts/write-fanout.md（新建概念页，confidence=medium：群服务扇出/副本指纹/MQ 批量化/双轨存储/规模分档；related 回链 idempotency-design、rocketmq、kafka）

@@ -49,6 +49,7 @@
 - [[github-niche-usage-tips|三个小众但实用的 GitHub 用法（zread / Deepwiki / gitingest）]]（2026-10-14，工具）
 - [[github-open-source-ai-books-6|知乎专栏：6 本 GitHub 开源 AI 宝典（Agent/Infra/DL/RL）]]（2026-10-23，AI/学习资源，置信度低）
 - [[huolala-agent-eval-platform|货拉拉业务 Agent 评测平台的工程实践与深度思考]]（2026-10-14，AI/Agent 评测）
+- [[im-group-chat-write-fanout-cost|IM千人群聊该不该用消息写扩散？详细算算成本账！]]（2026-10-23，IM/写扩散）
 - [[huolala-ai-coding-workflow|个人提效到团队提效：货拉拉 AI Coding 流程化落地实践]]（2026-10-20，AI/企业落地）
 - [[java-perf-low-cpu-coding-tips-part1|打造高性能、低CPU消耗系统—36种编码实战技巧（上篇）]]（2026-10-14，Java/性能）
 - [[java-perf-low-cpu-coding-tips-part2|打造高性能、低CPU消耗系统—36种编码实战技巧（下篇）]]（2026-10-14，Java/性能）
@@ -145,6 +146,7 @@
 - [[reactive-tracing-context|响应式环境的全链路 traceId 传递]]（Reactor Context 替代 ThreadLocal；doOnEach 同步 MDC、doFinally 清除）
 - [[table-sharding-migration|分表平滑迁移策略]]（五种读写策略矩阵 + 双写双读 SQL 重写，京东大表治理实践）
 - [[virtual-threads-production|虚拟线程生产实践]]（场景筛选、Helper 传 Trace/ThreadLocal、钉住规避与观测换代，货拉拉 JDK 21 实践）
+- [[write-fanout|写扩散（Fan-out on Write）]]（群消息按成员写副本换读路径简单；群服务扇出+副本指纹+MQ 批量化+双轨存储，万人群物理上限，单信源置信度中）
 
 ## entity（实体）
 

@@ -1336,6 +1336,18 @@
       ],
       "source_url": "https://zhuanlan.zhihu.com/p/2094018104430946138",
       "asset_ref": "Assets/2026/10/github-open-source-ai-books-6.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-im-group-chat-write-fanout-cost.md",
+      "sha256": "2ad5896b98b678d382e9269200c3a09b123eab281f8ccca9cdd33943da48f0e0",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-23-im-group-chat-write-fanout-cost.md",
+      "pages": [
+        "wiki/sources/im-group-chat-write-fanout-cost.md",
+        "wiki/concepts/write-fanout.md"
+      ],
+      "source_url": "https://segmentfault.com/a/1190000047907801",
+      "asset_ref": "Assets/2026/10/im-group-chat-write-fanout-cost.md"
     }
   ]
 }

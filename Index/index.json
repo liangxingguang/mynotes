@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-10-23 19:21",
+  "updated_at": "2026-10-23 19:23",
   "notes": [
-    {
-      "id": "2026-10-23-im-group-chat-write-fanout-cost",
-      "title": "IM千人群聊该不该用消息写扩散？详细算算成本账！",
-      "path": "Inbox/2026-10-23-im-group-chat-write-fanout-cost.md",
-      "created": "2026-10-23",
-      "category": "技术",
-      "tags": [
-        "分布式系统",
-        "工程实践"
-      ],
-      "source": "SegmentFault（拉丁解牛说技术）",
-      "source_url": "https://segmentfault.com/a/1190000047907801",
-      "source_type": "文章",
-      "platform": "SegmentFault",
-      "summary": "千人群一条 7 字消息，写扩散下服务端要干 3000~5000 次操作。文章把账单拆开算：扇出放在群服务（责任边界清晰）、副本指纹 uuid+\"|G\"+short_id 区分原消息与副本、MQ 批量化（50 人/批，写入次数降一个数量级）、双轨存储（历史库只存原消息，副本进离线盒子）、失败重试上限 + 死信定位到\"哪条没投到哪个人\"。结论：写扩散是千人群最优解但物理上限明确（5000 人需专项优化、万人群走不通），大厂对比——钉钉转读扩散+多级缓存、微信坚持写扩散、企业微信写扩散+硬件堆料。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/im-group-chat-write-fanout-cost.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-10-23-im-websocket-reconnect-heartbeat",
       "title": "IM聊天不掉线？生产级WebSocket断线重连、心跳保活实战",
@@ -2321,6 +2302,25 @@
       "summary": "6 个高质量开源 AI 书籍/教程项目清单，覆盖 Agent 工程、AI Infra、深度学习理论、强化学习数学与实战。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/github-open-source-ai-books-6.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-23-im-group-chat-write-fanout-cost",
+      "title": "IM千人群聊该不该用消息写扩散？详细算算成本账！",
+      "path": "Archive/2026-10-23-im-group-chat-write-fanout-cost.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "工程实践"
+      ],
+      "source": "SegmentFault（拉丁解牛说技术）",
+      "source_url": "https://segmentfault.com/a/1190000047907801",
+      "source_type": "文章",
+      "platform": "SegmentFault",
+      "summary": "千人群一条 7 字消息，写扩散下服务端要干 3000~5000 次操作。文章把账单拆开算：扇出放在群服务（责任边界清晰）、副本指纹 uuid+\"|G\"+short_id 区分原消息与副本、MQ 批量化（50 人/批，写入次数降一个数量级）、双轨存储（历史库只存原消息，副本进离线盒子）、失败重试上限 + 死信定位到\"哪条没投到哪个人\"。结论：写扩散是千人群最优解但物理上限明确（5000 人需专项优化、万人群走不通），大厂对比——钉钉转读扩散+多级缓存、微信坚持写扩散、企业微信写扩散+硬件堆料。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/im-group-chat-write-fanout-cost.md",
       "wiki_status": "ingested"
     },
     {

@@ -11,9 +11,7 @@ tags:
   - 分布式系统
   - 工程实践
 asset_ref: Assets/2026/10/im-group-chat-write-fanout-cost.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-10-23T11:19:02.197Z"
-ingest_claim_id: 59824-1792754342197-0
+wiki_status: ingested
 ---
 
 # IM千人群聊该不该用消息写扩散？详细算算成本账！
