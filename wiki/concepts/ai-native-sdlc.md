@@ -4,7 +4,7 @@ type: concept
 title: AI 原生 SDLC
 status: active
 created: 2026-10-17
-updated: 2026-10-17
+updated: 2026-10-23
 confidence: medium
 tags:
   - concept
@@ -13,6 +13,8 @@ tags:
   - engineering-practice
 sources:
   - raw/sources/ai/2026-10-14-anthropic-ai-native-sdlc-handbook.md
+  - raw/sources/ai/2026-10-17-ai-coding-delivery-evolution.md
+  - raw/sources/enterprise/2026-10-20-huolala-ai-coding-workflow.md
 related:
   - wiki/concepts/ai-native-organization.md
   - wiki/concepts/mcp.md
@@ -67,6 +69,8 @@ Agent 编码使构建阶段塌缩到以小时计，而规划、评审/测试、�
 ## Evolution（演进）
 
 - 2026-08-21：Anthropic（Louis Claxton，Applied AI 团队）发布《The AI-Native SDLC playbook》，系统化六阶段打法与治理配置。
+- 2026-10-17：公众号「架构师」《AI 写代码越来越快，研发交付系统该怎么演进？》从交付系统视角印证同一命题：交付建模为七态状态机（当前意图→候选变更→已持久化→已合并→已验证→可部署→已生效），每次推进记录状态/版本/证据/发起者五要素，证据绑定不可变版本；提出"人从 in the loop 移到 on the loop"（Kief Morris）与本概念"人守闸门"呼应，并引 METR 实验（熟悉仓库的开发者用 AI 反慢 19%）与 DORA 2025（AI 是组织能力放大器）佐证局部提速 ≠ 端到端提速。
+- 2026-10-20：货拉拉技术公开千人规模落地实践（普及→规范驱动→AI Native 三阶段），提供国内大厂一手印证：SDD 五步产线（澄清/方案/拆任务/实现/审查）对应本概念制品链；spec 打分回写/下架机制是"知识当缓存"的治理实例；度量三层（AI 代码占比三层签名、FPY 首次正确率、全链路 trace）落地了"衡量取自系统级指标"；主从双 Agent 对抗审查（副 Agent 独立回源码核对）与"评审=Agent 一审+人复审"是"人守闸门"的工程化；自治分级 L1-L3（当前 L2：人定目标、AI 起草、人决审）。
 
 ## Open Questions（开放问题）
 
@@ -77,8 +81,12 @@ Agent 编码使构建阶段塌缩到以小时计，而规划、评审/测试、�
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-10-14-anthropic-ai-native-sdlc-handbook.md`
+- Source: `raw/sources/ai/2026-10-17-ai-coding-delivery-evolution.md`（印证：制品链↔交付状态机、人守闸门↔on the loop；补充交付质量指标与证据链五要素）
+- Source: `raw/sources/enterprise/2026-10-20-huolala-ai-coding-workflow.md`（印证：千人规模 SDD 产线/spec 治理/FPY 度量/主从双 Agent 评审，国内大厂一手案例）
 
 ## Related Knowledge（相关知识）
 
 - [[ai-native-sdlc-playbook|Anthropic AI 原生 SDLC 实施手册（信源页）]]
+- [[ai-coding-delivery-evolution|AI 写代码越来越快，研发交付系统该怎么演进？（信源页）]]
+- [[huolala-ai-coding-workflow|货拉拉 AI Coding 流程化落地（信源页）]]
 - [[ai-native-organization|AI 原生研发组织]]

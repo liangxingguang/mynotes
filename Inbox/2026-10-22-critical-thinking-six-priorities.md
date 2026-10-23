@@ -11,7 +11,9 @@ tags:
   - 思维方式
   - 个人成长
 asset_ref: Assets/2026/10/critical-thinking-six-priorities.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-23T01:29:25.697Z"
+ingest_claim_id: 45308-1792718965697-0
 ---
 
 # 教了快十年批判性思维，我越来越看重这六件事

@@ -61,3 +61,60 @@
 - 2026-10-23 22:35 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
 - 2026-10-23 07:28 | ingest | raw/sources/ai/2026-10-14-state-of-ai-report-2026.md | wiki/sources/state-of-ai-report-2026.md（新建，confidence=medium）
 - 2026-10-23 00:05 | ingest | raw/sources/products/2026-10-14-unyra-local-first-ai-learning-app.md | wiki/sources/unyra-local-first-ai-learning-app.md, wiki/entities/unyra.md, wiki/concepts/exploratory-learning.md（均新建；无采集稿，README 重抓补登全文）
+- 2026-10-23 00:10 | ingest | raw/sources/ai/2026-10-15-agent-loop-production-boundaries.md | wiki/sources/agent-loop-production-boundaries.md（新建）, wiki/concepts/agent-loop.md（更新：生产化边界演进+信源）
+- 2026-10-23 00:10 | ingest | raw/sources/ai/2026-10-15-ep-harness-team-agent-workflow.md | wiki/sources/ep-harness-team-agent-workflow.md, wiki/entities/ep-harness.md（均新建）
+- 2026-10-23 00:10 | ingest | raw/sources/ai/2026-10-16-ai-coding-workflow-skill-prompt.md | wiki/sources/ai-coding-workflow-skill-prompt.md（新建，confidence=medium）
+- 2026-10-23 00:14 | ingest | raw/sources/misc/2026-10-16-awesome-design-md.md | wiki/sources/awesome-design-md.md（新建，confidence=medium）
+- 2026-10-23 00:14 | ingest | raw/sources/misc/2026-10-16-craft-of-selfteaching.md | wiki/sources/craft-of-selfteaching.md（新建，confidence=medium）
+- 2026-10-23 00:14 | ingest | raw/sources/architecture/2026-10-16-db-table-sharding-practice.md | wiki/sources/db-table-sharding-practice.md, wiki/concepts/table-sharding-migration.md（均新建）
+- 2026-10-23 00:18 | ingest | raw/sources/architecture/2026-10-16-distributed-systems-introduction.md | wiki/sources/distributed-systems-introduction.md（新建）
+- 2026-10-23 00:18 | ingest | raw/sources/misc/2026-10-16-esp32-dev-board-ai-trend.md | wiki/sources/esp32-dev-board-ai-trend.md（新建，confidence=low）
+- 2026-10-23 00:18 | ingest | raw/sources/ai/2026-10-16-knowledge-base-tech-evolution.md | wiki/sources/knowledge-base-tech-evolution.md, wiki/concepts/llm-wiki.md（均新建，confidence=medium）
+- 2026-10-23 00:22 | ingest | raw/sources/products/2026-10-16-pi-practice-06-daily-patterns-selection.md | wiki/sources/pi-practice-06-daily-patterns-selection.md（新建）, wiki/entities/pi.md（更新：开销实测/四模式/选型共识/SDK 包名疑点）
+- 2026-10-23 00:22 | ingest | raw/sources/products/2026-10-16-pi-school-official-course.md | wiki/sources/pi-school-official-course.md（新建）, wiki/entities/pi.md（更新：Pi School 官方口径）
+- 2026-10-23 00:22 | ingest | raw/sources/architecture/2026-10-16-tcp-retransmission-visualized.md | wiki/sources/tcp-retransmission-visualized.md（新建）
+- 2026-10-23 00:29 | ingest | raw/sources/ai/2026-10-17-ai-coding-delivery-evolution.md | wiki/sources/ai-coding-delivery-evolution.md（新建）, wiki/concepts/ai-native-sdlc.md（更新：交付状态机/on the loop/METR·DORA 印证）
+- 2026-10-23 00:29 | ingest | raw/sources/ai/2026-10-17-langchain4j-multimodal-rag.md | wiki/sources/langchain4j-multimodal-rag.md（新建，confidence=medium）
+- 2026-10-23 00:29 | ingest | raw/sources/products/2026-10-17-pi-custom-agent-setup.md | wiki/sources/pi-custom-agent-setup.md（新建）, wiki/concepts/pi-customization-layers.md（更新：必定发生判据/details 状态/定时两路，一手印证）
+- 2026-10-23 00:33 | ingest | raw/sources/products/2026-10-17-pi-durable-architecture.md | wiki/sources/pi-durable-architecture.md（新建）, wiki/concepts/durable-execution.md（更新：五层架构/崩溃恢复速查/1.2-1.3 演进）
+- 2026-10-23 00:33 | ingest | raw/sources/products/2026-10-17-pi-embedded-sdk-agent-engine.md | wiki/sources/pi-embedded-sdk-agent-engine.md（新建）, wiki/concepts/pi-customization-layers.md（更新：第 5 层三通道选型印证）
+- 2026-10-23 00:33 | ingest | raw/sources/misc/2026-10-20-15-books-understand-world.md | wiki/sources/15-books-understand-world.md（新建，confidence=low）
+- 2026-10-23 00:36 | ingest | raw/sources/ai/2026-10-20-475-claude-opus-demos-repo.md | wiki/sources/475-claude-opus-demos-repo.md（新建，confidence=low）
+- 2026-10-23 00:36 | ingest | raw/sources/ai/2026-10-20-ai-agents-definitive-guide-notebooks.md | wiki/sources/ai-agents-definitive-guide-notebooks.md（新建，confidence=low）
+- 2026-10-23 00:36 | ingest | raw/sources/architecture/2026-10-20-completablefuture-async-orchestration.md | wiki/sources/completablefuture-async-orchestration.md（新建）
+- 2026-10-23 00:39 | ingest | raw/sources/misc/2026-10-20-deep-thinking-training.md | wiki/sources/deep-thinking-training.md（新建）
+- 2026-10-23 00:39 | ingest | raw/sources/ai/2026-10-20-deepseek-hyperframes-video-workflow.md | wiki/sources/deepseek-hyperframes-video-workflow.md（新建，confidence=medium）
+- 2026-10-23 00:39 | ingest | raw/sources/ai/2026-10-20-deepseek-v41-flash-inference-deployment.md | wiki/sources/deepseek-v41-flash-inference-deployment.md（新建，官方一手）
+- 2026-10-23 00:42 | ingest | raw/sources/architecture/2026-10-20-design-a-query-system.md | wiki/sources/design-a-query-system.md（新建，confidence=low，视频无文字稿仅存证）
+- 2026-10-23 00:42 | ingest | raw/sources/misc/2026-10-20-eight-fields-booklist.md | wiki/sources/eight-fields-booklist.md（新建，confidence=low）
+- 2026-10-23 00:42 | ingest | raw/sources/architecture/2026-10-20-game-server-elastic-scaling.md | wiki/sources/game-server-elastic-scaling.md（新建，confidence=medium）
+- 2026-10-23 00:46 | ingest | raw/sources/enterprise/2026-10-20-huolala-ai-coding-workflow.md | wiki/sources/huolala-ai-coding-workflow.md（新建）, wiki/concepts/ai-native-sdlc.md（更新：货拉拉千人 SDD/FPY/双 Agent 印证）
+- 2026-10-23 00:46 | ingest | raw/sources/architecture/2026-10-20-netty-three-skills-high-performance.md | wiki/sources/netty-three-skills-high-performance.md（新建）
+- 2026-10-23 00:46 | ingest | raw/sources/products/2026-10-20-pi-tips-4-web-parallel.md | wiki/sources/pi-tips-4-web-parallel.md（新建）, wiki/entities/pi.md（更新：默认离线立场/四路线/扩展安全核查）
+- 2026-10-23 00:49 | ingest | raw/sources/misc/2026-10-20-reading-100-books-a-year.md | wiki/sources/reading-100-books-a-year.md（新建，confidence=medium）
+- 2026-10-23 00:49 | ingest | raw/sources/misc/2026-10-20-reading-system-sop.md | wiki/sources/reading-system-sop.md（新建，confidence=low，图片内容缺失）
+- 2026-10-23 00:49 | ingest | raw/sources/architecture/2026-10-20-spring-20-extension-points.md | wiki/sources/spring-20-extension-points.md（新建）
+- 2026-10-23 00:56 | ingest | raw/sources/architecture/2026-10-20-spring-async-to-task-table.md | wiki/sources/spring-async-to-task-table.md（新建，关联 durable-execution）
+- 2026-10-23 00:56 | ingest | raw/sources/architecture/2026-10-20-spring-cloud-gateway-advanced.md | wiki/sources/spring-cloud-gateway-advanced.md（新建，confidence=medium，示例代码为教学简化版）
+- 2026-10-23 00:56 | ingest | raw/sources/misc/2026-10-20-writing-8-frameworks.md | wiki/sources/writing-8-frameworks.md（新建，confidence=low）
+- 2026-10-23 01:01 | ingest | raw/sources/ai/2026-10-21-agent-2026-midyear-architecture-review.md | wiki/sources/agent-2026-midyear-architecture-review.md（新建）；更新 agent-loop（第3信源）、agent-evaluation（第2信源）
+- 2026-10-23 01:01 | ingest | raw/sources/ai/2026-10-21-agent-long-task-reliable-execution.md | wiki/sources/agent-long-task-reliable-execution.md（新建）；更新 durable-execution（第3信源，confidence→high）
+- 2026-10-23 01:01 | ingest | raw/sources/architecture/2026-10-21-business-risk-control-redis-lua-annotation.md | wiki/sources/business-risk-control-redis-lua-annotation.md（新建，confidence=medium）
+- 2026-10-23 01:07 | ingest | raw/sources/architecture/2026-10-21-ecommerce-search-realtime-personalization.md | wiki/sources/ecommerce-search-realtime-personalization.md（新建）
+- 2026-10-23 01:07 | ingest | raw/sources/architecture/2026-10-21-elasticsearch-interview-deep-dive.md | wiki/sources/elasticsearch-interview-deep-dive.md（新建，confidence=medium）
+- 2026-10-23 01:07 | ingest | raw/sources/architecture/2026-10-21-elasticsearch-search-tuning-production.md | wiki/sources/elasticsearch-search-tuning-production.md（新建）；新建实体页 wiki/entities/elasticsearch.md（三信源互证）
+- 2026-10-23 01:11 | ingest | raw/sources/architecture/2026-10-21-game-server-architecture-four-layers.md | wiki/sources/game-server-architecture-four-layers.md（新建，关联 game-server-elastic-scaling）
+- 2026-10-23 01:11 | ingest | raw/sources/architecture/2026-10-21-gc-log-tuning-practice.md | wiki/sources/gc-log-tuning-practice.md（新建）；更新 evidence-first-jvm-tuning（第2信源）
+- 2026-10-23 01:11 | ingest | raw/sources/architecture/2026-10-21-jenkins-gitlab-cicd-pipeline.md | wiki/sources/jenkins-gitlab-cicd-pipeline.md（新建，confidence=medium）
+- 2026-10-23 01:15 | ingest | raw/sources/architecture/2026-10-21-jvm-gc-troubleshooting-arthas.md | wiki/sources/jvm-gc-troubleshooting-arthas.md（新建）；更新实体页 arthas（第2信源，confidence→high）
+- 2026-10-23 01:15 | ingest | raw/sources/architecture/2026-10-21-jvm-troubleshooting-six-tools.md | wiki/sources/jvm-troubleshooting-six-tools.md（新建）
+- 2026-10-23 01:15 | ingest | raw/sources/architecture/2026-10-21-kafka-fast-four-mechanisms.md | wiki/sources/kafka-fast-four-mechanisms.md（新建，关联 netty/elasticsearch）
+- 2026-10-23 01:19 | ingest | raw/sources/architecture/2026-10-21-kafka-ops-tools-five-essentials.md | wiki/sources/kafka-ops-tools-five-essentials.md（新建）；新建实体页 kafka（双信源）
+- 2026-10-23 01:19 | ingest | raw/sources/architecture/2026-10-21-linked-list-vs-array-cache.md | wiki/sources/linked-list-vs-array-cache.md（新建，关联 cpu-funnel-coding）
+- 2026-10-23 01:19 | ingest | raw/sources/products/2026-10-21-lovart-2-arti-design-agent.md | wiki/sources/lovart-2-arti-design-agent.md（新建，confidence=low，软文性质）
+- 2026-10-23 01:28 | ingest | raw/sources/architecture/2026-10-21-spring-insight-lightweight-monitoring.md | wiki/sources/spring-insight-lightweight-monitoring.md（新建，confidence=medium，0.1.0 个人项目）
+- 2026-10-23 01:28 | ingest | raw/sources/architecture/2026-10-21-springboot-disruptor-event-bus.md | wiki/sources/springboot-disruptor-event-bus.md（新建）；新建概念页 cache-line-and-false-sharing（与 linked-list 双信源）
+- 2026-10-23 01:28 | ingest | raw/sources/misc/2026-10-22-architect-road-2025-digest.md | wiki/sources/architect-road-2025-digest.md（新建，confidence=low，纯链接索引）
+- 2026-10-23 01:35 | ingest | raw/sources/architecture/2026-10-21-raft-membership-log-barrier.md | wiki/sources/raft-membership-log-barrier.md（新建）；新建概念页 raft-membership-change-barrier
+- 2026-10-23 01:35 | ingest | raw/sources/architecture/2026-10-21-scg-traceid-full-chain.md | wiki/sources/scg-traceid-full-chain.md（新建）；新建概念页 reactive-tracing-context
+- 2026-10-23 01:35 | ingest | raw/sources/ai/2026-10-21-spring-ai-milvus-rag-production.md | wiki/sources/spring-ai-milvus-rag-production.md（新建，confidence=medium，设计示例）；新建概念页 rag-production-guardrails

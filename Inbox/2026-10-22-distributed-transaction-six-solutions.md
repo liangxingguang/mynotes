@@ -12,7 +12,9 @@ tags:
   - 工程实践
   - 分布式事务
 asset_ref: Assets/2026/10/distributed-transaction-six-solutions.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-23T01:33:20.352Z"
+ingest_claim_id: 46876-1792719200352-0
 ---
 
 # 分布式事务最全图解（6种方案）：从强一致的2PC到最终对账

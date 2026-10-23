@@ -11,7 +11,9 @@ tags:
   - 工程实践
   - 分布式系统
 asset_ref: Assets/2026/10/async-task-system-design.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-23T01:29:25.605Z"
+ingest_claim_id: 45080-1792718965605-0
 ---
 
 # 异步任务系统怎么设计？从提交、排队、执行到幂等和重试

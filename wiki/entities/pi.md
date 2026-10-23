@@ -18,6 +18,9 @@ sources:
   - raw/sources/ai/2026-10-14-pi-school-agent-course.md
   - raw/sources/ai/2026-10-14-pi-secondary-dev-5-layers.md
   - raw/sources/ai/2026-10-14-pi-setup-mcp-codemode-guide.md
+  - raw/sources/products/2026-10-16-pi-practice-06-daily-patterns-selection.md
+  - raw/sources/products/2026-10-16-pi-school-official-course.md
+  - raw/sources/products/2026-10-20-pi-tips-4-web-parallel.md
 related:
   - wiki/concepts/mcp.md
   - wiki/concepts/agent-loop.md
@@ -53,8 +56,12 @@ Pi 是一款极简风格的 Agent CLI：默认只内置 read、write、edit、ba
 - 头部扩展（2026-08 npm 月下载）：pi-mcp-adapter ≈76 万、pi-web-access ≈40 万、pi-subagents ≈36 万、rpiv-ask-user-question ≈12 万、rpiv-todo ≈10 万、pi-lens ≈6 万。
 - pi-mcp-adapter 通过约 200 token 的代理工具按需启动 MCP server，可直接读取 Claude Code 的 `.mcp.json` 配置（1.0 前的 MCP 接入方式；1.0 起 MCP 进入核心）。
 - 扩展以完整系统权限运行，官方生态依赖用户自行甄别可信源。
-- **会话树设计**（第三方课程描述口径）：Pi 把一段对话看作一棵树而非直线，走错可退回任意节点重走且原尝试保留，类似版本控制的存档点。
-- **Pi School**：社区免费课程（15 节 + 11 个练习，pi-school.ziki.boo），形式为"由 Pi 自己当老师"——网站每节只给一段提示词，讲解与操作由 Pi 引导；因 Pi 默认能力极简，被用作 Agent 入门教材。
+- **会话树设计**（第三方课程描述口径）：Pi 把一段对话看作一棵树而非直线，走错可退回任意节点重走且原尝试保留，类似版本控制的存档点；社区高频好评点，配套命令 /tree /fork /clone /resume。
+- **Pi School**：官方免费课程（pi-school.ziki.boo；第三方体验文口径 15 节 + 11 个练习），形式为"由 Pi 自己当老师"——Lesson 1（安装）在浏览器完成，其余每节给一段提示词贴进 Pi 交互进行，完成状态实时同步回网页；免费永久、无需账号、不收集个人数据（官方主页口径）；课程含信任模型（trust model）专题。
+- **固定系统开销**（Systima 实测，composio.dev 引用）：Pi < 1,000 tokens/请求，对照 OpenCode ~6,900、Claude Code ~32,800——系统提示词极简带来成本与有效上下文优势。
+- **四种运行模式**：interactive（日常）、print/JSON（`pi -p`，脚本管道）、RPC（`--mode rpc`，stdin/stdout JSON，供非 Node 集成）、SDK 嵌入（社区文包名 `@mariozechner/pi-coding-agent`，与本页四包结构的 `@earendil-works/pi-coding-agent` 命名口径不一，疑为历史包名，未裁决）。
+- **社区选型共识**（2026-10 汇编）："Pi is the Emacs of coding AI agents"（HN）；composio.dev 实测 100 小时 Pi vs OpenCode 平局（面向不同人群）；受监管行业（无 SaaS 后端+本地端点+可审计）被视为顶层优势；短板为本地模型体验与无内置权限弹窗（需自建 permission-gate）。
+- **默认离线是设计立场**：核心不内置联网（Mario Zechner：联网是扩展的事）；连接外界四路线——内置 MCP（0.99 原生、1.0 补 OAuth，pi-mcp-adapter 仅历史兼容）、pi-web-access（搜索+内容提取）、自建 Skill+CDP（Armin Ronacher 的浏览器自动化路线）、pi-side-agents（子代理并行，非真进程隔离）；装社区扩展前须自查行为范围/权限/Maintainer/包来源（扩展以宿主完整权限运行）。
 
 ## Products / Projects（产品／项目）
 
@@ -79,6 +86,9 @@ Pi 是一款极简风格的 Agent CLI：默认只内置 read、write、edit、ba
 - 2026-10 — 官方文档与示例源码梳理的两层隔离方案公开（脚本级沙箱 + 进程级五种做法）
 - 2026-10-14 — Pi School 课程推荐文发布，揭示其"Pi 自己当老师"的教学形式与树状会话设计
 - 2026-10-14 — 0.99.1 实操指南发布，给出 Codemode 五档 exposure 与 token 固定开销实测
+- 2026-10-16 — Pi 实战系列第 6 篇发布，汇总社区模型分工/节流/四模式/选型对照（含固定开销实测与"Emacs 定位"评价）
+- 2026-10-16 — Pi School 官方课程主页采集入库，确认官方课程机制与免费无账号口径
+- 2026-10-20 — 实用技巧系列第四篇发布，系统梳理联网/浏览器/并行四路线选型与社区扩展安全核查
 
 ## Current Understanding（当前认知）
 
@@ -93,3 +103,6 @@ Pi 代表了 Agent CLI 的另一种产品哲学：内核极简、能力清单交
 - `raw/sources/ai/2026-10-14-pi-school-agent-course.md`
 - `raw/sources/ai/2026-10-14-pi-secondary-dev-5-layers.md`
 - `raw/sources/ai/2026-10-14-pi-setup-mcp-codemode-guide.md`
+- `raw/sources/products/2026-10-16-pi-practice-06-daily-patterns-selection.md`
+- `raw/sources/products/2026-10-16-pi-school-official-course.md`
+- `raw/sources/products/2026-10-20-pi-tips-4-web-parallel.md`

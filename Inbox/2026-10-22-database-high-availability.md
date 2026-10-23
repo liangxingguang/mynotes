@@ -11,7 +11,9 @@ tags:
   - 工程实践
   - 数据库
 asset_ref: Assets/2026/10/database-high-availability.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-23T01:29:25.789Z"
+ingest_claim_id: 47752-1792718965789-0
 ---
 
 # 当我谈数据库高可用时是在谈些什么

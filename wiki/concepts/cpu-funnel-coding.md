@@ -52,6 +52,7 @@ related:
 ### Related Concepts（相关概念）
 
 - [[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]：JVM 侧的方法论印证——证据指向对象分配时先改代码，调参殿后。
+- [[cache-line-and-false-sharing|CPU 缓存行效应：局部性与伪共享]]：字段对齐与数组遍历技巧的体系结构根基。
 
 ### Distinctions（区分）
 

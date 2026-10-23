@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23 08:04",
+  "updated_at": "2026-10-23 09:34",
   "notes": [
     {
       "id": "2026-10-14-llm-wiki-advanced-four-steps",
@@ -21,1111 +21,6 @@
       "wiki_status": "failed"
     },
     {
-      "id": "2026-10-15-agent-loop-production-boundaries",
-      "title": "从 Chatbot 到 AI Agent：为什么一个 while 循环撑不起生产系统",
-      "path": "Inbox/2026-10-15-agent-loop-production-boundaries.md",
-      "created": "2026-10-15",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/lmO8xyKxJ2ckFEclxwrw3Q",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "文章以 Go 实现的运维诊断 Agent 原型 Aegis（W01 阶段，全部本地合成 Mock）为例，论证\"模型 while 循环 + 调工具\"的 Chatbot 骨架撑不起生产系统：模型不结束、工具挂住、用户取消、预算耗尽都必须成为明确且可查询的结果。关键设计：HTTP 与 Agent Loop 解耦（容量 32 的有限队列 + 单消费者后台 runtime + 内存仓储）；拆出 LLMProvider / ToolExecutor / AgentRuntime 三个可替换契约；任务走 PENDING→RUNNING→SUCCEEDED/FAILED/CANCELLED 状态机，取消先在仓储落终态再通知 worker，锁内排序保证终态不可被迟到结果覆盖；每类停止都有独立错误码；许可只来自服务端，模型输出不是授权凭据。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/agent-loop-production-boundaries.md",
-      "wiki_status": "ingesting"
-    },
-    {
-      "id": "2026-10-15-ep-harness-team-agent-workflow",
-      "title": "如何从个人 AI Coding 到构建团队级 Agent 工作流？（得物 EP-Harness）",
-      "path": "Inbox/2026-10-15-ep-harness-team-agent-workflow.md",
-      "created": "2026-10-15",
-      "category": "技术",
-      "tags": [
-        "AI Coding",
-        "Harness",
-        "工程实践"
-      ],
-      "source": "得物技术（微信公众号，作者：方舟；dbaplus 社群转载）",
-      "source_url": "https://mp.weixin.qq.com/s/yd68Wzm3za4m47LuRhMzYw",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "得物技术介绍基于开源 Multica 二次开发的团队级 Agent 工作系统 EP-Harness：把 Agent 当作有身份、任务、状态、执行记录与权限边界的\"团队成员\"纳入平台管理（server 管 Issue 队列，daemon 驻开发者本机调本地 AI CLI，Backend.Execute 统一各 Runtime 契约）。核心判断：AI Coding 正沿 Prompt→Context→Harness→Loop 四层从工具使用走向工程系统，个人工具只解决前两层，团队平台补齐结构化上下文、可观测可治理的执行环境与\"发现-派发-执行-验证-记录-决策\"闭环。已实现决策追溯、多 Agent 分阶段协作，累计自动修复 100+ 异常日志问题，典型高频问题从每 4 小时 2400+ 条降至个位数。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/ep-harness-team-agent-workflow.md",
-      "wiki_status": "ingesting"
-    },
-    {
-      "id": "2026-10-16-ai-coding-workflow-skill-prompt",
-      "title": "一位 Agent 开发者的 AI Coding 工作流：轻 Skill、方法论 Prompt 与端到端测试",
-      "path": "Inbox/2026-10-16-ai-coding-workflow-skill-prompt.md",
-      "created": "2026-10-16",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "工程实践",
-        "工具"
-      ],
-      "source": "X（黄同学h）",
-      "source_url": "https://x.com/huangtongxueh/status/2108577165306687938",
-      "source_type": "article",
-      "platform": "X",
-      "summary": "作者（大厂 Agent 开发）分享数月实践：重型 Skill（如 Superpowers 的固定 Workflow）在强模型时代变成噪声且费 Token，趋势是\"做减法\"——用 grill/implement/handoff 等轻 Skill 组织流程，用\"第一性原理/对抗性审查/消融实验/奥卡姆剃刀/高内聚低耦合\"这类方法论短 Prompt 当模型的\"思维快捷键\"；工作流上靠 Spec 沉淀上下文、subagent worktree 并行、小 MR + 端到端测试兜底；核心瓶颈是 Review 速度，解法是搭建 Agent 友好的端到端测试环境（CLI + 只读 DB MCP + 日志 Skill），让问题在交到人之前被发现。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/x-ai-coding-workflow-huangtongxueh.md",
-      "wiki_status": "ingesting"
-    },
-    {
-      "id": "2026-10-16-awesome-design-md",
-      "title": "用 DESIGN.md 治 AI 生成的丑 UI：awesome-design-md 仓库",
-      "path": "Inbox/2026-10-16-awesome-design-md.md",
-      "created": "2026-10-16",
-      "category": "技术",
-      "tags": [
-        "工具",
-        "工程实践"
-      ],
-      "source": "知乎想法",
-      "source_url": "https://www.zhihu.com/pin/2093703116751369059",
-      "source_type": "post",
-      "platform": "知乎",
-      "summary": "知乎想法推荐 GitHub 仓库 VoltAgent/awesome-design-md：沿用 Google Stitch 的 DESIGN.md 思路，用一份纯文本设计规范文件约束 AI 生成的 UI 风格。仓库收录 73 个知名网站（Claude、Cursor、Vercel、Notion、Figma、Linear 等）的设计配置，复制对应 md 到项目根目录并提示 AI 遵循即可，无需导 Figma 或写配置。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/awesome-design-md.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-16-craft-of-selfteaching",
-      "title": "微博推荐：GitHub 万星项目《自学是门手艺》——教的不是编程，是学会学习",
-      "path": "Inbox/2026-10-16-craft-of-selfteaching.md",
-      "created": "2026-10-16",
-      "category": "学习",
-      "tags": [
-        "阅读"
-      ],
-      "source": "微博",
-      "source_url": "https://weibo.com/1890573293/5354343621459970",
-      "source_type": "post",
-      "platform": "微博",
-      "summary": "微博帖推荐 GitHub 1.7 万星项目《自学是门手艺》（selfteaching/the-craft-of-selfteaching）：以 Python 为入口讲自学方法论，目标是让人成为\"能持续学新东西的人\"。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/weibo-craft-of-selfteaching.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-16-db-table-sharding-practice",
-      "title": "大表治理之分表实践：手搓一个简单的数据库分表组件",
-      "path": "Inbox/2026-10-16-db-table-sharding-practice.md",
-      "created": "2026-10-16",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "分布式系统"
-      ],
-      "source": "微信公众号（京东零售技术）",
-      "source_url": "https://mp.weixin.qq.com/s/q9EaCqqHxXtdZKjU_n6W1w",
-      "source_type": "article",
-      "platform": "mp.weixin.qq.com",
-      "summary": "京东库存流水表（日增 3400 万行/31GB）大表治理实战。因 Sharding-JDBC/Mycat 等中间件 SQL 语法限制多，团队基于 MyBatis 插件机制自研轻量分表拦截器（策略模式 + 责任链），按仓号分 128 表，核心是五种读写策略（双写读旧/双写读新/单写读旧/单写读新/单写双读）支撑单表→分表的不停机平滑迁移与回滚；双写靠分号拼接双 SQL + 复制参数映射，双读靠 UNION ALL 合并新旧表并对 COUNT/SUM 外层再聚合、ORDER BY/LIMIT 特殊重写；路由按\"配置优先 + 最少仓负载均衡 + 分布式锁\"分配后缀。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/db-table-sharding-practice.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-16-distributed-systems-introduction",
-      "title": "第一章：分布式系统概述",
-      "path": "Inbox/2026-10-16-distributed-systems-introduction.md",
-      "created": "2026-10-16",
-      "category": "技术",
-      "tags": [
-        "分布式系统",
-        "工程实践",
-        "课程"
-      ],
-      "source": "codedump（分布式系统中文教程）",
-      "source_url": "https://www.codedump.info/dist-system-cn/introduction/",
-      "source_type": "article",
-      "platform": "codedump.info",
-      "summary": "分布式系统教程开篇。以集中式单机系统为对照建立分布式系统定义（多节点经网络消息传递协同、无共享内存），剖析四大核心挑战——网络不可靠（丢包/乱序/延迟无上限，TCP 只给\"可靠流\"幻觉）、无全局时钟（物理时间戳会排出\"来自未来的消息\"）、部分失效（无法区分宕机、慢、丢消息，可引发级联故障与脑裂）、副本一致性（真理变成\"流言\"，一致性是频谱而非布尔值）；并总结工程师四点心智转变：二态→三态逻辑（成功/失败/超时+幂等设计）、绝对时间→因果顺序、完美主义→CAP 权衡、防御故障→拥抱故障（熔断/降级/隔离）。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/distributed-systems-introduction.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-16-esp32-dev-board-ai-trend",
-      "title": "ESP32 开发板借 AI 出圈：从创客玩具到 OpenAI 窃听器",
-      "path": "Inbox/2026-10-16-esp32-dev-board-ai-trend.md",
-      "created": "2026-10-16",
-      "category": "技术",
-      "tags": [
-        "行业动态",
-        "工具"
-      ],
-      "source": "微博",
-      "source_url": "https://weibo.com/2194035935/5354015136680392",
-      "source_type": "post",
-      "platform": "微博",
-      "summary": "微博观察：AI 热潮把 ESP32 开发板从创客圈带进 AI 圈——很多人晒用它做的小玩意（控制手机、小机器人、插路由器做 DNS 广告过滤，参考项目 M-Abozaid/esp32-c3-adblock）；近日曝出的 OpenAI 窃听案中窃听器同样基于 ESP32。带屏幕的板子只要几十元。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/esp32-dev-board-ai-trend.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-16-knowledge-base-tech-evolution",
-      "title": "一文搞懂知识库的技术演进：从关键词检索、向量 RAG 到 GraphRAG、LLM Wiki、本体论与 Agent",
-      "path": "Inbox/2026-10-16-knowledge-base-tech-evolution.md",
-      "created": "2026-10-16",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/p5DFqPrvMkf8y6kpiGmBKw",
-      "source_type": "article",
-      "platform": "mp.weixin.qq.com",
-      "summary": "文章梳理知识库技术的能力地图（非线性替代关系）：关键词检索匹配词面、向量检索匹配语义、RAG 把检索结果交给模型作答、混合检索+重排优化召回、知识图谱/GraphRAG 沿实体关系查找、LLM Wiki 持续编译可复用知识页面、本体论统一跨系统业务概念、Agent 在权限与规则约束下调工具执行流程。强调各技术解决不同问题、生产中常并行组合，选型应从问题类型出发，并盯住来源可追溯、权限、版本冲突与执行校验。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/knowledge-base-tech-evolution.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-16-pi-practice-06-daily-patterns-selection",
-      "title": "Pi实战 06：日常实战 · 模式 · 选型篇",
-      "path": "Inbox/2026-10-16-pi-practice-06-daily-patterns-selection.md",
-      "created": "2026-10-16",
-      "category": "技术",
-      "tags": [
-        "Pi",
-        "AI Coding",
-        "工程实践"
-      ],
-      "source": "微信公众号「九幺一铭 Ai修行手记」",
-      "source_url": "https://mp.weixin.qq.com/s/H5jMdYhJXR3QxdFBsy9QHA",
-      "source_type": "article",
-      "platform": "mp.weixin.qq.com",
-      "summary": "Pi Coding Agent 系列第 6 篇，汇总社区实战经验与选型对照：按任务分工切模型（便宜模型日常、强模型啃硬骨头）、固定系统开销 <1k tokens 的省 token 优势与五个节流技巧、四种运行模式（interactive/print/RPC/SDK）、高频快捷键与会话树习惯；并诚实对照 Pi / Claude Code / OpenCode / Codex CLI——Pi 是可无限 hack 的\"Emacs 式骨架\"，把 Agent 定义权交给工程师，代价是自建自维护，受监管行业可借其本地端点与可审计性获益。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/pi-practice-06-daily-patterns-selection.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-16-pi-school-official-course",
-      "title": "Pi School 官方课程主页：在 Pi 里边用边学的免费 Agent 入门课",
-      "path": "Inbox/2026-10-16-pi-school-official-course.md",
-      "created": "2026-10-16",
-      "category": "学习",
-      "tags": [
-        "AI",
-        "课程",
-        "工具"
-      ],
-      "source": "Pi School",
-      "source_url": "https://pi-school.ziki.boo",
-      "source_type": "article",
-      "platform": "网页",
-      "summary": "Pi School 是 Pi（开源终端 Agent harness）的官方免费课程：无需账号、不收集数据。独特之处在于「课在 Agent 里上」——只有安装课在浏览器完成，之后每节课给一段提示词贴进 Pi，由 Pi 本人带着你学并回传完成状态。面向有命令行基础的普通用户和资深开发者。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/pi-school-official.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-16-tcp-retransmission-visualized",
-      "title": "可视化 TCP 重传：终于有人将 TCP 传输讲明白了",
-      "path": "Inbox/2026-10-16-tcp-retransmission-visualized.md",
-      "created": "2026-10-16",
-      "category": "技术",
-      "tags": [
-        "分布式系统",
-        "课程"
-      ],
-      "source": "微信公众号（码农有道 coding）",
-      "source_url": "https://mp.weixin.qq.com/s/DFUJU3mU2h4Znm7XvvqxLA",
-      "source_type": "article",
-      "platform": "mp.weixin.qq.com",
-      "summary": "图解 TCP 可靠传输四件套：MSS 分段（以太网 MTU 1500 − IP/TCP 头各 20 = 1460，三次握手协商 SMSS/RMSS，避免 IP 层分片）；超时重传以字节序列号编号（32 位回绕），时间戳选项解决回绕后新旧段歧义；快速重传规定接收方对乱序段反复回同一 ACK、发送方连续收到 3 个重复 ACK 即不等超时立即重传；SACK 选项携带非连续已收区间，让发送方只重传真正丢失的段。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/tcp-retransmission-visualized.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-17-ai-coding-delivery-evolution",
-      "title": "AI 写代码越来越快，研发交付系统该怎么演进？",
-      "path": "Inbox/2026-10-17-ai-coding-delivery-evolution.md",
-      "created": "2026-10-17",
-      "category": "技术",
-      "tags": [
-        "AI Coding",
-        "工程实践",
-        "Harness"
-      ],
-      "source": "微信公众号「架构师」",
-      "source_url": "https://mp.weixin.qq.com/s/cUvvE5eiIc2KlB3SZ-WQhg",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "AI Coding 拓宽了编码环节，交付瓶颈随之搬家：需求澄清、变更审查、环境验证、上线确认开始排队。文章主张把交付建模为状态机（意图→候选→持久化→合并→验证→可部署→已生效），让规格随事实更新、Harness 留住执行现场、证据绑定不可变版本、知识库当作带有效期的缓存，人退到\"on the loop\"守住风险分叉口。落地建议：先跑通一类边界清楚的变更，用交付质量指标代替生成量衡量成败。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/ai-coding-delivery-evolution.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-17-langchain4j-multimodal-rag",
-      "title": "LangChain4j 多模态 RAG：图片+表格检索实战",
-      "path": "Inbox/2026-10-17-langchain4j-multimodal-rag.md",
-      "created": "2026-10-17",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/AJmVoaODjF5SAzPQnJF72Q",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "企业文档中图片/表格等非纯文本内容平均占比超 40%，传统 RAG 管线只处理文本，知识大量丢失。本文用 LangChain4j 实现两种多模态 RAG 方案：①图片描述法——用 VLM（GPT-4o）给图片生成文字描述，复用纯文本管线，成本低、可解释但受 VLM 质量制约；②多模态向量法——用 Cohere Embed v4 把图片和文本映射到同一向量空间，无损但调用成本高。表格处理是最大翻车点：禁止拍平/按段落切块/Markdown 直接 Embedding，正确做法是每个 chunk 保留完整表头、以\"列名=值\"描述行数据、小表整块大表逐行，并用 Metadata 过滤做双通道检索（向量处理开放问题、结构化查询处理精确问题）。最后整合文本/图片/表格三条管线构建完整问答 Agent，并总结 4 个坑：多模态模型贵、描述质量瓶颈、切分丢表头、上下文窗口超限。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/langchain4j-multimodal-rag.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-17-pi-custom-agent-setup",
-      "title": "用 Pi 搭一个自己的 Agent：Skills、Extensions、Subagents 和定时任务",
-      "path": "Inbox/2026-10-17-pi-custom-agent-setup.md",
-      "created": "2026-10-17",
-      "category": "技术",
-      "tags": [
-        "Pi",
-        "AI Coding",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/uZrIlXZMq8Rz8cYRN1J5sQ",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "Pi 是 OpenClaw 内核的极简 coding agent，默认只有 read/write/edit/bash 四个工具。本文给出一套分层定制方案：项目规范写成 skill（按需加载、不占上下文），常用指令固化成 prompt 模板，必须强制执行的行为（如\"改完代码必评审\"）用 extension 挂事件钩子，复杂任务交给 subagent 并行处理，定时任务按\"Pi 开着/关着\"分别选 pi-schedule-prompt 或系统调度器调 headless 模式。核心原则：能用轻方案就别上重的，关键在知道需求该放哪一层。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/pi-custom-agent-setup.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-17-pi-durable-architecture",
-      "title": "开源 Pi-durable：把持久化做进协议的 Agent 应用框架",
-      "path": "Inbox/2026-10-17-pi-durable-architecture.md",
-      "created": "2026-10-17",
-      "category": "技术",
-      "tags": [
-        "Pi",
-        "Harness",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/x1G9t7b8M1hrR370f4DW4Q",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "pi-durable 是构建\"随处运行、可崩溃恢复、多端协同、无限长\"Agent 应用的框架（library，不带 UI）。核心公理：Session 原子提交不可变条目、任务和文档，只有已提交状态可观察——先落盘后可见，进程任意时刻死掉都能从上个检查点继续。五层架构（Storage/Session/Documents/Tasks/Harness）各司其职，一次 run 是一条 generation 持久任务链。与 Pi coding agent 共享 pi-ai 模型层，但定位是天级长程运行、多端在场的 Agent 应用底座，等于把 Temporal 的 durable execution 搬进 agent 框架。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/pi-durable-architecture.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-17-pi-embedded-sdk-agent-engine",
-      "title": "Pi Embedded SDK：把 Agent 引擎塞进自己的 Node.js 系统",
-      "path": "Inbox/2026-10-17-pi-embedded-sdk-agent-engine.md",
-      "created": "2026-10-17",
-      "category": "技术",
-      "tags": [
-        "Pi",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/7L73s43MRwrvCRMMCoJD1Q",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "《拆解 Pi》专栏终篇。Pi 本质是纯粹的 Node.js 原生类库（`@earendil-works/pi-coding-agent`），业务系统若是 Node.js/TypeScript，无需 spawn 子进程，直接 import 即可在同进程内存里拉起工业级智能体。三大接入通道选型：人机交互用 CLI、跨语言用 RPC 管道、Node.js 同构自动化首选 Embedded SDK（零 IPC、编译期类型守卫、持久化自由定制）。核心实践：`SessionManager.inMemory()` 纯内存会话完事即焚、`tools:[\"read\"]` 构造期物理裁权防注入、`session.subscribe` 原生对象直连流式事件。落地蓝图：CI/CD 门禁机器人、告警驱动的只读运维排障 Agent、Promise.all 并发多仓审查。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/pi-embedded-sdk-agent-engine.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-20-15-books-understand-world",
-      "title": "看懂世界运转的 15 本书",
-      "path": "Inbox/2026-10-20-15-books-understand-world.md",
-      "created": "2026-10-20",
-      "category": "学习",
-      "tags": [
-        "阅读",
-        "个人成长"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/oZPb7241VoRvw5wMgRNYgg",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "覆盖政治、财富、人性、社会、认知、健康六个维度的 15 本通识书单，每本附简介、推荐理由与金句。主旨：世界运行的底层逻辑不在新闻和短视频碎片里，而被前人写进了书；真正的信息差是\"书就摆在那里，大多数人懒得翻\"。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/15-books-understand-world.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-20-475-claude-opus-demos-repo",
-      "title": "GitHub 仓库收录 475 个 Claude Opus 5.5 生成的视频演示",
-      "path": "Inbox/2026-10-20-475-claude-opus-demos-repo.md",
-      "created": "2026-10-20",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "github"
-      ],
-      "source": "微博",
-      "source_url": "https://weibo.com/1912085257/5355789153733341",
-      "source_type": "link",
-      "platform": "微博",
-      "summary": "微博分享的一个 GitHub 仓库，收录 475 个用 Claude Opus 5.5 构建的视频演示——动态图形、解说视频、3D 场景乃至游戏，全部用 HTML、Canvas、SVG 和 Three.js 实现。每个演示都附带原始提示词和来源帖子，可直接挑选示例自行复现，适合学习与实验。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/weibo-1912085257-5355789153733341.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-20-ai-agents-definitive-guide-notebooks",
-      "title": "O'Reilly《AI Agents - The Definitive Guide》配套代码全开源",
-      "path": "Inbox/2026-10-20-ai-agents-definitive-guide-notebooks.md",
-      "created": "2026-10-20",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "课程"
-      ],
-      "source": "知乎想法",
-      "source_url": "https://www.zhihu.com/pin/2088989044751520212",
-      "source_type": "link",
-      "platform": "知乎",
-      "summary": "知乎想法推荐：O'Reilly《AI Agents - The Definitive Guide》作者把整套配套代码放上 GitHub（Nicolepcx/ai-agents-the-definitive-guide），12 章 35 个 Jupyter notebook，全部带 Colab 一键运行，无需买书、无需本地环境即可从第一章跑到最后一章。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/ai-agents-definitive-guide-notebooks.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-20-completablefuture-async-orchestration",
-      "title": "CompletableFuture：异步编排的正确写法",
-      "path": "Inbox/2026-10-20-completablefuture-async-orchestration.md",
-      "created": "2026-10-20",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/qr1AojU66kbWv43wsMDghg",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "CompletableFuture 三条红线：① 永远显式传自定义线程池，别用 commonPool（为 CPU 密集设计，跑 IO 会被慢下游占满、拖垮所有共用业务）；② 异常必须 exceptionally/handle 接住，否则不调 get() 就静默吞掉；③ 必须加超时（Java 9+ 用 orTimeout，Java 8 用 get(timeout)+cancel）。串行异步用 thenCompose 扁平化，聚合用 allOf/anyOf，别 for 循环串行 get。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/completablefuture-async-orchestration.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-20-deep-thinking-training",
-      "title": "如何锻炼深度思考能力？",
-      "path": "Inbox/2026-10-20-deep-thinking-training.md",
-      "created": "2026-10-20",
-      "category": "学习",
-      "tags": [
-        "思维方式"
-      ],
-      "source": "微信公众号（给思考留点时间）",
-      "source_url": "https://mp.weixin.qq.com/s/xbkGmXwf9WqVqTnjGq7dRg",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "深度思考 = 主动加工信息 + 建立逻辑关系 + 允许结论迭代，思考回路为\"提问—拆解—假设—证据—行动—修正\"。先养成三个习惯（追问定义、5Why 追因果链、区分事实/观点/假设），再练四个方法（费曼学习法、反向思考、系统思考、输出复盘），融入工作拆问题、生活决策清单、社交深度提问三类日常场景，避开\"时长=深度\"\"急求唯一答案\"\"只输入不输出\"三个误区。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/deep-thinking-training.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-20-deepseek-hyperframes-video-workflow",
-      "title": "用 DeepSeek + HyperFrames 做视频",
-      "path": "Inbox/2026-10-20-deepseek-hyperframes-video-workflow.md",
-      "created": "2026-10-20",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "工具"
-      ],
-      "source": "知乎专栏",
-      "source_url": "https://zhuanlan.zhihu.com/p/2095222728152330716",
-      "source_type": "link",
-      "platform": "知乎",
-      "summary": "DeepSeek V4.1-Flash-1017 发布，主打\"许愿式编程\"，编程任务成本从约 3.3 元降到 1.3 元。作者用它搭配 HeyGen 开源的 HyperFrames（66k Star）做科普视频：视频本质是一个网页文件，Agent 写好标题/动画/配乐后经无头浏览器逐帧截图 + FFmpeg 合成 MP4。实测 40 秒降噪耳机科普视频：18 分钟、约 1 元钱、本地 Kokoro 免费中文配音。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/deepseek-hyperframes-video-workflow.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-20-deepseek-v41-flash-inference-deployment",
-      "title": "DeepSeek V4.1 Flash 大规模推理部署实践",
-      "path": "Inbox/2026-10-20-deepseek-v41-flash-inference-deployment.md",
-      "created": "2026-10-20",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "工程实践"
-      ],
-      "source": "知乎专栏",
-      "source_url": "https://zhuanlan.zhihu.com/p/2095560295930508953",
-      "source_type": "link",
-      "platform": "知乎",
-      "summary": "DeepSeek 官方披露 V4.1 Flash 推理系统设计，并开源推理框架 DeepInfer 与 Token 编解码组件 deepseek-recipe。围绕多芯片兼容、Prefill/Decode 分离部署、KVCache 留存 72h+ 三大目标，用四层负载均衡、3FS 上的 Block KVCache、SWA Bounded Replay、DSpark 变长投机解码与零开销异步调度，做到单集群 155 万亿 Tokens/天、每卡每小时 38 美金（谷价）。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/deepseek-v41-flash-inference-deployment.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-20-design-a-query-system",
-      "title": "设计一个查询系统（视频号 · 疯狂的Rust库）",
-      "path": "Inbox/2026-10-20-design-a-query-system.md",
-      "created": "2026-10-20",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "Rust"
-      ],
-      "source": "微信视频号",
-      "source_url": "https://weixin.qq.com/sph/AmGomDbiQY",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "微信视频号「疯狂的Rust库」发布的短视频，主题为\"设计一个查询系统\"，发布于 2026-10-19。视频形式无文字稿，页面仅含标题与封面，具体内容需前往微信观看。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/design-a-query-system.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-20-eight-fields-booklist",
-      "title": "一定要大量读书：八大领域通识书单",
-      "path": "Inbox/2026-10-20-eight-fields-booklist.md",
-      "created": "2026-10-20",
-      "category": "学习",
-      "tags": [
-        "阅读"
-      ],
-      "source": "微信公众号（李子会）",
-      "source_url": "https://mp.weixin.qq.com/s/6fjflB6zsiSZsQakch7xnw",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "八大领域、32 部通识书单：历史、经济、政治、社会、心理、哲学、科学、文学各 4 本，入门读物与经典搭配，每本附阅读切入点建议。主旨是打破阅读偏好茧房——不同领域的书会给同一个问题带来不同解释，读得广，理解事情就多一些参考角度。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/eight-fields-booklist.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-20-game-server-elastic-scaling",
-      "title": "游戏开发：服务器弹性伸缩",
-      "path": "Inbox/2026-10-20-game-server-elastic-scaling.md",
-      "created": "2026-10-20",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "游戏开发"
-      ],
-      "source": "知乎专栏",
-      "source_url": "https://zhuanlan.zhihu.com/p/2095121870475485746",
-      "source_type": "link",
-      "platform": "知乎",
-      "summary": "游戏服务器弹性伸缩的理论笔记：从登录负载均衡的\"信息滞后\"问题讲起，给出虚拟负载/动态权重两种解法与防炸服清单；主体部分讨论有状态公会服如何平滑伸缩——引入固定数量的路由服维护路由表，扩容时旧服先存档、压队列、经路由服把数据与积压请求转交新服，用路由切换状态机保证时序；最后指出路由 Key 的本质是\"时序的容器\"而非数据身份。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/game-server-elastic-scaling.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-20-huolala-ai-coding-workflow",
-      "title": "个人提效到团队提效：货拉拉AI Coding流程化落地实践",
-      "path": "Inbox/2026-10-20-huolala-ai-coding-workflow.md",
-      "created": "2026-10-20",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "AI Coding",
-        "工程实践"
-      ],
-      "source": "微信公众号（货拉拉技术）",
-      "source_url": "https://mp.weixin.qq.com/s/Rb-TrUkuLLuRjRsqii3XTg",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "货拉拉千人研发团队的 AI Coding 落地复盘：个人提效攒不成组织提效，解法是三阶段推进——先用统一工作台（AiBox）和培训抬升 80% 普通用户的下限，再走 Spec 驱动（五步产线 + spec 召回/打分/淘汰）让 AI 按规范写，最终走向全生命周期闭环的 AI Native。度量上自建三层签名的 AI 代码占比、全链路 Trace 与 FPY（首次正确率），并坦承三个坑：简单任务别上完整 Agent 流程、上下文要精准召回而非全量塞、幻觉需独立第二 Agent 对抗审查。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/huolala-ai-coding-workflow.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-20-netty-three-skills-high-performance",
-      "title": "Netty 三大技能：少量线程 + 零拷贝 + 无锁串行化",
-      "path": "Inbox/2026-10-20-netty-three-skills-high-performance.md",
-      "created": "2026-10-20",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/wZ5L22_CHLj9mEFe5Rz5kw",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "Netty 高性能 = 主从 Reactor 摊薄\"等 IO\"成本 + 堆外内存/零拷贝砍掉\"搬数据\"成本 + Channel 终身绑定 EventLoop 消掉\"抢锁\"成本。文章算清 BIO 万连接成本账（线程栈 10GB），拆 EventLoop 三段循环、ByteBuf 引用计数与内存池、零拷贝三层含义（OS sendfile / JVM 堆外 / 应用层组合切片），覆盖 Selector 空轮询自愈（阈值 512）、粘包拆包、原生 epoll ET/LT，附参数调优清单与 4.0/4.1/4.2 版本分水岭（4.2 默认自适应分配器、EventLoopGroup 与传输解耦、io_uring 毕业）。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-three-skills-high-performance.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-20-pi-tips-4-web-parallel",
-      "title": "Pi 实用技巧系列（四）：联网与并行的实战方案",
-      "path": "Inbox/2026-10-20-pi-tips-4-web-parallel.md",
-      "created": "2026-10-20",
-      "category": "技术",
-      "tags": [
-        "Pi",
-        "AI Coding"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/5ZRpRUFVM3DtudXweQHCRA",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "Pi 核心只有 read/write/edit/bash 四个工具，默认离线——联网是扩展的事，这是设计立场而非缺陷。本文梳理 Pi 连接外界的四条路线：MCP（0.99 起原生内置，接外部工具/系统）、pi-web-access（联网搜索与网页抓取）、自建 Skill + CDP（Armin 的浏览器自动化路线）、pi-side-agents（子代理并行），并给出场景化选型表与安全注意事项。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/pi-tips-4-web-parallel.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-20-reading-100-books-a-year",
-      "title": "如何在全职工作下每年阅读超100本书",
-      "path": "Inbox/2026-10-20-reading-100-books-a-year.md",
-      "created": "2026-10-20",
-      "category": "学习",
-      "tags": [
-        "阅读"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/BWw5WRsqWIKfxGu6tJ-oGg",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "一位年读 126 本的全职上班族的二十年读书方法论：阅读速度的本质是\"熟练\"，时间靠拆解而非硬挤（日均 4.5 小时、全年 1644 小时）；计划用四步法（知识分类→年度专题→分配数量→必读/选读 70%/30%）；速度从默读到视读、心流加速、听读结合；理解靠输出——笔记、单主题文章、融会贯通三层递进；AI 只用于优化原创和查资料，绝不替代原创。前提是三个自检原则：无不适感、无内卷感、无压力感。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/reading-100-books-a-year.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-20-reading-system-sop",
-      "title": "阅读体系 SOP：挖需求 → 搭结构 → 四步读书法",
-      "path": "Inbox/2026-10-20-reading-system-sop.md",
-      "created": "2026-10-20",
-      "category": "学习",
-      "tags": [
-        "阅读",
-        "个人成长"
-      ],
-      "source": "微信公众号（是凯西呀）",
-      "source_url": "https://mp.weixin.qq.com/s/Y-IgwEgw-YhnBB2A0JNnsg",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "面向自媒体输出者的阅读体系三步法：Step 1 用\"三层痛点法\"挖需求（表层困扰/中层能力缺口/深层要长出的能力），Step 2 借 AI 助手结合微信读书书架搭建阅读结构，Step 3 参考 SQ3R 的四步 SOP——预览建认知地图、带 3 个问题读、边读边问 AI、输出 1 篇笔记 + 1 个行动清单。主旨：用阅读体系拉开输入差距，\"用 10 本书读出 300 本的价值\"。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/reading-system-sop.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-20-spring-20-extension-points",
-      "title": "Spring 20 个扩展点：挂在容器启动时间轴上一次理清",
-      "path": "Inbox/2026-10-20-spring-20-extension-points.md",
-      "created": "2026-10-20",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "spring",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/50HiCXoigRgyugQLAfmzHA",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "Spring 扩展点考的不是\"有哪些\"而是\"什么时候被调\"——把 20 个扩展点挂到五段时间轴：定义期（改图纸，①~⑧）、实例化期（造零件，⑨~⑭）、初始化期（组装，⑮~⑱）、就绪期（通电，⑲~⑳）、销毁期。三条记忆主线：图纸/零件/通电（BFPP 改 BeanDefinition、BPP 改实例、事件管就绪）、越业务越靠前（@PostConstruct→afterPropertiesSet→init-method）、代理是分水岭（postProcessAfterInitialization 生成 AOP 代理，this 调用失效皆源于此）。附 4 个顺序错位翻车场景与 20 问速答。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/spring-20-extension-points.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-20-spring-async-to-task-table",
-      "title": "Spring Boot：从 @Async 到\"任务表 + Worker\"",
-      "path": "Inbox/2026-10-20-spring-async-to-task-table.md",
-      "created": "2026-10-20",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/DxS0YQAlpbFpP3sJVFUhKw",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "一次滚动发布让跑了 12 分钟的大文件任务彻底消失——@Async 的执行状态只在 JVM 线程里。改造为\"任务表 + Worker\"：Controller 只落库（WAITING/PROCESSING/SUCCESS/FAILED），Worker 定时扫描 + 条件 UPDATE 抢占解决多实例竞争，heartbeat_time + Recovery Job 解决 Worker 中途死亡，retry_count 区分\"值得重试\"与\"重试无意义\"，协作式取消替代杀线程，幂等设计接受\"至少执行一次\"。线程池管\"同时执行几个\"，数据库管\"有哪些任务、什么状态\"。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/spring-async-to-task-table.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-20-spring-cloud-gateway-advanced",
-      "title": "Spring Cloud Gateway 高级玩法：动态路由、请求日志、限流、灰度发布",
-      "path": "Inbox/2026-10-20-spring-cloud-gateway-advanced.md",
-      "created": "2026-10-20",
-      "category": "技术",
-      "tags": [
-        "spring gateway",
-        "spring",
-        "Java"
-      ],
-      "source": "微信公众号（服务端技术精选）",
-      "source_url": "https://mp.weixin.qq.com/s/FrrdoqLzrRCCa04JgtDGLQ",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "Spring Cloud Gateway 四大高级能力实战方案：动态路由（RouteDefinitionWriter + RefreshRoutesEvent + 数据库持久化，免重启改路由）、请求日志（GlobalFilter 记录请求/耗时，DataBufferUtils.join 缓存 body 解决流只能读一次）、限流（Redis + Lua 原子计数器，或集成 Sentinel GatewayFlowRule）、灰度发布（请求头强制灰度 + 权重随机分流 + 用户标签灰度）。附完整配置、Prometheus 监控告警、性能与安全加固、常见问题。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/spring-cloud-gateway-advanced.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-20-writing-8-frameworks",
-      "title": "21天学写作 Day10：8 种常见写作框架",
-      "path": "Inbox/2026-10-20-writing-8-frameworks.md",
-      "created": "2026-10-20",
-      "category": "学习",
-      "tags": [
-        "写作"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/HTpMrrVl-vyAGeUUosgQIg",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "写作没思路时先垒框架——8 种常见框架：干货三件套（what/why/how，可分层嵌套）、观点三步法（总-分-总，分论点是核心）、同维度并列拆分、逻辑递进拆分、不同维度并列拆分、清单体罗列、同一点多案例罗列、人物故事时间顺序法。实际写作是多种框架的综合运用，搭框架能力是写作最重要的能力之一。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/writing-8-frameworks.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-21-agent-2026-midyear-architecture-review",
-      "title": "2026 Agent 年中总结：从整体架构到关键细节",
-      "path": "Inbox/2026-10-21-agent-2026-midyear-architecture-review.md",
-      "created": "2026-10-21",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "Harness",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/cX3-i0N7HmV5aS3zNsCTsg",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "叶小钗的 Agent 系统设计全景文。核心命题：Agent 系统设计的本质是把模型运行中的判断接到**可验证、可恢复**的执行过程里——模型负责理解探索，程序保证执行规则，人承担关键决策。架构主线是\"薄 Harness 厚 Skills\"：Harness 管执行与控制（上下文装配、工具调用、循环控制、暂停恢复），Runtime 管资源，业务系统保存落地事实。围绕工具反馈、上下文管理、Skill 沉淀、多 Agent 分工、生命周期与评测六大块展开，主线思想是\"从 Workflow 到 Agent 是为提升泛化能力，架构演进全程为保证执行稳定性\"。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/agent-2026-midyear-architecture-review.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-21-agent-long-task-reliable-execution",
-      "title": "AI Agent 长任务可靠执行：状态机、Checkpoint、Fencing 与可对账副作用",
-      "path": "Inbox/2026-10-21-agent-long-task-reliable-execution.md",
-      "created": "2026-10-21",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "分布式系统",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/UpJRHy-PN1iEg1KxHXgTAw",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "单进程 Agent Loop 的根因问题：把工作流进度和执行权隐式绑定到进程生命周期。方案=七态状态机（QUEUED/RUNNING/WAITING_TOOL/PAUSED_INDOUBT/PAUSED_HUMAN/终态）+ PostgreSQL 事务协议：Claim 用 SKIP LOCKED+fencing_token 代际递增领取可失效执行权；Checkpoint 主表 version+快照+Outbox 事件同一事务原子提交；工具副作用三段式（Tx1 持久化 OUTBOUND_INTENT→出网→Tx2 结果与进度同事务）；结果未知一律冻结 PAUSED_INDOUBT 走对账，绝不盲目重发。核心认知：Fencing 只挡旧 Worker 写库、挡不住它出网；Outbox 保证至少一次不是 exactly-once；LLM 决策必须先持久化再执行，恢复时不得重新采样工具参数。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/agent-long-task-reliable-execution.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-21-business-risk-control-redis-lua-annotation",
-      "title": "业务风控组件设计：Redis+Lua 计数 + 注解接入",
-      "path": "Inbox/2026-10-21-business-risk-control-redis-lua-annotation.md",
-      "created": "2026-10-21",
-      "category": "技术",
-      "tags": [
-        "spring",
-        "Java",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/dbNxVwwHG9YxAE4oquGaSA",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "针对 AI 能力调用（OCR/语音测评等烧钱接口）的业务风控需求，自研轻量计数限流组件。计数选 Redis+Lua（脚本原子性替代事务，放弃精确计数与持久化换简单）；规则支持自然日、自然小时及二者组合——组合规则关键是**回退逻辑**：日通过但小时不通过时，两边计数都要 DECR 回退，不能各记各的。接入方式用 `@Detect(eventId, contentSpel)` 注解 + AOP 切面，SpEL 从方法参数（arg1/arg2…）解析出限流维度 content，业务代码零侵入。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/business-risk-control-redis-lua-annotation.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-21-ecommerce-search-realtime-personalization",
-      "title": "搜索即推荐：百毫秒级电商搜索与实时个性化系统",
-      "path": "Inbox/2026-10-21-ecommerce-search-realtime-personalization.md",
-      "created": "2026-10-21",
-      "category": "技术",
-      "tags": [
-        "Elasticsearch",
-        "Kafka",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/g6VUWmW-QAAbvwbqorjF9A",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "一条能经受消息重复、索引重建、热点缓存失效、ES 降级、大促并发考验的完整链路。核心原则：MySQL 保存事实、Kafka 传播已提交变更、ES 保存可重建读模型、Redis 保存有边界的热点与短期特征、应用层只在有限候选集内做重排。关键设计：Outbox+Debezium 传播 searchVersion 单调事件 → Kafka 至少一次 + ES external_gte 版本约束收敛 → 前台 size=20 与内部候选 200 分离 → 缓存存\"带 baseScore 的共享候选\"（key 不含 userId）→ PIT 签名 cursor 翻页（个性化分页是另一种问题）→ 索引升级双写+栅栏消 alias 切换窗口 → ES 故障三级降级绝不 LIKE 回源 MySQL。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/ecommerce-search-realtime-personalization.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-21-elasticsearch-interview-deep-dive",
-      "title": "Elasticsearch 面试万字长文（七大模块）",
-      "path": "Inbox/2026-10-21-elasticsearch-interview-deep-dive.md",
-      "created": "2026-10-21",
-      "category": "技术",
-      "tags": [
-        "Elasticsearch",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/4K_8IJ8DFwPbO8Dwz_OSJg",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "体系化 ES 面试题库，七大模块：倒排索引（Term Dictionary/Posting List/Term Index 三层结构，FST 内存仅哈希表 1/10，跳表加速 AND/OR 合并）、集群架构（Master/Data/Coordinating/Ingest 角色分离，路由公式 hash(_routing)%主分片数=主分片不可改的根源）、写入三机制（refresh 只到 OS Cache 不落盘、translog 先写顺序日志保命、flush 刷盘清 translog）、Query Then Fetch 两阶段（深分页=每分片回传 from+size 条的根源）、IK 分词（ik_max_word 索引/ik_smart 搜索，远程词典+MySQL 热更新方案）、三种分页选型（浅 from+size / 导出 scroll / 实时 search_after 必须唯一排序字段）、四维索引优化清单。核心一句话：查词翻词典→倒排列表取文档→排序查列存 Doc Values。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/elasticsearch-interview-deep-dive.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-21-elasticsearch-search-tuning-production",
-      "title": "Elasticsearch 生产级搜索性能调优实战",
-      "path": "Inbox/2026-10-21-elasticsearch-search-tuning-production.md",
-      "created": "2026-10-21",
-      "category": "技术",
-      "tags": [
-        "Elasticsearch",
-        "工程实践",
-        "分布式系统"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/3PwUQZX2BwoI3jQoIjn9zA",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "基于 20 亿+ 文档、峰值 5000 QPS 的订单搜索系统，系统讲清 ES 从秒级到毫秒级的调优路径：慢的根源在 query/fetch 两阶段与协调节点合并成本，优化优先级是**减分片→filter→缩时间→限字段→search_after 替代深分页→关 track_total_hits→routing**，而不是先调 JVM 参数。索引建模是生死线（dynamic strict、scaled_float、sort.field、慎用 nested），写入用 Kafka+Bulk 幂等链路，高并发靠线程池隔离+熔断降级+热点租户复合路由，长期演进靠 ILM 冷热分层与多集群拆分。完整方法论五步走：定位→砍不合理请求→重做索引模型→补治理→最后调参数。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/elasticsearch-search-tuning-production.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-21-game-server-architecture-four-layers",
-      "title": "游戏服务器架构应该如何分层？——四层骨架",
-      "path": "Inbox/2026-10-21-game-server-architecture-four-layers.md",
-      "created": "2026-10-21",
-      "category": "技术",
-      "tags": [
-        "游戏开发",
-        "工程实践",
-        "分布式系统",
-        "游戏架构"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/NSVCzrF9UvT67Vtl49nuMg",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "游戏服务器架构可拆解为四层骨架，各回答一个核心问题：**连接层**（客户端怎么连进来：长连接管理、会话绑定、心跳、编解码、鉴权限流、断线重连）；**实体层**（游戏对象怎么存在：有状态实体的生命周期、消息按序投递、状态隔离、AOI、持久化与迁移）；**RPC 约束层**（服务间怎么可靠调用：服务发现、按 entityId/shardId 路由、超时熔断重试、幂等、可观测性）；**协调层**（分布式下对象放在哪里：分片分配、再平衡、故障转移、迁移协调、防脑裂租约）。四层以纯接口隔离，演进路线先单机闭环再上分布式。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/game-server-architecture-four-layers.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-21-gc-log-tuning-practice",
-      "title": "GC 日志分析与调优实战",
-      "path": "Inbox/2026-10-21-gc-log-tuning-practice.md",
-      "created": "2026-10-21",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/Owc57OzkgLibnuUd1ZiZ9w",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "JVM 调优系列第 9 篇。调优不是拍脑袋改 -Xmx，而是「开日志→读指标→定假设→压测验证」的闭环：JDK9+ 用 `-Xlog:gc*` 滚动日志，Minor GC 看 Eden/Heap/Times（real 才是真实停顿），Full GC 看触发原因与停顿秒数；量化三指标=吞吐量（>95~99%）、最大停顿、停顿频率。附 G1（MaxGCPauseMillis 是目标不是保证、IHOP 调低让 Mixed GC 提前）与 ZGC（基本不用调，只看 Pause 行验证 <10ms）参数模板、jstat 实时观测技巧、内存泄漏早期信号（老年代锯齿上移、FGC 单调递增）、Prometheus 告警规则与完整调优案例。核心纪律：一次只动一个参数，用前后压测对比说话。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/gc-log-tuning-practice.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-21-jenkins-gitlab-cicd-pipeline",
-      "title": "Jenkins + GitLab CI/CD 流水线落地实战",
-      "path": "Inbox/2026-10-21-jenkins-gitlab-cicd-pipeline.md",
-      "created": "2026-10-21",
-      "category": "技术",
-      "tags": [
-        "CI/CD",
-        "工程实践",
-        "工具"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/OkT4w402xVI9RJjf3E_8vA",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "两套可直接落地的完整流水线：声明式 Jenkinsfile（约 130 行）与 .gitlab-ci.yml（约 90 行），覆盖 push 触发→lint→pytest→docker build/push→SSH 部署→健康检查失败自动回滚全链路，配 deploy.sh（releases/current 软链模式，保留最近 5 版）与 6 个避坑点。三个核心认知：流水线是代码（进仓库走评审）、失败要早要自动（lint 5 秒能拦的别等半夜报警）、一切可追溯（TAG=commit 前 8 位+构建号，不用 latest）。版本基准 Jenkins 2.452 LTS / GitLab 16.10 / Docker 27。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/jenkins-gitlab-cicd-pipeline.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-21-jvm-gc-troubleshooting-arthas",
-      "title": "JVM GC 排查实战（Arthas 版）",
-      "path": "Inbox/2026-10-21-jvm-gc-troubleshooting-arthas.md",
-      "created": "2026-10-21",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/WCrdRXRWCWtYzRRyLVMj2A",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "Full GC 频繁的七步排查法（Arthas 优先，比 jstat/jmap 效率高一个量级）：dashboard 看全局趋势 → jvm/memory 看配置 → 按「OU 降幅 vs 持续上涨」判定根因（晋升过快/内存泄漏/CMS 碎片/元空间类泄漏/堆太小）→ 分场景处理 → 验证修复。关键判定表：OU 每次 FGC 后降幅>50%=提前晋升，OU 持续涨 FGC 后不降=内存泄漏，OU 不高却 FGC=CMS 碎片，Metaspace>90%+Metadata GCThreshold=类泄漏。附 MAT 三步定位大对象（Leak Suspects→Dominator Tree→Path to GC Roots）、classloader 命令判类泄漏、五大常见泄漏点与分场景参数处方。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/jvm-gc-troubleshooting-arthas.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-21-jvm-troubleshooting-six-tools",
-      "title": "JVM 排查别乱试：6 个工具各管什么",
-      "path": "Inbox/2026-10-21-jvm-troubleshooting-six-tools.md",
-      "created": "2026-10-21",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/9eAlETU99LUBabyJ892kGQ",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "JDK 自带诊断工具的分工图谱与排障顺序：jps 找进程 PID、jcmd 综合诊断入口（先 `jcmd <pid> help`）、jstat -gcutil 连续采样看 GC 趋势（\"感觉像 GC\"不算证据）、jstack -l 取线程现场找锁等待/死锁、jinfo 查启动配置（不适合乱改线上参数）、VisualVM 看 CPU/GC/堆/线程趋势关联。核心原则：排障不是工具越多越专业，每次只拿能回答当前问题的那一个；把进程、配置、GC、线程几份证据放到同一条时间线上，定位才快。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/jvm-troubleshooting-six-tools.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-21-kafka-fast-four-mechanisms",
-      "title": "Kafka 为什么这么快？——顺序写+页缓存+零拷贝+批量，四板斧拆解",
-      "path": "Inbox/2026-10-21-kafka-fast-four-mechanisms.md",
-      "created": "2026-10-21",
-      "category": "技术",
-      "tags": [
-        "Kafka",
-        "分布式系统",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/MDAgNT5ir7Ts79vMyaYshQ",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "Kafka 单机百万级吞吐不是单点黑科技，而是\"四板斧\"联动消除每一跳的浪费：磁盘只做顺序追加写（HDD 上比随机写快 375 倍）、热数据全走 PageCache（write() 进内存即返回、磁盘 util <30%）、consumer 拉取走 sendfile 零拷贝（CPU 拷贝开销降 ~65%，SSL 下失效）、producer 批量+压缩（RPC 次数 ÷ 批大小，zstd 压缩比 ~3.3x）。生产实测单 Broker 80 万 msg/s @ CPU<40%，瓶颈在副本同步网络而非磁盘。附 JVM 堆与 PageCache 配比（6GB/32GB）、swappiness=1、batch.size=64KB 等调优基线与排障对照表。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/kafka-fast-four-mechanisms.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-21-kafka-ops-tools-five-essentials",
-      "title": "Kafka 运维必备工具清单：这 5 个工具让排障快 10 倍",
-      "path": "Inbox/2026-10-21-kafka-ops-tools-five-essentials.md",
-      "created": "2026-10-21",
-      "category": "技术",
-      "tags": [
-        "Kafka",
-        "工具",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/g2xStkIY7ap8EVAnJPlA1A",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "Kafka 排障痛点是\"找不到该看什么\"而非\"看不到问题\"。2026 年推荐组合：Kafka UI（日常看，可视化全覆盖、KRaft 友好）+ kafka-topics.sh（动手改，脚本化资产）+ Burrow（Lag 智能告警，基线判定抓\"假活\" STOP 状态）；Kafka Manager/CMAK 是 ZK 时代遗产（KRaft 支持不完整，新集群不再引入）。附 --describe 三个风险分区过滤参数、Burrow 五种状态语义、安全部署三件套与高频命令速查表。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/kafka-ops-tools-five-essentials.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-21-linked-list-vs-array-cache",
-      "title": "链表已死？C++ 之父：O(1) 不一定比 O(N) 快",
-      "path": "Inbox/2026-10-21-linked-list-vs-array-cache.md",
-      "created": "2026-10-21",
-      "category": "技术",
-      "tags": [
-        "算法",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/M-FKnd1kvdwvRtRNdsDK6g",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "「数组查询快、链表插入快」的教科书结论有个隐藏前提：访问内存免费。现代 CPU 的内存墙让这条前提崩塌——链表节点散落堆中，pointer chasing 每跳一次可能就是一次缓存未命中，预取器完全失效；数组搬移是连续 memcpy，预取友好快得惊人。Stroustrup 实测 std::list 完败于 std::vector，建议「默认用 vector」；Carruth 更直言「非连续数据结构是万恶之源」。但链表没死：内核侵入式链表、大对象+密集增删场景、跳表/B+树/LRU 等新形态里它仍是幕后支柱。核心教训：大 O 之上，还站着缓存行、预取器和内存墙。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/linked-list-vs-array-cache.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-21-lovart-2-arti-design-agent",
-      "title": "Lovart 2.0：设计界的 Personal Agent Arti",
-      "path": "Inbox/2026-10-21-lovart-2-arti-design-agent.md",
-      "created": "2026-10-21",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "工具"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/Oia5kjVMOMzn9713XICDzA",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "Lovart 2.0（10 月 19 日上线，国内可用）推出设计 Personal Agent「Arti」：不只生成，还主动调研、找参考、巡检画布、处理修改，并把重复工作沉淀成 Skill。作者用两个真实委托（办公室万圣节周边 + 游戏直播间月度主题）验证：写 brief 建委托计划 → Arti 先出调研报告推荐风格 → 5 分钟出首版 → 画布巡检后台对照要求查错提醒 → 分享画布同事评论直接对应元素、交给 Arti 出新版 → 一句话把整套流程沉淀成室内主题设计 skill，两句话生成圣诞全套物料。核心模式转变：从\"一句句指挥\"到\"整件事委托\"——定时委托+到点收货，节日营销素材不求人。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/lovart-2-arti-design-agent.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-21-raft-membership-log-barrier",
-      "title": "Raft 成员变更：何时需要先提交 leader 的当前 term 日志",
-      "path": "Inbox/2026-10-21-raft-membership-log-barrier.md",
-      "created": "2026-10-21",
-      "category": "技术",
-      "tags": [
-        "分布式系统",
-        "Raft",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/SMKqvXf5P8s1MA6sI_KJTQ",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "openacid 张炎泼的分布式硬核文，给出成员变更日志 barrier 的完整结论：**标准 joint 变更两步都无需额外的 noop 提交**（joint config `C01=[C0,C1]` 的每个 quorum 都包含 `C0` 的 quorum，config 日志本身构成 barrier）；**单步变更必须先提交当前 term 日志**（`Cu`/`Cv` 虽各自与 `C0` 相交，但彼此可不相交，缺 barrier 时未提交的 `Cu` 可覆盖已提交的 `Cv`——Ongaro 修正条件）；**若扩展允许 joint 回退，完成与回退两个方向都需先提交当前 term 日志**。核心机制：在公共 config 的 quorum 上提交一条当前 term 日志，即登记新 leader 的 term，排除旧 term 遗留的冲突变更。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/raft-membership-log-barrier.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-21-scg-traceid-full-chain",
-      "title": "Spring Cloud Gateway 全链路 traceId 传递方案",
-      "path": "Inbox/2026-10-21-scg-traceid-full-chain.md",
-      "created": "2026-10-21",
-      "category": "技术",
-      "tags": [
-        "spring gateway",
-        "spring",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/pcDs7bKa75MSLcpHUY3W1g",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "SCG 基于 WebFlux 响应式，请求处理不绑定固定线程，传统 ThreadLocal+MDC 方案直接失效——这是照搬 Servlet 写法导致 traceId 时有时无的根因。正解：GlobalFilter 中用 **Reactor Context** 作载体（contextWrite 写入 / deferContextual 读取），靠 **doOnEach 钩子**在每个信号发出时同步 MDC 保证日志稳定打印，**doFinally 清除**防线程复用串号；经 request.mutate() 透传 X-Trace-Id 请求头并写响应头返给前端。下游 Servlet 用 Filter+MDC、WebFlux 用 WebFilter+Context；异步靠 TaskDecorator/Runnable 包装；MQ 走消息属性。附与 Sleuth/SkyWalking 的选型对比。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/scg-traceid-full-chain.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-21-spring-ai-milvus-rag-production",
-      "title": "Spring AI + Milvus 企业级 RAG 生产工程实践",
-      "path": "Inbox/2026-10-21-spring-ai-milvus-rag-production.md",
-      "created": "2026-10-21",
-      "category": "技术",
-      "tags": [
-        "spring ai",
-        "RAG",
-        "AI",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/HgQxSmTRD--3QLTWR7c4wQ",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "以多租户电商客服知识库为例的可评审、可压测、可回滚 RAG 工程方法。核心立场：Spring AI/Milvus 不替你保证权限、发布生效时机、证据充分性与故障收敛——企业 RAG 的目标是「在给定权限、知识版本、模型配额和 SLO 下稳定产生可追溯回答，无法满足时安全拒答」。四条主线贯穿全文：容量（入口 QPS≠生成能力，用 Little 定律算在途）、证据（模型调用前的证据门禁，无证据短路拒答）、权限（AccessScope 服务端构造、过滤条件只能由适配层生成）、恢复（写入 ACK≠全局可见，发布目录原子切换）。附缓存键安全语义、SSE 取消协议、故障实验矩阵与第一周最小闭环清单。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/spring-ai-milvus-rag-production.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-21-spring-insight-lightweight-monitoring",
-      "title": "轻量级 Spring 监测工具——Spring Insight 正式发布",
-      "path": "Inbox/2026-10-21-spring-insight-lightweight-monitoring.md",
-      "created": "2026-10-21",
-      "category": "技术",
-      "tags": [
-        "spring",
-        "工具",
-        "分布式系统"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/ULrVnGzWaGv-Ypx3ROyGAQ",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "面向中小项目/本地联调的轻量 Spring 链路追踪工具，0.1.0 已发 Maven Central + GHCR 镜像。只回答三件事：谁调了谁、耗时卡在哪、哪里报错了。业务侧加一个 Starter、Docker 起一个监测中心（:9966），浏览器直接看拓扑和链路。明确不替代 SkyWalking/OTel——没有采样/告警/鉴权/多租户，存储仅内存或 JSON 文件。覆盖 Servlet MVC、OpenFeign、WebFlux/WebClient、Gateway 及线程池 Trace 透传，可选导出指标给 Micrometer/Prometheus。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/spring-insight-lightweight-monitoring.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-21-springboot-disruptor-event-bus",
-      "title": "Spring Boot 集成 Disruptor 无锁事件总线：RingBuffer 原理到百万级吞吐",
-      "path": "Inbox/2026-10-21-springboot-disruptor-event-bus.md",
-      "created": "2026-10-21",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "spring",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/AUGXjm9kh07lDUGdoUME1g",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "BlockingQueue 上生产露馅的四根因：锁竞争（cs 10w+/s）、GC 抖动（每事件 new 对象）、阻塞唤醒延迟毛刺、环满无降级空间。Disruptor 以预分配数组灭 GC、CAS+内存屏障灭锁、缓存行填充灭伪共享、序号代指针。JMH 实测 1P1C 比 ArrayBlockingQueue 快 4.5 倍、4P4C 快 10 倍+，P99.9 优于对方 P50；端到端埋点链路 11.2w→72.6w QPS、P99 48ms→4.1ms。含 Spring Boot 工程化封装（EventBus 门面 + SmartLifecycle + 配置化）与生产避坑清单。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/springboot-disruptor-event-bus.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-22-architect-road-2025-digest",
-      "title": "架构师之路：25年干货精选（1年，261.3W）",
-      "path": "Inbox/2026-10-22-architect-road-2025-digest.md",
-      "created": "2026-10-22",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "阅读"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/qfm8oA0v6gwUz6Uok_lYCg",
-      "source_type": "link",
-      "platform": "wechat",
-      "summary": "公众号「架构师之路」的 2025 年度文章精选索引。作者离职单干后全年更新 343 篇、261 万阅读，本文按四大方向（DeepSeek、数据库、架构、OPC 创业）汇总了全年优质文章链接，是一份架构与分布式系统主题的资源清单，适合收藏按需查阅。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/architect-road-2025-digest.md",
-      "wiki_status": "pending"
-    },
-    {
       "id": "2026-10-22-async-task-system-design",
       "title": "异步任务系统怎么设计？从提交、排队、执行到幂等和重试",
       "path": "Inbox/2026-10-22-async-task-system-design.md",
@@ -1142,7 +37,7 @@
       "summary": "线程池≠异步任务系统。可靠系统需要任务身份、持久化队列、状态机、租约、幂等、分级重试、协作式取消与可观测性——线程池只是执行环节的一个零件。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/async-task-system-design.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-22-critical-thinking-six-priorities",
@@ -1161,7 +56,7 @@
       "summary": "批判性思维≠逻辑规则+谬误清单。十年教学经验提炼六个重点：愿意反省、澄清问题、评价证据、积累并善用知识、提出备选方案、用程序与反馈养成习惯。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/critical-thinking-six-priorities.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-22-database-high-availability",
@@ -1180,7 +75,7 @@
       "summary": "京东技术团队出品的数据库高可用体系科普。以五层主线串起完整图景：单机崩溃可恢复（WAL/2PC/双1）→ 主备复制（异步/半同步/RPO）→ GTID 全局事务身份证 → 主备安全切换（fencing/PRS/ERS）→ Orchestrator 自动化容错，最后延伸到应用侧协同降级，点出\"高可用是数据库与应用双向奔赴\"。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/database-high-availability.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-22-distributed-transaction-six-solutions",
@@ -1200,7 +95,7 @@
       "summary": "分布式事务六种方案的完整梳理：2PC（及致命伤）、本地消息表、RocketMQ 事务消息、TCC、事务状态表+补偿、同步双写+异步对账。从强一致到最终一致，覆盖从理论到落地的全路径。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/distributed-transaction-six-solutions.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-22-k8s-ha-cluster-setup-guide",
@@ -2106,6 +1001,1111 @@
       "summary": "个人开源项目（v0.6.1，仅 Windows 安装包）：把学习从线性聊天做成一张知识 DAG——从一个想弄懂的目标出发逐层拆成节点，每个节点带一份教学文档和多份笔记，由\"超级导师\"模型通过 JS 沙箱 api 直接改写文档来教学。数据全部本机存储（`%APPDATA%\\unyra`，干净 Markdown 可脱离应用读写），AI 请求主进程直发用户自配服务商（默认 DeepSeek，兼容 OpenAI/Anthropic/Responses 协议，内置 Kimi/GLM/通义/豆包/SiliconFlow 等）。",
       "summary_status": "",
       "asset_ref": "",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-15-agent-loop-production-boundaries",
+      "title": "从 Chatbot 到 AI Agent：为什么一个 while 循环撑不起生产系统",
+      "path": "Archive/2026-10-15-agent-loop-production-boundaries.md",
+      "created": "2026-10-15",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/lmO8xyKxJ2ckFEclxwrw3Q",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "文章以 Go 实现的运维诊断 Agent 原型 Aegis（W01 阶段，全部本地合成 Mock）为例，论证\"模型 while 循环 + 调工具\"的 Chatbot 骨架撑不起生产系统：模型不结束、工具挂住、用户取消、预算耗尽都必须成为明确且可查询的结果。关键设计：HTTP 与 Agent Loop 解耦（容量 32 的有限队列 + 单消费者后台 runtime + 内存仓储）；拆出 LLMProvider / ToolExecutor / AgentRuntime 三个可替换契约；任务走 PENDING→RUNNING→SUCCEEDED/FAILED/CANCELLED 状态机，取消先在仓储落终态再通知 worker，锁内排序保证终态不可被迟到结果覆盖；每类停止都有独立错误码；许可只来自服务端，模型输出不是授权凭据。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/agent-loop-production-boundaries.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-15-ep-harness-team-agent-workflow",
+      "title": "如何从个人 AI Coding 到构建团队级 Agent 工作流？（得物 EP-Harness）",
+      "path": "Archive/2026-10-15-ep-harness-team-agent-workflow.md",
+      "created": "2026-10-15",
+      "category": "技术",
+      "tags": [
+        "AI Coding",
+        "Harness",
+        "工程实践"
+      ],
+      "source": "得物技术（微信公众号，作者：方舟；dbaplus 社群转载）",
+      "source_url": "https://mp.weixin.qq.com/s/yd68Wzm3za4m47LuRhMzYw",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "得物技术介绍基于开源 Multica 二次开发的团队级 Agent 工作系统 EP-Harness：把 Agent 当作有身份、任务、状态、执行记录与权限边界的\"团队成员\"纳入平台管理（server 管 Issue 队列，daemon 驻开发者本机调本地 AI CLI，Backend.Execute 统一各 Runtime 契约）。核心判断：AI Coding 正沿 Prompt→Context→Harness→Loop 四层从工具使用走向工程系统，个人工具只解决前两层，团队平台补齐结构化上下文、可观测可治理的执行环境与\"发现-派发-执行-验证-记录-决策\"闭环。已实现决策追溯、多 Agent 分阶段协作，累计自动修复 100+ 异常日志问题，典型高频问题从每 4 小时 2400+ 条降至个位数。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/ep-harness-team-agent-workflow.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-16-ai-coding-workflow-skill-prompt",
+      "title": "一位 Agent 开发者的 AI Coding 工作流：轻 Skill、方法论 Prompt 与端到端测试",
+      "path": "Archive/2026-10-16-ai-coding-workflow-skill-prompt.md",
+      "created": "2026-10-16",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践",
+        "工具"
+      ],
+      "source": "X（黄同学h）",
+      "source_url": "https://x.com/huangtongxueh/status/2108577165306687938",
+      "source_type": "article",
+      "platform": "X",
+      "summary": "作者（大厂 Agent 开发）分享数月实践：重型 Skill（如 Superpowers 的固定 Workflow）在强模型时代变成噪声且费 Token，趋势是\"做减法\"——用 grill/implement/handoff 等轻 Skill 组织流程，用\"第一性原理/对抗性审查/消融实验/奥卡姆剃刀/高内聚低耦合\"这类方法论短 Prompt 当模型的\"思维快捷键\"；工作流上靠 Spec 沉淀上下文、subagent worktree 并行、小 MR + 端到端测试兜底；核心瓶颈是 Review 速度，解法是搭建 Agent 友好的端到端测试环境（CLI + 只读 DB MCP + 日志 Skill），让问题在交到人之前被发现。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/x-ai-coding-workflow-huangtongxueh.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-16-awesome-design-md",
+      "title": "用 DESIGN.md 治 AI 生成的丑 UI：awesome-design-md 仓库",
+      "path": "Archive/2026-10-16-awesome-design-md.md",
+      "created": "2026-10-16",
+      "category": "技术",
+      "tags": [
+        "工具",
+        "工程实践"
+      ],
+      "source": "知乎想法",
+      "source_url": "https://www.zhihu.com/pin/2093703116751369059",
+      "source_type": "post",
+      "platform": "知乎",
+      "summary": "知乎想法推荐 GitHub 仓库 VoltAgent/awesome-design-md：沿用 Google Stitch 的 DESIGN.md 思路，用一份纯文本设计规范文件约束 AI 生成的 UI 风格。仓库收录 73 个知名网站（Claude、Cursor、Vercel、Notion、Figma、Linear 等）的设计配置，复制对应 md 到项目根目录并提示 AI 遵循即可，无需导 Figma 或写配置。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/awesome-design-md.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-16-craft-of-selfteaching",
+      "title": "微博推荐：GitHub 万星项目《自学是门手艺》——教的不是编程，是学会学习",
+      "path": "Archive/2026-10-16-craft-of-selfteaching.md",
+      "created": "2026-10-16",
+      "category": "学习",
+      "tags": [
+        "阅读"
+      ],
+      "source": "微博",
+      "source_url": "https://weibo.com/1890573293/5354343621459970",
+      "source_type": "post",
+      "platform": "微博",
+      "summary": "微博帖推荐 GitHub 1.7 万星项目《自学是门手艺》（selfteaching/the-craft-of-selfteaching）：以 Python 为入口讲自学方法论，目标是让人成为\"能持续学新东西的人\"。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/weibo-craft-of-selfteaching.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-16-db-table-sharding-practice",
+      "title": "大表治理之分表实践：手搓一个简单的数据库分表组件",
+      "path": "Archive/2026-10-16-db-table-sharding-practice.md",
+      "created": "2026-10-16",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "分布式系统"
+      ],
+      "source": "微信公众号（京东零售技术）",
+      "source_url": "https://mp.weixin.qq.com/s/q9EaCqqHxXtdZKjU_n6W1w",
+      "source_type": "article",
+      "platform": "mp.weixin.qq.com",
+      "summary": "京东库存流水表（日增 3400 万行/31GB）大表治理实战。因 Sharding-JDBC/Mycat 等中间件 SQL 语法限制多，团队基于 MyBatis 插件机制自研轻量分表拦截器（策略模式 + 责任链），按仓号分 128 表，核心是五种读写策略（双写读旧/双写读新/单写读旧/单写读新/单写双读）支撑单表→分表的不停机平滑迁移与回滚；双写靠分号拼接双 SQL + 复制参数映射，双读靠 UNION ALL 合并新旧表并对 COUNT/SUM 外层再聚合、ORDER BY/LIMIT 特殊重写；路由按\"配置优先 + 最少仓负载均衡 + 分布式锁\"分配后缀。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/db-table-sharding-practice.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-16-distributed-systems-introduction",
+      "title": "第一章：分布式系统概述",
+      "path": "Archive/2026-10-16-distributed-systems-introduction.md",
+      "created": "2026-10-16",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "工程实践",
+        "课程"
+      ],
+      "source": "codedump（分布式系统中文教程）",
+      "source_url": "https://www.codedump.info/dist-system-cn/introduction/",
+      "source_type": "article",
+      "platform": "codedump.info",
+      "summary": "分布式系统教程开篇。以集中式单机系统为对照建立分布式系统定义（多节点经网络消息传递协同、无共享内存），剖析四大核心挑战——网络不可靠（丢包/乱序/延迟无上限，TCP 只给\"可靠流\"幻觉）、无全局时钟（物理时间戳会排出\"来自未来的消息\"）、部分失效（无法区分宕机、慢、丢消息，可引发级联故障与脑裂）、副本一致性（真理变成\"流言\"，一致性是频谱而非布尔值）；并总结工程师四点心智转变：二态→三态逻辑（成功/失败/超时+幂等设计）、绝对时间→因果顺序、完美主义→CAP 权衡、防御故障→拥抱故障（熔断/降级/隔离）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/distributed-systems-introduction.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-16-esp32-dev-board-ai-trend",
+      "title": "ESP32 开发板借 AI 出圈：从创客玩具到 OpenAI 窃听器",
+      "path": "Archive/2026-10-16-esp32-dev-board-ai-trend.md",
+      "created": "2026-10-16",
+      "category": "技术",
+      "tags": [
+        "行业动态",
+        "工具"
+      ],
+      "source": "微博",
+      "source_url": "https://weibo.com/2194035935/5354015136680392",
+      "source_type": "post",
+      "platform": "微博",
+      "summary": "微博观察：AI 热潮把 ESP32 开发板从创客圈带进 AI 圈——很多人晒用它做的小玩意（控制手机、小机器人、插路由器做 DNS 广告过滤，参考项目 M-Abozaid/esp32-c3-adblock）；近日曝出的 OpenAI 窃听案中窃听器同样基于 ESP32。带屏幕的板子只要几十元。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/esp32-dev-board-ai-trend.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-16-knowledge-base-tech-evolution",
+      "title": "一文搞懂知识库的技术演进：从关键词检索、向量 RAG 到 GraphRAG、LLM Wiki、本体论与 Agent",
+      "path": "Archive/2026-10-16-knowledge-base-tech-evolution.md",
+      "created": "2026-10-16",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/p5DFqPrvMkf8y6kpiGmBKw",
+      "source_type": "article",
+      "platform": "mp.weixin.qq.com",
+      "summary": "文章梳理知识库技术的能力地图（非线性替代关系）：关键词检索匹配词面、向量检索匹配语义、RAG 把检索结果交给模型作答、混合检索+重排优化召回、知识图谱/GraphRAG 沿实体关系查找、LLM Wiki 持续编译可复用知识页面、本体论统一跨系统业务概念、Agent 在权限与规则约束下调工具执行流程。强调各技术解决不同问题、生产中常并行组合，选型应从问题类型出发，并盯住来源可追溯、权限、版本冲突与执行校验。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/knowledge-base-tech-evolution.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-16-pi-practice-06-daily-patterns-selection",
+      "title": "Pi实战 06：日常实战 · 模式 · 选型篇",
+      "path": "Archive/2026-10-16-pi-practice-06-daily-patterns-selection.md",
+      "created": "2026-10-16",
+      "category": "技术",
+      "tags": [
+        "Pi",
+        "AI Coding",
+        "工程实践"
+      ],
+      "source": "微信公众号「九幺一铭 Ai修行手记」",
+      "source_url": "https://mp.weixin.qq.com/s/H5jMdYhJXR3QxdFBsy9QHA",
+      "source_type": "article",
+      "platform": "mp.weixin.qq.com",
+      "summary": "Pi Coding Agent 系列第 6 篇，汇总社区实战经验与选型对照：按任务分工切模型（便宜模型日常、强模型啃硬骨头）、固定系统开销 <1k tokens 的省 token 优势与五个节流技巧、四种运行模式（interactive/print/RPC/SDK）、高频快捷键与会话树习惯；并诚实对照 Pi / Claude Code / OpenCode / Codex CLI——Pi 是可无限 hack 的\"Emacs 式骨架\"，把 Agent 定义权交给工程师，代价是自建自维护，受监管行业可借其本地端点与可审计性获益。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/pi-practice-06-daily-patterns-selection.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-16-pi-school-official-course",
+      "title": "Pi School 官方课程主页：在 Pi 里边用边学的免费 Agent 入门课",
+      "path": "Archive/2026-10-16-pi-school-official-course.md",
+      "created": "2026-10-16",
+      "category": "学习",
+      "tags": [
+        "AI",
+        "课程",
+        "工具"
+      ],
+      "source": "Pi School",
+      "source_url": "https://pi-school.ziki.boo",
+      "source_type": "article",
+      "platform": "网页",
+      "summary": "Pi School 是 Pi（开源终端 Agent harness）的官方免费课程：无需账号、不收集数据。独特之处在于「课在 Agent 里上」——只有安装课在浏览器完成，之后每节课给一段提示词贴进 Pi，由 Pi 本人带着你学并回传完成状态。面向有命令行基础的普通用户和资深开发者。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/pi-school-official.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-16-tcp-retransmission-visualized",
+      "title": "可视化 TCP 重传：终于有人将 TCP 传输讲明白了",
+      "path": "Archive/2026-10-16-tcp-retransmission-visualized.md",
+      "created": "2026-10-16",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "课程"
+      ],
+      "source": "微信公众号（码农有道 coding）",
+      "source_url": "https://mp.weixin.qq.com/s/DFUJU3mU2h4Znm7XvvqxLA",
+      "source_type": "article",
+      "platform": "mp.weixin.qq.com",
+      "summary": "图解 TCP 可靠传输四件套：MSS 分段（以太网 MTU 1500 − IP/TCP 头各 20 = 1460，三次握手协商 SMSS/RMSS，避免 IP 层分片）；超时重传以字节序列号编号（32 位回绕），时间戳选项解决回绕后新旧段歧义；快速重传规定接收方对乱序段反复回同一 ACK、发送方连续收到 3 个重复 ACK 即不等超时立即重传；SACK 选项携带非连续已收区间，让发送方只重传真正丢失的段。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/tcp-retransmission-visualized.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-17-ai-coding-delivery-evolution",
+      "title": "AI 写代码越来越快，研发交付系统该怎么演进？",
+      "path": "Archive/2026-10-17-ai-coding-delivery-evolution.md",
+      "created": "2026-10-17",
+      "category": "技术",
+      "tags": [
+        "AI Coding",
+        "工程实践",
+        "Harness"
+      ],
+      "source": "微信公众号「架构师」",
+      "source_url": "https://mp.weixin.qq.com/s/cUvvE5eiIc2KlB3SZ-WQhg",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "AI Coding 拓宽了编码环节，交付瓶颈随之搬家：需求澄清、变更审查、环境验证、上线确认开始排队。文章主张把交付建模为状态机（意图→候选→持久化→合并→验证→可部署→已生效），让规格随事实更新、Harness 留住执行现场、证据绑定不可变版本、知识库当作带有效期的缓存，人退到\"on the loop\"守住风险分叉口。落地建议：先跑通一类边界清楚的变更，用交付质量指标代替生成量衡量成败。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/ai-coding-delivery-evolution.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-17-langchain4j-multimodal-rag",
+      "title": "LangChain4j 多模态 RAG：图片+表格检索实战",
+      "path": "Archive/2026-10-17-langchain4j-multimodal-rag.md",
+      "created": "2026-10-17",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/AJmVoaODjF5SAzPQnJF72Q",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "企业文档中图片/表格等非纯文本内容平均占比超 40%，传统 RAG 管线只处理文本，知识大量丢失。本文用 LangChain4j 实现两种多模态 RAG 方案：①图片描述法——用 VLM（GPT-4o）给图片生成文字描述，复用纯文本管线，成本低、可解释但受 VLM 质量制约；②多模态向量法——用 Cohere Embed v4 把图片和文本映射到同一向量空间，无损但调用成本高。表格处理是最大翻车点：禁止拍平/按段落切块/Markdown 直接 Embedding，正确做法是每个 chunk 保留完整表头、以\"列名=值\"描述行数据、小表整块大表逐行，并用 Metadata 过滤做双通道检索（向量处理开放问题、结构化查询处理精确问题）。最后整合文本/图片/表格三条管线构建完整问答 Agent，并总结 4 个坑：多模态模型贵、描述质量瓶颈、切分丢表头、上下文窗口超限。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/langchain4j-multimodal-rag.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-17-pi-custom-agent-setup",
+      "title": "用 Pi 搭一个自己的 Agent：Skills、Extensions、Subagents 和定时任务",
+      "path": "Archive/2026-10-17-pi-custom-agent-setup.md",
+      "created": "2026-10-17",
+      "category": "技术",
+      "tags": [
+        "Pi",
+        "AI Coding",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/uZrIlXZMq8Rz8cYRN1J5sQ",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "Pi 是 OpenClaw 内核的极简 coding agent，默认只有 read/write/edit/bash 四个工具。本文给出一套分层定制方案：项目规范写成 skill（按需加载、不占上下文），常用指令固化成 prompt 模板，必须强制执行的行为（如\"改完代码必评审\"）用 extension 挂事件钩子，复杂任务交给 subagent 并行处理，定时任务按\"Pi 开着/关着\"分别选 pi-schedule-prompt 或系统调度器调 headless 模式。核心原则：能用轻方案就别上重的，关键在知道需求该放哪一层。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/pi-custom-agent-setup.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-17-pi-durable-architecture",
+      "title": "开源 Pi-durable：把持久化做进协议的 Agent 应用框架",
+      "path": "Archive/2026-10-17-pi-durable-architecture.md",
+      "created": "2026-10-17",
+      "category": "技术",
+      "tags": [
+        "Pi",
+        "Harness",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/x1G9t7b8M1hrR370f4DW4Q",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "pi-durable 是构建\"随处运行、可崩溃恢复、多端协同、无限长\"Agent 应用的框架（library，不带 UI）。核心公理：Session 原子提交不可变条目、任务和文档，只有已提交状态可观察——先落盘后可见，进程任意时刻死掉都能从上个检查点继续。五层架构（Storage/Session/Documents/Tasks/Harness）各司其职，一次 run 是一条 generation 持久任务链。与 Pi coding agent 共享 pi-ai 模型层，但定位是天级长程运行、多端在场的 Agent 应用底座，等于把 Temporal 的 durable execution 搬进 agent 框架。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/pi-durable-architecture.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-17-pi-embedded-sdk-agent-engine",
+      "title": "Pi Embedded SDK：把 Agent 引擎塞进自己的 Node.js 系统",
+      "path": "Archive/2026-10-17-pi-embedded-sdk-agent-engine.md",
+      "created": "2026-10-17",
+      "category": "技术",
+      "tags": [
+        "Pi",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/7L73s43MRwrvCRMMCoJD1Q",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "《拆解 Pi》专栏终篇。Pi 本质是纯粹的 Node.js 原生类库（`@earendil-works/pi-coding-agent`），业务系统若是 Node.js/TypeScript，无需 spawn 子进程，直接 import 即可在同进程内存里拉起工业级智能体。三大接入通道选型：人机交互用 CLI、跨语言用 RPC 管道、Node.js 同构自动化首选 Embedded SDK（零 IPC、编译期类型守卫、持久化自由定制）。核心实践：`SessionManager.inMemory()` 纯内存会话完事即焚、`tools:[\"read\"]` 构造期物理裁权防注入、`session.subscribe` 原生对象直连流式事件。落地蓝图：CI/CD 门禁机器人、告警驱动的只读运维排障 Agent、Promise.all 并发多仓审查。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/pi-embedded-sdk-agent-engine.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-20-15-books-understand-world",
+      "title": "看懂世界运转的 15 本书",
+      "path": "Archive/2026-10-20-15-books-understand-world.md",
+      "created": "2026-10-20",
+      "category": "学习",
+      "tags": [
+        "阅读",
+        "个人成长"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/oZPb7241VoRvw5wMgRNYgg",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "覆盖政治、财富、人性、社会、认知、健康六个维度的 15 本通识书单，每本附简介、推荐理由与金句。主旨：世界运行的底层逻辑不在新闻和短视频碎片里，而被前人写进了书；真正的信息差是\"书就摆在那里，大多数人懒得翻\"。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/15-books-understand-world.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-20-475-claude-opus-demos-repo",
+      "title": "GitHub 仓库收录 475 个 Claude Opus 5.5 生成的视频演示",
+      "path": "Archive/2026-10-20-475-claude-opus-demos-repo.md",
+      "created": "2026-10-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "github"
+      ],
+      "source": "微博",
+      "source_url": "https://weibo.com/1912085257/5355789153733341",
+      "source_type": "link",
+      "platform": "微博",
+      "summary": "微博分享的一个 GitHub 仓库，收录 475 个用 Claude Opus 5.5 构建的视频演示——动态图形、解说视频、3D 场景乃至游戏，全部用 HTML、Canvas、SVG 和 Three.js 实现。每个演示都附带原始提示词和来源帖子，可直接挑选示例自行复现，适合学习与实验。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/weibo-1912085257-5355789153733341.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-20-ai-agents-definitive-guide-notebooks",
+      "title": "O'Reilly《AI Agents - The Definitive Guide》配套代码全开源",
+      "path": "Archive/2026-10-20-ai-agents-definitive-guide-notebooks.md",
+      "created": "2026-10-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "课程"
+      ],
+      "source": "知乎想法",
+      "source_url": "https://www.zhihu.com/pin/2088989044751520212",
+      "source_type": "link",
+      "platform": "知乎",
+      "summary": "知乎想法推荐：O'Reilly《AI Agents - The Definitive Guide》作者把整套配套代码放上 GitHub（Nicolepcx/ai-agents-the-definitive-guide），12 章 35 个 Jupyter notebook，全部带 Colab 一键运行，无需买书、无需本地环境即可从第一章跑到最后一章。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/ai-agents-definitive-guide-notebooks.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-20-completablefuture-async-orchestration",
+      "title": "CompletableFuture：异步编排的正确写法",
+      "path": "Archive/2026-10-20-completablefuture-async-orchestration.md",
+      "created": "2026-10-20",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/qr1AojU66kbWv43wsMDghg",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "CompletableFuture 三条红线：① 永远显式传自定义线程池，别用 commonPool（为 CPU 密集设计，跑 IO 会被慢下游占满、拖垮所有共用业务）；② 异常必须 exceptionally/handle 接住，否则不调 get() 就静默吞掉；③ 必须加超时（Java 9+ 用 orTimeout，Java 8 用 get(timeout)+cancel）。串行异步用 thenCompose 扁平化，聚合用 allOf/anyOf，别 for 循环串行 get。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/completablefuture-async-orchestration.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-20-deep-thinking-training",
+      "title": "如何锻炼深度思考能力？",
+      "path": "Archive/2026-10-20-deep-thinking-training.md",
+      "created": "2026-10-20",
+      "category": "学习",
+      "tags": [
+        "思维方式"
+      ],
+      "source": "微信公众号（给思考留点时间）",
+      "source_url": "https://mp.weixin.qq.com/s/xbkGmXwf9WqVqTnjGq7dRg",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "深度思考 = 主动加工信息 + 建立逻辑关系 + 允许结论迭代，思考回路为\"提问—拆解—假设—证据—行动—修正\"。先养成三个习惯（追问定义、5Why 追因果链、区分事实/观点/假设），再练四个方法（费曼学习法、反向思考、系统思考、输出复盘），融入工作拆问题、生活决策清单、社交深度提问三类日常场景，避开\"时长=深度\"\"急求唯一答案\"\"只输入不输出\"三个误区。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/deep-thinking-training.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-20-deepseek-hyperframes-video-workflow",
+      "title": "用 DeepSeek + HyperFrames 做视频",
+      "path": "Archive/2026-10-20-deepseek-hyperframes-video-workflow.md",
+      "created": "2026-10-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工具"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2095222728152330716",
+      "source_type": "link",
+      "platform": "知乎",
+      "summary": "DeepSeek V4.1-Flash-1017 发布，主打\"许愿式编程\"，编程任务成本从约 3.3 元降到 1.3 元。作者用它搭配 HeyGen 开源的 HyperFrames（66k Star）做科普视频：视频本质是一个网页文件，Agent 写好标题/动画/配乐后经无头浏览器逐帧截图 + FFmpeg 合成 MP4。实测 40 秒降噪耳机科普视频：18 分钟、约 1 元钱、本地 Kokoro 免费中文配音。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/deepseek-hyperframes-video-workflow.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-20-deepseek-v41-flash-inference-deployment",
+      "title": "DeepSeek V4.1 Flash 大规模推理部署实践",
+      "path": "Archive/2026-10-20-deepseek-v41-flash-inference-deployment.md",
+      "created": "2026-10-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2095560295930508953",
+      "source_type": "link",
+      "platform": "知乎",
+      "summary": "DeepSeek 官方披露 V4.1 Flash 推理系统设计，并开源推理框架 DeepInfer 与 Token 编解码组件 deepseek-recipe。围绕多芯片兼容、Prefill/Decode 分离部署、KVCache 留存 72h+ 三大目标，用四层负载均衡、3FS 上的 Block KVCache、SWA Bounded Replay、DSpark 变长投机解码与零开销异步调度，做到单集群 155 万亿 Tokens/天、每卡每小时 38 美金（谷价）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/deepseek-v41-flash-inference-deployment.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-20-design-a-query-system",
+      "title": "设计一个查询系统（视频号 · 疯狂的Rust库）",
+      "path": "Archive/2026-10-20-design-a-query-system.md",
+      "created": "2026-10-20",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "Rust"
+      ],
+      "source": "微信视频号",
+      "source_url": "https://weixin.qq.com/sph/AmGomDbiQY",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "微信视频号「疯狂的Rust库」发布的短视频，主题为\"设计一个查询系统\"，发布于 2026-10-19。视频形式无文字稿，页面仅含标题与封面，具体内容需前往微信观看。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/design-a-query-system.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-20-eight-fields-booklist",
+      "title": "一定要大量读书：八大领域通识书单",
+      "path": "Archive/2026-10-20-eight-fields-booklist.md",
+      "created": "2026-10-20",
+      "category": "学习",
+      "tags": [
+        "阅读"
+      ],
+      "source": "微信公众号（李子会）",
+      "source_url": "https://mp.weixin.qq.com/s/6fjflB6zsiSZsQakch7xnw",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "八大领域、32 部通识书单：历史、经济、政治、社会、心理、哲学、科学、文学各 4 本，入门读物与经典搭配，每本附阅读切入点建议。主旨是打破阅读偏好茧房——不同领域的书会给同一个问题带来不同解释，读得广，理解事情就多一些参考角度。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/eight-fields-booklist.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-20-game-server-elastic-scaling",
+      "title": "游戏开发：服务器弹性伸缩",
+      "path": "Archive/2026-10-20-game-server-elastic-scaling.md",
+      "created": "2026-10-20",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "游戏开发"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2095121870475485746",
+      "source_type": "link",
+      "platform": "知乎",
+      "summary": "游戏服务器弹性伸缩的理论笔记：从登录负载均衡的\"信息滞后\"问题讲起，给出虚拟负载/动态权重两种解法与防炸服清单；主体部分讨论有状态公会服如何平滑伸缩——引入固定数量的路由服维护路由表，扩容时旧服先存档、压队列、经路由服把数据与积压请求转交新服，用路由切换状态机保证时序；最后指出路由 Key 的本质是\"时序的容器\"而非数据身份。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/game-server-elastic-scaling.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-20-huolala-ai-coding-workflow",
+      "title": "个人提效到团队提效：货拉拉AI Coding流程化落地实践",
+      "path": "Archive/2026-10-20-huolala-ai-coding-workflow.md",
+      "created": "2026-10-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "AI Coding",
+        "工程实践"
+      ],
+      "source": "微信公众号（货拉拉技术）",
+      "source_url": "https://mp.weixin.qq.com/s/Rb-TrUkuLLuRjRsqii3XTg",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "货拉拉千人研发团队的 AI Coding 落地复盘：个人提效攒不成组织提效，解法是三阶段推进——先用统一工作台（AiBox）和培训抬升 80% 普通用户的下限，再走 Spec 驱动（五步产线 + spec 召回/打分/淘汰）让 AI 按规范写，最终走向全生命周期闭环的 AI Native。度量上自建三层签名的 AI 代码占比、全链路 Trace 与 FPY（首次正确率），并坦承三个坑：简单任务别上完整 Agent 流程、上下文要精准召回而非全量塞、幻觉需独立第二 Agent 对抗审查。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/huolala-ai-coding-workflow.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-20-netty-three-skills-high-performance",
+      "title": "Netty 三大技能：少量线程 + 零拷贝 + 无锁串行化",
+      "path": "Archive/2026-10-20-netty-three-skills-high-performance.md",
+      "created": "2026-10-20",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/wZ5L22_CHLj9mEFe5Rz5kw",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "Netty 高性能 = 主从 Reactor 摊薄\"等 IO\"成本 + 堆外内存/零拷贝砍掉\"搬数据\"成本 + Channel 终身绑定 EventLoop 消掉\"抢锁\"成本。文章算清 BIO 万连接成本账（线程栈 10GB），拆 EventLoop 三段循环、ByteBuf 引用计数与内存池、零拷贝三层含义（OS sendfile / JVM 堆外 / 应用层组合切片），覆盖 Selector 空轮询自愈（阈值 512）、粘包拆包、原生 epoll ET/LT，附参数调优清单与 4.0/4.1/4.2 版本分水岭（4.2 默认自适应分配器、EventLoopGroup 与传输解耦、io_uring 毕业）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-three-skills-high-performance.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-20-pi-tips-4-web-parallel",
+      "title": "Pi 实用技巧系列（四）：联网与并行的实战方案",
+      "path": "Archive/2026-10-20-pi-tips-4-web-parallel.md",
+      "created": "2026-10-20",
+      "category": "技术",
+      "tags": [
+        "Pi",
+        "AI Coding"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/5ZRpRUFVM3DtudXweQHCRA",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "Pi 核心只有 read/write/edit/bash 四个工具，默认离线——联网是扩展的事，这是设计立场而非缺陷。本文梳理 Pi 连接外界的四条路线：MCP（0.99 起原生内置，接外部工具/系统）、pi-web-access（联网搜索与网页抓取）、自建 Skill + CDP（Armin 的浏览器自动化路线）、pi-side-agents（子代理并行），并给出场景化选型表与安全注意事项。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/pi-tips-4-web-parallel.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-20-reading-100-books-a-year",
+      "title": "如何在全职工作下每年阅读超100本书",
+      "path": "Archive/2026-10-20-reading-100-books-a-year.md",
+      "created": "2026-10-20",
+      "category": "学习",
+      "tags": [
+        "阅读"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/BWw5WRsqWIKfxGu6tJ-oGg",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "一位年读 126 本的全职上班族的二十年读书方法论：阅读速度的本质是\"熟练\"，时间靠拆解而非硬挤（日均 4.5 小时、全年 1644 小时）；计划用四步法（知识分类→年度专题→分配数量→必读/选读 70%/30%）；速度从默读到视读、心流加速、听读结合；理解靠输出——笔记、单主题文章、融会贯通三层递进；AI 只用于优化原创和查资料，绝不替代原创。前提是三个自检原则：无不适感、无内卷感、无压力感。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/reading-100-books-a-year.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-20-reading-system-sop",
+      "title": "阅读体系 SOP：挖需求 → 搭结构 → 四步读书法",
+      "path": "Archive/2026-10-20-reading-system-sop.md",
+      "created": "2026-10-20",
+      "category": "学习",
+      "tags": [
+        "阅读",
+        "个人成长"
+      ],
+      "source": "微信公众号（是凯西呀）",
+      "source_url": "https://mp.weixin.qq.com/s/Y-IgwEgw-YhnBB2A0JNnsg",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "面向自媒体输出者的阅读体系三步法：Step 1 用\"三层痛点法\"挖需求（表层困扰/中层能力缺口/深层要长出的能力），Step 2 借 AI 助手结合微信读书书架搭建阅读结构，Step 3 参考 SQ3R 的四步 SOP——预览建认知地图、带 3 个问题读、边读边问 AI、输出 1 篇笔记 + 1 个行动清单。主旨：用阅读体系拉开输入差距，\"用 10 本书读出 300 本的价值\"。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/reading-system-sop.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-20-spring-20-extension-points",
+      "title": "Spring 20 个扩展点：挂在容器启动时间轴上一次理清",
+      "path": "Archive/2026-10-20-spring-20-extension-points.md",
+      "created": "2026-10-20",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "spring",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/50HiCXoigRgyugQLAfmzHA",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "Spring 扩展点考的不是\"有哪些\"而是\"什么时候被调\"——把 20 个扩展点挂到五段时间轴：定义期（改图纸，①~⑧）、实例化期（造零件，⑨~⑭）、初始化期（组装，⑮~⑱）、就绪期（通电，⑲~⑳）、销毁期。三条记忆主线：图纸/零件/通电（BFPP 改 BeanDefinition、BPP 改实例、事件管就绪）、越业务越靠前（@PostConstruct→afterPropertiesSet→init-method）、代理是分水岭（postProcessAfterInitialization 生成 AOP 代理，this 调用失效皆源于此）。附 4 个顺序错位翻车场景与 20 问速答。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/spring-20-extension-points.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-20-spring-async-to-task-table",
+      "title": "Spring Boot：从 @Async 到\"任务表 + Worker\"",
+      "path": "Archive/2026-10-20-spring-async-to-task-table.md",
+      "created": "2026-10-20",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/DxS0YQAlpbFpP3sJVFUhKw",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "一次滚动发布让跑了 12 分钟的大文件任务彻底消失——@Async 的执行状态只在 JVM 线程里。改造为\"任务表 + Worker\"：Controller 只落库（WAITING/PROCESSING/SUCCESS/FAILED），Worker 定时扫描 + 条件 UPDATE 抢占解决多实例竞争，heartbeat_time + Recovery Job 解决 Worker 中途死亡，retry_count 区分\"值得重试\"与\"重试无意义\"，协作式取消替代杀线程，幂等设计接受\"至少执行一次\"。线程池管\"同时执行几个\"，数据库管\"有哪些任务、什么状态\"。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/spring-async-to-task-table.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-20-spring-cloud-gateway-advanced",
+      "title": "Spring Cloud Gateway 高级玩法：动态路由、请求日志、限流、灰度发布",
+      "path": "Archive/2026-10-20-spring-cloud-gateway-advanced.md",
+      "created": "2026-10-20",
+      "category": "技术",
+      "tags": [
+        "spring gateway",
+        "spring",
+        "Java"
+      ],
+      "source": "微信公众号（服务端技术精选）",
+      "source_url": "https://mp.weixin.qq.com/s/FrrdoqLzrRCCa04JgtDGLQ",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "Spring Cloud Gateway 四大高级能力实战方案：动态路由（RouteDefinitionWriter + RefreshRoutesEvent + 数据库持久化，免重启改路由）、请求日志（GlobalFilter 记录请求/耗时，DataBufferUtils.join 缓存 body 解决流只能读一次）、限流（Redis + Lua 原子计数器，或集成 Sentinel GatewayFlowRule）、灰度发布（请求头强制灰度 + 权重随机分流 + 用户标签灰度）。附完整配置、Prometheus 监控告警、性能与安全加固、常见问题。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/spring-cloud-gateway-advanced.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-20-writing-8-frameworks",
+      "title": "21天学写作 Day10：8 种常见写作框架",
+      "path": "Archive/2026-10-20-writing-8-frameworks.md",
+      "created": "2026-10-20",
+      "category": "学习",
+      "tags": [
+        "写作"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/HTpMrrVl-vyAGeUUosgQIg",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "写作没思路时先垒框架——8 种常见框架：干货三件套（what/why/how，可分层嵌套）、观点三步法（总-分-总，分论点是核心）、同维度并列拆分、逻辑递进拆分、不同维度并列拆分、清单体罗列、同一点多案例罗列、人物故事时间顺序法。实际写作是多种框架的综合运用，搭框架能力是写作最重要的能力之一。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/writing-8-frameworks.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-21-agent-2026-midyear-architecture-review",
+      "title": "2026 Agent 年中总结：从整体架构到关键细节",
+      "path": "Archive/2026-10-21-agent-2026-midyear-architecture-review.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Harness",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/cX3-i0N7HmV5aS3zNsCTsg",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "叶小钗的 Agent 系统设计全景文。核心命题：Agent 系统设计的本质是把模型运行中的判断接到**可验证、可恢复**的执行过程里——模型负责理解探索，程序保证执行规则，人承担关键决策。架构主线是\"薄 Harness 厚 Skills\"：Harness 管执行与控制（上下文装配、工具调用、循环控制、暂停恢复），Runtime 管资源，业务系统保存落地事实。围绕工具反馈、上下文管理、Skill 沉淀、多 Agent 分工、生命周期与评测六大块展开，主线思想是\"从 Workflow 到 Agent 是为提升泛化能力，架构演进全程为保证执行稳定性\"。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/agent-2026-midyear-architecture-review.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-21-agent-long-task-reliable-execution",
+      "title": "AI Agent 长任务可靠执行：状态机、Checkpoint、Fencing 与可对账副作用",
+      "path": "Archive/2026-10-21-agent-long-task-reliable-execution.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "分布式系统",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/UpJRHy-PN1iEg1KxHXgTAw",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "单进程 Agent Loop 的根因问题：把工作流进度和执行权隐式绑定到进程生命周期。方案=七态状态机（QUEUED/RUNNING/WAITING_TOOL/PAUSED_INDOUBT/PAUSED_HUMAN/终态）+ PostgreSQL 事务协议：Claim 用 SKIP LOCKED+fencing_token 代际递增领取可失效执行权；Checkpoint 主表 version+快照+Outbox 事件同一事务原子提交；工具副作用三段式（Tx1 持久化 OUTBOUND_INTENT→出网→Tx2 结果与进度同事务）；结果未知一律冻结 PAUSED_INDOUBT 走对账，绝不盲目重发。核心认知：Fencing 只挡旧 Worker 写库、挡不住它出网；Outbox 保证至少一次不是 exactly-once；LLM 决策必须先持久化再执行，恢复时不得重新采样工具参数。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/agent-long-task-reliable-execution.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-21-business-risk-control-redis-lua-annotation",
+      "title": "业务风控组件设计：Redis+Lua 计数 + 注解接入",
+      "path": "Archive/2026-10-21-business-risk-control-redis-lua-annotation.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "spring",
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/dbNxVwwHG9YxAE4oquGaSA",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "针对 AI 能力调用（OCR/语音测评等烧钱接口）的业务风控需求，自研轻量计数限流组件。计数选 Redis+Lua（脚本原子性替代事务，放弃精确计数与持久化换简单）；规则支持自然日、自然小时及二者组合——组合规则关键是**回退逻辑**：日通过但小时不通过时，两边计数都要 DECR 回退，不能各记各的。接入方式用 `@Detect(eventId, contentSpel)` 注解 + AOP 切面，SpEL 从方法参数（arg1/arg2…）解析出限流维度 content，业务代码零侵入。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/business-risk-control-redis-lua-annotation.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-21-ecommerce-search-realtime-personalization",
+      "title": "搜索即推荐：百毫秒级电商搜索与实时个性化系统",
+      "path": "Archive/2026-10-21-ecommerce-search-realtime-personalization.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "Elasticsearch",
+        "Kafka",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/g6VUWmW-QAAbvwbqorjF9A",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "一条能经受消息重复、索引重建、热点缓存失效、ES 降级、大促并发考验的完整链路。核心原则：MySQL 保存事实、Kafka 传播已提交变更、ES 保存可重建读模型、Redis 保存有边界的热点与短期特征、应用层只在有限候选集内做重排。关键设计：Outbox+Debezium 传播 searchVersion 单调事件 → Kafka 至少一次 + ES external_gte 版本约束收敛 → 前台 size=20 与内部候选 200 分离 → 缓存存\"带 baseScore 的共享候选\"（key 不含 userId）→ PIT 签名 cursor 翻页（个性化分页是另一种问题）→ 索引升级双写+栅栏消 alias 切换窗口 → ES 故障三级降级绝不 LIKE 回源 MySQL。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/ecommerce-search-realtime-personalization.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-21-elasticsearch-interview-deep-dive",
+      "title": "Elasticsearch 面试万字长文（七大模块）",
+      "path": "Archive/2026-10-21-elasticsearch-interview-deep-dive.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "Elasticsearch",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/4K_8IJ8DFwPbO8Dwz_OSJg",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "体系化 ES 面试题库，七大模块：倒排索引（Term Dictionary/Posting List/Term Index 三层结构，FST 内存仅哈希表 1/10，跳表加速 AND/OR 合并）、集群架构（Master/Data/Coordinating/Ingest 角色分离，路由公式 hash(_routing)%主分片数=主分片不可改的根源）、写入三机制（refresh 只到 OS Cache 不落盘、translog 先写顺序日志保命、flush 刷盘清 translog）、Query Then Fetch 两阶段（深分页=每分片回传 from+size 条的根源）、IK 分词（ik_max_word 索引/ik_smart 搜索，远程词典+MySQL 热更新方案）、三种分页选型（浅 from+size / 导出 scroll / 实时 search_after 必须唯一排序字段）、四维索引优化清单。核心一句话：查词翻词典→倒排列表取文档→排序查列存 Doc Values。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/elasticsearch-interview-deep-dive.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-21-elasticsearch-search-tuning-production",
+      "title": "Elasticsearch 生产级搜索性能调优实战",
+      "path": "Archive/2026-10-21-elasticsearch-search-tuning-production.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "Elasticsearch",
+        "工程实践",
+        "分布式系统"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/3PwUQZX2BwoI3jQoIjn9zA",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "基于 20 亿+ 文档、峰值 5000 QPS 的订单搜索系统，系统讲清 ES 从秒级到毫秒级的调优路径：慢的根源在 query/fetch 两阶段与协调节点合并成本，优化优先级是**减分片→filter→缩时间→限字段→search_after 替代深分页→关 track_total_hits→routing**，而不是先调 JVM 参数。索引建模是生死线（dynamic strict、scaled_float、sort.field、慎用 nested），写入用 Kafka+Bulk 幂等链路，高并发靠线程池隔离+熔断降级+热点租户复合路由，长期演进靠 ILM 冷热分层与多集群拆分。完整方法论五步走：定位→砍不合理请求→重做索引模型→补治理→最后调参数。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/elasticsearch-search-tuning-production.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-21-game-server-architecture-four-layers",
+      "title": "游戏服务器架构应该如何分层？——四层骨架",
+      "path": "Archive/2026-10-21-game-server-architecture-four-layers.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "游戏开发",
+        "工程实践",
+        "分布式系统",
+        "游戏架构"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/NSVCzrF9UvT67Vtl49nuMg",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "游戏服务器架构可拆解为四层骨架，各回答一个核心问题：**连接层**（客户端怎么连进来：长连接管理、会话绑定、心跳、编解码、鉴权限流、断线重连）；**实体层**（游戏对象怎么存在：有状态实体的生命周期、消息按序投递、状态隔离、AOI、持久化与迁移）；**RPC 约束层**（服务间怎么可靠调用：服务发现、按 entityId/shardId 路由、超时熔断重试、幂等、可观测性）；**协调层**（分布式下对象放在哪里：分片分配、再平衡、故障转移、迁移协调、防脑裂租约）。四层以纯接口隔离，演进路线先单机闭环再上分布式。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/game-server-architecture-four-layers.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-21-gc-log-tuning-practice",
+      "title": "GC 日志分析与调优实战",
+      "path": "Archive/2026-10-21-gc-log-tuning-practice.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/Owc57OzkgLibnuUd1ZiZ9w",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "JVM 调优系列第 9 篇。调优不是拍脑袋改 -Xmx，而是「开日志→读指标→定假设→压测验证」的闭环：JDK9+ 用 `-Xlog:gc*` 滚动日志，Minor GC 看 Eden/Heap/Times（real 才是真实停顿），Full GC 看触发原因与停顿秒数；量化三指标=吞吐量（>95~99%）、最大停顿、停顿频率。附 G1（MaxGCPauseMillis 是目标不是保证、IHOP 调低让 Mixed GC 提前）与 ZGC（基本不用调，只看 Pause 行验证 <10ms）参数模板、jstat 实时观测技巧、内存泄漏早期信号（老年代锯齿上移、FGC 单调递增）、Prometheus 告警规则与完整调优案例。核心纪律：一次只动一个参数，用前后压测对比说话。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/gc-log-tuning-practice.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-21-jenkins-gitlab-cicd-pipeline",
+      "title": "Jenkins + GitLab CI/CD 流水线落地实战",
+      "path": "Archive/2026-10-21-jenkins-gitlab-cicd-pipeline.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "CI/CD",
+        "工程实践",
+        "工具"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/OkT4w402xVI9RJjf3E_8vA",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "两套可直接落地的完整流水线：声明式 Jenkinsfile（约 130 行）与 .gitlab-ci.yml（约 90 行），覆盖 push 触发→lint→pytest→docker build/push→SSH 部署→健康检查失败自动回滚全链路，配 deploy.sh（releases/current 软链模式，保留最近 5 版）与 6 个避坑点。三个核心认知：流水线是代码（进仓库走评审）、失败要早要自动（lint 5 秒能拦的别等半夜报警）、一切可追溯（TAG=commit 前 8 位+构建号，不用 latest）。版本基准 Jenkins 2.452 LTS / GitLab 16.10 / Docker 27。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jenkins-gitlab-cicd-pipeline.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-21-jvm-gc-troubleshooting-arthas",
+      "title": "JVM GC 排查实战（Arthas 版）",
+      "path": "Archive/2026-10-21-jvm-gc-troubleshooting-arthas.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/WCrdRXRWCWtYzRRyLVMj2A",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "Full GC 频繁的七步排查法（Arthas 优先，比 jstat/jmap 效率高一个量级）：dashboard 看全局趋势 → jvm/memory 看配置 → 按「OU 降幅 vs 持续上涨」判定根因（晋升过快/内存泄漏/CMS 碎片/元空间类泄漏/堆太小）→ 分场景处理 → 验证修复。关键判定表：OU 每次 FGC 后降幅>50%=提前晋升，OU 持续涨 FGC 后不降=内存泄漏，OU 不高却 FGC=CMS 碎片，Metaspace>90%+Metadata GCThreshold=类泄漏。附 MAT 三步定位大对象（Leak Suspects→Dominator Tree→Path to GC Roots）、classloader 命令判类泄漏、五大常见泄漏点与分场景参数处方。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jvm-gc-troubleshooting-arthas.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-21-jvm-troubleshooting-six-tools",
+      "title": "JVM 排查别乱试：6 个工具各管什么",
+      "path": "Archive/2026-10-21-jvm-troubleshooting-six-tools.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/9eAlETU99LUBabyJ892kGQ",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "JDK 自带诊断工具的分工图谱与排障顺序：jps 找进程 PID、jcmd 综合诊断入口（先 `jcmd <pid> help`）、jstat -gcutil 连续采样看 GC 趋势（\"感觉像 GC\"不算证据）、jstack -l 取线程现场找锁等待/死锁、jinfo 查启动配置（不适合乱改线上参数）、VisualVM 看 CPU/GC/堆/线程趋势关联。核心原则：排障不是工具越多越专业，每次只拿能回答当前问题的那一个；把进程、配置、GC、线程几份证据放到同一条时间线上，定位才快。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jvm-troubleshooting-six-tools.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-21-kafka-fast-four-mechanisms",
+      "title": "Kafka 为什么这么快？——顺序写+页缓存+零拷贝+批量，四板斧拆解",
+      "path": "Archive/2026-10-21-kafka-fast-four-mechanisms.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "Kafka",
+        "分布式系统",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/MDAgNT5ir7Ts79vMyaYshQ",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "Kafka 单机百万级吞吐不是单点黑科技，而是\"四板斧\"联动消除每一跳的浪费：磁盘只做顺序追加写（HDD 上比随机写快 375 倍）、热数据全走 PageCache（write() 进内存即返回、磁盘 util <30%）、consumer 拉取走 sendfile 零拷贝（CPU 拷贝开销降 ~65%，SSL 下失效）、producer 批量+压缩（RPC 次数 ÷ 批大小，zstd 压缩比 ~3.3x）。生产实测单 Broker 80 万 msg/s @ CPU<40%，瓶颈在副本同步网络而非磁盘。附 JVM 堆与 PageCache 配比（6GB/32GB）、swappiness=1、batch.size=64KB 等调优基线与排障对照表。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/kafka-fast-four-mechanisms.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-21-kafka-ops-tools-five-essentials",
+      "title": "Kafka 运维必备工具清单：这 5 个工具让排障快 10 倍",
+      "path": "Archive/2026-10-21-kafka-ops-tools-five-essentials.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "Kafka",
+        "工具",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/g2xStkIY7ap8EVAnJPlA1A",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "Kafka 排障痛点是\"找不到该看什么\"而非\"看不到问题\"。2026 年推荐组合：Kafka UI（日常看，可视化全覆盖、KRaft 友好）+ kafka-topics.sh（动手改，脚本化资产）+ Burrow（Lag 智能告警，基线判定抓\"假活\" STOP 状态）；Kafka Manager/CMAK 是 ZK 时代遗产（KRaft 支持不完整，新集群不再引入）。附 --describe 三个风险分区过滤参数、Burrow 五种状态语义、安全部署三件套与高频命令速查表。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/kafka-ops-tools-five-essentials.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-21-linked-list-vs-array-cache",
+      "title": "链表已死？C++ 之父：O(1) 不一定比 O(N) 快",
+      "path": "Archive/2026-10-21-linked-list-vs-array-cache.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "算法",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/M-FKnd1kvdwvRtRNdsDK6g",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "「数组查询快、链表插入快」的教科书结论有个隐藏前提：访问内存免费。现代 CPU 的内存墙让这条前提崩塌——链表节点散落堆中，pointer chasing 每跳一次可能就是一次缓存未命中，预取器完全失效；数组搬移是连续 memcpy，预取友好快得惊人。Stroustrup 实测 std::list 完败于 std::vector，建议「默认用 vector」；Carruth 更直言「非连续数据结构是万恶之源」。但链表没死：内核侵入式链表、大对象+密集增删场景、跳表/B+树/LRU 等新形态里它仍是幕后支柱。核心教训：大 O 之上，还站着缓存行、预取器和内存墙。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/linked-list-vs-array-cache.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-21-lovart-2-arti-design-agent",
+      "title": "Lovart 2.0：设计界的 Personal Agent Arti",
+      "path": "Archive/2026-10-21-lovart-2-arti-design-agent.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工具"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/Oia5kjVMOMzn9713XICDzA",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "Lovart 2.0（10 月 19 日上线，国内可用）推出设计 Personal Agent「Arti」：不只生成，还主动调研、找参考、巡检画布、处理修改，并把重复工作沉淀成 Skill。作者用两个真实委托（办公室万圣节周边 + 游戏直播间月度主题）验证：写 brief 建委托计划 → Arti 先出调研报告推荐风格 → 5 分钟出首版 → 画布巡检后台对照要求查错提醒 → 分享画布同事评论直接对应元素、交给 Arti 出新版 → 一句话把整套流程沉淀成室内主题设计 skill，两句话生成圣诞全套物料。核心模式转变：从\"一句句指挥\"到\"整件事委托\"——定时委托+到点收货，节日营销素材不求人。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/lovart-2-arti-design-agent.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-21-raft-membership-log-barrier",
+      "title": "Raft 成员变更：何时需要先提交 leader 的当前 term 日志",
+      "path": "Archive/2026-10-21-raft-membership-log-barrier.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "Raft",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/SMKqvXf5P8s1MA6sI_KJTQ",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "openacid 张炎泼的分布式硬核文，给出成员变更日志 barrier 的完整结论：**标准 joint 变更两步都无需额外的 noop 提交**（joint config `C01=[C0,C1]` 的每个 quorum 都包含 `C0` 的 quorum，config 日志本身构成 barrier）；**单步变更必须先提交当前 term 日志**（`Cu`/`Cv` 虽各自与 `C0` 相交，但彼此可不相交，缺 barrier 时未提交的 `Cu` 可覆盖已提交的 `Cv`——Ongaro 修正条件）；**若扩展允许 joint 回退，完成与回退两个方向都需先提交当前 term 日志**。核心机制：在公共 config 的 quorum 上提交一条当前 term 日志，即登记新 leader 的 term，排除旧 term 遗留的冲突变更。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/raft-membership-log-barrier.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-21-scg-traceid-full-chain",
+      "title": "Spring Cloud Gateway 全链路 traceId 传递方案",
+      "path": "Archive/2026-10-21-scg-traceid-full-chain.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "spring gateway",
+        "spring",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/pcDs7bKa75MSLcpHUY3W1g",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "SCG 基于 WebFlux 响应式，请求处理不绑定固定线程，传统 ThreadLocal+MDC 方案直接失效——这是照搬 Servlet 写法导致 traceId 时有时无的根因。正解：GlobalFilter 中用 **Reactor Context** 作载体（contextWrite 写入 / deferContextual 读取），靠 **doOnEach 钩子**在每个信号发出时同步 MDC 保证日志稳定打印，**doFinally 清除**防线程复用串号；经 request.mutate() 透传 X-Trace-Id 请求头并写响应头返给前端。下游 Servlet 用 Filter+MDC、WebFlux 用 WebFilter+Context；异步靠 TaskDecorator/Runnable 包装；MQ 走消息属性。附与 Sleuth/SkyWalking 的选型对比。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/scg-traceid-full-chain.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-21-spring-ai-milvus-rag-production",
+      "title": "Spring AI + Milvus 企业级 RAG 生产工程实践",
+      "path": "Archive/2026-10-21-spring-ai-milvus-rag-production.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "spring ai",
+        "RAG",
+        "AI",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/HgQxSmTRD--3QLTWR7c4wQ",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "以多租户电商客服知识库为例的可评审、可压测、可回滚 RAG 工程方法。核心立场：Spring AI/Milvus 不替你保证权限、发布生效时机、证据充分性与故障收敛——企业 RAG 的目标是「在给定权限、知识版本、模型配额和 SLO 下稳定产生可追溯回答，无法满足时安全拒答」。四条主线贯穿全文：容量（入口 QPS≠生成能力，用 Little 定律算在途）、证据（模型调用前的证据门禁，无证据短路拒答）、权限（AccessScope 服务端构造、过滤条件只能由适配层生成）、恢复（写入 ACK≠全局可见，发布目录原子切换）。附缓存键安全语义、SSE 取消协议、故障实验矩阵与第一周最小闭环清单。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/spring-ai-milvus-rag-production.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-21-spring-insight-lightweight-monitoring",
+      "title": "轻量级 Spring 监测工具——Spring Insight 正式发布",
+      "path": "Archive/2026-10-21-spring-insight-lightweight-monitoring.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "spring",
+        "工具",
+        "分布式系统"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/ULrVnGzWaGv-Ypx3ROyGAQ",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "面向中小项目/本地联调的轻量 Spring 链路追踪工具，0.1.0 已发 Maven Central + GHCR 镜像。只回答三件事：谁调了谁、耗时卡在哪、哪里报错了。业务侧加一个 Starter、Docker 起一个监测中心（:9966），浏览器直接看拓扑和链路。明确不替代 SkyWalking/OTel——没有采样/告警/鉴权/多租户，存储仅内存或 JSON 文件。覆盖 Servlet MVC、OpenFeign、WebFlux/WebClient、Gateway 及线程池 Trace 透传，可选导出指标给 Micrometer/Prometheus。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/spring-insight-lightweight-monitoring.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-21-springboot-disruptor-event-bus",
+      "title": "Spring Boot 集成 Disruptor 无锁事件总线：RingBuffer 原理到百万级吞吐",
+      "path": "Archive/2026-10-21-springboot-disruptor-event-bus.md",
+      "created": "2026-10-21",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "spring",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/AUGXjm9kh07lDUGdoUME1g",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "BlockingQueue 上生产露馅的四根因：锁竞争（cs 10w+/s）、GC 抖动（每事件 new 对象）、阻塞唤醒延迟毛刺、环满无降级空间。Disruptor 以预分配数组灭 GC、CAS+内存屏障灭锁、缓存行填充灭伪共享、序号代指针。JMH 实测 1P1C 比 ArrayBlockingQueue 快 4.5 倍、4P4C 快 10 倍+，P99.9 优于对方 P50；端到端埋点链路 11.2w→72.6w QPS、P99 48ms→4.1ms。含 Spring Boot 工程化封装（EventBus 门面 + SmartLifecycle + 配置化）与生产避坑清单。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/springboot-disruptor-event-bus.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-22-architect-road-2025-digest",
+      "title": "架构师之路：25年干货精选（1年，261.3W）",
+      "path": "Archive/2026-10-22-architect-road-2025-digest.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "阅读"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/qfm8oA0v6gwUz6Uok_lYCg",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "公众号「架构师之路」的 2025 年度文章精选索引。作者离职单干后全年更新 343 篇、261 万阅读，本文按四大方向（DeepSeek、数据库、架构、OPC 创业）汇总了全年优质文章链接，是一份架构与分布式系统主题的资源清单，适合收藏按需查阅。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/architect-road-2025-digest.md",
       "wiki_status": "ingested"
     }
   ]

@@ -348,6 +348,685 @@
         "wiki/concepts/exploratory-learning.md"
       ],
       "source_url": "https://github.com/maplexrain/unyra"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-15-agent-loop-production-boundaries.md",
+      "sha256": "52fb6452885cffd9ecc02f5b0ce01b42cab12fd941bfe993f5e6e1a8ac7f7207",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-15-agent-loop-production-boundaries.md",
+      "pages": [
+        "wiki/sources/agent-loop-production-boundaries.md",
+        "wiki/concepts/agent-loop.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/lmO8xyKxJ2ckFEclxwrw3Q",
+      "asset_ref": "Assets/2026/10/agent-loop-production-boundaries.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-15-ep-harness-team-agent-workflow.md",
+      "sha256": "0509ee36d79bfb419dba50c3a0d58058f2735e2de32f912f511748e7d4454a0c",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-15-ep-harness-team-agent-workflow.md",
+      "pages": [
+        "wiki/sources/ep-harness-team-agent-workflow.md",
+        "wiki/entities/ep-harness.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/yd68Wzm3za4m47LuRhMzYw",
+      "asset_ref": "Assets/2026/10/ep-harness-team-agent-workflow.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-16-ai-coding-workflow-skill-prompt.md",
+      "sha256": "0fe2e3eddae9d8def22d59f09da6d5397c425119f1c4d6c4a904b68e1450c4cc",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-16-ai-coding-workflow-skill-prompt.md",
+      "pages": [
+        "wiki/sources/ai-coding-workflow-skill-prompt.md"
+      ],
+      "source_url": "https://x.com/huangtongxueh/status/2108577165306687938",
+      "asset_ref": "Assets/2026/10/x-ai-coding-workflow-huangtongxueh.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-16-awesome-design-md.md",
+      "sha256": "4112442df300dce46b0ebf37e5b8978a78c630535bcd28e5485f9f96c3b0974a",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-16-awesome-design-md.md",
+      "pages": [
+        "wiki/sources/awesome-design-md.md"
+      ],
+      "source_url": "https://www.zhihu.com/pin/2093703116751369059",
+      "asset_ref": "Assets/2026/10/awesome-design-md.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-16-craft-of-selfteaching.md",
+      "sha256": "194404a2b6d022d76e023f0af5d694e04a98fb5b0980ce348e799343169069c8",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-16-craft-of-selfteaching.md",
+      "pages": [
+        "wiki/sources/craft-of-selfteaching.md"
+      ],
+      "source_url": "https://weibo.com/1890573293/5354343621459970",
+      "asset_ref": "Assets/2026/10/weibo-craft-of-selfteaching.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-16-db-table-sharding-practice.md",
+      "sha256": "5e8f968e1066a96d9876eb191130b974b05cd92e2ec8dc46b9ac015005578c56",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-16-db-table-sharding-practice.md",
+      "pages": [
+        "wiki/sources/db-table-sharding-practice.md",
+        "wiki/concepts/table-sharding-migration.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/q9EaCqqHxXtdZKjU_n6W1w",
+      "asset_ref": "Assets/2026/10/db-table-sharding-practice.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-16-distributed-systems-introduction.md",
+      "sha256": "3f4935bfc3686f1b492cd52c0aa8b6d1335db3d0cae395aebd8616384ac41dfb",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-16-distributed-systems-introduction.md",
+      "pages": [
+        "wiki/sources/distributed-systems-introduction.md"
+      ],
+      "source_url": "https://www.codedump.info/dist-system-cn/introduction/",
+      "asset_ref": "Assets/2026/10/distributed-systems-introduction.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-16-esp32-dev-board-ai-trend.md",
+      "sha256": "b8d5ef8633247424e9dd4c8b9e9e3608e2fb173fbb6a7f57a06158ab4cfd1150",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-16-esp32-dev-board-ai-trend.md",
+      "pages": [
+        "wiki/sources/esp32-dev-board-ai-trend.md"
+      ],
+      "source_url": "https://weibo.com/2194035935/5354015136680392",
+      "asset_ref": "Assets/2026/10/esp32-dev-board-ai-trend.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-16-knowledge-base-tech-evolution.md",
+      "sha256": "230b3c39be6af5dbb65114649bdbe0c52359b536c6b89eef49d7c379f7751358",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-16-knowledge-base-tech-evolution.md",
+      "pages": [
+        "wiki/sources/knowledge-base-tech-evolution.md",
+        "wiki/concepts/llm-wiki.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/p5DFqPrvMkf8y6kpiGmBKw",
+      "asset_ref": "Assets/2026/10/knowledge-base-tech-evolution.md"
+    },
+    {
+      "path": "raw/sources/products/2026-10-16-pi-practice-06-daily-patterns-selection.md",
+      "sha256": "5713babc9792372c878d31c8d32c3c08d480d60f5eeedaba06624c9f38afd43d",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-16-pi-practice-06-daily-patterns-selection.md",
+      "pages": [
+        "wiki/sources/pi-practice-06-daily-patterns-selection.md",
+        "wiki/entities/pi.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/H5jMdYhJXR3QxdFBsy9QHA",
+      "asset_ref": "Assets/2026/10/pi-practice-06-daily-patterns-selection.md"
+    },
+    {
+      "path": "raw/sources/products/2026-10-16-pi-school-official-course.md",
+      "sha256": "12fc9effaa2c34f48e3fe7743669ba9a3e25220d0a6803ef83ba6075db9f783d",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-16-pi-school-official-course.md",
+      "pages": [
+        "wiki/sources/pi-school-official-course.md",
+        "wiki/entities/pi.md"
+      ],
+      "source_url": "https://pi-school.ziki.boo",
+      "asset_ref": "Assets/2026/10/pi-school-official.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-16-tcp-retransmission-visualized.md",
+      "sha256": "aebe8e253d81692e2d87e03af0417d0b7aa524c9e418d3181bcca9808e2ce200",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-16-tcp-retransmission-visualized.md",
+      "pages": [
+        "wiki/sources/tcp-retransmission-visualized.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/DFUJU3mU2h4Znm7XvvqxLA",
+      "asset_ref": "Assets/2026/10/tcp-retransmission-visualized.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-17-ai-coding-delivery-evolution.md",
+      "sha256": "c339e59f9e5584c31c323582afa639ce59fe7ad173e0982a496492fe55d488c2",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-17-ai-coding-delivery-evolution.md",
+      "pages": [
+        "wiki/sources/ai-coding-delivery-evolution.md",
+        "wiki/concepts/ai-native-sdlc.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/cUvvE5eiIc2KlB3SZ-WQhg",
+      "asset_ref": "Assets/2026/10/ai-coding-delivery-evolution.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-17-langchain4j-multimodal-rag.md",
+      "sha256": "a8ca3500ac8110b511167707f9fb6e58e3e31d5c54f885909f0e24954f272413",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-17-langchain4j-multimodal-rag.md",
+      "pages": [
+        "wiki/sources/langchain4j-multimodal-rag.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/AJmVoaODjF5SAzPQnJF72Q",
+      "asset_ref": "Assets/2026/10/langchain4j-multimodal-rag.md"
+    },
+    {
+      "path": "raw/sources/products/2026-10-17-pi-custom-agent-setup.md",
+      "sha256": "f8346dc47784cf1693fe4225560a4aab0bb35c1b3743d50247035c99738894a7",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-17-pi-custom-agent-setup.md",
+      "pages": [
+        "wiki/sources/pi-custom-agent-setup.md",
+        "wiki/concepts/pi-customization-layers.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/uZrIlXZMq8Rz8cYRN1J5sQ",
+      "asset_ref": "Assets/2026/10/pi-custom-agent-setup.md"
+    },
+    {
+      "path": "raw/sources/products/2026-10-17-pi-durable-architecture.md",
+      "sha256": "7b1abb07f08e3582152f85ba2b159a84d75e51b17a8ddbc117164097701e2fda",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-17-pi-durable-architecture.md",
+      "pages": [
+        "wiki/sources/pi-durable-architecture.md",
+        "wiki/concepts/durable-execution.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/x1G9t7b8M1hrR370f4DW4Q",
+      "asset_ref": "Assets/2026/10/pi-durable-architecture.md"
+    },
+    {
+      "path": "raw/sources/products/2026-10-17-pi-embedded-sdk-agent-engine.md",
+      "sha256": "38a248c716e39bbf3099b79c6115c20474546e669629138f0267c54d54ebfdeb",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-17-pi-embedded-sdk-agent-engine.md",
+      "pages": [
+        "wiki/sources/pi-embedded-sdk-agent-engine.md",
+        "wiki/concepts/pi-customization-layers.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/7L73s43MRwrvCRMMCoJD1Q",
+      "asset_ref": "Assets/2026/10/pi-embedded-sdk-agent-engine.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-20-15-books-understand-world.md",
+      "sha256": "76128759c9f34da7737729e1d3e6e50ffbdcb608ed61a1d39204c7837a3a4ff0",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-20-15-books-understand-world.md",
+      "pages": [
+        "wiki/sources/15-books-understand-world.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/oZPb7241VoRvw5wMgRNYgg",
+      "asset_ref": "Assets/2026/10/15-books-understand-world.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-20-475-claude-opus-demos-repo.md",
+      "sha256": "be95839cdf0b1d25faf0a41c27c17cf3180abbda1a9cb9b0336f48460a68e007",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-20-475-claude-opus-demos-repo.md",
+      "pages": [
+        "wiki/sources/475-claude-opus-demos-repo.md"
+      ],
+      "source_url": "https://weibo.com/1912085257/5355789153733341",
+      "asset_ref": "Assets/2026/10/weibo-1912085257-5355789153733341.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-20-ai-agents-definitive-guide-notebooks.md",
+      "sha256": "522e2fdc4bdeede0baf1e2b681e518d567a0f99e8e205f426eda5972526c6f2d",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-20-ai-agents-definitive-guide-notebooks.md",
+      "pages": [
+        "wiki/sources/ai-agents-definitive-guide-notebooks.md"
+      ],
+      "source_url": "https://www.zhihu.com/pin/2088989044751520212",
+      "asset_ref": "Assets/2026/10/ai-agents-definitive-guide-notebooks.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-20-completablefuture-async-orchestration.md",
+      "sha256": "837326715ddcbfd0f19902f7a20cb25d7d0e567ad34cb49c17c0383ab48453d1",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-20-completablefuture-async-orchestration.md",
+      "pages": [
+        "wiki/sources/completablefuture-async-orchestration.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/qr1AojU66kbWv43wsMDghg",
+      "asset_ref": "Assets/2026/10/completablefuture-async-orchestration.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-20-deep-thinking-training.md",
+      "sha256": "9b1f3151cee8b8844a1c77543ac1c9740aac46a110ce6b1734e5a060841c980a",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-20-deep-thinking-training.md",
+      "pages": [
+        "wiki/sources/deep-thinking-training.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/xbkGmXwf9WqVqTnjGq7dRg",
+      "asset_ref": "Assets/2026/10/deep-thinking-training.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-20-deepseek-hyperframes-video-workflow.md",
+      "sha256": "eb0e59025761705189d1fafb046e8ab8f004f7a33f2783493c62f994bb76e092",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-20-deepseek-hyperframes-video-workflow.md",
+      "pages": [
+        "wiki/sources/deepseek-hyperframes-video-workflow.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2095222728152330716",
+      "asset_ref": "Assets/2026/10/deepseek-hyperframes-video-workflow.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-20-deepseek-v41-flash-inference-deployment.md",
+      "sha256": "ca5031013d4baedfa529e2a1ef487492e7885aa18e579e4819974f01024ed152",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-20-deepseek-v41-flash-inference-deployment.md",
+      "pages": [
+        "wiki/sources/deepseek-v41-flash-inference-deployment.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2095560295930508953",
+      "asset_ref": "Assets/2026/10/deepseek-v41-flash-inference-deployment.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-20-design-a-query-system.md",
+      "sha256": "a8c873339152d8a257ed86190f64277a67fdf09e218926cb89097db101502ea8",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-20-design-a-query-system.md",
+      "pages": [
+        "wiki/sources/design-a-query-system.md"
+      ],
+      "source_url": "https://weixin.qq.com/sph/AmGomDbiQY",
+      "asset_ref": "Assets/2026/10/design-a-query-system.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-20-eight-fields-booklist.md",
+      "sha256": "867433c8790afd28e10bbcc595d7f2f3915ec23c04f991c9e3324f67056a6a3c",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-20-eight-fields-booklist.md",
+      "pages": [
+        "wiki/sources/eight-fields-booklist.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/6fjflB6zsiSZsQakch7xnw",
+      "asset_ref": "Assets/2026/10/eight-fields-booklist.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-20-game-server-elastic-scaling.md",
+      "sha256": "776e3c8f2d9b38b629ee9c10080779d2dd9967b171c4f4cad2d587d6c4c7c31b",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-20-game-server-elastic-scaling.md",
+      "pages": [
+        "wiki/sources/game-server-elastic-scaling.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2095121870475485746",
+      "asset_ref": "Assets/2026/10/game-server-elastic-scaling.md"
+    },
+    {
+      "path": "raw/sources/enterprise/2026-10-20-huolala-ai-coding-workflow.md",
+      "sha256": "f76c9543557eac26a0a6f9c177522efab8befc296c9fc07e00dc23491431bd2f",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-20-huolala-ai-coding-workflow.md",
+      "pages": [
+        "wiki/sources/huolala-ai-coding-workflow.md",
+        "wiki/concepts/ai-native-sdlc.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/Rb-TrUkuLLuRjRsqii3XTg",
+      "asset_ref": "Assets/2026/10/huolala-ai-coding-workflow.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-20-netty-three-skills-high-performance.md",
+      "sha256": "3ea252eb1b65ed49ecf2633cba638cfb657203bf7e6424bff5b45e8a101c1d96",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-20-netty-three-skills-high-performance.md",
+      "pages": [
+        "wiki/sources/netty-three-skills-high-performance.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/wZ5L22_CHLj9mEFe5Rz5kw",
+      "asset_ref": "Assets/2026/10/netty-three-skills-high-performance.md"
+    },
+    {
+      "path": "raw/sources/products/2026-10-20-pi-tips-4-web-parallel.md",
+      "sha256": "4a79c0c3651bf0013b93ee661b40aa972bcb8e18c10e8c0d5aa384e830cead7c",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-20-pi-tips-4-web-parallel.md",
+      "pages": [
+        "wiki/sources/pi-tips-4-web-parallel.md",
+        "wiki/entities/pi.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/5ZRpRUFVM3DtudXweQHCRA",
+      "asset_ref": "Assets/2026/10/pi-tips-4-web-parallel.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-20-reading-100-books-a-year.md",
+      "sha256": "338c0cd258db724587080fcff64e33d0f2edf26afbb048311ddba813efeeac96",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-20-reading-100-books-a-year.md",
+      "pages": [
+        "wiki/sources/reading-100-books-a-year.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/BWw5WRsqWIKfxGu6tJ-oGg",
+      "asset_ref": "Assets/2026/10/reading-100-books-a-year.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-20-reading-system-sop.md",
+      "sha256": "55b797d6606864742a44b3fac8d742fb0e861191d52cbe3c4716b3e42c1843a4",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-20-reading-system-sop.md",
+      "pages": [
+        "wiki/sources/reading-system-sop.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/Y-IgwEgw-YhnBB2A0JNnsg",
+      "asset_ref": "Assets/2026/10/reading-system-sop.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-20-spring-20-extension-points.md",
+      "sha256": "c40b57f2c2246bfa9d52f611f81fc597ef576e68c5d6b2fad05d482beea44e82",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-20-spring-20-extension-points.md",
+      "pages": [
+        "wiki/sources/spring-20-extension-points.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/50HiCXoigRgyugQLAfmzHA",
+      "asset_ref": "Assets/2026/10/spring-20-extension-points.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-20-spring-async-to-task-table.md",
+      "sha256": "e5b93470cc8b851147b48fb1b3fc58a5943cda2d6cbb3430c62f821dabcc24dd",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-20-spring-async-to-task-table.md",
+      "pages": [
+        "wiki/sources/spring-async-to-task-table.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/DxS0YQAlpbFpP3sJVFUhKw",
+      "asset_ref": "Assets/2026/10/spring-async-to-task-table.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-20-spring-cloud-gateway-advanced.md",
+      "sha256": "618e26a2c1e38a96e7568067ae915d27138bcb2c0cea0a69125ac78a8b99616f",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-20-spring-cloud-gateway-advanced.md",
+      "pages": [
+        "wiki/sources/spring-cloud-gateway-advanced.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/FrrdoqLzrRCCa04JgtDGLQ",
+      "asset_ref": "Assets/2026/10/spring-cloud-gateway-advanced.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-20-writing-8-frameworks.md",
+      "sha256": "2d5a33014f23595fb08ce9b6ab78ddaecac4494fd3cf8da6189baf08c29e1d0e",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-20-writing-8-frameworks.md",
+      "pages": [
+        "wiki/sources/writing-8-frameworks.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/HTpMrrVl-vyAGeUUosgQIg",
+      "asset_ref": "Assets/2026/10/writing-8-frameworks.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-21-agent-2026-midyear-architecture-review.md",
+      "sha256": "3441d282421adabd72dc1331c42db0af2c8edae626585adf004a7b3e16850b1b",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-21-agent-2026-midyear-architecture-review.md",
+      "pages": [
+        "wiki/sources/agent-2026-midyear-architecture-review.md",
+        "wiki/concepts/agent-loop.md",
+        "wiki/concepts/agent-evaluation.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/cX3-i0N7HmV5aS3zNsCTsg",
+      "asset_ref": "Assets/2026/10/agent-2026-midyear-architecture-review.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-21-agent-long-task-reliable-execution.md",
+      "sha256": "db3d49eb41888b3305dcaa29117d2ca1e11f00f2e6ca05cb68ea9ba65410063f",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-21-agent-long-task-reliable-execution.md",
+      "pages": [
+        "wiki/sources/agent-long-task-reliable-execution.md",
+        "wiki/concepts/durable-execution.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/UpJRHy-PN1iEg1KxHXgTAw",
+      "asset_ref": "Assets/2026/10/agent-long-task-reliable-execution.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-21-business-risk-control-redis-lua-annotation.md",
+      "sha256": "88886ca0ca187c576526394493bf81e65e14257509ae0bd94f87376c1db99229",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-21-business-risk-control-redis-lua-annotation.md",
+      "pages": [
+        "wiki/sources/business-risk-control-redis-lua-annotation.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/dbNxVwwHG9YxAE4oquGaSA",
+      "asset_ref": "Assets/2026/10/business-risk-control-redis-lua-annotation.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-21-ecommerce-search-realtime-personalization.md",
+      "sha256": "1ed8fdd91db21f0f7dcd2df62c98ceb156c51df72627d6dc4dfebbcfebd3bfa1",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-21-ecommerce-search-realtime-personalization.md",
+      "pages": [
+        "wiki/sources/ecommerce-search-realtime-personalization.md",
+        "wiki/entities/elasticsearch.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/g6VUWmW-QAAbvwbqorjF9A",
+      "asset_ref": "Assets/2026/10/ecommerce-search-realtime-personalization.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-21-elasticsearch-interview-deep-dive.md",
+      "sha256": "e0a823554797517e3e5844ee1ae35407c358fb60ca931e55ae8c807daccc4ca5",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-21-elasticsearch-interview-deep-dive.md",
+      "pages": [
+        "wiki/sources/elasticsearch-interview-deep-dive.md",
+        "wiki/entities/elasticsearch.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/4K_8IJ8DFwPbO8Dwz_OSJg",
+      "asset_ref": "Assets/2026/10/elasticsearch-interview-deep-dive.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-21-elasticsearch-search-tuning-production.md",
+      "sha256": "e2d10cf60a74dfed5a12c01b418a35f5ae05d25dca82efcc98584d438ac46d20",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-21-elasticsearch-search-tuning-production.md",
+      "pages": [
+        "wiki/sources/elasticsearch-search-tuning-production.md",
+        "wiki/entities/elasticsearch.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/3PwUQZX2BwoI3jQoIjn9zA",
+      "asset_ref": "Assets/2026/10/elasticsearch-search-tuning-production.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-21-game-server-architecture-four-layers.md",
+      "sha256": "d2e2c7c4eedf56a1b3baa73dde05082141562c84ad2a803fb87f3153b5aff3f7",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-21-game-server-architecture-four-layers.md",
+      "pages": [
+        "wiki/sources/game-server-architecture-four-layers.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/NSVCzrF9UvT67Vtl49nuMg",
+      "asset_ref": "Assets/2026/10/game-server-architecture-four-layers.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-21-gc-log-tuning-practice.md",
+      "sha256": "e2945741a8fc8595d0a9d8c427173cad2f0ad914d3291ff04ff833cd9a8adbc5",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-21-gc-log-tuning-practice.md",
+      "pages": [
+        "wiki/sources/gc-log-tuning-practice.md",
+        "wiki/concepts/evidence-first-jvm-tuning.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/Owc57OzkgLibnuUd1ZiZ9w",
+      "asset_ref": "Assets/2026/10/gc-log-tuning-practice.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-21-jenkins-gitlab-cicd-pipeline.md",
+      "sha256": "6696c894a0c3f0776e3605859ff12ae2a19b99e0e2def82ddf429557360a3550",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-21-jenkins-gitlab-cicd-pipeline.md",
+      "pages": [
+        "wiki/sources/jenkins-gitlab-cicd-pipeline.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/OkT4w402xVI9RJjf3E_8vA",
+      "asset_ref": "Assets/2026/10/jenkins-gitlab-cicd-pipeline.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-21-jvm-gc-troubleshooting-arthas.md",
+      "sha256": "ee355f902f3c8588246f8be41aeff37bd65c0dccf1a3a425055d488daf311b66",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-21-jvm-gc-troubleshooting-arthas.md",
+      "pages": [
+        "wiki/sources/jvm-gc-troubleshooting-arthas.md",
+        "wiki/entities/arthas.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/WCrdRXRWCWtYzRRyLVMj2A",
+      "asset_ref": "Assets/2026/10/jvm-gc-troubleshooting-arthas.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-21-jvm-troubleshooting-six-tools.md",
+      "sha256": "64b84be1c43184c31fe9b9be939698c57898d02ae7766e95038cd83931ebd01d",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-21-jvm-troubleshooting-six-tools.md",
+      "pages": [
+        "wiki/sources/jvm-troubleshooting-six-tools.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/9eAlETU99LUBabyJ892kGQ",
+      "asset_ref": "Assets/2026/10/jvm-troubleshooting-six-tools.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-21-kafka-fast-four-mechanisms.md",
+      "sha256": "f196fad257b91e36f01bb89fc338251d14072531e36d40f7d83795206b7ec6f8",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-21-kafka-fast-four-mechanisms.md",
+      "pages": [
+        "wiki/sources/kafka-fast-four-mechanisms.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/MDAgNT5ir7Ts79vMyaYshQ",
+      "asset_ref": "Assets/2026/10/kafka-fast-four-mechanisms.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-21-kafka-ops-tools-five-essentials.md",
+      "sha256": "586d0e2cdb8bfcaf337ba675a0e2dc9f80f167a413627b564b48504f7b5801a5",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-21-kafka-ops-tools-five-essentials.md",
+      "pages": [
+        "wiki/sources/kafka-ops-tools-five-essentials.md",
+        "wiki/entities/kafka.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/g2xStkIY7ap8EVAnJPlA1A",
+      "asset_ref": "Assets/2026/10/kafka-ops-tools-five-essentials.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-21-linked-list-vs-array-cache.md",
+      "sha256": "6bf3297c58cff068732b2cc0c48da1453de53d37e50fd84de9c746fd8ef30761",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-21-linked-list-vs-array-cache.md",
+      "pages": [
+        "wiki/sources/linked-list-vs-array-cache.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/M-FKnd1kvdwvRtRNdsDK6g",
+      "asset_ref": "Assets/2026/10/linked-list-vs-array-cache.md"
+    },
+    {
+      "path": "raw/sources/products/2026-10-21-lovart-2-arti-design-agent.md",
+      "sha256": "9d5297cb821de5909573ff6a91e976bcd44132615f3036cad4e9c7e32e63e503",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-21-lovart-2-arti-design-agent.md",
+      "pages": [
+        "wiki/sources/lovart-2-arti-design-agent.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/Oia5kjVMOMzn9713XICDzA",
+      "asset_ref": "Assets/2026/10/lovart-2-arti-design-agent.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-21-spring-insight-lightweight-monitoring.md",
+      "sha256": "8b6b12b13c5758466751b7ef6f544f3f4f13a1661cc2404de52fcb59a4c89c2d",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-21-spring-insight-lightweight-monitoring.md",
+      "pages": [
+        "wiki/sources/spring-insight-lightweight-monitoring.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/ULrVnGzWaGv-Ypx3ROyGAQ",
+      "asset_ref": "Assets/2026/10/spring-insight-lightweight-monitoring.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-21-springboot-disruptor-event-bus.md",
+      "sha256": "385a51389c1b4b51fd6f0863567b8dc88fcd16563aa853cb1cb80a0e42bad56b",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-21-springboot-disruptor-event-bus.md",
+      "pages": [
+        "wiki/sources/springboot-disruptor-event-bus.md",
+        "wiki/concepts/cache-line-and-false-sharing.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/AUGXjm9kh07lDUGdoUME1g",
+      "asset_ref": "Assets/2026/10/springboot-disruptor-event-bus.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-22-architect-road-2025-digest.md",
+      "sha256": "5abe4cbb2e9e73384129bc042cc0461aba2f116a9a5ed15de4fae83b24920b3e",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-22-architect-road-2025-digest.md",
+      "pages": [
+        "wiki/sources/architect-road-2025-digest.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/qfm8oA0v6gwUz6Uok_lYCg",
+      "asset_ref": "Assets/2026/10/architect-road-2025-digest.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-22-async-task-system-design.md",
+      "sha256": "5250e719753bcdb2ca8f5501c4dfa57be68a7a7c3e90f93df2a3cabe8d075765",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Inbox/2026-10-22-async-task-system-design.md",
+      "pages": [],
+      "source_url": "https://mp.weixin.qq.com/s/AfZ-w5215Bbi4HS6v1fsFA",
+      "asset_ref": "Assets/2026/10/async-task-system-design.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-22-critical-thinking-six-priorities.md",
+      "sha256": "899ffecabab7ed345eebef04777e92eac8fd3a734e889d1d9e7999dc9f1ca899",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Inbox/2026-10-22-critical-thinking-six-priorities.md",
+      "pages": [],
+      "source_url": "https://mp.weixin.qq.com/s/_fU0rplhK8ob_Uf85ADwlw",
+      "asset_ref": "Assets/2026/10/critical-thinking-six-priorities.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-22-database-high-availability.md",
+      "sha256": "96d3b31a1ccaa5d176d2cf095c391e221d60485902b33bb0cd34cceda0133322",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Inbox/2026-10-22-database-high-availability.md",
+      "pages": [],
+      "source_url": "https://mp.weixin.qq.com/s/x6c6RSYUdivoou1a6-NV6A",
+      "asset_ref": "Assets/2026/10/database-high-availability.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-21-raft-membership-log-barrier.md",
+      "sha256": "2b274565916d08efbb7dacdf6171b916199ad8f0fd2c6a7513206ea8cd311abe",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-21-raft-membership-log-barrier.md",
+      "pages": [
+        "wiki/sources/raft-membership-log-barrier.md",
+        "wiki/concepts/raft-membership-change-barrier.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/SMKqvXf5P8s1MA6sI_KJTQ",
+      "asset_ref": "Assets/2026/10/raft-membership-log-barrier.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-21-scg-traceid-full-chain.md",
+      "sha256": "005bf9357efa49a128f75d6ef1b22117f7eb098be69343360c74944aab0ad80e",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-21-scg-traceid-full-chain.md",
+      "pages": [
+        "wiki/sources/scg-traceid-full-chain.md",
+        "wiki/concepts/reactive-tracing-context.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/pcDs7bKa75MSLcpHUY3W1g",
+      "asset_ref": "Assets/2026/10/scg-traceid-full-chain.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-21-spring-ai-milvus-rag-production.md",
+      "sha256": "38b9b0c9423a45d39f572866123aaf3b76ddb74e430831c9ee11e7c95bd98254",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-21-spring-ai-milvus-rag-production.md",
+      "pages": [
+        "wiki/sources/spring-ai-milvus-rag-production.md",
+        "wiki/concepts/rag-production-guardrails.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/HgQxSmTRD--3QLTWR7c4wQ",
+      "asset_ref": "Assets/2026/10/spring-ai-milvus-rag-production.md"
     }
   ]
 }

@@ -1,0 +1,66 @@
+---
+id: wiki-entity-kafka
+type: entity
+title: Apache Kafka
+status: active
+created: 2026-10-23
+updated: 2026-10-23
+confidence: high
+tags:
+  - entity
+  - message-queue
+  - distributed
+  - streaming
+sources:
+  - raw/sources/architecture/2026-10-21-kafka-fast-four-mechanisms.md
+  - raw/sources/architecture/2026-10-21-kafka-ops-tools-five-essentials.md
+related:
+  - wiki/sources/kafka-fast-four-mechanisms.md
+  - wiki/sources/kafka-ops-tools-five-essentials.md
+  - wiki/sources/ecommerce-search-realtime-personalization.md
+---
+# Apache Kafka
+
+## Overview（概览）
+
+分布式消息/流平台：partition 即顺序追加日志文件，靠顺序写+PageCache+零拷贝+批量压缩四板斧实现高吞吐；在本库两个信源中分别作为性能机制拆解对象与运维工具栈主体出现。
+
+## Identity（身份信息）
+
+- Type（类型）: 开源分布式消息队列/流处理平台
+- Organization（所属组织）: Apache 软件基金会（起源于 LinkedIn）
+- Role（角色）: 高吞吐事件管道——事实库变更传播（Outbox/CDC）、行为事件流、系统间解耦
+- Status（状态）: 主流活跃（信源覆盖 Kafka 2.x-3.x，KRaft 取代 ZooKeeper 进行中）
+
+## Important Facts（重要事实）
+
+- 性能四板斧（机制信源）：顺序写（partition 追加日志，磁盘顺序写≈内存 1/10，"磁盘不慢、随机访问才慢"）；PageCache（write 返回即"落盘"，不自建 JVM 堆缓存——零 GC、重启缓存仍在，32GB 机器堆只给 6GB、swappiness=1）；零拷贝 sendfile（FileChannel.transferTo，4 拷贝 4 切换→2 切换 1 拷贝，SG-DMA 时真零拷贝；**SSL/TLS 使其失效，开加密吞吐降 20-40%**）；批量+压缩（batch.size/linger.ms 延迟换吞吐，batch 级压缩，zstd 推荐，一笔 CPU 换网络/磁盘/缓存命中/跨机房带宽四份收益）。
+- 顺序保证边界：**只保证分区内有序**；扩分区只能加不能减，且同 key 可能换分区导致乱序——消费端幂等是兜底。
+- 写入可靠性语义：至少一次投递是正常路径（响应丢失会重发），正确姿势是 manual ack + 下游幂等/版本约束，不存在开箱 exactly-once（与 [[ecommerce-search-realtime-personalization]] 的 Kafka→ES 链路互证）。
+- 运维工具栈（2026 口径）：看→Kafka UI（最活跃、KRaft 友好、生产须认证+只读+内网）；改→kafka-topics.sh/kafka-configs.sh 脚本化进 Git（三个 --describe 过滤参数做每日巡检）；Lag 告警→Burrow（按消费组自身基线滑窗判定，抓"应用活着但消费死了"的 STOP 状态）；集群指标→Prometheus kafka_exporter+Grafana；CMAK（原 Yahoo Kafka Manager）依赖 ZK，KRaft 新集群不推荐。
+- 分工哲学：CLI 定义事实，UI 降低门槛；Exporter 出面板（人看），Burrow 出决策（机器判）。
+
+## Products / Projects（产品／项目）
+
+- 生态组件（信源提及）：Kafka UI（provectuslabs）、Burrow（LinkedIn）、CMAK、MirrorMaker 2（跨集群同步）、Debezium/Kafka Connect（CDC 管道）。
+
+## Relationships（关系）
+
+- 上游硬件直觉：机械盘寻道/旋转延迟与 SSD 写放大决定"顺序优于随机"——Kafka 全部设计在此地基上（与 [[linked-list-vs-array-cache|缓存局部性]] 同为"体系结构压倒大 O"的例证）。
+- 常见搭档：Elasticsearch（Kafka→ES 投影管道，[[elasticsearch]]）；Redis（行为事件→画像，[[ecommerce-search-realtime-personalization]]）。
+- 机制对照：零拷贝与批量写同 [[netty-three-skills-high-performance|Netty]] 的网络层优化同源。
+
+## Timeline（时间线）
+
+- 2011 — LinkedIn 开源（背景知识，信源未详述）
+- 2.2+ — 管理 CLI 统一 --bootstrap-server，弃用 --zookeeper
+- 2.8+/3.x — KRaft 逐步取代 ZooKeeper（信源时点 ZK→KRaft 迁移进行中，CMAK 等 ZK 时代工具随之边缘化）
+
+## Current Understanding（当前认知）
+
+两个信源构成"机制+运维"互补：理解四板斧才能解释集群参数（小堆、关 swap、batch 调优），理解工具栈才能落地日常运维。一致立场：Kafka 的快来自"不浪费"——磁盘顺序、内存靠 OS、CPU 不当搬运工、网络省次数（两信源互证，置信度高）。
+
+## Evidence（证据）
+
+- `raw/sources/architecture/2026-10-21-kafka-fast-four-mechanisms.md`（性能机制）
+- `raw/sources/architecture/2026-10-21-kafka-ops-tools-five-essentials.md`（运维工具栈）

@@ -13,6 +13,7 @@ tags:
   - evaluation
 sources:
   - raw/sources/ai/2026-10-14-huolala-agent-eval-platform.md
+  - raw/sources/ai/2026-10-21-agent-2026-midyear-architecture-review.md
 related:
   - wiki/sources/huolala-agent-eval-platform.md
 ---
@@ -20,7 +21,7 @@ related:
 
 ## Definition（定义）
 
-面向生产环境业务 Agent 的质量保障范式：以"确定性规则 + LLM 智能裁判 + 人工复核"的复合裁判体系，覆盖测试数据准入、离线评测、CI/CD 门禁、性能压测与线上巡检的完整生命周期，而非单点打分。（目前仅由货拉拉单一信源支撑，定义为该实践的归纳。）
+面向生产环境业务 Agent 的质量保障范式：以"确定性规则 + LLM 智能裁判 + 人工复核"的复合裁判体系，覆盖测试数据准入、离线评测、CI/CD 门禁、性能压测与线上巡检的完整生命周期，而非单点打分。两个独立信源互证：货拉拉给出平台化落地，叶小钗综述给出"评测应从需求阶段开始、验收分清工具返回/任务结果/业务收益"的方法论立场。
 
 ## Why It Matters（为什么重要）
 
@@ -55,6 +56,7 @@ LLM 概率输出 + 长工具调用链使传统确定性断言失效：单步推�
 ## Evolution（演进）
 
 - 2026-10-14 — 货拉拉披露三代演进路径：人工盲测 → 离线数据集 + 单一 LLM-as-a-Judge → 全生命周期平台（114 个智能体、16,337 黄金用例、回归提效 5~10 倍）。
+- 2026-10-21 — 叶小钗综述独立印证并补充：评测后置是反模式，应从需求阶段把"希望 Agent 很智能"变成可验证的交付要求；企业任务按知识问答/查询/报告/执行四类分别定验收重点；"任务完成的证据应能在产物或业务状态中找到"（接口成功可能只是已受理）；评分组合=程序核验确定性字段+LLM Judge 语义+专家抽查校准；通过率必须说明分母与任务构成，线上失败归因后回流数据集。
 
 ## Open Questions（开放问题）
 
@@ -64,7 +66,9 @@ LLM 概率输出 + 长工具调用链使传统确定性断言失效：单步推�
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-10-14-huolala-agent-eval-platform.md`
+- Source: `raw/sources/ai/2026-10-21-agent-2026-midyear-architecture-review.md`（方法论印证：评测前置、四类任务验收、证据导向、分母纪律）
 
 ## Related Knowledge（相关知识）
 
 - [[huolala-agent-eval-platform]]
+- [[agent-2026-midyear-architecture-review|2026 Agent 年中总结（信源页）]]

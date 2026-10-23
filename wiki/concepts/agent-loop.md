@@ -11,6 +11,8 @@ tags:
   - ai-agent
 sources:
   - raw/sources/ai/2026-10-14-learn-pi-agent-01-llm-to-agent.md
+  - raw/sources/ai/2026-10-15-agent-loop-production-boundaries.md
+  - raw/sources/ai/2026-10-21-agent-2026-midyear-architecture-review.md
 related:
   - wiki/entities/pi.md
   - wiki/concepts/mcp.md
@@ -88,7 +90,9 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 
 ## Evolution（演进）
 
-（当前仅单一教学信源，待后续信源补充。）
+- 2026-10-23 — 新增生产化边界信源 `raw/sources/ai/2026-10-15-agent-loop-production-boundaries.md`（Aegis W01 原型）。它把本页"停止信号多源性""响应完整性检查""宿主校验"落到具体工程形态：任务状态机（终态不可覆盖、取消先在仓储落终态的并发排序点）、有限预算（步数/工具调用/三级超时各有独立错误码）、服务端授权（模型输出不是授权凭据，rollback 建议同样走 ToolExecutor → TOOL_DENIED）、证据引用校验（evidence_ids 必须真实存在，且证据 ≠ 因果）。同时印证"Runtime vs Harness"区分：该原型把 Provider/ToolExecutor/Runtime 拆为三个可替换契约，W02 接 MCP 只换工具适配器。
+
+- 2026-10-23 — 新增综述信源 `raw/sources/ai/2026-10-21-agent-2026-midyear-architecture-review.md`（叶小钗 2026 Agent 年中总结）。再次印证 Runtime/Harness 二分（Harness=上下文装配+工具调用+循环控制+暂停恢复+权限检查+运行记录；Runtime 回答资源位置），并补充三条 Loop 层判据：① 场景适配四条件——信息能否取得、工具能否使用、结果能否验证、失败能否恢复；② "Agent Loop 是推进任务的循环，验收机制决定循环什么时候有资格结束"——停止资格由业务证据而非模型的"完成了"判定；③ 工具设计四环节检查——选得对、调得动、读得懂结果、失败后知道如何处理，且 Agent 决策基于状态快照、执行时要校验快照是否仍有效（STALE_CONTEXT 模式）。
 
 ## Open Questions（开放问题）
 
@@ -98,8 +102,12 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-10-14-learn-pi-agent-01-llm-to-agent.md`
+- Source: `raw/sources/ai/2026-10-15-agent-loop-production-boundaries.md`
+- Source: `raw/sources/ai/2026-10-21-agent-2026-midyear-architecture-review.md`（综述印证：Harness/Runtime 职责、四条件、验收机制、状态快照校验）
 
 ## Related Knowledge（相关知识）
 
 - [[learn-pi-agent-01-llm-to-agent|Learn Pi Agent 01｜大模型如何一步步变成 Agent]]
+- [[agent-loop-production-boundaries|从 Chatbot 到 AI Agent：为什么一个 while 循环撑不起生产系统]]
+- [[agent-2026-midyear-architecture-review|2026 Agent 年中总结（信源页）]]
 - [[pi|Pi]]（其三包结构 pi-ai / pi-agent-core / pi-coding-agent 是本概念的工程实现）

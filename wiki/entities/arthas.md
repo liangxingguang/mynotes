@@ -5,7 +5,7 @@ title: Arthas
 status: active
 created: 2026-10-17
 updated: 2026-10-17
-confidence: medium
+confidence: high
 tags:
   - entity
   - java
@@ -13,8 +13,10 @@ tags:
   - mcp
 sources:
   - raw/sources/ai/2026-10-14-arthas-mcp-ai-troubleshooting.md
+  - raw/sources/architecture/2026-10-21-jvm-gc-troubleshooting-arthas.md
 related:
   - wiki/concepts/mcp.md
+  - wiki/concepts/evidence-first-jvm-tuning.md
 ---
 # Arthas
 
@@ -47,11 +49,13 @@ Arthas 是 Java 线上诊断工具，提供 dashboard、thread、trace、watch�
 ## Timeline（时间线）
 
 - 2026-10（信源时点）— 4.3.5：官方文档将 MCP Server 标为实验性模块，列出 29 个工具
+- 2026-10-21 — 第二信源（GC 排查实战）补充人工诊断侧实践：dashboard/jvm/memory 看全局与趋势、heapdump --live、classloader 对比法查类泄漏（Spring Boot 参考 5000-20000 类、Metaspace 50-120MB）、stack/sc 定位加载源；并把"现象→根因→处置"整理成 FGC 五步决策树
 
 ## Current Understanding（当前认知）
 
-Java 排障领域接入 AI 的代表性路径：把诊断命令封装为 MCP 工具后，AI 可保留上下文组织多步诊断；但危险命令管控、字节码增强开销与敏感数据保护都需在 Arthas 之外自建（当前仅单一信源支撑，且模块处于实验阶段）。
+Java 排障领域接入 AI 的代表性路径：把诊断命令封装为 MCP 工具后，AI 可保留上下文组织多步诊断；但危险命令管控、字节码增强开销与敏感数据保护都需在 Arthas 之外自建。第二信源显示人工侧同样成熟——Full GC 排查已沉淀为 dashboard→根因表→dump/类加载分支→验证 的固定流程，与 [[evidence-first-jvm-tuning]] 的证据驱动方法论一致（两个独立信源，MCP 模块仍处实验阶段）。
 
 ## Evidence（证据）
 
 - `raw/sources/ai/2026-10-14-arthas-mcp-ai-troubleshooting.md`
+- `raw/sources/architecture/2026-10-21-jvm-gc-troubleshooting-arthas.md`（人工诊断实战：FGC 七步排查法）

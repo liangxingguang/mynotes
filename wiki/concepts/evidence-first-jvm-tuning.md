@@ -13,6 +13,7 @@ tags:
   - jvm
 sources:
   - raw/sources/misc/2026-10-14-jvm-tuning-core-approach.md
+  - raw/sources/architecture/2026-10-21-gc-log-tuning-practice.md
 related:
   - wiki/concepts/cpu-funnel-coding.md
   - wiki/sources/jvm-tuning-core-approach.md
@@ -54,6 +55,7 @@ related:
 ## Evolution（演进）
 
 - 2026-10-14 — 随《一文掌握 JVM 调优核心思路》提出完整流程。
+- 2026-10-21 — 《GC 日志分析与调优实战》独立印证同一闭环（定目标→看基线→定假设→压测验证，一次只动一个参数），并补充 GC 日志专项读法：real 才是真实停顿、吞吐量经验值 >95%~99%、内存泄漏三早期信号（老年代锯齿上移/FGC 单调递增/Survivor 持续偏高）、IHOP 45→35 单变量案例（FGC 每小时 6 次→0.5 次，P99 1.2s→380ms）。
 
 ## Open Questions（开放问题）
 
@@ -63,8 +65,10 @@ related:
 ## Evidence（证据）
 
 - Source: `raw/sources/misc/2026-10-14-jvm-tuning-core-approach.md`
+- Source: `raw/sources/architecture/2026-10-21-gc-log-tuning-practice.md`（印证：同一四步闭环 + GC 日志读法与告警规则）
 
 ## Related Knowledge（相关知识）
 
 - [[jvm-tuning-core-approach|一文掌握 JVM 调优核心思路]]
 - [[cpu-funnel-coding|CPU 漏斗（编码级性能模型）]]
+- [[gc-log-tuning-practice|GC 日志分析与调优实战（信源页）]]
