@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-10-22T22:45:43.754Z",
+  "updated_at": "2026-10-23T16:33:22.591Z",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -1431,6 +1431,20 @@
       ],
       "source_url": "https://www.jianshu.com/p/6bf8166b291c",
       "asset_ref": "Assets/2026/10/message-system-design-part2.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-netease-pigeon-message-bus-activity.md",
+      "sha256": "acf8d950550bf5c95fde9e75d9029ca6eb69d78373869084e6b4ebf9487f22be",
+      "registered_at": "2026-10-24",
+      "inbox_ref": "Archive/2026-10-23-netease-pigeon-message-bus-activity.md",
+      "pages": [
+        "wiki/sources/netease-pigeon-message-bus-activity.md",
+        "wiki/entities/pigeon-message-bus.md",
+        "wiki/concepts/message-bus.md",
+        "wiki/entities/rocketmq.md"
+      ],
+      "source_url": "https://segmentfault.com/a/1190000047833219",
+      "asset_ref": "Assets/2026/10/netease-pigeon-message-bus-activity.md"
     }
   ]
 }

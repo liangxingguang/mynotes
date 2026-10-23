@@ -81,6 +81,7 @@
 - [[mysql-replication-lag-optimization|数据库主从同步延迟，业务还能稳吗？一线优化实战全解析]]（2026-10-22，MySQL/主从延迟，置信度中）
 - [[mq-message-backlog-solutions|RabbitMQ vs RocketMQ：消息堆积了一线解决方案全解析]]（2026-10-22，MQ/运维，置信度中）
 - [[mq-transaction-idempotency-design|消息队列架构设计（中篇）：事务消息+业务幂等保单据一致性]]（2026-10-22，MQ/分布式事务）
+- [[netease-pigeon-message-bus-activity|直播系统聊天技术(十)：网易云音乐「信鸽」实时消息总线的活动系统架构]]（2026-10-23，消息总线/履约分发/RocketMQ）
 - [[netty-iot-gateway-resilient-design|百万 IoT 设备并发接入：把 Netty 网关做成可恢复、可验证的连接系统]]（2026-10-22，Netty/IoT/可靠性）
 - [[netty-redis-kafka-iot-gateway|扛住百万设备长连接：Netty+Redis+Kafka 搭建 IoT 接入平台]]（2026-10-22，Netty/IoT 架构）
 - [[netty-three-skills-high-performance|为什么几个线程就能扛住上万连接？Netty 三大技能]]（2026-10-20，Java/网络）
@@ -144,6 +145,7 @@
 - [[llm-wiki|LLM Wiki]]（原始来源不可变 + 模型持续编译互链知识页面，Karpathy 模式；本仓库即实例，双信源）
 - [[mcp|MCP]]（LLM↔工具/数据纵向协议，Anthropic 2024）
 - [[mcast|长连接组播（mcast）]]（groupID 下沉长连接层，1:M×1:N 两级扩散；单实例 25w 连接 8w QPS，聚合+压缩消化峰值，百度一手）
+- [[message-bus|业务消息总线]]（哑管道式配置路由：履约异步分发+topic 治理收拢；与 ESB/Pipeline 的区分，信鸽单一信源）
 - [[next-token-prediction|下一 token 预测]]（LLM 的统一目标：交叉熵训练、自回归生成，能力与幻觉同根）
 - [[notification-system-design|站内消息系统领域模型]]（公告/提醒/私信三分类+提醒四元组；拉（订阅驱动）/推（私信直写）按类选型；免打扰后置读路径，简书上下篇双信源）
 - [[okf-knowledge-format|OKF（面向 AI Agent 的知识包装规范）]]（入库时编译为互链 Markdown 树，运行时只做导航+摘录）
@@ -172,6 +174,7 @@
 - [[kafka|Apache Kafka]]（高吞吐事件管道；顺序写+PageCache+零拷贝+批量四板斧，机制+运维+IoT 场景三信源）
 - [[netty|Netty]]（Java 异步事件驱动网络框架；Reactor+ByteBuf+零拷贝三支柱，机制+IoT 双工程三信源）
 - [[pi|Pi]]（极简 Agent CLI/Harness，1.0 起原生 MCP + Code Mode + Pi Durable，5000+ 扩展生态）
+- [[pigeon-message-bus|信鸽（Pigeon）]]（网易云音乐直播活动消息总线；32 台 8U16G 支撑 300w/min，RocketMQ 底座）
 - [[rocketmq|Apache RocketMQ]]（高性能分布式 MQ；事务消息+回查保发送、业务幂等保消费，运维+一致性+机制+存储+事务谱系五信源）
 - [[system-design-notes|system-design-notes]]（按 Alex Xu 两卷书体系整理的 28 章开源系统设计笔记，GitHub liquidslr）
 - [[unyra|归一 Unyra]]（本地优先探索式学习 AI 桌面应用，知识 DAG + 超级导师沙箱改文档，仅 Windows 安装链）

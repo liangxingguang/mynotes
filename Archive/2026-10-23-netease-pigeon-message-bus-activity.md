@@ -12,7 +12,7 @@ tags:
   - RocketMQ
   - 工程实践
 asset_ref: Assets/2026/10/netease-pigeon-message-bus-activity.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 网易云音乐「信鸽」：基于实时消息总线的直播活动系统架构

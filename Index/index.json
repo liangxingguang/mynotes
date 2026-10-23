@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24 00:27",
+  "updated_at": "2026-10-24 00:34",
   "notes": [
     {
       "id": "2026-10-23-mq-message-backlog-rabbitmq-rocketmq",
@@ -20,26 +20,6 @@
       "summary_status": "",
       "asset_ref": "Assets/2026/10/mq-message-backlog-rabbitmq-rocketmq.md",
       "wiki_status": "ingesting"
-    },
-    {
-      "id": "2026-10-23-netease-pigeon-message-bus-activity",
-      "title": "网易云音乐「信鸽」：基于实时消息总线的直播活动系统架构",
-      "path": "Inbox/2026-10-23-netease-pigeon-message-bus-activity.md",
-      "created": "2026-10-23",
-      "category": "技术",
-      "tags": [
-        "分布式系统",
-        "RocketMQ",
-        "工程实践"
-      ],
-      "source": "SegmentFault（云音乐技术团队·燕十三）",
-      "source_url": "https://segmentfault.com/a/1190000047833219",
-      "source_type": "文章",
-      "platform": "SegmentFault",
-      "summary": "直播活动的痛点：活动玩法灵活多变，\"模块 A 结束后触发模块 B\"每次都要改代码。信鸽（Pigeon）把这条触发链做成配置化的消息总线——各模块完成任务后把数据发给信鸽，信鸽按\"信鸽 ID\"查路由配置经 RocketMQ 异步投递到下一系统，失败备份存储 + 定时步长重试。四层面设计：履约能力、SDK 接入（Spring 容器自动建 PushConsumer）、全局标识字典（userId/anchorId 统一命名）、Provider 自动注册（注解扫描 + 定时上报）。与 ESB 的区别是\"哑管道\"——不做协议转换、不做中心化同步集成。消息治理上把多服务重复监听 topic 收拢为信鸽统一 receiver 转发（自动/自定义/存储三路，tag 区分 + 转发关系可配存活周期），实测 32 台 8U16G 容器支撑 300 万条/分钟、CPU 45%。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netease-pigeon-message-bus-activity.md",
-      "wiki_status": "pending"
     },
     {
       "id": "2026-10-23-netease-ten-million-live-danmu-cdn-broadcast",
@@ -2551,6 +2531,26 @@
       "summary": "上篇概念落地为库表与服务：四张表——Notify（消息本体，type 区分公告/提醒/私信，提醒用 target+targetType+action+sender 四元组）、UserNotify（用户消息队列，isRead 标记）、Subscription（订阅：target/targetType/action/user）、SubscriptionConfig（动作级免打扰，JSON，缺省用默认配置）；NotifyConfig 集中管理 targetType/action 枚举与 reasonAction 订阅原因映射；NotifyService 提供创建/拉取/订阅/已读全套方法，私信创建即推入队列，公告与提醒由用户侧按订阅关系 + lastTime 增量拉取。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/message-system-design-part2.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-23-netease-pigeon-message-bus-activity",
+      "title": "网易云音乐「信鸽」：基于实时消息总线的直播活动系统架构",
+      "path": "Archive/2026-10-23-netease-pigeon-message-bus-activity.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "RocketMQ",
+        "工程实践"
+      ],
+      "source": "SegmentFault（云音乐技术团队·燕十三）",
+      "source_url": "https://segmentfault.com/a/1190000047833219",
+      "source_type": "文章",
+      "platform": "SegmentFault",
+      "summary": "直播活动的痛点：活动玩法灵活多变，\"模块 A 结束后触发模块 B\"每次都要改代码。信鸽（Pigeon）把这条触发链做成配置化的消息总线——各模块完成任务后把数据发给信鸽，信鸽按\"信鸽 ID\"查路由配置经 RocketMQ 异步投递到下一系统，失败备份存储 + 定时步长重试。四层面设计：履约能力、SDK 接入（Spring 容器自动建 PushConsumer）、全局标识字典（userId/anchorId 统一命名）、Provider 自动注册（注解扫描 + 定时上报）。与 ESB 的区别是\"哑管道\"——不做协议转换、不做中心化同步集成。消息治理上把多服务重复监听 topic 收拢为信鸽统一 receiver 转发（自动/自定义/存储三路，tag 区分 + 转发关系可配存活周期），实测 32 台 8U16G 容器支撑 300 万条/分钟、CPU 45%。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netease-pigeon-message-bus-activity.md",
       "wiki_status": "ingested"
     },
     {

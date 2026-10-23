@@ -160,3 +160,5 @@
 - 2026-10-23 | ingest | raw/sources/architecture/2026-10-23-message-system-design-part1.md | wiki/sources/message-system-design-part1.md（新建，confidence=medium，站内消息概念篇）+ wiki/concepts/notification-system-design.md（新建概念页：三分类/四元组/订阅拉取/免打扰后置，上下篇双信源）
 - 2026-10-23 | ingest | raw/sources/architecture/2026-10-23-message-system-design-part2.md | wiki/sources/message-system-design-part2.md（新建，confidence=medium，库表与服务层实现篇）+ wiki/concepts/read-fanout.md、write-fanout.md（互链升级：站内通知推拉选型实例）
 - 2026-10-23 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
+- 2026-10-24 | ingest | raw/sources/architecture/2026-10-23-netease-pigeon-message-bus-activity.md | wiki/sources/netease-pigeon-message-bus-activity.md（新建，52im 系列第 10 篇）+ wiki/entities/pigeon-message-bus.md（新建实体：信鸽）+ wiki/concepts/message-bus.md（新建概念：业务消息总线，confidence=medium，单一信源）+ wiki/entities/rocketmq.md（更新：信鸽选型证据）
+- 2026-10-24 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）

@@ -4,7 +4,7 @@ type: entity
 title: Apache RocketMQ
 status: active
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-24
 confidence: high
 tags:
   - entity
@@ -16,6 +16,7 @@ sources:
   - raw/sources/architecture/2026-10-22-rocketmq-advanced-reliability-idempotency.md
   - raw/sources/architecture/2026-10-22-rocketmq-interview-8-topics.md
   - raw/sources/architecture/2026-10-22-distributed-transaction-six-solutions.md
+  - raw/sources/architecture/2026-10-23-netease-pigeon-message-bus-activity.md
 related:
   - wiki/sources/mq-message-backlog-solutions.md
   - wiki/sources/mq-transaction-idempotency-design.md
@@ -23,6 +24,7 @@ related:
   - wiki/sources/rocketmq-interview-8-topics.md
   - wiki/sources/distributed-transaction-six-solutions.md
   - wiki/sources/async-task-system-design.md
+  - wiki/entities/pigeon-message-bus.md
 ---
 # Apache RocketMQ
 
@@ -58,6 +60,7 @@ related:
 - 对照 RabbitMQ：轻量多协议 vs 高性能事务消息，按项目规模与一致性需求选型（堆积治理信源口径）。
 - 对照 [[kafka|Kafka]]：同为高吞吐 MQ，Kafka 胜在日志流生态与吞吐极致，RocketMQ 胜在事务消息与业务场景开箱能力（解读，信源未直接对比）。
 - 与 Outbox 模式（[[async-task-system-design]]）解决同一问题：DB+消息原子性——事务消息把回查责任交给 Broker，Outbox 把投递责任留给后台 Worker。
+- 业务总线底座（信鸽信源）：网易云音乐 [[pigeon-message-bus|信鸽]] 选 RocketMQ（内部版 Nydus）做活动域异步履约分发，理由是 4 台 broker 同时坏 3 台概率极低、且履约链路大多不需要下游返回结果，相比 RPC 有"绝对的优势"；Provider 自动注册走顺序消息上报；顺序消息与 PushConsumer 在该场景构成接入闭环。
 
 ## Timeline（时间线）
 
@@ -75,3 +78,4 @@ related:
 - `raw/sources/architecture/2026-10-22-rocketmq-advanced-reliability-idempotency.md`（可靠性三阶段/幂等四防线/局部顺序/延时/HA）
 - `raw/sources/architecture/2026-10-22-rocketmq-interview-8-topics.md`（CommitLog+ConsumeQueue 存储/事务回查参数/可靠性矩阵/5.x DLedger）
 - `raw/sources/architecture/2026-10-22-distributed-transaction-six-solutions.md`（回查默认 1min/重试 3 次转人工/六方案谱系定位）
+- `raw/sources/architecture/2026-10-23-netease-pigeon-message-bus-activity.md`（信鸽业务总线选型理由/顺序消息注册/PushConsumer 接入）
