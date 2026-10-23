@@ -24,6 +24,7 @@
 - [[async-idempotency-local-message-table|异步链路幂等实战：本地消息表配套防重，解决重复扣款与消息重放]]（2026-10-23，架构/幂等）
 - [[async-task-system-design|异步任务系统怎么设计？从提交、排队、执行到幂等和重试]]（2026-10-22，架构/可靠性）
 - [[awesome-design-md|用 DESIGN.md 治 AI 生成的丑 UI：awesome-design-md 仓库]]（2026-10-16，AI/工具）
+- [[baidu-live-mcast-message-architecture|百度直播海量用户实时消息系统架构：长连接组播 mcast 实践]]（2026-10-23，IM/直播消息/组播）
 - [[business-risk-control-redis-lua-annotation|业务风控组件设计：Redis+Lua 计数规则 + @Detect 注解 + SpEL 接入]]（2026-10-21，风控/Redis）
 - [[completablefuture-async-orchestration|CompletableFuture：异步编排的正确写法]]（2026-10-20，Java/并发）
 - [[craft-of-selfteaching|微博推荐：GitHub 万星项目《自学是门手艺》]]（2026-10-16，学习/资源）
@@ -51,6 +52,7 @@
 - [[github-open-source-ai-books-6|知乎专栏：6 本 GitHub 开源 AI 宝典（Agent/Infra/DL/RL）]]（2026-10-23，AI/学习资源，置信度低）
 - [[huolala-agent-eval-platform|货拉拉业务 Agent 评测平台的工程实践与深度思考]]（2026-10-14，AI/Agent 评测）
 - [[im-group-chat-write-fanout-cost|IM千人群聊该不该用消息写扩散？详细算算成本账！]]（2026-10-23，IM/写扩散）
+- [[im-websocket-reconnect-heartbeat|IM聊天不掉线？生产级WebSocket断线重连、心跳保活实战]]（2026-10-23，IM/WebSocket/前端，置信度中）
 - [[huolala-ai-coding-workflow|个人提效到团队提效：货拉拉 AI Coding 流程化落地实践]]（2026-10-20，AI/企业落地）
 - [[java-perf-low-cpu-coding-tips-part1|打造高性能、低CPU消耗系统—36种编码实战技巧（上篇）]]（2026-10-14，Java/性能）
 - [[java-perf-low-cpu-coding-tips-part2|打造高性能、低CPU消耗系统—36种编码实战技巧（下篇）]]（2026-10-14，Java/性能）
@@ -71,6 +73,7 @@
 - [[llm-wiki-advanced-four-steps|LLM Wiki 搭建教程·进阶篇一：四步搭建完整系统（本仓库模式出处）]]（2026-10-14，AI/知识库）
 - [[logical-thinking-models|分析问题的逻辑思考方法（14个模型）]]（2026-10-23，思维方法论，置信度中）
 - [[lovart-2-arti-design-agent|Lovart 2.0 发布：设计 Personal Agent Arti 上手体验]]（2026-10-21，AI/产品，置信度低）
+- [[meipai-live-danmu-realtime-push|百万在线的美拍直播弹幕系统实时推送技术实践]]（2026-10-23，IM/直播弹幕/Redis+长连接）
 - [[ms-agent-lightning-rl-framework|知乎想法：微软开源 Agent Lightning——3500 行框架让 AI 自己练级]]（2026-10-14，AI/Agent RL）
 - [[mysql-replication-lag-optimization|数据库主从同步延迟，业务还能稳吗？一线优化实战全解析]]（2026-10-22，MySQL/主从延迟，置信度中）
 - [[mq-message-backlog-solutions|RabbitMQ vs RocketMQ：消息堆积了一线解决方案全解析]]（2026-10-22，MQ/运维，置信度中）
@@ -137,6 +140,7 @@
 - [[framework-first-migration|框架先行的规模化运行时迁移]]（BOM 收口+框架分代并行+AI 批量改造+检查单收敛，货拉拉 JDK 21 实践）
 - [[llm-wiki|LLM Wiki]]（原始来源不可变 + 模型持续编译互链知识页面，Karpathy 模式；本仓库即实例，双信源）
 - [[mcp|MCP]]（LLM↔工具/数据纵向协议，Anthropic 2024）
+- [[mcast|长连接组播（mcast）]]（groupID 下沉长连接层，1:M×1:N 两级扩散；单实例 25w 连接 8w QPS，聚合+压缩消化峰值，百度一手）
 - [[next-token-prediction|下一 token 预测]]（LLM 的统一目标：交叉熵训练、自回归生成，能力与幻觉同根）
 - [[okf-knowledge-format|OKF（面向 AI Agent 的知识包装规范）]]（入库时编译为互链 Markdown 树，运行时只做导航+摘录）
 - [[pi-customization-layers|Pi 五层定制模型]]（Prompt 模板→AGENTS.md→Skill→Extension→SDK，官方扩展点成本阶梯）
@@ -148,7 +152,8 @@
 - [[reactive-tracing-context|响应式环境的全链路 traceId 传递]]（Reactor Context 替代 ThreadLocal；doOnEach 同步 MDC、doFinally 清除）
 - [[table-sharding-migration|分表平滑迁移策略]]（五种读写策略矩阵 + 双写双读 SQL 重写，京东大表治理实践）
 - [[virtual-threads-production|虚拟线程生产实践]]（场景筛选、Helper 传 Trace/ThreadLocal、钉住规避与观测换代，货拉拉 JDK 21 实践）
-- [[write-fanout|写扩散（Fan-out on Write）]]（群消息按成员写副本换读路径简单；群服务扇出+副本指纹+MQ 批量化+双轨存储，万人群物理上限，单信源置信度中）
+- [[write-fanout|写扩散（Fan-out on Write）]]（群消息按成员写副本换读路径简单；群服务扇出+副本指纹+MQ 批量化+双轨存储，万人群物理上限，三信源）
+- [[websocket-heartbeat-reconnect|WebSocket 心跳保活与断线重连]]（双向心跳判假死+指数退避防风暴+离线队列补发三段式，单教程信源置信度中）
 
 ## entity（实体）
 

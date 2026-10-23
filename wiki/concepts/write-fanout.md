@@ -14,9 +14,11 @@ tags:
 sources:
   - raw/sources/architecture/2026-10-23-im-group-chat-write-fanout-cost.md
   - raw/sources/architecture/2026-10-23-alibaba-ecommerce-im-group-live.md
+  - raw/sources/architecture/2026-10-23-baidu-live-mcast-message-architecture.md
 related:
   - wiki/sources/im-group-chat-write-fanout-cost.md
   - wiki/concepts/read-fanout.md
+  - wiki/concepts/mcast.md
   - wiki/entities/rocketmq.md
   - wiki/entities/kafka.md
 ---
@@ -60,6 +62,7 @@ toB IM 场景里已读回执、消息撤回、离线补全是硬需求，三者�
 ### Distinctions（区分）
 
 - 与 [[read-fanout|读扩散]] 的区别在于「写时复制 vs 读时聚合」：写扩散拿写放大换读路径简单与每成员投递记录；读扩散拿读取聚合成本与架构复杂度换存储与写入的极致节省。群规模是选型主变量：1000 人写扩散需批量化、5000 人需专项优化、10000 人写扩散走不通。写扩散另一短板是多群消息混排在用户同步队列、无会话级优先级与隔离能力（阿里信源）。
+- 与 [[mcast|长连接组播]] 的区别在于「持久化副本 vs 内存组播」：百度推演照搬 IM 群聊到直播场景时，用户列表拆分/设备/动态路由/下发/拉取/已读六步全是百万 QPS 级——印证写扩散式链路在百万在线直播下物理不可行；mcast 把展开收件人下沉到长连接层内存，放弃必达与投递记录换容量可控。
 
 ## Evolution（演进）
 
@@ -76,6 +79,7 @@ toB IM 场景里已读回执、消息撤回、离线补全是硬需求，三者�
 
 - Source: `raw/sources/architecture/2026-10-23-im-group-chat-write-fanout-cost.md`（经验性分析，数字为估算量级 → confidence: medium）
 - Source: `raw/sources/architecture/2026-10-23-alibaba-ecommerce-im-group-live.md`（一手实践，印证 1:N 写放大瓶颈与无优先级/隔离短板；给出 120w/s→3K/s 实测量级）
+- Source: `raw/sources/architecture/2026-10-23-baidu-live-mcast-message-architecture.md`（一手实践：百万在线直播下照搬 IM 群聊链路的六压力点推演，间接印证写扩散物理上限；并给出 mcast 替代路径）
 
 ## Related Knowledge（相关知识）
 

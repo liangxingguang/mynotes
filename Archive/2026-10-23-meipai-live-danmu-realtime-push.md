@@ -11,9 +11,7 @@ tags:
   - 分布式系统
   - 工程实践
 asset_ref: Assets/2026/10/meipai-live-danmu-realtime-push.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-10-23T13:20:24.625Z"
-ingest_claim_id: 49968-1792761624625-0
+wiki_status: ingested
 ---
 
 # 百万在线的美拍直播弹幕系统实时推送技术实践

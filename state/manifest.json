@@ -1361,6 +1361,41 @@
       ],
       "source_url": "http://www.52im.net/thread-3252-1-1.html",
       "asset_ref": "Assets/2026/10/alibaba-ecommerce-im-group-live.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-baidu-live-mcast-message-architecture.md",
+      "sha256": "11ebae78b86c2cec66e51fc61b2f777210d76249bd2c64805c92b8a81cd1247d",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-23-baidu-live-mcast-message-architecture.md",
+      "pages": [
+        "wiki/sources/baidu-live-mcast-message-architecture.md",
+        "wiki/concepts/mcast.md"
+      ],
+      "source_url": "http://www.52im.net/thread-3515-1-1.html",
+      "asset_ref": "Assets/2026/10/baidu-live-mcast-message-architecture.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-im-websocket-reconnect-heartbeat.md",
+      "sha256": "01d5bdddafec7a2007586ba68fcfd45d4f43a3abc542dd196313cb5fa1c86d73",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-23-im-websocket-reconnect-heartbeat.md",
+      "pages": [
+        "wiki/sources/im-websocket-reconnect-heartbeat.md",
+        "wiki/concepts/websocket-heartbeat-reconnect.md"
+      ],
+      "source_url": "https://segmentfault.com/a/1190000048352893",
+      "asset_ref": "Assets/2026/10/im-websocket-reconnect-heartbeat.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-meipai-live-danmu-realtime-push.md",
+      "sha256": "72cc976263d9d1f3934393d63a8292c4ee1f69450f1b5f2292aa8103140d5d4d",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-23-meipai-live-danmu-realtime-push.md",
+      "pages": [
+        "wiki/sources/meipai-live-danmu-realtime-push.md"
+      ],
+      "source_url": "http://www.52im.net/thread-1236-1-1.html",
+      "asset_ref": "Assets/2026/10/meipai-live-danmu-realtime-push.md"
     }
   ]
 }

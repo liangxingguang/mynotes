@@ -16,7 +16,9 @@ sources:
   - raw/sources/architecture/2026-10-23-im-group-chat-write-fanout-cost.md
 related:
   - wiki/concepts/write-fanout.md
+  - wiki/concepts/mcast.md
   - wiki/sources/alibaba-ecommerce-im-group-live.md
+  - wiki/sources/meipai-live-danmu-realtime-push.md
 ---
 # 读扩散（Fan-out on Read）
 
@@ -57,6 +59,7 @@ related:
 ### Distinctions（区分）
 
 - 与 [[write-fanout|写扩散]] 的区别在于「读时聚合 vs 写时复制」：读扩散拿架构复杂度与读聚合成本换存储/写入的极致节省；写扩散拿写放大换读路径简单与每成员投递记录（已读回执、撤回、离线补全的天然载体）。群规模与消息个性化比例是选型主变量。
+- 与 [[mcast|长连接组播]] 的区别在于「拉 vs 推」：读扩散由端侧持位点拉取补齐；mcast 由长连接层主动推、容忍折损。美拍的「告知→毫秒级等待→拉取→推」订阅推送模型是二者混合的长连接形态（见 [[meipai-live-danmu-realtime-push|美拍信源]]）。
 
 ## Evolution（演进）
 
