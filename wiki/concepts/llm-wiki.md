@@ -11,8 +11,10 @@ tags:
   - knowledge-base
 sources:
   - raw/sources/ai/2026-10-16-knowledge-base-tech-evolution.md
+  - raw/sources/ai/2026-10-14-llm-wiki-advanced-four-steps.md
 related:
   - wiki/concepts/okf-knowledge-format.md
+  - wiki/sources/llm-wiki-advanced-four-steps.md
 ---
 # LLM Wiki
 
@@ -31,6 +33,8 @@ related:
 3. **冲突检查**：新材料与已有结论比对，冲突显式处理。
 4. **索引与日志**：更新索引、记录处理日志，操作可追溯。
 5. **结构约定文件**：用说明文件（如本仓库的 AGENTS.md）约定组织方式与操作流程。
+6. **四原则与职责分离**（教程信源）：Raw 是证据、Wiki 是知识、Schema 是规则、Agent 是执行器；不让一个 Agent 拥有所有能力——Ingest（写）/Query（读）/Lint（验）三工作流权限表钉死边界，三者均无权改 raw、无权删知识；inbox ≠ raw，新材料经 inbox 缓冲、Ingest 标准化后才进不可变 raw。
+7. **页面分类型防垃圾场**（教程信源）：source/concept/entity/topic/decision/comparison/synthesis/timeline 八类，source 最基础、其余在其上编译。
 
 ## Structure（结构）
 
@@ -54,7 +58,7 @@ related:
 
 ## Evolution（演进）
 
-（当前仅单一综述信源，待补充一手信源，如 Karpathy 原述。）
+- 2026-10 — 教程信源（进阶篇一）给出可落地的四层架构、8 页面类型与三工作流权限表，与综述信源互证；本仓库即按该模式运行（目录、AGENTS.md、页面类型、权限表一一对应）。Karpathy 原述仍待补一手信源。
 
 ## Open Questions（开放问题）
 
@@ -63,8 +67,10 @@ related:
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-10-16-knowledge-base-tech-evolution.md`
+- Source: `raw/sources/ai/2026-10-14-llm-wiki-advanced-four-steps.md`（四原则/8 页面类型/证据不变量/Ingest-Query-Lint 权限表）
 
 ## Related Knowledge（相关知识）
 
 - [[knowledge-base-tech-evolution|一文搞懂知识库的技术演进]]
+- [[llm-wiki-advanced-four-steps|LLM Wiki 搭建教程·进阶篇一（信源页）]]（可落地架构与权限表）
 - [[jd-haibo-ai-knowledge-base|拆解京东海博 AI-Native 落地保障：海博团队 AI 知识库能力建设]]（团队知识库实践参照）

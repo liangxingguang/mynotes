@@ -15,6 +15,9 @@ sources:
   - raw/sources/architecture/2026-10-20-netty-three-skills-high-performance.md
 related:
   - wiki/sources/tcp-retransmission-visualized.md
+  - wiki/entities/netty.md
+  - wiki/sources/netty-iot-gateway-resilient-design.md
+  - wiki/sources/netty-redis-kafka-iot-gateway.md
 ---
 # 为什么几个线程就能扛住上万连接？Netty 三大技能主力高性能场景
 

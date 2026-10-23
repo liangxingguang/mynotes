@@ -1,493 +1,6 @@
 {
-  "updated_at": "2026-10-23 09:34",
+  "updated_at": "2026-10-23 10:12",
   "notes": [
-    {
-      "id": "2026-10-14-llm-wiki-advanced-four-steps",
-      "title": "LLM Wiki 知识库搭建深度教程 2·进阶篇一：四步搭建完整的 LLM Wiki 知识库系统",
-      "path": "Inbox/2026-10-14-llm-wiki-advanced-four-steps.md",
-      "created": "2026-10-14",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/HTp72kpUvbylh7hOrwpKbQ",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "系列教程第二篇：把上篇验证用的纯 Markdown Wiki 升级为可持续维护的完整 LLM Wiki 系统。业界已形成共同模式——`raw/` 存不可变原始资料、`wiki/` 存 LLM 编译后的知识、AGENTS.md/Schema 定规则，核心操作为 Ingest、Query、Lint。四原则：Raw 是证据、Wiki 是知识、Schema 是规则、Agent 是执行器。本篇定架构与边界，下篇才用编程工具实操三个工作流。",
-      "summary_status": "",
-      "asset_ref": "",
-      "wiki_status": "failed"
-    },
-    {
-      "id": "2026-10-22-async-task-system-design",
-      "title": "异步任务系统怎么设计？从提交、排队、执行到幂等和重试",
-      "path": "Inbox/2026-10-22-async-task-system-design.md",
-      "created": "2026-10-22",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "分布式系统"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/AfZ-w5215Bbi4HS6v1fsFA",
-      "source_type": "link",
-      "platform": "wechat",
-      "summary": "线程池≠异步任务系统。可靠系统需要任务身份、持久化队列、状态机、租约、幂等、分级重试、协作式取消与可观测性——线程池只是执行环节的一个零件。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/async-task-system-design.md",
-      "wiki_status": "ingesting"
-    },
-    {
-      "id": "2026-10-22-critical-thinking-six-priorities",
-      "title": "教了快十年批判性思维，我越来越看重这六件事",
-      "path": "Inbox/2026-10-22-critical-thinking-six-priorities.md",
-      "created": "2026-10-22",
-      "category": "学习",
-      "tags": [
-        "思维方式",
-        "个人成长"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/_fU0rplhK8ob_Uf85ADwlw",
-      "source_type": "link",
-      "platform": "wechat",
-      "summary": "批判性思维≠逻辑规则+谬误清单。十年教学经验提炼六个重点：愿意反省、澄清问题、评价证据、积累并善用知识、提出备选方案、用程序与反馈养成习惯。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/critical-thinking-six-priorities.md",
-      "wiki_status": "ingesting"
-    },
-    {
-      "id": "2026-10-22-database-high-availability",
-      "title": "当我谈数据库高可用时是在谈些什么",
-      "path": "Inbox/2026-10-22-database-high-availability.md",
-      "created": "2026-10-22",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "数据库"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/x6c6RSYUdivoou1a6-NV6A",
-      "source_type": "link",
-      "platform": "wechat",
-      "summary": "京东技术团队出品的数据库高可用体系科普。以五层主线串起完整图景：单机崩溃可恢复（WAL/2PC/双1）→ 主备复制（异步/半同步/RPO）→ GTID 全局事务身份证 → 主备安全切换（fencing/PRS/ERS）→ Orchestrator 自动化容错，最后延伸到应用侧协同降级，点出\"高可用是数据库与应用双向奔赴\"。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/database-high-availability.md",
-      "wiki_status": "ingesting"
-    },
-    {
-      "id": "2026-10-22-distributed-transaction-six-solutions",
-      "title": "分布式事务最全图解（6种方案）：从强一致的2PC到最终对账",
-      "path": "Inbox/2026-10-22-distributed-transaction-six-solutions.md",
-      "created": "2026-10-22",
-      "category": "技术",
-      "tags": [
-        "分布式系统",
-        "工程实践",
-        "分布式事务"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/iefb1PSKWHDdfnE_QKDwIQ",
-      "source_type": "link",
-      "platform": "wechat",
-      "summary": "分布式事务六种方案的完整梳理：2PC（及致命伤）、本地消息表、RocketMQ 事务消息、TCC、事务状态表+补偿、同步双写+异步对账。从强一致到最终一致，覆盖从理论到落地的全路径。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/distributed-transaction-six-solutions.md",
-      "wiki_status": "ingesting"
-    },
-    {
-      "id": "2026-10-22-k8s-ha-cluster-setup-guide",
-      "title": "K8s从零搭建高可用集群：保姆级图文实战教程（3 Master + 2 Worker）",
-      "path": "Inbox/2026-10-22-k8s-ha-cluster-setup-guide.md",
-      "created": "2026-10-22",
-      "category": "技术",
-      "tags": [
-        "Kubernetes",
-        "课程",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/_o_wiC0G8xaqdWWgMjbJLw",
-      "source_type": "link",
-      "platform": "wechat",
-      "summary": "从裸机到可\"拔电源\"演练的生产级 K8s：3 控制面堆叠 etcd（Raft 三成员）+ HAProxy/Keepalived 统一 VIP + Calico VXLAN 组网。全量脚本/YAML 可复制，含国内镜像拉取失败四大场景解法与三个故障演练。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/k8s-ha-cluster-setup-guide.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-22-mq-message-backlog-solutions",
-      "title": "RabbitMQ vs RocketMQ，消息堆积了怎么办？一线解决方案全解析！",
-      "path": "Inbox/2026-10-22-mq-message-backlog-solutions.md",
-      "created": "2026-10-22",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "Kafka"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/nXNdub_DSqJSnf73PWLLRg",
-      "source_type": "link",
-      "platform": "wechat",
-      "summary": "消息堆积（生产快于消费导致队列积压）的排查与解决指南：分别给出 RabbitMQ 与 RocketMQ 的消费者/队列/生产者优化代码，以及应急处理三板斧（临时扩容、消息分流、消息清理），并按电商/金融/内容三类业务场景给出差异化策略。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/mq-message-backlog-solutions.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-22-mq-transaction-idempotency-design",
-      "title": "消息队列架构设计（中篇）：事务消息、业务幂等，保障单据数据一致性",
-      "path": "Inbox/2026-10-22-mq-transaction-idempotency-design.md",
-      "created": "2026-10-22",
-      "category": "技术",
-      "tags": [
-        "分布式事务",
-        "Kafka"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/mR9XYzUnXQaEn2aW9X5nJA",
-      "source_type": "link",
-      "platform": "wechat",
-      "summary": "大宗商品销采运储系统架构连载中篇。解决\"数据库事务和消息发送的原子性\"与\"消息重复投递脏数据\"两大难题：RocketMQ 事务消息保发送、业务幂等保消费，两板斧配合让单据流转不丢不重。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/mq-transaction-idempotency-design.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-22-mysql-replication-lag-optimization",
-      "title": "数据库主从同步延迟，业务还能稳吗？一线优化实战全解析！",
-      "path": "Inbox/2026-10-22-mysql-replication-lag-optimization.md",
-      "created": "2026-10-22",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "MySQL"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/HTI_FoM1PT1jSKo0ZCqurQ",
-      "source_type": "link",
-      "platform": "wechat",
-      "summary": "MySQL 主从同步延迟的系统性优化指南：从延迟成因（写入压力、网络、从库性能、大事务）出发，给出监控诊断（Seconds_Behind_Master/GTID 差距）、五个层面的优化方案（主库写入/网络/从库/复制架构/应用层），以及 Spring Boot 读写分离 + 延迟感知路由的实战代码。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/mysql-replication-lag-optimization.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-22-netty-iot-gateway-resilient-design",
-      "title": "百万 IoT 设备并发接入：把 Netty 网关做成可恢复、可验证的连接系统",
-      "path": "Inbox/2026-10-22-netty-iot-gateway-resilient-design.md",
-      "created": "2026-10-22",
-      "category": "技术",
-      "tags": [
-        "Netty",
-        "IoT",
-        "分布式系统"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/Ymasw1q6aL5JGcIvv4y04w",
-      "source_type": "link",
-      "platform": "wechat",
-      "summary": "百万设备长连接接入层的硬核工程指南：不堆组件而是从不变量出发——EventLoop 不阻塞、会话只被所有者删除、内存队列有界、commandId 幂等。覆盖协议设计、会话路由原子性、命令状态机、Drain 发布、压测验收全流程。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-iot-gateway-resilient-design.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-22-netty-redis-kafka-iot-gateway",
-      "title": "扛住百万设备长连接：用 Netty + Redis + Kafka 搭建 IoT 接入平台",
-      "path": "Inbox/2026-10-22-netty-redis-kafka-iot-gateway.md",
-      "created": "2026-10-22",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "Kafka",
-        "分布式系统"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/ci_Fgd4x4Kh9oi7CP26pUg",
-      "source_type": "link",
-      "platform": "wechat",
-      "summary": "以智能充电桩平台（常态 60 万、峰值百万设备，上行 5~10 万条/秒）为主线，讲清 IoT 长连接接入平台的生产级架构：Netty 负责连接收发、Redis 做会话路由中心、Kafka 解耦上下行，并补齐连接风暴治理、背压、幂等、离线补偿、无损下线等工程化细节与完整代码骨架。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-redis-kafka-iot-gateway.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-22-nginx-websocket-million-connections",
-      "title": "百万 WebSocket 长连接背后的 Nginx 架构设计与踩坑实录",
-      "path": "Inbox/2026-10-22-nginx-websocket-million-connections.md",
-      "created": "2026-10-22",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "分布式系统",
-        "nginx",
-        "WebSocket"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/b-WPvJdAEI6fsxyN9hQysA",
-      "source_type": "link",
-      "platform": "wechat",
-      "summary": "系统讲解 Nginx 作为 WebSocket 反向代理的生产级实践：从握手原理、最小可用配置到容量模型、负载均衡、优雅下线、内核调优与可观测性，附 Go 网关代码示例与 10 类线上踩坑实录。核心观点：WebSocket 不是 HTTP 网关的平移，而是\"连接资产运营\"，需当完整实时通信基础设施来设计。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/nginx-websocket-million-connections.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-22-redisearch-vs-elasticsearch",
-      "title": "换掉 ES！Redis 官方搜索引擎 RediSearch 介绍与实操",
-      "path": "Inbox/2026-10-22-redisearch-vs-elasticsearch.md",
-      "created": "2026-10-22",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "Elasticsearch"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/L5VrkgzkEGWrsWOgX9aCHA",
-      "source_type": "link",
-      "platform": "wechat",
-      "summary": "RediSearch 入门文章：介绍这个 Redis 模块的全文搜索/二次索引能力、与 Elasticsearch 的官方基准对比（索引构建快 58%、查询吞吐 4 倍）、安装方式与 ft.* 命令行实操（建索引、增删文档、中文查询、模糊匹配、别名）。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/redisearch-vs-elasticsearch.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-22-rocketmq-advanced-reliability-idempotency",
-      "title": "RocketMQ 进阶：消息可靠性、幂等、顺序消息、延时消息与高可用，一篇彻底搞懂",
-      "path": "Inbox/2026-10-22-rocketmq-advanced-reliability-idempotency.md",
-      "created": "2026-10-22",
-      "category": "技术",
-      "tags": [
-        "RocketMQ",
-        "分布式事务",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/oG2MVFFHiLeMgeDimbyt-w",
-      "source_type": "link",
-      "platform": "wechat",
-      "summary": "RocketMQ 进阶九问通关：可靠性三阶段保障、幂等四种落地方案、消息积压扩容策略、局部顺序选队列、Tag/SQL 过滤、18 级延时实现、半消息事务八步、死信队列、主从集群读写高可用。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/rocketmq-advanced-reliability-idempotency.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-22-rocketmq-interview-8-topics",
-      "title": "RocketMQ 面试连环炮：8 大核心题一篇讲透",
-      "path": "Inbox/2026-10-22-rocketmq-interview-8-topics.md",
-      "created": "2026-10-22",
-      "category": "技术",
-      "tags": [
-        "RocketMQ",
-        "分布式事务",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/0C8U2RrwoXbhzSy_Hl2jqw",
-      "source_type": "link",
-      "platform": "wechat",
-      "summary": "RocketMQ 八模块通关地图：架构四组件、CommitLog+ConsumeQueue 存储、三种发送/消费模式、事务消息半消息+回查、刷盘与主从复制可靠性组合、At-Least-Once 幂等设计、消息堆积治理流程。每题按\"标准答案→原理→生产坑点→加分项\"展开。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/rocketmq-interview-8-topics.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-22-signin-system-distributed-evolution",
-      "title": "从 0 到 1 亿：Spring Boot 签到打卡系统的分布式架构演进与生产级避坑指南",
-      "path": "Inbox/2026-10-22-signin-system-distributed-evolution.md",
-      "created": "2026-10-22",
-      "category": "技术",
-      "tags": [
-        "分布式系统",
-        "工程实践",
-        "Kafka"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/Ig7Y4uOQWzBe97p51udlHQ",
-      "source_type": "link",
-      "platform": "wechat",
-      "summary": "以 1 亿账户、500 万日签到、30K QPS 峰值的内容 App 签到系统为案例，给出生产级方案：Redis 按日期+用户分桶 Bitmap 做热判定，DB Command Outbox 做恢复锚点，Stream+Dispatcher+Kafka 做异步投递，签到/积分双 Ledger 唯一键幂等，配故障复盘与压测清单。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/signin-system-distributed-evolution.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-22-spring-boot-startup-speedup",
-      "title": "Spring Boot 启动加速实战：从 8 秒到 2 秒的 5 个优化点",
-      "path": "Inbox/2026-10-22-spring-boot-startup-speedup.md",
-      "created": "2026-10-22",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/QnH9PyiwXgf-0OdAb19GOQ",
-      "source_type": "link",
-      "platform": "wechat",
-      "summary": "一个 Spring Boot 3.2 订单服务的启动优化实录：从 8.2s 压到 2~3.6s。核心思路是\"启动慢 = 容器替你做了太多没要的事\"，通过关闭多余自动配置、收窄类扫描、容器选型、JVM AOT、懒加载五步逐一清零浪费，每步附实测耗时与适用场景决策。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/spring-boot-startup-speedup.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-22-stress-test-capacity-planning",
-      "title": "第二十课：高并发系统压测与容量规划",
-      "path": "Inbox/2026-10-22-stress-test-capacity-planning.md",
-      "created": "2026-10-22",
-      "category": "技术",
-      "tags": [
-        "课程",
-        "工程实践",
-        "分布式系统"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/BhCRjKjsYNftqmQQP9pT-Q",
-      "source_type": "link",
-      "platform": "wechat",
-      "summary": "架构师之路系列第 20 课。从\"拍脑袋估流量\"到科学容量体系：峰值 QPS 估算公式、压测三板斧、影子库数据隔离、wrk2 恒定速率、性能曲线拐点解读、机器数公式与 70/80/90 水位线管理，附 5 个压测失真坑与自检脚本。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/stress-test-capacity-planning.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-22-weibo-gpt2-to-llama-tutorial",
-      "title": "从零手写大模型进阶教程：从 GPT-2 到 LLaMA 的 4 个关键零件",
-      "path": "Inbox/2026-10-22-weibo-gpt2-to-llama-tutorial.md",
-      "created": "2026-10-22",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "课程"
-      ],
-      "source": "微博",
-      "source_url": "https://weibo.com/2194035935/5356368037153150",
-      "source_type": "link",
-      "platform": "微博",
-      "summary": "微博博主「蚁工厂」推荐纳米AI（nano-ai.tech）的免费教程《从 GPT-2 到 LLaMA》：回答「2019 年的 GPT-2 与今天的 LLaMA/Qwen/DeepSeek 到底差在哪」。结论是骨架仍是 Transformer，真正演进的是 4 个关键零件——RMSNorm（归一化简化）、SwiGLU（前馈网络升级）、RoPE（旋转位置编码）、GQA（分组查询注意力）。教程共 5 篇，用「猫吃鱼」同一个小例子贯穿，数字可手算、代码可直接跑，适合手写完 GPT-2 后进阶。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/weibo-gpt2-to-llama-tutorial.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-23-ai-engineering-interview-questions",
-      "title": "AI Engineering Interview Questions：公开 AI 工程面试题库",
-      "path": "Inbox/2026-10-23-ai-engineering-interview-questions.md",
-      "created": "2026-10-23",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "课程"
-      ],
-      "source": "微博",
-      "source_url": "https://weibo.com/5648162302/5356356632055233",
-      "source_type": "link",
-      "platform": "weibo",
-      "summary": "开源项目 ai-engineering-interview-questions，按主题收录 AI 工程面试问题并附讲解入口，覆盖 LLM 基础到生产部署全链路，适合面试前自查知识覆盖。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/weibo-5356356632055233.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-23-deep-thinking-training",
-      "title": "如何锻炼出强悍的深度思考能力？",
-      "path": "Inbox/2026-10-23-deep-thinking-training.md",
-      "created": "2026-10-23",
-      "category": "学习",
-      "tags": [
-        "思维方式",
-        "个人成长"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/846BxF4GkiMtwXC1_tFssQ",
-      "source_type": "link",
-      "platform": "weixin",
-      "summary": "深度思考是围绕具体问题弄清概念与事实、分析原因条件、再用证据检查判断的过程；它可以通过五个日常习惯刻意练习形成。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/deep-thinking-training.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-23-logical-thinking-models",
-      "title": "分析问题的逻辑思考方法（14个模型）",
-      "path": "Inbox/2026-10-23-logical-thinking-models.md",
-      "created": "2026-10-23",
-      "category": "学习",
-      "tags": [
-        "思维方式",
-        "个人成长"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/FMdD6D9B_jES4SLO0QMmow",
-      "source_type": "link",
-      "platform": "weixin",
-      "summary": "一套由 14 个经典模型组成的逻辑思考流程：界定拆解 → 归因 → 对比关联 → 评估验证 → 综合迭代，每个模型都强调\"有证据、可检查\"。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/logical-thinking-models.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-23-proposal-logic-structures",
-      "title": "写方案的人，一定要掌握这6种逻辑结构",
-      "path": "Inbox/2026-10-23-proposal-logic-structures.md",
-      "created": "2026-10-23",
-      "category": "学习",
-      "tags": [
-        "写作",
-        "思维方式"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/RlqmqwGPM3dpHyTS1I1nlA",
-      "source_type": "link",
-      "platform": "weixin",
-      "summary": "多数方案输在结构而非内容：6 种逻辑结构覆盖 90% 方案场景，让读者顺着你的思路走，不用费力就能同意。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/proposal-logic-structures.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-23-springboot-global-exception-handling",
-      "title": "Spring Boot 3.x 全局异常处理最佳实践：从入门到生产级方案",
-      "path": "Inbox/2026-10-23-springboot-global-exception-handling.md",
-      "created": "2026-10-23",
-      "category": "技术",
-      "tags": [
-        "spring",
-        "工程实践",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/jmeVH93lmJBVRdjl-cqdTg",
-      "source_type": "link",
-      "platform": "weixin",
-      "summary": "用 `@RestControllerAdvice` + `@ExceptionHandler` 一处配置全局生效，配合统一响应体、异常码枚举与断言工具，替代 Controller 里散落的 try-catch。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/springboot-global-exception-handling.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-23-springboot-structured-logging",
-      "title": "SpringBoot 结构化日志实战",
-      "path": "Inbox/2026-10-23-springboot-structured-logging.md",
-      "created": "2026-10-23",
-      "category": "技术",
-      "tags": [
-        "spring",
-        "工程实践",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/0iAUApAJQCJKfn02SbbYOw",
-      "source_type": "link",
-      "platform": "weixin",
-      "summary": "结构化日志把每条日志输出为固定 JSON 字段，可直接按字段过滤聚合；Spring Boot 3.4 起内置支持，两行配置即可从纯文本切到 ECS/Logstash 格式。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/springboot-structured-logging.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
@@ -806,6 +319,25 @@
       "summary": "一篇面向零基础读者的 LLM 系统教程：用\"预测下一个 token\"一条主线串起信息论、神经网络、Transformer 到 ChatGPT 后训练与局限，只用加减乘除和对数，配手算例子。结论：把预测下一个 token 做到极致就是在通过图灵测试；模型的能力与幻觉等局限同源于此。",
       "summary_status": "",
       "asset_ref": "",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-14-llm-wiki-advanced-four-steps",
+      "title": "LLM Wiki 知识库搭建深度教程 2·进阶篇一：四步搭建完整的 LLM Wiki 知识库系统",
+      "path": "Archive/2026-10-14-llm-wiki-advanced-four-steps.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/HTp72kpUvbylh7hOrwpKbQ",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "系列教程第二篇：把上篇验证用的纯 Markdown Wiki 升级为可持续维护的完整 LLM Wiki 系统。业界已形成共同模式——`raw/` 存不可变原始资料、`wiki/` 存 LLM 编译后的知识、AGENTS.md/Schema 定规则，核心操作为 Ingest、Query、Lint。四原则：Raw 是证据、Wiki 是知识、Schema 是规则、Agent 是执行器。本篇定架构与边界，下篇才用编程工具实操三个工作流。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/llm-wiki-advanced-four-steps.md",
       "wiki_status": "ingested"
     },
     {
@@ -2106,6 +1638,474 @@
       "summary": "公众号「架构师之路」的 2025 年度文章精选索引。作者离职单干后全年更新 343 篇、261 万阅读，本文按四大方向（DeepSeek、数据库、架构、OPC 创业）汇总了全年优质文章链接，是一份架构与分布式系统主题的资源清单，适合收藏按需查阅。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/architect-road-2025-digest.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-22-async-task-system-design",
+      "title": "异步任务系统怎么设计？从提交、排队、执行到幂等和重试",
+      "path": "Archive/2026-10-22-async-task-system-design.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "分布式系统"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/AfZ-w5215Bbi4HS6v1fsFA",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "线程池≠异步任务系统。可靠系统需要任务身份、持久化队列、状态机、租约、幂等、分级重试、协作式取消与可观测性——线程池只是执行环节的一个零件。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/async-task-system-design.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-22-critical-thinking-six-priorities",
+      "title": "教了快十年批判性思维，我越来越看重这六件事",
+      "path": "Archive/2026-10-22-critical-thinking-six-priorities.md",
+      "created": "2026-10-22",
+      "category": "学习",
+      "tags": [
+        "思维方式",
+        "个人成长"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/_fU0rplhK8ob_Uf85ADwlw",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "批判性思维≠逻辑规则+谬误清单。十年教学经验提炼六个重点：愿意反省、澄清问题、评价证据、积累并善用知识、提出备选方案、用程序与反馈养成习惯。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/critical-thinking-six-priorities.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-22-database-high-availability",
+      "title": "当我谈数据库高可用时是在谈些什么",
+      "path": "Archive/2026-10-22-database-high-availability.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "数据库"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/x6c6RSYUdivoou1a6-NV6A",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "京东技术团队出品的数据库高可用体系科普。以五层主线串起完整图景：单机崩溃可恢复（WAL/2PC/双1）→ 主备复制（异步/半同步/RPO）→ GTID 全局事务身份证 → 主备安全切换（fencing/PRS/ERS）→ Orchestrator 自动化容错，最后延伸到应用侧协同降级，点出\"高可用是数据库与应用双向奔赴\"。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/database-high-availability.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-22-distributed-transaction-six-solutions",
+      "title": "分布式事务最全图解（6种方案）：从强一致的2PC到最终对账",
+      "path": "Archive/2026-10-22-distributed-transaction-six-solutions.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "工程实践",
+        "分布式事务"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/iefb1PSKWHDdfnE_QKDwIQ",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "分布式事务六种方案的完整梳理：2PC（及致命伤）、本地消息表、RocketMQ 事务消息、TCC、事务状态表+补偿、同步双写+异步对账。从强一致到最终一致，覆盖从理论到落地的全路径。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/distributed-transaction-six-solutions.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-22-k8s-ha-cluster-setup-guide",
+      "title": "K8s从零搭建高可用集群：保姆级图文实战教程（3 Master + 2 Worker）",
+      "path": "Archive/2026-10-22-k8s-ha-cluster-setup-guide.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "Kubernetes",
+        "课程",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/_o_wiC0G8xaqdWWgMjbJLw",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "从裸机到可\"拔电源\"演练的生产级 K8s：3 控制面堆叠 etcd（Raft 三成员）+ HAProxy/Keepalived 统一 VIP + Calico VXLAN 组网。全量脚本/YAML 可复制，含国内镜像拉取失败四大场景解法与三个故障演练。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/k8s-ha-cluster-setup-guide.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-22-mq-message-backlog-solutions",
+      "title": "RabbitMQ vs RocketMQ，消息堆积了怎么办？一线解决方案全解析！",
+      "path": "Archive/2026-10-22-mq-message-backlog-solutions.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "Kafka"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/nXNdub_DSqJSnf73PWLLRg",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "消息堆积（生产快于消费导致队列积压）的排查与解决指南：分别给出 RabbitMQ 与 RocketMQ 的消费者/队列/生产者优化代码，以及应急处理三板斧（临时扩容、消息分流、消息清理），并按电商/金融/内容三类业务场景给出差异化策略。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/mq-message-backlog-solutions.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-22-mq-transaction-idempotency-design",
+      "title": "消息队列架构设计（中篇）：事务消息、业务幂等，保障单据数据一致性",
+      "path": "Archive/2026-10-22-mq-transaction-idempotency-design.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "分布式事务",
+        "Kafka"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/mR9XYzUnXQaEn2aW9X5nJA",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "大宗商品销采运储系统架构连载中篇。解决\"数据库事务和消息发送的原子性\"与\"消息重复投递脏数据\"两大难题：RocketMQ 事务消息保发送、业务幂等保消费，两板斧配合让单据流转不丢不重。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/mq-transaction-idempotency-design.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-22-mysql-replication-lag-optimization",
+      "title": "数据库主从同步延迟，业务还能稳吗？一线优化实战全解析！",
+      "path": "Archive/2026-10-22-mysql-replication-lag-optimization.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "MySQL"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/HTI_FoM1PT1jSKo0ZCqurQ",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "MySQL 主从同步延迟的系统性优化指南：从延迟成因（写入压力、网络、从库性能、大事务）出发，给出监控诊断（Seconds_Behind_Master/GTID 差距）、五个层面的优化方案（主库写入/网络/从库/复制架构/应用层），以及 Spring Boot 读写分离 + 延迟感知路由的实战代码。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/mysql-replication-lag-optimization.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-22-netty-iot-gateway-resilient-design",
+      "title": "百万 IoT 设备并发接入：把 Netty 网关做成可恢复、可验证的连接系统",
+      "path": "Archive/2026-10-22-netty-iot-gateway-resilient-design.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "Netty",
+        "IoT",
+        "分布式系统"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/Ymasw1q6aL5JGcIvv4y04w",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "百万设备长连接接入层的硬核工程指南：不堆组件而是从不变量出发——EventLoop 不阻塞、会话只被所有者删除、内存队列有界、commandId 幂等。覆盖协议设计、会话路由原子性、命令状态机、Drain 发布、压测验收全流程。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-iot-gateway-resilient-design.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-22-netty-redis-kafka-iot-gateway",
+      "title": "扛住百万设备长连接：用 Netty + Redis + Kafka 搭建 IoT 接入平台",
+      "path": "Archive/2026-10-22-netty-redis-kafka-iot-gateway.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "Kafka",
+        "分布式系统"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/ci_Fgd4x4Kh9oi7CP26pUg",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "以智能充电桩平台（常态 60 万、峰值百万设备，上行 5~10 万条/秒）为主线，讲清 IoT 长连接接入平台的生产级架构：Netty 负责连接收发、Redis 做会话路由中心、Kafka 解耦上下行，并补齐连接风暴治理、背压、幂等、离线补偿、无损下线等工程化细节与完整代码骨架。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-redis-kafka-iot-gateway.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-22-nginx-websocket-million-connections",
+      "title": "百万 WebSocket 长连接背后的 Nginx 架构设计与踩坑实录",
+      "path": "Archive/2026-10-22-nginx-websocket-million-connections.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "分布式系统",
+        "nginx",
+        "WebSocket"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/b-WPvJdAEI6fsxyN9hQysA",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "系统讲解 Nginx 作为 WebSocket 反向代理的生产级实践：从握手原理、最小可用配置到容量模型、负载均衡、优雅下线、内核调优与可观测性，附 Go 网关代码示例与 10 类线上踩坑实录。核心观点：WebSocket 不是 HTTP 网关的平移，而是\"连接资产运营\"，需当完整实时通信基础设施来设计。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/nginx-websocket-million-connections.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-22-redisearch-vs-elasticsearch",
+      "title": "换掉 ES！Redis 官方搜索引擎 RediSearch 介绍与实操",
+      "path": "Archive/2026-10-22-redisearch-vs-elasticsearch.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "Elasticsearch"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/L5VrkgzkEGWrsWOgX9aCHA",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "RediSearch 入门文章：介绍这个 Redis 模块的全文搜索/二次索引能力、与 Elasticsearch 的官方基准对比（索引构建快 58%、查询吞吐 4 倍）、安装方式与 ft.* 命令行实操（建索引、增删文档、中文查询、模糊匹配、别名）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/redisearch-vs-elasticsearch.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-22-rocketmq-advanced-reliability-idempotency",
+      "title": "RocketMQ 进阶：消息可靠性、幂等、顺序消息、延时消息与高可用，一篇彻底搞懂",
+      "path": "Archive/2026-10-22-rocketmq-advanced-reliability-idempotency.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "RocketMQ",
+        "分布式事务",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/oG2MVFFHiLeMgeDimbyt-w",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "RocketMQ 进阶九问通关：可靠性三阶段保障、幂等四种落地方案、消息积压扩容策略、局部顺序选队列、Tag/SQL 过滤、18 级延时实现、半消息事务八步、死信队列、主从集群读写高可用。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/rocketmq-advanced-reliability-idempotency.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-22-rocketmq-interview-8-topics",
+      "title": "RocketMQ 面试连环炮：8 大核心题一篇讲透",
+      "path": "Archive/2026-10-22-rocketmq-interview-8-topics.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "RocketMQ",
+        "分布式事务",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/0C8U2RrwoXbhzSy_Hl2jqw",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "RocketMQ 八模块通关地图：架构四组件、CommitLog+ConsumeQueue 存储、三种发送/消费模式、事务消息半消息+回查、刷盘与主从复制可靠性组合、At-Least-Once 幂等设计、消息堆积治理流程。每题按\"标准答案→原理→生产坑点→加分项\"展开。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/rocketmq-interview-8-topics.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-22-signin-system-distributed-evolution",
+      "title": "从 0 到 1 亿：Spring Boot 签到打卡系统的分布式架构演进与生产级避坑指南",
+      "path": "Archive/2026-10-22-signin-system-distributed-evolution.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "工程实践",
+        "Kafka"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/Ig7Y4uOQWzBe97p51udlHQ",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "以 1 亿账户、500 万日签到、30K QPS 峰值的内容 App 签到系统为案例，给出生产级方案：Redis 按日期+用户分桶 Bitmap 做热判定，DB Command Outbox 做恢复锚点，Stream+Dispatcher+Kafka 做异步投递，签到/积分双 Ledger 唯一键幂等，配故障复盘与压测清单。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/signin-system-distributed-evolution.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-22-spring-boot-startup-speedup",
+      "title": "Spring Boot 启动加速实战：从 8 秒到 2 秒的 5 个优化点",
+      "path": "Archive/2026-10-22-spring-boot-startup-speedup.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/QnH9PyiwXgf-0OdAb19GOQ",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "一个 Spring Boot 3.2 订单服务的启动优化实录：从 8.2s 压到 2~3.6s。核心思路是\"启动慢 = 容器替你做了太多没要的事\"，通过关闭多余自动配置、收窄类扫描、容器选型、JVM AOT、懒加载五步逐一清零浪费，每步附实测耗时与适用场景决策。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/spring-boot-startup-speedup.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-22-stress-test-capacity-planning",
+      "title": "第二十课：高并发系统压测与容量规划",
+      "path": "Archive/2026-10-22-stress-test-capacity-planning.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "课程",
+        "工程实践",
+        "分布式系统"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/BhCRjKjsYNftqmQQP9pT-Q",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "架构师之路系列第 20 课。从\"拍脑袋估流量\"到科学容量体系：峰值 QPS 估算公式、压测三板斧、影子库数据隔离、wrk2 恒定速率、性能曲线拐点解读、机器数公式与 70/80/90 水位线管理，附 5 个压测失真坑与自检脚本。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/stress-test-capacity-planning.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-22-weibo-gpt2-to-llama-tutorial",
+      "title": "从零手写大模型进阶教程：从 GPT-2 到 LLaMA 的 4 个关键零件",
+      "path": "Archive/2026-10-22-weibo-gpt2-to-llama-tutorial.md",
+      "created": "2026-10-22",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "课程"
+      ],
+      "source": "微博",
+      "source_url": "https://weibo.com/2194035935/5356368037153150",
+      "source_type": "link",
+      "platform": "微博",
+      "summary": "微博博主「蚁工厂」推荐纳米AI（nano-ai.tech）的免费教程《从 GPT-2 到 LLaMA》：回答「2019 年的 GPT-2 与今天的 LLaMA/Qwen/DeepSeek 到底差在哪」。结论是骨架仍是 Transformer，真正演进的是 4 个关键零件——RMSNorm（归一化简化）、SwiGLU（前馈网络升级）、RoPE（旋转位置编码）、GQA（分组查询注意力）。教程共 5 篇，用「猫吃鱼」同一个小例子贯穿，数字可手算、代码可直接跑，适合手写完 GPT-2 后进阶。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/weibo-gpt2-to-llama-tutorial.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-23-ai-engineering-interview-questions",
+      "title": "AI Engineering Interview Questions：公开 AI 工程面试题库",
+      "path": "Archive/2026-10-23-ai-engineering-interview-questions.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "课程"
+      ],
+      "source": "微博",
+      "source_url": "https://weibo.com/5648162302/5356356632055233",
+      "source_type": "link",
+      "platform": "weibo",
+      "summary": "开源项目 ai-engineering-interview-questions，按主题收录 AI 工程面试问题并附讲解入口，覆盖 LLM 基础到生产部署全链路，适合面试前自查知识覆盖。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/weibo-5356356632055233.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-23-deep-thinking-training",
+      "title": "如何锻炼出强悍的深度思考能力？",
+      "path": "Archive/2026-10-23-deep-thinking-training.md",
+      "created": "2026-10-23",
+      "category": "学习",
+      "tags": [
+        "思维方式",
+        "个人成长"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/846BxF4GkiMtwXC1_tFssQ",
+      "source_type": "link",
+      "platform": "weixin",
+      "summary": "深度思考是围绕具体问题弄清概念与事实、分析原因条件、再用证据检查判断的过程；它可以通过五个日常习惯刻意练习形成。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/deep-thinking-training.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-23-logical-thinking-models",
+      "title": "分析问题的逻辑思考方法（14个模型）",
+      "path": "Archive/2026-10-23-logical-thinking-models.md",
+      "created": "2026-10-23",
+      "category": "学习",
+      "tags": [
+        "思维方式",
+        "个人成长"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/FMdD6D9B_jES4SLO0QMmow",
+      "source_type": "link",
+      "platform": "weixin",
+      "summary": "一套由 14 个经典模型组成的逻辑思考流程：界定拆解 → 归因 → 对比关联 → 评估验证 → 综合迭代，每个模型都强调\"有证据、可检查\"。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/logical-thinking-models.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-23-proposal-logic-structures",
+      "title": "写方案的人，一定要掌握这6种逻辑结构",
+      "path": "Archive/2026-10-23-proposal-logic-structures.md",
+      "created": "2026-10-23",
+      "category": "学习",
+      "tags": [
+        "写作",
+        "思维方式"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/RlqmqwGPM3dpHyTS1I1nlA",
+      "source_type": "link",
+      "platform": "weixin",
+      "summary": "多数方案输在结构而非内容：6 种逻辑结构覆盖 90% 方案场景，让读者顺着你的思路走，不用费力就能同意。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/proposal-logic-structures.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-23-springboot-global-exception-handling",
+      "title": "Spring Boot 3.x 全局异常处理最佳实践：从入门到生产级方案",
+      "path": "Archive/2026-10-23-springboot-global-exception-handling.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "spring",
+        "工程实践",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/jmeVH93lmJBVRdjl-cqdTg",
+      "source_type": "link",
+      "platform": "weixin",
+      "summary": "用 `@RestControllerAdvice` + `@ExceptionHandler` 一处配置全局生效，配合统一响应体、异常码枚举与断言工具，替代 Controller 里散落的 try-catch。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/springboot-global-exception-handling.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-23-springboot-structured-logging",
+      "title": "SpringBoot 结构化日志实战",
+      "path": "Archive/2026-10-23-springboot-structured-logging.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "spring",
+        "工程实践",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/0iAUApAJQCJKfn02SbbYOw",
+      "source_type": "link",
+      "platform": "weixin",
+      "summary": "结构化日志把每条日志输出为固定 JSON 字段，可直接按字段过滤聚合；Spring Boot 3.4 起内置支持，两行配置即可从纯文本切到 ECS/Logstash 格式。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/springboot-structured-logging.md",
       "wiki_status": "ingested"
     }
   ]

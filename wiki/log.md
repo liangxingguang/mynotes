@@ -118,3 +118,28 @@
 - 2026-10-23 01:35 | ingest | raw/sources/architecture/2026-10-21-raft-membership-log-barrier.md | wiki/sources/raft-membership-log-barrier.md（新建）；新建概念页 raft-membership-change-barrier
 - 2026-10-23 01:35 | ingest | raw/sources/architecture/2026-10-21-scg-traceid-full-chain.md | wiki/sources/scg-traceid-full-chain.md（新建）；新建概念页 reactive-tracing-context
 - 2026-10-23 01:35 | ingest | raw/sources/ai/2026-10-21-spring-ai-milvus-rag-production.md | wiki/sources/spring-ai-milvus-rag-production.md（新建，confidence=medium，设计示例）；新建概念页 rag-production-guardrails
+- 2026-10-23 01:36 | ingest | raw/sources/architecture/2026-10-22-async-task-system-design.md | wiki/sources/async-task-system-design.md（新建）；durable-execution 概念并入第 4 信源
+- 2026-10-23 01:36 | ingest | raw/sources/misc/2026-10-22-critical-thinking-six-priorities.md | wiki/sources/critical-thinking-six-priorities.md（新建，confidence=medium）
+- 2026-10-23 01:36 | ingest | raw/sources/architecture/2026-10-22-database-high-availability.md | wiki/sources/database-high-availability.md（新建，京东技术五层主线）
+- 2026-10-23 01:39 | ingest | raw/sources/architecture/2026-10-22-k8s-ha-cluster-setup-guide.md | wiki/sources/k8s-ha-cluster-setup-guide.md（新建）
+- 2026-10-23 01:39 | ingest | raw/sources/architecture/2026-10-22-mq-message-backlog-solutions.md | wiki/sources/mq-message-backlog-solutions.md（新建，confidence=medium）；新建实体页 rocketmq（双信源）
+- 2026-10-23 01:39 | ingest | raw/sources/architecture/2026-10-22-mq-transaction-idempotency-design.md | wiki/sources/mq-transaction-idempotency-design.md（新建，Outbox 对照）
+- 2026-10-23 01:44 | ingest | raw/sources/architecture/2026-10-22-mysql-replication-lag-optimization.md | wiki/sources/mysql-replication-lag-optimization.md（新建，confidence=medium）
+- 2026-10-23 01:44 | ingest | raw/sources/architecture/2026-10-22-netty-iot-gateway-resilient-design.md | wiki/sources/netty-iot-gateway-resilient-design.md（新建）；新建实体页 netty（三信源）
+- 2026-10-23 01:44 | ingest | raw/sources/architecture/2026-10-22-netty-redis-kafka-iot-gateway.md | wiki/sources/netty-redis-kafka-iot-gateway.md（新建）；kafka 实体并入第 3 信源
+- 2026-10-23 01:48 | ingest | raw/sources/architecture/2026-10-22-nginx-websocket-million-connections.md | wiki/sources/nginx-websocket-million-connections.md（新建，长连接运营同族）
+- 2026-10-23 01:48 | ingest | raw/sources/architecture/2026-10-22-redisearch-vs-elasticsearch.md | wiki/sources/redisearch-vs-elasticsearch.md（新建，confidence=low，标题党+官方基准）
+- 2026-10-23 01:48 | ingest | raw/sources/architecture/2026-10-22-rocketmq-advanced-reliability-idempotency.md | wiki/sources/rocketmq-advanced-reliability-idempotency.md（新建）；rocketmq 实体并入第 3 信源
+- 2026-10-23 01:52 | ingest | raw/sources/architecture/2026-10-22-rocketmq-interview-8-topics.md | wiki/sources/rocketmq-interview-8-topics.md（新建）；rocketmq 实体并入第 4 信源（存储+5.x DLedger 分水岭）
+- 2026-10-23 01:52 | ingest | raw/sources/architecture/2026-10-22-signin-system-distributed-evolution.md | wiki/sources/signin-system-distributed-evolution.md（新建，durable-execution 第 5 同构印证）
+- 2026-10-23 01:52 | ingest | raw/sources/architecture/2026-10-22-spring-boot-startup-speedup.md | wiki/sources/spring-boot-startup-speedup.md（新建，confidence=medium）
+- 2026-10-23 01:55 | ingest | raw/sources/architecture/2026-10-22-stress-test-capacity-planning.md | wiki/sources/stress-test-capacity-planning.md（新建，架构师之路第 20 课）
+- 2026-10-23 01:55 | ingest | raw/sources/ai/2026-10-22-weibo-gpt2-to-llama-tutorial.md | wiki/sources/weibo-gpt2-to-llama-tutorial.md（新建，confidence=medium，教程推荐）
+- 2026-10-23 01:55 | ingest | raw/sources/ai/2026-10-23-ai-engineering-interview-questions.md | wiki/sources/ai-engineering-interview-questions.md（新建，confidence=low，资源推荐）
+- 2026-10-23 02:02 | ingest | raw/sources/misc/2026-10-23-deep-thinking-training.md | wiki/sources/deep-thinking-training.md（更新：正文实为本篇，补正标题与 sources；2026-10-20 raw frontmatter/正文不符待人工复核）
+- 2026-10-23 02:02 | ingest | raw/sources/misc/2026-10-23-logical-thinking-models.md | wiki/sources/logical-thinking-models.md（新建，confidence=medium，14 模型方法论）
+- 2026-10-23 02:02 | ingest | raw/sources/misc/2026-10-23-proposal-logic-structures.md | wiki/sources/proposal-logic-structures.md（新建，confidence=medium，方案写作结构）
+- 2026-10-23 02:05 | ingest | raw/sources/architecture/2026-10-23-springboot-global-exception-handling.md | wiki/sources/springboot-global-exception-handling.md（新建，confidence=medium，Spring 教程）
+- 2026-10-23 02:05 | ingest | raw/sources/architecture/2026-10-23-springboot-structured-logging.md | wiki/sources/springboot-structured-logging.md（新建，confidence=medium，结构化日志）
+- 2026-10-23 02:07 | ingest | raw/sources/architecture/2026-10-22-distributed-transaction-six-solutions.md | wiki/sources/distributed-transaction-six-solutions.md（新建，confidence=high）+ wiki/entities/rocketmq.md（升级第 5 信源：回查 1min/重试 3 次转人工）
+- 2026-10-23 02:11 | ingest | raw/sources/ai/2026-10-14-llm-wiki-advanced-four-steps.md | wiki/sources/llm-wiki-advanced-four-steps.md（新建，confidence=high，无 asset_ref 已 web-fetch 补抓）+ wiki/concepts/llm-wiki.md（升级第 2 信源：四原则/8 页面类型/权限表）

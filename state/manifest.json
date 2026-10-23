@@ -969,8 +969,11 @@
       "path": "raw/sources/architecture/2026-10-22-async-task-system-design.md",
       "sha256": "5250e719753bcdb2ca8f5501c4dfa57be68a7a7c3e90f93df2a3cabe8d075765",
       "registered_at": "2026-10-23",
-      "inbox_ref": "Inbox/2026-10-22-async-task-system-design.md",
-      "pages": [],
+      "inbox_ref": "Archive/2026-10-22-async-task-system-design.md",
+      "pages": [
+        "wiki/sources/async-task-system-design.md",
+        "wiki/concepts/durable-execution.md"
+      ],
       "source_url": "https://mp.weixin.qq.com/s/AfZ-w5215Bbi4HS6v1fsFA",
       "asset_ref": "Assets/2026/10/async-task-system-design.md"
     },
@@ -978,8 +981,10 @@
       "path": "raw/sources/misc/2026-10-22-critical-thinking-six-priorities.md",
       "sha256": "899ffecabab7ed345eebef04777e92eac8fd3a734e889d1d9e7999dc9f1ca899",
       "registered_at": "2026-10-23",
-      "inbox_ref": "Inbox/2026-10-22-critical-thinking-six-priorities.md",
-      "pages": [],
+      "inbox_ref": "Archive/2026-10-22-critical-thinking-six-priorities.md",
+      "pages": [
+        "wiki/sources/critical-thinking-six-priorities.md"
+      ],
       "source_url": "https://mp.weixin.qq.com/s/_fU0rplhK8ob_Uf85ADwlw",
       "asset_ref": "Assets/2026/10/critical-thinking-six-priorities.md"
     },
@@ -987,8 +992,10 @@
       "path": "raw/sources/architecture/2026-10-22-database-high-availability.md",
       "sha256": "96d3b31a1ccaa5d176d2cf095c391e221d60485902b33bb0cd34cceda0133322",
       "registered_at": "2026-10-23",
-      "inbox_ref": "Inbox/2026-10-22-database-high-availability.md",
-      "pages": [],
+      "inbox_ref": "Archive/2026-10-22-database-high-availability.md",
+      "pages": [
+        "wiki/sources/database-high-availability.md"
+      ],
       "source_url": "https://mp.weixin.qq.com/s/x6c6RSYUdivoou1a6-NV6A",
       "asset_ref": "Assets/2026/10/database-high-availability.md"
     },
@@ -1027,6 +1034,257 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/HgQxSmTRD--3QLTWR7c4wQ",
       "asset_ref": "Assets/2026/10/spring-ai-milvus-rag-production.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-22-k8s-ha-cluster-setup-guide.md",
+      "sha256": "02e79e51e828784873e8ebd4d7b69243c00125072d705e856f80c0b082fcb790",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-22-k8s-ha-cluster-setup-guide.md",
+      "pages": [
+        "wiki/sources/k8s-ha-cluster-setup-guide.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/_o_wiC0G8xaqdWWgMjbJLw",
+      "asset_ref": "Assets/2026/10/k8s-ha-cluster-setup-guide.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-22-mq-message-backlog-solutions.md",
+      "sha256": "4e30438543168c3b116194713462050a6e903388e7a277a4f8d1cb6ee916f648",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-22-mq-message-backlog-solutions.md",
+      "pages": [
+        "wiki/sources/mq-message-backlog-solutions.md",
+        "wiki/entities/rocketmq.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/nXNdub_DSqJSnf73PWLLRg",
+      "asset_ref": "Assets/2026/10/mq-message-backlog-solutions.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-22-mq-transaction-idempotency-design.md",
+      "sha256": "d8eb75e7ed4ba8edab59d7fc7bbae6bf3f22e13c5b7a5cf7da2b7734feb42ba2",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-22-mq-transaction-idempotency-design.md",
+      "pages": [
+        "wiki/sources/mq-transaction-idempotency-design.md",
+        "wiki/entities/rocketmq.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/mR9XYzUnXQaEn2aW9X5nJA",
+      "asset_ref": "Assets/2026/10/mq-transaction-idempotency-design.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-22-mysql-replication-lag-optimization.md",
+      "sha256": "45244f654ee1c546b1a8bed10e3c7810c4afeac93fc1c55cf1f05fef70ccae16",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-22-mysql-replication-lag-optimization.md",
+      "pages": [
+        "wiki/sources/mysql-replication-lag-optimization.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/HTI_FoM1PT1jSKo0ZCqurQ",
+      "asset_ref": "Assets/2026/10/mysql-replication-lag-optimization.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-22-netty-iot-gateway-resilient-design.md",
+      "sha256": "3f38d3c126cb3046a674cd15afb23ccdff40fb7402cb472c5325def8714fe1c6",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-22-netty-iot-gateway-resilient-design.md",
+      "pages": [
+        "wiki/sources/netty-iot-gateway-resilient-design.md",
+        "wiki/entities/netty.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/Ymasw1q6aL5JGcIvv4y04w",
+      "asset_ref": "Assets/2026/10/netty-iot-gateway-resilient-design.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-22-netty-redis-kafka-iot-gateway.md",
+      "sha256": "d308abf8ee4950c767e18d757ad65ec6f61e4f2d0c1ebe324673ff2a1e9e4e8c",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-22-netty-redis-kafka-iot-gateway.md",
+      "pages": [
+        "wiki/sources/netty-redis-kafka-iot-gateway.md",
+        "wiki/entities/netty.md",
+        "wiki/entities/kafka.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/ci_Fgd4x4Kh9oi7CP26pUg",
+      "asset_ref": "Assets/2026/10/netty-redis-kafka-iot-gateway.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-22-nginx-websocket-million-connections.md",
+      "sha256": "76d7edacf35985d1f61b1ebe21813884e36c7d8c589a5be1627f76213ba58566",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-22-nginx-websocket-million-connections.md",
+      "pages": [
+        "wiki/sources/nginx-websocket-million-connections.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/b-WPvJdAEI6fsxyN9hQysA",
+      "asset_ref": "Assets/2026/10/nginx-websocket-million-connections.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-22-redisearch-vs-elasticsearch.md",
+      "sha256": "de2bdcf3742775ca760a6750776c3c5b06d58eb5db92976cdf4635c6cd5f8f61",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-22-redisearch-vs-elasticsearch.md",
+      "pages": [
+        "wiki/sources/redisearch-vs-elasticsearch.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/L5VrkgzkEGWrsWOgX9aCHA",
+      "asset_ref": "Assets/2026/10/redisearch-vs-elasticsearch.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-22-rocketmq-advanced-reliability-idempotency.md",
+      "sha256": "2d15920ed68b5d83533bd23198486c966711829526219bd8af675b1a62737b39",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-22-rocketmq-advanced-reliability-idempotency.md",
+      "pages": [
+        "wiki/sources/rocketmq-advanced-reliability-idempotency.md",
+        "wiki/entities/rocketmq.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/oG2MVFFHiLeMgeDimbyt-w",
+      "asset_ref": "Assets/2026/10/rocketmq-advanced-reliability-idempotency.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-22-rocketmq-interview-8-topics.md",
+      "sha256": "f5ae26d3ea6539e33e59d475780ac54d4b33182fe1eba28c0be7e933e26d07c6",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-22-rocketmq-interview-8-topics.md",
+      "pages": [
+        "wiki/sources/rocketmq-interview-8-topics.md",
+        "wiki/entities/rocketmq.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/0C8U2RrwoXbhzSy_Hl2jqw",
+      "asset_ref": "Assets/2026/10/rocketmq-interview-8-topics.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-22-signin-system-distributed-evolution.md",
+      "sha256": "96287adaf14037297123bedb160f500bb71061abcdcdff32dbd71f6aa230711f",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-22-signin-system-distributed-evolution.md",
+      "pages": [
+        "wiki/sources/signin-system-distributed-evolution.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/Ig7Y4uOQWzBe97p51udlHQ",
+      "asset_ref": "Assets/2026/10/signin-system-distributed-evolution.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-22-spring-boot-startup-speedup.md",
+      "sha256": "edd893f450545c6caac156f9c19b7746fa88a43d7650cdd32c8b3f5c6e3032ff",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-22-spring-boot-startup-speedup.md",
+      "pages": [
+        "wiki/sources/spring-boot-startup-speedup.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/QnH9PyiwXgf-0OdAb19GOQ",
+      "asset_ref": "Assets/2026/10/spring-boot-startup-speedup.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-22-stress-test-capacity-planning.md",
+      "sha256": "e3a5e68e9de0901f30d34a43e936e6f10e8963d19cc51b7d1776bf123f25ee3d",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-22-stress-test-capacity-planning.md",
+      "pages": [
+        "wiki/sources/stress-test-capacity-planning.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/BhCRjKjsYNftqmQQP9pT-Q",
+      "asset_ref": "Assets/2026/10/stress-test-capacity-planning.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-22-weibo-gpt2-to-llama-tutorial.md",
+      "sha256": "dcd541fd06459f06947468f3694edbf58e31648232547daf9884f8ef1fb4818a",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-22-weibo-gpt2-to-llama-tutorial.md",
+      "pages": [
+        "wiki/sources/weibo-gpt2-to-llama-tutorial.md"
+      ],
+      "source_url": "https://weibo.com/2194035935/5356368037153150",
+      "asset_ref": "Assets/2026/10/weibo-gpt2-to-llama-tutorial.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-23-ai-engineering-interview-questions.md",
+      "sha256": "93a13e3437739d4f1eeeb1859799d9391a7f10ebc8a119d54e9851107cef8096",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-23-ai-engineering-interview-questions.md",
+      "pages": [
+        "wiki/sources/ai-engineering-interview-questions.md"
+      ],
+      "source_url": "https://weibo.com/5648162302/5356356632055233",
+      "asset_ref": "Assets/2026/10/weibo-5356356632055233.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-23-deep-thinking-training.md",
+      "sha256": "744dc210283cceaacbb0a92873d1ec25ba37969787ab3fafd3a76df18bad7dd1",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-23-deep-thinking-training.md",
+      "pages": [
+        "wiki/sources/deep-thinking-training.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/846BxF4GkiMtwXC1_tFssQ",
+      "asset_ref": "Assets/2026/10/deep-thinking-training.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-23-logical-thinking-models.md",
+      "sha256": "ed8e39e6a0d42b40e718e8607565c970bb0a4689ae4ea500ab46b1d967f446a6",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-23-logical-thinking-models.md",
+      "pages": [
+        "wiki/sources/logical-thinking-models.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/FMdD6D9B_jES4SLO0QMmow",
+      "asset_ref": "Assets/2026/10/logical-thinking-models.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-23-proposal-logic-structures.md",
+      "sha256": "12ef18a92ab33dcb313b93baefb74525e1e16e0fe1e7b954a27bc1ad84176328",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-23-proposal-logic-structures.md",
+      "pages": [
+        "wiki/sources/proposal-logic-structures.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/RlqmqwGPM3dpHyTS1I1nlA",
+      "asset_ref": "Assets/2026/10/proposal-logic-structures.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-springboot-global-exception-handling.md",
+      "sha256": "b1d1685147bcddf58039d6111278ee6dfb9e0a6949305d6b5d95aa5f20a84953",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-23-springboot-global-exception-handling.md",
+      "pages": [
+        "wiki/sources/springboot-global-exception-handling.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/jmeVH93lmJBVRdjl-cqdTg",
+      "asset_ref": "Assets/2026/10/springboot-global-exception-handling.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-springboot-structured-logging.md",
+      "sha256": "9a11fbb2f6b338b7c86cf600856d1ad9e62abdb8cf8241fd04838ebf456f1356",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-23-springboot-structured-logging.md",
+      "pages": [
+        "wiki/sources/springboot-structured-logging.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/0iAUApAJQCJKfn02SbbYOw",
+      "asset_ref": "Assets/2026/10/springboot-structured-logging.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-22-distributed-transaction-six-solutions.md",
+      "sha256": "7290de101261c9f627a5c4b2ab781d1f0cd2dc78e58c68dc7397dd79043d3e50",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-22-distributed-transaction-six-solutions.md",
+      "pages": [
+        "wiki/sources/distributed-transaction-six-solutions.md",
+        "wiki/entities/rocketmq.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/iefb1PSKWHDdfnE_QKDwIQ",
+      "asset_ref": "Assets/2026/10/distributed-transaction-six-solutions.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-14-llm-wiki-advanced-four-steps.md",
+      "sha256": "3c90fffe0c71ce1782f056c3e20ecc6921fb308d767c0a81a24bfa116d3c75f6",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-14-llm-wiki-advanced-four-steps.md",
+      "pages": [
+        "wiki/sources/llm-wiki-advanced-four-steps.md",
+        "wiki/concepts/llm-wiki.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/HTp72kpUvbylh7hOrwpKbQ",
+      "asset_ref": "Assets/2026/10/llm-wiki-advanced-four-steps.md"
     }
   ]
 }

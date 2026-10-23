@@ -1,0 +1,68 @@
+---
+title: 从零手写大模型进阶教程：从 GPT-2 到 LLaMA 的 4 个关键零件
+source: 微博
+source_url: "https://weibo.com/2194035935/5356368037153150"
+source_type: link
+platform: 微博
+captured: 2026-10-22
+registered_at: 2026-10-23
+inbox_ref: Inbox/2026-10-22-weibo-gpt2-to-llama-tutorial.md
+asset_ref: Assets/2026/10/weibo-gpt2-to-llama-tutorial.md
+---
+
+# 从零手写大模型进阶教程：从 GPT-2 到 LLaMA 的 4 个关键零件
+
+# 微博正文 · 蚁工厂：纳米AI 教程《从 GPT-2 到 LLaMA》
+
+> 抓取自 https://weibo.com/2194035935/5356368037153150 （经 r.jina.ai，fetch_level=jina）
+> 发布时间：2026-10-21 00:05 · 发布于山东 · 来自微博网页版
+> 博主：蚁工厂（科技博主，58万粉丝） · 互动：52 转发 / 4 评论 / 68 赞
+
+## 微博正文
+
+纳米AI 的教程：从 GPT-2 到 LLaMA
+在这里： https://nano-ai.tech/series/gpt2-to-llama/
+之前他还发过从零手写大模型系列教程。
+
+作者写的介绍：
+
+"整理了《从零手写大模型之从GPT-2到LLaMA》学习教程
+
+GPT-2到LLaMA，中间隔了4年
+最关键的改动，集中在4个零件上
+手写完GPT-2之后，我一直卡在一个问题上：
+2019年的GPT-2
+和今天的LLaMA、Qwen、DeepSeek，到底差在哪？
+
+带着这个问题，我把LLaMA的结构拆开
+一个零件一个零件对着GPT-2去学
+学下来发现，骨架还是那个Transformer
+真正变的是几个关键零件
+
+每一篇都用同一个小例子"猫吃鱼"贯穿到底
+数字小到可以手算，配套代码也能直接跑
+看完可以自己跟着练一遍
+
+最后整理成了这5篇：
+01 RMSNorm：简化归一化
+02 SwiGLU：升级前馈网络
+03 RoPE：旋转位置编码
+04 GQA：分组查询注意力
+05 LLaMA：组装完整模型
+
+对我自己来说，这一段是承上启下：
+手写GPT-2，让我搞懂了Transformer怎么跑
+学完零件替换，才算明白现代大模型为什么长这样
+
+整理好的完整版放在这里
+如果你也是从GPT-2入门的，可以直接接着看："
+
+## 评论区（节选）
+
+- 霄汉造镜：360那个纳米ai吗，路边一条
+- 蚁工厂：不是，是这个（附图）
+
+## 相关链接
+
+- 教程地址：https://nano-ai.tech/series/gpt2-to-llama/
+- 前置系列（从零手写大模型）：https://weibo.com/2194035935/RjSwqt9Hp

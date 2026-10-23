@@ -14,10 +14,13 @@ tags:
 sources:
   - raw/sources/architecture/2026-10-21-kafka-fast-four-mechanisms.md
   - raw/sources/architecture/2026-10-21-kafka-ops-tools-five-essentials.md
+  - raw/sources/architecture/2026-10-22-netty-redis-kafka-iot-gateway.md
 related:
   - wiki/sources/kafka-fast-four-mechanisms.md
   - wiki/sources/kafka-ops-tools-five-essentials.md
   - wiki/sources/ecommerce-search-realtime-personalization.md
+  - wiki/sources/netty-redis-kafka-iot-gateway.md
+  - wiki/entities/netty.md
 ---
 # Apache Kafka
 
@@ -39,6 +42,7 @@ related:
 - 写入可靠性语义：至少一次投递是正常路径（响应丢失会重发），正确姿势是 manual ack + 下游幂等/版本约束，不存在开箱 exactly-once（与 [[ecommerce-search-realtime-personalization]] 的 Kafka→ES 链路互证）。
 - 运维工具栈（2026 口径）：看→Kafka UI（最活跃、KRaft 友好、生产须认证+只读+内网）；改→kafka-topics.sh/kafka-configs.sh 脚本化进 Git（三个 --describe 过滤参数做每日巡检）；Lag 告警→Burrow（按消费组自身基线滑窗判定，抓"应用活着但消费死了"的 STOP 状态）；集群指标→Prometheus kafka_exporter+Grafana；CMAK（原 Yahoo Kafka Manager）依赖 ZK，KRaft 新集群不推荐。
 - 分工哲学：CLI 定义事实，UI 降低门槛；Exporter 出面板（人看），Burrow 出决策（机器判）。
+- IoT 接入层用法（第 3 信源）：`key=deviceId` 按设备分区保单设备状态机顺序（插枪→充电→停止→结算乱序即错乱），消费端设备维度串行；生产者 acks=all+幂等+`max.in.flight=1` 保顺序；边界互证"只保证分区内有序"——超级热点设备会拖慢同分区其他设备，强一致场景消费侧仍需版本号/序列号校验。
 
 ## Products / Projects（产品／项目）
 
@@ -58,9 +62,10 @@ related:
 
 ## Current Understanding（当前认知）
 
-两个信源构成"机制+运维"互补：理解四板斧才能解释集群参数（小堆、关 swap、batch 调优），理解工具栈才能落地日常运维。一致立场：Kafka 的快来自"不浪费"——磁盘顺序、内存靠 OS、CPU 不当搬运工、网络省次数（两信源互证，置信度高）。
+三个信源构成"机制+运维+场景"互补：理解四板斧才能解释集群参数（小堆、关 swap、batch 调优），理解工具栈才能落地日常运维，IoT 场景把"分区内有序+幂等生产者"落到设备状态机保序。一致立场：Kafka 的快来自"不浪费"——磁盘顺序、内存靠 OS、CPU 不当搬运工、网络省次数（三信源互证，置信度高）。
 
 ## Evidence（证据）
 
 - `raw/sources/architecture/2026-10-21-kafka-fast-four-mechanisms.md`（性能机制）
 - `raw/sources/architecture/2026-10-21-kafka-ops-tools-five-essentials.md`（运维工具栈）
+- `raw/sources/architecture/2026-10-22-netty-redis-kafka-iot-gateway.md`（IoT 接入层：deviceId 分区保序、幂等生产者配置）

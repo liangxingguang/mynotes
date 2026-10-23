@@ -1,7 +1,7 @@
 ---
 id: wiki-source-deep-thinking-training
 type: source
-title: 如何锻炼深度思考能力？（给思考留点时间）
+title: 如何锻炼出强悍的深度思考能力？（给思考留点时间）
 status: active
 created: 2026-10-23
 updated: 2026-10-23
@@ -12,9 +12,12 @@ tags:
   - methodology
 sources:
   - raw/sources/misc/2026-10-20-deep-thinking-training.md
-related: []
+  - raw/sources/misc/2026-10-23-deep-thinking-training.md
+related:
+  - wiki/sources/logical-thinking-models.md
+  - wiki/sources/critical-thinking-six-priorities.md
 ---
-# 如何锻炼深度思考能力？（给思考留点时间）
+# 如何锻炼出强悍的深度思考能力？（给思考留点时间）
 
 ## Overview（概览）
 
@@ -51,11 +54,14 @@ related: []
 ## Limitations（局限）
 
 - 个人经验散文，案例均为作者自述；无实证研究支撑（除引卡尼曼外）。
+- 信源异常（2026-10-23 复核）：`raw/sources/misc/2026-10-20-deep-thinking-training.md` 的登记 frontmatter（标题"3个习惯、4个训练方法…"、URL `…/xbkGmXwf9WqVqTnjGq7dRg`）与正文不符——正文实际是本页文章（URL `…/846BxF4GkiMtwXC1_tFssQ`），系采集层两篇同名 slug 共用 `Assets/2026/10/deep-thinking-training.md` 导致原件被覆盖。raw 不可变，原文 A 全文缺失，需人工重新抓取补登记。
 
 ## Related Knowledge（相关知识）
 
-（无）
+- [[logical-thinking-models|分析问题的逻辑思考方法（14个模型）（信源页）]]（同作者，5Why/证据检查主线互通）
+- [[critical-thinking-six-priorities|批判性思维六件事（信源页）]]（"给观点留检查步骤"同旨）
 
 ## Source（信源）
 
 - `raw/sources/misc/2026-10-20-deep-thinking-training.md`
+- `raw/sources/misc/2026-10-23-deep-thinking-training.md`
