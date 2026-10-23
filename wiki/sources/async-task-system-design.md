@@ -16,8 +16,10 @@ sources:
   - raw/sources/architecture/2026-10-22-async-task-system-design.md
 related:
   - wiki/concepts/durable-execution.md
+  - wiki/concepts/idempotency-design.md
   - wiki/sources/spring-async-to-task-table.md
   - wiki/sources/agent-long-task-reliable-execution.md
+  - wiki/sources/async-idempotency-local-message-table.md
 ---
 # 异步任务系统怎么设计？从提交、排队、执行到幂等和重试
 
@@ -63,8 +65,10 @@ related:
 ## Related Knowledge（相关知识）
 
 - [[durable-execution|持久执行（概念页）]]
+- [[idempotency-design|幂等设计（概念页）]]
 - [[spring-async-to-task-table|任务表 + Worker（信源页）]]
 - [[agent-long-task-reliable-execution|Agent 长任务可靠执行 Go+PG（信源页）]]
+- [[async-idempotency-local-message-table|异步链路幂等实战（信源页）]]
 
 ## Source（信源）
 

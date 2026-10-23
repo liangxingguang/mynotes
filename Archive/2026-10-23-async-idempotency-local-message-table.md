@@ -12,7 +12,7 @@ tags:
   - 分布式事务
   - 工程实践
 asset_ref: Assets/2026/10/async-idempotency-local-message-table.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 异步链路幂等实战：本地消息表配套防重，解决重复扣款与消息重放

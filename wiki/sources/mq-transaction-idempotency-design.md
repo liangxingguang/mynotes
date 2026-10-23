@@ -19,6 +19,8 @@ related:
   - wiki/sources/async-task-system-design.md
   - wiki/sources/mq-message-backlog-solutions.md
   - wiki/concepts/durable-execution.md
+  - wiki/concepts/idempotency-design.md
+  - wiki/sources/async-idempotency-local-message-table.md
 ---
 # 消息队列架构设计（中篇）：事务消息、业务幂等，保障单据数据一致性
 
@@ -64,6 +66,8 @@ related:
 - [[async-task-system-design|异步任务系统设计（信源页）]]（Outbox 解法对照）
 - [[mq-message-backlog-solutions|MQ 消息堆积治理（信源页）]]
 - [[durable-execution|持久执行（概念页）]]
+- [[idempotency-design|幂等设计（概念页）]]
+- [[async-idempotency-local-message-table|异步链路幂等实战（信源页）]]（同事务铁律的事故侧证据）
 
 ## Source（信源）
 

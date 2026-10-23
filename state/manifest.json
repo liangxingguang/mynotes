@@ -1285,6 +1285,18 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/HTp72kpUvbylh7hOrwpKbQ",
       "asset_ref": "Assets/2026/10/llm-wiki-advanced-four-steps.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-async-idempotency-local-message-table.md",
+      "sha256": "e57c4cecddede99602d455667d7bfb7892b60bd18f94a78abdb05045d9aaed15",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-23-async-idempotency-local-message-table.md",
+      "pages": [
+        "wiki/sources/async-idempotency-local-message-table.md",
+        "wiki/concepts/idempotency-design.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/bixkfwD0i8YXBmBMgyCaog",
+      "asset_ref": "Assets/2026/10/async-idempotency-local-message-table.md"
     }
   ]
 }
