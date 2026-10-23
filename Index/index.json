@@ -1,6 +1,26 @@
 {
-  "updated_at": "2026-10-23 18:47",
+  "updated_at": "2026-10-23 18:55",
   "notes": [
+    {
+      "id": "2026-10-23-agent-software-architecture-task-run-step-event",
+      "title": "第 5 章：Agent 的软件架构设计（Task/Run/Step/Event 领域模型）",
+      "path": "Inbox/2026-10-23-agent-software-architecture-task-run-step-event.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Harness",
+        "工程实践"
+      ],
+      "source": "知乎专栏《agent-from-scratch》",
+      "source_url": "https://zhuanlan.zhihu.com/p/2096330283423360903",
+      "source_type": "文章",
+      "platform": "知乎",
+      "summary": "从可运行的 Agent Loop 走向 Agent 平台时，需要为控制平面建立显式领域模型：Task（业务意图）、Run（执行尝试）、Step（一步活动）、Event（已发生事实）四者分离、各有身份；配合 Run 状态机守卫、纯函数事件投影、乐观并发控制与幂等事件仓库，构成可验证、可回放、可测试的 Agent Runtime 一致性基础。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/agent-software-architecture-task-run-step-event.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-23-mq-message-backlog-rabbitmq-rocketmq",
       "title": "RabbitMQ vs RocketMQ，消息堆积了怎么办？一线解决方案全解析",
