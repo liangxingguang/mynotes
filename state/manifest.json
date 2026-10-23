@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-10-23T16:33:22.591Z",
+  "updated_at": "2026-10-24T00:00:00.000Z",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -1445,6 +1445,18 @@
       ],
       "source_url": "https://segmentfault.com/a/1190000047833219",
       "asset_ref": "Assets/2026/10/netease-pigeon-message-bus-activity.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-mq-message-backlog-rabbitmq-rocketmq.md",
+      "sha256": "2b9f5654438466f7d26bfee38fce1b3670eef77b0b62488f7cbef4655b5d7ff4",
+      "registered_at": "2026-10-24",
+      "inbox_ref": "Archive/2026-10-23-mq-message-backlog-rabbitmq-rocketmq.md",
+      "pages": [
+        "wiki/sources/mq-message-backlog-solutions.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/uspHedu0uxtmdBEkotYpwg",
+      "asset_ref": "Assets/2026/10/mq-message-backlog-rabbitmq-rocketmq.md",
+      "note": "与 2026-10-22-mq-message-backlog-solutions 为同一文章的不同发布 URL，非独立信源"
     }
   ]
 }

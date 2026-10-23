@@ -162,3 +162,5 @@
 - 2026-10-23 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
 - 2026-10-24 | ingest | raw/sources/architecture/2026-10-23-netease-pigeon-message-bus-activity.md | wiki/sources/netease-pigeon-message-bus-activity.md（新建，52im 系列第 10 篇）+ wiki/entities/pigeon-message-bus.md（新建实体：信鸽）+ wiki/concepts/message-bus.md（新建概念：业务消息总线，confidence=medium，单一信源）+ wiki/entities/rocketmq.md（更新：信鸽选型证据）
 - 2026-10-24 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
+- 2026-10-24 | ingest | raw/sources/architecture/2026-10-23-mq-message-backlog-rabbitmq-rocketmq.md | wiki/sources/mq-message-backlog-solutions.md（更新：sources 加第二 raw；判定为同一文章经双公众号 URL 发布、非独立信源，置信度维持 medium，未新建页面）
+- 2026-10-24 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）

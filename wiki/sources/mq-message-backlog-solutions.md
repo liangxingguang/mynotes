@@ -4,7 +4,7 @@ type: source
 title: RabbitMQ vs RocketMQ，消息堆积了怎么办？一线解决方案全解析
 status: active
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-24
 confidence: medium
 tags:
   - source
@@ -14,6 +14,7 @@ tags:
   - operations
 sources:
   - raw/sources/architecture/2026-10-22-mq-message-backlog-solutions.md
+  - raw/sources/architecture/2026-10-23-mq-message-backlog-rabbitmq-rocketmq.md
 related:
   - wiki/entities/rocketmq.md
   - wiki/sources/mq-transaction-idempotency-design.md
@@ -55,6 +56,7 @@ related:
 ## Limitations（局限）
 
 - 方案清单型文章，代码为示意级；RabbitMQ 示例中手动 ack 与异步处理混用存在 ack 时序争议（解读：先 ack 后异步处理失败会丢消息）。
+- 同一文章经两个公众号 URL 发布（2026-10-22 与 2026-10-23「服务端技术精选」两次采集，正文逐字一致）——两个 raw 登记是**同一信源的两次出现**，不构成独立第二信源，置信度不因之提升。
 
 ## Related Knowledge（相关知识）
 
@@ -64,3 +66,4 @@ related:
 ## Source（信源）
 
 - `raw/sources/architecture/2026-10-22-mq-message-backlog-solutions.md`
+- `raw/sources/architecture/2026-10-23-mq-message-backlog-rabbitmq-rocketmq.md`（同一文章的第二个发布 URL）

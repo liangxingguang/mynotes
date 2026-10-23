@@ -1,26 +1,6 @@
 {
-  "updated_at": "2026-10-24 01:41",
+  "updated_at": "2026-10-24 01:46",
   "notes": [
-    {
-      "id": "2026-10-23-mq-message-backlog-rabbitmq-rocketmq",
-      "title": "RabbitMQ vs RocketMQ，消息堆积了怎么办？一线解决方案全解析",
-      "path": "Inbox/2026-10-23-mq-message-backlog-rabbitmq-rocketmq.md",
-      "created": "2026-10-23",
-      "category": "技术",
-      "tags": [
-        "RocketMQ",
-        "分布式系统",
-        "工程实践"
-      ],
-      "source": "微信公众号「服务端技术精选」",
-      "source_url": "https://mp.weixin.qq.com/s/uspHedu0uxtmdBEkotYpwg",
-      "source_type": "文章",
-      "platform": "微信公众号",
-      "summary": "消息堆积 = 生产速度超过消费速度。文章给出 RabbitMQ 与 RocketMQ 两栈的消费端优化（并发消费者、手动确认、异步处理）、队列配置（TTL/死信/优先级）、应急三板斧（临时扩容、消息分流、消息清理）与监控告警清单的入门方案集。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/mq-message-backlog-rabbitmq-rocketmq.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-10-23-netease-ten-million-live-danmu-cdn-broadcast",
       "title": "网易云信：千万级实时直播弹幕的技术实践",
@@ -2550,6 +2530,26 @@
       "summary": "上篇概念落地为库表与服务：四张表——Notify（消息本体，type 区分公告/提醒/私信，提醒用 target+targetType+action+sender 四元组）、UserNotify（用户消息队列，isRead 标记）、Subscription（订阅：target/targetType/action/user）、SubscriptionConfig（动作级免打扰，JSON，缺省用默认配置）；NotifyConfig 集中管理 targetType/action 枚举与 reasonAction 订阅原因映射；NotifyService 提供创建/拉取/订阅/已读全套方法，私信创建即推入队列，公告与提醒由用户侧按订阅关系 + lastTime 增量拉取。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/message-system-design-part2.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-23-mq-message-backlog-rabbitmq-rocketmq",
+      "title": "RabbitMQ vs RocketMQ，消息堆积了怎么办？一线解决方案全解析",
+      "path": "Archive/2026-10-23-mq-message-backlog-rabbitmq-rocketmq.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "RocketMQ",
+        "分布式系统",
+        "工程实践"
+      ],
+      "source": "微信公众号「服务端技术精选」",
+      "source_url": "https://mp.weixin.qq.com/s/uspHedu0uxtmdBEkotYpwg",
+      "source_type": "文章",
+      "platform": "微信公众号",
+      "summary": "消息堆积 = 生产速度超过消费速度。文章给出 RabbitMQ 与 RocketMQ 两栈的消费端优化（并发消费者、手动确认、异步处理）、队列配置（TTL/死信/优先级）、应急三板斧（临时扩容、消息分流、消息清理）与监控告警清单的入门方案集。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/mq-message-backlog-rabbitmq-rocketmq.md",
       "wiki_status": "ingested"
     },
     {
