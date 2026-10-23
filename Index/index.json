@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23 18:55",
+  "updated_at": "2026-10-23 18:57",
   "notes": [
     {
       "id": "2026-10-23-agent-software-architecture-task-run-step-event",
@@ -19,6 +19,26 @@
       "summary": "从可运行的 Agent Loop 走向 Agent 平台时，需要为控制平面建立显式领域模型：Task（业务意图）、Run（执行尝试）、Step（一步活动）、Event（已发生事实）四者分离、各有身份；配合 Run 状态机守卫、纯函数事件投影、乐观并发控制与幂等事件仓库，构成可验证、可回放、可测试的 Agent Runtime 一致性基础。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/agent-software-architecture-task-run-step-event.md",
+      "wiki_status": "ingesting"
+    },
+    {
+      "id": "2026-10-23-github-open-source-ai-books-6",
+      "title": "这 6 本 GitHub 上的开源 AI 宝典，那是相当有真东西",
+      "path": "Inbox/2026-10-23-github-open-source-ai-books-6.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "github",
+        "课程"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2094018104430946138",
+      "source_type": "文章",
+      "platform": "知乎",
+      "summary": "6 个高质量开源 AI 书籍/教程项目清单，覆盖 Agent 工程、AI Infra、深度学习理论、强化学习数学与实战。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/github-open-source-ai-books-6.md",
       "wiki_status": "pending"
     },
     {
