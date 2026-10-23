@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23 19:06",
+  "updated_at": "2026-10-23 19:07",
   "notes": [
     {
       "id": "2026-10-23-github-open-source-ai-books-6",
@@ -19,6 +19,25 @@
       "summary": "6 个高质量开源 AI 书籍/教程项目清单，覆盖 Agent 工程、AI Infra、深度学习理论、强化学习数学与实战。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/github-open-source-ai-books-6.md",
+      "wiki_status": "ingesting"
+    },
+    {
+      "id": "2026-10-23-message-system-design-part1",
+      "title": "消息系统设计与实现「上篇」：概念与领域建模",
+      "path": "Inbox/2026-10-23-message-system-design-part1.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "分布式系统"
+      ],
+      "source": "简书",
+      "source_url": "https://www.jianshu.com/p/f4d7827821f1",
+      "source_type": "文章",
+      "platform": "简书",
+      "summary": "站内消息系统的概念篇：对标简书/知乎提炼出三类消息——公告 Announce、提醒 Remind、私信 Message；提醒句式归纳为「sender 对 targetOwner 的 target 做了 action」四元组（可扩展 targetType）；按类型选择推拉模型（公告/提醒走拉、私信走推）；用「订阅」（target+targetType+action，可按 subscribeReason 扩展动作集）+ 用户级 SubscriptionConfig（含默认配置）决定提醒触达；聚合（多条合并）留待下篇。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/message-system-design-part1.md",
       "wiki_status": "pending"
     },
     {
