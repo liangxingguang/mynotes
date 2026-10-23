@@ -11,7 +11,9 @@ tags:
   - 工程实践
   - 分布式系统
 asset_ref: Assets/2026/10/im-websocket-reconnect-heartbeat.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-23T13:20:19.310Z"
+ingest_claim_id: 51440-1792761619310-0
 ---
 
 # IM聊天不掉线？生产级WebSocket断线重连、心跳保活实战

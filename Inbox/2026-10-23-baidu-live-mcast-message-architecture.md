@@ -11,7 +11,9 @@ tags:
   - 分布式系统
   - 工程实践
 asset_ref: Assets/2026/10/baidu-live-mcast-message-architecture.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-23T13:20:14.508Z"
+ingest_claim_id: 59504-1792761614508-0
 ---
 
 # 百度直播海量用户实时消息系统架构：长连接组播 mcast 实践
