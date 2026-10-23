@@ -12,9 +12,7 @@ tags:
   - Harness
   - 工程实践
 asset_ref: Assets/2026/10/agent-software-architecture-task-run-step-event.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-10-23T10:56:07.875Z"
-ingest_claim_id: 55848-1792752967875-0
+wiki_status: ingested
 ---
 
 # 第 5 章：Agent 的软件架构设计（Task/Run/Step/Event 领域模型）

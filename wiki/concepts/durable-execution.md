@@ -15,6 +15,7 @@ sources:
   - raw/sources/products/2026-10-17-pi-durable-architecture.md
   - raw/sources/ai/2026-10-21-agent-long-task-reliable-execution.md
   - raw/sources/architecture/2026-10-22-async-task-system-design.md
+  - raw/sources/ai/2026-10-23-agent-software-architecture-task-run-step-event.md
 related:
   - wiki/entities/pi.md
   - wiki/sources/spring-async-to-task-table.md
@@ -87,6 +88,7 @@ Harness 里发生的每件事都是一个任务（效应三明治）：生成 LL
 - Source: `raw/sources/products/2026-10-17-pi-durable-architecture.md`（印证并展开：原子提交公理、五层架构、四存储后端、崩溃恢复速查表、二开六方向）
 - Source: `raw/sources/ai/2026-10-21-agent-long-task-reliable-execution.md`（独立技术栈印证：六条不变量、fencing 局限、出网三段式、IN_DOUBT 冻结对账、Outbox 至少一次+消费者幂等、上线验收清单）
 - Source: `raw/sources/architecture/2026-10-22-async-task-system-design.md`（第 4 信源：业务异步任务系统完整清单——条件领取/租约/幂等/错误三级/协作取消/Outbox/背压）
+- Source: `raw/sources/ai/2026-10-23-agent-software-architecture-task-run-step-event.md`（第 5 信源：三种 replay 区分、失败窗口 A–D、六步生产化路径、事件溯源取舍判据）
 - 同构印证（未列入 sources）：`raw/sources/architecture/2026-10-20-spring-async-to-task-table.md`（Java 任务表+Worker，业务系统版同一套三要素）
 
 ## Related Knowledge（相关知识）

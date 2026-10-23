@@ -11,6 +11,7 @@
 - [[agent-long-task-reliable-execution|AI Agent 长任务可靠执行：Go+PG 状态机/Checkpoint/Fencing/对账]]（2026-10-21，AI/Agent 基础设施）
 - [[ai-agents-definitive-guide-notebooks|知乎想法：O'Reilly《AI Agents》配套代码全开源（12 章 35 Notebook）]]（2026-10-20，AI/资源，置信度低）
 - [[agent-loop-production-boundaries|从 Chatbot 到 AI Agent：为什么一个 while 循环撑不起生产系统]]（2026-10-15，AI/Agent 工程）
+- [[agent-software-architecture-task-run-step-event|第 5 章：Agent 的软件架构设计（Task/Run/Step/Event 领域模型）]]（2026-10-23，AI/Agent 架构）
 - [[ai-coding-delivery-evolution|AI 写代码越来越快，研发交付系统该怎么演进？]]（2026-10-17，AI/交付系统）
 - [[ai-coding-workflow-skill-prompt|一位 Agent 开发者的 AI Coding 工作流：轻 Skill、方法论 Prompt 与端到端测试]]（2026-10-16，AI/工作流）
 - [[ai-engineering-interview-questions|AI Engineering Interview Questions：公开 AI 工程面试题库]]（2026-10-23，AI/资源，置信度低）
@@ -137,6 +138,7 @@
 - [[okf-knowledge-format|OKF（面向 AI Agent 的知识包装规范）]]（入库时编译为互链 Markdown 树，运行时只做导航+摘录）
 - [[pi-customization-layers|Pi 五层定制模型]]（Prompt 模板→AGENTS.md→Skill→Extension→SDK，官方扩展点成本阶梯）
 - [[pm-decision-frameworks|产品决策四框架]]（3步止损/反向假设/杠杆率排序/信号噪音过滤；单一自媒体信源，置信度低）
+- [[task-run-step-event-model|Task/Run/Step/Event 领域模型]]（Agent Runtime 控制平面四元分离；Run 聚合根+状态机守卫+纯函数投影+OCC；replay≠Durable Execution）
 - [[raft-membership-change-barrier|Raft 成员变更的日志 Barrier]]（公共 config 提交当前 term 日志登记 term；joint 无需/单步必需/回退双向必需）
 - [[rag-production-guardrails|企业级 RAG 生产护栏]]（容量/证据/权限/恢复四主线；证据门禁前置、发布目录原子切换；单一信源设计示例）
 - [[reactive-tracing-context|响应式环境的全链路 traceId 传递]]（Reactor Context 替代 ThreadLocal；doOnEach 同步 MDC、doFinally 清除）

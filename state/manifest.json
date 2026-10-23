@@ -1311,6 +1311,20 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/O85Y7lNSCJF5ciFmFrpyJw",
       "asset_ref": "Assets/2026/10/jdk21-migration-huolala.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-23-agent-software-architecture-task-run-step-event.md",
+      "sha256": "0bab8ee2c5d2a684f323512d84256dd5e400a9c2e053304c9e4c45f27aab29a6",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-23-agent-software-architecture-task-run-step-event.md",
+      "pages": [
+        "wiki/sources/agent-software-architecture-task-run-step-event.md",
+        "wiki/concepts/task-run-step-event-model.md",
+        "wiki/concepts/agent-loop.md",
+        "wiki/concepts/durable-execution.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2096330283423360903",
+      "asset_ref": "Assets/2026/10/agent-software-architecture-task-run-step-event.md"
     }
   ]
 }

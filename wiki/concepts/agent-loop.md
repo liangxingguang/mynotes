@@ -13,6 +13,7 @@ sources:
   - raw/sources/ai/2026-10-14-learn-pi-agent-01-llm-to-agent.md
   - raw/sources/ai/2026-10-15-agent-loop-production-boundaries.md
   - raw/sources/ai/2026-10-21-agent-2026-midyear-architecture-review.md
+  - raw/sources/ai/2026-10-23-agent-software-architecture-task-run-step-event.md
 related:
   - wiki/entities/pi.md
   - wiki/concepts/mcp.md
@@ -108,6 +109,7 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 - Source: `raw/sources/ai/2026-10-14-learn-pi-agent-01-llm-to-agent.md`
 - Source: `raw/sources/ai/2026-10-15-agent-loop-production-boundaries.md`
 - Source: `raw/sources/ai/2026-10-21-agent-2026-midyear-architecture-review.md`（综述印证：Harness/Runtime 职责、四条件、验收机制、状态快照校验）
+- Source: `raw/sources/ai/2026-10-23-agent-software-architecture-task-run-step-event.md`（教学互证：模型建议与工具执行分离、控制状态显式化、单次阻塞 run() 的局限）
 
 ## Related Knowledge（相关知识）
 
