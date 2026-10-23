@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24 00:34",
+  "updated_at": "2026-10-24 01:41",
   "notes": [
     {
       "id": "2026-10-23-mq-message-backlog-rabbitmq-rocketmq",
@@ -250,6 +250,25 @@
       "summary": "小游戏跑在独立进程，直播推流模块在主进程，音视频数据必须跨进程。视频侧：否决 MediaProjection 录屏（授权弹窗/隐私/会把主播评论挂件播出去），利用 Surface 实现 Parcelable、由 SurfaceFlinger 跨进程合成的特性，把在屏 Surface 传到主进程——MagicBrush 直接渲染到主进程 SurfaceTexture，主进程唯一 Renderer 负责 OES→2D 纹理转换、推流与回写小游戏在屏 Surface 上屏，Renderer 从 3 个砍到 1 个，帧率影响约 15%。音频侧：Android 10 AudioPlaybackCapture 版本要求太高 → 自采集混音；五种 IPC 实测 LocalSocket 延迟最优（ObjectStream 流式拷贝，~1ms），安全性靠随机命名 + 连接鉴权。两个多进程深坑：小游戏进程大量 GL 指令拖慢主进程 glFinish（GPU 唯一，删两处 glFinish 解决，双缓冲下本不需要）；后台进程 cgroup 限 CPU 导致编码只有 16 帧（renice 无效，上前台 Service 解决）。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/wechat-minigame-android-cross-process-livestream.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-24-huolala-ai-coding-harness",
+      "title": "货拉拉千人 AI Coding 落地：用自建 Harness 收口，跑通组织级 AI Native",
+      "path": "Inbox/2026-10-24-huolala-ai-coding-harness.md",
+      "created": "2026-10-24",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/tGPMdSIfEEzMqa8jp2cjoA",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "货拉拉 1000+ 工程师放开 AI Coding 后发现：个人提交量涨 17%，评审等待却从 4.8 小时恶化到 9.2 小时——个人提效不会自动变成组织提效。解法是以自建 Harness（AiBox）收口千人用法：统一网关管控与审计、多智能体协作规范、Spec 驱动锁质量、三层度量看真相，最终靠组织/人才/流程/知识体系四重重构让经验自动回流，走向 AI Native。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/wechat-tgpmds.md",
       "wiki_status": "pending"
     },
     {
