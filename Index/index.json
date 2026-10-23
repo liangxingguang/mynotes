@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23 07:57",
+  "updated_at": "2026-10-23 08:04",
   "notes": [
     {
       "id": "2026-10-14-llm-wiki-advanced-four-steps",
@@ -21,26 +21,6 @@
       "wiki_status": "failed"
     },
     {
-      "id": "2026-10-14-unyra-local-first-ai-learning-app",
-      "title": "归一 Unyra：本地优先的探索式学习 AI 桌面应用（Electron + React）",
-      "path": "Inbox/2026-10-14-unyra-local-first-ai-learning-app.md",
-      "created": "2026-10-14",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "工具",
-        "github"
-      ],
-      "source": "GitHub（maplexrain/unyra README）",
-      "source_url": "https://github.com/maplexrain/unyra",
-      "source_type": "article",
-      "platform": "GitHub",
-      "summary": "个人开源项目（v0.6.1，仅 Windows 安装包）：把学习从线性聊天做成一张知识 DAG——从一个想弄懂的目标出发逐层拆成节点，每个节点带一份教学文档和多份笔记，由\"超级导师\"模型通过 JS 沙箱 api 直接改写文档来教学。数据全部本机存储（`%APPDATA%\\unyra`，干净 Markdown 可脱离应用读写），AI 请求主进程直发用户自配服务商（默认 DeepSeek，兼容 OpenAI/Anthropic/Responses 协议，内置 Kimi/GLM/通义/豆包/SiliconFlow 等）。",
-      "summary_status": "",
-      "asset_ref": "",
-      "wiki_status": "pending"
-    },
-    {
       "id": "2026-10-15-agent-loop-production-boundaries",
       "title": "从 Chatbot 到 AI Agent：为什么一个 while 循环撑不起生产系统",
       "path": "Inbox/2026-10-15-agent-loop-production-boundaries.md",
@@ -57,7 +37,7 @@
       "summary": "文章以 Go 实现的运维诊断 Agent 原型 Aegis（W01 阶段，全部本地合成 Mock）为例，论证\"模型 while 循环 + 调工具\"的 Chatbot 骨架撑不起生产系统：模型不结束、工具挂住、用户取消、预算耗尽都必须成为明确且可查询的结果。关键设计：HTTP 与 Agent Loop 解耦（容量 32 的有限队列 + 单消费者后台 runtime + 内存仓储）；拆出 LLMProvider / ToolExecutor / AgentRuntime 三个可替换契约；任务走 PENDING→RUNNING→SUCCEEDED/FAILED/CANCELLED 状态机，取消先在仓储落终态再通知 worker，锁内排序保证终态不可被迟到结果覆盖；每类停止都有独立错误码；许可只来自服务端，模型输出不是授权凭据。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/agent-loop-production-boundaries.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-15-ep-harness-team-agent-workflow",
@@ -77,7 +57,7 @@
       "summary": "得物技术介绍基于开源 Multica 二次开发的团队级 Agent 工作系统 EP-Harness：把 Agent 当作有身份、任务、状态、执行记录与权限边界的\"团队成员\"纳入平台管理（server 管 Issue 队列，daemon 驻开发者本机调本地 AI CLI，Backend.Execute 统一各 Runtime 契约）。核心判断：AI Coding 正沿 Prompt→Context→Harness→Loop 四层从工具使用走向工程系统，个人工具只解决前两层，团队平台补齐结构化上下文、可观测可治理的执行环境与\"发现-派发-执行-验证-记录-决策\"闭环。已实现决策追溯、多 Agent 分阶段协作，累计自动修复 100+ 异常日志问题，典型高频问题从每 4 小时 2400+ 条降至个位数。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/ep-harness-team-agent-workflow.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-16-ai-coding-workflow-skill-prompt",
@@ -97,7 +77,7 @@
       "summary": "作者（大厂 Agent 开发）分享数月实践：重型 Skill（如 Superpowers 的固定 Workflow）在强模型时代变成噪声且费 Token，趋势是\"做减法\"——用 grill/implement/handoff 等轻 Skill 组织流程，用\"第一性原理/对抗性审查/消融实验/奥卡姆剃刀/高内聚低耦合\"这类方法论短 Prompt 当模型的\"思维快捷键\"；工作流上靠 Spec 沉淀上下文、subagent worktree 并行、小 MR + 端到端测试兜底；核心瓶颈是 Review 速度，解法是搭建 Agent 友好的端到端测试环境（CLI + 只读 DB MCP + 日志 Skill），让问题在交到人之前被发现。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/x-ai-coding-workflow-huangtongxueh.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-16-awesome-design-md",
@@ -2104,6 +2084,26 @@
       "source_type": "post",
       "platform": "知乎",
       "summary": "知乎想法推荐开源项目 liquidslr/system-design-notes（近 2 万 Star）：按 Alex Xu《System Design Interview》两卷体系整理的 28 个系统设计主题，每个主题围绕真实系统拆解核心架构与设计思路，作者还为部分主题补充了真实工程案例作为延伸阅读，适合不想啃厚原书、想实践式学习系统设计的人收藏。",
+      "summary_status": "",
+      "asset_ref": "",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-14-unyra-local-first-ai-learning-app",
+      "title": "归一 Unyra：本地优先的探索式学习 AI 桌面应用（Electron + React）",
+      "path": "Archive/2026-10-14-unyra-local-first-ai-learning-app.md",
+      "created": "2026-10-14",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工具",
+        "github"
+      ],
+      "source": "GitHub（maplexrain/unyra README）",
+      "source_url": "https://github.com/maplexrain/unyra",
+      "source_type": "article",
+      "platform": "GitHub",
+      "summary": "个人开源项目（v0.6.1，仅 Windows 安装包）：把学习从线性聊天做成一张知识 DAG——从一个想弄懂的目标出发逐层拆成节点，每个节点带一份教学文档和多份笔记，由\"超级导师\"模型通过 JS 沙箱 api 直接改写文档来教学。数据全部本机存储（`%APPDATA%\\unyra`，干净 Markdown 可脱离应用读写），AI 请求主进程直发用户自配服务商（默认 DeepSeek，兼容 OpenAI/Anthropic/Responses 协议，内置 Kimi/GLM/通义/豆包/SiliconFlow 等）。",
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "ingested"

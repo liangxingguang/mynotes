@@ -336,6 +336,18 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/6M4UtLeECfjBF3JRE4h1Qw",
       "asset_ref": "Assets/2026/10/state-of-ai-report-2026.md"
+    },
+    {
+      "path": "raw/sources/products/2026-10-14-unyra-local-first-ai-learning-app.md",
+      "sha256": "cdbec916698e7602ed53b21532d36f5848a0be63d709e75825c20ee85cf145dd",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-14-unyra-local-first-ai-learning-app.md",
+      "pages": [
+        "wiki/sources/unyra-local-first-ai-learning-app.md",
+        "wiki/entities/unyra.md",
+        "wiki/concepts/exploratory-learning.md"
+      ],
+      "source_url": "https://github.com/maplexrain/unyra"
     }
   ]
 }

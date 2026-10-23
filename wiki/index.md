@@ -30,6 +30,7 @@
 - [[state-of-ai-report-2026|State of AI Report 2026 中文要点（Datawhale 译）]]（2026-10-14，AI/行业报告）
 - [[system-design-12-components|一次讲清 12 个系统设计核心组件]]（2026-10-13，系统设计）
 - [[system-design-notes-28-cases|知乎想法：system-design-notes——把系统设计面试浓缩成 28 个经典架构案例的开源笔记]]（2026-10-14，系统设计/学习资源）
+- [[unyra-local-first-ai-learning-app|归一 Unyra：本地优先的探索式学习 AI 桌面应用（Electron + React）]]（2026-10-14，AI/学习工具）
 
 ## concept（概念）
 
@@ -43,6 +44,7 @@
 - [[cpu-funnel-coding|CPU 漏斗（编码级性能模型）]]（砍掉无效解析/转换/对象，让 CPU 只做核心运算）
 - [[durable-execution|持久执行（Durable Execution）]]（崩溃后断点精确恢复；效应三明治 + 版本化文档存储，非事件溯源）
 - [[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]（先目标基线、JFR/GC 日志归因，证据指向 JVM 才动参数，单变量实验）
+- [[exploratory-learning|探索式学习（知识 DAG）]]（目标→节点 DAG，导师写 JS 经沙箱改写文档教学；Unyra 提出）
 - [[mcp|MCP]]（LLM↔工具/数据纵向协议，Anthropic 2024）
 - [[next-token-prediction|下一 token 预测]]（LLM 的统一目标：交叉熵训练、自回归生成，能力与幻觉同根）
 - [[okf-knowledge-format|OKF（面向 AI Agent 的知识包装规范）]]（入库时编译为互链 Markdown 树，运行时只做导航+摘录）
@@ -59,6 +61,7 @@
 - [[jd-haibo|京东海博]]（京东本地生活即时零售 SaaS，780+ 商家/10 万+ 门店，AI 知识库实践标杆）
 - [[pi|Pi]]（极简 Agent CLI/Harness，1.0 起原生 MCP + Code Mode + Pi Durable，5000+ 扩展生态）
 - [[system-design-notes|system-design-notes]]（按 Alex Xu 两卷书体系整理的 28 章开源系统设计笔记，GitHub liquidslr）
+- [[unyra|归一 Unyra]]（本地优先探索式学习 AI 桌面应用，知识 DAG + 超级导师沙箱改文档，仅 Windows 安装链）
 
 ## topic（主题）
 

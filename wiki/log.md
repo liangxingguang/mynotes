@@ -60,3 +60,4 @@
 - 2026-10-23 22:35 | ingest | raw/sources/misc/2026-10-14-pm-director-4-decision-frameworks.md | wiki/sources/pm-director-4-decision-frameworks.md, wiki/concepts/pm-decision-frameworks.md（新建，confidence=low）
 - 2026-10-23 22:35 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
 - 2026-10-23 07:28 | ingest | raw/sources/ai/2026-10-14-state-of-ai-report-2026.md | wiki/sources/state-of-ai-report-2026.md（新建，confidence=medium）
+- 2026-10-23 00:05 | ingest | raw/sources/products/2026-10-14-unyra-local-first-ai-learning-app.md | wiki/sources/unyra-local-first-ai-learning-app.md, wiki/entities/unyra.md, wiki/concepts/exploratory-learning.md（均新建；无采集稿，README 重抓补登全文）

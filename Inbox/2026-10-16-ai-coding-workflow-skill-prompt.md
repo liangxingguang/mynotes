@@ -9,7 +9,9 @@ created: 2026-10-16
 category: 技术
 tags: [AI, 工程实践, 工具]
 asset_ref: Assets/2026/10/x-ai-coding-workflow-huangtongxueh.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-23T00:02:17.534Z"
+ingest_claim_id: 52472-1792713737534-0
 ---
 
 # 一位 Agent 开发者的 AI Coding 工作流：轻 Skill、方法论 Prompt 与端到端测试

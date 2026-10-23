@@ -9,7 +9,9 @@ created: 2026-10-15
 category: 技术
 tags: [AI Coding, Harness, 工程实践]
 asset_ref: Assets/2026/10/ep-harness-team-agent-workflow.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-23T00:02:17.418Z"
+ingest_claim_id: 58484-1792713737418-0
 ---
 
 # 如何从个人 AI Coding 到构建团队级 Agent 工作流？（得物 EP-Harness）

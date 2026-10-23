@@ -9,7 +9,9 @@ created: 2026-10-15
 category: 技术
 tags: [AI, 工程实践]
 asset_ref: Assets/2026/10/agent-loop-production-boundaries.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-23T00:02:17.300Z"
+ingest_claim_id: 58024-1792713737300-0
 ---
 
 # 从 Chatbot 到 AI Agent：为什么一个 while 循环撑不起生产系统
