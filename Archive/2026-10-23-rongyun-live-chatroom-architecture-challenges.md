@@ -11,9 +11,7 @@ tags:
   - 分布式系统
   - 工程实践
 asset_ref: Assets/2026/10/rongyun-live-chatroom-architecture-challenges.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-10-23T19:30:20.274Z"
-ingest_claim_id: 31124-1792783820274-0
+wiki_status: ingested
 ---
 
 # 融云：直播间海量聊天消息的架构设计难点实践

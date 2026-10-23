@@ -4,7 +4,7 @@ type: concept
 title: 读扩散（Fan-out on Read）
 status: active
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-24
 confidence: high
 tags:
   - concept
@@ -14,10 +14,13 @@ tags:
 sources:
   - raw/sources/architecture/2026-10-23-alibaba-ecommerce-im-group-live.md
   - raw/sources/architecture/2026-10-23-im-group-chat-write-fanout-cost.md
+  - raw/sources/architecture/2026-10-23-rongyun-million-online-live-message-distribution.md
+  - raw/sources/architecture/2026-10-23-rongyun-live-chatroom-architecture-challenges.md
 related:
   - wiki/concepts/write-fanout.md
   - wiki/concepts/mcast.md
   - wiki/concepts/notification-system-design.md
+  - wiki/concepts/live-message-drop-policy.md
   - wiki/sources/alibaba-ecommerce-im-group-live.md
   - wiki/sources/meipai-live-danmu-realtime-push.md
 ---
@@ -47,6 +50,8 @@ related:
 
 阿里混合模式（2020 双 11 实践）：非个性化消息读扩散、个性化消息写扩散，云端一体化数据同步；覆盖几千万互动群用户，做到一条上行消息 500ms 内到达群内其他端侧。钉钉（万人群）整体转读扩散 + 多级缓存；过渡期系统常用静态分流——群创建时按规模标记走写扩散或读扩散，而非每次扇出动态判断。
 
+融云直播聊天室形态（百万在线实践）：聊天室服务校验后广播到消息服务，消息服务**通知合并**（待通知队列去重，一轮只向同一用户发一个通知）后下发拉取通知；客户端携本地最大时间戳差量拉取（首拉传 0 取最近 50 条），消息存环形队列。位点用"最后一条消息时间戳"而非阿里 syncId，语义相同。与 IM 读扩散的关键差异：叠加 [[live-message-drop-policy|丢弃策略]]，位点拉取不再保证"最终全量补齐"。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -67,6 +72,7 @@ related:
 
 - 阿里：2018 双 11 盖楼活动暴露写扩散瓶颈（120w/s 写入 → 3K/s 上行）→ 演进出读写扩散混合模式（2020 双 11，500ms 端到端）。
 - 行业分化（二次信源断言）：钉钉转读扩散 + 多级缓存；微信坚持写扩散；企业微信写扩散 + 硬件堆料。
+- 融云（一手实践）：直播聊天室读扩散 + 通知合并 + 时间戳位点差量拉取；为适配直播"允许丢消息"语义叠加三级丢弃策略（2026-10 收录）。
 
 ## Open Questions（开放问题）
 
@@ -77,8 +83,13 @@ related:
 
 - Source: `raw/sources/architecture/2026-10-23-alibaba-ecommerce-im-group-live.md`（一手实践：同步模型、99.99% 前提、混合模式、500ms 指标、优缺点清单）
 - Source: `raw/sources/architecture/2026-10-23-im-group-chat-write-fanout-cost.md`（二次分析：钉钉读扩散选型、规模分档中的读扩散切换点、静态分流策略）
+- Source: `raw/sources/architecture/2026-10-23-rongyun-million-online-live-message-distribution.md`（一手实践：通知合并机制、环形队列、拉取流程）
+- Source: `raw/sources/architecture/2026-10-23-rongyun-live-chatroom-architecture-challenges.md`（一手实践：通知拉取流程、时间戳位点、首拉 50 条与退出清库）
 
 ## Related Knowledge（相关知识）
 
 - [[alibaba-ecommerce-im-group-live|阿里电商IM消息平台在群聊、直播场景下的技术实践]]
 - [[im-group-chat-write-fanout-cost|IM千人群聊该不该用消息写扩散？详细算算成本账！]]
+- [[rongyun-million-online-live-message-distribution|融云：百万人在线的直播间实时聊天消息分发技术实践]]
+- [[rongyun-live-chatroom-architecture-challenges|融云：直播间海量聊天消息的架构设计难点实践]]
+- [[live-streaming-messaging|直播实时消息分发]]（主题）

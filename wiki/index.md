@@ -108,7 +108,10 @@
 - [[raft-membership-log-barrier|Raft 成员变更：何时需要先提交 leader 的当前 term 日志]]（2026-10-21，分布式/Raft）
 - [[rocketmq-advanced-reliability-idempotency|RocketMQ 进阶：可靠性、幂等、顺序、延时与高可用一篇搞懂]]（2026-10-22，MQ/RocketMQ）
 - [[rocketmq-interview-8-topics|RocketMQ 面试连环炮：8 大核心题一篇讲透]]（2026-10-22，MQ/RocketMQ 存储机制）
+- [[rongyun-live-chatroom-architecture-challenges|融云：直播间海量聊天消息的架构设计难点实践]]（2026-10-24，IM/直播聊天室/扩缩容）
+- [[rongyun-million-online-live-message-distribution|融云：百万人在线的直播间实时聊天消息分发技术实践]]（2026-10-24，IM/直播分发/丢弃策略）
 - [[scg-traceid-full-chain|Spring Cloud Gateway 全链路 traceId 传递方案]]（2026-10-21，Java/网关/链路追踪）
+- [[scopedvalue-vs-threadlocal-virtual-threads|Java 21 虚拟线程下 ThreadLocal 怎么办？ScopedValue 实战替代方案]]（2026-10-24，Java/虚拟线程）
 - [[signin-system-distributed-evolution|从 0 到 1 亿：Spring Boot 签到打卡系统的分布式架构演进]]（2026-10-22，Redis/架构演进）
 - [[spring-20-extension-points|Spring 留了 20 个扩展点，你能按顺序说出几个？]]（2026-10-20，Java/Spring）
 - [[spring-ai-milvus-rag-production|Spring AI + Milvus 企业级 RAG 生产工程实践]]（2026-10-21，AI/RAG，设计示例）
@@ -148,6 +151,7 @@
 - [[framework-first-migration|框架先行的规模化运行时迁移]]（BOM 收口+框架分代并行+AI 批量改造+检查单收敛，货拉拉 JDK 21 实践）
 - [[llm-wiki|LLM Wiki]]（原始来源不可变 + 模型持续编译互链知识页面，Karpathy 模式；本仓库即实例，双信源）
 - [[mcp|MCP]]（LLM↔工具/数据纵向协议，Anthropic 2024）
+- [[live-message-drop-policy|直播消息丢弃策略]]（上行 200 条/s 硬丢弃 + 环形队列柔性丢弃 + 优先级三桶保必达，融云双信源）
 - [[mcast|长连接组播（mcast）]]（groupID 下沉长连接层，1:M×1:N 两级扩散；单实例 25w 连接 8w QPS，聚合+压缩消化峰值，百度一手）
 - [[message-bus|业务消息总线]]（哑管道式配置路由：履约异步分发+topic 治理收拢；与 ESB/Pipeline 的区分，信鸽单一信源）
 - [[next-token-prediction|下一 token 预测]]（LLM 的统一目标：交叉熵训练、自回归生成，能力与幻觉同根）
@@ -160,6 +164,7 @@
 - [[read-fanout|读扩散（Fan-out on Read）]]（会话队列+syncId 位点同步把 1:N 写压成 1:1；99.99% 非个性化消息前提；阿里混合模式 500ms 端到端，双信源）
 - [[rag-production-guardrails|企业级 RAG 生产护栏]]（容量/证据/权限/恢复四主线；证据门禁前置、发布目录原子切换；单一信源设计示例）
 - [[reactive-tracing-context|响应式环境的全链路 traceId 传递]]（Reactor Context 替代 ThreadLocal；doOnEach 同步 MDC、doFinally 清除）
+- [[scopedvalue|ScopedValue（作用域值）]]（JDK 25 正式：作用域共享不可变快照，终结 VT 下 ThreadLocal 内存膨胀/泄漏/脏值，Old Gen -61% 实测）
 - [[table-sharding-migration|分表平滑迁移策略]]（五种读写策略矩阵 + 双写双读 SQL 重写，京东大表治理实践）
 - [[virtual-threads-production|虚拟线程生产实践]]（场景筛选、Helper 传 Trace/ThreadLocal、钉住规避与观测换代，货拉拉 JDK 21 实践）
 - [[write-fanout|写扩散（Fan-out on Write）]]（群消息按成员写副本换读路径简单；群服务扇出+副本指纹+MQ 批量化+双轨存储，万人群物理上限，三信源）
@@ -180,11 +185,13 @@
 - [[pi|Pi]]（极简 Agent CLI/Harness，1.0 起原生 MCP + Code Mode + Pi Durable，5000+ 扩展生态）
 - [[pigeon-message-bus|信鸽（Pigeon）]]（网易云音乐直播活动消息总线；32 台 8U16G 支撑 300w/min，RocketMQ 底座）
 - [[rocketmq|Apache RocketMQ]]（高性能分布式 MQ；事务消息+回查保发送、业务幂等保消费，运维+一致性+机制+存储+事务谱系五信源）
+- [[rongyun|融云]]（IM 云服务厂商；直播聊天室通知拉取+丢弃策略路线代表，双信源）
 - [[system-design-notes|system-design-notes]]（按 Alex Xu 两卷书体系整理的 28 章开源系统设计笔记，GitHub liquidslr）
 - [[unyra|归一 Unyra]]（本地优先探索式学习 AI 桌面应用，知识 DAG + 超级导师沙箱改文档，仅 Windows 安装链）
 
 ## topic（主题）
 
+- [[live-streaming-messaging|直播实时消息分发]]（拉 vs 推路线图谱：读扩散通知拉取 / mcast 组播 / CDN 广播；允许策略性丢消息是与 IM 的根本分界，六信源）
 - [[system-design-core-components|系统设计核心组件]]（分布式系统 12 个核心组件清单）
 
 ## decision（决策）

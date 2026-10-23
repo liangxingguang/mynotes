@@ -12,7 +12,7 @@ tags:
   - 工程实践
   - spring
 asset_ref: Assets/2026/10/scopedvalue-vs-threadlocal-virtual-threads.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Java 21 虚拟线程下 ThreadLocal 怎么办？ScopedValue 实战替代方案

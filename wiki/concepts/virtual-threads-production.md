@@ -4,7 +4,7 @@ type: concept
 title: 虚拟线程生产实践
 status: active
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-24
 confidence: high
 tags:
   - concept
@@ -16,6 +16,7 @@ sources:
 related:
   - wiki/concepts/evidence-first-jvm-tuning.md
   - wiki/concepts/reactive-tracing-context.md
+  - wiki/concepts/scopedvalue.md
 ---
 # 虚拟线程生产实践
 
@@ -48,6 +49,7 @@ related:
 
 - [[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]：虚拟线程上线后的验收（GC 停顿、钉住次数、JFR 对比）遵循同一「先证据后参数」闭环。
 - [[reactive-tracing-context|响应式环境的全链路 traceId 传递]]：响应式与虚拟线程是打破「一请求一线程」假设的两条路径，前者换载体（Reactor Context），后者保模型但要求跨任务显式传递 ThreadLocal/Trace。
+- [[scopedvalue|ScopedValue（作用域值）]]：JDK 25 起 ThreadLocal 请求级上下文的正式替代——Helper 包装 ThreadLocal 是 JDK 21 现状妥协，ScopedValue 是不可变快照 + 结构化继承的正解（含内存账与迁移实战）。
 
 ### Distinctions（区分）
 
@@ -57,6 +59,7 @@ related:
 ## Evolution（演进）
 
 - 2026-10-23 — 货拉拉 JDK 21 规模化落地：场景筛选、VirtualThreadContextHelper 两种接入（runVirtual / newVirtualThreadExecutor）、DTP virtualThread 开关、钉住跟踪与观测换代；并给出 JEP 491（JDK 24，synchronized 不再钉住）后的演进方向。
+- 2026-10-24 — [[scopedvalue|ScopedValue]]（JDK 25 正式，JEP 506）为"请求级上下文"提供 API 级替代：where/run 替换 set/remove，StructuredTaskScope fork 零拷贝继承；本页的 Helper 传上下文纪律在 JDK 25 后可逐步收敛到 ScopedValue。
 
 ## Open Questions（开放问题）
 

@@ -12,7 +12,9 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026/10/system-design-google-maps.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-23T22:33:31.072Z"
+ingest_claim_id: 59420-1792794811072-0
 ---
 
 # 系统设计面试（第二卷）第03章：谷歌地图

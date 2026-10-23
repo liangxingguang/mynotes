@@ -1493,6 +1493,49 @@
       ],
       "source_url": "https://segmentfault.com/a/1190000048281968",
       "asset_ref": "Assets/2026/10/nginx-websocket-load-balancing.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-rongyun-million-online-live-message-distribution.md",
+      "sha256": "e26a51c3e05d38536606d280226f6746b9696a81d6878ddc79c0c136537ec0fa",
+      "registered_at": "2026-10-24",
+      "inbox_ref": "Archive/2026-10-23-rongyun-million-online-live-message-distribution.md",
+      "pages": [
+        "wiki/sources/rongyun-million-online-live-message-distribution.md",
+        "wiki/concepts/live-message-drop-policy.md",
+        "wiki/concepts/read-fanout.md",
+        "wiki/entities/rongyun.md",
+        "wiki/topics/live-streaming-messaging.md"
+      ],
+      "source_url": "http://www.52im.net/thread-3799-1-1.html",
+      "asset_ref": "Assets/2026/10/rongyun-million-online-live-message-distribution.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-rongyun-live-chatroom-architecture-challenges.md",
+      "sha256": "58f89a74e25d3361f607f5bbf47a1f622c64b73138f588db1f55b0ab110c7580",
+      "registered_at": "2026-10-24",
+      "inbox_ref": "Archive/2026-10-23-rongyun-live-chatroom-architecture-challenges.md",
+      "pages": [
+        "wiki/sources/rongyun-live-chatroom-architecture-challenges.md",
+        "wiki/concepts/live-message-drop-policy.md",
+        "wiki/concepts/read-fanout.md",
+        "wiki/entities/rongyun.md",
+        "wiki/topics/live-streaming-messaging.md"
+      ],
+      "source_url": "http://www.52im.net/thread-3835-1-1.html",
+      "asset_ref": "Assets/2026/10/rongyun-live-chatroom-architecture-challenges.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-scopedvalue-vs-threadlocal-virtual-threads.md",
+      "sha256": "fd733586fcd699423b06a0930529dede8f68d65138d0c042e94c220105b1daeb",
+      "registered_at": "2026-10-24",
+      "inbox_ref": "Archive/2026-10-23-scopedvalue-vs-threadlocal-virtual-threads.md",
+      "pages": [
+        "wiki/sources/scopedvalue-vs-threadlocal-virtual-threads.md",
+        "wiki/concepts/scopedvalue.md",
+        "wiki/concepts/virtual-threads-production.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/GBcUYJAqW-mTbhTsOK5KWw",
+      "asset_ref": "Assets/2026/10/scopedvalue-vs-threadlocal-virtual-threads.md"
     }
   ]
 }
