@@ -1,6 +1,44 @@
 {
-  "updated_at": "2026-10-23 19:23",
+  "updated_at": "2026-10-23 19:39",
   "notes": [
+    {
+      "id": "2026-10-23-alibaba-ecommerce-im-group-live",
+      "title": "阿里电商IM消息平台在群聊、直播场景下的技术实践",
+      "path": "Inbox/2026-10-23-alibaba-ecommerce-im-group-live.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "工程实践"
+      ],
+      "source": "52im.net（淘宝消息业务团队·李历岷/骨来）",
+      "source_url": "http://www.52im.net/thread-3252-1-1.html",
+      "source_type": "文章",
+      "platform": "52im.net",
+      "summary": "双 11 强互动场景（盖楼群、百万在线直播间）下电商 IM 的架构实践。群聊侧：写扩散 1:N 把 DB 写入打到极限（120w/s 写入仅支撑 3K/s 上行）→ 利用\"群内 99.99% 是非个性化消息\"改读扩散，消息只写一条、群会话队列按 syncId 位点推拉同步（客户端存位点去中心化，syncId 差值>1 则拉区间补洞），最终读写扩散混合做到 500ms 端到端。直播侧：直播间是\"弱关系特殊的群\"（40w~200w 设备），链路为网关→秒级 buffer→编码合并批量→设备分段切片扩散→长连推送；热点用一致性 Hash 二次打散 + Striped64 式分布式统计合并。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/alibaba-ecommerce-im-group-live.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-23-baidu-live-mcast-message-architecture",
+      "title": "百度直播海量用户实时消息系统架构：长连接组播 mcast 实践",
+      "path": "Inbox/2026-10-23-baidu-live-mcast-message-architecture.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "工程实践"
+      ],
+      "source": "52im.net（百度APP消息中台团队）",
+      "source_url": "http://www.52im.net/thread-3515-1-1.html",
+      "source_type": "文章",
+      "platform": "52im.net",
+      "summary": "先推演\"照搬 IM 群聊\"的六个百万级压力点（用户列表/设备/路由/下发/拉取/已读），砍掉拉取与已读后仍剩三个，且峰值资源冗余几十倍、多群组方案有消息不同步与成员不稳问题 → 另辟蹊径：把 groupID 概念下沉到长连接层做组播 mcast。下发变成 1:M×1:N 两级扩散（一致性 hash 选路由实例 → 并发到 M 个长连接实例 → 实例内并发到 N 条连接），用户列表拆分与动态路由查询全部消失。配套优化：秒级聚合打包（+500ms 均延换百倍下发量级）、6.7:1 压缩（单机 15.6Gbps→2.3Gbps）、按优先级分级限速、高优消息立即下发、独立可靠 mcast 通道 + 主播侧推拉结合/短连轮询兜底（礼物触达 99.9%+）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/baidu-live-mcast-message-architecture.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-23-im-websocket-reconnect-heartbeat",
       "title": "IM聊天不掉线？生产级WebSocket断线重连、心跳保活实战",
@@ -118,6 +156,25 @@
       "wiki_status": "pending"
     },
     {
+      "id": "2026-10-23-netease-ten-million-live-danmu-cdn-broadcast",
+      "title": "网易云信：千万级实时直播弹幕的技术实践",
+      "path": "Inbox/2026-10-23-netease-ten-million-live-danmu-cdn-broadcast.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "工程实践"
+      ],
+      "source": "52im.net（网易云信IM技术团队）",
+      "source_url": "http://www.52im.net/thread-4299-1-1.html",
+      "source_type": "文章",
+      "platform": "52im.net",
+      "summary": "网易云信支撑 TFBOYS 线上演唱会的千万级弹幕方案。接入层：GSLB 按网络类型/机房容量/负载/成本分配地址，开播并发 50~100 万 TPS 下的三优化——负载上报周期 1s→5ms、分配服务独立线程周期同步负载（不再按请求查询）、按负载排序轮转分配（防低负载机器被瞬间打爆）。登录：握手协商加密算法（RSA/SM2 + AES/SM4 国密，JNI 加速非对称计算）+ 动态 Token 鉴权（账号+时间+接入地址+时变随机数，进程本地计算不访问用户服务）。消息侧：消息体精简（礼物资源预加载只传编号）、逐级流控（本地粗粒度 + 反垃圾分布式全局流控 + 广播再控）、优先级队列分桶按比例投递（余量叠加到下一队列）。下行杀手锏：**CDN 广播**——推流方案（消息伪装成视频流，实时性高）或静态文件加速（实现简单，实时性取决于同步周期），多 CDN 厂商融合按权重轮询。稳定性四件套：ChatLink/ChatServer 单元化无状态跨机房部署、单点服务主备缓存集群 5s 切换、秒级监控大盘（业务预聚合+中心合并）、预设+随机双模式故障演练。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netease-ten-million-live-danmu-cdn-broadcast.md",
+      "wiki_status": "pending"
+    },
+    {
       "id": "2026-10-23-nginx-websocket-load-balancing",
       "title": "Nginx生产级WebSocket实时长连接负载均衡实战",
       "path": "Inbox/2026-10-23-nginx-websocket-load-balancing.md",
@@ -134,6 +191,44 @@
       "summary": "WebSocket 长连接 + 状态敏感，Nginx 反代有五个关键点：协议升级、连接保持、超时控制、负载策略、云环境断连。核心配置三件套 `proxy_http_version 1.1` + `Upgrade/Connection` 头 + `proxy_buffering off`；生产必改用 `map $http_upgrade $connection_upgrade`（空则 close，避免普通 HTTP 被误升级）；`proxy_read_timeout` 拉到 3600s~7d 防 Nginx 主动断连。云 LB/NAT/防火墙空闲断连 Nginx 配什么都没用，必须应用层 20~30s 心跳。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/nginx-websocket-load-balancing.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-23-rongyun-live-chatroom-architecture-challenges",
+      "title": "融云：直播间海量聊天消息的架构设计难点实践",
+      "path": "Inbox/2026-10-23-rongyun-live-chatroom-architecture-challenges.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "工程实践"
+      ],
+      "source": "52im.net（融云技术团队）",
+      "source_url": "http://www.52im.net/thread-3835-1-1.html",
+      "source_type": "文章",
+      "platform": "52im.net",
+      "summary": "融云直播聊天室高可用架构全景：连接层/存储层（Redis 二级缓存）/业务层三层，业务层分聊天室服务（管理类请求：进出/禁言/上行审核，按聊天室 ID 一致性哈希落点）与消息服务（用户信息与消息队列缓存 + 分发，按用户 ID 落点），Zk 服务发现，跨机房容灾。百万在线拆 200 台消息服务各管 5000 人。扩缩容靠 Redis 加载状态 + 渐进式人员转移（扩容按活跃度逐步迁、消息遍历时纠偏落点、拉取时向聊天室服务确认）。用户离线判定：30s 不拉或累计 30 条未拉即踢出。消息优先级三桶（白名单 > 高 > 低）按序拉取。客户端侧：通知拉取 + 首拉取 50 条 + 退出清库；Android 渲染靠 MVVM 子线程预处理、LiveData setValue/postValue 区分、滑动不刷新、DiffUtil 局部更新——中端机 400 条/秒不卡。自定义属性（麦位/角色等必达状态）全量 + 有序 map 变更记录双存储，同样走通知拉取增量回放。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/rongyun-live-chatroom-architecture-challenges.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-23-rongyun-million-online-live-message-distribution",
+      "title": "融云：百万人在线的直播间实时聊天消息分发技术实践",
+      "path": "Inbox/2026-10-23-rongyun-million-online-live-message-distribution.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "工程实践"
+      ],
+      "source": "52im.net（融云技术团队）",
+      "source_url": "http://www.52im.net/thread-3799-1-1.html",
+      "source_type": "文章",
+      "platform": "52im.net",
+      "summary": "融云百万在线直播间的消息分发方案：直播间服务（按直播间 ID 落点，只校验不存消息）+ 消息服务（按用户 ID 落点，缓存用户关系与消息环形队列）分离架构，Zk 注册计算落点、Redis 做二级缓存与重启备份。分发走\"通知+拉取\"读扩散模式，核心三板斧：**通知合并**（待通知队列去重，一轮只向同一用户发一个通知，天然适合 Actor 模型）、**上行限速**（默认 200 条/秒，超限直接在直播间服务丢弃）、**下行限速**（环形队列满则淘汰最老消息 + \"拉取中\"标记 2 秒内不重发通知，丢不丢取决于客户端拉取速度）。重要消息走独立环形队列 + 白名单/优先级保证不丢弃。与 IM 最大不同：直播消息允许有策略地丢。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/rongyun-million-online-live-message-distribution.md",
       "wiki_status": "pending"
     },
     {
@@ -213,6 +308,62 @@
       "summary": "vivo 内容审核平台\"谛听\"的敏感词匹配方案：词库百万级、平均匹配耗时 50ms。底层选型 AC 自动机（Trie+Fail 指针，近似线性复杂度）而非 WM——因敏感词长度/前缀无规律且加载不频繁、内存充足。两个业务增强：组合敏感词（拆成单词入 Trie，后置按映射聚合，全部命中才算组合命中）；拼音敏感词（对抗\"啋票\"类谐音规避——Trie 节点改存音节、多音字全读音展开成\"拼音图\"，AC 自动机改在图上 DFS 匹配，DFS 栈同步保存 Trie 状态位）。终止条件与剪枝是关键难点。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/vivo-diting-sensitive-word-matching.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-23-vivo-live-im-message-architecture",
+      "title": "vivo直播系统中IM消息模块的架构实践",
+      "path": "Inbox/2026-10-23-vivo-live-im-message-architecture.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "工程实践"
+      ],
+      "source": "52im.net（vivo互联网技术团队·LinDu/Li Guolin）",
+      "source_url": "http://www.52im.net/thread-3994-1-1.html",
+      "source_type": "文章",
+      "platform": "52im.net",
+      "summary": "vivo 秀场直播 IM 模块一年演进总结。核心认知：直播消息与微信类 IM 最大区别是**分优先级**（客户端每秒只能渲染 15~20 条，礼物>公屏、大额>小额、高等级用户>匿名）。推拉结合架构：**短轮询**（2s 间隔 + timestamp 游标，每次只回 10~15 条；存储用 Redis SortedSet 四桶——gift/chat/notify/pk，score=时间戳；日轮询 10+ 亿次，按房间人数动态配置 1.5~2.5s，超高热房间物理隔离 VIP Redis 集群；注意校验过期时间戳防慢查、客户端排重）；**长连接**（HTTP 拿 IP 列表→TCP 接入→鉴权；接入层简洁 + so 插件热更新防重启断连；TCP keepalive + 智能心跳）。分发侧：成员管理固定分片 vs 动态分片取舍、读扩散、批量下发、protobuf 省 43% 字节、**块消息**（1~2s 匀速聚合分发，每秒 10~20 条，超出按优先级丢）。丢弃三策略：低优先级丢弃、老消息丢弃（创建时间间隔过大直接丢）、**增益消息**（后续消息包含前续全量，如 PK 值发 22:10 而非增量 2:0，抗丢包自愈）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/vivo-live-im-message-architecture.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-23-wechat-live-chatroom-15m-online",
+      "title": "微信直播聊天室单房间1500万在线的消息架构演进之路",
+      "path": "Inbox/2026-10-23-wechat-live-chatroom-15m-online.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "工程实践"
+      ],
+      "source": "52im.net（微信后台团队·kellyliang）",
+      "source_url": "http://www.52im.net/thread-3376-1-1.html",
+      "source_type": "文章",
+      "platform": "52im.net",
+      "summary": "\"把 13 亿人拉个群\"的工程回答。1.0：读扩散（一人同时只在一个聊天室）+ longpolling（不用 WebSocket 三理由：推会丢需拉兜底、在线列表难维护、短连客户端简单）+ 无状态 cache recvsvr（通知异步拉取 + 1s 兜底轮询 + 读写表原子切换无锁读 + sect 化扩容）。2.0 解四痛点：重要信令按优先级标记、cache 内分 normal/important 双 seq 优先收（零丢失且不加 KV 访问）；在线统计改\"拆 key + 读写分离 + 异步聚合落盘\"（心跳只写内存、分 shard 对应 KV key、异步合并全量列表、双指针无锁查询）；历史在线用 HyperLogLog（≤1w 双写 tablekv 精确、>1w HLL 估算 >95% 准）；大房间提前加白走 vip sect 流量隔离；1500w 在线 longpolling 达 9 亿请求/分钟 → proxy 层 hold 请求柔性降频（按在线数定收取间隔 + 丢 notify），400w 压测请求量降 58%。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/wechat-live-chatroom-15m-online.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-23-wechat-minigame-android-cross-process-livestream",
+      "title": "微信小游戏直播在Android端的跨进程渲染推流实践",
+      "path": "Inbox/2026-10-23-wechat-minigame-android-cross-process-livestream.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "工程实践"
+      ],
+      "source": "52im.net（微信开发团队·virwu）",
+      "source_url": "http://www.52im.net/thread-3594-1-1.html",
+      "source_type": "文章",
+      "platform": "52im.net",
+      "summary": "小游戏跑在独立进程，直播推流模块在主进程，音视频数据必须跨进程。视频侧：否决 MediaProjection 录屏（授权弹窗/隐私/会把主播评论挂件播出去），利用 Surface 实现 Parcelable、由 SurfaceFlinger 跨进程合成的特性，把在屏 Surface 传到主进程——MagicBrush 直接渲染到主进程 SurfaceTexture，主进程唯一 Renderer 负责 OES→2D 纹理转换、推流与回写小游戏在屏 Surface 上屏，Renderer 从 3 个砍到 1 个，帧率影响约 15%。音频侧：Android 10 AudioPlaybackCapture 版本要求太高 → 自采集混音；五种 IPC 实测 LocalSocket 延迟最优（ObjectStream 流式拷贝，~1ms），安全性靠随机命名 + 连接鉴权。两个多进程深坑：小游戏进程大量 GL 指令拖慢主进程 glFinish（GPU 唯一，删两处 glFinish 解决，双缓冲下本不需要）；后台进程 cgroup 限 CPU 导致编码只有 16 帧（renice 无效，上前台 Service 解决）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/wechat-minigame-android-cross-process-livestream.md",
       "wiki_status": "pending"
     },
     {
