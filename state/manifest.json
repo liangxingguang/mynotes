@@ -1348,6 +1348,19 @@
       ],
       "source_url": "https://segmentfault.com/a/1190000047907801",
       "asset_ref": "Assets/2026/10/im-group-chat-write-fanout-cost.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-alibaba-ecommerce-im-group-live.md",
+      "sha256": "5ea955ba4338ef212220544ad5089293b9e1631eee08518d8c18cc27769c9fe7",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-23-alibaba-ecommerce-im-group-live.md",
+      "pages": [
+        "wiki/sources/alibaba-ecommerce-im-group-live.md",
+        "wiki/concepts/read-fanout.md",
+        "wiki/concepts/write-fanout.md"
+      ],
+      "source_url": "http://www.52im.net/thread-3252-1-1.html",
+      "asset_ref": "Assets/2026/10/alibaba-ecommerce-im-group-live.md"
     }
   ]
 }

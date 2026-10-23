@@ -13,8 +13,10 @@ tags:
   - messaging
 sources:
   - raw/sources/architecture/2026-10-23-im-group-chat-write-fanout-cost.md
+  - raw/sources/architecture/2026-10-23-alibaba-ecommerce-im-group-live.md
 related:
   - wiki/sources/im-group-chat-write-fanout-cost.md
+  - wiki/concepts/read-fanout.md
   - wiki/entities/rocketmq.md
   - wiki/entities/kafka.md
 ---
@@ -48,7 +50,7 @@ toB IM 场景里已读回执、消息撤回、离线补全是硬需求，三者�
 
 ### Related Concepts（相关概念）
 
-- 读扩散（Fan-out on Read）：对偶模式，消息存一份、读取时拉取；万人群场景的替代解（钉钉选型）。Wiki 暂无独立页面。
+- [[read-fanout|读扩散（Fan-out on Read）]]：对偶模式，消息存一份、读取时按会话队列位点拉取；万人群场景的替代解（钉钉选型），阿里混合模式的另一半。
 - [[idempotency-design|幂等设计]]：副本重投/拆分重投依赖消费侧幂等。
 
 ### Dependencies（依赖项）
@@ -57,21 +59,25 @@ toB IM 场景里已读回执、消息撤回、离线补全是硬需求，三者�
 
 ### Distinctions（区分）
 
-- 与读扩散的区别在于「写时复制 vs 读时聚合」：写扩散拿写放大换读路径简单与每成员投递记录；读扩散拿读取聚合成本换存储与写入的极致节省。群规模是选型主变量：1000 人写扩散需批量化、5000 人需专项优化、10000 人写扩散走不通。
+- 与 [[read-fanout|读扩散]] 的区别在于「写时复制 vs 读时聚合」：写扩散拿写放大换读路径简单与每成员投递记录；读扩散拿读取聚合成本与架构复杂度换存储与写入的极致节省。群规模是选型主变量：1000 人写扩散需批量化、5000 人需专项优化、10000 人写扩散走不通。写扩散另一短板是多群消息混排在用户同步队列、无会话级优先级与隔离能力（阿里信源）。
 
 ## Evolution（演进）
 
 已知实践中的规模分档（单信源）：100 人舒服 → 1000 人批量化 → 5000 人专项优化 → 10000 人切读扩散。过渡期常用混合模式：千以下写扩散、千以上读扩散，在**群创建时静态标记**分流而非每次扇出动态判断。大厂分化：钉钉转读扩散+多级缓存；微信坚持写扩散；企业微信写扩散+硬件堆料。
 
+阿里的瓶颈实测（2020 双 11 背景，一手信源）：主互动 500 人群、平均群大小 320+，DB 承接 120w/s 写入也只换来消息上行 3K/s，且 IM 写集群还要与营销/交易/物流通知共享——这是写扩散在大促强互动下触顶的直接量化证据，驱动其演进为读写扩散混合模式（500ms 端到端，详见 [[read-fanout|读扩散]]）。
+
 ## Open Questions（开放问题）
 
-- 读扩散侧的完整成本账（读放大、缓存一致性、已读 bitmap 聚合代价）尚无对称的信源支撑。
+- 读扩散侧的成本账已有阿里一手信源部分回答（架构复杂度、冷启动多读 QPS，见 [[read-fanout|读扩散]]）；已读 bitmap 聚合、缓存一致性的量化代价仍无信源支撑。
 - 5000 人档的「专项优化策略」具体形态，信源只给了方向未给方案。
 
 ## Evidence（证据）
 
-- Source: `raw/sources/architecture/2026-10-23-im-group-chat-write-fanout-cost.md`（单一信源，经验性分析，数字为估算量级 → confidence: medium）
+- Source: `raw/sources/architecture/2026-10-23-im-group-chat-write-fanout-cost.md`（经验性分析，数字为估算量级 → confidence: medium）
+- Source: `raw/sources/architecture/2026-10-23-alibaba-ecommerce-im-group-live.md`（一手实践，印证 1:N 写放大瓶颈与无优先级/隔离短板；给出 120w/s→3K/s 实测量级）
 
 ## Related Knowledge（相关知识）
 
 - [[im-group-chat-write-fanout-cost|IM千人群聊该不该用消息写扩散？详细算算成本账！]]
+- [[alibaba-ecommerce-im-group-live|阿里电商IM消息平台在群聊、直播场景下的技术实践]]

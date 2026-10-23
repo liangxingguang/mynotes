@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-10-23 19:43",
+  "updated_at": "2026-10-23 19:46",
   "notes": [
-    {
-      "id": "2026-10-23-alibaba-ecommerce-im-group-live",
-      "title": "阿里电商IM消息平台在群聊、直播场景下的技术实践",
-      "path": "Inbox/2026-10-23-alibaba-ecommerce-im-group-live.md",
-      "created": "2026-10-23",
-      "category": "技术",
-      "tags": [
-        "分布式系统",
-        "工程实践"
-      ],
-      "source": "52im.net（淘宝消息业务团队·李历岷/骨来）",
-      "source_url": "http://www.52im.net/thread-3252-1-1.html",
-      "source_type": "文章",
-      "platform": "52im.net",
-      "summary": "双 11 强互动场景（盖楼群、百万在线直播间）下电商 IM 的架构实践。群聊侧：写扩散 1:N 把 DB 写入打到极限（120w/s 写入仅支撑 3K/s 上行）→ 利用\"群内 99.99% 是非个性化消息\"改读扩散，消息只写一条、群会话队列按 syncId 位点推拉同步（客户端存位点去中心化，syncId 差值>1 则拉区间补洞），最终读写扩散混合做到 500ms 端到端。直播侧：直播间是\"弱关系特殊的群\"（40w~200w 设备），链路为网关→秒级 buffer→编码合并批量→设备分段切片扩散→长连推送；热点用一致性 Hash 二次打散 + Striped64 式分布式统计合并。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/alibaba-ecommerce-im-group-live.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-10-23-baidu-live-mcast-message-architecture",
       "title": "百度直播海量用户实时消息系统架构：长连接组播 mcast 实践",
@@ -2414,6 +2395,25 @@
       "summary": "开源项目 ai-engineering-interview-questions，按主题收录 AI 工程面试问题并附讲解入口，覆盖 LLM 基础到生产部署全链路，适合面试前自查知识覆盖。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/weibo-5356356632055233.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-23-alibaba-ecommerce-im-group-live",
+      "title": "阿里电商IM消息平台在群聊、直播场景下的技术实践",
+      "path": "Archive/2026-10-23-alibaba-ecommerce-im-group-live.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "工程实践"
+      ],
+      "source": "52im.net（淘宝消息业务团队·李历岷/骨来）",
+      "source_url": "http://www.52im.net/thread-3252-1-1.html",
+      "source_type": "文章",
+      "platform": "52im.net",
+      "summary": "双 11 强互动场景（盖楼群、百万在线直播间）下电商 IM 的架构实践。群聊侧：写扩散 1:N 把 DB 写入打到极限（120w/s 写入仅支撑 3K/s 上行）→ 利用\"群内 99.99% 是非个性化消息\"改读扩散，消息只写一条、群会话队列按 syncId 位点推拉同步（客户端存位点去中心化，syncId 差值>1 则拉区间补洞），最终读写扩散混合做到 500ms 端到端。直播侧：直播间是\"弱关系特殊的群\"（40w~200w 设备），链路为网关→秒级 buffer→编码合并批量→设备分段切片扩散→长连推送；热点用一致性 Hash 二次打散 + Striped64 式分布式统计合并。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/alibaba-ecommerce-im-group-live.md",
       "wiki_status": "ingested"
     },
     {

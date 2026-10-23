@@ -17,6 +17,7 @@
 - [[ai-engineering-interview-questions|AI Engineering Interview Questions：公开 AI 工程面试题库]]（2026-10-23，AI/资源，置信度低）
 - [[ai-native-rd-org-forum|AI 进入生产后，研发组织怎么变（阿里云 AI 原生研发组织论坛回顾）]]（2026-10-14，AI/组织）
 - [[ai-native-sdlc-playbook|Anthropic AI 原生 SDLC 实施手册]]（2026-10-14，AI/SDLC）
+- [[alibaba-ecommerce-im-group-live|阿里电商IM消息平台在群聊、直播场景下的技术实践]]（2026-10-23，IM/读写扩散/直播分发）
 - [[architect-road-2025-digest|架构师之路：2025 年干货精选（343 篇链接索引）]]（2026-10-22，架构/资源导航，置信度低）
 - [[archunit-java-architecture-guardrails|架构图不会报警，但 ArchUnit 会：给 Java 项目装一套架构门禁]]（2026-10-14，Java/架构治理）
 - [[arthas-mcp-ai-troubleshooting|让 AI 调 Arthas，Java 排障会快多少？]]（2026-10-14，AI/MCP/Java 诊断）
@@ -142,6 +143,7 @@
 - [[pm-decision-frameworks|产品决策四框架]]（3步止损/反向假设/杠杆率排序/信号噪音过滤；单一自媒体信源，置信度低）
 - [[task-run-step-event-model|Task/Run/Step/Event 领域模型]]（Agent Runtime 控制平面四元分离；Run 聚合根+状态机守卫+纯函数投影+OCC；replay≠Durable Execution）
 - [[raft-membership-change-barrier|Raft 成员变更的日志 Barrier]]（公共 config 提交当前 term 日志登记 term；joint 无需/单步必需/回退双向必需）
+- [[read-fanout|读扩散（Fan-out on Read）]]（会话队列+syncId 位点同步把 1:N 写压成 1:1；99.99% 非个性化消息前提；阿里混合模式 500ms 端到端，双信源）
 - [[rag-production-guardrails|企业级 RAG 生产护栏]]（容量/证据/权限/恢复四主线；证据门禁前置、发布目录原子切换；单一信源设计示例）
 - [[reactive-tracing-context|响应式环境的全链路 traceId 传递]]（Reactor Context 替代 ThreadLocal；doOnEach 同步 MDC、doFinally 清除）
 - [[table-sharding-migration|分表平滑迁移策略]]（五种读写策略矩阵 + 双写双读 SQL 重写，京东大表治理实践）

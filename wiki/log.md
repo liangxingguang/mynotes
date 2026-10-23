@@ -150,3 +150,5 @@
 - 2026-10-23 11:10 | ingest | raw/sources/ai/2026-10-23-github-open-source-ai-books-6.md | wiki/sources/github-open-source-ai-books-6.md（新建，confidence=low，知乎开源 AI 书单，按书单先例不立实体页）
 - 2026-10-23 11:10 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
 - 2026-10-23 19:22 | ingest | raw/sources/architecture/2026-10-23-im-group-chat-write-fanout-cost.md | wiki/sources/im-group-chat-write-fanout-cost.md（新建，confidence=high，IM 写扩散成本账与大厂选型）+ wiki/concepts/write-fanout.md（新建概念页，confidence=medium：群服务扇出/副本指纹/MQ 批量化/双轨存储/规模分档；related 回链 idempotency-design、rocketmq、kafka）
+- 2026-10-23 11:45 | ingest | raw/sources/architecture/2026-10-23-alibaba-ecommerce-im-group-live.md | wiki/sources/alibaba-ecommerce-im-group-live.md（新建，confidence=high，阿里电商IM群聊/直播一手实践）+ wiki/concepts/read-fanout.md（新建概念页，confidence=high：会话队列+syncId 位点同步/99.99% 非个性化前提/混合模式 500ms，双信源）+ wiki/concepts/write-fanout.md（升级第 2 信源：120w/s→3K/s 瓶颈实测印证，补读扩散回链）
+- 2026-10-23 11:45 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
