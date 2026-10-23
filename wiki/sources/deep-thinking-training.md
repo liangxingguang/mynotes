@@ -54,7 +54,7 @@ related:
 ## Limitations（局限）
 
 - 个人经验散文，案例均为作者自述；无实证研究支撑（除引卡尼曼外）。
-- 信源异常（2026-10-23 复核）：`raw/sources/misc/2026-10-20-deep-thinking-training.md` 的登记 frontmatter（标题"3个习惯、4个训练方法…"、URL `…/xbkGmXwf9WqVqTnjGq7dRg`）与正文不符——正文实际是本页文章（URL `…/846BxF4GkiMtwXC1_tFssQ`），系采集层两篇同名 slug 共用 `Assets/2026/10/deep-thinking-training.md` 导致原件被覆盖。raw 不可变，原文 A 全文缺失，需人工重新抓取补登记。
+- 信源异常（2026-10-23 人工复核已结案）：`raw/sources/misc/2026-10-20-deep-thinking-training.md` 的登记 frontmatter（标题"3个习惯、4个训练方法…"、URL `…/xbkGmXwf9WqVqTnjGq7dRg`）与正文不符——正文实际是本页文章（URL `…/846BxF4GkiMtwXC1_tFssQ`），系采集层两篇同名 slug 共用 `Assets/2026/10/deep-thinking-training.md` 导致原件被覆盖。raw 不可变未动；经用户裁决放弃找回原文 A（"3个习惯、4个训练方法"篇），以正文实际收录的本篇为准，该 frontmatter 不符作为已知异常留存。
 
 ## Related Knowledge（相关知识）
 
