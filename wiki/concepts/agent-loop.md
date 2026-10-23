@@ -17,6 +17,8 @@ related:
   - wiki/entities/pi.md
   - wiki/concepts/mcp.md
   - wiki/concepts/next-token-prediction.md
+  - wiki/concepts/task-run-step-event-model.md
+  - wiki/concepts/durable-execution.md
 ---
 # Agent Loop
 
@@ -93,6 +95,8 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 - 2026-10-23 — 新增生产化边界信源 `raw/sources/ai/2026-10-15-agent-loop-production-boundaries.md`（Aegis W01 原型）。它把本页"停止信号多源性""响应完整性检查""宿主校验"落到具体工程形态：任务状态机（终态不可覆盖、取消先在仓储落终态的并发排序点）、有限预算（步数/工具调用/三级超时各有独立错误码）、服务端授权（模型输出不是授权凭据，rollback 建议同样走 ToolExecutor → TOOL_DENIED）、证据引用校验（evidence_ids 必须真实存在，且证据 ≠ 因果）。同时印证"Runtime vs Harness"区分：该原型把 Provider/ToolExecutor/Runtime 拆为三个可替换契约，W02 接 MCP 只换工具适配器。
 
 - 2026-10-23 — 新增综述信源 `raw/sources/ai/2026-10-21-agent-2026-midyear-architecture-review.md`（叶小钗 2026 Agent 年中总结）。再次印证 Runtime/Harness 二分（Harness=上下文装配+工具调用+循环控制+暂停恢复+权限检查+运行记录；Runtime 回答资源位置），并补充三条 Loop 层判据：① 场景适配四条件——信息能否取得、工具能否使用、结果能否验证、失败能否恢复；② "Agent Loop 是推进任务的循环，验收机制决定循环什么时候有资格结束"——停止资格由业务证据而非模型的"完成了"判定；③ 工具设计四环节检查——选得对、调得动、读得懂结果、失败后知道如何处理，且 Agent 决策基于状态快照、执行时要校验快照是否仍有效（STALE_CONTEXT 模式）。
+
+- 2026-10-23 — 新增教学信源 `raw/sources/ai/2026-10-23-agent-software-architecture-task-run-step-event.md`（agent-from-scratch 第 5 章）。它承接第 4 章 AgentKernel（即本页 Loop 的教学实现），指出单次阻塞 `run()` 调用缺少任务身份、运行身份、持久化状态、审批状态与并发版本，由此引出 [[task-run-step-event-model|Task/Run/Step/Event 领域模型]] 作为 Loop 的控制平面化；其"模型建议与工具执行分离""停止信号转明确状态"等原则与本页模型/宿主边界、停止信号多源性互证。
 
 ## Open Questions（开放问题）
 

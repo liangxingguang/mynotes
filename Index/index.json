@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23 18:57",
+  "updated_at": "2026-10-23 19:01",
   "notes": [
     {
       "id": "2026-10-23-agent-software-architecture-task-run-step-event",
@@ -79,6 +79,26 @@
       "summary": "虚拟线程\"百万级、短命、不复用\"的模型与 ThreadLocal\"每线程一份可变 Map\"的假设冲突：百万并发即百万份 Map 副本，内存线性膨胀、young GC churn 抬高。ScopedValue（JDK 25 正式，JEP 506）把模型倒过来——作用域内共享一份不可变快照，同时终结内存膨胀、泄漏和脏值三类问题。实测 10 万并发迁移后 Old Gen 从 2.3GB 降到 0.9GB（-61%）。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/scopedvalue-vs-threadlocal-virtual-threads.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-23-system-design-google-maps",
+      "title": "系统设计面试（第二卷）第03章：谷歌地图",
+      "path": "Inbox/2026-10-23-system-design-google-maps.md",
+      "created": "2026-10-23",
+      "category": "学习",
+      "tags": [
+        "分布式系统",
+        "工程实践",
+        "课程"
+      ],
+      "source": "GitBook《系统设计面试：内幕指南 第二卷》中文译版",
+      "source_url": "https://learning-guide.gitbook.io/system-design-interview/xi-tong-she-ji-mian-shi-nei-mu-zhi-nan-di-er-juan/chapter-03-google-maps",
+      "source_type": "文章",
+      "platform": "GitBook",
+      "summary": "10 亿 DAU 简化版谷歌地图设计：聚焦位置更新、导航（含 ETA）、地图渲染三大特性。核心机制——geohash 网格瓦片化（地图瓦片预计算 + CDN 分发、路由瓦片分层承载 A* 寻路）、位置更新客户端批量上报（15s/批，峰值 100 万 QPS 写 Cassandra + Kafka 分发）、自适应 ETA 用分层路由瓦片快速筛出受交通影响的活跃用户。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/system-design-google-maps.md",
       "wiki_status": "pending"
     },
     {

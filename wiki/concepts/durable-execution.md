@@ -19,6 +19,8 @@ related:
   - wiki/entities/pi.md
   - wiki/sources/spring-async-to-task-table.md
   - wiki/sources/async-task-system-design.md
+  - wiki/concepts/task-run-step-event-model.md
+  - wiki/concepts/agent-loop.md
 ---
 # 持久执行（Durable Execution）
 
@@ -71,6 +73,8 @@ Harness 里发生的每件事都是一个任务（效应三明治）：生成 LL
 - 2026-10-21：Go+PG 工程信源把持久执行落到通用后端技术栈（状态机+fencing+outbox+对账），并给出与 Temporal/DBOS 的选型判据——"不存在超过 30 分钟就必须用 Temporal 的普适阈值"。同构的业务系统简化版亦见于 Java 任务表+Worker 方案（条件 UPDATE 抢占、心跳回收、at-least-once+幂等）。
 - 2026-10-22：通用异步任务系统信源（第 4 信源）从业务任务角度独立复现同一套构件（租约 fencing/幂等键/MANUAL 冻结/协作取消/Outbox），至此 Pi 框架、Go+PG Agent 长任务、Java 业务任务三条路线互证。
 - 2026-10 中下旬：pi-durable 半个月从 1.0 到 1.3——1.2 性能改造（500 任务连环结算 12 秒→50 毫秒）并向"工具平台"生长（工具嵌套调用、结构化输出、deferred 工具经 BM25 检索按需加载、code mode 脚本本身是持久任务）；1.3 表前缀支持多存储共享库/DO。崩溃恢复语义细化成速查表（流式中断转 aborted 重发、replay safe 重跑、memo 首写胜出不二次审批、扩展消失则任务阻塞待装回）。
+
+- 2026-10-23：教学信源（agent-from-scratch 第 5 章，第 5 信源）从事件溯源路线给出对照视角：明确区分状态重放 ≠ 模型重跑 ≠ Durable Execution Replay（本章只实现第 1 种），列出四类失败窗口（模型调用前崩溃/工具已执行结果未持久化/事件已存通知未发/代码升级后重放不兼容），并给出六步生产化路径（内存事件仓库→持久 append-only→CAS+幂等命令→Worker 租约+心跳→事务 Outbox+恢复协调→checkpoint/版本化/回放兼容测试）——与 Go+PG/Java 两信源的生产机制一一对应；同时与 Pi Durable"明确不采用事件溯源"形成路线对照，其"事件溯源是设计选择、非 Agent 必备"的取舍判据（长任务恢复/审批/审计/复盘才值得引入）补充了本页 Open Questions 中"与事件溯源路线系统性对比"的一侧证据。
 
 ## Open Questions（开放问题）
 
