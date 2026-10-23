@@ -1325,6 +1325,17 @@
       ],
       "source_url": "https://zhuanlan.zhihu.com/p/2096330283423360903",
       "asset_ref": "Assets/2026/10/agent-software-architecture-task-run-step-event.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-23-github-open-source-ai-books-6.md",
+      "sha256": "27d1d6a17ba6e484ea988deaf5674dcdb45736e9cf379d06da47731e7ff89255",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-23-github-open-source-ai-books-6.md",
+      "pages": [
+        "wiki/sources/github-open-source-ai-books-6.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2094018104430946138",
+      "asset_ref": "Assets/2026/10/github-open-source-ai-books-6.md"
     }
   ]
 }

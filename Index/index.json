@@ -1,26 +1,6 @@
 {
-  "updated_at": "2026-10-23 19:10",
+  "updated_at": "2026-10-23 19:11",
   "notes": [
-    {
-      "id": "2026-10-23-github-open-source-ai-books-6",
-      "title": "这 6 本 GitHub 上的开源 AI 宝典，那是相当有真东西",
-      "path": "Inbox/2026-10-23-github-open-source-ai-books-6.md",
-      "created": "2026-10-23",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "github",
-        "课程"
-      ],
-      "source": "知乎专栏",
-      "source_url": "https://zhuanlan.zhihu.com/p/2094018104430946138",
-      "source_type": "文章",
-      "platform": "知乎",
-      "summary": "6 个高质量开源 AI 书籍/教程项目清单，覆盖 Agent 工程、AI Infra、深度学习理论、强化学习数学与实战。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/github-open-source-ai-books-6.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-10-23-im-group-chat-write-fanout-cost",
       "title": "IM千人群聊该不该用消息写扩散？详细算算成本账！",
@@ -38,6 +18,25 @@
       "summary": "千人群一条 7 字消息，写扩散下服务端要干 3000~5000 次操作。文章把账单拆开算：扇出放在群服务（责任边界清晰）、副本指纹 uuid+\"|G\"+short_id 区分原消息与副本、MQ 批量化（50 人/批，写入次数降一个数量级）、双轨存储（历史库只存原消息，副本进离线盒子）、失败重试上限 + 死信定位到\"哪条没投到哪个人\"。结论：写扩散是千人群最优解但物理上限明确（5000 人需专项优化、万人群走不通），大厂对比——钉钉转读扩散+多级缓存、微信坚持写扩散、企业微信写扩散+硬件堆料。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/im-group-chat-write-fanout-cost.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-23-im-websocket-reconnect-heartbeat",
+      "title": "IM聊天不掉线？生产级WebSocket断线重连、心跳保活实战",
+      "path": "Inbox/2026-10-23-im-websocket-reconnect-heartbeat.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "分布式系统"
+      ],
+      "source": "SegmentFault（老前端的功夫）",
+      "source_url": "https://segmentfault.com/a/1190000048352893",
+      "source_type": "文章",
+      "platform": "SegmentFault",
+      "summary": "一套可直接落地的 Web 端 IM 长连接方案：ReconnectingWebSocket 类封装四件事——双向心跳（前端 PING + 超时未收任何消息主动断开，解决\"连接已断但 TCP 未感知\"）、指数退避重连（1s×1.5^n 封顶 30s，防重连风暴）、离线消息队列（重连期间消息入队、onopen 后批量补发，需幂等去重）、manualClose 标志区分手动关闭与异常断线。生产补充：页面可见性降频心跳、navigator.onLine 网络恢复立即重连、重连后 401 重新鉴权；后端配套超时踢人（如 60s 未收 PING 主动断）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/im-websocket-reconnect-heartbeat.md",
       "wiki_status": "pending"
     },
     {
@@ -2225,6 +2224,26 @@
       "summary": "深度思考是围绕具体问题弄清概念与事实、分析原因条件、再用证据检查判断的过程；它可以通过五个日常习惯刻意练习形成。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/deep-thinking-training.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-23-github-open-source-ai-books-6",
+      "title": "这 6 本 GitHub 上的开源 AI 宝典，那是相当有真东西",
+      "path": "Archive/2026-10-23-github-open-source-ai-books-6.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "github",
+        "课程"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2094018104430946138",
+      "source_type": "文章",
+      "platform": "知乎",
+      "summary": "6 个高质量开源 AI 书籍/教程项目清单，覆盖 Agent 工程、AI Infra、深度学习理论、强化学习数学与实战。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/github-open-source-ai-books-6.md",
       "wiki_status": "ingested"
     },
     {

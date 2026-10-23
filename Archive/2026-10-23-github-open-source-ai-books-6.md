@@ -12,9 +12,7 @@ tags:
   - github
   - 课程
 asset_ref: Assets/2026/10/github-open-source-ai-books-6.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-10-23T11:06:54.029Z"
-ingest_claim_id: 29152-1792753614029-0
+wiki_status: ingested
 ---
 
 # 这 6 本 GitHub 上的开源 AI 宝典，那是相当有真东西
