@@ -12,7 +12,7 @@ tags:
   - 工具
   - 课程
 asset_ref: Assets/2026/10/claude-howto-github-tutorial.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # claude-howto：一套完整的 Claude Code 开源教程

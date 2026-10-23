@@ -1,0 +1,33 @@
+---
+title: claude-howto：一套完整的 Claude Code 开源教程（微博分享）
+source: 微博（@科技先锋官 话题）
+source_url: https://weibo.com/5078115336/5357247907763381
+source_type: post
+platform: weibo
+captured: 2026-10-23
+registered_at: 2026-10-23
+inbox_ref: Inbox/2026-10-23-claude-howto-github-tutorial.md
+asset_ref: Assets/2026/10/claude-howto-github-tutorial.md
+---
+
+# claude-howto：一套完整的 Claude Code 开源教程（微博分享）
+
+来源：https://weibo.com/5078115336/5357247907763381
+
+---
+
+很多人装了 Claude Code，用了一段时间之后就觉得，这玩意儿好像也没什么特别的。
+
+但有人统计过，大多数用户只用到了 Claude Code 10% 左右的功能，剩下那 90%，根本不知道在哪里。
+
+一个叫 luongnv89 的开发者在 GitHub 上建了个仓库，叫 claude-howto，整理出了一套完整的使用教程。免费，开源，现在还在持续更新，跟着 Claude Code 每次版本迭代同步内容。
+
+这套教程分 10 个模块，从最基础的一直讲到高级用法。先讲 Slash Commands，这是最简单的快捷指令，打几个字就能触发某个操作；然后讲 Memory，让 Claude 在不同对话里记住你的项目配置和规范；接下来是 Skills，提前写好能力模块，Claude 到时候自动调用；再往后是 Subagents，把任务拆开分给不同的专属 AI 助手分头处理；然后是 MCP 协议，让 Claude 对接 GitHub、数据库这些外部工具；还有 Hooks，某个事件触发时自动运行指定脚本；以及 Plugins，把上面这些打包成整套方案，一条命令部署完毕。
+
+完整学完大概要 11 到 13 个小时。但不需要一次学完，仓库里有个自评测试，填一下就知道应该从哪个模块开始。就算只花 15 分钟，复制一个 slash command 模板进项目，也能立刻感受到差别。
+
+如果你现在装着 Claude Code 但感觉平平无奇，去翻一下这个仓库，大概率会发现不少从没用过的功能。
+
+传送门：github.com/luongnv89/claude-howto
+
+话题：#科技先锋官# #How I AI#

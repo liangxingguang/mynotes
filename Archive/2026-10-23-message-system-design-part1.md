@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - 分布式系统
 asset_ref: Assets/2026/10/message-system-design-part1.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 消息系统设计与实现「上篇」：概念与领域建模

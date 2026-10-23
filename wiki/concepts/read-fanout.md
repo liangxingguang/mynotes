@@ -17,6 +17,7 @@ sources:
 related:
   - wiki/concepts/write-fanout.md
   - wiki/concepts/mcast.md
+  - wiki/concepts/notification-system-design.md
   - wiki/sources/alibaba-ecommerce-im-group-live.md
   - wiki/sources/meipai-live-danmu-realtime-push.md
 ---
@@ -60,6 +61,7 @@ related:
 
 - 与 [[write-fanout|写扩散]] 的区别在于「读时聚合 vs 写时复制」：读扩散拿架构复杂度与读聚合成本换存储/写入的极致节省；写扩散拿写放大换读路径简单与每成员投递记录（已读回执、撤回、离线补全的天然载体）。群规模与消息个性化比例是选型主变量。
 - 与 [[mcast|长连接组播]] 的区别在于「拉 vs 推」：读扩散由端侧持位点拉取补齐；mcast 由长连接层主动推、容忍折损。美拍的「告知→毫秒级等待→拉取→推」订阅推送模型是二者混合的长连接形态（见 [[meipai-live-danmu-realtime-push|美拍信源]]）。
+- 站内通知场景的应用见 [[notification-system-design|站内消息系统领域模型]]：公告/提醒按订阅关系拉取（读扩散实例），私信发送即写接收者队列（写扩散实例）——推拉按「消息类型」而非「群规模」划分。
 
 ## Evolution（演进）
 

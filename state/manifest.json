@@ -1396,6 +1396,41 @@
       ],
       "source_url": "http://www.52im.net/thread-1236-1-1.html",
       "asset_ref": "Assets/2026/10/meipai-live-danmu-realtime-push.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-23-claude-howto-github-tutorial.md",
+      "sha256": "c6aac457464b2a9cbfc7d2be5ea852bb200e128d1bb0c501243ded84a3c98b1d",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-23-claude-howto-github-tutorial.md",
+      "pages": [
+        "wiki/sources/claude-howto-github-tutorial.md"
+      ],
+      "source_url": "https://weibo.com/5078115336/5357247907763381",
+      "asset_ref": "Assets/2026/10/claude-howto-github-tutorial.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-message-system-design-part1.md",
+      "sha256": "eecbd0508c35363248c398077154f6ed11fc22551ad1175060aabe5a52ea7aa5",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-23-message-system-design-part1.md",
+      "pages": [
+        "wiki/sources/message-system-design-part1.md",
+        "wiki/concepts/notification-system-design.md"
+      ],
+      "source_url": "https://www.jianshu.com/p/f4d7827821f1",
+      "asset_ref": "Assets/2026/10/message-system-design-part1.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-message-system-design-part2.md",
+      "sha256": "78dcbdc863ced12d749f3c0911af6906c9ad239e89f24733d9398326abd10155",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-23-message-system-design-part2.md",
+      "pages": [
+        "wiki/sources/message-system-design-part2.md",
+        "wiki/concepts/notification-system-design.md"
+      ],
+      "source_url": "https://www.jianshu.com/p/6bf8166b291c",
+      "asset_ref": "Assets/2026/10/message-system-design-part2.md"
     }
   ]
 }

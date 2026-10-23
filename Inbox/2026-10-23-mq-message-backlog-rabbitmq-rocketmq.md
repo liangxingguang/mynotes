@@ -12,7 +12,9 @@ tags:
   - 分布式系统
   - 工程实践
 asset_ref: Assets/2026/10/mq-message-backlog-rabbitmq-rocketmq.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-23T16:26:31.274Z"
+ingest_claim_id: 49004-1792772791274-0
 ---
 
 # RabbitMQ vs RocketMQ，消息堆积了怎么办？一线解决方案全解析

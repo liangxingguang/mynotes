@@ -156,3 +156,7 @@
 - 2026-10-23 21:29 | ingest | raw/sources/architecture/2026-10-23-im-websocket-reconnect-heartbeat.md | wiki/sources/im-websocket-reconnect-heartbeat.md（新建，confidence=medium，教程信源）+ wiki/concepts/websocket-heartbeat-reconnect.md（新建概念页，confidence=medium：检测/恢复/状态重建三段式）
 - 2026-10-23 21:29 | ingest | raw/sources/architecture/2026-10-23-meipai-live-danmu-realtime-push.md | wiki/sources/meipai-live-danmu-realtime-push.md（新建，confidence=high，美拍弹幕一手实践；推送模型偏单点实践不立概念页，互链 mcast/read-fanout）
 - 2026-10-23 21:29 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
+- 2026-10-23 | ingest | raw/sources/ai/2026-10-23-claude-howto-github-tutorial.md | wiki/sources/claude-howto-github-tutorial.md（新建，confidence=low，微博资源分享，按书单/资源先例不立实体页）
+- 2026-10-23 | ingest | raw/sources/architecture/2026-10-23-message-system-design-part1.md | wiki/sources/message-system-design-part1.md（新建，confidence=medium，站内消息概念篇）+ wiki/concepts/notification-system-design.md（新建概念页：三分类/四元组/订阅拉取/免打扰后置，上下篇双信源）
+- 2026-10-23 | ingest | raw/sources/architecture/2026-10-23-message-system-design-part2.md | wiki/sources/message-system-design-part2.md（新建，confidence=medium，库表与服务层实现篇）+ wiki/concepts/read-fanout.md、write-fanout.md（互链升级：站内通知推拉选型实例）
+- 2026-10-23 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
