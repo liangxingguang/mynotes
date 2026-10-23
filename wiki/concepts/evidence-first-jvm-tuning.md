@@ -4,7 +4,7 @@ type: concept
 title: 证据驱动的 JVM 调优
 status: active
 created: 2026-10-22
-updated: 2026-10-22
+updated: 2026-10-23
 confidence: high
 tags:
   - concept
@@ -14,8 +14,10 @@ tags:
 sources:
   - raw/sources/misc/2026-10-14-jvm-tuning-core-approach.md
   - raw/sources/architecture/2026-10-21-gc-log-tuning-practice.md
+  - raw/sources/architecture/2026-10-23-jdk21-migration-huolala.md
 related:
   - wiki/concepts/cpu-funnel-coding.md
+  - wiki/concepts/virtual-threads-production.md
   - wiki/sources/jvm-tuning-core-approach.md
 ---
 # 证据驱动的 JVM 调优
@@ -56,6 +58,7 @@ related:
 
 - 2026-10-14 — 随《一文掌握 JVM 调优核心思路》提出完整流程。
 - 2026-10-21 — 《GC 日志分析与调优实战》独立印证同一闭环（定目标→看基线→定假设→压测验证，一次只动一个参数），并补充 GC 日志专项读法：real 才是真实停顿、吞吐量经验值 >95%~99%、内存泄漏三早期信号（老年代锯齿上移/FGC 单调递增/Survivor 持续偏高）、IHOP 45→35 单变量案例（FGC 每小时 6 次→0.5 次，P99 1.2s→380ms）。
+- 2026-10-23 — 《JDK 21 规模化落地实践（货拉拉）》第三信源印证并补充容器化细则：G1 停顿目标从 200ms 起步、IHOP 45→35~40 同法；MaxRAMPercentage G1 取 70~75、分代 ZGC 取 65~70（ZGC 自身占用更高，堆占比不超 85%）；InitialRAMPercentage 约上限一半且不等于上限（防节点超卖先被杀）；System.gc() 用 -XX:+ExplicitGCInvokesConcurrent 改并发回收而非 DisableExplicitGC（NIO 要靠它回收 DirectByteBuffer）；堆外显式 MaxDirectMemorySize；JDK 21 起 JVM 读容器配额，堆大小用百分比不写死 -Xmx；排障顺序在虚拟线程时代变为 GC 日志→JFR→钉住跟踪→聚合指标。
 
 ## Open Questions（开放问题）
 
@@ -66,9 +69,12 @@ related:
 
 - Source: `raw/sources/misc/2026-10-14-jvm-tuning-core-approach.md`
 - Source: `raw/sources/architecture/2026-10-21-gc-log-tuning-practice.md`（印证：同一四步闭环 + GC 日志读法与告警规则）
+- Source: `raw/sources/architecture/2026-10-23-jdk21-migration-huolala.md`（印证 + 容器化细则：堆百分比、ZGC 堆占比、ExplicitGCInvokesConcurrent、观测换代）
 
 ## Related Knowledge（相关知识）
 
 - [[jvm-tuning-core-approach|一文掌握 JVM 调优核心思路]]
 - [[cpu-funnel-coding|CPU 漏斗（编码级性能模型）]]
 - [[gc-log-tuning-practice|GC 日志分析与调优实战（信源页）]]
+- [[jdk21-migration-huolala|JDK 21 规模化落地实践（信源页）]]
+- [[virtual-threads-production|虚拟线程生产实践]]

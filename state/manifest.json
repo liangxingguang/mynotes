@@ -1297,6 +1297,20 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/bixkfwD0i8YXBmBMgyCaog",
       "asset_ref": "Assets/2026/10/async-idempotency-local-message-table.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-jdk21-migration-huolala.md",
+      "sha256": "8400e68722d54da91ee196e7477940e606c7828e1747899988108f4622307fa1",
+      "registered_at": "2026-10-23",
+      "inbox_ref": "Archive/2026-10-23-jdk21-migration-huolala.md",
+      "pages": [
+        "wiki/sources/jdk21-migration-huolala.md",
+        "wiki/concepts/virtual-threads-production.md",
+        "wiki/concepts/framework-first-migration.md",
+        "wiki/concepts/evidence-first-jvm-tuning.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/O85Y7lNSCJF5ciFmFrpyJw",
+      "asset_ref": "Assets/2026/10/jdk21-migration-huolala.md"
     }
   ]
 }

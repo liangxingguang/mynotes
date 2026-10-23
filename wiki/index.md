@@ -51,6 +51,7 @@
 - [[java-perf-low-cpu-coding-tips-part1|打造高性能、低CPU消耗系统—36种编码实战技巧（上篇）]]（2026-10-14，Java/性能）
 - [[java-perf-low-cpu-coding-tips-part2|打造高性能、低CPU消耗系统—36种编码实战技巧（下篇）]]（2026-10-14，Java/性能）
 - [[jd-haibo-ai-knowledge-base|拆解京东海博 AI-Native 落地保障：海博团队 AI 知识库能力建设]]（2026-10-14，AI/知识库）
+- [[jdk21-migration-huolala|JDK 21 规模化落地实践（货拉拉）：框架先扛兼容成本，业务切 parent 收尾]]（2026-10-23，Java/JVM/虚拟线程）
 - [[jenkins-gitlab-cicd-pipeline|Jenkins + GitLab CI/CD 流水线落地实战（完整配置）]]（2026-10-21，CI/CD，置信度中）
 - [[jvm-gc-troubleshooting-arthas|JVM GC 排查实战（Arthas 版）]]（2026-10-21，Java/JVM）
 - [[jvm-troubleshooting-six-tools|JVM 排查别乱试：6 个工具各管什么]]（2026-10-21，Java/JVM）
@@ -129,6 +130,7 @@
 - [[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]（先目标基线、JFR/GC 日志归因，证据指向 JVM 才动参数，单变量实验）
 - [[idempotency-design|幂等设计]]（重试与幂等共生；同事务铁律+幂等键三要素+分层防护闭环，三信源互证）
 - [[exploratory-learning|探索式学习（知识 DAG）]]（目标→节点 DAG，导师写 JS 经沙箱改写文档教学；Unyra 提出）
+- [[framework-first-migration|框架先行的规模化运行时迁移]]（BOM 收口+框架分代并行+AI 批量改造+检查单收敛，货拉拉 JDK 21 实践）
 - [[llm-wiki|LLM Wiki]]（原始来源不可变 + 模型持续编译互链知识页面，Karpathy 模式；本仓库即实例，双信源）
 - [[mcp|MCP]]（LLM↔工具/数据纵向协议，Anthropic 2024）
 - [[next-token-prediction|下一 token 预测]]（LLM 的统一目标：交叉熵训练、自回归生成，能力与幻觉同根）
@@ -139,6 +141,7 @@
 - [[rag-production-guardrails|企业级 RAG 生产护栏]]（容量/证据/权限/恢复四主线；证据门禁前置、发布目录原子切换；单一信源设计示例）
 - [[reactive-tracing-context|响应式环境的全链路 traceId 传递]]（Reactor Context 替代 ThreadLocal；doOnEach 同步 MDC、doFinally 清除）
 - [[table-sharding-migration|分表平滑迁移策略]]（五种读写策略矩阵 + 双写双读 SQL 重写，京东大表治理实践）
+- [[virtual-threads-production|虚拟线程生产实践]]（场景筛选、Helper 传 Trace/ThreadLocal、钉住规避与观测换代，货拉拉 JDK 21 实践）
 
 ## entity（实体）
 

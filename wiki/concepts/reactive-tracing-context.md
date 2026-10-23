@@ -14,6 +14,7 @@ sources:
   - raw/sources/architecture/2026-10-21-scg-traceid-full-chain.md
 related:
   - wiki/sources/scg-traceid-full-chain.md
+  - wiki/concepts/virtual-threads-production.md
 ---
 # 响应式环境的全链路 traceId 传递
 
@@ -44,6 +45,7 @@ Servlet 时代「Filter + ThreadLocal + MDC」的方案依赖一请求一线程�
 ### Distinctions（区分）
 
 - 与 Servlet ThreadLocal 方案的区别：载体从线程绑定改为流绑定；MDC 从「全程有效」降级为「信号时刻同步」。
+- 与 [[virtual-threads-production|虚拟线程生产实践]] 的关系：两者都打破「一请求一线程」假设；响应式换载体（Reactor Context），虚拟线程保留同步模型但要求跨任务显式传递 ThreadLocal/Trace（框架 Helper 包装）。
 - 与 Sleuth/SkyWalking 的区别：手动实现轻量可控但无可视化；Sleuth 依赖级侵入配 Zipkin；SkyWalking Agent 无侵入自带 UI。用了它们则不必自写过滤器，但自定义 traceId 格式或返给前端仍需定制。
 
 ## Open Questions（开放问题）
