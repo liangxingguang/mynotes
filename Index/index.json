@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23 19:11",
+  "updated_at": "2026-10-23 19:13",
   "notes": [
     {
       "id": "2026-10-23-im-group-chat-write-fanout-cost",
@@ -155,6 +155,25 @@
       "summary": "1 亿 DAU、2 亿商家的\"附近地点\"服务设计：LBS（读多无状态）+ 商家服务（写少）分离。核心是地理空间索引选型——二维搜索/均匀网格/geohash/四叉树/S2 逐一比较，推荐 geohash（简单）或四叉树（支持 k 近邻）；geohash 需处理边界问题（赤道/本初子午线两侧无共享前缀 → 加 8 邻居网格；前缀相似≠邻近）与商家不足（截短 geohash 扩大半径）。索引数据量小（四叉树全量约 1.71GB），读副本优于分片；缓存键用 geohash 而非原始经纬度。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/system-design-proximity-service.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-23-vivo-diting-sensitive-word-matching",
+      "title": "vivo谛听敏感词匹配系统技术实践：AC自动机 + 组合/拼音敏感词",
+      "path": "Inbox/2026-10-23-vivo-diting-sensitive-word-matching.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "分布式系统"
+      ],
+      "source": "SegmentFault（vivo互联网服务器团队）",
+      "source_url": "https://segmentfault.com/a/1190000048315142",
+      "source_type": "文章",
+      "platform": "SegmentFault",
+      "summary": "vivo 内容审核平台\"谛听\"的敏感词匹配方案：词库百万级、平均匹配耗时 50ms。底层选型 AC 自动机（Trie+Fail 指针，近似线性复杂度）而非 WM——因敏感词长度/前缀无规律且加载不频繁、内存充足。两个业务增强：组合敏感词（拆成单词入 Trie，后置按映射聚合，全部命中才算组合命中）；拼音敏感词（对抗\"啋票\"类谐音规避——Trie 节点改存音节、多音字全读音展开成\"拼音图\"，AC 自动机改在图上 DFS 匹配，DFS 栈同步保存 Trie 状态位）。终止条件与剪枝是关键难点。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/vivo-diting-sensitive-word-matching.md",
       "wiki_status": "pending"
     },
     {
