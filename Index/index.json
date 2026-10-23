@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23 19:15",
+  "updated_at": "2026-10-23 19:18",
   "notes": [
     {
       "id": "2026-10-23-im-group-chat-write-fanout-cost",
@@ -95,6 +95,26 @@
       "summary": "消息堆积 = 生产速度超过消费速度。文章给出 RabbitMQ 与 RocketMQ 两栈的消费端优化（并发消费者、手动确认、异步处理）、队列配置（TTL/死信/优先级）、应急三板斧（临时扩容、消息分流、消息清理）与监控告警清单的入门方案集。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/mq-message-backlog-rabbitmq-rocketmq.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-23-netease-pigeon-message-bus-activity",
+      "title": "网易云音乐「信鸽」：基于实时消息总线的直播活动系统架构",
+      "path": "Inbox/2026-10-23-netease-pigeon-message-bus-activity.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "RocketMQ",
+        "工程实践"
+      ],
+      "source": "SegmentFault（云音乐技术团队·燕十三）",
+      "source_url": "https://segmentfault.com/a/1190000047833219",
+      "source_type": "文章",
+      "platform": "SegmentFault",
+      "summary": "直播活动的痛点：活动玩法灵活多变，\"模块 A 结束后触发模块 B\"每次都要改代码。信鸽（Pigeon）把这条触发链做成配置化的消息总线——各模块完成任务后把数据发给信鸽，信鸽按\"信鸽 ID\"查路由配置经 RocketMQ 异步投递到下一系统，失败备份存储 + 定时步长重试。四层面设计：履约能力、SDK 接入（Spring 容器自动建 PushConsumer）、全局标识字典（userId/anchorId 统一命名）、Provider 自动注册（注解扫描 + 定时上报）。与 ESB 的区别是\"哑管道\"——不做协议转换、不做中心化同步集成。消息治理上把多服务重复监听 topic 收拢为信鸽统一 receiver 转发（自动/自定义/存储三路，tag 区分 + 转发关系可配存活周期），实测 32 台 8U16G 容器支撑 300 万条/分钟、CPU 45%。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netease-pigeon-message-bus-activity.md",
       "wiki_status": "pending"
     },
     {
