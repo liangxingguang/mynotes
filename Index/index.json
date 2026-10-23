@@ -1,26 +1,6 @@
 {
-  "updated_at": "2026-10-23 18:27",
+  "updated_at": "2026-10-23 18:33",
   "notes": [
-    {
-      "id": "2026-10-23-async-idempotency-local-message-table",
-      "title": "异步链路幂等实战：本地消息表配套防重，解决重复扣款与消息重放",
-      "path": "Inbox/2026-10-23-async-idempotency-local-message-table.md",
-      "created": "2026-10-23",
-      "category": "技术",
-      "tags": [
-        "分布式系统",
-        "分布式事务",
-        "工程实践"
-      ],
-      "source": "微信公众号「互联网后端架构栈」",
-      "source_url": "https://mp.weixin.qq.com/s/bixkfwD0i8YXBmBMgyCaog",
-      "source_type": "文章",
-      "platform": "微信公众号",
-      "summary": "基于商城大促重复扣券真实事故，拆解异步链路重复流量的三大来源，对比四类幂等方案的取舍边界。核心结论：重试是最终一致性方案赖以生存的基础，而重试必然引入重复执行，因此幂等不是可选功能，而是整套最终一致性体系中不可分割的配套约束层。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/async-idempotency-local-message-table.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
@@ -2029,6 +2009,26 @@
       "summary": "开源项目 ai-engineering-interview-questions，按主题收录 AI 工程面试问题并附讲解入口，覆盖 LLM 基础到生产部署全链路，适合面试前自查知识覆盖。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/weibo-5356356632055233.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-23-async-idempotency-local-message-table",
+      "title": "异步链路幂等实战：本地消息表配套防重，解决重复扣款与消息重放",
+      "path": "Archive/2026-10-23-async-idempotency-local-message-table.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "分布式事务",
+        "工程实践"
+      ],
+      "source": "微信公众号「互联网后端架构栈」",
+      "source_url": "https://mp.weixin.qq.com/s/bixkfwD0i8YXBmBMgyCaog",
+      "source_type": "文章",
+      "platform": "微信公众号",
+      "summary": "基于商城大促重复扣券真实事故，拆解异步链路重复流量的三大来源，对比四类幂等方案的取舍边界。核心结论：重试是最终一致性方案赖以生存的基础，而重试必然引入重复执行，因此幂等不是可选功能，而是整套最终一致性体系中不可分割的配套约束层。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/async-idempotency-local-message-table.md",
       "wiki_status": "ingested"
     },
     {
