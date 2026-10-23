@@ -11,7 +11,9 @@ tags:
   - 分布式系统
   - 工程实践
 asset_ref: Assets/2026/10/alibaba-ecommerce-im-group-live.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-23T11:40:19.052Z"
+ingest_claim_id: 31576-1792755619052-0
 ---
 
 # 阿里电商IM消息平台在群聊、直播场景下的技术实践

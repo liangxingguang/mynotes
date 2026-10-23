@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23 19:39",
+  "updated_at": "2026-10-23 19:42",
   "notes": [
     {
       "id": "2026-10-23-alibaba-ecommerce-im-group-live",
@@ -18,7 +18,7 @@
       "summary": "双 11 强互动场景（盖楼群、百万在线直播间）下电商 IM 的架构实践。群聊侧：写扩散 1:N 把 DB 写入打到极限（120w/s 写入仅支撑 3K/s 上行）→ 利用\"群内 99.99% 是非个性化消息\"改读扩散，消息只写一条、群会话队列按 syncId 位点推拉同步（客户端存位点去中心化，syncId 差值>1 则拉区间补洞），最终读写扩散混合做到 500ms 端到端。直播侧：直播间是\"弱关系特殊的群\"（40w~200w 设备），链路为网关→秒级 buffer→编码合并批量→设备分段切片扩散→长连推送；热点用一致性 Hash 二次打散 + Striped64 式分布式统计合并。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/alibaba-ecommerce-im-group-live.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-23-baidu-live-mcast-message-architecture",
@@ -172,6 +172,25 @@
       "summary": "网易云信支撑 TFBOYS 线上演唱会的千万级弹幕方案。接入层：GSLB 按网络类型/机房容量/负载/成本分配地址，开播并发 50~100 万 TPS 下的三优化——负载上报周期 1s→5ms、分配服务独立线程周期同步负载（不再按请求查询）、按负载排序轮转分配（防低负载机器被瞬间打爆）。登录：握手协商加密算法（RSA/SM2 + AES/SM4 国密，JNI 加速非对称计算）+ 动态 Token 鉴权（账号+时间+接入地址+时变随机数，进程本地计算不访问用户服务）。消息侧：消息体精简（礼物资源预加载只传编号）、逐级流控（本地粗粒度 + 反垃圾分布式全局流控 + 广播再控）、优先级队列分桶按比例投递（余量叠加到下一队列）。下行杀手锏：**CDN 广播**——推流方案（消息伪装成视频流，实时性高）或静态文件加速（实现简单，实时性取决于同步周期），多 CDN 厂商融合按权重轮询。稳定性四件套：ChatLink/ChatServer 单元化无状态跨机房部署、单点服务主备缓存集群 5s 切换、秒级监控大盘（业务预聚合+中心合并）、预设+随机双模式故障演练。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netease-ten-million-live-danmu-cdn-broadcast.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-23-netty-million-connection-push-service",
+      "title": "基于Netty实现海量接入的推送服务技术要点",
+      "path": "Inbox/2026-10-23-netty-million-connection-push-service.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "工程实践"
+      ],
+      "source": "52im.net（李林锋，原载 InfoQ）",
+      "source_url": "http://www.52im.net/thread-166-1-1.html",
+      "source_type": "文章",
+      "platform": "52im.net",
+      "summary": "李林锋（《Netty权威指南》作者）的百万长连接推送服务调优清单。由一个真实案例切入：10 万长连接的 MQTT 服务\"内存泄露\"，实为 IdleStateHandler 空闲超时设 15 分钟导致 110 万个 ScheduledFutureTask 堆积进老年代——改 45 秒即愈，量级放大一切小问题。八大要点：① ulimit 句柄数调到百万级；② 防 CLOSE_WAIT 堆积（不在 I/O 线程跑业务/自定义 Task，Reactor 线程数取 [核数+1, 核数×2]，IdleStateHandler 回调时延必须可控）；③ 心跳周期权衡 NAT 超时（移动 2.5G 约 5 分钟释放空闲链路）与信令风暴，建议 180s（微信 300s）；④ 缓冲区按消息均值而非上限设置，用 AdaptiveRecvByteBufAllocator 动态伸缩（百万连接省 ~5G 内存）；⑤ PooledByteBufAllocator 内存池（Twitter 案例：垃圾生成降 5 倍，retain/release 必须成对）；⑥ 日志是隐形杀手——log4j AsyncAppender 队列满会同步阻塞 I/O 线程；⑦ TCP 调优：SO_SNDBUF/RCVBUF 设 32K + Linux RPS 软中断均衡（性能 +20%）；⑧ JVM 参数按内存模型计算 -Xmx、压 Full GC 频率。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-million-connection-push-service.md",
       "wiki_status": "pending"
     },
     {
