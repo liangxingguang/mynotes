@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23 18:34",
+  "updated_at": "2026-10-23 18:38",
   "notes": [
     {
       "id": "2026-10-23-jdk21-migration-huolala",
@@ -19,6 +19,26 @@
       "summary": "货拉拉上千个 Java 服务从 JDK 8 升级 JDK 21 的完整复盘：框架（JAF/Hermes/Monitor）先把兼容成本扛下来、BOM 收口版本、AI 批量改 javax→jakarta，业务工程只需切 parent 按检查单收尾。实测 CPU 降 10%、内存降 50%。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/jdk21-migration-huolala.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-23-scopedvalue-vs-threadlocal-virtual-threads",
+      "title": "Java 21 虚拟线程下 ThreadLocal 怎么办？ScopedValue 实战替代方案",
+      "path": "Inbox/2026-10-23-scopedvalue-vs-threadlocal-virtual-threads.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "工程实践",
+        "spring"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/GBcUYJAqW-mTbhTsOK5KWw",
+      "source_type": "文章",
+      "platform": "微信公众号",
+      "summary": "虚拟线程\"百万级、短命、不复用\"的模型与 ThreadLocal\"每线程一份可变 Map\"的假设冲突：百万并发即百万份 Map 副本，内存线性膨胀、young GC churn 抬高。ScopedValue（JDK 25 正式，JEP 506）把模型倒过来——作用域内共享一份不可变快照，同时终结内存膨胀、泄漏和脏值三类问题。实测 10 万并发迁移后 Old Gen 从 2.3GB 降到 0.9GB（-61%）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/scopedvalue-vs-threadlocal-virtual-threads.md",
       "wiki_status": "pending"
     },
     {
