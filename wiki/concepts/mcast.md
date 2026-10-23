@@ -4,7 +4,7 @@ type: concept
 title: 长连接组播（mcast）
 status: active
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-24
 confidence: high
 tags:
   - concept
@@ -16,8 +16,10 @@ sources:
 related:
   - wiki/concepts/write-fanout.md
   - wiki/concepts/read-fanout.md
+  - wiki/concepts/cdn-broadcast-fanout.md
   - wiki/sources/baidu-live-mcast-message-architecture.md
   - wiki/sources/meipai-live-danmu-realtime-push.md
+  - wiki/sources/netease-live-danmu-cdn-broadcast.md
 ---
 # 长连接组播（mcast）
 
@@ -65,7 +67,7 @@ related:
 ## Evolution（演进）
 
 - 百度直播：先推演照搬 IM 群聊（六压力点）与多群组方案（消息不同步/成员不稳）均不可行 → 设计 mcast（本文信源，一手）；后续拓展历史消息信箱与独立可靠礼物通道。
-- 对照路径：美拍弹幕选择「轮询 → 长连接订阅推送（告知→拉取→推，大直播间降级广播）」（见 [[meipai-live-danmu-realtime-push|美拍信源]]）；阿里直播选择读写扩散混合（见 [[read-fanout|读扩散]]）。
+- 对照路径：美拍弹幕选择「轮询 → 长连接订阅推送（告知→拉取→推，大直播间降级广播）」（见 [[meipai-live-danmu-realtime-push|美拍信源]]）；阿里直播选择读写扩散混合（见 [[read-fanout|读扩散]]）；网易云信选择 [[cdn-broadcast-fanout|CDN 广播]]（见 [[netease-live-danmu-cdn-broadcast|网易云信信源]]）。
 
 ## Open Questions（开放问题）
 

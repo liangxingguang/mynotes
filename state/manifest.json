@@ -1457,6 +1457,42 @@
       "source_url": "https://mp.weixin.qq.com/s/uspHedu0uxtmdBEkotYpwg",
       "asset_ref": "Assets/2026/10/mq-message-backlog-rabbitmq-rocketmq.md",
       "note": "与 2026-10-22-mq-message-backlog-solutions 为同一文章的不同发布 URL，非独立信源"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-netease-ten-million-live-danmu-cdn-broadcast.md",
+      "sha256": "a42fe14be8867bc5759e2cdf7faffc964a3146b0420bf3e1760bfd4596ca6a38",
+      "registered_at": "2026-10-24",
+      "inbox_ref": "Archive/2026-10-23-netease-ten-million-live-danmu-cdn-broadcast.md",
+      "pages": [
+        "wiki/sources/netease-live-danmu-cdn-broadcast.md",
+        "wiki/concepts/cdn-broadcast-fanout.md"
+      ],
+      "source_url": "http://www.52im.net/thread-4299-1-1.html",
+      "asset_ref": "Assets/2026/10/netease-ten-million-live-danmu-cdn-broadcast.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-netty-million-connection-push-service.md",
+      "sha256": "47f4b11c7054dc7c671953b60a299eb9f7a77b20873e1eaf70df5f4babfbe4ed",
+      "registered_at": "2026-10-24",
+      "inbox_ref": "Archive/2026-10-23-netty-million-connection-push-service.md",
+      "pages": [
+        "wiki/sources/netty-million-connection-push-service.md",
+        "wiki/entities/netty.md"
+      ],
+      "source_url": "http://www.52im.net/thread-166-1-1.html",
+      "asset_ref": "Assets/2026/10/netty-million-connection-push-service.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-nginx-websocket-load-balancing.md",
+      "sha256": "29f25db40f77c4bf95bce9385b298b7ca6449597b35ed8b84c5adfae9ff3e38b",
+      "registered_at": "2026-10-24",
+      "inbox_ref": "Archive/2026-10-23-nginx-websocket-load-balancing.md",
+      "pages": [
+        "wiki/sources/nginx-websocket-load-balancing.md",
+        "wiki/concepts/websocket-heartbeat-reconnect.md"
+      ],
+      "source_url": "https://segmentfault.com/a/1190000048281968",
+      "asset_ref": "Assets/2026/10/nginx-websocket-load-balancing.md"
     }
   ]
 }

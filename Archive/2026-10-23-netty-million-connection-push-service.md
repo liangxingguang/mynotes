@@ -12,7 +12,7 @@ tags:
   - netty
   - 工程实践
 asset_ref: Assets/2026/10/netty-million-connection-push-service.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 基于Netty实现海量接入的推送服务技术要点

@@ -81,7 +81,10 @@
 - [[mysql-replication-lag-optimization|数据库主从同步延迟，业务还能稳吗？一线优化实战全解析]]（2026-10-22，MySQL/主从延迟，置信度中）
 - [[mq-message-backlog-solutions|RabbitMQ vs RocketMQ：消息堆积了一线解决方案全解析]]（2026-10-22，MQ/运维，置信度中）
 - [[mq-transaction-idempotency-design|消息队列架构设计（中篇）：事务消息+业务幂等保单据一致性]]（2026-10-22，MQ/分布式事务）
+- [[netease-live-danmu-cdn-broadcast|直播系统聊天技术(九)：千万级实时直播弹幕的技术实践（网易云信）]]（2026-10-24，IM/直播弹幕/CDN 广播）
 - [[netease-pigeon-message-bus-activity|直播系统聊天技术(十)：网易云音乐「信鸽」实时消息总线的活动系统架构]]（2026-10-23，消息总线/履约分发/RocketMQ）
+- [[netty-million-connection-push-service|绝对干货：基于Netty实现海量接入的推送服务技术要点（李林锋）]]（2026-10-24，Netty/百万长连接调优）
+- [[nginx-websocket-load-balancing|Nginx生产级WebSocket实时长连接负载均衡，一文搞定（银河技术）]]（2026-10-24，Nginx/WebSocket/云环境断连）
 - [[netty-iot-gateway-resilient-design|百万 IoT 设备并发接入：把 Netty 网关做成可恢复、可验证的连接系统]]（2026-10-22，Netty/IoT/可靠性）
 - [[netty-redis-kafka-iot-gateway|扛住百万设备长连接：Netty+Redis+Kafka 搭建 IoT 接入平台]]（2026-10-22，Netty/IoT 架构）
 - [[netty-three-skills-high-performance|为什么几个线程就能扛住上万连接？Netty 三大技能]]（2026-10-20，Java/网络）
@@ -135,6 +138,7 @@
 - [[ai-native-organization|AI 原生研发组织]]（工具原生→工作流原生→组织原生）
 - [[ai-native-sdlc|AI 原生 SDLC]]（制品提交链驱动的六阶段闭环，Anthropic 2026）
 - [[cache-line-and-false-sharing|CPU 缓存行效应：局部性与伪共享]]（64 字节行为失效粒度；数组胜链表、Disruptor Sequence 填充，双信源）
+- [[cdn-broadcast-fanout|CDN 广播（弹幕下行）]]（千万级在线下行外包 CDN 边缘：推流伪装视频流 vs 静态文件周期拉取，多 CDN 权重轮询融合；网易云信一手）
 - [[codemode|Codemode（代码模式工具编排）]]（模型写 JS 沙箱脚本编排工具调用，只回筛选结果；固定开销约减半，单次收益看返回格式）
 - [[cpu-funnel-coding|CPU 漏斗（编码级性能模型）]]（砍掉无效解析/转换/对象，让 CPU 只做核心运算）
 - [[durable-execution|持久执行（Durable Execution）]]（崩溃后断点精确恢复；效应三明治 + 版本化文档存储，非事件溯源）

@@ -1,64 +1,6 @@
 {
-  "updated_at": "2026-10-24 01:46",
+  "updated_at": "2026-10-24 03:30",
   "notes": [
-    {
-      "id": "2026-10-23-netease-ten-million-live-danmu-cdn-broadcast",
-      "title": "网易云信：千万级实时直播弹幕的技术实践",
-      "path": "Inbox/2026-10-23-netease-ten-million-live-danmu-cdn-broadcast.md",
-      "created": "2026-10-23",
-      "category": "技术",
-      "tags": [
-        "分布式系统",
-        "工程实践"
-      ],
-      "source": "52im.net（网易云信IM技术团队）",
-      "source_url": "http://www.52im.net/thread-4299-1-1.html",
-      "source_type": "文章",
-      "platform": "52im.net",
-      "summary": "网易云信支撑 TFBOYS 线上演唱会的千万级弹幕方案。接入层：GSLB 按网络类型/机房容量/负载/成本分配地址，开播并发 50~100 万 TPS 下的三优化——负载上报周期 1s→5ms、分配服务独立线程周期同步负载（不再按请求查询）、按负载排序轮转分配（防低负载机器被瞬间打爆）。登录：握手协商加密算法（RSA/SM2 + AES/SM4 国密，JNI 加速非对称计算）+ 动态 Token 鉴权（账号+时间+接入地址+时变随机数，进程本地计算不访问用户服务）。消息侧：消息体精简（礼物资源预加载只传编号）、逐级流控（本地粗粒度 + 反垃圾分布式全局流控 + 广播再控）、优先级队列分桶按比例投递（余量叠加到下一队列）。下行杀手锏：**CDN 广播**——推流方案（消息伪装成视频流，实时性高）或静态文件加速（实现简单，实时性取决于同步周期），多 CDN 厂商融合按权重轮询。稳定性四件套：ChatLink/ChatServer 单元化无状态跨机房部署、单点服务主备缓存集群 5s 切换、秒级监控大盘（业务预聚合+中心合并）、预设+随机双模式故障演练。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netease-ten-million-live-danmu-cdn-broadcast.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-23-netty-million-connection-push-service",
-      "title": "基于Netty实现海量接入的推送服务技术要点",
-      "path": "Inbox/2026-10-23-netty-million-connection-push-service.md",
-      "created": "2026-10-23",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "netty",
-        "工程实践"
-      ],
-      "source": "52im.net（李林锋，原载 InfoQ）",
-      "source_url": "http://www.52im.net/thread-166-1-1.html",
-      "source_type": "文章",
-      "platform": "52im.net",
-      "summary": "李林锋（《Netty权威指南》作者）的百万长连接推送服务调优清单。由一个真实案例切入：10 万长连接的 MQTT 服务\"内存泄露\"，实为 IdleStateHandler 空闲超时设 15 分钟导致 110 万个 ScheduledFutureTask 堆积进老年代——改 45 秒即愈，量级放大一切小问题。八大要点：① ulimit 句柄数调到百万级；② 防 CLOSE_WAIT 堆积（不在 I/O 线程跑业务/自定义 Task，Reactor 线程数取 [核数+1, 核数×2]，IdleStateHandler 回调时延必须可控）；③ 心跳周期权衡 NAT 超时（移动 2.5G 约 5 分钟释放空闲链路）与信令风暴，建议 180s（微信 300s）；④ 缓冲区按消息均值而非上限设置，用 AdaptiveRecvByteBufAllocator 动态伸缩（百万连接省 ~5G 内存）；⑤ PooledByteBufAllocator 内存池（Twitter 案例：垃圾生成降 5 倍，retain/release 必须成对）；⑥ 日志是隐形杀手——log4j AsyncAppender 队列满会同步阻塞 I/O 线程；⑦ TCP 调优：SO_SNDBUF/RCVBUF 设 32K + Linux RPS 软中断均衡（性能 +20%）；⑧ JVM 参数按内存模型计算 -Xmx、压 Full GC 频率。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-million-connection-push-service.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-23-nginx-websocket-load-balancing",
-      "title": "Nginx生产级WebSocket实时长连接负载均衡实战",
-      "path": "Inbox/2026-10-23-nginx-websocket-load-balancing.md",
-      "created": "2026-10-23",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "分布式系统"
-      ],
-      "source": "SegmentFault（银河技术）",
-      "source_url": "https://segmentfault.com/a/1190000048281968",
-      "source_type": "文章",
-      "platform": "SegmentFault",
-      "summary": "WebSocket 长连接 + 状态敏感，Nginx 反代有五个关键点：协议升级、连接保持、超时控制、负载策略、云环境断连。核心配置三件套 `proxy_http_version 1.1` + `Upgrade/Connection` 头 + `proxy_buffering off`；生产必改用 `map $http_upgrade $connection_upgrade`（空则 close，避免普通 HTTP 被误升级）；`proxy_read_timeout` 拉到 3600s~7d 防 Nginx 主动断连。云 LB/NAT/防火墙空闲断连 Nginx 配什么都没用，必须应用层 20~30s 心跳。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/nginx-websocket-load-balancing.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-23-rongyun-live-chatroom-architecture-challenges",
       "title": "融云：直播间海量聊天消息的架构设计难点实践",
@@ -76,7 +18,7 @@
       "summary": "融云直播聊天室高可用架构全景：连接层/存储层（Redis 二级缓存）/业务层三层，业务层分聊天室服务（管理类请求：进出/禁言/上行审核，按聊天室 ID 一致性哈希落点）与消息服务（用户信息与消息队列缓存 + 分发，按用户 ID 落点），Zk 服务发现，跨机房容灾。百万在线拆 200 台消息服务各管 5000 人。扩缩容靠 Redis 加载状态 + 渐进式人员转移（扩容按活跃度逐步迁、消息遍历时纠偏落点、拉取时向聊天室服务确认）。用户离线判定：30s 不拉或累计 30 条未拉即踢出。消息优先级三桶（白名单 > 高 > 低）按序拉取。客户端侧：通知拉取 + 首拉取 50 条 + 退出清库；Android 渲染靠 MVVM 子线程预处理、LiveData setValue/postValue 区分、滑动不刷新、DiffUtil 局部更新——中端机 400 条/秒不卡。自定义属性（麦位/角色等必达状态）全量 + 有序 map 变更记录双存储，同样走通知拉取增量回放。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/rongyun-live-chatroom-architecture-challenges.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-23-rongyun-million-online-live-message-distribution",
@@ -95,7 +37,7 @@
       "summary": "融云百万在线直播间的消息分发方案：直播间服务（按直播间 ID 落点，只校验不存消息）+ 消息服务（按用户 ID 落点，缓存用户关系与消息环形队列）分离架构，Zk 注册计算落点、Redis 做二级缓存与重启备份。分发走\"通知+拉取\"读扩散模式，核心三板斧：**通知合并**（待通知队列去重，一轮只向同一用户发一个通知，天然适合 Actor 模型）、**上行限速**（默认 200 条/秒，超限直接在直播间服务丢弃）、**下行限速**（环形队列满则淘汰最老消息 + \"拉取中\"标记 2 秒内不重发通知，丢不丢取决于客户端拉取速度）。重要消息走独立环形队列 + 白名单/优先级保证不丢弃。与 IM 最大不同：直播消息允许有策略地丢。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/rongyun-million-online-live-message-distribution.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-23-scopedvalue-vs-threadlocal-virtual-threads",
@@ -2570,6 +2512,64 @@
       "summary": "直播活动的痛点：活动玩法灵活多变，\"模块 A 结束后触发模块 B\"每次都要改代码。信鸽（Pigeon）把这条触发链做成配置化的消息总线——各模块完成任务后把数据发给信鸽，信鸽按\"信鸽 ID\"查路由配置经 RocketMQ 异步投递到下一系统，失败备份存储 + 定时步长重试。四层面设计：履约能力、SDK 接入（Spring 容器自动建 PushConsumer）、全局标识字典（userId/anchorId 统一命名）、Provider 自动注册（注解扫描 + 定时上报）。与 ESB 的区别是\"哑管道\"——不做协议转换、不做中心化同步集成。消息治理上把多服务重复监听 topic 收拢为信鸽统一 receiver 转发（自动/自定义/存储三路，tag 区分 + 转发关系可配存活周期），实测 32 台 8U16G 容器支撑 300 万条/分钟、CPU 45%。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netease-pigeon-message-bus-activity.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-23-netease-ten-million-live-danmu-cdn-broadcast",
+      "title": "网易云信：千万级实时直播弹幕的技术实践",
+      "path": "Archive/2026-10-23-netease-ten-million-live-danmu-cdn-broadcast.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "工程实践"
+      ],
+      "source": "52im.net（网易云信IM技术团队）",
+      "source_url": "http://www.52im.net/thread-4299-1-1.html",
+      "source_type": "文章",
+      "platform": "52im.net",
+      "summary": "网易云信支撑 TFBOYS 线上演唱会的千万级弹幕方案。接入层：GSLB 按网络类型/机房容量/负载/成本分配地址，开播并发 50~100 万 TPS 下的三优化——负载上报周期 1s→5ms、分配服务独立线程周期同步负载（不再按请求查询）、按负载排序轮转分配（防低负载机器被瞬间打爆）。登录：握手协商加密算法（RSA/SM2 + AES/SM4 国密，JNI 加速非对称计算）+ 动态 Token 鉴权（账号+时间+接入地址+时变随机数，进程本地计算不访问用户服务）。消息侧：消息体精简（礼物资源预加载只传编号）、逐级流控（本地粗粒度 + 反垃圾分布式全局流控 + 广播再控）、优先级队列分桶按比例投递（余量叠加到下一队列）。下行杀手锏：**CDN 广播**——推流方案（消息伪装成视频流，实时性高）或静态文件加速（实现简单，实时性取决于同步周期），多 CDN 厂商融合按权重轮询。稳定性四件套：ChatLink/ChatServer 单元化无状态跨机房部署、单点服务主备缓存集群 5s 切换、秒级监控大盘（业务预聚合+中心合并）、预设+随机双模式故障演练。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netease-ten-million-live-danmu-cdn-broadcast.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-23-netty-million-connection-push-service",
+      "title": "基于Netty实现海量接入的推送服务技术要点",
+      "path": "Archive/2026-10-23-netty-million-connection-push-service.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "netty",
+        "工程实践"
+      ],
+      "source": "52im.net（李林锋，原载 InfoQ）",
+      "source_url": "http://www.52im.net/thread-166-1-1.html",
+      "source_type": "文章",
+      "platform": "52im.net",
+      "summary": "李林锋（《Netty权威指南》作者）的百万长连接推送服务调优清单。由一个真实案例切入：10 万长连接的 MQTT 服务\"内存泄露\"，实为 IdleStateHandler 空闲超时设 15 分钟导致 110 万个 ScheduledFutureTask 堆积进老年代——改 45 秒即愈，量级放大一切小问题。八大要点：① ulimit 句柄数调到百万级；② 防 CLOSE_WAIT 堆积（不在 I/O 线程跑业务/自定义 Task，Reactor 线程数取 [核数+1, 核数×2]，IdleStateHandler 回调时延必须可控）；③ 心跳周期权衡 NAT 超时（移动 2.5G 约 5 分钟释放空闲链路）与信令风暴，建议 180s（微信 300s）；④ 缓冲区按消息均值而非上限设置，用 AdaptiveRecvByteBufAllocator 动态伸缩（百万连接省 ~5G 内存）；⑤ PooledByteBufAllocator 内存池（Twitter 案例：垃圾生成降 5 倍，retain/release 必须成对）；⑥ 日志是隐形杀手——log4j AsyncAppender 队列满会同步阻塞 I/O 线程；⑦ TCP 调优：SO_SNDBUF/RCVBUF 设 32K + Linux RPS 软中断均衡（性能 +20%）；⑧ JVM 参数按内存模型计算 -Xmx、压 Full GC 频率。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-million-connection-push-service.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-23-nginx-websocket-load-balancing",
+      "title": "Nginx生产级WebSocket实时长连接负载均衡实战",
+      "path": "Archive/2026-10-23-nginx-websocket-load-balancing.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "分布式系统"
+      ],
+      "source": "SegmentFault（银河技术）",
+      "source_url": "https://segmentfault.com/a/1190000048281968",
+      "source_type": "文章",
+      "platform": "SegmentFault",
+      "summary": "WebSocket 长连接 + 状态敏感，Nginx 反代有五个关键点：协议升级、连接保持、超时控制、负载策略、云环境断连。核心配置三件套 `proxy_http_version 1.1` + `Upgrade/Connection` 头 + `proxy_buffering off`；生产必改用 `map $http_upgrade $connection_upgrade`（空则 close，避免普通 HTTP 被误升级）；`proxy_read_timeout` 拉到 3600s~7d 防 Nginx 主动断连。云 LB/NAT/防火墙空闲断连 Nginx 配什么都没用，必须应用层 20~30s 心跳。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/nginx-websocket-load-balancing.md",
       "wiki_status": "ingested"
     },
     {

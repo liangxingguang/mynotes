@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - 分布式系统
 asset_ref: Assets/2026/10/nginx-websocket-load-balancing.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Nginx生产级WebSocket实时长连接负载均衡实战

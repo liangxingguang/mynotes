@@ -11,7 +11,9 @@ tags:
   - 分布式系统
   - 工程实践
 asset_ref: Assets/2026/10/rongyun-million-online-live-message-distribution.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-23T19:30:20.363Z"
+ingest_claim_id: 28404-1792783820363-0
 ---
 
 # 融云：百万人在线的直播间实时聊天消息分发技术实践

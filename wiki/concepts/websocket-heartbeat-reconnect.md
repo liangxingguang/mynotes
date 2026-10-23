@@ -4,7 +4,7 @@ type: concept
 title: WebSocket 心跳保活与断线重连
 status: active
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-24
 confidence: medium
 tags:
   - concept
@@ -13,9 +13,11 @@ tags:
   - frontend
 sources:
   - raw/sources/architecture/2026-10-23-im-websocket-reconnect-heartbeat.md
+  - raw/sources/architecture/2026-10-23-nginx-websocket-load-balancing.md
 related:
   - wiki/sources/im-websocket-reconnect-heartbeat.md
   - wiki/sources/nginx-websocket-million-connections.md
+  - wiki/sources/nginx-websocket-load-balancing.md
 ---
 # WebSocket 心跳保活与断线重连
 
@@ -59,18 +61,21 @@ Web 端长连接可靠性的三段式工程模式：**检测**（应用层双向
 
 ## Evolution（演进）
 
-（单一信源，无演进记录）
+- 2026-10-23：端侧三段式机制（IM 教程信源）。
+- 2026-10-24：补充服务端/链路侧证据——云环境空闲断连点与 20~30s 心跳推荐（Nginx 负载均衡信源）；心跳取值与移动网络侧 180s/300s（李林锋信源，见 [[netty-million-connection-push-service]]）形成场景对照。
 
 ## Open Questions（开放问题）
 
-- 心跳间隔/超时参数在不同网络（移动弱网 vs WiFi）下的调优依据，信源只给默认值。
+- 心跳间隔/超时参数在不同网络（移动弱网 vs WiFi）下的调优依据，信源只给默认值。（第二信源部分补位：云环境因 LB/NAT/防火墙空闲断连，推荐 20~30s；移动网络因运营商 NAT 约 5 分钟释放，李林锋信源推荐 180s、微信 300s——取值随链路最脆弱环节的空闲超时而定）
 - 与服务端连接层设计（如 [[nginx-websocket-million-connections|Nginx 百万长连接]] 的空闲超时）的参数对齐策略未展开。
 
 ## Evidence（证据）
 
 - Source: `raw/sources/architecture/2026-10-23-im-websocket-reconnect-heartbeat.md`（单篇教程信源，含完整代码与参数默认值；99%+ 成功率为作者断言）
+- Source: `raw/sources/architecture/2026-10-23-nginx-websocket-load-balancing.md`（服务端/链路侧视角：云 LB、NAT 会话老化、防火墙空闲断连在 Nginx 控制面之外，应用层 20~30s 心跳为生产必做；印证"心跳必需"但不涉及端侧重连机制）
 
 ## Related Knowledge（相关知识）
 
 - [[im-websocket-reconnect-heartbeat|IM聊天不掉线？生产级WebSocket断线重连、心跳保活实战]]
 - [[nginx-websocket-million-connections|百万 WebSocket 长连接背后的 Nginx 架构设计与踩坑实录]]
+- [[nginx-websocket-load-balancing|Nginx生产级WebSocket实时长连接负载均衡，一文搞定（银河技术）]]

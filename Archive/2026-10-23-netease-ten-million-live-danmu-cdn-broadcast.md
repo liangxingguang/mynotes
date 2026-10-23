@@ -11,7 +11,7 @@ tags:
   - 分布式系统
   - 工程实践
 asset_ref: Assets/2026/10/netease-ten-million-live-danmu-cdn-broadcast.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 网易云信：千万级实时直播弹幕的技术实践

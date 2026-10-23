@@ -4,7 +4,7 @@ type: source
 title: 直播系统聊天技术(一)：百万在线的美拍直播弹幕系统的实时推送技术实践之路
 status: active
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-24
 confidence: high
 tags:
   - im
@@ -16,7 +16,9 @@ sources:
   - raw/sources/architecture/2026-10-23-meipai-live-danmu-realtime-push.md
 related:
   - wiki/sources/baidu-live-mcast-message-architecture.md
+  - wiki/sources/netease-live-danmu-cdn-broadcast.md
   - wiki/concepts/mcast.md
+  - wiki/concepts/cdn-broadcast-fanout.md
   - wiki/concepts/read-fanout.md
 ---
 # 直播系统聊天技术(一)：百万在线的美拍直播弹幕系统的实时推送技术实践之路
@@ -73,6 +75,7 @@ related:
 ## Related Knowledge（相关知识）
 
 - [[baidu-live-mcast-message-architecture|百度直播海量用户实时消息系统架构：长连接组播 mcast 实践]]（同为直播消息一手实践；百度选择组播 mcast，美拍选择订阅推送 + 降级广播）
+- [[netease-live-danmu-cdn-broadcast|直播系统聊天技术(九)：千万级实时直播弹幕的技术实践（网易云信）]]（同为直播弹幕一手实践；网易云信选择 CDN 广播下行）
 - [[read-fanout|读扩散（Fan-out on Read）]]（美拍的「告知→拉取→推」是把拉取语义架在长连接上的近亲）
 
 ## Source（信源）

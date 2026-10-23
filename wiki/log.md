@@ -164,3 +164,6 @@
 - 2026-10-24 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
 - 2026-10-24 | ingest | raw/sources/architecture/2026-10-23-mq-message-backlog-rabbitmq-rocketmq.md | wiki/sources/mq-message-backlog-solutions.md（更新：sources 加第二 raw；判定为同一文章经双公众号 URL 发布、非独立信源，置信度维持 medium，未新建页面）
 - 2026-10-24 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
+- 2026-10-24 | ingest | raw/sources/architecture/2026-10-23-netease-ten-million-live-danmu-cdn-broadcast.md | wiki/sources/netease-live-danmu-cdn-broadcast.md（新建，52im 系列第 9 篇，网易云信千万级弹幕）+ wiki/concepts/cdn-broadcast-fanout.md（新建概念：CDN 广播弹幕下行，单一信源 confidence=high）+ wiki/concepts/mcast.md 与 wiki/sources/meipai-live-danmu-realtime-push.md（交叉链接更新）
+- 2026-10-24 | ingest | raw/sources/architecture/2026-10-23-netty-million-connection-push-service.md | wiki/sources/netty-million-connection-push-service.md（新建，李林锋百万长连接调优清单）+ wiki/entities/netty.md（更新：第四信源——CLOSE_WAIT 三防线/心跳 NAT 权衡/内存池 Twitter 案例/事故反例）
+- 2026-10-24 | ingest | raw/sources/architecture/2026-10-23-nginx-websocket-load-balancing.md | wiki/sources/nginx-websocket-load-balancing.md（新建，Nginx WS 反代生产配置）+ wiki/concepts/websocket-heartbeat-reconnect.md（更新：第二信源——云 LB/NAT/防火墙空闲断连与 20~30s 心跳，置信度维持 medium）
