@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23 18:38",
+  "updated_at": "2026-10-23 18:40",
   "notes": [
     {
       "id": "2026-10-23-jdk21-migration-huolala",
@@ -19,6 +19,26 @@
       "summary": "货拉拉上千个 Java 服务从 JDK 8 升级 JDK 21 的完整复盘：框架（JAF/Hermes/Monitor）先把兼容成本扛下来、BOM 收口版本、AI 批量改 javax→jakarta，业务工程只需切 parent 按检查单收尾。实测 CPU 降 10%、内存降 50%。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/jdk21-migration-huolala.md",
+      "wiki_status": "ingesting"
+    },
+    {
+      "id": "2026-10-23-mq-message-backlog-rabbitmq-rocketmq",
+      "title": "RabbitMQ vs RocketMQ，消息堆积了怎么办？一线解决方案全解析",
+      "path": "Inbox/2026-10-23-mq-message-backlog-rabbitmq-rocketmq.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "RocketMQ",
+        "分布式系统",
+        "工程实践"
+      ],
+      "source": "微信公众号「服务端技术精选」",
+      "source_url": "https://mp.weixin.qq.com/s/uspHedu0uxtmdBEkotYpwg",
+      "source_type": "文章",
+      "platform": "微信公众号",
+      "summary": "消息堆积 = 生产速度超过消费速度。文章给出 RabbitMQ 与 RocketMQ 两栈的消费端优化（并发消费者、手动确认、异步处理）、队列配置（TTL/死信/优先级）、应急三板斧（临时扩容、消息分流、消息清理）与监控告警清单的入门方案集。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/mq-message-backlog-rabbitmq-rocketmq.md",
       "wiki_status": "pending"
     },
     {

@@ -12,7 +12,9 @@ tags:
   - 工程实践
   - spring
 asset_ref: Assets/2026/10/jdk21-migration-huolala.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-23T10:38:41.982Z"
+ingest_claim_id: 40968-1792751921982-0
 ---
 
 # JDK 21 规模化落地实践（货拉拉）
