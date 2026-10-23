@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23 19:42",
+  "updated_at": "2026-10-23 19:43",
   "notes": [
     {
       "id": "2026-10-23-alibaba-ecommerce-im-group-live",
@@ -182,6 +182,7 @@
       "category": "技术",
       "tags": [
         "Java",
+        "netty",
         "工程实践"
       ],
       "source": "52im.net（李林锋，原载 InfoQ）",

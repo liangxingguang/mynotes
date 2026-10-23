@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23 19:42",
+  "updated_at": "2026-10-23 19:43",
   "tags": [
     {
       "name": "思维方式",
@@ -197,6 +197,16 @@
       ],
       "category": "技术",
       "count": 16,
+      "status": "new"
+    },
+    {
+      "name": "netty",
+      "aliases": [
+        "Netty",
+        "NIO框架"
+      ],
+      "category": "技术",
+      "count": 1,
       "status": "new"
     },
     {

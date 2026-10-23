@@ -9,6 +9,7 @@ created: 2026-10-23
 category: 技术
 tags:
   - Java
+  - netty
   - 工程实践
 asset_ref: Assets/2026/10/netty-million-connection-push-service.md
 wiki_status: pending
