@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23 19:07",
+  "updated_at": "2026-10-23 19:08",
   "notes": [
     {
       "id": "2026-10-23-github-open-source-ai-books-6",
@@ -38,6 +38,25 @@
       "summary": "站内消息系统的概念篇：对标简书/知乎提炼出三类消息——公告 Announce、提醒 Remind、私信 Message；提醒句式归纳为「sender 对 targetOwner 的 target 做了 action」四元组（可扩展 targetType）；按类型选择推拉模型（公告/提醒走拉、私信走推）；用「订阅」（target+targetType+action，可按 subscribeReason 扩展动作集）+ 用户级 SubscriptionConfig（含默认配置）决定提醒触达；聚合（多条合并）留待下篇。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/message-system-design-part1.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-23-message-system-design-part2",
+      "title": "消息系统设计与实现「下篇」：模型与服务层实现",
+      "path": "Inbox/2026-10-23-message-system-design-part2.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "分布式系统"
+      ],
+      "source": "简书",
+      "source_url": "https://www.jianshu.com/p/6bf8166b291c",
+      "source_type": "文章",
+      "platform": "简书",
+      "summary": "上篇概念落地为库表与服务：四张表——Notify（消息本体，type 区分公告/提醒/私信，提醒用 target+targetType+action+sender 四元组）、UserNotify（用户消息队列，isRead 标记）、Subscription（订阅：target/targetType/action/user）、SubscriptionConfig（动作级免打扰，JSON，缺省用默认配置）；NotifyConfig 集中管理 targetType/action 枚举与 reasonAction 订阅原因映射；NotifyService 提供创建/拉取/订阅/已读全套方法，私信创建即推入队列，公告与提醒由用户侧按订阅关系 + lastTime 增量拉取。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/message-system-design-part2.md",
       "wiki_status": "pending"
     },
     {
