@@ -47,6 +47,7 @@
 - [[game-server-elastic-scaling|游戏开发：服务器弹性伸缩（负载均衡、路由服与数据迁移）]]（2026-10-20，游戏服务器/分布式）
 - [[gc-log-tuning-practice|GC 日志分析与调优实战]]（2026-10-21，Java/JVM）
 - [[github-niche-usage-tips|三个小众但实用的 GitHub 用法（zread / Deepwiki / gitingest）]]（2026-10-14，工具）
+- [[github-open-source-ai-books-6|知乎专栏：6 本 GitHub 开源 AI 宝典（Agent/Infra/DL/RL）]]（2026-10-23，AI/学习资源，置信度低）
 - [[huolala-agent-eval-platform|货拉拉业务 Agent 评测平台的工程实践与深度思考]]（2026-10-14，AI/Agent 评测）
 - [[huolala-ai-coding-workflow|个人提效到团队提效：货拉拉 AI Coding 流程化落地实践]]（2026-10-20，AI/企业落地）
 - [[java-perf-low-cpu-coding-tips-part1|打造高性能、低CPU消耗系统—36种编码实战技巧（上篇）]]（2026-10-14，Java/性能）
