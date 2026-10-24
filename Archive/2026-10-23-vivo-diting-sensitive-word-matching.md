@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - 分布式系统
 asset_ref: Assets/2026/10/vivo-diting-sensitive-word-matching.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # vivo谛听敏感词匹配系统技术实践：AC自动机 + 组合/拼音敏感词

@@ -126,9 +126,12 @@
 - [[state-of-ai-report-2026|State of AI Report 2026 中文要点（Datawhale 译）]]（2026-10-14，AI/行业报告）
 - [[stress-test-capacity-planning|第二十课：高并发系统压测与容量规划（架构师之路）]]（2026-10-22，压测/容量规划）
 - [[system-design-12-components|一次讲清 12 个系统设计核心组件]]（2026-10-13，系统设计）
+- [[system-design-google-maps|系统设计面试（第二卷）第03章：谷歌地图]]（2026-10-24，系统设计/地理空间）
+- [[system-design-proximity-service|系统设计面试（第二卷）第01章：邻近服务]]（2026-10-24，系统设计/LBS）
 - [[system-design-notes-28-cases|知乎想法：system-design-notes——把系统设计面试浓缩成 28 个经典架构案例的开源笔记]]（2026-10-14，系统设计/学习资源）
 - [[tcp-retransmission-visualized|可视化 TCP 重传：终于有人将 TCP 传输讲明白了]]（2026-10-16，网络/TCP）
 - [[unyra-local-first-ai-learning-app|归一 Unyra：本地优先的探索式学习 AI 桌面应用（Electron + React）]]（2026-10-14，AI/学习工具）
+- [[vivo-diting-sensitive-word-matching|vivo谛听敏感词匹配系统技术实践：AC自动机+组合/拼音敏感词]]（2026-10-24，内容审核/算法）
 - [[weibo-gpt2-to-llama-tutorial|从零手写大模型进阶教程：从 GPT-2 到 LLaMA 的 4 个关键零件]]（2026-10-22，AI/教程资源，置信度中）
 - [[writing-8-frameworks|21 天学写作 Day10：让文章结构清晰的 8 个框架]]（2026-10-20，写作/方法论，置信度低）
 
@@ -138,6 +141,7 @@
 - [[agent-evaluation|业务 Agent 全生命周期评测]]（规则+LLM 裁判+人工复核，覆盖准入/门禁/压测/巡检，货拉拉实践）
 - [[agent-loop|Agent Loop]]（Runtime 驱动的模型-工具循环；Tool Call/Result、Message/Context/State/Session、Runtime vs Harness）
 - [[agent-sandboxing|Agent 沙箱隔离]]（能力限制而非行为审查；四条路径收窄可达面；脚本级/命令级/工具级/整体隔离）
+- [[aho-corasick|AC 自动机（Aho-Corasick）]]（Trie+Fail 指针多模式匹配，近似线性；vivo 谛听改造：组合词后置聚合、拼音图 DFS，单信源一手）
 - [[ai-native-organization|AI 原生研发组织]]（工具原生→工作流原生→组织原生）
 - [[ai-native-sdlc|AI 原生 SDLC]]（制品提交链驱动的六阶段闭环，Anthropic 2026）
 - [[cache-line-and-false-sharing|CPU 缓存行效应：局部性与伪共享]]（64 字节行为失效粒度；数组胜链表、Disruptor Sequence 填充，双信源）
@@ -149,6 +153,7 @@
 - [[idempotency-design|幂等设计]]（重试与幂等共生；同事务铁律+幂等键三要素+分层防护闭环，三信源互证）
 - [[exploratory-learning|探索式学习（知识 DAG）]]（目标→节点 DAG，导师写 JS 经沙箱改写文档教学；Unyra 提出）
 - [[framework-first-migration|框架先行的规模化运行时迁移]]（BOM 收口+框架分代并行+AI 批量改造+检查单收敛，货拉拉 JDK 21 实践）
+- [[geohash|Geohash（地理哈希）]]（经纬度降维前缀编码；边界问题+8 邻居、截短扩半径、缓存键归一；邻近索引+地图瓦片双信源）
 - [[llm-wiki|LLM Wiki]]（原始来源不可变 + 模型持续编译互链知识页面，Karpathy 模式；本仓库即实例，双信源）
 - [[mcp|MCP]]（LLM↔工具/数据纵向协议，Anthropic 2024）
 - [[live-message-drop-policy|直播消息丢弃策略]]（上行 200 条/s 硬丢弃 + 环形队列柔性丢弃 + 优先级三桶保必达，融云双信源）

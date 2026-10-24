@@ -12,7 +12,7 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026/10/system-design-proximity-service.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 系统设计面试（第二卷）第01章：邻近服务

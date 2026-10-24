@@ -171,3 +171,7 @@
 - 2026-10-24 | ingest | raw/sources/architecture/2026-10-23-rongyun-live-chatroom-architecture-challenges.md | wiki/sources/rongyun-live-chatroom-architecture-challenges.md（新建，52im 系列第 7 篇，聊天室架构/扩缩容/客户端优化）+ live-message-drop-policy/rongyun/live-streaming-messaging/read-fanout 复用上条新建与更新（同批双信源合并编译）
 - 2026-10-24 | ingest | raw/sources/architecture/2026-10-23-scopedvalue-vs-threadlocal-virtual-threads.md | wiki/sources/scopedvalue-vs-threadlocal-virtual-threads.md（新建，ScopedValue 迁移实战）+ wiki/concepts/scopedvalue.md（新建概念：ScopedValue 作用域值，JDK 25 正式，单一信源 confidence=high）+ wiki/concepts/virtual-threads-production.md（更新：ScopedValue 演进线索）
 - 2026-10-24 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
+- 2026-10-24 | ingest | raw/sources/architecture/2026-10-23-system-design-google-maps.md | wiki/sources/system-design-google-maps.md（新建，confidence=high，系统设计面试第二卷第 3 章）+ wiki/concepts/geohash.md（新建概念，双信源：瓦片寻址用法）
+- 2026-10-24 | ingest | raw/sources/architecture/2026-10-23-system-design-proximity-service.md | wiki/sources/system-design-proximity-service.md（新建，confidence=high，第二卷第 1 章）+ wiki/concepts/geohash.md（双信源编译：边界问题/8 邻居/截短扩半径/缓存键归一/复合键表）
+- 2026-10-24 | ingest | raw/sources/architecture/2026-10-23-vivo-diting-sensitive-word-matching.md | wiki/sources/vivo-diting-sensitive-word-matching.md（新建，confidence=high，vivo 谛听一手实践）+ wiki/concepts/aho-corasick.md（新建概念：Trie+Fail，组合词后置聚合与拼音图 DFS 改造）
+- 2026-10-24 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）

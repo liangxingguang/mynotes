@@ -1536,6 +1536,42 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/GBcUYJAqW-mTbhTsOK5KWw",
       "asset_ref": "Assets/2026/10/scopedvalue-vs-threadlocal-virtual-threads.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-system-design-google-maps.md",
+      "sha256": "ce05c0e9c7517fa6270ab5b2e0c2d3c0480cb91396083a4f9f78e498db4c833a",
+      "registered_at": "2026-10-24",
+      "inbox_ref": "Archive/2026-10-23-system-design-google-maps.md",
+      "pages": [
+        "wiki/sources/system-design-google-maps.md",
+        "wiki/concepts/geohash.md"
+      ],
+      "source_url": "https://learning-guide.gitbook.io/system-design-interview/xi-tong-she-ji-mian-shi-nei-mu-zhi-nan-di-er-juan/chapter-03-google-maps",
+      "asset_ref": "Assets/2026/10/system-design-google-maps.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-system-design-proximity-service.md",
+      "sha256": "03381b19a9b1fd656c8f6fa355f35dc0180bca926116e4c6f9c29c8de7339ba2",
+      "registered_at": "2026-10-24",
+      "inbox_ref": "Archive/2026-10-23-system-design-proximity-service.md",
+      "pages": [
+        "wiki/sources/system-design-proximity-service.md",
+        "wiki/concepts/geohash.md"
+      ],
+      "source_url": "https://learning-guide.gitbook.io/system-design-interview/xi-tong-she-ji-mian-shi-nei-mu-zhi-nan-di-er-juan/chapter-01-proximity-service",
+      "asset_ref": "Assets/2026/10/system-design-proximity-service.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-vivo-diting-sensitive-word-matching.md",
+      "sha256": "8d455279225aec688cb8162d0fa0d375d284cdf9b8f4fccaf37f4ce1fb2be25b",
+      "registered_at": "2026-10-24",
+      "inbox_ref": "Archive/2026-10-23-vivo-diting-sensitive-word-matching.md",
+      "pages": [
+        "wiki/sources/vivo-diting-sensitive-word-matching.md",
+        "wiki/concepts/aho-corasick.md"
+      ],
+      "source_url": "https://segmentfault.com/a/1190000048315142",
+      "asset_ref": "Assets/2026/10/vivo-diting-sensitive-word-matching.md"
     }
   ]
 }
