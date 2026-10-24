@@ -1586,6 +1586,46 @@
       ],
       "source_url": "http://www.52im.net/thread-3994-1-1.html",
       "asset_ref": "Assets/2026/10/vivo-live-im-message-architecture.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-wechat-live-chatroom-15m-online.md",
+      "sha256": "4b7fd952770ef5154d1e79a4a20158dfdab11eff67382cb017fe021c9fd38238",
+      "registered_at": "2026-10-24",
+      "inbox_ref": "Archive/2026-10-23-wechat-live-chatroom-15m-online.md",
+      "pages": [
+        "wiki/sources/wechat-live-chatroom-15m-online.md",
+        "wiki/concepts/hyperloglog.md",
+        "wiki/concepts/read-fanout.md",
+        "wiki/topics/live-streaming-messaging.md"
+      ],
+      "source_url": "http://www.52im.net/thread-3376-1-1.html",
+      "asset_ref": "Assets/2026/10/wechat-live-chatroom-15m-online.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-wechat-minigame-android-cross-process-livestream.md",
+      "sha256": "bf651af353e19ae3135fbf637c901d2dc8cec583091169eb62ab1957fe6d9325",
+      "registered_at": "2026-10-24",
+      "inbox_ref": "Archive/2026-10-23-wechat-minigame-android-cross-process-livestream.md",
+      "pages": [
+        "wiki/sources/wechat-minigame-android-cross-process-livestream.md",
+        "wiki/concepts/cross-process-surface-rendering.md"
+      ],
+      "source_url": "http://www.52im.net/thread-3594-1-1.html",
+      "asset_ref": "Assets/2026/10/wechat-minigame-android-cross-process-livestream.md"
+    },
+    {
+      "path": "raw/sources/enterprise/2026-10-24-huolala-ai-coding-harness.md",
+      "sha256": "e0311e3b8b0d9c7e1146be6a2130b9fa7f9338c76097f1cfd88c028fc3146283",
+      "registered_at": "2026-10-24",
+      "inbox_ref": "Archive/2026-10-24-huolala-ai-coding-harness.md",
+      "pages": [
+        "wiki/sources/huolala-ai-coding-harness.md",
+        "wiki/entities/aibox.md",
+        "wiki/concepts/ai-native-organization.md",
+        "wiki/entities/ep-harness.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/tGPMdSIfEEzMqa8jp2cjoA",
+      "asset_ref": "Assets/2026/10/wechat-tgpmds.md"
     }
   ]
 }

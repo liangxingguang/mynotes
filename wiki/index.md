@@ -54,6 +54,7 @@
 - [[huolala-agent-eval-platform|货拉拉业务 Agent 评测平台的工程实践与深度思考]]（2026-10-14，AI/Agent 评测）
 - [[im-group-chat-write-fanout-cost|IM千人群聊该不该用消息写扩散？详细算算成本账！]]（2026-10-23，IM/写扩散）
 - [[im-websocket-reconnect-heartbeat|IM聊天不掉线？生产级WebSocket断线重连、心跳保活实战]]（2026-10-23，IM/WebSocket/前端，置信度中）
+- [[huolala-ai-coding-harness|货拉拉千人 AI Coding 落地：用自建 Harness 收口，跑通组织级 AI Native]]（2026-10-24，AI/组织级落地）
 - [[huolala-ai-coding-workflow|个人提效到团队提效：货拉拉 AI Coding 流程化落地实践]]（2026-10-20，AI/企业落地）
 - [[java-perf-low-cpu-coding-tips-part1|打造高性能、低CPU消耗系统—36种编码实战技巧（上篇）]]（2026-10-14，Java/性能）
 - [[java-perf-low-cpu-coding-tips-part2|打造高性能、低CPU消耗系统—36种编码实战技巧（下篇）]]（2026-10-14，Java/性能）
@@ -133,6 +134,8 @@
 - [[unyra-local-first-ai-learning-app|归一 Unyra：本地优先的探索式学习 AI 桌面应用（Electron + React）]]（2026-10-14，AI/学习工具）
 - [[vivo-diting-sensitive-word-matching|vivo谛听敏感词匹配系统技术实践：AC自动机+组合/拼音敏感词]]（2026-10-24，内容审核/算法）
 - [[vivo-live-im-message-architecture|vivo直播系统中IM消息模块的架构实践]]（2026-10-24，IM/直播消息/推拉结合）
+- [[wechat-live-chatroom-15m-online|微信直播聊天室单房间1500万在线的消息架构演进之路]]（2026-10-24，IM/直播聊天室/longpolling）
+- [[wechat-minigame-android-cross-process-livestream|微信小游戏直播在Android端的跨进程渲染推流实践]]（2026-10-24，Android/跨进程渲染）
 - [[weibo-gpt2-to-llama-tutorial|从零手写大模型进阶教程：从 GPT-2 到 LLaMA 的 4 个关键零件]]（2026-10-22，AI/教程资源，置信度中）
 - [[writing-8-frameworks|21 天学写作 Day10：让文章结构清晰的 8 个框架]]（2026-10-20，写作/方法论，置信度低）
 
@@ -149,6 +152,7 @@
 - [[cdn-broadcast-fanout|CDN 广播（弹幕下行）]]（千万级在线下行外包 CDN 边缘：推流伪装视频流 vs 静态文件周期拉取，多 CDN 权重轮询融合；网易云信一手）
 - [[codemode|Codemode（代码模式工具编排）]]（模型写 JS 沙箱脚本编排工具调用，只回筛选结果；固定开销约减半，单次收益看返回格式）
 - [[cpu-funnel-coding|CPU 漏斗（编码级性能模型）]]（砍掉无效解析/转换/对象，让 CPU 只做核心运算）
+- [[cross-process-surface-rendering|Surface 跨进程渲染]]（Surface Parcelable + SurfaceFlinger 跨进程合成，Binder 传 Surface 零拷贝传画面；Renderer 3→1，微信小游戏一手）
 - [[durable-execution|持久执行（Durable Execution）]]（崩溃后断点精确恢复；效应三明治 + 版本化文档存储，非事件溯源）
 - [[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]（先目标基线、JFR/GC 日志归因，证据指向 JVM 才动参数，单变量实验）
 - [[idempotency-design|幂等设计]]（重试与幂等共生；同事务铁律+幂等键三要素+分层防护闭环，三信源互证）
@@ -156,6 +160,7 @@
 - [[framework-first-migration|框架先行的规模化运行时迁移]]（BOM 收口+框架分代并行+AI 批量改造+检查单收敛，货拉拉 JDK 21 实践）
 - [[gain-message|增益消息（全量快照自愈）]]（状态类消息发全量快照而非增量，丢包被下一条自动纠正；vivo 一手）
 - [[geohash|Geohash（地理哈希）]]（经纬度降维前缀编码；边界问题+8 邻居、截短扩半径、缓存键归一；邻近索引+地图瓦片双信源）
+- [[hyperloglog|HyperLogLog（基数估算）]]（伯努利过程+分桶调和平均，12KB 估 64 位级基数；≤1w tablekv 精确、>1w HLL >95%，微信一手）
 - [[llm-wiki|LLM Wiki]]（原始来源不可变 + 模型持续编译互链知识页面，Karpathy 模式；本仓库即实例，双信源）
 - [[mcp|MCP]]（LLM↔工具/数据纵向协议，Anthropic 2024）
 - [[live-message-drop-policy|直播消息丢弃策略]]（上行 200 条/s 硬丢弃 + 环形队列柔性丢弃 + 优先级三桶保必达，融云双信源）
@@ -179,6 +184,7 @@
 
 ## entity（实体）
 
+- [[aibox|AiBox]]（货拉拉自建 AI Coding Harness/管控面：Rules/Skills/Commands/MCP 下发 + 网关四统一 + 三层度量，千人规模）
 - [[agent-lightning|Agent Lightning]]（微软研究院开源 Agent RL 训练框架，约 3500 行，真实工具链交互训练）
 - [[archunit|ArchUnit]]（Java 架构约束即测试，TNG，当前 1.5.1）
 - [[arthas|Arthas]]（Java 线上诊断工具，4.3.5 起含实验性 MCP Server）
@@ -198,7 +204,7 @@
 
 ## topic（主题）
 
-- [[live-streaming-messaging|直播实时消息分发]]（拉 vs 推路线图谱：读扩散通知拉取 / 短轮询 / mcast 组播 / CDN 广播；允许策略性丢消息是与 IM 的根本分界，七信源）
+- [[live-streaming-messaging|直播实时消息分发]]（拉 vs 推路线图谱：读扩散通知拉取 / longpolling / 短轮询 / mcast 组播 / CDN 广播；允许策略性丢消息是与 IM 的根本分界，八信源）
 - [[system-design-core-components|系统设计核心组件]]（分布式系统 12 个核心组件清单）
 
 ## decision（决策）

@@ -10,7 +10,7 @@ category: 技术
 tags:
   - 工程实践
 asset_ref: Assets/2026/10/wechat-minigame-android-cross-process-livestream.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 微信小游戏直播在Android端的跨进程渲染推流实践

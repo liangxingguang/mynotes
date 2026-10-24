@@ -11,7 +11,7 @@ tags:
   - 分布式系统
   - 工程实践
 asset_ref: Assets/2026/10/wechat-live-chatroom-15m-online.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 微信直播聊天室单房间1500万在线的消息架构演进之路

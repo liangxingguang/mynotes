@@ -177,3 +177,7 @@
 - 2026-10-24 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
 - 2026-10-24 | ingest | raw/sources/architecture/2026-10-23-vivo-live-im-message-architecture.md | wiki/sources/vivo-live-im-message-architecture.md（新建，confidence=high，vivo 秀场直播推拉结合一手实践）+ wiki/concepts/gain-message.md（新建概念：全量快照自愈，单一信源）+ wiki/concepts/live-message-drop-policy.md（第三信源：丢老消息/渲染上限 15~20 条/增益消息补偿）+ wiki/topics/live-streaming-messaging.md（补短轮询路线，七信源）
 - 2026-10-24 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
+- 2026-10-24 | ingest | raw/sources/architecture/2026-10-23-wechat-live-chatroom-15m-online.md | wiki/sources/wechat-live-chatroom-15m-online.md（新建，confidence=high，微信单房间 1500w 在线一手实践）+ wiki/concepts/hyperloglog.md（新建概念：伯努利+分桶调和平均，tablekv/HLL 阈值混用）+ wiki/concepts/read-fanout.md（第五信源：longpolling+无状态 cache 形态）+ wiki/topics/live-streaming-messaging.md（补 longpolling 路线，八信源）
+- 2026-10-24 | ingest | raw/sources/architecture/2026-10-23-wechat-minigame-android-cross-process-livestream.md | wiki/sources/wechat-minigame-android-cross-process-livestream.md（新建，confidence=high，微信小游戏跨进程推流一手实践）+ wiki/concepts/cross-process-surface-rendering.md（新建概念：Surface Parcelable 跨进程渲染，单一信源）
+- 2026-10-24 | ingest | raw/sources/enterprise/2026-10-24-huolala-ai-coding-harness.md | wiki/sources/huolala-ai-coding-harness.md（新建，confidence=high，货拉拉千人 AI Coding 复盘）+ wiki/entities/aibox.md（新建实体：自建 Harness 管控面）+ wiki/concepts/ai-native-organization.md（第二信源：四重重构落地样本）+ wiki/entities/ep-harness.md（互链同类平台）
+- 2026-10-24 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）

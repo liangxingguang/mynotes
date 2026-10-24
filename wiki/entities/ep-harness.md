@@ -4,7 +4,7 @@ type: entity
 title: EP-Harness
 status: active
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-24
 confidence: medium
 tags:
   - entity
@@ -14,6 +14,7 @@ sources:
   - raw/sources/ai/2026-10-15-ep-harness-team-agent-workflow.md
 related:
   - wiki/concepts/agent-loop.md
+  - wiki/entities/aibox.md
 ---
 # EP-Harness
 
@@ -43,6 +44,7 @@ related:
 ## Relationships（关系）
 
 - [[agent-loop|Agent Loop]]：EP-Harness 是 Harness/Loop 层工程化的团队平台实例（derived-from 该概念框架）。
+- [[aibox|AiBox]]：同类平行实践——货拉拉自建 AI Coding Harness 偏管控面（配置下发 + 网关 + 度量），EP-Harness 偏任务执行面（Issue 驱动 + 本机 daemon）（alternative-to / 同类参照）。
 
 ## Timeline（时间线）
 

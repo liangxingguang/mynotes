@@ -16,6 +16,7 @@ sources:
   - raw/sources/architecture/2026-10-23-im-group-chat-write-fanout-cost.md
   - raw/sources/architecture/2026-10-23-rongyun-million-online-live-message-distribution.md
   - raw/sources/architecture/2026-10-23-rongyun-live-chatroom-architecture-challenges.md
+  - raw/sources/architecture/2026-10-23-wechat-live-chatroom-15m-online.md
 related:
   - wiki/concepts/write-fanout.md
   - wiki/concepts/mcast.md
@@ -23,6 +24,7 @@ related:
   - wiki/concepts/live-message-drop-policy.md
   - wiki/sources/alibaba-ecommerce-im-group-live.md
   - wiki/sources/meipai-live-danmu-realtime-push.md
+  - wiki/sources/wechat-live-chatroom-15m-online.md
 ---
 # 读扩散（Fan-out on Read）
 
@@ -52,6 +54,8 @@ related:
 
 融云直播聊天室形态（百万在线实践）：聊天室服务校验后广播到消息服务，消息服务**通知合并**（待通知队列去重，一轮只向同一用户发一个通知）后下发拉取通知；客户端携本地最大时间戳差量拉取（首拉传 0 取最近 50 条），消息存环形队列。位点用"最后一条消息时间戳"而非阿里 syncId，语义相同。与 IM 读扩散的关键差异：叠加 [[live-message-drop-policy|丢弃策略]]，位点拉取不再保证"最终全量补齐"。
 
+微信直播聊天室形态（单房间 1500w 在线实践）：选型依据是"同一人同一时间只关注一个聊天室"（与微信标准群聊写扩散分野）。传输层不用 WebSocket 而用 **longpolling**（推可能丢需拉兜底、在线列表难维护、短连客户端简单）；消息列表前架**无状态 cache（recvsvr）**：写后通知→异步拉取、1s 兜底轮询（防通知失效+启动自恢复）、读写表分离原子切换无锁读、sect 化扩容。重要信令不打另一条写通道，而是同表打优先级标记、cache 内分 normal/important 双 seq 先收——读扩散下"保必达"的最小改造样本。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -73,6 +77,7 @@ related:
 - 阿里：2018 双 11 盖楼活动暴露写扩散瓶颈（120w/s 写入 → 3K/s 上行）→ 演进出读写扩散混合模式（2020 双 11，500ms 端到端）。
 - 行业分化（二次信源断言）：钉钉转读扩散 + 多级缓存；微信坚持写扩散；企业微信写扩散 + 硬件堆料。
 - 融云（一手实践）：直播聊天室读扩散 + 通知合并 + 时间戳位点差量拉取；为适配直播"允许丢消息"语义叠加三级丢弃策略（2026-10 收录）。
+- 微信（一手实践）：直播聊天室 1.0（2017）即定读扩散 + longpolling + 无状态 cache；2.0 叠加优先级双 seq 信道与 proxy 柔性控流，支撑单房间 1500w 在线（2026-10 收录）。同一公司群内消息（写扩散必达）与直播聊天室（读扩散）按场景分化，与阿里路径一致。
 
 ## Open Questions（开放问题）
 
@@ -85,6 +90,7 @@ related:
 - Source: `raw/sources/architecture/2026-10-23-im-group-chat-write-fanout-cost.md`（二次分析：钉钉读扩散选型、规模分档中的读扩散切换点、静态分流策略）
 - Source: `raw/sources/architecture/2026-10-23-rongyun-million-online-live-message-distribution.md`（一手实践：通知合并机制、环形队列、拉取流程）
 - Source: `raw/sources/architecture/2026-10-23-rongyun-live-chatroom-architecture-challenges.md`（一手实践：通知拉取流程、时间戳位点、首拉 50 条与退出清库）
+- Source: `raw/sources/architecture/2026-10-23-wechat-live-chatroom-15m-online.md`（一手实践：读扩散选型依据、longpolling 三理由、无状态 cache 五件套、优先级双 seq）
 
 ## Related Knowledge（相关知识）
 
@@ -92,4 +98,5 @@ related:
 - [[im-group-chat-write-fanout-cost|IM千人群聊该不该用消息写扩散？详细算算成本账！]]
 - [[rongyun-million-online-live-message-distribution|融云：百万人在线的直播间实时聊天消息分发技术实践]]
 - [[rongyun-live-chatroom-architecture-challenges|融云：直播间海量聊天消息的架构设计难点实践]]
+- [[wechat-live-chatroom-15m-online|微信直播聊天室单房间1500万在线的消息架构演进之路]]
 - [[live-streaming-messaging|直播实时消息分发]]（主题）

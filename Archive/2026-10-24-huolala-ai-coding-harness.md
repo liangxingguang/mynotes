@@ -11,7 +11,7 @@ tags:
   - AI
   - 工程实践
 asset_ref: Assets/2026/10/wechat-tgpmds.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 货拉拉千人 AI Coding 落地：用自建 Harness 收口，跑通组织级 AI Native
