@@ -14,8 +14,10 @@ tags:
 sources:
   - raw/sources/architecture/2026-10-23-rongyun-million-online-live-message-distribution.md
   - raw/sources/architecture/2026-10-23-rongyun-live-chatroom-architecture-challenges.md
+  - raw/sources/architecture/2026-10-23-vivo-live-im-message-architecture.md
 related:
   - wiki/concepts/read-fanout.md
+  - wiki/concepts/gain-message.md
   - wiki/topics/live-streaming-messaging.md
 ---
 # 直播消息丢弃策略
@@ -35,10 +37,14 @@ related:
 3. **"拉取中"标记**：下发通知后标记用户，2 秒内新消息不再重复通知（**丢通知不丢消息**，降低客户端压力）；超 2 秒继续通知，连续多次不拉取触发踢出。
 4. **优先级三桶**：白名单（系统/管理通知）> 高 > 低，分桶存储、客户端按序拉取；高并发时低优先级先丢，白名单消息独立环形队列不丢。
 5. **离线判定兜底**：30s 未拉取或累计 30 条未拉 → 判离线踢出并同步下线（白名单豁免），防止"死用户"占住分发资源。
+6. **丢"老"消息**（vivo）：消息带创建时间，下发时判断与当前时间间隔过大则直接丢弃，避免展示过期消息拉低 QoE。
+7. **分级依据是客户端渲染上限**（vivo）：直播间每秒只能渲染 15~20 条，分级的物理根源在客户端而非服务端；优先级维度可细化到业务类型（礼物>公屏）、金额（大额>小额）、用户等级（高等级>匿名）。
 
 ## How It Works（运作方式）
 
 上行：消息先到直播间服务校验 → 超 200 条/秒即弃。分发：直播间服务广播到消息服务 → 消息服务按环形队列缓存、通知合并后下发拉取通知 → 有"拉取中"标记且未超 2 秒则跳过本次通知。拉取：客户端携本地最大时间戳差量拉取，按白名单 > 高 > 低顺序取三个桶。客户端拉得快就不丢任何消息——丢弃压力被转移到"拉取速度"这个客户端可控变量上。
+
+丢弃之后的状态恢复由消息语义层兜底：状态类消息设计为 [[gain-message|增益消息]]（后续消息包含前续全量），丢一条不致命，下一条自动纠正（vivo 一手实践）。
 
 ## Relationships（关系）
 
@@ -54,6 +60,7 @@ related:
 ## Evolution（演进）
 
 - 融云《直播系统聊天技术》第六篇（分发与丢弃策略，约 2020 年代初）→ 第七篇扩展为完整架构（优先级三桶、离线判定、客户端协同）。
+- vivo 秀场直播 IM 一年演进（同期）：独立提出"选择性丢低优先级 + 丢老消息 + 增益消息补偿"三策略，与融云体系互证"策略性丢弃"是行业共识。
 
 ## Open Questions（开放问题）
 
@@ -64,9 +71,11 @@ related:
 
 - Source: `raw/sources/architecture/2026-10-23-rongyun-million-online-live-message-distribution.md`（一手实践：三级丢弃、200 条/秒、拉取中标记、独立环形队列）
 - Source: `raw/sources/architecture/2026-10-23-rongyun-live-chatroom-architecture-challenges.md`（一手实践：优先级三桶、离线判定 30s/30 条、白名单豁免）
+- Source: `raw/sources/architecture/2026-10-23-vivo-live-im-message-architecture.md`（一手实践：渲染上限 15~20 条/秒、丢老消息、增益消息补偿）
 
 ## Related Knowledge（相关知识）
 
 - [[rongyun-million-online-live-message-distribution|融云：百万人在线的直播间实时聊天消息分发技术实践]]
 - [[rongyun-live-chatroom-architecture-challenges|融云：直播间海量聊天消息的架构设计难点实践]]
+- [[vivo-live-im-message-architecture|vivo直播系统中IM消息模块的架构实践]]
 - [[live-streaming-messaging|直播实时消息分发]]（主题）

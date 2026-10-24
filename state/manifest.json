@@ -1572,6 +1572,20 @@
       ],
       "source_url": "https://segmentfault.com/a/1190000048315142",
       "asset_ref": "Assets/2026/10/vivo-diting-sensitive-word-matching.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-23-vivo-live-im-message-architecture.md",
+      "sha256": "353cfc6d7e7590a1c907aabf557e32d0a188d475a34714d63f3eb6f036267c72",
+      "registered_at": "2026-10-24",
+      "inbox_ref": "Archive/2026-10-23-vivo-live-im-message-architecture.md",
+      "pages": [
+        "wiki/sources/vivo-live-im-message-architecture.md",
+        "wiki/concepts/gain-message.md",
+        "wiki/concepts/live-message-drop-policy.md",
+        "wiki/topics/live-streaming-messaging.md"
+      ],
+      "source_url": "http://www.52im.net/thread-3994-1-1.html",
+      "asset_ref": "Assets/2026/10/vivo-live-im-message-architecture.md"
     }
   ]
 }

@@ -11,7 +11,7 @@ tags:
   - 分布式系统
   - 工程实践
 asset_ref: Assets/2026/10/vivo-live-im-message-architecture.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # vivo直播系统中IM消息模块的架构实践

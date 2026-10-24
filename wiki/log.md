@@ -175,3 +175,5 @@
 - 2026-10-24 | ingest | raw/sources/architecture/2026-10-23-system-design-proximity-service.md | wiki/sources/system-design-proximity-service.md（新建，confidence=high，第二卷第 1 章）+ wiki/concepts/geohash.md（双信源编译：边界问题/8 邻居/截短扩半径/缓存键归一/复合键表）
 - 2026-10-24 | ingest | raw/sources/architecture/2026-10-23-vivo-diting-sensitive-word-matching.md | wiki/sources/vivo-diting-sensitive-word-matching.md（新建，confidence=high，vivo 谛听一手实践）+ wiki/concepts/aho-corasick.md（新建概念：Trie+Fail，组合词后置聚合与拼音图 DFS 改造）
 - 2026-10-24 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
+- 2026-10-24 | ingest | raw/sources/architecture/2026-10-23-vivo-live-im-message-architecture.md | wiki/sources/vivo-live-im-message-architecture.md（新建，confidence=high，vivo 秀场直播推拉结合一手实践）+ wiki/concepts/gain-message.md（新建概念：全量快照自愈，单一信源）+ wiki/concepts/live-message-drop-policy.md（第三信源：丢老消息/渲染上限 15~20 条/增益消息补偿）+ wiki/topics/live-streaming-messaging.md（补短轮询路线，七信源）
+- 2026-10-24 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）

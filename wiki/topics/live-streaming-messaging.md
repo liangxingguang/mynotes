@@ -18,6 +18,7 @@ sources:
   - raw/sources/architecture/2026-10-23-baidu-live-mcast-message-architecture.md
   - raw/sources/architecture/2026-10-23-meipai-live-danmu-realtime-push.md
   - raw/sources/architecture/2026-10-23-netease-live-danmu-cdn-broadcast.md
+  - raw/sources/architecture/2026-10-23-vivo-live-im-message-architecture.md
 ---
 # 直播实时消息分发
 
@@ -30,15 +31,17 @@ sources:
 直播消息与 IM 最根本的区别是**允许有策略地丢消息**：刷屏消息大量重复、价值密度低，全达既压垮服务端又让客户端卡顿。各厂路线由此分化为"拉"与"推"两大阵营：
 
 - **通知拉取（读扩散）**：融云——通知合并 + 客户端位点拉取 + 三级丢弃 + 优先级三桶；阿里直播互动消息同走读扩散（读写混合）。
-- **长连接推送**：百度 mcast（groupID 下沉长连接层两级扩散）、美拍（Redis 关系 + 长连接推拉结合）。
+- **短轮询（HTTP 拉）**：vivo——2s 间隔 + timestamp 游标，Redis SortedSet 四桶存储，日轮询 10+ 亿次，间隔按房间人数动态下发；超高热房间物理隔离 VIP Redis 集群。
+- **长连接推送**：百度 mcast（groupID 下沉长连接层两级扩散）、美拍（Redis 关系 + 长连接推拉结合）、vivo 长连接侧（接入层 so 热更新 + 块消息匀速分发，每秒 10~20 条）。
 - **下行外包 CDN**：网易云信把弹幕下行伪装成视频流/静态文件交给 CDN 边缘，源站只扛上行。
 
-共性工程手段：一致性哈希落点汇聚行为、环形队列缓存、"拉取中/聚合/合并"类降频机制、重要消息（系统/管理通知）独立通道保必达。
+共性工程手段：一致性哈希落点汇聚行为、环形队列缓存、"拉取中/聚合/合并"类降频机制、重要消息（系统/管理通知）独立通道保必达、状态类消息用 [[gain-message|增益消息]] 全量快照兜底丢包（vivo）。
 
 ## Key Concepts（关键概念）
 
 - [[read-fanout|读扩散（Fan-out on Read）]]
 - [[live-message-drop-policy|直播消息丢弃策略]]
+- [[gain-message|增益消息（全量快照自愈）]]
 - [[mcast|长连接组播（mcast）]]
 - [[cdn-broadcast-fanout|CDN 广播（弹幕下行）]]
 
@@ -57,6 +60,7 @@ sources:
 - 百度：mcast 单实例 25w 连接 8w QPS，聚合 + 压缩消化峰值
 - 网易云信：千万级在线下行改道 CDN 广播
 - 融云：百万在线聊天室 200 台消息服务 × 5000 人，丢弃策略体系化（上/下行限速 + 优先级三桶）
+- vivo：推拉结合（短轮询日 10+ 亿次 + 长连接），消息分级的物理根源定位为客户端渲染上限（15~20 条/秒），增益消息抗丢包自愈
 
 ## Disagreements（分歧）
 

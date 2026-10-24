@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-10-24 09:33",
+  "updated_at": "2026-10-24 09:39",
   "notes": [
-    {
-      "id": "2026-10-23-vivo-live-im-message-architecture",
-      "title": "vivo直播系统中IM消息模块的架构实践",
-      "path": "Inbox/2026-10-23-vivo-live-im-message-architecture.md",
-      "created": "2026-10-23",
-      "category": "技术",
-      "tags": [
-        "分布式系统",
-        "工程实践"
-      ],
-      "source": "52im.net（vivo互联网技术团队·LinDu/Li Guolin）",
-      "source_url": "http://www.52im.net/thread-3994-1-1.html",
-      "source_type": "文章",
-      "platform": "52im.net",
-      "summary": "vivo 秀场直播 IM 模块一年演进总结。核心认知：直播消息与微信类 IM 最大区别是**分优先级**（客户端每秒只能渲染 15~20 条，礼物>公屏、大额>小额、高等级用户>匿名）。推拉结合架构：**短轮询**（2s 间隔 + timestamp 游标，每次只回 10~15 条；存储用 Redis SortedSet 四桶——gift/chat/notify/pk，score=时间戳；日轮询 10+ 亿次，按房间人数动态配置 1.5~2.5s，超高热房间物理隔离 VIP Redis 集群；注意校验过期时间戳防慢查、客户端排重）；**长连接**（HTTP 拿 IP 列表→TCP 接入→鉴权；接入层简洁 + so 插件热更新防重启断连；TCP keepalive + 智能心跳）。分发侧：成员管理固定分片 vs 动态分片取舍、读扩散、批量下发、protobuf 省 43% 字节、**块消息**（1~2s 匀速聚合分发，每秒 10~20 条，超出按优先级丢）。丢弃三策略：低优先级丢弃、老消息丢弃（创建时间间隔过大直接丢）、**增益消息**（后续消息包含前续全量，如 PK 值发 22:10 而非增量 2:0，抗丢包自愈）。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/vivo-live-im-message-architecture.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-23-wechat-live-chatroom-15m-online",
       "title": "微信直播聊天室单房间1500万在线的消息架构演进之路",
@@ -2629,6 +2610,25 @@
       "summary": "vivo 内容审核平台\"谛听\"的敏感词匹配方案：词库百万级、平均匹配耗时 50ms。底层选型 AC 自动机（Trie+Fail 指针，近似线性复杂度）而非 WM——因敏感词长度/前缀无规律且加载不频繁、内存充足。两个业务增强：组合敏感词（拆成单词入 Trie，后置按映射聚合，全部命中才算组合命中）；拼音敏感词（对抗\"啋票\"类谐音规避——Trie 节点改存音节、多音字全读音展开成\"拼音图\"，AC 自动机改在图上 DFS 匹配，DFS 栈同步保存 Trie 状态位）。终止条件与剪枝是关键难点。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/vivo-diting-sensitive-word-matching.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-23-vivo-live-im-message-architecture",
+      "title": "vivo直播系统中IM消息模块的架构实践",
+      "path": "Archive/2026-10-23-vivo-live-im-message-architecture.md",
+      "created": "2026-10-23",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "工程实践"
+      ],
+      "source": "52im.net（vivo互联网技术团队·LinDu/Li Guolin）",
+      "source_url": "http://www.52im.net/thread-3994-1-1.html",
+      "source_type": "文章",
+      "platform": "52im.net",
+      "summary": "vivo 秀场直播 IM 模块一年演进总结。核心认知：直播消息与微信类 IM 最大区别是**分优先级**（客户端每秒只能渲染 15~20 条，礼物>公屏、大额>小额、高等级用户>匿名）。推拉结合架构：**短轮询**（2s 间隔 + timestamp 游标，每次只回 10~15 条；存储用 Redis SortedSet 四桶——gift/chat/notify/pk，score=时间戳；日轮询 10+ 亿次，按房间人数动态配置 1.5~2.5s，超高热房间物理隔离 VIP Redis 集群；注意校验过期时间戳防慢查、客户端排重）；**长连接**（HTTP 拿 IP 列表→TCP 接入→鉴权；接入层简洁 + so 插件热更新防重启断连；TCP keepalive + 智能心跳）。分发侧：成员管理固定分片 vs 动态分片取舍、读扩散、批量下发、protobuf 省 43% 字节、**块消息**（1~2s 匀速聚合分发，每秒 10~20 条，超出按优先级丢）。丢弃三策略：低优先级丢弃、老消息丢弃（创建时间间隔过大直接丢）、**增益消息**（后续消息包含前续全量，如 PK 值发 22:10 而非增量 2:0，抗丢包自愈）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/vivo-live-im-message-architecture.md",
       "wiki_status": "ingested"
     }
   ]
