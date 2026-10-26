@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26 22:45",
+  "updated_at": "2026-10-26 22:48",
   "notes": [
     {
       "id": "2026-10-26-agent-context-tutorial",
@@ -18,6 +18,26 @@
       "summary": "微博博主「蚁工厂」推荐的可交互 Agent 入门教程（nano-ai.tech/agent/）：把 Agent 讲成一个 while 循环——调模型、执行工具、结果写回上下文、再调模型。逐章演示上下文每转一圈如何增长、哪里会出问题、各种 Agent 技巧在上下文里做了什么，每章可「播放」或逐格步进。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/agent-context-tutorial.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-26-learn-harness-engineering",
+      "title": "Learn Harness Engineering：开源 Coding Agent 工程课程",
+      "path": "Inbox/2026-10-26-learn-harness-engineering.md",
+      "created": "2026-10-26",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Harness",
+        "课程"
+      ],
+      "source": "微博",
+      "source_url": "https://weibo.com/5648162302/5355994244187575",
+      "source_type": "link",
+      "platform": "微博",
+      "summary": "微博博主「黄建同学」推荐：Walking Labs 出品的开源课程 Learn Harness Engineering，14 讲 + 8 个递进项目，附中文资料与可复用模板。课程围绕 Coding Agent 的工作环境展开——组织仓库、保存进度、控制任务范围、验证 Agent 是否真完成了工作，适合已在用 Coding Agent、想系统改善开发流程的人。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/learn-harness-engineering.md",
       "wiki_status": "pending"
     },
     {
