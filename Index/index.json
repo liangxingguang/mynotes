@@ -1,6 +1,25 @@
 {
-  "updated_at": "2026-10-26 21:20",
+  "updated_at": "2026-10-26 22:45",
   "notes": [
+    {
+      "id": "2026-10-26-agent-context-tutorial",
+      "title": "Agent 入门教程：上下文里的 Agent",
+      "path": "Inbox/2026-10-26-agent-context-tutorial.md",
+      "created": "2026-10-26",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "课程"
+      ],
+      "source": "微博",
+      "source_url": "https://weibo.com/2194035935/5357902698908316",
+      "source_type": "link",
+      "platform": "微博",
+      "summary": "微博博主「蚁工厂」推荐的可交互 Agent 入门教程（nano-ai.tech/agent/）：把 Agent 讲成一个 while 循环——调模型、执行工具、结果写回上下文、再调模型。逐章演示上下文每转一圈如何增长、哪里会出问题、各种 Agent 技巧在上下文里做了什么，每章可「播放」或逐格步进。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/agent-context-tutorial.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
