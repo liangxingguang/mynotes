@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27 20:28",
+  "updated_at": "2026-10-27 20:30",
   "notes": [
     {
       "id": "2026-10-26-learn-harness-engineering",
@@ -77,6 +77,26 @@
       "summary": "以一次脱敏订单服务发布事故为主线，讲透交易系统蓝绿发布的完整工程：Argo Rollouts 资源定义、Preview 冒烟、四层 SLO 门禁、优雅退出状态机、数据兼容（Expand/Migrate/Contract）、容量门禁与可审计发布流水线。核心观点：蓝绿的价值不是\"无中断切换\"，而是承认变更会失败，并把失败限制在可观测、可回退、可补偿的范围内。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/k8s-blue-green-release-trading.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-in-mainstream-middleware",
+      "title": "Netty 在主流中间件中的应用",
+      "path": "Inbox/2026-10-27-netty-in-mainstream-middleware.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java",
+        "RocketMQ"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/oqhrO1qmeRsJdeu4KmVpCg",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "Netty 源码分析系列番外篇（完结）：拆解 RocketMQ、Dubbo、Elasticsearch、Pulsar 四大中间件的 Netty 用法，含核心源码与关键问题对照表，总结五大最佳实践并给出一个可直接复用的 Netty 服务端模板。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-in-mainstream-middleware.md",
       "wiki_status": "pending"
     },
     {
