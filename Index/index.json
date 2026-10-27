@@ -1,65 +1,6 @@
 {
-  "updated_at": "2026-10-27 21:06",
+  "updated_at": "2026-10-27 21:32",
   "notes": [
-    {
-      "id": "2026-10-27-deep-thinking-5-tools",
-      "title": "深度思考的5个思维工具",
-      "path": "Inbox/2026-10-27-deep-thinking-5-tools.md",
-      "created": "2026-10-27",
-      "category": "学习",
-      "tags": [
-        "思维方式",
-        "个人成长"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/eu0Dzydkj4G9l7WmYrtyPQ",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "针对「认知闭合需要」（急于要一个答案、有了答案就固着不改）的思维陷阱，给出 5 个按顺序使用的思考工具：澄清、拆解、追问、反证收敛问题，逆向作为发散出口。以一个\"加班全组第一却晋升落选\"的案例全程贯穿演示。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/deep-thinking-5-tools.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-27-harness-engineering-11-agents-study",
-      "title": "从 11 款 Agent 的源码研究，看懂 Harness Engineering",
-      "path": "Inbox/2026-10-27-harness-engineering-11-agents-study.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "Harness",
-        "AI Coding",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/8Z1uHMWIpQ7D9oXN9bV8GQ",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "基于《Harness Engineering》论文（分析 11 个 Coding Agent、约 400 万行源码）的架构解读：Agent ≈ Model + Harness，Harness 负责把模型决策转化为可靠执行。文章拆解 Harness 的七个观察面（执行循环/模型适配/工具/上下文/权限/多 Agent/扩展），辨析 Skills、MCP、ACP 分工，给出从最小系统走向可靠交付的演进路径与单变量评测方案。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/harness-engineering-11-agents-study.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-27-how-to-get-startup-ideas",
-      "title": "如何找到创业点子（YC 合伙人演讲）",
-      "path": "Inbox/2026-10-27-how-to-get-startup-ideas.md",
-      "created": "2026-10-27",
-      "category": "学习",
-      "tags": [
-        "创业",
-        "思维方式",
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/wP2A_l2mkrBbbY5dcuyHAA",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "YC 合伙人 Jared Friedman 的 Startup School 演讲（基于 YC 前 100 公司估值数据 + PG《How to Get Startup Ideas》）：创业点子的四大常见错误（SISP 为方案找问题、焦油坑点子、扑向第一个点子、苦等完美点子）、评估点子的十问框架、让点子「看起来差实际变好」的三件事，以及生成好点子的七个配方。核心结论：爱上问题而非方案；70% 的 YC 顶级点子是自然注意到的；最终验证方式只有一个——发出去。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/how-to-get-startup-ideas.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-27-jvm-gc-interview-guide",
       "title": "JVM 垃圾回收面试全讲透",
@@ -77,7 +18,7 @@
       "summary": "一篇覆盖 JVM GC 面试高频考点的长文：对象可回收判定（引用计数 vs 可达性分析）、四大回收算法与分代收集、Serial/Parallel/CMS/G1/ZGC/Shenandoah 六大收集器对比选型，深入拆解 G1 的 Region/RSet/SATB/Mixed GC 与 ZGC 的染色指针/并发整理，最后给出 GC 调优黄金 6 步、常用参数速查表和 Graal JIT 优化解析。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/jvm-gc-interview-guide.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-27-k8s-blue-green-release-trading",
@@ -3398,6 +3339,65 @@
       "summary": "一套企业级智能体中台的完整架构方案：FastAPI（在线服务+Worker 双链路）+ Nacos（注册发现+配置热更新）+ RocketMQ（异步解耦）+ LangGraph（多 Agent 编排）+ Milvus+ES（混合检索）+ Redis+MySQL（状态与元数据）。亮点是每个组件都给出选型对比与「不选备选的理由」，以及六个生产避坑点。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/agent-platform-architecture.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-deep-thinking-5-tools",
+      "title": "深度思考的5个思维工具",
+      "path": "Archive/2026-10-27-deep-thinking-5-tools.md",
+      "created": "2026-10-27",
+      "category": "学习",
+      "tags": [
+        "思维方式",
+        "个人成长"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/eu0Dzydkj4G9l7WmYrtyPQ",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "针对「认知闭合需要」（急于要一个答案、有了答案就固着不改）的思维陷阱，给出 5 个按顺序使用的思考工具：澄清、拆解、追问、反证收敛问题，逆向作为发散出口。以一个\"加班全组第一却晋升落选\"的案例全程贯穿演示。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/deep-thinking-5-tools.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-harness-engineering-11-agents-study",
+      "title": "从 11 款 Agent 的源码研究，看懂 Harness Engineering",
+      "path": "Archive/2026-10-27-harness-engineering-11-agents-study.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "Harness",
+        "AI Coding",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/8Z1uHMWIpQ7D9oXN9bV8GQ",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "基于《Harness Engineering》论文（分析 11 个 Coding Agent、约 400 万行源码）的架构解读：Agent ≈ Model + Harness，Harness 负责把模型决策转化为可靠执行。文章拆解 Harness 的七个观察面（执行循环/模型适配/工具/上下文/权限/多 Agent/扩展），辨析 Skills、MCP、ACP 分工，给出从最小系统走向可靠交付的演进路径与单变量评测方案。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/harness-engineering-11-agents-study.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-how-to-get-startup-ideas",
+      "title": "如何找到创业点子（YC 合伙人演讲）",
+      "path": "Archive/2026-10-27-how-to-get-startup-ideas.md",
+      "created": "2026-10-27",
+      "category": "学习",
+      "tags": [
+        "创业",
+        "思维方式",
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/wP2A_l2mkrBbbY5dcuyHAA",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "YC 合伙人 Jared Friedman 的 Startup School 演讲（基于 YC 前 100 公司估值数据 + PG《How to Get Startup Ideas》）：创业点子的四大常见错误（SISP 为方案找问题、焦油坑点子、扑向第一个点子、苦等完美点子）、评估点子的十问框架、让点子「看起来差实际变好」的三件事，以及生成好点子的七个配方。核心结论：爱上问题而非方案；70% 的 YC 顶级点子是自然注意到的；最终验证方式只有一个——发出去。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/how-to-get-startup-ideas.md",
       "wiki_status": "ingested"
     }
   ]

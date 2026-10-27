@@ -34,6 +34,7 @@
 - [[critical-thinking-six-priorities|教了快十年批判性思维，我越来越看重这六件事]]（2026-10-22，思维方法论，置信度中）
 - [[database-high-availability|当我谈数据库高可用时是在谈些什么（京东技术五层主线）]]（2026-10-22，数据库/MySQL 高可用）
 - [[db-table-sharding-practice|大表治理之分表实践：手搓一个简单的数据库分表组件]]（2026-10-16，数据库/分表）
+- [[deep-thinking-5-tools|深度思考的5个思维工具（YouCore）]]（2026-10-27，思维方法论，置信度中）
 - [[deep-thinking-training|如何锻炼出强悍的深度思考能力？（给思考留点时间）]]（2026-10-20/23，方法论，置信度中）
 - [[deepseek-harness-7day-day1|7天学懂 DeepSeek Harness 实操手册（Day 1）]]（2026-10-14，AI/教程）
 - [[deepseek-hyperframes-video-workflow|用 DeepSeek + HyperFrames 做视频：AI 写网页、逐帧渲染成 MP4]]（2026-10-20，AI/视频工作流）
@@ -53,6 +54,8 @@
 - [[gc-log-tuning-practice|GC 日志分析与调优实战]]（2026-10-21，Java/JVM）
 - [[github-niche-usage-tips|三个小众但实用的 GitHub 用法（zread / Deepwiki / gitingest）]]（2026-10-14，工具）
 - [[github-open-source-ai-books-6|知乎专栏：6 本 GitHub 开源 AI 宝典（Agent/Infra/DL/RL）]]（2026-10-23，AI/学习资源，置信度低）
+- [[harness-engineering-11-agents-study|从 11 款 Agent 的源码研究，看懂 Harness Engineering]]（2026-10-27，AI/Harness，置信度高）
+- [[how-to-get-startup-ideas|如何找到创业点子（YC 合伙人 Jared Friedman 演讲）]]（2026-10-27，创业/方法论，置信度中）
 - [[huolala-agent-eval-platform|货拉拉业务 Agent 评测平台的工程实践与深度思考]]（2026-10-14，AI/Agent 评测）
 - [[im-group-chat-write-fanout-cost|IM千人群聊该不该用消息写扩散？详细算算成本账！]]（2026-10-23，IM/写扩散）
 - [[im-websocket-reconnect-heartbeat|IM聊天不掉线？生产级WebSocket断线重连、心跳保活实战]]（2026-10-23，IM/WebSocket/前端，置信度中）
@@ -156,6 +159,7 @@
 - [[codemode|Codemode（代码模式工具编排）]]（模型写 JS 沙箱脚本编排工具调用，只回筛选结果；固定开销约减半，单次收益看返回格式）
 - [[cpu-funnel-coding|CPU 漏斗（编码级性能模型）]]（砍掉无效解析/转换/对象，让 CPU 只做核心运算）
 - [[cross-process-surface-rendering|Surface 跨进程渲染]]（Surface Parcelable + SurfaceFlinger 跨进程合成，Binder 传 Surface 零拷贝传画面；Renderer 3→1，微信小游戏一手）
+- [[deep-thinking-five-tools|深度思考五工具（澄清-拆解-追问-反证-逆向）]]（按序收敛四步+发散出口一步，反认知闭合；YouCore 单信源，置信度中）
 - [[durable-execution|持久执行（Durable Execution）]]（崩溃后断点精确恢复；效应三明治 + 版本化文档存储，非事件溯源）
 - [[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]（先目标基线、JFR/GC 日志归因，证据指向 JVM 才动参数，单变量实验）
 - [[idempotency-design|幂等设计]]（重试与幂等共生；同事务铁律+幂等键三要素+分层防护闭环，三信源互证）
@@ -163,6 +167,7 @@
 - [[framework-first-migration|框架先行的规模化运行时迁移]]（BOM 收口+框架分代并行+AI 批量改造+检查单收敛，货拉拉 JDK 21 实践）
 - [[gain-message|增益消息（全量快照自愈）]]（状态类消息发全量快照而非增量，丢包被下一条自动纠正；vivo 一手）
 - [[geohash|Geohash（地理哈希）]]（经纬度降维前缀编码；边界问题+8 邻居、截短扩半径、缓存键归一；邻近索引+地图瓦片双信源）
+- [[harness-engineering|Harness Engineering（Agent 执行系统工程）]]（Agent ≈ Model + Harness；七观察面+信息三层+安全四层+B0~B5 单变量评测；11 系统源码研究解读）
 - [[hyperloglog|HyperLogLog（基数估算）]]（伯努利过程+分桶调和平均，12KB 估 64 位级基数；≤1w tablekv 精确、>1w HLL >95%，微信一手）
 - [[llm-wiki|LLM Wiki]]（原始来源不可变 + 模型持续编译互链知识页面，Karpathy 模式；本仓库即实例，双信源）
 - [[mcp|MCP]]（LLM↔工具/数据纵向协议，Anthropic 2024）
@@ -180,6 +185,7 @@
 - [[rag-production-guardrails|企业级 RAG 生产护栏]]（容量/证据/权限/恢复四主线；证据门禁前置、发布目录原子切换；混合检索+存储分层+参数热调双信源互证）
 - [[reactive-tracing-context|响应式环境的全链路 traceId 传递]]（Reactor Context 替代 ThreadLocal；doOnEach 同步 MDC、doFinally 清除）
 - [[scopedvalue|ScopedValue（作用域值）]]（JDK 25 正式：作用域共享不可变快照，终结 VT 下 ThreadLocal 内存膨胀/泄漏/脏值，Old Gen -61% 实测）
+- [[startup-ideas-framework|创业点子生成与评估框架（YC）]]（四错误避坑+十问评估+七配方生成；YC 前 100 公司 70% 点子自然注意到；演讲整理稿单信源）
 - [[table-sharding-migration|分表平滑迁移策略]]（五种读写策略矩阵 + 双写双读 SQL 重写，京东大表治理实践）
 - [[virtual-threads-production|虚拟线程生产实践]]（场景筛选、Helper 传 Trace/ThreadLocal、钉住规避与观测换代，货拉拉 JDK 21 实践）
 - [[write-fanout|写扩散（Fan-out on Write）]]（群消息按成员写副本换读路径简单；群服务扇出+副本指纹+MQ 批量化+双轨存储，万人群物理上限，三信源）

@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [Harness, AI Coding, 工程实践]
 asset_ref: Assets/2026/10/harness-engineering-11-agents-study.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 从 11 款 Agent 的源码研究，看懂 Harness Engineering

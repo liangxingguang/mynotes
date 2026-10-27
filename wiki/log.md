@@ -188,3 +188,7 @@
 - 2026-10-27 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
 - 2026-10-27 | ingest | raw/sources/ai/2026-10-27-agent-platform-architecture.md | wiki/sources/agent-platform-architecture.md（新建，confidence=high，企业级 Agent 中台选型+避坑，单信源经验方案）+ wiki/entities/langgraph.md（新建实体：编排状态机，原生非分布式+RedisSaver/MySQL 补齐，双信源）+ wiki/concepts/rag-production-guardrails.md（第二信源：混合检索/存储分层/参数热调/最终一致互证）+ wiki/sources/a2a-multi-agent-langgraph.md（补 langgraph 互链）
 - 2026-10-27 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
+- 2026-10-27 | ingest | raw/sources/misc/2026-10-27-deep-thinking-5-tools.md | wiki/sources/deep-thinking-5-tools.md（新建，confidence=medium，YouCore 思维方法论）+ wiki/concepts/deep-thinking-five-tools.md（新建概念：澄清-拆解-追问-反证-逆向五工具流水线，与批判性思维/14 模型区分）
+- 2026-10-27 | ingest | raw/sources/ai/2026-10-27-harness-engineering-11-agents-study.md | wiki/sources/harness-engineering-11-agents-study.md（新建，confidence=high，11 系统源码研究解读）+ wiki/concepts/harness-engineering.md（新建概念：Agent ≈ Model + Harness，七观察面/信息三层/安全四层/B0~B5 评测）+ wiki/concepts/agent-loop.md（第六信源互证 Runtime/Harness 二分，补互链）
+- 2026-10-27 | ingest | raw/sources/misc/2026-10-27-how-to-get-startup-ideas.md | wiki/sources/how-to-get-startup-ideas.md（新建，confidence=medium，YC 演讲整理稿）+ wiki/concepts/startup-ideas-framework.md（新建概念：四错误+十问+七配方，wiki 创业领域首篇）
+- 2026-10-27 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）

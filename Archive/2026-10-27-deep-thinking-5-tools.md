@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 学习
 tags: [思维方式, 个人成长]
 asset_ref: Assets/2026/10/deep-thinking-5-tools.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 深度思考的5个思维工具

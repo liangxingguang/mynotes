@@ -9,7 +9,9 @@ created: 2026-10-27
 category: 技术
 tags: [Java, 工程实践]
 asset_ref: Assets/2026/10/jvm-gc-interview-guide.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-27T13:20:26.338Z"
+ingest_claim_id: 21892-1793107226338-0
 ---
 
 # JVM 垃圾回收面试全讲透

@@ -1663,6 +1663,43 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/3vZDwVLMVSpVk2_LOYrwGg",
       "asset_ref": "Assets/2026/10/agent-platform-architecture.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-27-deep-thinking-5-tools.md",
+      "sha256": "947828dbf45954b0e55cd7ab7e3842c20475675293e7559efef38b155db91a1d",
+      "registered_at": "2026-10-27",
+      "inbox_ref": "Archive/2026-10-27-deep-thinking-5-tools.md",
+      "pages": [
+        "wiki/sources/deep-thinking-5-tools.md",
+        "wiki/concepts/deep-thinking-five-tools.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/eu0Dzydkj4G9l7WmYrtyPQ",
+      "asset_ref": "Assets/2026/10/deep-thinking-5-tools.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-27-harness-engineering-11-agents-study.md",
+      "sha256": "cfa5bd3d627ec0bfa8ad06b3933ff9c3f7e7c0df3c7f790aa3d5c13c0bbf22fa",
+      "registered_at": "2026-10-27",
+      "inbox_ref": "Archive/2026-10-27-harness-engineering-11-agents-study.md",
+      "pages": [
+        "wiki/sources/harness-engineering-11-agents-study.md",
+        "wiki/concepts/harness-engineering.md",
+        "wiki/concepts/agent-loop.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/8Z1uHMWIpQ7D9oXN9bV8GQ",
+      "asset_ref": "Assets/2026/10/harness-engineering-11-agents-study.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-27-how-to-get-startup-ideas.md",
+      "sha256": "6633a452111728034a8f8f9d5a67c6bfcae3e5fa138f51beca3718bbbb3b8613",
+      "registered_at": "2026-10-27",
+      "inbox_ref": "Archive/2026-10-27-how-to-get-startup-ideas.md",
+      "pages": [
+        "wiki/sources/how-to-get-startup-ideas.md",
+        "wiki/concepts/startup-ideas-framework.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/wP2A_l2mkrBbbY5dcuyHAA",
+      "asset_ref": "Assets/2026/10/how-to-get-startup-ideas.md"
     }
   ]
 }

@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 学习
 tags: [创业, 思维方式, 产品]
 asset_ref: Assets/2026/10/how-to-get-startup-ideas.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 如何找到创业点子（YC 合伙人演讲）
