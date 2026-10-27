@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [Kubernetes, 工程实践]
 asset_ref: Assets/2026/10/k8s-blue-green-release-trading.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 从零构建 K8s 蓝绿发布：日千万级交易系统的渐进式交付实战

@@ -1715,6 +1715,21 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/n2J8M9N14e2oTOldtt-EHQ",
       "asset_ref": "Assets/2026/10/jvm-gc-interview-guide.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-27-k8s-blue-green-release-trading.md",
+      "sha256": "80ed054f013fa38f191ffd05c7d5bc55c071c7cc3122bad681f0bb398636abb3",
+      "registered_at": "2026-10-27",
+      "inbox_ref": "Archive/2026-10-27-k8s-blue-green-release-trading.md",
+      "pages": [
+        "wiki/sources/k8s-blue-green-release-trading.md",
+        "wiki/concepts/blue-green-deployment.md",
+        "wiki/concepts/expand-migrate-contract.md",
+        "wiki/entities/argo-rollouts.md",
+        "wiki/concepts/idempotency-design.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/GdY6mos2iKd0G1hMYzjy8w",
+      "asset_ref": "Assets/2026/10/k8s-blue-green-release-trading.md"
     }
   ]
 }

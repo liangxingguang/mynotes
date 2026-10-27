@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-10-27 22:40",
+  "updated_at": "2026-10-27 22:51",
   "notes": [
-    {
-      "id": "2026-10-27-k8s-blue-green-release-trading",
-      "title": "从零构建 K8s 蓝绿发布：日千万级交易系统的渐进式交付实战",
-      "path": "Inbox/2026-10-27-k8s-blue-green-release-trading.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "Kubernetes",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/GdY6mos2iKd0G1hMYzjy8w",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "以一次脱敏订单服务发布事故为主线，讲透交易系统蓝绿发布的完整工程：Argo Rollouts 资源定义、Preview 冒烟、四层 SLO 门禁、优雅退出状态机、数据兼容（Expand/Migrate/Contract）、容量门禁与可审计发布流水线。核心观点：蓝绿的价值不是\"无中断切换\"，而是承认变更会失败，并把失败限制在可观测、可回退、可补偿的范围内。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/k8s-blue-green-release-trading.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-27-netty-01-intro",
       "title": "Netty源码分析(1) — 开篇：Netty到底是什么，凭什么成为Java网络编程的事实标准？",
@@ -3398,6 +3379,25 @@
       "summary": "一篇覆盖 JVM GC 面试高频考点的长文：对象可回收判定（引用计数 vs 可达性分析）、四大回收算法与分代收集、Serial/Parallel/CMS/G1/ZGC/Shenandoah 六大收集器对比选型，深入拆解 G1 的 Region/RSet/SATB/Mixed GC 与 ZGC 的染色指针/并发整理，最后给出 GC 调优黄金 6 步、常用参数速查表和 Graal JIT 优化解析。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/jvm-gc-interview-guide.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-k8s-blue-green-release-trading",
+      "title": "从零构建 K8s 蓝绿发布：日千万级交易系统的渐进式交付实战",
+      "path": "Archive/2026-10-27-k8s-blue-green-release-trading.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "Kubernetes",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/GdY6mos2iKd0G1hMYzjy8w",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "以一次脱敏订单服务发布事故为主线，讲透交易系统蓝绿发布的完整工程：Argo Rollouts 资源定义、Preview 冒烟、四层 SLO 门禁、优雅退出状态机、数据兼容（Expand/Migrate/Contract）、容量门禁与可审计发布流水线。核心观点：蓝绿的价值不是\"无中断切换\"，而是承认变更会失败，并把失败限制在可观测、可回退、可补偿的范围内。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/k8s-blue-green-release-trading.md",
       "wiki_status": "ingested"
     }
   ]

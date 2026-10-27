@@ -70,6 +70,7 @@
 - [[jvm-gc-troubleshooting-arthas|JVM GC 排查实战（Arthas 版）]]（2026-10-21，Java/JVM）
 - [[jvm-troubleshooting-six-tools|JVM 排查别乱试：6 个工具各管什么]]（2026-10-21，Java/JVM）
 - [[jvm-tuning-core-approach|一文掌握 JVM 调优核心思路]]（2026-10-14，Java/性能）
+- [[k8s-blue-green-release-trading|从零构建 K8s 蓝绿发布：日千万级交易系统的渐进式交付实战]]（2026-10-27，K8s/渐进式交付）
 - [[k8s-ha-cluster-setup-guide|K8s 从零搭建高可用集群：3 Master + 2 Worker 保姆级实战]]（2026-10-22，K8s/高可用）
 - [[kafka-fast-four-mechanisms|Kafka 为什么这么快？——顺序写+页缓存+零拷贝+批量四板斧]]（2026-10-21，Kafka/性能）
 - [[kafka-ops-tools-five-essentials|Kafka 运维必备工具清单：5 个工具让排障快 10 倍]]（2026-10-21，Kafka/运维）
@@ -155,6 +156,7 @@
 - [[aho-corasick|AC 自动机（Aho-Corasick）]]（Trie+Fail 指针多模式匹配，近似线性；vivo 谛听改造：组合词后置聚合、拼音图 DFS，单信源一手）
 - [[ai-native-organization|AI 原生研发组织]]（工具原生→工作流原生→组织原生）
 - [[ai-native-sdlc|AI 原生 SDLC]]（制品提交链驱动的六阶段闭环，Anthropic 2026）
+- [[blue-green-deployment|蓝绿发布（Blue-Green Deployment）]]（Preview+全量切换+自动观察回退；selector 只影响新连接；四层门禁先过样本量；蓝绿实战单信源）
 - [[cache-line-and-false-sharing|CPU 缓存行效应：局部性与伪共享]]（64 字节行为失效粒度；数组胜链表、Disruptor Sequence 填充，双信源）
 - [[cdn-broadcast-fanout|CDN 广播（弹幕下行）]]（千万级在线下行外包 CDN 边缘：推流伪装视频流 vs 静态文件周期拉取，多 CDN 权重轮询融合；网易云信一手）
 - [[codemode|Codemode（代码模式工具编排）]]（模型写 JS 沙箱脚本编排工具调用，只回筛选结果；固定开销约减半，单次收益看返回格式）
@@ -163,6 +165,7 @@
 - [[deep-thinking-five-tools|深度思考五工具（澄清-拆解-追问-反证-逆向）]]（按序收敛四步+发散出口一步，反认知闭合；YouCore 单信源，置信度中）
 - [[durable-execution|持久执行（Durable Execution）]]（崩溃后断点精确恢复；效应三明治 + 版本化文档存储，非事件溯源）
 - [[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]（先目标基线、JFR/GC 日志归因，证据指向 JVM 才动参数，单变量实验）
+- [[expand-migrate-contract|Expand/Migrate/Contract（Schema 跨版本演进）]]（Expand 只加兼容结构→Migrate 双写限速回填→回退窗口关闭后才 Contract；蓝绿回退的数据前提，单信源）
 - [[idempotency-design|幂等设计]]（重试与幂等共生；同事务铁律+幂等键三要素+分层防护闭环，三信源互证）
 - [[exploratory-learning|探索式学习（知识 DAG）]]（目标→节点 DAG，导师写 JS 经沙箱改写文档教学；Unyra 提出）
 - [[framework-first-migration|框架先行的规模化运行时迁移]]（BOM 收口+框架分代并行+AI 批量改造+检查单收敛，货拉拉 JDK 21 实践）
@@ -199,6 +202,7 @@
 - [[aibox|AiBox]]（货拉拉自建 AI Coding Harness/管控面：Rules/Skills/Commands/MCP 下发 + 网关四统一 + 三层度量，千人规模）
 - [[agent-lightning|Agent Lightning]]（微软研究院开源 Agent RL 训练框架，约 3500 行，真实工具链交互训练）
 - [[archunit|ArchUnit]]（Java 架构约束即测试，TNG，当前 1.5.1）
+- [[argo-rollouts|Argo Rollouts]]（K8s 渐进式交付控制器：Rollout CRD + AnalysisTemplate 门禁，blueGreen/canary，单信源）
 - [[arthas|Arthas]]（Java 线上诊断工具，4.3.5 起含实验性 MCP Server）
 - [[deepseek-harness|DeepSeek Harness]]（DeepSeek 模型的桌面 Agent 客户端，v0.2 预览版）
 - [[drawio-skill|drawio-skill]]（代码/配置→可编辑 .drawio 架构图，增量同步 + CI 架构检查）

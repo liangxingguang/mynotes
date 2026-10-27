@@ -4,7 +4,7 @@ type: concept
 title: 幂等设计（Idempotency Design）
 status: active
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-27
 confidence: high
 tags:
   - concept
@@ -15,11 +15,14 @@ sources:
   - raw/sources/architecture/2026-10-23-async-idempotency-local-message-table.md
   - raw/sources/architecture/2026-10-22-mq-transaction-idempotency-design.md
   - raw/sources/architecture/2026-10-22-async-task-system-design.md
+  - raw/sources/architecture/2026-10-27-k8s-blue-green-release-trading.md
 related:
   - wiki/concepts/durable-execution.md
+  - wiki/concepts/blue-green-deployment.md
   - wiki/sources/async-idempotency-local-message-table.md
   - wiki/sources/mq-transaction-idempotency-design.md
   - wiki/sources/async-task-system-design.md
+  - wiki/sources/k8s-blue-green-release-trading.md
 ---
 # 幂等设计（Idempotency Design）
 
@@ -70,6 +73,7 @@ related:
 - 2026-10-22：[[mq-transaction-idempotency-design]] 给出幂等三方案选型与同事务铁律（MQ 消费侧）。
 - 2026-10-22：[[async-task-system-design]] 从异步任务视角确立「至少一次执行下重复是常态」，幂等键 (task_id, row_number) 与「状态已是 RUNNING 不是幂等保护」。
 - 2026-10-23：[[async-idempotency-local-message-table]] 以真实重复扣券事故补全事故侧证据：不确定结果根因、异步重复流量三大来源、分层防护闭环与 8 条评审清单。
+- 2026-10-27：[[k8s-blue-green-release-trading]] 第四信源印证：蓝绿发布回退场景下，订单记录+幂等键+Outbox 事件同事务提交，Green 期间 12 笔订单经对账确认无重复扣款/预留；发布门禁把"支付幂等冲突"列为业务层指标。
 
 ## Open Questions（开放问题）
 
@@ -80,8 +84,10 @@ related:
 - Source: `raw/sources/architecture/2026-10-23-async-idempotency-local-message-table.md`（事故复盘 + 四方案取舍 + 分层闭环）
 - Source: `raw/sources/architecture/2026-10-22-mq-transaction-idempotency-design.md`（幂等三方案选型、同事务铁律）
 - Source: `raw/sources/architecture/2026-10-22-async-task-system-design.md`（至少一次执行、任务幂等键）
+- Source: `raw/sources/architecture/2026-10-27-k8s-blue-green-release-trading.md`（发布回退下订单+幂等键+Outbox 同事务、对账键与业务门禁）
 
 ## Related Knowledge（相关知识）
 
 - [[durable-execution|持久执行（概念页）]]
+- [[blue-green-deployment|蓝绿发布（概念页）]]（回退不造成二次业务执行以幂等为前提）
 - [[rocketmq|RocketMQ（实体页）]]（消息重放是异步重复流量来源之一）

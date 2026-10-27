@@ -60,6 +60,7 @@ related:
 
 - [[database-high-availability|数据库高可用五层主线（信源页）]]（HA 方法论的另一层：DB 侧）
 - [[raft-membership-log-barrier|Raft 成员变更（信源页）]]（etcd 成员数奇数规则的协议根基）
+- [[k8s-blue-green-release-trading|K8s 蓝绿发布实战（信源页）]]（集群建好之后的交付层：渐进式发布与回退）
 
 ## Source（信源）
 
