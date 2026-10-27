@@ -1,26 +1,6 @@
 {
-  "updated_at": "2026-10-27 20:50",
+  "updated_at": "2026-10-27 20:51",
   "notes": [
-    {
-      "id": "2026-10-27-agent-platform-architecture",
-      "title": "企业级多 Agent 中台架构实践",
-      "path": "Inbox/2026-10-27-agent-platform-architecture.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "RAG",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/3vZDwVLMVSpVk2_LOYrwGg",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "一套企业级智能体中台的完整架构方案：FastAPI（在线服务+Worker 双链路）+ Nacos（注册发现+配置热更新）+ RocketMQ（异步解耦）+ LangGraph（多 Agent 编排）+ Milvus+ES（混合检索）+ Redis+MySQL（状态与元数据）。亮点是每个组件都给出选型对比与「不选备选的理由」，以及六个生产避坑点。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/agent-platform-architecture.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-10-27-deep-thinking-5-tools",
       "title": "深度思考的5个思维工具",
@@ -2825,6 +2805,26 @@
       "summary": "微博博主「黄建同学」推荐：Walking Labs 出品的开源课程 Learn Harness Engineering，14 讲 + 8 个递进项目，附中文资料与可复用模板。课程围绕 Coding Agent 的工作环境展开——组织仓库、保存进度、控制任务范围、验证 Agent 是否真完成了工作，适合已在用 Coding Agent、想系统改善开发流程的人。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/learn-harness-engineering.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-agent-platform-architecture",
+      "title": "企业级多 Agent 中台架构实践",
+      "path": "Archive/2026-10-27-agent-platform-architecture.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "RAG",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/3vZDwVLMVSpVk2_LOYrwGg",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "一套企业级智能体中台的完整架构方案：FastAPI（在线服务+Worker 双链路）+ Nacos（注册发现+配置热更新）+ RocketMQ（异步解耦）+ LangGraph（多 Agent 编排）+ Milvus+ES（混合检索）+ Redis+MySQL（状态与元数据）。亮点是每个组件都给出选型对比与「不选备选的理由」，以及六个生产避坑点。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/agent-platform-architecture.md",
       "wiki_status": "ingested"
     }
   ]

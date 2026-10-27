@@ -186,3 +186,5 @@
 
 - 2026-10-27 | ingest | raw/sources/ai/2026-10-26-learn-harness-engineering.md | wiki/sources/learn-harness-engineering.md（新建，confidence=low，微博推荐帖）+ wiki/entities/learn-harness-engineering-course.md（新建实体：Walking Labs 开源 Harness 工程课程，14 讲 + 8 递进项目，与 ep-harness/aibox/deepseek-harness 互链）
 - 2026-10-27 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
+- 2026-10-27 | ingest | raw/sources/ai/2026-10-27-agent-platform-architecture.md | wiki/sources/agent-platform-architecture.md（新建，confidence=high，企业级 Agent 中台选型+避坑，单信源经验方案）+ wiki/entities/langgraph.md（新建实体：编排状态机，原生非分布式+RedisSaver/MySQL 补齐，双信源）+ wiki/concepts/rag-production-guardrails.md（第二信源：混合检索/存储分层/参数热调/最终一致互证）+ wiki/sources/a2a-multi-agent-langgraph.md（补 langgraph 互链）
+- 2026-10-27 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）

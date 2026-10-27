@@ -9,9 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [AI, RAG, 工程实践]
 asset_ref: Assets/2026/10/agent-platform-architecture.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-10-27T12:46:06.221Z"
-ingest_claim_id: 43904-1793105166221-0
+wiki_status: ingested
 ---
 
 # 企业级多 Agent 中台架构实践
