@@ -1,0 +1,214 @@
+## JDK源码阅读(3) — HashMap：面试之王，一文打透
+
+![图片](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
+
+## 一、HashMap 的地位
+
+Java 面试里如果只能选一个必问的类，那一定是 **HashMap**。没有之一。
+
+为什么？因为它太巧妙了——数组 + 链表 + 红黑树，三种数据结构的组合拳。而且从 JDK 7 到 JDK 8 有了一次大重构，每次版本升级也跟着微调，深度足够问到怀疑人生。
+
+`java.lang.Object     └── java.util.AbstractMap<K,V>           └── java.util.HashMap<K,V>                 implements Map<K,V>, Cloneable, Serializable   `
+
+## 二、核心数据结构——数组 + 链表 + 红黑树
+
+### 2.1 静态常量——调优的起点
+
+`public class HashMap<K,V> extends AbstractMap<K,V>       implements Map<K,V>, Cloneable, Serializable {      // 默认初始容量——16，必须是2的幂       static final int DEFAULT_INITIAL_CAPACITY = 1 << 4; // 16      // 最大容量       static final int MAXIMUM_CAPACITY = 1 << 30;      // 默认负载因子——0.75，空间和时间的平衡点       static final float DEFAULT_LOAD_FACTOR = 0.75f;      // 树化阈值——链表长度 >= 8 时转红黑树       static final int TREEIFY_THRESHOLD = 8;      // 树退化阈值——红黑树节点 <= 6 时退化为链表       static final int UNTREEIFY_THRESHOLD = 6;      // 最小树化容量——数组长度 < 64 时优先扩容，不树化       static final int MIN_TREEIFY_CAPACITY = 64;   }  `
+
+这几个常量的数字不是瞎拍的，背后都有门道：
+
+*   **`1 << 4` 而不是写 16**：位运算的意图，让人一眼看出是 2 的幂
+    
+*   **0.75 的负载因子**：这是空间和时间的折中。太大（比如1）则冲突多、查询慢；太小（比如0.5）则数组很多空位、内存浪费。0.75 是泊松分布下经验最优值
+    
+*   **阈值 8 和 6 不一样**：中间留了 1 的缓冲，避免链表和红黑树在边界频繁来回切换
+    
+
+### 2.2 字段——核心状态
+
+`// 哈希桶数组——第一次 put 时才创建（懒加载）   transient Node<K,V>[] table;  // 缓存的 entrySet   transient Set<Map.Entry<K,V>> entrySet;  // 元素个数（不是 table 长度）   transient int size;  // 结构修改计数器——用于 fail-fast   transient int modCount;  // 扩容阈值 = table.length * loadFactor   int threshold;  // 负载因子   final float loadFactor;  `
+
+### 2.3 节点结构——链表节点 vs 树节点
+
+链表节点：
+
+`static class Node<K,V> implements Map.Entry<K,V> {       final int hash;     // 哈希值（经过扰动处理）       final K key;       V value;       Node<K,V> next;     // 链表下一个节点      Node(int hash, K key, V value, Node<K,V> next) {           this.hash = hash;           this.key = key;           this.value = value;           this.next = next;       }      public final int hashCode() {           return Objects.hashCode(key) ^ Objects.hashCode(value);       }      public final boolean equals(Object o) {           if (o == this) return true;           if (o instanceof Map.Entry) {               Map.Entry<?,?> e = (Map.Entry<?,?>)o;               // key 和 value 都相等才算相等               if (Objects.equals(key, e.getKey()) &&                   Objects.equals(value, e.getValue()))                   return true;           }           return false;       }   }  `
+
+红黑树节点（只展示结构）：
+
+`static final class TreeNode<K,V> extends LinkedHashMap.Entry<K,V> {       TreeNode<K,V> parent;   // 父节点       TreeNode<K,V> left;     // 左孩子       TreeNode<K,V> right;    // 右孩子       TreeNode<K,V> prev;     // 链表顺序的前驱（删除时用）       boolean red;            // 红黑树颜色标记      TreeNode(int hash, K key, V val, Node<K,V> next) {           super(hash, key, val, next);       }   }  `
+
+TreeNode 继承自 LinkedHashMap.Entry（多了 before/after），LinkedHashMap.Entry 继承自 Node。这个继承链在后面写 LinkedHashMap 时会展开，现在先记住 TreeNode 有了 `parent/left/right/red` 这四个红黑树必备字段就够了。
+
+## 三、核心方法深度拆解
+
+### 3.1 hash()——高16位参与运算
+
+`static final int hash(Object key) {       int h;       // key 为 null 时 hash = 0       return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);   }   `
+
+这行代码太经典了。**为什么要把高16位异或到低16位？**
+
+因为 HashMap 定位桶的算法是 `(n - 1) & hash`，n 是数组长度。当 n 比较小（比如默认16），n-1 的二进制只有低几位是1，高位全是0。如果对象的 hashCode 差异在高位而不是低位，没有扰动就会疯狂碰撞。
+
+举个栗子，假设有两个对象的 hashCode 分别是 `0xA0000000` 和 `0xB0000000`：
+
+`// n = 16 = 0x0F   // 无扰动：   0xA0000000 & 0x0F = 0x00  // 碰撞！   0xB0000000 & 0x0F = 0x00  // 碰撞！同一个桶  // 扰动后（高16位参与）：   h = 0xA0000000   h >>> 16 = 0x0000A000   h ^ (h >>> 16) = 0xA000A000   0xA000A000 & 0x0F = 0x00   // 还是0，但后面会好很多  h = 0xB0000000   h >>> 16 = 0x0000B000   h ^ (h >>> 16) = 0xB000B000   0xB000B000 & 0x0F = 0x00   // 嗯...这个例子不太好，但道理就是这样  `
+
+其实当 n=16 时，低位只有4位，再怎么扰动也只能影响这4位，改善有限。**真正起作用的是 resize 之后**，当 n 变大，原来被掩码掩盖的高位信息通过扰动参与进来，分布就更均匀了。
+
+### 3.2 put()——一切的入口
+
+`public V put(K key, V value) {       return putVal(hash(key), key, value, false, true);   }  final V putVal(int hash, K key, V value, boolean onlyIfAbsent,                  boolean evict) {       Node<K,V>[] tab; Node<K,V> p; int n, i;      // 1. 懒加载——table 还没初始化就扩容       if ((tab = table) == null || (n = tab.length) == 0)           n = (tab = resize()).length;      // 2. 桶为空——直接放       if ((p = tab[i = (n - 1) & hash]) == null)           tab[i] = newNode(hash, key, value, null);       else {           Node<K,V> e; K k;           // 3. 桶第一个节点就是——覆盖           if (p.hash == hash &&               ((k = p.key) == key || (key != null && key.equals(k))))               e = p;           // 4. 红黑树节点           else if (p instanceof TreeNode)               e = ((TreeNode<K,V>)p).putTreeVal(this, tab, hash, key, value);           // 5. 链表节点——遍历           else {               for (int binCount = 0; ; ++binCount) {                   if ((e = p.next) == null) {                       // 尾插法——JDK 8 改的，JDK 7 是头插                       p.next = newNode(hash, key, value, null);                       // 达到树化阈值时转红黑树                       if (binCount >= TREEIFY_THRESHOLD - 1) // -1 是因为 binCount 从0开始                           treeifyBin(tab, hash);                       break;                   }                   if (e.hash == hash &&                       ((k = e.key) == key || (key != null && key.equals(k))))                       break;                   p = e;               }           }           // 6. 找到相同 key——替换 value           if (e != null) {               V oldValue = e.value;               if (!onlyIfAbsent || oldValue == null)                   e.value = value;               afterNodeAccess(e);  // LinkedHashMap 用到的回调               return oldValue;           }       }       ++modCount;       // 7. 超出阈值——扩容       if (++size > threshold)           resize();       afterNodeInsertion(evict);  // LinkedHashMap 回调       return null;   }  `
+
+执行流程用一张图概括：
+
+`put(key, value)      │      ├── table == null? ──YES──→ resize()      │      └── (n-1) & hash 定位桶            │            ├── 桶为空 ──→ 直接放 Node            │            └── 桶不为空                  │                  ├── 是同一个 key（hash 相等 && equals）──→ 替换 value                  │                  ├── 桶节点是 TreeNode ──→ 红黑树插入                  │                  └── 桶节点是 Node ──→ 链表遍历                        │                        ├── 找到相同 key ──→ 替换 value                        │                        └── 到达链表尾部 ──→ 尾插                              │                              └── 链表长度 ≥ 8 ──→ treeifyBin()                                    │                                    ├── table.length ≥ 64 ──→ 树化                                    └── table.length < 64 ──→ resize() 扩容   `
+
+### 3.3 resize()——扩容的学问
+
+`final Node<K,V>[] resize() {       Node<K,V>[] oldTab = table;       int oldCap = (oldTab == null) ? 0 : oldTab.length;       int oldThr = threshold;       int newCap, newThr = 0;      // 1. 计算新容量和阈值       if (oldCap > 0) {           // 已达最大值，不再扩容           if (oldCap >= MAXIMUM_CAPACITY) {               threshold = Integer.MAX_VALUE;               return oldTab;           }           // 翻倍扩容——左移1位           else if ((newCap = oldCap << 1) <= MAXIMUM_CAPACITY &&                    oldCap >= DEFAULT_INITIAL_CAPACITY)               newThr = oldThr << 1;  // 阈值也翻倍       }       // 2. 容量为0但阈值>0（初次 put 时，带初始容量构造）       else if (oldThr > 0)           newCap = oldThr;       // 3. 默认初始化       else {           newCap = DEFAULT_INITIAL_CAPACITY;           newThr = (int)(DEFAULT_LOAD_FACTOR * DEFAULT_INITIAL_CAPACITY);       }      // 4. 重新计算阈值（第一次构造时）       if (newThr == 0) {           float ft = (float)newCap * loadFactor;           newThr = (newCap < MAXIMUM_CAPACITY && ft < (float)MAXIMUM_CAPACITY                     ? (int)ft : Integer.MAX_VALUE);       }      threshold = newThr;       @SuppressWarnings({"rawtypes","unchecked"})       Node<K,V>[] newTab = (Node<K,V>[])new Node[newCap];       table = newTab;      // 5. 搬数据——最关键的部分       if (oldTab != null) {           for (int j = 0; j < oldCap; ++j) {               Node<K,V> e;               if ((e = oldTab[j]) != null) {                   oldTab[j] = null;  // 帮助 GC                   // 5.1 只有一个节点——直接 rehash                   if (e.next == null)                       newTab[e.hash & (newCap - 1)] = e;                   // 5.2 红黑树搬移                   else if (e instanceof TreeNode)                       ((TreeNode<K,V>)e).split(this, newTab, j, oldCap);                   // 5.3 链表搬移——JDK 8 的高明之处                   else {                       // 低位链表（索引不变）                       Node<K,V> loHead = null, loTail = null;                       // 高位链表（索引 + oldCap）                       Node<K,V> hiHead = null, hiTail = null;                       Node<K,V> next;                       do {                           next = e.next;                           // 核心判断：hash & oldCap == 0                           if ((e.hash & oldCap) == 0) {                               if (loTail == null)                                   loHead = e;                               else                                   loTail.next = e;                               loTail = e;                           } else {                               if (hiTail == null)                                   hiHead = e;                               else                                   hiTail.next = e;                               hiTail = e;                           }                           e = next;                       } while (e != null);                       // 低位放原位，高位放 j + oldCap                       if (loTail != null) {                           loTail.next = null;                           newTab[j] = loHead;                       }                       if (hiTail != null) {                           hiTail.next = null;                           newTab[j + oldCap] = hiHead;                       }                   }               }           }       }       return newTab;   }  `
+
+扩容的妙处在于 **`hash & oldCap == 0`** 这个判断。因为容量翻倍，n-1 相当于多了一位 1。原来在位置 j 的元素，新的位置要么不变，要么变成 `j + oldCap`。
+
+`举例：oldCap = 16 = 0x10000        newCap = 32 = 0x100000  原来的 n-1 = 0x1111（低4位）   新的 n-1 = 0x11111（低5位）  对于 hash = 5 （0b00101）：     5 & oldCap(0x10000) = 0 → 留在原位（低位）      对于 hash = 21（0b10101）：     21 & oldCap(0x10000) = 1 → 移到 j + 16（高位）  因为 oldCap 是 2 的幂，正好是新的那一位的权重。  `
+
+这样就不需要重新计算全部的 hash，只通过一次位运算就拆成了两条链。相比 JDK 7 逐个 rehash + 头插法可能产生死循环，JDK 8 这个设计安全且高效。
+
+### 3.4 get()——查找
+
+`public V get(Object key) {       Node<K,V> e;       return (e = getNode(hash(key), key)) == null ? null : e.value;   }  final Node<K,V> getNode(int hash, Object key) {       Node<K,V>[] tab; Node<K,V> first, e; int n; K k;       if ((tab = table) != null && (n = tab.length) > 0 &&           (first = tab[(n - 1) & hash]) != null) {           // 1. 检查第一个节点           if (first.hash == hash &&               ((k = first.key) == key || (key != null && key.equals(k))))               return first;           // 2. 遍历下一个           if ((e = first.next) != null) {               // 红黑树查找               if (first instanceof TreeNode)                   return ((TreeNode<K,V>)first).getTreeNode(hash, key);               // 链表遍历               do {                   if (e.hash == hash &&                       ((k = e.key) == key || (key != null && key.equals(k))))                       return e;               } while ((e = e.next) != null);           }       }       return null;   }  `
+
+get 的逻辑对称于 put，只是不修改结构。
+
+## 四、红黑树化——treeifyBin()
+
+`final void treeifyBin(Node<K,V>[] tab, int hash) {       int n, index; Node<K,V> e;       // 桶数组长度 < 64 时优先扩容       if (tab == null || (n = tab.length) < MIN_TREEIFY_CAPACITY)           resize();       else if ((e = tab[index = (n - 1) & hash]) != null) {           // 链表 → 双向链表 → 红黑树           TreeNode<K,V> hd = null, tl = null;           do {               TreeNode<K,V> p = replacementTreeNode(e, null);               if (tl == null)                   hd = p;               else {                   p.prev = tl;                   tl.next = p;               }               tl = p;           } while ((e = e.next) != null);           if ((tab[index] = hd) != null)               hd.treeify(tab);  // 真正的树化操作       }   }   `
+
+注意这里：**不是链表长度 8 就一定会树化**。如果数组长度还不到 64，就先扩容。因为扩容可以让链表变短，比费劲搞红黑树更划算。这种权衡在实际开发中特别常见——"能不能不做复杂操作，用一种更简单的替代方案？"
+
+## 五、构造方法——几个细节
+
+`// 默认构造——容量16，负载因子0.75   public HashMap() {       this.loadFactor = DEFAULT_LOAD_FACTOR;   }  // 指定初始容量——会帮你对齐到2的幂   public HashMap(int initialCapacity) {       this(initialCapacity, DEFAULT_LOAD_FACTOR);   }  // 最完整的构造   public HashMap(int initialCapacity, float loadFactor) {       if (initialCapacity < 0)           throw new IllegalArgumentException("Illegal initial capacity: " + initialCapacity);       if (initialCapacity > MAXIMUM_CAPACITY)           initialCapacity = MAXIMUM_CAPACITY;       if (loadFactor <= 0 || Float.isNaN(loadFactor))           throw new IllegalArgumentException("Illegal load factor: " + loadFactor);       this.loadFactor = loadFactor;       // 关键是这个——tableSizeFor！       this.threshold = tableSizeFor(initialCapacity);   }  // 把传入的容量对齐到 >= cap 的最小2的幂   // 比如 cap=7 返回 8，cap=9 返回 16   static final int tableSizeFor(int cap) {       int n = -1 >>> Integer.numberOfLeadingZeros(cap - 1);       return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;   }  `
+
+`tableSizeFor` 这方法改一下写法可能更好理解：
+
+`// 等效写法：   static final int tableSizeFor(int cap) {       int n = cap - 1;       n |= n >>> 1;       n |= n >>> 2;       n |= n >>> 4;       n |= n >>> 8;       n |= n >>> 16;       return n + 1;   }   `
+
+原理就是把最高位1后面所有的位都变成1，然后 +1 翻到下一个2的幂。这里用 `Integer.numberOfLeadingZeros` 只是更简洁的写法。
+
+## 六、完整示例
+
+`import java.util.*;  public class HashMapDemo {       public static void main(String[] args) {           // 1. 基础操作           HashMap<String, Integer> map = new HashMap<>();           map.put("Java", 1);           map.put("Python", 2);           map.put("Go", 3);           System.out.println("基础操作: " + map);           System.out.println("get('Java'): " + map.get("Java"));       // 1           System.out.println("containsKey('Go'): " + map.containsKey("Go"));  // true                  // 2. null key——HashMap 允许一个 null key           map.put(null, 0);           System.out.println("null key: " + map.get(null));            // 0                  // 3. 遍历方式           System.out.println("\n=== 遍历方式 ===");           // 3.1 entrySet           for (Map.Entry<String, Integer> entry : map.entrySet()) {               System.out.println(entry.getKey() + " -> " + entry.getValue());           }           // 3.2 keySet + get（不推荐，每次都 O(1) 但多了次查找）           for (String key : map.keySet()) {               System.out.println(key + " -> " + map.get(key));           }                  // 4. 指定初始容量——避免频繁扩容           // 已知要放100个元素，负载因子0.75，100/0.75≈134，对齐到2的幂=256           HashMap<String, String> bigMap = new HashMap<>(256);           for (int i = 0; i < 100; i++) {               bigMap.put("key-" + i, "value-" + i);           }           System.out.println("\nbigMap size: " + bigMap.size());                  // 5. 自定义对象作为 key——必须重写 hashCode 和 equals！           class Person {               String name;               int age;               Person(String name, int age) {                   this.name = name; this.age = age;               }               @Override               public boolean equals(Object o) {                   if (this == o) return true;                   if (!(o instanceof Person)) return false;                   Person p = (Person) o;                   return age == p.age && Objects.equals(name, p.name);               }               @Override               public int hashCode() {                   return Objects.hash(name, age);               }               @Override               public String toString() {                   return name + "(" + age + ")";               }           }                  HashMap<Person, String> people = new HashMap<>();           people.put(new Person("Alice", 25), "Engineer");           people.put(new Person("Bob", 30), "Designer");           // 同一个逻辑对象必须能查到           System.out.println("Alice: " + people.get(new Person("Alice", 25)));  // Engineer       }   }  `
+
+## 七、常见坑
+
+### 7.1 自定义 key 不重写 hashCode
+
+这是最经典的坑。不重写 hashCode 会导致两个相等的对象被分配到不同的桶，`get()` 永远返回 null。
+
+`class BadKey {       String id;       BadKey(String id) { this.id = id; }       @Override public boolean equals(Object o) {           return o instanceof BadKey && Objects.equals(id, ((BadKey)o).id);       }       // ❌ 忘记重写 hashCode   }  BadKey k1 = new BadKey("123");   BadKey k2 = new BadKey("123");   map.put(k1, "value");   map.get(k2);  // → null！因为 k1 和 k2 的 hashCode 不同！  `
+
+### 7.2 并发修改——ConcurrentModificationException
+
+`// ❌ 遍历时修改   for (String key : map.keySet()) {       if ("Python".equals(key)) {           map.remove(key);  // → ConcurrentModificationException！       }   }  // ✅ 用 Iterator   Iterator<String> it = map.keySet().iterator();   while (it.hasNext()) {       String key = it.next();       if ("Python".equals(key)) {           it.remove();  // OK       }   }  // ✅ 或者用 removeIf（Java 8+）   map.keySet().removeIf(k -> "Python".equals(k));  `
+
+### 7.3 线程安全
+
+HashMap 不是线程安全的。多线程并发 put 可能导致：
+
+*   数据丢失（两个线程同时 put 到同一个桶，一个被覆盖）
+    
+*   JDK 7 下 resize 死循环（头插法导致环形链表）
+    
+*   JDK 8 改了尾插，但数据丢失问题依然存在
+    
+
+**替代方案：**
+
+场景
+
+推荐
+
+读多写少
+
+`Collections.synchronizedMap()`
+
+高并发
+
+`ConcurrentHashMap`（下一篇就写）
+
+需要额外特性
+
+`ConcurrentSkipListMap`
+
+### 7.4 初始容量预估
+
+`// ❌ 要放 1000 个元素   HashMap<String, String> bad = new HashMap<>();    // 默认 16   for (...) { bad.put(...); }  // 触发多次 resize——性能浪费  // ✅ 预估容量：1000 / 0.75 ≈ 1334 → 对齐到 2048   HashMap<String, String> good = new HashMap<>(2048);  `
+
+简化写法：`new HashMap<>(initialSize / 0.75f + 1)`
+
+## 八、JDK 7 vs JDK 8 对比
+
+维度
+
+JDK 7
+
+JDK 8
+
+数据结构
+
+数组 + 链表
+
+数组 + 链表 + 红黑树
+
+插入方式
+
+头插（简单）
+
+尾插（避免死循环）
+
+hash 扰动
+
+4次位运算+5次异或
+
+1次异或
+
+扩容后搬移
+
+逐个 rehash
+
+hash & oldCap 分高低位链
+
+树化
+
+无
+
+链表 ≥ 8 且数组 ≥ 64
+
+节点类型
+
+Entry（内部类）
+
+Node + TreeNode
+
+JDK 8 的改动主要是为了解决两个问题：
+
+1.  **哈希碰撞导致链表过长时性能骤降** → 红黑树把 O(n) 降为 O(log n)
+    
+2.  **并发 resize 死循环** → 尾插 + 高低位链拆分
+    
+
+当然，HashMap 本来就没承诺线程安全，JDK 8 只是顺手修了 JDK 7 在非并发情况下的头插坑（JDK 7 非并发下 get 也可能造成死循环，因为扩容时头插改成尾插了）。
+
+## 九、面试问答
+
+**Q：HashMap 的容量为什么必须是 2 的幂？** A：因为 `(n - 1) & hash` 等效于 `hash % n`，但位运算比取模快得多。当 n 是 2 的幂时，n-1 的二进制全是1，位运算不会丢失信息。
+
+**Q：为什么负载因子是 0.75？** A：泊松分布下的经验值。JDK 源码注释里提到，在负载因子 0.75 下，链表长度达到 8 的概率约为 0.00000006，几乎不可能发生。这是空间和时间的平衡点。
+
+**Q：什么时候触发扩容？** A：`size > threshold` 时触发，即元素个数超过 `容量 × 负载因子`。扩容后容量翻倍，阈值也翻倍。
+
+**Q：为什么树化阈值是 8？** A：根据泊松分布计算，在理想随机 hashCode 下，链表长度达到 8 的概率极低（千万分之六）。所以链表达不到 8 时性能可以接受，到了 8 说明 hashCode 分布很差，树化来兜底。
+
+![Java](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E> "Java")
