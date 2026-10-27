@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-10-27",
+  "updated_at": "2026-10-28",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -1778,6 +1778,18 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483878&idx=1&sn=b82cd5bdd8fa18152a02a7e6bef005f8&chksm=fe6ca0bcc91b29aadb162db56a36a695bc35c300233d996cc8e0d989f504518d3e56e34c56fb",
       "asset_ref": "Assets/2026/10/jdk-03-hashmap.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-27-jdk-04-concurrenthashmap.md",
+      "sha256": "825887c704b3384ff6ab01f240216839e0ca159ca510532b51a5d0765d2a4560",
+      "registered_at": "2026-10-28",
+      "inbox_ref": "Archive/2026-10-27-jdk-04-concurrenthashmap.md",
+      "pages": [
+        "wiki/sources/jdk-04-concurrenthashmap.md",
+        "wiki/concepts/concurrenthashmap-internals.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483907&idx=1&sn=d8d2ae367a11551d05de46aff6ff3908&chksm=fe6ca359c91b2a4f5f4d0c98fa4d6eeb7c4dca13bd206c655db6dae1aeaefe9f56ea5257f78f",
+      "asset_ref": "Assets/2026/10/jdk-04-concurrenthashmap.md"
     }
   ]
 }

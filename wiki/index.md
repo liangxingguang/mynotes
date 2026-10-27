@@ -67,6 +67,7 @@
 - [[jdk-01-arraylist|JDK源码阅读(1) — ArrayList：懒加载/1.5倍扩容/Fast-Fail]]（2026-10-28，Java/JDK 源码）
 - [[jdk-02-linkedlist|JDK源码阅读(2) — LinkedList：双向链表三栖容器，内存 8 倍于 ArrayList]]（2026-10-28，Java/JDK 源码）
 - [[jdk-03-hashmap|JDK源码阅读(3) — HashMap：扰动/树化/高低位链拆分全拆解]]（2026-10-28，Java/JDK 源码）
+- [[jdk-04-concurrenthashmap|JDK源码阅读 — ConcurrentHashMap：CAS+桶头锁/无锁读/协作扩容]]（2026-10-28，Java/JDK 源码）
 - [[jdk-source-reading-album|JDK 源码阅读合集（Java解忧杂货铺，30 篇系列索引）]]（2026-10-27，Java/源码阅读资源，置信度低）
 - [[jdk21-migration-huolala|JDK 21 规模化落地实践（货拉拉）：框架先扛兼容成本，业务切 parent 收尾]]（2026-10-23，Java/JVM/虚拟线程）
 - [[jenkins-gitlab-cicd-pipeline|Jenkins + GitLab CI/CD 流水线落地实战（完整配置）]]（2026-10-21，CI/CD，置信度中）
@@ -164,6 +165,7 @@
 - [[cache-line-and-false-sharing|CPU 缓存行效应：局部性与伪共享]]（64 字节行为失效粒度；数组胜链表、Disruptor Sequence 填充、LinkedList Node 32B 三倍内存，三信源）
 - [[cdn-broadcast-fanout|CDN 广播（弹幕下行）]]（千万级在线下行外包 CDN 边缘：推流伪装视频流 vs 静态文件周期拉取，多 CDN 权重轮询融合；网易云信一手）
 - [[codemode|Codemode（代码模式工具编排）]]（模型写 JS 沙箱脚本编排工具调用，只回筛选结果；固定开销约减半，单次收益看返回格式）
+- [[concurrenthashmap-internals|ConcurrentHashMap 并发设计（JDK 8+）]]（读无锁+CAS 空桶插+synchronized 桶头+sizeCtl 三态+协作扩容；单信源，置信度中）
 - [[cpu-funnel-coding|CPU 漏斗（编码级性能模型）]]（砍掉无效解析/转换/对象，让 CPU 只做核心运算）
 - [[cross-process-surface-rendering|Surface 跨进程渲染]]（Surface Parcelable + SurfaceFlinger 跨进程合成，Binder 传 Surface 零拷贝传画面；Renderer 3→1，微信小游戏一手）
 - [[deep-thinking-five-tools|深度思考五工具（澄清-拆解-追问-反证-逆向）]]（按序收敛四步+发散出口一步，反认知闭合；YouCore 单信源，置信度中）

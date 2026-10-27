@@ -16,6 +16,7 @@ sources:
   - raw/sources/misc/2026-10-27-jdk-03-hashmap.md
 related:
   - wiki/concepts/fail-fast-modcount.md
+  - wiki/concepts/concurrenthashmap-internals.md
   - wiki/sources/jdk-03-hashmap.md
 ---
 # HashMap 核心设计（JDK 8）
@@ -46,15 +47,18 @@ put：扰动后的 hash 定位桶 → 空桶直接放 / 同 key（hash 相等且
 ### Related Concepts（相关概念）
 
 - [[fail-fast-modcount|Fail-Fast 迭代器（modCount）]]：HashMap 同样以 modCount 实现遍历期的结构修改检测。
+- [[concurrenthashmap-internals|ConcurrentHashMap 并发设计（JDK 8+）]]：在本页存储基座上加并发语义（CAS + 桶头锁 + 协作扩容）。
 
 ### Distinctions（区分）
+
+- 与 [[concurrenthashmap-internals|ConcurrentHashMap]] 的不同之处：HashMap 单线程最快但线程不安全、允许一个 null key、迭代器 fail-fast；ConcurrentHashMap 读无锁写锁桶头、不允许 null、迭代器弱一致性，整体慢约 10%-30%。
 
 - 与 JDK 7 的不同：JDK 7 为数组+链表、头插法、4 次位运算+5 次异或的扰动、扩容逐个 rehash；JDK 8 引入红黑树、改尾插（消除并发 resize 成环死循环）、扰动减为 1 次异或、扩容改高低位链拆分。
 - 树化是"分布恶劣的兜底"而非常态——链表长度 ≥ 8 在理想 hashCode 下几乎不发生。
 
 ## Evolution（演进）
 
-- 2026-10-28 — 由《JDK源码阅读(3) — HashMap》单信源建立；系列后续 LinkedHashMap/ConcurrentHashMap/HashSet 篇摄入后应回填本页。
+- 2026-10-28 — 由《JDK源码阅读(3) — HashMap》单信源建立；同日 ConcurrentHashMap 篇摄入，回填 [[concurrenthashmap-internals]] 交叉引用（存储基座关系）。
 
 ## Open Questions（开放问题）
 
