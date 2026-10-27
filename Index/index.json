@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26 22:48",
+  "updated_at": "2026-10-27 20:21",
   "notes": [
     {
       "id": "2026-10-26-agent-context-tutorial",
@@ -18,7 +18,7 @@
       "summary": "微博博主「蚁工厂」推荐的可交互 Agent 入门教程（nano-ai.tech/agent/）：把 Agent 讲成一个 while 循环——调模型、执行工具、结果写回上下文、再调模型。逐章演示上下文每转一圈如何增长、哪里会出问题、各种 Agent 技巧在上下文里做了什么，每章可「播放」或逐格步进。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/agent-context-tutorial.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-26-learn-harness-engineering",
@@ -38,6 +38,25 @@
       "summary": "微博博主「黄建同学」推荐：Walking Labs 出品的开源课程 Learn Harness Engineering，14 讲 + 8 个递进项目，附中文资料与可复用模板。课程围绕 Coding Agent 的工作环境展开——组织仓库、保存进度、控制任务范围、验证 Agent 是否真完成了工作，适合已在用 Coding Agent、想系统改善开发流程的人。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/learn-harness-engineering.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-jvm-gc-interview-guide",
+      "title": "JVM 垃圾回收面试全讲透",
+      "path": "Inbox/2026-10-27-jvm-gc-interview-guide.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/n2J8M9N14e2oTOldtt-EHQ",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "一篇覆盖 JVM GC 面试高频考点的长文：对象可回收判定（引用计数 vs 可达性分析）、四大回收算法与分代收集、Serial/Parallel/CMS/G1/ZGC/Shenandoah 六大收集器对比选型，深入拆解 G1 的 Region/RSet/SATB/Mixed GC 与 ZGC 的染色指针/并发整理，最后给出 GC 调优黄金 6 步、常用参数速查表和 Graal JIT 优化解析。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jvm-gc-interview-guide.md",
       "wiki_status": "pending"
     },
     {
