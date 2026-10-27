@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27 20:40",
+  "updated_at": "2026-10-27 20:42",
   "notes": [
     {
       "id": "2026-10-27-harness-engineering-11-agents-study",
@@ -19,6 +19,26 @@
       "summary": "基于《Harness Engineering》论文（分析 11 个 Coding Agent、约 400 万行源码）的架构解读：Agent ≈ Model + Harness，Harness 负责把模型决策转化为可靠执行。文章拆解 Harness 的七个观察面（执行循环/模型适配/工具/上下文/权限/多 Agent/扩展），辨析 Skills、MCP、ACP 分工，给出从最小系统走向可靠交付的演进路径与单变量评测方案。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/harness-engineering-11-agents-study.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-how-to-get-startup-ideas",
+      "title": "如何找到创业点子（YC 合伙人演讲）",
+      "path": "Inbox/2026-10-27-how-to-get-startup-ideas.md",
+      "created": "2026-10-27",
+      "category": "学习",
+      "tags": [
+        "创业",
+        "思维方式",
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/wP2A_l2mkrBbbY5dcuyHAA",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "YC 合伙人 Jared Friedman 的 Startup School 演讲（基于 YC 前 100 公司估值数据 + PG《How to Get Startup Ideas》）：创业点子的四大常见错误（SISP 为方案找问题、焦油坑点子、扑向第一个点子、苦等完美点子）、评估点子的十问框架、让点子「看起来差实际变好」的三件事，以及生成好点子的七个配方。核心结论：爱上问题而非方案；70% 的 YC 顶级点子是自然注意到的；最终验证方式只有一个——发出去。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/how-to-get-startup-ideas.md",
       "wiki_status": "pending"
     },
     {
