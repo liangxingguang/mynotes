@@ -4,7 +4,7 @@ type: concept
 title: Agent Loop
 status: active
 created: 2026-10-22
-updated: 2026-10-23
+updated: 2026-10-27
 confidence: high
 tags:
   - concept
@@ -14,6 +14,7 @@ sources:
   - raw/sources/ai/2026-10-15-agent-loop-production-boundaries.md
   - raw/sources/ai/2026-10-21-agent-2026-midyear-architecture-review.md
   - raw/sources/ai/2026-10-23-agent-software-architecture-task-run-step-event.md
+  - raw/sources/ai/2026-10-26-agent-context-tutorial.md
 related:
   - wiki/entities/pi.md
   - wiki/concepts/mcp.md
