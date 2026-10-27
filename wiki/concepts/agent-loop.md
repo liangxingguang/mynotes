@@ -100,6 +100,8 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 
 - 2026-10-23 — 新增教学信源 `raw/sources/ai/2026-10-23-agent-software-architecture-task-run-step-event.md`（agent-from-scratch 第 5 章）。它承接第 4 章 AgentKernel（即本页 Loop 的教学实现），指出单次阻塞 `run()` 调用缺少任务身份、运行身份、持久化状态、审批状态与并发版本，由此引出 [[task-run-step-event-model|Task/Run/Step/Event 领域模型]] 作为 Loop 的控制平面化；其"模型建议与工具执行分离""停止信号转明确状态"等原则与本页模型/宿主边界、停止信号多源性互证。
 
+- 2026-10-27 — 新增教学资源信源 `raw/sources/ai/2026-10-26-agent-context-tutorial.md`（nano-ai.tech/agent/ 可交互教程的微博推荐帖）。其"Agent 就是一个 while 循环：调模型、执行工具、把结果写回上下文，再调模型"是本页定义的通俗化印证；教程以"逐步观察上下文每轮增长与出问题点"为教学主线，可视作本页 Context/State 机制的入门演示材料（教程站点本身未经抓取核验）。
+
 ## Open Questions（开放问题）
 
 - 不同框架（LangGraph、AutoGen、各厂商 Agent SDK）对 Runtime/Harness 的划分与本文是否一致？
@@ -111,6 +113,7 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 - Source: `raw/sources/ai/2026-10-15-agent-loop-production-boundaries.md`
 - Source: `raw/sources/ai/2026-10-21-agent-2026-midyear-architecture-review.md`（综述印证：Harness/Runtime 职责、四条件、验收机制、状态快照校验）
 - Source: `raw/sources/ai/2026-10-23-agent-software-architecture-task-run-step-event.md`（教学互证：模型建议与工具执行分离、控制状态显式化、单次阻塞 run() 的局限）
+- Source: `raw/sources/ai/2026-10-26-agent-context-tutorial.md`（通俗印证：Agent = while 循环；可交互教程资源）
 
 ## Related Knowledge（相关知识）
 

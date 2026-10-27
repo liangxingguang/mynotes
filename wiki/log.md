@@ -181,3 +181,5 @@
 - 2026-10-24 | ingest | raw/sources/architecture/2026-10-23-wechat-minigame-android-cross-process-livestream.md | wiki/sources/wechat-minigame-android-cross-process-livestream.md（新建，confidence=high，微信小游戏跨进程推流一手实践）+ wiki/concepts/cross-process-surface-rendering.md（新建概念：Surface Parcelable 跨进程渲染，单一信源）
 - 2026-10-24 | ingest | raw/sources/enterprise/2026-10-24-huolala-ai-coding-harness.md | wiki/sources/huolala-ai-coding-harness.md（新建，confidence=high，货拉拉千人 AI Coding 复盘）+ wiki/entities/aibox.md（新建实体：自建 Harness 管控面）+ wiki/concepts/ai-native-organization.md（第二信源：四重重构落地样本）+ wiki/entities/ep-harness.md（互链同类平台）
 - 2026-10-24 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
+- 2026-10-27 | ingest | raw/sources/ai/2026-10-26-agent-context-tutorial.md | wiki/sources/agent-context-tutorial.md（新建，confidence=medium，微博推荐帖，nano-ai 可交互 Agent 教程）+ wiki/concepts/agent-loop.md（第五信源：while 循环通俗印证，入门演示材料）
+- 2026-10-27 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）

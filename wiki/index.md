@@ -8,6 +8,7 @@
 - [[475-claude-opus-demos-repo|微博分享：475 个 Claude Opus 5.5 生成的视频演示仓库]]（2026-10-20，AI/资源，置信度低）
 - [[a2a-multi-agent-langgraph|A2A 实战：从零搭建工业级多 Agent 协作系统]]（2026-10-13，AI/多 Agent）
 - [[agent-2026-midyear-architecture-review|2026 Agent 年中总结：从整体架构到关键细节（叶小钗）]]（2026-10-21，AI/架构综述）
+- [[agent-context-tutorial|Agent 入门教程：上下文里的 Agent（nano-ai 可交互演示）]]（2026-10-25，AI/教程资源，置信度中）
 - [[agent-long-task-reliable-execution|AI Agent 长任务可靠执行：Go+PG 状态机/Checkpoint/Fencing/对账]]（2026-10-21，AI/Agent 基础设施）
 - [[ai-agents-definitive-guide-notebooks|知乎想法：O'Reilly《AI Agents》配套代码全开源（12 章 35 Notebook）]]（2026-10-20，AI/资源，置信度低）
 - [[agent-loop-production-boundaries|从 Chatbot 到 AI Agent：为什么一个 while 循环撑不起生产系统]]（2026-10-15，AI/Agent 工程）

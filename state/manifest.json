@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-10-24T00:00:00.000Z",
+  "updated_at": "2026-10-27T00:00:00.000Z",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -1626,6 +1626,18 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/tGPMdSIfEEzMqa8jp2cjoA",
       "asset_ref": "Assets/2026/10/wechat-tgpmds.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-26-agent-context-tutorial.md",
+      "sha256": "4c9d554e0b833d48e2dd353f68ded4f53ca5b4551fc554efcdd8120753e49f02",
+      "registered_at": "2026-10-27",
+      "inbox_ref": "Archive/2026-10-26-agent-context-tutorial.md",
+      "pages": [
+        "wiki/sources/agent-context-tutorial.md",
+        "wiki/concepts/agent-loop.md"
+      ],
+      "source_url": "https://weibo.com/2194035935/5357902698908316",
+      "asset_ref": "Assets/2026/10/agent-context-tutorial.md"
     }
   ]
 }
