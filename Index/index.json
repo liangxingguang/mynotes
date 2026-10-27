@@ -1,6 +1,25 @@
 {
-  "updated_at": "2026-10-27 22:51",
+  "updated_at": "2026-10-27 22:52",
   "notes": [
+    {
+      "id": "2026-10-27-jdk-source-reading-album",
+      "title": "JDK 源码阅读合集（系列索引）",
+      "path": "Inbox/2026-10-27-jdk-source-reading-album.md",
+      "created": "2026-10-27",
+      "category": "学习",
+      "tags": [
+        "Java",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzU5NTcwMzg2MQ==&action=getalbum&album_id=4541344630860103688",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "公众号「Java解忧杂货铺」的 JDK 源码阅读系列合集页（30 篇），覆盖 JDK 集合与并发两大源码主线：List/Map/Set/Queue 全家桶（ArrayList、HashMap、ConcurrentHashMap、PriorityQueue、ArrayDeque、阻塞队列等）与 JUC 并发原语（ReentrantLock/AQS、CountDownLatch、CyclicBarrier、线程池、FutureTask、原子类、LongAdder、Phaser、Exchanger 等）。本条为系列索引，供按主题回查单篇。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jdk-source-reading-album.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-27-netty-01-intro",
       "title": "Netty源码分析(1) — 开篇：Netty到底是什么，凭什么成为Java网络编程的事实标准？",
