@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27 20:52",
+  "updated_at": "2026-10-27 21:06",
   "notes": [
     {
       "id": "2026-10-27-deep-thinking-5-tools",
@@ -99,6 +99,521 @@
       "wiki_status": "pending"
     },
     {
+      "id": "2026-10-27-netty-01-intro",
+      "title": "Netty源码分析(1) — 开篇：Netty到底是什么，凭什么成为Java网络编程的事实标准？",
+      "path": "Inbox/2026-10-27-netty-01-intro.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483863&idx=1&sn=ade34c4a6b6ee3fe3a1dd53730e01ff2&chksm=fe6ca08dc91b299bdc26627afa790ccbddbd4f81fe4ddc780097ee66d1283eb12b62a94f6b97#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "Netty 源码分析系列开篇：回顾 BIO 到 NIO 的演进及 JDK NIO 的痛点（API 原始、epoll 空轮询、粘包等），引出 Netty 如何统一\"简单易用\"与\"高性能高并发\"。给出 Netty 分层架构总览、高性能关键点（Reactor 线程模型、零拷贝、直接内存+内存池），并从 `ServerBootstrap.bind()` 源码切入，附源码环境搭建指南。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-01-intro.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-02-bio-nio",
+      "title": "Netty源码分析(2) — 从BIO到NIO再到Netty，为什么我们需要Netty？",
+      "path": "Inbox/2026-10-27-netty-02-bio-nio.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483884&idx=1&sn=2e1dead9301b6513f77c93258db7f80b&chksm=fe6ca0b6c91b29a04550c9c711510eea4dbd9b0e9959fed73de92ff95d6db9dde354624a9123#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "通过 BIO 多线程服务端、原生 NIO 服务端、Netty 服务端三段完整代码对比，论证为什么需要 Netty：BIO 受制于 C10K，原生 NIO 代码复杂且需自处理粘包/重连/多线程/epoll 空轮询，Netty 用 Reactor 线程模型、Pipeline 责任链、零拷贝和内存池把复杂留给自己。附 Netty 客户端完整示例与适用场景盘点。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-02-bio-nio.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-03-reactor",
+      "title": "Netty源码分析(3) — Reactor线程模型：从单线程到主从多Reactor",
+      "path": "Inbox/2026-10-27-netty-03-reactor.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483912&idx=1&sn=5d9fc79cadf73e9107cdf88aada49f7b&chksm=fe6ca352c91b2a4453519a17764104363a6b4f46847dfa40829199be08e3a2a05e1daa515182#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "深入 Netty 的 Reactor 线程模型：从单线程、多线程到主从多 Reactor 三种形态，剖析 NioEventLoop 的 run() 死循环、EventLoopGroup 的 chooser 分配算法，以及 boss 与 worker 通过 ServerBootstrapAcceptor 衔接的完整链路，附可运行示例与常见坑。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-03-reactor.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-04-channel-pipeline-handler",
+      "title": "Netty源码分析(4) — Channel、ChannelPipeline与ChannelHandler三剑客",
+      "path": "Inbox/2026-10-27-netty-04-channel-pipeline-handler.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483934&idx=1&sn=9c175b4c2275a9fd373d8c0f1796c95e&chksm=fe6ca344c91b2a520287802d7341a8acb54949ff11cc24825350287dace4e1fe1e41990df886#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "剖析 Netty 三大核心组件：Channel 代表连接，ChannelPipeline 是以 head/tail 为端点的双向链表（节点为 ChannelHandlerContext），ChannelHandler 承载业务逻辑。重点讲透入站事件 Head→Tail 正向传播、出站事件 Tail→Head 反向传播的机制，Handler 生命周期，以及 ctx.write 与 channel.write 的路径差异。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-04-channel-pipeline-handler.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-05-bytebuf",
+      "title": "Netty源码分析(5) — ByteBuf：Netty的数据容器深度解析",
+      "path": "Inbox/2026-10-27-netty-05-bytebuf.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483944&idx=1&sn=261d8489acffb8afe5088e5f4f4612a7&chksm=fe6ca372c91b2a64ebff3b813276cc57c94dde2529d5086333cb871f670f5c8b41ff7e787261#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "针对 JDK ByteBuffer 单指针、容量固定、无池化、无引用计数四大痛点，解析 Netty ByteBuf 的设计：读写双指针、ensureWritable 自动扩容（4MB 以下翻倍、以上步进 4MB）、Heap/Direct/Composite 三种形态、引用计数管理堆外内存，以及 Pooled/Unpooled 分配器体系，附完整示例与泄漏排查建议。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-05-bytebuf.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-06-eventloop",
+      "title": "Netty源码分析(6) — EventLoopGroup 与 EventLoop 源码解析",
+      "path": "Inbox/2026-10-27-netty-06-eventloop.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483959&idx=1&sn=fad11177db7eac2d06d924bcfccec4c9&chksm=fe6ca36dc91b2a7bf7750cf11a7672da1054f9a0d6711c2cce72c7c93ecd790107dbc74a5b2e#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "源码级解析 Netty 线程模型骨架：NioEventLoopGroup 默认线程数（CPU×2）的来源、MultithreadEventExecutorGroup 的 children 数组与 chooser 位运算优化、NioEventLoop.run() 事件循环全流程（select 策略、ioRatio 时间配比、空轮询自愈）、processSelectedKeys 事件分发、wakeup 机制与 Channel 注册绑定，附窥视 EventLoop 内部的完整示例。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-06-eventloop.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-08-bootstrap",
+      "title": "Netty源码分析(8) — Bootstrap 与 ServerBootstrap 启动流程源码",
+      "path": "Inbox/2026-10-27-netty-08-bootstrap.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484034&idx=1&sn=ebceba0b6e18e5922fcb5d368e17f189&chksm=fe6ca3d8c91b2ace786da5c8cb08bb537c07d6d3282702448623a91791349432a60d692ecd23#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "从源码层面拆解 Netty 客户端 Bootstrap.connect() 与服务端 ServerBootstrap.bind() 的完整启动链路：创建 Channel、初始化 Pipeline、注册到 Selector 三件套，以及 ServerBootstrapAcceptor 如何把新连接分发给 worker 线程池。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-08-bootstrap.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-09-nioeventloop-run",
+      "title": "Netty源码分析(9) — NioEventLoop 的 run() 方法到底在干什么？",
+      "path": "Inbox/2026-10-27-netty-09-nioeventloop-run.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484046&idx=1&sn=cd2f21f2e428e1217908bd00c08c730d&chksm=fe6ca3d4c91b2ac2719875e900d19d3d120e21149cd36c5ebede587784e5635e2579043496dd#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "拆解 Netty 主循环 NioEventLoop.run()：select 策略、ioRatio 时间分配、JDK epoll 空轮询 BUG 的自愈机制，以及整个事件循环的完整流程。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-09-nioeventloop-run.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-10-pooled-allocator",
+      "title": "Netty源码分析(10) — 内存分配之 PooledByteBufAllocator",
+      "path": "Inbox/2026-10-27-netty-10-pooled-allocator.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484061&idx=1&sn=8b1ff421f1a5bf65f3c3cd1d52bd785c&chksm=fe6ca3c7c91b2ad162cd50d051c99a57c2087ea4b4c9b9070972e3f8cdc240173db3ed3af21e#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "拆解 Netty 池化内存分配器 PooledByteBufAllocator：借鉴 jemalloc 的 Arena → Chunk → Page → Subpage 四级分级，配合 ThreadLocal 缓存实现低锁、低 GC 压力的高性能内存池。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-10-pooled-allocator.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-11-poolchunk-subpage",
+      "title": "Netty源码分析(11) — 池化内存分配：PoolChunk 与 PoolSubpage",
+      "path": "Inbox/2026-10-27-netty-11-poolchunk-subpage.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484111&idx=1&sn=21f5fda71a216271344503641607e27e&chksm=fe6ca395c91b2a83e35eeb02b6b1ca0681f8896167f014acc263e0ba4735740fe34b84f9f6a7#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "深入 Netty 内存池的心脏：PoolChunk 用满二叉树实现伙伴分配管理 16MB 大块，PoolSubpage 用位图管理 8KB 页内小块，配合 PoolChunkList 使用率分区和 PoolThreadCache 无锁缓存。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-11-poolchunk-subpage.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-15-write-flush",
+      "title": "Netty源码分析(15) — 写缓冲 buffer 与 writeAndFlush 流程",
+      "path": "Inbox/2026-10-27-netty-15-write-flush.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484556&idx=1&sn=bf7a3c022ed30eb28ff793fe4b727631&chksm=fe6ca5d6c91b2cc0a1ea07f676c1c2868198327926ec7c6d3edca01c29723ab388f6aacde5a6#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "讲清 write 与 flush 为何是两个动作：write 只是把消息挂进 ChannelOutboundBuffer 链表，flush 才由 I/O 线程真正调用 SocketChannel.write 写入内核，并详解写自旋、OP_WRITE 与高低水位背压机制。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-15-write-flush.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-16-connection-mgmt",
+      "title": "Netty源码分析(16) — 连接管理：connect、bind、close 背后的故事",
+      "path": "Inbox/2026-10-27-netty-16-connection-mgmt.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484571&idx=1&sn=843829d9ee03815901f202c2224fc228&chksm=fe6ca5c1c91b2cd7ef0bd93a09839cc38b8538da8079a9c2a946086be8234280f8c610f60d62#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "从源码捋清 Netty 连接管理三条主线：connect 的异步 TCP 连接与超时处理、bind 的端口绑定与 OP_ACCEPT 注册、close 的四层优雅关闭，全程 Promise-Future 异步串联。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-16-connection-mgmt.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-17-idlestate-heartbeat",
+      "title": "Netty源码分析(17) — IdleStateHandler 心跳机制源码",
+      "path": "Inbox/2026-10-27-netty-17-idlestate-heartbeat.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484577&idx=1&sn=c5ebc90b7b92c621c66c2b7105bd622e&chksm=fe6ca5fbc91b2ced7ebcd8fe2c188d958496e7960cb32ca8cb73944ed85aa752b34aa8ed8140#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "深度解析 Netty IdleStateHandler 的源码实现：它通过 EventLoop 定时任务跟踪读/写/读写三个维度的空闲时间，超时后触发 IdleStateEvent 事件，配合下游 Handler 即可低成本实现心跳检测与死连接清理。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-17-idlestate-heartbeat.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-18-reconnect",
+      "title": "Netty源码分析(18) — 断线重连机制实现与源码分析",
+      "path": "Inbox/2026-10-27-netty-18-reconnect.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484583&idx=1&sn=6ed23a36b1efae41a176ffe4e8361388&chksm=fe6ca5fdc91b2cebfbf123efd210a2a9447e97fe884a63ee03bc4c8cf067ce44bbc5148c0de1#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "Netty 没有内置自动重连，但基于 ChannelFutureListener、channelInactive 事件与 eventLoop.schedule 可优雅实现。文章给出带指数退避+随机抖动的可复用重连器，并结合 IdleStateHandler 讲透心跳+重连的完整方案。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-18-reconnect.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-20-http-decoder",
+      "title": "Netty源码分析(20) — Netty 与 HTTP 协议：HttpObjectDecoder 解析",
+      "path": "Inbox/2026-10-27-netty-20-http-decoder.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484592&idx=1&sn=6a91ff0a777288d923dad1f251f245e6&chksm=fe6ca5eac91b2cfc7c96db27c0de87566f7c7f1dc248423ff50fcf85b5a6c00e595bb4157e4a#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "HttpObjectDecoder 是 Netty HTTP 协议栈的心脏，用有限状态机把 TCP 字节流解码为 HttpRequest/HttpResponse/HttpContent 对象，优雅解决粘包半包、chunked 编码、Keep-Alive 边界等解析难题。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-20-http-decoder.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-21-websocket",
+      "title": "Netty源码分析(21) — WebSocket 支持与协议升级源码",
+      "path": "Inbox/2026-10-27-netty-21-websocket.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "WebSocket"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484598&idx=1&sn=ec52f9b41a17b557887fd68c8b7ef42c&chksm=fe6ca5ecc91b2cfa27f5b2dcb77ce4f4766838ae70d7e64b005eacb62b9c074c740f0c6bc321#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "WebSocket 在同一 TCP 连接上先走 HTTP 握手再无缝切换协议。Netty 通过 WebSocketServerProtocolHandler + WebSocketServerHandshaker 完成 101 握手，握手成功后动态替换 Pipeline——HTTP 编解码器全部移除、WebSocket 帧编解码器热插拔进来。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-21-websocket.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-22-ssl-tls",
+      "title": "Netty源码分析(22) — Netty 的 SSL/TLS 支持",
+      "path": "Inbox/2026-10-27-netty-22-ssl-tls.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484604&idx=1&sn=b5db4f8ded964cdc6fb8d34a62cf7cdc&chksm=fe6ca5e6c91b2cf0a7ac5a8d8de49946fbcfe692bd4cd7a9b87e62a62e66c8f1d2b7beb28d19#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "Netty 的 SSL/TLS 支持本质是对 JDK SSLEngine 的封装：SslHandler 通过 wrap()/unwrap() 在出站加密、入站解密，对 Pipeline 上下游完全透明；SslContext 作为工厂支持 JDK/OpenSSL 多提供者切换。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-22-ssl-tls.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-23-zero-copy",
+      "title": "Netty源码分析(23) — 零拷贝机制详解",
+      "path": "Inbox/2026-10-27-netty-23-zero-copy.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484607&idx=1&sn=ab05acab1098719909f8d4a894ed7bb5&chksm=fe6ca5e5c91b2cf38784a3fc4b9b5b43556004c973f8b8e8beda861f1d5a69491d0fa0bd0fe9#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "零拷贝的本质是让 CPU 不参与数据搬运。Netty 提供四大零拷贝兵器：FileRegion(sendfile)、CompositeByteBuf、Unpooled.wrappedBuffer、DirectBuffer+内存映射，分别覆盖文件传输、逻辑合并、数组包装、堆外读写四类场景。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-23-zero-copy.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-24-epoll-native",
+      "title": "Netty源码分析(24) — EpollEventLoop 与 Native Transport",
+      "path": "Inbox/2026-10-27-netty-24-epoll-native.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484613&idx=1&sn=a220017004e50b20b8925ff0dd000a06&chksm=fe6ca59fc91b2c89846b22c2c447abdd98a192ef19deec3017ed9c4f205d3d4c6d7a741beb1c#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "剖析 Netty 的 native 传输层：EpollEventLoop 绕过 JDK Selector 直接调用 Linux epoll 系统调用，结合 eventfd/timerfd 实现高效唤醒与定时，是 Netty 性能的\"杀手锏\"。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-24-epoll-native.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-25-flow-control",
+      "title": "Netty源码分析(25) — Netty 的流量控制：高低水位与可写性",
+      "path": "Inbox/2026-10-27-netty-25-flow-control.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484622&idx=1&sn=9d1f84eb30d923022f03631b2e07e8db&chksm=fe6ca594c91b2c827b5d86ee5e031485b8259e07a19edba268eebc113dd31de7397702cb27d7#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "源码级解析 Netty 的写侧背压机制：ChannelOutboundBuffer 的高低水位设计、isWritable 状态切换与 channelWritabilityChanged 事件传播，解决\"写得比对方读得快\"导致的 OOM 问题。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-25-flow-control.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-27-channelfuture",
+      "title": "Netty源码分析(27) — ChannelFuture 与 异步回调机制",
+      "path": "Inbox/2026-10-27-netty-27-channelfuture.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484630&idx=1&sn=7a142bfae8c38fa15b978d6fdd8041b9&chksm=fe6ca58cc91b2c9ab41702695e4d633504156d14bdacd7c9c7a87c4e4ee1a1c0877d691d5d5e#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "解析 Netty 的异步结果模型：ChannelFuture 在 JDK Future 之上增加 Listener 回调、sync/await 阻塞等待与 isWritable 水位感知，剖析 DefaultPromise 的 CAS 无锁状态机与监听器通知机制。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-27-channelfuture.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-28-promise",
+      "title": "Netty源码分析(28) — Promise 与 自定义异步结果",
+      "path": "Inbox/2026-10-27-netty-28-promise.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484638&idx=1&sn=3cb762789818581715f45344c6c29d38&chksm=fe6ca584c91b2c925fcb15210dd32aa8325f550dba9e80c8cc87c68141e84eb53cfac729e1d8#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "Promise 是\"可写的 Future\"：继承 Future 并增加 setSuccess/setFailure/trySuccess 等手动完成方法。本文剖析 DefaultPromise 实现——CAS 状态机、监听器懒加载与 EventLoop 亲和性通知。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-28-promise.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-30-rpc-framework",
+      "title": "Netty源码分析(30) — 实战：基于Netty实现一个简单的RPC框架",
+      "path": "Inbox/2026-10-27-netty-30-rpc-framework.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484662&idx=1&sn=8c5c06610ba51aa1c52b6ba4cd28b0f3&chksm=fe6ca5acc91b2cba40615efef5174155931be83bf9015e33664d1d508effb434793828c2d9c7#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "系列收官实战篇：约 300 行代码手写一个轻量级 RPC 框架，覆盖协议定义、序列化、粘包编解码、JDK 动态代理、服务注册与反射调用、异步转同步的 RpcFuture，串起全系列知识点，揭示 Dubbo/gRPC 的底层通信原理。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-30-rpc-framework.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-4-to-5",
+      "title": "Netty源码分析(番外篇6) — Netty 4.x 到 5.x：演进路线与未来展望",
+      "path": "Inbox/2026-10-27-netty-4-to-5.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484716&idx=2&sn=35eb4093625aaa2e82174e455caf29a1&chksm=fe6ca476c91b2d609ad82f0681af07fd2d75166f8c2b172a4ddd907a5febd28031a769c90f17#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "梳理 Netty 从 3.x 到新 5.0 的版本演进：4.0→4.1 的关键升级、2018 旧 5.0 为何失败、2024 重启的新 5.0 改了什么（JDK17、io_uring、Buffer API 重设计），以及不同场景下的升级建议。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-4-to-5.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-debugging-guide",
+      "title": "Netty源码分析(番外篇) — Netty调试技巧与生产问题排查方法论",
+      "path": "Inbox/2026-10-27-netty-debugging-guide.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484689&idx=2&sn=2f7f268bc6d34db87c7db4e42c4cea8c&chksm=fe6ca44bc91b2d5df71f819f870aa75490324010ad5eae1999a5bb68e405ee234a43522c1d33#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "Netty 系列收官番外，系统性整理源码调试与线上问题排查方法论：本地用 EmbeddedChannel 与黄金断点调 Handler，线上靠内置指标、内存泄漏检测与 epoll 空轮询防护三板斧，并以一个真实压测排障案例串起完整思路。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-debugging-guide.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-design-patterns",
+      "title": "Netty源码分析(番外篇7) — Netty中的设计模式：23种经典模式的工程实践",
+      "path": "Inbox/2026-10-27-netty-design-patterns.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484716&idx=1&sn=4446792a1f1f6f02cce5b6df7b8a4e30&chksm=fe6ca476c91b2d60e265b7acdffd5b416545738b838c2260a8a9d40c5545a0d0382a684decfc#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "从源码视角识别 Netty 中的设计模式：逐一剖析模板方法、责任链、工厂方法、观察者、命令、装饰器、单例、适配器、策略、建造者十大模式的具体落点，并给出 16 种模式的全景对照表。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-design-patterns.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-gateway-scg",
+      "title": "Netty源码分析(番外篇) — Spring Cloud Gateway 中的 Netty 应用解析",
+      "path": "Inbox/2026-10-27-netty-gateway-scg.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "spring gateway"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484705&idx=1&sn=8e3ff2de8fd218f81921cbe72d23f75b&chksm=fe6ca47bc91b2d6dfd4dc5bad272f69b2312a73594f14f9ff0d71c1b745bf61c0bee3b8e9941#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "拆解 Spring Cloud Gateway 底层对 Netty 的使用：Reactor Netty 的 HttpClient 初始化、双 EventLoopGroup、GlobalFilter 链与 ChannelPipeline 的对应关系，并手写一个迷你网关串起路由匹配、转发、响应写回的完整流程。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-gateway-scg.md",
+      "wiki_status": "pending"
+    },
+    {
       "id": "2026-10-27-netty-in-mainstream-middleware",
       "title": "Netty 在主流中间件中的应用",
       "path": "Inbox/2026-10-27-netty-in-mainstream-middleware.md",
@@ -119,6 +634,45 @@
       "wiki_status": "pending"
     },
     {
+      "id": "2026-10-27-netty-kafka",
+      "title": "Netty源码分析(番外篇9) — Kafka为什么选Netty？网络层源码拆解",
+      "path": "Inbox/2026-10-27-netty-kafka.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Kafka"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484730&idx=1&sn=7760e5006f2d495fc8ffe3146c7887ba&chksm=fe6ca460c91b2d76430dcc1428c8cc9c718138e0bb12cb6beba307a488f970bcf3f103bc4851#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "基于 Kafka 3.9.0 源码拆解其网络层如何从自研 NIO 转向 Netty：启动流程、七层 Pipeline 流水线、帧解码的引用计数坑、RequestChannel 背压设计与批量 flush 优化，最后复盘 Kafka 选 Netty 的决策逻辑。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-kafka.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-perf-tuning",
+      "title": "Netty源码分析(番外篇) — Netty性能调优实战：从参数配置到JVM层优化",
+      "path": "Inbox/2026-10-27-netty-perf-tuning.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484674&idx=3&sn=c704c16f6646dd1646485bc918094498&chksm=fe6ca458c91b2d4e520b3328a91595a4e153b222f1453b493e67ce27bc863d599be8e21db181#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "系列番外篇，系统梳理 Netty 生产调优的四大维度：线程模型、Channel 参数、内存分配、系统/JVM 层，附完整优化配置示例与常见问题速查表。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-perf-tuning.md",
+      "wiki_status": "pending"
+    },
+    {
       "id": "2026-10-27-netty-source-reading-album",
       "title": "Netty 源码阅读合集（系列索引）",
       "path": "Inbox/2026-10-27-netty-source-reading-album.md",
@@ -136,6 +690,25 @@
       "summary": "公众号「Java解忧杂货铺」的 Netty 源码阅读系列合集页（32 篇），覆盖 Netty 核心源码全链路：Reactor 线程模型、Channel/Pipeline/Handler 三剑客、ByteBuf 与池化内存、EventLoop、Bootstrap 启动流程、写缓冲与 writeAndFlush、连接管理、心跳与断线重连、HTTP/WebSocket/SSL 协议支持、零拷贝，以及 RPC 实战与性能调优。本条为系列索引，供按主题回查单篇。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-source-reading-album.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-netty-vs-tomcat-undertow",
+      "title": "Netty源码分析(番外篇8) — Netty vs Tomcat vs Undertow：HTTP服务器性能横评",
+      "path": "Inbox/2026-10-27-netty-vs-tomcat-undertow.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484730&idx=2&sn=a31d863ee0658feaa449c35ebbdcca19&chksm=fe6ca460c91b2d76db44ac3a72590fa7205915c745b9e7df0d746d14bbfa8eb47ba9a4bd1205#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "同机同压测条件下用 wrk 对 Netty/Tomcat/Undertow 三个 HTTP 服务做横评：Netty QPS 15.8 万领先 Tomcat 约 77%，并从线程模型、内存管理、零拷贝、TCP 参数四个源码层面解释差距来源。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-vs-tomcat-undertow.md",
       "wiki_status": "pending"
     },
     {
