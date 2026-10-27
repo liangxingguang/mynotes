@@ -183,3 +183,6 @@
 - 2026-10-24 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
 - 2026-10-27 | ingest | raw/sources/ai/2026-10-26-agent-context-tutorial.md | wiki/sources/agent-context-tutorial.md（新建，confidence=medium，微博推荐帖，nano-ai 可交互 Agent 教程）+ wiki/concepts/agent-loop.md（第五信源：while 循环通俗印证，入门演示材料）
 - 2026-10-27 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
+
+- 2026-10-27 | ingest | raw/sources/ai/2026-10-26-learn-harness-engineering.md | wiki/sources/learn-harness-engineering.md（新建，confidence=low，微博推荐帖）+ wiki/entities/learn-harness-engineering-course.md（新建实体：Walking Labs 开源 Harness 工程课程，14 讲 + 8 递进项目，与 ep-harness/aibox/deepseek-harness 互链）
+- 2026-10-27 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）

@@ -1638,6 +1638,18 @@
       ],
       "source_url": "https://weibo.com/2194035935/5357902698908316",
       "asset_ref": "Assets/2026/10/agent-context-tutorial.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-26-learn-harness-engineering.md",
+      "sha256": "74d81530e36e36bc8884d7590e715bdeec1efc72ecf9c42ef0e29d4677c71c37",
+      "registered_at": "2026-10-27",
+      "inbox_ref": "Archive/2026-10-26-learn-harness-engineering.md",
+      "pages": [
+        "wiki/sources/learn-harness-engineering.md",
+        "wiki/entities/learn-harness-engineering-course.md"
+      ],
+      "source_url": "https://weibo.com/5648162302/5355994244187575",
+      "asset_ref": "Assets/2026/10/learn-harness-engineering.md"
     }
   ]
 }

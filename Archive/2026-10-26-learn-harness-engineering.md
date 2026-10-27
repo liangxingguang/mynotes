@@ -9,7 +9,7 @@ created: 2026-10-26
 category: 技术
 tags: [AI, Harness, 课程]
 asset_ref: Assets/2026/10/learn-harness-engineering.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Learn Harness Engineering：开源 Coding Agent 工程课程

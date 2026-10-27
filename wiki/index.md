@@ -70,6 +70,7 @@
 - [[kafka-ops-tools-five-essentials|Kafka 运维必备工具清单：5 个工具让排障快 10 倍]]（2026-10-21，Kafka/运维）
 - [[knowledge-base-tech-evolution|一文搞懂知识库的技术演进：从关键词检索、向量 RAG 到 GraphRAG、LLM Wiki、本体论与 Agent]]（2026-10-16，AI/知识库）
 - [[langchain4j-multimodal-rag|LangChain4j 多模态 RAG：图片+表格检索实战]]（2026-10-17，AI/RAG）
+- [[learn-harness-engineering|Learn Harness Engineering：开源 Coding Agent 工程课程（微博 @黄建同学）]]（2026-10-26，AI/课程资源，置信度低）
 - [[learn-pi-agent-01-llm-to-agent|Learn Pi Agent 01｜大模型如何一步步变成 Agent]]（2026-10-14，AI/教程）
 - [[linked-list-vs-array-cache|链表已死？C++ 之父：O(1) 不一定比 O(N) 快]]（2026-10-21，性能/体系结构）
 - [[llm-from-scratch-primer|三万字长文：大语言模型从零入门]]（2026-10-14，AI/教程）
@@ -195,6 +196,7 @@
 - [[ep-harness|EP-Harness]]（得物团队级 Managed Agents 平台，Multica 二开，Prompt→Context→Harness→Loop 四层）
 - [[jd-haibo|京东海博]]（京东本地生活即时零售 SaaS，780+ 商家/10 万+ 门店，AI 知识库实践标杆）
 - [[kafka|Apache Kafka]]（高吞吐事件管道；顺序写+PageCache+零拷贝+批量四板斧，机制+运维+IoT 场景三信源）
+- [[learn-harness-engineering-course|Learn Harness Engineering]]（Walking Labs 开源 Coding Agent 工程课程：14 讲 + 8 递进项目，单一微博推荐信源）
 - [[netty|Netty]]（Java 异步事件驱动网络框架；Reactor+ByteBuf+零拷贝三支柱，机制+IoT 双工程三信源）
 - [[pi|Pi]]（极简 Agent CLI/Harness，1.0 起原生 MCP + Code Mode + Pi Durable，5000+ 扩展生态）
 - [[pigeon-message-bus|信鸽（Pigeon）]]（网易云音乐直播活动消息总线；32 台 8U16G 支撑 300w/min，RocketMQ 底座）
