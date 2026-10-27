@@ -197,3 +197,7 @@
 - 2026-10-27 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
 - 2026-10-27 | ingest | raw/sources/misc/2026-10-27-jdk-source-reading-album.md | wiki/sources/jdk-source-reading-album.md（新建，confidence=low，公众号合集纯目录索引，30 篇 JDK 集合+JUC 源码系列；按 architect-road 先例不开概念/实体页）
 - 2026-10-27 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）
+- 2026-10-28 | ingest | raw/sources/misc/2026-10-27-jdk-01-arraylist.md | wiki/sources/jdk-01-arraylist.md（新建，confidence=high，ArrayList 懒加载/1.5 倍扩容/序列化细节）+ wiki/concepts/fail-fast-modcount.md（新建概念：modCount 快速失败，首信源）
+- 2026-10-28 | ingest | raw/sources/misc/2026-10-27-jdk-02-linkedlist.md | wiki/sources/jdk-02-linkedlist.md（新建，confidence=high，LinkedList 三栖接口/Node 32B 内存/折半查找）+ wiki/concepts/fail-fast-modcount.md（第二信源：ListItr）+ wiki/concepts/cache-line-and-false-sharing.md（第三信源：Node 32B vs 引用 4B 互证局部性）
+- 2026-10-28 | ingest | raw/sources/misc/2026-10-27-jdk-03-hashmap.md | wiki/sources/jdk-03-hashmap.md（新建，confidence=high，HashMap 全量源码拆解+JDK7/8 对比）+ wiki/concepts/hashmap-internals.md（新建概念：16/0.75/8/6/64 常量体系+扰动+高低位链扩容）+ wiki/concepts/fail-fast-modcount.md（第三信源）+ wiki/sources/jdk-source-reading-album.md（回补三篇单篇互链）
+- 2026-10-28 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式）

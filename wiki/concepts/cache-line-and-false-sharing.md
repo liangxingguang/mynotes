@@ -4,7 +4,7 @@ type: concept
 title: CPU 缓存行效应：局部性与伪共享
 status: active
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-28
 confidence: medium
 tags:
   - concept
@@ -14,10 +14,12 @@ tags:
 sources:
   - raw/sources/architecture/2026-10-21-linked-list-vs-array-cache.md
   - raw/sources/architecture/2026-10-21-springboot-disruptor-event-bus.md
+  - raw/sources/misc/2026-10-27-jdk-02-linkedlist.md
 related:
   - wiki/sources/linked-list-vs-array-cache.md
   - wiki/sources/springboot-disruptor-event-bus.md
   - wiki/sources/kafka-fast-four-mechanisms.md
+  - wiki/sources/jdk-02-linkedlist.md
   - wiki/concepts/cpu-funnel-coding.md
 ---
 # CPU 缓存行效应：局部性与伪共享
@@ -56,6 +58,7 @@ CPU 以 64 字节缓存行为最小单位在内存与缓存之间搬运数据，
 ## Evolution（演进）
 
 - 2026-10-23 — 由 linked-list-vs-array-cache（局部性侧）与 springboot-disruptor-event-bus（伪共享侧）两个独立信源合并提炼建立；此前缓存行内容散见于两信源页，未立概念页。
+- 2026-10-28 — 新增第三信源 jdk-02-linkedlist：JDK 集合层的具体数据点（LinkedList Node 约 32 字节 vs ArrayList 引用 4 字节、分散节点缓存命中低），互证局部性一侧结论。
 
 ## Open Questions（开放问题）
 
@@ -65,10 +68,12 @@ CPU 以 64 字节缓存行为最小单位在内存与缓存之间搬运数据，
 
 - Source: `raw/sources/architecture/2026-10-21-linked-list-vs-array-cache.md`（局部性：数组胜链表、预取器）
 - Source: `raw/sources/architecture/2026-10-21-springboot-disruptor-event-bus.md`（伪共享：Sequence 三层继承填充 56 字节、性能降一个数量级、与 @Contended 的取舍）
+- Source: `raw/sources/misc/2026-10-27-jdk-02-linkedlist.md`（局部性在 JDK 集合的实例：Node 32 字节 vs 引用 4 字节约 8 倍内存、节点分散缓存命中低）
 
 ## Related Knowledge（相关知识）
 
 - [[linked-list-vs-array-cache|链表已死？（信源页）]]
+- [[jdk-02-linkedlist|JDK源码阅读(2) — LinkedList（信源页）]]
 - [[springboot-disruptor-event-bus|Disruptor 无锁事件总线（信源页）]]
 - [[kafka-fast-four-mechanisms|Kafka 四板斧（信源页）]]（PageCache/顺序写同属"顺着硬件脾气设计"哲学）
 - [[cpu-funnel-coding|CPU 漏斗（概念页）]]

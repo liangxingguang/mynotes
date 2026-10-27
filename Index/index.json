@@ -1,63 +1,6 @@
 {
-  "updated_at": "2026-10-27 23:09",
+  "updated_at": "2026-10-28 00:33",
   "notes": [
-    {
-      "id": "2026-10-27-jdk-01-arraylist",
-      "title": "JDK源码阅读(1) — ArrayList：最熟悉的陌生人，你真的会用吗？",
-      "path": "Inbox/2026-10-27-jdk-01-arraylist.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483850&idx=1&sn=e7ed1b5dcfe84b5c398ec7cf80b9c0ba&chksm=fe6ca090c91b2986d6e41fdbd1fe54603dbd518a1174a9dd820b29dcc692800ee7e43c337251#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "ArrayList 本质是动态数组，底层用 transient Object[] 存数据并自定义序列化。无参构造采用懒加载，首次 add 才分配默认容量 10，之后按 1.5 倍扩容。随机访问 O(1)，中间插入删除 O(n)，通过 modCount 实现 Fast-Fail。文章还给出了预分配容量、subList、线程安全、toArray 转型等实战避坑建议。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/jdk-01-arraylist.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-27-jdk-02-linkedlist",
-      "title": "JDK源码阅读(2) — LinkedList：双向链表，不只是个List",
-      "path": "Inbox/2026-10-27-jdk-02-linkedlist.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483854&idx=1&sn=66afc3d3379c0c5252284472d168ee6c&chksm=fe6ca094c91b29824d0934e50d7150a1a09417b5cb1809c5f8db1f2115eea47aea25b568038f#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "LinkedList 底层是双向链表，同时实现 List、Deque、Stack 三份职责。头尾插入删除 O(1)，但按索引访问需折半遍历仍是 O(n)。每个节点是带前后指针的 Node 对象，内存开销约为 ArrayList 元素引用的 8 倍。配合 ListIterator 可在遍历中 O(1) 插入删除，适合头尾操作频繁、随机访问少的场景。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/jdk-02-linkedlist.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-27-jdk-03-hashmap",
-      "title": "JDK源码阅读(3) — HashMap：面试之王，一文打透",
-      "path": "Inbox/2026-10-27-jdk-03-hashmap.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483878&idx=1&sn=b82cd5bdd8fa18152a02a7e6bef005f8&chksm=fe6ca0bcc91b29aadb162db56a36a695bc35c300233d996cc8e0d989f504518d3e56e34c56fb#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "HashMap 底层是数组 + 链表 + 红黑树的组合，默认容量 16、负载因子 0.75。hash 扰动用高 16 位异或低 16 位，桶定位靠 (n-1) & hash。JDK 8 改尾插并在链表长度≥8 且数组≥64 时树化；扩容翻倍后用 hash & oldCap 一次位运算拆分高低位链，避免重新 rehash。文章含 put/get/resize/treeifyBin 全流程源码拆解与面试问答。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/jdk-03-hashmap.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-27-jdk-04-concurrenthashmap",
       "title": "JDK源码阅读(3)：ConcurrentHashMap——面试必问的并发HashMap，看完这篇就够了",
@@ -3949,6 +3892,63 @@
       "summary": "YC 合伙人 Jared Friedman 的 Startup School 演讲（基于 YC 前 100 公司估值数据 + PG《How to Get Startup Ideas》）：创业点子的四大常见错误（SISP 为方案找问题、焦油坑点子、扑向第一个点子、苦等完美点子）、评估点子的十问框架、让点子「看起来差实际变好」的三件事，以及生成好点子的七个配方。核心结论：爱上问题而非方案；70% 的 YC 顶级点子是自然注意到的；最终验证方式只有一个——发出去。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/how-to-get-startup-ideas.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-jdk-01-arraylist",
+      "title": "JDK源码阅读(1) — ArrayList：最熟悉的陌生人，你真的会用吗？",
+      "path": "Archive/2026-10-27-jdk-01-arraylist.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483850&idx=1&sn=e7ed1b5dcfe84b5c398ec7cf80b9c0ba&chksm=fe6ca090c91b2986d6e41fdbd1fe54603dbd518a1174a9dd820b29dcc692800ee7e43c337251#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "ArrayList 本质是动态数组，底层用 transient Object[] 存数据并自定义序列化。无参构造采用懒加载，首次 add 才分配默认容量 10，之后按 1.5 倍扩容。随机访问 O(1)，中间插入删除 O(n)，通过 modCount 实现 Fast-Fail。文章还给出了预分配容量、subList、线程安全、toArray 转型等实战避坑建议。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jdk-01-arraylist.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-jdk-02-linkedlist",
+      "title": "JDK源码阅读(2) — LinkedList：双向链表，不只是个List",
+      "path": "Archive/2026-10-27-jdk-02-linkedlist.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483854&idx=1&sn=66afc3d3379c0c5252284472d168ee6c&chksm=fe6ca094c91b29824d0934e50d7150a1a09417b5cb1809c5f8db1f2115eea47aea25b568038f#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "LinkedList 底层是双向链表，同时实现 List、Deque、Stack 三份职责。头尾插入删除 O(1)，但按索引访问需折半遍历仍是 O(n)。每个节点是带前后指针的 Node 对象，内存开销约为 ArrayList 元素引用的 8 倍。配合 ListIterator 可在遍历中 O(1) 插入删除，适合头尾操作频繁、随机访问少的场景。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jdk-02-linkedlist.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-jdk-03-hashmap",
+      "title": "JDK源码阅读(3) — HashMap：面试之王，一文打透",
+      "path": "Archive/2026-10-27-jdk-03-hashmap.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483878&idx=1&sn=b82cd5bdd8fa18152a02a7e6bef005f8&chksm=fe6ca0bcc91b29aadb162db56a36a695bc35c300233d996cc8e0d989f504518d3e56e34c56fb#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "HashMap 底层是数组 + 链表 + 红黑树的组合，默认容量 16、负载因子 0.75。hash 扰动用高 16 位异或低 16 位，桶定位靠 (n-1) & hash。JDK 8 改尾插并在链表长度≥8 且数组≥64 时树化；扩容翻倍后用 hash & oldCap 一次位运算拆分高低位链，避免重新 rehash。文章含 put/get/resize/treeifyBin 全流程源码拆解与面试问答。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jdk-03-hashmap.md",
       "wiki_status": "ingested"
     },
     {

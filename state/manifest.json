@@ -1741,6 +1741,43 @@
       ],
       "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzU5NTcwMzg2MQ==&action=getalbum&album_id=4541344630860103688",
       "asset_ref": "Assets/2026/10/jdk-source-reading-album.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-27-jdk-01-arraylist.md",
+      "sha256": "98b2a1550d2cba55edfbfd7e4f3be415423252b1745df449f6957049ab72f7fc",
+      "registered_at": "2026-10-28",
+      "inbox_ref": "Archive/2026-10-27-jdk-01-arraylist.md",
+      "pages": [
+        "wiki/sources/jdk-01-arraylist.md",
+        "wiki/concepts/fail-fast-modcount.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483850&idx=1&sn=e7ed1b5dcfe84b5c398ec7cf80b9c0ba&chksm=fe6ca090c91b2986d6e41fdbd1fe54603dbd518a1174a9dd820b29dcc692800ee7e43c337251",
+      "asset_ref": "Assets/2026/10/jdk-01-arraylist.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-27-jdk-02-linkedlist.md",
+      "sha256": "309e6a27bb7a55850ed8f2234c3ab3aaf080477fe3001625dcd57b78951def8f",
+      "registered_at": "2026-10-28",
+      "inbox_ref": "Archive/2026-10-27-jdk-02-linkedlist.md",
+      "pages": [
+        "wiki/sources/jdk-02-linkedlist.md",
+        "wiki/concepts/cache-line-and-false-sharing.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483854&idx=1&sn=66afc3d3379c0c5252284472d168ee6c&chksm=fe6ca094c91b29824d0934e50d7150a1a09417b5cb1809c5f8db1f2115eea47aea25b568038f",
+      "asset_ref": "Assets/2026/10/jdk-02-linkedlist.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-27-jdk-03-hashmap.md",
+      "sha256": "6c8468f39019413c5c70b63afc36dc1d872be975628d10b17ae9c2b3f56c2c16",
+      "registered_at": "2026-10-28",
+      "inbox_ref": "Archive/2026-10-27-jdk-03-hashmap.md",
+      "pages": [
+        "wiki/sources/jdk-03-hashmap.md",
+        "wiki/concepts/hashmap-internals.md",
+        "wiki/concepts/fail-fast-modcount.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483878&idx=1&sn=b82cd5bdd8fa18152a02a7e6bef005f8&chksm=fe6ca0bcc91b29aadb162db56a36a695bc35c300233d996cc8e0d989f504518d3e56e34c56fb",
+      "asset_ref": "Assets/2026/10/jdk-03-hashmap.md"
     }
   ]
 }
