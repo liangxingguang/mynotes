@@ -1790,6 +1790,43 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483907&idx=1&sn=d8d2ae367a11551d05de46aff6ff3908&chksm=fe6ca359c91b2a4f5f4d0c98fa4d6eeb7c4dca13bd206c655db6dae1aeaefe9f56ea5257f78f",
       "asset_ref": "Assets/2026/10/jdk-04-concurrenthashmap.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-27-jdk-05-copyonwritearraylist.md",
+      "sha256": "481d333daead79e592d69410943eaa68dbd17d750f3cc365d508d8182e58dfd7",
+      "registered_at": "2026-10-28",
+      "inbox_ref": "Archive/2026-10-27-jdk-05-copyonwritearraylist.md",
+      "pages": [
+        "wiki/sources/jdk-05-copyonwritearraylist.md",
+        "wiki/concepts/copyonwritearraylist-internals.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483923&idx=1&sn=140dce437a9e4c5c0c6a0970502ad90f&chksm=fe6ca349c91b2a5f4d56a5a8281c206a06d493905c212354c648037f41b29919e7594bb783dd",
+      "asset_ref": "Assets/2026/10/jdk-05-copyonwritearraylist.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-27-jdk-06-linkedhashmap.md",
+      "sha256": "3a2c3daaee830158a55ba864ce00116317a16e42684d9efa930bd92b8f2bbed7",
+      "registered_at": "2026-10-28",
+      "inbox_ref": "Archive/2026-10-27-jdk-06-linkedhashmap.md",
+      "pages": [
+        "wiki/sources/jdk-06-linkedhashmap.md",
+        "wiki/concepts/linkedhashmap-internals.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483939&idx=1&sn=d32daec7895b112584753b7b696afa71&chksm=fe6ca379c91b2a6fc196ccd95f77cdda69dcd7393f5e7ec3d858688a98fcd18f991a56152b0c",
+      "asset_ref": "Assets/2026/10/jdk-06-linkedhashmap.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-27-jdk-07-reentrantlock.md",
+      "sha256": "81bfd04a7abb2abbddab6caced4f4086855c0bd3708b52429fb67573fcb71e9a",
+      "registered_at": "2026-10-28",
+      "inbox_ref": "Archive/2026-10-27-jdk-07-reentrantlock.md",
+      "pages": [
+        "wiki/sources/jdk-07-reentrantlock.md",
+        "wiki/concepts/aqs-internals.md",
+        "wiki/concepts/reentrantlock-internals.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483954&idx=1&sn=dfa68e8418234148eaa351d7746ae9fc&chksm=fe6ca368c91b2a7e319c39e46f1adba95429c3952305e73d609a4715d624638ef9fc6e28c6d1",
+      "asset_ref": "Assets/2026/10/jdk-07-reentrantlock.md"
     }
   ]
 }

@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [Java, 课程]
 asset_ref: Assets/2026/10/jdk-05-copyonwritearraylist.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # JDK源码阅读(4)：CopyOnWriteArrayList——最"懒"的线程安全集合，读多写少场景的王者

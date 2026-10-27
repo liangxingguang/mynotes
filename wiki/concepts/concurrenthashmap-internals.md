@@ -17,6 +17,7 @@ sources:
 related:
   - wiki/concepts/hashmap-internals.md
   - wiki/concepts/fail-fast-modcount.md
+  - wiki/concepts/copyonwritearraylist-internals.md
   - wiki/sources/jdk-04-concurrenthashmap.md
 ---
 # ConcurrentHashMap 并发设计（JDK 8+）

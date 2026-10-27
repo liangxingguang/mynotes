@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [Java, 课程]
 asset_ref: Assets/2026/10/jdk-07-reentrantlock.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # JDK源码阅读(6)：ReentrantLock——可重入锁，从"管程"本质看AQS的优雅实现

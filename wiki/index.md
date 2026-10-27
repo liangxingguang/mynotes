@@ -68,6 +68,9 @@
 - [[jdk-02-linkedlist|JDK源码阅读(2) — LinkedList：双向链表三栖容器，内存 8 倍于 ArrayList]]（2026-10-28，Java/JDK 源码）
 - [[jdk-03-hashmap|JDK源码阅读(3) — HashMap：扰动/树化/高低位链拆分全拆解]]（2026-10-28，Java/JDK 源码）
 - [[jdk-04-concurrenthashmap|JDK源码阅读 — ConcurrentHashMap：CAS+桶头锁/无锁读/协作扩容]]（2026-10-28，Java/JDK 源码）
+- [[jdk-05-copyonwritearraylist|JDK源码阅读(4) — CopyOnWriteArrayList：写时复制/读无锁/快照迭代]]（2026-10-28，Java/JDK 源码）
+- [[jdk-06-linkedhashmap|JDK源码阅读(5) — LinkedHashMap：双链表有序化/模板方法钩子/三行 LRU]]（2026-10-28，Java/JDK 源码）
+- [[jdk-07-reentrantlock|JDK源码阅读(6) — ReentrantLock：AQS/公平非公平/Condition 精确唤醒]]（2026-10-28，Java/JDK 源码）
 - [[jdk-source-reading-album|JDK 源码阅读合集（Java解忧杂货铺，30 篇系列索引）]]（2026-10-27，Java/源码阅读资源，置信度低）
 - [[jdk21-migration-huolala|JDK 21 规模化落地实践（货拉拉）：框架先扛兼容成本，业务切 parent 收尾]]（2026-10-23，Java/JVM/虚拟线程）
 - [[jenkins-gitlab-cicd-pipeline|Jenkins + GitLab CI/CD 流水线落地实战（完整配置）]]（2026-10-21，CI/CD，置信度中）
@@ -158,6 +161,7 @@
 - [[agent-evaluation|业务 Agent 全生命周期评测]]（规则+LLM 裁判+人工复核，覆盖准入/门禁/压测/巡检，货拉拉实践）
 - [[agent-loop|Agent Loop]]（Runtime 驱动的模型-工具循环；Tool Call/Result、Message/Context/State/Session、Runtime vs Harness）
 - [[agent-sandboxing|Agent 沙箱隔离]]（能力限制而非行为审查；四条路径收窄可达面；脚本级/命令级/工具级/整体隔离）
+- [[aqs-internals|AQS（AbstractQueuedSynchronizer）核心机制]]（volatile state + CLH 变体 FIFO 队列 + acquire/release 模板方法；JUC 锁体系基座，单信源）
 - [[aho-corasick|AC 自动机（Aho-Corasick）]]（Trie+Fail 指针多模式匹配，近似线性；vivo 谛听改造：组合词后置聚合、拼音图 DFS，单信源一手）
 - [[ai-native-organization|AI 原生研发组织]]（工具原生→工作流原生→组织原生）
 - [[ai-native-sdlc|AI 原生 SDLC]]（制品提交链驱动的六阶段闭环，Anthropic 2026）
@@ -166,6 +170,7 @@
 - [[cdn-broadcast-fanout|CDN 广播（弹幕下行）]]（千万级在线下行外包 CDN 边缘：推流伪装视频流 vs 静态文件周期拉取，多 CDN 权重轮询融合；网易云信一手）
 - [[codemode|Codemode（代码模式工具编排）]]（模型写 JS 沙箱脚本编排工具调用，只回筛选结果；固定开销约减半，单次收益看返回格式）
 - [[concurrenthashmap-internals|ConcurrentHashMap 并发设计（JDK 8+）]]（读无锁+CAS 空桶插+synchronized 桶头+sizeCtl 三态+协作扩容；单信源，置信度中）
+- [[copyonwritearraylist-internals|CopyOnWriteArrayList 写时复制设计]]（volatile 数组引用替换+写时 O(n) 复制换读零锁；快照迭代不抛 CME；读多写极少专用，单信源，置信度中）
 - [[cpu-funnel-coding|CPU 漏斗（编码级性能模型）]]（砍掉无效解析/转换/对象，让 CPU 只做核心运算）
 - [[cross-process-surface-rendering|Surface 跨进程渲染]]（Surface Parcelable + SurfaceFlinger 跨进程合成，Binder 传 Surface 零拷贝传画面；Renderer 3→1，微信小游戏一手）
 - [[deep-thinking-five-tools|深度思考五工具（澄清-拆解-追问-反证-逆向）]]（按序收敛四步+发散出口一步，反认知闭合；YouCore 单信源，置信度中）
@@ -182,6 +187,7 @@
 - [[harness-engineering|Harness Engineering（Agent 执行系统工程）]]（Agent ≈ Model + Harness；七观察面+信息三层+安全四层+B0~B5 单变量评测；11 系统源码研究解读）
 - [[hashmap-internals|HashMap 核心设计（JDK 8）]]（2 的幂容量+扰动+0.75 负载因子+8/6/64 树化阈值+高低位链扩容拆分；单信源，置信度中）
 - [[hyperloglog|HyperLogLog（基数估算）]]（伯努利过程+分桶调和平均，12KB 估 64 位级基数；≤1w tablekv 精确、>1w HLL >95%，微信一手）
+- [[linkedhashmap-internals|LinkedHashMap 有序化设计（双链表 + 模板方法钩子）]]（Entry 身兼桶节点+双链节点；三钩子维护插入/访问序；两行核心代码 LRU，单信源，置信度中）
 - [[llm-wiki|LLM Wiki]]（原始来源不可变 + 模型持续编译互链知识页面，Karpathy 模式；本仓库即实例，双信源）
 - [[mcp|MCP]]（LLM↔工具/数据纵向协议，Anthropic 2024）
 - [[live-message-drop-policy|直播消息丢弃策略]]（上行 200 条/s 硬丢弃 + 环形队列柔性丢弃 + 优先级三桶保必达，融云双信源）
@@ -197,6 +203,7 @@
 - [[read-fanout|读扩散（Fan-out on Read）]]（会话队列+syncId 位点同步把 1:N 写压成 1:1；99.99% 非个性化消息前提；阿里混合模式 500ms 端到端，双信源）
 - [[rag-production-guardrails|企业级 RAG 生产护栏]]（容量/证据/权限/恢复四主线；证据门禁前置、发布目录原子切换；混合检索+存储分层+参数热调双信源互证）
 - [[reactive-tracing-context|响应式环境的全链路 traceId 传递]]（Reactor Context 替代 ThreadLocal；doOnEach 同步 MDC、doFinally 清除）
+- [[reentrantlock-internals|ReentrantLock 可重入锁设计]]（AQS 经典实现：非公平先抢/公平只差 hasQueuedPredecessors/state 累加可重入/多 Condition 精确唤醒，单信源，置信度中）
 - [[scopedvalue|ScopedValue（作用域值）]]（JDK 25 正式：作用域共享不可变快照，终结 VT 下 ThreadLocal 内存膨胀/泄漏/脏值，Old Gen -61% 实测）
 - [[startup-ideas-framework|创业点子生成与评估框架（YC）]]（四错误避坑+十问评估+七配方生成；YC 前 100 公司 70% 点子自然注意到；演讲整理稿单信源）
 - [[table-sharding-migration|分表平滑迁移策略]]（五种读写策略矩阵 + 双写双读 SQL 重写，京东大表治理实践）
