@@ -73,3 +73,4 @@ put：扰动后的 hash 定位桶 → 空桶直接放 / 同 key（hash 相等且
 ## Related Knowledge（相关知识）
 
 - [[jdk-03-hashmap|JDK源码阅读(3) — HashMap（信源页）]]
+- [[hashset-internals|HashSet / LinkedHashSet 去重设计]]（HashMap 的 key 视图应用）

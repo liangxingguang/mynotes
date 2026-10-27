@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [Java, 课程]
 asset_ref: Assets/2026/10/jdk-08-treeset-vs-hashset.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 灵魂拷问：TreeSet 和 HashSet 到底有什么区别？5张图彻底说清楚

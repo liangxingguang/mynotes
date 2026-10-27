@@ -14,8 +14,10 @@ tags:
   - juc
 sources:
   - raw/sources/misc/2026-10-27-jdk-07-reentrantlock.md
+  - raw/sources/misc/2026-10-27-jdk-10-countdownlatch.md
 related:
   - wiki/concepts/reentrantlock-internals.md
+  - wiki/concepts/countdownlatch-internals.md
   - wiki/sources/jdk-07-reentrantlock.md
 ---
 # AQS（AbstractQueuedSynchronizer）核心机制
@@ -58,7 +60,8 @@ AQS
 
 ### Related Concepts（相关概念）
 
-- [[reentrantlock-internals|ReentrantLock 可重入锁设计]]（AQS 最经典的子类实现）
+- [[reentrantlock-internals|ReentrantLock 可重入锁设计]]（AQS 最经典的独占模式子类实现）
+- [[countdownlatch-internals|CountDownLatch 门闩设计]]（AQS 共享模式子类实现：tryAcquireShared/tryReleaseShared + doReleaseShared 广播唤醒）
 
 ### Distinctions（区分）
 
@@ -66,16 +69,18 @@ AQS
 
 ## Evolution（演进）
 
-当前信源以 ReentrantLock 为样本讲解独占模式；共享模式（CountDownLatch 等）与 Condition 内部条件队列的完整实现尚未有信源覆盖（本系列后续篇目预计涉及）。
+- 2026-10-28：以 ReentrantLock 为样本讲解独占模式（jdk-07 信源）。
+- 2026-10-28：jdk-11 信源补入共享模式样本（CountDownLatch：state 作计数器、SHARED 节点入队、doReleaseShared 广播唤醒）；Condition 内部条件队列的完整实现仍无信源覆盖。
 
 ## Open Questions（开放问题）
 
-- 共享模式（tryAcquireShared）的 propagate 唤醒链细节——当前信源未覆盖（未知）。
+- 共享模式 doReleaseShared 的 PROPAGATE 级联唤醒链细节——jdk-11 信源只到"广播唤醒全部共享节点"，未逐行展开（未知）。
 - CLH 变体与原始 CLH 队列的差异（如显式 prev 指针）当前信源未展开（未知）。
 
 ## Evidence（证据）
 
 - Source: `raw/sources/misc/2026-10-27-jdk-07-reentrantlock.md`
+- Source: `raw/sources/misc/2026-10-27-jdk-10-countdownlatch.md`
 
 ## Related Knowledge（相关知识）
 

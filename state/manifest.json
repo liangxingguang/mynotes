@@ -1827,6 +1827,44 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483954&idx=1&sn=dfa68e8418234148eaa351d7746ae9fc&chksm=fe6ca368c91b2a7e319c39e46f1adba95429c3952305e73d609a4715d624638ef9fc6e28c6d1",
       "asset_ref": "Assets/2026/10/jdk-07-reentrantlock.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-27-jdk-08-treeset-vs-hashset.md",
+      "sha256": "f314a6540b11b4b8a4674b6b255514189b3fec09a15097834d12473281895c2f",
+      "registered_at": "2026-10-28",
+      "inbox_ref": "Archive/2026-10-27-jdk-08-treeset-vs-hashset.md",
+      "pages": [
+        "wiki/sources/jdk-08-treeset-vs-hashset.md",
+        "wiki/concepts/treeset-internals.md",
+        "wiki/concepts/hashset-internals.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484058&idx=1&sn=5616da78841718a10c3536b2f5d30570&chksm=fe6ca3c0c91b2ad6b844f189ce2519869e75a2e6a3abfe22aa0ae794ff986c0be55711bc49c5",
+      "asset_ref": "Assets/2026/10/jdk-08-treeset-vs-hashset.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-27-jdk-09-hashset-linkedhashset.md",
+      "sha256": "b0b515731cb0082cb1aa61fe635a259be8fa4cf5c36795cf81a272227a58ef8b",
+      "registered_at": "2026-10-28",
+      "inbox_ref": "Archive/2026-10-27-jdk-09-hashset-linkedhashset.md",
+      "pages": [
+        "wiki/sources/jdk-09-hashset-linkedhashset.md",
+        "wiki/concepts/hashset-internals.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484067&idx=1&sn=6ff50dbde8d3c0a40f67d5e5cbc6a46c&chksm=fe6ca3f9c91b2aef88112dc82041c4ba2a1cf38bf95a44a7994235c99793368a9011e27c34c6",
+      "asset_ref": "Assets/2026/10/jdk-09-hashset-linkedhashset.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-27-jdk-10-countdownlatch.md",
+      "sha256": "92d9d3807ed9014d07b3b188ad5537a144cf71dd27db9d61820b94cfa90c61ba",
+      "registered_at": "2026-10-28",
+      "inbox_ref": "Inbox/2026-10-27-jdk-10-countdownlatch.md",
+      "pages": [
+        "wiki/sources/jdk-10-countdownlatch.md",
+        "wiki/concepts/countdownlatch-internals.md",
+        "wiki/concepts/aqs-internals.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484070&idx=1&sn=e936e788fc9df36fde5efc693a278b52&chksm=fe6ca3fcc91b2aea64a082ad107f5b67e1b8e559e4bd6f2c5c17ef12240d51553802116d69ce",
+      "asset_ref": "Assets/2026/10/jdk-10-countdownlatch.md"
     }
   ]
 }

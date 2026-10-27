@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [Java, 课程]
 asset_ref: Assets/2026/10/jdk-09-hashset-linkedhashset.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # JDK源码阅读(10) HashSet & LinkedHashSet 不重复是怎么做到的

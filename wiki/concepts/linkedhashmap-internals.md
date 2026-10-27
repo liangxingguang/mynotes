@@ -78,4 +78,5 @@ JDK 8 起桶树化后，红黑树节点的双链指针维护也由三个 afterNo
 ## Related Knowledge（相关知识）
 
 - [[jdk-06-linkedhashmap|JDK源码阅读(5) — LinkedHashMap（信源页）]]
+- [[hashset-internals|HashSet / LinkedHashSet 去重设计]]（LinkedHashSet 的插入序来自 LinkedHashMap）
 - [[jdk-source-reading-album|JDK 源码阅读合集（30 篇系列索引）]]

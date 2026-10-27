@@ -1,63 +1,6 @@
 {
-  "updated_at": "2026-10-28 03:28",
+  "updated_at": "2026-10-28 06:27",
   "notes": [
-    {
-      "id": "2026-10-27-jdk-08-treeset-vs-hashset",
-      "title": "灵魂拷问：TreeSet 和 HashSet 到底有什么区别？5张图彻底说清楚",
-      "path": "Inbox/2026-10-27-jdk-08-treeset-vs-hashset.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484058&idx=1&sn=5616da78841718a10c3536b2f5d30570&chksm=fe6ca3c0c91b2ad6b844f189ce2519869e75a2e6a3abfe22aa0ae794ff986c0be55711bc49c5#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "TreeSet 本质是 TreeMap 的 key 视图（value 统一为 PRESENT 哑对象），底层红黑树保证有序，增删查 O(log n)；HashSet 底层是 HashMap，O(1) 但无序。实测百万级插入 TreeSet 约慢 11 倍。TreeSet 的杀手锏是有序遍历与 floor/ceiling/subSet 等范围操作。结论：不需要排序用 HashSet，需要排序或范围查询才用 TreeSet。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/jdk-08-treeset-vs-hashset.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-27-jdk-09-hashset-linkedhashset",
-      "title": "JDK源码阅读(10) HashSet & LinkedHashSet 不重复是怎么做到的",
-      "path": "Inbox/2026-10-27-jdk-09-hashset-linkedhashset.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484067&idx=1&sn=6ff50dbde8d3c0a40f67d5e5cbc6a46c&chksm=fe6ca3f9c91b2aef88112dc82041c4ba2a1cf38bf95a44a7994235c99793368a9011e27c34c6#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "HashSet 内部就是一个 HashMap：元素作 key，value 统一为 PRESENT 占位对象，去重本质依赖 hashCode() 定位桶 + equals() 判同。LinkedHashSet 通过 HashSet 的包级私有构造把底层换成 LinkedHashMap，从而获得插入顺序。add 返回 put(e,PRESENT)==null 的巧妙判断。自定义对象必须同时重写 hashCode 与 equals，且入桶后不可修改参与 hash 计算的字段。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/jdk-09-hashset-linkedhashset.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-27-jdk-10-countdownlatch",
-      "title": "JDK源码阅读(11) CountDownLatch 门闩的等待与唤醒",
-      "path": "Inbox/2026-10-27-jdk-10-countdownlatch.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484070&idx=1&sn=e936e788fc9df36fde5efc693a278b52&chksm=fe6ca3fcc91b2aea64a082ad107f5b67e1b8e559e4bd6f2c5c17ef12240d51553802116d69ce#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "CountDownLatch 让一个或多个线程等待其他线程完成，底层基于 AQS 共享模式：构造时把 count 设为 state，await() 调 acquireSharedInterruptibly，state≠0 时线程封装成共享节点入 CLH 队列阻塞；countDown() 通过 CAS 把 state 减 1，减到 0 时 doReleaseShared 唤醒所有等待线程。计数不可重置，区别于可重用的 CyclicBarrier。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/jdk-10-countdownlatch.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-27-jdk-11-cyclicbarrier",
       "title": "JDK源码阅读(12) — CyclicBarrier：循环栅栏，让线程\"凑一桌\"再出发",
@@ -75,7 +18,7 @@
       "summary": "深入剖析 CyclicBarrier 源码：基于 ReentrantLock + Condition 实现的可循环使用的线程屏障，通过 Generation 对象隔离每一轮状态实现\"循环\"，最后一个到达的线程负责执行 barrierAction 并唤醒所有等待线程。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/jdk-11-cyclicbarrier.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-27-jdk-12-priorityqueue",
@@ -3949,6 +3892,63 @@
       "summary": "ReentrantLock 基于 AQS 实现：核心是一个 volatile state（0 未锁定，>1 表示重入次数）加 CLH 变体 FIFO 双向等待队列。抢锁失败的线程包装成 Node 入队，通过 CAS + 自旋 + park 阻塞唤醒。公平锁与非公平锁只差一个 hasQueuedPredecessors() 检查。支持可中断、超时获取与多 Condition 精确唤醒。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/jdk-07-reentrantlock.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-jdk-08-treeset-vs-hashset",
+      "title": "灵魂拷问：TreeSet 和 HashSet 到底有什么区别？5张图彻底说清楚",
+      "path": "Archive/2026-10-27-jdk-08-treeset-vs-hashset.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484058&idx=1&sn=5616da78841718a10c3536b2f5d30570&chksm=fe6ca3c0c91b2ad6b844f189ce2519869e75a2e6a3abfe22aa0ae794ff986c0be55711bc49c5#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "TreeSet 本质是 TreeMap 的 key 视图（value 统一为 PRESENT 哑对象），底层红黑树保证有序，增删查 O(log n)；HashSet 底层是 HashMap，O(1) 但无序。实测百万级插入 TreeSet 约慢 11 倍。TreeSet 的杀手锏是有序遍历与 floor/ceiling/subSet 等范围操作。结论：不需要排序用 HashSet，需要排序或范围查询才用 TreeSet。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jdk-08-treeset-vs-hashset.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-jdk-09-hashset-linkedhashset",
+      "title": "JDK源码阅读(10) HashSet & LinkedHashSet 不重复是怎么做到的",
+      "path": "Archive/2026-10-27-jdk-09-hashset-linkedhashset.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484067&idx=1&sn=6ff50dbde8d3c0a40f67d5e5cbc6a46c&chksm=fe6ca3f9c91b2aef88112dc82041c4ba2a1cf38bf95a44a7994235c99793368a9011e27c34c6#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "HashSet 内部就是一个 HashMap：元素作 key，value 统一为 PRESENT 占位对象，去重本质依赖 hashCode() 定位桶 + equals() 判同。LinkedHashSet 通过 HashSet 的包级私有构造把底层换成 LinkedHashMap，从而获得插入顺序。add 返回 put(e,PRESENT)==null 的巧妙判断。自定义对象必须同时重写 hashCode 与 equals，且入桶后不可修改参与 hash 计算的字段。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jdk-09-hashset-linkedhashset.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-jdk-10-countdownlatch",
+      "title": "JDK源码阅读(11) CountDownLatch 门闩的等待与唤醒",
+      "path": "Archive/2026-10-27-jdk-10-countdownlatch.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484070&idx=1&sn=e936e788fc9df36fde5efc693a278b52&chksm=fe6ca3fcc91b2aea64a082ad107f5b67e1b8e559e4bd6f2c5c17ef12240d51553802116d69ce#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "CountDownLatch 让一个或多个线程等待其他线程完成，底层基于 AQS 共享模式：构造时把 count 设为 state，await() 调 acquireSharedInterruptibly，state≠0 时线程封装成共享节点入 CLH 队列阻塞；countDown() 通过 CAS 把 state 减 1，减到 0 时 doReleaseShared 唤醒所有等待线程。计数不可重置，区别于可重用的 CyclicBarrier。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jdk-10-countdownlatch.md",
       "wiki_status": "ingested"
     },
     {

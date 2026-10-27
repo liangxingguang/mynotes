@@ -71,6 +71,9 @@
 - [[jdk-05-copyonwritearraylist|JDK源码阅读(4) — CopyOnWriteArrayList：写时复制/读无锁/快照迭代]]（2026-10-28，Java/JDK 源码）
 - [[jdk-06-linkedhashmap|JDK源码阅读(5) — LinkedHashMap：双链表有序化/模板方法钩子/三行 LRU]]（2026-10-28，Java/JDK 源码）
 - [[jdk-07-reentrantlock|JDK源码阅读(6) — ReentrantLock：AQS/公平非公平/Condition 精确唤醒]]（2026-10-28，Java/JDK 源码）
+- [[jdk-08-treeset-vs-hashset|灵魂拷问：TreeSet 和 HashSet 到底有什么区别？]]（2026-10-28，Java/JDK 源码）
+- [[jdk-09-hashset-linkedhashset|JDK源码阅读(10) — HashSet & LinkedHashSet 不重复是怎么做到的]]（2026-10-28，Java/JDK 源码）
+- [[jdk-10-countdownlatch|JDK源码阅读(11) — CountDownLatch 门闩的等待与唤醒]]（2026-10-28，Java/JDK 源码）
 - [[jdk-source-reading-album|JDK 源码阅读合集（Java解忧杂货铺，30 篇系列索引）]]（2026-10-27，Java/源码阅读资源，置信度低）
 - [[jdk21-migration-huolala|JDK 21 规模化落地实践（货拉拉）：框架先扛兼容成本，业务切 parent 收尾]]（2026-10-23，Java/JVM/虚拟线程）
 - [[jenkins-gitlab-cicd-pipeline|Jenkins + GitLab CI/CD 流水线落地实战（完整配置）]]（2026-10-21，CI/CD，置信度中）
@@ -171,6 +174,7 @@
 - [[codemode|Codemode（代码模式工具编排）]]（模型写 JS 沙箱脚本编排工具调用，只回筛选结果；固定开销约减半，单次收益看返回格式）
 - [[concurrenthashmap-internals|ConcurrentHashMap 并发设计（JDK 8+）]]（读无锁+CAS 空桶插+synchronized 桶头+sizeCtl 三态+协作扩容；单信源，置信度中）
 - [[copyonwritearraylist-internals|CopyOnWriteArrayList 写时复制设计]]（volatile 数组引用替换+写时 O(n) 复制换读零锁；快照迭代不抛 CME；读多写极少专用，单信源，置信度中）
+- [[countdownlatch-internals|CountDownLatch 门闩设计（AQS 共享模式）]]（state 即计数器+CAS 减一归零广播唤醒；一次性不可重置，区别于 CyclicBarrier；单信源，置信度中）
 - [[cpu-funnel-coding|CPU 漏斗（编码级性能模型）]]（砍掉无效解析/转换/对象，让 CPU 只做核心运算）
 - [[cross-process-surface-rendering|Surface 跨进程渲染]]（Surface Parcelable + SurfaceFlinger 跨进程合成，Binder 传 Surface 零拷贝传画面；Renderer 3→1，微信小游戏一手）
 - [[deep-thinking-five-tools|深度思考五工具（澄清-拆解-追问-反证-逆向）]]（按序收敛四步+发散出口一步，反认知闭合；YouCore 单信源，置信度中）
@@ -186,6 +190,7 @@
 - [[geohash|Geohash（地理哈希）]]（经纬度降维前缀编码；边界问题+8 邻居、截短扩半径、缓存键归一；邻近索引+地图瓦片双信源）
 - [[harness-engineering|Harness Engineering（Agent 执行系统工程）]]（Agent ≈ Model + Harness；七观察面+信息三层+安全四层+B0~B5 单变量评测；11 系统源码研究解读）
 - [[hashmap-internals|HashMap 核心设计（JDK 8）]]（2 的幂容量+扰动+0.75 负载因子+8/6/64 树化阈值+高低位链扩容拆分；单信源，置信度中）
+- [[hashset-internals|HashSet / LinkedHashSet 去重设计]]（HashMap key 视图+PRESENT 占位；hashCode+equals 双写铁律；dummy 构造换 LinkedHashMap 得插入序；双信源互证，置信度中）
 - [[hyperloglog|HyperLogLog（基数估算）]]（伯努利过程+分桶调和平均，12KB 估 64 位级基数；≤1w tablekv 精确、>1w HLL >95%，微信一手）
 - [[linkedhashmap-internals|LinkedHashMap 有序化设计（双链表 + 模板方法钩子）]]（Entry 身兼桶节点+双链节点；三钩子维护插入/访问序；两行核心代码 LRU，单信源，置信度中）
 - [[llm-wiki|LLM Wiki]]（原始来源不可变 + 模型持续编译互链知识页面，Karpathy 模式；本仓库即实例，双信源）
@@ -207,6 +212,7 @@
 - [[scopedvalue|ScopedValue（作用域值）]]（JDK 25 正式：作用域共享不可变快照，终结 VT 下 ThreadLocal 内存膨胀/泄漏/脏值，Old Gen -61% 实测）
 - [[startup-ideas-framework|创业点子生成与评估框架（YC）]]（四错误避坑+十问评估+七配方生成；YC 前 100 公司 70% 点子自然注意到；演讲整理稿单信源）
 - [[table-sharding-migration|分表平滑迁移策略]]（五种读写策略矩阵 + 双写双读 SQL 重写，京东大表治理实践）
+- [[treeset-internals|TreeSet 有序集合设计]]（TreeMap key 视图+红黑树；compareTo 判重≠equals；范围操作视图；插入慢 HashSet 约 11 倍实测；单信源，置信度中）
 - [[virtual-threads-production|虚拟线程生产实践]]（场景筛选、Helper 传 Trace/ThreadLocal、钉住规避与观测换代，货拉拉 JDK 21 实践）
 - [[write-fanout|写扩散（Fan-out on Write）]]（群消息按成员写副本换读路径简单；群服务扇出+副本指纹+MQ 批量化+双轨存储，万人群物理上限，三信源）
 - [[websocket-heartbeat-reconnect|WebSocket 心跳保活与断线重连]]（双向心跳判假死+指数退避防风暴+离线队列补发三段式，单教程信源置信度中）
