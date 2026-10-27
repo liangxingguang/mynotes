@@ -1730,6 +1730,17 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/GdY6mos2iKd0G1hMYzjy8w",
       "asset_ref": "Assets/2026/10/k8s-blue-green-release-trading.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-27-jdk-source-reading-album.md",
+      "sha256": "051ebf8dd55ee6143dc3873c5512e49adf3386005659992fcd7074fd471dc806",
+      "registered_at": "2026-10-27",
+      "inbox_ref": "Archive/2026-10-27-jdk-source-reading-album.md",
+      "pages": [
+        "wiki/sources/jdk-source-reading-album.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzU5NTcwMzg2MQ==&action=getalbum&album_id=4541344630860103688",
+      "asset_ref": "Assets/2026/10/jdk-source-reading-album.md"
     }
   ]
 }
