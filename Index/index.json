@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27 20:45",
+  "updated_at": "2026-10-27 20:47",
   "notes": [
     {
       "id": "2026-10-27-agent-platform-architecture",
@@ -19,7 +19,7 @@
       "summary": "一套企业级智能体中台的完整架构方案：FastAPI（在线服务+Worker 双链路）+ Nacos（注册发现+配置热更新）+ RocketMQ（异步解耦）+ LangGraph（多 Agent 编排）+ Milvus+ES（混合检索）+ Redis+MySQL（状态与元数据）。亮点是每个组件都给出选型对比与「不选备选的理由」，以及六个生产避坑点。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/agent-platform-architecture.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-27-harness-engineering-11-agents-study",
