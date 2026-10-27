@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-10-27T12:50:22.689Z",
+  "updated_at": "2026-10-27",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -1700,6 +1700,21 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/wP2A_l2mkrBbbY5dcuyHAA",
       "asset_ref": "Assets/2026/10/how-to-get-startup-ideas.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-27-jvm-gc-interview-guide.md",
+      "sha256": "43a9f3191c8251660369c7744359291cccf8b530b71f99b5603e19038467461d",
+      "registered_at": "2026-10-27",
+      "inbox_ref": "Archive/2026-10-27-jvm-gc-interview-guide.md",
+      "pages": [
+        "wiki/sources/jvm-gc-interview-guide.md",
+        "wiki/concepts/g1-gc.md",
+        "wiki/concepts/zgc.md",
+        "wiki/topics/jvm-gc.md",
+        "wiki/concepts/evidence-first-jvm-tuning.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/n2J8M9N14e2oTOldtt-EHQ",
+      "asset_ref": "Assets/2026/10/jvm-gc-interview-guide.md"
     }
   ]
 }

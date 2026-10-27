@@ -4,7 +4,7 @@ type: concept
 title: 证据驱动的 JVM 调优
 status: active
 created: 2026-10-22
-updated: 2026-10-23
+updated: 2026-10-27
 confidence: high
 tags:
   - concept
@@ -15,9 +15,13 @@ sources:
   - raw/sources/misc/2026-10-14-jvm-tuning-core-approach.md
   - raw/sources/architecture/2026-10-21-gc-log-tuning-practice.md
   - raw/sources/architecture/2026-10-23-jdk21-migration-huolala.md
+  - raw/sources/architecture/2026-10-27-jvm-gc-interview-guide.md
 related:
   - wiki/concepts/cpu-funnel-coding.md
   - wiki/concepts/virtual-threads-production.md
+  - wiki/concepts/g1-gc.md
+  - wiki/concepts/zgc.md
+  - wiki/topics/jvm-gc.md
   - wiki/sources/jvm-tuning-core-approach.md
 ---
 # 证据驱动的 JVM 调优
@@ -59,6 +63,7 @@ related:
 - 2026-10-14 — 随《一文掌握 JVM 调优核心思路》提出完整流程。
 - 2026-10-21 — 《GC 日志分析与调优实战》独立印证同一闭环（定目标→看基线→定假设→压测验证，一次只动一个参数），并补充 GC 日志专项读法：real 才是真实停顿、吞吐量经验值 >95%~99%、内存泄漏三早期信号（老年代锯齿上移/FGC 单调递增/Survivor 持续偏高）、IHOP 45→35 单变量案例（FGC 每小时 6 次→0.5 次，P99 1.2s→380ms）。
 - 2026-10-23 — 《JDK 21 规模化落地实践（货拉拉）》第三信源印证并补充容器化细则：G1 停顿目标从 200ms 起步、IHOP 45→35~40 同法；MaxRAMPercentage G1 取 70~75、分代 ZGC 取 65~70（ZGC 自身占用更高，堆占比不超 85%）；InitialRAMPercentage 约上限一半且不等于上限（防节点超卖先被杀）；System.gc() 用 -XX:+ExplicitGCInvokesConcurrent 改并发回收而非 DisableExplicitGC（NIO 要靠它回收 DirectByteBuffer）；堆外显式 MaxDirectMemorySize；JDK 21 起 JVM 读容器配额，堆大小用百分比不写死 -Xmx；排障顺序在虚拟线程时代变为 GC 日志→JFR→钉住跟踪→聚合指标。
+- 2026-10-27 — 《JVM 垃圾回收面试全讲透》第四信源印证同一闭环：「黄金 6 步」（定位→定目标→选收集器→调内存→调参数→压测验证）与先证据后参数同构；补充监控阈值经验值（Minor GC >100ms 关注、Full GC 一小时多次为严重、平均 >2s 影响可用性、老年代 >80% 持续上涨需关注）与「90% 问题靠选对收集器+合理内存、代码优化 > GC 调优」的优先级判断。
 
 ## Open Questions（开放问题）
 
@@ -70,6 +75,7 @@ related:
 - Source: `raw/sources/misc/2026-10-14-jvm-tuning-core-approach.md`
 - Source: `raw/sources/architecture/2026-10-21-gc-log-tuning-practice.md`（印证：同一四步闭环 + GC 日志读法与告警规则）
 - Source: `raw/sources/architecture/2026-10-23-jdk21-migration-huolala.md`（印证 + 容器化细则：堆百分比、ZGC 堆占比、ExplicitGCInvokesConcurrent、观测换代）
+- Source: `raw/sources/architecture/2026-10-27-jvm-gc-interview-guide.md`（印证：黄金 6 步闭环 + 监控阈值经验值）
 
 ## Related Knowledge（相关知识）
 

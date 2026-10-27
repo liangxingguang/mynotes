@@ -66,6 +66,7 @@
 - [[jd-haibo-ai-knowledge-base|拆解京东海博 AI-Native 落地保障：海博团队 AI 知识库能力建设]]（2026-10-14，AI/知识库）
 - [[jdk21-migration-huolala|JDK 21 规模化落地实践（货拉拉）：框架先扛兼容成本，业务切 parent 收尾]]（2026-10-23，Java/JVM/虚拟线程）
 - [[jenkins-gitlab-cicd-pipeline|Jenkins + GitLab CI/CD 流水线落地实战（完整配置）]]（2026-10-21，CI/CD，置信度中）
+- [[jvm-gc-interview-guide|JVM 垃圾回收面试全讲透：从引用计数到 ZGC 调优]]（2026-10-27，Java/JVM/GC 理论）
 - [[jvm-gc-troubleshooting-arthas|JVM GC 排查实战（Arthas 版）]]（2026-10-21，Java/JVM）
 - [[jvm-troubleshooting-six-tools|JVM 排查别乱试：6 个工具各管什么]]（2026-10-21，Java/JVM）
 - [[jvm-tuning-core-approach|一文掌握 JVM 调优核心思路]]（2026-10-14，Java/性能）
@@ -165,6 +166,7 @@
 - [[idempotency-design|幂等设计]]（重试与幂等共生；同事务铁律+幂等键三要素+分层防护闭环，三信源互证）
 - [[exploratory-learning|探索式学习（知识 DAG）]]（目标→节点 DAG，导师写 JS 经沙箱改写文档教学；Unyra 提出）
 - [[framework-first-migration|框架先行的规模化运行时迁移]]（BOM 收口+框架分代并行+AI 批量改造+检查单收敛，货拉拉 JDK 21 实践）
+- [[g1-gc|G1 垃圾收集器]]（Region 分区+RSet+SATB+Mixed GC，可预测停顿，JDK 9+ 默认；单信源）
 - [[gain-message|增益消息（全量快照自愈）]]（状态类消息发全量快照而非增量，丢包被下一条自动纠正；vivo 一手）
 - [[geohash|Geohash（地理哈希）]]（经纬度降维前缀编码；边界问题+8 邻居、截短扩半径、缓存键归一；邻近索引+地图瓦片双信源）
 - [[harness-engineering|Harness Engineering（Agent 执行系统工程）]]（Agent ≈ Model + Harness；七观察面+信息三层+安全四层+B0~B5 单变量评测；11 系统源码研究解读）
@@ -190,6 +192,7 @@
 - [[virtual-threads-production|虚拟线程生产实践]]（场景筛选、Helper 传 Trace/ThreadLocal、钉住规避与观测换代，货拉拉 JDK 21 实践）
 - [[write-fanout|写扩散（Fan-out on Write）]]（群消息按成员写副本换读路径简单；群服务扇出+副本指纹+MQ 批量化+双轨存储，万人群物理上限，三信源）
 - [[websocket-heartbeat-reconnect|WebSocket 心跳保活与断线重连]]（双向心跳判假死+指数退避防风暴+离线队列补发三段式，单教程信源置信度中）
+- [[zgc|ZGC]]（染色指针+多视图映射+读屏障自愈实现并发整理，停顿 <10ms 与堆大小无关，JDK 15 转正；单信源）
 
 ## entity（实体）
 
@@ -215,6 +218,7 @@
 
 ## topic（主题）
 
+- [[jvm-gc|JVM 垃圾回收]]（判定/算法/收集器演进与选型/调优主线枢纽；G1/ZGC 原理 + 证据驱动调优，四信源）
 - [[live-streaming-messaging|直播实时消息分发]]（拉 vs 推路线图谱：读扩散通知拉取 / longpolling / 短轮询 / mcast 组播 / CDN 广播；允许策略性丢消息是与 IM 的根本分界，八信源）
 - [[system-design-core-components|系统设计核心组件]]（分布式系统 12 个核心组件清单）
 
