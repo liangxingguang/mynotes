@@ -1865,6 +1865,18 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484070&idx=1&sn=e936e788fc9df36fde5efc693a278b52&chksm=fe6ca3fcc91b2aea64a082ad107f5b67e1b8e559e4bd6f2c5c17ef12240d51553802116d69ce",
       "asset_ref": "Assets/2026/10/jdk-10-countdownlatch.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-27-jdk-12-priorityqueue.md",
+      "sha256": "1f2e304357804942aaa835bd60701a02206345549844cd208f1e3fa3baa6cb6c",
+      "registered_at": "2026-10-28",
+      "inbox_ref": "Archive/2026-10-27-jdk-12-priorityqueue.md",
+      "pages": [
+        "wiki/sources/jdk-12-priorityqueue.md",
+        "wiki/concepts/priorityqueue-internals.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484215&idx=1&sn=d18c2f3a9eddb9adbfe53821649309e1&chksm=fe6ca26dc91b2b7b47da4caef883fb6e1875da49442e02e2c7b40abda3177d815a151428f512",
+      "asset_ref": "Assets/2026/10/jdk-12-priorityqueue.md"
     }
   ]
 }

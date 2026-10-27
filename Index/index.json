@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28 06:27",
+  "updated_at": "2026-10-28 06:34",
   "notes": [
     {
       "id": "2026-10-27-jdk-11-cyclicbarrier",
@@ -19,25 +19,6 @@
       "summary_status": "",
       "asset_ref": "Assets/2026/10/jdk-11-cyclicbarrier.md",
       "wiki_status": "ingesting"
-    },
-    {
-      "id": "2026-10-27-jdk-12-priorityqueue",
-      "title": "JDK源码阅读(13) — PriorityQueue：藏在二叉堆里的优先级天堂",
-      "path": "Inbox/2026-10-27-jdk-12-priorityqueue.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484215&idx=1&sn=d18c2f3a9eddb9adbfe53821649309e1&chksm=fe6ca26dc91b2b7b47da4caef883fb6e1875da49442e02e2c7b40abda3177d815a151428f512#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "拆解 PriorityQueue 源码：底层用数组实现隐式平衡二叉堆，通过上浮（siftUp）和下沉（siftDown）维护堆序，实现插入和出队 O(log n)、取堆顶 O(1)。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/jdk-12-priorityqueue.md",
-      "wiki_status": "pending"
     },
     {
       "id": "2026-10-27-jdk-13-arraydeque",
@@ -3949,6 +3930,25 @@
       "summary": "CountDownLatch 让一个或多个线程等待其他线程完成，底层基于 AQS 共享模式：构造时把 count 设为 state，await() 调 acquireSharedInterruptibly，state≠0 时线程封装成共享节点入 CLH 队列阻塞；countDown() 通过 CAS 把 state 减 1，减到 0 时 doReleaseShared 唤醒所有等待线程。计数不可重置，区别于可重用的 CyclicBarrier。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/jdk-10-countdownlatch.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-jdk-12-priorityqueue",
+      "title": "JDK源码阅读(13) — PriorityQueue：藏在二叉堆里的优先级天堂",
+      "path": "Archive/2026-10-27-jdk-12-priorityqueue.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484215&idx=1&sn=d18c2f3a9eddb9adbfe53821649309e1&chksm=fe6ca26dc91b2b7b47da4caef883fb6e1875da49442e02e2c7b40abda3177d815a151428f512#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "拆解 PriorityQueue 源码：底层用数组实现隐式平衡二叉堆，通过上浮（siftUp）和下沉（siftDown）维护堆序，实现插入和出队 O(log n)、取堆顶 O(1)。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jdk-12-priorityqueue.md",
       "wiki_status": "ingested"
     },
     {
