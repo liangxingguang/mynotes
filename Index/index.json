@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27 20:22",
+  "updated_at": "2026-10-27 20:24",
   "notes": [
     {
       "id": "2026-10-26-agent-context-tutorial",
@@ -38,6 +38,26 @@
       "summary": "微博博主「黄建同学」推荐：Walking Labs 出品的开源课程 Learn Harness Engineering，14 讲 + 8 个递进项目，附中文资料与可复用模板。课程围绕 Coding Agent 的工作环境展开——组织仓库、保存进度、控制任务范围、验证 Agent 是否真完成了工作，适合已在用 Coding Agent、想系统改善开发流程的人。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/learn-harness-engineering.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-27-harness-engineering-11-agents-study",
+      "title": "从 11 款 Agent 的源码研究，看懂 Harness Engineering",
+      "path": "Inbox/2026-10-27-harness-engineering-11-agents-study.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "Harness",
+        "AI Coding",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/8Z1uHMWIpQ7D9oXN9bV8GQ",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "基于《Harness Engineering》论文（分析 11 个 Coding Agent、约 400 万行源码）的架构解读：Agent ≈ Model + Harness，Harness 负责把模型决策转化为可靠执行。文章拆解 Harness 的七个观察面（执行循环/模型适配/工具/上下文/权限/多 Agent/扩展），辨析 Skills、MCP、ACP 分工，给出从最小系统走向可靠交付的演进路径与单变量评测方案。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/harness-engineering-11-agents-study.md",
       "wiki_status": "pending"
     },
     {

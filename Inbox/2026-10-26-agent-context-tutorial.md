@@ -10,8 +10,8 @@ category: 技术
 tags: [AI, 课程]
 asset_ref: Assets/2026/10/agent-context-tutorial.md
 wiki_status: ingesting
-ingest_claimed_at: "2026-10-26T14:48:56.008Z"
-ingest_claim_id: 47124-1793026136008-0
+ingest_claimed_at: "2026-10-27T12:23:45.170Z"
+ingest_claim_id: 24476-1793103825170-0
 ---
 
 # Agent 入门教程：上下文里的 Agent
