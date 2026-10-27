@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27 20:47",
+  "updated_at": "2026-10-27 20:50",
   "notes": [
     {
       "id": "2026-10-27-agent-platform-architecture",
@@ -20,6 +20,25 @@
       "summary_status": "",
       "asset_ref": "Assets/2026/10/agent-platform-architecture.md",
       "wiki_status": "ingesting"
+    },
+    {
+      "id": "2026-10-27-deep-thinking-5-tools",
+      "title": "深度思考的5个思维工具",
+      "path": "Inbox/2026-10-27-deep-thinking-5-tools.md",
+      "created": "2026-10-27",
+      "category": "学习",
+      "tags": [
+        "思维方式",
+        "个人成长"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/eu0Dzydkj4G9l7WmYrtyPQ",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "针对「认知闭合需要」（急于要一个答案、有了答案就固着不改）的思维陷阱，给出 5 个按顺序使用的思考工具：澄清、拆解、追问、反证收敛问题，逆向作为发散出口。以一个\"加班全组第一却晋升落选\"的案例全程贯穿演示。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/deep-thinking-5-tools.md",
+      "wiki_status": "pending"
     },
     {
       "id": "2026-10-27-harness-engineering-11-agents-study",

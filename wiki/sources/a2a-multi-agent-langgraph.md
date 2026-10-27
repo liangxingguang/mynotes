@@ -54,7 +54,7 @@ MCP（Anthropic 2024）是 LLM↔工具/数据的纵向底层协议；A2A（Goog
 
 - Google（A2A 协议发起方）
 - Anthropic（MCP 协议发起方）
-- python-a2a / LangChain / LangGraph / Pydantic（技术栈）
+- python-a2a / LangChain / [[langgraph|LangGraph]] / Pydantic（技术栈）
 - 尼恩（作者，「技术自由圈」公众号）
 
 ## Implications（影响／启示）

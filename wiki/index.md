@@ -12,6 +12,7 @@
 - [[agent-long-task-reliable-execution|AI Agent 长任务可靠执行：Go+PG 状态机/Checkpoint/Fencing/对账]]（2026-10-21，AI/Agent 基础设施）
 - [[ai-agents-definitive-guide-notebooks|知乎想法：O'Reilly《AI Agents》配套代码全开源（12 章 35 Notebook）]]（2026-10-20，AI/资源，置信度低）
 - [[agent-loop-production-boundaries|从 Chatbot 到 AI Agent：为什么一个 while 循环撑不起生产系统]]（2026-10-15，AI/Agent 工程）
+- [[agent-platform-architecture|高性能弹性扩展智能体中台架构：FastAPI+Nacos+RocketMQ+LangGraph+Milvus+ES 实践]]（2026-10-27，AI/架构）
 - [[agent-software-architecture-task-run-step-event|第 5 章：Agent 的软件架构设计（Task/Run/Step/Event 领域模型）]]（2026-10-23，AI/Agent 架构）
 - [[ai-coding-delivery-evolution|AI 写代码越来越快，研发交付系统该怎么演进？]]（2026-10-17，AI/交付系统）
 - [[ai-coding-workflow-skill-prompt|一位 Agent 开发者的 AI Coding 工作流：轻 Skill、方法论 Prompt 与端到端测试]]（2026-10-16，AI/工作流）
@@ -176,7 +177,7 @@
 - [[task-run-step-event-model|Task/Run/Step/Event 领域模型]]（Agent Runtime 控制平面四元分离；Run 聚合根+状态机守卫+纯函数投影+OCC；replay≠Durable Execution）
 - [[raft-membership-change-barrier|Raft 成员变更的日志 Barrier]]（公共 config 提交当前 term 日志登记 term；joint 无需/单步必需/回退双向必需）
 - [[read-fanout|读扩散（Fan-out on Read）]]（会话队列+syncId 位点同步把 1:N 写压成 1:1；99.99% 非个性化消息前提；阿里混合模式 500ms 端到端，双信源）
-- [[rag-production-guardrails|企业级 RAG 生产护栏]]（容量/证据/权限/恢复四主线；证据门禁前置、发布目录原子切换；单一信源设计示例）
+- [[rag-production-guardrails|企业级 RAG 生产护栏]]（容量/证据/权限/恢复四主线；证据门禁前置、发布目录原子切换；混合检索+存储分层+参数热调双信源互证）
 - [[reactive-tracing-context|响应式环境的全链路 traceId 传递]]（Reactor Context 替代 ThreadLocal；doOnEach 同步 MDC、doFinally 清除）
 - [[scopedvalue|ScopedValue（作用域值）]]（JDK 25 正式：作用域共享不可变快照，终结 VT 下 ThreadLocal 内存膨胀/泄漏/脏值，Old Gen -61% 实测）
 - [[table-sharding-migration|分表平滑迁移策略]]（五种读写策略矩阵 + 双写双读 SQL 重写，京东大表治理实践）
@@ -196,6 +197,7 @@
 - [[ep-harness|EP-Harness]]（得物团队级 Managed Agents 平台，Multica 二开，Prompt→Context→Harness→Loop 四层）
 - [[jd-haibo|京东海博]]（京东本地生活即时零售 SaaS，780+ 商家/10 万+ 门店，AI 知识库实践标杆）
 - [[kafka|Apache Kafka]]（高吞吐事件管道；顺序写+PageCache+零拷贝+批量四板斧，机制+运维+IoT 场景三信源）
+- [[langgraph|LangGraph]]（LangChain 生态 Agent 编排状态机；原生非分布式，RedisSaver+MySQL 快照+外部锁补齐，双信源）
 - [[learn-harness-engineering-course|Learn Harness Engineering]]（Walking Labs 开源 Coding Agent 工程课程：14 讲 + 8 递进项目，单一微博推荐信源）
 - [[netty|Netty]]（Java 异步事件驱动网络框架；Reactor+ByteBuf+零拷贝三支柱，机制+IoT 双工程三信源）
 - [[pi|Pi]]（极简 Agent CLI/Harness，1.0 起原生 MCP + Code Mode + Pi Durable，5000+ 扩展生态）

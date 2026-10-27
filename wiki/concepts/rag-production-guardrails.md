@@ -4,7 +4,7 @@ type: concept
 title: 企业级 RAG 生产护栏
 status: active
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-27
 confidence: medium
 tags:
   - concept
@@ -12,8 +12,10 @@ tags:
   - rag
 sources:
   - raw/sources/ai/2026-10-21-spring-ai-milvus-rag-production.md
+  - raw/sources/ai/2026-10-27-agent-platform-architecture.md
 related:
   - wiki/sources/spring-ai-milvus-rag-production.md
+  - wiki/sources/agent-platform-architecture.md
 ---
 # 企业级 RAG 生产护栏
 
@@ -37,6 +39,8 @@ Spring AI/Milvus 等框架只解决集成与检索，不替应用保证：用户
 
 在线路径：网关 → 编排（授权、Deadline、准入）→ 带 ACL/版本的答案缓存 → 受限检索与混合召回 → 证据/权限/注入策略 → 充分则生成走 SSE，不足则明确拒答。离线路径：原文对象存储 → 任务表+Outbox → 独立 Worker（解析/分块/Embedding）→ 验证与发布目录。缓存键必须含知识修订、ACL 修订、向量空间与模型版本，使命中前先命中同一安全语义。
 
+第二信源（智能体中台架构，FastAPI+LangGraph 技术栈）从平台侧独立印证了其中多条形态：Milvus 向量召回 + ES 全文召回 + 重排的混合检索被其称为「企业 RAG 中台标配」；存储分层各司其职（Milvus 只存向量、ES 存原文、MySQL 只存元数据）；离线解析/Embedding 走 MQ 异步 Worker 且绝不进在线链路，与本页「离线路径独立 Worker」一致；召回 topk/相似度阈值/重排策略经配置中心（Nacos）热更新不重启调参；MySQL/Milvus/ES 多写放弃分布式事务、走最终一致 + 定时校对。该信源同时给出两条本页未覆盖的工程边界：Embedding 服务独立扩缩容不混部（CPU 密集），Milvus 生产环境用 HNSW 索引而非 FLAT。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -55,9 +59,11 @@ Spring AI/Milvus 等框架只解决集成与检索，不替应用保证：用户
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-10-21-spring-ai-milvus-rag-production.md`
+- Source: `raw/sources/ai/2026-10-27-agent-platform-architecture.md`（第 2 信源：平台侧印证混合检索/存储分层/异步离线链路/参数热调/最终一致，新增 Embedding 独立部署与 Milvus 生产用 HNSW 两条边界）
 
 ## Related Knowledge（相关知识）
 
 - [[spring-ai-milvus-rag-production|Spring AI + Milvus 企业级 RAG 生产工程实践（信源页）]]
+- [[agent-platform-architecture|高性能弹性扩展智能体中台架构实践（信源页）]]
 - [[langchain4j-multimodal-rag|LangChain4j 多模态 RAG 实战]]
 - [[knowledge-base-tech-evolution|知识库的技术演进]]
