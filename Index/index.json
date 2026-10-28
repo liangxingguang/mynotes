@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28 18:22",
+  "updated_at": "2026-10-28 18:26",
   "notes": [
     {
       "id": "2026-10-27-jdk-source-reading-album",
@@ -1147,6 +1147,25 @@
       "summary": "游戏开发系列·红点系统：在\"前缀树+父节点脏集合\"主流方案基础上把\"计算\"也合并——拉模式叶子自订阅自计算、脏标记冒泡到根、每帧后序遍历只算脏节点，新增红点只需一个类+一行注册。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/slg-red-dot-tree-system.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-28-spring-security-oauth2-sso-demo",
+      "title": "使用 Spring Security OAuth2 实现简单的单点登录",
+      "path": "Inbox/2026-10-28-spring-security-oauth2-sso-demo.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "spring",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/zTLDAj6072ItrqFWWIuZ_Q",
+      "source_type": "文章",
+      "platform": "微信公众号",
+      "summary": "不装 Keycloak、不用 Docker，用 Spring Boot 3.2 + Spring Authorization Server 三个应用跑出可体验的 SSO Demo。讲清 SSO 本质：多个客户端共享认证服务器的 Session，授权码 + OIDC 是标准协议组合。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/spring-security-oauth2-sso-demo.md",
       "wiki_status": "pending"
     },
     {
