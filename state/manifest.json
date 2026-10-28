@@ -2299,6 +2299,48 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484577&idx=1&sn=c5ebc90b7b92c621c66c2b7105bd622e&chksm=fe6ca5fbc91b2ced7ebcd8fe2c188d958496e7960cb32ca8cb73944ed85aa752b34aa8ed8140",
       "asset_ref": "Assets/2026/10/netty-17-idlestate-heartbeat.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-27-netty-18-reconnect.md",
+      "sha256": "698132b87b753425b9d06d10efbdddb35ae29a6a1539af2270514df3cc8ede2f",
+      "registered_at": "2026-10-29",
+      "inbox_ref": "Archive/2026-10-27-netty-18-reconnect.md",
+      "pages": [
+        "wiki/sources/netty-18-reconnect.md",
+        "wiki/concepts/netty-reconnect.md",
+        "wiki/entities/netty.md",
+        "wiki/concepts/netty-idlestate-heartbeat.md",
+        "wiki/concepts/websocket-heartbeat-reconnect.md",
+        "wiki/sources/netty-17-idlestate-heartbeat.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484583&idx=1&sn=6ed23a36b1efae41a176ffe4e8361388&chksm=fe6ca5fdc91b2cebfbf123efd210a2a9447e97fe884a63ee03bc4c8cf067ce44bbc5148c0de1",
+      "asset_ref": "Assets/2026/10/netty-18-reconnect.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-27-netty-20-http-decoder.md",
+      "sha256": "b2431b2f9239fcc0bc75df2267f1521f0c0a67a1813a3cd71303ba9822622c17",
+      "registered_at": "2026-10-29",
+      "inbox_ref": "Archive/2026-10-27-netty-20-http-decoder.md",
+      "pages": [
+        "wiki/sources/netty-20-http-decoder.md",
+        "wiki/concepts/netty-http-decoder.md",
+        "wiki/entities/netty.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484592&idx=1&sn=6a91ff0a777288d923dad1f251f245e6&chksm=fe6ca5eac91b2cfc7c96db27c0de87566f7c7f1dc248423ff50fcf85b5a6c00e595bb4157e4a",
+      "asset_ref": "Assets/2026/10/netty-20-http-decoder.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-27-netty-21-websocket.md",
+      "sha256": "25f6254cc36f74bb78ef46725ef99f251269e281eac64e00644d3d6e65c917b6",
+      "registered_at": "2026-10-29",
+      "inbox_ref": "Archive/2026-10-27-netty-21-websocket.md",
+      "pages": [
+        "wiki/sources/netty-21-websocket.md",
+        "wiki/concepts/netty-websocket-upgrade.md",
+        "wiki/entities/netty.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484598&idx=1&sn=ec52f9b41a17b557887fd68c8b7ef42c&chksm=fe6ca5ecc91b2cfa27f5b2dcb77ce4f4766838ae70d7e64b005eacb62b9c074c740f0c6bc321",
+      "asset_ref": "Assets/2026/10/netty-21-websocket.md"
     }
   ]
 }

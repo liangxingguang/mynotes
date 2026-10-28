@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [netty, WebSocket]
 asset_ref: Assets/2026/10/netty-21-websocket.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Netty源码分析(21) — WebSocket 支持与协议升级源码

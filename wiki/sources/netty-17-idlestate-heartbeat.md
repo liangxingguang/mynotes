@@ -16,6 +16,7 @@ sources:
   - raw/sources/architecture/2026-10-27-netty-17-idlestate-heartbeat.md
 related:
   - wiki/sources/netty-16-connection-mgmt.md
+  - wiki/sources/netty-18-reconnect.md
   - wiki/entities/netty.md
   - wiki/concepts/netty-idlestate-heartbeat.md
   - wiki/concepts/netty-eventloop.md
@@ -63,11 +64,12 @@ related:
 
 - 单一自媒体教程信源；性能数字（10 万连接 <0.5% CPU）为作者自述压测，未给环境与方法细节。
 - "三个定时任务""模板方法"等归纳基于作者注释放置的源码片段，未标明 Netty 具体版本（同系列前文为 4.1.x）。
-- 预告的续篇（断线重连）未包含在本篇。
+- 预告的续篇（断线重连）未包含在本篇（已补采，见 [[netty-18-reconnect]]）。
 
 ## Related Knowledge（相关知识）
 
 - [[netty-16-connection-mgmt]]（同系列第 16 篇：连接生命周期，本篇为其续篇）
+- [[netty-18-reconnect]]（同系列第 18 篇：断线重连，本篇预告的续篇）
 - [[netty-idlestate-heartbeat]]（概念页）
 - [[netty-eventloop]]（定时任务承载线程）
 - [[websocket-heartbeat-reconnect]]（端侧心跳重连模式，本篇为服务端机制对照）

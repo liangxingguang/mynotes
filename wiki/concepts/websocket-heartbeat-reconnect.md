@@ -14,11 +14,14 @@ tags:
 sources:
   - raw/sources/architecture/2026-10-23-im-websocket-reconnect-heartbeat.md
   - raw/sources/architecture/2026-10-23-nginx-websocket-load-balancing.md
+  - raw/sources/architecture/2026-10-27-netty-18-reconnect.md
 related:
   - wiki/sources/im-websocket-reconnect-heartbeat.md
   - wiki/sources/nginx-websocket-million-connections.md
   - wiki/sources/nginx-websocket-load-balancing.md
   - wiki/concepts/netty-idlestate-heartbeat.md
+  - wiki/concepts/netty-reconnect.md
+  - wiki/concepts/netty-websocket-upgrade.md
 ---
 # WebSocket 心跳保活与断线重连
 
@@ -65,6 +68,7 @@ Web 端长连接可靠性的三段式工程模式：**检测**（应用层双向
 - 2026-10-23：端侧三段式机制（IM 教程信源）。
 - 2026-10-24：补充服务端/链路侧证据——云环境空闲断连点与 20~30s 心跳推荐（Nginx 负载均衡信源）；心跳取值与移动网络侧 180s/300s（李林锋信源，见 [[netty-million-connection-push-service]]）形成场景对照。
 - 2026-10-29：补充服务端连接层机制证据——Netty [[netty-idlestate-heartbeat|IdleStateHandler]] 源码级实现（教程第 17 篇：三维空闲检测+精确再调度+IdleStateEvent 传播，WebSocket 场景可直接发 PingWebSocketFrame），作者压测断言 10 万连接 30s 间隔 CPU <0.5%。
+- 2026-10-29：补充框架侧重连机制证据——教程第 18 篇给出 Netty 客户端重连三件套（ChannelFutureListener+channelInactive+eventLoop.schedule），指数退避+随机抖动防风暴、重连后 channelActive 状态重建，与本概念的端侧三段式跨端互证（服务端 Ping 帧心跳机制见 [[netty-websocket-upgrade]]，教程第 21 篇）。
 
 ## Open Questions（开放问题）
 
@@ -75,6 +79,7 @@ Web 端长连接可靠性的三段式工程模式：**检测**（应用层双向
 
 - Source: `raw/sources/architecture/2026-10-23-im-websocket-reconnect-heartbeat.md`（单篇教程信源，含完整代码与参数默认值；99%+ 成功率为作者断言）
 - Source: `raw/sources/architecture/2026-10-23-nginx-websocket-load-balancing.md`（服务端/链路侧视角：云 LB、NAT 会话老化、防火墙空闲断连在 Nginx 控制面之外，应用层 20~30s 心跳为生产必做；印证"心跳必需"但不涉及端侧重连机制）
+- Source: `raw/sources/architecture/2026-10-27-netty-18-reconnect.md`（框架侧重连机制：双时机触发/指数退避+抖动/EventLoop 调度纪律/状态重建，与端侧三段式互证）
 
 ## Related Knowledge（相关知识）
 
@@ -82,3 +87,5 @@ Web 端长连接可靠性的三段式工程模式：**检测**（应用层双向
 - [[nginx-websocket-million-connections|百万 WebSocket 长连接背后的 Nginx 架构设计与踩坑实录]]
 - [[nginx-websocket-load-balancing|Nginx生产级WebSocket实时长连接负载均衡，一文搞定（银河技术）]]
 - [[netty-idlestate-heartbeat|Netty 空闲检测与心跳（IdleStateHandler）]]（服务端连接层机制对照）
+- [[netty-reconnect|Netty 断线重连机制]]（框架侧重连三件套，与本概念互证）
+- [[netty-websocket-upgrade|Netty WebSocket 协议升级]]（服务端 WebSocket 握手与 Ping 帧心跳）
