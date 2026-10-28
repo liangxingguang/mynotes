@@ -996,6 +996,26 @@
       "wiki_status": "pending"
     },
     {
+      "id": "2026-10-28-log4j2-thread-block-pitfalls",
+      "title": "日志导致线程Block的这些坑，你不得不防",
+      "path": "Inbox/2026-10-28-log4j2-thread-block-pitfalls.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "工程实践",
+        "工具"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/nowNpIOHBFHD0pctcKr2UA",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "美团 API 网关 Shepherd 团队复盘 Log4j2 导致线程 Block 的四个真实案例：日志队列满后 ErrorHandler 线程安全问题使大量日志涌向 Console 的 synchronized 块；打印异常日志时 ThrowableProxy 解析堆栈触发类加载，而 JVM 反射生成的字节码类与 JDK8 低版本 Lambda 生成类无法被 WebAppClassLoader 加载，synchronized 类加载在高并发下拖死业务线程。文末给出入队前/入队时/出队后三阶段的避坑方案与最佳实践。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/log4j2-thread-block-pitfalls.md",
+      "wiki_status": "pending"
+    },
+    {
       "id": "2026-10-28-meituan-waimai-search-elasticsearch-rle",
       "title": "美团外卖搜索基于Elasticsearch的优化实践",
       "path": "Inbox/2026-10-28-meituan-waimai-search-elasticsearch-rle.md",
