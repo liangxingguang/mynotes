@@ -49,6 +49,11 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 - 海量接入调优清单（李林锋信源）：ulimit 调至百万级；心跳周期由运营商 NAT 释放时间（中移动 2.5G 约 5 分钟）与信令风暴夹击，实践取 180s（微信 300s）；接收缓冲区设消息均值而非上限，AdaptiveRecvByteBufAllocator 动态伸缩（100 万连接省约 5G）；PooledByteBufAllocator（纯 Java 版 jemalloc）Twitter 案例垃圾生成降 5 倍，代价是泄漏不再被 GC 兜底；RPS 软中断均衡（内核 ≥2.6.35）性能 +20%。
 - 反例案例（李林锋信源）：10 万长连接 MQTT 服务 IdleStateHandler 超时设 15 分钟 → 约 110 万个 ScheduledFutureTask 老化进持久代被误判内存泄露，改 45 秒即愈——量级放大一切小问题。
 - 容量观：无万能"单机 10 万连接"数字——上限由 FD 数、内存（RSS）、带宽、EventLoop p99 联合压测确定（机制信源"真正上限是 fd 数与内存"+IoT 信源反"参数包"互证）。
+- 分层架构总览（教程开篇信源）：核心层（Channel/EventLoop/ChannelPipeline）、传输层（NIO/Epoll/KQueue/OIO/Unix Socket）、缓冲层（ByteBuf + 直接内存 + 内存池 + 零拷贝）、编解码层（ByteToMessageDecoder/LengthFieldBasedFrameDecoder/Protobuf 等）、协议层（HTTP/HTTP2/WebSocket/DNS/MQTT）。
+- 设计起点（教程双信源）：填 JDK NIO 的坑——API 原始、粘包自理、断线重连/心跳手写、多线程配合难、epoll 空轮询 BUG（无事件也返回致 CPU 100%；JDK 早期以"空轮询超阈值重建 Selector"Hack 缓解，6u17 才官方修好——信源说法；Netty 侧防御同为自旋计数器+重建 Selector）。
+- 启动源码路径（教程开篇信源）：`ServerBootstrap.bind()` → `initAndRegister()`（反射建 NioServerSocketChannel + 注册到 Boss EventLoop 的 Selector，异步）→ 监听器回调 `doBind0()` 真正调 JDK bind。
+- 其他机制点名（教程开篇信源）：FastThreadLocal 快于 JDK ThreadLocal；MpscLinkedQueue（MPSC 无锁队列，EventLoop 任务队列）；HashedWheelTimer 时间轮；内存池底层为伙伴分配算法。
+- 生态位（教程信源说法）：Dubbo/gRPC（RPC）、RocketMQ（消息）、Spring WebFlux/Spring Cloud Gateway、Elasticsearch 节点通信、ZooKeeper 3.6+ 可选、Hadoop/Spark 部分组件；同信源把 Kafka 列入"底层用 Netty"，本库无信源支撑、与既有认知不一致，标记存疑不作定论。
 
 ## Products / Projects（产品／项目）
 
@@ -68,7 +73,7 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 
 ## Current Understanding（当前认知）
 
-四个信源分层互证：机制层（线程模型/内存/零拷贝）解释"为什么快"，两个 IoT 工程层展示"快之外还要什么"——会话路由原子性、命令状态机、背压分层、Drain 发布；李林锋调优层给出百万接入的系统侧配套（句柄/心跳周期/缓冲区/内存池/RPS/JVM）。一致立场：Netty 只保证 IO 层不阻塞，生产级靠使用者的纪律（四信源，置信度高）。
+六个信源分层互证：机制层（线程模型/内存/零拷贝）解释"为什么快"，教程双信源（源码分析开篇+对比篇）补齐"为什么存在"（JDK NIO 痛点）与入门路径（分层架构图、bind() 源码、Echo 三段代码对比），两个 IoT 工程层展示"快之外还要什么"——会话路由原子性、命令状态机、背压分层、Drain 发布；李林锋调优层给出百万接入的系统侧配套（句柄/心跳周期/缓冲区/内存池/RPS/JVM）。一致立场：Netty 只保证 IO 层不阻塞，生产级靠使用者的纪律（六信源，置信度高）。
 
 ## Evidence（证据）
 
@@ -76,3 +81,5 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 - `raw/sources/architecture/2026-10-22-netty-iot-gateway-resilient-design.md`（不变量与可恢复设计）
 - `raw/sources/architecture/2026-10-22-netty-redis-kafka-iot-gateway.md`（组件组合与代码骨架）
 - `raw/sources/architecture/2026-10-23-netty-million-connection-push-service.md`（海量接入调优清单与 IdleStateHandler 事故案例）
+- `raw/sources/architecture/2026-10-27-netty-01-intro.md`（教程开篇：BIO→NIO 痛点、分层架构、bind() 源码路径）
+- `raw/sources/architecture/2026-10-27-netty-02-bio-nio.md`（教程对比篇：三段代码对比、十维对照表、适用场景清单）
