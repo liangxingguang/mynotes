@@ -213,3 +213,5 @@
 
 - 2026-10-28 | ingest | raw/sources/misc/2026-10-27-jdk-11-cyclicbarrier.md | wiki/sources/jdk-11-cyclicbarrier.md（新建，confidence=high，CyclicBarrier 源码拆解+CountDownLatch 双对比表+分阶段计算示例）+ wiki/concepts/cyclicbarrier-internals.md（新建概念：Generation 换代+最后线程负责制+breakBarrier 传播）+ wiki/concepts/countdownlatch-internals.md（第二信源：对比表互证，related 互链）+ wiki/sources/jdk-source-reading-album.md（回补 jdk-11 互链）
 - 2026-10-28 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式，ingest 后校验）
+- 2026-10-28 | ingest | raw/sources/misc/2026-10-27-jdk-13-arraydeque.md | wiki/sources/jdk-13-arraydeque.md（新建，confidence=high，ArrayDeque 循环数组源码拆解+LinkedList/Stack 九维对比+滑动窗口实战）+ wiki/concepts/arraydeque-internals.md（新建概念：2 的幂容量+位运算定位+分两段拷贝扩容+fence 弱 fail-fast）+ wiki/sources/jdk-source-reading-album.md（回补 jdk-13 互链）
+- 2026-10-28 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式，jdk-13 ingest 后校验）

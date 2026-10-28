@@ -30,6 +30,7 @@ related:
   - wiki/sources/jdk-10-countdownlatch.md
   - wiki/sources/jdk-11-cyclicbarrier.md
   - wiki/sources/jdk-12-priorityqueue.md
+  - wiki/sources/jdk-13-arraydeque.md
 ---
 # JDK 源码阅读合集（Java解忧杂货铺，30 篇系列索引）
 
@@ -67,7 +68,7 @@ related:
 
 ## Related Knowledge（相关知识）
 
-- 已摄入单篇：[[jdk-01-arraylist|JDK源码阅读(1) — ArrayList]]、[[jdk-02-linkedlist|JDK源码阅读(2) — LinkedList]]、[[jdk-03-hashmap|JDK源码阅读(3) — HashMap]]、[[jdk-04-concurrenthashmap|JDK源码阅读 — ConcurrentHashMap]]、[[jdk-05-copyonwritearraylist|JDK源码阅读(4) — CopyOnWriteArrayList]]、[[jdk-06-linkedhashmap|JDK源码阅读(5) — LinkedHashMap]]、[[jdk-07-reentrantlock|JDK源码阅读(6) — ReentrantLock]]、[[jdk-08-treeset-vs-hashset|TreeSet vs HashSet]]、[[jdk-09-hashset-linkedhashset|JDK源码阅读(10) — HashSet & LinkedHashSet]]、[[jdk-10-countdownlatch|JDK源码阅读(11) — CountDownLatch]]、[[jdk-11-cyclicbarrier|JDK源码阅读(12) — CyclicBarrier]]、[[jdk-12-priorityqueue|JDK源码阅读(13) — PriorityQueue]]
+- 已摄入单篇：[[jdk-01-arraylist|JDK源码阅读(1) — ArrayList]]、[[jdk-02-linkedlist|JDK源码阅读(2) — LinkedList]]、[[jdk-03-hashmap|JDK源码阅读(3) — HashMap]]、[[jdk-04-concurrenthashmap|JDK源码阅读 — ConcurrentHashMap]]、[[jdk-05-copyonwritearraylist|JDK源码阅读(4) — CopyOnWriteArrayList]]、[[jdk-06-linkedhashmap|JDK源码阅读(5) — LinkedHashMap]]、[[jdk-07-reentrantlock|JDK源码阅读(6) — ReentrantLock]]、[[jdk-08-treeset-vs-hashset|TreeSet vs HashSet]]、[[jdk-09-hashset-linkedhashset|JDK源码阅读(10) — HashSet & LinkedHashSet]]、[[jdk-10-countdownlatch|JDK源码阅读(11) — CountDownLatch]]、[[jdk-11-cyclicbarrier|JDK源码阅读(12) — CyclicBarrier]]、[[jdk-12-priorityqueue|JDK源码阅读(13) — PriorityQueue]]、[[jdk-13-arraydeque|ArrayDeque 源码深度剖析]]
 - [[completablefuture-async-orchestration|CompletableFuture：异步编排的正确写法（信源页）]]（Java 并发主题相近）
 - [[springboot-disruptor-event-bus|Spring Boot 集成 Disruptor 无锁事件总线（信源页）]]（Java 并发性能主题相近）
 - [[architect-road-2025-digest|架构师之路 2025 干货精选（信源页）]]（同为公众号系列索引型学习资源）

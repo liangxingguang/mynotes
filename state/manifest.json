@@ -1890,6 +1890,18 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484091&idx=1&sn=f34fe74b9a55040bae8cc137be67d214&chksm=fe6ca3e1c91b2af79d7e5caff79882ec321f9ee80aada71861fbfe21dc5d106feec1492781a7",
       "asset_ref": "Assets/2026/10/jdk-11-cyclicbarrier.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-27-jdk-13-arraydeque.md",
+      "sha256": "3e344046063bc541f2630bb545d03f8a067c74a2ebdc8cf293ee7c7d7106109e",
+      "registered_at": "2026-10-28",
+      "inbox_ref": "Archive/2026-10-27-jdk-13-arraydeque.md",
+      "pages": [
+        "wiki/sources/jdk-13-arraydeque.md",
+        "wiki/concepts/arraydeque-internals.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484559&idx=1&sn=c6b080c5d119ad90488c1b230eb7b0de&chksm=fe6ca5d5c91b2cc33f2b8867c3aecfbd2b39cc0d2cd22409804b4cb06fbc7a2693d4ee59a958",
+      "asset_ref": "Assets/2026/10/jdk-13-arraydeque.md"
     }
   ]
 }
