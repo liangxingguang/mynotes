@@ -20,6 +20,7 @@ sources:
   - raw/sources/architecture/2026-10-27-netty-02-bio-nio.md
   - raw/sources/architecture/2026-10-27-netty-04-channel-pipeline-handler.md
   - raw/sources/architecture/2026-10-27-netty-05-bytebuf.md
+  - raw/sources/architecture/2026-10-27-netty-06-eventloop.md
 related:
   - wiki/sources/netty-three-skills-high-performance.md
   - wiki/sources/netty-iot-gateway-resilient-design.md
@@ -32,6 +33,8 @@ related:
   - wiki/concepts/netty-channel-pipeline.md
   - wiki/sources/netty-05-bytebuf.md
   - wiki/concepts/netty-bytebuf.md
+  - wiki/sources/netty-06-eventloop.md
+  - wiki/concepts/netty-eventloop.md
   - wiki/entities/kafka.md
 ---
 # Netty
@@ -61,6 +64,7 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 - 其他机制点名（教程开篇信源）：FastThreadLocal 快于 JDK ThreadLocal；MpscLinkedQueue（MPSC 无锁队列，EventLoop 任务队列）；HashedWheelTimer 时间轮；内存池底层为伙伴分配算法。
 - ByteBuf 源码级机制（教程第 5 篇）：readerIndex/writerIndex 双指针免 flip；ensureWritable 自动扩容 ≤4MB 从 64B 翻倍、>4MB 步进 4MB；Heap/Direct/Composite 三形态（Composite addComponent 零拷贝拼接）；引用计数管理堆外内存，铁律"谁最后消费谁 release"，泄漏排查用 `-Dio.netty.leakDetectionLevel=paranoid`；Pooled 类 jemalloc（Arena 默认 CPU×2、page 8KB），4.1 默认池化，作者称高频场景约降 70% GC 压力。详见 [[netty-bytebuf]]。
 - Pipeline 内部机制（教程第 4 篇，源码级）：DefaultChannelPipeline 为 ChannelHandlerContext 双向链表（HeadContext 管底层 IO、TailContext 为入站终点，addLast 尾插）；入站事件 Head→Tail 正向、出站事件 Tail→Head 反向，按 Context 的 inbound/outbound 标志跳节点传播；Handler 回调不调 ctx.fireXxx() 传播即中断；channel.write 从 tail 出发、ctx.write 从当前节点下一个出站 Handler 出发，路径不同；SimpleChannelInboundHandler 自动释放 ByteBuf，ChannelInboundHandlerAdapter 须手动 release 否则泄漏。详见 [[netty-channel-pipeline]]。
+- EventLoop 源码级机制（教程第 6 篇）：NioEventLoop = 线程+Selector+MpscLinkedQueue 任务队列；默认线程数 availableProcessors×2（`-Dio.netty.eventLoopThreads` 覆盖）；chooser 在线程数为 2 的幂时用 `idx++ & (len-1)` 位运算分配 Channel；run() 循环按 ioRatio（默认 50）做 IO 与任务时间配比，selectCnt 超阈值 rebuildSelector 自愈 JDK 空轮询 bug；外部线程提交任务入队后经 wakeup 布尔短路唤醒 select；register 跨线程时异步投递回 EventLoop 线程执行；优雅停机先关 bossGroup 再关 workerGroup。详见 [[netty-eventloop]]。
 - 生态位（教程信源说法）：Dubbo/gRPC（RPC）、RocketMQ（消息）、Spring WebFlux/Spring Cloud Gateway、Elasticsearch 节点通信、ZooKeeper 3.6+ 可选、Hadoop/Spark 部分组件；同信源把 Kafka 列入"底层用 Netty"，本库无信源支撑、与既有认知不一致，标记存疑不作定论。
 
 ## Products / Projects（产品／项目）
@@ -81,7 +85,7 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 
 ## Current Understanding（当前认知）
 
-八个信源分层互证：机制层（线程模型/内存/零拷贝）解释"为什么快"，教程四信源（源码分析开篇+对比篇+Pipeline 篇+ByteBuf 篇）补齐"为什么存在"（JDK NIO 痛点）、入门路径（分层架构图、bind() 源码、Echo 三段代码对比）与核心组件内部机制（Pipeline 双向链表与双向事件传播、Handler 生命周期；ByteBuf 双指针/扩容/引用计数/池化分配器），两个 IoT 工程层展示"快之外还要什么"——会话路由原子性、命令状态机、背压分层、Drain 发布；李林锋调优层给出百万接入的系统侧配套（句柄/心跳周期/缓冲区/内存池/RPS/JVM）。一致立场：Netty 只保证 IO 层不阻塞，生产级靠使用者的纪律（八信源，置信度高）。
+九个信源分层互证：机制层（线程模型/内存/零拷贝）解释"为什么快"，教程五信源（源码分析开篇+对比篇+Pipeline 篇+ByteBuf 篇+EventLoop 篇）补齐"为什么存在"（JDK NIO 痛点）、入门路径（分层架构图、bind() 源码、Echo 三段代码对比）与核心组件内部机制（Pipeline 双向链表与双向事件传播、Handler 生命周期；ByteBuf 双指针/扩容/引用计数/池化分配器；EventLoop 三合一结构/run() 循环/ioRatio/chooser/register 异步化），两个 IoT 工程层展示"快之外还要什么"——会话路由原子性、命令状态机、背压分层、Drain 发布；李林锋调优层给出百万接入的系统侧配套（句柄/心跳周期/缓冲区/内存池/RPS/JVM）。一致立场：Netty 只保证 IO 层不阻塞，生产级靠使用者的纪律（九信源，置信度高）。
 
 ## Evidence（证据）
 
@@ -93,3 +97,4 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 - `raw/sources/architecture/2026-10-27-netty-02-bio-nio.md`（教程对比篇：三段代码对比、十维对照表、适用场景清单）
 - `raw/sources/architecture/2026-10-27-netty-04-channel-pipeline-handler.md`（教程 Pipeline 篇：三剑客关系、事件双向传播源码、Handler 生命周期、ctx.write vs channel.write）
 - `raw/sources/architecture/2026-10-27-netty-05-bytebuf.md`（教程 ByteBuf 篇：双指针/扩容策略/三形态/引用计数/分配器体系源码）
+- `raw/sources/architecture/2026-10-27-netty-06-eventloop.md`（教程 EventLoop 篇：默认线程数/chooser 位运算/run() 循环/ioRatio/空轮询自愈/wakeup/register 源码）

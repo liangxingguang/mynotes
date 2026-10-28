@@ -2180,7 +2180,7 @@
    "path": "raw/sources/architecture/2026-10-27-netty-06-eventloop.md",
    "sha256": "a4fc11a058109cee655c0c72cbff0ef6599916506524a396eed3278667a5d4ff",
    "registered_at": "2026-10-28",
-   "inbox_ref": "Inbox/2026-10-27-netty-06-eventloop.md",
+   "inbox_ref": "Archive/2026-10-27-netty-06-eventloop.md",
    "pages": [
     "wiki/sources/netty-06-eventloop.md",
     "wiki/concepts/netty-eventloop.md",

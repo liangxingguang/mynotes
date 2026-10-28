@@ -15,8 +15,10 @@ sources:
   - raw/sources/architecture/2026-10-20-netty-three-skills-high-performance.md
   - raw/sources/architecture/2026-10-27-netty-01-intro.md
   - raw/sources/architecture/2026-10-27-netty-02-bio-nio.md
+  - raw/sources/architecture/2026-10-27-netty-06-eventloop.md
 related:
   - wiki/entities/netty.md
+  - wiki/concepts/netty-eventloop.md
 ---
 # 主从 Reactor 线程模型（Netty 版）
 
@@ -55,6 +57,7 @@ Boss 的 Selector 只监听 OP_ACCEPT；新连接到来后创建 Channel 并注�
 
 ### Related Concepts（相关概念）
 
+- [[netty-eventloop]]：本模型的实现层——单个 EventLoop 的 run() 循环、chooser 分配、ioRatio 配比、register 异步化源码机制。
 - 无锁串行化思想与 Disruptor 单生产者/RingBuffer 同源（解读）：都是"把并发访问收敛到单线程"换无锁，见 [[springboot-disruptor-event-bus]]。
 - Channel 绑单线程的纪律衍生出"EventLoop 不阻塞"生产不变量，见 [[netty]] 实体页事故与防线清单。
 
@@ -69,7 +72,7 @@ Boss 的 Selector 只监听 OP_ACCEPT；新连接到来后创建 Channel 并注�
 
 ## Evolution（演进）
 
-机制信源（netty-three-skills）给出"boss 只 accept、worker CPU×2、Channel 终身绑单 EventLoop"的性能视角；教程双信源（netty-01/02）补全代码结构与 bind() 源码路径。三信源对核心结构表述一致。
+机制信源（netty-three-skills）给出"boss 只 accept、worker CPU×2、Channel 终身绑单 EventLoop"的性能视角；教程双信源（netty-01/02）补全代码结构与 bind() 源码路径；教程第 6 篇（netty-06，2026-10-27 摄入）把模型落到源码实现——默认线程数静态块、chooser 位运算、ioRatio=50 时间配比、register 跨线程异步化、selectCnt 空轮询自愈，与本页结论一致互证（详见 [[netty-eventloop]]）。四信源对核心结构表述一致。
 
 ## Open Questions（开放问题）
 
@@ -80,9 +83,11 @@ Boss 的 Selector 只监听 OP_ACCEPT；新连接到来后创建 Channel 并注�
 - Source: `raw/sources/architecture/2026-10-20-netty-three-skills-high-performance.md`（机制层：三支柱之首）
 - Source: `raw/sources/architecture/2026-10-27-netty-01-intro.md`（开篇：模型结构 + bind() 源码）
 - Source: `raw/sources/architecture/2026-10-27-netty-02-bio-nio.md`（对比篇：结构图 + 天然无锁表述）
+- Source: `raw/sources/architecture/2026-10-27-netty-06-eventloop.md`（源码实现层：默认线程数/chooser/ioRatio/register 异步化/空轮询自愈）
 
 ## Related Knowledge（相关知识）
 
 - [[netty]]
 - [[netty-01-intro]]
 - [[netty-02-bio-nio]]
+- [[netty-eventloop]]

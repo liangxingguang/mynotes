@@ -127,6 +127,7 @@
 - [[netty-02-bio-nio|Netty源码分析(2) — 从BIO到NIO再到Netty，为什么我们需要Netty？]]（2026-10-28，Netty/教程/BIO-NIO对比）
 - [[netty-04-channel-pipeline-handler|Netty源码分析(4) — Channel、ChannelPipeline与ChannelHandler三剑客]]（2026-10-28，Netty/教程/Pipeline事件传播源码）
 - [[netty-05-bytebuf|Netty源码分析(5) — ByteBuf：Netty的数据容器深度解析]]（2026-10-28，Netty/教程/ByteBuf源码）
+- [[netty-06-eventloop|Netty源码分析(6) — EventLoopGroup 与 EventLoop 源码解析]]（2026-10-28，Netty/教程/EventLoop源码）
 - [[netty-million-connection-push-service|绝对干货：基于Netty实现海量接入的推送服务技术要点（李林锋）]]（2026-10-24，Netty/百万长连接调优）
 - [[nginx-websocket-load-balancing|Nginx生产级WebSocket实时长连接负载均衡，一文搞定（银河技术）]]（2026-10-24，Nginx/WebSocket/云环境断连）
 - [[netty-iot-gateway-resilient-design|百万 IoT 设备并发接入：把 Netty 网关做成可恢复、可验证的连接系统]]（2026-10-22，Netty/IoT/可靠性）
@@ -237,6 +238,7 @@
 - [[next-token-prediction|下一 token 预测]]（LLM 的统一目标：交叉熵训练、自回归生成，能力与幻觉同根）
 - [[netty-bytebuf|Netty ByteBuf（数据容器与内存管理）]]（读写双指针免 flip+4MB 阈值扩容+引用计数+类 jemalloc 池化；Heap/Direct/Composite 三形态；释放铁律"谁最后消费谁 release"；双信源，置信度高）
 - [[netty-channel-pipeline|Netty ChannelPipeline（责任链与事件传播）]]（Context 双向链表+inbound/outbound 标志跳节点；入站 Head→Tail、出站 Tail→Head；ctx.write≠channel.write 路径；源码级单信源，置信度高）
+- [[netty-eventloop|Netty EventLoop / EventLoopGroup（事件循环机制）]]（线程+Selector+MpscLinkedQueue 三合一；CPU×2 默认线程+chooser 位运算+ioRatio=50 时间配比+selectCnt 空轮询自愈+register 异步化；源码级单信源，与线程模型三信源互证，置信度高）
 - [[notification-system-design|站内消息系统领域模型]]（公告/提醒/私信三分类+提醒四元组；拉（订阅驱动）/推（私信直写）按类选型；免打扰后置读路径，简书上下篇双信源）
 - [[okf-knowledge-format|OKF（面向 AI Agent 的知识包装规范）]]（入库时编译为互链 Markdown 树，运行时只做导航+摘录）
 - [[pi-customization-layers|Pi 五层定制模型]]（Prompt 模板→AGENTS.md→Skill→Extension→SDK，官方扩展点成本阶梯）
@@ -279,7 +281,7 @@
 - [[kafka|Apache Kafka]]（高吞吐事件管道；顺序写+PageCache+零拷贝+批量四板斧，机制+运维+IoT 场景三信源）
 - [[langgraph|LangGraph]]（LangChain 生态 Agent 编排状态机；原生非分布式，RedisSaver+MySQL 快照+外部锁补齐，双信源）
 - [[learn-harness-engineering-course|Learn Harness Engineering]]（Walking Labs 开源 Coding Agent 工程课程：14 讲 + 8 递进项目，单一微博推荐信源）
-- [[netty|Netty]]（Java 异步事件驱动网络框架；Reactor+ByteBuf+零拷贝三支柱+Pipeline 传播机制，机制+教程+IoT 工程七信源）
+- [[netty|Netty]]（Java 异步事件驱动网络框架；Reactor+ByteBuf+零拷贝三支柱+Pipeline/EventLoop 源码机制，机制+教程+IoT 工程九信源）
 - [[pi|Pi]]（极简 Agent CLI/Harness，1.0 起原生 MCP + Code Mode + Pi Durable，5000+ 扩展生态）
 - [[pigeon-message-bus|信鸽（Pigeon）]]（网易云音乐直播活动消息总线；32 台 8U16G 支撑 300w/min，RocketMQ 底座）
 - [[rocketmq|Apache RocketMQ]]（高性能分布式 MQ；事务消息+回查保发送、业务幂等保消费，运维+一致性+机制+存储+事务谱系五信源）

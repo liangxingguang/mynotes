@@ -29,6 +29,8 @@ wiki_status: pending
 
 完整 172 篇目录与链接：[[Assets/2026/10/llm-rag-agent-series-album.md]]
 
+其中 **Pi 实战系列 16 篇正文**已单独抓取：[[2026-10-28-pi-series-full|Pi 实战系列（01~17 全文本）]]
+
 ## 来源
 
 - [LLM/RAG/Agent 实战合集页](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzkwOTAxOTY4Nw==&action=getalbum&album_id=3391836763593359360)（微信公众号）

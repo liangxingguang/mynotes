@@ -16,6 +16,7 @@ sources:
   - raw/sources/architecture/2026-10-27-netty-05-bytebuf.md
 related:
   - wiki/sources/netty-04-channel-pipeline-handler.md
+  - wiki/sources/netty-06-eventloop.md
   - wiki/entities/netty.md
   - wiki/concepts/netty-bytebuf.md
 ---
@@ -67,6 +68,7 @@ related:
 ## Related Knowledge（相关知识）
 
 - [[netty-04-channel-pipeline-handler]]（同系列第 4 篇：Pipeline 事件传播与 Handler 释放语义）
+- [[netty-06-eventloop]]（同系列第 6 篇：EventLoop 线程模型源码）
 - [[netty-01-intro]]（同系列开篇：分层架构中 ByteBuf 属缓冲层）
 - [[netty-bytebuf]]（概念页）
 - [[netty]]（实体页）
