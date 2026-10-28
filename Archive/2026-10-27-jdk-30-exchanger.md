@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [Java, 课程]
 asset_ref: Assets/2026/10/jdk-30-exchanger.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Exchanger：一个被严重低估的线程间数据交换神器

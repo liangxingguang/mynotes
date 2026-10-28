@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-10-28 17:59",
+  "updated_at": "2026-10-28 18:06",
   "notes": [
-    {
-      "id": "2026-10-27-jdk-30-exchanger",
-      "title": "Exchanger：一个被严重低估的线程间数据交换神器",
-      "path": "Inbox/2026-10-27-jdk-30-exchanger.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484730&idx=3&sn=9807133d2825642ffaefbbaa0b640a9f&chksm=fe6ca460c91b2d767c5084e644b1d6721320854646ca77865d257d1f1f09e45ce05dd57df4d6#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "Exchanger 让两个线程在汇合点双向交换数据，API 仅两个 exchange 方法，内部却集中了 CAS、动态自旋、park/unpark、缓存行填充等并发技巧。文章剖析其从单槽（Slot）到多槽 Arena 的渐进式扩容设计、防伪共享的 @Contended 填充，以及按 CPU 核数与 hash 值调整的自旋策略。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/jdk-30-exchanger.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-27-jdk-source-reading-album",
       "title": "JDK 源码阅读合集（系列索引）",
@@ -4485,6 +4466,25 @@
       "summary": "Phaser（JDK 7）是 CountDownLatch 与 CyclicBarrier 的\"完全体\"：可重用、参与方动态增减、支持分层与分阶段。文章剖析其核心设计——用一个 volatile long 的位布局（unarrived/parties/phase/终止位）编码全部状态，一次 CAS 完成\"到达检查+阶段推进\"，并讲解树形分层如何分散大规模 CAS 竞争。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/jdk-29-phaser.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-jdk-30-exchanger",
+      "title": "Exchanger：一个被严重低估的线程间数据交换神器",
+      "path": "Archive/2026-10-27-jdk-30-exchanger.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484730&idx=3&sn=9807133d2825642ffaefbbaa0b640a9f&chksm=fe6ca460c91b2d767c5084e644b1d6721320854646ca77865d257d1f1f09e45ce05dd57df4d6#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "Exchanger 让两个线程在汇合点双向交换数据，API 仅两个 exchange 方法，内部却集中了 CAS、动态自旋、park/unpark、缓存行填充等并发技巧。文章剖析其从单槽（Slot）到多槽 Arena 的渐进式扩容设计、防伪共享的 @Contended 填充，以及按 CPU 核数与 hash 值调整的自旋策略。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jdk-30-exchanger.md",
       "wiki_status": "ingested"
     },
     {

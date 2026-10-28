@@ -19,6 +19,7 @@ related:
   - wiki/concepts/linkedblockingqueue-internals.md
   - wiki/concepts/futuretask-internals.md
   - wiki/concepts/atomic-variables-cas.md
+  - wiki/concepts/exchanger-internals.md
   - wiki/sources/jdk-28-synchronousqueue.md
 ---
 # SynchronousQueue 直接交接设计（零容量 + 双模式无锁配对）
@@ -56,6 +57,7 @@ put(e) → transfer(e, false, 0)：栈空或栈顶同类则 CAS 头插入栈 →
 
 - 与 [[arrayblockingqueue-internals|ArrayBlockingQueue]]：ABQ 有界预分配数组 + 单锁双条件，队列满才阻塞；SQ 零容量无锁，每次交接都要配对。
 - 与 [[linkedblockingqueue-internals|LinkedBlockingQueue]]：LBQ 双锁链表、默认近无界、不支持公平；SQ 无缓冲、支持公平模式（TransferQueue）。
+- 与 [[exchanger-internals|Exchanger 双向交换设计]]：同属一对一配对交接（CAS + park/unpark + 先自旋后阻塞）；SQ 单向传递（生产者不给消费者拿东西回来），Exchanger 双向互换且要求线程成对。
 
 ## Evolution（演进）
 

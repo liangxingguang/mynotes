@@ -17,6 +17,7 @@ sources:
   - raw/sources/misc/2026-10-27-jdk-02-linkedlist.md
   - raw/sources/misc/2026-10-27-jdk-23-atomic.md
   - raw/sources/misc/2026-10-27-jdk-25-longadder.md
+  - raw/sources/misc/2026-10-27-jdk-30-exchanger.md
 related:
   - wiki/sources/linked-list-vs-array-cache.md
   - wiki/sources/springboot-disruptor-event-bus.md
@@ -64,6 +65,7 @@ CPU 以 64 字节缓存行为最小单位在内存与缓存之间搬运数据，
 - 2026-10-28 — 新增第三信源 jdk-02-linkedlist：JDK 集合层的具体数据点（LinkedList Node 约 32 字节 vs ArrayList 引用 4 字节、分散节点缓存命中低），互证局部性一侧结论。
 - 2026-10-28 — 新增第四信源 jdk-23-atomic：伪共享在 JUC 原子类的实例——多个 AtomicLong 落同一缓存行互相失效；JDK 8 `@Contended` 为官方解法，LongAdder 的 Cell 数组已使用（AtomicLong 本身未加）。
 - 2026-10-28 — 新增第五信源 jdk-25-longadder：Striped64.Cell 的 `@Contended` 实例细节——对象前后填充 128 字节确保独占缓存行，填充后每 Cell 约 128~256 字节，与 Disruptor 的手工继承填充互为对照。
+- 2026-10-28 — 新增第六信源 jdk-30-exchanger：防伪共享"双轨制"实例——Exchanger 的 Node 用 `@Contended` 注解、Slot 手动填充 15 个 long（q0~qe），强制各占独立缓存行。
 
 ## Open Questions（开放问题）
 
@@ -76,12 +78,14 @@ CPU 以 64 字节缓存行为最小单位在内存与缓存之间搬运数据，
 - Source: `raw/sources/misc/2026-10-27-jdk-02-linkedlist.md`（局部性在 JDK 集合的实例：Node 32 字节 vs 引用 4 字节约 8 倍内存、节点分散缓存命中低）
 - Source: `raw/sources/misc/2026-10-27-jdk-23-atomic.md`（伪共享在 JUC 原子类的实例：AtomicLong 计数器同缓存行失效、@Contended 与 LongAdder Cell）
 - Source: `raw/sources/misc/2026-10-27-jdk-25-longadder.md`（Striped64.Cell `@Contended` 前后填充 128 字节独占缓存行；填充后 Cell 约 128~256 字节）
+- Source: `raw/sources/misc/2026-10-27-jdk-30-exchanger.md`（Exchanger Node `@Contended` + Slot 手动填充 15 个 long 防伪共享；缓存行 64 字节释义）
 
 ## Related Knowledge（相关知识）
 
 - [[linked-list-vs-array-cache|链表已死？（信源页）]]
 - [[jdk-02-linkedlist|JDK源码阅读(2) — LinkedList（信源页）]]
 - [[jdk-23-atomic|Atomic 三兄弟（信源页）]]
+- [[jdk-30-exchanger|Exchanger 线程间数据交换（信源页）]]
 - [[springboot-disruptor-event-bus|Disruptor 无锁事件总线（信源页）]]
 - [[kafka-fast-four-mechanisms|Kafka 四板斧（信源页）]]（PageCache/顺序写同属"顺着硬件脾气设计"哲学）
 - [[cpu-funnel-coding|CPU 漏斗（概念页）]]

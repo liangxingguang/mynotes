@@ -2111,6 +2111,18 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484716&idx=3&sn=bae461d3b7fe0ce615444acaa0fd0e1c&chksm=fe6ca476c91b2d6014cf293b24694a3bcee479f5ce52c3460e2d085ba6edb5213732af91ee16",
       "asset_ref": "Assets/2026/10/jdk-29-phaser.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-27-jdk-30-exchanger.md",
+      "sha256": "f7db0944a5cdc709b9fc807f242012252fac5224b06570cac8b8bbafb8cadd3a",
+      "registered_at": "2026-10-28",
+      "inbox_ref": "Archive/2026-10-27-jdk-30-exchanger.md",
+      "pages": [
+        "wiki/sources/jdk-30-exchanger.md",
+        "wiki/concepts/exchanger-internals.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484730&idx=3&sn=9807133d2825642ffaefbbaa0b640a9f&chksm=fe6ca460c91b2d767c5084e644b1d6721320854646ca77865d257d1f1f09e45ce05dd57df4d6",
+      "asset_ref": "Assets/2026/10/jdk-30-exchanger.md"
     }
   ]
 }
