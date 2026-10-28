@@ -4,7 +4,7 @@ type: entity
 title: Netty
 status: active
 created: 2026-10-23
-updated: 2026-10-24
+updated: 2026-10-28
 confidence: high
 tags:
   - entity
@@ -16,11 +16,16 @@ sources:
   - raw/sources/architecture/2026-10-22-netty-iot-gateway-resilient-design.md
   - raw/sources/architecture/2026-10-22-netty-redis-kafka-iot-gateway.md
   - raw/sources/architecture/2026-10-23-netty-million-connection-push-service.md
+  - raw/sources/architecture/2026-10-27-netty-01-intro.md
+  - raw/sources/architecture/2026-10-27-netty-02-bio-nio.md
 related:
   - wiki/sources/netty-three-skills-high-performance.md
   - wiki/sources/netty-iot-gateway-resilient-design.md
   - wiki/sources/netty-redis-kafka-iot-gateway.md
   - wiki/sources/netty-million-connection-push-service.md
+  - wiki/sources/netty-01-intro.md
+  - wiki/sources/netty-02-bio-nio.md
+  - wiki/concepts/reactor-thread-model.md
   - wiki/entities/kafka.md
 ---
 # Netty

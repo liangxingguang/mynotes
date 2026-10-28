@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28 18:26",
+  "updated_at": "2026-10-28 18:29",
   "notes": [
     {
       "id": "2026-10-27-jdk-source-reading-album",
@@ -968,6 +968,25 @@
       "summary": "微博博主张岱樾推荐的开源项目《投资入门指南》：面向普通人的投资基础知识与专业术语合集，已完成第一阶段整理，新版新增《投资第一课》，分享普通人投资最值得了解的几条成功路径。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/investing-for-beginners.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-28-java-online-troubleshooting-arthas",
+      "title": "Java线上排查实战：OOM、超时、闪退、GC抖动、死锁",
+      "path": "Inbox/2026-10-28-java-online-troubleshooting-arthas.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/jHZuIXbFH7Rt03FC4jCzKw",
+      "source_type": "文章",
+      "platform": "微信公众号",
+      "summary": "真实环境（JDK17 + Arthas）复现五类线上事故并完整走排查流程：OOM 用 jmap+MAT，超时用 trace 逐层剥，闪退分 JVM OOM 与 OOM Killer，GC 抖动用 jstat，死锁阻塞用 jstack + thread -b。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/java-online-troubleshooting-arthas.md",
       "wiki_status": "pending"
     },
     {
