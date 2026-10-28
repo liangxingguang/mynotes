@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28 08:11",
+  "updated_at": "2026-10-28 08:12",
   "notes": [
     {
       "id": "2026-10-27-jdk-13-arraydeque",
@@ -1033,6 +1033,26 @@
       "summary": "美团外卖搜索每天承载十亿级检索流量，LBS 场景下单次查询需对上万商家做 Terms 过滤，万级 Terms 检索耗时达 5-10ms。团队基于 RLE（Run-Length Encoding）重新设计倒排索引，倒排链合并 TP99 降低 96%，全链路检索时延 TP99 从 100ms 降至 16ms（-84%），线上 CPU 大幅下降。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/meituan-waimai-search-elasticsearch-rle.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-28-netty-design-patterns",
+      "title": "Netty中的设计模式：23种经典模式的工程实践",
+      "path": "Inbox/2026-10-28-netty-design-patterns.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/NppUlQruRzWXcpvtd1_c_w",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "Netty 源码分析番外篇：从源码视角识别 Netty 中散落的设计模式——模板方法（ChannelHandler 骨架）、责任链（Pipeline 双向链表）、观察者（ChannelFuture 异步回调）、装饰器（ByteBuf 功能增强）、策略（EventExecutorChooser 位运算优化）等 16 种模式的工程化运用，附全景对照表。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-design-patterns.md",
       "wiki_status": "pending"
     },
     {
