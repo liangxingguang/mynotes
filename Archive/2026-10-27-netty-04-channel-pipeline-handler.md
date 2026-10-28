@@ -9,9 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [netty, Java]
 asset_ref: Assets/2026/10/netty-04-channel-pipeline-handler.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-10-28T10:34:08.199Z"
-ingest_claim_id: 59448-1793183648199-0
+wiki_status: ingested
 ---
 
 # Netty源码分析(4) — Channel、ChannelPipeline与ChannelHandler三剑客

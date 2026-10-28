@@ -2149,6 +2149,19 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483884&idx=1&sn=2e1dead9301b6513f77c93258db7f80b&chksm=fe6ca0b6c91b29a04550c9c711510eea4dbd9b0e9959fed73de92ff95d6db9dde354624a9123",
       "asset_ref": "Assets/2026/10/netty-02-bio-nio.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-27-netty-04-channel-pipeline-handler.md",
+      "sha256": "e7d33d3cfed2781fa7ee3da99df03c4778cb7766aa69d126dcde2ef13f2d4f03",
+      "registered_at": "2026-10-28",
+      "inbox_ref": "Archive/2026-10-27-netty-04-channel-pipeline-handler.md",
+      "pages": [
+        "wiki/sources/netty-04-channel-pipeline-handler.md",
+        "wiki/concepts/netty-channel-pipeline.md",
+        "wiki/entities/netty.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483934&idx=1&sn=9c175b4c2275a9fd373d8c0f1796c95e&chksm=fe6ca344c91b2a520287802d7341a8acb54949ff11cc24825350287dace4e1fe1e41990df886",
+      "asset_ref": "Assets/2026/10/netty-04-channel-pipeline-handler.md"
     }
   ]
 }

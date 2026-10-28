@@ -16,8 +16,10 @@ sources:
   - raw/sources/architecture/2026-10-27-netty-02-bio-nio.md
 related:
   - wiki/sources/netty-01-intro.md
+  - wiki/sources/netty-04-channel-pipeline-handler.md
   - wiki/entities/netty.md
   - wiki/concepts/reactor-thread-model.md
+  - wiki/concepts/netty-channel-pipeline.md
 ---
 # Netty源码分析(2) — 从BIO到NIO再到Netty，为什么我们需要Netty？
 
@@ -67,7 +69,9 @@ related:
 ## Related Knowledge（相关知识）
 
 - [[netty-01-intro]]（同系列开篇）
+- [[netty-04-channel-pipeline-handler]]（同系列第 4 篇：Pipeline 事件传播源码剖析）
 - [[netty-three-skills-high-performance]]（机制层互证：Reactor/ByteBuf/零拷贝三支柱）
+- [[netty-channel-pipeline]]（概念页）
 - [[netty]]（实体页）
 
 ## Source（信源）
