@@ -87,6 +87,7 @@
 - [[jdk-21-collections|JDK源码阅读(21)：Collections工具类——被低估的瑞士军刀]]（2026-10-28，Java/JDK 源码）
 - [[jdk-22-arrays|JDK源码阅读 (23)：Arrays —— 被低估的瑞士军刀]]（2026-10-28，Java/JDK 源码）
 - [[jdk-23-atomic|AtomicInteger / AtomicLong / AtomicBoolean —— 无锁并发的基石]]（2026-10-28，Java/JDK 源码）
+- [[jdk-24-concurrentmodificationexception|深扒 ConcurrentModificationException：单线程 foreach 才是 CME 高频场景]]（2026-10-28，Java/JDK 源码）
 - [[jdk-source-reading-album|JDK 源码阅读合集（Java解忧杂货铺，30 篇系列索引）]]（2026-10-27，Java/源码阅读资源，置信度低）
 - [[jdk21-migration-huolala|JDK 21 规模化落地实践（货拉拉）：框架先扛兼容成本，业务切 parent 收尾]]（2026-10-23，Java/JVM/虚拟线程）
 - [[jenkins-gitlab-cicd-pipeline|Jenkins + GitLab CI/CD 流水线落地实战（完整配置）]]（2026-10-21，CI/CD，置信度中）
@@ -203,7 +204,7 @@
 - [[expand-migrate-contract|Expand/Migrate/Contract（Schema 跨版本演进）]]（Expand 只加兼容结构→Migrate 双写限速回填→回退窗口关闭后才 Contract；蓝绿回退的数据前提，单信源）
 - [[idempotency-design|幂等设计]]（重试与幂等共生；同事务铁律+幂等键三要素+分层防护闭环，三信源互证）
 - [[exploratory-learning|探索式学习（知识 DAG）]]（目标→节点 DAG，导师写 JS 经沙箱改写文档教学；Unyra 提出）
-- [[fail-fast-modcount|Fail-Fast 迭代器（modCount）]]（结构修改计数器+迭代器快照比对抛 CME；检测单线程编程错误而非线程安全机制，同作者五信源）
+- [[fail-fast-modcount|Fail-Fast 迭代器（modCount）]]（结构修改计数器+迭代器快照比对抛 CME；检测单线程编程错误而非线程安全机制；含 fail-safe 对比与 subList 陷阱，同作者六信源）
 - [[framework-first-migration|框架先行的规模化运行时迁移]]（BOM 收口+框架分代并行+AI 批量改造+检查单收敛，货拉拉 JDK 21 实践）
 - [[futuretask-internals|FutureTask 内部设计（单向状态机 + CAS + Treiber 等待栈）]]（七态单向递增+CAS 推进+WaitNode 无锁栈 park/unpark；cancel 仅设中断标志；异常包装 ExecutionException；单信源，置信度中）
 - [[g1-gc|G1 垃圾收集器]]（Region 分区+RSet+SATB+Mixed GC，可预测停顿，JDK 9+ 默认；单信源）

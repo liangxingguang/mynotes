@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [Java, 课程]
 asset_ref: Assets/2026/10/jdk-24-concurrentmodificationexception.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 深扒 ConcurrentModificationException：Java 集合中最常见的运行时异常，你真的搞懂了吗？

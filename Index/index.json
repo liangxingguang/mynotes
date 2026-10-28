@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-10-28 12:31",
+  "updated_at": "2026-10-28 12:39",
   "notes": [
-    {
-      "id": "2026-10-27-jdk-24-concurrentmodificationexception",
-      "title": "深扒 ConcurrentModificationException：Java 集合中最常见的运行时异常，你真的搞懂了吗？",
-      "path": "Inbox/2026-10-27-jdk-24-concurrentmodificationexception.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484642&idx=1&sn=1a9e72c7d4757109a31e738106eef7e8&chksm=fe6ca5b8c91b2caeb57ebecd829c52ff2705c90daa6e971dbee19bca33681cbf2b2da6dfa943#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "CME 最高频的场景其实是单线程 foreach 里直接 remove，而非多线程。文章剖析 ArrayList 迭代器的 fail-fast 检测机制（modCount vs expectedModCount 一个 int 比较），对比 fail-fast 与 fail-safe 设计哲学，并给出迭代器 remove、removeIf、CopyOnWriteArrayList 三种正确删除姿势及 subList 陷阱。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/jdk-24-concurrentmodificationexception.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-27-jdk-25-longadder",
       "title": "JDK源码剖析 —— LongAdder & LongAccumulator，比 AtomicLong 更快的秘密",
@@ -764,6 +745,26 @@
       "summary": "同机同压测条件下用 wrk 对 Netty/Tomcat/Undertow 三个 HTTP 服务做横评：Netty QPS 15.8 万领先 Tomcat 约 77%，并从线程模型、内存管理、零拷贝、TCP 参数四个源码层面解释差距来源。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-vs-tomcat-undertow.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-28-agent-classic-agent-theory",
+      "title": "Agent - 经典智能体理论 → 现代 LLM Agent 映射（2）",
+      "path": "Inbox/2026-10-28-agent-classic-agent-theory.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Harness",
+        "课程"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2094449859252197165",
+      "source_type": "link",
+      "platform": "zhihu",
+      "summary": "Agent 系列第 2 篇（纯理论）：AIMA 五类智能体（reflex/model-based/goal-based/utility-based/learning）逐档映射到 LLM agent 构件，提出 PMTA 四要素（Planning/Memory/Tool use/Action）作为全系列坐标系。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/agent-classic-agent-theory.md",
       "wiki_status": "pending"
     },
     {
@@ -4367,6 +4368,25 @@
       "summary": "Atomic 三兄弟通过 volatile 保证可见性、CAS 保证原子性，用无锁自旋替代 synchronized，是理解整个 JUC 的前置知识。文章剖析其 Unsafe + CAS 源码（底层落到 CPU 的 lock cmpxchg 指令），讲解 ABA 问题、伪共享、高并发空转等痛点，并给出计数器、一次性初始化标记、ID 生成器等典型用法与选型建议。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/jdk-23-atomic.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-jdk-24-concurrentmodificationexception",
+      "title": "深扒 ConcurrentModificationException：Java 集合中最常见的运行时异常，你真的搞懂了吗？",
+      "path": "Archive/2026-10-27-jdk-24-concurrentmodificationexception.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484642&idx=1&sn=1a9e72c7d4757109a31e738106eef7e8&chksm=fe6ca5b8c91b2caeb57ebecd829c52ff2705c90daa6e971dbee19bca33681cbf2b2da6dfa943#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "CME 最高频的场景其实是单线程 foreach 里直接 remove，而非多线程。文章剖析 ArrayList 迭代器的 fail-fast 检测机制（modCount vs expectedModCount 一个 int 比较），对比 fail-fast 与 fail-safe 设计哲学，并给出迭代器 remove、removeIf、CopyOnWriteArrayList 三种正确删除姿势及 subList 陷阱。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jdk-24-concurrentmodificationexception.md",
       "wiki_status": "ingested"
     },
     {

@@ -2030,6 +2030,19 @@
    ],
    "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484634&idx=1&sn=3e387ea9a1c8fc485cb9cb022fa265e3&chksm=fe6ca580c91b2c96779ea2dc7a951bf2596432fdc20a15e88c9ea219270b7a4b4d6681c560a5",
    "asset_ref": "Assets/2026/10/jdk-23-atomic.md"
+  },
+  {
+   "path": "raw/sources/misc/2026-10-27-jdk-24-concurrentmodificationexception.md",
+   "sha256": "58adbc8e5e2e0562d440dc70c36adbe3d085aff3291e1a7826f2f142ae8ea4fb",
+   "registered_at": "2026-10-28",
+   "inbox_ref": "Archive/2026-10-27-jdk-24-concurrentmodificationexception.md",
+   "pages": [
+    "wiki/sources/jdk-24-concurrentmodificationexception.md",
+    "wiki/concepts/fail-fast-modcount.md",
+    "wiki/sources/jdk-source-reading-album.md"
+   ],
+   "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484642&idx=1&sn=1a9e72c7d4757109a31e738106eef7e8&chksm=fe6ca5b8c91b2caeb57ebecd829c52ff2705c90daa6e971dbee19bca33681cbf2b2da6dfa943",
+   "asset_ref": "Assets/2026/10/jdk-24-concurrentmodificationexception.md"
   }
  ]
 }
