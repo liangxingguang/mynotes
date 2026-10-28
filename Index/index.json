@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28 18:56",
+  "updated_at": "2026-10-28 19:01",
   "notes": [
     {
       "id": "2026-10-27-netty-03-reactor",
@@ -37,7 +37,7 @@
       "summary": "源码级解析 Netty 线程模型骨架：NioEventLoopGroup 默认线程数（CPU×2）的来源、MultithreadEventExecutorGroup 的 children 数组与 chooser 位运算优化、NioEventLoop.run() 事件循环全流程（select 策略、ioRatio 时间配比、空轮询自愈）、processSelectedKeys 事件分发、wakeup 机制与 Channel 注册绑定，附窥视 EventLoop 内部的完整示例。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-06-eventloop.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-27-netty-08-bootstrap",
@@ -1047,6 +1047,25 @@
       "summary": "高并发互动系统完整方案：业务画像（写多读更多、强依赖去重、容忍最终一致）→ 同步直写三个死穴 → V1~V4 架构演进 → Lua 原子/分桶破热点/MQ 攒批削峰/对账降级全链路。主线三句话：把集中的写打散、把高频的写合并、把不重要的一致性后置。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/like-follow-high-concurrency-design.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-28-llm-rag-agent-series-album",
+      "title": "LLM/RAG/Agent 实战合集（172 篇）",
+      "path": "Inbox/2026-10-28-llm-rag-agent-series-album.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "AI Coding"
+      ],
+      "source": "微信公众号（合集页）",
+      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzkwOTAxOTY4Nw==&action=getalbum&album_id=3391836763593359360",
+      "source_type": "合集",
+      "platform": "微信公众号",
+      "summary": "大规模 LLM 应用工程实战合集，172 篇含原文链接。主要板块：Pi 实战 17 篇、Harness/Loop Engineering、Claude Code 原理、RAG 实战（dify/LightRAG/LlamaIndex/LangGraph）、MCP 实战、本地 LLM（Ollama）、OpenClaw 与 AI 编程助手产品分析。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/llm-rag-agent-series-album.md",
       "wiki_status": "pending"
     },
     {

@@ -9,7 +9,9 @@ created: 2026-10-27
 category: 技术
 tags: [netty, Java]
 asset_ref: Assets/2026/10/netty-06-eventloop.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-28T10:57:34.035Z"
+ingest_claim_id: 57448-1793185054035-0
 ---
 
 # Netty源码分析(6) — EventLoopGroup 与 EventLoop 源码解析
