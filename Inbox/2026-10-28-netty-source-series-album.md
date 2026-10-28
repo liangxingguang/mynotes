@@ -8,7 +8,7 @@ platform: 微信公众号
 created: 2026-10-28
 category: 技术
 tags: [netty, Java]
-asset_ref: Assets/2026/10/netty-source-series-album.md
+asset_ref: Assets/2026/10/netty-source-series-full.md
 wiki_status: pending
 ---
 
@@ -26,7 +26,7 @@ wiki_status: pending
 
 ## 正文
 
-见 [[Assets/2026/10/netty-source-series-album.md|合集目录]]（28 篇标题清单）。
+28 篇全文已抓取：[[Assets/2026/10/netty-source-series-full.md|全 28 篇正文汇总]]（约 21 万字符，含每篇原文链接）；目录清单见 [[Assets/2026/10/netty-source-series-album.md]]。
 
 ## 来源
 

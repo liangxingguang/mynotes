@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28 18:54",
+  "updated_at": "2026-10-28 18:56",
   "notes": [
     {
       "id": "2026-10-27-netty-03-reactor",
@@ -738,6 +738,25 @@
       "wiki_status": "pending"
     },
     {
+      "id": "2026-10-28-ai-agent-series-album",
+      "title": "AI Agent 系列合集（82 篇）",
+      "path": "Inbox/2026-10-28-ai-agent-series-album.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "AI Coding"
+      ],
+      "source": "微信公众号（合集页）",
+      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk4ODE0NzEzNQ==&action=getalbum&album_id=4029823410275598350",
+      "source_type": "合集",
+      "platform": "微信公众号",
+      "summary": "高质量 AI Agent 主题合集，82 篇含原文链接。五大板块：大厂官方指南、Context Engineering、OpenClaw 技术解剖、跟我学 AI Agent 17 课、Pi Harness 深入浅出 11 篇。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/ai-agent-series-album.md",
+      "wiki_status": "pending"
+    },
+    {
       "id": "2026-10-28-ai-native-dev-org-transformation",
       "title": "构建 AI Native 研发组织的转型探索之路（百人团队实录）",
       "path": "Inbox/2026-10-28-ai-native-dev-org-transformation.md",
@@ -1145,7 +1164,7 @@
       "platform": "微信公众号",
       "summary": "公众号「程序员行一」的 Netty 源码合集，28 篇成体系：从启动、EventLoop、Pipeline 到 ByteBuf 内存池、定时轮、优雅停机、Epoll 原生传输，覆盖 Netty 核心链路源码。",
       "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-source-series-album.md",
+      "asset_ref": "Assets/2026/10/netty-source-series-full.md",
       "wiki_status": "pending"
     },
     {
