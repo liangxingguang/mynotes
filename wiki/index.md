@@ -139,6 +139,7 @@
 - [[netty-18-reconnect|Netty源码分析(18) — 断线重连机制实现与源码分析]]（2026-10-29，Netty/教程/断线重连源码）
 - [[netty-20-http-decoder|Netty源码分析(20) — Netty 与 HTTP 协议：HttpObjectDecoder 解析]]（2026-10-29，Netty/教程/HTTP 解码状态机源码）
 - [[netty-21-websocket|Netty源码分析(21) — WebSocket 支持与协议升级源码]]（2026-10-29，Netty/教程/WebSocket 握手与帧编解码源码）
+- [[netty-22-ssl-tls|Netty源码分析(22) — Netty 的 SSL/TLS 支持]]（2026-10-29，Netty/教程/SslHandler 与异步握手源码）
 - [[netty-million-connection-push-service|绝对干货：基于Netty实现海量接入的推送服务技术要点（李林锋）]]（2026-10-24，Netty/百万长连接调优）
 - [[nginx-websocket-load-balancing|Nginx生产级WebSocket实时长连接负载均衡，一文搞定（银河技术）]]（2026-10-24，Nginx/WebSocket/云环境断连）
 - [[netty-iot-gateway-resilient-design|百万 IoT 设备并发接入：把 Netty 网关做成可恢复、可验证的连接系统]]（2026-10-22，Netty/IoT/可靠性）
@@ -254,6 +255,7 @@
 - [[netty-eventloop|Netty EventLoop / EventLoopGroup（事件循环机制）]]（线程+Selector+MpscLinkedQueue 三合一；CPU×2 默认线程+chooser 位运算+ioRatio=50 时间配比+selectCnt 超 512 重建 Selector 自愈+register 异步化；源码级三信源互证，置信度高）
 - [[netty-http-decoder|Netty HTTP 解码状态机（HttpObjectDecoder）]]（currentState 成员变量持久化的 12 态 FSM 抗 TCP 分片；头部 readerIndex 零拷贝+chunked readRetainedSlice；碎片产出由 HttpObjectAggregator 选配聚合；UPGRADED 让位 WebSocket；单信源，置信度中）
 - [[netty-reconnect|Netty 断线重连机制]]（无内置重连，ChannelFutureListener+channelInactive 双时机+eventLoop.schedule 串行化；指数退避+抖动 30s 封顶防惊群；IdleStateEvent→close→channelInactive→重连闭环+channelActive 状态重建；单信源，置信度中）
+- [[netty-ssl-tls|Netty SSL/TLS 支持（SslHandler 对 SSLEngine 的透明封装）]]（入站 unwrap 解密/出站 wrap 加密双职责+握手全程异步 NEED_TASK 不占 IO 线程+handshakeFuture 通知；SslContext 工厂+SslProvider 策略 JDK/OpenSSL/BouncyCastle；Pipeline 最前/PKCS#8/Session 复用+TLS 1.3；单信源，置信度中）
 - [[netty-websocket-upgrade|Netty WebSocket 协议升级（握手与 Pipeline 热插拔）]]（Upgrade 头+Base64(SHA1(Key+魔数))→101→Listener 里移除 HTTP 编解码器热插拔帧编解码器；掩码单向铁律+分片重组；聚合器不可省/限帧/文明关闭；单信源，置信度中）
 - [[netty-idlestate-heartbeat|Netty 空闲检测与心跳（IdleStateHandler）]]（三维读/写/全部空闲超时转纳秒计时+精确剩余时间再调度+ChannelPromise 回调更新写时间戳+IdleStateEvent/isFirst 责任链分发；EventLoop 承载；李林锋 10 万连接事故反例互证，双信源）
 - [[netty-pooled-allocator|Netty 池化内存分配（PooledByteBufAllocator）]]（jemalloc 四级分级 Arena CPU×2→Chunk 16MB 满二叉树→Page 8KB→Subpage 位图+PoolThreadCache 无锁缓存；tiny/small/normal/huge 分派；ChunkList 六档流转；release 纪律+PARANOID 泄漏检测；五信源，置信度高）

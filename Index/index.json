@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-10-29 03:35",
+  "updated_at": "2026-10-29 03:45",
   "notes": [
-    {
-      "id": "2026-10-27-netty-22-ssl-tls",
-      "title": "Netty源码分析(22) — Netty 的 SSL/TLS 支持",
-      "path": "Inbox/2026-10-27-netty-22-ssl-tls.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484604&idx=1&sn=b5db4f8ded964cdc6fb8d34a62cf7cdc&chksm=fe6ca5e6c91b2cf0a7ac5a8d8de49946fbcfe692bd4cd7a9b87e62a62e66c8f1d2b7beb28d19#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "Netty 的 SSL/TLS 支持本质是对 JDK SSLEngine 的封装：SslHandler 通过 wrap()/unwrap() 在出站加密、入站解密，对 Pipeline 上下游完全透明；SslContext 作为工厂支持 JDK/OpenSSL 多提供者切换。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-22-ssl-tls.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-27-netty-23-zero-copy",
       "title": "Netty源码分析(23) — 零拷贝机制详解",
@@ -4827,6 +4808,25 @@
       "summary": "WebSocket 在同一 TCP 连接上先走 HTTP 握手再无缝切换协议。Netty 通过 WebSocketServerProtocolHandler + WebSocketServerHandshaker 完成 101 握手，握手成功后动态替换 Pipeline——HTTP 编解码器全部移除、WebSocket 帧编解码器热插拔进来。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-21-websocket.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-22-ssl-tls",
+      "title": "Netty源码分析(22) — Netty 的 SSL/TLS 支持",
+      "path": "Archive/2026-10-27-netty-22-ssl-tls.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484604&idx=1&sn=b5db4f8ded964cdc6fb8d34a62cf7cdc&chksm=fe6ca5e6c91b2cf0a7ac5a8d8de49946fbcfe692bd4cd7a9b87e62a62e66c8f1d2b7beb28d19#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "Netty 的 SSL/TLS 支持本质是对 JDK SSLEngine 的封装：SslHandler 通过 wrap()/unwrap() 在出站加密、入站解密，对 Pipeline 上下游完全透明；SslContext 作为工厂支持 JDK/OpenSSL 多提供者切换。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-22-ssl-tls.md",
       "wiki_status": "ingested"
     }
   ]

@@ -32,6 +32,7 @@ sources:
   - raw/sources/architecture/2026-10-27-netty-18-reconnect.md
   - raw/sources/architecture/2026-10-27-netty-20-http-decoder.md
   - raw/sources/architecture/2026-10-27-netty-21-websocket.md
+  - raw/sources/architecture/2026-10-27-netty-22-ssl-tls.md
 related:
   - wiki/sources/netty-three-skills-high-performance.md
   - wiki/sources/netty-iot-gateway-resilient-design.md
@@ -65,6 +66,8 @@ related:
   - wiki/concepts/netty-http-decoder.md
   - wiki/sources/netty-21-websocket.md
   - wiki/concepts/netty-websocket-upgrade.md
+  - wiki/sources/netty-22-ssl-tls.md
+  - wiki/concepts/netty-ssl-tls.md
   - wiki/entities/kafka.md
 ---
 # Netty
@@ -106,6 +109,7 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 - 断线重连机制（教程第 18 篇）：Netty 无内置自动重连，靠 ChannelFutureListener（connect 失败）+ channelInactive（断开）双时机触发 + eventLoop.schedule 延迟重连（保持 Channel 串行化，禁另起线程）；退避公式 min(1s×2^retry+随机抖动, 30s 封顶) 防惊群；channelInactive 触发链路为 read 返回 -1 → closeOnRead → fireChannelInactive；完整链路 = IdleStateEvent → 主动 close → channelInactive → 重连，成功后 channelActive 重做认证/状态初始化，主动 close 用标志位跳过。详见 [[netty-reconnect]]。
 - HTTP 解码状态机（教程第 20 篇）：HttpObjectDecoder（ByteToMessageDecoder 子类）以 currentState 成员变量持久化的 12 态 FSM 解码 TCP 字节流，天然抗分片；头部解析直接操作 readerIndex 零拷贝，chunked 用 readRetainedSlice 共享视图；产出 HttpRequest+HttpContent 碎片序列由 HttpObjectAggregator 选配聚合；UPGRADED 状态为 WebSocket 升级让位；HttpContent 必须 release、100 Continue 需手动响应、大文件禁用聚合器。详见 [[netty-http-decoder]]。
 - WebSocket 协议升级（教程第 21 篇）：同一 TCP 连接先 HTTP 握手（Upgrade: websocket → Base64(SHA1(Key+RFC 魔数)) → 101）再在 Listener 里 Pipeline 热插拔——移除 HTTP 编解码器、插入 WebSocket13FrameDecoder/Encoder，对上层透明；帧解码处理 FIN/Opcode/Mask/扩展长度与分片重组；客户端→服务端必须带掩码、服务端下发不能带；聚合器不可省（握手需 FullHttpRequest）、必须限最大帧、文明关闭先发 CloseWebSocketFrame。详见 [[netty-websocket-upgrade]]。
+- SSL/TLS 支持（教程第 22 篇）：本质是 JDK SSLEngine 的封装——SslHandler 入站 decode→unwrap 解密、出站 write→wrap 加密，握手未完成时出站数据入 pendingUnencryptedWrites 排队、握手成功 Listener 冲刷；unwrap 循环处理 OK/UNDERFLOW/OVERFLOW/CLOSED 四态，NEED_TASK 委托任务异步执行不占 IO 线程；握手全程异步经 handshakeFuture() 通知（channelActive ≠ 握手完成）；SslContext 为工厂+配置中心，SslProvider 可切 JDK/OpenSSL（netty-tcnative，AES-NI 硬件加速，信源经验论断生产必选）/BouncyCastle；铁律：SslHandler 放 Pipeline 最前、私钥须 PKCS#8；优化靠 Session 复用+TLS 1.3（1-RTT）。详见 [[netty-ssl-tls]]。
 - 生态位（教程信源说法）：Dubbo/gRPC（RPC）、RocketMQ（消息）、Spring WebFlux/Spring Cloud Gateway、Elasticsearch 节点通信、ZooKeeper 3.6+ 可选、Hadoop/Spark 部分组件；同信源把 Kafka 列入"底层用 Netty"，本库无信源支撑、与既有认知不一致，标记存疑不作定论。
 
 ## Products / Projects（产品／项目）
@@ -126,7 +130,7 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 
 ## Current Understanding（当前认知）
 
-二十个信源分层互证：机制层（线程模型/内存/零拷贝）解释"为什么快"，教程十六信源（源码分析第 1~6、8~11、15~18、20、21 篇，第 7、12~14、19 篇未采集）补齐"为什么存在"（JDK NIO 痛点）、入门路径（分层架构图、Echo 三段代码对比）与核心组件内部机制（Reactor 三形态与 ServerBootstrapAcceptor 移交链路；Pipeline 双向链表与双向事件传播、Handler 生命周期；ByteBuf 双指针/扩容/引用计数；EventLoop 三合一结构/run() 循环/ioRatio/chooser/register 异步化；启动三件套 initAndRegister 与 Acceptor 装配源码；run() 主循环的 SelectStrategy/ioRatio/空轮询自愈深挖；PooledByteBufAllocator 的 Arena→Chunk→Page→Subpage 四级与线程缓存；PoolChunk/PoolSubpage 内部算法与 ChunkList 六档流转；写缓冲 ChannelOutboundBuffer 的 write/flush 分离与高低水位背压；connect/bind/close 连接生命周期与四层优雅关闭；IdleStateHandler 三维空闲检测与精确再调度心跳机制；断线重连的双时机触发+退避+EventLoop 调度纪律；HttpObjectDecoder 十二态解码状态机与碎片聚合；WebSocket 握手与 Pipeline 热插拔升级），两个 IoT 工程层展示"快之外还要什么"——会话路由原子性、命令状态机、背压分层、Drain 发布；李林锋调优层给出百万接入的系统侧配套（句柄/心跳周期/缓冲区/内存池/RPS/JVM）。一致立场：Netty 只保证 IO 层不阻塞，生产级靠使用者的纪律（二十信源，置信度高）。
+二十一个信源分层互证：机制层（线程模型/内存/零拷贝）解释"为什么快"，教程十七信源（源码分析第 1~6、8~11、15~18、20~22 篇，第 7、12~14、19 篇未采集）补齐"为什么存在"（JDK NIO 痛点）、入门路径（分层架构图、Echo 三段代码对比）与核心组件内部机制（Reactor 三形态与 ServerBootstrapAcceptor 移交链路；Pipeline 双向链表与双向事件传播、Handler 生命周期；ByteBuf 双指针/扩容/引用计数；EventLoop 三合一结构/run() 循环/ioRatio/chooser/register 异步化；启动三件套 initAndRegister 与 Acceptor 装配源码；run() 主循环的 SelectStrategy/ioRatio/空轮询自愈深挖；PooledByteBufAllocator 的 Arena→Chunk→Page→Subpage 四级与线程缓存；PoolChunk/PoolSubpage 内部算法与 ChunkList 六档流转；写缓冲 ChannelOutboundBuffer 的 write/flush 分离与高低水位背压；connect/bind/close 连接生命周期与四层优雅关闭；IdleStateHandler 三维空闲检测与精确再调度心跳机制；断线重连的双时机触发+退避+EventLoop 调度纪律；HttpObjectDecoder 十二态解码状态机与碎片聚合；WebSocket 握手与 Pipeline 热插拔升级；SslHandler 对 SSLEngine 的透明封装、异步握手与 SslProvider 策略切换），两个 IoT 工程层展示"快之外还要什么"——会话路由原子性、命令状态机、背压分层、Drain 发布；李林锋调优层给出百万接入的系统侧配套（句柄/心跳周期/缓冲区/内存池/RPS/JVM）。一致立场：Netty 只保证 IO 层不阻塞，生产级靠使用者的纪律（二十一信源，置信度高）。
 
 ## Evidence（证据）
 
@@ -150,3 +154,4 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 - `raw/sources/architecture/2026-10-27-netty-18-reconnect.md`（教程重连篇：双时机触发/指数退避+抖动/eventLoop.schedule 纪律/channelInactive 链路/心跳+重连完整方案）
 - `raw/sources/architecture/2026-10-27-netty-20-http-decoder.md`（教程 HTTP 篇：HttpObjectDecoder 状态机/decode 主循环/chunked 零拷贝/UPGRADED/聚合器与常见坑）
 - `raw/sources/architecture/2026-10-27-netty-21-websocket.md`（教程 WebSocket 篇：101 握手/Pipeline 热插拔/帧编解码/掩码铁律/心跳与关闭纪律）
+- `raw/sources/architecture/2026-10-27-netty-22-ssl-tls.md`（教程 SSL/TLS 篇：SslHandler 双向加解密/unwrap 四态循环/异步握手/SslContext 工厂/SslProvider 策略/OpenSSL 集成/生产坑与优化）

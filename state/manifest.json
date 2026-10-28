@@ -2341,6 +2341,19 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484598&idx=1&sn=ec52f9b41a17b557887fd68c8b7ef42c&chksm=fe6ca5ecc91b2cfa27f5b2dcb77ce4f4766838ae70d7e64b005eacb62b9c074c740f0c6bc321",
       "asset_ref": "Assets/2026/10/netty-21-websocket.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-27-netty-22-ssl-tls.md",
+      "sha256": "bb444b567a558a6949dc370a3de6ecb942c3dbaa93e659a05c8afb430a8789f7",
+      "registered_at": "2026-10-29",
+      "inbox_ref": "Archive/2026-10-27-netty-22-ssl-tls.md",
+      "pages": [
+        "wiki/sources/netty-22-ssl-tls.md",
+        "wiki/concepts/netty-ssl-tls.md",
+        "wiki/entities/netty.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484604&idx=1&sn=b5db4f8ded964cdc6fb8d34a62cf7cdc&chksm=fe6ca5e6c91b2cf0a7ac5a8d8de49946fbcfe692bd4cd7a9b87e62a62e66c8f1d2b7beb28d19",
+      "asset_ref": "Assets/2026/10/netty-22-ssl-tls.md"
     }
   ]
 }

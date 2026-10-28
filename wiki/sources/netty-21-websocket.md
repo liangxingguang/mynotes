@@ -16,6 +16,7 @@ sources:
   - raw/sources/architecture/2026-10-27-netty-21-websocket.md
 related:
   - wiki/sources/netty-20-http-decoder.md
+  - wiki/sources/netty-22-ssl-tls.md
   - wiki/entities/netty.md
   - wiki/concepts/netty-websocket-upgrade.md
   - wiki/concepts/netty-http-decoder.md
@@ -64,11 +65,12 @@ related:
 
 - 单一自媒体教程信源；源码为"简化版/极度简化"注解片段（作者自述核心逻辑一致），未标明具体 Netty 版本（同系列前文为 4.1.x）。
 - "90% 的情况是忘了加聚合器"为作者经验断言，无统计依据。
-- 预告的续篇（SSL/TLS）未包含在本篇。
+- 预告的续篇（SSL/TLS）未包含在本篇；该续篇已单独摄入，见 [[netty-22-ssl-tls]]。
 
 ## Related Knowledge（相关知识）
 
 - [[netty-20-http-decoder]]（同系列第 20 篇：HTTP 解码状态机，本篇为其续篇）
+- [[netty-22-ssl-tls]]（同系列第 22 篇：SSL/TLS 支持，本篇预告的续篇）
 - [[netty-websocket-upgrade]]（概念页）
 - [[netty-http-decoder]]（UPGRADED 状态提供方）
 - [[netty-idlestate-heartbeat]]（Ping 帧心跳的机制底座）
