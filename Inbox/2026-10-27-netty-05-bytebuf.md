@@ -9,7 +9,9 @@ created: 2026-10-27
 category: 技术
 tags: [netty, Java]
 asset_ref: Assets/2026/10/netty-05-bytebuf.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-28T10:46:06.075Z"
+ingest_claim_id: 49328-1793184366075-0
 ---
 
 # Netty源码分析(5) — ByteBuf：Netty的数据容器深度解析
