@@ -83,6 +83,7 @@
 - [[jdk-17-enummap-enumset|JDK源码剖析——EnumMap & EnumSet，用枚举当数组下标]]（2026-10-28，Java/JDK 源码）
 - [[jdk-18-arrayblockingqueue|JDK源码阅读系列-ArrayBlockingQueue：用一把锁撑起的数组阻塞队列]]（2026-10-28，Java/JDK 源码）
 - [[jdk-19-linkedblockingqueue|深度剖析 LinkedBlockingQueue：链表实现的阻塞队列，为什么比 ArrayBlockingQueue 快？]]（2026-10-28，Java/JDK 源码）
+- [[jdk-20-futuretask|JDK源码剖析——FutureTask，线程池里那个「能拿到结果」的秘密武器]]（2026-10-28，Java/JDK 源码）
 - [[jdk-source-reading-album|JDK 源码阅读合集（Java解忧杂货铺，30 篇系列索引）]]（2026-10-27，Java/源码阅读资源，置信度低）
 - [[jdk21-migration-huolala|JDK 21 规模化落地实践（货拉拉）：框架先扛兼容成本，业务切 parent 收尾]]（2026-10-23，Java/JVM/虚拟线程）
 - [[jenkins-gitlab-cicd-pipeline|Jenkins + GitLab CI/CD 流水线落地实战（完整配置）]]（2026-10-21，CI/CD，置信度中）
@@ -198,6 +199,7 @@
 - [[exploratory-learning|探索式学习（知识 DAG）]]（目标→节点 DAG，导师写 JS 经沙箱改写文档教学；Unyra 提出）
 - [[fail-fast-modcount|Fail-Fast 迭代器（modCount）]]（结构修改计数器+迭代器快照比对抛 CME；检测单线程编程错误而非线程安全机制，同作者三信源）
 - [[framework-first-migration|框架先行的规模化运行时迁移]]（BOM 收口+框架分代并行+AI 批量改造+检查单收敛，货拉拉 JDK 21 实践）
+- [[futuretask-internals|FutureTask 内部设计（单向状态机 + CAS + Treiber 等待栈）]]（七态单向递增+CAS 推进+WaitNode 无锁栈 park/unpark；cancel 仅设中断标志；异常包装 ExecutionException；单信源，置信度中）
 - [[g1-gc|G1 垃圾收集器]]（Region 分区+RSet+SATB+Mixed GC，可预测停顿，JDK 9+ 默认；单信源）
 - [[gain-message|增益消息（全量快照自愈）]]（状态类消息发全量快照而非增量，丢包被下一条自动纠正；vivo 一手）
 - [[geohash|Geohash（地理哈希）]]（经纬度降维前缀编码；边界问题+8 邻居、截短扩半径、缓存键归一；邻近索引+地图瓦片双信源）

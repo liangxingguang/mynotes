@@ -18,6 +18,7 @@ related:
   - wiki/concepts/aqs-internals.md
   - wiki/concepts/reentrantlock-internals.md
   - wiki/concepts/scheduledthreadpoolexecutor-internals.md
+  - wiki/concepts/futuretask-internals.md
   - wiki/sources/jdk-14-threadpoolexecutor.md
 ---
 # ThreadPoolExecutor 核心设计（ctl 打包 + Worker/AQS + 拒绝策略）

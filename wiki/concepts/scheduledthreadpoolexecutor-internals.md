@@ -18,6 +18,7 @@ related:
   - wiki/concepts/threadpoolexecutor-internals.md
   - wiki/concepts/reentrantlock-internals.md
   - wiki/concepts/priorityqueue-internals.md
+  - wiki/concepts/futuretask-internals.md
   - wiki/sources/jdk-16-scheduledthreadpool.md
 ---
 # ScheduledThreadPoolExecutor 调度设计（最小堆延迟队列 + Leader-Follower）

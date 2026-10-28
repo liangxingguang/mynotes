@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [Java, 课程]
 asset_ref: Assets/2026/10/jdk-20-futuretask.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # JDK源码剖析——FutureTask，线程池里那个「能拿到结果」的秘密武器

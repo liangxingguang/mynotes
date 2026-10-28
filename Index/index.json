@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-10-28 12:11",
+  "updated_at": "2026-10-28 12:20",
   "notes": [
-    {
-      "id": "2026-10-27-jdk-20-futuretask",
-      "title": "JDK源码剖析——FutureTask，线程池里那个「能拿到结果」的秘密武器",
-      "path": "Inbox/2026-10-27-jdk-20-futuretask.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484610&idx=1&sn=8afe78d4ba6c2c15f568ef087d75d6d2&chksm=fe6ca598c91b2c8e08f3819db1ca1261c4ad6169305755ae7c65e60b8d8adc3c5891ad53b4ec#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "剖析 FutureTask 源码：既是 Runnable 又是 Future，用 200 多行代码实现单向递增状态机 + CAS + Treiber 无锁栈等待队列，支撑线程池 submit 的返回值、取消与等待语义。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/jdk-20-futuretask.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-27-jdk-21-collections",
       "title": "JDK源码阅读(21)：Collections工具类——被低估的瑞士军刀",
@@ -840,6 +821,66 @@
       "summary": "同机同压测条件下用 wrk 对 Netty/Tomcat/Undertow 三个 HTTP 服务做横评：Netty QPS 15.8 万领先 Tomcat 约 77%，并从线程模型、内存管理、零拷贝、TCP 参数四个源码层面解释差距来源。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-vs-tomcat-undertow.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-28-agent-minimal-handwritten",
+      "title": "Agent - 手写最小 agent（7）",
+      "path": "Inbox/2026-10-28-agent-minimal-handwritten.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Harness",
+        "工程实践"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2095565673804083692",
+      "source_type": "link",
+      "platform": "zhihu",
+      "summary": "Agent 系列第 7 篇：把前五篇的零件装成\"看得懂每行代码\"的最小 agent——config/tools/agent 三文件组织、schema 校验、四类错误兜底、reasoning_content 回传，终端跑起里程碑 M1（DeepSeek + openai SDK）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/agent-minimal-handwritten.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-28-agent-rest-api-as-tools",
+      "title": "Agent - 后台API变成工具（8）",
+      "path": "Inbox/2026-10-28-agent-rest-api-as-tools.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Harness",
+        "工程实践"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2095575551146718898",
+      "source_type": "link",
+      "platform": "zhihu",
+      "summary": "Agent 系列第 8 篇：把真实 REST 接口变成 agent 工具——百行 FastAPI 假后台 + 登录/查用户/查角色/分配角色四工具，收口里程碑 M2（一句话\"把张三提升为管理员\"自动完成全链路）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/agent-rest-api-as-tools.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-28-agent-tool-security-whitelist",
+      "title": "Agent - 工具全谱系与安全边界（10）",
+      "path": "Inbox/2026-10-28-agent-tool-security-whitelist.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Harness",
+        "工程实践"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2095930576318551219",
+      "source_type": "link",
+      "platform": "zhihu",
+      "summary": "Agent 系列第 10 篇：工具是 agent 的攻击面——五类工具风险分级、提示词注入的三条路径、确认闸门为什么拦不住注入，以及参数层白名单防线（格式/取值/语法树）的完整代码落地。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/agent-tool-security-whitelist.md",
       "wiki_status": "pending"
     },
     {
@@ -4227,6 +4268,25 @@
       "summary": "逐行剖析 LinkedBlockingQueue 源码：基于单向链表 + 哨兵节点，用 takeLock/putLock 两把锁实现读写分离互不阻塞，配 AtomicInteger 计数与跨锁信号传递，高并发下吞吐量优于单锁的 ArrayBlockingQueue。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/jdk-19-linkedblockingqueue.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-jdk-20-futuretask",
+      "title": "JDK源码剖析——FutureTask，线程池里那个「能拿到结果」的秘密武器",
+      "path": "Archive/2026-10-27-jdk-20-futuretask.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484610&idx=1&sn=8afe78d4ba6c2c15f568ef087d75d6d2&chksm=fe6ca598c91b2c8e08f3819db1ca1261c4ad6169305755ae7c65e60b8d8adc3c5891ad53b4ec#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "剖析 FutureTask 源码：既是 Runnable 又是 Future，用 200 多行代码实现单向递增状态机 + CAS + Treiber 无锁栈等待队列，支撑线程池 submit 的返回值、取消与等待语义。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jdk-20-futuretask.md",
       "wiki_status": "ingested"
     },
     {

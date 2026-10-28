@@ -224,3 +224,5 @@
 - 2026-10-28 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式，jdk-18 ingest 后校验）
 - 2026-10-28 | ingest | raw/sources/misc/2026-10-27-jdk-19-linkedblockingqueue.md | wiki/sources/jdk-19-linkedblockingqueue.md（新建，confidence=high，LBQ 源码拆解：双锁读写分离+滚动哨兵+跨锁信号传递+ABQ 八维对比与选型）+ wiki/concepts/linkedblockingqueue-internals.md（新建概念：双锁阻塞队列设计，单信源置信度中）+ wiki/concepts/arrayblockingqueue-internals.md（第二信源互证：对偶设计根因与对比维度）+ wiki/sources/jdk-18-arrayblockingqueue.md、wiki/sources/jdk-source-reading-album.md（回补 jdk-19 互链）
 - 2026-10-28 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式，jdk-19 ingest 后校验）
+- 2026-10-28 | ingest | raw/sources/misc/2026-10-27-jdk-20-futuretask.md | wiki/sources/jdk-20-futuretask.md（新建，confidence=high，FutureTask 源码拆解：七态单向状态机+CAS+Treiber 等待栈+取消/异常语义+CF 对比选型）+ wiki/concepts/futuretask-internals.md（新建概念：FutureTask 内部设计，单信源置信度中）+ wiki/concepts/threadpoolexecutor-internals.md、wiki/concepts/scheduledthreadpoolexecutor-internals.md、wiki/sources/jdk-source-reading-album.md（回补 jdk-20 互链）
+- 2026-10-28 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式，jdk-20 ingest 后校验）

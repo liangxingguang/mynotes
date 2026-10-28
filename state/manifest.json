@@ -1977,6 +1977,18 @@
    ],
    "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484674&idx=2&sn=2a4992228ac447520573028b047d17b7&chksm=fe6ca458c91b2d4eead7b2ab5bd34c3a780e802125ac8eb617a730bcedb89946bedf24e4fa26",
    "asset_ref": "Assets/2026/10/jdk-19-linkedblockingqueue.md"
+  },
+  {
+   "path": "raw/sources/misc/2026-10-27-jdk-20-futuretask.md",
+   "sha256": "4a2c1ef3d35a45400f2130e0e3c0d0342e2d04360b0a11bcfe4714f10c234869",
+   "registered_at": "2026-10-28",
+   "inbox_ref": "Archive/2026-10-27-jdk-20-futuretask.md",
+   "pages": [
+    "wiki/sources/jdk-20-futuretask.md",
+    "wiki/concepts/futuretask-internals.md"
+   ],
+   "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484610&idx=1&sn=8afe78d4ba6c2c15f568ef087d75d6d2&chksm=fe6ca598c91b2c8e08f3819db1ca1261c4ad6169305755ae7c65e60b8d8adc3c5891ad53b4ec",
+   "asset_ref": "Assets/2026/10/jdk-20-futuretask.md"
   }
  ]
 }
