@@ -9,7 +9,9 @@ created: 2026-10-27
 category: 技术
 tags: [netty, Java]
 asset_ref: Assets/2026/10/netty-02-bio-nio.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-28T10:21:27.784Z"
+ingest_claim_id: 62972-1793182887784-0
 ---
 
 # Netty源码分析(2) — 从BIO到NIO再到Netty，为什么我们需要Netty？

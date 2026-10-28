@@ -9,7 +9,9 @@ created: 2026-10-27
 category: 学习
 tags: [Java, 课程]
 asset_ref: Assets/2026/10/jdk-source-reading-album.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-28T10:21:10.268Z"
+ingest_claim_id: 15252-1793182870268-0
 ---
 
 # JDK 源码阅读合集（系列索引）
