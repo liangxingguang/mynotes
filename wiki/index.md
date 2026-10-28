@@ -126,6 +126,7 @@
 - [[netty-01-intro|Netty源码分析(1) — 开篇：Netty到底是什么，凭什么成为Java网络编程的事实标准？]]（2026-10-28，Netty/教程/分层架构）
 - [[netty-02-bio-nio|Netty源码分析(2) — 从BIO到NIO再到Netty，为什么我们需要Netty？]]（2026-10-28，Netty/教程/BIO-NIO对比）
 - [[netty-04-channel-pipeline-handler|Netty源码分析(4) — Channel、ChannelPipeline与ChannelHandler三剑客]]（2026-10-28，Netty/教程/Pipeline事件传播源码）
+- [[netty-05-bytebuf|Netty源码分析(5) — ByteBuf：Netty的数据容器深度解析]]（2026-10-28，Netty/教程/ByteBuf源码）
 - [[netty-million-connection-push-service|绝对干货：基于Netty实现海量接入的推送服务技术要点（李林锋）]]（2026-10-24，Netty/百万长连接调优）
 - [[nginx-websocket-load-balancing|Nginx生产级WebSocket实时长连接负载均衡，一文搞定（银河技术）]]（2026-10-24，Nginx/WebSocket/云环境断连）
 - [[netty-iot-gateway-resilient-design|百万 IoT 设备并发接入：把 Netty 网关做成可恢复、可验证的连接系统]]（2026-10-22，Netty/IoT/可靠性）
@@ -234,6 +235,7 @@
 - [[mcast|长连接组播（mcast）]]（groupID 下沉长连接层，1:M×1:N 两级扩散；单实例 25w 连接 8w QPS，聚合+压缩消化峰值，百度一手）
 - [[message-bus|业务消息总线]]（哑管道式配置路由：履约异步分发+topic 治理收拢；与 ESB/Pipeline 的区分，信鸽单一信源）
 - [[next-token-prediction|下一 token 预测]]（LLM 的统一目标：交叉熵训练、自回归生成，能力与幻觉同根）
+- [[netty-bytebuf|Netty ByteBuf（数据容器与内存管理）]]（读写双指针免 flip+4MB 阈值扩容+引用计数+类 jemalloc 池化；Heap/Direct/Composite 三形态；释放铁律"谁最后消费谁 release"；双信源，置信度高）
 - [[netty-channel-pipeline|Netty ChannelPipeline（责任链与事件传播）]]（Context 双向链表+inbound/outbound 标志跳节点；入站 Head→Tail、出站 Tail→Head；ctx.write≠channel.write 路径；源码级单信源，置信度高）
 - [[notification-system-design|站内消息系统领域模型]]（公告/提醒/私信三分类+提醒四元组；拉（订阅驱动）/推（私信直写）按类选型；免打扰后置读路径，简书上下篇双信源）
 - [[okf-knowledge-format|OKF（面向 AI Agent 的知识包装规范）]]（入库时编译为互链 Markdown 树，运行时只做导航+摘录）

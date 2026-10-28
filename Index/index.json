@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28 18:49",
+  "updated_at": "2026-10-28 18:51",
   "notes": [
     {
       "id": "2026-10-27-netty-03-reactor",
@@ -949,6 +949,25 @@
       "summary": "真实环境（JDK17 + Arthas）复现五类线上事故并完整走排查流程：OOM 用 jmap+MAT，超时用 trace 逐层剥，闪退分 JVM OOM 与 OOM Killer，GC 抖动用 jstat，死锁阻塞用 jstack + thread -b。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/java-online-troubleshooting-arthas.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-28-jvm-interview-guide",
+      "title": "JVM面试题最全整理：从内存模型到OOM排查",
+      "path": "Inbox/2026-10-28-jvm-interview-guide.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/kKcYVmrZ8LwUtgxghzGBcQ",
+      "source_type": "文章",
+      "platform": "微信公众号",
+      "summary": "JVM 七大高频考点一篇打通：运行时数据区、对象分配三板斧（逃逸分析/TLAB/栈上分配）、类加载五阶段、双亲委派与四种破坏场景、JMM 与 happens-before、四种引用、6 类 OOM 速查与排查五步法。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jvm-interview-guide.md",
       "wiki_status": "pending"
     },
     {
