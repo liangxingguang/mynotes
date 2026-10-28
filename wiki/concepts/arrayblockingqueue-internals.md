@@ -13,7 +13,9 @@ tags:
   - concurrency
 sources:
   - raw/sources/misc/2026-10-27-jdk-18-arrayblockingqueue.md
+  - raw/sources/misc/2026-10-27-jdk-19-linkedblockingqueue.md
 related:
+  - wiki/concepts/linkedblockingqueue-internals.md
   - wiki/concepts/reentrantlock-internals.md
   - wiki/concepts/aqs-internals.md
   - wiki/concepts/arraydeque-internals.md

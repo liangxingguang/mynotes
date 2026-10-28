@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28 12:01",
+  "updated_at": "2026-10-28 12:03",
   "notes": [
     {
       "id": "2026-10-27-jdk-19-linkedblockingqueue",
@@ -899,6 +899,26 @@
       "summary": "MMO 队伍系统三代架构演进：单服同线程队伍（精确但限制玩法）→ 传统分布式队伍（灵活但创建走网络）→ 互为镜像式（Game 服与跨服互相同步全量队伍数据，单服队伍优先），兼顾玩法自由度与编程体验。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/game-distributed-team-design.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-28-game-level-flow-management",
+      "title": "游戏开发：关卡流程管理（HFSM / 行为树 / 场景任务）",
+      "path": "Inbox/2026-10-28-game-level-flow-management.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "游戏开发",
+        "游戏架构",
+        "工程实践"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2067243524303611861",
+      "source_type": "link",
+      "platform": "zhihu",
+      "summary": "游戏副本流程管理的四种实现路径：FSM/HFSM 管生命周期、触发器去中心化流程、事件驱动行为树、以及\"任务即流程编排器\"的场景任务抽象——最终用任务系统统一表达副本流程是一次跃迁。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/game-level-flow-management.md",
       "wiki_status": "pending"
     },
     {
