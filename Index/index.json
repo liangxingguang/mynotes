@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28 15:35",
+  "updated_at": "2026-10-28 17:58",
   "notes": [
     {
       "id": "2026-10-27-jdk-30-exchanger",
@@ -1147,6 +1147,25 @@
       "summary": "游戏开发系列·红点系统：在\"前缀树+父节点脏集合\"主流方案基础上把\"计算\"也合并——拉模式叶子自订阅自计算、脏标记冒泡到根、每帧后序遍历只算脏节点，新增红点只需一个类+一行注册。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/slg-red-dot-tree-system.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-28-writing-craft-training-system",
+      "title": "拆解《写作是门手艺》：普通人可复刻的完整写作训练体系",
+      "path": "Inbox/2026-10-28-writing-craft-training-system.md",
+      "created": "2026-10-28",
+      "category": "学习",
+      "tags": [
+        "写作",
+        "思维方式"
+      ],
+      "source": "微信公众号·思绪收藏夹",
+      "source_url": "https://mp.weixin.qq.com/s/oiPx6PmVr9PXroE_pBcQhg",
+      "source_type": "文章",
+      "platform": "微信公众号",
+      "summary": "刘军强《写作是门手艺》写作篇的完整拆解：把写作方法拆成论证、结构、标题、故事、过程管理五块，给出可直接照做的训练清单。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/writing-craft-training-system.md",
       "wiki_status": "pending"
     },
     {
