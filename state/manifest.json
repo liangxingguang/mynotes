@@ -2048,7 +2048,7 @@
       "path": "raw/sources/misc/2026-10-27-jdk-25-longadder.md",
       "sha256": "4698ababb7c00c365cdc6bb7ffdc56ff79cd1df1e28732c4f7f83d60b8c9c888",
       "registered_at": "2026-10-28",
-      "inbox_ref": "Inbox/2026-10-27-jdk-25-longadder.md",
+      "inbox_ref": "Archive/2026-10-27-jdk-25-longadder.md",
       "pages": [
         "wiki/sources/jdk-25-longadder.md",
         "wiki/concepts/longadder-internals.md",

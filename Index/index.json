@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-10-28 12:49",
+  "updated_at": "2026-10-28 12:52",
   "notes": [
-    {
-      "id": "2026-10-27-jdk-25-longadder",
-      "title": "JDK源码剖析 —— LongAdder & LongAccumulator，比 AtomicLong 更快的秘密",
-      "path": "Inbox/2026-10-27-jdk-25-longadder.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484651&idx=2&sn=4e31336ceac1387fe177b8ea131b40b9&chksm=fe6ca5b1c91b2ca79b3d4d0e948236c928930e3c4fb61a9bbe8fa17b44a30ea811f35dbe3fd7#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "LongAdder 是 AtomicLong 的高并发替代品，核心思想是把单点 CAS 竞争分散到 Cell 数组上（分段思想），最后 sum() 汇总；LongAccumulator 是其通用版，支持自定义二元运算。文章剖析父类 Striped64 的源码：base 低竞争快速路径、Cell 数组扩容、@Contended 防伪共享、cellsBusy 自旋锁，并给出选型指南。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/jdk-25-longadder.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-10-27-jdk-26-priorityblockingqueue",
       "title": "深度解析 PriorityBlockingQueue — JUC 里的\"插队之王\"",
@@ -4447,6 +4428,25 @@
       "summary": "CME 最高频的场景其实是单线程 foreach 里直接 remove，而非多线程。文章剖析 ArrayList 迭代器的 fail-fast 检测机制（modCount vs expectedModCount 一个 int 比较），对比 fail-fast 与 fail-safe 设计哲学，并给出迭代器 remove、removeIf、CopyOnWriteArrayList 三种正确删除姿势及 subList 陷阱。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/jdk-24-concurrentmodificationexception.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-jdk-25-longadder",
+      "title": "JDK源码剖析 —— LongAdder & LongAccumulator，比 AtomicLong 更快的秘密",
+      "path": "Archive/2026-10-27-jdk-25-longadder.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484651&idx=2&sn=4e31336ceac1387fe177b8ea131b40b9&chksm=fe6ca5b1c91b2ca79b3d4d0e948236c928930e3c4fb61a9bbe8fa17b44a30ea811f35dbe3fd7#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "LongAdder 是 AtomicLong 的高并发替代品，核心思想是把单点 CAS 竞争分散到 Cell 数组上（分段思想），最后 sum() 汇总；LongAccumulator 是其通用版，支持自定义二元运算。文章剖析父类 Striped64 的源码：base 低竞争快速路径、Cell 数组扩容、@Contended 防伪共享、cellsBusy 自旋锁，并给出选型指南。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jdk-25-longadder.md",
       "wiki_status": "ingested"
     },
     {
