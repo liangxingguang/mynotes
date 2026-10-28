@@ -1,63 +1,6 @@
 {
-  "updated_at": "2026-10-28 21:35",
+  "updated_at": "2026-10-29 00:39",
   "notes": [
-    {
-      "id": "2026-10-27-netty-11-poolchunk-subpage",
-      "title": "Netty源码分析(11) — 池化内存分配：PoolChunk 与 PoolSubpage",
-      "path": "Inbox/2026-10-27-netty-11-poolchunk-subpage.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484111&idx=1&sn=21f5fda71a216271344503641607e27e&chksm=fe6ca395c91b2a83e35eeb02b6b1ca0681f8896167f014acc263e0ba4735740fe34b84f9f6a7#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "深入 Netty 内存池的心脏：PoolChunk 用满二叉树实现伙伴分配管理 16MB 大块，PoolSubpage 用位图管理 8KB 页内小块，配合 PoolChunkList 使用率分区和 PoolThreadCache 无锁缓存。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-11-poolchunk-subpage.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-27-netty-15-write-flush",
-      "title": "Netty源码分析(15) — 写缓冲 buffer 与 writeAndFlush 流程",
-      "path": "Inbox/2026-10-27-netty-15-write-flush.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484556&idx=1&sn=bf7a3c022ed30eb28ff793fe4b727631&chksm=fe6ca5d6c91b2cc0a1ea07f676c1c2868198327926ec7c6d3edca01c29723ab388f6aacde5a6#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "讲清 write 与 flush 为何是两个动作：write 只是把消息挂进 ChannelOutboundBuffer 链表，flush 才由 I/O 线程真正调用 SocketChannel.write 写入内核，并详解写自旋、OP_WRITE 与高低水位背压机制。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-15-write-flush.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-27-netty-16-connection-mgmt",
-      "title": "Netty源码分析(16) — 连接管理：connect、bind、close 背后的故事",
-      "path": "Inbox/2026-10-27-netty-16-connection-mgmt.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484571&idx=1&sn=843829d9ee03815901f202c2224fc228&chksm=fe6ca5c1c91b2cd7ef0bd93a09839cc38b8538da8079a9c2a946086be8234280f8c610f60d62#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "从源码捋清 Netty 连接管理三条主线：connect 的异步 TCP 连接与超时处理、bind 的端口绑定与 OP_ACCEPT 注册、close 的四层优雅关闭，全程 Promise-Future 异步串联。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-16-connection-mgmt.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-27-netty-17-idlestate-heartbeat",
       "title": "Netty源码分析(17) — IdleStateHandler 心跳机制源码",
@@ -4827,6 +4770,63 @@
       "summary": "拆解 Netty 池化内存分配器 PooledByteBufAllocator：借鉴 jemalloc 的 Arena → Chunk → Page → Subpage 四级分级，配合 ThreadLocal 缓存实现低锁、低 GC 压力的高性能内存池。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-10-pooled-allocator.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-11-poolchunk-subpage",
+      "title": "Netty源码分析(11) — 池化内存分配：PoolChunk 与 PoolSubpage",
+      "path": "Archive/2026-10-27-netty-11-poolchunk-subpage.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484111&idx=1&sn=21f5fda71a216271344503641607e27e&chksm=fe6ca395c91b2a83e35eeb02b6b1ca0681f8896167f014acc263e0ba4735740fe34b84f9f6a7#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "深入 Netty 内存池的心脏：PoolChunk 用满二叉树实现伙伴分配管理 16MB 大块，PoolSubpage 用位图管理 8KB 页内小块，配合 PoolChunkList 使用率分区和 PoolThreadCache 无锁缓存。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-11-poolchunk-subpage.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-15-write-flush",
+      "title": "Netty源码分析(15) — 写缓冲 buffer 与 writeAndFlush 流程",
+      "path": "Archive/2026-10-27-netty-15-write-flush.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484556&idx=1&sn=bf7a3c022ed30eb28ff793fe4b727631&chksm=fe6ca5d6c91b2cc0a1ea07f676c1c2868198327926ec7c6d3edca01c29723ab388f6aacde5a6#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "讲清 write 与 flush 为何是两个动作：write 只是把消息挂进 ChannelOutboundBuffer 链表，flush 才由 I/O 线程真正调用 SocketChannel.write 写入内核，并详解写自旋、OP_WRITE 与高低水位背压机制。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-15-write-flush.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-16-connection-mgmt",
+      "title": "Netty源码分析(16) — 连接管理：connect、bind、close 背后的故事",
+      "path": "Archive/2026-10-27-netty-16-connection-mgmt.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484571&idx=1&sn=843829d9ee03815901f202c2224fc228&chksm=fe6ca5c1c91b2cd7ef0bd93a09839cc38b8538da8079a9c2a946086be8234280f8c610f60d62#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "从源码捋清 Netty 连接管理三条主线：connect 的异步 TCP 连接与超时处理、bind 的端口绑定与 OP_ACCEPT 注册、close 的四层优雅关闭，全程 Promise-Future 异步串联。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-16-connection-mgmt.md",
       "wiki_status": "ingested"
     }
   ]
