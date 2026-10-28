@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28 09:27",
+  "updated_at": "2026-10-28 09:28",
   "notes": [
     {
       "id": "2026-10-27-jdk-17-enummap-enumset",
@@ -18,7 +18,7 @@
       "summary": "剖析 EnumMap 与 EnumSet 源码：专为枚举设计的高性能集合，EnumMap 直接拿 ordinal() 当数组下标实现确定性 O(1)，EnumSet 用一个 long 位向量做位运算级集合操作，性能与内存全面碾压 HashMap/HashSet。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/jdk-17-enummap-enumset.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-27-jdk-18-arrayblockingqueue",
