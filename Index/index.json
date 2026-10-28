@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-10-28 08:07",
+  "updated_at": "2026-10-28 08:09",
   "notes": [
-    {
-      "id": "2026-10-27-jdk-11-cyclicbarrier",
-      "title": "JDK源码阅读(12) — CyclicBarrier：循环栅栏，让线程\"凑一桌\"再出发",
-      "path": "Inbox/2026-10-27-jdk-11-cyclicbarrier.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484091&idx=1&sn=f34fe74b9a55040bae8cc137be67d214&chksm=fe6ca3e1c91b2af79d7e5caff79882ec321f9ee80aada71861fbfe21dc5d106feec1492781a7#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "深入剖析 CyclicBarrier 源码：基于 ReentrantLock + Condition 实现的可循环使用的线程屏障，通过 Generation 对象隔离每一轮状态实现\"循环\"，最后一个到达的线程负责执行 barrierAction 并唤醒所有等待线程。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/jdk-11-cyclicbarrier.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-10-27-jdk-13-arraydeque",
       "title": "ArrayDeque 源码深度剖析：比 LinkedList 更快的双端队列",
@@ -3970,6 +3951,25 @@
       "summary": "CountDownLatch 让一个或多个线程等待其他线程完成，底层基于 AQS 共享模式：构造时把 count 设为 state，await() 调 acquireSharedInterruptibly，state≠0 时线程封装成共享节点入 CLH 队列阻塞；countDown() 通过 CAS 把 state 减 1，减到 0 时 doReleaseShared 唤醒所有等待线程。计数不可重置，区别于可重用的 CyclicBarrier。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/jdk-10-countdownlatch.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-jdk-11-cyclicbarrier",
+      "title": "JDK源码阅读(12) — CyclicBarrier：循环栅栏，让线程\"凑一桌\"再出发",
+      "path": "Archive/2026-10-27-jdk-11-cyclicbarrier.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484091&idx=1&sn=f34fe74b9a55040bae8cc137be67d214&chksm=fe6ca3e1c91b2af79d7e5caff79882ec321f9ee80aada71861fbfe21dc5d106feec1492781a7#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "深入剖析 CyclicBarrier 源码：基于 ReentrantLock + Condition 实现的可循环使用的线程屏障，通过 Generation 对象隔离每一轮状态实现\"循环\"，最后一个到达的线程负责执行 barrierAction 并唤醒所有等待线程。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jdk-11-cyclicbarrier.md",
       "wiki_status": "ingested"
     },
     {

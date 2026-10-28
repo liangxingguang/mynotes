@@ -210,3 +210,6 @@
 - 2026-10-28 | ingest | raw/sources/misc/2026-10-27-jdk-10-countdownlatch.md | wiki/sources/jdk-10-countdownlatch.md（新建，confidence=high，CountDownLatch AQS 共享模式拆解+CyclicBarrier 对比）+ wiki/concepts/countdownlatch-internals.md（新建概念：state 计数器+doReleaseShared 广播唤醒）+ wiki/concepts/aqs-internals.md（第二信源：共享模式样本补入，Evolution 更新）+ wiki/sources/jdk-source-reading-album.md（回补 jdk-10 互链）
 - 2026-10-28 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式，ingest 后校验）
 - 2026-10-28 | ingest | raw/sources/misc/2026-10-27-jdk-12-priorityqueue.md | wiki/sources/jdk-12-priorityqueue.md（新建，confidence=high，PriorityQueue 数组堆源码拆解+TreeSet 对比+Top-K 实战）+ wiki/concepts/priorityqueue-internals.md（新建概念：数组承载二叉堆+siftUp/siftDown+Floyd 建堆 O(n)）+ wiki/sources/jdk-source-reading-album.md（回补 jdk-12 互链）
+
+- 2026-10-28 | ingest | raw/sources/misc/2026-10-27-jdk-11-cyclicbarrier.md | wiki/sources/jdk-11-cyclicbarrier.md（新建，confidence=high，CyclicBarrier 源码拆解+CountDownLatch 双对比表+分阶段计算示例）+ wiki/concepts/cyclicbarrier-internals.md（新建概念：Generation 换代+最后线程负责制+breakBarrier 传播）+ wiki/concepts/countdownlatch-internals.md（第二信源：对比表互证，related 互链）+ wiki/sources/jdk-source-reading-album.md（回补 jdk-11 互链）
+- 2026-10-28 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式，ingest 后校验）

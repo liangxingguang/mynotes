@@ -74,6 +74,7 @@
 - [[jdk-08-treeset-vs-hashset|灵魂拷问：TreeSet 和 HashSet 到底有什么区别？]]（2026-10-28，Java/JDK 源码）
 - [[jdk-09-hashset-linkedhashset|JDK源码阅读(10) — HashSet & LinkedHashSet 不重复是怎么做到的]]（2026-10-28，Java/JDK 源码）
 - [[jdk-10-countdownlatch|JDK源码阅读(11) — CountDownLatch 门闩的等待与唤醒]]（2026-10-28，Java/JDK 源码）
+- [[jdk-11-cyclicbarrier|JDK源码阅读(12) — CyclicBarrier 循环栅栏：Generation 换代 + 最后线程负责制]]（2026-10-28，Java/JDK 源码）
 - [[jdk-12-priorityqueue|JDK源码阅读(13) — PriorityQueue：数组承载二叉堆/上浮下沉/Floyd 建堆]]（2026-10-28，Java/JDK 源码）
 - [[jdk-source-reading-album|JDK 源码阅读合集（Java解忧杂货铺，30 篇系列索引）]]（2026-10-27，Java/源码阅读资源，置信度低）
 - [[jdk21-migration-huolala|JDK 21 规模化落地实践（货拉拉）：框架先扛兼容成本，业务切 parent 收尾]]（2026-10-23，Java/JVM/虚拟线程）
@@ -175,7 +176,8 @@
 - [[codemode|Codemode（代码模式工具编排）]]（模型写 JS 沙箱脚本编排工具调用，只回筛选结果；固定开销约减半，单次收益看返回格式）
 - [[concurrenthashmap-internals|ConcurrentHashMap 并发设计（JDK 8+）]]（读无锁+CAS 空桶插+synchronized 桶头+sizeCtl 三态+协作扩容；单信源，置信度中）
 - [[copyonwritearraylist-internals|CopyOnWriteArrayList 写时复制设计]]（volatile 数组引用替换+写时 O(n) 复制换读零锁；快照迭代不抛 CME；读多写极少专用，单信源，置信度中）
-- [[countdownlatch-internals|CountDownLatch 门闩设计（AQS 共享模式）]]（state 即计数器+CAS 减一归零广播唤醒；一次性不可重置，区别于 CyclicBarrier；单信源，置信度中）
+- [[countdownlatch-internals|CountDownLatch 门闩设计（AQS 共享模式）]]（state 即计数器+CAS 减一归零广播唤醒；一次性不可重置，区别于 CyclicBarrier；双信源，置信度中）
+- [[cyclicbarrier-internals|CyclicBarrier 循环屏障设计（Generation 换代）]]（ReentrantLock+Condition，parties 凑齐破障，最后线程执行 barrierAction 并换代唤醒；BrokenBarrierException 传播，单信源，置信度中）
 - [[cpu-funnel-coding|CPU 漏斗（编码级性能模型）]]（砍掉无效解析/转换/对象，让 CPU 只做核心运算）
 - [[cross-process-surface-rendering|Surface 跨进程渲染]]（Surface Parcelable + SurfaceFlinger 跨进程合成，Binder 传 Surface 零拷贝传画面；Renderer 3→1，微信小游戏一手）
 - [[deep-thinking-five-tools|深度思考五工具（澄清-拆解-追问-反证-逆向）]]（按序收敛四步+发散出口一步，反认知闭合；YouCore 单信源，置信度中）

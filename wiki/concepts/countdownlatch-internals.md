@@ -14,8 +14,10 @@ tags:
   - juc
 sources:
   - raw/sources/misc/2026-10-27-jdk-10-countdownlatch.md
+  - raw/sources/misc/2026-10-27-jdk-11-cyclicbarrier.md
 related:
   - wiki/concepts/aqs-internals.md
+  - wiki/concepts/cyclicbarrier-internals.md
   - wiki/sources/jdk-10-countdownlatch.md
 ---
 # CountDownLatch 门闩设计（AQS 共享模式）
@@ -49,7 +51,7 @@ await() → `sync.acquireSharedInterruptibly(1)` → state≠0 时 tryAcquireSha
 
 ### Distinctions（区分）
 
-- 与 CyclicBarrier 的不同之处：CountDownLatch 是一等多、计数 N→0、不可重置；CyclicBarrier 是线程互相等待到达屏障、计数 0→N、可 reset 重用（信源对比表）。
+- 与 [[cyclicbarrier-internals|CyclicBarrier]] 的不同之处：CountDownLatch 是一等多、计数 N→0、不可重置；CyclicBarrier 是线程互相等待到达屏障、count 自减归零破障、Generation 换代自动重置可循环（双信源对比表互证）。
 - 与 [[reentrantlock-internals|ReentrantLock]] 的不同之处：同为 AQS 子类，Latch 用共享模式（全唤醒）、无持有者与重入；Lock 用独占模式（逐个唤醒）、有 owner 与重入计数。
 
 ## Evolution（演进）

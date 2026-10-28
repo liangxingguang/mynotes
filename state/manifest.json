@@ -1877,6 +1877,19 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484215&idx=1&sn=d18c2f3a9eddb9adbfe53821649309e1&chksm=fe6ca26dc91b2b7b47da4caef883fb6e1875da49442e02e2c7b40abda3177d815a151428f512",
       "asset_ref": "Assets/2026/10/jdk-12-priorityqueue.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-27-jdk-11-cyclicbarrier.md",
+      "sha256": "6115bcb715fee011bdf39aaa1ad152de91c33a8222dc60f107c0f363c6738523",
+      "registered_at": "2026-10-28",
+      "inbox_ref": "Archive/2026-10-27-jdk-11-cyclicbarrier.md",
+      "pages": [
+        "wiki/sources/jdk-11-cyclicbarrier.md",
+        "wiki/concepts/cyclicbarrier-internals.md",
+        "wiki/concepts/countdownlatch-internals.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484091&idx=1&sn=f34fe74b9a55040bae8cc137be67d214&chksm=fe6ca3e1c91b2af79d7e5caff79882ec321f9ee80aada71861fbfe21dc5d106feec1492781a7",
+      "asset_ref": "Assets/2026/10/jdk-11-cyclicbarrier.md"
     }
   ]
 }
