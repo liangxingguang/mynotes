@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28 12:48",
+  "updated_at": "2026-10-28 12:49",
   "notes": [
     {
       "id": "2026-10-27-jdk-25-longadder",
@@ -1203,6 +1203,26 @@
       "summary": "Java 并发工具类入门科普：用停车场闸机类比 Semaphore（acquire/release 控制并发度），用运动会开幕式类比 CountDownLatch（倒计时归零放行）。给出动态限流、tryAcquire 超时、批量任务超时控制、线程池优雅关闭等实战技巧，附常见踩坑与选型对比。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/semaphore-countdownlatch-practices.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-28-slg-red-dot-tree-system",
+      "title": "用一棵树管住 100+ 个红点：SLG 红点系统实现详解",
+      "path": "Inbox/2026-10-28-slg-red-dot-tree-system.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "游戏开发",
+        "游戏架构",
+        "工程实践"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2093767907499161439",
+      "source_type": "link",
+      "platform": "zhihu",
+      "summary": "游戏开发系列·红点系统：在\"前缀树+父节点脏集合\"主流方案基础上把\"计算\"也合并——拉模式叶子自订阅自计算、脏标记冒泡到根、每帧后序遍历只算脏节点，新增红点只需一个类+一行注册。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/slg-red-dot-tree-system.md",
       "wiki_status": "pending"
     },
     {

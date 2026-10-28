@@ -13,8 +13,10 @@ tags:
   - concurrency
 sources:
   - raw/sources/misc/2026-10-27-jdk-23-atomic.md
+  - raw/sources/misc/2026-10-27-jdk-25-longadder.md
 related:
   - wiki/concepts/cache-line-and-false-sharing.md
+  - wiki/concepts/longadder-internals.md
   - wiki/concepts/aqs-internals.md
   - wiki/concepts/concurrenthashmap-internals.md
   - wiki/concepts/futuretask-internals.md
@@ -57,21 +59,25 @@ JUC `java.util.concurrent.atomic` 包的原子变量类（AtomicInteger/AtomicLo
 ### Distinctions（区分）
 
 - 与 synchronized 的不同：CAS 不挂起线程（乐观、自旋），synchronized 走管程可能挂起（悲观）；竞争低时 CAS 赢，争抢白热化时 CAS 空转浪费 CPU，须降级为分段（LongAdder）或锁。
+- 与 [[longadder-internals|LongAdder 分段累加设计]] 的不同：AtomicLong 单变量 CAS、读 O(1) 精确、有 `addAndGet()`；LongAdder 分 Cell 分散竞争、读 O(n) 近似、无带返回值的复合操作。写多读少用后者，读多写少/需精确中间值用前者。
 - 与 volatile 的不同：volatile 只保证可见性，不保证复合操作原子性；「先 get 再判断再操作」必须 CAS 自旋或 updateAndGet。
 
 ## Evolution（演进）
 
 - 2026-10-28 — 由 JDK 源码阅读系列（Atomic 三兄弟篇）单信源建立。
+- 2026-10-28 — 新增第二信源 jdk-25-longadder：AtomicLong vs LongAdder 六维对比表与选型指南互证「高并发分段替代」结论；「LongAdder 内部机制」开放问题已由其概念页 [[longadder-internals]] 回答，自开放问题移出。
 
 ## Open Questions（开放问题）
 
-- LongAdder 的分段累加内部设计（Cell 数组、扩容、sum 汇总）为系列下一篇主题，当前信源只给结论未给机制。
+- ABA 问题在真实业务中的触发概率与 StampedReference 的性能代价，当前信源均未量化。
 
 ## Evidence（证据）
 
 - Source: `raw/sources/misc/2026-10-27-jdk-23-atomic.md`（AtomicInteger/AtomicBoolean 核心源码、Unsafe→cmpxchg 链路、ABA 与伪共享、LongAdder 选型阈值、4 个完整示例）
+- Source: `raw/sources/misc/2026-10-27-jdk-25-longadder.md`（AtomicLong vs LongAdder vs LongAccumulator 对比表：引入版本/原理/读写性能/操作集/重置/场景）
 
 ## Related Knowledge（相关知识）
 
 - [[jdk-23-atomic|AtomicInteger / AtomicLong / AtomicBoolean（信源页）]]
+- [[jdk-25-longadder|JDK源码剖析 —— LongAdder & LongAccumulator（信源页）]]
 - [[jdk-20-futuretask|JDK源码剖析——FutureTask（信源页）]]

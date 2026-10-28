@@ -16,6 +16,7 @@ sources:
   - raw/sources/architecture/2026-10-21-springboot-disruptor-event-bus.md
   - raw/sources/misc/2026-10-27-jdk-02-linkedlist.md
   - raw/sources/misc/2026-10-27-jdk-23-atomic.md
+  - raw/sources/misc/2026-10-27-jdk-25-longadder.md
 related:
   - wiki/sources/linked-list-vs-array-cache.md
   - wiki/sources/springboot-disruptor-event-bus.md
@@ -62,6 +63,7 @@ CPU 以 64 字节缓存行为最小单位在内存与缓存之间搬运数据，
 - 2026-10-23 — 由 linked-list-vs-array-cache（局部性侧）与 springboot-disruptor-event-bus（伪共享侧）两个独立信源合并提炼建立；此前缓存行内容散见于两信源页，未立概念页。
 - 2026-10-28 — 新增第三信源 jdk-02-linkedlist：JDK 集合层的具体数据点（LinkedList Node 约 32 字节 vs ArrayList 引用 4 字节、分散节点缓存命中低），互证局部性一侧结论。
 - 2026-10-28 — 新增第四信源 jdk-23-atomic：伪共享在 JUC 原子类的实例——多个 AtomicLong 落同一缓存行互相失效；JDK 8 `@Contended` 为官方解法，LongAdder 的 Cell 数组已使用（AtomicLong 本身未加）。
+- 2026-10-28 — 新增第五信源 jdk-25-longadder：Striped64.Cell 的 `@Contended` 实例细节——对象前后填充 128 字节确保独占缓存行，填充后每 Cell 约 128~256 字节，与 Disruptor 的手工继承填充互为对照。
 
 ## Open Questions（开放问题）
 
@@ -73,6 +75,7 @@ CPU 以 64 字节缓存行为最小单位在内存与缓存之间搬运数据，
 - Source: `raw/sources/architecture/2026-10-21-springboot-disruptor-event-bus.md`（伪共享：Sequence 三层继承填充 56 字节、性能降一个数量级、与 @Contended 的取舍）
 - Source: `raw/sources/misc/2026-10-27-jdk-02-linkedlist.md`（局部性在 JDK 集合的实例：Node 32 字节 vs 引用 4 字节约 8 倍内存、节点分散缓存命中低）
 - Source: `raw/sources/misc/2026-10-27-jdk-23-atomic.md`（伪共享在 JUC 原子类的实例：AtomicLong 计数器同缓存行失效、@Contended 与 LongAdder Cell）
+- Source: `raw/sources/misc/2026-10-27-jdk-25-longadder.md`（Striped64.Cell `@Contended` 前后填充 128 字节独占缓存行；填充后 Cell 约 128~256 字节）
 
 ## Related Knowledge（相关知识）
 

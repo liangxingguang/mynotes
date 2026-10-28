@@ -232,3 +232,5 @@
 - 2026-10-28 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式，jdk-21/22/23 ingest 后校验）
 - 2026-10-28 | ingest | raw/sources/misc/2026-10-27-jdk-24-concurrentmodificationexception.md | wiki/sources/jdk-24-concurrentmodificationexception.md（新建，confidence=high，CME 专题：modCount 检测机制/fail-fast vs fail-safe/正确删除三法/subList 陷阱）+ wiki/concepts/fail-fast-modcount.md（第六信源回填：单线程 foreach 高频场景、best-effort 官方声明、subList 视图校验，置信度升 high）+ wiki/sources/jdk-source-reading-album.md（回补 jdk-24 互链）
 - 2026-10-28 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式，jdk-24 ingest 后校验）
+- 2026-10-28 | ingest | raw/sources/misc/2026-10-27-jdk-25-longadder.md | wiki/sources/jdk-25-longadder.md（新建，confidence=high，Striped64 分段累加：base 快速路径/Cell 数组/@Contended 128B/cellsBusy 扩容/选型指南）+ wiki/concepts/longadder-internals.md（新建概念，单信源置信度中）+ wiki/concepts/atomic-variables-cas.md（第二信源：六维对比表互证，LongAdder 机制开放问题闭环）+ wiki/concepts/cache-line-and-false-sharing.md（第五信源：Cell @Contended 128 字节填充细节）+ wiki/sources/jdk-source-reading-album.md（回补 jdk-25 互链）
+- 2026-10-28 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式，jdk-25 ingest 后校验）
