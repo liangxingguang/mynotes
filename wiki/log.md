@@ -234,3 +234,5 @@
 - 2026-10-28 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式，jdk-24 ingest 后校验）
 - 2026-10-28 | ingest | raw/sources/misc/2026-10-27-jdk-25-longadder.md | wiki/sources/jdk-25-longadder.md（新建，confidence=high，Striped64 分段累加：base 快速路径/Cell 数组/@Contended 128B/cellsBusy 扩容/选型指南）+ wiki/concepts/longadder-internals.md（新建概念，单信源置信度中）+ wiki/concepts/atomic-variables-cas.md（第二信源：六维对比表互证，LongAdder 机制开放问题闭环）+ wiki/concepts/cache-line-and-false-sharing.md（第五信源：Cell @Contended 128 字节填充细节）+ wiki/sources/jdk-source-reading-album.md（回补 jdk-25 互链）
 - 2026-10-28 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式，jdk-25 ingest 后校验）
+- 2026-10-28 | ingest | raw/sources/misc/2026-10-27-jdk-26-priorityblockingqueue.md | wiki/sources/jdk-26-priorityblockingqueue.md（新建，confidence=high，PriorityBlockingQueue 源码拆解：堆+单锁+notEmpty/tryGrow 释放主锁+CAS 令牌分阶段扩容/迭代器无序等五坑）+ wiki/concepts/priorityblockingqueue-internals.md（新建概念，单信源置信度中）+ wiki/concepts/priorityqueue-internals.md（第二信源：堆逻辑与扩容公式互证，PBQ 实现开放问题闭环）+ wiki/sources/jdk-source-reading-album.md（回补 jdk-26 互链）
+- 2026-10-28 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式，jdk-26 ingest 后校验）

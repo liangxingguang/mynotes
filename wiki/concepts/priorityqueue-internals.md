@@ -13,8 +13,10 @@ tags:
   - collections
 sources:
   - raw/sources/misc/2026-10-27-jdk-12-priorityqueue.md
+  - raw/sources/misc/2026-10-27-jdk-26-priorityblockingqueue.md
 related:
   - wiki/sources/jdk-12-priorityqueue.md
+  - wiki/concepts/priorityblockingqueue-internals.md
   - wiki/concepts/treeset-internals.md
 ---
 # PriorityQueue 二叉堆设计（数组承载 + 上浮/下沉）
@@ -49,20 +51,20 @@ offer(e) → 满了先 grow → 放数组末尾 → siftUp：与父节点 `(k-1)
 ### Distinctions（区分）
 
 - 与 [[treeset-internals|TreeSet]] 的不同之处：堆允许重复、peek 最值 O(1)、迭代无序、随机查找 O(n)；TreeSet 不允许重复、迭代有序、查找 O(log n)。
-- 与 PriorityBlockingQueue 的不同之处：同语义但后者线程安全（信源仅指明并发场景用它，未展开实现——未知）。
+- 与 [[priorityblockingqueue-internals|PriorityBlockingQueue]] 的不同之处：堆逻辑（siftUp/siftDown、扩容公式）完全一致，后者加 ReentrantLock+notEmpty 得线程安全与阻塞消费，并以"释放主锁+CAS 令牌"分阶段扩容避免扩容阻塞读写。
 
 ## Evolution（演进）
 
-单信源（公众号源码解读）；siftUpUsingComparator 与 siftUpComparable 双变体并存（有无比较器分派），逻辑同构。
+双信源互证（PriorityQueue 篇 + PriorityBlockingQueue 篇，同作者）：siftUp/siftDown 与扩容公式在两类中逐行一致；siftUpUsingComparator 与 siftUpComparable 双变体并存（有无比较器分派），逻辑同构。
 
 ## Open Questions（开放问题）
 
-- PriorityBlockingQueue 的并发堆实现（未知，当前信源未覆盖，属系列后续篇目）。
 - JDK 各版本间 PriorityQueue 实现的差异（未知）。
 
 ## Evidence（证据）
 
 - Source: `raw/sources/misc/2026-10-27-jdk-12-priorityqueue.md`
+- Source: `raw/sources/misc/2026-10-27-jdk-26-priorityblockingqueue.md`（印证堆逻辑与扩容公式一致）
 
 ## Related Knowledge（相关知识）
 
