@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [netty, Java]
 asset_ref: Assets/2026/10/netty-24-epoll-native.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Netty源码分析(24) — EpollEventLoop 与 Native Transport

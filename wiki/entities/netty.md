@@ -33,6 +33,9 @@ sources:
   - raw/sources/architecture/2026-10-27-netty-20-http-decoder.md
   - raw/sources/architecture/2026-10-27-netty-21-websocket.md
   - raw/sources/architecture/2026-10-27-netty-22-ssl-tls.md
+  - raw/sources/architecture/2026-10-27-netty-23-zero-copy.md
+  - raw/sources/architecture/2026-10-27-netty-24-epoll-native.md
+  - raw/sources/architecture/2026-10-27-netty-25-flow-control.md
 related:
   - wiki/sources/netty-three-skills-high-performance.md
   - wiki/sources/netty-iot-gateway-resilient-design.md
@@ -68,6 +71,12 @@ related:
   - wiki/concepts/netty-websocket-upgrade.md
   - wiki/sources/netty-22-ssl-tls.md
   - wiki/concepts/netty-ssl-tls.md
+  - wiki/sources/netty-23-zero-copy.md
+  - wiki/concepts/netty-zero-copy.md
+  - wiki/sources/netty-24-epoll-native.md
+  - wiki/concepts/netty-epoll-native-transport.md
+  - wiki/sources/netty-25-flow-control.md
+  - wiki/concepts/netty-flow-control.md
   - wiki/entities/kafka.md
 ---
 # Netty
@@ -109,6 +118,9 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 - 断线重连机制（教程第 18 篇）：Netty 无内置自动重连，靠 ChannelFutureListener（connect 失败）+ channelInactive（断开）双时机触发 + eventLoop.schedule 延迟重连（保持 Channel 串行化，禁另起线程）；退避公式 min(1s×2^retry+随机抖动, 30s 封顶) 防惊群；channelInactive 触发链路为 read 返回 -1 → closeOnRead → fireChannelInactive；完整链路 = IdleStateEvent → 主动 close → channelInactive → 重连，成功后 channelActive 重做认证/状态初始化，主动 close 用标志位跳过。详见 [[netty-reconnect]]。
 - HTTP 解码状态机（教程第 20 篇）：HttpObjectDecoder（ByteToMessageDecoder 子类）以 currentState 成员变量持久化的 12 态 FSM 解码 TCP 字节流，天然抗分片；头部解析直接操作 readerIndex 零拷贝，chunked 用 readRetainedSlice 共享视图；产出 HttpRequest+HttpContent 碎片序列由 HttpObjectAggregator 选配聚合；UPGRADED 状态为 WebSocket 升级让位；HttpContent 必须 release、100 Continue 需手动响应、大文件禁用聚合器。详见 [[netty-http-decoder]]。
 - WebSocket 协议升级（教程第 21 篇）：同一 TCP 连接先 HTTP 握手（Upgrade: websocket → Base64(SHA1(Key+RFC 魔数)) → 101）再在 Listener 里 Pipeline 热插拔——移除 HTTP 编解码器、插入 WebSocket13FrameDecoder/Encoder，对上层透明；帧解码处理 FIN/Opcode/Mask/扩展长度与分片重组；客户端→服务端必须带掩码、服务端下发不能带；聚合器不可省（握手需 FullHttpRequest）、必须限最大帧、文明关闭先发 CloseWebSocketFrame。详见 [[netty-websocket-upgrade]]。
+- 零拷贝机制（教程第 23 篇）：本质是"没有 CPU 参与的拷贝"——四大兵器分场景：FileRegion 委托 FileChannel.transferTo 走 Linux sendfile（4 次拷贝+4 次上下文切换压成 2 次 DMA，doWrite 有专门零拷贝分支，单次使用不可复用、编解码器须跳过、Windows fallback）；CompositeByteBuf 用 Component 数组逻辑拼接（引用不拷数据，二分定位 O(log n)，release 递归释放）；Unpooled.wrappedBuffer 直接包装 byte[]/MappedByteBuffer；DirectBuffer 堆外内存省 JVM↔native 拷贝。详见 [[netty-zero-copy]]。
+- Native Transport（教程第 24 篇）：EpollEventLoop 绕过 JDK Selector 直调 epoll——持 epollFd/eventFd/timerFd 三 fd（eventfd 单 fd 计数器优于 Pipe 双 fd wakeup，timerfd 纳秒级优于 epoll_wait 毫秒 timeout）；事件栈上分配零 GC、processReady 按 fd 直映射无 selectedKeys 遍历；ET 模式须循环读到 EAGAIN；作者简易压测延迟降 33-45%/吞吐升 38%/GC 降 38%（非受控数据）；仅 Linux 可用，生产须 Epoll→KQueue→NIO 回退（与 IoT 信源"epoll/nio 自适应"互证）；信源称"Netty 5 正推 io_uring"与本页时间线（4.2 GA 含 io_uring、5.x 停推）矛盾，暂倾向既有口径待复核。详见 [[netty-epoll-native-transport]]。
+- 流量控制源码级机制（教程第 25 篇）：高低水位默认 32K/64K（WriteBufferWaterMark）是软限制——addMessage 原子累加超高水位即 setUnwritable、removeBytes 降到低水位以下 setWritable；状态用 unwritable 位标记+CAS（AtomicIntegerFieldUpdater）切换；变不可写时 invokeLater 抛 EventLoop 队列延迟传播防 write 链递归重入（代价：事件有延迟，写前必现查 isWritable()）；高低水位≠TCP 滑窗（用户态软信号 vs 内核态硬阻塞），三层背压叠加才是全链路反压。详见 [[netty-flow-control]]。
 - SSL/TLS 支持（教程第 22 篇）：本质是 JDK SSLEngine 的封装——SslHandler 入站 decode→unwrap 解密、出站 write→wrap 加密，握手未完成时出站数据入 pendingUnencryptedWrites 排队、握手成功 Listener 冲刷；unwrap 循环处理 OK/UNDERFLOW/OVERFLOW/CLOSED 四态，NEED_TASK 委托任务异步执行不占 IO 线程；握手全程异步经 handshakeFuture() 通知（channelActive ≠ 握手完成）；SslContext 为工厂+配置中心，SslProvider 可切 JDK/OpenSSL（netty-tcnative，AES-NI 硬件加速，信源经验论断生产必选）/BouncyCastle；铁律：SslHandler 放 Pipeline 最前、私钥须 PKCS#8；优化靠 Session 复用+TLS 1.3（1-RTT）。详见 [[netty-ssl-tls]]。
 - 生态位（教程信源说法）：Dubbo/gRPC（RPC）、RocketMQ（消息）、Spring WebFlux/Spring Cloud Gateway、Elasticsearch 节点通信、ZooKeeper 3.6+ 可选、Hadoop/Spark 部分组件；同信源把 Kafka 列入"底层用 Netty"，本库无信源支撑、与既有认知不一致，标记存疑不作定论。
 
@@ -130,7 +142,7 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 
 ## Current Understanding（当前认知）
 
-二十一个信源分层互证：机制层（线程模型/内存/零拷贝）解释"为什么快"，教程十七信源（源码分析第 1~6、8~11、15~18、20~22 篇，第 7、12~14、19 篇未采集）补齐"为什么存在"（JDK NIO 痛点）、入门路径（分层架构图、Echo 三段代码对比）与核心组件内部机制（Reactor 三形态与 ServerBootstrapAcceptor 移交链路；Pipeline 双向链表与双向事件传播、Handler 生命周期；ByteBuf 双指针/扩容/引用计数；EventLoop 三合一结构/run() 循环/ioRatio/chooser/register 异步化；启动三件套 initAndRegister 与 Acceptor 装配源码；run() 主循环的 SelectStrategy/ioRatio/空轮询自愈深挖；PooledByteBufAllocator 的 Arena→Chunk→Page→Subpage 四级与线程缓存；PoolChunk/PoolSubpage 内部算法与 ChunkList 六档流转；写缓冲 ChannelOutboundBuffer 的 write/flush 分离与高低水位背压；connect/bind/close 连接生命周期与四层优雅关闭；IdleStateHandler 三维空闲检测与精确再调度心跳机制；断线重连的双时机触发+退避+EventLoop 调度纪律；HttpObjectDecoder 十二态解码状态机与碎片聚合；WebSocket 握手与 Pipeline 热插拔升级；SslHandler 对 SSLEngine 的透明封装、异步握手与 SslProvider 策略切换），两个 IoT 工程层展示"快之外还要什么"——会话路由原子性、命令状态机、背压分层、Drain 发布；李林锋调优层给出百万接入的系统侧配套（句柄/心跳周期/缓冲区/内存池/RPS/JVM）。一致立场：Netty 只保证 IO 层不阻塞，生产级靠使用者的纪律（二十一信源，置信度高）。
+二十四个信源分层互证：机制层（线程模型/内存/零拷贝）解释"为什么快"，教程二十信源（源码分析第 1~6、8~11、15~18、20~25 篇，第 7、12~14、19 篇未采集）补齐"为什么存在"（JDK NIO 痛点）、入门路径（分层架构图、Echo 三段代码对比）与核心组件内部机制（Reactor 三形态与 ServerBootstrapAcceptor 移交链路；Pipeline 双向链表与双向事件传播、Handler 生命周期；ByteBuf 双指针/扩容/引用计数；EventLoop 三合一结构/run() 循环/ioRatio/chooser/register 异步化；启动三件套 initAndRegister 与 Acceptor 装配源码；run() 主循环的 SelectStrategy/ioRatio/空轮询自愈深挖；PooledByteBufAllocator 的 Arena→Chunk→Page→Subpage 四级与线程缓存；PoolChunk/PoolSubpage 内部算法与 ChunkList 六档流转；写缓冲 ChannelOutboundBuffer 的 write/flush 分离与高低水位背压；connect/bind/close 连接生命周期与四层优雅关闭；IdleStateHandler 三维空闲检测与精确再调度心跳机制；断线重连的双时机触发+退避+EventLoop 调度纪律；HttpObjectDecoder 十二态解码状态机与碎片聚合；WebSocket 握手与 Pipeline 热插拔升级；SslHandler 对 SSLEngine 的透明封装、异步握手与 SslProvider 策略切换；零拷贝四大兵器（FileRegion sendfile/CompositeByteBuf 逻辑拼接/wrappedBuffer 包装/堆外内存）；EpollEventLoop native 传输（三 fd 结构/零 GC 事件/ET 模式/回退纪律）；高低水位背压（CAS 状态切换/延迟传播防重入/isWritable 三件套）），两个 IoT 工程层展示"快之外还要什么"——会话路由原子性、命令状态机、背压分层、Drain 发布；李林锋调优层给出百万接入的系统侧配套（句柄/心跳周期/缓冲区/内存池/RPS/JVM）。一致立场：Netty 只保证 IO 层不阻塞，生产级靠使用者的纪律（二十四信源，置信度高）。
 
 ## Evidence（证据）
 
@@ -155,3 +167,6 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 - `raw/sources/architecture/2026-10-27-netty-20-http-decoder.md`（教程 HTTP 篇：HttpObjectDecoder 状态机/decode 主循环/chunked 零拷贝/UPGRADED/聚合器与常见坑）
 - `raw/sources/architecture/2026-10-27-netty-21-websocket.md`（教程 WebSocket 篇：101 握手/Pipeline 热插拔/帧编解码/掩码铁律/心跳与关闭纪律）
 - `raw/sources/architecture/2026-10-27-netty-22-ssl-tls.md`（教程 SSL/TLS 篇：SslHandler 双向加解密/unwrap 四态循环/异步握手/SslContext 工厂/SslProvider 策略/OpenSSL 集成/生产坑与优化）
+- `raw/sources/architecture/2026-10-27-netty-23-zero-copy.md`（教程零拷贝篇：四大兵器 FileRegion/CompositeByteBuf/wrappedBuffer/堆外+sendfile 数据路径/六条注意事项）
+- `raw/sources/architecture/2026-10-27-netty-24-epoll-native.md`（教程 Native Transport 篇：三 fd 结构/epollWait C 实现/fd 直映射/ET-LT/eventfd+timerfd/简易压测/回退链）
+- `raw/sources/architecture/2026-10-27-netty-25-flow-control.md`（教程流量控制篇：WriteBufferWaterMark 32K/64K/ChannelOutboundBuffer 水位检测/CAS 状态切换/invokeLater 防重入/水位经验表）

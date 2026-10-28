@@ -17,6 +17,7 @@ sources:
   - raw/sources/architecture/2026-10-27-netty-22-ssl-tls.md
 related:
   - wiki/sources/netty-21-websocket.md
+  - wiki/sources/netty-23-zero-copy.md
   - wiki/entities/netty.md
   - wiki/concepts/netty-ssl-tls.md
   - wiki/concepts/netty-channel-pipeline.md

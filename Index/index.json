@@ -1,63 +1,6 @@
 {
-  "updated_at": "2026-10-29 03:45",
+  "updated_at": "2026-10-29 06:34",
   "notes": [
-    {
-      "id": "2026-10-27-netty-23-zero-copy",
-      "title": "Netty源码分析(23) — 零拷贝机制详解",
-      "path": "Inbox/2026-10-27-netty-23-zero-copy.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484607&idx=1&sn=ab05acab1098719909f8d4a894ed7bb5&chksm=fe6ca5e5c91b2cf38784a3fc4b9b5b43556004c973f8b8e8beda861f1d5a69491d0fa0bd0fe9#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "零拷贝的本质是让 CPU 不参与数据搬运。Netty 提供四大零拷贝兵器：FileRegion(sendfile)、CompositeByteBuf、Unpooled.wrappedBuffer、DirectBuffer+内存映射，分别覆盖文件传输、逻辑合并、数组包装、堆外读写四类场景。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-23-zero-copy.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-27-netty-24-epoll-native",
-      "title": "Netty源码分析(24) — EpollEventLoop 与 Native Transport",
-      "path": "Inbox/2026-10-27-netty-24-epoll-native.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484613&idx=1&sn=a220017004e50b20b8925ff0dd000a06&chksm=fe6ca59fc91b2c89846b22c2c447abdd98a192ef19deec3017ed9c4f205d3d4c6d7a741beb1c#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "剖析 Netty 的 native 传输层：EpollEventLoop 绕过 JDK Selector 直接调用 Linux epoll 系统调用，结合 eventfd/timerfd 实现高效唤醒与定时，是 Netty 性能的\"杀手锏\"。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-24-epoll-native.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-27-netty-25-flow-control",
-      "title": "Netty源码分析(25) — Netty 的流量控制：高低水位与可写性",
-      "path": "Inbox/2026-10-27-netty-25-flow-control.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484622&idx=1&sn=9d1f84eb30d923022f03631b2e07e8db&chksm=fe6ca594c91b2c827b5d86ee5e031485b8259e07a19edba268eebc113dd31de7397702cb27d7#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "源码级解析 Netty 的写侧背压机制：ChannelOutboundBuffer 的高低水位设计、isWritable 状态切换与 channelWritabilityChanged 事件传播，解决\"写得比对方读得快\"导致的 OOM 问题。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-25-flow-control.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-27-netty-27-channelfuture",
       "title": "Netty源码分析(27) — ChannelFuture 与 异步回调机制",
@@ -4827,6 +4770,63 @@
       "summary": "Netty 的 SSL/TLS 支持本质是对 JDK SSLEngine 的封装：SslHandler 通过 wrap()/unwrap() 在出站加密、入站解密，对 Pipeline 上下游完全透明；SslContext 作为工厂支持 JDK/OpenSSL 多提供者切换。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-22-ssl-tls.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-23-zero-copy",
+      "title": "Netty源码分析(23) — 零拷贝机制详解",
+      "path": "Archive/2026-10-27-netty-23-zero-copy.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484607&idx=1&sn=ab05acab1098719909f8d4a894ed7bb5&chksm=fe6ca5e5c91b2cf38784a3fc4b9b5b43556004c973f8b8e8beda861f1d5a69491d0fa0bd0fe9#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "零拷贝的本质是让 CPU 不参与数据搬运。Netty 提供四大零拷贝兵器：FileRegion(sendfile)、CompositeByteBuf、Unpooled.wrappedBuffer、DirectBuffer+内存映射，分别覆盖文件传输、逻辑合并、数组包装、堆外读写四类场景。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-23-zero-copy.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-24-epoll-native",
+      "title": "Netty源码分析(24) — EpollEventLoop 与 Native Transport",
+      "path": "Archive/2026-10-27-netty-24-epoll-native.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484613&idx=1&sn=a220017004e50b20b8925ff0dd000a06&chksm=fe6ca59fc91b2c89846b22c2c447abdd98a192ef19deec3017ed9c4f205d3d4c6d7a741beb1c#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "剖析 Netty 的 native 传输层：EpollEventLoop 绕过 JDK Selector 直接调用 Linux epoll 系统调用，结合 eventfd/timerfd 实现高效唤醒与定时，是 Netty 性能的\"杀手锏\"。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-24-epoll-native.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-25-flow-control",
+      "title": "Netty源码分析(25) — Netty 的流量控制：高低水位与可写性",
+      "path": "Archive/2026-10-27-netty-25-flow-control.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484622&idx=1&sn=9d1f84eb30d923022f03631b2e07e8db&chksm=fe6ca594c91b2c827b5d86ee5e031485b8259e07a19edba268eebc113dd31de7397702cb27d7#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "源码级解析 Netty 的写侧背压机制：ChannelOutboundBuffer 的高低水位设计、isWritable 状态切换与 channelWritabilityChanged 事件传播，解决\"写得比对方读得快\"导致的 OOM 问题。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-25-flow-control.md",
       "wiki_status": "ingested"
     }
   ]
