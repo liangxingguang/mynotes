@@ -895,6 +895,25 @@
       "wiki_status": "pending"
     },
     {
+      "id": "2026-10-28-hot-cold-data-separation-archive",
+      "title": "大表治理与冷热分离：历史单据到底怎么存？",
+      "path": "Inbox/2026-10-28-hot-cold-data-separation-archive.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "MySQL",
+        "分布式系统"
+      ],
+      "source": "微信公众号·架构落地笔记",
+      "source_url": "https://mp.weixin.qq.com/s/pfpZAv_WmdsBn2WVdneY0g",
+      "source_type": "文章",
+      "platform": "微信公众号",
+      "summary": "冷热分离不是省磁盘，是给数据库做减负手术。三层存储：热库分库分表（≤500万行）、温库归档 MySQL、冷库 OSS 或 ES/ClickHouse；归档分批软删，严禁长事务大 DELETE。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/hot-cold-data-separation-archive.md",
+      "wiki_status": "pending"
+    },
+    {
       "id": "2026-10-28-investing-for-beginners",
       "title": "开源项目推荐：《投资入门指南》investing-for-beginners",
       "path": "Inbox/2026-10-28-investing-for-beginners.md",
