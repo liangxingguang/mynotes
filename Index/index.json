@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28 11:43",
+  "updated_at": "2026-10-28 11:48",
   "notes": [
     {
       "id": "2026-10-27-jdk-18-arrayblockingqueue",
@@ -18,7 +18,7 @@
       "summary": "JUC 中最经典的阻塞队列实现：底层是定长循环数组，全部并发控制用一把 ReentrantLock + 两个条件变量（notEmpty/notFull）完成。put/take 对称阻塞、enqueue/dequeue 循环指针，代码干净直白，是理解后续 LinkedBlockingQueue、PriorityBlockingQueue、DelayQueue 的最佳入口。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/jdk-18-arrayblockingqueue.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-27-jdk-19-linkedblockingqueue",
