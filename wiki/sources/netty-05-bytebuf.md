@@ -17,6 +17,7 @@ sources:
 related:
   - wiki/sources/netty-04-channel-pipeline-handler.md
   - wiki/sources/netty-06-eventloop.md
+  - wiki/sources/netty-03-reactor.md
   - wiki/entities/netty.md
   - wiki/concepts/netty-bytebuf.md
 ---
@@ -63,12 +64,13 @@ related:
 
 - 单一自媒体教程信源，源码解读基于 Netty 4.1.x；"约 70% GC 压力下降"无测量方法与版本环境。
 - 池化内部（PoolChunk/PoolSubpage）仅点名未展开，作者明示留待第 10、11 篇。
-- 系列第 3 篇未采集，连续性有缺口。
+- 系列编号与发布顺序存在错位（第 6 篇自称"下一期讲 Pipeline"，而 Pipeline 为第 4 篇）。
 
 ## Related Knowledge（相关知识）
 
 - [[netty-04-channel-pipeline-handler]]（同系列第 4 篇：Pipeline 事件传播与 Handler 释放语义）
 - [[netty-06-eventloop]]（同系列第 6 篇：EventLoop 线程模型源码）
+- [[netty-03-reactor]]（同系列第 3 篇：Reactor 线程模型）
 - [[netty-01-intro]]（同系列开篇：分层架构中 ByteBuf 属缓冲层）
 - [[netty-bytebuf]]（概念页）
 - [[netty]]（实体页）

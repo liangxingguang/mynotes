@@ -9,9 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [netty, Java]
 asset_ref: Assets/2026/10/netty-03-reactor.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-10-28T11:05:49.633Z"
-ingest_claim_id: 11904-1793185549633-0
+wiki_status: ingested
 ---
 
 # Netty源码分析(3) — Reactor线程模型：从单线程到主从多Reactor

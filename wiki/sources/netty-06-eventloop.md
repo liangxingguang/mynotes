@@ -16,6 +16,7 @@ sources:
   - raw/sources/architecture/2026-10-27-netty-06-eventloop.md
 related:
   - wiki/sources/netty-05-bytebuf.md
+  - wiki/sources/netty-03-reactor.md
   - wiki/entities/netty.md
   - wiki/concepts/netty-eventloop.md
   - wiki/concepts/reactor-thread-model.md
@@ -61,12 +62,13 @@ related:
 ## Limitations（局限）
 
 - 单一自媒体教程信源，源码解读基于 Netty 4.1.x；EpollEventLoopGroup / BUSY_WAIT 仅点名未展开。
-- 文中自称"下一期深挖 ChannelPipeline 事件传播"，与本库已摄入的系列第 4 篇（Pipeline 篇）主题重叠——系列编号与发布顺序存在错位，系列第 3 篇仍未采集。
+- 文中自称"下一期深挖 ChannelPipeline 事件传播"，与本库已摄入的系列第 4 篇（Pipeline 篇）主题重叠——系列编号与发布顺序存在错位。
 - "一个 EventLoop 服务几百上千个 Channel"为经验性表述，无压测数据。
 
 ## Related Knowledge（相关知识）
 
 - [[netty-05-bytebuf]]（同系列第 5 篇：ByteBuf 源码）
+- [[netty-03-reactor]]（同系列第 3 篇：Reactor 线程模型，与本篇 run()/chooser 剖析互证）
 - [[netty-04-channel-pipeline-handler]]（同系列第 4 篇：Pipeline 事件传播源码）
 - [[netty-eventloop]]（概念页）
 - [[reactor-thread-model]]（架构视角的线程模型概念页）

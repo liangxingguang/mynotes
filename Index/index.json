@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-10-28 19:06",
+  "updated_at": "2026-10-28 19:14",
   "notes": [
-    {
-      "id": "2026-10-27-netty-03-reactor",
-      "title": "Netty源码分析(3) — Reactor线程模型：从单线程到主从多Reactor",
-      "path": "Inbox/2026-10-27-netty-03-reactor.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483912&idx=1&sn=5d9fc79cadf73e9107cdf88aada49f7b&chksm=fe6ca352c91b2a4453519a17764104363a6b4f46847dfa40829199be08e3a2a05e1daa515182#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "深入 Netty 的 Reactor 线程模型：从单线程、多线程到主从多 Reactor 三种形态，剖析 NioEventLoop 的 run() 死循环、EventLoopGroup 的 chooser 分配算法，以及 boss 与 worker 通过 ServerBootstrapAcceptor 衔接的完整链路，附可运行示例与常见坑。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-03-reactor.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-10-27-netty-08-bootstrap",
       "title": "Netty源码分析(8) — Bootstrap 与 ServerBootstrap 启动流程源码",
@@ -4770,6 +4751,25 @@
       "summary": "通过 BIO 多线程服务端、原生 NIO 服务端、Netty 服务端三段完整代码对比，论证为什么需要 Netty：BIO 受制于 C10K，原生 NIO 代码复杂且需自处理粘包/重连/多线程/epoll 空轮询，Netty 用 Reactor 线程模型、Pipeline 责任链、零拷贝和内存池把复杂留给自己。附 Netty 客户端完整示例与适用场景盘点。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-02-bio-nio.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-03-reactor",
+      "title": "Netty源码分析(3) — Reactor线程模型：从单线程到主从多Reactor",
+      "path": "Archive/2026-10-27-netty-03-reactor.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483912&idx=1&sn=5d9fc79cadf73e9107cdf88aada49f7b&chksm=fe6ca352c91b2a4453519a17764104363a6b4f46847dfa40829199be08e3a2a05e1daa515182#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "深入 Netty 的 Reactor 线程模型：从单线程、多线程到主从多 Reactor 三种形态，剖析 NioEventLoop 的 run() 死循环、EventLoopGroup 的 chooser 分配算法，以及 boss 与 worker 通过 ServerBootstrapAcceptor 衔接的完整链路，附可运行示例与常见坑。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-03-reactor.md",
       "wiki_status": "ingested"
     },
     {

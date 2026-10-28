@@ -2189,6 +2189,20 @@
    ],
    "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483959&idx=1&sn=fad11177db7eac2d06d924bcfccec4c9&chksm=fe6ca36dc91b2a7bf7750cf11a7672da1054f9a0d6711c2cce72c7c93ecd790107dbc74a5b2e",
    "asset_ref": "Assets/2026/10/netty-06-eventloop.md"
+  },
+  {
+   "path": "raw/sources/architecture/2026-10-27-netty-03-reactor.md",
+   "sha256": "b1816dd9badc0c174faea4d80e69d72c48e0518ae73ee7f72168a7319a154997",
+   "registered_at": "2026-10-28",
+   "inbox_ref": "Archive/2026-10-27-netty-03-reactor.md",
+   "pages": [
+    "wiki/sources/netty-03-reactor.md",
+    "wiki/concepts/reactor-thread-model.md",
+    "wiki/concepts/netty-eventloop.md",
+    "wiki/entities/netty.md"
+   ],
+   "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483912&idx=1&sn=5d9fc79cadf73e9107cdf88aada49f7b&chksm=fe6ca352c91b2a4453519a17764104363a6b4f46847dfa40829199be08e3a2a05e1daa515182",
+   "asset_ref": "Assets/2026/10/netty-03-reactor.md"
   }
  ]
 }

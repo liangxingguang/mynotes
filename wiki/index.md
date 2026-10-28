@@ -125,6 +125,7 @@
 - [[netease-pigeon-message-bus-activity|直播系统聊天技术(十)：网易云音乐「信鸽」实时消息总线的活动系统架构]]（2026-10-23，消息总线/履约分发/RocketMQ）
 - [[netty-01-intro|Netty源码分析(1) — 开篇：Netty到底是什么，凭什么成为Java网络编程的事实标准？]]（2026-10-28，Netty/教程/分层架构）
 - [[netty-02-bio-nio|Netty源码分析(2) — 从BIO到NIO再到Netty，为什么我们需要Netty？]]（2026-10-28，Netty/教程/BIO-NIO对比）
+- [[netty-03-reactor|Netty源码分析(3) — Reactor线程模型：从单线程到主从多Reactor]]（2026-10-28，Netty/教程/Reactor源码）
 - [[netty-04-channel-pipeline-handler|Netty源码分析(4) — Channel、ChannelPipeline与ChannelHandler三剑客]]（2026-10-28，Netty/教程/Pipeline事件传播源码）
 - [[netty-05-bytebuf|Netty源码分析(5) — ByteBuf：Netty的数据容器深度解析]]（2026-10-28，Netty/教程/ByteBuf源码）
 - [[netty-06-eventloop|Netty源码分析(6) — EventLoopGroup 与 EventLoop 源码解析]]（2026-10-28，Netty/教程/EventLoop源码）
@@ -238,7 +239,7 @@
 - [[next-token-prediction|下一 token 预测]]（LLM 的统一目标：交叉熵训练、自回归生成，能力与幻觉同根）
 - [[netty-bytebuf|Netty ByteBuf（数据容器与内存管理）]]（读写双指针免 flip+4MB 阈值扩容+引用计数+类 jemalloc 池化；Heap/Direct/Composite 三形态；释放铁律"谁最后消费谁 release"；双信源，置信度高）
 - [[netty-channel-pipeline|Netty ChannelPipeline（责任链与事件传播）]]（Context 双向链表+inbound/outbound 标志跳节点；入站 Head→Tail、出站 Tail→Head；ctx.write≠channel.write 路径；源码级单信源，置信度高）
-- [[netty-eventloop|Netty EventLoop / EventLoopGroup（事件循环机制）]]（线程+Selector+MpscLinkedQueue 三合一；CPU×2 默认线程+chooser 位运算+ioRatio=50 时间配比+selectCnt 空轮询自愈+register 异步化；源码级单信源，与线程模型三信源互证，置信度高）
+- [[netty-eventloop|Netty EventLoop / EventLoopGroup（事件循环机制）]]（线程+Selector+MpscLinkedQueue 三合一；CPU×2 默认线程+chooser 位运算+ioRatio=50 时间配比+selectCnt 超 512 重建 Selector 自愈+register 异步化；源码级双信源互证，置信度高）
 - [[notification-system-design|站内消息系统领域模型]]（公告/提醒/私信三分类+提醒四元组；拉（订阅驱动）/推（私信直写）按类选型；免打扰后置读路径，简书上下篇双信源）
 - [[okf-knowledge-format|OKF（面向 AI Agent 的知识包装规范）]]（入库时编译为互链 Markdown 树，运行时只做导航+摘录）
 - [[pi-customization-layers|Pi 五层定制模型]]（Prompt 模板→AGENTS.md→Skill→Extension→SDK，官方扩展点成本阶梯）
@@ -251,7 +252,7 @@
 - [[read-fanout|读扩散（Fan-out on Read）]]（会话队列+syncId 位点同步把 1:N 写压成 1:1；99.99% 非个性化消息前提；阿里混合模式 500ms 端到端，双信源）
 - [[rag-production-guardrails|企业级 RAG 生产护栏]]（容量/证据/权限/恢复四主线；证据门禁前置、发布目录原子切换；混合检索+存储分层+参数热调双信源互证）
 - [[reactive-tracing-context|响应式环境的全链路 traceId 传递]]（Reactor Context 替代 ThreadLocal；doOnEach 同步 MDC、doFinally 清除）
-- [[reactor-thread-model|主从 Reactor 线程模型（Netty 版）]]（Boss accept/Worker CPU×2/Channel 终身绑单 EventLoop 天然无锁；三信源互证，置信度高）
+- [[reactor-thread-model|主从 Reactor 线程模型（Netty 版）]]（Boss accept/Worker CPU×2/Channel 终身绑单 EventLoop 天然无锁；ServerBootstrapAcceptor 移交链路+三形态选型，五信源互证，置信度高）
 - [[reentrantlock-internals|ReentrantLock 可重入锁设计]]（AQS 经典实现：非公平先抢/公平只差 hasQueuedPredecessors/state 累加可重入/多 Condition 精确唤醒，单信源，置信度中）
 - [[scheduledthreadpoolexecutor-internals|ScheduledThreadPoolExecutor 调度设计]]（DelayedWorkQueue 数组最小堆+Leader-Follower 等待；period 正负号编码 fixedRate/fixedDelay；周期任务异常静默取消，单信源，置信度中）
 - [[synchronousqueue-internals|SynchronousQueue 直接交接设计]]（零容量不存储+单 transfer 双角色；TransferStack Treiber 栈 FULFILLING 配对/TransferQueue FIFO；先自旋后 park；newCachedThreadPool 之选，单信源，置信度中）
@@ -281,7 +282,7 @@
 - [[kafka|Apache Kafka]]（高吞吐事件管道；顺序写+PageCache+零拷贝+批量四板斧，机制+运维+IoT 场景三信源）
 - [[langgraph|LangGraph]]（LangChain 生态 Agent 编排状态机；原生非分布式，RedisSaver+MySQL 快照+外部锁补齐，双信源）
 - [[learn-harness-engineering-course|Learn Harness Engineering]]（Walking Labs 开源 Coding Agent 工程课程：14 讲 + 8 递进项目，单一微博推荐信源）
-- [[netty|Netty]]（Java 异步事件驱动网络框架；Reactor+ByteBuf+零拷贝三支柱+Pipeline/EventLoop 源码机制，机制+教程+IoT 工程九信源）
+- [[netty|Netty]]（Java 异步事件驱动网络框架；Reactor+ByteBuf+零拷贝三支柱+Pipeline/EventLoop 源码机制，机制+教程+IoT 工程十信源）
 - [[pi|Pi]]（极简 Agent CLI/Harness，1.0 起原生 MCP + Code Mode + Pi Durable，5000+ 扩展生态）
 - [[pigeon-message-bus|信鸽（Pigeon）]]（网易云音乐直播活动消息总线；32 台 8U16G 支撑 300w/min，RocketMQ 底座）
 - [[rocketmq|Apache RocketMQ]]（高性能分布式 MQ；事务消息+回查保发送、业务幂等保消费，运维+一致性+机制+存储+事务谱系五信源）

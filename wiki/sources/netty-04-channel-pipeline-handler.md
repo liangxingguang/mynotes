@@ -16,6 +16,7 @@ sources:
   - raw/sources/architecture/2026-10-27-netty-04-channel-pipeline-handler.md
 related:
   - wiki/sources/netty-02-bio-nio.md
+  - wiki/sources/netty-03-reactor.md
   - wiki/entities/netty.md
   - wiki/concepts/netty-channel-pipeline.md
   - wiki/concepts/reactor-thread-model.md
@@ -68,6 +69,7 @@ related:
 ## Related Knowledge（相关知识）
 
 - [[netty-02-bio-nio]]（同系列第 2 篇）
+- [[netty-03-reactor]]（同系列第 3 篇：Reactor 线程模型）
 - [[netty-01-intro]]（同系列开篇：分层架构中 ChannelPipeline 属核心层）
 - [[reactor-thread-model]]（线程模型篇：boss/worker 分工，本篇回答"数据在 handler 间如何流转"）
 - [[netty]]（实体页）

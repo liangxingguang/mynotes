@@ -15,6 +15,7 @@ sources:
   - raw/sources/architecture/2026-10-20-netty-three-skills-high-performance.md
   - raw/sources/architecture/2026-10-27-netty-01-intro.md
   - raw/sources/architecture/2026-10-27-netty-02-bio-nio.md
+  - raw/sources/architecture/2026-10-27-netty-03-reactor.md
   - raw/sources/architecture/2026-10-27-netty-06-eventloop.md
 related:
   - wiki/entities/netty.md
@@ -36,6 +37,7 @@ BIO"一连接一线程"在万级并发（C10K）下直接崩溃（线程栈溢�
 2. EventLoop = 单线程 + 私有 Selector，一对多管理 Channel。
 3. Channel 终身绑单 EventLoop → 天然无锁串行化，业务 Handler 默认不用考虑并发。
 4. accept 异步化：注册未完成时挂监听器，完成后回调 `doBind0()` 再绑定端口（`ServerBootstrap.bind()` 源码路径）。
+5. 三形态可按规模选择（教程第 3 篇）：单线程 Reactor（一个 EventLoop 干所有事，小规模）；多线程 Reactor（boss accept + worker 池，Netty 默认形态）；主从多 Reactor（多 boss + 多 worker，万级以上连接）。boss 与 worker 的衔接靠 `ServerBootstrapAcceptor`——ServerBootstrap.init() 把它尾插进 ServerSocketChannel 的 Pipeline，其 channelRead 收到新 accept 的 Channel 后 `childGroup.register(child)` 移交 workerGroup。
 
 ## Structure（结构）
 
@@ -69,10 +71,11 @@ Boss 的 Selector 只监听 OP_ACCEPT；新连接到来后创建 Channel 并注�
 
 - 与 BIO 一连接一线程：线程数不随连接数增长。
 - 与单 Reactor 单线程：accept 与读写分离，避免单点瓶颈；Boss 也可多线程（多 EventLoop 的 EventLoopGroup）应对海量建连。
+- 模式思想源头：Doug Lea《Scalable IO in Java》的 Reactor 模式（教程第 3 篇信源说法）。
 
 ## Evolution（演进）
 
-机制信源（netty-three-skills）给出"boss 只 accept、worker CPU×2、Channel 终身绑单 EventLoop"的性能视角；教程双信源（netty-01/02）补全代码结构与 bind() 源码路径；教程第 6 篇（netty-06，2026-10-27 摄入）把模型落到源码实现——默认线程数静态块、chooser 位运算、ioRatio=50 时间配比、register 跨线程异步化、selectCnt 空轮询自愈，与本页结论一致互证（详见 [[netty-eventloop]]）。四信源对核心结构表述一致。
+机制信源（netty-three-skills）给出"boss 只 accept、worker CPU×2、Channel 终身绑单 EventLoop"的性能视角；教程双信源（netty-01/02）补全代码结构与 bind() 源码路径；教程第 3 篇（netty-03，2026-10-28 摄入）补齐三形态对照与 ServerBootstrapAcceptor 移交链路，并给出空轮询自愈阈值 512；教程第 6 篇（netty-06，2026-10-28 摄入）把模型落到源码实现——默认线程数静态块、chooser 位运算、ioRatio=50 时间配比、register 跨线程异步化、selectCnt 空轮询自愈，与本页结论一致互证（详见 [[netty-eventloop]]）。五信源对核心结构表述一致。
 
 ## Open Questions（开放问题）
 
@@ -83,6 +86,7 @@ Boss 的 Selector 只监听 OP_ACCEPT；新连接到来后创建 Channel 并注�
 - Source: `raw/sources/architecture/2026-10-20-netty-three-skills-high-performance.md`（机制层：三支柱之首）
 - Source: `raw/sources/architecture/2026-10-27-netty-01-intro.md`（开篇：模型结构 + bind() 源码）
 - Source: `raw/sources/architecture/2026-10-27-netty-02-bio-nio.md`（对比篇：结构图 + 天然无锁表述）
+- Source: `raw/sources/architecture/2026-10-27-netty-03-reactor.md`（线程模型专篇：三形态对照/ServerBootstrapAcceptor 链路/chooser 演进/自愈阈值 512/选型分档）
 - Source: `raw/sources/architecture/2026-10-27-netty-06-eventloop.md`（源码实现层：默认线程数/chooser/ioRatio/register 异步化/空轮询自愈）
 
 ## Related Knowledge（相关知识）
@@ -90,4 +94,5 @@ Boss 的 Selector 只监听 OP_ACCEPT；新连接到来后创建 Channel 并注�
 - [[netty]]
 - [[netty-01-intro]]
 - [[netty-02-bio-nio]]
+- [[netty-03-reactor]]
 - [[netty-eventloop]]

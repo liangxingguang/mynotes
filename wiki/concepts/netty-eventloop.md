@@ -14,6 +14,7 @@ tags:
   - concurrency
 sources:
   - raw/sources/architecture/2026-10-27-netty-06-eventloop.md
+  - raw/sources/architecture/2026-10-27-netty-03-reactor.md
 related:
   - wiki/concepts/reactor-thread-model.md
   - wiki/concepts/netty-channel-pipeline.md
@@ -33,10 +34,10 @@ EventLoop 是"Handler 的 channelRead 跑在哪个线程上"这个问题的答�
 
 1. 三合一结构：Thread + Selector + MpscLinkedQueue 任务队列，死循环串起 IO 事件与任务。
 2. 默认线程数：`availableProcessors() * 2`（下限 1），可用 `-Dio.netty.eventLoopThreads` 覆盖（MultithreadEventLoopGroup 静态块）。
-3. chooser 均匀分配：线程数为 2 的幂走 `idx++ & (len-1)` 位运算（PowerOfTwoEventExecutorChooser），否则取模（GenericEventExecutorChooser）。
+3. chooser 均匀分配：线程数为 2 的幂走 `idx++ & (len-1)` 位运算（PowerOfTwoEventExecutorChooser），否则取模（GenericEventExecutorChooser）；作者称 Netty 4.x 由早期 `AtomicInteger % length` 取模演进为位运算。
 4. 时间配比：`ioRatio`（默认 50）按 `ioTime * (100 - ioRatio) / ioRatio` 给任务分配执行时长，防止 IO 事件饿死任务；ioRatio=100 时先清完所有 IO 再跑全部任务。
 5. 跨线程安全提交：外部线程 execute() 只入队 + `wakeup` 布尔短路后 `selector.wakeup()` 打断 select；register 不在 EventLoop 线程时把 register0() 异步投递回本线程执行。
-6. 性能微优化：SelectedSelectionKeySet 用数组替代 JDK HashSet（消除迭代器/哈希开销，处理后置 null help GC）；`selectCnt` 计数超阈值即 rebuildSelector0() 重建 Selector，自愈 JDK epoll 空轮询 bug。
+6. 性能微优化：SelectedSelectionKeySet 用数组替代 JDK HashSet（消除迭代器/哈希开销，处理后置 null help GC）；`selectCnt` 计数超阈值（`SELECTOR_AUTO_REBUILD_THRESHOLD`，默认 512 次）即 rebuildSelector——新建 Selector 并把原注册的 Channel 迁移过去，自愈 JDK epoll 空轮询 bug。
 
 ## Structure（结构）
 
@@ -76,18 +77,20 @@ NioEventLoop.run() 每轮：① SelectStrategy 决策（CONTINUE / BUSY_WAIT 仅
 
 ## Evolution（演进）
 
-机制信源（netty-three-skills）与教程开篇（netty-01/02）给出"Boss accept / Worker CPU×2 / Channel 终身绑单 EventLoop"的架构结论；本信源（netty-06，2026-10-27）把结论落到源码：默认线程数静态块、chooser 位运算、ioRatio 配比公式、register 异步化、wakeup 短路。两侧表述一致，无矛盾。
+机制信源（netty-three-skills）与教程开篇（netty-01/02）给出"Boss accept / Worker CPU×2 / Channel 终身绑单 EventLoop"的架构结论；教程第 3 篇（netty-03）补 chooser 版本演进（取模→位运算）、runAllTasks 尾部任务（afterRunningAllTasks）与自愈阈值 512；教程第 6 篇（netty-06）给 run()/processSelectedKeys/register 逐方法剖析与 ioRatio 配比公式。两篇教程的 run() 伪代码详略与策略命名略有差异（03 简化为 SELECT/SELECT_NOW，06 为 CONTINUE/BUSY_WAIT/SELECT），属作者简化口径不同，无实质矛盾。
 
 ## Open Questions（开放问题）
 
-- SELECTOR_AUTO_REBUILD_THRESHOLD 的具体取值与本信源未覆盖的 EpollEventLoopGroup/BUSY_WAIT 细节。
+- EpollEventLoopGroup / BUSY_WAIT 细节（信源仅点名未展开）。
 - Netty 4.2 的 EventLoopGroup 与传输解耦、io_uring 一级传输对本机制的影响（见 [[netty]] Timeline），本库暂无展开信源。
 
 ## Evidence（证据）
 
-- Source: `raw/sources/architecture/2026-10-27-netty-06-eventloop.md`（源码级单信源：类层次/构造链/run()/processSelectedKeys/wakeup/register 逐方法剖析；架构层结论与 [[reactor-thread-model]] 三信源互证）
+- Source: `raw/sources/architecture/2026-10-27-netty-06-eventloop.md`（源码级主信源：类层次/构造链/run()/processSelectedKeys/wakeup/register 逐方法剖析）
+- Source: `raw/sources/architecture/2026-10-27-netty-03-reactor.md`（补强：run() 四阶段简化版/chooser 演进/自愈阈值 512/runAllTasks 与 MPSC 队列；架构层结论与 [[reactor-thread-model]] 各信源互证）
 
 ## Related Knowledge（相关知识）
 
 - [[netty-06-eventloop]]（信源页）
+- [[netty-03-reactor]]（信源页）
 - [[netty]]（实体页：生产事故第一根因"EventLoop 阻塞"）
