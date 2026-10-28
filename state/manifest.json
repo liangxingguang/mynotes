@@ -2162,6 +2162,19 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483934&idx=1&sn=9c175b4c2275a9fd373d8c0f1796c95e&chksm=fe6ca344c91b2a520287802d7341a8acb54949ff11cc24825350287dace4e1fe1e41990df886",
       "asset_ref": "Assets/2026/10/netty-04-channel-pipeline-handler.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-27-netty-05-bytebuf.md",
+      "sha256": "58b5e07f38679b6f863cb992dd19d570f102697924a2fa6d19433df4f451bf1e",
+      "registered_at": "2026-10-28",
+      "inbox_ref": "Inbox/2026-10-27-netty-05-bytebuf.md",
+      "pages": [
+        "wiki/sources/netty-05-bytebuf.md",
+        "wiki/concepts/netty-bytebuf.md",
+        "wiki/entities/netty.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483944&idx=1&sn=261d8489acffb8afe5088e5f4f4612a7&chksm=fe6ca372c91b2a64ebff3b813276cc57c94dde2529d5086333cb871f670f5c8b41ff7e787261",
+      "asset_ref": "Assets/2026/10/netty-05-bytebuf.md"
     }
   ]
 }
