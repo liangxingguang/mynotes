@@ -9,7 +9,9 @@ created: 2026-10-27
 category: 技术
 tags: [Java, 课程]
 asset_ref: Assets/2026/10/jdk-25-longadder.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-28T04:46:54.915Z"
+ingest_claim_id: 8172-1793162814915-0
 ---
 
 # JDK源码剖析 —— LongAdder & LongAccumulator，比 AtomicLong 更快的秘密

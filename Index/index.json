@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28 12:46",
+  "updated_at": "2026-10-28 12:48",
   "notes": [
     {
       "id": "2026-10-27-jdk-25-longadder",
@@ -18,7 +18,7 @@
       "summary": "LongAdder 是 AtomicLong 的高并发替代品，核心思想是把单点 CAS 竞争分散到 Cell 数组上（分段思想），最后 sum() 汇总；LongAccumulator 是其通用版，支持自定义二元运算。文章剖析父类 Striped64 的源码：base 低竞争快速路径、Cell 数组扩容、@Contended 防伪共享、cellsBusy 自旋锁，并给出选型指南。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/jdk-25-longadder.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-27-jdk-26-priorityblockingqueue",
@@ -1064,6 +1064,26 @@
       "summary": "消费积压的本质是\"生产速度 > 消费速度\"的算术题：消费速度 ≥ 生产峰值 × 1.5 才不会积压。文章以一次凌晨 Lag 飙到 200 万的实战为例，给出四步处理法——扩分区+扩消费者止血、批量拉取摊薄网络往返、poll 与处理解耦的异步化、耗时埋点定位慢消息——并强调消化期须守住幂等、下游容量、retention 三条底线。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/kafka-consumer-lag-backlog-guide.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-28-kiso-minimal-agent-framework",
+      "title": "我开源了一个极简 Agent 框架，叫 Kiso",
+      "path": "Inbox/2026-10-28-kiso-minimal-agent-framework.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Harness",
+        "工程实践"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2085299067861595529",
+      "source_type": "link",
+      "platform": "zhihu",
+      "summary": "作者自研极简 Coding Agent 框架 Kiso 的设计复盘：从\"更简单、更稳定、更省 token\"出发，最终收敛为 Agent Runtime——模型负责扩大问题空间，Runtime 负责限定\"什么才有资格被称为事实\"。核心机制：Event Log 执行账本、Context 投影观、只读证明式权限、2,200 行内核门禁，附与 Pi 的 48 对 Benchmark。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/kiso-minimal-agent-framework.md",
       "wiki_status": "pending"
     },
     {
