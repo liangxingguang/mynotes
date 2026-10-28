@@ -222,3 +222,5 @@
 - 2026-10-28 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式，jdk-17 ingest 后校验）
 - 2026-10-28 | ingest | raw/sources/misc/2026-10-27-jdk-18-arrayblockingqueue.md | wiki/sources/jdk-18-arrayblockingqueue.md（新建，confidence=high，ABQ 源码拆解：循环数组+单锁双 Condition+put/take 对称闭环+三方对比表）+ wiki/concepts/arrayblockingqueue-internals.md（新建概念：单锁阻塞队列设计，单信源置信度中）+ wiki/sources/jdk-source-reading-album.md（回补 jdk-18 互链）
 - 2026-10-28 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式，jdk-18 ingest 后校验）
+- 2026-10-28 | ingest | raw/sources/misc/2026-10-27-jdk-19-linkedblockingqueue.md | wiki/sources/jdk-19-linkedblockingqueue.md（新建，confidence=high，LBQ 源码拆解：双锁读写分离+滚动哨兵+跨锁信号传递+ABQ 八维对比与选型）+ wiki/concepts/linkedblockingqueue-internals.md（新建概念：双锁阻塞队列设计，单信源置信度中）+ wiki/concepts/arrayblockingqueue-internals.md（第二信源互证：对偶设计根因与对比维度）+ wiki/sources/jdk-18-arrayblockingqueue.md、wiki/sources/jdk-source-reading-album.md（回补 jdk-19 互链）
+- 2026-10-28 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式，jdk-19 ingest 后校验）

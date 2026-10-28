@@ -82,6 +82,7 @@
 - [[jdk-16-scheduledthreadpool|深度剖析 ScheduledThreadPoolExecutor——JDK 定时任务调度引擎]]（2026-10-28，Java/JDK 源码）
 - [[jdk-17-enummap-enumset|JDK源码剖析——EnumMap & EnumSet，用枚举当数组下标]]（2026-10-28，Java/JDK 源码）
 - [[jdk-18-arrayblockingqueue|JDK源码阅读系列-ArrayBlockingQueue：用一把锁撑起的数组阻塞队列]]（2026-10-28，Java/JDK 源码）
+- [[jdk-19-linkedblockingqueue|深度剖析 LinkedBlockingQueue：链表实现的阻塞队列，为什么比 ArrayBlockingQueue 快？]]（2026-10-28，Java/JDK 源码）
 - [[jdk-source-reading-album|JDK 源码阅读合集（Java解忧杂货铺，30 篇系列索引）]]（2026-10-27，Java/源码阅读资源，置信度低）
 - [[jdk21-migration-huolala|JDK 21 规模化落地实践（货拉拉）：框架先扛兼容成本，业务切 parent 收尾]]（2026-10-23，Java/JVM/虚拟线程）
 - [[jenkins-gitlab-cicd-pipeline|Jenkins + GitLab CI/CD 流水线落地实战（完整配置）]]（2026-10-21，CI/CD，置信度中）
@@ -204,6 +205,7 @@
 - [[hashmap-internals|HashMap 核心设计（JDK 8）]]（2 的幂容量+扰动+0.75 负载因子+8/6/64 树化阈值+高低位链扩容拆分；单信源，置信度中）
 - [[hashset-internals|HashSet / LinkedHashSet 去重设计]]（HashMap key 视图+PRESENT 占位；hashCode+equals 双写铁律；dummy 构造换 LinkedHashMap 得插入序；双信源互证，置信度中）
 - [[hyperloglog|HyperLogLog（基数估算）]]（伯努利过程+分桶调和平均，12KB 估 64 位级基数；≤1w tablekv 精确、>1w HLL >95%，微信一手）
+- [[linkedblockingqueue-internals|LinkedBlockingQueue 双锁阻塞队列设计]]（takeLock/putLock 读写分离+滚动哨兵+跨锁信号传递+计数旧值精确唤醒；默认近无界须显式容量防 OOM；单信源，置信度中）
 - [[linkedhashmap-internals|LinkedHashMap 有序化设计（双链表 + 模板方法钩子）]]（Entry 身兼桶节点+双链节点；三钩子维护插入/访问序；两行核心代码 LRU，单信源，置信度中）
 - [[llm-wiki|LLM Wiki]]（原始来源不可变 + 模型持续编译互链知识页面，Karpathy 模式；本仓库即实例，双信源）
 - [[mcp|MCP]]（LLM↔工具/数据纵向协议，Anthropic 2024）

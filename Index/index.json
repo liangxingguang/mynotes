@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-10-28 12:03",
+  "updated_at": "2026-10-28 12:05",
   "notes": [
-    {
-      "id": "2026-10-27-jdk-19-linkedblockingqueue",
-      "title": "深度剖析 LinkedBlockingQueue：链表实现的阻塞队列，为什么比 ArrayBlockingQueue 快？",
-      "path": "Inbox/2026-10-27-jdk-19-linkedblockingqueue.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484674&idx=2&sn=2a4992228ac447520573028b047d17b7&chksm=fe6ca458c91b2d4eead7b2ab5bd34c3a780e802125ac8eb617a730bcedb89946bedf24e4fa26#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "逐行剖析 LinkedBlockingQueue 源码：基于单向链表 + 哨兵节点，用 takeLock/putLock 两把锁实现读写分离互不阻塞，配 AtomicInteger 计数与跨锁信号传递，高并发下吞吐量优于单锁的 ArrayBlockingQueue。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/jdk-19-linkedblockingqueue.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-10-27-jdk-20-futuretask",
       "title": "JDK源码剖析——FutureTask，线程池里那个「能拿到结果」的秘密武器",
@@ -4187,6 +4168,25 @@
       "summary": "JUC 中最经典的阻塞队列实现：底层是定长循环数组，全部并发控制用一把 ReentrantLock + 两个条件变量（notEmpty/notFull）完成。put/take 对称阻塞、enqueue/dequeue 循环指针，代码干净直白，是理解后续 LinkedBlockingQueue、PriorityBlockingQueue、DelayQueue 的最佳入口。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/jdk-18-arrayblockingqueue.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-jdk-19-linkedblockingqueue",
+      "title": "深度剖析 LinkedBlockingQueue：链表实现的阻塞队列，为什么比 ArrayBlockingQueue 快？",
+      "path": "Archive/2026-10-27-jdk-19-linkedblockingqueue.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484674&idx=2&sn=2a4992228ac447520573028b047d17b7&chksm=fe6ca458c91b2d4eead7b2ab5bd34c3a780e802125ac8eb617a730bcedb89946bedf24e4fa26#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "逐行剖析 LinkedBlockingQueue 源码：基于单向链表 + 哨兵节点，用 takeLock/putLock 两把锁实现读写分离互不阻塞，配 AtomicInteger 计数与跨锁信号传递，高并发下吞吐量优于单锁的 ArrayBlockingQueue。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jdk-19-linkedblockingqueue.md",
       "wiki_status": "ingested"
     },
     {

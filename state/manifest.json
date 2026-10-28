@@ -1962,6 +1962,21 @@
    ],
    "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484662&idx=2&sn=d98080fec05ae3d2edc34a3c03864367&chksm=fe6ca5acc91b2cba67457f79883e6bdf9ec1624a4f483249e274ef63a1ebda65d4c5b76a3db9#rd",
    "asset_ref": "Assets/2026/10/jdk-18-arrayblockingqueue.md"
+  },
+  {
+   "path": "raw/sources/misc/2026-10-27-jdk-19-linkedblockingqueue.md",
+   "sha256": "2880feec1093a855480cda5da4dc9840343679a75071c25a0d3fa9aef97e53ea",
+   "registered_at": "2026-10-28",
+   "inbox_ref": "Archive/2026-10-27-jdk-19-linkedblockingqueue.md",
+   "pages": [
+    "wiki/sources/jdk-19-linkedblockingqueue.md",
+    "wiki/concepts/linkedblockingqueue-internals.md",
+    "wiki/concepts/arrayblockingqueue-internals.md",
+    "wiki/sources/jdk-18-arrayblockingqueue.md",
+    "wiki/sources/jdk-source-reading-album.md"
+   ],
+   "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484674&idx=2&sn=2a4992228ac447520573028b047d17b7&chksm=fe6ca458c91b2d4eead7b2ab5bd34c3a780e802125ac8eb617a730bcedb89946bedf24e4fa26",
+   "asset_ref": "Assets/2026/10/jdk-19-linkedblockingqueue.md"
   }
  ]
 }
