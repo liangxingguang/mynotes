@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28 12:05",
+  "updated_at": "2026-10-28 12:08",
   "notes": [
     {
       "id": "2026-10-27-jdk-20-futuretask",
@@ -920,6 +920,26 @@
       "summary": "游戏后端核心系统的实战总结：普通邮件的弱时序设计（只关注送达不关注顺序）、公共邮件的读裂变与标记法撤回、跨服可靠性投递的 Seq+Ack 与合服陷阱，以及\"一切领奖皆邮件\"的 Channel 抽象。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/game-mail-system-design.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-28-game-quest-system-design",
+      "title": "游戏开发：任务系统的设计与实现",
+      "path": "Inbox/2026-10-28-game-quest-system-design.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "游戏开发",
+        "游戏架构",
+        "工程实践"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2077349145707397379",
+      "source_type": "link",
+      "platform": "zhihu",
+      "summary": "游戏任务系统实战设计：Quest/Goal 合并原理（限定单 Goal 换组合能力）、Git 式任务分支与历史库、进度可回退目标的就绪态、Score/Progress 分离、可接取任务索引优化、任务掉落冲突与多阶段成就。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/game-quest-system-design.md",
       "wiki_status": "pending"
     },
     {
