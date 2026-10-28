@@ -17,6 +17,7 @@ sources:
 related:
   - wiki/sources/netty-08-bootstrap.md
   - wiki/sources/netty-15-write-flush.md
+  - wiki/sources/netty-17-idlestate-heartbeat.md
   - wiki/entities/netty.md
   - wiki/concepts/netty-connection-lifecycle.md
   - wiki/concepts/netty-bootstrap.md
@@ -65,6 +66,7 @@ related:
 
 - [[netty-08-bootstrap]]（同系列第 8 篇：启动注册侧，本篇为其运行时续篇）
 - [[netty-15-write-flush]]（同系列第 15 篇：outboundBuffer 机制，close 第一层与之衔接）
+- [[netty-17-idlestate-heartbeat]]（同系列第 17 篇：心跳机制，本篇续篇）
 - [[netty-connection-lifecycle]]（概念页）
 - [[netty-bootstrap]]（概念页）
 - [[netty]]（实体页）

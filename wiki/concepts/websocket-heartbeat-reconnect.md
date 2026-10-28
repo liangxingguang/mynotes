@@ -4,7 +4,7 @@ type: concept
 title: WebSocket 心跳保活与断线重连
 status: active
 created: 2026-10-23
-updated: 2026-10-24
+updated: 2026-10-29
 confidence: medium
 tags:
   - concept
@@ -18,6 +18,7 @@ related:
   - wiki/sources/im-websocket-reconnect-heartbeat.md
   - wiki/sources/nginx-websocket-million-connections.md
   - wiki/sources/nginx-websocket-load-balancing.md
+  - wiki/concepts/netty-idlestate-heartbeat.md
 ---
 # WebSocket 心跳保活与断线重连
 
@@ -63,6 +64,7 @@ Web 端长连接可靠性的三段式工程模式：**检测**（应用层双向
 
 - 2026-10-23：端侧三段式机制（IM 教程信源）。
 - 2026-10-24：补充服务端/链路侧证据——云环境空闲断连点与 20~30s 心跳推荐（Nginx 负载均衡信源）；心跳取值与移动网络侧 180s/300s（李林锋信源，见 [[netty-million-connection-push-service]]）形成场景对照。
+- 2026-10-29：补充服务端连接层机制证据——Netty [[netty-idlestate-heartbeat|IdleStateHandler]] 源码级实现（教程第 17 篇：三维空闲检测+精确再调度+IdleStateEvent 传播，WebSocket 场景可直接发 PingWebSocketFrame），作者压测断言 10 万连接 30s 间隔 CPU <0.5%。
 
 ## Open Questions（开放问题）
 
@@ -79,3 +81,4 @@ Web 端长连接可靠性的三段式工程模式：**检测**（应用层双向
 - [[im-websocket-reconnect-heartbeat|IM聊天不掉线？生产级WebSocket断线重连、心跳保活实战]]
 - [[nginx-websocket-million-connections|百万 WebSocket 长连接背后的 Nginx 架构设计与踩坑实录]]
 - [[nginx-websocket-load-balancing|Nginx生产级WebSocket实时长连接负载均衡，一文搞定（银河技术）]]
+- [[netty-idlestate-heartbeat|Netty 空闲检测与心跳（IdleStateHandler）]]（服务端连接层机制对照）

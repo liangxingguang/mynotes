@@ -135,6 +135,7 @@
 - [[netty-11-poolchunk-subpage|Netty源码分析(11) — 池化内存分配：PoolChunk 与 PoolSubpage]]（2026-10-29，Netty/教程/内存池深入源码）
 - [[netty-15-write-flush|Netty源码分析(15) — 写缓冲 buffer 与 writeAndFlush 流程]]（2026-10-29，Netty/教程/写缓冲与背压源码）
 - [[netty-16-connection-mgmt|Netty源码分析(16) — 连接管理：connect、bind、close 背后的故事]]（2026-10-29，Netty/教程/连接生命周期源码）
+- [[netty-17-idlestate-heartbeat|Netty源码分析(17) — IdleStateHandler 心跳机制源码]]（2026-10-29，Netty/教程/空闲检测与心跳源码）
 - [[netty-million-connection-push-service|绝对干货：基于Netty实现海量接入的推送服务技术要点（李林锋）]]（2026-10-24，Netty/百万长连接调优）
 - [[nginx-websocket-load-balancing|Nginx生产级WebSocket实时长连接负载均衡，一文搞定（银河技术）]]（2026-10-24，Nginx/WebSocket/云环境断连）
 - [[netty-iot-gateway-resilient-design|百万 IoT 设备并发接入：把 Netty 网关做成可恢复、可验证的连接系统]]（2026-10-22，Netty/IoT/可靠性）
@@ -248,6 +249,7 @@
 - [[netty-channel-pipeline|Netty ChannelPipeline（责任链与事件传播）]]（Context 双向链表+inbound/outbound 标志跳节点；入站 Head→Tail、出站 Tail→Head；ctx.write≠channel.write 路径；源码级单信源，置信度高）
 - [[netty-connection-lifecycle|Netty 连接生命周期（connect/bind/close）]]（AbstractUnsafe 三主线：OP_CONNECT+超时定时/fireChannelActive 注册 OP_ACCEPT/close 四层优雅清理；全程 Promise-Future；双信源，置信度高）
 - [[netty-eventloop|Netty EventLoop / EventLoopGroup（事件循环机制）]]（线程+Selector+MpscLinkedQueue 三合一；CPU×2 默认线程+chooser 位运算+ioRatio=50 时间配比+selectCnt 超 512 重建 Selector 自愈+register 异步化；源码级三信源互证，置信度高）
+- [[netty-idlestate-heartbeat|Netty 空闲检测与心跳（IdleStateHandler）]]（三维读/写/全部空闲超时转纳秒计时+精确剩余时间再调度+ChannelPromise 回调更新写时间戳+IdleStateEvent/isFirst 责任链分发；EventLoop 承载；李林锋 10 万连接事故反例互证，双信源）
 - [[netty-pooled-allocator|Netty 池化内存分配（PooledByteBufAllocator）]]（jemalloc 四级分级 Arena CPU×2→Chunk 16MB 满二叉树→Page 8KB→Subpage 位图+PoolThreadCache 无锁缓存；tiny/small/normal/huge 分派；ChunkList 六档流转；release 纪律+PARANOID 泄漏检测；五信源，置信度高）
 - [[netty-write-flush|Netty 写缓冲与背压（ChannelOutboundBuffer/writeAndFlush/高低水位）]]（write 入队 O(1)+flush 移指针+doWrite 才调 JDK 写；写自旋 16/OP_WRITE 半包续写/水位 64KB/32KB 背压；三信源互证，置信度高）
 - [[notification-system-design|站内消息系统领域模型]]（公告/提醒/私信三分类+提醒四元组；拉（订阅驱动）/推（私信直写）按类选型；免打扰后置读路径，简书上下篇双信源）

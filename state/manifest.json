@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-10-28",
+  "updated_at": "2026-10-29",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -2285,6 +2285,20 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484571&idx=1&sn=843829d9ee03815901f202c2224fc228&chksm=fe6ca5c1c91b2cd7ef0bd93a09839cc38b8538da8079a9c2a946086be8234280f8c610f60d62",
       "asset_ref": "Assets/2026/10/netty-16-connection-mgmt.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-27-netty-17-idlestate-heartbeat.md",
+      "sha256": "8b5c7a0031c553cab157e9870bf007e7f92cef63e5025f358138bf277854fcc1",
+      "registered_at": "2026-10-29",
+      "inbox_ref": "Archive/2026-10-27-netty-17-idlestate-heartbeat.md",
+      "pages": [
+        "wiki/sources/netty-17-idlestate-heartbeat.md",
+        "wiki/concepts/netty-idlestate-heartbeat.md",
+        "wiki/entities/netty.md",
+        "wiki/concepts/websocket-heartbeat-reconnect.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484577&idx=1&sn=c5ebc90b7b92c621c66c2b7105bd622e&chksm=fe6ca5fbc91b2ced7ebcd8fe2c188d958496e7960cb32ca8cb73944ed85aa752b34aa8ed8140",
+      "asset_ref": "Assets/2026/10/netty-17-idlestate-heartbeat.md"
     }
   ]
 }

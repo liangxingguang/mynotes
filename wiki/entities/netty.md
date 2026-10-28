@@ -28,6 +28,7 @@ sources:
   - raw/sources/architecture/2026-10-27-netty-11-poolchunk-subpage.md
   - raw/sources/architecture/2026-10-27-netty-15-write-flush.md
   - raw/sources/architecture/2026-10-27-netty-16-connection-mgmt.md
+  - raw/sources/architecture/2026-10-27-netty-17-idlestate-heartbeat.md
 related:
   - wiki/sources/netty-three-skills-high-performance.md
   - wiki/sources/netty-iot-gateway-resilient-design.md
@@ -53,6 +54,8 @@ related:
   - wiki/concepts/netty-write-flush.md
   - wiki/sources/netty-16-connection-mgmt.md
   - wiki/concepts/netty-connection-lifecycle.md
+  - wiki/sources/netty-17-idlestate-heartbeat.md
+  - wiki/concepts/netty-idlestate-heartbeat.md
   - wiki/entities/kafka.md
 ---
 # Netty
@@ -90,6 +93,7 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 - 内存池深入篇（教程第 11 篇，源码级）：PoolChunk memoryMap 节点值=子树最浅空闲深度（根 O(1) 知整块状态）、allocateNode 从根左优先搜索降外部碎片、updateParents 沿路径 min(左,右) 上刷；PoolSubpage `nextAvail` 缓存+`Long.numberOfTrailingZeros` 指令级查空闲位，句柄编码 `(bitmapIdx<<32)|memoryMapIdx`，全空闲整页归还 Chunk；PoolChunkList 六档使用率流转（qInit/q000/q025/q050/q075/q100），`usage()<minUsage` 降级、全闲 Chunk 回收归 OS；JMH 实测小块池化 ~7x（32B 45ns vs 310ns）、1MB 仅 ~2.9x；PoolThreadCache 裁剪参数 cacheTrimInterval=8192/maxCachedBufferCapacity=32KB。详见 [[netty-pooled-allocator]]。
 - 写缓冲与背压源码级机制（教程第 15 篇）：write() 只入队（消息包装 Entry 追加 ChannelOutboundBuffer 链表，O(1) 返回解耦业务/I/O 线程），flush() 的 addFlush() 移 unflushedEntry→flushedEntry 指针，真正写入在 NioSocketChannel.doWrite() 调 JDK SocketChannel.write()；写自旋默认 16 次防独占 I/O 线程，写不进注册 OP_WRITE 等 selector 通知，半包留链表续写；高低水位默认 64KB/32KB（DefaultChannelConfig），穿越触发 channelWritabilityChanged 做背压防 OOM；高吞吐攒批 write 后一次 flush，大文件用 FileRegion。详见 [[netty-write-flush]]。
 - 连接生命周期源码级机制（教程第 16 篇）：connect = initAndRegister + 异步 DNS + AbstractUnsafe.connect → JDK connect，未立即完成注册 OP_CONNECT + CONNECT_TIMEOUT_MILLIS 定时任务（依赖 EventLoop 调度，线程卡住超时失效），selector 通知后 finishConnect→fireChannelActive；bind = doBind0 在 EventLoop 执行 → 带 SO_BACKLOG 绑端口 → fireChannelActive 注册 OP_ACCEPT；close 四层优雅清理——failFlushed 冲刷 outboundBuffer → fireChannelInactive/Unregistered → selectionKey.cancel+deregister（漏了已关闭 channel 仍触发事件）→ javaChannel().close()；全程 Promise-Future 异步（close 也异步，须 closeFuture 等完成），高频路径用 FixedChannelPool 避免频繁 connect/close，支持 shutdownOutput/Input 半关闭。详见 [[netty-connection-lifecycle]]。
+- 空闲检测与心跳源码级机制（教程第 17 篇）：IdleStateHandler（ChannelDuplexHandler）三维超时转纳秒用 System.nanoTime() 计时，handlerAdded 在 EventLoop 上启动至多三个 IdleStateTask；未超时按剩余延迟精确再调度（非 scheduleAtFixedRate 轮询）；写时间戳经 ChannelPromise Listener 在真正写完成后更新；超时触发 IdleStateEvent（含 isFirst 标记）fireUserEventTriggered 交下游；作者压测 10 万连接 30s 间隔 CPU 开销 <0.5%（自述）。详见 [[netty-idlestate-heartbeat]]。
 - 生态位（教程信源说法）：Dubbo/gRPC（RPC）、RocketMQ（消息）、Spring WebFlux/Spring Cloud Gateway、Elasticsearch 节点通信、ZooKeeper 3.6+ 可选、Hadoop/Spark 部分组件；同信源把 Kafka 列入"底层用 Netty"，本库无信源支撑、与既有认知不一致，标记存疑不作定论。
 
 ## Products / Projects（产品／项目）
@@ -110,7 +114,7 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 
 ## Current Understanding（当前认知）
 
-十六个信源分层互证：机制层（线程模型/内存/零拷贝）解释"为什么快"，教程十二信源（源码分析第 1~6、8~11、15、16 篇，第 7、12~14 篇未采集）补齐"为什么存在"（JDK NIO 痛点）、入门路径（分层架构图、Echo 三段代码对比）与核心组件内部机制（Reactor 三形态与 ServerBootstrapAcceptor 移交链路；Pipeline 双向链表与双向事件传播、Handler 生命周期；ByteBuf 双指针/扩容/引用计数；EventLoop 三合一结构/run() 循环/ioRatio/chooser/register 异步化；启动三件套 initAndRegister 与 Acceptor 装配源码；run() 主循环的 SelectStrategy/ioRatio/空轮询自愈深挖；PooledByteBufAllocator 的 Arena→Chunk→Page→Subpage 四级与线程缓存；PoolChunk/PoolSubpage 内部算法与 ChunkList 六档流转；写缓冲 ChannelOutboundBuffer 的 write/flush 分离与高低水位背压；connect/bind/close 连接生命周期与四层优雅关闭），两个 IoT 工程层展示"快之外还要什么"——会话路由原子性、命令状态机、背压分层、Drain 发布；李林锋调优层给出百万接入的系统侧配套（句柄/心跳周期/缓冲区/内存池/RPS/JVM）。一致立场：Netty 只保证 IO 层不阻塞，生产级靠使用者的纪律（十六信源，置信度高）。
+十七个信源分层互证：机制层（线程模型/内存/零拷贝）解释"为什么快"，教程十三信源（源码分析第 1~6、8~11、15~17 篇，第 7、12~14 篇未采集）补齐"为什么存在"（JDK NIO 痛点）、入门路径（分层架构图、Echo 三段代码对比）与核心组件内部机制（Reactor 三形态与 ServerBootstrapAcceptor 移交链路；Pipeline 双向链表与双向事件传播、Handler 生命周期；ByteBuf 双指针/扩容/引用计数；EventLoop 三合一结构/run() 循环/ioRatio/chooser/register 异步化；启动三件套 initAndRegister 与 Acceptor 装配源码；run() 主循环的 SelectStrategy/ioRatio/空轮询自愈深挖；PooledByteBufAllocator 的 Arena→Chunk→Page→Subpage 四级与线程缓存；PoolChunk/PoolSubpage 内部算法与 ChunkList 六档流转；写缓冲 ChannelOutboundBuffer 的 write/flush 分离与高低水位背压；connect/bind/close 连接生命周期与四层优雅关闭；IdleStateHandler 三维空闲检测与精确再调度心跳机制），两个 IoT 工程层展示"快之外还要什么"——会话路由原子性、命令状态机、背压分层、Drain 发布；李林锋调优层给出百万接入的系统侧配套（句柄/心跳周期/缓冲区/内存池/RPS/JVM）。一致立场：Netty 只保证 IO 层不阻塞，生产级靠使用者的纪律（十七信源，置信度高）。
 
 ## Evidence（证据）
 
@@ -130,3 +134,4 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 - `raw/sources/architecture/2026-10-27-netty-11-poolchunk-subpage.md`（教程内存池深入篇：memoryMap 值语义/左优先搜索/Subpage 位图细节/ChunkList 六档/JMH 实测/缓存裁剪参数）
 - `raw/sources/architecture/2026-10-27-netty-15-write-flush.md`（教程写缓冲篇：write/flush 分离/ChannelOutboundBuffer/doWrite 写自旋/OP_WRITE/高低水位背压）
 - `raw/sources/architecture/2026-10-27-netty-16-connection-mgmt.md`（教程连接管理篇：connect/bind/close 三主线/OP_CONNECT 超时/四层优雅关闭/Promise-Future/半关闭与重试）
+- `raw/sources/architecture/2026-10-27-netty-17-idlestate-heartbeat.md`（教程心跳篇：IdleStateHandler 三维检测/精确再调度/Promise 更新写时间戳/IdleStateEvent+isFirst/性能断言与注意事项）

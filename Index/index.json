@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-10-29 00:39",
+  "updated_at": "2026-10-29 00:50",
   "notes": [
-    {
-      "id": "2026-10-27-netty-17-idlestate-heartbeat",
-      "title": "Netty源码分析(17) — IdleStateHandler 心跳机制源码",
-      "path": "Inbox/2026-10-27-netty-17-idlestate-heartbeat.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484577&idx=1&sn=c5ebc90b7b92c621c66c2b7105bd622e&chksm=fe6ca5fbc91b2ced7ebcd8fe2c188d958496e7960cb32ca8cb73944ed85aa752b34aa8ed8140#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "深度解析 Netty IdleStateHandler 的源码实现：它通过 EventLoop 定时任务跟踪读/写/读写三个维度的空闲时间，超时后触发 IdleStateEvent 事件，配合下游 Handler 即可低成本实现心跳检测与死连接清理。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-17-idlestate-heartbeat.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-27-netty-18-reconnect",
       "title": "Netty源码分析(18) — 断线重连机制实现与源码分析",
@@ -4827,6 +4808,25 @@
       "summary": "从源码捋清 Netty 连接管理三条主线：connect 的异步 TCP 连接与超时处理、bind 的端口绑定与 OP_ACCEPT 注册、close 的四层优雅关闭，全程 Promise-Future 异步串联。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-16-connection-mgmt.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-17-idlestate-heartbeat",
+      "title": "Netty源码分析(17) — IdleStateHandler 心跳机制源码",
+      "path": "Archive/2026-10-27-netty-17-idlestate-heartbeat.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484577&idx=1&sn=c5ebc90b7b92c621c66c2b7105bd622e&chksm=fe6ca5fbc91b2ced7ebcd8fe2c188d958496e7960cb32ca8cb73944ed85aa752b34aa8ed8140#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "深度解析 Netty IdleStateHandler 的源码实现：它通过 EventLoop 定时任务跟踪读/写/读写三个维度的空闲时间，超时后触发 IdleStateEvent 事件，配合下游 Handler 即可低成本实现心跳检测与死连接清理。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-17-idlestate-heartbeat.md",
       "wiki_status": "ingested"
     }
   ]
