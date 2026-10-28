@@ -80,6 +80,7 @@
 - [[jdk-14-threadpoolexecutor|ThreadPoolExecutor 源码深度剖析｜Java线程池的核心实现]]（2026-10-28，Java/JDK 源码）
 - [[jdk-15-vector-stack|Vector & Stack：被遗忘的元老级集合，它们真的该被淘汰了吗？]]（2026-10-28，Java/JDK 源码）
 - [[jdk-16-scheduledthreadpool|深度剖析 ScheduledThreadPoolExecutor——JDK 定时任务调度引擎]]（2026-10-28，Java/JDK 源码）
+- [[jdk-17-enummap-enumset|JDK源码剖析——EnumMap & EnumSet，用枚举当数组下标]]（2026-10-28，Java/JDK 源码）
 - [[jdk-source-reading-album|JDK 源码阅读合集（Java解忧杂货铺，30 篇系列索引）]]（2026-10-27，Java/源码阅读资源，置信度低）
 - [[jdk21-migration-huolala|JDK 21 规模化落地实践（货拉拉）：框架先扛兼容成本，业务切 parent 收尾]]（2026-10-23，Java/JVM/虚拟线程）
 - [[jenkins-gitlab-cicd-pipeline|Jenkins + GitLab CI/CD 流水线落地实战（完整配置）]]（2026-10-21，CI/CD，置信度中）
@@ -187,6 +188,7 @@
 - [[cross-process-surface-rendering|Surface 跨进程渲染]]（Surface Parcelable + SurfaceFlinger 跨进程合成，Binder 传 Surface 零拷贝传画面；Renderer 3→1，微信小游戏一手）
 - [[deep-thinking-five-tools|深度思考五工具（澄清-拆解-追问-反证-逆向）]]（按序收敛四步+发散出口一步，反认知闭合；YouCore 单信源，置信度中）
 - [[durable-execution|持久执行（Durable Execution）]]（崩溃后断点精确恢复；效应三明治 + 版本化文档存储，非事件溯源）
+- [[enummap-enumset-internals|EnumMap / EnumSet 枚举专用集合设计]]（ordinal 直接索引：Object[] 数组下标 / long 位向量，≤64 自动选型 RegularEnumSet；集合运算一条位运算；单信源，置信度中）
 - [[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]（先目标基线、JFR/GC 日志归因，证据指向 JVM 才动参数，单变量实验）
 - [[expand-migrate-contract|Expand/Migrate/Contract（Schema 跨版本演进）]]（Expand 只加兼容结构→Migrate 双写限速回填→回退窗口关闭后才 Contract；蓝绿回退的数据前提，单信源）
 - [[idempotency-design|幂等设计]]（重试与幂等共生；同事务铁律+幂等键三要素+分层防护闭环，三信源互证）

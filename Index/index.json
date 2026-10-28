@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-10-28 11:33",
+  "updated_at": "2026-10-28 11:40",
   "notes": [
-    {
-      "id": "2026-10-27-jdk-17-enummap-enumset",
-      "title": "JDK源码剖析——EnumMap & EnumSet，用枚举当数组下标，快得离谱！",
-      "path": "Inbox/2026-10-27-jdk-17-enummap-enumset.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484601&idx=1&sn=a52e748a47f2128794b08fc1c0bb7f28&chksm=fe6ca5e3c91b2cf57b14a2051e5cb902624cf12c250dc3e8226cc8259c181d69e07a7da867f9#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "剖析 EnumMap 与 EnumSet 源码：专为枚举设计的高性能集合，EnumMap 直接拿 ordinal() 当数组下标实现确定性 O(1)，EnumSet 用一个 long 位向量做位运算级集合操作，性能与内存全面碾压 HashMap/HashSet。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/jdk-17-enummap-enumset.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-10-27-jdk-18-arrayblockingqueue",
       "title": "JDK源码阅读系列-ArrayBlockingQueue：用一把锁撑起的数组阻塞队列",
@@ -4127,6 +4108,25 @@
       "summary": "剖析 ScheduledThreadPoolExecutor 源码：在 ThreadPoolExecutor 之上几乎零改动地加入定时调度能力——任务包装为带触发时间的 ScheduledFutureTask，用最小堆 DelayedWorkQueue 排序，周期任务执行完重新设时间入队。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/jdk-16-scheduledthreadpool.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-jdk-17-enummap-enumset",
+      "title": "JDK源码剖析——EnumMap & EnumSet，用枚举当数组下标，快得离谱！",
+      "path": "Archive/2026-10-27-jdk-17-enummap-enumset.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484601&idx=1&sn=a52e748a47f2128794b08fc1c0bb7f28&chksm=fe6ca5e3c91b2cf57b14a2051e5cb902624cf12c250dc3e8226cc8259c181d69e07a7da867f9#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "剖析 EnumMap 与 EnumSet 源码：专为枚举设计的高性能集合，EnumMap 直接拿 ordinal() 当数组下标实现确定性 O(1)，EnumSet 用一个 long 位向量做位运算级集合操作，性能与内存全面碾压 HashMap/HashSet。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jdk-17-enummap-enumset.md",
       "wiki_status": "ingested"
     },
     {

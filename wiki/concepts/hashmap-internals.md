@@ -18,6 +18,7 @@ related:
   - wiki/concepts/fail-fast-modcount.md
   - wiki/concepts/concurrenthashmap-internals.md
   - wiki/concepts/linkedhashmap-internals.md
+  - wiki/concepts/enummap-enumset-internals.md
   - wiki/sources/jdk-03-hashmap.md
 ---
 # HashMap 核心设计（JDK 8）

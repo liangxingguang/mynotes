@@ -18,6 +18,7 @@ related:
   - wiki/concepts/hashmap-internals.md
   - wiki/concepts/linkedhashmap-internals.md
   - wiki/concepts/treeset-internals.md
+  - wiki/concepts/enummap-enumset-internals.md
   - wiki/sources/jdk-09-hashset-linkedhashset.md
 ---
 # HashSet / LinkedHashSet 去重设计（HashMap key 视图）

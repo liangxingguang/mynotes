@@ -9,9 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [Java, 课程]
 asset_ref: Assets/2026/10/jdk-17-enummap-enumset.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-10-28T01:27:45.447Z"
-ingest_claim_id: 63252-1793150865447-0
+wiki_status: ingested
 ---
 
 # JDK源码剖析——EnumMap & EnumSet，用枚举当数组下标，快得离谱！
