@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28 08:27",
+  "updated_at": "2026-10-28 08:30",
   "notes": [
     {
       "id": "2026-10-27-jdk-13-arraydeque",
@@ -18,7 +18,7 @@
       "summary": "剖析 ArrayDeque 源码：基于循环数组（容量恒为 2 的幂）+ head/tail 指针实现的双端队列，两端操作均摊 O(1)，作栈比 Stack 快、作队列比 LinkedList 快，是官方推荐的替代方案。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/jdk-13-arraydeque.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-27-jdk-14-threadpoolexecutor",
@@ -1053,6 +1053,26 @@
       "summary": "美团外卖搜索每天承载十亿级检索流量，LBS 场景下单次查询需对上万商家做 Terms 过滤，万级 Terms 检索耗时达 5-10ms。团队基于 RLE（Run-Length Encoding）重新设计倒排索引，倒排链合并 TP99 降低 96%，全链路检索时延 TP99 从 100ms 降至 16ms（-84%），线上 CPU 大幅下降。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/meituan-waimai-search-elasticsearch-rle.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-28-mysql-10b-bulk-import-guide",
+      "title": "100 亿条数据如何快速写入 MySQL？从 231 天到 3.5 小时",
+      "path": "Inbox/2026-10-28-mysql-10b-bulk-import-guide.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "MySQL",
+        "工程实践",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/SgdVCOgPuv-Lp0VBCADzRQ",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "面试场景题的工程落地版：逐条 INSERT 需 231 天，按\"一算、二拆、三批量、四调参、五并发、六收尾\"六步口诀做到 3.5 小时以内。涵盖 B+ 树算账、真批量参数、LOAD DATA、导入期调参、分片并行、幂等断点续传与影子表切换。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/mysql-10b-bulk-import-guide.md",
       "wiki_status": "pending"
     },
     {

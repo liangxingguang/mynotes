@@ -9,7 +9,9 @@ created: 2026-10-27
 category: 技术
 tags: [Java, 课程]
 asset_ref: Assets/2026/10/jdk-13-arraydeque.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-28T00:27:54.155Z"
+ingest_claim_id: 35244-1793147274155-0
 ---
 
 # ArrayDeque 源码深度剖析：比 LinkedList 更快的双端队列
