@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [Java, 课程]
 asset_ref: Assets/2026/10/jdk-16-scheduledthreadpool.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 深度剖析 ScheduledThreadPoolExecutor——JDK 定时任务调度引擎

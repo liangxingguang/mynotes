@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [Java, 课程]
 asset_ref: Assets/2026/10/jdk-15-vector-stack.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Vector & Stack：被遗忘的元老级集合，它们真的该被淘汰了吗？

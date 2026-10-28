@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [Java, 课程]
 asset_ref: Assets/2026/10/jdk-14-threadpoolexecutor.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # ThreadPoolExecutor 源码深度剖析｜Java线程池的核心实现

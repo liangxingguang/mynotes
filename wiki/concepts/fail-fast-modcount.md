@@ -15,8 +15,10 @@ sources:
   - raw/sources/misc/2026-10-27-jdk-01-arraylist.md
   - raw/sources/misc/2026-10-27-jdk-02-linkedlist.md
   - raw/sources/misc/2026-10-27-jdk-03-hashmap.md
+  - raw/sources/misc/2026-10-27-jdk-15-vector-stack.md
 related:
   - wiki/concepts/hashmap-internals.md
+  - wiki/concepts/vector-stack-legacy-design.md
 ---
 # Fail-Fast 迭代器（modCount）
 
@@ -54,6 +56,7 @@ JDK 非线程安全集合（ArrayList、LinkedList、HashMap 等）的通用防�
 ## Evolution（演进）
 
 - 2026-10-28 — 由 JDK 源码阅读系列第 1、2、3 篇（ArrayList / LinkedList / HashMap，同作者三信源）合并提炼建立；系列第 24 篇（ConcurrentModificationException 专题）摄入后应回填。
+- 2026-10-28 — jdk-15 信源补入第四信源：Vector 的 Iterator 沿用 fail-fast，但更古老的 Enumeration 不做 modCount 检查、不抛 CME，属前 fail-fast 时代的历史遗留变体。
 
 ## Open Questions（开放问题）
 
@@ -65,9 +68,11 @@ JDK 非线程安全集合（ArrayList、LinkedList、HashMap 等）的通用防�
 - Source: `raw/sources/misc/2026-10-27-jdk-01-arraylist.md`（modCount/expectedModCount 机制、Itr 源码、foreach 删除必抛、removeIf 正确姿势）
 - Source: `raw/sources/misc/2026-10-27-jdk-02-linkedlist.md`（ListItr 的 checkForComodification 与 expectedModCount++ 同步）
 - Source: `raw/sources/misc/2026-10-27-jdk-03-hashmap.md`（HashMap 遍历删除抛 CME、Iterator/removeIf 两种安全写法）
+- Source: `raw/sources/misc/2026-10-27-jdk-15-vector-stack.md`（Vector Iterator fail-fast；Enumeration 不抛 CME 的历史遗留）
 
 ## Related Knowledge（相关知识）
 
 - [[jdk-01-arraylist|JDK源码阅读(1) — ArrayList（信源页）]]
 - [[jdk-02-linkedlist|JDK源码阅读(2) — LinkedList（信源页）]]
 - [[jdk-03-hashmap|JDK源码阅读(3) — HashMap（信源页）]]
+- [[jdk-15-vector-stack|Vector & Stack 源码篇（信源页）]]

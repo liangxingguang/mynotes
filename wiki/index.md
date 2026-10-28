@@ -77,6 +77,9 @@
 - [[jdk-11-cyclicbarrier|JDK源码阅读(12) — CyclicBarrier 循环栅栏：Generation 换代 + 最后线程负责制]]（2026-10-28，Java/JDK 源码）
 - [[jdk-12-priorityqueue|JDK源码阅读(13) — PriorityQueue：数组承载二叉堆/上浮下沉/Floyd 建堆]]（2026-10-28，Java/JDK 源码）
 - [[jdk-13-arraydeque|ArrayDeque 源码深度剖析：比 LinkedList 更快的双端队列]]（2026-10-28，Java/JDK 源码）
+- [[jdk-14-threadpoolexecutor|ThreadPoolExecutor 源码深度剖析｜Java线程池的核心实现]]（2026-10-28，Java/JDK 源码）
+- [[jdk-15-vector-stack|Vector & Stack：被遗忘的元老级集合，它们真的该被淘汰了吗？]]（2026-10-28，Java/JDK 源码）
+- [[jdk-16-scheduledthreadpool|深度剖析 ScheduledThreadPoolExecutor——JDK 定时任务调度引擎]]（2026-10-28，Java/JDK 源码）
 - [[jdk-source-reading-album|JDK 源码阅读合集（Java解忧杂货铺，30 篇系列索引）]]（2026-10-27，Java/源码阅读资源，置信度低）
 - [[jdk21-migration-huolala|JDK 21 规模化落地实践（货拉拉）：框架先扛兼容成本，业务切 parent 收尾]]（2026-10-23，Java/JVM/虚拟线程）
 - [[jenkins-gitlab-cicd-pipeline|Jenkins + GitLab CI/CD 流水线落地实战（完整配置）]]（2026-10-21，CI/CD，置信度中）
@@ -215,10 +218,13 @@
 - [[rag-production-guardrails|企业级 RAG 生产护栏]]（容量/证据/权限/恢复四主线；证据门禁前置、发布目录原子切换；混合检索+存储分层+参数热调双信源互证）
 - [[reactive-tracing-context|响应式环境的全链路 traceId 传递]]（Reactor Context 替代 ThreadLocal；doOnEach 同步 MDC、doFinally 清除）
 - [[reentrantlock-internals|ReentrantLock 可重入锁设计]]（AQS 经典实现：非公平先抢/公平只差 hasQueuedPredecessors/state 累加可重入/多 Condition 精确唤醒，单信源，置信度中）
+- [[scheduledthreadpoolexecutor-internals|ScheduledThreadPoolExecutor 调度设计]]（DelayedWorkQueue 数组最小堆+Leader-Follower 等待；period 正负号编码 fixedRate/fixedDelay；周期任务异常静默取消，单信源，置信度中）
 - [[scopedvalue|ScopedValue（作用域值）]]（JDK 25 正式：作用域共享不可变快照，终结 VT 下 ThreadLocal 内存膨胀/泄漏/脏值，Old Gen -61% 实测）
 - [[startup-ideas-framework|创业点子生成与评估框架（YC）]]（四错误避坑+十问评估+七配方生成；YC 前 100 公司 70% 点子自然注意到；演讲整理稿单信源）
 - [[table-sharding-migration|分表平滑迁移策略]]（五种读写策略矩阵 + 双写双读 SQL 重写，京东大表治理实践）
+- [[threadpoolexecutor-internals|ThreadPoolExecutor 核心设计]]（ctl 单 int 打包状态+线程数；execute 四级漏斗+二次检查；Worker 继承 AQS 不可重入锁；四种拒绝策略，单信源，置信度中）
 - [[treeset-internals|TreeSet 有序集合设计]]（TreeMap key 视图+红黑树；compareTo 判重≠equals；范围操作视图；插入慢 HashSet 约 11 倍实测；单信源，置信度中）
+- [[vector-stack-legacy-design|Vector/Stack 遗留设计缺陷]]（方法级 synchronized 复合操作仍不安全；Stack 继承 Vector 违反 LSP；JDK 11+ 扩容改扩一半；替代 ArrayList/ArrayDeque，单信源，置信度中）
 - [[virtual-threads-production|虚拟线程生产实践]]（场景筛选、Helper 传 Trace/ThreadLocal、钉住规避与观测换代，货拉拉 JDK 21 实践）
 - [[write-fanout|写扩散（Fan-out on Write）]]（群消息按成员写副本换读路径简单；群服务扇出+副本指纹+MQ 批量化+双轨存储，万人群物理上限，三信源）
 - [[websocket-heartbeat-reconnect|WebSocket 心跳保活与断线重连]]（双向心跳判假死+指数退避防风暴+离线队列补发三段式，单教程信源置信度中）

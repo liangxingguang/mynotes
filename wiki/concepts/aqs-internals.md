@@ -15,9 +15,11 @@ tags:
 sources:
   - raw/sources/misc/2026-10-27-jdk-07-reentrantlock.md
   - raw/sources/misc/2026-10-27-jdk-10-countdownlatch.md
+  - raw/sources/misc/2026-10-27-jdk-14-threadpoolexecutor.md
 related:
   - wiki/concepts/reentrantlock-internals.md
   - wiki/concepts/countdownlatch-internals.md
+  - wiki/concepts/threadpoolexecutor-internals.md
   - wiki/sources/jdk-07-reentrantlock.md
 ---
 # AQS（AbstractQueuedSynchronizer）核心机制
@@ -71,6 +73,7 @@ AQS
 
 - 2026-10-28：以 ReentrantLock 为样本讲解独占模式（jdk-07 信源）。
 - 2026-10-28：jdk-11 信源补入共享模式样本（CountDownLatch：state 作计数器、SHARED 节点入队、doReleaseShared 广播唤醒）；Condition 内部条件队列的完整实现仍无信源覆盖。
+- 2026-10-28：jdk-14 信源补入第三个子类样本——ThreadPoolExecutor.Worker 用 AQS 实现**不可重入**独占锁（tryAcquire 仅 CAS 0→1，构造时 setState(-1) 禁中断），展示 state 语义的另一种解释（区别于 ReentrantLock 的重入计数）。
 
 ## Open Questions（开放问题）
 
@@ -81,6 +84,7 @@ AQS
 
 - Source: `raw/sources/misc/2026-10-27-jdk-07-reentrantlock.md`
 - Source: `raw/sources/misc/2026-10-27-jdk-10-countdownlatch.md`
+- Source: `raw/sources/misc/2026-10-27-jdk-14-threadpoolexecutor.md`（Worker 不可重入独占锁：tryAcquire CAS 0→1、setState(-1) 禁中断）
 
 ## Related Knowledge（相关知识）
 

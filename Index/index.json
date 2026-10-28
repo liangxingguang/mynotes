@@ -1,63 +1,6 @@
 {
-  "updated_at": "2026-10-28 08:34",
+  "updated_at": "2026-10-28 09:27",
   "notes": [
-    {
-      "id": "2026-10-27-jdk-14-threadpoolexecutor",
-      "title": "ThreadPoolExecutor 源码深度剖析｜Java线程池的核心实现",
-      "path": "Inbox/2026-10-27-jdk-14-threadpoolexecutor.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484580&idx=1&sn=1615c1c619ede406ce8b10c235e064df&chksm=fe6ca5fec91b2ce86e9c6840fc315c67a1a9a7049b8e3d5060d054a4def6b1329072f3ca800d#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "深入 ThreadPoolExecutor 源码：用一个 AtomicInteger（ctl）高 3 位存状态、低 29 位存线程数的精巧设计，execute 三步流程、Worker 继承 AQS 实现不可重入锁、getTask 控制线程存活，以及四种拒绝策略。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/jdk-14-threadpoolexecutor.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-27-jdk-15-vector-stack",
-      "title": "Vector & Stack：被遗忘的元老级集合，它们真的该被淘汰了吗？",
-      "path": "Inbox/2026-10-27-jdk-15-vector-stack.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484586&idx=1&sn=ac5077b88ccc3ec9e6a1e31997e7054c&chksm=fe6ca5f0c91b2ce6e039a3e6fad75014df9b9cd26bacd3bff020bacd3998e68e47aa184b6ed9#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "剖析 JDK 1.0 元老 Vector 与 Stack 的源码与设计缺陷：Vector 全方法 synchronized 但复合操作仍不安全，Stack 用继承而非组合违反 LSP——理解它们为何被 ArrayList 和 ArrayDeque 取代比使用它们更有价值。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/jdk-15-vector-stack.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-27-jdk-16-scheduledthreadpool",
-      "title": "深度剖析 ScheduledThreadPoolExecutor——JDK 定时任务调度引擎",
-      "path": "Inbox/2026-10-27-jdk-16-scheduledthreadpool.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484595&idx=1&sn=877c00f350fe26df19ff7fd04b670b7b&chksm=fe6ca5e9c91b2cffca7cc3391179bca7b4cd4be16f6494dcb5026de4b579477be6c672e6b18f#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "剖析 ScheduledThreadPoolExecutor 源码：在 ThreadPoolExecutor 之上几乎零改动地加入定时调度能力——任务包装为带触发时间的 ScheduledFutureTask，用最小堆 DelayedWorkQueue 排序，周期任务执行完重新设时间入队。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/jdk-16-scheduledthreadpool.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-27-jdk-17-enummap-enumset",
       "title": "JDK源码剖析——EnumMap & EnumSet，用枚举当数组下标，快得离谱！",
@@ -4108,6 +4051,63 @@
       "summary": "剖析 ArrayDeque 源码：基于循环数组（容量恒为 2 的幂）+ head/tail 指针实现的双端队列，两端操作均摊 O(1)，作栈比 Stack 快、作队列比 LinkedList 快，是官方推荐的替代方案。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/jdk-13-arraydeque.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-jdk-14-threadpoolexecutor",
+      "title": "ThreadPoolExecutor 源码深度剖析｜Java线程池的核心实现",
+      "path": "Archive/2026-10-27-jdk-14-threadpoolexecutor.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484580&idx=1&sn=1615c1c619ede406ce8b10c235e064df&chksm=fe6ca5fec91b2ce86e9c6840fc315c67a1a9a7049b8e3d5060d054a4def6b1329072f3ca800d#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "深入 ThreadPoolExecutor 源码：用一个 AtomicInteger（ctl）高 3 位存状态、低 29 位存线程数的精巧设计，execute 三步流程、Worker 继承 AQS 实现不可重入锁、getTask 控制线程存活，以及四种拒绝策略。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jdk-14-threadpoolexecutor.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-jdk-15-vector-stack",
+      "title": "Vector & Stack：被遗忘的元老级集合，它们真的该被淘汰了吗？",
+      "path": "Archive/2026-10-27-jdk-15-vector-stack.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484586&idx=1&sn=ac5077b88ccc3ec9e6a1e31997e7054c&chksm=fe6ca5f0c91b2ce6e039a3e6fad75014df9b9cd26bacd3bff020bacd3998e68e47aa184b6ed9#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "剖析 JDK 1.0 元老 Vector 与 Stack 的源码与设计缺陷：Vector 全方法 synchronized 但复合操作仍不安全，Stack 用继承而非组合违反 LSP——理解它们为何被 ArrayList 和 ArrayDeque 取代比使用它们更有价值。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jdk-15-vector-stack.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-jdk-16-scheduledthreadpool",
+      "title": "深度剖析 ScheduledThreadPoolExecutor——JDK 定时任务调度引擎",
+      "path": "Archive/2026-10-27-jdk-16-scheduledthreadpool.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484595&idx=1&sn=877c00f350fe26df19ff7fd04b670b7b&chksm=fe6ca5e9c91b2cffca7cc3391179bca7b4cd4be16f6494dcb5026de4b579477be6c672e6b18f#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "剖析 ScheduledThreadPoolExecutor 源码：在 ThreadPoolExecutor 之上几乎零改动地加入定时调度能力——任务包装为带触发时间的 ScheduledFutureTask，用最小堆 DelayedWorkQueue 排序，周期任务执行完重新设时间入队。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jdk-16-scheduledthreadpool.md",
       "wiki_status": "ingested"
     },
     {
