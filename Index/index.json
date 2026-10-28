@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28 18:39",
+  "updated_at": "2026-10-28 18:40",
   "notes": [
     {
       "id": "2026-10-27-netty-03-reactor",
@@ -1185,6 +1185,25 @@
       "summary": "跳出\"三次握手四次挥手\"八股，跟一个 TCP 连接从生到死走一遍：四大核心功能、握手挥手细节、RTO/快重传/滑动窗口/拥塞控制、状态机排障四场景与 Wireshark 实战。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/tcp-connection-full-lifecycle.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-28-uncle-bob-ub-mode-skill",
+      "title": "Uncle Bob 给 Agent 写了一份开发 Skill（ub-mode）",
+      "path": "Inbox/2026-10-28-uncle-bob-ub-mode-skill.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "AI Coding",
+        "工程实践"
+      ],
+      "source": "微信公众号·AI速通",
+      "source_url": "https://mp.weixin.qq.com/s/V24Epigc4bxE7vjufOOZ5Q",
+      "source_type": "文章",
+      "platform": "微信公众号",
+      "summary": "Uncle Bob 发布 `ub-mode`：把 TDD、重构、Clean 系纪律压成一份 Agent Skill。三段式执行——先让它能工作、再把它做好、遵循实践要求；质量靠 Crapper/Dryer/Mutator 确定性工具验证，不靠 Agent 自说自话。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/uncle-bob-ub-mode-skill.md",
       "wiki_status": "pending"
     },
     {
