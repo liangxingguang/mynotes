@@ -1,63 +1,6 @@
 {
-  "updated_at": "2026-10-28 18:29",
+  "updated_at": "2026-10-28 18:31",
   "notes": [
-    {
-      "id": "2026-10-27-jdk-source-reading-album",
-      "title": "JDK 源码阅读合集（系列索引）",
-      "path": "Inbox/2026-10-27-jdk-source-reading-album.md",
-      "created": "2026-10-27",
-      "category": "学习",
-      "tags": [
-        "Java",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzU5NTcwMzg2MQ==&action=getalbum&album_id=4541344630860103688",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "公众号「Java解忧杂货铺」的 JDK 源码阅读系列合集页（30 篇），覆盖 JDK 集合与并发两大源码主线：List/Map/Set/Queue 全家桶（ArrayList、HashMap、ConcurrentHashMap、PriorityQueue、ArrayDeque、阻塞队列等）与 JUC 并发原语（ReentrantLock/AQS、CountDownLatch、CyclicBarrier、线程池、FutureTask、原子类、LongAdder、Phaser、Exchanger 等）。本条为系列索引，供按主题回查单篇。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/jdk-source-reading-album.md",
-      "wiki_status": "ingesting"
-    },
-    {
-      "id": "2026-10-27-netty-01-intro",
-      "title": "Netty源码分析(1) — 开篇：Netty到底是什么，凭什么成为Java网络编程的事实标准？",
-      "path": "Inbox/2026-10-27-netty-01-intro.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483863&idx=1&sn=ade34c4a6b6ee3fe3a1dd53730e01ff2&chksm=fe6ca08dc91b299bdc26627afa790ccbddbd4f81fe4ddc780097ee66d1283eb12b62a94f6b97#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "Netty 源码分析系列开篇：回顾 BIO 到 NIO 的演进及 JDK NIO 的痛点（API 原始、epoll 空轮询、粘包等），引出 Netty 如何统一\"简单易用\"与\"高性能高并发\"。给出 Netty 分层架构总览、高性能关键点（Reactor 线程模型、零拷贝、直接内存+内存池），并从 `ServerBootstrap.bind()` 源码切入，附源码环境搭建指南。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-01-intro.md",
-      "wiki_status": "ingesting"
-    },
-    {
-      "id": "2026-10-27-netty-02-bio-nio",
-      "title": "Netty源码分析(2) — 从BIO到NIO再到Netty，为什么我们需要Netty？",
-      "path": "Inbox/2026-10-27-netty-02-bio-nio.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483884&idx=1&sn=2e1dead9301b6513f77c93258db7f80b&chksm=fe6ca0b6c91b29a04550c9c711510eea4dbd9b0e9959fed73de92ff95d6db9dde354624a9123#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "通过 BIO 多线程服务端、原生 NIO 服务端、Netty 服务端三段完整代码对比，论证为什么需要 Netty：BIO 受制于 C10K，原生 NIO 代码复杂且需自处理粘包/重连/多线程/epoll 空轮询，Netty 用 Reactor 线程模型、Pipeline 责任链、零拷贝和内存池把复杂留给自己。附 Netty 客户端完整示例与适用场景盘点。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-02-bio-nio.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-10-27-netty-03-reactor",
       "title": "Netty源码分析(3) — Reactor线程模型：从单线程到主从多Reactor",
@@ -75,7 +18,7 @@
       "summary": "深入 Netty 的 Reactor 线程模型：从单线程、多线程到主从多 Reactor 三种形态，剖析 NioEventLoop 的 run() 死循环、EventLoopGroup 的 chooser 分配算法，以及 boss 与 worker 通过 ServerBootstrapAcceptor 衔接的完整链路，附可运行示例与常见坑。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-03-reactor.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-27-netty-04-channel-pipeline-handler",
@@ -771,6 +714,25 @@
       "summary": "Agent 系列第 1 篇（全系列总纲）：三级能力阶梯（聊天 → 工具调用 → 自主 agent）、一次 tool call 的完整时序、为什么必须有编排层（harness）、21 篇 / 8 个 Part 学习路线图与自测方法，附最小 tool_use 动手脚本。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/agent-panorama-roadmap.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-28-agent-permission-model-design",
+      "title": "Agent架构设计15：Agent 权限模型设计",
+      "path": "Inbox/2026-10-28-agent-permission-model-design.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/8UvaemNt_bE1_Fy76DyaBQ",
+      "source_type": "文章",
+      "platform": "微信公众号",
+      "summary": "Agent 权限 ≠ 传统 RBAC：权限 = 静态基线 + 指令临时授权 + 调用时动态校验。四层防线——租户划边界、Agent 定上限、指令收范围、MCP 网关做兜底，覆盖 A2A 委派收缩与落地避坑。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/agent-permission-model-design.md",
       "wiki_status": "pending"
     },
     {
@@ -4547,6 +4509,25 @@
     {
       "id": "2026-10-27-jdk-source-reading-album",
       "title": "JDK 源码阅读合集（系列索引）",
+      "path": "Archive/2026-10-27-jdk-source-reading-album-2.md",
+      "created": "2026-10-27",
+      "category": "学习",
+      "tags": [
+        "Java",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzU5NTcwMzg2MQ==&action=getalbum&album_id=4541344630860103688",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "公众号「Java解忧杂货铺」的 JDK 源码阅读系列合集页（30 篇），覆盖 JDK 集合与并发两大源码主线：List/Map/Set/Queue 全家桶（ArrayList、HashMap、ConcurrentHashMap、PriorityQueue、ArrayDeque、阻塞队列等）与 JUC 并发原语（ReentrantLock/AQS、CountDownLatch、CyclicBarrier、线程池、FutureTask、原子类、LongAdder、Phaser、Exchanger 等）。本条为系列索引，供按主题回查单篇。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jdk-source-reading-album.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-jdk-source-reading-album",
+      "title": "JDK 源码阅读合集（系列索引）",
       "path": "Archive/2026-10-27-jdk-source-reading-album.md",
       "created": "2026-10-27",
       "category": "学习",
@@ -4599,6 +4580,44 @@
       "summary": "以一次脱敏订单服务发布事故为主线，讲透交易系统蓝绿发布的完整工程：Argo Rollouts 资源定义、Preview 冒烟、四层 SLO 门禁、优雅退出状态机、数据兼容（Expand/Migrate/Contract）、容量门禁与可审计发布流水线。核心观点：蓝绿的价值不是\"无中断切换\"，而是承认变更会失败，并把失败限制在可观测、可回退、可补偿的范围内。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/k8s-blue-green-release-trading.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-01-intro",
+      "title": "Netty源码分析(1) — 开篇：Netty到底是什么，凭什么成为Java网络编程的事实标准？",
+      "path": "Archive/2026-10-27-netty-01-intro.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483863&idx=1&sn=ade34c4a6b6ee3fe3a1dd53730e01ff2&chksm=fe6ca08dc91b299bdc26627afa790ccbddbd4f81fe4ddc780097ee66d1283eb12b62a94f6b97#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "Netty 源码分析系列开篇：回顾 BIO 到 NIO 的演进及 JDK NIO 的痛点（API 原始、epoll 空轮询、粘包等），引出 Netty 如何统一\"简单易用\"与\"高性能高并发\"。给出 Netty 分层架构总览、高性能关键点（Reactor 线程模型、零拷贝、直接内存+内存池），并从 `ServerBootstrap.bind()` 源码切入，附源码环境搭建指南。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-01-intro.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-02-bio-nio",
+      "title": "Netty源码分析(2) — 从BIO到NIO再到Netty，为什么我们需要Netty？",
+      "path": "Archive/2026-10-27-netty-02-bio-nio.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483884&idx=1&sn=2e1dead9301b6513f77c93258db7f80b&chksm=fe6ca0b6c91b29a04550c9c711510eea4dbd9b0e9959fed73de92ff95d6db9dde354624a9123#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "通过 BIO 多线程服务端、原生 NIO 服务端、Netty 服务端三段完整代码对比，论证为什么需要 Netty：BIO 受制于 C10K，原生 NIO 代码复杂且需自处理粘包/重连/多线程/epoll 空轮询，Netty 用 Reactor 线程模型、Pipeline 责任链、零拷贝和内存池把复杂留给自己。附 Netty 客户端完整示例与适用场景盘点。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-02-bio-nio.md",
       "wiki_status": "ingested"
     }
   ]

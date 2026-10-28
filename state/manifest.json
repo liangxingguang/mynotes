@@ -2123,6 +2123,32 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484730&idx=3&sn=9807133d2825642ffaefbbaa0b640a9f&chksm=fe6ca460c91b2d767c5084e644b1d6721320854646ca77865d257d1f1f09e45ce05dd57df4d6",
       "asset_ref": "Assets/2026/10/jdk-30-exchanger.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-27-netty-01-intro.md",
+      "sha256": "a20b4cd9afd8270b69c9d6fefb75c849fba29d8d4b808eb72b4ed7495e5c2d5e",
+      "registered_at": "2026-10-28",
+      "inbox_ref": "Archive/2026-10-27-netty-01-intro.md",
+      "pages": [
+        "wiki/sources/netty-01-intro.md",
+        "wiki/concepts/reactor-thread-model.md",
+        "wiki/entities/netty.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483863&idx=1&sn=ade34c4a6b6ee3fe3a1dd53730e01ff2&chksm=fe6ca08dc91b299bdc26627afa790ccbddbd4f81fe4ddc780097ee66d1283eb12b62a94f6b97",
+      "asset_ref": "Assets/2026/10/netty-01-intro.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-27-netty-02-bio-nio.md",
+      "sha256": "2c5757d3b2d54989efceb32a2f82653e45cedd2c1f4e5fe620ae34b801ed69a4",
+      "registered_at": "2026-10-28",
+      "inbox_ref": "Archive/2026-10-27-netty-02-bio-nio.md",
+      "pages": [
+        "wiki/sources/netty-02-bio-nio.md",
+        "wiki/concepts/reactor-thread-model.md",
+        "wiki/entities/netty.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483884&idx=1&sn=2e1dead9301b6513f77c93258db7f80b&chksm=fe6ca0b6c91b29a04550c9c711510eea4dbd9b0e9959fed73de92ff95d6db9dde354624a9123",
+      "asset_ref": "Assets/2026/10/netty-02-bio-nio.md"
     }
   ]
 }
