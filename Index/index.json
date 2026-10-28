@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28 18:52",
+  "updated_at": "2026-10-28 18:53",
   "notes": [
     {
       "id": "2026-10-27-netty-03-reactor",
@@ -18,25 +18,6 @@
       "summary": "深入 Netty 的 Reactor 线程模型：从单线程、多线程到主从多 Reactor 三种形态，剖析 NioEventLoop 的 run() 死循环、EventLoopGroup 的 chooser 分配算法，以及 boss 与 worker 通过 ServerBootstrapAcceptor 衔接的完整链路，附可运行示例与常见坑。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-03-reactor.md",
-      "wiki_status": "ingesting"
-    },
-    {
-      "id": "2026-10-27-netty-05-bytebuf",
-      "title": "Netty源码分析(5) — ByteBuf：Netty的数据容器深度解析",
-      "path": "Inbox/2026-10-27-netty-05-bytebuf.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483944&idx=1&sn=261d8489acffb8afe5088e5f4f4612a7&chksm=fe6ca372c91b2a64ebff3b813276cc57c94dde2529d5086333cb871f670f5c8b41ff7e787261#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "针对 JDK ByteBuffer 单指针、容量固定、无池化、无引用计数四大痛点，解析 Netty ByteBuf 的设计：读写双指针、ensureWritable 自动扩容（4MB 以下翻倍、以上步进 4MB）、Heap/Direct/Composite 三种形态、引用计数管理堆外内存，以及 Pooled/Unpooled 分配器体系，附完整示例与泄漏排查建议。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-05-bytebuf.md",
       "wiki_status": "ingesting"
     },
     {
@@ -4751,6 +4732,25 @@
       "summary": "剖析 Netty 三大核心组件：Channel 代表连接，ChannelPipeline 是以 head/tail 为端点的双向链表（节点为 ChannelHandlerContext），ChannelHandler 承载业务逻辑。重点讲透入站事件 Head→Tail 正向传播、出站事件 Tail→Head 反向传播的机制，Handler 生命周期，以及 ctx.write 与 channel.write 的路径差异。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-04-channel-pipeline-handler.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-05-bytebuf",
+      "title": "Netty源码分析(5) — ByteBuf：Netty的数据容器深度解析",
+      "path": "Archive/2026-10-27-netty-05-bytebuf.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247483944&idx=1&sn=261d8489acffb8afe5088e5f4f4612a7&chksm=fe6ca372c91b2a64ebff3b813276cc57c94dde2529d5086333cb871f670f5c8b41ff7e787261#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "针对 JDK ByteBuffer 单指针、容量固定、无池化、无引用计数四大痛点，解析 Netty ByteBuf 的设计：读写双指针、ensureWritable 自动扩容（4MB 以下翻倍、以上步进 4MB）、Heap/Direct/Composite 三种形态、引用计数管理堆外内存，以及 Pooled/Unpooled 分配器体系，附完整示例与泄漏排查建议。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-05-bytebuf.md",
       "wiki_status": "ingested"
     }
   ]
