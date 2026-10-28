@@ -1989,6 +1989,47 @@
    ],
    "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484610&idx=1&sn=8afe78d4ba6c2c15f568ef087d75d6d2&chksm=fe6ca598c91b2c8e08f3819db1ca1261c4ad6169305755ae7c65e60b8d8adc3c5891ad53b4ec",
    "asset_ref": "Assets/2026/10/jdk-20-futuretask.md"
+  },
+  {
+   "path": "raw/sources/misc/2026-10-27-jdk-21-collections.md",
+   "sha256": "d1ce40335bca086c6333d3e2103b4cc3829eea028ecf5262860b4693f05eaaa3",
+   "registered_at": "2026-10-28",
+   "inbox_ref": "Archive/2026-10-27-jdk-21-collections.md",
+   "pages": [
+    "wiki/sources/jdk-21-collections.md",
+    "wiki/concepts/collections-utility-class.md",
+    "wiki/concepts/fail-fast-modcount.md",
+    "wiki/sources/jdk-source-reading-album.md"
+   ],
+   "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484616&idx=1&sn=248f227750f8d652f0352e21a0b18a62&chksm=fe6ca592c91b2c8447086a98e557b0831246a0a11e8fc1d07a32ee0692cdf9b77506dbda71c1",
+   "asset_ref": "Assets/2026/10/jdk-21-collections.md"
+  },
+  {
+   "path": "raw/sources/misc/2026-10-27-jdk-22-arrays.md",
+   "sha256": "b89fbbb6e366666351a999af6ac961c4ee140989a7a727e6bf7f789a536a569b",
+   "registered_at": "2026-10-28",
+   "inbox_ref": "Archive/2026-10-27-jdk-22-arrays.md",
+   "pages": [
+    "wiki/sources/jdk-22-arrays.md",
+    "wiki/concepts/arrays-utility-class.md",
+    "wiki/sources/jdk-source-reading-album.md"
+   ],
+   "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484626&idx=1&sn=15a6e76017c9b468401721a6790e9729&chksm=fe6ca588c91b2c9eb48c0fe2f416f35b4598448255614fbbe991c593db681f66232d7d42d72c",
+   "asset_ref": "Assets/2026/10/jdk-22-arrays.md"
+  },
+  {
+   "path": "raw/sources/misc/2026-10-27-jdk-23-atomic.md",
+   "sha256": "de018906c23eda52376dfad03e46fb32ffb0019262a39e8defddb0e0a61c6aec",
+   "registered_at": "2026-10-28",
+   "inbox_ref": "Archive/2026-10-27-jdk-23-atomic.md",
+   "pages": [
+    "wiki/sources/jdk-23-atomic.md",
+    "wiki/concepts/atomic-variables-cas.md",
+    "wiki/concepts/cache-line-and-false-sharing.md",
+    "wiki/sources/jdk-source-reading-album.md"
+   ],
+   "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484634&idx=1&sn=3e387ea9a1c8fc485cb9cb022fa265e3&chksm=fe6ca580c91b2c96779ea2dc7a951bf2596432fdc20a15e88c9ea219270b7a4b4d6681c560a5",
+   "asset_ref": "Assets/2026/10/jdk-23-atomic.md"
   }
  ]
 }

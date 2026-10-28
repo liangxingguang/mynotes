@@ -1,63 +1,6 @@
 {
-  "updated_at": "2026-10-28 12:20",
+  "updated_at": "2026-10-28 12:31",
   "notes": [
-    {
-      "id": "2026-10-27-jdk-21-collections",
-      "title": "JDK源码阅读(21)：Collections工具类——被低估的瑞士军刀",
-      "path": "Inbox/2026-10-27-jdk-21-collections.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484616&idx=1&sn=248f227750f8d652f0352e21a0b18a62&chksm=fe6ca592c91b2c8447086a98e557b0831246a0a11e8fc1d07a32ee0692cdf9b77506dbda71c1#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "java.util.Collections 是集合框架的\"算法库+工厂车间+安全卫士\"，提供排序、洗牌、二分查找等算法操作，以及同步、不可变、类型检查三类包装器。文章基于 OpenJDK 21 源码逐方法剖析其实现与坑点，指出 synchronizedList 迭代需外部加锁、unmodifiableList 只是视图而非真正不可变等经典陷阱。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/jdk-21-collections.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-27-jdk-22-arrays",
-      "title": "JDK源码阅读 (23)：Arrays —— 被低估的瑞士军刀",
-      "path": "Inbox/2026-10-27-jdk-22-arrays.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484626&idx=1&sn=15a6e76017c9b468401721a6790e9729&chksm=fe6ca588c91b2c9eb48c0fe2f416f35b4598448255614fbbe991c593db681f66232d7d42d72c#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "java.util.Arrays 浓缩了 JDK 团队几十年的算法调优经验：排序按类型和规模分策略（基本类型双轴快排、对象 TimSort、小数组退化插入排序），binarySearch 用无符号右移防溢出，还有 parallelPrefix、parallelSort 等基于 ForkJoinPool 的并行大杀器。文章基于 OpenJDK 23 源码剖析核心方法，并梳理 asList 视图、deepEquals 等常见坑。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/jdk-22-arrays.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-27-jdk-23-atomic",
-      "title": "AtomicInteger / AtomicLong / AtomicBoolean —— 无锁并发的基石",
-      "path": "Inbox/2026-10-27-jdk-23-atomic.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484634&idx=1&sn=3e387ea9a1c8fc485cb9cb022fa265e3&chksm=fe6ca580c91b2c96779ea2dc7a951bf2596432fdc20a15e88c9ea219270b7a4b4d6681c560a5#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "Atomic 三兄弟通过 volatile 保证可见性、CAS 保证原子性，用无锁自旋替代 synchronized，是理解整个 JUC 的前置知识。文章剖析其 Unsafe + CAS 源码（底层落到 CPU 的 lock cmpxchg 指令），讲解 ABA 问题、伪共享、高并发空转等痛点，并给出计数器、一次性初始化标记、ID 生成器等典型用法与选型建议。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/jdk-23-atomic.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-27-jdk-24-concurrentmodificationexception",
       "title": "深扒 ConcurrentModificationException：Java 集合中最常见的运行时异常，你真的搞懂了吗？",
@@ -824,6 +767,66 @@
       "wiki_status": "pending"
     },
     {
+      "id": "2026-10-28-agent-harness-framework-selection",
+      "title": "Agent - harness 框架怎么选（5）",
+      "path": "Inbox/2026-10-28-agent-harness-framework-selection.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Harness",
+        "工程实践"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2095515233271951377",
+      "source_type": "link",
+      "platform": "zhihu",
+      "summary": "Agent 系列第 5 篇：面向\"维护既有系统\"需求的 harness 选型结论——首选 deepagents，备选 Microsoft Agent Framework，DeepSeek Harness 因 developer preview 暂缓；附 12 个候选的一句话定位。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/agent-harness-framework-selection.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-28-agent-llm-call-patterns",
+      "title": "Agent - 调用 LLM 的三种姿势（6）",
+      "path": "Inbox/2026-10-28-agent-llm-call-patterns.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Harness",
+        "工程实践"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2095551564815644272",
+      "source_type": "link",
+      "platform": "zhihu",
+      "summary": "Agent 系列第 6 篇：把\"调用 LLM\"摊开看全貌——直连 REST / 官方 SDK / agent SDK 三种姿势最终发出同一份 wire JSON，逐字节解剖请求响应，外加三种姿势共享的工程四件套。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/agent-llm-call-patterns.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-28-agent-loop-context-management",
+      "title": "Agent - agent loop 与上下文管理（3）",
+      "path": "Inbox/2026-10-28-agent-loop-context-management.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Harness",
+        "工程实践"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2094456858648100884",
+      "source_type": "link",
+      "platform": "zhihu",
+      "summary": "Agent 系列第 3 篇（核心篇）：agent loop 五阶段拆解、harness 六件套、上下文窗口的 token 预算与裁剪/压缩/隔离三手段、四类终止条件——附不接真模型的最小 loop 骨架实践。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/agent-loop-context-management.md",
+      "wiki_status": "pending"
+    },
+    {
       "id": "2026-10-28-agent-minimal-handwritten",
       "title": "Agent - 手写最小 agent（7）",
       "path": "Inbox/2026-10-28-agent-minimal-handwritten.md",
@@ -841,6 +844,26 @@
       "summary": "Agent 系列第 7 篇：把前五篇的零件装成\"看得懂每行代码\"的最小 agent——config/tools/agent 三文件组织、schema 校验、四类错误兜底、reasoning_content 回传，终端跑起里程碑 M1（DeepSeek + openai SDK）。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/agent-minimal-handwritten.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-28-agent-model-selection-reasoning",
+      "title": "Agent - 模型选型与推理能力（4）",
+      "path": "Inbox/2026-10-28-agent-model-selection-reasoning.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Harness",
+        "工程实践"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2095469418528651019",
+      "source_type": "link",
+      "platform": "zhihu",
+      "summary": "Agent 系列第 4 篇：agent loop 里的 LLM() 该填什么——\"通用 vs 推理\"已制度化为同一模型的 thinking 开关，DeepSeek 档位怎么选、带工具的思维链回传规则（不回传直接 400）、提示词买到的\"半个推理\"，以及国内在线/本地/私有化落地选项。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/agent-model-selection-reasoning.md",
       "wiki_status": "pending"
     },
     {
@@ -4287,6 +4310,63 @@
       "summary": "剖析 FutureTask 源码：既是 Runnable 又是 Future，用 200 多行代码实现单向递增状态机 + CAS + Treiber 无锁栈等待队列，支撑线程池 submit 的返回值、取消与等待语义。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/jdk-20-futuretask.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-jdk-21-collections",
+      "title": "JDK源码阅读(21)：Collections工具类——被低估的瑞士军刀",
+      "path": "Archive/2026-10-27-jdk-21-collections.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484616&idx=1&sn=248f227750f8d652f0352e21a0b18a62&chksm=fe6ca592c91b2c8447086a98e557b0831246a0a11e8fc1d07a32ee0692cdf9b77506dbda71c1#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "java.util.Collections 是集合框架的\"算法库+工厂车间+安全卫士\"，提供排序、洗牌、二分查找等算法操作，以及同步、不可变、类型检查三类包装器。文章基于 OpenJDK 21 源码逐方法剖析其实现与坑点，指出 synchronizedList 迭代需外部加锁、unmodifiableList 只是视图而非真正不可变等经典陷阱。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jdk-21-collections.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-jdk-22-arrays",
+      "title": "JDK源码阅读 (23)：Arrays —— 被低估的瑞士军刀",
+      "path": "Archive/2026-10-27-jdk-22-arrays.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484626&idx=1&sn=15a6e76017c9b468401721a6790e9729&chksm=fe6ca588c91b2c9eb48c0fe2f416f35b4598448255614fbbe991c593db681f66232d7d42d72c#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "java.util.Arrays 浓缩了 JDK 团队几十年的算法调优经验：排序按类型和规模分策略（基本类型双轴快排、对象 TimSort、小数组退化插入排序），binarySearch 用无符号右移防溢出，还有 parallelPrefix、parallelSort 等基于 ForkJoinPool 的并行大杀器。文章基于 OpenJDK 23 源码剖析核心方法，并梳理 asList 视图、deepEquals 等常见坑。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jdk-22-arrays.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-jdk-23-atomic",
+      "title": "AtomicInteger / AtomicLong / AtomicBoolean —— 无锁并发的基石",
+      "path": "Archive/2026-10-27-jdk-23-atomic.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484634&idx=1&sn=3e387ea9a1c8fc485cb9cb022fa265e3&chksm=fe6ca580c91b2c96779ea2dc7a951bf2596432fdc20a15e88c9ea219270b7a4b4d6681c560a5#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "Atomic 三兄弟通过 volatile 保证可见性、CAS 保证原子性，用无锁自旋替代 synchronized，是理解整个 JUC 的前置知识。文章剖析其 Unsafe + CAS 源码（底层落到 CPU 的 lock cmpxchg 指令），讲解 ABA 问题、伪共享、高并发空转等痛点，并给出计数器、一次性初始化标记、ID 生成器等典型用法与选型建议。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jdk-23-atomic.md",
       "wiki_status": "ingested"
     },
     {

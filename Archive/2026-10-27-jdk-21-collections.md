@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [Java, 课程]
 asset_ref: Assets/2026/10/jdk-21-collections.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # JDK源码阅读(21)：Collections工具类——被低估的瑞士军刀
