@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [Java, 课程]
 asset_ref: Assets/2026/10/jdk-27-delayqueue.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # DelayQueue —— 延迟队列，让任务“迟到”的艺术

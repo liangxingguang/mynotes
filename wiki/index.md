@@ -90,6 +90,9 @@
 - [[jdk-24-concurrentmodificationexception|深扒 ConcurrentModificationException：单线程 foreach 才是 CME 高频场景]]（2026-10-28，Java/JDK 源码）
 - [[jdk-25-longadder|JDK源码剖析 —— LongAdder & LongAccumulator，比 AtomicLong 更快的秘密]]（2026-10-28，Java/JDK 源码/并发）
 - [[jdk-26-priorityblockingqueue|深度解析 PriorityBlockingQueue — JUC 里的"插队之王"]]（2026-10-28，Java/JDK 源码/并发）
+- [[jdk-27-delayqueue|DelayQueue —— 延迟队列，让任务"迟到"的艺术]]（2026-10-28，Java/JDK 源码/并发）
+- [[jdk-28-synchronousqueue|深度剖析 SynchronousQueue — 零容量的神奇队列]]（2026-10-28，Java/JDK 源码/并发）
+- [[jdk-29-phaser|Phaser——比CyclicBarrier更灵活的同步屏障]]（2026-10-28，Java/JDK 源码/并发）
 - [[jdk-source-reading-album|JDK 源码阅读合集（Java解忧杂货铺，30 篇系列索引）]]（2026-10-27，Java/源码阅读资源，置信度低）
 - [[jdk21-migration-huolala|JDK 21 规模化落地实践（货拉拉）：框架先扛兼容成本，业务切 parent 收尾]]（2026-10-23，Java/JVM/虚拟线程）
 - [[jenkins-gitlab-cicd-pipeline|Jenkins + GitLab CI/CD 流水线落地实战（完整配置）]]（2026-10-21，CI/CD，置信度中）
@@ -197,6 +200,7 @@
 - [[copyonwritearraylist-internals|CopyOnWriteArrayList 写时复制设计]]（volatile 数组引用替换+写时 O(n) 复制换读零锁；快照迭代不抛 CME；读多写极少专用，单信源，置信度中）
 - [[countdownlatch-internals|CountDownLatch 门闩设计（AQS 共享模式）]]（state 即计数器+CAS 减一归零广播唤醒；一次性不可重置，区别于 CyclicBarrier；双信源，置信度中）
 - [[cyclicbarrier-internals|CyclicBarrier 循环屏障设计（Generation 换代）]]（ReentrantLock+Condition，parties 凑齐破障，最后线程执行 barrierAction 并换代唤醒；BrokenBarrierException 传播，单信源，置信度中）
+- [[delayqueue-internals|DelayQueue 延迟阻塞队列设计]]（PriorityQueue 小顶堆+单锁+leader-follower 精确等待消惊群；offer 仅队首变更才唤醒；单信源，置信度中）
 - [[cpu-funnel-coding|CPU 漏斗（编码级性能模型）]]（砍掉无效解析/转换/对象，让 CPU 只做核心运算）
 - [[cross-process-surface-rendering|Surface 跨进程渲染]]（Surface Parcelable + SurfaceFlinger 跨进程合成，Binder 传 Surface 零拷贝传画面；Renderer 3→1，微信小游戏一手）
 - [[deep-thinking-five-tools|深度思考五工具（澄清-拆解-追问-反证-逆向）]]（按序收敛四步+发散出口一步，反认知闭合；YouCore 单信源，置信度中）
@@ -230,6 +234,7 @@
 - [[pi-customization-layers|Pi 五层定制模型]]（Prompt 模板→AGENTS.md→Skill→Extension→SDK，官方扩展点成本阶梯）
 - [[pm-decision-frameworks|产品决策四框架]]（3步止损/反向假设/杠杆率排序/信号噪音过滤；单一自媒体信源，置信度低）
 - [[priorityblockingqueue-internals|PriorityBlockingQueue 并发优先队列设计]]（PriorityQueue 堆 + 单 ReentrantLock + notEmpty；无界故无 notFull；tryGrow 释放主锁+CAS allocationSpinLock 令牌+yield 分阶段扩容；单信源，置信度中）
+- [[phaser-internals|Phaser 分阶段同步屏障设计]]（单 volatile long 位编码 unarrived/parties/phase/终止位+一次 CAS 推进；arrive 三变体动态增减；树形分层分散 CAS 竞争；单信源，置信度中）
 - [[priorityqueue-internals|PriorityQueue 二叉堆设计]]（Object[] 数组承载隐式完全二叉堆；siftUp/siftDown 维护堆序；扩容 <64 翻倍+2、≥64 扩 50%；Floyd 建堆 O(n)；双信源，置信度中）
 - [[task-run-step-event-model|Task/Run/Step/Event 领域模型]]（Agent Runtime 控制平面四元分离；Run 聚合根+状态机守卫+纯函数投影+OCC；replay≠Durable Execution）
 - [[raft-membership-change-barrier|Raft 成员变更的日志 Barrier]]（公共 config 提交当前 term 日志登记 term；joint 无需/单步必需/回退双向必需）
@@ -238,6 +243,7 @@
 - [[reactive-tracing-context|响应式环境的全链路 traceId 传递]]（Reactor Context 替代 ThreadLocal；doOnEach 同步 MDC、doFinally 清除）
 - [[reentrantlock-internals|ReentrantLock 可重入锁设计]]（AQS 经典实现：非公平先抢/公平只差 hasQueuedPredecessors/state 累加可重入/多 Condition 精确唤醒，单信源，置信度中）
 - [[scheduledthreadpoolexecutor-internals|ScheduledThreadPoolExecutor 调度设计]]（DelayedWorkQueue 数组最小堆+Leader-Follower 等待；period 正负号编码 fixedRate/fixedDelay；周期任务异常静默取消，单信源，置信度中）
+- [[synchronousqueue-internals|SynchronousQueue 直接交接设计]]（零容量不存储+单 transfer 双角色；TransferStack Treiber 栈 FULFILLING 配对/TransferQueue FIFO；先自旋后 park；newCachedThreadPool 之选，单信源，置信度中）
 - [[scopedvalue|ScopedValue（作用域值）]]（JDK 25 正式：作用域共享不可变快照，终结 VT 下 ThreadLocal 内存膨胀/泄漏/脏值，Old Gen -61% 实测）
 - [[startup-ideas-framework|创业点子生成与评估框架（YC）]]（四错误避坑+十问评估+七配方生成；YC 前 100 公司 70% 点子自然注意到；演讲整理稿单信源）
 - [[table-sharding-migration|分表平滑迁移策略]]（五种读写策略矩阵 + 双写双读 SQL 重写，京东大表治理实践）

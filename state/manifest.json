@@ -2072,6 +2072,45 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484689&idx=3&sn=25bc6f50f37be1a1d90714dbd0408f6d&chksm=fe6ca44bc91b2d5dfaf508f16fd3d0e89beccedba6a17d4eb875248f4955ff8a29b04d210df9",
       "asset_ref": "Assets/2026/10/jdk-26-priorityblockingqueue.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-27-jdk-27-delayqueue.md",
+      "sha256": "24ec77f08c694b895a90a1c659de81ab04d0f46a784fe096c9cd016638f3bac4",
+      "registered_at": "2026-10-28",
+      "inbox_ref": "Archive/2026-10-27-jdk-27-delayqueue.md",
+      "pages": [
+        "wiki/sources/jdk-27-delayqueue.md",
+        "wiki/concepts/delayqueue-internals.md",
+        "wiki/sources/jdk-source-reading-album.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484697&idx=2&sn=8e03c6e70157166bc0d50ca7bb72b8cd&chksm=fe6ca443c91b2d558b2898edeb03386aec35516bf44d3ea388c8abea14dc3717b7da90905bba",
+      "asset_ref": "Assets/2026/10/jdk-27-delayqueue.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-27-jdk-28-synchronousqueue.md",
+      "sha256": "c27529ff2d0b866109053461f4be7b801b8eba7b81c6f574b0ecfa35ad9b054d",
+      "registered_at": "2026-10-28",
+      "inbox_ref": "Archive/2026-10-27-jdk-28-synchronousqueue.md",
+      "pages": [
+        "wiki/sources/jdk-28-synchronousqueue.md",
+        "wiki/concepts/synchronousqueue-internals.md",
+        "wiki/sources/jdk-source-reading-album.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484705&idx=2&sn=04702b3898086b5770b4399e97ff53dc&chksm=fe6ca47bc91b2d6de1b5c0408572221426d758e764390f864585669628c832163e1c026030c2",
+      "asset_ref": "Assets/2026/10/jdk-28-synchronousqueue.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-27-jdk-29-phaser.md",
+      "sha256": "9677dfc3ef55852a09b184f3a832a9d16fef6f45b2c7fc8c1c2b3d48d8b429ac",
+      "registered_at": "2026-10-28",
+      "inbox_ref": "Archive/2026-10-27-jdk-29-phaser.md",
+      "pages": [
+        "wiki/sources/jdk-29-phaser.md",
+        "wiki/concepts/phaser-internals.md",
+        "wiki/sources/jdk-source-reading-album.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484716&idx=3&sn=bae461d3b7fe0ce615444acaa0fd0e1c&chksm=fe6ca476c91b2d6014cf293b24694a3bcee479f5ce52c3460e2d085ba6edb5213732af91ee16",
+      "asset_ref": "Assets/2026/10/jdk-29-phaser.md"
     }
   ]
 }
