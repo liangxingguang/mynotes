@@ -1,63 +1,6 @@
 {
-  "updated_at": "2026-10-28 19:17",
+  "updated_at": "2026-10-28 21:35",
   "notes": [
-    {
-      "id": "2026-10-27-netty-08-bootstrap",
-      "title": "Netty源码分析(8) — Bootstrap 与 ServerBootstrap 启动流程源码",
-      "path": "Inbox/2026-10-27-netty-08-bootstrap.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484034&idx=1&sn=ebceba0b6e18e5922fcb5d368e17f189&chksm=fe6ca3d8c91b2ace786da5c8cb08bb537c07d6d3282702448623a91791349432a60d692ecd23#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "从源码层面拆解 Netty 客户端 Bootstrap.connect() 与服务端 ServerBootstrap.bind() 的完整启动链路：创建 Channel、初始化 Pipeline、注册到 Selector 三件套，以及 ServerBootstrapAcceptor 如何把新连接分发给 worker 线程池。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-08-bootstrap.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-27-netty-09-nioeventloop-run",
-      "title": "Netty源码分析(9) — NioEventLoop 的 run() 方法到底在干什么？",
-      "path": "Inbox/2026-10-27-netty-09-nioeventloop-run.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484046&idx=1&sn=cd2f21f2e428e1217908bd00c08c730d&chksm=fe6ca3d4c91b2ac2719875e900d19d3d120e21149cd36c5ebede587784e5635e2579043496dd#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "拆解 Netty 主循环 NioEventLoop.run()：select 策略、ioRatio 时间分配、JDK epoll 空轮询 BUG 的自愈机制，以及整个事件循环的完整流程。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-09-nioeventloop-run.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-27-netty-10-pooled-allocator",
-      "title": "Netty源码分析(10) — 内存分配之 PooledByteBufAllocator",
-      "path": "Inbox/2026-10-27-netty-10-pooled-allocator.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484061&idx=1&sn=8b1ff421f1a5bf65f3c3cd1d52bd785c&chksm=fe6ca3c7c91b2ad162cd50d051c99a57c2087ea4b4c9b9070972e3f8cdc240173db3ed3af21e#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "拆解 Netty 池化内存分配器 PooledByteBufAllocator：借鉴 jemalloc 的 Arena → Chunk → Page → Subpage 四级分级，配合 ThreadLocal 缓存实现低锁、低 GC 压力的高性能内存池。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-10-pooled-allocator.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-27-netty-11-poolchunk-subpage",
       "title": "Netty源码分析(11) — 池化内存分配：PoolChunk 与 PoolSubpage",
@@ -4827,6 +4770,63 @@
       "summary": "源码级解析 Netty 线程模型骨架：NioEventLoopGroup 默认线程数（CPU×2）的来源、MultithreadEventExecutorGroup 的 children 数组与 chooser 位运算优化、NioEventLoop.run() 事件循环全流程（select 策略、ioRatio 时间配比、空轮询自愈）、processSelectedKeys 事件分发、wakeup 机制与 Channel 注册绑定，附窥视 EventLoop 内部的完整示例。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-06-eventloop.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-08-bootstrap",
+      "title": "Netty源码分析(8) — Bootstrap 与 ServerBootstrap 启动流程源码",
+      "path": "Archive/2026-10-27-netty-08-bootstrap.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484034&idx=1&sn=ebceba0b6e18e5922fcb5d368e17f189&chksm=fe6ca3d8c91b2ace786da5c8cb08bb537c07d6d3282702448623a91791349432a60d692ecd23#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "从源码层面拆解 Netty 客户端 Bootstrap.connect() 与服务端 ServerBootstrap.bind() 的完整启动链路：创建 Channel、初始化 Pipeline、注册到 Selector 三件套，以及 ServerBootstrapAcceptor 如何把新连接分发给 worker 线程池。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-08-bootstrap.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-09-nioeventloop-run",
+      "title": "Netty源码分析(9) — NioEventLoop 的 run() 方法到底在干什么？",
+      "path": "Archive/2026-10-27-netty-09-nioeventloop-run.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484046&idx=1&sn=cd2f21f2e428e1217908bd00c08c730d&chksm=fe6ca3d4c91b2ac2719875e900d19d3d120e21149cd36c5ebede587784e5635e2579043496dd#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "拆解 Netty 主循环 NioEventLoop.run()：select 策略、ioRatio 时间分配、JDK epoll 空轮询 BUG 的自愈机制，以及整个事件循环的完整流程。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-09-nioeventloop-run.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-10-pooled-allocator",
+      "title": "Netty源码分析(10) — 内存分配之 PooledByteBufAllocator",
+      "path": "Archive/2026-10-27-netty-10-pooled-allocator.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484061&idx=1&sn=8b1ff421f1a5bf65f3c3cd1d52bd785c&chksm=fe6ca3c7c91b2ad162cd50d051c99a57c2087ea4b4c9b9070972e3f8cdc240173db3ed3af21e#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "拆解 Netty 池化内存分配器 PooledByteBufAllocator：借鉴 jemalloc 的 Arena → Chunk → Page → Subpage 四级分级，配合 ThreadLocal 缓存实现低锁、低 GC 压力的高性能内存池。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-10-pooled-allocator.md",
       "wiki_status": "ingested"
     }
   ]

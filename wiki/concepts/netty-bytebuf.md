@@ -13,9 +13,11 @@ tags:
 sources:
   - raw/sources/architecture/2026-10-27-netty-05-bytebuf.md
   - raw/sources/architecture/2026-10-20-netty-three-skills-high-performance.md
+  - raw/sources/architecture/2026-10-27-netty-10-pooled-allocator.md
 related:
   - wiki/entities/netty.md
   - wiki/concepts/netty-channel-pipeline.md
+  - wiki/concepts/netty-pooled-allocator.md
 ---
 # Netty ByteBuf（数据容器与内存管理）
 
@@ -35,7 +37,7 @@ Netty 自研的字节容器，用于替代 JDK `java.nio.ByteBuffer`：以读写
 2. 自动扩容（4.1）：≤4MB 从 64B 翻倍，>4MB 每次步进 4MB，上限 maxCapacity（默认 Integer.MAX_VALUE）。
 3. 三形态：Heap（byte[]，GC 托管）、Direct（堆外，IO 少一次拷贝）、Composite（addComponent 引用组合，零拷贝拼接）。
 4. 引用计数：实现 ReferenceCounted（refCnt/retain/release），归零释放底层资源。
-5. 分配器双体系：Unpooled（随用随扔）vs Pooled（类 jemalloc，Arena 数组默认 CPU×2、page 8KB、maxOrder 11）；4.1 默认池化。
+5. 分配器双体系：Unpooled（随用随扔）vs Pooled（类 jemalloc，Arena 数组默认 CPU×2、Chunk 16MB、page 8KB、maxOrder 11）；4.1 默认池化；池化内部四级分级与线程缓存细节见 [[netty-pooled-allocator]]。
 
 ## Structure（结构）
 
@@ -61,19 +63,21 @@ Netty 自研的字节容器，用于替代 JDK `java.nio.ByteBuffer`：以读写
 ## Evolution（演进）
 
 - 4.1 起池化转正为默认（实体页时间线）；4.2 引入 AdaptiveByteBufAllocator（适配虚拟线程，见 [[netty]]）。
-- ByteBuf 篇作者预告系列第 10、11 篇深入 PoolChunk/PoolSubpage 池化细节（未采集，当前未知）。
+- ByteBuf 篇作者预告系列第 10、11 篇深入 PoolChunk/PoolSubpage 池化细节——第 10 篇（netty-10，2026-10-28 摄入）已兑现：Arena→Chunk→Page→Subpage 四级、满二叉树 memoryMap、Subpage bitmap、PoolThreadCache 无锁缓存、tiny/small/normal/huge 分派全部落地为源码级证据，独立为 [[netty-pooled-allocator]] 概念页；第 11 篇未采集，当前未知。
 
 ## Open Questions（开放问题）
 
 - "约 70% GC 压力下降"缺测量方法与版本环境，仅作经验参考。
-- Pooled 内部（PoolChunk/PoolSubpage/tiny-small-normal-huge 分级）源码细节待系列后续信源补齐。
 
 ## Evidence（证据）
 
 - Source: `raw/sources/architecture/2026-10-27-netty-05-bytebuf.md`（源码级主信源）
 - Source: `raw/sources/architecture/2026-10-20-netty-three-skills-high-performance.md`（三支柱定位）
+- Source: `raw/sources/architecture/2026-10-27-netty-10-pooled-allocator.md`（池化分配器深入篇：四级结构/二叉树/位图/分配链路源码）
 
 ## Related Knowledge（相关知识）
 
 - [[netty]]（实体页）
 - [[netty-05-bytebuf]]（信源页）
+- [[netty-10-pooled-allocator]]（信源页）
+- [[netty-pooled-allocator]]（概念页）

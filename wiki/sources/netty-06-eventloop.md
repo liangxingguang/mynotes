@@ -17,6 +17,8 @@ sources:
 related:
   - wiki/sources/netty-05-bytebuf.md
   - wiki/sources/netty-03-reactor.md
+  - wiki/sources/netty-08-bootstrap.md
+  - wiki/sources/netty-09-nioeventloop-run.md
   - wiki/entities/netty.md
   - wiki/concepts/netty-eventloop.md
   - wiki/concepts/reactor-thread-model.md
@@ -70,6 +72,8 @@ related:
 - [[netty-05-bytebuf]]（同系列第 5 篇：ByteBuf 源码）
 - [[netty-03-reactor]]（同系列第 3 篇：Reactor 线程模型，与本篇 run()/chooser 剖析互证）
 - [[netty-04-channel-pipeline-handler]]（同系列第 4 篇：Pipeline 事件传播源码）
+- [[netty-08-bootstrap]]（同系列第 8 篇：启动流程，register/connect 链路源码）
+- [[netty-09-nioeventloop-run]]（同系列第 9 篇：run() 主循环深挖，与本篇互证）
 - [[netty-eventloop]]（概念页）
 - [[reactor-thread-model]]（架构视角的线程模型概念页）
 - [[netty]]（实体页）

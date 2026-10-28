@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [netty, Java]
 asset_ref: Assets/2026/10/netty-10-pooled-allocator.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Netty源码分析(10) — 内存分配之 PooledByteBufAllocator

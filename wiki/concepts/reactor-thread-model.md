@@ -17,9 +17,11 @@ sources:
   - raw/sources/architecture/2026-10-27-netty-02-bio-nio.md
   - raw/sources/architecture/2026-10-27-netty-03-reactor.md
   - raw/sources/architecture/2026-10-27-netty-06-eventloop.md
+  - raw/sources/architecture/2026-10-27-netty-08-bootstrap.md
 related:
   - wiki/entities/netty.md
   - wiki/concepts/netty-eventloop.md
+  - wiki/concepts/netty-bootstrap.md
 ---
 # 主从 Reactor 线程模型（Netty 版）
 
@@ -75,7 +77,7 @@ Boss 的 Selector 只监听 OP_ACCEPT；新连接到来后创建 Channel 并注�
 
 ## Evolution（演进）
 
-机制信源（netty-three-skills）给出"boss 只 accept、worker CPU×2、Channel 终身绑单 EventLoop"的性能视角；教程双信源（netty-01/02）补全代码结构与 bind() 源码路径；教程第 3 篇（netty-03，2026-10-28 摄入）补齐三形态对照与 ServerBootstrapAcceptor 移交链路，并给出空轮询自愈阈值 512；教程第 6 篇（netty-06，2026-10-28 摄入）把模型落到源码实现——默认线程数静态块、chooser 位运算、ioRatio=50 时间配比、register 跨线程异步化、selectCnt 空轮询自愈，与本页结论一致互证（详见 [[netty-eventloop]]）。五信源对核心结构表述一致。
+机制信源（netty-three-skills）给出"boss 只 accept、worker CPU×2、Channel 终身绑单 EventLoop"的性能视角；教程双信源（netty-01/02）补全代码结构与 bind() 源码路径；教程第 3 篇（netty-03，2026-10-28 摄入）补齐三形态对照与 ServerBootstrapAcceptor 移交链路，并给出空轮询自愈阈值 512；教程第 6 篇（netty-06，2026-10-28 摄入）把模型落到源码实现——默认线程数静态块、chooser 位运算、ioRatio=50 时间配比、register 跨线程异步化、selectCnt 空轮询自愈，与本页结论一致互证（详见 [[netty-eventloop]]）；教程第 8 篇（netty-08，2026-10-28 摄入）把 Boss/Worker 分工的装配过程落到源码——ServerBootstrap.init() 异步尾插 ServerBootstrapAcceptor、Acceptor.channelRead 挂 childHandler 并 childGroup.register 移交 worker、NioServerSocketChannel 构造即记录 OP_ACCEPT（详见 [[netty-bootstrap]]）。六信源对核心结构表述一致。
 
 ## Open Questions（开放问题）
 
@@ -88,6 +90,7 @@ Boss 的 Selector 只监听 OP_ACCEPT；新连接到来后创建 Channel 并注�
 - Source: `raw/sources/architecture/2026-10-27-netty-02-bio-nio.md`（对比篇：结构图 + 天然无锁表述）
 - Source: `raw/sources/architecture/2026-10-27-netty-03-reactor.md`（线程模型专篇：三形态对照/ServerBootstrapAcceptor 链路/chooser 演进/自愈阈值 512/选型分档）
 - Source: `raw/sources/architecture/2026-10-27-netty-06-eventloop.md`（源码实现层：默认线程数/chooser/ioRatio/register 异步化/空轮询自愈）
+- Source: `raw/sources/architecture/2026-10-27-netty-08-bootstrap.md`（装配层源码：initAndRegister 三件套/ServerBootstrapAcceptor 移交/OP_ACCEPT 登记时机）
 
 ## Related Knowledge（相关知识）
 
@@ -96,3 +99,4 @@ Boss 的 Selector 只监听 OP_ACCEPT；新连接到来后创建 Channel 并注�
 - [[netty-02-bio-nio]]
 - [[netty-03-reactor]]
 - [[netty-eventloop]]
+- [[netty-bootstrap]]

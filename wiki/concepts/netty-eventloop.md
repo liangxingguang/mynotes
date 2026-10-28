@@ -15,9 +15,11 @@ tags:
 sources:
   - raw/sources/architecture/2026-10-27-netty-06-eventloop.md
   - raw/sources/architecture/2026-10-27-netty-03-reactor.md
+  - raw/sources/architecture/2026-10-27-netty-09-nioeventloop-run.md
 related:
   - wiki/concepts/reactor-thread-model.md
   - wiki/concepts/netty-channel-pipeline.md
+  - wiki/concepts/netty-bootstrap.md
   - wiki/entities/netty.md
 ---
 # Netty EventLoop / EventLoopGroup（事件循环机制）
@@ -55,7 +57,7 @@ EventExecutor
 
 ## How It Works（运作方式）
 
-NioEventLoop.run() 每轮：① SelectStrategy 决策（CONTINUE / BUSY_WAIT 仅 epoll / SELECT）；SELECT 时按定时任务 deadline 计算阻塞超时，有到期任务改走 selectNow() 不阻塞；② processSelectedKeys() 按 attachment 分发——AbstractNioChannel 走 unsafe.finishConnect / forceFlush / read（OP_CONNECT 优先，读完检查 Channel 是否已关闭），NioTask 直接运行；③ 按 ioRatio 时间配比 runAllTasks()；④ selectCnt 超阈值重建 Selector。异常兜底：IOException 重建 Selector 续跑，未知 Throwable 记日志并 sleep 1s 防打满 CPU。
+NioEventLoop.run() 每轮：① SelectStrategy 决策（CONTINUE / BUSY_WAIT 仅 epoll / SELECT）——反直觉点在于**有任务时走 `selectNow()` 非阻塞扫一遍立即返回去跑任务，没任务时才 `select(timeout)` 阻塞等待**（超时按最近定时任务 deadline 计算），因为 close/write 等用户任务对及时性敏感而 IO 事件可以等（netty-09 增补解释）；每轮先 `canceller.run()` 处理取消的 key；② processSelectedKeys() 按 attachment 分发——AbstractNioChannel 走 unsafe.finishConnect / forceFlush / read（OP_CONNECT 优先，读完检查 Channel 是否已关闭），NioTask 直接运行；③ 按 ioRatio 时间配比 runAllTasks()；④ 空轮询检测：有实际工作（ranTasks 或 strategy>0）时 selectCnt 重置为 1，只有连续空转超阈值才 rebuildSelector——rebuildSelector0() 新建 Selector、遍历旧 key 保留 interestOps/attachment 重新注册、替换引用并关闭旧 Selector，对上层透明（netty-09 给出迁移源码与 BUG 编号 JDK-2144974）。异常兜底：IOException 重建 Selector 续跑，CancelledKeyException 吞掉（JDK 已知 BUG），Error 直抛，未知 Throwable 记日志并 sleep 1s 防打满 CPU。ioRatio 选型（netty-09 建议表）：纯网络代理/网关 100，业务密集服务 50~70，不确定用默认 50。
 
 ## Relationships（关系）
 
@@ -77,20 +79,23 @@ NioEventLoop.run() 每轮：① SelectStrategy 决策（CONTINUE / BUSY_WAIT 仅
 
 ## Evolution（演进）
 
-机制信源（netty-three-skills）与教程开篇（netty-01/02）给出"Boss accept / Worker CPU×2 / Channel 终身绑单 EventLoop"的架构结论；教程第 3 篇（netty-03）补 chooser 版本演进（取模→位运算）、runAllTasks 尾部任务（afterRunningAllTasks）与自愈阈值 512；教程第 6 篇（netty-06）给 run()/processSelectedKeys/register 逐方法剖析与 ioRatio 配比公式。两篇教程的 run() 伪代码详略与策略命名略有差异（03 简化为 SELECT/SELECT_NOW，06 为 CONTINUE/BUSY_WAIT/SELECT），属作者简化口径不同，无实质矛盾。
+机制信源（netty-three-skills）与教程开篇（netty-01/02）给出"Boss accept / Worker CPU×2 / Channel 终身绑单 EventLoop"的架构结论；教程第 3 篇（netty-03）补 chooser 版本演进（取模→位运算）、runAllTasks 尾部任务（afterRunningAllTasks）与自愈阈值 512；教程第 6 篇（netty-06）给 run()/processSelectedKeys/register 逐方法剖析与 ioRatio 配比公式；教程第 9 篇（netty-09，2026-10-28 摄入）专篇深挖 run()——SelectStrategy "有任务非阻塞"的解释、ioRatio 选型建议表、epoll 空轮询 BUG 编号 JDK-2144974、rebuildSelector0 的 key 迁移源码与"有工作即重置 selectCnt"细节，与既有结论一致互证。各篇 run() 伪代码详略与策略命名略有差异（03 简化为 SELECT/SELECT_NOW，06/09 为 CONTINUE/BUSY_WAIT/SELECT），属作者简化口径不同，无实质矛盾。
 
 ## Open Questions（开放问题）
 
 - EpollEventLoopGroup / BUSY_WAIT 细节（信源仅点名未展开）。
+- SelectedSelectionKeySet 数组实现细节（netty-09 只给"替换 HashSet 降 GC 与遍历开销"的动机，未展开实现）。
 - Netty 4.2 的 EventLoopGroup 与传输解耦、io_uring 一级传输对本机制的影响（见 [[netty]] Timeline），本库暂无展开信源。
 
 ## Evidence（证据）
 
 - Source: `raw/sources/architecture/2026-10-27-netty-06-eventloop.md`（源码级主信源：类层次/构造链/run()/processSelectedKeys/wakeup/register 逐方法剖析）
 - Source: `raw/sources/architecture/2026-10-27-netty-03-reactor.md`（补强：run() 四阶段简化版/chooser 演进/自愈阈值 512/runAllTasks 与 MPSC 队列；架构层结论与 [[reactor-thread-model]] 各信源互证）
+- Source: `raw/sources/architecture/2026-10-27-netty-09-nioeventloop-run.md`（run() 专篇：SelectStrategy 反直觉解释/ioRatio 选型表/JDK-2144974/rebuildSelector0 迁移源码）
 
 ## Related Knowledge（相关知识）
 
 - [[netty-06-eventloop]]（信源页）
 - [[netty-03-reactor]]（信源页）
+- [[netty-09-nioeventloop-run]]（信源页）
 - [[netty]]（实体页：生产事故第一根因"EventLoop 阻塞"）
