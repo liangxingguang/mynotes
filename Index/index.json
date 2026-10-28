@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28 12:08",
+  "updated_at": "2026-10-28 12:11",
   "notes": [
     {
       "id": "2026-10-27-jdk-20-futuretask",
@@ -1098,6 +1098,26 @@
       "summary": "Java 并发工具类入门科普：用停车场闸机类比 Semaphore（acquire/release 控制并发度），用运动会开幕式类比 CountDownLatch（倒计时归零放行）。给出动态限流、tryAcquire 超时、批量任务超时控制、线程池优雅关闭等实战技巧，附常见踩坑与选型对比。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/semaphore-countdownlatch-practices.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-28-zhihu-agent-column",
+      "title": "知乎专栏《Agent》：从理论到手写 harness 的 10 篇系列教程",
+      "path": "Inbox/2026-10-28-zhihu-agent-column.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Harness",
+        "课程"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://www.zhihu.com/column/c_2094113198626686177",
+      "source_type": "link",
+      "platform": "zhihu",
+      "summary": "一套循序渐进的 LLM Agent 系列教程：从经典智能体理论与 agent loop 五阶段，到模型/harness 选型、手写最小 agent、把真实后台 REST API 变成工具，再到工具工程的认证/错误分级/确认闸门与全谱系安全边界。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/zhihu-agent-column-index.md",
       "wiki_status": "pending"
     },
     {
