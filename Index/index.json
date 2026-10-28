@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29 06:36",
+  "updated_at": "2026-10-29 07:52",
   "notes": [
     {
       "id": "2026-10-27-netty-27-channelfuture",
@@ -1053,6 +1053,25 @@
       "summary": "一套循序渐进的 LLM Agent 系列教程：从经典智能体理论与 agent loop 五阶段，到模型/harness 选型、手写最小 agent、把真实后台 REST API 变成工具，再到工具工程的认证/错误分级/确认闸门与全谱系安全边界。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/zhihu-agent-column-index.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-29-ste-zh-skill",
+      "title": "ste-zh：简化技术中文规范 Skill",
+      "path": "Inbox/2026-10-29-ste-zh-skill.md",
+      "created": "2026-10-29",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工具"
+      ],
+      "source": "微博·蚁工厂",
+      "source_url": "https://weibo.com/2194035935/5359072102848033",
+      "source_type": "帖子",
+      "platform": "微博",
+      "summary": "蚁工厂发布 `ste-zh`：一个面向 AI Agent 的任务汇报规范 skill。借鉴航空与工业界的 ASD-STE100（简化技术英语）原则，约束 Agent 用清晰、严密、无歧义的中文汇报工作结果。开源在 GitHub，微博互动 57 转 / 87 赞。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/ste-zh-skill.md",
       "wiki_status": "pending"
     },
     {
