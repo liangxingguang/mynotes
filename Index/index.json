@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29 07:53",
+  "updated_at": "2026-10-29 07:54",
   "notes": [
     {
       "id": "2026-10-27-netty-27-channelfuture",
@@ -1072,6 +1072,25 @@
       "summary": "蚁工厂发布 `ste-zh`：一个面向 AI Agent 的任务汇报规范 skill。借鉴航空与工业界的 ASD-STE100（简化技术英语）原则，约束 Agent 用清晰、严密、无歧义的中文汇报工作结果。开源在 GitHub，微博互动 57 转 / 87 赞。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/ste-zh-skill.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-29-survival-llm-offline-assistant",
+      "title": "survival-llm：离线 AI 生存知识助手",
+      "path": "Inbox/2026-10-29-survival-llm-offline-assistant.md",
+      "created": "2026-10-29",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工具"
+      ],
+      "source": "微博·蚁工厂",
+      "source_url": "https://weibo.com/2194035935/5358923348710037",
+      "source_type": "帖子",
+      "platform": "微博",
+      "summary": "蚁工厂推荐的开源项目 `survival-llm`：完全离线运行的 AI 生存知识助手，面向断网、停电、自然灾害、野外求生场景。本地 LLM + 约 150 万篇离线知识文档（Wikipedia、MedlinePlus、CDC、FEMA、WHO、wikiHow、iFixit），涵盖急救、净水、食品安全、发电机使用、设备维修与灾害应对。可按电脑配置引导下载不同规格模型。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/survival-llm-offline-assistant.md",
       "wiki_status": "pending"
     },
     {
