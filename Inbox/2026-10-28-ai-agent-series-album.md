@@ -8,7 +8,7 @@ platform: 微信公众号
 created: 2026-10-28
 category: 技术
 tags: [AI, AI Coding]
-asset_ref: Assets/2026/10/ai-agent-series-album.md
+asset_ref: Assets/2026/10/ai-agent-series-full.md
 wiki_status: pending
 ---
 
@@ -27,7 +27,7 @@ wiki_status: pending
 
 ## 正文
 
-完整 82 篇目录与链接：[[Assets/2026/10/ai-agent-series-album.md]]
+82 篇全文已抓取：[[Assets/2026/10/ai-agent-series-full.md|全 82 篇正文汇总]]（约 74 万字符，含每篇原文链接）；目录清单见 [[Assets/2026/10/ai-agent-series-album.md]]。
 
 ## 来源
 
@@ -36,3 +36,4 @@ wiki_status: pending
 ## 附件
 
 - [[Assets/2026/10/ai-agent-series-album.md]]
+- [[Assets/2026/10/ai-agent-series-full.md]]
