@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28 18:40",
+  "updated_at": "2026-10-28 18:44",
   "notes": [
     {
       "id": "2026-10-27-netty-03-reactor",
@@ -1012,6 +1012,25 @@
       "wiki_status": "pending"
     },
     {
+      "id": "2026-10-28-local-message-table-distributed-transaction",
+      "title": "本地消息表终极实战：商城分布式事务最终一致性避坑",
+      "path": "Inbox/2026-10-28-local-message-table-distributed-transaction.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "分布式事务",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/ypHhsVCifGc3yaSBBN7YaQ",
+      "source_type": "文章",
+      "platform": "微信公众号",
+      "summary": "商城真实事故复盘：不是所有最终一致场景都要上 Seata。本地消息表 = 单库事务原子性 + 重试可靠性，轻量可控，但消息丢失、重试风暴、无幂等三大坑任一上线即资损。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/local-message-table-distributed-transaction.md",
+      "wiki_status": "pending"
+    },
+    {
       "id": "2026-10-28-log4j2-thread-block-pitfalls",
       "title": "日志导致线程Block的这些坑，你不得不防",
       "path": "Inbox/2026-10-28-log4j2-thread-block-pitfalls.md",
@@ -1089,6 +1108,25 @@
       "summary": "Netty 源码分析番外篇：从源码视角识别 Netty 中散落的设计模式——模板方法（ChannelHandler 骨架）、责任链（Pipeline 双向链表）、观察者（ChannelFuture 异步回调）、装饰器（ByteBuf 功能增强）、策略（EventExecutorChooser 位运算优化）等 16 种模式的工程化运用，附全景对照表。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-design-patterns.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-28-netty-source-series-album",
+      "title": "Netty 源码系列合集（28篇）",
+      "path": "Inbox/2026-10-28-netty-source-series-album.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号·程序员行一（合集页）",
+      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzI3NzQ1MTI4OQ==&action=getalbum&album_id=1946733195882708993",
+      "source_type": "合集",
+      "platform": "微信公众号",
+      "summary": "公众号「程序员行一」的 Netty 源码合集，28 篇成体系：从启动、EventLoop、Pipeline 到 ByteBuf 内存池、定时轮、优雅停机、Epoll 原生传输，覆盖 Netty 核心链路源码。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-source-series-album.md",
       "wiki_status": "pending"
     },
     {
