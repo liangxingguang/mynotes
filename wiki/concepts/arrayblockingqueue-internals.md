@@ -71,7 +71,7 @@ notEmpty / notFull: Condition
 
 ### Distinctions（区分）
 
-- 与 LinkedBlockingQueue：单锁 vs 双锁（takeLock/putLock）；预分配数组 vs 每次 new Node；null 表空位 vs 哨兵节点；支持 fair vs 不支持；根因是数组无法分离队头队尾原子操作而链表可以。
+- 与 [[linkedblockingqueue-internals|LinkedBlockingQueue]]：单锁 vs 双锁（takeLock/putLock）；预分配数组 vs 每次 new Node；null 表空位 vs 滚动哨兵节点；支持 fair vs 不支持；根因是数组无法分离队头队尾原子操作而链表可以（双信源互证）。
 - 与 SynchronousQueue：有界缓冲 vs 零容量直接移交（CAS/转移者模式）。
 
 ## Evolution（演进）

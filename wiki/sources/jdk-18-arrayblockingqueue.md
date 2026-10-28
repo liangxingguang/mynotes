@@ -16,6 +16,7 @@ sources:
 related:
   - wiki/concepts/arrayblockingqueue-internals.md
   - wiki/concepts/reentrantlock-internals.md
+  - wiki/sources/jdk-19-linkedblockingqueue.md
   - wiki/sources/jdk-07-reentrantlock.md
   - wiki/sources/jdk-source-reading-album.md
 ---
@@ -69,6 +70,7 @@ related:
 
 ## Related Knowledge（相关知识）
 
+- [[jdk-19-linkedblockingqueue|深度剖析 LinkedBlockingQueue（信源页）]]（本文的对照篇：双锁链表方案）
 - [[jdk-07-reentrantlock|JDK源码阅读(6) — ReentrantLock（信源页）]]（本队列的锁与 Condition 即由它提供）
 - [[jdk-source-reading-album|JDK 源码阅读合集（30 篇系列索引）]]
 
