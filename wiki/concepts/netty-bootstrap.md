@@ -4,7 +4,7 @@ type: concept
 title: Netty Bootstrap 启动引导（initAndRegister 三件套与 ServerBootstrapAcceptor）
 status: active
 created: 2026-10-28
-updated: 2026-10-28
+updated: 2026-10-29
 confidence: high
 tags:
   - concept
@@ -20,6 +20,7 @@ related:
   - wiki/concepts/reactor-thread-model.md
   - wiki/concepts/netty-eventloop.md
   - wiki/concepts/netty-channel-pipeline.md
+  - wiki/concepts/netty-connection-lifecycle.md
 ---
 # Netty Bootstrap 启动引导（initAndRegister 三件套与 ServerBootstrapAcceptor）
 

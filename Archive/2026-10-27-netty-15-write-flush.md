@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [netty, Java]
 asset_ref: Assets/2026/10/netty-15-write-flush.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Netty源码分析(15) — 写缓冲 buffer 与 writeAndFlush 流程

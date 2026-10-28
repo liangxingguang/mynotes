@@ -4,7 +4,7 @@ type: entity
 title: Netty
 status: active
 created: 2026-10-23
-updated: 2026-10-28
+updated: 2026-10-29
 confidence: high
 tags:
   - entity
@@ -25,6 +25,9 @@ sources:
   - raw/sources/architecture/2026-10-27-netty-08-bootstrap.md
   - raw/sources/architecture/2026-10-27-netty-09-nioeventloop-run.md
   - raw/sources/architecture/2026-10-27-netty-10-pooled-allocator.md
+  - raw/sources/architecture/2026-10-27-netty-11-poolchunk-subpage.md
+  - raw/sources/architecture/2026-10-27-netty-15-write-flush.md
+  - raw/sources/architecture/2026-10-27-netty-16-connection-mgmt.md
 related:
   - wiki/sources/netty-three-skills-high-performance.md
   - wiki/sources/netty-iot-gateway-resilient-design.md
@@ -45,6 +48,11 @@ related:
   - wiki/sources/netty-09-nioeventloop-run.md
   - wiki/sources/netty-10-pooled-allocator.md
   - wiki/concepts/netty-pooled-allocator.md
+  - wiki/sources/netty-11-poolchunk-subpage.md
+  - wiki/sources/netty-15-write-flush.md
+  - wiki/concepts/netty-write-flush.md
+  - wiki/sources/netty-16-connection-mgmt.md
+  - wiki/concepts/netty-connection-lifecycle.md
   - wiki/entities/kafka.md
 ---
 # Netty
@@ -79,6 +87,9 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 - 启动流程源码级机制（教程第 8 篇）：客户端 connect() 与服务端 bind() 共用 `initAndRegister()` 三件套——ReflectiveChannelFactory 反射建 Channel → init() 组装 Pipeline → register 到 EventLoop 的 Selector；客户端注册时 interestOps=0、connect 未立即成功才关注 OP_CONNECT，服务端 NioServerSocketChannel 构造即记录 OP_ACCEPT、bind 成功后 doBeginRead 生效；register/doBind0 全程经 inEventLoop() 判断异步投递保证同线程；ServerBootstrapAcceptor 在 channelRead 里挂 childHandler 并 childGroup.register 移交 worker。避坑纪律：bind/connect 完成前不操作 Channel、handler≠childHandler、bossGroup 1 线程即可。详见 [[netty-bootstrap]]。
 - run() 主循环深挖（教程第 9 篇）：SelectStrategy 反直觉设计——有任务走 selectNow() 非阻塞、没任务才阻塞 select；ioRatio 配比公式 ioTime×(100-ioRatio)/ioRatio 与选型表（网关 100/业务密集 50~70）；epoll 空轮询 BUG（JDK-2144974）连续 512 次空转即 rebuildSelector0 迁移全部 key 重建 Selector，有实际工作即重置计数；SelectedSelectionKeySet 数组替换 HashSet 降 GC。与 [[netty-eventloop]] 既有结论三方互证。
 - 池化内存分配源码级机制（教程第 10 篇）：PooledByteBufAllocator 借鉴 jemalloc 四级分级——PoolArena（默认 2×CPU 核数各持锁）→ PoolChunk（16MB，memoryMap 满二叉树管 2048 个 8KB Page，O(logN) 分配合并）→ PoolSubpage（bitmap 切分 tiny/small 小块）；分配先查 PoolThreadCache 线程缓存（无锁），未命中走 Arena 加锁；huge（>16MB）走 Unpooled 不缓存；池化 ByteBuf 必须显式 release()，泄漏用 ResourceLeakDetector PARANOID 排查。详见 [[netty-pooled-allocator]]。
+- 内存池深入篇（教程第 11 篇，源码级）：PoolChunk memoryMap 节点值=子树最浅空闲深度（根 O(1) 知整块状态）、allocateNode 从根左优先搜索降外部碎片、updateParents 沿路径 min(左,右) 上刷；PoolSubpage `nextAvail` 缓存+`Long.numberOfTrailingZeros` 指令级查空闲位，句柄编码 `(bitmapIdx<<32)|memoryMapIdx`，全空闲整页归还 Chunk；PoolChunkList 六档使用率流转（qInit/q000/q025/q050/q075/q100），`usage()<minUsage` 降级、全闲 Chunk 回收归 OS；JMH 实测小块池化 ~7x（32B 45ns vs 310ns）、1MB 仅 ~2.9x；PoolThreadCache 裁剪参数 cacheTrimInterval=8192/maxCachedBufferCapacity=32KB。详见 [[netty-pooled-allocator]]。
+- 写缓冲与背压源码级机制（教程第 15 篇）：write() 只入队（消息包装 Entry 追加 ChannelOutboundBuffer 链表，O(1) 返回解耦业务/I/O 线程），flush() 的 addFlush() 移 unflushedEntry→flushedEntry 指针，真正写入在 NioSocketChannel.doWrite() 调 JDK SocketChannel.write()；写自旋默认 16 次防独占 I/O 线程，写不进注册 OP_WRITE 等 selector 通知，半包留链表续写；高低水位默认 64KB/32KB（DefaultChannelConfig），穿越触发 channelWritabilityChanged 做背压防 OOM；高吞吐攒批 write 后一次 flush，大文件用 FileRegion。详见 [[netty-write-flush]]。
+- 连接生命周期源码级机制（教程第 16 篇）：connect = initAndRegister + 异步 DNS + AbstractUnsafe.connect → JDK connect，未立即完成注册 OP_CONNECT + CONNECT_TIMEOUT_MILLIS 定时任务（依赖 EventLoop 调度，线程卡住超时失效），selector 通知后 finishConnect→fireChannelActive；bind = doBind0 在 EventLoop 执行 → 带 SO_BACKLOG 绑端口 → fireChannelActive 注册 OP_ACCEPT；close 四层优雅清理——failFlushed 冲刷 outboundBuffer → fireChannelInactive/Unregistered → selectionKey.cancel+deregister（漏了已关闭 channel 仍触发事件）→ javaChannel().close()；全程 Promise-Future 异步（close 也异步，须 closeFuture 等完成），高频路径用 FixedChannelPool 避免频繁 connect/close，支持 shutdownOutput/Input 半关闭。详见 [[netty-connection-lifecycle]]。
 - 生态位（教程信源说法）：Dubbo/gRPC（RPC）、RocketMQ（消息）、Spring WebFlux/Spring Cloud Gateway、Elasticsearch 节点通信、ZooKeeper 3.6+ 可选、Hadoop/Spark 部分组件；同信源把 Kafka 列入"底层用 Netty"，本库无信源支撑、与既有认知不一致，标记存疑不作定论。
 
 ## Products / Projects（产品／项目）
@@ -99,7 +110,7 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 
 ## Current Understanding（当前认知）
 
-十三个信源分层互证：机制层（线程模型/内存/零拷贝）解释"为什么快"，教程九信源（源码分析第 1~6、8~10 篇，第 7 篇未采集）补齐"为什么存在"（JDK NIO 痛点）、入门路径（分层架构图、Echo 三段代码对比）与核心组件内部机制（Reactor 三形态与 ServerBootstrapAcceptor 移交链路；Pipeline 双向链表与双向事件传播、Handler 生命周期；ByteBuf 双指针/扩容/引用计数；EventLoop 三合一结构/run() 循环/ioRatio/chooser/register 异步化；启动三件套 initAndRegister 与 Acceptor 装配源码；run() 主循环的 SelectStrategy/ioRatio/空轮询自愈深挖；PooledByteBufAllocator 的 Arena→Chunk→Page→Subpage 四级与线程缓存），两个 IoT 工程层展示"快之外还要什么"——会话路由原子性、命令状态机、背压分层、Drain 发布；李林锋调优层给出百万接入的系统侧配套（句柄/心跳周期/缓冲区/内存池/RPS/JVM）。一致立场：Netty 只保证 IO 层不阻塞，生产级靠使用者的纪律（十三信源，置信度高）。
+十六个信源分层互证：机制层（线程模型/内存/零拷贝）解释"为什么快"，教程十二信源（源码分析第 1~6、8~11、15、16 篇，第 7、12~14 篇未采集）补齐"为什么存在"（JDK NIO 痛点）、入门路径（分层架构图、Echo 三段代码对比）与核心组件内部机制（Reactor 三形态与 ServerBootstrapAcceptor 移交链路；Pipeline 双向链表与双向事件传播、Handler 生命周期；ByteBuf 双指针/扩容/引用计数；EventLoop 三合一结构/run() 循环/ioRatio/chooser/register 异步化；启动三件套 initAndRegister 与 Acceptor 装配源码；run() 主循环的 SelectStrategy/ioRatio/空轮询自愈深挖；PooledByteBufAllocator 的 Arena→Chunk→Page→Subpage 四级与线程缓存；PoolChunk/PoolSubpage 内部算法与 ChunkList 六档流转；写缓冲 ChannelOutboundBuffer 的 write/flush 分离与高低水位背压；connect/bind/close 连接生命周期与四层优雅关闭），两个 IoT 工程层展示"快之外还要什么"——会话路由原子性、命令状态机、背压分层、Drain 发布；李林锋调优层给出百万接入的系统侧配套（句柄/心跳周期/缓冲区/内存池/RPS/JVM）。一致立场：Netty 只保证 IO 层不阻塞，生产级靠使用者的纪律（十六信源，置信度高）。
 
 ## Evidence（证据）
 
@@ -116,3 +127,6 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 - `raw/sources/architecture/2026-10-27-netty-08-bootstrap.md`（教程启动篇：initAndRegister 三件套/interestOps 不对称/ServerBootstrapAcceptor 装配源码/避坑清单）
 - `raw/sources/architecture/2026-10-27-netty-09-nioeventloop-run.md`（教程 run() 专篇：SelectStrategy/ioRatio 选型/JDK-2144974 自愈/Selector 迁移源码）
 - `raw/sources/architecture/2026-10-27-netty-10-pooled-allocator.md`（教程内存池篇：Arena→Chunk→Page→Subpage 四级/二叉树/位图/线程缓存/泄漏检测）
+- `raw/sources/architecture/2026-10-27-netty-11-poolchunk-subpage.md`（教程内存池深入篇：memoryMap 值语义/左优先搜索/Subpage 位图细节/ChunkList 六档/JMH 实测/缓存裁剪参数）
+- `raw/sources/architecture/2026-10-27-netty-15-write-flush.md`（教程写缓冲篇：write/flush 分离/ChannelOutboundBuffer/doWrite 写自旋/OP_WRITE/高低水位背压）
+- `raw/sources/architecture/2026-10-27-netty-16-connection-mgmt.md`（教程连接管理篇：connect/bind/close 三主线/OP_CONNECT 超时/四层优雅关闭/Promise-Future/半关闭与重试）

@@ -2246,6 +2246,45 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484061&idx=1&sn=8b1ff421f1a5bf65f3c3cd1d52bd785c&chksm=fe6ca3c7c91b2ad162cd50d051c99a57c2087ea4b4c9b9070972e3f8cdc240173db3ed3af21e",
       "asset_ref": "Assets/2026/10/netty-10-pooled-allocator.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-27-netty-11-poolchunk-subpage.md",
+      "sha256": "7951041b8fab594a3ed7de4e4d03b18112d087f42db0e6e712a6b9124b9319cc",
+      "registered_at": "2026-10-29",
+      "inbox_ref": "Archive/2026-10-27-netty-11-poolchunk-subpage.md",
+      "pages": [
+        "wiki/sources/netty-11-poolchunk-subpage.md",
+        "wiki/concepts/netty-pooled-allocator.md",
+        "wiki/entities/netty.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484111&idx=1&sn=21f5fda71a216271344503641607e27e&chksm=fe6ca395c91b2a83e35eeb02b6b1ca0681f8896167f014acc263e0ba4735740fe34b84f9f6a7",
+      "asset_ref": "Assets/2026/10/netty-11-poolchunk-subpage.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-27-netty-15-write-flush.md",
+      "sha256": "3e291e1819a828e5801bbd566758e783f777d124d4c30f9c12de6440908d0232",
+      "registered_at": "2026-10-29",
+      "inbox_ref": "Archive/2026-10-27-netty-15-write-flush.md",
+      "pages": [
+        "wiki/sources/netty-15-write-flush.md",
+        "wiki/concepts/netty-write-flush.md",
+        "wiki/entities/netty.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484556&idx=1&sn=bf7a3c022ed30eb28ff793fe4b727631&chksm=fe6ca5d6c91b2cc0a1ea07f676c1c2868198327926ec7c6d3edca01c29723ab388f6aacde5a6",
+      "asset_ref": "Assets/2026/10/netty-15-write-flush.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-27-netty-16-connection-mgmt.md",
+      "sha256": "443250c50fdb63e88a0d956dd9832d950e6ab8459f1fac1dd18805f7474fbfcf",
+      "registered_at": "2026-10-29",
+      "inbox_ref": "Archive/2026-10-27-netty-16-connection-mgmt.md",
+      "pages": [
+        "wiki/sources/netty-16-connection-mgmt.md",
+        "wiki/concepts/netty-connection-lifecycle.md",
+        "wiki/entities/netty.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484571&idx=1&sn=843829d9ee03815901f202c2224fc228&chksm=fe6ca5c1c91b2cd7ef0bd93a09839cc38b8538da8079a9c2a946086be8234280f8c610f60d62",
+      "asset_ref": "Assets/2026/10/netty-16-connection-mgmt.md"
     }
   ]
 }
