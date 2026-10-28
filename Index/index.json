@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28 11:59",
+  "updated_at": "2026-10-28 12:01",
   "notes": [
     {
       "id": "2026-10-27-jdk-19-linkedblockingqueue",
@@ -18,7 +18,7 @@
       "summary": "逐行剖析 LinkedBlockingQueue 源码：基于单向链表 + 哨兵节点，用 takeLock/putLock 两把锁实现读写分离互不阻塞，配 AtomicInteger 计数与跨锁信号传递，高并发下吞吐量优于单锁的 ArrayBlockingQueue。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/jdk-19-linkedblockingqueue.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-27-jdk-20-futuretask",
@@ -879,6 +879,26 @@
       "summary": "系统设计与面试顶流题：一题考实时通信、分布式一致性、冲突解决算法、存储设计四样。从需求澄清（千万 DAU、30 万长连接、最终一致）讲到分层架构、OT 变换函数完整实现、CRDT 三拼图、文档级 Actor 定序、快照 + OpLog 存储，附 18 条难点速查表与高频追问。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/collaborative-doc-editor-design.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-28-game-distributed-team-design",
+      "title": "游戏开发：分布式队伍架构的改进（互为镜像式）",
+      "path": "Inbox/2026-10-28-game-distributed-team-design.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "游戏开发",
+        "分布式系统",
+        "游戏架构"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2021861957037212357",
+      "source_type": "link",
+      "platform": "zhihu",
+      "summary": "MMO 队伍系统三代架构演进：单服同线程队伍（精确但限制玩法）→ 传统分布式队伍（灵活但创建走网络）→ 互为镜像式（Game 服与跨服互相同步全量队伍数据，单服队伍优先），兼顾玩法自由度与编程体验。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/game-distributed-team-design.md",
       "wiki_status": "pending"
     },
     {

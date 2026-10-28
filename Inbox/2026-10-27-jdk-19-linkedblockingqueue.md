@@ -9,7 +9,9 @@ created: 2026-10-27
 category: 技术
 tags: [Java, 课程]
 asset_ref: Assets/2026/10/jdk-19-linkedblockingqueue.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-28T03:59:59.492Z"
+ingest_claim_id: 50020-1793159999492-0
 ---
 
 # 深度剖析 LinkedBlockingQueue：链表实现的阻塞队列，为什么比 ArrayBlockingQueue 快？
