@@ -9,9 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [Java, 课程]
 asset_ref: Assets/2026/10/jdk-18-arrayblockingqueue.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-10-28T03:45:30.254Z"
-ingest_claim_id: 52680-1793159130254-0
+wiki_status: ingested
 ---
 
 # JDK源码阅读系列-ArrayBlockingQueue：用一把锁撑起的数组阻塞队列

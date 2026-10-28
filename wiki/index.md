@@ -81,6 +81,7 @@
 - [[jdk-15-vector-stack|Vector & Stack：被遗忘的元老级集合，它们真的该被淘汰了吗？]]（2026-10-28，Java/JDK 源码）
 - [[jdk-16-scheduledthreadpool|深度剖析 ScheduledThreadPoolExecutor——JDK 定时任务调度引擎]]（2026-10-28，Java/JDK 源码）
 - [[jdk-17-enummap-enumset|JDK源码剖析——EnumMap & EnumSet，用枚举当数组下标]]（2026-10-28，Java/JDK 源码）
+- [[jdk-18-arrayblockingqueue|JDK源码阅读系列-ArrayBlockingQueue：用一把锁撑起的数组阻塞队列]]（2026-10-28，Java/JDK 源码）
 - [[jdk-source-reading-album|JDK 源码阅读合集（Java解忧杂货铺，30 篇系列索引）]]（2026-10-27，Java/源码阅读资源，置信度低）
 - [[jdk21-migration-huolala|JDK 21 规模化落地实践（货拉拉）：框架先扛兼容成本，业务切 parent 收尾]]（2026-10-23，Java/JVM/虚拟线程）
 - [[jenkins-gitlab-cicd-pipeline|Jenkins + GitLab CI/CD 流水线落地实战（完整配置）]]（2026-10-21，CI/CD，置信度中）
@@ -173,6 +174,7 @@
 - [[agent-sandboxing|Agent 沙箱隔离]]（能力限制而非行为审查；四条路径收窄可达面；脚本级/命令级/工具级/整体隔离）
 - [[aqs-internals|AQS（AbstractQueuedSynchronizer）核心机制]]（volatile state + CLH 变体 FIFO 队列 + acquire/release 模板方法；JUC 锁体系基座，单信源）
 - [[aho-corasick|AC 自动机（Aho-Corasick）]]（Trie+Fail 指针多模式匹配，近似线性；vivo 谛听改造：组合词后置聚合、拼音图 DFS，单信源一手）
+- [[arrayblockingqueue-internals|ArrayBlockingQueue 单锁阻塞队列设计]]（循环数组+一把锁+双条件变量，put/take 对称闭环；数组不可分离队头队尾故只能单锁；单信源，置信度中）
 - [[arraydeque-internals|ArrayDeque 循环数组设计]]（2 的幂容量+位运算取模；head/tail 追赶、head==tail 翻倍扩容分两段拷贝重排；弱 fail-fast 用 fence 非 modCount；单信源，置信度中）
 - [[ai-native-organization|AI 原生研发组织]]（工具原生→工作流原生→组织原生）
 - [[ai-native-sdlc|AI 原生 SDLC]]（制品提交链驱动的六阶段闭环，Anthropic 2026）

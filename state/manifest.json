@@ -1950,6 +1950,18 @@
    ],
    "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484601&idx=1&sn=a52e748a47f2128794b08fc1c0bb7f28&chksm=fe6ca5e3c91b2cf57b14a2051e5cb902624cf12c250dc3e8226cc8259c181d69e07a7da867f9#rd",
    "asset_ref": "Assets/2026/10/jdk-17-enummap-enumset.md"
+  },
+  {
+   "path": "raw/sources/misc/2026-10-27-jdk-18-arrayblockingqueue.md",
+   "sha256": "876526bd3d38e7620ef56bc0083be2706917701426e703f9a7a907e31834e2b3",
+   "registered_at": "2026-10-28",
+   "inbox_ref": "Archive/2026-10-27-jdk-18-arrayblockingqueue.md",
+   "pages": [
+    "wiki/sources/jdk-18-arrayblockingqueue.md",
+    "wiki/concepts/arrayblockingqueue-internals.md"
+   ],
+   "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484662&idx=2&sn=d98080fec05ae3d2edc34a3c03864367&chksm=fe6ca5acc91b2cba67457f79883e6bdf9ec1624a4f483249e274ef63a1ebda65d4c5b76a3db9#rd",
+   "asset_ref": "Assets/2026/10/jdk-18-arrayblockingqueue.md"
   }
  ]
 }
