@@ -9,7 +9,9 @@ created: 2026-10-27
 category: 技术
 tags: [netty, Java]
 asset_ref: Assets/2026/10/netty-27-channelfuture.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-28T22:34:58.615Z"
+ingest_claim_id: 59788-1793226898615-0
 ---
 
 # Netty源码分析(27) — ChannelFuture 与 异步回调机制

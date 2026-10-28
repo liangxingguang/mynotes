@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29 06:34",
+  "updated_at": "2026-10-29 06:36",
   "notes": [
     {
       "id": "2026-10-27-netty-27-channelfuture",
@@ -18,7 +18,7 @@
       "summary": "解析 Netty 的异步结果模型：ChannelFuture 在 JDK Future 之上增加 Listener 回调、sync/await 阻塞等待与 isWritable 水位感知，剖析 DefaultPromise 的 CAS 无锁状态机与监听器通知机制。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-27-channelfuture.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-27-netty-28-promise",
