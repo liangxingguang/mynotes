@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28 08:04",
+  "updated_at": "2026-10-28 08:07",
   "notes": [
     {
       "id": "2026-10-27-jdk-11-cyclicbarrier",
@@ -1012,6 +1012,26 @@
       "summary": "消费积压的本质是\"生产速度 > 消费速度\"的算术题：消费速度 ≥ 生产峰值 × 1.5 才不会积压。文章以一次凌晨 Lag 飙到 200 万的实战为例，给出四步处理法——扩分区+扩消费者止血、批量拉取摊薄网络往返、poll 与处理解耦的异步化、耗时埋点定位慢消息——并强调消化期须守住幂等、下游容量、retention 三条底线。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/kafka-consumer-lag-backlog-guide.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-28-meituan-waimai-search-elasticsearch-rle",
+      "title": "美团外卖搜索基于Elasticsearch的优化实践",
+      "path": "Inbox/2026-10-28-meituan-waimai-search-elasticsearch-rle.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "Elasticsearch",
+        "工程实践",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/6k8THshasaYfSaLr58O1NA",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "美团外卖搜索每天承载十亿级检索流量，LBS 场景下单次查询需对上万商家做 Terms 过滤，万级 Terms 检索耗时达 5-10ms。团队基于 RLE（Run-Length Encoding）重新设计倒排索引，倒排链合并 TP99 降低 96%，全链路检索时延 TP99 从 100ms 降至 16ms（-84%），线上 CPU 大幅下降。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/meituan-waimai-search-elasticsearch-rle.md",
       "wiki_status": "pending"
     },
     {

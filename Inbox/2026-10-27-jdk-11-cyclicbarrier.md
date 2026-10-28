@@ -10,8 +10,8 @@ category: 技术
 tags: [Java, 课程]
 asset_ref: Assets/2026/10/jdk-11-cyclicbarrier.md
 wiki_status: ingesting
-ingest_claimed_at: "2026-10-27T22:27:17.057Z"
-ingest_claim_id: 53252-1793140037057-0
+ingest_claimed_at: "2026-10-28T00:05:05.102Z"
+ingest_claim_id: 60564-1793145905102-0
 ---
 
 # JDK源码阅读(12) — CyclicBarrier：循环栅栏，让线程"凑一桌"再出发
