@@ -11,6 +11,9 @@
 - [[agent-context-tutorial|Agent 入门教程：上下文里的 Agent（nano-ai 可交互演示）]]（2026-10-25，AI/教程资源，置信度中）
 - [[agent-long-task-reliable-execution|AI Agent 长任务可靠执行：Go+PG 状态机/Checkpoint/Fencing/对账]]（2026-10-21，AI/Agent 基础设施）
 - [[agent-minimal-handwritten|Agent - 手写最小 agent（7）：五阶段 loop + schema 即 prompt + 四类错误兜底]]（2026-10-28，AI/教程）
+- [[agent-classic-agent-theory|Agent - 经典 Agent 理论：AIMA 五分类与 PMTA 框架]]（2026-10-28，AI/理论）
+- [[agent-harness-framework-selection|Agent - harness 框架怎么选（5）：deepagents 首选]]（2026-10-28，AI/Harness 选型）
+- [[agent-llm-call-patterns|Agent - 调用 LLM 的三种姿势（6）：REST/SDK/agent SDK 同一 wire 协议]]（2026-10-28，AI/LLM API）
 - [[ai-agents-definitive-guide-notebooks|知乎想法：O'Reilly《AI Agents》配套代码全开源（12 章 35 Notebook）]]（2026-10-20，AI/资源，置信度低）
 - [[agent-loop-production-boundaries|从 Chatbot 到 AI Agent：为什么一个 while 循环撑不起生产系统]]（2026-10-15，AI/Agent 工程）
 - [[agent-platform-architecture|高性能弹性扩展智能体中台架构：FastAPI+Nacos+RocketMQ+LangGraph+Milvus+ES 实践]]（2026-10-27，AI/架构）
@@ -214,6 +217,7 @@
 ## concept（概念）
 
 - [[a2a-protocol|A2A 协议]]（Agent↔Agent 横向协作协议，Google 2025）
+- [[aima-agent-taxonomy|AIMA Agent 分类]]（简单反射/基于模型/基于目标/基于效用/学习五类 + 环境四属性；经典理论单信源）
 - [[agent-evaluation|业务 Agent 全生命周期评测]]（规则+LLM 裁判+人工复核，覆盖准入/门禁/压测/巡检，货拉拉实践）
 - [[agent-loop|Agent Loop]]（Runtime 驱动的模型-工具循环；Tool Call/Result、Message/Context/State/Session、Runtime vs Harness）
 - [[agent-sandboxing|Agent 沙箱隔离]]（能力限制而非行为审查；四条路径收窄可达面；脚本级/命令级/工具级/整体隔离）
@@ -260,6 +264,7 @@
 - [[longadder-internals|LongAdder 分段累加设计（Striped64）]]（base 快速路径+Cell 数组分散 CAS+@Contended 128B 防伪共享+cellsBusy 自旋扩容≤CPU 核数；sum 近似无 addAndGet；LongAccumulator 泛化任意二元聚合；单信源，置信度中）
 - [[linkedhashmap-internals|LinkedHashMap 有序化设计（双链表 + 模板方法钩子）]]（Entry 身兼桶节点+双链节点；三钩子维护插入/访问序；两行核心代码 LRU，单信源，置信度中）
 - [[llm-wiki|LLM Wiki]]（原始来源不可变 + 模型持续编译互链知识页面，Karpathy 模式；本仓库即实例，双信源）
+- [[llm-call-protocol|OpenAI 兼容 Chat Completions 调用协议]]（messages 四角色+tool_call_id 配对+finish_reason 续轮判据+SDK 默认 timeout 10min/重试 2；单信源）
 - [[mcp|MCP]]（LLM↔工具/数据纵向协议，Anthropic 2024）
 - [[live-message-drop-policy|直播消息丢弃策略]]（上行 200 条/s 硬丢弃 + 环形队列柔性丢弃 + 优先级三桶保必达，融云双信源）
 - [[mcast|长连接组播（mcast）]]（groupID 下沉长连接层，1:M×1:N 两级扩散；单实例 25w 连接 8w QPS，聚合+压缩消化峰值，百度一手）
@@ -288,6 +293,7 @@
 - [[okf-knowledge-format|OKF（面向 AI Agent 的知识包装规范）]]（入库时编译为互链 Markdown 树，运行时只做导航+摘录）
 - [[pi-customization-layers|Pi 五层定制模型]]（Prompt 模板→AGENTS.md→Skill→Extension→SDK，官方扩展点成本阶梯）
 - [[pm-decision-frameworks|产品决策四框架]]（3步止损/反向假设/杠杆率排序/信号噪音过滤；单一自媒体信源，置信度低）
+- [[pmta-framework|PMTA 框架]]（Planning/Memory/Tool use/Action 四要素，CoALA 谱系；现代 agent 框架的能力清单原型，单信源）
 - [[priorityblockingqueue-internals|PriorityBlockingQueue 并发优先队列设计]]（PriorityQueue 堆 + 单 ReentrantLock + notEmpty；无界故无 notFull；tryGrow 释放主锁+CAS allocationSpinLock 令牌+yield 分阶段扩容；单信源，置信度中）
 - [[phaser-internals|Phaser 分阶段同步屏障设计]]（单 volatile long 位编码 unarrived/parties/phase/终止位+一次 CAS 推进；arrive 三变体动态增减；树形分层分散 CAS 竞争；单信源，置信度中）
 - [[priorityqueue-internals|PriorityQueue 二叉堆设计]]（Object[] 数组承载隐式完全二叉堆；siftUp/siftDown 维护堆序；扩容 <64 翻倍+2、≥64 扩 50%；Floyd 建堆 O(n)；双信源，置信度中）
@@ -320,6 +326,7 @@
 - [[argo-rollouts|Argo Rollouts]]（K8s 渐进式交付控制器：Rollout CRD + AnalysisTemplate 门禁，blueGreen/canary，单信源）
 - [[arthas|Arthas]]（Java 线上诊断工具，4.3.5 起含实验性 MCP Server）
 - [[deepseek-harness|DeepSeek Harness]]（DeepSeek 模型的桌面 Agent 客户端，v0.2 预览版）
+- [[deepagents|deepagents]]（LangChain 官方 batteries-included agent harness 库，create_deep_agent 一个函数带齐八件套，LangGraph 底座）
 - [[drawio-skill|drawio-skill]]（代码/配置→可编辑 .drawio 架构图，增量同步 + CI 架构检查）
 - [[elasticsearch|Elasticsearch]]（Lucene 之上的分布式搜索引擎；读模型定位、生产纪律+Netty 4 传输层，四信源互证）
 - [[ep-harness|EP-Harness]]（得物团队级 Managed Agents 平台，Multica 二开，Prompt→Context→Harness→Loop 四层）
@@ -344,6 +351,7 @@
 ## decision（决策）
 
 - [[kafka-adopts-netty|Kafka 2.0 网络层弃自研 NIO 迁移 Netty]]（维护成本三痛点+七维对照复盘；"知道什么该自己造"，单信源，置信度中）
+- [[harness-selection-deepagents|Harness 选型决策：首选 deepagents]]（八件套+四能力轴打分，deepagents 首选/MAF 备选/DeepSeek Harness 因 developer preview 暂缓，单信源）
 
 ## comparison（对比）
 

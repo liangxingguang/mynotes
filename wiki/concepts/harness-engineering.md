@@ -4,7 +4,7 @@ type: concept
 title: Harness Engineering（Agent 执行系统工程）
 status: active
 created: 2026-10-27
-updated: 2026-10-27
+updated: 2026-10-29
 confidence: high
 tags:
   - concept
@@ -12,12 +12,15 @@ tags:
   - harness
 sources:
   - raw/sources/ai/2026-10-27-harness-engineering-11-agents-study.md
+  - raw/sources/ai/2026-10-28-agent-harness-framework-selection.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/concepts/mcp.md
   - wiki/concepts/agent-sandboxing.md
   - wiki/concepts/agent-evaluation.md
   - wiki/entities/learn-harness-engineering-course.md
+  - wiki/decisions/harness-selection-deepagents.md
+  - wiki/entities/deepagents.md
 ---
 # Harness Engineering（Agent 执行系统工程）
 
@@ -87,6 +90,8 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 
 - 2026-10-27 — 新建，信源为《Harness Engineering》论文（11 系统源码研究）的架构解读文章。wiki 此前已有 Harness 产品实例（[[aibox|AiBox]]、[[ep-harness|EP-Harness]]、[[deepseek-harness|DeepSeek Harness]]）与课程实体（[[learn-harness-engineering-course|Learn Harness Engineering]]），本页补上概念层定义。
 
+- 2026-10-29 — 新增选型信源 `raw/sources/ai/2026-10-28-agent-harness-framework-selection.md`（知乎《Agent》系列第 5 篇）。其"harness 八件套"（loop+终止、工具注册、权限/HITL、持久化、上下文管理、子 agent、MCP、可观测）与本页七个观察面互证且更偏交付清单；`Model + Harness = Agent` 与 `Agent ≈ Model + Harness` 表述一致；选型结论落成决策页 [[harness-selection-deepagents|Harness 选型决策：首选 deepagents]] 与实体页 [[deepagents|deepagents]]。
+
 ## Open Questions（开放问题）
 
 - 论文原始统计口径与当前产品能力的时差（快照为历史版本）？
@@ -95,9 +100,12 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-10-27-harness-engineering-11-agents-study.md`
+- Source: `raw/sources/ai/2026-10-28-agent-harness-framework-selection.md`（印证：harness 八件套 vs 七观察面；选型决策树）
 
 ## Related Knowledge（相关知识）
 
 - [[harness-engineering-11-agents-study|从 11 款 Agent 的源码研究，看懂 Harness Engineering（信源页）]]
 - [[learn-harness-engineering-course|Learn Harness Engineering 课程]]
 - [[aibox|AiBox]]、[[ep-harness|EP-Harness]]、[[deepseek-harness|DeepSeek Harness]]
+- [[harness-selection-deepagents|Harness 选型决策：首选 deepagents]]
+- [[deepagents|deepagents]]

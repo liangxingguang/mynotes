@@ -9,9 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [AI, Harness, 课程]
 asset_ref: Assets/2026/10/agent-classic-agent-theory.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-10-29T10:20:13.908Z"
-ingest_claim_id: 7132-1793269213908-0
+wiki_status: ingested
 ---
 
 # Agent - 经典智能体理论 → 现代 LLM Agent 映射（2）

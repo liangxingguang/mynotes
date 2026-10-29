@@ -9,9 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [AI, Harness, 工程实践]
 asset_ref: Assets/2026/10/agent-llm-call-patterns.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-10-29T10:20:27.968Z"
-ingest_claim_id: 50280-1793269227968-0
+wiki_status: ingested
 ---
 
 # Agent - 调用 LLM 的三种姿势（6）
