@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [netty, Java, 工程实践]
 asset_ref: Assets/2026/10/netty-debugging-guide.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Netty源码分析(番外篇) — Netty调试技巧与生产问题排查方法论

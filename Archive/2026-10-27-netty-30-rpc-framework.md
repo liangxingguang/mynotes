@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [netty, Java]
 asset_ref: Assets/2026/10/netty-30-rpc-framework.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Netty源码分析(30) — 实战：基于Netty实现一个简单的RPC框架

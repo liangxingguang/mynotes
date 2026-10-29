@@ -1,64 +1,6 @@
 {
-  "updated_at": "2026-10-29 08:14",
+  "updated_at": "2026-10-29 09:34",
   "notes": [
-    {
-      "id": "2026-10-27-netty-30-rpc-framework",
-      "title": "Netty源码分析(30) — 实战：基于Netty实现一个简单的RPC框架",
-      "path": "Inbox/2026-10-27-netty-30-rpc-framework.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484662&idx=1&sn=8c5c06610ba51aa1c52b6ba4cd28b0f3&chksm=fe6ca5acc91b2cba40615efef5174155931be83bf9015e33664d1d508effb434793828c2d9c7#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "系列收官实战篇：约 300 行代码手写一个轻量级 RPC 框架，覆盖协议定义、序列化、粘包编解码、JDK 动态代理、服务注册与反射调用、异步转同步的 RpcFuture，串起全系列知识点，揭示 Dubbo/gRPC 的底层通信原理。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-30-rpc-framework.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-27-netty-4-to-5",
-      "title": "Netty源码分析(番外篇6) — Netty 4.x 到 5.x：演进路线与未来展望",
-      "path": "Inbox/2026-10-27-netty-4-to-5.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484716&idx=2&sn=35eb4093625aaa2e82174e455caf29a1&chksm=fe6ca476c91b2d609ad82f0681af07fd2d75166f8c2b172a4ddd907a5febd28031a769c90f17#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "梳理 Netty 从 3.x 到新 5.0 的版本演进：4.0→4.1 的关键升级、2018 旧 5.0 为何失败、2024 重启的新 5.0 改了什么（JDK17、io_uring、Buffer API 重设计），以及不同场景下的升级建议。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-4-to-5.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-27-netty-debugging-guide",
-      "title": "Netty源码分析(番外篇) — Netty调试技巧与生产问题排查方法论",
-      "path": "Inbox/2026-10-27-netty-debugging-guide.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Java",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484689&idx=2&sn=2f7f268bc6d34db87c7db4e42c4cea8c&chksm=fe6ca44bc91b2d5df71f819f870aa75490324010ad5eae1999a5bb68e405ee234a43522c1d33#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "Netty 系列收官番外，系统性整理源码调试与线上问题排查方法论：本地用 EmbeddedChannel 与黄金断点调 Handler，线上靠内置指标、内存泄漏检测与 epoll 空轮询防护三板斧，并以一个真实压测排障案例串起完整思路。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-debugging-guide.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-27-netty-design-patterns",
       "title": "Netty源码分析(番外篇7) — Netty中的设计模式：23种经典模式的工程实践",
@@ -4884,6 +4826,64 @@
       "summary": "Promise 是\"可写的 Future\"：继承 Future 并增加 setSuccess/setFailure/trySuccess 等手动完成方法。本文剖析 DefaultPromise 实现——CAS 状态机、监听器懒加载与 EventLoop 亲和性通知。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-28-promise.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-30-rpc-framework",
+      "title": "Netty源码分析(30) — 实战：基于Netty实现一个简单的RPC框架",
+      "path": "Archive/2026-10-27-netty-30-rpc-framework.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484662&idx=1&sn=8c5c06610ba51aa1c52b6ba4cd28b0f3&chksm=fe6ca5acc91b2cba40615efef5174155931be83bf9015e33664d1d508effb434793828c2d9c7#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "系列收官实战篇：约 300 行代码手写一个轻量级 RPC 框架，覆盖协议定义、序列化、粘包编解码、JDK 动态代理、服务注册与反射调用、异步转同步的 RpcFuture，串起全系列知识点，揭示 Dubbo/gRPC 的底层通信原理。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-30-rpc-framework.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-4-to-5",
+      "title": "Netty源码分析(番外篇6) — Netty 4.x 到 5.x：演进路线与未来展望",
+      "path": "Archive/2026-10-27-netty-4-to-5.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484716&idx=2&sn=35eb4093625aaa2e82174e455caf29a1&chksm=fe6ca476c91b2d609ad82f0681af07fd2d75166f8c2b172a4ddd907a5febd28031a769c90f17#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "梳理 Netty 从 3.x 到新 5.0 的版本演进：4.0→4.1 的关键升级、2018 旧 5.0 为何失败、2024 重启的新 5.0 改了什么（JDK17、io_uring、Buffer API 重设计），以及不同场景下的升级建议。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-4-to-5.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-debugging-guide",
+      "title": "Netty源码分析(番外篇) — Netty调试技巧与生产问题排查方法论",
+      "path": "Archive/2026-10-27-netty-debugging-guide.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484689&idx=2&sn=2f7f268bc6d34db87c7db4e42c4cea8c&chksm=fe6ca44bc91b2d5df71f819f870aa75490324010ad5eae1999a5bb68e405ee234a43522c1d33#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "Netty 系列收官番外，系统性整理源码调试与线上问题排查方法论：本地用 EmbeddedChannel 与黄金断点调 Handler，线上靠内置指标、内存泄漏检测与 epoll 空轮询防护三板斧，并以一个真实压测排障案例串起完整思路。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-debugging-guide.md",
       "wiki_status": "ingested"
     }
   ]

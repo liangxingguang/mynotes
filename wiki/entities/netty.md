@@ -38,6 +38,9 @@ sources:
   - raw/sources/architecture/2026-10-27-netty-25-flow-control.md
   - raw/sources/architecture/2026-10-27-netty-27-channelfuture.md
   - raw/sources/architecture/2026-10-27-netty-28-promise.md
+  - raw/sources/architecture/2026-10-27-netty-30-rpc-framework.md
+  - raw/sources/architecture/2026-10-27-netty-4-to-5.md
+  - raw/sources/architecture/2026-10-27-netty-debugging-guide.md
 related:
   - wiki/sources/netty-three-skills-high-performance.md
   - wiki/sources/netty-iot-gateway-resilient-design.md
@@ -82,6 +85,11 @@ related:
   - wiki/sources/netty-27-channelfuture.md
   - wiki/concepts/netty-channelfuture.md
   - wiki/sources/netty-28-promise.md
+  - wiki/sources/netty-30-rpc-framework.md
+  - wiki/concepts/netty-rpc-framework.md
+  - wiki/sources/netty-4-to-5.md
+  - wiki/sources/netty-debugging-guide.md
+  - wiki/concepts/netty-debugging-troubleshooting.md
   - wiki/entities/kafka.md
 ---
 # Netty
@@ -95,7 +103,7 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 - Type（类型）: 开源异步事件驱动网络框架
 - Organization（所属组织）: Netty Project（起源于 JBoss，背景知识信源未详述）
 - Role（角色）: 高并发长连接/ RPC 的通信底座——主从 Reactor 摊薄等 IO 成本、零拷贝砍搬数据成本、无锁串行化消抢锁成本
-- Status（状态）: 主流活跃（4.1 池化转正只收 bugfix；4.2 于 2025-04-03 GA：AdaptiveByteBufAllocator、传输解耦、io_uring 一级传输、HTTP/3 毕业；5.x 已停止推进）
+- Status（状态）: 主流活跃（4.1 为绝对主流、维护至少到 2027 以后；4.2 于 2025-04-03 GA：AdaptiveByteBufAllocator、传输解耦、io_uring 一级传输、HTTP/3 毕业；旧 5.0 Alpha（2018，ForkJoinPool+API 大改）已废弃；新 5.0 于 2024 重启、积极开发中：JDK 17 底线/io_uring/Buffer API 重设计。注：本页早前口径"5.x 已停止推进"来自早前综述信源，指向旧 5.0 一代；番外篇6 信源（基于 2026-08 公开资料）给出新旧两代 5.0 的完整图景，二者不冲突——详见 Timeline）
 
 ## Important Facts（重要事实）
 
@@ -129,6 +137,9 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 - SSL/TLS 支持（教程第 22 篇）：本质是 JDK SSLEngine 的封装——SslHandler 入站 decode→unwrap 解密、出站 write→wrap 加密，握手未完成时出站数据入 pendingUnencryptedWrites 排队、握手成功 Listener 冲刷；unwrap 循环处理 OK/UNDERFLOW/OVERFLOW/CLOSED 四态，NEED_TASK 委托任务异步执行不占 IO 线程；握手全程异步经 handshakeFuture() 通知（channelActive ≠ 握手完成）；SslContext 为工厂+配置中心，SslProvider 可切 JDK/OpenSSL（netty-tcnative，AES-NI 硬件加速，信源经验论断生产必选）/BouncyCastle；铁律：SslHandler 放 Pipeline 最前、私钥须 PKCS#8；优化靠 Session 复用+TLS 1.3（1-RTT）。详见 [[netty-ssl-tls]]。
 - 异步结果模型源码级机制（教程第 27、28 篇）：ChannelFuture 在 JDK Future 上加 addListener 回调/sync/await/isSuccess/cause，Channel 层再加 isWritable() 水位感知；Promise 为可写端（set/trySuccess/Failure，对应 Guava SettableFuture/JDK CompletableFuture），业务自建异步结果 new DefaultPromise<>(executor)；DefaultPromise 用单个 volatile Object result 字段编码全部状态（null/SUCCESS/结果/CauseHolder/UNCANCELLABLE）+ AtomicReferenceFieldUpdater CAS 无锁转换、不可逆；监听器懒加载（单 Object 字段，加第二个才升级 DefaultFutureListeners 数组），addListener 时 isDone 即触发防丢失；setValue0 CAS 成功后先 checkNotifyWaiters（notifyAll 唤醒 await 线程）再 notifyListeners；notifyListeners 三细节（notifyingListeners 防递归、同步块外回调防死锁、catch Throwable 保后续）+ EventLoop 亲和性（非 Loop 线程 safeExecute 提交回 Loop）；await() 走 wait/notifyAll 不耗 CPU；取消后 isDone 即 true、listener 立即触发；铁律"EventLoop 内禁 sync/await（自我等待死锁），回调第一步必查 isSuccess，不确定已完成用 trySuccess"；与 CompletableFuture 对比——EventLoop 内用 ChannelFuture、跨线程编排用 CF（作者经验，解读）。详见 [[netty-channelfuture]]。
 - 生态位（教程信源说法）：Dubbo/gRPC（RPC）、RocketMQ（消息）、Spring WebFlux/Spring Cloud Gateway、Elasticsearch 节点通信、ZooKeeper 3.6+ 可选、Hadoop/Spark 部分组件；同信源把 Kafka 列入"底层用 Netty"，本库无信源支撑、与既有认知不一致，标记存疑不作定论。
+- RPC 实战（教程第 30 篇，收官）：约 300 行手写轻量 RPC 框架——RpcRequest/RpcResponse 协议信封（requestId 关联、Throwable 随响应回传）、4 字节长度域编解码（mark/reset 回滚拆粘包）、JDK 动态代理透明化、pendingRequests(ConcurrentHashMap)+RpcFuture(CountDownLatch) 异步转同步、Map 模拟注册中心+反射调用；与 Dubbo 差在服务发现/负载均衡/连接池/容错/序列化性能（JSON vs Hessian2 差 5-10 倍）/降级/SPI/限流八项工程化能力，核心通信原理一致。详见 [[netty-rpc-framework]]。
+- 版本演进（番外篇6，基于 2026-08 公开资料）：4.0→4.1 三大升级为 Epoll 原生传输（吞吐 +10-30%，信源口径）、池化全面铺开、HTTP/2 原生；旧 5.0（2018）死于 ForkJoinPool 替代 EventLoop 丢了 Channel-线程绑定确定性 + API 破坏性变更；新 5.0（2024 重启）走渐进演进——JDK 17 底线、清理 deprecated 但保留 4.1 核心用法、io_uring（benchmark 称高吞吐比 epoll +20-50%）、Buffer API 读写拆分+AutoCloseable；升级建议：4.1 继续用、新项目 JDK21+ 可试 5.0、业务跟随中间件版本。
+- 调试与排障方法论（番外篇）：本地三件套 EmbeddedChannel/黄金断点/LoggingHandler；线上三板斧 PoolArenaMetric（alloc>dealloc 即泄漏）/pendingTasks() 积压监控/ResourceLeakDetector PARANOID（损耗 5% 以内报泄漏代码行）；epoll 空轮询超 512 次 rebuildSelector 自愈（与第 6/9 篇三方互证）；真实案例 5000 连接超时双根因（ByteBuf 未 release + IO 线程阻塞 DB 查询）修完 RT 800ms→20ms。两条铁律再获第五信源互证。详见 [[netty-debugging-troubleshooting]]。
 
 ## Products / Projects（产品／项目）
 
@@ -141,14 +152,17 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 
 ## Timeline（时间线）
 
-- 4.0 — 非池化，已 EOL
-- 4.1 — 池化转正（Android 除外），只收 bugfix（成稿时 4.1.135）
-- 2025-04-03 — 4.2 GA：AdaptiveByteBufAllocator（适配虚拟线程）、EventLoopGroup 与传输解耦、io_uring 一级传输、HTTP/3 毕业
-- 5.x — 已停止推进
+- ~2008 — 3.x：NIO 封装初步成型，已废弃（番外篇6）
+- 2013 — 4.0：ChannelPipeline 重构、ByteBuf 重写（番外篇6）
+- 2016 — 4.1：性能优化、HTTP/2、原生传输；当前绝对主流，维护至少到 2027 以后（番外篇6）
+- 2018 — 旧 5.0 Alpha：ForkJoinPool 替代 EventLoop + API 大改，已废弃（番外篇6）
+- 2024 — 新 5.0 重启开发：渐进演进，JDK 17 底线、io_uring、Buffer API 重设计（番外篇6，基于 2026-08 公开资料）
+- 2025-04-03 — 4.2 GA：AdaptiveByteBufAllocator（适配虚拟线程）、EventLoopGroup 与传输解耦、io_uring 一级传输、HTTP/3 毕业（早前综述信源）
+- 矛盾记录（已消解）：早前口径"5.x 已停止推进"与教程第 24 篇"Netty 5 正推 io_uring"曾登记为矛盾；番外篇6 给出分代图景——停止的是 2018 旧 5.0，推进 io_uring 的是 2024 新 5.0，两说法指向不同代际不再冲突。4.2 GA 与新 5.0 的并行关系番外篇6 未提及，留待官方 Release Notes 复核。
 
 ## Current Understanding（当前认知）
 
-二十六个信源分层互证：机制层（线程模型/内存/零拷贝）解释"为什么快"，教程二十二信源（源码分析第 1~6、8~11、15~18、20~25、27、28 篇，第 7、12~14、19 篇未采集）补齐"为什么存在"（JDK NIO 痛点）、入门路径（分层架构图、Echo 三段代码对比）与核心组件内部机制（Reactor 三形态与 ServerBootstrapAcceptor 移交链路；Pipeline 双向链表与双向事件传播、Handler 生命周期；ByteBuf 双指针/扩容/引用计数；EventLoop 三合一结构/run() 循环/ioRatio/chooser/register 异步化；启动三件套 initAndRegister 与 Acceptor 装配源码；run() 主循环的 SelectStrategy/ioRatio/空轮询自愈深挖；PooledByteBufAllocator 的 Arena→Chunk→Page→Subpage 四级与线程缓存；PoolChunk/PoolSubpage 内部算法与 ChunkList 六档流转；写缓冲 ChannelOutboundBuffer 的 write/flush 分离与高低水位背压；connect/bind/close 连接生命周期与四层优雅关闭；IdleStateHandler 三维空闲检测与精确再调度心跳机制；断线重连的双时机触发+退避+EventLoop 调度纪律；HttpObjectDecoder 十二态解码状态机与碎片聚合；WebSocket 握手与 Pipeline 热插拔升级；SslHandler 对 SSLEngine 的透明封装、异步握手与 SslProvider 策略切换；零拷贝四大兵器（FileRegion sendfile/CompositeByteBuf 逻辑拼接/wrappedBuffer 包装/堆外内存）；EpollEventLoop native 传输（三 fd 结构/零 GC 事件/ET 模式/回退纪律）；高低水位背压（CAS 状态切换/延迟传播防重入/isWritable 三件套）；ChannelFuture/DefaultPromise 异步结果模型（读写两侧：单字段 CAS 状态机/监听器懒加载/checkNotifyWaiters 唤醒/EventLoop 亲和通知/EventLoop 禁 sync）），两个 IoT 工程层展示"快之外还要什么"——会话路由原子性、命令状态机、背压分层、Drain 发布；李林锋调优层给出百万接入的系统侧配套（句柄/心跳周期/缓冲区/内存池/RPS/JVM）。一致立场：Netty 只保证 IO 层不阻塞，生产级靠使用者的纪律（二十六信源，置信度高）。
+二十九个信源分层互证：机制层（线程模型/内存/零拷贝）解释"为什么快"，教程二十五信源（源码分析第 1~6、8~11、15~18、20~25、27、28、30 篇与番外篇6、调试番外，第 7、12~14、19 篇未采集）补齐"为什么存在"（JDK NIO 痛点）、入门路径（分层架构图、Echo 三段代码对比）与核心组件内部机制（Reactor 三形态与 ServerBootstrapAcceptor 移交链路；Pipeline 双向链表与双向事件传播、Handler 生命周期；ByteBuf 双指针/扩容/引用计数；EventLoop 三合一结构/run() 循环/ioRatio/chooser/register 异步化；启动三件套 initAndRegister 与 Acceptor 装配源码；run() 主循环的 SelectStrategy/ioRatio/空轮询自愈深挖；PooledByteBufAllocator 的 Arena→Chunk→Page→Subpage 四级与线程缓存；PoolChunk/PoolSubpage 内部算法与 ChunkList 六档流转；写缓冲 ChannelOutboundBuffer 的 write/flush 分离与高低水位背压；connect/bind/close 连接生命周期与四层优雅关闭；IdleStateHandler 三维空闲检测与精确再调度心跳机制；断线重连的双时机触发+退避+EventLoop 调度纪律；HttpObjectDecoder 十二态解码状态机与碎片聚合；WebSocket 握手与 Pipeline 热插拔升级；SslHandler 对 SSLEngine 的透明封装、异步握手与 SslProvider 策略切换；零拷贝四大兵器（FileRegion sendfile/CompositeByteBuf 逻辑拼接/wrappedBuffer 包装/堆外内存）；EpollEventLoop native 传输（三 fd 结构/零 GC 事件/ET 模式/回退纪律）；高低水位背压（CAS 状态切换/延迟传播防重入/isWritable 三件套）；ChannelFuture/DefaultPromise 异步结果模型（读写两侧：单字段 CAS 状态机/监听器懒加载/checkNotifyWaiters 唤醒/EventLoop 亲和通知/EventLoop 禁 sync）；实战收尾三篇：手写 RPC 框架（协议信封/长度域拆包/动态代理/异步转同步/与 Dubbo 八维差距）、版本演进（4.0→4.1 升级点/旧 5.0 失败教训/新 5.0 的 JDK17+io_uring+Buffer API）、调试排障方法论（EmbeddedChannel/LoggingHandler/PoolArenaMetric/PARANOID 泄漏检测/空轮询自愈/双根因案例）），两个 IoT 工程层展示"快之外还要什么"——会话路由原子性、命令状态机、背压分层、Drain 发布；李林锋调优层给出百万接入的系统侧配套（句柄/心跳周期/缓冲区/内存池/RPS/JVM）。一致立场：Netty 只保证 IO 层不阻塞，生产级靠使用者的纪律（二十九信源，置信度高）。
 
 ## Evidence（证据）
 
@@ -178,3 +192,6 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 - `raw/sources/architecture/2026-10-27-netty-25-flow-control.md`（教程流量控制篇：WriteBufferWaterMark 32K/64K/ChannelOutboundBuffer 水位检测/CAS 状态切换/invokeLater 防重入/水位经验表）
 - `raw/sources/architecture/2026-10-27-netty-27-channelfuture.md`（教程异步结果篇：接口继承链/DefaultPromise 单字段 CAS 状态机/notifyListeners 三细节/await wait-notify/isWritable/三用法五场景/CompletableFuture 对比）
 - `raw/sources/architecture/2026-10-27-netty-28-promise.md`（教程 Promise 写侧篇：set/trySuccess 语义/监听器懒加载/checkNotifyWaiters 唤醒路径/取消即 isDone/异步 RPC 与回调封装示例/Promise-CF-FutureTask 对比表）
+- `raw/sources/architecture/2026-10-27-netty-30-rpc-framework.md`（教程收官实战篇：300 行 RPC 框架全组件源码/调用流程/设计模式/与 Dubbo 八维差距/生产化注意事项）
+- `raw/sources/architecture/2026-10-27-netty-4-to-5.md`（番外篇6：版本演进简史/4.0→4.1 三大升级/旧 5.0 失败两因/新 5.0 四大方向/分场景升级建议）
+- `raw/sources/architecture/2026-10-27-netty-debugging-guide.md`（调试番外：EmbeddedChannel/黄金断点/LoggingHandler/PoolArenaMetric/pendingTasks/PARANOID 泄漏检测/空轮询自愈/5000 连接排障案例/工具速查表）

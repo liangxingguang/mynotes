@@ -2420,6 +2420,45 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484638&idx=1&sn=3cb762789818581715f45344c6c29d38&chksm=fe6ca584c91b2c925fcb15210dd32aa8325f550dba9e80c8cc87c68141e84eb53cfac729e1d8",
       "asset_ref": "Assets/2026/10/netty-28-promise.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-27-netty-30-rpc-framework.md",
+      "sha256": "c46e9ee56acfe9342a668bcedc16d51a7215b5ecd263590eb9032cc84a1cc08f",
+      "registered_at": "2026-10-29",
+      "inbox_ref": "Archive/2026-10-27-netty-30-rpc-framework.md",
+      "pages": [
+        "wiki/sources/netty-30-rpc-framework.md",
+        "wiki/concepts/netty-rpc-framework.md",
+        "wiki/entities/netty.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484662&idx=1&sn=8c5c06610ba51aa1c52b6ba4cd28b0f3&chksm=fe6ca5acc91b2cba40615efef5174155931be83bf9015e33664d1d508effb434793828c2d9c7",
+      "asset_ref": "Assets/2026/10/netty-30-rpc-framework.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-27-netty-4-to-5.md",
+      "sha256": "64f0956e59f0c287ba9c57423b5684ee2c14b5e3a7ee63cc6e98f66ca4317f1b",
+      "registered_at": "2026-10-29",
+      "inbox_ref": "Archive/2026-10-27-netty-4-to-5.md",
+      "pages": [
+        "wiki/sources/netty-4-to-5.md",
+        "wiki/entities/netty.md",
+        "wiki/concepts/netty-epoll-native-transport.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484716&idx=2&sn=35eb4093625aaa2e82174e455caf29a1&chksm=fe6ca476c91b2d609ad82f0681af07fd2d75166f8c2b172a4ddd907a5febd28031a769c90f17",
+      "asset_ref": "Assets/2026/10/netty-4-to-5.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-27-netty-debugging-guide.md",
+      "sha256": "5eaa79bc027c992174364962d61db23d2c648686b6fac7094d6b98afa543f8d2",
+      "registered_at": "2026-10-29",
+      "inbox_ref": "Archive/2026-10-27-netty-debugging-guide.md",
+      "pages": [
+        "wiki/sources/netty-debugging-guide.md",
+        "wiki/concepts/netty-debugging-troubleshooting.md",
+        "wiki/entities/netty.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484689&idx=2&sn=2f7f268bc6d34db87c7db4e42c4cea8c&chksm=fe6ca44bc91b2d5df71f819f870aa75490324010ad5eae1999a5bb68e405ee234a43522c1d33",
+      "asset_ref": "Assets/2026/10/netty-debugging-guide.md"
     }
   ]
 }

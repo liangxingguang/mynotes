@@ -145,6 +145,9 @@
 - [[netty-25-flow-control|Netty源码分析(25) — Netty 的流量控制：高低水位与可写性]]（2026-10-29，Netty/教程/高低水位背压源码）
 - [[netty-27-channelfuture|Netty源码分析(27) — ChannelFuture 与 异步回调机制]]（2026-10-29，Netty/教程/异步结果模型源码）
 - [[netty-28-promise|Netty源码分析(28) — Promise 与 自定义异步结果]]（2026-10-29，Netty/教程/Promise写侧源码）
+- [[netty-30-rpc-framework|Netty源码分析(30) — 实战：基于Netty实现一个简单的RPC框架]]（2026-10-29，Netty/教程/RPC实战收官篇）
+- [[netty-4-to-5|Netty源码分析(番外篇6) — Netty 4.x 到 5.x：演进路线与未来展望]]（2026-10-29，Netty/版本演进/io_uring）
+- [[netty-debugging-guide|Netty源码分析(番外篇) — Netty调试技巧与生产问题排查方法论]]（2026-10-29，Netty/调试排障方法论）
 - [[netty-million-connection-push-service|绝对干货：基于Netty实现海量接入的推送服务技术要点（李林锋）]]（2026-10-24，Netty/百万长连接调优）
 - [[nginx-websocket-load-balancing|Nginx生产级WebSocket实时长连接负载均衡，一文搞定（银河技术）]]（2026-10-24，Nginx/WebSocket/云环境断连）
 - [[netty-iot-gateway-resilient-design|百万 IoT 设备并发接入：把 Netty 网关做成可恢复、可验证的连接系统]]（2026-10-22，Netty/IoT/可靠性）
@@ -257,9 +260,10 @@
 - [[netty-bytebuf|Netty ByteBuf（数据容器与内存管理）]]（读写双指针免 flip+4MB 阈值扩容+引用计数+类 jemalloc 池化；Heap/Direct/Composite 三形态；释放铁律"谁最后消费谁 release"；三信源，置信度高）
 - [[netty-channel-pipeline|Netty ChannelPipeline（责任链与事件传播）]]（Context 双向链表+inbound/outbound 标志跳节点；入站 Head→Tail、出站 Tail→Head；ctx.write≠channel.write 路径；源码级单信源，置信度高）
 - [[netty-channelfuture|Netty ChannelFuture 与 DefaultPromise（异步结果模型）]]（JDK Future 上加 Listener 回调+sync/await+isSuccess/cause+isWritable 水位感知+Promise 可写端 set/trySuccess；DefaultPromise 单 volatile result 字段 CAS 无锁状态机+监听器懒加载+checkNotifyWaiters 唤醒+EventLoop 亲和通知；EventLoop 内禁 sync 死锁铁律；与 CompletableFuture 对比；双信源（同系列 27/28 篇），置信度中）
+- [[netty-debugging-troubleshooting|Netty 调试与生产排障方法论]]（EmbeddedChannel/黄金断点/LoggingHandler 三件套+PoolArenaMetric/pendingTasks/PARANOID 泄漏检测/空轮询自愈三板斧；5000 连接双根因案例 RT 800→20ms；单信源，置信度中）
 - [[netty-connection-lifecycle|Netty 连接生命周期（connect/bind/close）]]（AbstractUnsafe 三主线：OP_CONNECT+超时定时/fireChannelActive 注册 OP_ACCEPT/close 四层优雅清理；全程 Promise-Future；双信源，置信度高）
 - [[netty-eventloop|Netty EventLoop / EventLoopGroup（事件循环机制）]]（线程+Selector+MpscLinkedQueue 三合一；CPU×2 默认线程+chooser 位运算+ioRatio=50 时间配比+selectCnt 超 512 重建 Selector 自愈+register 异步化；源码级三信源互证，置信度高）
-- [[netty-epoll-native-transport|Netty EpollEventLoop 与 Native Transport（绕过 JDK Selector 直调 epoll）]]（epollFd/eventFd/timerFd 三 fd+事件栈上分配零 GC+fd 直映射无 selectedKeys 遍历+ET 循环读到 EAGAIN；仅 Linux+Epoll→KQueue→NIO 回退纪律；"Netty 5 推 io_uring"与既有口径矛盾已标注；单信源，置信度中）
+- [[netty-epoll-native-transport|Netty EpollEventLoop 与 Native Transport（绕过 JDK Selector 直调 epoll）]]（epollFd/eventFd/timerFd 三 fd+事件栈上分配零 GC+fd 直映射无 selectedKeys 遍历+ET 循环读到 EAGAIN；仅 Linux+Epoll→KQueue→NIO 回退纪律；"Netty 5 推 io_uring"矛盾经番外篇6 消解（新旧两代 5.0）；双信源，置信度中）
 - [[netty-flow-control|Netty 流量控制（高低水位与 isWritable 背压）]]（WriteBufferWaterMark 默认 32K/64K 软限制+CAS 位标记状态切换+变不可写 invokeLater 延迟传播防重入+写前必查 isWritable；与 TCP 滑窗/应用队列三层背压叠加；单信源，置信度中）
 - [[netty-http-decoder|Netty HTTP 解码状态机（HttpObjectDecoder）]]（currentState 成员变量持久化的 12 态 FSM 抗 TCP 分片；头部 readerIndex 零拷贝+chunked readRetainedSlice；碎片产出由 HttpObjectAggregator 选配聚合；UPGRADED 让位 WebSocket；单信源，置信度中）
 - [[netty-reconnect|Netty 断线重连机制]]（无内置重连，ChannelFutureListener+channelInactive 双时机+eventLoop.schedule 串行化；指数退避+抖动 30s 封顶防惊群；IdleStateEvent→close→channelInactive→重连闭环+channelActive 状态重建；单信源，置信度中）
@@ -267,6 +271,7 @@
 - [[netty-websocket-upgrade|Netty WebSocket 协议升级（握手与 Pipeline 热插拔）]]（Upgrade 头+Base64(SHA1(Key+魔数))→101→Listener 里移除 HTTP 编解码器热插拔帧编解码器；掩码单向铁律+分片重组；聚合器不可省/限帧/文明关闭；单信源，置信度中）
 - [[netty-idlestate-heartbeat|Netty 空闲检测与心跳（IdleStateHandler）]]（三维读/写/全部空闲超时转纳秒计时+精确剩余时间再调度+ChannelPromise 回调更新写时间戳+IdleStateEvent/isFirst 责任链分发；EventLoop 承载；李林锋 10 万连接事故反例互证，双信源）
 - [[netty-pooled-allocator|Netty 池化内存分配（PooledByteBufAllocator）]]（jemalloc 四级分级 Arena CPU×2→Chunk 16MB 满二叉树→Page 8KB→Subpage 位图+PoolThreadCache 无锁缓存；tiny/small/normal/huge 分派；ChunkList 六档流转；release 纪律+PARANOID 泄漏检测；五信源，置信度高）
+- [[netty-rpc-framework|基于 Netty 的轻量级 RPC 框架实现模式]]（协议信封 requestId 关联+长度域 mark/reset 拆粘包+JDK 动态代理+RpcFuture(CountDownLatch) 异步转同步+反射调用；与 Dubbo 八维工程化差距；系列收官实战单信源，置信度中）
 - [[netty-write-flush|Netty 写缓冲与背压（ChannelOutboundBuffer/writeAndFlush/高低水位）]]（write 入队 O(1)+flush 移指针+doWrite 才调 JDK 写；写自旋 16/OP_WRITE 半包续写/水位 64KB/32KB 背压；三信源互证，置信度高）
 - [[netty-zero-copy|Netty 零拷贝机制（FileRegion/CompositeByteBuf/wrappedBuffer/堆外内存）]]（零拷贝=无 CPU 参与的拷贝；sendfile 4 拷贝压成 2 次 DMA+doWrite 专门分支；Composite 组件数组逻辑拼接二分定位；FileRegion 单次使用+编解码跳过+Windows fallback；单信源，置信度中）
 - [[notification-system-design|站内消息系统领域模型]]（公告/提醒/私信三分类+提醒四元组；拉（订阅驱动）/推（私信直写）按类选型；免打扰后置读路径，简书上下篇双信源）
@@ -311,7 +316,7 @@
 - [[kafka|Apache Kafka]]（高吞吐事件管道；顺序写+PageCache+零拷贝+批量四板斧，机制+运维+IoT 场景三信源）
 - [[langgraph|LangGraph]]（LangChain 生态 Agent 编排状态机；原生非分布式，RedisSaver+MySQL 快照+外部锁补齐，双信源）
 - [[learn-harness-engineering-course|Learn Harness Engineering]]（Walking Labs 开源 Coding Agent 工程课程：14 讲 + 8 递进项目，单一微博推荐信源）
-- [[netty|Netty]]（Java 异步事件驱动网络框架；Reactor+ByteBuf+零拷贝三支柱+Pipeline/EventLoop/Bootstrap/内存池/Native Transport/流量控制/ChannelFuture 源码机制，机制+教程+IoT 工程二十五信源）
+- [[netty|Netty]]（Java 异步事件驱动网络框架；Reactor+ByteBuf+零拷贝三支柱+Pipeline/EventLoop/Bootstrap/内存池/Native Transport/流量控制/ChannelFuture 源码机制+RPC 实战/版本演进/调试排障收尾，机制+教程+IoT 工程二十九信源）
 - [[pi|Pi]]（极简 Agent CLI/Harness，1.0 起原生 MCP + Code Mode + Pi Durable，5000+ 扩展生态）
 - [[pigeon-message-bus|信鸽（Pigeon）]]（网易云音乐直播活动消息总线；32 台 8U16G 支撑 300w/min，RocketMQ 底座）
 - [[rocketmq|Apache RocketMQ]]（高性能分布式 MQ；事务消息+回查保发送、业务幂等保消费，运维+一致性+机制+存储+事务谱系五信源）

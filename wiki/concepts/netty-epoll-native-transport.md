@@ -14,6 +14,7 @@ tags:
   - performance
 sources:
   - raw/sources/architecture/2026-10-27-netty-24-epoll-native.md
+  - raw/sources/architecture/2026-10-27-netty-4-to-5.md
 related:
   - wiki/concepts/netty-eventloop.md
   - wiki/concepts/netty-bootstrap.md
@@ -70,13 +71,14 @@ run() 骨架与 NioEventLoop 一致（算超时 → 等事件 → 处理 → 跑
 
 ## Open Questions（开放问题）
 
-- **矛盾（未解决）**：信源称"Netty 5 正在推 io_uring"；本库既有口径（[[netty]] 实体页时间线）为 4.2（2025-04-03 GA）已将 io_uring 作为一级传输且 5.x 停止推进。当前倾向既有口径（成稿更近的综述信源），留待人工复核。
+- **矛盾（已消解，2026-10-29）**：信源称"Netty 5 正在推 io_uring"；本库既有口径（[[netty]] 实体页时间线）曾记"5.x 停止推进"。番外篇6 信源（`raw/sources/architecture/2026-10-27-netty-4-to-5.md`）给出分代图景：停止推进的是 2018 旧 5.0 Alpha（ForkJoinPool+API 大改），2024 年重启的新 5.0 正把 io_uring 作为头号特性推进——两说法指向不同代际，不再冲突。遗留疑问：4.2（2025-04-03 GA）已含 io_uring 一级传输，与新 5.0 的并行关系番外篇6 未提及，待官方 Release Notes 复核。
 - 信源压测（延迟 -33~-45%、吞吐 +38%、GC -38%）为单环境简易测试，生产量化收益待受控基准验证。
 - EpollEventLoop 对 sendfile "支持更好"的机制细节未展开。
 
 ## Evidence（证据）
 
 - Source: `raw/sources/architecture/2026-10-27-netty-24-epoll-native.md`（单一自媒体教程信源；C 代码为作者简化版；压测为作者自述非受控数据）
+- Source: `raw/sources/architecture/2026-10-27-netty-4-to-5.md`（同系列番外篇6：io_uring 在新 5.0 的定位与 epoll 对比维度，用于消解上方矛盾记录）
 
 ## Related Knowledge（相关知识）
 
