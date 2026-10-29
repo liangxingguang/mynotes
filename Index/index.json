@@ -1,26 +1,6 @@
 {
-  "updated_at": "2026-10-30 03:26",
+  "updated_at": "2026-10-30 03:36",
   "notes": [
-    {
-      "id": "2026-10-28-collaborative-doc-editor-design",
-      "title": "「设计一个在线文档协同编辑系统」：从 WebSocket、OT/CRDT 到快照回放",
-      "path": "Inbox/2026-10-28-collaborative-doc-editor-design.md",
-      "created": "2026-10-28",
-      "category": "技术",
-      "tags": [
-        "分布式系统",
-        "工程实践",
-        "WebSocket"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/RxiTou-DD--KeS7pnriUcQ",
-      "source_type": "link",
-      "platform": "wechat",
-      "summary": "系统设计与面试顶流题：一题考实时通信、分布式一致性、冲突解决算法、存储设计四样。从需求澄清（千万 DAU、30 万长连接、最终一致）讲到分层架构、OT 变换函数完整实现、CRDT 三拼图、文档级 Actor 定序、快照 + OpLog 存储，附 18 条难点速查表与高频追问。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/collaborative-doc-editor-design.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-28-game-distributed-team-design",
       "title": "游戏开发：分布式队伍架构的改进（互为镜像式）",
@@ -4923,6 +4903,26 @@
       "summary": "Claude Skills 实战指南：Skill 是把你的判断、偏好、标准压进一个 .md 文件的可复用资产。四步构建 + 七个提质动作 + 2.0 三大升级 + 七种已验证类型，半小时换以后每次省十分钟。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/claude-skills-guide.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-28-collaborative-doc-editor-design",
+      "title": "「设计一个在线文档协同编辑系统」：从 WebSocket、OT/CRDT 到快照回放",
+      "path": "Archive/2026-10-28-collaborative-doc-editor-design.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "工程实践",
+        "WebSocket"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/RxiTou-DD--KeS7pnriUcQ",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "系统设计与面试顶流题：一题考实时通信、分布式一致性、冲突解决算法、存储设计四样。从需求澄清（千万 DAU、30 万长连接、最终一致）讲到分层架构、OT 变换函数完整实现、CRDT 三拼图、文档级 Actor 定序、快照 + OpLog 存储，附 18 条难点速查表与高频追问。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/collaborative-doc-editor-design.md",
       "wiki_status": "ingested"
     }
   ]

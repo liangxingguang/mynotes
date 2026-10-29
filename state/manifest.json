@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-10-29",
+  "updated_at": "2026-10-30",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -2741,6 +2741,20 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/jH7uIqn534W51c4a4cFUkA",
       "asset_ref": "Assets/2026/10/claude-skills-guide.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-28-collaborative-doc-editor-design.md",
+      "sha256": "7eda7ad4875202b990e69a2408c53fb902d6703d94ad8cf66bc21aa9d650c2cb",
+      "registered_at": "2026-10-30",
+      "inbox_ref": "Archive/2026-10-28-collaborative-doc-editor-design.md",
+      "pages": [
+        "wiki/sources/collaborative-doc-editor-design.md",
+        "wiki/concepts/operational-transformation.md",
+        "wiki/concepts/crdt.md",
+        "wiki/comparisons/ot-vs-crdt.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/RxiTou-DD--KeS7pnriUcQ",
+      "asset_ref": "Assets/2026/10/collaborative-doc-editor-design.md"
     }
   ]
 }

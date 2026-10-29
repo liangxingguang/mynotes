@@ -9,7 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [分布式系统, 工程实践, WebSocket]
 asset_ref: Assets/2026/10/collaborative-doc-editor-design.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 「设计一个在线文档协同编辑系统」：从 WebSocket、OT/CRDT 到快照回放

@@ -43,6 +43,7 @@
 - [[claude-skills-guide|从 0 到 1 拆解 Claude Skills：一次构建，永久生效（SKILLS 专栏 01）]]（2026-10-28，AI/Claude，置信度中）
 - [[business-risk-control-redis-lua-annotation|业务风控组件设计：Redis+Lua 计数规则 + @Detect 注解 + SpEL 接入]]（2026-10-21，风控/Redis）
 - [[career-sharing-website-195|我发现了一个收录195篇真实职业分享的网站（把抽象变具象）]]（2026-10-28，职业/资源，置信度中）
+- [[collaborative-doc-editor-design|设计一个在线文档协同编辑系统：WebSocket、OT/CRDT 到快照回放]]（2026-10-28，系统设计/协同编辑）
 - [[completablefuture-async-orchestration|CompletableFuture：异步编排的正确写法]]（2026-10-20，Java/并发）
 - [[craft-of-selfteaching|微博推荐：GitHub 万星项目《自学是门手艺》]]（2026-10-16，学习/资源）
 - [[critical-thinking-six-priorities|教了快十年批判性思维，我越来越看重这六件事]]（2026-10-22，思维方法论，置信度中）
@@ -253,6 +254,7 @@
 - [[cyclicbarrier-internals|CyclicBarrier 循环屏障设计（Generation 换代）]]（ReentrantLock+Condition，parties 凑齐破障，最后线程执行 barrierAction 并换代唤醒；BrokenBarrierException 传播，单信源，置信度中）
 - [[delayqueue-internals|DelayQueue 延迟阻塞队列设计]]（PriorityQueue 小顶堆+单锁+leader-follower 精确等待消惊群；offer 仅队首变更才唤醒；单信源，置信度中）
 - [[cpu-funnel-coding|CPU 漏斗（编码级性能模型）]]（砍掉无效解析/转换/对象，让 CPU 只做核心运算）
+- [[crdt|CRDT（无冲突复制数据类型）]]（交换律+结合律+幂等天然收敛；LSEQ/RGA/墓碑 GC 三拼图；离线友好，代价是每字符带 ID 内存膨胀 3~5 倍，单信源）
 - [[cross-process-surface-rendering|Surface 跨进程渲染]]（Surface Parcelable + SurfaceFlinger 跨进程合成，Binder 传 Surface 零拷贝传画面；Renderer 3→1，微信小游戏一手）
 - [[deep-thinking-five-tools|深度思考五工具（澄清-拆解-追问-反证-逆向）]]（按序收敛四步+发散出口一步，反认知闭合；YouCore 单信源，置信度中）
 - [[design-patterns-in-netty|Netty 设计模式全景（源码视角的模式识别）]]（十大模式源码落点+16 模式对照表；机制概念页的模式视角索引；单信源，置信度中）
@@ -304,6 +306,7 @@
 - [[netty-zero-copy|Netty 零拷贝机制（FileRegion/CompositeByteBuf/wrappedBuffer/堆外内存）]]（零拷贝=无 CPU 参与的拷贝；sendfile 4 拷贝压成 2 次 DMA+doWrite 专门分支；Composite 组件数组逻辑拼接二分定位；FileRegion 单次使用+编解码跳过+Windows fallback；单信源，置信度中）
 - [[notification-system-design|站内消息系统领域模型]]（公告/提醒/私信三分类+提醒四元组；拉（订阅驱动）/推（私信直写）按类选型；免打扰后置读路径，简书上下篇双信源）
 - [[okf-knowledge-format|OKF（面向 AI Agent 的知识包装规范）]]（入库时编译为互链 Markdown 树，运行时只做导航+摘录）
+- [[operational-transformation|Operational Transformation（OT，操作转换）]]（中心定序+变换调整偏移量收敛并发编辑；siteId tie-break 命门+TP1/TP2 验证；文档级 Actor 串行+pending/buffer 客户端，单信源）
 - [[pi-customization-layers|Pi 五层定制模型]]（Prompt 模板→AGENTS.md→Skill→Extension→SDK，官方扩展点成本阶梯）
 - [[pm-decision-frameworks|产品决策四框架]]（3步止损/反向假设/杠杆率排序/信号噪音过滤；单一自媒体信源，置信度低）
 - [[pmta-framework|PMTA 框架]]（Planning/Memory/Tool use/Action 四要素，CoALA 谱系；现代 agent 框架的能力清单原型，单信源）
@@ -376,6 +379,7 @@
 
 - [[a2a-vs-mcp|A2A vs MCP]]（横向多 Agent 协作 vs 纵向单 Agent 能力拓展，互补关系）
 - [[netty-vs-tomcat-vs-undertow|Netty vs Tomcat vs Undertow]]（同机 wrk 横评：QPS/GC/高并发衰减+线程模型/内存/零拷贝/TCP 参数四层归因与选型分档，单信源自测，置信度中）
+- [[ot-vs-crdt|OT vs CRDT]]（中心变换 vs 数据结构天然收敛；取舍点=是否需要端侧完全自治；中心化选 OT、离线/去中心化选 CRDT，单信源）
 
 ## synthesis（综述）
 
