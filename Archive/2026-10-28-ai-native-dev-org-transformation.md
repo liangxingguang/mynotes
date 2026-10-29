@@ -9,7 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [AI, 工程实践]
 asset_ref: Assets/2026/10/ai-native-dev-org-transformation.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 构建 AI Native 研发组织的转型探索之路（百人团队实录）

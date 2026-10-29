@@ -9,7 +9,7 @@ created: 2026-10-28
 category: 资讯
 tags: [行业动态, 个人成长]
 asset_ref: Assets/2026/10/career-sharing-website-195.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 我发现了一个收录195篇真实职业分享的网站

@@ -4,7 +4,7 @@ type: concept
 title: AI 原生研发组织
 status: active
 created: 2026-10-16
-updated: 2026-10-24
+updated: 2026-10-30
 confidence: medium
 tags:
   - concept
@@ -13,10 +13,12 @@ tags:
 sources:
   - raw/sources/enterprise/2026-10-14-ai-native-rd-org-alibaba.md
   - raw/sources/enterprise/2026-10-24-huolala-ai-coding-harness.md
+  - raw/sources/enterprise/2026-10-28-ai-native-dev-org-transformation.md
 related:
   - wiki/concepts/ai-native-sdlc.md
   - wiki/concepts/mcp.md
   - wiki/entities/aibox.md
+  - wiki/entities/kongming-ai-dev-platform.md
 ---
 # AI 原生研发组织
 
@@ -43,6 +45,8 @@ AI Native 的首要价值是降本，但更被强调的是竞争维度跃迁：�
 
 推进方式（阿里云 CTO 线实践）："北极星、留白、沙箱"——北极星目标动员、留白允许跨岗试验、沙箱隔离生产风险；过程指标只观测不考核，防止局部优化变形。问题分两类："成长型"（现有框架内全链路极致优化）与"进化型"（在 AI 能力与客户价值间重构一切）。
 
+落地样本（某教育产品百人团队八个月实录）：把问题框架化为"生产力 vs 生产关系"——AI 压缩干活时间，压缩不了等待、交接、返工与责任模糊；组织线（前后端分工 → PO → 全栈 → RDO 探索，独立 QA 必须保留，交付/维护责任"双轨制"）与工具线（自研平台[[kongming-ai-dev-platform|孔明]]按组织步伐逐级扩展）双线同步演进。实测全程周期 25.8→14.6 天（-43%）、纯编码人日 -52.2%，但 5 月 PO 磨合期周期一度反弹到 32 天——转型阵痛与改善同样真实（一手复盘口径）。
+
 落地样本（货拉拉千人实践）：先以自建 Harness（[[aibox|AiBox]]）收口工具与流程，再做**组织/人才/流程/知识体系四重重构**——组织从职能切分转向业务域对齐（域内闭环）；人才从实现者转向目标设定者与结果审计者（招聘标尺转向上下文构建能力）；流程全链路按 spec 重写（文档结构化供 AI 读取、评审改 Agent 一审 + 人复审）；知识体系靠提示词资产库（两周迭代）+ 踩坑自动变 Rule/CR 检查项 + 线上报警反推规则，让经验随每次交付自动回流。其前提判断：个人提效 ≠ 组织提效（实测个人提交量 +17%、评审等待 4.8h→9.2h），AI Coding 在组织层必须是"协作约束工具"。
 
 ## Relationships（关系）
@@ -60,6 +64,7 @@ AI Native 的首要价值是降本，但更被强调的是竞争维度跃迁：�
 
 - 2026-10（云栖大会）：阿里云 CTO 线披露三个月探索的阶段性观察与 7 个生产样板间；承认仍处早期，目标/权限/验收/追责无统一做法，后续将发 7 篇专题详解。
 - 2026-09（货拉拉公开复盘）：千人规模以自建 Harness 收口后完成四重重构，给出"工具收口→质量三关→三层度量→经验回流"的组织原生落地次序（2026-10 收录）。
+- 2026-10（黑夜路人团队复盘）：百人团队八个月双线演进给出"生产关系"框架与完整阵痛曲线；提出 RDO 角色与交付/维护"双轨制"，并验证"独立 QA 必须保留"（2026-10-30 收录）。
 
 ## Open Questions（开放问题）
 
@@ -71,6 +76,7 @@ AI Native 的首要价值是降本，但更被强调的是竞争维度跃迁：�
 
 - Source: `raw/sources/enterprise/2026-10-14-ai-native-rd-org-alibaba.md`
 - Source: `raw/sources/enterprise/2026-10-24-huolala-ai-coding-harness.md`（一手复盘：四重重构、个人提效≠组织提效实测数字、Harness 收口次序；厂商自述口径）
+- Source: `raw/sources/enterprise/2026-10-28-ai-native-dev-org-transformation.md`（一手复盘：生产力/生产关系框架、组织四步演进、双轨制、周期与编码人日数据；团队自述口径）
 
 ## Related Knowledge（相关知识）
 
@@ -78,3 +84,5 @@ AI Native 的首要价值是降本，但更被强调的是竞争维度跃迁：�
 - [[ai-native-sdlc|AI 原生 SDLC]]
 - [[aibox|AiBox]]（货拉拉自建 Harness）
 - [[huolala-ai-coding-harness|货拉拉千人 AI Coding 落地：用自建 Harness 收口]]
+- [[ai-native-dev-org-transformation|一支百人研发团队的 AI Native 真实转型实录]]
+- [[kongming-ai-dev-platform|孔明（AI 研发平台）]]

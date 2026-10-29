@@ -2705,6 +2705,42 @@
       ],
       "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk4ODE0NzEzNQ==&action=getalbum&album_id=4029823410275598350",
       "asset_ref": "Assets/2026/10/ai-agent-series-full.md"
+    },
+    {
+      "path": "raw/sources/enterprise/2026-10-28-ai-native-dev-org-transformation.md",
+      "sha256": "41b38dc39c85706af86a91daa642c0f7429747bdf326064d4e023ea917b174c4",
+      "registered_at": "2026-10-30",
+      "inbox_ref": "Archive/2026-10-28-ai-native-dev-org-transformation.md",
+      "pages": [
+        "wiki/sources/ai-native-dev-org-transformation.md",
+        "wiki/concepts/ai-native-organization.md",
+        "wiki/entities/kongming-ai-dev-platform.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/RU2KgMW3W6txqCX7753myA",
+      "asset_ref": "Assets/2026/10/ai-native-dev-org-transformation.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-28-career-sharing-website-195.md",
+      "sha256": "60a0ec0e687dad333eefed72e93b532b05f1c1cf33767810792cd0b9f395aa7c",
+      "registered_at": "2026-10-30",
+      "inbox_ref": "Archive/2026-10-28-career-sharing-website-195.md",
+      "pages": [
+        "wiki/sources/career-sharing-website-195.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/m0NEaCRmxWEdEh14OkXCUQ",
+      "asset_ref": "Assets/2026/10/career-sharing-website-195.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-28-claude-skills-guide.md",
+      "sha256": "d124535375151106c6eb50f873d5c9816b2eacedea1e5ac1f3e0329d9d502296",
+      "registered_at": "2026-10-30",
+      "inbox_ref": "Archive/2026-10-28-claude-skills-guide.md",
+      "pages": [
+        "wiki/sources/claude-skills-guide.md",
+        "wiki/concepts/claude-skills.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/jH7uIqn534W51c4a4cFUkA",
+      "asset_ref": "Assets/2026/10/claude-skills-guide.md"
     }
   ]
 }

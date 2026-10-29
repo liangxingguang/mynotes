@@ -9,7 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [AI, AI Coding]
 asset_ref: Assets/2026/10/claude-skills-guide.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 从 0 到 1 拆解 Claude Skills：一次构建，永久生效

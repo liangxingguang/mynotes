@@ -28,6 +28,7 @@
 - [[ai-coding-delivery-evolution|AI 写代码越来越快，研发交付系统该怎么演进？]]（2026-10-17，AI/交付系统）
 - [[ai-coding-workflow-skill-prompt|一位 Agent 开发者的 AI Coding 工作流：轻 Skill、方法论 Prompt 与端到端测试]]（2026-10-16，AI/工作流）
 - [[ai-engineering-interview-questions|AI Engineering Interview Questions：公开 AI 工程面试题库]]（2026-10-23，AI/资源，置信度低）
+- [[ai-native-dev-org-transformation|一支百人研发团队的 AI Native 真实转型实录（黑夜路人）]]（2026-10-28，AI/组织，一手复盘）
 - [[ai-native-rd-org-forum|AI 进入生产后，研发组织怎么变（阿里云 AI 原生研发组织论坛回顾）]]（2026-10-14，AI/组织）
 - [[ai-native-sdlc-playbook|Anthropic AI 原生 SDLC 实施手册]]（2026-10-14，AI/SDLC）
 - [[alibaba-ecommerce-im-group-live|阿里电商IM消息平台在群聊、直播场景下的技术实践]]（2026-10-23，IM/读写扩散/直播分发）
@@ -39,7 +40,9 @@
 - [[awesome-design-md|用 DESIGN.md 治 AI 生成的丑 UI：awesome-design-md 仓库]]（2026-10-16，AI/工具）
 - [[baidu-live-mcast-message-architecture|百度直播海量用户实时消息系统架构：长连接组播 mcast 实践]]（2026-10-23，IM/直播消息/组播）
 - [[claude-howto-github-tutorial|claude-howto：一套完整的 Claude Code 开源教程（GitHub 仓库）]]（2026-10-23，AI/资源，置信度低）
+- [[claude-skills-guide|从 0 到 1 拆解 Claude Skills：一次构建，永久生效（SKILLS 专栏 01）]]（2026-10-28，AI/Claude，置信度中）
 - [[business-risk-control-redis-lua-annotation|业务风控组件设计：Redis+Lua 计数规则 + @Detect 注解 + SpEL 接入]]（2026-10-21，风控/Redis）
+- [[career-sharing-website-195|我发现了一个收录195篇真实职业分享的网站（把抽象变具象）]]（2026-10-28，职业/资源，置信度中）
 - [[completablefuture-async-orchestration|CompletableFuture：异步编排的正确写法]]（2026-10-20，Java/并发）
 - [[craft-of-selfteaching|微博推荐：GitHub 万星项目《自学是门手艺》]]（2026-10-16，学习/资源）
 - [[critical-thinking-six-priorities|教了快十年批判性思维，我越来越看重这六件事]]（2026-10-22，思维方法论，置信度中）
@@ -240,6 +243,7 @@
 - [[blue-green-deployment|蓝绿发布（Blue-Green Deployment）]]（Preview+全量切换+自动观察回退；selector 只影响新连接；四层门禁先过样本量；蓝绿实战单信源）
 - [[cache-line-and-false-sharing|CPU 缓存行效应：局部性与伪共享]]（64 字节行为失效粒度；数组胜链表、Disruptor Sequence 填充、LinkedList Node 32B 三倍内存、AtomicLong/LongAdder Cell/Exchanger Node 伪共享与 @Contended，六信源）
 - [[cdn-broadcast-fanout|CDN 广播（弹幕下行）]]（千万级在线下行外包 CDN 边缘：推流伪装视频流 vs 静态文件周期拉取，多 CDN 权重轮询融合；网易云信一手）
+- [[claude-skills|Claude Skills]]（Markdown 文件即资产：判断/偏好/标准固化、按需加载、一句话唤醒；Skill-Creator 构建 + 2.0 断言评估/A-B/触发词优化；单信源导览，置信度中）
 - [[codemode|Codemode（代码模式工具编排）]]（模型写 JS 沙箱脚本编排工具调用，只回筛选结果；固定开销约减半，单次收益看返回格式）
 - [[collections-utility-class|Collections 工具类设计]]（算法委托+三类包装器工厂；同步/不可变均为视图，迭代须外部加锁；emptyList 单例零分配；单信源，置信度中）
 - [[context-management|上下文管理（Context Management）]]（messages 全量重发下的体积工程：裁剪/压缩/隔离三手段+成对保留与磁盘全量两铁律；Claude Code 分层裁剪实证，单信源）
@@ -346,6 +350,7 @@
 - [[ep-harness|EP-Harness]]（得物团队级 Managed Agents 平台，Multica 二开，Prompt→Context→Harness→Loop 四层）
 - [[jd-haibo|京东海博]]（京东本地生活即时零售 SaaS，780+ 商家/10 万+ 门店，AI 知识库实践标杆）
 - [[kafka|Apache Kafka]]（高吞吐事件管道；顺序写+PageCache+零拷贝+批量四板斧；2.0 起网络层自研 NIO→Netty，机制+运维+IoT 场景+网络层四信源）
+- [[kongming-ai-dev-platform|孔明（AI 研发平台）]]（某教育产品百人团队自研研发交付 Harness：Fly/Pro/Max/Fast/Flow/Ultra 版本阶梯随组织演进扩张，普及率 9.8%→70.2%，团队自述单信源）
 - [[langgraph|LangGraph]]（LangChain 生态 Agent 编排状态机；原生非分布式，RedisSaver+MySQL 快照+外部锁补齐，双信源）
 - [[learn-harness-engineering-course|Learn Harness Engineering]]（Walking Labs 开源 Coding Agent 工程课程：14 讲 + 8 递进项目，单一微博推荐信源）
 - [[netty|Netty]]（Java 异步事件驱动网络框架；Reactor+ByteBuf+零拷贝三支柱+Pipeline/EventLoop/Bootstrap/内存池/Native Transport/流量控制/ChannelFuture 源码机制+RPC 实战/版本演进/调试排障/设计模式全景+生产调优五维度+SCG/Kafka/中间件应用+系列目录，机制+教程+IoT 工程三十五信源）
