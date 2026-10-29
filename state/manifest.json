@@ -2613,6 +2613,47 @@
       ],
       "source_url": "https://zhuanlan.zhihu.com/p/2095551564815644272",
       "asset_ref": "Assets/2026/10/agent-llm-call-patterns.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-28-agent-panorama-roadmap.md",
+      "sha256": "2a0923ffc06fb7a1ee1141306f4e53297247e7e4b80819606cf618bbb990e938",
+      "registered_at": "2026-10-29",
+      "inbox_ref": "Archive/2026-10-28-agent-panorama-roadmap.md",
+      "pages": [
+        "wiki/sources/agent-panorama-roadmap.md",
+        "wiki/concepts/workflow-vs-agent.md",
+        "wiki/concepts/agent-loop.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2094116344245625249",
+      "asset_ref": "Assets/2026/10/agent-panorama-roadmap.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-28-agent-loop-context-management.md",
+      "sha256": "d8adf940cbc83ffbeb68f64a76a3c526693f7dd4c50973d31f27199380531559",
+      "registered_at": "2026-10-29",
+      "inbox_ref": "Archive/2026-10-28-agent-loop-context-management.md",
+      "pages": [
+        "wiki/sources/agent-loop-context-management.md",
+        "wiki/concepts/context-management.md",
+        "wiki/concepts/agent-loop.md",
+        "wiki/concepts/harness-engineering.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2094456858648100884",
+      "asset_ref": "Assets/2026/10/agent-loop-context-management.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-28-agent-model-selection-reasoning.md",
+      "sha256": "3def90d0977492dd1f36ead8bf95a2914616d0da0c5b4f1c0edcdb4ecb198890",
+      "registered_at": "2026-10-29",
+      "inbox_ref": "Archive/2026-10-28-agent-model-selection-reasoning.md",
+      "pages": [
+        "wiki/sources/agent-model-selection-reasoning.md",
+        "wiki/concepts/thinking-mode.md",
+        "wiki/concepts/agent-loop.md",
+        "wiki/concepts/llm-call-protocol.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2095469418528651019",
+      "asset_ref": "Assets/2026/10/agent-model-selection-reasoning.md"
     }
   ]
 }

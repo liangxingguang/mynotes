@@ -9,7 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [AI, Harness, 课程]
 asset_ref: Assets/2026/10/agent-panorama-roadmap.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Agent - 全景与学习路线地图（1）

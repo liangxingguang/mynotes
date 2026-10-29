@@ -12,8 +12,10 @@ tags:
   - llm-api
 sources:
   - raw/sources/ai/2026-10-28-agent-llm-call-patterns.md
+  - raw/sources/ai/2026-10-28-agent-model-selection-reasoning.md
 related:
   - wiki/concepts/agent-loop.md
+  - wiki/concepts/thinking-mode.md
 ---
 # OpenAI 兼容 Chat Completions 调用协议
 
@@ -66,6 +68,8 @@ SDK 默认工程行为（openai/anthropic 同源）：timeout 默认 10 分钟�
 
 - 2026-10-29 — 新建，信源为知乎《Agent》系列第 6 篇（字段定义与默认值经作者对照官方 API Reference/README/源码核验，真实端点调用未实测）。
 
+- 2026-10-29 — 新增信源 `raw/sources/ai/2026-10-28-agent-model-selection-reasoning.md`（知乎《Agent》系列第 4 篇）。把第四条协议约束（思考模式带 tools 必须完整回传 `reasoning_content`）展开为完整工程规则：DeepSeek 官方页原文"即使该轮未实际调工具也要回传"；思维链按输出价计费、`usage.completion_tokens_details.reasoning_tokens` 单列；思考档 `max_tokens` 默认上限放大到 64K/128K。由此新建概念页 [[thinking-mode|思考模式与模型路由]]。
+
 ## Open Questions（开放问题）
 
 - Responses API 与 Chat Completions 的能力差（如中途插入 tool call 的支持）待专门信源补充。
@@ -73,6 +77,7 @@ SDK 默认工程行为（openai/anthropic 同源）：timeout 默认 10 分钟�
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-10-28-agent-llm-call-patterns.md`
+- Source: `raw/sources/ai/2026-10-28-agent-model-selection-reasoning.md`（协议约束展开：reasoning_content 回传官方规则、reasoning_tokens 计费单列、思考档 max_tokens 默认值）
 
 ## Related Knowledge（相关知识）
 

@@ -19,6 +19,9 @@ sources:
   - raw/sources/ai/2026-10-28-agent-minimal-handwritten.md
   - raw/sources/ai/2026-10-28-agent-classic-agent-theory.md
   - raw/sources/ai/2026-10-28-agent-llm-call-patterns.md
+  - raw/sources/ai/2026-10-28-agent-panorama-roadmap.md
+  - raw/sources/ai/2026-10-28-agent-loop-context-management.md
+  - raw/sources/ai/2026-10-28-agent-model-selection-reasoning.md
 related:
   - wiki/concepts/harness-engineering.md
   - wiki/entities/pi.md
@@ -30,6 +33,9 @@ related:
   - wiki/concepts/llm-call-protocol.md
   - wiki/concepts/aima-agent-taxonomy.md
   - wiki/concepts/pmta-framework.md
+  - wiki/concepts/workflow-vs-agent.md
+  - wiki/concepts/context-management.md
+  - wiki/concepts/thinking-mode.md
 ---
 # Agent Loop
 
@@ -119,6 +125,12 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 
 - 2026-10-29 — 新增协议层信源 `raw/sources/ai/2026-10-28-agent-llm-call-patterns.md`（知乎《Agent》系列第 6 篇）。把本页"停止信号多源性"落到 wire 层：Loop 续轮的结构化判据是响应的 `finish_reason: "tool_calls"`，Tool Result 回填靠 `tool_call_id` 配对。由此新建概念页 [[llm-call-protocol|OpenAI 兼容 Chat Completions 调用协议]]。
 
+- 2026-10-29 — 新增系列总纲信源 `raw/sources/ai/2026-10-28-agent-panorama-roadmap.md`（知乎《Agent》系列第 1 篇）。给出本页定义的"前传"：三级能力阶梯（聊天→工具调用→自主 agent）的分水岭是控制流归谁；tool call 六步时序是 loop 的单点形态，"把第 4→5 步连成循环"才升级为 agent；OpenAI 四构件（Instruction/Model/Tools/Loop）中 Tools 与 Loop 是聊天与 agent 的分水岭。由此新建概念页 [[workflow-vs-agent|Workflow vs Agent]]。
+
+- 2026-10-29 — 新增核心篇信源 `raw/sources/ai/2026-10-28-agent-loop-context-management.md`（知乎《Agent》系列第 3 篇）。把本页 Loop 拆成五阶段数据流（获取输入→调 LLM→解析 finish_reason→执行工具→追加回填），并给出两套同构互证：OpenClaw 官方 agent loop 六步定义与 Claude Code agentic loop 三相位映射到同一个 while 循环。补强"停止信号多源性"为四类终止条件（模型自判/最大迭代数/工具超时/用户打断），"工程上永远假设模型自判会失效"。由此新建概念页 [[context-management|上下文管理]]。
+
+- 2026-10-29 — 新增模型层信源 `raw/sources/ai/2026-10-28-agent-model-selection-reasoning.md`（知乎《Agent》系列第 4 篇）。回答 Loop 里 `LLM()` 填什么：默认非思考档，难题单独切思考档；思考模式下思维链按轮累加进 token 预算、max_tokens 默认上限放大，预算熔断更要设。由此新建概念页 [[thinking-mode|思考模式与模型路由]]。
+
 ## Open Questions（开放问题）
 
 - 不同框架（LangGraph、AutoGen、各厂商 Agent SDK）对 Runtime/Harness 的划分与本文是否一致？
@@ -135,6 +147,9 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 - Source: `raw/sources/ai/2026-10-28-agent-minimal-handwritten.md`（教学实现：tool_calls 终止判定、MAX_ITERATIONS 熔断、reasoning_content 回传、四类错误回喂）
 - Source: `raw/sources/ai/2026-10-28-agent-classic-agent-theory.md`（理论溯源：AIMA 五类 Agent、PMTA 框架）
 - Source: `raw/sources/ai/2026-10-28-agent-llm-call-patterns.md`（协议层印证：finish_reason 续轮判据、tool_call_id 配对回填）
+- Source: `raw/sources/ai/2026-10-28-agent-panorama-roadmap.md`（总纲：三级能力阶梯、tool call 六步、编排层必然性）
+- Source: `raw/sources/ai/2026-10-28-agent-loop-context-management.md`（核心拆解：五阶段数据流、三套官方拆法同构、四类终止条件）
+- Source: `raw/sources/ai/2026-10-28-agent-model-selection-reasoning.md`（模型层：LLM() 默认填法、思考档的预算影响）
 
 ## Related Knowledge（相关知识）
 
@@ -147,3 +162,6 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 - [[llm-call-protocol|OpenAI 兼容 Chat Completions 调用协议]]
 - [[aima-agent-taxonomy|AIMA Agent 分类]]
 - [[pmta-framework|PMTA 框架]]
+- [[workflow-vs-agent|Workflow vs Agent（控制流分界）]]
+- [[context-management|上下文管理（Context Management）]]
+- [[thinking-mode|思考模式（Thinking Mode）与模型路由]]

@@ -14,6 +14,9 @@
 - [[agent-classic-agent-theory|Agent - 经典 Agent 理论：AIMA 五分类与 PMTA 框架]]（2026-10-28，AI/理论）
 - [[agent-harness-framework-selection|Agent - harness 框架怎么选（5）：deepagents 首选]]（2026-10-28，AI/Harness 选型）
 - [[agent-llm-call-patterns|Agent - 调用 LLM 的三种姿势（6）：REST/SDK/agent SDK 同一 wire 协议]]（2026-10-28，AI/LLM API）
+- [[agent-loop-context-management|Agent - agent loop 与上下文管理（3）：五阶段 loop + harness 六件套 + 裁剪/压缩/隔离]]（2026-10-28，AI/Agent 工程）
+- [[agent-model-selection-reasoning|Agent - 模型选型与推理能力（4）：thinking 开关 + reasoning_content 回传 + 模型路由]]（2026-10-28，AI/LLM API）
+- [[agent-panorama-roadmap|Agent - 全景与学习路线地图（1）：三级阶梯 + workflow vs agent + 21 篇路线]]（2026-10-28，AI/总纲）
 - [[ai-agents-definitive-guide-notebooks|知乎想法：O'Reilly《AI Agents》配套代码全开源（12 章 35 Notebook）]]（2026-10-20，AI/资源，置信度低）
 - [[agent-loop-production-boundaries|从 Chatbot 到 AI Agent：为什么一个 while 循环撑不起生产系统]]（2026-10-15，AI/Agent 工程）
 - [[agent-platform-architecture|高性能弹性扩展智能体中台架构：FastAPI+Nacos+RocketMQ+LangGraph+Milvus+ES 实践]]（2026-10-27，AI/架构）
@@ -234,6 +237,7 @@
 - [[cdn-broadcast-fanout|CDN 广播（弹幕下行）]]（千万级在线下行外包 CDN 边缘：推流伪装视频流 vs 静态文件周期拉取，多 CDN 权重轮询融合；网易云信一手）
 - [[codemode|Codemode（代码模式工具编排）]]（模型写 JS 沙箱脚本编排工具调用，只回筛选结果；固定开销约减半，单次收益看返回格式）
 - [[collections-utility-class|Collections 工具类设计]]（算法委托+三类包装器工厂；同步/不可变均为视图，迭代须外部加锁；emptyList 单例零分配；单信源，置信度中）
+- [[context-management|上下文管理（Context Management）]]（messages 全量重发下的体积工程：裁剪/压缩/隔离三手段+成对保留与磁盘全量两铁律；Claude Code 分层裁剪实证，单信源）
 - [[concurrenthashmap-internals|ConcurrentHashMap 并发设计（JDK 8+）]]（读无锁+CAS 空桶插+synchronized 桶头+sizeCtl 三态+协作扩容；单信源，置信度中）
 - [[copyonwritearraylist-internals|CopyOnWriteArrayList 写时复制设计]]（volatile 数组引用替换+写时 O(n) 复制换读零锁；快照迭代不抛 CME；读多写极少专用，单信源，置信度中）
 - [[countdownlatch-internals|CountDownLatch 门闩设计（AQS 共享模式）]]（state 即计数器+CAS 减一归零广播唤醒；一次性不可重置，区别于 CyclicBarrier；双信源，置信度中）
@@ -309,12 +313,14 @@
 - [[scopedvalue|ScopedValue（作用域值）]]（JDK 25 正式：作用域共享不可变快照，终结 VT 下 ThreadLocal 内存膨胀/泄漏/脏值，Old Gen -61% 实测）
 - [[startup-ideas-framework|创业点子生成与评估框架（YC）]]（四错误避坑+十问评估+七配方生成；YC 前 100 公司 70% 点子自然注意到；演讲整理稿单信源）
 - [[table-sharding-migration|分表平滑迁移策略]]（五种读写策略矩阵 + 双写双读 SQL 重写，京东大表治理实践）
+- [[thinking-mode|思考模式（Thinking Mode）与模型路由]]（通用 vs 推理已制度化为 thinking 开关两态；reasoning_content 回传 400 规则+参数坑+reasoning_tokens 计费；两行规则表最小路由，单信源）
 - [[threadpoolexecutor-internals|ThreadPoolExecutor 核心设计]]（ctl 单 int 打包状态+线程数；execute 四级漏斗+二次检查；Worker 继承 AQS 不可重入锁；四种拒绝策略，单信源，置信度中）
 - [[tool-schema-as-prompt|Tool Schema as Prompt]]（模型只见 name/description/parameters，写描述即写 prompt；schema 软约束须执行前校验；禁 eval 用 ast 白名单；单信源）
 - [[treeset-internals|TreeSet 有序集合设计]]（TreeMap key 视图+红黑树；compareTo 判重≠equals；范围操作视图；插入慢 HashSet 约 11 倍实测；单信源，置信度中）
 - [[vector-stack-legacy-design|Vector/Stack 遗留设计缺陷]]（方法级 synchronized 复合操作仍不安全；Stack 继承 Vector 违反 LSP；JDK 11+ 扩容改扩一半；替代 ArrayList/ArrayDeque，单信源，置信度中）
 - [[virtual-threads-production|虚拟线程生产实践]]（场景筛选、Helper 传 Trace/ThreadLocal、钉住规避与观测换代，货拉拉 JDK 21 实践）
 - [[write-fanout|写扩散（Fan-out on Write）]]（群消息按成员写副本换读路径简单；群服务扇出+副本指纹+MQ 批量化+双轨存储，万人群物理上限，三信源）
+- [[workflow-vs-agent|Workflow vs Agent（控制流分界）]]（Anthropic 定义：路径写死在代码 vs 模型运行时动态决定；三级能力阶梯+选型纪律"能用 workflow 别上 agent"，单信源）
 - [[websocket-heartbeat-reconnect|WebSocket 心跳保活与断线重连]]（双向心跳判假死+指数退避防风暴+离线队列补发三段式，单教程信源置信度中）
 - [[zgc|ZGC]]（染色指针+多视图映射+读屏障自愈实现并发整理，停顿 <10ms 与堆大小无关，JDK 15 转正；单信源）
 

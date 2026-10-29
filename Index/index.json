@@ -1,66 +1,6 @@
 {
-  "updated_at": "2026-10-29 18:48",
+  "updated_at": "2026-10-29 21:59",
   "notes": [
-    {
-      "id": "2026-10-28-agent-loop-context-management",
-      "title": "Agent - agent loop 与上下文管理（3）",
-      "path": "Inbox/2026-10-28-agent-loop-context-management.md",
-      "created": "2026-10-28",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "Harness",
-        "工程实践"
-      ],
-      "source": "知乎专栏",
-      "source_url": "https://zhuanlan.zhihu.com/p/2094456858648100884",
-      "source_type": "link",
-      "platform": "zhihu",
-      "summary": "Agent 系列第 3 篇（核心篇）：agent loop 五阶段拆解、harness 六件套、上下文窗口的 token 预算与裁剪/压缩/隔离三手段、四类终止条件——附不接真模型的最小 loop 骨架实践。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/agent-loop-context-management.md",
-      "wiki_status": "ingesting"
-    },
-    {
-      "id": "2026-10-28-agent-model-selection-reasoning",
-      "title": "Agent - 模型选型与推理能力（4）",
-      "path": "Inbox/2026-10-28-agent-model-selection-reasoning.md",
-      "created": "2026-10-28",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "Harness",
-        "工程实践"
-      ],
-      "source": "知乎专栏",
-      "source_url": "https://zhuanlan.zhihu.com/p/2095469418528651019",
-      "source_type": "link",
-      "platform": "zhihu",
-      "summary": "Agent 系列第 4 篇：agent loop 里的 LLM() 该填什么——\"通用 vs 推理\"已制度化为同一模型的 thinking 开关，DeepSeek 档位怎么选、带工具的思维链回传规则（不回传直接 400）、提示词买到的\"半个推理\"，以及国内在线/本地/私有化落地选项。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/agent-model-selection-reasoning.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-28-agent-panorama-roadmap",
-      "title": "Agent - 全景与学习路线地图（1）",
-      "path": "Inbox/2026-10-28-agent-panorama-roadmap.md",
-      "created": "2026-10-28",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "Harness",
-        "课程"
-      ],
-      "source": "知乎专栏",
-      "source_url": "https://zhuanlan.zhihu.com/p/2094116344245625249",
-      "source_type": "link",
-      "platform": "zhihu",
-      "summary": "Agent 系列第 1 篇（全系列总纲）：三级能力阶梯（聊天 → 工具调用 → 自主 agent）、一次 tool call 的完整时序、为什么必须有编排层（harness）、21 篇 / 8 个 Part 学习路线图与自测方法，附最小 tool_use 动手脚本。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/agent-panorama-roadmap.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-28-agent-permission-model-design",
       "title": "Agent架构设计15：Agent 权限模型设计",
@@ -4906,6 +4846,26 @@
       "wiki_status": "ingested"
     },
     {
+      "id": "2026-10-28-agent-loop-context-management",
+      "title": "Agent - agent loop 与上下文管理（3）",
+      "path": "Archive/2026-10-28-agent-loop-context-management.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Harness",
+        "工程实践"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2094456858648100884",
+      "source_type": "link",
+      "platform": "zhihu",
+      "summary": "Agent 系列第 3 篇（核心篇）：agent loop 五阶段拆解、harness 六件套、上下文窗口的 token 预算与裁剪/压缩/隔离三手段、四类终止条件——附不接真模型的最小 loop 骨架实践。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/agent-loop-context-management.md",
+      "wiki_status": "ingested"
+    },
+    {
       "id": "2026-10-28-agent-minimal-handwritten",
       "title": "Agent - 手写最小 agent（7）",
       "path": "Archive/2026-10-28-agent-minimal-handwritten.md",
@@ -4923,6 +4883,46 @@
       "summary": "Agent 系列第 7 篇：把前五篇的零件装成\"看得懂每行代码\"的最小 agent——config/tools/agent 三文件组织、schema 校验、四类错误兜底、reasoning_content 回传，终端跑起里程碑 M1（DeepSeek + openai SDK）。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/agent-minimal-handwritten.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-28-agent-model-selection-reasoning",
+      "title": "Agent - 模型选型与推理能力（4）",
+      "path": "Archive/2026-10-28-agent-model-selection-reasoning.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Harness",
+        "工程实践"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2095469418528651019",
+      "source_type": "link",
+      "platform": "zhihu",
+      "summary": "Agent 系列第 4 篇：agent loop 里的 LLM() 该填什么——\"通用 vs 推理\"已制度化为同一模型的 thinking 开关，DeepSeek 档位怎么选、带工具的思维链回传规则（不回传直接 400）、提示词买到的\"半个推理\"，以及国内在线/本地/私有化落地选项。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/agent-model-selection-reasoning.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-28-agent-panorama-roadmap",
+      "title": "Agent - 全景与学习路线地图（1）",
+      "path": "Archive/2026-10-28-agent-panorama-roadmap.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Harness",
+        "课程"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2094116344245625249",
+      "source_type": "link",
+      "platform": "zhihu",
+      "summary": "Agent 系列第 1 篇（全系列总纲）：三级能力阶梯（聊天 → 工具调用 → 自主 agent）、一次 tool call 的完整时序、为什么必须有编排层（harness）、21 篇 / 8 个 Part 学习路线图与自测方法，附最小 tool_use 动手脚本。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/agent-panorama-roadmap.md",
       "wiki_status": "ingested"
     }
   ]

@@ -13,8 +13,10 @@ tags:
 sources:
   - raw/sources/ai/2026-10-27-harness-engineering-11-agents-study.md
   - raw/sources/ai/2026-10-28-agent-harness-framework-selection.md
+  - raw/sources/ai/2026-10-28-agent-loop-context-management.md
 related:
   - wiki/concepts/agent-loop.md
+  - wiki/concepts/context-management.md
   - wiki/concepts/mcp.md
   - wiki/concepts/agent-sandboxing.md
   - wiki/concepts/agent-evaluation.md
@@ -90,7 +92,9 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 
 - 2026-10-27 — 新建，信源为《Harness Engineering》论文（11 系统源码研究）的架构解读文章。wiki 此前已有 Harness 产品实例（[[aibox|AiBox]]、[[ep-harness|EP-Harness]]、[[deepseek-harness|DeepSeek Harness]]）与课程实体（[[learn-harness-engineering-course|Learn Harness Engineering]]），本页补上概念层定义。
 
-- 2026-10-29 — 新增选型信源 `raw/sources/ai/2026-10-28-agent-harness-framework-selection.md`（知乎《Agent》系列第 5 篇）。其"harness 八件套"（loop+终止、工具注册、权限/HITL、持久化、上下文管理、子 agent、MCP、可观测）与本页七个观察面互证且更偏交付清单；`Model + Harness = Agent` 与 `Agent ≈ Model + Harness` 表述一致；选型结论落成决策页 [[harness-selection-deepagents|Harness 选型决策：首选 deepagents]] 与实体页 [[deepagents|deepagents]]。
+- 2026-10-29 — 新增组装视角信源 `raw/sources/ai/2026-10-28-agent-loop-context-management.md`（知乎《Agent》系列第 3 篇）。其 harness 六件套（messages 数组、工具注册、模型配置、循环控制与终止条件、上下文管理、事件流）与本页观察面互补：第 3 篇把"上下文与记忆"观察面展开成 [[context-management|上下文管理]] 独立概念页（裁剪/压缩/隔离三手段、两条铁律），并以 Claude Code 官方分层裁剪行为（先清旧工具输出、再总结对话）为该观察面提供落地实例。
+
+- 2026-10-29 — 新增选型信源 `raw/sources/ai/2026-10-28-agent-harness-framework-selection.md`（知乎《Agent》系列第 5 篇）。其"harness 八件套"（loop+终止、工具注册、权限/HITL、持久化、上下文管理、子 agent、MCP、可观测）与本页七个观察面互证且更偏交付清单；"harness 即插件"的 Claude Code 三层图（运行时/插件能力/用户输入）与 2026-10-29 新增第 3 篇的"harness 六件套"（messages、工具、模型配置、循环控制、上下文管理、事件流）互补印证——八件套偏交付清单、六件套偏组装视角，共同收敛到本页观察面。`Model + Harness = Agent` 与 `Agent ≈ Model + Harness` 表述一致；选型结论落成决策页 [[harness-selection-deepagents|Harness 选型决策：首选 deepagents]] 与实体页 [[deepagents|deepagents]]。
 
 ## Open Questions（开放问题）
 
@@ -101,6 +105,7 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 
 - Source: `raw/sources/ai/2026-10-27-harness-engineering-11-agents-study.md`
 - Source: `raw/sources/ai/2026-10-28-agent-harness-framework-selection.md`（印证：harness 八件套 vs 七观察面；选型决策树）
+- Source: `raw/sources/ai/2026-10-28-agent-loop-context-management.md`（组装视角：harness 六件套；Claude Code 上下文分层裁剪实例）
 
 ## Related Knowledge（相关知识）
 
