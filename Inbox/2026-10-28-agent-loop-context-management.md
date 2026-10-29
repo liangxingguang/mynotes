@@ -9,7 +9,9 @@ created: 2026-10-28
 category: 技术
 tags: [AI, Harness, 工程实践]
 asset_ref: Assets/2026/10/agent-loop-context-management.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-29T10:20:31.482Z"
+ingest_claim_id: 12704-1793269231482-0
 ---
 
 # Agent - agent loop 与上下文管理（3）

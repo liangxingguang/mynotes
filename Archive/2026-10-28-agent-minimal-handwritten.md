@@ -9,7 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [AI, Harness, 工程实践]
 asset_ref: Assets/2026/10/agent-minimal-handwritten.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Agent - 手写最小 agent（7）

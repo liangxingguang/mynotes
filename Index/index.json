@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29 17:55",
+  "updated_at": "2026-10-29 18:33",
   "notes": [
     {
       "id": "2026-10-28-agent-classic-agent-theory",
@@ -19,7 +19,7 @@
       "summary": "Agent 系列第 2 篇（纯理论）：AIMA 五类智能体（reflex/model-based/goal-based/utility-based/learning）逐档映射到 LLM agent 构件，提出 PMTA 四要素（Planning/Memory/Tool use/Action）作为全系列坐标系。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/agent-classic-agent-theory.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-28-agent-harness-framework-selection",
@@ -39,7 +39,7 @@
       "summary": "Agent 系列第 5 篇：面向\"维护既有系统\"需求的 harness 选型结论——首选 deepagents，备选 Microsoft Agent Framework，DeepSeek Harness 因 developer preview 暂缓；附 12 个候选的一句话定位。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/agent-harness-framework-selection.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-28-agent-llm-call-patterns",
@@ -59,7 +59,7 @@
       "summary": "Agent 系列第 6 篇：把\"调用 LLM\"摊开看全貌——直连 REST / 官方 SDK / agent SDK 三种姿势最终发出同一份 wire JSON，逐字节解剖请求响应，外加三种姿势共享的工程四件套。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/agent-llm-call-patterns.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-28-agent-loop-context-management",
@@ -79,27 +79,7 @@
       "summary": "Agent 系列第 3 篇（核心篇）：agent loop 五阶段拆解、harness 六件套、上下文窗口的 token 预算与裁剪/压缩/隔离三手段、四类终止条件——附不接真模型的最小 loop 骨架实践。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/agent-loop-context-management.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-28-agent-minimal-handwritten",
-      "title": "Agent - 手写最小 agent（7）",
-      "path": "Inbox/2026-10-28-agent-minimal-handwritten.md",
-      "created": "2026-10-28",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "Harness",
-        "工程实践"
-      ],
-      "source": "知乎专栏",
-      "source_url": "https://zhuanlan.zhihu.com/p/2095565673804083692",
-      "source_type": "link",
-      "platform": "zhihu",
-      "summary": "Agent 系列第 7 篇：把前五篇的零件装成\"看得懂每行代码\"的最小 agent——config/tools/agent 三文件组织、schema 校验、四类错误兜底、reasoning_content 回传，终端跑起里程碑 M1（DeepSeek + openai SDK）。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/agent-minimal-handwritten.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-28-agent-model-selection-reasoning",
@@ -4923,6 +4903,26 @@
       "summary": "同机同压测条件下用 wrk 对 Netty/Tomcat/Undertow 三个 HTTP 服务做横评：Netty QPS 15.8 万领先 Tomcat 约 77%，并从线程模型、内存管理、零拷贝、TCP 参数四个源码层面解释差距来源。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-vs-tomcat-undertow.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-28-agent-minimal-handwritten",
+      "title": "Agent - 手写最小 agent（7）",
+      "path": "Archive/2026-10-28-agent-minimal-handwritten.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Harness",
+        "工程实践"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2095565673804083692",
+      "source_type": "link",
+      "platform": "zhihu",
+      "summary": "Agent 系列第 7 篇：把前五篇的零件装成\"看得懂每行代码\"的最小 agent——config/tools/agent 三文件组织、schema 校验、四类错误兜底、reasoning_content 回传，终端跑起里程碑 M1（DeepSeek + openai SDK）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/agent-minimal-handwritten.md",
       "wiki_status": "ingested"
     }
   ]

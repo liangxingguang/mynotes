@@ -10,6 +10,7 @@
 - [[agent-2026-midyear-architecture-review|2026 Agent 年中总结：从整体架构到关键细节（叶小钗）]]（2026-10-21，AI/架构综述）
 - [[agent-context-tutorial|Agent 入门教程：上下文里的 Agent（nano-ai 可交互演示）]]（2026-10-25，AI/教程资源，置信度中）
 - [[agent-long-task-reliable-execution|AI Agent 长任务可靠执行：Go+PG 状态机/Checkpoint/Fencing/对账]]（2026-10-21，AI/Agent 基础设施）
+- [[agent-minimal-handwritten|Agent - 手写最小 agent（7）：五阶段 loop + schema 即 prompt + 四类错误兜底]]（2026-10-28，AI/教程）
 - [[ai-agents-definitive-guide-notebooks|知乎想法：O'Reilly《AI Agents》配套代码全开源（12 章 35 Notebook）]]（2026-10-20，AI/资源，置信度低）
 - [[agent-loop-production-boundaries|从 Chatbot 到 AI Agent：为什么一个 while 循环撑不起生产系统]]（2026-10-15，AI/Agent 工程）
 - [[agent-platform-architecture|高性能弹性扩展智能体中台架构：FastAPI+Nacos+RocketMQ+LangGraph+Milvus+ES 实践]]（2026-10-27，AI/架构）
@@ -303,6 +304,7 @@
 - [[startup-ideas-framework|创业点子生成与评估框架（YC）]]（四错误避坑+十问评估+七配方生成；YC 前 100 公司 70% 点子自然注意到；演讲整理稿单信源）
 - [[table-sharding-migration|分表平滑迁移策略]]（五种读写策略矩阵 + 双写双读 SQL 重写，京东大表治理实践）
 - [[threadpoolexecutor-internals|ThreadPoolExecutor 核心设计]]（ctl 单 int 打包状态+线程数；execute 四级漏斗+二次检查；Worker 继承 AQS 不可重入锁；四种拒绝策略，单信源，置信度中）
+- [[tool-schema-as-prompt|Tool Schema as Prompt]]（模型只见 name/description/parameters，写描述即写 prompt；schema 软约束须执行前校验；禁 eval 用 ast 白名单；单信源）
 - [[treeset-internals|TreeSet 有序集合设计]]（TreeMap key 视图+红黑树；compareTo 判重≠equals；范围操作视图；插入慢 HashSet 约 11 倍实测；单信源，置信度中）
 - [[vector-stack-legacy-design|Vector/Stack 遗留设计缺陷]]（方法级 synchronized 复合操作仍不安全；Stack 继承 Vector 违反 LSP；JDK 11+ 扩容改扩一半；替代 ArrayList/ArrayDeque，单信源，置信度中）
 - [[virtual-threads-production|虚拟线程生产实践]]（场景筛选、Helper 传 Trace/ThreadLocal、钉住规避与观测换代，货拉拉 JDK 21 实践）

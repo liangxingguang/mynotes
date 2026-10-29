@@ -4,7 +4,7 @@ type: concept
 title: Agent Loop
 status: active
 created: 2026-10-22
-updated: 2026-10-27
+updated: 2026-10-29
 confidence: high
 tags:
   - concept
@@ -16,6 +16,7 @@ sources:
   - raw/sources/ai/2026-10-23-agent-software-architecture-task-run-step-event.md
   - raw/sources/ai/2026-10-26-agent-context-tutorial.md
   - raw/sources/ai/2026-10-27-harness-engineering-11-agents-study.md
+  - raw/sources/ai/2026-10-28-agent-minimal-handwritten.md
 related:
   - wiki/concepts/harness-engineering.md
   - wiki/entities/pi.md
@@ -23,6 +24,7 @@ related:
   - wiki/concepts/next-token-prediction.md
   - wiki/concepts/task-run-step-event-model.md
   - wiki/concepts/durable-execution.md
+  - wiki/concepts/tool-schema-as-prompt.md
 ---
 # Agent Loop
 
@@ -106,6 +108,8 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 
 - 2026-10-27 — 新增教学资源信源 `raw/sources/ai/2026-10-26-agent-context-tutorial.md`（nano-ai.tech/agent/ 可交互教程的微博推荐帖）。其"Agent 就是一个 while 循环：调模型、执行工具、把结果写回上下文，再调模型"是本页定义的通俗化印证；教程以"逐步观察上下文每轮增长与出问题点"为教学主线，可视作本页 Context/State 机制的入门演示材料（教程站点本身未经抓取核验）。
 
+- 2026-10-29 — 新增教学实现信源 `raw/sources/ai/2026-10-28-agent-minimal-handwritten.md`（手写最小 agent 第 7 篇，Python + DeepSeek 可运行代码）。把本页抽象原则落到逐行实现：① 终止判定读结构化信号 `tool_calls` 有无（模型嘴上说"完成了"不算数），`finish_reason` 只做次级校验；② `MAX_ITERATIONS` 熔断是"唯一不依赖模型自觉的终止保险"，官方示例的 `while True` 工程上不能省；③ 带 tools 的请求必须完整回传历史 `reasoning_content`（否则 API 400），回填是"loop 的记忆点"；④ 四类工具错误（幻觉调用/坏 JSON/参数不合规/工具异常）统一回喂模型自纠而不抛出——印证本页"停止信号多源性""宿主校验"边界。由此新建概念页 [[tool-schema-as-prompt|Tool Schema as Prompt]]。
+
 ## Open Questions（开放问题）
 
 - 不同框架（LangGraph、AutoGen、各厂商 Agent SDK）对 Runtime/Harness 的划分与本文是否一致？
@@ -119,6 +123,7 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 - Source: `raw/sources/ai/2026-10-23-agent-software-architecture-task-run-step-event.md`（教学互证：模型建议与工具执行分离、控制状态显式化、单次阻塞 run() 的局限）
 - Source: `raw/sources/ai/2026-10-26-agent-context-tutorial.md`（通俗印证：Agent = while 循环；可交互教程资源）
 - Source: `raw/sources/ai/2026-10-27-harness-engineering-11-agents-study.md`（印证：Agent ≈ Model + Harness；极简循环 vs 生产复杂度）
+- Source: `raw/sources/ai/2026-10-28-agent-minimal-handwritten.md`（教学实现：tool_calls 终止判定、MAX_ITERATIONS 熔断、reasoning_content 回传、四类错误回喂）
 
 ## Related Knowledge（相关知识）
 
@@ -126,3 +131,5 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 - [[agent-loop-production-boundaries|从 Chatbot 到 AI Agent：为什么一个 while 循环撑不起生产系统]]
 - [[agent-2026-midyear-architecture-review|2026 Agent 年中总结（信源页）]]
 - [[pi|Pi]]（其三包结构 pi-ai / pi-agent-core / pi-coding-agent 是本概念的工程实现）
+- [[agent-minimal-handwritten|Agent - 手写最小 agent（7）（信源页）]]（最小可运行实现）
+- [[tool-schema-as-prompt|Tool Schema as Prompt]]
