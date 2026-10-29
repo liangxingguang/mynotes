@@ -17,6 +17,8 @@ sources:
   - raw/sources/ai/2026-10-26-agent-context-tutorial.md
   - raw/sources/ai/2026-10-27-harness-engineering-11-agents-study.md
   - raw/sources/ai/2026-10-28-agent-minimal-handwritten.md
+  - raw/sources/ai/2026-10-28-agent-classic-agent-theory.md
+  - raw/sources/ai/2026-10-28-agent-llm-call-patterns.md
 related:
   - wiki/concepts/harness-engineering.md
   - wiki/entities/pi.md
@@ -25,6 +27,9 @@ related:
   - wiki/concepts/task-run-step-event-model.md
   - wiki/concepts/durable-execution.md
   - wiki/concepts/tool-schema-as-prompt.md
+  - wiki/concepts/llm-call-protocol.md
+  - wiki/concepts/aima-agent-taxonomy.md
+  - wiki/concepts/pmta-framework.md
 ---
 # Agent Loop
 
@@ -110,6 +115,10 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 
 - 2026-10-29 — 新增教学实现信源 `raw/sources/ai/2026-10-28-agent-minimal-handwritten.md`（手写最小 agent 第 7 篇，Python + DeepSeek 可运行代码）。把本页抽象原则落到逐行实现：① 终止判定读结构化信号 `tool_calls` 有无（模型嘴上说"完成了"不算数），`finish_reason` 只做次级校验；② `MAX_ITERATIONS` 熔断是"唯一不依赖模型自觉的终止保险"，官方示例的 `while True` 工程上不能省；③ 带 tools 的请求必须完整回传历史 `reasoning_content`（否则 API 400），回填是"loop 的记忆点"；④ 四类工具错误（幻觉调用/坏 JSON/参数不合规/工具异常）统一回喂模型自纠而不抛出——印证本页"停止信号多源性""宿主校验"边界。由此新建概念页 [[tool-schema-as-prompt|Tool Schema as Prompt]]。
 
+- 2026-10-29 — 新增理论溯源信源 `raw/sources/ai/2026-10-28-agent-classic-agent-theory.md`（知乎《Agent》系列经典理论篇）。AIMA 五类 Agent 中，本页 Loop 的"每轮带历史重备 Context"正是 model-based reflex agent 的内部状态机制；其环境四属性（可观测/确定/静态/离散）可作为 Loop 场景适配四条件的理论前身。由此新建概念页 [[aima-agent-taxonomy|AIMA Agent 分类]] 与 [[pmta-framework|PMTA 框架]]。
+
+- 2026-10-29 — 新增协议层信源 `raw/sources/ai/2026-10-28-agent-llm-call-patterns.md`（知乎《Agent》系列第 6 篇）。把本页"停止信号多源性"落到 wire 层：Loop 续轮的结构化判据是响应的 `finish_reason: "tool_calls"`，Tool Result 回填靠 `tool_call_id` 配对。由此新建概念页 [[llm-call-protocol|OpenAI 兼容 Chat Completions 调用协议]]。
+
 ## Open Questions（开放问题）
 
 - 不同框架（LangGraph、AutoGen、各厂商 Agent SDK）对 Runtime/Harness 的划分与本文是否一致？
@@ -124,6 +133,8 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 - Source: `raw/sources/ai/2026-10-26-agent-context-tutorial.md`（通俗印证：Agent = while 循环；可交互教程资源）
 - Source: `raw/sources/ai/2026-10-27-harness-engineering-11-agents-study.md`（印证：Agent ≈ Model + Harness；极简循环 vs 生产复杂度）
 - Source: `raw/sources/ai/2026-10-28-agent-minimal-handwritten.md`（教学实现：tool_calls 终止判定、MAX_ITERATIONS 熔断、reasoning_content 回传、四类错误回喂）
+- Source: `raw/sources/ai/2026-10-28-agent-classic-agent-theory.md`（理论溯源：AIMA 五类 Agent、PMTA 框架）
+- Source: `raw/sources/ai/2026-10-28-agent-llm-call-patterns.md`（协议层印证：finish_reason 续轮判据、tool_call_id 配对回填）
 
 ## Related Knowledge（相关知识）
 
@@ -133,3 +144,6 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 - [[pi|Pi]]（其三包结构 pi-ai / pi-agent-core / pi-coding-agent 是本概念的工程实现）
 - [[agent-minimal-handwritten|Agent - 手写最小 agent（7）（信源页）]]（最小可运行实现）
 - [[tool-schema-as-prompt|Tool Schema as Prompt]]
+- [[llm-call-protocol|OpenAI 兼容 Chat Completions 调用协议]]
+- [[aima-agent-taxonomy|AIMA Agent 分类]]
+- [[pmta-framework|PMTA 框架]]
