@@ -9,7 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [AI, 工程实践]
 asset_ref: Assets/2026/10/agent-permission-model-design.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Agent架构设计15：Agent 权限模型设计

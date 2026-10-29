@@ -2654,6 +2654,46 @@
       ],
       "source_url": "https://zhuanlan.zhihu.com/p/2095469418528651019",
       "asset_ref": "Assets/2026/10/agent-model-selection-reasoning.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-28-agent-permission-model-design.md",
+      "sha256": "cf3534d5c8dc175ed170f50d661c3515adbe34a04704212cda83a4add4faf77c",
+      "registered_at": "2026-10-30",
+      "inbox_ref": "Archive/2026-10-28-agent-permission-model-design.md",
+      "pages": [
+        "wiki/sources/agent-permission-model-design.md",
+        "wiki/concepts/agent-permission-model.md",
+        "wiki/concepts/mcp.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/8UvaemNt_bE1_Fy76DyaBQ",
+      "asset_ref": "Assets/2026/10/agent-permission-model-design.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-28-agent-rest-api-as-tools.md",
+      "sha256": "1117ea4ead015fe0e7684dbcc5b2e3c6b267471f652387184ef68d2ee68bb592",
+      "registered_at": "2026-10-30",
+      "inbox_ref": "Archive/2026-10-28-agent-rest-api-as-tools.md",
+      "pages": [
+        "wiki/sources/agent-rest-api-as-tools.md",
+        "wiki/concepts/rest-api-as-tools.md",
+        "wiki/concepts/tool-schema-as-prompt.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2095575551146718898",
+      "asset_ref": "Assets/2026/10/agent-rest-api-as-tools.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-28-agent-tool-security-whitelist.md",
+      "sha256": "cb1814126ecb44dd6b316aca05cd178a60b1846ad6ff64a96b6ce7cc8e58e6ec",
+      "registered_at": "2026-10-30",
+      "inbox_ref": "Archive/2026-10-28-agent-tool-security-whitelist.md",
+      "pages": [
+        "wiki/sources/agent-tool-security-whitelist.md",
+        "wiki/concepts/prompt-injection.md",
+        "wiki/concepts/tool-parameter-whitelist.md",
+        "wiki/concepts/tool-schema-as-prompt.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2095930576318551219",
+      "asset_ref": "Assets/2026/10/agent-tool-security-whitelist.md"
     }
   ]
 }

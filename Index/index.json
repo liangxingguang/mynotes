@@ -1,65 +1,6 @@
 {
-  "updated_at": "2026-10-29 21:59",
+  "updated_at": "2026-10-30 00:39",
   "notes": [
-    {
-      "id": "2026-10-28-agent-permission-model-design",
-      "title": "Agent架构设计15：Agent 权限模型设计",
-      "path": "Inbox/2026-10-28-agent-permission-model-design.md",
-      "created": "2026-10-28",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/8UvaemNt_bE1_Fy76DyaBQ",
-      "source_type": "文章",
-      "platform": "微信公众号",
-      "summary": "Agent 权限 ≠ 传统 RBAC：权限 = 静态基线 + 指令临时授权 + 调用时动态校验。四层防线——租户划边界、Agent 定上限、指令收范围、MCP 网关做兜底，覆盖 A2A 委派收缩与落地避坑。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/agent-permission-model-design.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-28-agent-rest-api-as-tools",
-      "title": "Agent - 后台API变成工具（8）",
-      "path": "Inbox/2026-10-28-agent-rest-api-as-tools.md",
-      "created": "2026-10-28",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "Harness",
-        "工程实践"
-      ],
-      "source": "知乎专栏",
-      "source_url": "https://zhuanlan.zhihu.com/p/2095575551146718898",
-      "source_type": "link",
-      "platform": "zhihu",
-      "summary": "Agent 系列第 8 篇：把真实 REST 接口变成 agent 工具——百行 FastAPI 假后台 + 登录/查用户/查角色/分配角色四工具，收口里程碑 M2（一句话\"把张三提升为管理员\"自动完成全链路）。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/agent-rest-api-as-tools.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-28-agent-tool-security-whitelist",
-      "title": "Agent - 工具全谱系与安全边界（10）",
-      "path": "Inbox/2026-10-28-agent-tool-security-whitelist.md",
-      "created": "2026-10-28",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "Harness",
-        "工程实践"
-      ],
-      "source": "知乎专栏",
-      "source_url": "https://zhuanlan.zhihu.com/p/2095930576318551219",
-      "source_type": "link",
-      "platform": "zhihu",
-      "summary": "Agent 系列第 10 篇：工具是 agent 的攻击面——五类工具风险分级、提示词注入的三条路径、确认闸门为什么拦不住注入，以及参数层白名单防线（格式/取值/语法树）的完整代码落地。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/agent-tool-security-whitelist.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-28-ai-agent-series-album",
       "title": "AI Agent 系列合集（82 篇）",
@@ -4923,6 +4864,65 @@
       "summary": "Agent 系列第 1 篇（全系列总纲）：三级能力阶梯（聊天 → 工具调用 → 自主 agent）、一次 tool call 的完整时序、为什么必须有编排层（harness）、21 篇 / 8 个 Part 学习路线图与自测方法，附最小 tool_use 动手脚本。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/agent-panorama-roadmap.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-28-agent-permission-model-design",
+      "title": "Agent架构设计15：Agent 权限模型设计",
+      "path": "Archive/2026-10-28-agent-permission-model-design.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/8UvaemNt_bE1_Fy76DyaBQ",
+      "source_type": "文章",
+      "platform": "微信公众号",
+      "summary": "Agent 权限 ≠ 传统 RBAC：权限 = 静态基线 + 指令临时授权 + 调用时动态校验。四层防线——租户划边界、Agent 定上限、指令收范围、MCP 网关做兜底，覆盖 A2A 委派收缩与落地避坑。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/agent-permission-model-design.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-28-agent-rest-api-as-tools",
+      "title": "Agent - 后台API变成工具（8）",
+      "path": "Archive/2026-10-28-agent-rest-api-as-tools.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Harness",
+        "工程实践"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2095575551146718898",
+      "source_type": "link",
+      "platform": "zhihu",
+      "summary": "Agent 系列第 8 篇：把真实 REST 接口变成 agent 工具——百行 FastAPI 假后台 + 登录/查用户/查角色/分配角色四工具，收口里程碑 M2（一句话\"把张三提升为管理员\"自动完成全链路）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/agent-rest-api-as-tools.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-28-agent-tool-security-whitelist",
+      "title": "Agent - 工具全谱系与安全边界（10）",
+      "path": "Archive/2026-10-28-agent-tool-security-whitelist.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Harness",
+        "工程实践"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2095930576318551219",
+      "source_type": "link",
+      "platform": "zhihu",
+      "summary": "Agent 系列第 10 篇：工具是 agent 的攻击面——五类工具风险分级、提示词注入的三条路径、确认闸门为什么拦不住注入，以及参数层白名单防线（格式/取值/语法树）的完整代码落地。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/agent-tool-security-whitelist.md",
       "wiki_status": "ingested"
     }
   ]

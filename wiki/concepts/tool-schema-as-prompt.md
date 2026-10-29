@@ -4,16 +4,20 @@ type: concept
 title: Tool Schema as Prompt
 status: active
 created: 2026-10-29
-updated: 2026-10-29
+updated: 2026-10-30
 confidence: high
 tags:
   - concept
   - ai-agent
 sources:
   - raw/sources/ai/2026-10-28-agent-minimal-handwritten.md
+  - raw/sources/ai/2026-10-28-agent-rest-api-as-tools.md
+  - raw/sources/ai/2026-10-28-agent-tool-security-whitelist.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/concepts/mcp.md
+  - wiki/concepts/rest-api-as-tools.md
+  - wiki/concepts/tool-parameter-whitelist.md
 ---
 # Tool Schema as Prompt
 
@@ -57,6 +61,8 @@ TOOL_SCHEMAS（JSON Schema）→ 序列化为请求体 tools 字段 → 模型�
 ## Evolution（演进）
 
 - 2026-10-29 — 由信源 `raw/sources/ai/2026-10-28-agent-minimal-handwritten.md`（手写最小 agent 第 7 篇）建立。
+- 2026-10-30 — 第 8 篇信源印证并扩展出「描述即流程」：执行顺序（先登录、写操作先查现状再复述）写进工具描述，模型照着自己排步骤，用户无需说「先登录」（M2 实测第一轮即调 login）；工具函数体换 HTTP 封装后形状不变（见 [[rest-api-as-tools|REST 接口工具化模式]]）。
+- 2026-10-30 — 第 10 篇信源把「schema 软约束须执行前校验」推进到语义层：两段式校验（schema 查形状 + 语义白名单查值），描述里写明参数约束可让模型生成时收敛、减少被拒次数（见 [[tool-parameter-whitelist|参数层白名单防线]]）。
 
 ## Open Questions（开放问题）
 
@@ -66,7 +72,11 @@ TOOL_SCHEMAS（JSON Schema）→ 序列化为请求体 tools 字段 → 模型�
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-10-28-agent-minimal-handwritten.md`（含 DeepSeek 官方文档 2026-10-15 curl 实测引述：Tool Calls / Thinking Mode / JSON Output / strict 模式 Beta）
+- Source: `raw/sources/ai/2026-10-28-agent-rest-api-as-tools.md`（描述即流程、M2 五轮闭环实测）
+- Source: `raw/sources/ai/2026-10-28-agent-tool-security-whitelist.md`（两段式校验、29 项断言自检）
 
 ## Related Knowledge（相关知识）
 
 - [[agent-minimal-handwritten|Agent - 手写最小 agent（7）（信源页）]]
+- [[agent-rest-api-as-tools|Agent - 后台API变成工具（8）（信源页）]]
+- [[agent-tool-security-whitelist|Agent - 工具全谱系与安全边界（10）（信源页）]]

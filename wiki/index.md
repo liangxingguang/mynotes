@@ -17,6 +17,9 @@
 - [[agent-loop-context-management|Agent - agent loop 与上下文管理（3）：五阶段 loop + harness 六件套 + 裁剪/压缩/隔离]]（2026-10-28，AI/Agent 工程）
 - [[agent-model-selection-reasoning|Agent - 模型选型与推理能力（4）：thinking 开关 + reasoning_content 回传 + 模型路由]]（2026-10-28，AI/LLM API）
 - [[agent-panorama-roadmap|Agent - 全景与学习路线地图（1）：三级阶梯 + workflow vs agent + 21 篇路线]]（2026-10-28，AI/总纲）
+- [[agent-permission-model-design|Agent架构设计15：Agent 权限模型设计（四层防线/MCP 网关鉴权/A2A 委派收缩）]]（2026-10-28，AI/安全架构，置信度中）
+- [[agent-rest-api-as-tools|Agent - 后台API变成工具（8）：REST 接口工具化 + M2 一句话闭环]]（2026-10-28，AI/教程）
+- [[agent-tool-security-whitelist|Agent - 工具全谱系与安全边界（10）：注入原理 + 参数层白名单]]（2026-10-28，AI/安全教程）
 - [[ai-agents-definitive-guide-notebooks|知乎想法：O'Reilly《AI Agents》配套代码全开源（12 章 35 Notebook）]]（2026-10-20，AI/资源，置信度低）
 - [[agent-loop-production-boundaries|从 Chatbot 到 AI Agent：为什么一个 while 循环撑不起生产系统]]（2026-10-15，AI/Agent 工程）
 - [[agent-platform-architecture|高性能弹性扩展智能体中台架构：FastAPI+Nacos+RocketMQ+LangGraph+Milvus+ES 实践]]（2026-10-27，AI/架构）
@@ -223,6 +226,7 @@
 - [[aima-agent-taxonomy|AIMA Agent 分类]]（简单反射/基于模型/基于目标/基于效用/学习五类 + 环境四属性；经典理论单信源）
 - [[agent-evaluation|业务 Agent 全生命周期评测]]（规则+LLM 裁判+人工复核，覆盖准入/门禁/压测/巡检，货拉拉实践）
 - [[agent-loop|Agent Loop]]（Runtime 驱动的模型-工具循环；Tool Call/Result、Message/Context/State/Session、Runtime vs Harness）
+- [[agent-permission-model|Agent 权限模型（四层防线）]]（权限=静态基线+指令临时授权+动态校验；租户划边界/Agent 定上限/指令收范围/MCP 网关兜底；A2A 委派子授权⊆父授权；单信源设计稿，置信度中）
 - [[agent-sandboxing|Agent 沙箱隔离]]（能力限制而非行为审查；四条路径收窄可达面；脚本级/命令级/工具级/整体隔离）
 - [[aqs-internals|AQS（AbstractQueuedSynchronizer）核心机制]]（volatile state + CLH 变体 FIFO 队列 + acquire/release 模板方法；JUC 锁体系基座，单信源）
 - [[arrays-utility-class|Arrays 工具类设计]]（排序按类型/规模分派：双轴快排/TimSort/<47 插入排序；parallelSort/parallelPrefix 走 ForkJoinPool；asList 固定视图坑；单信源，置信度中）
@@ -301,12 +305,14 @@
 - [[priorityblockingqueue-internals|PriorityBlockingQueue 并发优先队列设计]]（PriorityQueue 堆 + 单 ReentrantLock + notEmpty；无界故无 notFull；tryGrow 释放主锁+CAS allocationSpinLock 令牌+yield 分阶段扩容；单信源，置信度中）
 - [[phaser-internals|Phaser 分阶段同步屏障设计]]（单 volatile long 位编码 unarrived/parties/phase/终止位+一次 CAS 推进；arrive 三变体动态增减；树形分层分散 CAS 竞争；单信源，置信度中）
 - [[priorityqueue-internals|PriorityQueue 二叉堆设计]]（Object[] 数组承载隐式完全二叉堆；siftUp/siftDown 维护堆序；扩容 <64 翻倍+2、≥64 扩 50%；Floyd 建堆 O(n)；双信源，置信度中）
+- [[prompt-injection|提示词注入（Prompt Injection）]]（模型分不清指令与数据且无参数化查询解药；三条注入路径+四环模型；确认闸门拦不住；OWASP LLM01 连续两年榜首，单信源，置信度中）
 - [[task-run-step-event-model|Task/Run/Step/Event 领域模型]]（Agent Runtime 控制平面四元分离；Run 聚合根+状态机守卫+纯函数投影+OCC；replay≠Durable Execution）
 - [[raft-membership-change-barrier|Raft 成员变更的日志 Barrier]]（公共 config 提交当前 term 日志登记 term；joint 无需/单步必需/回退双向必需）
 - [[read-fanout|读扩散（Fan-out on Read）]]（会话队列+syncId 位点同步把 1:N 写压成 1:1；99.99% 非个性化消息前提；阿里混合模式 500ms 端到端，双信源）
 - [[rag-production-guardrails|企业级 RAG 生产护栏]]（容量/证据/权限/恢复四主线；证据门禁前置、发布目录原子切换；混合检索+存储分层+参数热调双信源互证）
 - [[reactive-tracing-context|响应式环境的全链路 traceId 传递]]（Reactor Context 替代 ThreadLocal；doOnEach 同步 MDC、doFinally 清除）
 - [[reactor-thread-model|主从 Reactor 线程模型（Netty 版）]]（Boss accept/Worker CPU×2/Channel 终身绑单 EventLoop 天然无锁；ServerBootstrapAcceptor 移交链路+三形态选型+SCG 双 Group 与中间件应用印证，八信源互证，置信度高）
+- [[rest-api-as-tools|REST 接口工具化模式]]（函数体换 HTTP 封装但工具形状不变；登录即工具+token 只活进程内存+统一 _call 注入+描述即流程+错误回喂 HTTP 化；换真后台只改 BASE_URL，单信源实测）
 - [[reentrantlock-internals|ReentrantLock 可重入锁设计]]（AQS 经典实现：非公平先抢/公平只差 hasQueuedPredecessors/state 累加可重入/多 Condition 精确唤醒，单信源，置信度中）
 - [[scheduledthreadpoolexecutor-internals|ScheduledThreadPoolExecutor 调度设计]]（DelayedWorkQueue 数组最小堆+Leader-Follower 等待；period 正负号编码 fixedRate/fixedDelay；周期任务异常静默取消，单信源，置信度中）
 - [[synchronousqueue-internals|SynchronousQueue 直接交接设计]]（零容量不存储+单 transfer 双角色；TransferStack Treiber 栈 FULFILLING 配对/TransferQueue FIFO；先自旋后 park；newCachedThreadPool 之选，单信源，置信度中）
@@ -315,7 +321,8 @@
 - [[table-sharding-migration|分表平滑迁移策略]]（五种读写策略矩阵 + 双写双读 SQL 重写，京东大表治理实践）
 - [[thinking-mode|思考模式（Thinking Mode）与模型路由]]（通用 vs 推理已制度化为 thinking 开关两态；reasoning_content 回传 400 规则+参数坑+reasoning_tokens 计费；两行规则表最小路由，单信源）
 - [[threadpoolexecutor-internals|ThreadPoolExecutor 核心设计]]（ctl 单 int 打包状态+线程数；execute 四级漏斗+二次检查；Worker 继承 AQS 不可重入锁；四种拒绝策略，单信源，置信度中）
-- [[tool-schema-as-prompt|Tool Schema as Prompt]]（模型只见 name/description/parameters，写描述即写 prompt；schema 软约束须执行前校验；禁 eval 用 ast 白名单；单信源）
+- [[tool-parameter-whitelist|参数层白名单防线]]（白名单优于黑名单；两段式校验先形状后语义挂必经之路；强度跟参数熵走、事实来源在服务端；error:rejected 与运行时兜底分开审计；29 项断言实测，单信源）
+- [[tool-schema-as-prompt|Tool Schema as Prompt]]（模型只见 name/description/parameters，写描述即写 prompt/写流程；schema 软约束须执行前校验（两段式）；禁 eval 用 ast 白名单；三信源互证）
 - [[treeset-internals|TreeSet 有序集合设计]]（TreeMap key 视图+红黑树；compareTo 判重≠equals；范围操作视图；插入慢 HashSet 约 11 倍实测；单信源，置信度中）
 - [[vector-stack-legacy-design|Vector/Stack 遗留设计缺陷]]（方法级 synchronized 复合操作仍不安全；Stack 继承 Vector 违反 LSP；JDK 11+ 扩容改扩一半；替代 ArrayList/ArrayDeque，单信源，置信度中）
 - [[virtual-threads-production|虚拟线程生产实践]]（场景筛选、Helper 传 Trace/ThreadLocal、钉住规避与观测换代，货拉拉 JDK 21 实践）

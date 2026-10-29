@@ -9,7 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [AI, Harness, 工程实践]
 asset_ref: Assets/2026/10/agent-tool-security-whitelist.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Agent - 工具全谱系与安全边界（10）

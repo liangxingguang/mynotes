@@ -4,7 +4,7 @@ type: concept
 title: MCP
 status: active
 created: 2026-10-16
-updated: 2026-10-23
+updated: 2026-10-30
 confidence: medium
 tags:
   - concept
@@ -16,12 +16,14 @@ sources:
   - raw/sources/products/2026-10-14-pi-6-extensions-from-claude-code.md
   - raw/sources/ai/2026-10-14-pi-1-0-durable-mcp-update.md
   - raw/sources/ai/2026-10-14-pi-setup-mcp-codemode-guide.md
+  - raw/sources/ai/2026-10-28-agent-permission-model-design.md
 related:
   - wiki/concepts/a2a-protocol.md
   - wiki/comparisons/a2a-vs-mcp.md
   - wiki/entities/arthas.md
   - wiki/entities/pi.md
   - wiki/concepts/codemode.md
+  - wiki/concepts/agent-permission-model.md
 ---
 # MCP
 
@@ -66,11 +68,12 @@ MCP 把"LLM 调用外部工具、数据库、文件、API"的方式协议化，�
 - 2026-09-30：[[pi|Pi]] v0.99.0/0.99.1 将 MCP 做进核心（Armin Ronacher PR #10040），但换了个接法——MCP 工具默认不直接给模型，藏在 [[codemode|Codemode]] 后面，五档 exposure 按需选择；配置 `~/.pi/agent/mcp.json` 与 Claude Code/Cursor 格式一致可直接复制。背景账：Pi 作者 2025-11 博客称 Playwright MCP 21 个工具仅工具说明就 1.37 万 token/请求（二手转述）。
 - 2026-10：Pi 1.0 将原生 MCP 纳入稳定版（0.99 引入、1.0 稳定）——其团队曾公开批评 MCP 臃肿、官网写"不支持 MCP"，因协议成熟（一年六七轮调整）与模型训练改善而转变；接入方式为工具搜索 + 渐进式披露按需加载，避免上下文膨胀——"批评者转向采纳"可作为 MCP 协议成熟度的一个信号。
 - 2026-10：Pi 0.99.1 实测为 MCP 的上下文成本提供定量个案（GLM-5.3，3 个 MCP 共 11 工具）：工具说明固定开销 direct 12,878 → codemode 6,956 → deferred 1,780 token；但单次任务收益取决于 MCP 返回格式是否结构化（brave 非结构化 JSON 文本致模型试错，GPT-5.5 反多 63%）——MCP 服务端返回格式设计直接影响 Agent 侧成本。
+- 2026-10-30：[[agent-permission-model|Agent 权限模型]]信源确认「MCP 协议标准没有内置复杂权限，要在接入层补齐」，并给出两种落地：MCP 网关统一收口（校验签名 claim/授权记录/租户隔离/限流/审计，原生服务零改动，生产首选）vs 服务内置鉴权中间件（适合少量自建工具）；明确不推荐静态 Token（无法绑定 session/指令细粒度回收）。部分回答了下方工具级权限分级的开放问题。
 
 ## Open Questions（开放问题）
 
 - MCP 的规范细节与 Server/Client 模型的完整定义：当前信源未确立，需专门信源补充（传输方式已有个案证据：Streamable HTTP / JSON-RPC 2.0）。
-- 工具级权限分级（RBAC）在 MCP 生态中的通行做法：当前信源仅表明 Arthas 官方未提供，需客户端/网关自建。
+- 工具级权限分级在 MCP 生态中的通行做法：已有「协议不管、接入层网关补齐」的设计方案证据（2026-10-30），但缺乏多家实现的横向实证。
 
 ## Evidence（证据）
 
@@ -79,6 +82,7 @@ MCP 把"LLM 调用外部工具、数据库、文件、API"的方式协议化，�
 - Source: `raw/sources/products/2026-10-14-pi-6-extensions-from-claude-code.md`
 - Source: `raw/sources/ai/2026-10-14-pi-1-0-durable-mcp-update.md`
 - Source: `raw/sources/ai/2026-10-14-pi-setup-mcp-codemode-guide.md`
+- Source: `raw/sources/ai/2026-10-28-agent-permission-model-design.md`
 
 ## Related Knowledge（相关知识）
 
