@@ -2694,6 +2694,17 @@
       ],
       "source_url": "https://zhuanlan.zhihu.com/p/2095930576318551219",
       "asset_ref": "Assets/2026/10/agent-tool-security-whitelist.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-28-ai-agent-series-album.md",
+      "sha256": "5961906bc55f12004c9b8386b521aba65923d74e2cb52a9597fc99a7db3eb06c",
+      "registered_at": "2026-10-30",
+      "inbox_ref": "Archive/2026-10-28-ai-agent-series-album.md",
+      "pages": [
+        "wiki/sources/ai-agent-series-album.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk4ODE0NzEzNQ==&action=getalbum&album_id=4029823410275598350",
+      "asset_ref": "Assets/2026/10/ai-agent-series-full.md"
     }
   ]
 }

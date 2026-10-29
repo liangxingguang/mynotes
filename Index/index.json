@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-10-30 00:39",
+  "updated_at": "2026-10-30 00:44",
   "notes": [
-    {
-      "id": "2026-10-28-ai-agent-series-album",
-      "title": "AI Agent 系列合集（82 篇）",
-      "path": "Inbox/2026-10-28-ai-agent-series-album.md",
-      "created": "2026-10-28",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "AI Coding"
-      ],
-      "source": "微信公众号（合集页）",
-      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk4ODE0NzEzNQ==&action=getalbum&album_id=4029823410275598350",
-      "source_type": "合集",
-      "platform": "微信公众号",
-      "summary": "高质量 AI Agent 主题合集，82 篇含原文链接。五大板块：大厂官方指南、Context Engineering、OpenClaw 技术解剖、跟我学 AI Agent 17 课、Pi Harness 深入浅出 11 篇。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/ai-agent-series-full.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-28-ai-native-dev-org-transformation",
       "title": "构建 AI Native 研发组织的转型探索之路（百人团队实录）",
@@ -4923,6 +4904,25 @@
       "summary": "Agent 系列第 10 篇：工具是 agent 的攻击面——五类工具风险分级、提示词注入的三条路径、确认闸门为什么拦不住注入，以及参数层白名单防线（格式/取值/语法树）的完整代码落地。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/agent-tool-security-whitelist.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-28-ai-agent-series-album",
+      "title": "AI Agent 系列合集（82 篇）",
+      "path": "Archive/2026-10-28-ai-agent-series-album.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "AI Coding"
+      ],
+      "source": "微信公众号（合集页）",
+      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk4ODE0NzEzNQ==&action=getalbum&album_id=4029823410275598350",
+      "source_type": "合集",
+      "platform": "微信公众号",
+      "summary": "高质量 AI Agent 主题合集，82 篇含原文链接。五大板块：大厂官方指南、Context Engineering、OpenClaw 技术解剖、跟我学 AI Agent 17 课、Pi Harness 深入浅出 11 篇。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/ai-agent-series-full.md",
       "wiki_status": "ingested"
     }
   ]

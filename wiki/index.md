@@ -20,6 +20,7 @@
 - [[agent-permission-model-design|Agent架构设计15：Agent 权限模型设计（四层防线/MCP 网关鉴权/A2A 委派收缩）]]（2026-10-28，AI/安全架构，置信度中）
 - [[agent-rest-api-as-tools|Agent - 后台API变成工具（8）：REST 接口工具化 + M2 一句话闭环]]（2026-10-28，AI/教程）
 - [[agent-tool-security-whitelist|Agent - 工具全谱系与安全边界（10）：注入原理 + 参数层白名单]]（2026-10-28，AI/安全教程）
+- [[ai-agent-series-album|AI Agent 系列合集（82 篇：官方指南/Context Engineering/OpenClaw/Pi Harness，含全文快照）]]（2026-10-28，AI/资源导航，置信度中）
 - [[ai-agents-definitive-guide-notebooks|知乎想法：O'Reilly《AI Agents》配套代码全开源（12 章 35 Notebook）]]（2026-10-20，AI/资源，置信度低）
 - [[agent-loop-production-boundaries|从 Chatbot 到 AI Agent：为什么一个 while 循环撑不起生产系统]]（2026-10-15，AI/Agent 工程）
 - [[agent-platform-architecture|高性能弹性扩展智能体中台架构：FastAPI+Nacos+RocketMQ+LangGraph+Milvus+ES 实践]]（2026-10-27，AI/架构）
