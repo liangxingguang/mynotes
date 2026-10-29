@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-10-29 07:54",
+  "updated_at": "2026-10-29 08:03",
   "notes": [
-    {
-      "id": "2026-10-27-netty-27-channelfuture",
-      "title": "Netty源码分析(27) — ChannelFuture 与 异步回调机制",
-      "path": "Inbox/2026-10-27-netty-27-channelfuture.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484630&idx=1&sn=7a142bfae8c38fa15b978d6fdd8041b9&chksm=fe6ca58cc91b2c9ab41702695e4d633504156d14bdacd7c9c7a87c4e4ee1a1c0877d691d5d5e#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "解析 Netty 的异步结果模型：ChannelFuture 在 JDK Future 之上增加 Listener 回调、sync/await 阻塞等待与 isWritable 水位感知，剖析 DefaultPromise 的 CAS 无锁状态机与监听器通知机制。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-27-channelfuture.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-10-27-netty-28-promise",
       "title": "Netty源码分析(28) — Promise 与 自定义异步结果",
@@ -1053,6 +1034,25 @@
       "summary": "一套循序渐进的 LLM Agent 系列教程：从经典智能体理论与 agent loop 五阶段，到模型/harness 选型、手写最小 agent、把真实后台 REST API 变成工具，再到工具工程的认证/错误分级/确认闸门与全谱系安全边界。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/zhihu-agent-column-index.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-29-ai-education-three-old-questions",
+      "title": "AI 回答教育界的三个老问题",
+      "path": "Inbox/2026-10-29-ai-education-three-old-questions.md",
+      "created": "2026-10-29",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "行业动态"
+      ],
+      "source": "微博",
+      "source_url": "https://weibo.com/5078115336/5359214998585501",
+      "source_type": "帖子",
+      "platform": "微博",
+      "summary": "一场 2200+ 一线教师与校长的教育年会观察：教育者不是展示 AI 多厉害，而是借 AI 回答教育界问了几十年的老问题——\"一学就会一做就废\"（惰性观念）、什么难度该留给孩子、因材施教。AI 没发明任何新教育理念，只是让过去因成本太高而无法实现的目标突然有了条件。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/ai-education-three-old-questions.md",
       "wiki_status": "pending"
     },
     {
@@ -4865,6 +4865,25 @@
       "summary": "源码级解析 Netty 的写侧背压机制：ChannelOutboundBuffer 的高低水位设计、isWritable 状态切换与 channelWritabilityChanged 事件传播，解决\"写得比对方读得快\"导致的 OOM 问题。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-25-flow-control.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-27-channelfuture",
+      "title": "Netty源码分析(27) — ChannelFuture 与 异步回调机制",
+      "path": "Archive/2026-10-27-netty-27-channelfuture.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484630&idx=1&sn=7a142bfae8c38fa15b978d6fdd8041b9&chksm=fe6ca58cc91b2c9ab41702695e4d633504156d14bdacd7c9c7a87c4e4ee1a1c0877d691d5d5e#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "解析 Netty 的异步结果模型：ChannelFuture 在 JDK Future 之上增加 Listener 回调、sync/await 阻塞等待与 isWritable 水位感知，剖析 DefaultPromise 的 CAS 无锁状态机与监听器通知机制。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-27-channelfuture.md",
       "wiki_status": "ingested"
     }
   ]

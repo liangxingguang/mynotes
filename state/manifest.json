@@ -2393,6 +2393,20 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484622&idx=1&sn=9d1f84eb30d923022f03631b2e07e8db&chksm=fe6ca594c91b2c827b5d86ee5e031485b8259e07a19edba268eebc113dd31de7397702cb27d7",
       "asset_ref": "Assets/2026/10/netty-25-flow-control.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-27-netty-27-channelfuture.md",
+      "sha256": "16c3d488574137931e20dd7529b90c9c3bbd42a5b5e56aa3433678f2c734d3f5",
+      "registered_at": "2026-10-29",
+      "inbox_ref": "Archive/2026-10-27-netty-27-channelfuture.md",
+      "pages": [
+        "wiki/sources/netty-27-channelfuture.md",
+        "wiki/concepts/netty-channelfuture.md",
+        "wiki/entities/netty.md",
+        "wiki/concepts/netty-flow-control.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484630&idx=1&sn=7a142bfae8c38fa15b978d6fdd8041b9&chksm=fe6ca58cc91b2c9ab41702695e4d633504156d14bdacd7c9c7a87c4e4ee1a1c0877d691d5d5e",
+      "asset_ref": "Assets/2026/10/netty-27-channelfuture.md"
     }
   ]
 }

@@ -36,6 +36,7 @@ sources:
   - raw/sources/architecture/2026-10-27-netty-23-zero-copy.md
   - raw/sources/architecture/2026-10-27-netty-24-epoll-native.md
   - raw/sources/architecture/2026-10-27-netty-25-flow-control.md
+  - raw/sources/architecture/2026-10-27-netty-27-channelfuture.md
 related:
   - wiki/sources/netty-three-skills-high-performance.md
   - wiki/sources/netty-iot-gateway-resilient-design.md
@@ -77,6 +78,8 @@ related:
   - wiki/concepts/netty-epoll-native-transport.md
   - wiki/sources/netty-25-flow-control.md
   - wiki/concepts/netty-flow-control.md
+  - wiki/sources/netty-27-channelfuture.md
+  - wiki/concepts/netty-channelfuture.md
   - wiki/entities/kafka.md
 ---
 # Netty
@@ -122,6 +125,7 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 - Native Transport（教程第 24 篇）：EpollEventLoop 绕过 JDK Selector 直调 epoll——持 epollFd/eventFd/timerFd 三 fd（eventfd 单 fd 计数器优于 Pipe 双 fd wakeup，timerfd 纳秒级优于 epoll_wait 毫秒 timeout）；事件栈上分配零 GC、processReady 按 fd 直映射无 selectedKeys 遍历；ET 模式须循环读到 EAGAIN；作者简易压测延迟降 33-45%/吞吐升 38%/GC 降 38%（非受控数据）；仅 Linux 可用，生产须 Epoll→KQueue→NIO 回退（与 IoT 信源"epoll/nio 自适应"互证）；信源称"Netty 5 正推 io_uring"与本页时间线（4.2 GA 含 io_uring、5.x 停推）矛盾，暂倾向既有口径待复核。详见 [[netty-epoll-native-transport]]。
 - 流量控制源码级机制（教程第 25 篇）：高低水位默认 32K/64K（WriteBufferWaterMark）是软限制——addMessage 原子累加超高水位即 setUnwritable、removeBytes 降到低水位以下 setWritable；状态用 unwritable 位标记+CAS（AtomicIntegerFieldUpdater）切换；变不可写时 invokeLater 抛 EventLoop 队列延迟传播防 write 链递归重入（代价：事件有延迟，写前必现查 isWritable()）；高低水位≠TCP 滑窗（用户态软信号 vs 内核态硬阻塞），三层背压叠加才是全链路反压。详见 [[netty-flow-control]]。
 - SSL/TLS 支持（教程第 22 篇）：本质是 JDK SSLEngine 的封装——SslHandler 入站 decode→unwrap 解密、出站 write→wrap 加密，握手未完成时出站数据入 pendingUnencryptedWrites 排队、握手成功 Listener 冲刷；unwrap 循环处理 OK/UNDERFLOW/OVERFLOW/CLOSED 四态，NEED_TASK 委托任务异步执行不占 IO 线程；握手全程异步经 handshakeFuture() 通知（channelActive ≠ 握手完成）；SslContext 为工厂+配置中心，SslProvider 可切 JDK/OpenSSL（netty-tcnative，AES-NI 硬件加速，信源经验论断生产必选）/BouncyCastle；铁律：SslHandler 放 Pipeline 最前、私钥须 PKCS#8；优化靠 Session 复用+TLS 1.3（1-RTT）。详见 [[netty-ssl-tls]]。
+- 异步结果模型源码级机制（教程第 27 篇）：ChannelFuture 在 JDK Future 上加 addListener 回调/sync/await/isSuccess/cause，Channel 层再加 isWritable() 水位感知；DefaultPromise 用单个 volatile Object result 字段编码全部状态（null/SUCCESS/结果/CauseHolder/UNCANCELLABLE）+ AtomicReferenceFieldUpdater CAS 无锁转换、不可逆；notifyListeners 三细节（notifyingListeners 防递归、同步块外回调防死锁、catch Throwable 保后续）；await() 走 wait/notifyAll 不耗 CPU；铁律"EventLoop 内禁 sync/await（自我等待死锁），回调第一步必查 isSuccess"；与 CompletableFuture 对比——EventLoop 内用 ChannelFuture、跨线程编排用 CF（作者经验，解读）。详见 [[netty-channelfuture]]。
 - 生态位（教程信源说法）：Dubbo/gRPC（RPC）、RocketMQ（消息）、Spring WebFlux/Spring Cloud Gateway、Elasticsearch 节点通信、ZooKeeper 3.6+ 可选、Hadoop/Spark 部分组件；同信源把 Kafka 列入"底层用 Netty"，本库无信源支撑、与既有认知不一致，标记存疑不作定论。
 
 ## Products / Projects（产品／项目）
@@ -142,7 +146,7 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 
 ## Current Understanding（当前认知）
 
-二十四个信源分层互证：机制层（线程模型/内存/零拷贝）解释"为什么快"，教程二十信源（源码分析第 1~6、8~11、15~18、20~25 篇，第 7、12~14、19 篇未采集）补齐"为什么存在"（JDK NIO 痛点）、入门路径（分层架构图、Echo 三段代码对比）与核心组件内部机制（Reactor 三形态与 ServerBootstrapAcceptor 移交链路；Pipeline 双向链表与双向事件传播、Handler 生命周期；ByteBuf 双指针/扩容/引用计数；EventLoop 三合一结构/run() 循环/ioRatio/chooser/register 异步化；启动三件套 initAndRegister 与 Acceptor 装配源码；run() 主循环的 SelectStrategy/ioRatio/空轮询自愈深挖；PooledByteBufAllocator 的 Arena→Chunk→Page→Subpage 四级与线程缓存；PoolChunk/PoolSubpage 内部算法与 ChunkList 六档流转；写缓冲 ChannelOutboundBuffer 的 write/flush 分离与高低水位背压；connect/bind/close 连接生命周期与四层优雅关闭；IdleStateHandler 三维空闲检测与精确再调度心跳机制；断线重连的双时机触发+退避+EventLoop 调度纪律；HttpObjectDecoder 十二态解码状态机与碎片聚合；WebSocket 握手与 Pipeline 热插拔升级；SslHandler 对 SSLEngine 的透明封装、异步握手与 SslProvider 策略切换；零拷贝四大兵器（FileRegion sendfile/CompositeByteBuf 逻辑拼接/wrappedBuffer 包装/堆外内存）；EpollEventLoop native 传输（三 fd 结构/零 GC 事件/ET 模式/回退纪律）；高低水位背压（CAS 状态切换/延迟传播防重入/isWritable 三件套）），两个 IoT 工程层展示"快之外还要什么"——会话路由原子性、命令状态机、背压分层、Drain 发布；李林锋调优层给出百万接入的系统侧配套（句柄/心跳周期/缓冲区/内存池/RPS/JVM）。一致立场：Netty 只保证 IO 层不阻塞，生产级靠使用者的纪律（二十四信源，置信度高）。
+二十五个信源分层互证：机制层（线程模型/内存/零拷贝）解释"为什么快"，教程二十一信源（源码分析第 1~6、8~11、15~18、20~25、27 篇，第 7、12~14、19 篇未采集）补齐"为什么存在"（JDK NIO 痛点）、入门路径（分层架构图、Echo 三段代码对比）与核心组件内部机制（Reactor 三形态与 ServerBootstrapAcceptor 移交链路；Pipeline 双向链表与双向事件传播、Handler 生命周期；ByteBuf 双指针/扩容/引用计数；EventLoop 三合一结构/run() 循环/ioRatio/chooser/register 异步化；启动三件套 initAndRegister 与 Acceptor 装配源码；run() 主循环的 SelectStrategy/ioRatio/空轮询自愈深挖；PooledByteBufAllocator 的 Arena→Chunk→Page→Subpage 四级与线程缓存；PoolChunk/PoolSubpage 内部算法与 ChunkList 六档流转；写缓冲 ChannelOutboundBuffer 的 write/flush 分离与高低水位背压；connect/bind/close 连接生命周期与四层优雅关闭；IdleStateHandler 三维空闲检测与精确再调度心跳机制；断线重连的双时机触发+退避+EventLoop 调度纪律；HttpObjectDecoder 十二态解码状态机与碎片聚合；WebSocket 握手与 Pipeline 热插拔升级；SslHandler 对 SSLEngine 的透明封装、异步握手与 SslProvider 策略切换；零拷贝四大兵器（FileRegion sendfile/CompositeByteBuf 逻辑拼接/wrappedBuffer 包装/堆外内存）；EpollEventLoop native 传输（三 fd 结构/零 GC 事件/ET 模式/回退纪律）；高低水位背压（CAS 状态切换/延迟传播防重入/isWritable 三件套）；ChannelFuture/DefaultPromise 异步结果模型（单字段 CAS 状态机/Listener 通知三细节/wait-notify/EventLoop 禁 sync）），两个 IoT 工程层展示"快之外还要什么"——会话路由原子性、命令状态机、背压分层、Drain 发布；李林锋调优层给出百万接入的系统侧配套（句柄/心跳周期/缓冲区/内存池/RPS/JVM）。一致立场：Netty 只保证 IO 层不阻塞，生产级靠使用者的纪律（二十五信源，置信度高）。
 
 ## Evidence（证据）
 
@@ -170,3 +174,4 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 - `raw/sources/architecture/2026-10-27-netty-23-zero-copy.md`（教程零拷贝篇：四大兵器 FileRegion/CompositeByteBuf/wrappedBuffer/堆外+sendfile 数据路径/六条注意事项）
 - `raw/sources/architecture/2026-10-27-netty-24-epoll-native.md`（教程 Native Transport 篇：三 fd 结构/epollWait C 实现/fd 直映射/ET-LT/eventfd+timerfd/简易压测/回退链）
 - `raw/sources/architecture/2026-10-27-netty-25-flow-control.md`（教程流量控制篇：WriteBufferWaterMark 32K/64K/ChannelOutboundBuffer 水位检测/CAS 状态切换/invokeLater 防重入/水位经验表）
+- `raw/sources/architecture/2026-10-27-netty-27-channelfuture.md`（教程异步结果篇：接口继承链/DefaultPromise 单字段 CAS 状态机/notifyListeners 三细节/await wait-notify/isWritable/三用法五场景/CompletableFuture 对比）
