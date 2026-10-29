@@ -153,6 +153,8 @@
 - [[netty-in-mainstream-middleware|Netty 在主流中间件中的应用：RocketMQ、Dubbo、Elasticsearch、Pulsar 怎么用 Netty]]（2026-10-29，Netty/中间件应用，系列完结篇）
 - [[netty-kafka-network-layer|Netty源码分析(番外篇9) — Kafka为什么选Netty？网络层源码拆解]]（2026-10-29，Netty/Kafka/应用层背压）
 - [[netty-million-connection-push-service|绝对干货：基于Netty实现海量接入的推送服务技术要点（李林锋）]]（2026-10-24，Netty/百万长连接调优）
+- [[netty-perf-tuning|Netty源码分析(番外篇) — Netty性能调优实战：从参数配置到JVM层优化]]（2026-10-29，Netty/生产调优五维度清单，系列收官）
+- [[netty-source-reading-album|Netty 源码阅读合集（Java解忧杂货铺，32 篇系列索引）]]（2026-10-29，Netty/源码阅读资源，置信度低）
 - [[nginx-websocket-load-balancing|Nginx生产级WebSocket实时长连接负载均衡，一文搞定（银河技术）]]（2026-10-24，Nginx/WebSocket/云环境断连）
 - [[netty-iot-gateway-resilient-design|百万 IoT 设备并发接入：把 Netty 网关做成可恢复、可验证的连接系统]]（2026-10-22，Netty/IoT/可靠性）
 - [[netty-redis-kafka-iot-gateway|扛住百万设备长连接：Netty+Redis+Kafka 搭建 IoT 接入平台]]（2026-10-22，Netty/IoT 架构）
@@ -276,6 +278,7 @@
 - [[netty-websocket-upgrade|Netty WebSocket 协议升级（握手与 Pipeline 热插拔）]]（Upgrade 头+Base64(SHA1(Key+魔数))→101→Listener 里移除 HTTP 编解码器热插拔帧编解码器；掩码单向铁律+分片重组；聚合器不可省/限帧/文明关闭；单信源，置信度中）
 - [[netty-idlestate-heartbeat|Netty 空闲检测与心跳（IdleStateHandler）]]（三维读/写/全部空闲超时转纳秒计时+精确剩余时间再调度+ChannelPromise 回调更新写时间戳+IdleStateEvent/isFirst 责任链分发；EventLoop 承载；李林锋 10 万连接事故反例+RocketMQ/Dubbo 生态用法互证，四信源）
 - [[netty-pooled-allocator|Netty 池化内存分配（PooledByteBufAllocator）]]（jemalloc 四级分级 Arena CPU×2→Chunk 16MB 满二叉树→Page 8KB→Subpage 位图+PoolThreadCache 无锁缓存；tiny/small/normal/huge 分派；ChunkList 六档流转；release 纪律+PARANOID 泄漏检测+中间件生态标配印证；六信源，置信度高）
+- [[netty-performance-tuning|Netty 性能调优方法论（五维度清单+监控驱动）]]（线程模型/Channel 参数/内存分配/系统层/JVM 五维旋钮表；容器核数坑、TCP_NODELAY 只管内核层、水位背压、Direct/Heap 选型、sysctl 与 JVM 参数族；先监控定位再调整；部件多信源互证、方法论单信源，置信度中）
 - [[netty-rpc-framework|基于 Netty 的轻量级 RPC 框架实现模式]]（协议信封 requestId 关联+长度域 mark/reset 拆粘包+JDK 动态代理+RpcFuture(CountDownLatch) 异步转同步+反射调用；与 Dubbo 八维工程化差距；系列收官实战单信源，置信度中）
 - [[netty-write-flush|Netty 写缓冲与背压（ChannelOutboundBuffer/writeAndFlush/高低水位）]]（write 入队 O(1)+flush 移指针+doWrite 才调 JDK 写；写自旋 16/OP_WRITE 半包续写/水位 64KB/32KB 背压；三信源互证，置信度高）
 - [[netty-zero-copy|Netty 零拷贝机制（FileRegion/CompositeByteBuf/wrappedBuffer/堆外内存）]]（零拷贝=无 CPU 参与的拷贝；sendfile 4 拷贝压成 2 次 DMA+doWrite 专门分支；Composite 组件数组逻辑拼接二分定位；FileRegion 单次使用+编解码跳过+Windows fallback；单信源，置信度中）
@@ -321,7 +324,7 @@
 - [[kafka|Apache Kafka]]（高吞吐事件管道；顺序写+PageCache+零拷贝+批量四板斧；2.0 起网络层自研 NIO→Netty，机制+运维+IoT 场景+网络层四信源）
 - [[langgraph|LangGraph]]（LangChain 生态 Agent 编排状态机；原生非分布式，RedisSaver+MySQL 快照+外部锁补齐，双信源）
 - [[learn-harness-engineering-course|Learn Harness Engineering]]（Walking Labs 开源 Coding Agent 工程课程：14 讲 + 8 递进项目，单一微博推荐信源）
-- [[netty|Netty]]（Java 异步事件驱动网络框架；Reactor+ByteBuf+零拷贝三支柱+Pipeline/EventLoop/Bootstrap/内存池/Native Transport/流量控制/ChannelFuture 源码机制+RPC 实战/版本演进/调试排障/设计模式全景+SCG/Kafka/中间件应用，机制+教程+IoT 工程三十三信源）
+- [[netty|Netty]]（Java 异步事件驱动网络框架；Reactor+ByteBuf+零拷贝三支柱+Pipeline/EventLoop/Bootstrap/内存池/Native Transport/流量控制/ChannelFuture 源码机制+RPC 实战/版本演进/调试排障/设计模式全景+生产调优五维度+SCG/Kafka/中间件应用+系列目录，机制+教程+IoT 工程三十五信源）
 - [[pi|Pi]]（极简 Agent CLI/Harness，1.0 起原生 MCP + Code Mode + Pi Durable，5000+ 扩展生态）
 - [[pigeon-message-bus|信鸽（Pigeon）]]（网易云音乐直播活动消息总线；32 台 8U16G 支撑 300w/min，RocketMQ 底座）
 - [[rocketmq|Apache RocketMQ]]（高性能分布式 MQ；事务消息+回查保发送、业务幂等保消费，运维+一致性+机制+存储+事务谱系+Netty 网络层六信源）

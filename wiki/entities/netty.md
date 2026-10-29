@@ -45,6 +45,8 @@ sources:
   - raw/sources/architecture/2026-10-27-netty-gateway-scg.md
   - raw/sources/architecture/2026-10-27-netty-in-mainstream-middleware.md
   - raw/sources/architecture/2026-10-27-netty-kafka.md
+  - raw/sources/architecture/2026-10-27-netty-perf-tuning.md
+  - raw/sources/architecture/2026-10-27-netty-source-reading-album.md
 related:
   - wiki/sources/netty-three-skills-high-performance.md
   - wiki/sources/netty-iot-gateway-resilient-design.md
@@ -101,6 +103,9 @@ related:
   - wiki/sources/netty-kafka-network-layer.md
   - wiki/decisions/kafka-adopts-netty.md
   - wiki/entities/kafka.md
+  - wiki/sources/netty-perf-tuning.md
+  - wiki/concepts/netty-performance-tuning.md
+  - wiki/sources/netty-source-reading-album.md
 ---
 # Netty
 
@@ -154,6 +159,8 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 - 设计模式全景（番外篇7）：十大模式源码落点——模板方法（SimpleChannelInboundHandler 四步骨架把 release 纪律 API 化）、责任链（Pipeline 双向链表+哨兵+动态增删）、工厂方法（ReflectiveChannelFactory 与 Transport 解耦）、观察者（ChannelFuture/DefaultPromise 监听器回调）、命令（WriteTask/ScheduledFutureTask 统一入 taskQueue）、装饰器（WrappedByteBuf 系正交增强）、单例（仅无状态 @Sharable）、适配器（ChannelInboundHandlerAdapter 空实现）、策略（chooser 位运算/取模分派）、建造者（Bootstrap Fluent DSL），另以全景表覆盖代理/组合/状态/享元/迭代器/中介者共 16 模式。详见 [[design-patterns-in-netty]]。
 - Spring Cloud Gateway 应用（番外篇）：SCG 底层为 Reactor Netty——httpclient 配置本质是对 Bootstrap/ChannelPool 调参；Server/Client 双 EventLoopGroup（代理模式 Reactor，Server 侧默认 CPU×2、Client 侧 CPU 核数，useNative 切 Epoll）；GlobalFilter 链对应 ChannelPipeline 责任链，NettyRoutingFilter/NettyWriteResponseFilter 最终回落 Channel.writeAndFlush()；生产坑：elastic 连接池无上限易 "Too many open files"（建议 fixed+max-connections）、超时三层（connect/response/单路由覆盖）、多处使用响应须 retain。详见 [[netty-gateway-scg]]。
 - 中间件应用全景（番外篇4，系列完结）：RocketMQ 4.x 起 Remoting 全面 Netty 化（4B+4B+JSON header+body 协议、IdleStateHandler 60s、Processor 业务线程池）；Dubbo Transporter 抽象 + Pipeline 三层 + HashedWheelTimer 客户端心跳（默认 60s）；Elasticsearch 5.0 后迁 Netty 4（9200 HTTP/9300 Transport 双传输、Releasable 内存管理、bulk 全异步）；Pulsar 单连接多路复用 + 高低水位 channelWritabilityChanged 消费端反压；五大最佳实践——IO 线程不做业务/Pipeline 分层/IdleStateHandler+应用层心跳/内存必池化/协议从简。详见 [[netty-in-mainstream-middleware]]。
+- 生产调优番外（调优篇，系列收官）：五维度清单——线程模型（Boss 1/Worker 2×CPU，容器环境 availableProcessors() 不准须显式 `-Dio.netty.eventLoopThreads`，与"K8s 不感知 cgroup"提示互证）、Channel 参数（TCP_NODELAY 只管内核层 Nagle，应用层攒包管不了；水位线是背压开关）、内存（纯代理用 Direct、频繁改数据用 Heap；release 纪律+leakDetectionLevel，作者案例泄漏致 7 天一次 OOM）、系统层（Linux sysctl 清单+优先 Epoll）、JVM（G1 固定堆+MaxDirectMemorySize+Netty `-D` 参数族）；方法论"不为调优而调优，先监控定位再调整"。口径冲突：该篇"PoolChunk=4096<<11=8MB"与第 10/11 篇"16MB（8192<<11）"不一致，暂倾向既有 16MB。详见 [[netty-performance-tuning]]。
+- 系列目录（合集信源）：公众号 32 篇合集目录确认系列全貌——编号 7/12~14/19/26/29 不存在（作者跳号或删除），两个「(30) RPC 实战」为不同 msgid 重复条目（本库收 4662 版）；截至 2026-10-29 全系列除番外篇8（横评，待摄入）与 RPC 重复条目外均已入库。详见 [[netty-source-reading-album]]。
 
 ## Products / Projects（产品／项目）
 
@@ -176,7 +183,7 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 
 ## Current Understanding（当前认知）
 
-三十三个信源分层互证：机制层（线程模型/内存/零拷贝）解释"为什么快"，教程二十九信源（源码分析第 1~6、8~11、15~18、20~25、27、28、30 篇与番外篇 4/6/7/9、SCG 番外、调试番外，第 7、12~14、19、26、29 篇未采集）补齐"为什么存在"（JDK NIO 痛点）、入门路径（分层架构图、Echo 三段代码对比）与核心组件内部机制（Reactor 三形态与 ServerBootstrapAcceptor 移交链路；Pipeline 双向链表与双向事件传播、Handler 生命周期；ByteBuf 双指针/扩容/引用计数；EventLoop 三合一结构/run() 循环/ioRatio/chooser/register 异步化；启动三件套 initAndRegister 与 Acceptor 装配源码；run() 主循环的 SelectStrategy/ioRatio/空轮询自愈深挖；PooledByteBufAllocator 的 Arena→Chunk→Page→Subpage 四级与线程缓存；PoolChunk/PoolSubpage 内部算法与 ChunkList 六档流转；写缓冲 ChannelOutboundBuffer 的 write/flush 分离与高低水位背压；connect/bind/close 连接生命周期与四层优雅关闭；IdleStateHandler 三维空闲检测与精确再调度心跳机制；断线重连的双时机触发+退避+EventLoop 调度纪律；HttpObjectDecoder 十二态解码状态机与碎片聚合；WebSocket 握手与 Pipeline 热插拔升级；SslHandler 对 SSLEngine 的透明封装、异步握手与 SslProvider 策略切换；零拷贝四大兵器（FileRegion sendfile/CompositeByteBuf 逻辑拼接/wrappedBuffer 包装/堆外内存）；EpollEventLoop native 传输（三 fd 结构/零 GC 事件/ET 模式/回退纪律）；高低水位背压（CAS 状态切换/延迟传播防重入/isWritable 三件套）；ChannelFuture/DefaultPromise 异步结果模型（读写两侧：单字段 CAS 状态机/监听器懒加载/checkNotifyWaiters 唤醒/EventLoop 亲和通知/EventLoop 禁 sync）；收尾五篇：手写 RPC 框架（协议信封/长度域拆包/动态代理/异步转同步/与 Dubbo 八维差距）、版本演进（4.0→4.1 升级点/旧 5.0 失败教训/新 5.0 的 JDK17+io_uring+Buffer API）、调试排障方法论（EmbeddedChannel/LoggingHandler/PoolArenaMetric/PARANOID 泄漏检测/空轮询自愈/双根因案例）、设计模式全景（十大模式源码落点+16 模式对照表）、应用层三篇（SCG 的双 EventLoopGroup/Filter 链↔Pipeline/连接池与超时三层生产坑；RocketMQ/Dubbo/ES/Pulsar 中间件用法与 IO 线程不做业务等五大最佳实践；Kafka 网络层整体迁移——单 EventLoopGroup 简化、七层 Pipeline、RequestChannel 应用层背压、迁移决策复盘）），两个 IoT 工程层展示"快之外还要什么"——会话路由原子性、命令状态机、背压分层、Drain 发布；李林锋调优层给出百万接入的系统侧配套（句柄/心跳周期/缓冲区/内存池/RPS/JVM）。一致立场：Netty 只保证 IO 层不阻塞，生产级靠使用者的纪律（三十三信源，置信度高）。
+三十五个信源分层互证：机制层（线程模型/内存/零拷贝）解释"为什么快"，教程三十一信源（源码分析第 1~6、8~11、15~18、20~25、27、28、30 篇与番外篇 4/6/7/9、SCG 番外、调试番外、调优番外及 32 篇系列目录，第 7、12~14、19、26、29 篇未采集）补齐"为什么存在"（JDK NIO 痛点）、入门路径（分层架构图、Echo 三段代码对比）与核心组件内部机制（Reactor 三形态与 ServerBootstrapAcceptor 移交链路；Pipeline 双向链表与双向事件传播、Handler 生命周期；ByteBuf 双指针/扩容/引用计数；EventLoop 三合一结构/run() 循环/ioRatio/chooser/register 异步化；启动三件套 initAndRegister 与 Acceptor 装配源码；run() 主循环的 SelectStrategy/ioRatio/空轮询自愈深挖；PooledByteBufAllocator 的 Arena→Chunk→Page→Subpage 四级与线程缓存；PoolChunk/PoolSubpage 内部算法与 ChunkList 六档流转；写缓冲 ChannelOutboundBuffer 的 write/flush 分离与高低水位背压；connect/bind/close 连接生命周期与四层优雅关闭；IdleStateHandler 三维空闲检测与精确再调度心跳机制；断线重连的双时机触发+退避+EventLoop 调度纪律；HttpObjectDecoder 十二态解码状态机与碎片聚合；WebSocket 握手与 Pipeline 热插拔升级；SslHandler 对 SSLEngine 的透明封装、异步握手与 SslProvider 策略切换；零拷贝四大兵器（FileRegion sendfile/CompositeByteBuf 逻辑拼接/wrappedBuffer 包装/堆外内存）；EpollEventLoop native 传输（三 fd 结构/零 GC 事件/ET 模式/回退纪律）；高低水位背压（CAS 状态切换/延迟传播防重入/isWritable 三件套）；ChannelFuture/DefaultPromise 异步结果模型（读写两侧：单字段 CAS 状态机/监听器懒加载/checkNotifyWaiters 唤醒/EventLoop 亲和通知/EventLoop 禁 sync）；收尾五篇：手写 RPC 框架（协议信封/长度域拆包/动态代理/异步转同步/与 Dubbo 八维差距）、版本演进（4.0→4.1 升级点/旧 5.0 失败教训/新 5.0 的 JDK17+io_uring+Buffer API）、调试排障方法论（EmbeddedChannel/LoggingHandler/PoolArenaMetric/PARANOID 泄漏检测/空轮询自愈/双根因案例）、设计模式全景（十大模式源码落点+16 模式对照表）、应用层三篇（SCG 的双 EventLoopGroup/Filter 链↔Pipeline/连接池与超时三层生产坑；RocketMQ/Dubbo/ES/Pulsar 中间件用法与 IO 线程不做业务等五大最佳实践；Kafka 网络层整体迁移——单 EventLoopGroup 简化、七层 Pipeline、RequestChannel 应用层背压、迁移决策复盘），收官调优番外给出五维度生产调优清单（线程/Channel 参数/内存/系统/JVM）与"监控驱动、不为调优而调优"方法论），两个 IoT 工程层展示"快之外还要什么"——会话路由原子性、命令状态机、背压分层、Drain 发布；李林锋调优层给出百万接入的系统侧配套（句柄/心跳周期/缓冲区/内存池/RPS/JVM）。一致立场：Netty 只保证 IO 层不阻塞，生产级靠使用者的纪律（三十五信源，置信度高）。
 
 ## Evidence（证据）
 
@@ -213,3 +220,5 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 - `raw/sources/architecture/2026-10-27-netty-gateway-scg.md`（SCG 番外：Reactor Netty/双 EventLoopGroup/GlobalFilter↔Pipeline/连接池 elastic vs fixed/超时三层/MiniGateway）
 - `raw/sources/architecture/2026-10-27-netty-in-mainstream-middleware.md`（番外篇4 完结篇：RocketMQ/Dubbo/ES/Pulsar 的 Netty 用法+六维对照表+五大最佳实践+服务端模板）
 - `raw/sources/architecture/2026-10-27-netty-kafka.md`（番外篇9：Kafka 2.0 网络层自研 NIO→Netty 迁移拆解——单 EventLoopGroup 复用/七层 Pipeline/引用计数坑/RequestChannel 应用层背压/批量 flush/七维决策复盘；消解"Kafka 底层用 Netty"存疑项）
+- `raw/sources/architecture/2026-10-27-netty-perf-tuning.md`（调优番外·系列收官：五维度调优清单——线程模型/Channel 参数/内存分配/Linux sysctl/JVM 参数族+生产级 Server 完整示例+问题速查表；"PoolChunk 8MB"口径与第 10/11 篇 16MB 冲突已标注）
+- `raw/sources/architecture/2026-10-27-netty-source-reading-album.md`（系列目录：32 篇合集全目，确认编号缺口与 RPC 重复条目，核验本库覆盖率）

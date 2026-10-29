@@ -1,46 +1,6 @@
 {
-  "updated_at": "2026-10-29 12:40",
+  "updated_at": "2026-10-29 15:32",
   "notes": [
-    {
-      "id": "2026-10-27-netty-perf-tuning",
-      "title": "Netty源码分析(番外篇) — Netty性能调优实战：从参数配置到JVM层优化",
-      "path": "Inbox/2026-10-27-netty-perf-tuning.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Java",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484674&idx=3&sn=c704c16f6646dd1646485bc918094498&chksm=fe6ca458c91b2d4e520b3328a91595a4e153b222f1453b493e67ce27bc863d599be8e21db181#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "系列番外篇，系统梳理 Netty 生产调优的四大维度：线程模型、Channel 参数、内存分配、系统/JVM 层，附完整优化配置示例与常见问题速查表。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-perf-tuning.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-27-netty-source-reading-album",
-      "title": "Netty 源码阅读合集（系列索引）",
-      "path": "Inbox/2026-10-27-netty-source-reading-album.md",
-      "created": "2026-10-27",
-      "category": "学习",
-      "tags": [
-        "netty",
-        "Java",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzU5NTcwMzg2MQ==&action=getalbum&album_id=4541345257556230156",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "公众号「Java解忧杂货铺」的 Netty 源码阅读系列合集页（32 篇），覆盖 Netty 核心源码全链路：Reactor 线程模型、Channel/Pipeline/Handler 三剑客、ByteBuf 与池化内存、EventLoop、Bootstrap 启动流程、写缓冲与 writeAndFlush、连接管理、心跳与断线重连、HTTP/WebSocket/SSL 协议支持、零拷贝，以及 RPC 实战与性能调优。本条为系列索引，供按主题回查单篇。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-source-reading-album.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-27-netty-vs-tomcat-undertow",
       "title": "Netty源码分析(番外篇8) — Netty vs Tomcat vs Undertow：HTTP服务器性能横评",
@@ -4904,6 +4864,46 @@
       "summary": "基于 Kafka 3.9.0 源码拆解其网络层如何从自研 NIO 转向 Netty：启动流程、七层 Pipeline 流水线、帧解码的引用计数坑、RequestChannel 背压设计与批量 flush 优化，最后复盘 Kafka 选 Netty 的决策逻辑。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-kafka.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-perf-tuning",
+      "title": "Netty源码分析(番外篇) — Netty性能调优实战：从参数配置到JVM层优化",
+      "path": "Archive/2026-10-27-netty-perf-tuning.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484674&idx=3&sn=c704c16f6646dd1646485bc918094498&chksm=fe6ca458c91b2d4e520b3328a91595a4e153b222f1453b493e67ce27bc863d599be8e21db181#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "系列番外篇，系统梳理 Netty 生产调优的四大维度：线程模型、Channel 参数、内存分配、系统/JVM 层，附完整优化配置示例与常见问题速查表。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-perf-tuning.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-source-reading-album",
+      "title": "Netty 源码阅读合集（系列索引）",
+      "path": "Archive/2026-10-27-netty-source-reading-album.md",
+      "created": "2026-10-27",
+      "category": "学习",
+      "tags": [
+        "netty",
+        "Java",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzU5NTcwMzg2MQ==&action=getalbum&album_id=4541345257556230156",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "公众号「Java解忧杂货铺」的 Netty 源码阅读系列合集页（32 篇），覆盖 Netty 核心源码全链路：Reactor 线程模型、Channel/Pipeline/Handler 三剑客、ByteBuf 与池化内存、EventLoop、Bootstrap 启动流程、写缓冲与 writeAndFlush、连接管理、心跳与断线重连、HTTP/WebSocket/SSL 协议支持、零拷贝，以及 RPC 实战与性能调优。本条为系列索引，供按主题回查单篇。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-source-reading-album.md",
       "wiki_status": "ingested"
     }
   ]

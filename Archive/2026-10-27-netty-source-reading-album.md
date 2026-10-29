@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 学习
 tags: [netty, Java, 课程]
 asset_ref: Assets/2026/10/netty-source-reading-album.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Netty 源码阅读合集（系列索引）
