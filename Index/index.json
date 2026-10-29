@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29 12:32",
+  "updated_at": "2026-10-29 12:36",
   "notes": [
     {
       "id": "2026-10-27-netty-kafka",
@@ -18,7 +18,7 @@
       "summary": "基于 Kafka 3.9.0 源码拆解其网络层如何从自研 NIO 转向 Netty：启动流程、七层 Pipeline 流水线、帧解码的引用计数坑、RequestChannel 背压设计与批量 flush 优化，最后复盘 Kafka 选 Netty 的决策逻辑。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-kafka.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-27-netty-perf-tuning",
@@ -917,6 +917,26 @@
       "summary": "一场 2200+ 一线教师与校长的教育年会观察：教育者不是展示 AI 多厉害，而是借 AI 回答教育界问了几十年的老问题——\"一学就会一做就废\"（惰性观念）、什么难度该留给孩子、因材施教。AI 没发明任何新教育理念，只是让过去因成本太高而无法实现的目标突然有了条件。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/ai-education-three-old-questions.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-29-google-prompt-engineering-whitepaper",
+      "title": "Google 官方提示工程白皮书（Prompt Engineering，宝玉译）",
+      "path": "Inbox/2026-10-29-google-prompt-engineering-whitepaper.md",
+      "created": "2026-10-29",
+      "category": "学习",
+      "tags": [
+        "AI",
+        "课程",
+        "工程实践"
+      ],
+      "source": "IM 附件（飞书）",
+      "source_url": "IM 附件（原件已归档，译文来源 baoyu.io）",
+      "source_type": "文档",
+      "platform": "飞书",
+      "summary": "Google 官方白皮书（Lee Boonstra，2024 年 9 月，宝玉翻译），系统讲解 LLM 输出配置（温度/Top-K/Top-P/令牌长度）与 11 种提示技巧——零样本、少样本、系统/角色/上下文提示、回退、思维链、自我一致性、思维树、ReAct、自动提示工程，并以代码提示四场景和一批最佳实践收尾，是提示工程的入门到进阶教材。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/9ed65982-d90c-4a44-bf08-403c8e02281d_google_________prompt_engineering____-baoyu.io__1_-pdf.md",
       "wiki_status": "pending"
     },
     {
