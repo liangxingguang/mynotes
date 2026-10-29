@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-10-29 17:48",
+  "updated_at": "2026-10-29 17:55",
   "notes": [
-    {
-      "id": "2026-10-27-netty-vs-tomcat-undertow",
-      "title": "Netty源码分析(番外篇8) — Netty vs Tomcat vs Undertow：HTTP服务器性能横评",
-      "path": "Inbox/2026-10-27-netty-vs-tomcat-undertow.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484730&idx=2&sn=a31d863ee0658feaa449c35ebbdcca19&chksm=fe6ca460c91b2d76db44ac3a72590fa7205915c745b9e7df0d746d14bbfa8eb47ba9a4bd1205#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "同机同压测条件下用 wrk 对 Netty/Tomcat/Undertow 三个 HTTP 服务做横评：Netty QPS 15.8 万领先 Tomcat 约 77%，并从线程模型、内存管理、零拷贝、TCP 参数四个源码层面解释差距来源。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-vs-tomcat-undertow.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-28-agent-classic-agent-theory",
       "title": "Agent - 经典智能体理论 → 现代 LLM Agent 映射（2）",
@@ -4923,6 +4904,25 @@
       "summary": "公众号「Java解忧杂货铺」的 Netty 源码阅读系列合集页（32 篇），覆盖 Netty 核心源码全链路：Reactor 线程模型、Channel/Pipeline/Handler 三剑客、ByteBuf 与池化内存、EventLoop、Bootstrap 启动流程、写缓冲与 writeAndFlush、连接管理、心跳与断线重连、HTTP/WebSocket/SSL 协议支持、零拷贝，以及 RPC 实战与性能调优。本条为系列索引，供按主题回查单篇。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-source-reading-album.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-vs-tomcat-undertow",
+      "title": "Netty源码分析(番外篇8) — Netty vs Tomcat vs Undertow：HTTP服务器性能横评",
+      "path": "Archive/2026-10-27-netty-vs-tomcat-undertow.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484730&idx=2&sn=a31d863ee0658feaa449c35ebbdcca19&chksm=fe6ca460c91b2d76db44ac3a72590fa7205915c745b9e7df0d746d14bbfa8eb47ba9a4bd1205#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "同机同压测条件下用 wrk 对 Netty/Tomcat/Undertow 三个 HTTP 服务做横评：Netty QPS 15.8 万领先 Tomcat 约 77%，并从线程模型、内存管理、零拷贝、TCP 参数四个源码层面解释差距来源。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-vs-tomcat-undertow.md",
       "wiki_status": "ingested"
     }
   ]

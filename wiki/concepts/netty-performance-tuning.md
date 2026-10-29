@@ -13,7 +13,9 @@ tags:
   - java
 sources:
   - raw/sources/architecture/2026-10-27-netty-perf-tuning.md
+  - raw/sources/architecture/2026-10-27-netty-vs-tomcat-undertow.md
 related:
+  - wiki/comparisons/netty-vs-tomcat-vs-undertow.md
   - wiki/concepts/netty-eventloop.md
   - wiki/concepts/reactor-thread-model.md
   - wiki/concepts/netty-flow-control.md
@@ -71,6 +73,7 @@ Netty 默认配置已覆盖多数场景，但配置不当（线程数错、分�
 ## Evolution（演进）
 
 - 2026-10-29 — 首建：调优番外信源（系列收官篇）。
+- 2026-10-29 — 横评番外篇8 提供量化印证（单信源自测）：关 TCP_NODELAY 致 Netty QPS -42%（15.8 万→9.2 万），SO_BACKLOG 调至 1024 使 P99 3.8ms→2.9ms，Tomcat 对齐 Netty TCP 参数 +14%——印证"TCP 参数影响不亚于线程模型"；池化堆外 vs 堆内分配的 GC 差距实测约 13 倍（2.3s vs 31.7s/60s），见 [[netty-vs-tomcat-vs-undertow]]。
 
 ## Open Questions（开放问题）
 
@@ -80,6 +83,7 @@ Netty 默认配置已覆盖多数场景，但配置不当（线程数错、分�
 ## Evidence（证据）
 
 - Source: `raw/sources/architecture/2026-10-27-netty-perf-tuning.md`（五维度清单、完整 Server 示例、sysctl/JVM 参数表、速查表；个案数据为作者自述）
+- Source: `raw/sources/architecture/2026-10-27-netty-vs-tomcat-undertow.md`（TCP_NODELAY/SO_BACKLOG 量化影响与池化内存 GC 差距的横评实测，单信源自测数据）
 
 ## Related Knowledge（相关知识）
 

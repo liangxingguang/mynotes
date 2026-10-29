@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [netty, Java]
 asset_ref: Assets/2026/10/netty-vs-tomcat-undertow.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Netty源码分析(番外篇8) — Netty vs Tomcat vs Undertow：HTTP服务器性能横评

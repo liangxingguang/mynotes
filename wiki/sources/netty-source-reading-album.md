@@ -46,7 +46,7 @@ related:
 
 ## Implications（影响／启示）
 
-- 目录确认本库 Netty 系列的覆盖状态：截至 2026-10-29，32 条中 30 条已摄入为 Wiki 信源页；余 2 条为——番外篇8「Netty vs Tomcat vs Undertow 性能横评」（已采集，Inbox 待摄入）与合集内重复的「(30) RPC 实战」msgid 4651 版（不计划单独摄入，内容预期与 4662 版重复）（解读）。
+- 目录确认本库 Netty 系列的覆盖状态：截至 2026-10-29，32 条中 31 条已摄入为 Wiki 信源页——番外篇8「Netty vs Tomcat vs Undertow 性能横评」已摄入（[[netty-vs-tomcat-undertow]]）；仅余合集内重复的「(30) RPC 实战」msgid 4651 版（不计划单独摄入，内容预期与 4662 版重复）（解读）。
 - 与 JDK 合集构成同作者的「JDK + Netty」源码学习路线（解读）。
 
 ## Limitations（局限）
@@ -56,7 +56,7 @@ related:
 
 ## Related Knowledge（相关知识）
 
-- 系列已摄入单篇：[[netty-01-intro]]、[[netty-02-bio-nio]]、[[netty-03-reactor]]、[[netty-04-channel-pipeline-handler]]、[[netty-05-bytebuf]]、[[netty-06-eventloop]]、[[netty-08-bootstrap]]、[[netty-09-nioeventloop-run]]、[[netty-10-pooled-allocator]]、[[netty-11-poolchunk-subpage]]、[[netty-15-write-flush]]、[[netty-16-connection-mgmt]]、[[netty-17-idlestate-heartbeat]]、[[netty-18-reconnect]]、[[netty-20-http-decoder]]、[[netty-21-websocket]]、[[netty-22-ssl-tls]]、[[netty-23-zero-copy]]、[[netty-24-epoll-native]]、[[netty-25-flow-control]]、[[netty-27-channelfuture]]、[[netty-28-promise]]、[[netty-30-rpc-framework]]、[[netty-perf-tuning]]、[[netty-debugging-guide]]、[[netty-in-mainstream-middleware]]、[[netty-gateway-scg]]、[[netty-design-patterns]]、[[netty-4-to-5]]、[[netty-kafka-network-layer]]
+- 系列已摄入单篇：[[netty-01-intro]]、[[netty-02-bio-nio]]、[[netty-03-reactor]]、[[netty-04-channel-pipeline-handler]]、[[netty-05-bytebuf]]、[[netty-06-eventloop]]、[[netty-08-bootstrap]]、[[netty-09-nioeventloop-run]]、[[netty-10-pooled-allocator]]、[[netty-11-poolchunk-subpage]]、[[netty-15-write-flush]]、[[netty-16-connection-mgmt]]、[[netty-17-idlestate-heartbeat]]、[[netty-18-reconnect]]、[[netty-20-http-decoder]]、[[netty-21-websocket]]、[[netty-22-ssl-tls]]、[[netty-23-zero-copy]]、[[netty-24-epoll-native]]、[[netty-25-flow-control]]、[[netty-27-channelfuture]]、[[netty-28-promise]]、[[netty-30-rpc-framework]]、[[netty-perf-tuning]]、[[netty-debugging-guide]]、[[netty-in-mainstream-middleware]]、[[netty-gateway-scg]]、[[netty-design-patterns]]、[[netty-4-to-5]]、[[netty-kafka-network-layer]]、[[netty-vs-tomcat-undertow]]
 - [[jdk-source-reading-album]]（同作者 JDK 源码阅读合集，30 篇）
 - [[netty]]
 

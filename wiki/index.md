@@ -155,6 +155,7 @@
 - [[netty-million-connection-push-service|绝对干货：基于Netty实现海量接入的推送服务技术要点（李林锋）]]（2026-10-24，Netty/百万长连接调优）
 - [[netty-perf-tuning|Netty源码分析(番外篇) — Netty性能调优实战：从参数配置到JVM层优化]]（2026-10-29，Netty/生产调优五维度清单，系列收官）
 - [[netty-source-reading-album|Netty 源码阅读合集（Java解忧杂货铺，32 篇系列索引）]]（2026-10-29，Netty/源码阅读资源，置信度低）
+- [[netty-vs-tomcat-undertow|Netty vs Tomcat vs Undertow：HTTP 服务器性能横评（番外篇8）]]（2026-10-29，Netty/性能横评，系列收官实证，置信度中）
 - [[nginx-websocket-load-balancing|Nginx生产级WebSocket实时长连接负载均衡，一文搞定（银河技术）]]（2026-10-24，Nginx/WebSocket/云环境断连）
 - [[netty-iot-gateway-resilient-design|百万 IoT 设备并发接入：把 Netty 网关做成可恢复、可验证的连接系统]]（2026-10-22，Netty/IoT/可靠性）
 - [[netty-redis-kafka-iot-gateway|扛住百万设备长连接：Netty+Redis+Kafka 搭建 IoT 接入平台]]（2026-10-22，Netty/IoT 架构）
@@ -345,6 +346,7 @@
 ## comparison（对比）
 
 - [[a2a-vs-mcp|A2A vs MCP]]（横向多 Agent 协作 vs 纵向单 Agent 能力拓展，互补关系）
+- [[netty-vs-tomcat-vs-undertow|Netty vs Tomcat vs Undertow]]（同机 wrk 横评：QPS/GC/高并发衰减+线程模型/内存/零拷贝/TCP 参数四层归因与选型分档，单信源自测，置信度中）
 
 ## synthesis（综述）
 
