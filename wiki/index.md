@@ -144,6 +144,7 @@
 - [[netty-24-epoll-native|Netty源码分析(24) — EpollEventLoop 与 Native Transport]]（2026-10-29，Netty/教程/Native Transport 源码）
 - [[netty-25-flow-control|Netty源码分析(25) — Netty 的流量控制：高低水位与可写性]]（2026-10-29，Netty/教程/高低水位背压源码）
 - [[netty-27-channelfuture|Netty源码分析(27) — ChannelFuture 与 异步回调机制]]（2026-10-29，Netty/教程/异步结果模型源码）
+- [[netty-28-promise|Netty源码分析(28) — Promise 与 自定义异步结果]]（2026-10-29，Netty/教程/Promise写侧源码）
 - [[netty-million-connection-push-service|绝对干货：基于Netty实现海量接入的推送服务技术要点（李林锋）]]（2026-10-24，Netty/百万长连接调优）
 - [[nginx-websocket-load-balancing|Nginx生产级WebSocket实时长连接负载均衡，一文搞定（银河技术）]]（2026-10-24，Nginx/WebSocket/云环境断连）
 - [[netty-iot-gateway-resilient-design|百万 IoT 设备并发接入：把 Netty 网关做成可恢复、可验证的连接系统]]（2026-10-22，Netty/IoT/可靠性）
@@ -255,7 +256,7 @@
 - [[netty-bootstrap|Netty Bootstrap 启动引导]]（initAndRegister 三件套：反射建 Channel→init 组装 Pipeline→注册 Selector；interestOps=0 vs OP_ACCEPT 不对称；ServerBootstrapAcceptor 装配移交 worker；三信源互证，置信度高）
 - [[netty-bytebuf|Netty ByteBuf（数据容器与内存管理）]]（读写双指针免 flip+4MB 阈值扩容+引用计数+类 jemalloc 池化；Heap/Direct/Composite 三形态；释放铁律"谁最后消费谁 release"；三信源，置信度高）
 - [[netty-channel-pipeline|Netty ChannelPipeline（责任链与事件传播）]]（Context 双向链表+inbound/outbound 标志跳节点；入站 Head→Tail、出站 Tail→Head；ctx.write≠channel.write 路径；源码级单信源，置信度高）
-- [[netty-channelfuture|Netty ChannelFuture 与 DefaultPromise（异步结果模型）]]（JDK Future 上加 Listener 回调+sync/await+isSuccess/cause+isWritable 水位感知；DefaultPromise 单 volatile result 字段 CAS 无锁状态机+notifyListeners 三细节+wait/notify 阻塞；EventLoop 内禁 sync 死锁铁律；与 CompletableFuture 六维对比；单信源，置信度中）
+- [[netty-channelfuture|Netty ChannelFuture 与 DefaultPromise（异步结果模型）]]（JDK Future 上加 Listener 回调+sync/await+isSuccess/cause+isWritable 水位感知+Promise 可写端 set/trySuccess；DefaultPromise 单 volatile result 字段 CAS 无锁状态机+监听器懒加载+checkNotifyWaiters 唤醒+EventLoop 亲和通知；EventLoop 内禁 sync 死锁铁律；与 CompletableFuture 对比；双信源（同系列 27/28 篇），置信度中）
 - [[netty-connection-lifecycle|Netty 连接生命周期（connect/bind/close）]]（AbstractUnsafe 三主线：OP_CONNECT+超时定时/fireChannelActive 注册 OP_ACCEPT/close 四层优雅清理；全程 Promise-Future；双信源，置信度高）
 - [[netty-eventloop|Netty EventLoop / EventLoopGroup（事件循环机制）]]（线程+Selector+MpscLinkedQueue 三合一；CPU×2 默认线程+chooser 位运算+ioRatio=50 时间配比+selectCnt 超 512 重建 Selector 自愈+register 异步化；源码级三信源互证，置信度高）
 - [[netty-epoll-native-transport|Netty EpollEventLoop 与 Native Transport（绕过 JDK Selector 直调 epoll）]]（epollFd/eventFd/timerFd 三 fd+事件栈上分配零 GC+fd 直映射无 selectedKeys 遍历+ET 循环读到 EAGAIN；仅 Linux+Epoll→KQueue→NIO 回退纪律；"Netty 5 推 io_uring"与既有口径矛盾已标注；单信源，置信度中）

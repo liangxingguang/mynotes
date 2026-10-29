@@ -2407,6 +2407,19 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484630&idx=1&sn=7a142bfae8c38fa15b978d6fdd8041b9&chksm=fe6ca58cc91b2c9ab41702695e4d633504156d14bdacd7c9c7a87c4e4ee1a1c0877d691d5d5e",
       "asset_ref": "Assets/2026/10/netty-27-channelfuture.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-27-netty-28-promise.md",
+      "sha256": "e5c58020094a0759922dfd31b28ea9bc396042af6a84d3f3967ba79191472627",
+      "registered_at": "2026-10-29",
+      "inbox_ref": "Archive/2026-10-27-netty-28-promise.md",
+      "pages": [
+        "wiki/sources/netty-28-promise.md",
+        "wiki/concepts/netty-channelfuture.md",
+        "wiki/entities/netty.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484638&idx=1&sn=3cb762789818581715f45344c6c29d38&chksm=fe6ca584c91b2c925fcb15210dd32aa8325f550dba9e80c8cc87c68141e84eb53cfac729e1d8",
+      "asset_ref": "Assets/2026/10/netty-28-promise.md"
     }
   ]
 }

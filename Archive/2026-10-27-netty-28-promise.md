@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [netty, Java]
 asset_ref: Assets/2026/10/netty-28-promise.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Netty源码分析(28) — Promise 与 自定义异步结果

@@ -272,3 +272,5 @@
 - 2026-10-29 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式，netty-23/24/25 ingest 后校验）
 - 2026-10-29 | ingest | raw/sources/architecture/2026-10-27-netty-27-channelfuture.md | wiki/sources/netty-27-channelfuture.md（新建，confidence=medium，接口继承链/DefaultPromise 单字段 CAS 状态机/notifyListeners 三细节/await wait-notify/isWritable 水位/三用法五场景/CF 六维对比；SIGNAL_MASK 等简化演绎已标注存疑）+ wiki/concepts/netty-channelfuture.md（新建概念，单信源置信度中）+ wiki/entities/netty.md（第二十五信源：异步结果模型）+ wiki/concepts/netty-flow-control.md（回填 isWritable 接口侧互链）
 - 2026-10-29 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式，netty-27 ingest 后校验）
+- 2026-10-29 | ingest | raw/sources/architecture/2026-10-27-netty-28-promise.md | wiki/sources/netty-28-promise.md（新建，confidence=medium，Promise 可写端 set/trySuccess/监听器懒加载/checkNotifyWaiters 唤醒路径/取消即 isDone/EventLoop 亲和通知/异步 RPC 与回调封装示例/CF-FutureTask 对比表；await() 中断表述与其自身代码矛盾已标注存疑）+ wiki/concepts/netty-channelfuture.md（增量更新写侧，消解 DefaultFutureListeners 疑问，双信源）+ wiki/entities/netty.md（第二十六信源：Promise 写侧）
+- 2026-10-29 | lint | wiki | findings=0 fixed=0 needs_human=0（skeleton 模式，netty-28 ingest 后校验）

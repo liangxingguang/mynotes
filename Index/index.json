@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-10-29 08:03",
+  "updated_at": "2026-10-29 08:14",
   "notes": [
-    {
-      "id": "2026-10-27-netty-28-promise",
-      "title": "Netty源码分析(28) — Promise 与 自定义异步结果",
-      "path": "Inbox/2026-10-27-netty-28-promise.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484638&idx=1&sn=3cb762789818581715f45344c6c29d38&chksm=fe6ca584c91b2c925fcb15210dd32aa8325f550dba9e80c8cc87c68141e84eb53cfac729e1d8#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "Promise 是\"可写的 Future\"：继承 Future 并增加 setSuccess/setFailure/trySuccess 等手动完成方法。本文剖析 DefaultPromise 实现——CAS 状态机、监听器懒加载与 EventLoop 亲和性通知。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-28-promise.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-27-netty-30-rpc-framework",
       "title": "Netty源码分析(30) — 实战：基于Netty实现一个简单的RPC框架",
@@ -4884,6 +4865,25 @@
       "summary": "解析 Netty 的异步结果模型：ChannelFuture 在 JDK Future 之上增加 Listener 回调、sync/await 阻塞等待与 isWritable 水位感知，剖析 DefaultPromise 的 CAS 无锁状态机与监听器通知机制。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-27-channelfuture.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-28-promise",
+      "title": "Netty源码分析(28) — Promise 与 自定义异步结果",
+      "path": "Archive/2026-10-27-netty-28-promise.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484638&idx=1&sn=3cb762789818581715f45344c6c29d38&chksm=fe6ca584c91b2c925fcb15210dd32aa8325f550dba9e80c8cc87c68141e84eb53cfac729e1d8#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "Promise 是\"可写的 Future\"：继承 Future 并增加 setSuccess/setFailure/trySuccess 等手动完成方法。本文剖析 DefaultPromise 实现——CAS 状态机、监听器懒加载与 EventLoop 亲和性通知。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-28-promise.md",
       "wiki_status": "ingested"
     }
   ]
