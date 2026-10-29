@@ -14,6 +14,7 @@ sources:
   - raw/sources/architecture/2026-10-28-game-level-flow-management.md
 related:
   - wiki/sources/game-level-flow-management.md
+  - wiki/concepts/game-quest-system.md
 ---
 # 场景任务流程编排（SceneQuest）
 
@@ -53,6 +54,7 @@ IQuestTask { Quest; Handler }          // 任务数据类 + 结果处理策略
 
 - 与 HFSM 的不同：HFSM 顶层 State 抽象过死，会演化出 Task/Action 抽象反伤组合能力（"过于明确的抽象对战斗系统有害"）；行为树框架中一切皆 Node，State 只是称呼而非明确抽象。
 - 与纯触发器流程的不同：保留显式主流程与中控，避免"没人能说出完整流程"。
+- 与 [[game-quest-system|玩家任务系统]] 的不同：副本任务通常只有一个、是含流程控制的行为树、自动提交、延迟到心跳检查状态切换；玩家任务量大、结构简单、需显式提交、事件到达立即切状态。同构（目标+进度+结果处理）而不同策。
 
 ## Evolution（演进）
 

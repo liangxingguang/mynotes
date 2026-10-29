@@ -2791,6 +2791,18 @@
       ],
       "source_url": "https://zhuanlan.zhihu.com/p/2062549231966090581",
       "asset_ref": "Assets/2026/10/game-mail-system-design.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-28-game-quest-system-design.md",
+      "sha256": "93ac6c5de7438a331db2a39e4513193490d028b59fce5559938805fe29c0140a",
+      "registered_at": "2026-10-30",
+      "inbox_ref": "Archive/2026-10-28-game-quest-system-design.md",
+      "pages": [
+        "wiki/sources/game-quest-system-design.md",
+        "wiki/concepts/game-quest-system.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2077349145707397379",
+      "asset_ref": "Assets/2026/10/game-quest-system-design.md"
     }
   ]
 }

@@ -67,6 +67,7 @@
 - [[game-distributed-team-design|游戏开发：分布式队伍的改进（互为镜像式）]]（2026-10-28，游戏服务器/分布式队伍）
 - [[game-level-flow-management|游戏开发：关卡流程管理（HFSM / 行为树 / 场景任务）]]（2026-10-28，游戏服务器/Gameplay 框架）
 - [[game-mail-system-design|游戏开发：邮件系统的分布式逻辑与特殊用法]]（2026-10-28，游戏服务器/分布式邮件）
+- [[game-quest-system-design|游戏开发：任务系统的设计与实现（Quest/Goal 合一与进度建模）]]（2026-10-28，游戏服务器/Gameplay 框架）
 - [[game-server-architecture-four-layers|游戏服务器架构应该如何分层？——连接层/实体层/RPC 约束层/协调层]]（2026-10-21，游戏服务器/架构）
 - [[game-server-elastic-scaling|游戏开发：服务器弹性伸缩（负载均衡、路由服与数据迁移）]]（2026-10-20，游戏服务器/分布式）
 - [[gc-log-tuning-practice|GC 日志分析与调优实战]]（2026-10-21，Java/JVM）
@@ -274,6 +275,7 @@
 - [[g1-gc|G1 垃圾收集器]]（Region 分区+RSet+SATB+Mixed GC，可预测停顿，JDK 9+ 默认；单信源）
 - [[gain-message|增益消息（全量快照自愈）]]（状态类消息发全量快照而非增量，丢包被下一条自动纠正；vivo 一手）
 - [[game-mail-system|游戏邮件系统的分布式设计]]（弱时序+独立队列；公共邮件读裂变+标记撤回；Seq+Ack 与合服 DomainEvent；一切领奖皆邮件 Channel；单信源，置信度中）
+- [[game-quest-system|游戏任务系统设计（Quest/Goal 合一与进度建模）]]（限定单 Goal 组合 Quest；子任务表步骤任务即章节；Git 参照系；Ready 中间态；Progress/Score 分离；前置索引+等级二分；任务侧掉落+公共管理器；单信源，置信度中）
 - [[geohash|Geohash（地理哈希）]]（经纬度降维前缀编码；边界问题+8 邻居、截短扩半径、缓存键归一；邻近索引+地图瓦片双信源）
 - [[harness-engineering|Harness Engineering（Agent 执行系统工程）]]（Agent ≈ Model + Harness；七观察面+信息三层+安全四层+B0~B5 单变量评测；11 系统源码研究解读）
 - [[hashmap-internals|HashMap 核心设计（JDK 8）]]（2 的幂容量+扰动+0.75 负载因子+8/6/64 树化阈值+高低位链扩容拆分；单信源，置信度中）
