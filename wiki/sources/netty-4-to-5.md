@@ -64,6 +64,9 @@ NIO → Epoll（JNI 绕过 JDK Selector）→ io_uring（共享环形缓冲+批�
 - [[netty-epoll-native-transport]]（epoll→io_uring 演进线）
 - [[netty-bytebuf]]（Buffer API 重设计的现状对照）
 - [[netty-01-intro]]（系列开篇）
+- [[netty-design-patterns]]（番外篇7：设计模式全景）
+- [[netty-gateway-scg]]（番外篇：SCG 中的 Netty 应用）
+- [[netty-in-mainstream-middleware]]（番外篇4：中间件应用，系列完结篇）
 
 ## Source（信源）
 

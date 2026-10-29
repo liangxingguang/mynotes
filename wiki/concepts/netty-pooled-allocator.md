@@ -17,6 +17,7 @@ sources:
   - raw/sources/architecture/2026-10-27-netty-05-bytebuf.md
   - raw/sources/architecture/2026-10-20-netty-three-skills-high-performance.md
   - raw/sources/architecture/2026-10-23-netty-million-connection-push-service.md
+  - raw/sources/architecture/2026-10-27-netty-in-mainstream-middleware.md
 related:
   - wiki/entities/netty.md
   - wiki/concepts/netty-bytebuf.md
@@ -75,7 +76,7 @@ PooledByteBufAllocator
 
 ## Evolution（演进）
 
-机制信源（netty-three-skills）把"类 jemalloc 内存池"列为三支柱之一并给出 Arena CPU×2、page 8KB 轮廓；李林锋信源给出 Twitter 垃圾生成降 5 倍的工程背书；ByteBuf 篇（netty-05）给出分配器双体系与"4.1 默认池化"；netty-10 补齐四级结构、二叉树/位图算法与分配链路源码细节；netty-11（深入篇）再补齐 memoryMap 值语义（最浅空闲深度）、allocateNode 左优先搜索、ChunkList 六档流转与 PoolThreadCache 裁剪参数（`io.netty.allocator.cacheTrimInterval` 默认 8192、`maxCachedBufferCapacity` 默认 32KB），并给出 JMH 分档实测（100w 次分配+释放：32B ~6.8x、1KB ~7.3x、64KB ~4.2x、1MB ~2.9x，小块优势最大）——池化收益主要来自小块高频分配，与李林锋 Twitter 案例互证。
+机制信源（netty-three-skills）把"类 jemalloc 内存池"列为三支柱之一并给出 Arena CPU×2、page 8KB 轮廓；李林锋信源给出 Twitter 垃圾生成降 5 倍的工程背书；ByteBuf 篇（netty-05）给出分配器双体系与"4.1 默认池化"；netty-10 补齐四级结构、二叉树/位图算法与分配链路源码细节；netty-11（深入篇）再补齐 memoryMap 值语义（最浅空闲深度）、allocateNode 左优先搜索、ChunkList 六档流转与 PoolThreadCache 裁剪参数（`io.netty.allocator.cacheTrimInterval` 默认 8192、`maxCachedBufferCapacity` 默认 32KB），并给出 JMH 分档实测（100w 次分配+释放：32B ~6.8x、1KB ~7.3x、64KB ~4.2x、1MB ~2.9x，小块优势最大）——池化收益主要来自小块高频分配，与李林锋 Twitter 案例互证。番外篇 4（2026-10-29）从生态侧第六信源印证：RocketMQ（DirectBuffer+Pooled）、Dubbo（Netty PooledByteBuf）、Pulsar（PooledByteBufAllocator）全部池化，作者断言"没有人用 Unpooled 跑生产"，通用服务端模板把 `ALLOCATOR=PooledByteBufAllocator.DEFAULT` 列为标配。
 
 ## Open Questions（开放问题）
 
@@ -89,6 +90,7 @@ PooledByteBufAllocator
 - Source: `raw/sources/architecture/2026-10-27-netty-05-bytebuf.md`（分配器双体系定位 + 引用计数纪律互证）
 - Source: `raw/sources/architecture/2026-10-20-netty-three-skills-high-performance.md`（三支柱定位）
 - Source: `raw/sources/architecture/2026-10-23-netty-million-connection-push-service.md`（Twitter 案例与"泄漏不被 GC 兜底"代价）
+- Source: `raw/sources/architecture/2026-10-27-netty-in-mainstream-middleware.md`（生态印证：四大中间件全部池化 + 服务端模板标配 PooledByteBufAllocator.DEFAULT）
 
 ## Related Knowledge（相关知识）
 

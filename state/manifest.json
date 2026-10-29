@@ -2459,6 +2459,50 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484689&idx=2&sn=2f7f268bc6d34db87c7db4e42c4cea8c&chksm=fe6ca44bc91b2d5df71f819f870aa75490324010ad5eae1999a5bb68e405ee234a43522c1d33",
       "asset_ref": "Assets/2026/10/netty-debugging-guide.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-27-netty-design-patterns.md",
+      "sha256": "75d2cb43a4008fe19aabf2d9be8e5a4684feb2f1c1df7812541d51b34f893145",
+      "registered_at": "2026-10-29",
+      "inbox_ref": "Archive/2026-10-27-netty-design-patterns.md",
+      "pages": [
+        "wiki/sources/netty-design-patterns.md",
+        "wiki/concepts/design-patterns-in-netty.md",
+        "wiki/entities/netty.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484716&idx=1&sn=4446792a1f1f6f02cce5b6df7b8a4e30&chksm=fe6ca476c91b2d60e265b7acdffd5b416545738b838c2260a8a9d40c5545a0d0382a684decfc",
+      "asset_ref": "Assets/2026/10/netty-design-patterns.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-27-netty-gateway-scg.md",
+      "sha256": "0fc83f32b0b413a22d8ad93a4b9fc55661b7a855d10223592e0482331d29a41c",
+      "registered_at": "2026-10-29",
+      "inbox_ref": "Archive/2026-10-27-netty-gateway-scg.md",
+      "pages": [
+        "wiki/sources/netty-gateway-scg.md",
+        "wiki/entities/netty.md",
+        "wiki/concepts/reactor-thread-model.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484705&idx=1&sn=8e3ff2de8fd218f81921cbe72d23f75b&chksm=fe6ca47bc91b2d6dfd4dc5bad272f69b2312a73594f14f9ff0d71c1b745bf61c0bee3b8e9941",
+      "asset_ref": "Assets/2026/10/netty-gateway-scg.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-27-netty-in-mainstream-middleware.md",
+      "sha256": "109088ba2761d27129a42246193bc7809dcb0abf6ad56d89db9c0b0bfcca61ed",
+      "registered_at": "2026-10-29",
+      "inbox_ref": "Archive/2026-10-27-netty-in-mainstream-middleware.md",
+      "pages": [
+        "wiki/sources/netty-in-mainstream-middleware.md",
+        "wiki/entities/netty.md",
+        "wiki/entities/rocketmq.md",
+        "wiki/entities/elasticsearch.md",
+        "wiki/concepts/netty-idlestate-heartbeat.md",
+        "wiki/concepts/netty-flow-control.md",
+        "wiki/concepts/netty-pooled-allocator.md",
+        "wiki/concepts/reactor-thread-model.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/oqhrO1qmeRsJdeu4KmVpCg",
+      "asset_ref": "Assets/2026/10/netty-in-mainstream-middleware.md"
     }
   ]
 }

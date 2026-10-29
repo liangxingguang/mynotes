@@ -41,6 +41,9 @@ sources:
   - raw/sources/architecture/2026-10-27-netty-30-rpc-framework.md
   - raw/sources/architecture/2026-10-27-netty-4-to-5.md
   - raw/sources/architecture/2026-10-27-netty-debugging-guide.md
+  - raw/sources/architecture/2026-10-27-netty-design-patterns.md
+  - raw/sources/architecture/2026-10-27-netty-gateway-scg.md
+  - raw/sources/architecture/2026-10-27-netty-in-mainstream-middleware.md
 related:
   - wiki/sources/netty-three-skills-high-performance.md
   - wiki/sources/netty-iot-gateway-resilient-design.md
@@ -90,6 +93,10 @@ related:
   - wiki/sources/netty-4-to-5.md
   - wiki/sources/netty-debugging-guide.md
   - wiki/concepts/netty-debugging-troubleshooting.md
+  - wiki/sources/netty-design-patterns.md
+  - wiki/concepts/design-patterns-in-netty.md
+  - wiki/sources/netty-gateway-scg.md
+  - wiki/sources/netty-in-mainstream-middleware.md
   - wiki/entities/kafka.md
 ---
 # Netty
@@ -140,6 +147,9 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 - RPC 实战（教程第 30 篇，收官）：约 300 行手写轻量 RPC 框架——RpcRequest/RpcResponse 协议信封（requestId 关联、Throwable 随响应回传）、4 字节长度域编解码（mark/reset 回滚拆粘包）、JDK 动态代理透明化、pendingRequests(ConcurrentHashMap)+RpcFuture(CountDownLatch) 异步转同步、Map 模拟注册中心+反射调用；与 Dubbo 差在服务发现/负载均衡/连接池/容错/序列化性能（JSON vs Hessian2 差 5-10 倍）/降级/SPI/限流八项工程化能力，核心通信原理一致。详见 [[netty-rpc-framework]]。
 - 版本演进（番外篇6，基于 2026-08 公开资料）：4.0→4.1 三大升级为 Epoll 原生传输（吞吐 +10-30%，信源口径）、池化全面铺开、HTTP/2 原生；旧 5.0（2018）死于 ForkJoinPool 替代 EventLoop 丢了 Channel-线程绑定确定性 + API 破坏性变更；新 5.0（2024 重启）走渐进演进——JDK 17 底线、清理 deprecated 但保留 4.1 核心用法、io_uring（benchmark 称高吞吐比 epoll +20-50%）、Buffer API 读写拆分+AutoCloseable；升级建议：4.1 继续用、新项目 JDK21+ 可试 5.0、业务跟随中间件版本。
 - 调试与排障方法论（番外篇）：本地三件套 EmbeddedChannel/黄金断点/LoggingHandler；线上三板斧 PoolArenaMetric（alloc>dealloc 即泄漏）/pendingTasks() 积压监控/ResourceLeakDetector PARANOID（损耗 5% 以内报泄漏代码行）；epoll 空轮询超 512 次 rebuildSelector 自愈（与第 6/9 篇三方互证）；真实案例 5000 连接超时双根因（ByteBuf 未 release + IO 线程阻塞 DB 查询）修完 RT 800ms→20ms。两条铁律再获第五信源互证。详见 [[netty-debugging-troubleshooting]]。
+- 设计模式全景（番外篇7）：十大模式源码落点——模板方法（SimpleChannelInboundHandler 四步骨架把 release 纪律 API 化）、责任链（Pipeline 双向链表+哨兵+动态增删）、工厂方法（ReflectiveChannelFactory 与 Transport 解耦）、观察者（ChannelFuture/DefaultPromise 监听器回调）、命令（WriteTask/ScheduledFutureTask 统一入 taskQueue）、装饰器（WrappedByteBuf 系正交增强）、单例（仅无状态 @Sharable）、适配器（ChannelInboundHandlerAdapter 空实现）、策略（chooser 位运算/取模分派）、建造者（Bootstrap Fluent DSL），另以全景表覆盖代理/组合/状态/享元/迭代器/中介者共 16 模式。详见 [[design-patterns-in-netty]]。
+- Spring Cloud Gateway 应用（番外篇）：SCG 底层为 Reactor Netty——httpclient 配置本质是对 Bootstrap/ChannelPool 调参；Server/Client 双 EventLoopGroup（代理模式 Reactor，Server 侧默认 CPU×2、Client 侧 CPU 核数，useNative 切 Epoll）；GlobalFilter 链对应 ChannelPipeline 责任链，NettyRoutingFilter/NettyWriteResponseFilter 最终回落 Channel.writeAndFlush()；生产坑：elastic 连接池无上限易 "Too many open files"（建议 fixed+max-connections）、超时三层（connect/response/单路由覆盖）、多处使用响应须 retain。详见 [[netty-gateway-scg]]。
+- 中间件应用全景（番外篇4，系列完结）：RocketMQ 4.x 起 Remoting 全面 Netty 化（4B+4B+JSON header+body 协议、IdleStateHandler 60s、Processor 业务线程池）；Dubbo Transporter 抽象 + Pipeline 三层 + HashedWheelTimer 客户端心跳（默认 60s）；Elasticsearch 5.0 后迁 Netty 4（9200 HTTP/9300 Transport 双传输、Releasable 内存管理、bulk 全异步）；Pulsar 单连接多路复用 + 高低水位 channelWritabilityChanged 消费端反压；五大最佳实践——IO 线程不做业务/Pipeline 分层/IdleStateHandler+应用层心跳/内存必池化/协议从简。详见 [[netty-in-mainstream-middleware]]。
 
 ## Products / Projects（产品／项目）
 
@@ -162,7 +172,7 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 
 ## Current Understanding（当前认知）
 
-二十九个信源分层互证：机制层（线程模型/内存/零拷贝）解释"为什么快"，教程二十五信源（源码分析第 1~6、8~11、15~18、20~25、27、28、30 篇与番外篇6、调试番外，第 7、12~14、19 篇未采集）补齐"为什么存在"（JDK NIO 痛点）、入门路径（分层架构图、Echo 三段代码对比）与核心组件内部机制（Reactor 三形态与 ServerBootstrapAcceptor 移交链路；Pipeline 双向链表与双向事件传播、Handler 生命周期；ByteBuf 双指针/扩容/引用计数；EventLoop 三合一结构/run() 循环/ioRatio/chooser/register 异步化；启动三件套 initAndRegister 与 Acceptor 装配源码；run() 主循环的 SelectStrategy/ioRatio/空轮询自愈深挖；PooledByteBufAllocator 的 Arena→Chunk→Page→Subpage 四级与线程缓存；PoolChunk/PoolSubpage 内部算法与 ChunkList 六档流转；写缓冲 ChannelOutboundBuffer 的 write/flush 分离与高低水位背压；connect/bind/close 连接生命周期与四层优雅关闭；IdleStateHandler 三维空闲检测与精确再调度心跳机制；断线重连的双时机触发+退避+EventLoop 调度纪律；HttpObjectDecoder 十二态解码状态机与碎片聚合；WebSocket 握手与 Pipeline 热插拔升级；SslHandler 对 SSLEngine 的透明封装、异步握手与 SslProvider 策略切换；零拷贝四大兵器（FileRegion sendfile/CompositeByteBuf 逻辑拼接/wrappedBuffer 包装/堆外内存）；EpollEventLoop native 传输（三 fd 结构/零 GC 事件/ET 模式/回退纪律）；高低水位背压（CAS 状态切换/延迟传播防重入/isWritable 三件套）；ChannelFuture/DefaultPromise 异步结果模型（读写两侧：单字段 CAS 状态机/监听器懒加载/checkNotifyWaiters 唤醒/EventLoop 亲和通知/EventLoop 禁 sync）；实战收尾三篇：手写 RPC 框架（协议信封/长度域拆包/动态代理/异步转同步/与 Dubbo 八维差距）、版本演进（4.0→4.1 升级点/旧 5.0 失败教训/新 5.0 的 JDK17+io_uring+Buffer API）、调试排障方法论（EmbeddedChannel/LoggingHandler/PoolArenaMetric/PARANOID 泄漏检测/空轮询自愈/双根因案例）），两个 IoT 工程层展示"快之外还要什么"——会话路由原子性、命令状态机、背压分层、Drain 发布；李林锋调优层给出百万接入的系统侧配套（句柄/心跳周期/缓冲区/内存池/RPS/JVM）。一致立场：Netty 只保证 IO 层不阻塞，生产级靠使用者的纪律（二十九信源，置信度高）。
+三十二个信源分层互证：机制层（线程模型/内存/零拷贝）解释"为什么快"，教程二十八信源（源码分析第 1~6、8~11、15~18、20~25、27、28、30 篇与番外篇 4/6/7、SCG 番外、调试番外，第 7、12~14、19、26、29 篇未采集）补齐"为什么存在"（JDK NIO 痛点）、入门路径（分层架构图、Echo 三段代码对比）与核心组件内部机制（Reactor 三形态与 ServerBootstrapAcceptor 移交链路；Pipeline 双向链表与双向事件传播、Handler 生命周期；ByteBuf 双指针/扩容/引用计数；EventLoop 三合一结构/run() 循环/ioRatio/chooser/register 异步化；启动三件套 initAndRegister 与 Acceptor 装配源码；run() 主循环的 SelectStrategy/ioRatio/空轮询自愈深挖；PooledByteBufAllocator 的 Arena→Chunk→Page→Subpage 四级与线程缓存；PoolChunk/PoolSubpage 内部算法与 ChunkList 六档流转；写缓冲 ChannelOutboundBuffer 的 write/flush 分离与高低水位背压；connect/bind/close 连接生命周期与四层优雅关闭；IdleStateHandler 三维空闲检测与精确再调度心跳机制；断线重连的双时机触发+退避+EventLoop 调度纪律；HttpObjectDecoder 十二态解码状态机与碎片聚合；WebSocket 握手与 Pipeline 热插拔升级；SslHandler 对 SSLEngine 的透明封装、异步握手与 SslProvider 策略切换；零拷贝四大兵器（FileRegion sendfile/CompositeByteBuf 逻辑拼接/wrappedBuffer 包装/堆外内存）；EpollEventLoop native 传输（三 fd 结构/零 GC 事件/ET 模式/回退纪律）；高低水位背压（CAS 状态切换/延迟传播防重入/isWritable 三件套）；ChannelFuture/DefaultPromise 异步结果模型（读写两侧：单字段 CAS 状态机/监听器懒加载/checkNotifyWaiters 唤醒/EventLoop 亲和通知/EventLoop 禁 sync）；收尾五篇：手写 RPC 框架（协议信封/长度域拆包/动态代理/异步转同步/与 Dubbo 八维差距）、版本演进（4.0→4.1 升级点/旧 5.0 失败教训/新 5.0 的 JDK17+io_uring+Buffer API）、调试排障方法论（EmbeddedChannel/LoggingHandler/PoolArenaMetric/PARANOID 泄漏检测/空轮询自愈/双根因案例）、设计模式全景（十大模式源码落点+16 模式对照表）、应用层两篇（SCG 的双 EventLoopGroup/Filter 链↔Pipeline/连接池与超时三层生产坑；RocketMQ/Dubbo/ES/Pulsar 中间件用法与 IO 线程不做业务等五大最佳实践）），两个 IoT 工程层展示"快之外还要什么"——会话路由原子性、命令状态机、背压分层、Drain 发布；李林锋调优层给出百万接入的系统侧配套（句柄/心跳周期/缓冲区/内存池/RPS/JVM）。一致立场：Netty 只保证 IO 层不阻塞，生产级靠使用者的纪律（三十二信源，置信度高）。
 
 ## Evidence（证据）
 
@@ -195,3 +205,6 @@ Java 异步事件驱动网络框架（基于 IO 多路复用 + Reactor，**不�
 - `raw/sources/architecture/2026-10-27-netty-30-rpc-framework.md`（教程收官实战篇：300 行 RPC 框架全组件源码/调用流程/设计模式/与 Dubbo 八维差距/生产化注意事项）
 - `raw/sources/architecture/2026-10-27-netty-4-to-5.md`（番外篇6：版本演进简史/4.0→4.1 三大升级/旧 5.0 失败两因/新 5.0 四大方向/分场景升级建议）
 - `raw/sources/architecture/2026-10-27-netty-debugging-guide.md`（调试番外：EmbeddedChannel/黄金断点/LoggingHandler/PoolArenaMetric/pendingTasks/PARANOID 泄漏检测/空轮询自愈/5000 连接排障案例/工具速查表）
+- `raw/sources/architecture/2026-10-27-netty-design-patterns.md`（番外篇7：十大设计模式源码落点+16 模式全景表）
+- `raw/sources/architecture/2026-10-27-netty-gateway-scg.md`（SCG 番外：Reactor Netty/双 EventLoopGroup/GlobalFilter↔Pipeline/连接池 elastic vs fixed/超时三层/MiniGateway）
+- `raw/sources/architecture/2026-10-27-netty-in-mainstream-middleware.md`（番外篇4 完结篇：RocketMQ/Dubbo/ES/Pulsar 的 Netty 用法+六维对照表+五大最佳实践+服务端模板）

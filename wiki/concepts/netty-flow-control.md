@@ -13,6 +13,7 @@ tags:
   - flow-control
 sources:
   - raw/sources/architecture/2026-10-27-netty-25-flow-control.md
+  - raw/sources/architecture/2026-10-27-netty-in-mainstream-middleware.md
 related:
   - wiki/concepts/netty-write-flush.md
   - wiki/concepts/netty-channel-pipeline.md
@@ -68,6 +69,7 @@ Netty 的写侧流量控制是建在 `ChannelOutboundBuffer` 上的软性背压�
 
 - 2026-10-29：随教程第 25 篇建立（单信源）；与既有 IoT 信源"写缓冲水位线（32/64KB）是反压开关"互证。
 - 2026-10-29：第 27 篇从 ChannelFuture 接口侧印证 isWritable 语义（totalPendingSize vs 高水位比较），补充"isWritable 检查是 O(1)"的性能断言。
+- 2026-10-29：番外篇 4 给出生产实例——Apache Pulsar 消费端反压：channelActive 里 setWriteBufferHighWaterMark(64K)/LowWaterMark(32K)（与默认值一致），`channelWritabilityChanged` 中 `!isWritable()` 即 `consumer.pause()`、恢复可写即 `consumer.resume()`——"配水位/监听事件/现查 isWritable"三件套的完整落地。
 
 ## Open Questions（开放问题）
 
@@ -78,6 +80,7 @@ Netty 的写侧流量控制是建在 `ChannelOutboundBuffer` 上的软性背压�
 ## Evidence（证据）
 
 - Source: `raw/sources/architecture/2026-10-27-netty-25-flow-control.md`（单一自媒体教程信源；源码为简化注解片段，同系列前文标注 Netty 4.1.x）
+- Source: `raw/sources/architecture/2026-10-27-netty-in-mainstream-middleware.md`（生产实例：Pulsar 消费端高低水位 + channelWritabilityChanged pause/resume 反压）
 
 ## Related Knowledge（相关知识）
 

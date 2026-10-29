@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [netty, Java, RocketMQ]
 asset_ref: Assets/2026/10/netty-in-mainstream-middleware.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Netty 在主流中间件中的应用

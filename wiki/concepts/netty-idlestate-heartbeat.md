@@ -15,6 +15,7 @@ sources:
   - raw/sources/architecture/2026-10-27-netty-17-idlestate-heartbeat.md
   - raw/sources/architecture/2026-10-23-netty-million-connection-push-service.md
   - raw/sources/architecture/2026-10-27-netty-18-reconnect.md
+  - raw/sources/architecture/2026-10-27-netty-in-mainstream-middleware.md
 related:
   - wiki/sources/netty-17-idlestate-heartbeat.md
   - wiki/concepts/netty-eventloop.md
@@ -72,6 +73,7 @@ TCP 无法感知半开/假死连接（物理链路中断、防火墙静默丢弃
 - 2026-10-23：作为机制名出现在李林锋海量接入信源——长连接保活靠应用层心跳（IdleStateHandler）；同信源给出规模化反例：10 万长连接 MQTT 服务超时设 15 分钟 → 约 110 万 ScheduledFutureTask 老化进持久代被误判内存泄露，改 45 秒即愈。
 - 2026-10-29：补齐源码级机制（教程第 17 篇）——三维检测/精确再调度/Promise 回调更新时间戳/isFirst 标记/EventLoop 承载；作者压测断言 10 万连接 30s 间隔 CPU 开销 <0.5%，>10 万连接建议 HashedWheelTimer 或时间段位图。
 - 2026-10-29：第三信源（教程第 18 篇）——给出心跳+重连完整链路（IdleStateEvent → 主动 close → channelInactive → eventLoop.schedule 退避重连），本概念由"检测"扩展为"检测+恢复"闭环的上半环；注意该篇将 IdleStateHandler 描述为"本质上也是 ChannelInboundHandler"，与第 17 篇的 ChannelDuplexHandler 口径不一（该篇为简化示意，以 17 篇为准）。
+- 2026-10-29：第四信源（番外篇 4）——生态用法印证：RocketMQ 服务端 `IdleStateHandler(0,0,60)`、通用服务端模板 `IdleStateHandler(60,0,0)`（60s 读空闲断连）；Dubbo 走另一条路——客户端用 `HashedWheelTimer` 自管定时心跳（默认 60s、最短 1s，大量连接定时任务比 ScheduledExecutorService 高效），服务端用 IdleStateHandler 容忍 3 倍客户端心跳间隔。Dubbo 案例为">10 万连接用时间轮替代"开放问题提供了工程先例。
 
 ## Open Questions（开放问题）
 
@@ -83,6 +85,7 @@ TCP 无法感知半开/假死连接（物理链路中断、防火墙静默丢弃
 - Source: `raw/sources/architecture/2026-10-27-netty-17-idlestate-heartbeat.md`（机制源码级详解，单一自媒体教程信源；性能数字为作者自述）
 - Source: `raw/sources/architecture/2026-10-23-netty-million-connection-push-service.md`（应用层心跳立场与 10 万连接 ScheduledFutureTask 事故案例，李林锋）
 - Source: `raw/sources/architecture/2026-10-27-netty-18-reconnect.md`（心跳+重连完整链路：空闲检测 → close → channelInactive → 退避重连）
+- Source: `raw/sources/architecture/2026-10-27-netty-in-mainstream-middleware.md`（生态印证：RocketMQ/模板 60s 配置；Dubbo HashedWheelTimer 心跳 + 服务端 3 倍容忍）
 
 ## Related Knowledge（相关知识）
 

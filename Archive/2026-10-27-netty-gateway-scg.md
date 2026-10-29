@@ -9,7 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [netty, spring gateway]
 asset_ref: Assets/2026/10/netty-gateway-scg.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Netty源码分析(番外篇) — Spring Cloud Gateway 中的 Netty 应用解析

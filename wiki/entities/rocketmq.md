@@ -4,7 +4,7 @@ type: entity
 title: Apache RocketMQ
 status: active
 created: 2026-10-23
-updated: 2026-10-24
+updated: 2026-10-29
 confidence: high
 tags:
   - entity
@@ -17,6 +17,7 @@ sources:
   - raw/sources/architecture/2026-10-22-rocketmq-interview-8-topics.md
   - raw/sources/architecture/2026-10-22-distributed-transaction-six-solutions.md
   - raw/sources/architecture/2026-10-23-netease-pigeon-message-bus-activity.md
+  - raw/sources/architecture/2026-10-27-netty-in-mainstream-middleware.md
 related:
   - wiki/sources/mq-message-backlog-solutions.md
   - wiki/sources/mq-transaction-idempotency-design.md
@@ -25,6 +26,7 @@ related:
   - wiki/sources/distributed-transaction-six-solutions.md
   - wiki/sources/async-task-system-design.md
   - wiki/entities/pigeon-message-bus.md
+  - wiki/entities/netty.md
 ---
 # Apache RocketMQ
 
@@ -50,6 +52,7 @@ related:
 - 顺序与延时（进阶信源）：局部顺序按业务键 hash 选队列+Broker 队列加锁（与 [[kafka]] 按 key 分区同思想）；延时消息 18 固定级别，经 `SCHEDULE_TOPIC_XXXX` 暂存到期转投。
 - 高可用边界（进阶+面试双信源）：NameServer 无状态（不用 ZK，最终一致优先可用性）；Broker Master 读写/Slave 只读，Consumer 自动切 Slave 读高可用；**4.x Slave 不能自动升 Master**（手动切换，对比 MySQL orc 是能力差距），**5.x 引入 DLedger（Raft）支持自动主从切换**——两信源口径经版本线对齐；生产可靠性常用"异步刷盘+同步复制"折中（同步刷盘+同步复制零丢失但吞吐骤降；异步复制 Master 宕机丢未同步消息，"很多线上事故的根源"）。
 - 存储架构（面试信源）：CommitLog+ConsumeQueue+IndexFile 三层——所有 Topic 消息混存顺序追加 CommitLog（≈600MB/s，单文件 1GB 文件名即偏移），ConsumeQueue 每队列 20 字节定长索引（物理偏移+大小+TagHash），哲学"写时合并，读时分治"；mmap 写 PageCache+sendfile 零拷贝读，与 [[kafka]] 四板斧同源（对比：Kafka 按分区文件组织，RocketMQ 全混存——前者读更局部，后者写更极致）。
+- 网络层（Netty 应用信源）：4.x 起 Remoting 层全面改用 [[netty|Netty]]（早期自研 NIO 的半包粘包/连接管理/背压/心跳边界情况太多）；`NettyRemotingServer`（`org.apache.rocketmq.remoting.netty`）boss 1 线程 + worker 默认 CPU 核数，SO_BACKLOG 1024、SNDBUF/RCVBUF 65535；Pipeline = NettyEncoder/NettyDecoder（自定义二进制协议 RemotingCommand：4B totalSize + 4B headerLength + JSON 头 + body）→ IdleStateHandler(0,0,60) → 连接管理 → 业务分发；IO 线程只做解码，业务按请求 code 分发到 Processor 独立线程池处理——"IO 线程不做业务"的生产样板。
 
 ## Products / Projects（产品／项目）
 
@@ -69,7 +72,7 @@ related:
 
 ## Current Understanding（当前认知）
 
-五个信源互补：堆积治理给运维视角，事务消息信源给一致性视角，进阶信源补机制全景，面试信源补存储层与 5.x DLedger 分水岭，分布式事务综述把事务消息放进"本地消息表→事务消息→对账"责任转移谱系定位。一致纪律：至少一次投递下幂等是必修课（幂等键用业务唯一键而非 msgId），事务消息只用于核心单据，写高可用 4.x 须计入 Slave 不可自动升主（5.x DLedger 解）（五信源互证，置信度高）。
+六个信源互补：堆积治理给运维视角，事务消息信源给一致性视角，进阶信源补机制全景，面试信源补存储层与 5.x DLedger 分水岭，分布式事务综述把事务消息放进"本地消息表→事务消息→对账"责任转移谱系定位，Netty 应用信源补网络层（Remoting 的 Netty 化与协议设计）。一致纪律：至少一次投递下幂等是必修课（幂等键用业务唯一键而非 msgId），事务消息只用于核心单据，写高可用 4.x 须计入 Slave 不可自动升主（5.x DLedger 解）（六信源互证，置信度高）。
 
 ## Evidence（证据）
 
@@ -79,3 +82,4 @@ related:
 - `raw/sources/architecture/2026-10-22-rocketmq-interview-8-topics.md`（CommitLog+ConsumeQueue 存储/事务回查参数/可靠性矩阵/5.x DLedger）
 - `raw/sources/architecture/2026-10-22-distributed-transaction-six-solutions.md`（回查默认 1min/重试 3 次转人工/六方案谱系定位）
 - `raw/sources/architecture/2026-10-23-netease-pigeon-message-bus-activity.md`（信鸽业务总线选型理由/顺序消息注册/PushConsumer 接入）
+- `raw/sources/architecture/2026-10-27-netty-in-mainstream-middleware.md`（Remoting 层 Netty 化：协议设计/Pipeline 结构/Processor 线程池异步化）

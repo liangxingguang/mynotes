@@ -148,6 +148,9 @@
 - [[netty-30-rpc-framework|Netty源码分析(30) — 实战：基于Netty实现一个简单的RPC框架]]（2026-10-29，Netty/教程/RPC实战收官篇）
 - [[netty-4-to-5|Netty源码分析(番外篇6) — Netty 4.x 到 5.x：演进路线与未来展望]]（2026-10-29，Netty/版本演进/io_uring）
 - [[netty-debugging-guide|Netty源码分析(番外篇) — Netty调试技巧与生产问题排查方法论]]（2026-10-29，Netty/调试排障方法论）
+- [[netty-design-patterns|Netty源码分析(番外篇7) — Netty中的设计模式：23种经典模式的工程实践]]（2026-10-29，Netty/设计模式）
+- [[netty-gateway-scg|Netty源码分析(番外篇) — Spring Cloud Gateway 中的 Netty 应用解析]]（2026-10-29，Netty/Spring Cloud Gateway）
+- [[netty-in-mainstream-middleware|Netty 在主流中间件中的应用：RocketMQ、Dubbo、Elasticsearch、Pulsar 怎么用 Netty]]（2026-10-29，Netty/中间件应用，系列完结篇）
 - [[netty-million-connection-push-service|绝对干货：基于Netty实现海量接入的推送服务技术要点（李林锋）]]（2026-10-24，Netty/百万长连接调优）
 - [[nginx-websocket-load-balancing|Nginx生产级WebSocket实时长连接负载均衡，一文搞定（银河技术）]]（2026-10-24，Nginx/WebSocket/云环境断连）
 - [[netty-iot-gateway-resilient-design|百万 IoT 设备并发接入：把 Netty 网关做成可恢复、可验证的连接系统]]（2026-10-22，Netty/IoT/可靠性）
@@ -230,6 +233,7 @@
 - [[cpu-funnel-coding|CPU 漏斗（编码级性能模型）]]（砍掉无效解析/转换/对象，让 CPU 只做核心运算）
 - [[cross-process-surface-rendering|Surface 跨进程渲染]]（Surface Parcelable + SurfaceFlinger 跨进程合成，Binder 传 Surface 零拷贝传画面；Renderer 3→1，微信小游戏一手）
 - [[deep-thinking-five-tools|深度思考五工具（澄清-拆解-追问-反证-逆向）]]（按序收敛四步+发散出口一步，反认知闭合；YouCore 单信源，置信度中）
+- [[design-patterns-in-netty|Netty 设计模式全景（源码视角的模式识别）]]（十大模式源码落点+16 模式对照表；机制概念页的模式视角索引；单信源，置信度中）
 - [[durable-execution|持久执行（Durable Execution）]]（崩溃后断点精确恢复；效应三明治 + 版本化文档存储，非事件溯源）
 - [[enummap-enumset-internals|EnumMap / EnumSet 枚举专用集合设计]]（ordinal 直接索引：Object[] 数组下标 / long 位向量，≤64 自动选型 RegularEnumSet；集合运算一条位运算；单信源，置信度中）
 - [[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]（先目标基线、JFR/GC 日志归因，证据指向 JVM 才动参数，单变量实验）
@@ -264,13 +268,13 @@
 - [[netty-connection-lifecycle|Netty 连接生命周期（connect/bind/close）]]（AbstractUnsafe 三主线：OP_CONNECT+超时定时/fireChannelActive 注册 OP_ACCEPT/close 四层优雅清理；全程 Promise-Future；双信源，置信度高）
 - [[netty-eventloop|Netty EventLoop / EventLoopGroup（事件循环机制）]]（线程+Selector+MpscLinkedQueue 三合一；CPU×2 默认线程+chooser 位运算+ioRatio=50 时间配比+selectCnt 超 512 重建 Selector 自愈+register 异步化；源码级三信源互证，置信度高）
 - [[netty-epoll-native-transport|Netty EpollEventLoop 与 Native Transport（绕过 JDK Selector 直调 epoll）]]（epollFd/eventFd/timerFd 三 fd+事件栈上分配零 GC+fd 直映射无 selectedKeys 遍历+ET 循环读到 EAGAIN；仅 Linux+Epoll→KQueue→NIO 回退纪律；"Netty 5 推 io_uring"矛盾经番外篇6 消解（新旧两代 5.0）；双信源，置信度中）
-- [[netty-flow-control|Netty 流量控制（高低水位与 isWritable 背压）]]（WriteBufferWaterMark 默认 32K/64K 软限制+CAS 位标记状态切换+变不可写 invokeLater 延迟传播防重入+写前必查 isWritable；与 TCP 滑窗/应用队列三层背压叠加；单信源，置信度中）
+- [[netty-flow-control|Netty 流量控制（高低水位与 isWritable 背压）]]（WriteBufferWaterMark 默认 32K/64K 软限制+CAS 位标记状态切换+变不可写 invokeLater 延迟传播防重入+写前必查 isWritable；与 TCP 滑窗/应用队列三层背压叠加；Pulsar 消费端反压生产实例印证，双信源，置信度中）
 - [[netty-http-decoder|Netty HTTP 解码状态机（HttpObjectDecoder）]]（currentState 成员变量持久化的 12 态 FSM 抗 TCP 分片；头部 readerIndex 零拷贝+chunked readRetainedSlice；碎片产出由 HttpObjectAggregator 选配聚合；UPGRADED 让位 WebSocket；单信源，置信度中）
 - [[netty-reconnect|Netty 断线重连机制]]（无内置重连，ChannelFutureListener+channelInactive 双时机+eventLoop.schedule 串行化；指数退避+抖动 30s 封顶防惊群；IdleStateEvent→close→channelInactive→重连闭环+channelActive 状态重建；单信源，置信度中）
 - [[netty-ssl-tls|Netty SSL/TLS 支持（SslHandler 对 SSLEngine 的透明封装）]]（入站 unwrap 解密/出站 wrap 加密双职责+握手全程异步 NEED_TASK 不占 IO 线程+handshakeFuture 通知；SslContext 工厂+SslProvider 策略 JDK/OpenSSL/BouncyCastle；Pipeline 最前/PKCS#8/Session 复用+TLS 1.3；单信源，置信度中）
 - [[netty-websocket-upgrade|Netty WebSocket 协议升级（握手与 Pipeline 热插拔）]]（Upgrade 头+Base64(SHA1(Key+魔数))→101→Listener 里移除 HTTP 编解码器热插拔帧编解码器；掩码单向铁律+分片重组；聚合器不可省/限帧/文明关闭；单信源，置信度中）
-- [[netty-idlestate-heartbeat|Netty 空闲检测与心跳（IdleStateHandler）]]（三维读/写/全部空闲超时转纳秒计时+精确剩余时间再调度+ChannelPromise 回调更新写时间戳+IdleStateEvent/isFirst 责任链分发；EventLoop 承载；李林锋 10 万连接事故反例互证，双信源）
-- [[netty-pooled-allocator|Netty 池化内存分配（PooledByteBufAllocator）]]（jemalloc 四级分级 Arena CPU×2→Chunk 16MB 满二叉树→Page 8KB→Subpage 位图+PoolThreadCache 无锁缓存；tiny/small/normal/huge 分派；ChunkList 六档流转；release 纪律+PARANOID 泄漏检测；五信源，置信度高）
+- [[netty-idlestate-heartbeat|Netty 空闲检测与心跳（IdleStateHandler）]]（三维读/写/全部空闲超时转纳秒计时+精确剩余时间再调度+ChannelPromise 回调更新写时间戳+IdleStateEvent/isFirst 责任链分发；EventLoop 承载；李林锋 10 万连接事故反例+RocketMQ/Dubbo 生态用法互证，四信源）
+- [[netty-pooled-allocator|Netty 池化内存分配（PooledByteBufAllocator）]]（jemalloc 四级分级 Arena CPU×2→Chunk 16MB 满二叉树→Page 8KB→Subpage 位图+PoolThreadCache 无锁缓存；tiny/small/normal/huge 分派；ChunkList 六档流转；release 纪律+PARANOID 泄漏检测+中间件生态标配印证；六信源，置信度高）
 - [[netty-rpc-framework|基于 Netty 的轻量级 RPC 框架实现模式]]（协议信封 requestId 关联+长度域 mark/reset 拆粘包+JDK 动态代理+RpcFuture(CountDownLatch) 异步转同步+反射调用；与 Dubbo 八维工程化差距；系列收官实战单信源，置信度中）
 - [[netty-write-flush|Netty 写缓冲与背压（ChannelOutboundBuffer/writeAndFlush/高低水位）]]（write 入队 O(1)+flush 移指针+doWrite 才调 JDK 写；写自旋 16/OP_WRITE 半包续写/水位 64KB/32KB 背压；三信源互证，置信度高）
 - [[netty-zero-copy|Netty 零拷贝机制（FileRegion/CompositeByteBuf/wrappedBuffer/堆外内存）]]（零拷贝=无 CPU 参与的拷贝；sendfile 4 拷贝压成 2 次 DMA+doWrite 专门分支；Composite 组件数组逻辑拼接二分定位；FileRegion 单次使用+编解码跳过+Windows fallback；单信源，置信度中）
@@ -286,7 +290,7 @@
 - [[read-fanout|读扩散（Fan-out on Read）]]（会话队列+syncId 位点同步把 1:N 写压成 1:1；99.99% 非个性化消息前提；阿里混合模式 500ms 端到端，双信源）
 - [[rag-production-guardrails|企业级 RAG 生产护栏]]（容量/证据/权限/恢复四主线；证据门禁前置、发布目录原子切换；混合检索+存储分层+参数热调双信源互证）
 - [[reactive-tracing-context|响应式环境的全链路 traceId 传递]]（Reactor Context 替代 ThreadLocal；doOnEach 同步 MDC、doFinally 清除）
-- [[reactor-thread-model|主从 Reactor 线程模型（Netty 版）]]（Boss accept/Worker CPU×2/Channel 终身绑单 EventLoop 天然无锁；ServerBootstrapAcceptor 移交链路+三形态选型，六信源互证，置信度高）
+- [[reactor-thread-model|主从 Reactor 线程模型（Netty 版）]]（Boss accept/Worker CPU×2/Channel 终身绑单 EventLoop 天然无锁；ServerBootstrapAcceptor 移交链路+三形态选型+SCG 双 Group 与中间件应用印证，八信源互证，置信度高）
 - [[reentrantlock-internals|ReentrantLock 可重入锁设计]]（AQS 经典实现：非公平先抢/公平只差 hasQueuedPredecessors/state 累加可重入/多 Condition 精确唤醒，单信源，置信度中）
 - [[scheduledthreadpoolexecutor-internals|ScheduledThreadPoolExecutor 调度设计]]（DelayedWorkQueue 数组最小堆+Leader-Follower 等待；period 正负号编码 fixedRate/fixedDelay；周期任务异常静默取消，单信源，置信度中）
 - [[synchronousqueue-internals|SynchronousQueue 直接交接设计]]（零容量不存储+单 transfer 双角色；TransferStack Treiber 栈 FULFILLING 配对/TransferQueue FIFO；先自旋后 park；newCachedThreadPool 之选，单信源，置信度中）
@@ -310,16 +314,16 @@
 - [[arthas|Arthas]]（Java 线上诊断工具，4.3.5 起含实验性 MCP Server）
 - [[deepseek-harness|DeepSeek Harness]]（DeepSeek 模型的桌面 Agent 客户端，v0.2 预览版）
 - [[drawio-skill|drawio-skill]]（代码/配置→可编辑 .drawio 架构图，增量同步 + CI 架构检查）
-- [[elasticsearch|Elasticsearch]]（Lucene 之上的分布式搜索引擎；读模型定位、三信源互证的生产纪律）
+- [[elasticsearch|Elasticsearch]]（Lucene 之上的分布式搜索引擎；读模型定位、生产纪律+Netty 4 传输层，四信源互证）
 - [[ep-harness|EP-Harness]]（得物团队级 Managed Agents 平台，Multica 二开，Prompt→Context→Harness→Loop 四层）
 - [[jd-haibo|京东海博]]（京东本地生活即时零售 SaaS，780+ 商家/10 万+ 门店，AI 知识库实践标杆）
 - [[kafka|Apache Kafka]]（高吞吐事件管道；顺序写+PageCache+零拷贝+批量四板斧，机制+运维+IoT 场景三信源）
 - [[langgraph|LangGraph]]（LangChain 生态 Agent 编排状态机；原生非分布式，RedisSaver+MySQL 快照+外部锁补齐，双信源）
 - [[learn-harness-engineering-course|Learn Harness Engineering]]（Walking Labs 开源 Coding Agent 工程课程：14 讲 + 8 递进项目，单一微博推荐信源）
-- [[netty|Netty]]（Java 异步事件驱动网络框架；Reactor+ByteBuf+零拷贝三支柱+Pipeline/EventLoop/Bootstrap/内存池/Native Transport/流量控制/ChannelFuture 源码机制+RPC 实战/版本演进/调试排障收尾，机制+教程+IoT 工程二十九信源）
+- [[netty|Netty]]（Java 异步事件驱动网络框架；Reactor+ByteBuf+零拷贝三支柱+Pipeline/EventLoop/Bootstrap/内存池/Native Transport/流量控制/ChannelFuture 源码机制+RPC 实战/版本演进/调试排障/设计模式全景+SCG 与中间件应用，机制+教程+IoT 工程三十二信源）
 - [[pi|Pi]]（极简 Agent CLI/Harness，1.0 起原生 MCP + Code Mode + Pi Durable，5000+ 扩展生态）
 - [[pigeon-message-bus|信鸽（Pigeon）]]（网易云音乐直播活动消息总线；32 台 8U16G 支撑 300w/min，RocketMQ 底座）
-- [[rocketmq|Apache RocketMQ]]（高性能分布式 MQ；事务消息+回查保发送、业务幂等保消费，运维+一致性+机制+存储+事务谱系五信源）
+- [[rocketmq|Apache RocketMQ]]（高性能分布式 MQ；事务消息+回查保发送、业务幂等保消费，运维+一致性+机制+存储+事务谱系+Netty 网络层六信源）
 - [[rongyun|融云]]（IM 云服务厂商；直播聊天室通知拉取+丢弃策略路线代表，双信源）
 - [[system-design-notes|system-design-notes]]（按 Alex Xu 两卷书体系整理的 28 章开源系统设计笔记，GitHub liquidslr）
 - [[unyra|归一 Unyra]]（本地优先探索式学习 AI 桌面应用，知识 DAG + 超级导师沙箱改文档，仅 Windows 安装链）

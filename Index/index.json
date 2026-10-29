@@ -1,65 +1,6 @@
 {
-  "updated_at": "2026-10-29 09:34",
+  "updated_at": "2026-10-29 12:32",
   "notes": [
-    {
-      "id": "2026-10-27-netty-design-patterns",
-      "title": "Netty源码分析(番外篇7) — Netty中的设计模式：23种经典模式的工程实践",
-      "path": "Inbox/2026-10-27-netty-design-patterns.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Java",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484716&idx=1&sn=4446792a1f1f6f02cce5b6df7b8a4e30&chksm=fe6ca476c91b2d60e265b7acdffd5b416545738b838c2260a8a9d40c5545a0d0382a684decfc#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "从源码视角识别 Netty 中的设计模式：逐一剖析模板方法、责任链、工厂方法、观察者、命令、装饰器、单例、适配器、策略、建造者十大模式的具体落点，并给出 16 种模式的全景对照表。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-design-patterns.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-27-netty-gateway-scg",
-      "title": "Netty源码分析(番外篇) — Spring Cloud Gateway 中的 Netty 应用解析",
-      "path": "Inbox/2026-10-27-netty-gateway-scg.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "spring gateway"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484705&idx=1&sn=8e3ff2de8fd218f81921cbe72d23f75b&chksm=fe6ca47bc91b2d6dfd4dc5bad272f69b2312a73594f14f9ff0d71c1b745bf61c0bee3b8e9941#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "拆解 Spring Cloud Gateway 底层对 Netty 的使用：Reactor Netty 的 HttpClient 初始化、双 EventLoopGroup、GlobalFilter 链与 ChannelPipeline 的对应关系，并手写一个迷你网关串起路由匹配、转发、响应写回的完整流程。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-gateway-scg.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-27-netty-in-mainstream-middleware",
-      "title": "Netty 在主流中间件中的应用",
-      "path": "Inbox/2026-10-27-netty-in-mainstream-middleware.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Java",
-        "RocketMQ"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/oqhrO1qmeRsJdeu4KmVpCg",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "Netty 源码分析系列番外篇（完结）：拆解 RocketMQ、Dubbo、Elasticsearch、Pulsar 四大中间件的 Netty 用法，含核心源码与关键问题对照表，总结五大最佳实践并给出一个可直接复用的 Netty 服务端模板。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-in-mainstream-middleware.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-27-netty-kafka",
       "title": "Netty源码分析(番外篇9) — Kafka为什么选Netty？网络层源码拆解",
@@ -4884,6 +4825,65 @@
       "summary": "Netty 系列收官番外，系统性整理源码调试与线上问题排查方法论：本地用 EmbeddedChannel 与黄金断点调 Handler，线上靠内置指标、内存泄漏检测与 epoll 空轮询防护三板斧，并以一个真实压测排障案例串起完整思路。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-debugging-guide.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-design-patterns",
+      "title": "Netty源码分析(番外篇7) — Netty中的设计模式：23种经典模式的工程实践",
+      "path": "Archive/2026-10-27-netty-design-patterns.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484716&idx=1&sn=4446792a1f1f6f02cce5b6df7b8a4e30&chksm=fe6ca476c91b2d60e265b7acdffd5b416545738b838c2260a8a9d40c5545a0d0382a684decfc#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "从源码视角识别 Netty 中的设计模式：逐一剖析模板方法、责任链、工厂方法、观察者、命令、装饰器、单例、适配器、策略、建造者十大模式的具体落点，并给出 16 种模式的全景对照表。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-design-patterns.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-gateway-scg",
+      "title": "Netty源码分析(番外篇) — Spring Cloud Gateway 中的 Netty 应用解析",
+      "path": "Archive/2026-10-27-netty-gateway-scg.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "spring gateway"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484705&idx=1&sn=8e3ff2de8fd218f81921cbe72d23f75b&chksm=fe6ca47bc91b2d6dfd4dc5bad272f69b2312a73594f14f9ff0d71c1b745bf61c0bee3b8e9941#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "拆解 Spring Cloud Gateway 底层对 Netty 的使用：Reactor Netty 的 HttpClient 初始化、双 EventLoopGroup、GlobalFilter 链与 ChannelPipeline 的对应关系，并手写一个迷你网关串起路由匹配、转发、响应写回的完整流程。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-gateway-scg.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-in-mainstream-middleware",
+      "title": "Netty 在主流中间件中的应用",
+      "path": "Archive/2026-10-27-netty-in-mainstream-middleware.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java",
+        "RocketMQ"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/oqhrO1qmeRsJdeu4KmVpCg",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "Netty 源码分析系列番外篇（完结）：拆解 RocketMQ、Dubbo、Elasticsearch、Pulsar 四大中间件的 Netty 用法，含核心源码与关键问题对照表，总结五大最佳实践并给出一个可直接复用的 Netty 服务端模板。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-in-mainstream-middleware.md",
       "wiki_status": "ingested"
     }
   ]
