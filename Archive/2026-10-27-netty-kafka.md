@@ -9,9 +9,7 @@ created: 2026-10-27
 category: 技术
 tags: [netty, Kafka]
 asset_ref: Assets/2026/10/netty-kafka.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-10-29T04:33:08.661Z"
-ingest_claim_id: 28240-1793248388661-0
+wiki_status: ingested
 ---
 
 # Netty源码分析(番外篇9) — Kafka为什么选Netty？网络层源码拆解

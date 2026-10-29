@@ -14,12 +14,15 @@ tags:
 sources:
   - raw/sources/architecture/2026-10-27-netty-25-flow-control.md
   - raw/sources/architecture/2026-10-27-netty-in-mainstream-middleware.md
+  - raw/sources/architecture/2026-10-27-netty-kafka.md
 related:
   - wiki/concepts/netty-write-flush.md
   - wiki/concepts/netty-channel-pipeline.md
   - wiki/concepts/netty-eventloop.md
   - wiki/concepts/netty-channelfuture.md
   - wiki/entities/netty.md
+  - wiki/entities/kafka.md
+  - wiki/decisions/kafka-adopts-netty.md
 ---
 # Netty 流量控制（高低水位与 isWritable 背压）
 
@@ -70,6 +73,7 @@ Netty 的写侧流量控制是建在 `ChannelOutboundBuffer` 上的软性背压�
 - 2026-10-29：随教程第 25 篇建立（单信源）；与既有 IoT 信源"写缓冲水位线（32/64KB）是反压开关"互证。
 - 2026-10-29：第 27 篇从 ChannelFuture 接口侧印证 isWritable 语义（totalPendingSize vs 高水位比较），补充"isWritable 检查是 O(1)"的性能断言。
 - 2026-10-29：番外篇 4 给出生产实例——Apache Pulsar 消费端反压：channelActive 里 setWriteBufferHighWaterMark(64K)/LowWaterMark(32K)（与默认值一致），`channelWritabilityChanged` 中 `!isWritable()` 即 `consumer.pause()`、恢复可写即 `consumer.resume()`——"配水位/监听事件/现查 isWritable"三件套的完整落地。
+- 2026-10-29：番外篇 9 补全"三层背压叠加"的应用层队列环节——Kafka 的 RequestChannel 是有界队列，队列满时 sendRequest 阻塞网络线程 → Reactor 线程停止从 Socket 读 → TCP 接收窗口收缩 → 客户端发送变慢：压力从应用层一路传导到 TCP 层再到客户端。这是本概念首个应用层队列实例（Pulsar 实例属写侧水位层）。
 
 ## Open Questions（开放问题）
 
@@ -81,6 +85,7 @@ Netty 的写侧流量控制是建在 `ChannelOutboundBuffer` 上的软性背压�
 
 - Source: `raw/sources/architecture/2026-10-27-netty-25-flow-control.md`（单一自媒体教程信源；源码为简化注解片段，同系列前文标注 Netty 4.1.x）
 - Source: `raw/sources/architecture/2026-10-27-netty-in-mainstream-middleware.md`（生产实例：Pulsar 消费端高低水位 + channelWritabilityChanged pause/resume 反压）
+- Source: `raw/sources/architecture/2026-10-27-netty-kafka.md`（生产实例：Kafka RequestChannel 有界队列阻塞网络线程 → TCP 接收窗口收缩的应用层→TCP 背压传导）
 
 ## Related Knowledge（相关知识）
 

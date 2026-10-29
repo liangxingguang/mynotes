@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-10-29 12:36",
+  "updated_at": "2026-10-29 12:40",
   "notes": [
-    {
-      "id": "2026-10-27-netty-kafka",
-      "title": "Netty源码分析(番外篇9) — Kafka为什么选Netty？网络层源码拆解",
-      "path": "Inbox/2026-10-27-netty-kafka.md",
-      "created": "2026-10-27",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Kafka"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484730&idx=1&sn=7760e5006f2d495fc8ffe3146c7887ba&chksm=fe6ca460c91b2d76430dcc1428c8cc9c718138e0bb12cb6beba307a488f970bcf3f103bc4851#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "基于 Kafka 3.9.0 源码拆解其网络层如何从自研 NIO 转向 Netty：启动流程、七层 Pipeline 流水线、帧解码的引用计数坑、RequestChannel 背压设计与批量 flush 优化，最后复盘 Kafka 选 Netty 的决策逻辑。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-kafka.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-10-27-netty-perf-tuning",
       "title": "Netty源码分析(番外篇) — Netty性能调优实战：从参数配置到JVM层优化",
@@ -4904,6 +4885,25 @@
       "summary": "Netty 源码分析系列番外篇（完结）：拆解 RocketMQ、Dubbo、Elasticsearch、Pulsar 四大中间件的 Netty 用法，含核心源码与关键问题对照表，总结五大最佳实践并给出一个可直接复用的 Netty 服务端模板。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-in-mainstream-middleware.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-27-netty-kafka",
+      "title": "Netty源码分析(番外篇9) — Kafka为什么选Netty？网络层源码拆解",
+      "path": "Archive/2026-10-27-netty-kafka.md",
+      "created": "2026-10-27",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Kafka"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NTcwMzg2MQ==&mid=2247484730&idx=1&sn=7760e5006f2d495fc8ffe3146c7887ba&chksm=fe6ca460c91b2d76430dcc1428c8cc9c718138e0bb12cb6beba307a488f970bcf3f103bc4851#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "基于 Kafka 3.9.0 源码拆解其网络层如何从自研 NIO 转向 Netty：启动流程、七层 Pipeline 流水线、帧解码的引用计数坑、RequestChannel 背压设计与批量 flush 优化，最后复盘 Kafka 选 Netty 的决策逻辑。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-kafka.md",
       "wiki_status": "ingested"
     }
   ]

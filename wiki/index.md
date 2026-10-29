@@ -151,6 +151,7 @@
 - [[netty-design-patterns|Netty源码分析(番外篇7) — Netty中的设计模式：23种经典模式的工程实践]]（2026-10-29，Netty/设计模式）
 - [[netty-gateway-scg|Netty源码分析(番外篇) — Spring Cloud Gateway 中的 Netty 应用解析]]（2026-10-29，Netty/Spring Cloud Gateway）
 - [[netty-in-mainstream-middleware|Netty 在主流中间件中的应用：RocketMQ、Dubbo、Elasticsearch、Pulsar 怎么用 Netty]]（2026-10-29，Netty/中间件应用，系列完结篇）
+- [[netty-kafka-network-layer|Netty源码分析(番外篇9) — Kafka为什么选Netty？网络层源码拆解]]（2026-10-29，Netty/Kafka/应用层背压）
 - [[netty-million-connection-push-service|绝对干货：基于Netty实现海量接入的推送服务技术要点（李林锋）]]（2026-10-24，Netty/百万长连接调优）
 - [[nginx-websocket-load-balancing|Nginx生产级WebSocket实时长连接负载均衡，一文搞定（银河技术）]]（2026-10-24，Nginx/WebSocket/云环境断连）
 - [[netty-iot-gateway-resilient-design|百万 IoT 设备并发接入：把 Netty 网关做成可恢复、可验证的连接系统]]（2026-10-22，Netty/IoT/可靠性）
@@ -268,7 +269,7 @@
 - [[netty-connection-lifecycle|Netty 连接生命周期（connect/bind/close）]]（AbstractUnsafe 三主线：OP_CONNECT+超时定时/fireChannelActive 注册 OP_ACCEPT/close 四层优雅清理；全程 Promise-Future；双信源，置信度高）
 - [[netty-eventloop|Netty EventLoop / EventLoopGroup（事件循环机制）]]（线程+Selector+MpscLinkedQueue 三合一；CPU×2 默认线程+chooser 位运算+ioRatio=50 时间配比+selectCnt 超 512 重建 Selector 自愈+register 异步化；源码级三信源互证，置信度高）
 - [[netty-epoll-native-transport|Netty EpollEventLoop 与 Native Transport（绕过 JDK Selector 直调 epoll）]]（epollFd/eventFd/timerFd 三 fd+事件栈上分配零 GC+fd 直映射无 selectedKeys 遍历+ET 循环读到 EAGAIN；仅 Linux+Epoll→KQueue→NIO 回退纪律；"Netty 5 推 io_uring"矛盾经番外篇6 消解（新旧两代 5.0）；双信源，置信度中）
-- [[netty-flow-control|Netty 流量控制（高低水位与 isWritable 背压）]]（WriteBufferWaterMark 默认 32K/64K 软限制+CAS 位标记状态切换+变不可写 invokeLater 延迟传播防重入+写前必查 isWritable；与 TCP 滑窗/应用队列三层背压叠加；Pulsar 消费端反压生产实例印证，双信源，置信度中）
+- [[netty-flow-control|Netty 流量控制（高低水位与 isWritable 背压）]]（WriteBufferWaterMark 默认 32K/64K 软限制+CAS 位标记状态切换+变不可写 invokeLater 延迟传播防重入+写前必查 isWritable；与 TCP 滑窗/应用队列三层背压叠加；Pulsar 写侧水位+Kafka RequestChannel 应用层队列双生产实例，三信源，置信度中）
 - [[netty-http-decoder|Netty HTTP 解码状态机（HttpObjectDecoder）]]（currentState 成员变量持久化的 12 态 FSM 抗 TCP 分片；头部 readerIndex 零拷贝+chunked readRetainedSlice；碎片产出由 HttpObjectAggregator 选配聚合；UPGRADED 让位 WebSocket；单信源，置信度中）
 - [[netty-reconnect|Netty 断线重连机制]]（无内置重连，ChannelFutureListener+channelInactive 双时机+eventLoop.schedule 串行化；指数退避+抖动 30s 封顶防惊群；IdleStateEvent→close→channelInactive→重连闭环+channelActive 状态重建；单信源，置信度中）
 - [[netty-ssl-tls|Netty SSL/TLS 支持（SslHandler 对 SSLEngine 的透明封装）]]（入站 unwrap 解密/出站 wrap 加密双职责+握手全程异步 NEED_TASK 不占 IO 线程+handshakeFuture 通知；SslContext 工厂+SslProvider 策略 JDK/OpenSSL/BouncyCastle；Pipeline 最前/PKCS#8/Session 复用+TLS 1.3；单信源，置信度中）
@@ -317,10 +318,10 @@
 - [[elasticsearch|Elasticsearch]]（Lucene 之上的分布式搜索引擎；读模型定位、生产纪律+Netty 4 传输层，四信源互证）
 - [[ep-harness|EP-Harness]]（得物团队级 Managed Agents 平台，Multica 二开，Prompt→Context→Harness→Loop 四层）
 - [[jd-haibo|京东海博]]（京东本地生活即时零售 SaaS，780+ 商家/10 万+ 门店，AI 知识库实践标杆）
-- [[kafka|Apache Kafka]]（高吞吐事件管道；顺序写+PageCache+零拷贝+批量四板斧，机制+运维+IoT 场景三信源）
+- [[kafka|Apache Kafka]]（高吞吐事件管道；顺序写+PageCache+零拷贝+批量四板斧；2.0 起网络层自研 NIO→Netty，机制+运维+IoT 场景+网络层四信源）
 - [[langgraph|LangGraph]]（LangChain 生态 Agent 编排状态机；原生非分布式，RedisSaver+MySQL 快照+外部锁补齐，双信源）
 - [[learn-harness-engineering-course|Learn Harness Engineering]]（Walking Labs 开源 Coding Agent 工程课程：14 讲 + 8 递进项目，单一微博推荐信源）
-- [[netty|Netty]]（Java 异步事件驱动网络框架；Reactor+ByteBuf+零拷贝三支柱+Pipeline/EventLoop/Bootstrap/内存池/Native Transport/流量控制/ChannelFuture 源码机制+RPC 实战/版本演进/调试排障/设计模式全景+SCG 与中间件应用，机制+教程+IoT 工程三十二信源）
+- [[netty|Netty]]（Java 异步事件驱动网络框架；Reactor+ByteBuf+零拷贝三支柱+Pipeline/EventLoop/Bootstrap/内存池/Native Transport/流量控制/ChannelFuture 源码机制+RPC 实战/版本演进/调试排障/设计模式全景+SCG/Kafka/中间件应用，机制+教程+IoT 工程三十三信源）
 - [[pi|Pi]]（极简 Agent CLI/Harness，1.0 起原生 MCP + Code Mode + Pi Durable，5000+ 扩展生态）
 - [[pigeon-message-bus|信鸽（Pigeon）]]（网易云音乐直播活动消息总线；32 台 8U16G 支撑 300w/min，RocketMQ 底座）
 - [[rocketmq|Apache RocketMQ]]（高性能分布式 MQ；事务消息+回查保发送、业务幂等保消费，运维+一致性+机制+存储+事务谱系+Netty 网络层六信源）
@@ -336,7 +337,7 @@
 
 ## decision（决策）
 
-（暂无）
+- [[kafka-adopts-netty|Kafka 2.0 网络层弃自研 NIO 迁移 Netty]]（维护成本三痛点+七维对照复盘；"知道什么该自己造"，单信源，置信度中）
 
 ## comparison（对比）
 
