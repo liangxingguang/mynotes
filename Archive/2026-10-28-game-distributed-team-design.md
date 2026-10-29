@@ -9,7 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [游戏开发, 分布式系统, 游戏架构]
 asset_ref: Assets/2026/10/game-distributed-team-design.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 游戏开发：分布式队伍架构的改进（互为镜像式）

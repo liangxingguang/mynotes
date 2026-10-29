@@ -2755,6 +2755,42 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/RxiTou-DD--KeS7pnriUcQ",
       "asset_ref": "Assets/2026/10/collaborative-doc-editor-design.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-28-game-distributed-team-design.md",
+      "sha256": "c2827a681f189c5548fa2aee2b2190918980061057165c26c51da25d23d579f3",
+      "registered_at": "2026-10-30",
+      "inbox_ref": "Archive/2026-10-28-game-distributed-team-design.md",
+      "pages": [
+        "wiki/sources/game-distributed-team-design.md",
+        "wiki/concepts/mirror-team-architecture.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2021861957037212357",
+      "asset_ref": "Assets/2026/10/game-distributed-team-design.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-28-game-level-flow-management.md",
+      "sha256": "7883d99a344c1b5731e0099d856113f73180c425c6f6467097950139744502b0",
+      "registered_at": "2026-10-30",
+      "inbox_ref": "Archive/2026-10-28-game-level-flow-management.md",
+      "pages": [
+        "wiki/sources/game-level-flow-management.md",
+        "wiki/concepts/scene-quest-orchestration.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2067243524303611861",
+      "asset_ref": "Assets/2026/10/game-level-flow-management.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-28-game-mail-system-design.md",
+      "sha256": "15957a8943c6c8798b7ef1fb4be30edbb168231086657017e86da1cd497e6505",
+      "registered_at": "2026-10-30",
+      "inbox_ref": "Archive/2026-10-28-game-mail-system-design.md",
+      "pages": [
+        "wiki/sources/game-mail-system-design.md",
+        "wiki/concepts/game-mail-system.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2062549231966090581",
+      "asset_ref": "Assets/2026/10/game-mail-system-design.md"
     }
   ]
 }

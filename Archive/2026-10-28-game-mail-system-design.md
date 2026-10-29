@@ -9,7 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [游戏开发, 分布式系统, 工程实践]
 asset_ref: Assets/2026/10/game-mail-system-design.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 游戏开发：邮件系统的分布式逻辑与特殊用法

@@ -64,6 +64,9 @@
 - [[drawio-skill-arch-diagram|drawio-skill：把代码与配置变成可编辑架构图的开源 Skill]]（2026-10-14，架构/工具）
 - [[ep-harness-team-agent-workflow|如何从个人 AI Coding 到构建团队级 Agent 工作流？（得物 EP-Harness）]]（2026-10-15，AI/团队平台）
 - [[esp32-dev-board-ai-trend|ESP32 开发板借 AI 出圈：从创客玩具到 OpenAI 窃听器]]（2026-10-16，硬件/行业，置信度低）
+- [[game-distributed-team-design|游戏开发：分布式队伍的改进（互为镜像式）]]（2026-10-28，游戏服务器/分布式队伍）
+- [[game-level-flow-management|游戏开发：关卡流程管理（HFSM / 行为树 / 场景任务）]]（2026-10-28，游戏服务器/Gameplay 框架）
+- [[game-mail-system-design|游戏开发：邮件系统的分布式逻辑与特殊用法]]（2026-10-28，游戏服务器/分布式邮件）
 - [[game-server-architecture-four-layers|游戏服务器架构应该如何分层？——连接层/实体层/RPC 约束层/协调层]]（2026-10-21，游戏服务器/架构）
 - [[game-server-elastic-scaling|游戏开发：服务器弹性伸缩（负载均衡、路由服与数据迁移）]]（2026-10-20，游戏服务器/分布式）
 - [[gc-log-tuning-practice|GC 日志分析与调优实战]]（2026-10-21，Java/JVM）
@@ -270,6 +273,7 @@
 - [[futuretask-internals|FutureTask 内部设计（单向状态机 + CAS + Treiber 等待栈）]]（七态单向递增+CAS 推进+WaitNode 无锁栈 park/unpark；cancel 仅设中断标志；异常包装 ExecutionException；单信源，置信度中）
 - [[g1-gc|G1 垃圾收集器]]（Region 分区+RSet+SATB+Mixed GC，可预测停顿，JDK 9+ 默认；单信源）
 - [[gain-message|增益消息（全量快照自愈）]]（状态类消息发全量快照而非增量，丢包被下一条自动纠正；vivo 一手）
+- [[game-mail-system|游戏邮件系统的分布式设计]]（弱时序+独立队列；公共邮件读裂变+标记撤回；Seq+Ack 与合服 DomainEvent；一切领奖皆邮件 Channel；单信源，置信度中）
 - [[geohash|Geohash（地理哈希）]]（经纬度降维前缀编码；边界问题+8 邻居、截短扩半径、缓存键归一；邻近索引+地图瓦片双信源）
 - [[harness-engineering|Harness Engineering（Agent 执行系统工程）]]（Agent ≈ Model + Harness；七观察面+信息三层+安全四层+B0~B5 单变量评测；11 系统源码研究解读）
 - [[hashmap-internals|HashMap 核心设计（JDK 8）]]（2 的幂容量+扰动+0.75 负载因子+8/6/64 树化阈值+高低位链扩容拆分；单信源，置信度中）
@@ -284,6 +288,7 @@
 - [[live-message-drop-policy|直播消息丢弃策略]]（上行 200 条/s 硬丢弃 + 环形队列柔性丢弃 + 优先级三桶保必达，融云双信源）
 - [[mcast|长连接组播（mcast）]]（groupID 下沉长连接层，1:M×1:N 两级扩散；单实例 25w 连接 8w QPS，聚合+压缩消化峰值，百度一手）
 - [[message-bus|业务消息总线]]（哑管道式配置路由：履约异步分发+topic 治理收拢；与 ESB/Pipeline 的区分，信鸽单一信源）
+- [[mirror-team-architecture|互为镜像式队伍架构]]（Game 服与跨服双队伍服务双向全量同步，冲突以单服队伍为准；限定副本只建单服队伍拿回单线程体验；单信源，置信度中）
 - [[next-token-prediction|下一 token 预测]]（LLM 的统一目标：交叉熵训练、自回归生成，能力与幻觉同根）
 - [[netty-bootstrap|Netty Bootstrap 启动引导]]（initAndRegister 三件套：反射建 Channel→init 组装 Pipeline→注册 Selector；interestOps=0 vs OP_ACCEPT 不对称；ServerBootstrapAcceptor 装配移交 worker；三信源互证，置信度高）
 - [[netty-bytebuf|Netty ByteBuf（数据容器与内存管理）]]（读写双指针免 flip+4MB 阈值扩容+引用计数+类 jemalloc 池化；Heap/Direct/Composite 三形态；释放铁律"谁最后消费谁 release"；三信源，置信度高）
@@ -324,6 +329,7 @@
 - [[reentrantlock-internals|ReentrantLock 可重入锁设计]]（AQS 经典实现：非公平先抢/公平只差 hasQueuedPredecessors/state 累加可重入/多 Condition 精确唤醒，单信源，置信度中）
 - [[scheduledthreadpoolexecutor-internals|ScheduledThreadPoolExecutor 调度设计]]（DelayedWorkQueue 数组最小堆+Leader-Follower 等待；period 正负号编码 fixedRate/fixedDelay；周期任务异常静默取消，单信源，置信度中）
 - [[synchronousqueue-internals|SynchronousQueue 直接交接设计]]（零容量不存储+单 transfer 双角色；TransferStack Treiber 栈 FULFILLING 配对/TransferQueue FIFO；先自旋后 park；newCachedThreadPool 之选，单信源，置信度中）
+- [[scene-quest-orchestration|场景任务流程编排（SceneQuest）]]（任务即流程编排器：目标+进度+结果处理；生命周期 FSM 硬编码与流程数据驱动分离；事件立即更新数据心跳再切状态；单信源，置信度中）
 - [[scopedvalue|ScopedValue（作用域值）]]（JDK 25 正式：作用域共享不可变快照，终结 VT 下 ThreadLocal 内存膨胀/泄漏/脏值，Old Gen -61% 实测）
 - [[startup-ideas-framework|创业点子生成与评估框架（YC）]]（四错误避坑+十问评估+七配方生成；YC 前 100 公司 70% 点子自然注意到；演讲整理稿单信源）
 - [[table-sharding-migration|分表平滑迁移策略]]（五种读写策略矩阵 + 双写双读 SQL 重写，京东大表治理实践）

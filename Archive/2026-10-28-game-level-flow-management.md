@@ -9,7 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [游戏开发, 游戏架构, 工程实践]
 asset_ref: Assets/2026/10/game-level-flow-management.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 游戏开发：关卡流程管理（HFSM / 行为树 / 场景任务）

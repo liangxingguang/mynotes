@@ -1,66 +1,6 @@
 {
-  "updated_at": "2026-10-30 03:36",
+  "updated_at": "2026-10-30 06:27",
   "notes": [
-    {
-      "id": "2026-10-28-game-distributed-team-design",
-      "title": "游戏开发：分布式队伍架构的改进（互为镜像式）",
-      "path": "Inbox/2026-10-28-game-distributed-team-design.md",
-      "created": "2026-10-28",
-      "category": "技术",
-      "tags": [
-        "游戏开发",
-        "分布式系统",
-        "游戏架构"
-      ],
-      "source": "知乎专栏",
-      "source_url": "https://zhuanlan.zhihu.com/p/2021861957037212357",
-      "source_type": "link",
-      "platform": "zhihu",
-      "summary": "MMO 队伍系统三代架构演进：单服同线程队伍（精确但限制玩法）→ 传统分布式队伍（灵活但创建走网络）→ 互为镜像式（Game 服与跨服互相同步全量队伍数据，单服队伍优先），兼顾玩法自由度与编程体验。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/game-distributed-team-design.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-28-game-level-flow-management",
-      "title": "游戏开发：关卡流程管理（HFSM / 行为树 / 场景任务）",
-      "path": "Inbox/2026-10-28-game-level-flow-management.md",
-      "created": "2026-10-28",
-      "category": "技术",
-      "tags": [
-        "游戏开发",
-        "游戏架构",
-        "工程实践"
-      ],
-      "source": "知乎专栏",
-      "source_url": "https://zhuanlan.zhihu.com/p/2067243524303611861",
-      "source_type": "link",
-      "platform": "zhihu",
-      "summary": "游戏副本流程管理的四种实现路径：FSM/HFSM 管生命周期、触发器去中心化流程、事件驱动行为树、以及\"任务即流程编排器\"的场景任务抽象——最终用任务系统统一表达副本流程是一次跃迁。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/game-level-flow-management.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-28-game-mail-system-design",
-      "title": "游戏开发：邮件系统的分布式逻辑与特殊用法",
-      "path": "Inbox/2026-10-28-game-mail-system-design.md",
-      "created": "2026-10-28",
-      "category": "技术",
-      "tags": [
-        "游戏开发",
-        "分布式系统",
-        "工程实践"
-      ],
-      "source": "知乎专栏",
-      "source_url": "https://zhuanlan.zhihu.com/p/2062549231966090581",
-      "source_type": "link",
-      "platform": "zhihu",
-      "summary": "游戏后端核心系统的实战总结：普通邮件的弱时序设计（只关注送达不关注顺序）、公共邮件的读裂变与标记法撤回、跨服可靠性投递的 Seq+Ack 与合服陷阱，以及\"一切领奖皆邮件\"的 Channel 抽象。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/game-mail-system-design.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-28-game-quest-system-design",
       "title": "游戏开发：任务系统的设计与实现",
@@ -4923,6 +4863,66 @@
       "summary": "系统设计与面试顶流题：一题考实时通信、分布式一致性、冲突解决算法、存储设计四样。从需求澄清（千万 DAU、30 万长连接、最终一致）讲到分层架构、OT 变换函数完整实现、CRDT 三拼图、文档级 Actor 定序、快照 + OpLog 存储，附 18 条难点速查表与高频追问。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/collaborative-doc-editor-design.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-28-game-distributed-team-design",
+      "title": "游戏开发：分布式队伍架构的改进（互为镜像式）",
+      "path": "Archive/2026-10-28-game-distributed-team-design.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "游戏开发",
+        "分布式系统",
+        "游戏架构"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2021861957037212357",
+      "source_type": "link",
+      "platform": "zhihu",
+      "summary": "MMO 队伍系统三代架构演进：单服同线程队伍（精确但限制玩法）→ 传统分布式队伍（灵活但创建走网络）→ 互为镜像式（Game 服与跨服互相同步全量队伍数据，单服队伍优先），兼顾玩法自由度与编程体验。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/game-distributed-team-design.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-28-game-level-flow-management",
+      "title": "游戏开发：关卡流程管理（HFSM / 行为树 / 场景任务）",
+      "path": "Archive/2026-10-28-game-level-flow-management.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "游戏开发",
+        "游戏架构",
+        "工程实践"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2067243524303611861",
+      "source_type": "link",
+      "platform": "zhihu",
+      "summary": "游戏副本流程管理的四种实现路径：FSM/HFSM 管生命周期、触发器去中心化流程、事件驱动行为树、以及\"任务即流程编排器\"的场景任务抽象——最终用任务系统统一表达副本流程是一次跃迁。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/game-level-flow-management.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-28-game-mail-system-design",
+      "title": "游戏开发：邮件系统的分布式逻辑与特殊用法",
+      "path": "Archive/2026-10-28-game-mail-system-design.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "游戏开发",
+        "分布式系统",
+        "工程实践"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2062549231966090581",
+      "source_type": "link",
+      "platform": "zhihu",
+      "summary": "游戏后端核心系统的实战总结：普通邮件的弱时序设计（只关注送达不关注顺序）、公共邮件的读裂变与标记法撤回、跨服可靠性投递的 Seq+Ack 与合服陷阱，以及\"一切领奖皆邮件\"的 Channel 抽象。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/game-mail-system-design.md",
       "wiki_status": "ingested"
     }
   ]
