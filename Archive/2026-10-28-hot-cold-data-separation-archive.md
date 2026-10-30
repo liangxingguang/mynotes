@@ -9,7 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [MySQL, 分布式系统]
 asset_ref: Assets/2026/10/hot-cold-data-separation-archive.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 大表治理与冷热分离：历史单据到底怎么存？

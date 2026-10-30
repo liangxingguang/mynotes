@@ -74,6 +74,7 @@
 - [[github-niche-usage-tips|三个小众但实用的 GitHub 用法（zread / Deepwiki / gitingest）]]（2026-10-14，工具）
 - [[github-open-source-ai-books-6|知乎专栏：6 本 GitHub 开源 AI 宝典（Agent/Infra/DL/RL）]]（2026-10-23，AI/学习资源，置信度低）
 - [[harness-engineering-11-agents-study|从 11 款 Agent 的源码研究，看懂 Harness Engineering]]（2026-10-27，AI/Harness，置信度高）
+- [[hot-cold-data-separation-archive|微服务架构落地：大表治理与冷热分离——历史单据到底怎么存？]]（2026-10-28，数据库/大表治理）
 - [[how-to-get-startup-ideas|如何找到创业点子（YC 合伙人 Jared Friedman 演讲）]]（2026-10-27，创业/方法论，置信度中）
 - [[huolala-agent-eval-platform|货拉拉业务 Agent 评测平台的工程实践与深度思考]]（2026-10-14，AI/Agent 评测）
 - [[im-group-chat-write-fanout-cost|IM千人群聊该不该用消息写扩散？详细算算成本账！]]（2026-10-23，IM/写扩散）
@@ -280,6 +281,7 @@
 - [[harness-engineering|Harness Engineering（Agent 执行系统工程）]]（Agent ≈ Model + Harness；七观察面+信息三层+安全四层+B0~B5 单变量评测；11 系统源码研究解读）
 - [[hashmap-internals|HashMap 核心设计（JDK 8）]]（2 的幂容量+扰动+0.75 负载因子+8/6/64 树化阈值+高低位链扩容拆分；单信源，置信度中）
 - [[hashset-internals|HashSet / LinkedHashSet 去重设计]]（HashMap key 视图+PRESENT 占位；hashCode+equals 双写铁律；dummy 构造换 LinkedHashMap 得插入序；双信源互证，置信度中）
+- [[hot-cold-data-separation|冷热分离（Hot/Cold Data Separation）]]（状态+时间双维划分；热/温/冷三层异构存储；先复制后删除分批限速；报表走数仓 T+1，单信源）
 - [[hyperloglog|HyperLogLog（基数估算）]]（伯努利过程+分桶调和平均，12KB 估 64 位级基数；≤1w tablekv 精确、>1w HLL >95%，微信一手）
 - [[linkedblockingqueue-internals|LinkedBlockingQueue 双锁阻塞队列设计]]（takeLock/putLock 读写分离+滚动哨兵+跨锁信号传递+计数旧值精确唤醒；默认近无界须显式容量防 OOM；单信源，置信度中）
 - [[longadder-internals|LongAdder 分段累加设计（Striped64）]]（base 快速路径+Cell 数组分散 CAS+@Contended 128B 防伪共享+cellsBusy 自旋扩容≤CPU 核数；sum 近似无 addAndGet；LongAccumulator 泛化任意二元聚合；单信源，置信度中）

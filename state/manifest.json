@@ -2803,6 +2803,18 @@
       ],
       "source_url": "https://zhuanlan.zhihu.com/p/2077349145707397379",
       "asset_ref": "Assets/2026/10/game-quest-system-design.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-28-hot-cold-data-separation-archive.md",
+      "sha256": "92f85cd37f656169ba2f7685c95d5ac0321f38eff08cdebd52780c54ad82417f",
+      "registered_at": "2026-10-30",
+      "inbox_ref": "Archive/2026-10-28-hot-cold-data-separation-archive.md",
+      "pages": [
+        "wiki/sources/hot-cold-data-separation-archive.md",
+        "wiki/concepts/hot-cold-data-separation.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/pfpZAv_WmdsBn2WVdneY0g",
+      "asset_ref": "Assets/2026/10/hot-cold-data-separation-archive.md"
     }
   ]
 }

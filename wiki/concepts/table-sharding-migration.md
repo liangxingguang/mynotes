@@ -4,7 +4,7 @@ type: concept
 title: 分表平滑迁移策略
 status: active
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-30
 confidence: high
 tags:
   - concept
@@ -14,6 +14,7 @@ sources:
   - raw/sources/architecture/2026-10-16-db-table-sharding-practice.md
 related:
   - wiki/sources/db-table-sharding-practice.md
+  - wiki/concepts/hot-cold-data-separation.md
 ---
 # 分表平滑迁移策略
 
@@ -50,6 +51,7 @@ related:
 ### Related Concepts（相关概念）
 
 - 大表治理组合拳：分库分表、表分区、冷热分离、索引优化、读写分离（信源口径，本概念覆盖其中"分库分表"的迁移环节）。
+- [[hot-cold-data-separation|冷热分离]]：组合拳的姊妹手段，解决时间维度的数据温度，与本概念（横向拆分）互补。
 
 ### Distinctions（区分）
 
