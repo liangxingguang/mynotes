@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-10-30 08:26",
+  "updated_at": "2026-10-30 08:30",
   "notes": [
-    {
-      "id": "2026-10-28-investing-for-beginners",
-      "title": "开源项目推荐：《投资入门指南》investing-for-beginners",
-      "path": "Inbox/2026-10-28-investing-for-beginners.md",
-      "created": "2026-10-28",
-      "category": "学习",
-      "tags": [
-        "github",
-        "课程"
-      ],
-      "source": "微博",
-      "source_url": "https://weibo.com/1890573293/5358247088750818",
-      "source_type": "link",
-      "platform": "weibo",
-      "summary": "微博博主张岱樾推荐的开源项目《投资入门指南》：面向普通人的投资基础知识与专业术语合集，已完成第一阶段整理，新版新增《投资第一课》，分享普通人投资最值得了解的几条成功路径。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/investing-for-beginners.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-28-java-online-troubleshooting-arthas",
       "title": "Java线上排查实战：OOM、超时、闪退、GC抖动、死锁",
@@ -4982,6 +4963,25 @@
       "summary": "冷热分离不是省磁盘，是给数据库做减负手术。三层存储：热库分库分表（≤500万行）、温库归档 MySQL、冷库 OSS 或 ES/ClickHouse；归档分批软删，严禁长事务大 DELETE。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/hot-cold-data-separation-archive.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-28-investing-for-beginners",
+      "title": "开源项目推荐：《投资入门指南》investing-for-beginners",
+      "path": "Archive/2026-10-28-investing-for-beginners.md",
+      "created": "2026-10-28",
+      "category": "学习",
+      "tags": [
+        "github",
+        "课程"
+      ],
+      "source": "微博",
+      "source_url": "https://weibo.com/1890573293/5358247088750818",
+      "source_type": "link",
+      "platform": "weibo",
+      "summary": "微博博主张岱樾推荐的开源项目《投资入门指南》：面向普通人的投资基础知识与专业术语合集，已完成第一阶段整理，新版新增《投资第一课》，分享普通人投资最值得了解的几条成功路径。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/investing-for-beginners.md",
       "wiki_status": "ingested"
     }
   ]

@@ -79,6 +79,7 @@
 - [[huolala-agent-eval-platform|货拉拉业务 Agent 评测平台的工程实践与深度思考]]（2026-10-14，AI/Agent 评测）
 - [[im-group-chat-write-fanout-cost|IM千人群聊该不该用消息写扩散？详细算算成本账！]]（2026-10-23，IM/写扩散）
 - [[im-websocket-reconnect-heartbeat|IM聊天不掉线？生产级WebSocket断线重连、心跳保活实战]]（2026-10-23，IM/WebSocket/前端，置信度中）
+- [[investing-for-beginners|微博推荐：开源项目《投资入门指南》investing-for-beginners]]（2026-10-28，学习资源/投资，置信度低）
 - [[huolala-ai-coding-harness|货拉拉千人 AI Coding 落地：用自建 Harness 收口，跑通组织级 AI Native]]（2026-10-24，AI/组织级落地）
 - [[huolala-ai-coding-workflow|个人提效到团队提效：货拉拉 AI Coding 流程化落地实践]]（2026-10-20，AI/企业落地）
 - [[java-perf-low-cpu-coding-tips-part1|打造高性能、低CPU消耗系统—36种编码实战技巧（上篇）]]（2026-10-14，Java/性能）

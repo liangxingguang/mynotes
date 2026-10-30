@@ -9,7 +9,7 @@ created: 2026-10-28
 category: 学习
 tags: [github, 课程]
 asset_ref: Assets/2026/10/investing-for-beginners.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 开源项目推荐：《投资入门指南》investing-for-beginners

@@ -2815,6 +2815,17 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/pfpZAv_WmdsBn2WVdneY0g",
       "asset_ref": "Assets/2026/10/hot-cold-data-separation-archive.md"
+    },
+    {
+      "path": "raw/sources/products/2026-10-28-investing-for-beginners.md",
+      "sha256": "376fad16cb73b0913e61940b62d890275b5a80f5843572d1bbceef17b234edbc",
+      "registered_at": "2026-10-30",
+      "inbox_ref": "Archive/2026-10-28-investing-for-beginners.md",
+      "pages": [
+        "wiki/sources/investing-for-beginners.md"
+      ],
+      "source_url": "https://weibo.com/1890573293/5358247088750818",
+      "asset_ref": "Assets/2026/10/investing-for-beginners.md"
     }
   ]
 }
