@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30 06:30",
+  "updated_at": "2026-10-30 08:14",
   "notes": [
     {
       "id": "2026-10-28-hot-cold-data-separation-archive",
@@ -541,6 +541,26 @@
       "summary": "蚁工厂推荐的开源项目 `survival-llm`：完全离线运行的 AI 生存知识助手，面向断网、停电、自然灾害、野外求生场景。本地 LLM + 约 150 万篇离线知识文档（Wikipedia、MedlinePlus、CDC、FEMA、WHO、wikiHow、iFixit），涵盖急救、净水、食品安全、发电机使用、设备维修与灾害应对。可按电脑配置引导下载不同规格模型。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/survival-llm-offline-assistant.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-30-agent-platform-retry-resilience",
+      "title": "从重试风暴到可控恢复：Agent 平台超时、退避、熔断与背压的系统设计",
+      "path": "Inbox/2026-10-30-agent-platform-retry-resilience.md",
+      "created": "2026-10-30",
+      "category": "技术",
+      "tags": [
+        "分布式系统",
+        "工程实践",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/bEuxXk_f9GSBoZH5a5_RxA",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "以 Agent 平台 `API → Scheduler → Worker → ToolExecutor → MCP/LLM` 调用链为背景的系统设计长文。核心结论：可靠性不是\"多试几次\"，而是限定额外工作——一次业务操作必须有唯一重试所有者，并同时受时间、次数、额度、并发、副作用语义五条边界约束。最危险的不是依赖完全不可用，而是\"仍偶尔成功但每次占用更久\"，此时各层独立重试会在下游容量最低时制造乘法放大（三层各重试 3 次 → 最深层可达 64 次）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/agent-platform-retry-resilience.md",
       "wiki_status": "pending"
     },
     {
