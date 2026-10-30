@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30 08:23",
+  "updated_at": "2026-10-30 08:26",
   "notes": [
     {
       "id": "2026-10-28-investing-for-beginners",
@@ -542,6 +542,26 @@
       "summary": "以 Agent 平台 `API → Scheduler → Worker → ToolExecutor → MCP/LLM` 调用链为背景的系统设计长文。核心结论：可靠性不是\"多试几次\"，而是限定额外工作——一次业务操作必须有唯一重试所有者，并同时受时间、次数、额度、并发、副作用语义五条边界约束。最危险的不是依赖完全不可用，而是\"仍偶尔成功但每次占用更久\"，此时各层独立重试会在下游容量最低时制造乘法放大（三层各重试 3 次 → 最深层可达 64 次）。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/agent-platform-retry-resilience.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-30-alibaba-ai-native-dev-handbook",
+      "title": "阿里巴巴《AI Native 研发范式实践手册》解读",
+      "path": "Inbox/2026-10-30-alibaba-ai-native-dev-handbook.md",
+      "created": "2026-10-30",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践",
+        "AI Coding"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/ilYbYgZRB63nSMCw4MnVRA",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "阿里内部多个团队的 AI Native 研发实践总结：3 个真实案例（AIDC 数字投手、千问用增 Agent、万有无界平台）→ 5 大共性挑战 → 企业级 AI 研发基础设施全景（Harness / 知识库 / 工具体系 / Sandbox / Identity / Guardrail / 可观测）。核心立论：Coding 正在被快速解决，但它只占研发生命周期 20–30%（阿姆达尔定律），瓶颈已转移到验证与环境——\"主战场在验证与环境\"。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/alibaba-ai-native-dev-handbook.md",
       "wiki_status": "pending"
     },
     {

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30 08:23",
+  "updated_at": "2026-10-30 08:26",
   "tags": [
     {
       "name": "思维方式",
@@ -63,7 +63,7 @@
         "LLM"
       ],
       "category": "技术",
-      "count": 65,
+      "count": 66,
       "status": "active"
     },
     {
@@ -73,7 +73,7 @@
         "最佳实践"
       ],
       "category": "技术",
-      "count": 137,
+      "count": 138,
       "status": "active"
     },
     {
@@ -173,7 +173,7 @@
         "AI 编程"
       ],
       "category": "技术",
-      "count": 12,
+      "count": 13,
       "status": "new"
     },
     {
