@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30 08:19",
+  "updated_at": "2026-10-30 08:23",
   "notes": [
     {
       "id": "2026-10-28-investing-for-beginners",
@@ -542,6 +542,25 @@
       "summary": "以 Agent 平台 `API → Scheduler → Worker → ToolExecutor → MCP/LLM` 调用链为背景的系统设计长文。核心结论：可靠性不是\"多试几次\"，而是限定额外工作——一次业务操作必须有唯一重试所有者，并同时受时间、次数、额度、并发、副作用语义五条边界约束。最危险的不是依赖完全不可用，而是\"仍偶尔成功但每次占用更久\"，此时各层独立重试会在下游容量最低时制造乘法放大（三层各重试 3 次 → 最深层可达 64 次）。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/agent-platform-retry-resilience.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-30-coupon-optimal-combination-dfs-ddd",
+      "title": "优惠券最优组合设计：DFS 四层剪枝 + DDD 建模，商城结算工业级落地",
+      "path": "Inbox/2026-10-30-coupon-optimal-combination-dfs-ddd.md",
+      "created": "2026-10-30",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/j5jttq6rZ6LP7VVX-EeIcQ",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "电商大促中优惠券贪心策略算出非全局最优实付引发客诉的治理方案。核心不是算法题，而是\"规则控制面 + 寻优计算面\"分离的控制面设计：DDD 领域模型收敛多变规则、规则引擎与 DFS 回溯算法职责隔离、四层剪枝压缩搜索空间、降级与快照兜底守住预计算链路。贪心的缺陷是策略边界（只看单券局部收益），DP 则被异构约束（互斥/门槛/优先级/赠品）的爆炸状态空间排除。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/coupon-optimal-combination-dfs-ddd.md",
       "wiki_status": "pending"
     },
     {
