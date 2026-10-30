@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30 08:30",
+  "updated_at": "2026-10-30 08:35",
   "notes": [
     {
       "id": "2026-10-28-java-online-troubleshooting-arthas",
@@ -523,6 +523,26 @@
       "summary": "以 Agent 平台 `API → Scheduler → Worker → ToolExecutor → MCP/LLM` 调用链为背景的系统设计长文。核心结论：可靠性不是\"多试几次\"，而是限定额外工作——一次业务操作必须有唯一重试所有者，并同时受时间、次数、额度、并发、副作用语义五条边界约束。最危险的不是依赖完全不可用，而是\"仍偶尔成功但每次占用更久\"，此时各层独立重试会在下游容量最低时制造乘法放大（三层各重试 3 次 → 最深层可达 64 次）。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/agent-platform-retry-resilience.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-30-ai-coding-eight-stage-workflow",
+      "title": "【实战系列】AI 开发的八个阶段：一套从需求到验收的工作流设计",
+      "path": "Inbox/2026-10-30-ai-coding-eight-stage-workflow.md",
+      "created": "2026-10-30",
+      "category": "技术",
+      "tags": [
+        "AI Coding",
+        "AI",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/1fj2mu8DZubFAibM_Z2sxw",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "银河智学自研 AI Coding 框架「孔明」的后端开发工作流设计。核心主张：工作流比一份长提示词多出的，是执行记录与流程走向——\"这一步执行了没有？留下了什么？失败之后往哪走？\"提示词管不了的事由机制接管：需求拆成可逐项核对的验收项、规范按框架/阶段/任务类型装配并自检、测试结果绑定代码快照、问题带触发条件退回原任务修复、\"完成\"由脚本核对而非 AI 自述。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/ai-coding-eight-stage-workflow.md",
       "wiki_status": "pending"
     },
     {
