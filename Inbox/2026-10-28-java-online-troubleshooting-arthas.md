@@ -9,7 +9,9 @@ created: 2026-10-28
 category: 技术
 tags: [Java, 工程实践]
 asset_ref: Assets/2026/10/java-online-troubleshooting-arthas.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-30T00:36:49.442Z"
+ingest_claim_id: 22876-1793320609442-0
 ---
 
 # Java线上排查实战：OOM、超时、闪退、GC抖动、死锁

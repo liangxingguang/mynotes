@@ -4,7 +4,7 @@ type: topic
 title: JVM 垃圾回收
 status: active
 created: 2026-10-27
-updated: 2026-10-27
+updated: 2026-10-30
 confidence: medium
 tags:
   - topic
@@ -16,6 +16,7 @@ sources:
   - raw/sources/misc/2026-10-14-jvm-tuning-core-approach.md
   - raw/sources/architecture/2026-10-21-gc-log-tuning-practice.md
   - raw/sources/architecture/2026-10-21-jvm-gc-troubleshooting-arthas.md
+  - raw/sources/architecture/2026-10-28-java-online-troubleshooting-arthas.md
 ---
 # JVM 垃圾回收
 
@@ -55,4 +56,4 @@ JVM GC 的判定、算法、收集器、原理、选型与调优：对象可回�
 
 ## Related Topics（相关主题）
 
-- 信源页：[[jvm-gc-interview-guide|JVM GC 面试全讲透]]、[[jvm-tuning-core-approach|JVM 调优核心思路]]、[[gc-log-tuning-practice|GC 日志分析与调优实战]]、[[jvm-gc-troubleshooting-arthas|JVM GC 排查实战（Arthas）]]、[[jvm-troubleshooting-six-tools|JVM 排查 6 工具]]、[[jdk21-migration-huolala|JDK 21 规模化落地（货拉拉）]]
+- 信源页：[[jvm-gc-interview-guide|JVM GC 面试全讲透]]、[[jvm-tuning-core-approach|JVM 调优核心思路]]、[[gc-log-tuning-practice|GC 日志分析与调优实战]]、[[jvm-gc-troubleshooting-arthas|JVM GC 排查实战（Arthas）]]、[[jvm-troubleshooting-six-tools|JVM 排查 6 工具]]、[[jdk21-migration-huolala|JDK 21 规模化落地（货拉拉）]]、[[java-online-troubleshooting-arthas|Java 线上排查实战（OOM/超时/闪退/GC 抖动/死锁）]]

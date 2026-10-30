@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30 08:36",
+  "updated_at": "2026-10-30 08:43",
   "notes": [
     {
       "id": "2026-10-28-java-online-troubleshooting-arthas",
@@ -18,7 +18,7 @@
       "summary": "真实环境（JDK17 + Arthas）复现五类线上事故并完整走排查流程：OOM 用 jmap+MAT，超时用 trace 逐层剥，闪退分 JVM OOM 与 OOM Killer，GC 抖动用 jstat，死锁阻塞用 jstack + thread -b。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/java-online-troubleshooting-arthas.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-28-jvm-interview-guide",

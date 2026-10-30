@@ -4,7 +4,7 @@ type: entity
 title: Arthas
 status: active
 created: 2026-10-17
-updated: 2026-10-17
+updated: 2026-10-30
 confidence: high
 tags:
   - entity
@@ -14,6 +14,7 @@ tags:
 sources:
   - raw/sources/ai/2026-10-14-arthas-mcp-ai-troubleshooting.md
   - raw/sources/architecture/2026-10-21-jvm-gc-troubleshooting-arthas.md
+  - raw/sources/architecture/2026-10-28-java-online-troubleshooting-arthas.md
 related:
   - wiki/concepts/mcp.md
   - wiki/concepts/evidence-first-jvm-tuning.md
@@ -50,6 +51,7 @@ Arthas 是 Java 线上诊断工具，提供 dashboard、thread、trace、watch�
 
 - 2026-10（信源时点）— 4.3.5：官方文档将 MCP Server 标为实验性模块，列出 29 个工具
 - 2026-10-21 — 第二信源（GC 排查实战）补充人工诊断侧实践：dashboard/jvm/memory 看全局与趋势、heapdump --live、classloader 对比法查类泄漏（Spring Boot 参考 5000-20000 类、Metaspace 50-120MB）、stack/sc 定位加载源；并把"现象→根因→处置"整理成 FGC 五步决策树
+- 2026-10-28 — 第三信源（五类线上事故实战）补充 trace 逐层剥超时（正常 102ms vs 慢请求 queryData 占 96.32%）、watch 抓入参返回值确认场景、`thread -b` 一句话定位阻塞源（持 ReentrantLock 阻塞 5 线程）、dashboard 实时看内存区域；并提示 Arthas 常驻有额外性能开销，用完需 `stop`
 
 ## Current Understanding（当前认知）
 
@@ -59,3 +61,4 @@ Java 排障领域接入 AI 的代表性路径：把诊断命令封装为 MCP 工
 
 - `raw/sources/ai/2026-10-14-arthas-mcp-ai-troubleshooting.md`
 - `raw/sources/architecture/2026-10-21-jvm-gc-troubleshooting-arthas.md`（人工诊断实战：FGC 七步排查法）
+- `raw/sources/architecture/2026-10-28-java-online-troubleshooting-arthas.md`（人工诊断实战：trace/watch/thread -b 五场景）
