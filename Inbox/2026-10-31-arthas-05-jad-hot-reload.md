@@ -11,7 +11,9 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026-10/weixin-20261031-arthas-05-jad-hot-reload.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-31T14:17:07.280Z"
+ingest_claim_id: 15108-1793456227280-0
 ---
 
 # 改了代码没生效？先 jad 一下，再谈热更新

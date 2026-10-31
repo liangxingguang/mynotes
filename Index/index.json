@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31 22:16",
+  "updated_at": "2026-10-31 22:18",
   "notes": [
     {
       "id": "2026-10-31-arthas-05-jad-hot-reload",
@@ -18,7 +18,7 @@
       "summary": "最冤的一类线上问题：代码明明改了，行为还是旧的。这篇讲三件事——用 jad / sc / sm 确认线上跑的是哪版代码、\"改了没生效\"通常有哪四个原因、以及 redefine 能改什么不能改什么、为什么它只适合临时止血。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-arthas-05-jad-hot-reload.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-31-arthas-06-flame-graph",
@@ -379,6 +379,63 @@
       "summary": "系统思维专辑第 6 篇。100 天 WorkBuddy 落地，很少遇到\"模型能力不够\"——真正限制智能体效果的不是模型能力，而是人的管理能力。全文给三套工具：WBS 工作包拆解（事前）、交付约定（事中）、Scrum Sprint 迭代（事后），并强调顺序就是完整闭环。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-xitongsiwei-06-workbuddy-manage.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-xuqiufenxi-01-ruanjian-xiangmu-shibai",
+      "title": "软件项目失败，很多时候不是技术问题，而是需求问题",
+      "path": "Inbox/2026-10-31-xuqiufenxi-01-ruanjian-xiangmu-shibai.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483800&idx=1&sn=d80add1c630e10d34fadfe0e239926ca&chksm=c1d0b519f6a73c0f31a5596084a913ac4a5c59cc5cd1c902b4746448e63e818323522ac751b0",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "《需求分析》专辑第 1 篇，也是整个系列的开篇。技术问题显性、看得见、能解决；需求问题隐性，藏在开发甚至测试阶段才暴露，像隐形裂缝越裂越大。全文用典型场景说明：业务说\"我要一个能管理客户的功能\"，开发做完才发现理解不一致，业务又冒出新要求。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-01-ruanjian-xiangmu-shibai.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-xuqiufenxi-02-zaogao-xuqiu-wendang-daijia",
+      "title": "一份糟糕的需求文档，让团队付出什么代价？",
+      "path": "Inbox/2026-10-31-xuqiufenxi-02-zaogao-xuqiu-wendang-daijia.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483808&idx=1&sn=00a20c2cf5e48f07f8611844cadc8ae6&chksm=c1d0b521f6a73c37114ae3cd846ba356a565739de4364803cae22837261492eb95f2def0bd29",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "《需求分析》专辑第 2 篇。质量差的需求文档代价远比想象沉重，而且会层层叠加产生乘数效应。全文四条显性代价（开发反复返工、测试验收混乱、沟通成本剧增、项目延期超预算甚至失败）加一条隐性伤害（团队士气与离职率）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-02-zaogao-xuqiu-wendang-daijia.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-xuqiufenxi-03-chuangyegongsi-yizheng",
+      "title": "创业公司最容易忽略的需求阶段",
+      "path": "Inbox/2026-10-31-xuqiufenxi-03-chuangyegongsi-yizheng.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483818&idx=1&sn=f52587099ff0b423ff0170f525e4473d&chksm=c1d0b52bf6a73c3dfad19c8fb9d324e98fa06717a0cde31725ba770ab004bb61e0f97ef627fa",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "《需求分析》专辑第 3 篇。前两篇的问题在大公司也存在，但在创业公司里更集中、更致命。创业公司天然有\"快\"的压力，需求阶段被看成写文档、开会议、浪费时间的环节，能压缩就压缩——结果是表面进度快，实际方向一直在漂。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-03-chuangyegongsi-yizheng.md",
       "wiki_status": "pending"
     },
     {
