@@ -9,7 +9,9 @@ created: 2026-10-31
 category: 技术
 tags: [AI Coding, AI, 工程实践]
 asset_ref: Assets/2026-10/weibo-2194035935-5359269681561901.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-31T07:53:13.304Z"
+ingest_claim_id: 49784-1793433193304-0
 ---
 
 # MiniMax 开源「mcode-stack」：用 MiniMax Code 写 MiniMax Code 的全套工作流
