@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31 21:08",
+  "updated_at": "2026-10-31 21:13",
   "notes": [
     {
       "id": "2026-10-31-agent-harness-essay-ideal-harness",
@@ -208,6 +208,25 @@
       "summary": "一道并发高频面试题。表面考池子实现，实际考「分治型任务怎么调度」；准确答案不是「它更快」，而是「它在一种特定任务上更快」——能递归拆分的 CPU 密集任务。快在两层：队列分散到每线程一个双端队列、工作窃取两端取方向错开；`join` 等待时顺手干活不空转。命门是对阻塞任务毫无办法，`commonPool` 里千万别放阻塞逻辑。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-OWGCpNVxy0HpPvn8aq1eCA.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-llm-integration-engineering-hard-parts",
+      "title": "大模型接进业务系统：工程难点在哪（面试深挖 84）",
+      "path": "Inbox/2026-10-31-llm-integration-engineering-hard-parts.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/FyagmlvUGDioU-bMUY9tyA",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "「Java 架构师面试深挖」系列第 84 篇，主题是工具调用、上下文预算、意图路由、成本控制。定调：模型接进业务系统，难点不在调通那次接口，而是这条链路上几乎所有此前成立的假设都要重做一遍。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-FyagmlvUGDioU-bMUY9tyA.md",
       "wiki_status": "pending"
     },
     {
