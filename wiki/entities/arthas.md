@@ -4,7 +4,7 @@ type: entity
 title: Arthas
 status: active
 created: 2026-10-17
-updated: 2026-10-30
+updated: 2026-10-31
 confidence: high
 tags:
   - entity
@@ -15,6 +15,7 @@ sources:
   - raw/sources/ai/2026-10-14-arthas-mcp-ai-troubleshooting.md
   - raw/sources/architecture/2026-10-21-jvm-gc-troubleshooting-arthas.md
   - raw/sources/architecture/2026-10-28-java-online-troubleshooting-arthas.md
+  - raw/sources/ai/2026-10-31-arthas-mcp-server-ai-diagnosis.md
 related:
   - wiki/concepts/mcp.md
   - wiki/concepts/evidence-first-jvm-tuning.md
@@ -23,7 +24,7 @@ related:
 
 ## Overview（概览）
 
-Arthas 是 Java 线上诊断工具，提供 dashboard、thread、trace、watch、heapdump 等诊断命令。4.3.5 版本（截至 2026-10）官方文档把 MCP Server 标为实验性模块，使诊断能力可作为标准工具被 AI 客户端发现与调用。
+Arthas 是 Java 线上诊断工具，提供 dashboard、thread、trace、watch、heapdump 等诊断命令。4.3.5 版本（截至 2026-10）官方文档把 MCP Server 标为实验性模块，使诊断能力可作为标准工具被 AI 客户端发现与调用。第四信源（2026-10-31 独立实测）给出量化对比：CPU 98% 排查传统 45 分钟 vs AI 驱动 5 分钟（作者实测均值区间，非官方基准）。
 
 ## Identity（身份信息）
 
@@ -34,8 +35,8 @@ Arthas 是 Java 线上诊断工具，提供 dashboard、thread、trace、watch�
 
 ## Important Facts（重要事实）
 
-- MCP Server（实验性）：通过 HTTP/Netty 提供 JSON-RPC 2.0 接口，Streamable HTTP 传输（保留会话状态，适合持续输出命令），亦支持 STATELESS 模式；截至 2026-10 官方文档列出 29 个工具。
-- 开启方式：arthas.properties 配置 `arthas.mcpEndpoint=/mcp`、`arthas.mcpProtocol=STREAMABLE`、`arthas.password`；HTTP 默认端口 8563；客户端以 streamableHttp + Bearer Token 接入。
+- MCP Server（实验性）：通过 HTTP/Netty 提供 JSON-RPC 2.0 接口，Streamable HTTP 传输（保留会话状态，适合持续输出命令），亦支持 STATELESS 模式；协议版本对齐 MCP `2025-06-18`（第四信源）；截至 2026-10 官方文档列出 29 个工具，分四类：JVM 与运行时 13（dashboard/thread/heapdump/memory/jvm/sysprop/sysenv/vmoption/perfcounter/vmtool/getstatic/ognl/mbean）、类与类加载器 8（sc/sm/jad/mc/redefine/retransform/dump/classloader）、监控与剖析 6（monitor/stack/trace/tt/watch/profiler）、辅助 2（options/viewfile）；支持 JDK 8+（含 17/21）。
+- 开启方式：arthas.properties 配置 `arthas.mcpEndpoint=/mcp`、`arthas.mcpProtocol=STREAMABLE`、`arthas.password`；HTTP 默认端口 8563；客户端以 streamableHttp + Bearer Token 接入。可选 `arthas.sessionTimeout=1800` 会话超时自动断开；本地 IDEA 可装 arthas-workbench 插件解决进程重启导致 MCP 断连。
 - 命令风险谱系：观察型（dashboard/jvm/memory/thread/sc/sm/jad）只读；增强型（trace/watch/monitor/stack/tt）需字节码增强，范围过大或表达式过重会影响线上应用，参数返回值可能含敏感数据；状态修改型（ognl/vmtool/sysprop/vmoption/options/mc/redefine/retransform）可改运行参数、执行表达式、强制 GC、中断线程、改已加载类；heapdump 文件大、开销高。
 - 官方安全能力仅密码认证与 viewfile 目录白名单，无工具级 RBAC；工具级管控需在 MCP 客户端、代理或网关层另加。
 
@@ -52,13 +53,15 @@ Arthas 是 Java 线上诊断工具，提供 dashboard、thread、trace、watch�
 - 2026-10（信源时点）— 4.3.5：官方文档将 MCP Server 标为实验性模块，列出 29 个工具
 - 2026-10-21 — 第二信源（GC 排查实战）补充人工诊断侧实践：dashboard/jvm/memory 看全局与趋势、heapdump --live、classloader 对比法查类泄漏（Spring Boot 参考 5000-20000 类、Metaspace 50-120MB）、stack/sc 定位加载源；并把"现象→根因→处置"整理成 FGC 五步决策树
 - 2026-10-28 — 第三信源（五类线上事故实战）补充 trace 逐层剥超时（正常 102ms vs 慢请求 queryData 占 96.32%）、watch 抓入参返回值确认场景、`thread -b` 一句话定位阻塞源（持 ReentrantLock 阻塞 5 线程）、dashboard 实时看内存区域；并提示 Arthas 常驻有额外性能开销，用完需 `stop`
+- 2026-10-31 — 第四信源（官方 MCP 实测，独立于前篇）补量化对比：CPU 98% 订单服务传统流程 45 分钟（含两次 OGNL 写错重来）vs AI 流程 5 分钟（thread → thread 29 → 读堆栈 → 人话结论+止血），根因为脱敏正则贪婪 `.*` 灾难性回溯（请求体 >10KB）；给出生产红线（watch 加 `-n`/`#cost` 过滤、redefine 只止血、端点设密码+绑定 127.0.0.1、工具调用审批、viewfile 白名单不放开）、六个坑速查表与上线 Checklist；成本账为示意口径（单次省 40 分钟、5 人团队年省约 9.2 万）
 
 ## Current Understanding（当前认知）
 
-Java 排障领域接入 AI 的代表性路径：把诊断命令封装为 MCP 工具后，AI 可保留上下文组织多步诊断；但危险命令管控、字节码增强开销与敏感数据保护都需在 Arthas 之外自建。第二信源显示人工侧同样成熟——Full GC 排查已沉淀为 dashboard→根因表→dump/类加载分支→验证 的固定流程，与 [[evidence-first-jvm-tuning]] 的证据驱动方法论一致（两个独立信源，MCP 模块仍处实验阶段）。
+Java 排障领域接入 AI 的代表性路径：把诊断命令封装为 MCP 工具后，AI 可保留上下文组织多步诊断；但危险命令管控、字节码增强开销与敏感数据保护都需在 Arthas 之外自建。第二信源显示人工侧同样成熟——Full GC 排查已沉淀为 dashboard→根因表→dump/类加载分支→验证 的固定流程，与 [[evidence-first-jvm-tuning]] 的证据驱动方法论一致。第四信源（独立实测）补上量化对比（45 分钟 vs 5 分钟，作者实测口径）并给出可复用的生产红线与 prompt 模板，与第一信源的危险能力分级互相印证（MCP 模块仍处实验阶段，量化数据非官方基准）。
 
 ## Evidence（证据）
 
 - `raw/sources/ai/2026-10-14-arthas-mcp-ai-troubleshooting.md`
 - `raw/sources/architecture/2026-10-21-jvm-gc-troubleshooting-arthas.md`（人工诊断实战：FGC 七步排查法）
 - `raw/sources/architecture/2026-10-28-java-online-troubleshooting-arthas.md`（人工诊断实战：trace/watch/thread -b 五场景）
+- `raw/sources/ai/2026-10-31-arthas-mcp-server-ai-diagnosis.md`（官方 MCP 实测：量化对比 45min vs 5min、生产红线、坑速查表与 Checklist）

@@ -39,6 +39,7 @@
 - [[architect-road-2025-digest|架构师之路：2025 年干货精选（343 篇链接索引）]]（2026-10-22，架构/资源导航，置信度低）
 - [[archunit-java-architecture-guardrails|架构图不会报警，但 ArchUnit 会：给 Java 项目装一套架构门禁]]（2026-10-14，Java/架构治理）
 - [[arthas-mcp-ai-troubleshooting|让 AI 调 Arthas，Java 排障会快多少？]]（2026-10-14，AI/MCP/Java 诊断）
+- [[arthas-mcp-server-ai-diagnosis|Arthas 官方 MCP 实测：29 个诊断命令交给 AI，凌晨排查省 40 分钟]]（2026-10-31，AI/MCP/Java 诊断，量化对比 45min vs 5min+生产红线，与前篇互证，单信源置信度高）
 - [[async-idempotency-local-message-table|异步链路幂等实战：本地消息表配套防重，解决重复扣款与消息重放]]（2026-10-23，架构/幂等）
 - [[async-task-system-design|异步任务系统怎么设计？从提交、排队、执行到幂等和重试]]（2026-10-22，架构/可靠性）
 - [[awesome-design-md|用 DESIGN.md 治 AI 生成的丑 UI：awesome-design-md 仓库]]（2026-10-16，AI/工具）

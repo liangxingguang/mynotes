@@ -3234,6 +3234,19 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/V-xHPeOXQk78iVLKaAPSTQ",
       "asset_ref": "Assets/2026/10/codex-agent-harness-architecture-6.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-31-arthas-mcp-server-ai-diagnosis.md",
+      "sha256": "da11bc4d24d9a20c87f8c31b64326fe5775c95b3ba95cfff060e3aa2cb121aa6",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-31-arthas-mcp-server-ai-diagnosis.md",
+      "pages": [
+        "wiki/sources/arthas-mcp-server-ai-diagnosis.md",
+        "wiki/entities/arthas.md",
+        "wiki/sources/arthas-mcp-ai-troubleshooting.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/P4Baj-4PX5nQVrVOmXijQg",
+      "asset_ref": "Assets/2026/10/arthas-mcp-server-ai-diagnosis.md"
     }
   ]
 }

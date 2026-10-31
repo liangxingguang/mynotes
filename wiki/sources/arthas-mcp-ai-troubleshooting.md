@@ -16,6 +16,7 @@ sources:
 related:
   - wiki/entities/arthas.md
   - wiki/concepts/mcp.md
+  - wiki/sources/arthas-mcp-server-ai-diagnosis.md
 ---
 # 让 AI 调 Arthas，Java 排障会快多少？
 
@@ -65,10 +66,11 @@ related:
 
 - 单一作者经验文；危险能力分级为作者自定策略，明确标注非官方功能。
 - MCP Server 模块仍处实验性阶段，接口与工具集可能变化。
-- 未提供接入前后的量化排障时长对比。
+- 本文未提供接入前后的量化排障时长对比；该缺口已由后续独立实测文 [[arthas-mcp-server-ai-diagnosis]] 补上（传统 45 分钟 vs AI 5 分钟，作者多次实测均值区间，非受控实验基准）。
 
 ## Related Knowledge（相关知识）
 
+- [[arthas-mcp-server-ai-diagnosis]]（后续独立实测文：补量化对比 45min vs 5min、生产红线与 Checklist，配置细节与本文互证）
 - [[arthas|Arthas]]
 - [[mcp|MCP]]
 

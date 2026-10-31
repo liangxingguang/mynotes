@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - AI
 asset_ref: Assets/2026/10/arthas-mcp-server-ai-diagnosis.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Arthas 官方 MCP 实测：29 个诊断命令交给 AI，凌晨排查省 40 分钟

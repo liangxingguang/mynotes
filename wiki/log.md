@@ -14,6 +14,7 @@
 -->
 
 - （暂无记录）
+- 2026-10-31 09:45 | ingest | raw/sources/ai/2026-10-31-arthas-mcp-server-ai-diagnosis.md | wiki/sources/arthas-mcp-server-ai-diagnosis.md（新建）, wiki/entities/arthas.md（更新：第四信源/协议版本2025-06-18/29工具分类/JDK8+/量化对比45min vs 5min/生产红线）, wiki/sources/arthas-mcp-ai-troubleshooting.md（更新：局限-量化对比缺口已补/交叉链接）, wiki/index.md, wiki/log.md, state/manifest.json
 - 2026-10-31 07:20 | ingest | raw/sources/architecture/2026-10-31-agent-platform-retry-resilience.md | wiki/sources/agent-platform-retry-resilience.md, wiki/concepts/retry-governance.md（新建）, wiki/concepts/durable-execution.md（更新：跨 Worker 字段清单/崩溃窗口）, wiki/concepts/idempotency-design.md（更新：幂等键服务端协议五要素）, wiki/index.md, wiki/log.md, state/manifest.json
 - 2026-10-31 07:40 | ingest | raw/sources/architecture/2026-10-31-ai-coding-eight-stage-workflow.md | wiki/sources/ai-coding-eight-stage-workflow.md（新建）, wiki/concepts/ai-native-sdlc.md（更新：孔明八阶段工作流实例）, wiki/entities/kongming-ai-dev-platform.md（更新：八阶段工作流细节/提效数据）, wiki/index.md, wiki/log.md, state/manifest.json
 - 2026-10-31 08:10 | ingest | raw/sources/ai/2026-10-30-alibaba-ai-native-dev-handbook.md | wiki/sources/alibaba-ai-native-dev-handbook.md（新建）, wiki/concepts/ai-native-sdlc.md（更新：第5信源/主战场论断/约束vs假设/阿姆达尔实证）, wiki/index.md, wiki/log.md, state/manifest.json
