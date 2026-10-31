@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31 12:24",
+  "updated_at": "2026-10-31 12:58",
   "notes": [
     {
       "id": "2026-10-28-netty-source-series-album",
@@ -57,64 +57,6 @@
       "summary_status": "",
       "asset_ref": "Assets/2026/10/programmer-overseas-remote-work.md",
       "wiki_status": "ingesting"
-    },
-    {
-      "id": "2026-10-28-semaphore-countdownlatch-practices",
-      "title": "并发编程\"黑科技\"：Semaphore和CountDownLatch的5个实战技巧",
-      "path": "Inbox/2026-10-28-semaphore-countdownlatch-practices.md",
-      "created": "2026-10-28",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/EQgBlIUavYhSAp6NN2cdUg",
-      "source_type": "link",
-      "platform": "wechat",
-      "summary": "Java 并发工具类入门科普：用停车场闸机类比 Semaphore（acquire/release 控制并发度），用运动会开幕式类比 CountDownLatch（倒计时归零放行）。给出动态限流、tryAcquire 超时、批量任务超时控制、线程池优雅关闭等实战技巧，附常见踩坑与选型对比。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/semaphore-countdownlatch-practices.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-28-slg-red-dot-tree-system",
-      "title": "用一棵树管住 100+ 个红点：SLG 红点系统实现详解",
-      "path": "Inbox/2026-10-28-slg-red-dot-tree-system.md",
-      "created": "2026-10-28",
-      "category": "技术",
-      "tags": [
-        "游戏开发",
-        "游戏架构",
-        "工程实践"
-      ],
-      "source": "知乎专栏",
-      "source_url": "https://zhuanlan.zhihu.com/p/2093767907499161439",
-      "source_type": "link",
-      "platform": "zhihu",
-      "summary": "游戏开发系列·红点系统：在\"前缀树+父节点脏集合\"主流方案基础上把\"计算\"也合并——拉模式叶子自订阅自计算、脏标记冒泡到根、每帧后序遍历只算脏节点，新增红点只需一个类+一行注册。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/slg-red-dot-tree-system.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-28-spring-security-oauth2-sso-demo",
-      "title": "使用 Spring Security OAuth2 实现简单的单点登录",
-      "path": "Inbox/2026-10-28-spring-security-oauth2-sso-demo.md",
-      "created": "2026-10-28",
-      "category": "技术",
-      "tags": [
-        "spring",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/zTLDAj6072ItrqFWWIuZ_Q",
-      "source_type": "文章",
-      "platform": "微信公众号",
-      "summary": "不装 Keycloak、不用 Docker，用 Spring Boot 3.2 + Spring Authorization Server 三个应用跑出可体验的 SSO Demo。讲清 SSO 本质：多个客户端共享认证服务器的 Session，授权码 + OIDC 是标准协议组合。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/spring-security-oauth2-sso-demo.md",
-      "wiki_status": "pending"
     },
     {
       "id": "2026-10-28-tcp-connection-full-lifecycle",
@@ -5022,6 +4964,64 @@
       "summary": "Netty 源码分析番外篇：从源码视角识别 Netty 中散落的设计模式——模板方法（ChannelHandler 骨架）、责任链（Pipeline 双向链表）、观察者（ChannelFuture 异步回调）、装饰器（ByteBuf 功能增强）、策略（EventExecutorChooser 位运算优化）等 16 种模式的工程化运用，附全景对照表。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-design-patterns.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-28-semaphore-countdownlatch-practices",
+      "title": "并发编程\"黑科技\"：Semaphore和CountDownLatch的5个实战技巧",
+      "path": "Archive/2026-10-28-semaphore-countdownlatch-practices.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/EQgBlIUavYhSAp6NN2cdUg",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "Java 并发工具类入门科普：用停车场闸机类比 Semaphore（acquire/release 控制并发度），用运动会开幕式类比 CountDownLatch（倒计时归零放行）。给出动态限流、tryAcquire 超时、批量任务超时控制、线程池优雅关闭等实战技巧，附常见踩坑与选型对比。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/semaphore-countdownlatch-practices.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-28-slg-red-dot-tree-system",
+      "title": "用一棵树管住 100+ 个红点：SLG 红点系统实现详解",
+      "path": "Archive/2026-10-28-slg-red-dot-tree-system.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "游戏开发",
+        "游戏架构",
+        "工程实践"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2093767907499161439",
+      "source_type": "link",
+      "platform": "zhihu",
+      "summary": "游戏开发系列·红点系统：在\"前缀树+父节点脏集合\"主流方案基础上把\"计算\"也合并——拉模式叶子自订阅自计算、脏标记冒泡到根、每帧后序遍历只算脏节点，新增红点只需一个类+一行注册。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/slg-red-dot-tree-system.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-28-spring-security-oauth2-sso-demo",
+      "title": "使用 Spring Security OAuth2 实现简单的单点登录",
+      "path": "Archive/2026-10-28-spring-security-oauth2-sso-demo.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "spring",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/zTLDAj6072ItrqFWWIuZ_Q",
+      "source_type": "文章",
+      "platform": "微信公众号",
+      "summary": "不装 Keycloak、不用 Docker，用 Spring Boot 3.2 + Spring Authorization Server 三个应用跑出可体验的 SSO Demo。讲清 SSO 本质：多个客户端共享认证服务器的 Session，授权码 + OIDC 是标准协议组合。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/spring-security-oauth2-sso-demo.md",
       "wiki_status": "ingested"
     }
   ]
