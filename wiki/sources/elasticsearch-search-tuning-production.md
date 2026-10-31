@@ -58,7 +58,7 @@ mapping 一旦承载海量数据回改成本极高；把在线检索与导出/�
 
 ## Related Knowledge（相关知识）
 
-- [[ecommerce-search-realtime-personalization|电商搜索实时个性化（信源页）]]、[[elasticsearch-interview-deep-dive|ES 面试深拆（信源页）]]
+- [[ecommerce-search-realtime-personalization|电商搜索实时个性化（信源页）]]、[[elasticsearch-interview-deep-dive|ES 面试深拆（信源页）]]、[[meituan-waimai-search-elasticsearch-rle|美团外卖搜索 ES 优化（信源页）]]（索引数据结构改造层次）
 
 ## Source（信源）
 

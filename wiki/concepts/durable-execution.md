@@ -25,6 +25,7 @@ related:
   - wiki/sources/kiso-minimal-agent-framework.md
   - wiki/concepts/task-run-step-event-model.md
   - wiki/concepts/agent-loop.md
+  - wiki/concepts/mysql-bulk-import.md
 ---
 # 持久执行（Durable Execution）
 
@@ -83,6 +84,7 @@ Harness 里发生的每件事都是一个任务（效应三明治）：生成 LL
 - 2026-10-23：教学信源（agent-from-scratch 第 5 章，第 5 信源）从事件溯源路线给出对照视角：明确区分状态重放 ≠ 模型重跑 ≠ Durable Execution Replay（本章只实现第 1 种），列出四类失败窗口（模型调用前崩溃/工具已执行结果未持久化/事件已存通知未发/代码升级后重放不兼容），并给出六步生产化路径（内存事件仓库→持久 append-only→CAS+幂等命令→Worker 租约+心跳→事务 Outbox+恢复协调→checkpoint/版本化/回放兼容测试）——与 Go+PG/Java 两信源的生产机制一一对应；同时与 Pi Durable"明确不采用事件溯源"形成路线对照，其"事件溯源是设计选择、非 Agent 必备"的取舍判据（长任务恢复/审批/审计/复盘才值得引入）补充了本页 Open Questions 中"与事件溯源路线系统性对比"的一侧证据。
 
 - 2026-10-31：Kiso 信源（第 6 信源）以 append-only Event Log + uncertain 裁决补上"事件溯源式账本"路线（日志即真相、其余皆投影），与 Pi 的取舍形成路线对照；其 uncertain → 人工 rerun/abandon 裁决与第 3 信源 PAUSED_INDOUBT 冻结对账同族（一者冻结等对账、一者停原地等人裁决），为"结果未知"场景提供第二种收敛路径；Turn Commit（draft 与执行资格分离）补充"模型输出不完整时不得改现实"的边界；真实 kill -9（PTY 进程组 SIGKILL）测试是本页首个崩溃恢复级别的实证证据，此前信源均为设计/测试级描述。
+- 2026-10-31：[[mysql-10b-bulk-import-guide]] 第七信源在数据库批量导入领域独立复现"checkpoint + 幂等重放"不变量——水位表 `import_checkpoint`（batch_id/start_id/end_id/offset/status）记录分片导入位点，宕机恢复从位点继续，配合幂等键可无限重试、可重入；与 Agent/任务系统的 checkpoint 同构（状态推进与可重放位点原子落库），印证 checkpoint 是跨域通用原语而非 Agent 专属。
 
 ## Open Questions（开放问题）
 

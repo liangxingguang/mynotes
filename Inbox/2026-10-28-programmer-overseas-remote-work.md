@@ -9,7 +9,9 @@ created: 2026-10-28
 category: 随笔
 tags: [个人成长, 创业]
 asset_ref: Assets/2026/10/programmer-overseas-remote-work.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-31T04:20:45.636Z"
+ingest_claim_id: 8816-1793420445636-0
 ---
 
 # 程序员出海远程，是一条好出路吗？

@@ -15,6 +15,7 @@ sources:
 related:
   - wiki/concepts/table-sharding-migration.md
   - wiki/sources/hot-cold-data-separation-archive.md
+  - wiki/concepts/mysql-bulk-import.md
 ---
 # 冷热分离（Hot/Cold Data Separation）
 
@@ -63,7 +64,8 @@ related:
 
 ## Evolution（演进）
 
-（当前仅单一信源，待补充。）
+- 2026-10-28：[[hot-cold-data-separation-archive|大表治理与冷热分离]] 立页：状态+时间双维划分、热/温/冷三层异构存储、先复制后删除分批限速、报表走数仓 T+1。
+- 2026-10-31：[[mysql-10b-bulk-import-guide]] 信源印证"MySQL 舒适区是分片后的热数据和在线事务"——冷数据归档/日志/时序数据不该硬塞 MySQL，是冷热分离立论的前提侧证据。
 
 ## Open Questions（开放问题）
 

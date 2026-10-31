@@ -18,6 +18,7 @@ sources:
   - raw/sources/architecture/2026-10-27-k8s-blue-green-release-trading.md
   - raw/sources/architecture/2026-10-28-like-follow-high-concurrency-design.md
   - raw/sources/architecture/2026-10-28-local-message-table-distributed-transaction.md
+  - raw/sources/architecture/2026-10-28-mysql-10b-bulk-import-guide.md
 related:
   - wiki/concepts/durable-execution.md
   - wiki/concepts/blue-green-deployment.md
@@ -30,6 +31,8 @@ related:
   - wiki/sources/like-follow-high-concurrency-design.md
   - wiki/concepts/local-message-table.md
   - wiki/sources/local-message-table-distributed-transaction.md
+  - wiki/concepts/mysql-bulk-import.md
+  - wiki/sources/mysql-10b-bulk-import-guide.md
 ---
 # 幂等设计（Idempotency Design）
 
@@ -84,6 +87,7 @@ related:
 - 2026-10-27：[[k8s-blue-green-release-trading]] 第四信源印证：蓝绿发布回退场景下，订单记录+幂等键+Outbox 事件同事务提交，Green 期间 12 笔订单经对账确认无重复扣款/预留；发布门禁把"支付幂等冲突"列为业务层指标。
 - 2026-10-31：[[like-follow-high-concurrency-design]] 第五信源补充缓存层幂等形态：Redis Lua 脚本返回值即幂等裁决（`1` 生效 / `0` 重复拦截 / `-1` 参数错误），`SETBIT` 旧值当幂等标记；取消操作先判存在防负数；DB 唯一索引 `(user_id, target_id)` + `ON DUPLICATE KEY UPDATE`/`INSERT IGNORE` 双层保险——与第 1 条同构的"判重与变更原子化"，只是发生在缓存层而非 DB 事务层。
 - 2026-10-31：[[local-message-table-distributed-transaction]] 第六信源印证同事务铁律：本地消息表只保证至少一次投递，案例 3 以"状态更新超时无幂等导致重复业务"给出违反同事务铁律的事故侧证据；幂等键用业务唯一流水号。
+- 2026-10-31：[[mysql-10b-bulk-import-guide]] 第七信源在批量导入重跑场景印证：幂等键（`shard_id + biz_id` 唯一）+ `ON DUPLICATE KEY UPDATE`/`INSERT IGNORE` 让分片失败重跑安全，配合水位表断点续传可无限重试——重试与幂等共生在"可重入导入"场景的落地。
 
 ## Open Questions（开放问题）
 
@@ -96,6 +100,7 @@ related:
 - Source: `raw/sources/architecture/2026-10-22-async-task-system-design.md`（至少一次执行、任务幂等键）
 - Source: `raw/sources/architecture/2026-10-27-k8s-blue-green-release-trading.md`（发布回退下订单+幂等键+Outbox 同事务、对账键与业务门禁）
 - Source: `raw/sources/architecture/2026-10-28-like-follow-high-concurrency-design.md`（Lua 返回值 1/0/-1 幂等裁决、SETBIT 旧值标记、唯一索引 UPSERT 双保险、SETNX 消费标记 24h）
+- Source: `raw/sources/architecture/2026-10-28-mysql-10b-bulk-import-guide.md`（批量导入幂等键 `shard_id+biz_id` + ON DUPLICATE KEY UPDATE/INSERT IGNORE 重跑安全、水位表断点续传可重入）
 
 ## Related Knowledge（相关知识）
 

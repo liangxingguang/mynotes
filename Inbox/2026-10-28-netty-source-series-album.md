@@ -9,7 +9,9 @@ created: 2026-10-28
 category: 技术
 tags: [netty, Java]
 asset_ref: Assets/2026/10/netty-source-series-full.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-31T04:20:33.297Z"
+ingest_claim_id: 14064-1793420433297-0
 ---
 
 # Netty 源码系列合集（28篇）

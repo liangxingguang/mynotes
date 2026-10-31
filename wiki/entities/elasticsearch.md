@@ -4,7 +4,7 @@ type: entity
 title: Elasticsearch
 status: active
 created: 2026-10-23
-updated: 2026-10-29
+updated: 2026-10-31
 confidence: high
 tags:
   - entity
@@ -16,11 +16,14 @@ sources:
   - raw/sources/architecture/2026-10-21-elasticsearch-search-tuning-production.md
   - raw/sources/architecture/2026-10-21-ecommerce-search-realtime-personalization.md
   - raw/sources/architecture/2026-10-27-netty-in-mainstream-middleware.md
+  - raw/sources/architecture/2026-10-28-meituan-waimai-search-elasticsearch-rle.md
 related:
   - wiki/sources/ecommerce-search-realtime-personalization.md
   - wiki/sources/elasticsearch-interview-deep-dive.md
   - wiki/sources/elasticsearch-search-tuning-production.md
   - wiki/entities/netty.md
+  - wiki/concepts/rle-inverted-index.md
+  - wiki/sources/meituan-waimai-search-elasticsearch-rle.md
 ---
 # Elasticsearch
 
@@ -44,6 +47,7 @@ related:
 - 作为读模型的边界：价格/库存等展示数据允许最终一致，强一致操作必须回交易服务；索引损坏时可从事实库快照+保留期事件重建；写入链路是"至少一次投递+版本约束（external_gte）+幂等消费"，不存在 exactly-once 写 ES。
 - 治理要点：在线检索与导出/统计拆链路拆索引（导出拖死在线查询池、text 聚合 fielddata 致 Full GC 是高频事故）；慢查询日志必开；压测先控制变量。
 - 传输层（Netty 应用信源）：5.0 后从 Netty 3 全面迁移 [[netty|Netty]] 4；双传输——HTTP Transport（9200 REST，Pipeline 含 HttpRequestDecoder/HttpContentDecompressor+Compressor/HttpObjectAggregator/HttpServerHandler，支持 CORS 与压缩）与 Transport（9300 节点间自定义二进制协议，低延迟）；内存不直接用 ByteBuf 而是封装 `Releasable` 接口自管；bulk 写优化——多个索引请求在 Netty 层聚合后异步提交 Lucene（BulkProcessor + ActionListener 回调 writeAndFlush），"接收→写入→响应"全异步是扛高并发的关键（信源口径）。
+- 倒排链合并优化（[[rle-inverted-index|RLE 倒排索引]]，美团外卖一手）：LBS 场景万级 Terms 过滤合并复杂度 O(K×M)；Index Sorting 使同商家 Doc ID 连续 + RLE 编码 [start, length] + SparseRoaringDocIdSet 消除空置 bucket，合并降为 O(M log M)，倒排链合并 TP99 降低 96%，全链路 TP99 从 100ms 降至 16ms。LongObjectHashMap 替换 FST（long 型精确匹配 O(1) 换 O(len(term))）。
 
 ## Products / Projects（产品／项目）
 

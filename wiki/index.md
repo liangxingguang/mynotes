@@ -143,9 +143,11 @@
 - [[logical-thinking-models|分析问题的逻辑思考方法（14个模型）]]（2026-10-23，思维方法论，置信度中）
 - [[lovart-2-arti-design-agent|Lovart 2.0 发布：设计 Personal Agent Arti 上手体验]]（2026-10-21，AI/产品，置信度低）
 - [[meipai-live-danmu-realtime-push|百万在线的美拍直播弹幕系统实时推送技术实践]]（2026-10-23，IM/直播弹幕/Redis+长连接）
+- [[meituan-waimai-search-elasticsearch-rle|美团外卖搜索基于Elasticsearch的优化实践]]（2026-10-31，ES/搜索/倒排索引/性能）
 - [[message-system-design-part1|消息系统设计与实现「上篇」：概念与领域建模]]（2026-10-23，站内消息/领域建模，置信度中）
 - [[message-system-design-part2|消息系统设计与实现「下篇」：模型与服务层实现]]（2026-10-23，站内消息/库表与服务层，置信度中）
 - [[ms-agent-lightning-rl-framework|知乎想法：微软开源 Agent Lightning——3500 行框架让 AI 自己练级]]（2026-10-14，AI/Agent RL）
+- [[mysql-10b-bulk-import-guide|100 亿条数据如何快速写入 MySQL？从 231 天到 3.5 小时]]（2026-10-31，数据库/MySQL/批量导入）
 - [[mysql-replication-lag-optimization|数据库主从同步延迟，业务还能稳吗？一线优化实战全解析]]（2026-10-22，MySQL/主从延迟，置信度中）
 - [[mq-message-backlog-solutions|RabbitMQ vs RocketMQ：消息堆积了一线解决方案全解析]]（2026-10-22，MQ/运维，置信度中）
 - [[mq-transaction-idempotency-design|消息队列架构设计（中篇）：事务消息+业务幂等保单据一致性]]（2026-10-22，MQ/分布式事务）
@@ -307,6 +309,7 @@
 - [[mcast|长连接组播（mcast）]]（groupID 下沉长连接层，1:M×1:N 两级扩散；单实例 25w 连接 8w QPS，聚合+压缩消化峰值，百度一手）
 - [[message-bus|业务消息总线]]（哑管道式配置路由：履约异步分发+topic 治理收拢；与 ESB/Pipeline 的区分，信鸽单一信源）
 - [[mirror-team-architecture|互为镜像式队伍架构]]（Game 服与跨服双队伍服务双向全量同步，冲突以单服队伍为准；限定副本只建单服队伍拿回单线程体验；单信源，置信度中）
+- [[mysql-bulk-import|MySQL 大批量导入优化（Bulk Import Optimization）]]（攒批+并行+少刷盘；B+ 树算账/rewriteBatchedStatements 灵魂参数/LOAD DATA/先灌后建索引/分片并行/收尾四件套，单信源）
 - [[next-token-prediction|下一 token 预测]]（LLM 的统一目标：交叉熵训练、自回归生成，能力与幻觉同根）
 - [[netty-bootstrap|Netty Bootstrap 启动引导]]（initAndRegister 三件套：反射建 Channel→init 组装 Pipeline→注册 Selector；interestOps=0 vs OP_ACCEPT 不对称；ServerBootstrapAcceptor 装配移交 worker；三信源互证，置信度高）
 - [[netty-bytebuf|Netty ByteBuf（数据容器与内存管理）]]（读写双指针免 flip+4MB 阈值扩容+引用计数+类 jemalloc 池化；Heap/Direct/Composite 三形态；释放铁律"谁最后消费谁 release"；三信源，置信度高）
@@ -346,6 +349,7 @@
 - [[reactor-thread-model|主从 Reactor 线程模型（Netty 版）]]（Boss accept/Worker CPU×2/Channel 终身绑单 EventLoop 天然无锁；ServerBootstrapAcceptor 移交链路+三形态选型+SCG 双 Group 与中间件应用印证，八信源互证，置信度高）
 - [[rest-api-as-tools|REST 接口工具化模式]]（函数体换 HTTP 封装但工具形状不变；登录即工具+token 只活进程内存+统一 _call 注入+描述即流程+错误回喂 HTTP 化；换真后台只改 BASE_URL，单信源实测）
 - [[reentrantlock-internals|ReentrantLock 可重入锁设计]]（AQS 经典实现：非公平先抢/公平只差 hasQueuedPredecessors/state 累加可重入/多 Condition 精确唤醒，单信源，置信度中）
+- [[rle-inverted-index|RLE 倒排索引（Run-Length Encoding Inverted Index）]]（Index Sorting 使 Doc ID 连续+RLE 编码 [start,length]+SparseRoaringDocIdSet 消除空置 bucket，合并 O(K×M)→O(M log M)，倒排链合并 TP99 -96%，全链路 TP99 -84%，美团一手）
 - [[scheduledthreadpoolexecutor-internals|ScheduledThreadPoolExecutor 调度设计]]（DelayedWorkQueue 数组最小堆+Leader-Follower 等待；period 正负号编码 fixedRate/fixedDelay；周期任务异常静默取消，单信源，置信度中）
 - [[synchronousqueue-internals|SynchronousQueue 直接交接设计]]（零容量不存储+单 transfer 双角色；TransferStack Treiber 栈 FULFILLING 配对/TransferQueue FIFO；先自旋后 park；newCachedThreadPool 之选，单信源，置信度中）
 - [[scene-quest-orchestration|场景任务流程编排（SceneQuest）]]（任务即流程编排器：目标+进度+结果处理；生命周期 FSM 硬编码与流程数据驱动分离；事件立即更新数据心跳再切状态；单信源，置信度中）

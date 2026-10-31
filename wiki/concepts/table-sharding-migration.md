@@ -15,6 +15,7 @@ sources:
 related:
   - wiki/sources/db-table-sharding-practice.md
   - wiki/concepts/hot-cold-data-separation.md
+  - wiki/concepts/mysql-bulk-import.md
 ---
 # 分表平滑迁移策略
 
@@ -52,6 +53,7 @@ related:
 
 - 大表治理组合拳：分库分表、表分区、冷热分离、索引优化、读写分离（信源口径，本概念覆盖其中"分库分表"的迁移环节）。
 - [[hot-cold-data-separation|冷热分离]]：组合拳的姊妹手段，解决时间维度的数据温度，与本概念（横向拆分）互补。
+- [[mysql-bulk-import|MySQL 大批量导入优化]]：本概念讲"已有大表→分表"的双写双读迁移，该概念讲"海量新数据→分表"的批量灌入；分库分表是两者的共同前提。
 
 ### Distinctions（区分）
 

@@ -2938,6 +2938,36 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/nowNpIOHBFHD0pctcKr2UA",
       "asset_ref": "Assets/2026/10/log4j2-thread-block-pitfalls.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-28-meituan-waimai-search-elasticsearch-rle.md",
+      "sha256": "de0d1c66ba1a284019d93aecd2383058d017da1e275061881bc584abede8d22c",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-28-meituan-waimai-search-elasticsearch-rle.md",
+      "pages": [
+        "wiki/sources/meituan-waimai-search-elasticsearch-rle.md",
+        "wiki/concepts/rle-inverted-index.md",
+        "wiki/entities/elasticsearch.md",
+        "wiki/sources/elasticsearch-search-tuning-production.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/6k8THshasaYfSaLr58O1NA",
+      "asset_ref": "Assets/2026/10/meituan-waimai-search-elasticsearch-rle.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-28-mysql-10b-bulk-import-guide.md",
+      "sha256": "ce9c615b0a7494a4baf3aa28b7e1a1dedcb6b282e5f76bfaeaafe71c776a71ff",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-28-mysql-10b-bulk-import-guide.md",
+      "pages": [
+        "wiki/sources/mysql-10b-bulk-import-guide.md",
+        "wiki/concepts/mysql-bulk-import.md",
+        "wiki/concepts/idempotency-design.md",
+        "wiki/concepts/durable-execution.md",
+        "wiki/concepts/table-sharding-migration.md",
+        "wiki/concepts/hot-cold-data-separation.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/SgdVCOgPuv-Lp0VBCADzRQ",
+      "asset_ref": "Assets/2026/10/mysql-10b-bulk-import-guide.md"
     }
   ]
 }

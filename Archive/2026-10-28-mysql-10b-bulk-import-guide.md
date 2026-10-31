@@ -9,9 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [MySQL, 工程实践, Java]
 asset_ref: Assets/2026/10/mysql-10b-bulk-import-guide.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-10-31T03:51:55.782Z"
-ingest_claim_id: 26832-1793418715782-0
+wiki_status: ingested
 ---
 
 # 100 亿条数据如何快速写入 MySQL？从 231 天到 3.5 小时
