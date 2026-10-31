@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31 19:52",
+  "updated_at": "2026-10-31 19:54",
   "notes": [
     {
       "id": "2026-10-31-niche-product-selection-methodology",
@@ -18,6 +18,25 @@
       "summary": "给独立开发者的选品方法论。定义\"小众需求\"为第三条路——**一个足够具体、有人愿意付钱、但大公司嫌市场太小不值得做**的问题，这是独立开发者的天然生态位。给出 7 个需求发现渠道（差评挖掘 / Reddit·V2EX·HN 的\"有没有…\"帖 / 自己的痛点 / 垂直行业×通用工具交集 / 趋势前沿 / 竞品停更后的用户流失 / 现有用户的新功能请求）、5 维需求评估（支付意愿、市场规模、竞争程度、能力匹配、获客渠道）、两层市场规模算账公式，以及 3 种 MVP 快速验证方式与两个可查证案例（Plausible Analytics、Sidekiq）。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-J990Xv2Hsqlh0NmOYLujw.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-points-system-architecture-design",
+      "title": "架构设计 | 积分系统：并发扣减、分批过期、幂等、冲正与对账",
+      "path": "Inbox/2026-10-31-points-system-architecture-design.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/-o5i4O-fJItMXZO3vnv4AQ",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "从一笔积分消费推演整个积分系统架构——110 积分（50 于 9/30 到期 + 60 于 12/31 到期）消费 80，客户端超时重试、几天后订单退款。难点不在加减，而在回答\"第一次成功没有、重试会不会重复扣、80 来自哪些批次、退款怎么退、缓存/MQ/过期任务失败后怎样证明余额仍正确\"。八步推演：定不变量 → 总体架构 → 6 类数据模型 → 写入链路 → 异常恢复 → 扩展 → 上线 → 演进。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-o5i4O-fJItMXZO3vnv4AQ.md",
       "wiki_status": "pending"
     },
     {
