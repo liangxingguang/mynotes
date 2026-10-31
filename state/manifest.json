@@ -3352,6 +3352,44 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/qggQE_Au5uhVK9yGAgbl6g",
       "asset_ref": "Assets/2026-10/weixin-20261031-qggQE_Au5uhVK9yGAgbl6g.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-31-arthas-01-attach-first-conclusion.md",
+      "sha256": "094ae87684421d92c6ba7e79a6331f12eb93dabf5b13208a33b2a39484464414",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-31-arthas-01-attach-first-conclusion.md",
+      "pages": [
+        "wiki/sources/arthas-01-attach-first-conclusion.md",
+        "wiki/entities/arthas.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg4MjE2Nzk0NQ==&mid=2247483859&idx=1&sn=c4145cbf200355f92a50d1ca87cebf67&chksm=cf5b9835f82c11238d04a4f1895891c9990f92a8e8cf00c3d1029242767db939ecd806777003",
+      "asset_ref": "Assets/2026-10/weixin-20261031-arthas-01-attach-first-conclusion.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-31-arthas-02-ai-arthas.md",
+      "sha256": "87e4c524d2821dab3c71b4c4e9fc1a7bbd97c06d1809280edf559c136076d657",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-31-arthas-02-ai-arthas.md",
+      "pages": [
+        "wiki/sources/arthas-02-ai-arthas.md",
+        "wiki/concepts/ai-assisted-troubleshooting-workflow.md",
+        "wiki/entities/arthas.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg4MjE2Nzk0NQ==&mid=2247483860&idx=1&sn=7cb1aeae24e118883216e976f01e0d3a&chksm=cf5b9832f82c1124f1b39ee2b1ff5f24f3934fcafa722466d86d45e03edaff1933e8b995a248",
+      "asset_ref": "Assets/2026-10/weixin-20261031-arthas-02-ai-arthas.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-31-arthas-03-thread-command.md",
+      "sha256": "54b6603ac80587a0efaf82643ba5e9cbc7c6dc2a425020b8de68f5313f1e1bef",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-31-arthas-03-thread-command.md",
+      "pages": [
+        "wiki/sources/arthas-03-thread-command.md",
+        "wiki/concepts/thread-stack-reading.md",
+        "wiki/entities/arthas.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg4MjE2Nzk0NQ==&mid=2247483861&idx=1&sn=48e17d6de6e4c2eecb0b9151f04041de&chksm=cf5b9833f82c11257f96c5790ad9f1b17054e315999c77a8e7e182cc24925c76d2dc9499e5c8",
+      "asset_ref": "Assets/2026-10/weixin-20261031-arthas-03-thread-command.md"
     }
   ]
 }

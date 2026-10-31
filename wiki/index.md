@@ -41,6 +41,9 @@
 - [[architect-road-2025-digest|架构师之路：2025 年干货精选（343 篇链接索引）]]（2026-10-22，架构/资源导航，置信度低）
 - [[architecture-science-and-art-42-rules|架构是学问，也是艺术：42 条架构取舍法则]]（2026-10-31，架构/方法论，11 章 42 条法则，先定约束再挑技术+三高量化+数据放置 8 条+稳定性三件套，配图 1px 占位正文完整，单信源置信度中）
 - [[archunit-java-architecture-guardrails|架构图不会报警，但 ArchUnit 会：给 Java 项目装一套架构门禁]]（2026-10-14，Java/架构治理）
+- [[arthas-01-attach-first-conclusion|Arthas 上手：从 attach 到第一个结论，6 个命令够用]]（2026-10-31，Java/Arthas 入门，attach 两种方式+三类失败原因+6 命令速查+生产纪律，配图 1px 占位正文完整）
+- [[arthas-02-ai-arthas|AI + Arthas 排查线上问题：4 个环节，AI 该在哪一步上手]]（2026-10-31，AI/Arthas，贴文本模式四环节+三件不交给 AI+脱敏前提，与 MCP 信源互证）
+- [[arthas-03-thread-command|CPU 打满、接口卡住、线程池耗尽：thread 命令怎么读]]（2026-10-31，Java/Arthas，三种「卡」分类+三步读栈+线程池耗尽识别+三个误判）
 - [[arthas-mcp-ai-troubleshooting|让 AI 调 Arthas，Java 排障会快多少？]]（2026-10-14，AI/MCP/Java 诊断）
 - [[arthas-mcp-server-ai-diagnosis|Arthas 官方 MCP 实测：29 个诊断命令交给 AI，凌晨排查省 40 分钟]]（2026-10-31，AI/MCP/Java 诊断，量化对比 45min vs 5min+生产红线，与前篇互证，单信源置信度高）
 - [[async-idempotency-local-message-table|异步链路幂等实战：本地消息表配套防重，解决重复扣款与消息重放]]（2026-10-23，架构/幂等）
@@ -287,6 +290,7 @@
 - [[artifact-verification-delivery|产物核验与独立交付]]（核验输入三组成+确定性读取/模型核验分工+核验预算+交付入口独立于最终回复，Codex Harness 实践，单信源置信度中）
 - [[arrayblockingqueue-internals|ArrayBlockingQueue 单锁阻塞队列设计]]（循环数组+一把锁+双条件变量，put/take 对称闭环；数组不可分离队头队尾故只能单锁；单信源，置信度中）
 - [[arraydeque-internals|ArrayDeque 循环数组设计]]（2 的幂容量+位运算取模；head/tail 追赶、head==tail 翻倍扩容分两段拷贝重排；弱 fail-fast 用 fence 非 modCount；单信源，置信度中）
+- [[ai-assisted-troubleshooting-workflow|AI 辅助排障工作流]]（贴文本模式四环节：现象选命令/读栈/写表达式/结论分叉；三件不交给 AI；脱敏前提；它翻译你判断，双信源）
 - [[ai-native-organization|AI 原生研发组织]]（工具原生→工作流原生→组织原生）
 - [[ai-native-sdlc|AI 原生 SDLC]]（制品提交链驱动的闭环，Anthropic 2026；人守闸门/三层控制模型；货拉拉千人落地+孔明八阶段工作流实例，四信源）
 - [[architecture-tradeoff-methodology|架构取舍方法论（先定约束，再挑技术）]]（四问前置+演进式架构+三高量化+对症优化+选型看访问路径+稳定性工具箱，单信源置信度中）
@@ -404,6 +408,7 @@
 - [[startup-ideas-framework|创业点子生成与评估框架（YC）]]（四错误避坑+十问评估+七配方生成；YC 前 100 公司 70% 点子自然注意到；演讲整理稿单信源）
 - [[table-sharding-migration|分表平滑迁移策略]]（五种读写策略矩阵 + 双写双读 SQL 重写，京东大表治理实践）
 - [[thinking-mode|思考模式（Thinking Mode）与模型路由]]（通用 vs 推理已制度化为 thinking 开关两态；reasoning_content 回传 400 规则+参数坑+reasoning_tokens 计费；两行规则表最小路由，单信源）
+- [[thread-stack-reading|线程栈读法]]（三种「卡」先分类：RUNNABLE 在算/BLOCKED 等锁/RUNNABLE 等外部响应；读栈顺序 状态→自己的包→卡在等什么；线程池耗尽看分布；RUNNABLE 但 CPU 不高多半在等 IO；隔时二次采样，三信源）
 - [[threadpoolexecutor-internals|ThreadPoolExecutor 核心设计]]（ctl 单 int 打包状态+线程数；execute 四级漏斗+二次检查；Worker 继承 AQS 不可重入锁；四种拒绝策略，单信源，置信度中）
 - [[tool-parameter-whitelist|参数层白名单防线]]（白名单优于黑名单；两段式校验先形状后语义挂必经之路；强度跟参数熵走、事实来源在服务端；error:rejected 与运行时兜底分开审计；29 项断言实测，单信源）
 - [[tool-schema-as-prompt|Tool Schema as Prompt]]（模型只见 name/description/parameters，写描述即写 prompt/写流程；schema 软约束须执行前校验（两段式）；禁 eval 用 ast 白名单；三信源互证）
@@ -421,7 +426,7 @@
 - [[agent-lightning|Agent Lightning]]（微软研究院开源 Agent RL 训练框架，约 3500 行，真实工具链交互训练）
 - [[archunit|ArchUnit]]（Java 架构约束即测试，TNG，当前 1.5.1）
 - [[argo-rollouts|Argo Rollouts]]（K8s 渐进式交付控制器：Rollout CRD + AnalysisTemplate 门禁，blueGreen/canary，单信源）
-- [[arthas|Arthas]]（Java 线上诊断工具，4.3.5 起含实验性 MCP Server）
+- [[arthas|Arthas]]（Java 线上诊断工具，4.3.5 起含实验性 MCP Server；七信源：MCP 双实测+人工入门/AI 协作/thread 深读/GC 实战/五场景事故）
 - [[deepseek-harness|DeepSeek Harness]]（DeepSeek 模型的桌面 Agent 客户端，v0.2 预览版）
 - [[deepagents|deepagents]]（LangChain 官方 batteries-included agent harness 库，create_deep_agent 一个函数带齐八件套，LangGraph 底座）
 - [[drawio-skill|drawio-skill]]（代码/配置→可编辑 .drawio 架构图，增量同步 + CI 架构检查）

@@ -11,9 +11,7 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026-10/weixin-20261031-arthas-03-thread-command.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-10-31T13:20:42.999Z"
-ingest_claim_id: 63236-1793452842999-1
+wiki_status: ingested
 ---
 
 # CPU 打满、接口卡住、线程池耗尽：thread 命令怎么读

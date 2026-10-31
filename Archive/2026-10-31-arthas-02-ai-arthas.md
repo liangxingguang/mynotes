@@ -11,9 +11,7 @@ tags:
   - 工程实践
   - AI
 asset_ref: Assets/2026-10/weixin-20261031-arthas-02-ai-arthas.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-10-31T13:20:42.999Z"
-ingest_claim_id: 63236-1793452842999-0
+wiki_status: ingested
 ---
 
 # AI + Arthas 排查线上问题：4 个环节，AI 该在哪一步上手
