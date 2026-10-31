@@ -17,6 +17,7 @@ sources:
   - raw/sources/architecture/2026-10-22-async-task-system-design.md
   - raw/sources/architecture/2026-10-27-k8s-blue-green-release-trading.md
   - raw/sources/architecture/2026-10-28-like-follow-high-concurrency-design.md
+  - raw/sources/architecture/2026-10-28-local-message-table-distributed-transaction.md
 related:
   - wiki/concepts/durable-execution.md
   - wiki/concepts/blue-green-deployment.md
@@ -27,6 +28,8 @@ related:
   - wiki/sources/async-task-system-design.md
   - wiki/sources/k8s-blue-green-release-trading.md
   - wiki/sources/like-follow-high-concurrency-design.md
+  - wiki/concepts/local-message-table.md
+  - wiki/sources/local-message-table-distributed-transaction.md
 ---
 # 幂等设计（Idempotency Design）
 
@@ -80,6 +83,7 @@ related:
 - 2026-10-23：[[async-idempotency-local-message-table]] 以真实重复扣券事故补全事故侧证据：不确定结果根因、异步重复流量三大来源、分层防护闭环与 8 条评审清单。
 - 2026-10-27：[[k8s-blue-green-release-trading]] 第四信源印证：蓝绿发布回退场景下，订单记录+幂等键+Outbox 事件同事务提交，Green 期间 12 笔订单经对账确认无重复扣款/预留；发布门禁把"支付幂等冲突"列为业务层指标。
 - 2026-10-31：[[like-follow-high-concurrency-design]] 第五信源补充缓存层幂等形态：Redis Lua 脚本返回值即幂等裁决（`1` 生效 / `0` 重复拦截 / `-1` 参数错误），`SETBIT` 旧值当幂等标记；取消操作先判存在防负数；DB 唯一索引 `(user_id, target_id)` + `ON DUPLICATE KEY UPDATE`/`INSERT IGNORE` 双层保险——与第 1 条同构的"判重与变更原子化"，只是发生在缓存层而非 DB 事务层。
+- 2026-10-31：[[local-message-table-distributed-transaction]] 第六信源印证同事务铁律：本地消息表只保证至少一次投递，案例 3 以"状态更新超时无幂等导致重复业务"给出违反同事务铁律的事故侧证据；幂等键用业务唯一流水号。
 
 ## Open Questions（开放问题）
 

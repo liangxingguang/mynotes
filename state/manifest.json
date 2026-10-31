@@ -2912,6 +2912,20 @@
       ],
       "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzkwOTAxOTY4Nw==&action=getalbum&album_id=3391836763593359360",
       "asset_ref": "Assets/2026/10/llm-rag-agent-series-album.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-28-local-message-table-distributed-transaction.md",
+      "sha256": "4408a017953f520497fa31d73caf18a1824ec72c350cfe1e47474504301730dc",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-28-local-message-table-distributed-transaction.md",
+      "pages": [
+        "wiki/sources/local-message-table-distributed-transaction.md",
+        "wiki/concepts/local-message-table.md",
+        "wiki/concepts/idempotency-design.md",
+        "wiki/sources/distributed-transaction-six-solutions.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/ypHhsVCifGc3yaSBBN7YaQ",
+      "asset_ref": "Assets/2026/10/local-message-table-distributed-transaction.md"
     }
   ]
 }

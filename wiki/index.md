@@ -138,6 +138,7 @@
 - [[llm-from-scratch-primer|三万字长文：大语言模型从零入门]]（2026-10-14，AI/教程）
 - [[llm-rag-agent-series-album|LLM/RAG/Agent 实战合集（172 篇：Pi实战/Harness Engineering/RAG实战/MCP实战/LLM基础/OpenClaw）]]（2026-10-28，AI/资源导航，纯链接目录型，置信度中）
 - [[llm-wiki-advanced-four-steps|LLM Wiki 搭建教程·进阶篇一：四步搭建完整系统（本仓库模式出处）]]（2026-10-14，AI/知识库）
+- [[local-message-table-distributed-transaction|本地消息表终极实战：商城分布式事务落地，Seata 之外最稳方案]]（2026-10-31，架构/分布式事务/可靠性）
 - [[logical-thinking-models|分析问题的逻辑思考方法（14个模型）]]（2026-10-23，思维方法论，置信度中）
 - [[lovart-2-arti-design-agent|Lovart 2.0 发布：设计 Personal Agent Arti 上手体验]]（2026-10-21，AI/产品，置信度低）
 - [[meipai-live-danmu-realtime-push|百万在线的美拍直播弹幕系统实时推送技术实践]]（2026-10-23，IM/直播弹幕/Redis+长连接）
@@ -297,6 +298,7 @@
 - [[linkedhashmap-internals|LinkedHashMap 有序化设计（双链表 + 模板方法钩子）]]（Entry 身兼桶节点+双链节点；三钩子维护插入/访问序；两行核心代码 LRU，单信源，置信度中）
 - [[llm-wiki|LLM Wiki]]（原始来源不可变 + 模型持续编译互链知识页面，Karpathy 模式；本仓库即实例，双信源）
 - [[llm-call-protocol|OpenAI 兼容 Chat Completions 调用协议]]（messages 四角色+tool_call_id 配对+finish_reason 续轮判据+SDK 默认 timeout 10min/重试 2；单信源）
+- [[local-message-table|本地消息表（Local Message Table）]]（同事务原子性+重试可靠性+至少一次投递+状态机流转+选型边界+6 条红线；三信源互证）
 - [[mcp|MCP]]（LLM↔工具/数据纵向协议，Anthropic 2024）
 - [[jmm-happens-before|Java 内存模型与 happens-before]]（JMM 抽象规范≠内存结构；主内存/工作内存副本模型；8 条 hb 规则；volatile 禁重排是 DCL 必须；单信源，置信度中）
 - [[live-message-drop-policy|直播消息丢弃策略]]（上行 200 条/s 硬丢弃 + 环形队列柔性丢弃 + 优先级三桶保必达，融云双信源）

@@ -9,7 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [分布式事务, 工程实践]
 asset_ref: Assets/2026/10/local-message-table-distributed-transaction.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 本地消息表终极实战：商城分布式事务最终一致性避坑

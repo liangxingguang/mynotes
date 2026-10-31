@@ -18,6 +18,7 @@ related:
   - wiki/entities/rocketmq.md
   - wiki/concepts/durable-execution.md
   - wiki/sources/async-task-system-design.md
+  - wiki/concepts/local-message-table.md
 ---
 # 分布式事务最全图解（6种方案）：从强一致的2PC到最终对账
 
