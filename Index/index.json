@@ -1,6 +1,25 @@
 {
-  "updated_at": "2026-10-31 17:28",
+  "updated_at": "2026-10-31 17:31",
   "notes": [
+    {
+      "id": "2026-10-31-arthas-mcp-server-ai-diagnosis",
+      "title": "Arthas 官方 MCP 实测：29 个诊断命令交给 AI，凌晨排查省 40 分钟",
+      "path": "Inbox/2026-10-31-arthas-mcp-server-ai-diagnosis.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/P4Baj-4PX5nQVrVOmXijQg",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "Arthas 4 官方内置 MCP Server（实验性模块），把 29 个诊断命令封装为 AI 可直接调用的工具，排查瓶颈从「命令层」转移到「问题层」。本文实测三步接入（开启端点 → 客户端配置 → 人话对话），用 CPU 98% 订单服务案例对比传统 45 分钟 vs AI 5 分钟，并给出生产红线（watch 加过滤、redefine 只止血、端点必设密码+审批）、六个坑速查表与上线 Checklist。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/arthas-mcp-server-ai-diagnosis.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-31-codex-agent-harness-architecture-6",
       "title": "Codex 桌面客户端开发（六）：Agent Harness 的架构设计",
