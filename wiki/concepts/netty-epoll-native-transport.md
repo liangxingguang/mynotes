@@ -15,6 +15,7 @@ tags:
 sources:
   - raw/sources/architecture/2026-10-27-netty-24-epoll-native.md
   - raw/sources/architecture/2026-10-27-netty-4-to-5.md
+  - raw/sources/architecture/2026-10-28-netty-source-series-album.md
 related:
   - wiki/concepts/netty-eventloop.md
   - wiki/concepts/netty-bootstrap.md
@@ -68,6 +69,7 @@ run() 骨架与 NioEventLoop 一致（算超时 → 等事件 → 处理 → 跑
 ## Evolution（演进）
 
 - 2026-10-29：随教程第 24 篇建立（单信源）。
+- 2026-10-31：程序员行一第 24 篇增量——Native Transport 是完整传输实现不是开关（EventLoop/Channel/配置项/事件表示/fd 管理全换，Pipeline 契约不变故业务可复用）；EpollEventLoop 四对象（epollFd/eventFd/timerFd/EpollEventArray，`Native.epollWait` 进 JNI）；KQueue kevent 结构（filter/ident 与 epoll interest mask 语义不同，非复制品）；平台能力清单（SO_REUSEPORT/TCP_CORK/TCP_QUICKACK/UDS/边沿触发/splice）；边沿触发须读到 EAGAIN 否则剩余数据等不到新边沿；Epoll.isAvailable() 启动检测不静默回退（生产显式 Epoll→KQueue→NIO 策略，CI 跑镜像内实际检测）；依赖匹配六项检查（glibc/musl/CPU 架构/shaded jar 资源/容器平台/版本统一）。
 
 ## Open Questions（开放问题）
 
@@ -79,6 +81,7 @@ run() 骨架与 NioEventLoop 一致（算超时 → 等事件 → 处理 → 跑
 
 - Source: `raw/sources/architecture/2026-10-27-netty-24-epoll-native.md`（单一自媒体教程信源；C 代码为作者简化版；压测为作者自述非受控数据）
 - Source: `raw/sources/architecture/2026-10-27-netty-4-to-5.md`（同系列番外篇6：io_uring 在新 5.0 的定位与 epoll 对比维度，用于消解上方矛盾记录）
+- Source: `raw/sources/architecture/2026-10-28-netty-source-series-album.md`（第 24 篇，四 fd/kevent 结构/平台能力清单/可用性检测增量）
 
 ## Related Knowledge（相关知识）
 

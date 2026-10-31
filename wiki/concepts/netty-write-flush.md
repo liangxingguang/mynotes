@@ -15,6 +15,7 @@ sources:
   - raw/sources/architecture/2026-10-27-netty-15-write-flush.md
   - raw/sources/architecture/2026-10-22-netty-iot-gateway-resilient-design.md
   - raw/sources/architecture/2026-10-22-netty-redis-kafka-iot-gateway.md
+  - raw/sources/architecture/2026-10-28-netty-source-series-album.md
 related:
   - wiki/entities/netty.md
   - wiki/concepts/netty-channel-pipeline.md
@@ -74,6 +75,7 @@ channel.writeAndFlush(msg)
 ## Evolution（演进）
 
 教程第 15 篇（netty-15）给出源码级全貌（Entry 链表/addFlush/doWrite/写自旋/水位默认值）；此前两个 IoT 工程信源已把"写缓冲水位线（32/64KB）是反压开关"列为长连接工程纪律，本篇为其补上了默认值出处（DefaultChannelConfig）与回调机制，机制与工程互证。
+- 2026-10-31：程序员行一第 21 篇增量——写积压≠泄漏（前者仍被需要但发送跟不上）；bytesBeforeUnwritable/bytesBeforeWritable 写前估算细粒度控制；入站背压把写侧不可写传回 read（关闭 AUTO_READ）；推送队列五策略（暂停上游/丢低优先级/合并保留最新/断慢连接/落盘补偿）；水位线乘积估算（10 万连接 × 1MB = 100GB 理论积压，先建背压策略再微调水位）；fireChannelWritabilityChanged(invokeLater) 异步传播防重入；慢连接排查指标（pending bytes/不可写数/OP_WRITE/write Future 延迟/flush 耗时）。
 
 ## Open Questions（开放问题）
 
@@ -85,6 +87,7 @@ channel.writeAndFlush(msg)
 - Source: `raw/sources/architecture/2026-10-27-netty-15-write-flush.md`（源码级主信源：write/flush 分离、doWrite、水位机制）
 - Source: `raw/sources/architecture/2026-10-22-netty-iot-gateway-resilient-design.md`（工程侧：水位线反压纪律）
 - Source: `raw/sources/architecture/2026-10-22-netty-redis-kafka-iot-gateway.md`（工程侧：水位线反压纪律）
+- Source: `raw/sources/architecture/2026-10-28-netty-source-series-album.md`（第 21 篇，写积压≠泄漏/bytesBeforeUnwritable/入站背压/水位乘积估算增量）
 
 ## Related Knowledge（相关知识）
 

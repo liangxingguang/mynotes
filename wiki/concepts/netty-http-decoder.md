@@ -13,6 +13,7 @@ tags:
   - codec
 sources:
   - raw/sources/architecture/2026-10-27-netty-20-http-decoder.md
+  - raw/sources/architecture/2026-10-28-netty-source-series-album.md
 related:
   - wiki/concepts/netty-channel-pipeline.md
   - wiki/concepts/netty-bytebuf.md
@@ -64,15 +65,17 @@ HTTP 看似简单，但 Keep-Alive 复用、chunked 编码、Content-Length 缺�
 ## Evolution（演进）
 
 - 2026-10-29：随教程第 20 篇建立（单信源）。
+- 2026-10-31：程序员行一第 28 篇增量——状态机细节（SKIP_CONTROL_CHARS→READ_INITIAL→READ_HEADER→READ_FIXED_LENGTH_CONTENT/READ_VARIABLE_LENGTH_CONTENT→READ_CHUNK_SIZE→READ_CHUNKED_CONTENT→READ_CHUNK_DELIMITER→READ_CHUNK_FOOTER）；HttpObjectAggregator maxContentLength 峰值聚合内存 ≈ 并发上传连接数 × 单连接 Body 上限（慢请求/内存风险）；request smuggling 与 keep-alive/pipelining 顺序风险；HttpRequest/HttpContent/LastHttpContent 对象流（头部完即发、聚合器选配）。
 
 ## Open Questions（开放问题）
 
-- 与 HttpObjectAggregator 的边界（多大 body 该聚合、多大该流式）信源只给"大文件禁用聚合器"的定性结论，无量化阈值。
+- 与 HttpObjectAggregator 的边界（多大 body 该聚合、多大该流式）信源只给"大文件禁用聚合器"的定性结论；第 28 篇补上估算口径（峰值聚合内存 ≈ 并发上传连接数 × 单连接 Body 上限），但聚合/流式切换的绝对阈值仍无量化。
 - HTTP/2 解码是否复用同一状态机思路，信源未涉及。
 
 ## Evidence（证据）
 
 - Source: `raw/sources/architecture/2026-10-27-netty-20-http-decoder.md`（单一自媒体教程信源；源码为简化注解版，标注 Netty 4.1.x）
+- Source: `raw/sources/architecture/2026-10-28-netty-source-series-album.md`（第 28 篇，状态机细节/聚合器内存估算/request smuggling 增量）
 
 ## Related Knowledge（相关知识）
 

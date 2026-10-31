@@ -9,9 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [AI, AI Coding]
 asset_ref: Assets/2026/10/pi-series-full.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-10-31T04:20:40.025Z"
-ingest_claim_id: 14368-1793420440025-0
+wiki_status: ingested
 ---
 
 # Pi 实战系列（01~17，共 16 篇）

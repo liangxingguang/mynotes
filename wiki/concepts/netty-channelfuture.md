@@ -14,6 +14,7 @@ tags:
 sources:
   - raw/sources/architecture/2026-10-27-netty-27-channelfuture.md
   - raw/sources/architecture/2026-10-27-netty-28-promise.md
+  - raw/sources/architecture/2026-10-28-netty-source-series-album.md
 related:
   - wiki/concepts/netty-eventloop.md
   - wiki/concepts/netty-flow-control.md
@@ -73,6 +74,7 @@ Netty 的 I/O 操作全部异步、立即返回，结果获取方式直接决定
 
 - 2026-10-29：随教程第 27 篇建立（读侧：addListener/sync/await/isWritable）。
 - 2026-10-29：第 28 篇摄入，补齐写侧（Promise 接口语义、监听器懒加载、checkNotifyWaiters 唤醒路径、取消语义、两个使用示例），并证实第 27 篇存疑的 DefaultFutureListeners 数组优化真实存在。
+- 2026-10-31：程序员行一第 22 篇增量——notifyListeners 的 EventLoop 内直接执行/提交任务双分支（`futureListenerStackDepth` 回调栈深保护）；VoidChannelPromise 吞掉 Listener/await/失败观测，仅限框架热路径；Listener 抛异常不改变 Future 结果（仅记日志，业务须自隔离）；await(timeout) 是等待 Future 完成的超时而非 I/O 超时（连接超时用 `ChannelOption.CONNECT_TIMEOUT_MILLIS`）；写成功≠对端业务已处理（须应用层 ACK）；Future 排查表（Listener 延迟/未完成/cause 为空/complete already/关闭后回调丢失/业务状态错乱）。
 
 ## Open Questions（开放问题）
 
@@ -84,6 +86,7 @@ Netty 的 I/O 操作全部异步、立即返回，结果获取方式直接决定
 
 - Source: `raw/sources/architecture/2026-10-27-netty-27-channelfuture.md`（自媒体教程信源；源码为简化注解片段，同系列前文标注 Netty 4.1.x）
 - Source: `raw/sources/architecture/2026-10-27-netty-28-promise.md`（同系列写侧篇；await() 中断表述矛盾见 Open Questions）
+- Source: `raw/sources/architecture/2026-10-28-netty-source-series-album.md`（第 22 篇，自媒体教程信源；notifyListeners 双分支/VoidPromise/await 语义/写成功≠业务 ACK 增量）
 
 ## Related Knowledge（相关知识）
 

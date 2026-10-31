@@ -21,6 +21,7 @@ sources:
   - raw/sources/products/2026-10-16-pi-practice-06-daily-patterns-selection.md
   - raw/sources/products/2026-10-16-pi-school-official-course.md
   - raw/sources/products/2026-10-20-pi-tips-4-web-parallel.md
+  - raw/sources/ai/2026-10-28-pi-series.md
 related:
   - wiki/concepts/mcp.md
   - wiki/concepts/agent-loop.md
@@ -89,6 +90,7 @@ Pi 是一款极简风格的 Agent CLI：默认只内置 read、write、edit、ba
 - 2026-10-16 — Pi 实战系列第 6 篇发布，汇总社区模型分工/节流/四模式/选型对照（含固定开销实测与"Emacs 定位"评价）
 - 2026-10-16 — Pi School 官方课程主页采集入库，确认官方课程机制与免费无账号口径
 - 2026-10-20 — 实用技巧系列第四篇发布，系统梳理联网/浏览器/并行四路线选型与社区扩展安全核查
+- 2026-10-31 — Pi 实战系列 16 篇合集采集入库，覆盖配置/提示词/扩展/多智能体/本地模型/调试/TDD 等全流程实操
 
 ## Current Understanding（当前认知）
 
@@ -106,3 +108,4 @@ Pi 代表了 Agent CLI 的另一种产品哲学：内核极简、能力清单交
 - `raw/sources/products/2026-10-16-pi-practice-06-daily-patterns-selection.md`
 - `raw/sources/products/2026-10-16-pi-school-official-course.md`
 - `raw/sources/products/2026-10-20-pi-tips-4-web-parallel.md`
+- `raw/sources/ai/2026-10-28-pi-series.md`

@@ -185,6 +185,7 @@
 - [[netty-million-connection-push-service|绝对干货：基于Netty实现海量接入的推送服务技术要点（李林锋）]]（2026-10-24，Netty/百万长连接调优）
 - [[netty-perf-tuning|Netty源码分析(番外篇) — Netty性能调优实战：从参数配置到JVM层优化]]（2026-10-29，Netty/生产调优五维度清单，系列收官）
 - [[netty-source-reading-album|Netty 源码阅读合集（Java解忧杂货铺，32 篇系列索引）]]（2026-10-29，Netty/源码阅读资源，置信度低）
+- [[netty-source-series-album|Netty 源码系列合集（程序员行一，28 篇系列）]]（2026-10-31，Netty/源码阅读资源，28 篇倒序正文+双信源互补，单信源，置信度中）
 - [[netty-vs-tomcat-undertow|Netty vs Tomcat vs Undertow：HTTP 服务器性能横评（番外篇8）]]（2026-10-29，Netty/性能横评，系列收官实证，置信度中）
 - [[nginx-websocket-load-balancing|Nginx生产级WebSocket实时长连接负载均衡，一文搞定（银河技术）]]（2026-10-24，Nginx/WebSocket/云环境断连）
 - [[netty-iot-gateway-resilient-design|百万 IoT 设备并发接入：把 Netty 网关做成可恢复、可验证的连接系统]]（2026-10-22，Netty/IoT/可靠性）
@@ -196,6 +197,7 @@
 - [[pi-embedded-sdk-agent-engine|从 Pi SDK 看懂怎样把 Agent 引擎塞进自己的系统]]（2026-10-17，AI/Pi SDK）
 - [[pi-custom-agent-setup|用 Pi 搭一个自己的 Agent：Skills、Extensions、Subagents 和定时任务]]（2026-10-17，AI/Pi）
 - [[pi-practice-06-daily-patterns-selection|Pi实战 06：日常实战 · 模式 · 选型篇]]（2026-10-16，AI/Pi）
+- [[pi-practice-series|Pi 实战系列（16 篇全文本合集）]]（2026-10-31，AI/Pi/资源导航，16 篇实操合集，无新概念页，回链 pi/codemode/mcp 等，置信度中）
 - [[pi-school-official-course|Pi School 官方课程主页：在 Pi 里边用边学的免费 Agent 入门课]]（2026-10-16，AI/课程）
 - [[pi-1-0-durable-mcp-update|Pi 1.0：原生 MCP + Code Mode 稳定版与 Pi Durable 持久执行框架]]（2026-10-14，AI/Agent 基础设施）
 - [[pi-sandbox-two-layer-isolation|Pi 支持沙箱吗：从什么是沙箱，到 Pi 的两层隔离]]（2026-10-14，AI/安全）
@@ -206,6 +208,7 @@
 - [[reading-system-sop|阅读体系 SOP：挖需求、搭结构、四步读书法]]（2026-10-20，方法论/阅读，置信度低）
 - [[redisearch-vs-elasticsearch|换掉 ES！Redis 官方搜索引擎 RediSearch 介绍与实操]]（2026-10-22，Redis/搜索，置信度低）
 - [[pm-director-4-decision-frameworks|大厂产品总监私藏的 4 个决策框架]]（2026-10-14，产品/方法论）
+- [[programmer-overseas-remote-work|程序员出海远程，是一条好出路吗？]]（2026-10-31，职业/出海/汇率杠杆，Upwork 供需比 1:23+薪资价格带+卖资产 vs 卖时间，单信源，置信度中）
 - [[proposal-logic-structures|写方案的人，一定要掌握这6种逻辑结构]]（2026-10-23，写作/方法论，置信度中）
 - [[raft-membership-log-barrier|Raft 成员变更：何时需要先提交 leader 的当前 term 日志]]（2026-10-21，分布式/Raft）
 - [[rocketmq-advanced-reliability-idempotency|RocketMQ 进阶：可靠性、幂等、顺序、延时与高可用一篇搞懂]]（2026-10-22，MQ/RocketMQ）
@@ -323,6 +326,8 @@
 - [[netty-eventloop|Netty EventLoop / EventLoopGroup（事件循环机制）]]（线程+Selector+MpscLinkedQueue 三合一；CPU×2 默认线程+chooser 位运算+ioRatio=50 时间配比+selectCnt 超 512 重建 Selector 自愈+register 异步化；源码级三信源互证，置信度高）
 - [[netty-epoll-native-transport|Netty EpollEventLoop 与 Native Transport（绕过 JDK Selector 直调 epoll）]]（epollFd/eventFd/timerFd 三 fd+事件栈上分配零 GC+fd 直映射无 selectedKeys 遍历+ET 循环读到 EAGAIN；仅 Linux+Epoll→KQueue→NIO 回退纪律；"Netty 5 推 io_uring"矛盾经番外篇6 消解（新旧两代 5.0）；双信源，置信度中）
 - [[netty-flow-control|Netty 流量控制（高低水位与 isWritable 背压）]]（WriteBufferWaterMark 默认 32K/64K 软限制+CAS 位标记状态切换+变不可写 invokeLater 延迟传播防重入+写前必查 isWritable；与 TCP 滑窗/应用队列三层背压叠加；Pulsar 写侧水位+Kafka RequestChannel 应用层队列双生产实例，三信源，置信度中）
+- [[netty-graceful-shutdown|Netty 优雅停机（shutdownGracefully / quiet period）]]（quiet period 连续安静窗口被 lastExecutionTime 刷新+timeout 硬上限不保证任务完成+三对象模型+发布顺序九步+停机不安静根因+验收六指标；单信源，置信度中）
+- [[netty-hashed-wheel-timer|Netty 时间轮定时器（HashedWheelTimer）]]（钟表面盘+MPSC 提交/Worker 串行落桶+掩码映射槽位+remainingRounds 圈数+每 tick 四件事+与 EventLoop.schedule 分工+四条工程纪律；单信源，置信度中）
 - [[netty-http-decoder|Netty HTTP 解码状态机（HttpObjectDecoder）]]（currentState 成员变量持久化的 12 态 FSM 抗 TCP 分片；头部 readerIndex 零拷贝+chunked readRetainedSlice；碎片产出由 HttpObjectAggregator 选配聚合；UPGRADED 让位 WebSocket；单信源，置信度中）
 - [[netty-reconnect|Netty 断线重连机制]]（无内置重连，ChannelFutureListener+channelInactive 双时机+eventLoop.schedule 串行化；指数退避+抖动 30s 封顶防惊群；IdleStateEvent→close→channelInactive→重连闭环+channelActive 状态重建；单信源，置信度中）
 - [[netty-ssl-tls|Netty SSL/TLS 支持（SslHandler 对 SSLEngine 的透明封装）]]（入站 unwrap 解密/出站 wrap 加密双职责+握手全程异步 NEED_TASK 不占 IO 线程+handshakeFuture 通知；SslContext 工厂+SslProvider 策略 JDK/OpenSSL/BouncyCastle；Pipeline 最前/PKCS#8/Session 复用+TLS 1.3；单信源，置信度中）
@@ -404,6 +409,7 @@
 
 - [[jvm-gc|JVM 垃圾回收]]（判定/算法/收集器演进与选型/调优主线枢纽；G1/ZGC 原理 + 证据驱动调优，四信源）
 - [[live-streaming-messaging|直播实时消息分发]]（拉 vs 推路线图谱：读扩散通知拉取 / longpolling / 短轮询 / mcast 组播 / CDN 广播；允许策略性丢消息是与 IM 的根本分界，八信源）
+- [[programmer-overseas-remote-work|程序员出海远程]]（汇率杠杆/价格带定价/卖资产 vs 卖时间；AI 一人公司技术前提；收款/时差/合规三实操；单信源，置信度中）
 - [[system-design-core-components|系统设计核心组件]]（分布式系统 12 个核心组件清单）
 
 ## decision（决策）

@@ -48,6 +48,7 @@ sources:
   - raw/sources/architecture/2026-10-27-netty-perf-tuning.md
   - raw/sources/architecture/2026-10-27-netty-source-reading-album.md
   - raw/sources/architecture/2026-10-27-netty-vs-tomcat-undertow.md
+  - raw/sources/architecture/2026-10-28-netty-source-series-album.md
 related:
   - wiki/sources/netty-three-skills-high-performance.md
   - wiki/sources/netty-iot-gateway-resilient-design.md

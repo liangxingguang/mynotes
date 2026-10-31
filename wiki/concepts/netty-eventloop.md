@@ -16,6 +16,7 @@ sources:
   - raw/sources/architecture/2026-10-27-netty-06-eventloop.md
   - raw/sources/architecture/2026-10-27-netty-03-reactor.md
   - raw/sources/architecture/2026-10-27-netty-09-nioeventloop-run.md
+  - raw/sources/architecture/2026-10-28-netty-source-series-album.md
 related:
   - wiki/concepts/reactor-thread-model.md
   - wiki/concepts/netty-channel-pipeline.md
@@ -81,6 +82,8 @@ NioEventLoop.run() 每轮：① SelectStrategy 决策（CONTINUE / BUSY_WAIT 仅
 
 机制信源（netty-three-skills）与教程开篇（netty-01/02）给出"Boss accept / Worker CPU×2 / Channel 终身绑单 EventLoop"的架构结论；教程第 3 篇（netty-03）补 chooser 版本演进（取模→位运算）、runAllTasks 尾部任务（afterRunningAllTasks）与自愈阈值 512；教程第 6 篇（netty-06）给 run()/processSelectedKeys/register 逐方法剖析与 ioRatio 配比公式；教程第 9 篇（netty-09，2026-10-28 摄入）专篇深挖 run()——SelectStrategy "有任务非阻塞"的解释、ioRatio 选型建议表、epoll 空轮询 BUG 编号 JDK-2144974、rebuildSelector0 的 key 迁移源码与"有工作即重置 selectCnt"细节，与既有结论一致互证。各篇 run() 伪代码详略与策略命名略有差异（03 简化为 SELECT/SELECT_NOW，06/09 为 CONTINUE/BUSY_WAIT/SELECT），属作者简化口径不同，无实质矛盾。
 
+- 2026-10-31：程序员行一第 25 篇增量——selectCnt 语义为"无法解释的提前返回"计数（任务/wakeup/deadline/中断等合理返回清零）；unexpectedSelectorWakeup→rebuildSelector（`io.netty.selectorAutoRebuildThreshold`）；rebuildSelector 线程归属检查（非 EventLoop 线程 execute 投递回本线程）；rebuildSelector0 迁移 SelectionKey 不关闭 Socket（TCP 连接不重建，个别注册失败则关 Channel 防悬挂）；selectedKeys 优化与 Selector 重建是两件事；CPU 100% ≠ 空轮询（五步排查：栈采样/任务队列/读写指标/重建日志/GC 与系统调用）。
+
 ## Open Questions（开放问题）
 
 - EpollEventLoopGroup / BUSY_WAIT 细节（信源仅点名未展开）。
@@ -92,6 +95,7 @@ NioEventLoop.run() 每轮：① SelectStrategy 决策（CONTINUE / BUSY_WAIT 仅
 - Source: `raw/sources/architecture/2026-10-27-netty-06-eventloop.md`（源码级主信源：类层次/构造链/run()/processSelectedKeys/wakeup/register 逐方法剖析）
 - Source: `raw/sources/architecture/2026-10-27-netty-03-reactor.md`（补强：run() 四阶段简化版/chooser 演进/自愈阈值 512/runAllTasks 与 MPSC 队列；架构层结论与 [[reactor-thread-model]] 各信源互证）
 - Source: `raw/sources/architecture/2026-10-27-netty-09-nioeventloop-run.md`（run() 专篇：SelectStrategy 反直觉解释/ioRatio 选型表/JDK-2144974/rebuildSelector0 迁移源码）
+- Source: `raw/sources/architecture/2026-10-28-netty-source-series-album.md`（第 25 篇，selectCnt 语义/unexpectedSelectorWakeup/线程归属/五步排查增量）
 
 ## Related Knowledge（相关知识）
 

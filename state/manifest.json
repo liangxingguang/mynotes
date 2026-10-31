@@ -3004,6 +3004,50 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/zTLDAj6072ItrqFWWIuZ_Q",
       "asset_ref": "Assets/2026/10/spring-security-oauth2-sso-demo.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-28-netty-source-series-album.md",
+      "sha256": "c7376d0b3cd83267ffa0514928e0683d2bf430509bf11744cb57fe5970d668d3",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-28-netty-source-series-album.md",
+      "pages": [
+        "wiki/sources/netty-source-series-album.md",
+        "wiki/concepts/netty-hashed-wheel-timer.md",
+        "wiki/concepts/netty-graceful-shutdown.md",
+        "wiki/concepts/netty-channelfuture.md",
+        "wiki/concepts/netty-idlestate-heartbeat.md",
+        "wiki/concepts/netty-http-decoder.md",
+        "wiki/concepts/netty-write-flush.md",
+        "wiki/concepts/netty-eventloop.md",
+        "wiki/concepts/netty-epoll-native-transport.md",
+        "wiki/entities/netty.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzI3NzQ1MTI4OQ==&action=getalbum&album_id=1946733195882708993",
+      "asset_ref": "Assets/2026/10/netty-source-series-full.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-28-pi-series.md",
+      "sha256": "ece9dbdc935a89f9c5296789fb296d549928ef39b0e12490a380f75f2606af82",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-28-pi-series-full.md",
+      "pages": [
+        "wiki/sources/pi-practice-series.md",
+        "wiki/entities/pi.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzkwOTAxOTY4Nw==&action=getalbum&album_id=3391836763593359360",
+      "asset_ref": "Assets/2026/10/pi-series-full.md"
+    },
+    {
+      "path": "raw/sources/products/2026-10-28-programmer-overseas-remote-work.md",
+      "sha256": "41b8c3480865ac6cef618ea5657bbf1150a82ed0dcd23fa9c27913f9857dfe4e",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-28-programmer-overseas-remote-work.md",
+      "pages": [
+        "wiki/sources/programmer-overseas-remote-work.md",
+        "wiki/topics/programmer-overseas-remote-work.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/06rlJbQzvreFfbIE1iHqHQ",
+      "asset_ref": "Assets/2026/10/programmer-overseas-remote-work.md"
     }
   ]
 }
