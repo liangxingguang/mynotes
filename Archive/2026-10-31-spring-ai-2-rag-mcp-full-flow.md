@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - AI
 asset_ref: Assets/2026/10/spring-ai-2-rag-mcp-full-flow.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 新玩具到货：Spring AI 2.0 + RAG + MCP，Java生态的AI开发全流程

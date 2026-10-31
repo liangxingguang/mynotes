@@ -281,6 +281,9 @@
 - [[llm-integration-engineering-hard-parts|大模型接进业务系统：工程难点在哪（面试深挖 84）]]（2026-10-31，AI/Agent 工程，工具调用归属+上下文预算六类分配+意图路由+非确定性重试=分布采样+评测验收纪律，公众号单信源，置信度中）
 - [[openfeign-thread-pool-isolation|OpenFeign 服务远程调用 + 线程池隔离架构实战（连载十）]]（2026-10-31，架构/微服务/可靠性，超时/重试/日志三项生产配置+四类线程池隔离+降级红线，代码块采集丢失，单信源置信度中）
 - [[points-system-architecture-design|积分系统架构：并发扣减、分批过期、幂等、冲正与对账]]（2026-10-31，架构/账户系统，五条不变量+批次账务+写入链路 7 步+冲正对账+扩展顺序克制，公众号单信源，置信度中）
+- [[scaling-pain-glm5-coding-agent-inference|Scaling Pain：超大规模 Coding Agent 推理实践（GLM-5 / SGLang）]]（2026-10-31，AI/推理基础设施，PD 分离 KV Cache 竞态+HiCache read-before-ready+投机采样质量监控+LayerSplit，官方博客一手，置信度高）
+- [[spring-ai-2-rag-mcp-full-flow|新玩具到货：Spring AI 2.0 + RAG + MCP，Java生态的AI开发全流程]]（2026-10-31，AI/Java/Spring，七步全流程+换模型只改配置+Advisor 横切+MCP 工具暴露，公众号教程单信源，置信度中）
+- [[spring-interview-11-high-freq-topics|Spring 面试 11 大高频考点全解：从 IOC/AOP 到事务失效与事件机制]]（2026-10-31，Java/Spring/面试，容器差异+refresh 十二步+Bean 生命周期+三级缓存+JDK/CGLIB+事务传播隔离失效+事件机制，面试八股总纲单信源，置信度中）
 
 ## concept（概念）
 
@@ -434,6 +437,15 @@
 - [[zgc|ZGC]]（染色指针+多视图映射+读屏障自愈实现并发整理，停顿 <10ms 与堆大小无关，JDK 15 转正；单信源）
 - [[points-system-design|积分系统设计（不变量/批次账务/并发扣减/冲正与对账）]]（五条不变量+批次账务较早到期优先+6 类数据模型+写入链路 7 步+冲正不删账+对账三类关系+扩展顺序克制，单信源，置信度中）
 - [[remote-call-governance|服务远程调用治理（超时/重试/线程池隔离/降级）]]（超时/重试/日志三项生产配置+四类线程池隔离+降级红线；入口防浪涌通信防阻塞；单信源，置信度中）
+- [[pd-separation-kv-cache-consistency|PD 分离架构下的 KV Cache 生命周期一致性]]（Abort 信号未传播至 Prefill+RDMA 写入覆盖复用槽位+显式可释放确认，万分之十几→万分之三，GLM 官方复盘一手）
+- [[hicache-read-before-ready|HiCache 多级 KV Cache 加载流水线的 read-before-ready 竞态]]（Indexer 启动未同步 Load Stream+显式同步点，修复提交 SGLang PR #22811，GLM 一手）
+- [[speculative-decoding-quality-monitoring|投机采样指标作为输出质量监控信号]]（spec_accept_length/rate 阈值 1.4/0.96 中止重试；乱码→极低/复读→偏高；性能指标反推 KV Cache 状态损坏，GLM 一手）
+- [[layersplit-kv-cache-tiering|LayerSplit：KV Cache 分层存储优化]]（每卡仅持部分层+Attention 前广播+广播与 indexer 计算重叠掩盖，1/8 开销，40k-120k 吞吐 +10%~132%，GLM-5.1 实测）
+- [[spring-ioc-di|Spring IOC 与 DI]]（IOC 思想/DI 实现；populateBean 注入点+AutowiredAnnotationBeanPostProcessor；@Autowired 先 byType vs @Resource 先 byName，单信源）
+- [[spring-aop|Spring AOP 动态代理]]（5 通知执行序+JDK/CGLIB 选型+自调用不走代理+Boot 2.x 默认 CGLIB，单信源）
+- [[spring-circular-dependency|Spring 三级缓存解循环依赖]]（一级成品/二级早期引用/三级工厂；三级存在的根本理由是 AOP 代理一致性；仅支持单例 setter 注入，单信源）
+- [[spring-transaction|Spring 事务传播/隔离/失效]]（REQUIRED/REQUIRES_NEW/NESTED；RR/RC 须与库对齐；失效 10 场景前 4 种占 90%，单信源）
+- [[spring-event-mechanism|Spring 事件机制]]（观察者模式；默认同步；@Async/@TransactionalEventListener 三大坑，单信源）
 
 ## entity（实体）
 
@@ -461,6 +473,7 @@
 - [[rongyun|融云]]（IM 云服务厂商；直播聊天室通知拉取+丢弃策略路线代表，双信源）
 - [[system-design-notes|system-design-notes]]（按 Alex Xu 两卷书体系整理的 28 章开源系统设计笔记，GitHub liquidslr）
 - [[unyra|归一 Unyra]]（本地优先探索式学习 AI 桌面应用，知识 DAG + 超级导师沙箱改文档，仅 Windows 安装链）
+- [[spring-ai|Spring AI]]（Java 应用与模型间的中间层，屏蔽模型差异，Java 版 LangChain；七步能力栈+版本基线 1.0.9→2.0.2+MCP Server 暴露工具，双信源，置信度中）
 
 ## topic（主题）
 

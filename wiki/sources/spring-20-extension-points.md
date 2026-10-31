@@ -4,7 +4,7 @@ type: source
 title: Spring 留了 20 个扩展点，你能按顺序说出几个？
 status: active
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-11-01
 confidence: high
 tags:
   - source
@@ -12,7 +12,13 @@ tags:
   - spring
 sources:
   - raw/sources/architecture/2026-10-20-spring-20-extension-points.md
-related: []
+related:
+  - wiki/sources/spring-interview-11-high-freq-topics.md
+  - wiki/concepts/spring-ioc-di.md
+  - wiki/concepts/spring-aop.md
+  - wiki/concepts/spring-circular-dependency.md
+  - wiki/concepts/spring-transaction.md
+  - wiki/concepts/spring-event-mechanism.md
 ---
 # Spring 留了 20 个扩展点，你能按顺序说出几个？
 
@@ -55,7 +61,12 @@ related: []
 
 ## Related Knowledge（相关知识）
 
-（无）
+- [[spring-interview-11-high-freq-topics|Spring 面试 11 大高频考点全解]]（refresh() 十二步与 Bean 生命周期逐步骤详解，扩展点时间轴的同构印证）
+- [[spring-ioc-di]]（DI 发生在实例化期属性填充段）
+- [[spring-aop]]（AOP 代理诞生于 postProcessAfterInitialization）
+- [[spring-circular-dependency]]（三级缓存为 AOP 代理一致性而存在）
+- [[spring-transaction]]（事务失效：代理没生效类事故）
+- [[spring-event-mechanism]]（事件广播器于 refresh() 第 8 步初始化）
 
 ## Source（信源）
 

@@ -16,6 +16,8 @@ related:
   - wiki/concepts/rag-production-guardrails.md
   - wiki/sources/langchain4j-multimodal-rag.md
   - wiki/sources/knowledge-base-tech-evolution.md
+  - wiki/entities/spring-ai.md
+  - wiki/sources/spring-ai-2-rag-mcp-full-flow.md
 ---
 # Spring AI + Milvus 企业级 RAG 生产工程实践
 

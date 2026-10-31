@@ -3510,6 +3510,51 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/-o5i4O-fJItMXZO3vnv4AQ",
       "asset_ref": "Assets/2026-10/weixin-20261031-o5i4O-fJItMXZO3vnv4AQ.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-31-scaling-pain-glm5-coding-agent-inference.md",
+      "sha256": "fe6d2851115a76259c257dd34e8ddbe029b52e8fdf5aa522cf8776b7894b8c99",
+      "registered_at": "2026-11-01",
+      "inbox_ref": "Archive/2026-10-31-scaling-pain-coding-agent-inference.md",
+      "pages": [
+        "wiki/sources/scaling-pain-glm5-coding-agent-inference.md",
+        "wiki/concepts/pd-separation-kv-cache-consistency.md",
+        "wiki/concepts/hicache-read-before-ready.md",
+        "wiki/concepts/speculative-decoding-quality-monitoring.md",
+        "wiki/concepts/layersplit-kv-cache-tiering.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2033130936229959142",
+      "asset_ref": "Assets/2026-10/zhihu-20261031-2033130936229959142.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-31-spring-ai-2-rag-mcp-full-flow.md",
+      "sha256": "beb188ad7b7827242a6856b11cebbc50f986e803a2ae520f5348073e13a972e4",
+      "registered_at": "2026-11-01",
+      "inbox_ref": "Archive/2026-10-31-spring-ai-2-rag-mcp-full-flow.md",
+      "pages": [
+        "wiki/sources/spring-ai-2-rag-mcp-full-flow.md",
+        "wiki/entities/spring-ai.md",
+        "wiki/sources/spring-ai-milvus-rag-production.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/fc3HYvCgv4AK9BPQnVnPCg",
+      "asset_ref": "Assets/2026/10/spring-ai-2-rag-mcp-full-flow.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-31-spring-interview-11-high-freq-topics.md",
+      "sha256": "6bd31cf9a382073fdce3207f3c2fc7a6fd9af34d916e1f37ef69a5ca8cd5b679",
+      "registered_at": "2026-11-01",
+      "inbox_ref": "Archive/2026-10-31-spring-interview-11-high-freq-topics.md",
+      "pages": [
+        "wiki/sources/spring-interview-11-high-freq-topics.md",
+        "wiki/concepts/spring-ioc-di.md",
+        "wiki/concepts/spring-aop.md",
+        "wiki/concepts/spring-circular-dependency.md",
+        "wiki/concepts/spring-transaction.md",
+        "wiki/concepts/spring-event-mechanism.md",
+        "wiki/sources/spring-20-extension-points.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/SpHaBjO13VfcQap34ajgDg",
+      "asset_ref": "Assets/2026-10/weixin-20261031-SpHaBjO13VfcQap34ajgDg.md"
     }
   ]
 }

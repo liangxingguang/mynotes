@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - AI
 asset_ref: Assets/2026-10/zhihu-20261031-2033130936229959142.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Scaling Pain：超大规模 Coding Agent 推理实践（GLM-5 / SGLang）

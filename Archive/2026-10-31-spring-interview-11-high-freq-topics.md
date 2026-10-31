@@ -11,7 +11,7 @@ tags:
   - 课程
   - 工程实践
 asset_ref: Assets/2026-10/weixin-20261031-SpHaBjO13VfcQap34ajgDg.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Spring 面试 11 大高频考点全解：从 IOC/AOP 到事务失效与事件机制
