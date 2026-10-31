@@ -12,8 +12,8 @@ tags:
   - 课程
 asset_ref: Assets/2026-10/weixin-20261031-arthas-04-watch-trace-tt.md
 wiki_status: ingesting
-ingest_claimed_at: "2026-10-31T13:20:42.999Z"
-ingest_claim_id: 63236-1793452842999-2
+ingest_claimed_at: "2026-10-31T14:06:56.590Z"
+ingest_claim_id: 62500-1793455616590-0
 ---
 
 # watch、trace、tt：把方法看透的三件套
