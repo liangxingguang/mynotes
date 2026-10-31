@@ -4,7 +4,7 @@ type: concept
 title: LongAdder 分段累加设计（Striped64）
 status: active
 created: 2026-10-28
-updated: 2026-10-28
+updated: 2026-10-31
 confidence: medium
 tags:
   - concept
@@ -13,10 +13,14 @@ tags:
   - concurrency
 sources:
   - raw/sources/misc/2026-10-27-jdk-25-longadder.md
+  - raw/sources/architecture/2026-10-28-like-follow-high-concurrency-design.md
 related:
   - wiki/concepts/atomic-variables-cas.md
   - wiki/concepts/cache-line-and-false-sharing.md
   - wiki/concepts/concurrenthashmap-internals.md
+  - wiki/concepts/interaction-write-path.md
+  - wiki/concepts/redis.md
+  - wiki/sources/like-follow-high-concurrency-design.md
 ---
 # LongAdder 分段累加设计（Striped64）
 
@@ -36,6 +40,7 @@ LongAdder/LongAccumulator（JDK 1.8，`java.util.concurrent.atomic`）通过父�
 4. **有界扩容**：cells 翻倍扩容且不超过 CPU 核数；多线程并发扩容由 `cellsBusy` CAS 保证单线程操作。
 5. **弱一致读**：`sum()` = base + 遍历所有 Cell，扫描期间的并发更新使其成为近似值而非快照；因此 LongAdder 不提供 `getAndAdd()`/`addAndGet()`。
 6. **通用化**：LongAccumulator = LongAdder 泛化，传 `LongBinaryOperator` + 单位元（identity），支持取最大、累乘等任意二元聚合。
+7. **本地聚合 flush 用法（第 2 信源）**：热点计数器写侧用 LongAdder 承接本地累加，定时任务每秒 `sumThenReset()` 原子取走+清零后合并为一次 Redis `INCRBY`（Hash 分 field）——Redis 网络调用降至约 1/50，把单 key 热点从「每请求一次 RT」压成「每秒每片一次 RT」。**flush 失败必须回滚 buffer**（把本地计数重新 add 回去），否则请求稍后重试会造成计数丢失（很多方案在这里悄悄丢数据）。
 
 ## How It Works（运作方式）
 
@@ -61,6 +66,7 @@ LongAdder/LongAccumulator（JDK 1.8，`java.util.concurrent.atomic`）通过父�
 ## Evolution（演进）
 
 - 2026-10-28 — 由 JDK 源码阅读系列（LongAdder & LongAccumulator 篇）单信源建立；回答了 [[atomic-variables-cas]] 此前遗留的「LongAdder 内部机制」开放问题。
+- 2026-10-31 — 第 2 信源（点赞/关注系统）补充生产用法：`sumThenReset()` 定时 flush 合并 Redis `INCRBY` 的「本地聚合」模式，及 flush 失败回滚 buffer 的数据安全纪律；说明 LongAdder 在分布式计数热点治理中扮演「Redis 调用节流器」角色。
 
 ## Open Questions（开放问题）
 
@@ -70,7 +76,9 @@ LongAdder/LongAccumulator（JDK 1.8，`java.util.concurrent.atomic`）通过父�
 ## Evidence（证据）
 
 - Source: `raw/sources/misc/2026-10-27-jdk-25-longadder.md`（Striped64/LongAdder/LongAccumulator 核心源码摘录、扩容四步流程、@Contended 128 字节填充、PV 统计示例、三者对比表）
+- Source: `raw/sources/architecture/2026-10-28-like-follow-high-concurrency-design.md`（HotCounterWriter：LongAdder 每秒 sumThenReset flush 合并 INCRBY、Redis 调用 1/50、flush 失败回滚 buffer）
 
 ## Related Knowledge（相关知识）
 
 - [[jdk-25-longadder|JDK源码剖析 —— LongAdder & LongAccumulator（信源页）]]
+- [[like-follow-high-concurrency-design|别再上来就堆 Redis！点赞系统从打挂数据库到 18w 写峰值（信源页）]]（LongAdder 本地聚合 flush 生产用法）

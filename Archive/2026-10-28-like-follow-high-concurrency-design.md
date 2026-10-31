@@ -9,9 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [Redis, 工程实践, 分布式系统]
 asset_ref: Assets/2026/10/like-follow-high-concurrency-design.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-10-31T01:28:45.728Z"
-ingest_claim_id: 45808-1793410125728-0
+wiki_status: ingested
 ---
 
 # 高并发点赞/关注系统：从打挂数据库到 18w 写峰值

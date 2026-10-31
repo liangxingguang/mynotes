@@ -47,7 +47,7 @@ AgentPolicy 定义 allowedToolCodes 基线最大范围；InstructionGrant 是基
 
 ## Concepts Introduced（引入的概念）
 
-- [[agent-permission-model|Agent 权限模型（四层防线）]]
+- [[agent-permission-model|Agent 权限模型（平台授权与本地运行）]]
 
 ## Entities Mentioned（提及的实体）
 
@@ -68,6 +68,7 @@ AgentPolicy 定义 allowedToolCodes 基线最大范围；InstructionGrant 是基
 - [[mcp|MCP]]（网关鉴权是其接入层补齐项）
 - [[a2a-protocol|A2A 协议]]（委派链路权限收缩）
 - [[agent-sandboxing|Agent 沙箱隔离]]（权限=授权收窄，沙箱=能力收窄，互补）
+- [[kiso|Kiso]]（本地运行时权限维度：CLI 五模式、只读证明式放行 Unknown≠Safe；与平台四层防线互补可组合）
 
 ## Source（信源）
 

@@ -4,7 +4,7 @@ type: concept
 title: 幂等设计（Idempotency Design）
 status: active
 created: 2026-10-23
-updated: 2026-10-27
+updated: 2026-10-31
 confidence: high
 tags:
   - concept
@@ -16,13 +16,17 @@ sources:
   - raw/sources/architecture/2026-10-22-mq-transaction-idempotency-design.md
   - raw/sources/architecture/2026-10-22-async-task-system-design.md
   - raw/sources/architecture/2026-10-27-k8s-blue-green-release-trading.md
+  - raw/sources/architecture/2026-10-28-like-follow-high-concurrency-design.md
 related:
   - wiki/concepts/durable-execution.md
   - wiki/concepts/blue-green-deployment.md
+  - wiki/concepts/interaction-write-path.md
+  - wiki/concepts/redis.md
   - wiki/sources/async-idempotency-local-message-table.md
   - wiki/sources/mq-transaction-idempotency-design.md
   - wiki/sources/async-task-system-design.md
   - wiki/sources/k8s-blue-green-release-trading.md
+  - wiki/sources/like-follow-high-concurrency-design.md
 ---
 # 幂等设计（Idempotency Design）
 
@@ -40,6 +44,7 @@ related:
 2. **幂等键三要素**：全局唯一、业务含义稳定、多次重试不变（如业务单据号、支付流水号、msgId+topic）；自增 ID 与本地随机串在重试下失效；外部传入 ID 须做合法性校验。
 3. **同步/异步边界**：异步重复流量（MQ 重放、回调重试、本地消息表轮询）是系统自治产生的内部重复，前端防抖与一次性 Token 完全无效。
 4. **持久化兜底**：缓存（Redis）只能做前置快速拦截，宕机/过期/闪断时查询异常会放行重复执行，唯一幂等数据源必须是数据库。
+5. **Redis Lua 原子幂等（缓存层，第 5 信源）**：把"判重+写入+计数+返回"合成 1 次 RT 的原子脚本——返回值即幂等裁决（`1` 真实生效 / `0` 重复请求幂等拦截 / `-1` 参数错误），业务层直接走分支省一次 RTT；`SETBIT` 返回旧值可直接当幂等标记（旧值为 1 说明早已点过，省 SISMEMBER+SADD 两步）；取消操作先判存在再 `DECR`，从根上防负数。本质与本概念第 1 条同构：判重与变更在同一原子单元内，不允许中间态被并发读到。
 
 ## Structure（结构）
 
@@ -74,6 +79,7 @@ related:
 - 2026-10-22：[[async-task-system-design]] 从异步任务视角确立「至少一次执行下重复是常态」，幂等键 (task_id, row_number) 与「状态已是 RUNNING 不是幂等保护」。
 - 2026-10-23：[[async-idempotency-local-message-table]] 以真实重复扣券事故补全事故侧证据：不确定结果根因、异步重复流量三大来源、分层防护闭环与 8 条评审清单。
 - 2026-10-27：[[k8s-blue-green-release-trading]] 第四信源印证：蓝绿发布回退场景下，订单记录+幂等键+Outbox 事件同事务提交，Green 期间 12 笔订单经对账确认无重复扣款/预留；发布门禁把"支付幂等冲突"列为业务层指标。
+- 2026-10-31：[[like-follow-high-concurrency-design]] 第五信源补充缓存层幂等形态：Redis Lua 脚本返回值即幂等裁决（`1` 生效 / `0` 重复拦截 / `-1` 参数错误），`SETBIT` 旧值当幂等标记；取消操作先判存在防负数；DB 唯一索引 `(user_id, target_id)` + `ON DUPLICATE KEY UPDATE`/`INSERT IGNORE` 双层保险——与第 1 条同构的"判重与变更原子化"，只是发生在缓存层而非 DB 事务层。
 
 ## Open Questions（开放问题）
 
@@ -85,9 +91,12 @@ related:
 - Source: `raw/sources/architecture/2026-10-22-mq-transaction-idempotency-design.md`（幂等三方案选型、同事务铁律）
 - Source: `raw/sources/architecture/2026-10-22-async-task-system-design.md`（至少一次执行、任务幂等键）
 - Source: `raw/sources/architecture/2026-10-27-k8s-blue-green-release-trading.md`（发布回退下订单+幂等键+Outbox 同事务、对账键与业务门禁）
+- Source: `raw/sources/architecture/2026-10-28-like-follow-high-concurrency-design.md`（Lua 返回值 1/0/-1 幂等裁决、SETBIT 旧值标记、唯一索引 UPSERT 双保险、SETNX 消费标记 24h）
 
 ## Related Knowledge（相关知识）
 
 - [[durable-execution|持久执行（概念页）]]
 - [[blue-green-deployment|蓝绿发布（概念页）]]（回退不造成二次业务执行以幂等为前提）
 - [[rocketmq|RocketMQ（实体页）]]（消息重放是异步重复流量来源之一）
+- [[interaction-write-path|互动数据写路径治理]]（缓存层幂等：Lua 判重+写入+计数原子合成）
+- [[redis|Redis（实体）]]（Lua 脚本原子性是缓存层幂等的基座）

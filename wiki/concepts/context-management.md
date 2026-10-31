@@ -4,7 +4,7 @@ type: concept
 title: 上下文管理（Context Management）
 status: active
 created: 2026-10-29
-updated: 2026-10-29
+updated: 2026-10-31
 confidence: high
 tags:
   - concept
@@ -12,10 +12,14 @@ tags:
   - context-management
 sources:
   - raw/sources/ai/2026-10-28-agent-loop-context-management.md
+  - raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/concepts/harness-engineering.md
   - wiki/concepts/llm-call-protocol.md
+  - wiki/concepts/durable-execution.md
+  - wiki/sources/kiso-minimal-agent-framework.md
+  - wiki/entities/kiso.md
 ---
 # 上下文管理（Context Management）
 
@@ -45,6 +49,8 @@ related:
 
 Claude Code 官方做法分两层（信源 §3.4 引用核验）：先清旧工具输出（裁剪：最大且时效最短），不够再总结对话（压缩），用户请求与关键代码片段优先保留。
 
+投影观与缓存经济学（Kiso 信源，第 2 信源）：把本概念提到"事实层"之上——四层分离：Event Log = Truth（发生过什么）/ Context = Projection（下一轮模型需要看什么）/ Summary = Compressed Projection（有损投影）/ Prompt Cache = Projection 的经济属性（不是 Agent State，只是投影方式在 Provider 侧的成本属性）。压缩 Context ≠ 篡改历史：Event Log 仍存实际发生的事，Runtime 按模型、窗口、任务阶段、成本约束把同一份历史投影成不同形式。缓存经济学给出一个反直觉结论：历史中间删除旧 Tool Result 会让从删除点起的整个 token prefix 失效，可能"为省 3 万旧 token 让 20 万保留 token 重新 prefill"——固定比例触发的 microcompact 因此被撤掉（Primitive 保留但须过 break-even 判断：预估未来调用次数足够覆盖 cache break 损失才动手）；Summary Compaction 则用 Soft/Hard 双阈值 + Raw Tail（详见 Evolution 2026-10-31 条目）。
+
 ## How It Works（运作方式）
 
 两条工程铁律（信源 §3.5，均出自 OpenClaw/Claude Code 官方文档）：
@@ -70,6 +76,7 @@ Claude Code 官方做法分两层（信源 §3.4 引用核验）：先清旧工�
 ## Evolution（演进）
 
 - 2026-10-29 — 新建，信源为知乎《Agent》系列第 3 篇（Claude Code / OpenClaw 官方文档行为均经作者 2026-10-15 实测核验）。
+- 2026-10-31 — Kiso 信源（第 2 信源）补上"投影观 + 缓存经济学"：四层分离（Event Log=Truth / Context=Projection / Summary=有损投影 / Cache=投影的经济属性）；撤掉固定比例 microcompact（须过 break-even 判断）；Summary Compaction 双阈值：Soft 400K（进入 Eligible，等自然 phase boundary——刚跑完测试、编辑告一段落——再摘要；作者明示 400K 是质量取舍非成本最优，更早摘要在部分负载下反而更便宜）/ Hard 700K 强制处理 / Raw Tail 100K 原样保留；In-Band Summary（复用当前 session 系统提示词与消息 prefix、只在末尾追加总结指令，保住 Cache 前缀命中）。与第 1 信源"磁盘全量、窗口有损"铁律互证（可见性与有损性分离），并把"压缩时机"从固定比例推进到语义边界 + 经济性判断。
 
 ## Open Questions（开放问题）
 
@@ -78,7 +85,11 @@ Claude Code 官方做法分两层（信源 §3.4 引用核验）：先清旧工�
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-10-28-agent-loop-context-management.md`
+- Source: `raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md`（第 2 信源：投影四句式、microcompact 撤除、Soft/Hard/Raw Tail 阈值、In-Band Summary）
 
 ## Related Knowledge（相关知识）
 
 - [[agent-loop-context-management|Agent - agent loop 与上下文管理（3）（信源页）]]
+- [[kiso-minimal-agent-framework|Kiso：极简 Agent 框架（信源页）]]
+- [[kiso|Kiso]]
+- [[durable-execution|持久执行（Durable Execution）]]

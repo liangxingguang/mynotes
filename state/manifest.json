@@ -2869,6 +2869,38 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/ZvwtpNmW1jPqtnCl1_2QpA",
       "asset_ref": "Assets/2026/10/kafka-consumer-lag-backlog-guide.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md",
+      "sha256": "03d931f70931d931406a9817b2fdcb722cd995ac61d4de55df8a6332dcb76350",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-28-kiso-minimal-agent-framework.md",
+      "pages": [
+        "wiki/sources/kiso-minimal-agent-framework.md",
+        "wiki/entities/kiso.md",
+        "wiki/concepts/durable-execution.md",
+        "wiki/concepts/context-management.md",
+        "wiki/concepts/agent-permission-model.md",
+        "wiki/concepts/harness-engineering.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2085299067861595529",
+      "asset_ref": "Assets/2026/10/kiso-minimal-agent-framework.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-28-like-follow-high-concurrency-design.md",
+      "sha256": "7c66a8b21552e42a0a69afcfbdfa2c66ea5d1347daeb0d88789127af0dc90630",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-28-like-follow-high-concurrency-design.md",
+      "pages": [
+        "wiki/sources/like-follow-high-concurrency-design.md",
+        "wiki/concepts/interaction-write-path.md",
+        "wiki/entities/redis.md",
+        "wiki/concepts/idempotency-design.md",
+        "wiki/concepts/write-fanout.md",
+        "wiki/concepts/longadder-internals.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/K33QsP6ohLbBLQsEbzyZgA",
+      "asset_ref": "Assets/2026/10/like-follow-high-concurrency-design.md"
     }
   ]
 }

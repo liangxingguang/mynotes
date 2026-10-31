@@ -4,7 +4,7 @@ type: concept
 title: 持久执行（Durable Execution）
 status: active
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-31
 confidence: high
 tags:
   - concept
@@ -16,10 +16,13 @@ sources:
   - raw/sources/ai/2026-10-21-agent-long-task-reliable-execution.md
   - raw/sources/architecture/2026-10-22-async-task-system-design.md
   - raw/sources/ai/2026-10-23-agent-software-architecture-task-run-step-event.md
+  - raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md
 related:
   - wiki/entities/pi.md
+  - wiki/entities/kiso.md
   - wiki/sources/spring-async-to-task-table.md
   - wiki/sources/async-task-system-design.md
+  - wiki/sources/kiso-minimal-agent-framework.md
   - wiki/concepts/task-run-step-event-model.md
   - wiki/concepts/agent-loop.md
 ---
@@ -53,6 +56,8 @@ Pi Durable 的两个基本原语（当前唯一详细信源）：
 
 数据库队列实现形态（Go + PostgreSQL 信源，与 Pi 路线独立互证）：把工作流进度与执行权从进程生命周期解绑——调度器管短暂执行权，持久化层管可恢复历史。关键机制：状态机（QUEUED/RUNNING/WAITING_TOOL/PAUSED_INDOUBT/PAUSED_HUMAN/COMPLETED/FAILED）；Worker 经条件 UPDATE 竞争并获递增 fencing_token，每次状态推进校验 (run_id, lease_owner, fencing_token, version)；出网三段式 Tx1（写 OUTBOUND_INTENT）→ HTTP（稳定幂等键）→ Tx2（结果+checkpoint+outbox 原子提交）；结果未知一律冻结进 PAUSED_INDOUBT 走对账而非盲目重试；LLM 已确定的工具决策必须持久化、恢复时不得重新采样。该信源特别纠正一个认知误区：fencing 只能阻止旧 Worker 写受控存储，不能阻止它出网——外部副作用的 exactly-once 没有任何单一机制能证明，只能选下游幂等、查询对账或人工介入。
 
+Event Log 账本路线（Kiso 信源，第 6 信源）：Session 建立在只追加 Event Log 上，因果链为 Model Intent → Turn Commit → Authorization → Durable STARTED → Real-world Effect → Durable Receipt → Observation/Verification。Turn Commit 把"模型提出工具调用"与"获得执行资格"分开（整轮 response cleanly exhausted 并获得兼容终止语义之前皆为 draft）；Persist Before Effect 要求副作用前先持久化 `tool_execution_started`、副作用后持久化 receipt。STARTED 与 receipt 之间崩溃 = Unknown Effect：不猜，标记 `uncertain` 停在原地等人决定 rerun 或 abandon（**Ambiguity Never Auto-Repeats**，不确定的副作用永远不自动重试）。恢复是纯函数——输入一串 durable events 推导当前唯一安全下一步，无第二份特殊状态机；Execution Ledger、Session State、Recovery Plan 都是 Event Log 的 projection（"The Event Log is the truth. Everything else is a projection."），并有真实 kill -9（PTY 进程组 SIGKILL）崩溃恢复测试背书。
+
 ## How It Works（运作方式）
 
 Harness 里发生的每件事都是一个任务（效应三明治）：生成 LLM 回复=创建任务（保存"即将调用"记录→调用→持久化回答）；工具调用同理。重启后扫描存储，发现等待执行的操作接着运行。不可撤销效应（删文件、刷卡）要求效应本身能与持久性系统组合。
@@ -65,7 +70,7 @@ Harness 里发生的每件事都是一个任务（效应三明治）：生成 LL
 
 ### Distinctions（区分）
 
-- 与**事件溯源**不同：Pi Durable 明确不采用事件溯源（认为其带来很多问题），而是用"意图→执行→结果"三明治 + 版本化文档。
+- 与**事件溯源**不同：Pi Durable 明确不采用事件溯源（认为其带来很多问题），而是用"意图→执行→结果"三明治 + 版本化文档。Kiso（第 6 信源）则采用 append-only Event Log——日志即真相、其余皆投影，属事件溯源式账本设计，与 Pi 的取舍相反；两条路线并存说明"是否事件溯源"是工程选择而非 Agent 必备条件（第 5 信源判据：长任务恢复/审批/审计/复盘才值得引入）。
 - 与简单会话快照（如复制会话 JSON 换机重启）不同：后者无任务级恢复与幂等保证。
 
 ## Evolution（演进）
@@ -76,6 +81,8 @@ Harness 里发生的每件事都是一个任务（效应三明治）：生成 LL
 - 2026-10 中下旬：pi-durable 半个月从 1.0 到 1.3——1.2 性能改造（500 任务连环结算 12 秒→50 毫秒）并向"工具平台"生长（工具嵌套调用、结构化输出、deferred 工具经 BM25 检索按需加载、code mode 脚本本身是持久任务）；1.3 表前缀支持多存储共享库/DO。崩溃恢复语义细化成速查表（流式中断转 aborted 重发、replay safe 重跑、memo 首写胜出不二次审批、扩展消失则任务阻塞待装回）。
 
 - 2026-10-23：教学信源（agent-from-scratch 第 5 章，第 5 信源）从事件溯源路线给出对照视角：明确区分状态重放 ≠ 模型重跑 ≠ Durable Execution Replay（本章只实现第 1 种），列出四类失败窗口（模型调用前崩溃/工具已执行结果未持久化/事件已存通知未发/代码升级后重放不兼容），并给出六步生产化路径（内存事件仓库→持久 append-only→CAS+幂等命令→Worker 租约+心跳→事务 Outbox+恢复协调→checkpoint/版本化/回放兼容测试）——与 Go+PG/Java 两信源的生产机制一一对应；同时与 Pi Durable"明确不采用事件溯源"形成路线对照，其"事件溯源是设计选择、非 Agent 必备"的取舍判据（长任务恢复/审批/审计/复盘才值得引入）补充了本页 Open Questions 中"与事件溯源路线系统性对比"的一侧证据。
+
+- 2026-10-31：Kiso 信源（第 6 信源）以 append-only Event Log + uncertain 裁决补上"事件溯源式账本"路线（日志即真相、其余皆投影），与 Pi 的取舍形成路线对照；其 uncertain → 人工 rerun/abandon 裁决与第 3 信源 PAUSED_INDOUBT 冻结对账同族（一者冻结等对账、一者停原地等人裁决），为"结果未知"场景提供第二种收敛路径；Turn Commit（draft 与执行资格分离）补充"模型输出不完整时不得改现实"的边界；真实 kill -9（PTY 进程组 SIGKILL）测试是本页首个崩溃恢复级别的实证证据，此前信源均为设计/测试级描述。
 
 ## Open Questions（开放问题）
 
@@ -89,13 +96,16 @@ Harness 里发生的每件事都是一个任务（效应三明治）：生成 LL
 - Source: `raw/sources/ai/2026-10-21-agent-long-task-reliable-execution.md`（独立技术栈印证：六条不变量、fencing 局限、出网三段式、IN_DOUBT 冻结对账、Outbox 至少一次+消费者幂等、上线验收清单）
 - Source: `raw/sources/architecture/2026-10-22-async-task-system-design.md`（第 4 信源：业务异步任务系统完整清单——条件领取/租约/幂等/错误三级/协作取消/Outbox/背压）
 - Source: `raw/sources/ai/2026-10-23-agent-software-architecture-task-run-step-event.md`（第 5 信源：三种 replay 区分、失败窗口 A–D、六步生产化路径、事件溯源取舍判据）
+- Source: `raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md`（第 6 信源：Event Log 账本、Turn Commit、Persist Before Effect、uncertain 人工裁决、kill -9 实测）
 - 同构印证（未列入 sources）：`raw/sources/architecture/2026-10-20-spring-async-to-task-table.md`（Java 任务表+Worker，业务系统版同一套三要素）
 
 ## Related Knowledge（相关知识）
 
 - [[pi|Pi]]
+- [[kiso|Kiso]]
 - [[pi-1-0-durable-mcp-update|Pi 1.0 与 Pi Durable（信源页）]]
 - [[pi-durable-architecture|Pi-durable 架构深拆（信源页）]]
+- [[kiso-minimal-agent-framework|Kiso：极简 Agent 框架（信源页）]]
 - [[agent-long-task-reliable-execution|Agent 长任务可靠执行 Go+PG（信源页）]]
 - [[async-task-system-design|异步任务系统设计（信源页）]]
 - [[spring-async-to-task-table|任务表 + Worker（信源页）]]

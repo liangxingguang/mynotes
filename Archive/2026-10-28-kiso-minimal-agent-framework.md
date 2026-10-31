@@ -9,9 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [AI, Harness, 工程实践]
 asset_ref: Assets/2026/10/kiso-minimal-agent-framework.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-10-31T01:28:45.501Z"
-ingest_claim_id: 61032-1793410125501-0
+wiki_status: ingested
 ---
 
 # 我开源了一个极简 Agent 框架，叫 Kiso

@@ -4,7 +4,7 @@ type: concept
 title: Harness Engineering（Agent 执行系统工程）
 status: active
 created: 2026-10-27
-updated: 2026-10-29
+updated: 2026-10-31
 confidence: high
 tags:
   - concept
@@ -14,15 +14,19 @@ sources:
   - raw/sources/ai/2026-10-27-harness-engineering-11-agents-study.md
   - raw/sources/ai/2026-10-28-agent-harness-framework-selection.md
   - raw/sources/ai/2026-10-28-agent-loop-context-management.md
+  - raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/concepts/context-management.md
   - wiki/concepts/mcp.md
   - wiki/concepts/agent-sandboxing.md
   - wiki/concepts/agent-evaluation.md
+  - wiki/concepts/durable-execution.md
   - wiki/entities/learn-harness-engineering-course.md
+  - wiki/entities/kiso.md
   - wiki/decisions/harness-selection-deepagents.md
   - wiki/entities/deepagents.md
+  - wiki/sources/kiso-minimal-agent-framework.md
 ---
 # Harness Engineering（Agent 执行系统工程）
 
@@ -58,6 +62,8 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 
 安全四层职责：请求校验 → 授权决策 → 执行约束 → 审计恢复。第四项是可追踪/纠错能力，不是阻止越权的强制边界。
 
+内核治理（Kiso 信源，第 4 信源）：对"框架退化为中央 Loop 大 Blob"这一自然趋势的反向制动——给核心包设有效代码硬门禁（2,200 行 Tripwire，写作时 2,192 行），每次往内核塞逻辑必须回答"为什么属于内核 / 做错是否改变底层执行语义 / 内核里有没有东西该先移出去"；门禁保护的不是代码量而是**决策所有权**。分层结构：Product Shell（CLI/TUI）→ Composition（组装 Provider/Tool/Extension/Store）→ Agent（创建 Session）→ Session（durable conversation + recovery）→ Run（执行生命周期）→ Kernel Loop（模型↔工具驱动语义）+ Store（持久化判决）。诚实披露：小内核 ≠ 系统可靠性只靠内核，TCB 远大于内核（Store 的 single-writer/CAS/torn-tail、进程间锁、OS、文件系统、工具层 Revision Guard、Provider 协议风险都属信任边界）。
+
 ## How It Works（运作方式）
 
 从最小系统走向可靠交付的演进路径（信源第十节）：
@@ -68,6 +74,8 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 4. 评测用 B0~B5 单变量实验隔离组件贡献（固定模型版本、任务集、预算、权限、重试规则）
 
 关键纪律：**记录事件 ≠ 可安全重放事件**——外部写入用幂等键、查询确认或人工处理；不确定是否成功的动作进"结果待核对"状态。压缩摘要不许扭曲事实（"计划测试"不能变成"测试通过"）。
+
+评测纪律（Kiso 信源，第 4 信源）：对照 Benchmark 的价值在于"不是全赢"的结果与失败模式的具体定位——跨文件修改 12:12 打平、隐藏题 22/24 且成本低 32%、长会话反而贵 19%；贵 19% 的根因先用真实 Trace 验证假说（"read_file 200 行太保守"被最长文件仅 132 行当场推翻），再定位到 edit_file 缺 append 原子操作（360 次编辑 26 次失败 vs 对照 3/287）。方法论原则：**工程解释须 Trace 验证，没有支持的解释只是一种故事**；工具拒绝正确 ≠ 接口设计良好——模型持续在同一调用模式上失败说明接口缺少合适原子操作。
 
 ## Relationships（关系）
 
@@ -96,6 +104,8 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 
 - 2026-10-29 — 新增选型信源 `raw/sources/ai/2026-10-28-agent-harness-framework-selection.md`（知乎《Agent》系列第 5 篇）。其"harness 八件套"（loop+终止、工具注册、权限/HITL、持久化、上下文管理、子 agent、MCP、可观测）与本页七个观察面互证且更偏交付清单；"harness 即插件"的 Claude Code 三层图（运行时/插件能力/用户输入）与 2026-10-29 新增第 3 篇的"harness 六件套"（messages、工具、模型配置、循环控制、上下文管理、事件流）互补印证——八件套偏交付清单、六件套偏组装视角，共同收敛到本页观察面。`Model + Harness = Agent` 与 `Agent ≈ Model + Harness` 表述一致；选型结论落成决策页 [[harness-selection-deepagents|Harness 选型决策：首选 deepagents]] 与实体页 [[deepagents|deepagents]]。
 
+- 2026-10-31 — 新增 Kiso 信源 `raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md`（第 4 信源）。补上两块此前缺失的维度：①**内核治理**——2,200 行核心包硬门禁（Tripwire）保护"决策所有权"、分层结构（Product Shell→Composition→Agent→Session→Run→Kernel Loop+Store）、TCB 诚实披露（小内核≠可靠性只靠内核）；②**评测纪律**——对照 Benchmark 的诚实报告（不是全赢）与"Trace 先于解释"的方法论。其"Event Log 即真相、其余皆投影""执行者与裁判者分离"与本页"审计恢复"观察面及 [[durable-execution|持久执行]] 概念互为支撑。
+
 ## Open Questions（开放问题）
 
 - 论文原始统计口径与当前产品能力的时差（快照为历史版本）？
@@ -106,6 +116,7 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 - Source: `raw/sources/ai/2026-10-27-harness-engineering-11-agents-study.md`
 - Source: `raw/sources/ai/2026-10-28-agent-harness-framework-selection.md`（印证：harness 八件套 vs 七观察面；选型决策树）
 - Source: `raw/sources/ai/2026-10-28-agent-loop-context-management.md`（组装视角：harness 六件套；Claude Code 上下文分层裁剪实例）
+- Source: `raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md`（第 4 信源：内核门禁与决策所有权、TCB 诚实披露、评测纪律与 Trace 验证）
 
 ## Related Knowledge（相关知识）
 
@@ -114,3 +125,5 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 - [[aibox|AiBox]]、[[ep-harness|EP-Harness]]、[[deepseek-harness|DeepSeek Harness]]
 - [[harness-selection-deepagents|Harness 选型决策：首选 deepagents]]
 - [[deepagents|deepagents]]
+- [[kiso|Kiso]]、[[kiso-minimal-agent-framework|Kiso：极简 Agent 框架（信源页）]]
+- [[durable-execution|持久执行（Durable Execution）]]

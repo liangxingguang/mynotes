@@ -128,10 +128,12 @@
 - [[kafka-consumer-lag-backlog-guide|Kafka 消费积压实战：Lag 从 0 飙到百万——扩容、批量、多线程消费的正确姿势]]（2026-10-31，Kafka/消费治理，置信度中）
 - [[kafka-fast-four-mechanisms|Kafka 为什么这么快？——顺序写+页缓存+零拷贝+批量四板斧]]（2026-10-21，Kafka/性能）
 - [[kafka-ops-tools-five-essentials|Kafka 运维必备工具清单：5 个工具让排障快 10 倍]]（2026-10-21，Kafka/运维）
+- [[kiso-minimal-agent-framework|Kiso：极简 Agent 框架（信源页）]]（2026-10-28，AI/Agent 框架/Runtime，作者自述+自报 Benchmark，置信度中）
 - [[knowledge-base-tech-evolution|一文搞懂知识库的技术演进：从关键词检索、向量 RAG 到 GraphRAG、LLM Wiki、本体论与 Agent]]（2026-10-16，AI/知识库）
 - [[langchain4j-multimodal-rag|LangChain4j 多模态 RAG：图片+表格检索实战]]（2026-10-17，AI/RAG）
 - [[learn-harness-engineering|Learn Harness Engineering：开源 Coding Agent 工程课程（微博 @黄建同学）]]（2026-10-26，AI/课程资源，置信度低）
 - [[learn-pi-agent-01-llm-to-agent|Learn Pi Agent 01｜大模型如何一步步变成 Agent]]（2026-10-14，AI/教程）
+- [[like-follow-high-concurrency-design|别再上来就堆 Redis！点赞系统从打挂数据库到 18w 写峰值（信源页）]]（2026-10-28，架构/高并发/Redis，作者自述线上落地 2 年，置信度中）
 - [[linked-list-vs-array-cache|链表已死？C++ 之父：O(1) 不一定比 O(N) 快]]（2026-10-21，性能/体系结构）
 - [[llm-from-scratch-primer|三万字长文：大语言模型从零入门]]（2026-10-14，AI/教程）
 - [[llm-wiki-advanced-four-steps|LLM Wiki 搭建教程·进阶篇一：四步搭建完整系统（本仓库模式出处）]]（2026-10-14，AI/知识库）
@@ -239,7 +241,7 @@
 - [[aima-agent-taxonomy|AIMA Agent 分类]]（简单反射/基于模型/基于目标/基于效用/学习五类 + 环境四属性；经典理论单信源）
 - [[agent-evaluation|业务 Agent 全生命周期评测]]（规则+LLM 裁判+人工复核，覆盖准入/门禁/压测/巡检，货拉拉实践）
 - [[agent-loop|Agent Loop]]（Runtime 驱动的模型-工具循环；Tool Call/Result、Message/Context/State/Session、Runtime vs Harness）
-- [[agent-permission-model|Agent 权限模型（四层防线）]]（权限=静态基线+指令临时授权+动态校验；租户划边界/Agent 定上限/指令收范围/MCP 网关兜底；A2A 委派子授权⊆父授权；单信源设计稿，置信度中）
+- [[agent-permission-model|Agent 权限模型（平台授权与本地运行）]]（权限=静态基线+指令临时授权+动态校验；租户划边界/Agent 定上限/指令收范围/MCP 网关兜底；本地 CLI 五模式+只读证明式放行 Unknown≠Safe；A2A 委派子授权⊆父授权；双信源，置信度中）
 - [[agent-sandboxing|Agent 沙箱隔离]]（能力限制而非行为审查；四条路径收窄可达面；脚本级/命令级/工具级/整体隔离）
 - [[aqs-internals|AQS（AbstractQueuedSynchronizer）核心机制]]（volatile state + CLH 变体 FIFO 队列 + acquire/release 模板方法；JUC 锁体系基座，单信源）
 - [[arrays-utility-class|Arrays 工具类设计]]（排序按类型/规模分派：双轴快排/TimSort/<47 插入排序；parallelSort/parallelPrefix 走 ForkJoinPool；asList 固定视图坑；单信源，置信度中）
@@ -256,7 +258,7 @@
 - [[claude-skills|Claude Skills]]（Markdown 文件即资产：判断/偏好/标准固化、按需加载、一句话唤醒；Skill-Creator 构建 + 2.0 断言评估/A-B/触发词优化；单信源导览，置信度中）
 - [[codemode|Codemode（代码模式工具编排）]]（模型写 JS 沙箱脚本编排工具调用，只回筛选结果；固定开销约减半，单次收益看返回格式）
 - [[collections-utility-class|Collections 工具类设计]]（算法委托+三类包装器工厂；同步/不可变均为视图，迭代须外部加锁；emptyList 单例零分配；单信源，置信度中）
-- [[context-management|上下文管理（Context Management）]]（messages 全量重发下的体积工程：裁剪/压缩/隔离三手段+成对保留与磁盘全量两铁律；Claude Code 分层裁剪实证，单信源）
+- [[context-management|上下文管理（Context Management）]]（messages 全量重发下的体积工程：裁剪/压缩/隔离三手段+成对保留与磁盘全量两铁律；Claude Code 分层裁剪实证；Kiso 投影观+缓存经济学双信源）
 - [[concurrenthashmap-internals|ConcurrentHashMap 并发设计（JDK 8+）]]（读无锁+CAS 空桶插+synchronized 桶头+sizeCtl 三态+协作扩容；单信源，置信度中）
 - [[consumer-lag-governance|消费积压治理（Consumer Lag Governance）]]（Kafka 消费端 Lag 治理：四步法+三底线+增速告警，单信源，置信度中）
 - [[copyonwritearraylist-internals|CopyOnWriteArrayList 写时复制设计]]（volatile 数组引用替换+写时 O(n) 复制换读零锁；快照迭代不抛 CME；读多写极少专用，单信源，置信度中）
@@ -268,12 +270,13 @@
 - [[cross-process-surface-rendering|Surface 跨进程渲染]]（Surface Parcelable + SurfaceFlinger 跨进程合成，Binder 传 Surface 零拷贝传画面；Renderer 3→1，微信小游戏一手）
 - [[deep-thinking-five-tools|深度思考五工具（澄清-拆解-追问-反证-逆向）]]（按序收敛四步+发散出口一步，反认知闭合；YouCore 单信源，置信度中）
 - [[design-patterns-in-netty|Netty 设计模式全景（源码视角的模式识别）]]（十大模式源码落点+16 模式对照表；机制概念页的模式视角索引；单信源，置信度中）
-- [[durable-execution|持久执行（Durable Execution）]]（崩溃后断点精确恢复；效应三明治 + 版本化文档存储，非事件溯源）
+- [[durable-execution|持久执行（Durable Execution）]]（崩溃后断点精确恢复；效应三明治 + 版本化文档存储，非事件溯源；Kiso 补 Event Log 账本+uncertain 裁决+kill -9 实测路线，六信源）
 - [[enummap-enumset-internals|EnumMap / EnumSet 枚举专用集合设计]]（ordinal 直接索引：Object[] 数组下标 / long 位向量，≤64 自动选型 RegularEnumSet；集合运算一条位运算；单信源，置信度中）
 - [[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]（先目标基线、JFR/GC 日志归因，证据指向 JVM 才动参数，单变量实验）
 - [[exchanger-internals|Exchanger 双向交换设计]]（JUC 唯一双向交换；Slot 单槽→Arena 多槽渐进扩容；@Contended+手动填充防伪共享；SPINS=1024 按核数/hash 动态自旋；线程须成对，单信源，置信度中）
 - [[expand-migrate-contract|Expand/Migrate/Contract（Schema 跨版本演进）]]（Expand 只加兼容结构→Migrate 双写限速回填→回退窗口关闭后才 Contract；蓝绿回退的数据前提，单信源）
-- [[idempotency-design|幂等设计]]（重试与幂等共生；同事务铁律+幂等键三要素+分层防护闭环，三信源互证）
+- [[idempotency-design|幂等设计]]（重试与幂等共生；同事务铁律+幂等键三要素+分层防护闭环，五信源互证）
+- [[interaction-write-path|互动数据写路径治理（Interaction Write Path Governance）]]（缓存扛读、异步削写、原子幂等、最终一致；先更缓存立即返回+三死穴+热点三板斧+落库三层压缩+对账降级；单信源，置信度中）
 - [[exploratory-learning|探索式学习（知识 DAG）]]（目标→节点 DAG，导师写 JS 经沙箱改写文档教学；Unyra 提出）
 - [[fail-fast-modcount|Fail-Fast 迭代器（modCount）]]（结构修改计数器+迭代器快照比对抛 CME；检测单线程编程错误而非线程安全机制；含 fail-safe 对比与 subList 陷阱，同作者六信源）
 - [[framework-first-migration|框架先行的规模化运行时迁移]]（BOM 收口+框架分代并行+AI 批量改造+检查单收敛，货拉拉 JDK 21 实践）
@@ -283,13 +286,13 @@
 - [[game-mail-system|游戏邮件系统的分布式设计]]（弱时序+独立队列；公共邮件读裂变+标记撤回；Seq+Ack 与合服 DomainEvent；一切领奖皆邮件 Channel；单信源，置信度中）
 - [[game-quest-system|游戏任务系统设计（Quest/Goal 合一与进度建模）]]（限定单 Goal 组合 Quest；子任务表步骤任务即章节；Git 参照系；Ready 中间态；Progress/Score 分离；前置索引+等级二分；任务侧掉落+公共管理器；单信源，置信度中）
 - [[geohash|Geohash（地理哈希）]]（经纬度降维前缀编码；边界问题+8 邻居、截短扩半径、缓存键归一；邻近索引+地图瓦片双信源）
-- [[harness-engineering|Harness Engineering（Agent 执行系统工程）]]（Agent ≈ Model + Harness；七观察面+信息三层+安全四层+B0~B5 单变量评测；11 系统源码研究解读）
+- [[harness-engineering|Harness Engineering（Agent 执行系统工程）]]（Agent ≈ Model + Harness；七观察面+信息三层+安全四层+B0~B5 单变量评测；11 系统源码研究解读；Kiso 内核门禁+决策所有权四信源）
 - [[hashmap-internals|HashMap 核心设计（JDK 8）]]（2 的幂容量+扰动+0.75 负载因子+8/6/64 树化阈值+高低位链扩容拆分；单信源，置信度中）
 - [[hashset-internals|HashSet / LinkedHashSet 去重设计]]（HashMap key 视图+PRESENT 占位；hashCode+equals 双写铁律；dummy 构造换 LinkedHashMap 得插入序；双信源互证，置信度中）
 - [[hot-cold-data-separation|冷热分离（Hot/Cold Data Separation）]]（状态+时间双维划分；热/温/冷三层异构存储；先复制后删除分批限速；报表走数仓 T+1，单信源）
 - [[hyperloglog|HyperLogLog（基数估算）]]（伯努利过程+分桶调和平均，12KB 估 64 位级基数；≤1w tablekv 精确、>1w HLL >95%，微信一手）
 - [[linkedblockingqueue-internals|LinkedBlockingQueue 双锁阻塞队列设计]]（takeLock/putLock 读写分离+滚动哨兵+跨锁信号传递+计数旧值精确唤醒；默认近无界须显式容量防 OOM；单信源，置信度中）
-- [[longadder-internals|LongAdder 分段累加设计（Striped64）]]（base 快速路径+Cell 数组分散 CAS+@Contended 128B 防伪共享+cellsBusy 自旋扩容≤CPU 核数；sum 近似无 addAndGet；LongAccumulator 泛化任意二元聚合；单信源，置信度中）
+- [[longadder-internals|LongAdder 分段累加设计（Striped64）]]（base 快速路径+Cell 数组分散 CAS+@Contended 128B 防伪共享+cellsBusy 自旋扩容≤CPU 核数；sum 近似无 addAndGet；LongAccumulator 泛化任意二元聚合；双信源：JDK 源码+点赞系统本地聚合 flush 用法，置信度中）
 - [[linkedhashmap-internals|LinkedHashMap 有序化设计（双链表 + 模板方法钩子）]]（Entry 身兼桶节点+双链节点；三钩子维护插入/访问序；两行核心代码 LRU，单信源，置信度中）
 - [[llm-wiki|LLM Wiki]]（原始来源不可变 + 模型持续编译互链知识页面，Karpathy 模式；本仓库即实例，双信源）
 - [[llm-call-protocol|OpenAI 兼容 Chat Completions 调用协议]]（messages 四角色+tool_call_id 配对+finish_reason 续轮判据+SDK 默认 timeout 10min/重试 2；单信源）
@@ -351,7 +354,7 @@
 - [[treeset-internals|TreeSet 有序集合设计]]（TreeMap key 视图+红黑树；compareTo 判重≠equals；范围操作视图；插入慢 HashSet 约 11 倍实测；单信源，置信度中）
 - [[vector-stack-legacy-design|Vector/Stack 遗留设计缺陷]]（方法级 synchronized 复合操作仍不安全；Stack 继承 Vector 违反 LSP；JDK 11+ 扩容改扩一半；替代 ArrayList/ArrayDeque，单信源，置信度中）
 - [[virtual-threads-production|虚拟线程生产实践]]（场景筛选、Helper 传 Trace/ThreadLocal、钉住规避与观测换代，货拉拉 JDK 21 实践）
-- [[write-fanout|写扩散（Fan-out on Write）]]（群消息按成员写副本换读路径简单；群服务扇出+副本指纹+MQ 批量化+双轨存储，万人群物理上限，三信源）
+- [[write-fanout|写扩散（Fan-out on Write）]]（群消息按成员写副本换读路径简单；群服务扇出+副本指纹+MQ 批量化+双轨存储，万人群物理上限；Feed 小 V 推/大 V 拉阈值，四信源）
 - [[workflow-vs-agent|Workflow vs Agent（控制流分界）]]（Anthropic 定义：路径写死在代码 vs 模型运行时动态决定；三级能力阶梯+选型纪律"能用 workflow 别上 agent"，单信源）
 - [[websocket-heartbeat-reconnect|WebSocket 心跳保活与断线重连]]（双向心跳判假死+指数退避防风暴+离线队列补发三段式，单教程信源置信度中）
 - [[zgc|ZGC]]（染色指针+多视图映射+读屏障自愈实现并发整理，停顿 <10ms 与堆大小无关，JDK 15 转正；单信源）
@@ -370,12 +373,14 @@
 - [[ep-harness|EP-Harness]]（得物团队级 Managed Agents 平台，Multica 二开，Prompt→Context→Harness→Loop 四层）
 - [[jd-haibo|京东海博]]（京东本地生活即时零售 SaaS，780+ 商家/10 万+ 门店，AI 知识库实践标杆）
 - [[kafka|Apache Kafka]]（高吞吐事件管道；顺序写+PageCache+零拷贝+批量四板斧；2.0 起网络层自研 NIO→Netty，机制+运维+IoT 场景+网络层四信源）
+- [[kiso|Kiso]]（开源极简 Agent 框架/Runtime：Event Log 执行账本+uncertain 裁决、只读证明式 shell、五运行模式、2200 行内核门禁；vs Pi Benchmark 单信源自述，置信度中）
 - [[kongming-ai-dev-platform|孔明（AI 研发平台）]]（某教育产品百人团队自研研发交付 Harness：Fly/Pro/Max/Fast/Flow/Ultra 版本阶梯随组织演进扩张，普及率 9.8%→70.2%，团队自述单信源）
 - [[langgraph|LangGraph]]（LangChain 生态 Agent 编排状态机；原生非分布式，RedisSaver+MySQL 快照+外部锁补齐，双信源）
 - [[learn-harness-engineering-course|Learn Harness Engineering]]（Walking Labs 开源 Coding Agent 工程课程：14 讲 + 8 递进项目，单一微博推荐信源）
 - [[netty|Netty]]（Java 异步事件驱动网络框架；Reactor+ByteBuf+零拷贝三支柱+Pipeline/EventLoop/Bootstrap/内存池/Native Transport/流量控制/ChannelFuture 源码机制+RPC 实战/版本演进/调试排障/设计模式全景+生产调优五维度+SCG/Kafka/中间件应用+系列目录，机制+教程+IoT 工程三十五信源）
 - [[pi|Pi]]（极简 Agent CLI/Harness，1.0 起原生 MCP + Code Mode + Pi Durable，5000+ 扩展生态）
 - [[pigeon-message-bus|信鸽（Pigeon）]]（网易云音乐直播活动消息总线；32 台 8U16G 支撑 300w/min，RocketMQ 底座）
+- [[redis|Redis]]（内存键值存储；单线程模型+Lua 原子+Cluster 分片；互动承诺层/签到布尔判定/风控计数三类用法：Bitmap/ZSet/分桶/降级，三信源，置信度中）
 - [[rocketmq|Apache RocketMQ]]（高性能分布式 MQ；事务消息+回查保发送、业务幂等保消费，运维+一致性+机制+存储+事务谱系+Netty 网络层六信源）
 - [[rongyun|融云]]（IM 云服务厂商；直播聊天室通知拉取+丢弃策略路线代表，双信源）
 - [[system-design-notes|system-design-notes]]（按 Alex Xu 两卷书体系整理的 28 章开源系统设计笔记，GitHub liquidslr）

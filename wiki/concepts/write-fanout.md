@@ -4,7 +4,7 @@ type: concept
 title: 写扩散（Fan-out on Write）
 status: active
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-31
 confidence: medium
 tags:
   - concept
@@ -15,13 +15,16 @@ sources:
   - raw/sources/architecture/2026-10-23-im-group-chat-write-fanout-cost.md
   - raw/sources/architecture/2026-10-23-alibaba-ecommerce-im-group-live.md
   - raw/sources/architecture/2026-10-23-baidu-live-mcast-message-architecture.md
+  - raw/sources/architecture/2026-10-28-like-follow-high-concurrency-design.md
 related:
   - wiki/sources/im-group-chat-write-fanout-cost.md
   - wiki/concepts/read-fanout.md
   - wiki/concepts/mcast.md
   - wiki/concepts/notification-system-design.md
+  - wiki/concepts/interaction-write-path.md
   - wiki/entities/rocketmq.md
   - wiki/entities/kafka.md
+  - wiki/sources/like-follow-high-concurrency-design.md
 ---
 # 写扩散（Fan-out on Write）
 
@@ -40,6 +43,7 @@ toB IM 场景里已读回执、消息撤回、离线补全是硬需求，三者�
 3. **MQ 批量化对抗写放大**：50 人/批把千人群 MQ 写次数从 999 降到 ~20；批内部分失败用「拆分重投」。
 4. **双轨存储**：历史库只存原消息（1 条），离线盒子存副本（N 条），避免分表爆炸又保住未读对账。
 5. **部分失败是常态**：不 ACK 自动重投、3~5 次上限进死信（带 uuid+uid 精确定位）、发送方入库即 ACK 不感知扇出失败。
+6. **Feed 推拉结合阈值（第 4 信源）**：社交 Feed 场景中按创作者粉丝规模分流——小 V（粉丝 <1w）写扩散推收件箱；大 V（≥10w）读扩散拉；活跃大 V 推拉结合（只推在线粉丝）。阈值必须做成配置动态调，否则一次给 1000w 粉丝写扩散 = 1000w 次写、MQ 瞬间堆积百万，写扩散风暴当场打垮 MQ。
 
 ## Structure（结构）
 
@@ -72,6 +76,8 @@ toB IM 场景里已读回执、消息撤回、离线补全是硬需求，三者�
 
 阿里的瓶颈实测（2020 双 11 背景，一手信源）：主互动 500 人群、平均群大小 320+，DB 承接 120w/s 写入也只换来消息上行 3K/s，且 IM 写集群还要与营销/交易/物流通知共享——这是写扩散在大促强互动下触顶的直接量化证据，驱动其演进为读写扩散混合模式（500ms 端到端，详见 [[read-fanout|读扩散]]）。
 
+Feed 场景的推拉分流（2026-10-31，第 4 信源）：点赞/关注系统的文章把写扩散延伸到社交 Feed——小 V（粉丝 <1w）推收件箱、大 V（≥10w）拉、活跃大 V 只推在线粉丝；其教训与 IM 场景同构：写放大是物理上限，粉丝规模（而非群人数）是主变量，阈值是动态配置而非写死的常数。
+
 ## Open Questions（开放问题）
 
 - 读扩散侧的成本账已有阿里一手信源部分回答（架构复杂度、冷启动多读 QPS，见 [[read-fanout|读扩散]]）；已读 bitmap 聚合、缓存一致性的量化代价仍无信源支撑。
@@ -82,8 +88,10 @@ toB IM 场景里已读回执、消息撤回、离线补全是硬需求，三者�
 - Source: `raw/sources/architecture/2026-10-23-im-group-chat-write-fanout-cost.md`（经验性分析，数字为估算量级 → confidence: medium）
 - Source: `raw/sources/architecture/2026-10-23-alibaba-ecommerce-im-group-live.md`（一手实践，印证 1:N 写放大瓶颈与无优先级/隔离短板；给出 120w/s→3K/s 实测量级）
 - Source: `raw/sources/architecture/2026-10-23-baidu-live-mcast-message-architecture.md`（一手实践：百万在线直播下照搬 IM 群聊链路的六压力点推演，间接印证写扩散物理上限；并给出 mcast 替代路径）
+- Source: `raw/sources/architecture/2026-10-28-like-follow-high-concurrency-design.md`（Feed 推拉阈值：小 V <1w 推 / 大 V ≥10w 拉 / 活跃大 V 只推在线粉丝；1000w 粉丝写扩散风暴案例）
 
 ## Related Knowledge（相关知识）
 
 - [[im-group-chat-write-fanout-cost|IM千人群聊该不该用消息写扩散？详细算算成本账！]]
 - [[alibaba-ecommerce-im-group-live|阿里电商IM消息平台在群聊、直播场景下的技术实践]]
+- [[like-follow-high-concurrency-design|别再上来就堆 Redis！点赞系统从打挂数据库到 18w 写峰值（信源页）]]（Feed 推拉阈值）

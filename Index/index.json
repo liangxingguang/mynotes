@@ -1,46 +1,6 @@
 {
-  "updated_at": "2026-10-31 09:43",
+  "updated_at": "2026-10-31 10:27",
   "notes": [
-    {
-      "id": "2026-10-28-kiso-minimal-agent-framework",
-      "title": "我开源了一个极简 Agent 框架，叫 Kiso",
-      "path": "Inbox/2026-10-28-kiso-minimal-agent-framework.md",
-      "created": "2026-10-28",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "Harness",
-        "工程实践"
-      ],
-      "source": "知乎专栏",
-      "source_url": "https://zhuanlan.zhihu.com/p/2085299067861595529",
-      "source_type": "link",
-      "platform": "zhihu",
-      "summary": "作者自研极简 Coding Agent 框架 Kiso 的设计复盘：从\"更简单、更稳定、更省 token\"出发，最终收敛为 Agent Runtime——模型负责扩大问题空间，Runtime 负责限定\"什么才有资格被称为事实\"。核心机制：Event Log 执行账本、Context 投影观、只读证明式权限、2,200 行内核门禁，附与 Pi 的 48 对 Benchmark。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/kiso-minimal-agent-framework.md",
-      "wiki_status": "ingesting"
-    },
-    {
-      "id": "2026-10-28-like-follow-high-concurrency-design",
-      "title": "高并发点赞/关注系统：从打挂数据库到 18w 写峰值",
-      "path": "Inbox/2026-10-28-like-follow-high-concurrency-design.md",
-      "created": "2026-10-28",
-      "category": "技术",
-      "tags": [
-        "Redis",
-        "工程实践",
-        "分布式系统"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/K33QsP6ohLbBLQsEbzyZgA",
-      "source_type": "link",
-      "platform": "wechat",
-      "summary": "高并发互动系统完整方案：业务画像（写多读更多、强依赖去重、容忍最终一致）→ 同步直写三个死穴 → V1~V4 架构演进 → Lua 原子/分桶破热点/MQ 攒批削峰/对账降级全链路。主线三句话：把集中的写打散、把高频的写合并、把不重要的一致性后置。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/like-follow-high-concurrency-design.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-10-28-llm-rag-agent-series-album",
       "title": "LLM/RAG/Agent 实战合集（172 篇）",
@@ -5022,6 +4982,46 @@
       "summary": "消费积压的本质是\"生产速度 > 消费速度\"的算术题：消费速度 ≥ 生产峰值 × 1.5 才不会积压。文章以一次凌晨 Lag 飙到 200 万的实战为例，给出四步处理法——扩分区+扩消费者止血、批量拉取摊薄网络往返、poll 与处理解耦的异步化、耗时埋点定位慢消息——并强调消化期须守住幂等、下游容量、retention 三条底线。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/kafka-consumer-lag-backlog-guide.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-28-kiso-minimal-agent-framework",
+      "title": "我开源了一个极简 Agent 框架，叫 Kiso",
+      "path": "Archive/2026-10-28-kiso-minimal-agent-framework.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Harness",
+        "工程实践"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2085299067861595529",
+      "source_type": "link",
+      "platform": "zhihu",
+      "summary": "作者自研极简 Coding Agent 框架 Kiso 的设计复盘：从\"更简单、更稳定、更省 token\"出发，最终收敛为 Agent Runtime——模型负责扩大问题空间，Runtime 负责限定\"什么才有资格被称为事实\"。核心机制：Event Log 执行账本、Context 投影观、只读证明式权限、2,200 行内核门禁，附与 Pi 的 48 对 Benchmark。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/kiso-minimal-agent-framework.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-28-like-follow-high-concurrency-design",
+      "title": "高并发点赞/关注系统：从打挂数据库到 18w 写峰值",
+      "path": "Archive/2026-10-28-like-follow-high-concurrency-design.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "Redis",
+        "工程实践",
+        "分布式系统"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/K33QsP6ohLbBLQsEbzyZgA",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "高并发互动系统完整方案：业务画像（写多读更多、强依赖去重、容忍最终一致）→ 同步直写三个死穴 → V1~V4 架构演进 → Lua 原子/分桶破热点/MQ 攒批削峰/对账降级全链路。主线三句话：把集中的写打散、把高频的写合并、把不重要的一致性后置。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/like-follow-high-concurrency-design.md",
       "wiki_status": "ingested"
     }
   ]
