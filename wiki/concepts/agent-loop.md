@@ -4,7 +4,7 @@ type: concept
 title: Agent Loop
 status: active
 created: 2026-10-22
-updated: 2026-10-29
+updated: 2026-10-31
 confidence: high
 tags:
   - concept
@@ -22,6 +22,7 @@ sources:
   - raw/sources/ai/2026-10-28-agent-panorama-roadmap.md
   - raw/sources/ai/2026-10-28-agent-loop-context-management.md
   - raw/sources/ai/2026-10-28-agent-model-selection-reasoning.md
+  - raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md
 related:
   - wiki/concepts/harness-engineering.md
   - wiki/entities/pi.md
@@ -131,6 +132,8 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 
 - 2026-10-29 — 新增模型层信源 `raw/sources/ai/2026-10-28-agent-model-selection-reasoning.md`（知乎《Agent》系列第 4 篇）。回答 Loop 里 `LLM()` 填什么：默认非思考档，难题单独切思考档；思考模式下思维链按轮累加进 token 预算、max_tokens 默认上限放大，预算熔断更要设。由此新建概念页 [[thinking-mode|思考模式与模型路由]]。
 
+- 2026-10-31 — 新增 Codex Harness 架构信源 `raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md`。印证并补强：①"停止信号的多源性"——流结束（`[DONE]`/token 用量）只说明传输层，任务终态须读实际阶段、停止原因与错误事件，终态解析应从 HTTP 路由层抽出供多入口统一消费；②"宿主校验"之上新增状态提交纪律——工具执行器只能提交"本次写入"事实、核验器只能提交检查缺口，都不能自行宣布任务完成（与 [[task-run-step-event-model|Task/Run/Step/Event 领域模型]] 的 Event 提交语义互证）；③"停止不是回滚"——取消阻止继续派发但不撤销已发生的外部动作，晚到结果须按尝试身份检查归属。由此新建概念页 [[agent-state-separation|Agent 状态分离]] 与 [[artifact-verification-delivery|产物核验与独立交付]]。
+
 ## Open Questions（开放问题）
 
 - 不同框架（LangGraph、AutoGen、各厂商 Agent SDK）对 Runtime/Harness 的划分与本文是否一致？
@@ -150,6 +153,7 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 - Source: `raw/sources/ai/2026-10-28-agent-panorama-roadmap.md`（总纲：三级能力阶梯、tool call 六步、编排层必然性）
 - Source: `raw/sources/ai/2026-10-28-agent-loop-context-management.md`（核心拆解：五阶段数据流、三套官方拆法同构、四类终止条件）
 - Source: `raw/sources/ai/2026-10-28-agent-model-selection-reasoning.md`（模型层：LLM() 默认填法、思考档的预算影响）
+- Source: `raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md`（印证：流结束≠任务终态、状态提交纪律、停止非回滚）
 
 ## Related Knowledge（相关知识）
 
@@ -165,3 +169,6 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 - [[workflow-vs-agent|Workflow vs Agent（控制流分界）]]
 - [[context-management|上下文管理（Context Management）]]
 - [[thinking-mode|思考模式（Thinking Mode）与模型路由]]
+- [[codex-agent-harness-architecture-6|Codex 桌面客户端开发（六）：Agent Harness 的架构设计（信源页）]]
+- [[agent-state-separation|Agent 状态分离]]
+- [[artifact-verification-delivery|产物核验与独立交付]]

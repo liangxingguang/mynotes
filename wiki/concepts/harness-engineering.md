@@ -16,6 +16,7 @@ sources:
   - raw/sources/ai/2026-10-28-agent-loop-context-management.md
   - raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md
   - raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md
+  - raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/concepts/context-management.md
@@ -28,6 +29,9 @@ related:
   - wiki/decisions/harness-selection-deepagents.md
   - wiki/entities/deepagents.md
   - wiki/sources/kiso-minimal-agent-framework.md
+  - wiki/concepts/agent-state-separation.md
+  - wiki/concepts/artifact-verification-delivery.md
+  - wiki/sources/codex-agent-harness-architecture-6.md
 ---
 # Harness Engineering（Agent 执行系统工程）
 
@@ -110,6 +114,8 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 
 - 2026-10-31 — 新增 Pi 与 DSH 复杂度之争信源 `raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md`（第 5 信源）。补上**复杂度治理**维度（第 8 观察面）：Pi 的"举证责任倒置"（默认 4 工具、三重成本门槛）与 DSH 的"可逆组合"（Cordis 插件架构、运行时自我改装）代表两种工程理性——前者要求复杂度先证明价值，后者要求复杂度可隔离可撤销。两者不互相替代：Pi 适合边界稳定/可观察性优先，DSH 适合能力组合多变/多 Agent 共存。自进化需要"宪法"四问（资源访问/有效性验证/回滚能力/转正资格），否则自我扩展自动生成技术债。
 
+- 2026-10-31 — 新增 Codex 桌面客户端 Harness 架构信源 `raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md`（第 6 信源）。补上**状态所有权与 Harness/Infra 边界**两块细节：①三控制模块（任务控制/操作记录/产物记录）各有状态所有权，状态变化必须经各模块提交接口——工具执行器只能提交"本次写入"事实、核验器只能提交检查缺口，都不能自行宣布任务完成，为"执行循环"观察面补上状态提交纪律；②Harness vs Infra 职责二分（Infra 提供模型访问/身份凭据/执行环境/存储/日志，Harness 决定派发/等待/重试/恢复/核验/交付；Anthropic Managed Agents 将 Harness、会话记录与沙箱拆开，允许分别失败或替换），与本页"权限与隔离"观察面及 [[agent-sandboxing|Agent 沙箱隔离]] 互证。其"三种状态分别记录"与"多身份"设计落成概念页 [[agent-state-separation|Agent 状态分离]]；"产物核验+独立交付入口"落成概念页 [[artifact-verification-delivery|产物核验与独立交付]]。
+
 ## Open Questions（开放问题）
 
 - 论文原始统计口径与当前产品能力的时差（快照为历史版本）？
@@ -122,6 +128,7 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 - Source: `raw/sources/ai/2026-10-28-agent-loop-context-management.md`（组装视角：harness 六件套；Claude Code 上下文分层裁剪实例）
 - Source: `raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md`（第 4 信源：内核门禁与决策所有权、TCB 诚实披露、评测纪律与 Trace 验证）
 - Source: `raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md`（第 5 信源：复杂度治理——设计时 vs 运行时控制、可逆组合、自进化宪法）
+- Source: `raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md`（第 6 信源：三控制模块状态所有权、Harness/Infra 边界、三态分离与多身份）
 
 ## Related Knowledge（相关知识）
 
@@ -133,3 +140,6 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 - [[kiso|Kiso]]、[[kiso-minimal-agent-framework|Kiso：极简 Agent 框架（信源页）]]
 - [[durable-execution|持久执行（Durable Execution）]]
 - [[pi-dsh-agent-complexity|复杂度归谁：Pi 与 DSH 把 Agent 带向了两种未来（信源页）]]
+- [[codex-agent-harness-architecture-6|Codex 桌面客户端开发（六）：Agent Harness 的架构设计（信源页）]]
+- [[agent-state-separation|Agent 状态分离]]
+- [[artifact-verification-delivery|产物核验与独立交付]]

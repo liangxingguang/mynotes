@@ -4,7 +4,7 @@ type: concept
 title: 业务 Agent 全生命周期评测
 status: active
 created: 2026-10-22
-updated: 2026-10-22
+updated: 2026-10-31
 confidence: medium
 tags:
   - concept
@@ -14,8 +14,10 @@ tags:
 sources:
   - raw/sources/ai/2026-10-14-huolala-agent-eval-platform.md
   - raw/sources/ai/2026-10-21-agent-2026-midyear-architecture-review.md
+  - raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md
 related:
   - wiki/sources/huolala-agent-eval-platform.md
+  - wiki/concepts/artifact-verification-delivery.md
 ---
 # 业务 Agent 全生命周期评测
 
@@ -57,6 +59,7 @@ LLM 概率输出 + 长工具调用链使传统确定性断言失效：单步推�
 
 - 2026-10-14 — 货拉拉披露三代演进路径：人工盲测 → 离线数据集 + 单一 LLM-as-a-Judge → 全生命周期平台（114 个智能体、16,337 黄金用例、回归提效 5~10 倍）。
 - 2026-10-21 — 叶小钗综述独立印证并补充：评测后置是反模式，应从需求阶段把"希望 Agent 很智能"变成可验证的交付要求；企业任务按知识问答/查询/报告/执行四类分别定验收重点；"任务完成的证据应能在产物或业务状态中找到"（接口成功可能只是已受理）；评分组合=程序核验确定性字段+LLM Judge 语义+专家抽查校准；通过率必须说明分母与任务构成，线上失败归因后回流数据集。
+- 2026-10-31 — 第三信源（Codex Harness 第六篇第 10 节）独立印证并补强：①**分项判定**——任务成功率分子=全部必需条件通过的试验次数，超时/失败/无法判定都要列出、不能从分母悄悄删掉，与叶小钗"通过率必须说明分母与任务构成"同调；②**评分器校准**——核验器至少需要已确认合格与已知缺陷两组样本，分别记录漏检率（错误产物被放行数÷错误产物总数）/误拒率（合格产物被判失败数÷合格产物总数），缺某类样本时该指标不可计算、不能填零，与货拉拉黄金集反哺裁判 Prompt 同族；③**零容忍发布规则**——越权写入、旧派发覆盖新状态等关键约束不参与平均分补偿，出现一次即保留失败并阻断候选版本；④其 E4 配对对照（调用数与总耗时不单调对应）提醒"效率指标不能单轮定结论"。该信源的核验器与交付入口细节落成概念页 [[artifact-verification-delivery|产物核验与独立交付]]。
 
 ## Open Questions（开放问题）
 
@@ -67,8 +70,11 @@ LLM 概率输出 + 长工具调用链使传统确定性断言失效：单步推�
 
 - Source: `raw/sources/ai/2026-10-14-huolala-agent-eval-platform.md`
 - Source: `raw/sources/ai/2026-10-21-agent-2026-midyear-architecture-review.md`（方法论印证：评测前置、四类任务验收、证据导向、分母纪律）
+- Source: `raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md`（第 3 信源：固定输入/环境/成功条件、分项判定、评分器漏检率/误拒率校准、发布阻断项）
 
 ## Related Knowledge（相关知识）
 
 - [[huolala-agent-eval-platform]]
 - [[agent-2026-midyear-architecture-review|2026 Agent 年中总结（信源页）]]
+- [[artifact-verification-delivery|产物核验与独立交付]]
+- [[codex-agent-harness-architecture-6|Codex 桌面客户端开发（六）：Agent Harness 的架构设计（信源页）]]

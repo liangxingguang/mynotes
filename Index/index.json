@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31 17:36",
+  "updated_at": "2026-10-31 17:39",
   "notes": [
     {
       "id": "2026-10-31-arthas-mcp-server-ai-diagnosis",
@@ -76,6 +76,25 @@
       "summary": "Pi（pi-coding-agent）1.4.0 保姆级实战教程（Windows 视角）。从两条安装路径（PowerShell / npm，Node ≥ 22.19）、自写 `~/.pi/agent/models.json` 接国内模型（SiliconFlow/DeepSeek/中转站，`api` 填 `openai-completions`）、界面三区与斜杠/@/感叹号口诀，到四类资源（扩展加能力、Skills 加知识、模板加熟练、主题加好看）、`-p` 批处理模式、五类任务提示词（每类带验收话术）、扩展 vs MCP vs Skills 差异、10 个踩坑速查。核心提醒：默认无沙箱继承账户权限，跑真项目先 git commit。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/pi-coding-agent-getting-started-guide.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-spring-ai-2-rag-mcp-full-flow",
+      "title": "新玩具到货：Spring AI 2.0 + RAG + MCP，Java生态的AI开发全流程",
+      "path": "Inbox/2026-10-31-spring-ai-2-rag-mcp-full-flow.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/fc3HYvCgv4AK9BPQnVnPCg",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "Java 程序员的 AI 应用开发教程——不用学 Python、不碰 LangChain，用 Spring AI 2.0 以写 Service 的姿势搭一个\"私人助手\"。七步走通全流程：ChatClient 对话 → defaultSystem 人设 → MessageChatMemoryAdvisor 记忆 → QuestionAnswerAdvisor + PgVector 读笔记（RAG）→ @Tool 方法查实时数据（Tool Calling）→ .entity() 返回结构化 Java 对象 → MCP Server 把工具暴露给其他 AI 客户端。核心卖点：换模型只改配置不改代码；MCP 是 AI 应用间的\"USB 接口\"。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/spring-ai-2-rag-mcp-full-flow.md",
       "wiki_status": "pending"
     },
     {

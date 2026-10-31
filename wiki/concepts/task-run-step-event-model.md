@@ -4,7 +4,7 @@ type: concept
 title: Task/Run/Step/Event 领域模型
 status: active
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-31
 confidence: medium
 tags:
   - concept
@@ -13,10 +13,12 @@ tags:
   - event-sourcing
 sources:
   - raw/sources/ai/2026-10-23-agent-software-architecture-task-run-step-event.md
+  - raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/concepts/durable-execution.md
   - wiki/concepts/idempotency-design.md
+  - wiki/concepts/agent-state-separation.md
 ---
 # Task/Run/Step/Event 领域模型
 
@@ -67,6 +69,8 @@ Run 为聚合根（执行生命周期的一致性边界，所有 Step 转移经�
 
 - 2026-10-23 — 自立：《agent-from-scratch》第 5 章信源登记。单一教学信源，置信度 medium：状态机为教材自定义（非行业标准），生产化路径（持久事件仓库→CAS→Worker 租约→Outbox→checkpoint）尚未经多信源互证；与 Go+PG 长任务信源的生产机制（fencing/outbox/IN_DOUBT 对账）存在教学版↔生产版呼应，待后续信源确认或合并表述。
 
+- 2026-10-31 — 新增生产实践信源 `raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md`（第 2 信源）。独立印证本页核心设计动机：会话/任务/执行尝试/外部操作/产物五种身份生命周期不同，仅有一个会话 ID 无法判断迟到结果应由谁接收（执行尝试 A 超时派发 B 后，A 的晚到回包须按派发身份被拒并留拒绝记录）——与本页"Run 即执行尝试、Event 即事实、OCC 版本检查"同构；其"要求版本冲突不能凭最后写入覆盖新要求"印证事件提交时的版本校验。该信源以三态分离（执行/操作/产物核验）补充本页状态机的用户态视角，落成概念页 [[agent-state-separation|Agent 状态分离]]。本页置信度维持 medium：两信源均为实践自述，无第三方基准。
+
 ## Open Questions（开放问题）
 
 - 多 active Step 并发（并行 Tool Calls）的聚合模型如何演进（ID 集合管理依赖/取消/并行预算）？
@@ -76,9 +80,12 @@ Run 为聚合根（执行生命周期的一致性边界，所有 Step 转移经�
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-10-23-agent-software-architecture-task-run-step-event.md`（全文：5.2 四元定义、5.3 状态机与守卫、5.4–5.5 命令/事件/纯投影、5.7 OCC 与幂等、5.8 四层与聚合根、5.12–5.13 取舍）
+- Source: `raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md`（第 2 信源：多身份生命周期、晚到回包拒绝、要求版本冲突）
 
 ## Related Knowledge（相关知识）
 
 - [[agent-software-architecture-task-run-step-event|第 5 章：Agent 的软件架构设计（信源页）]]
 - [[agent-long-task-reliable-execution|Agent 长任务可靠执行 Go+PG（信源页）]]（生产版同构机制）
 - [[agent-loop-production-boundaries|从 Chatbot 到 AI Agent（信源页）]]（任务状态机/终态守卫的生产原型互证）
+- [[agent-state-separation|Agent 状态分离]]
+- [[codex-agent-harness-architecture-6|Codex 桌面客户端开发（六）：Agent Harness 的架构设计（信源页）]]
