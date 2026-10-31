@@ -45,6 +45,7 @@
 - [[arthas-02-ai-arthas|AI + Arthas 排查线上问题：4 个环节，AI 该在哪一步上手]]（2026-10-31，AI/Arthas，贴文本模式四环节+三件不交给 AI+脱敏前提，与 MCP 信源互证）
 - [[arthas-03-thread-command|CPU 打满、接口卡住、线程池耗尽：thread 命令怎么读]]（2026-10-31，Java/Arthas，三种「卡」分类+三步读栈+线程池耗尽识别+三个误判）
 - [[arthas-04-watch-trace-tt|watch、trace、tt：把方法看透的三件套]]（2026-10-31，Java/Arthas，时间/数据/现场三命令分工+排查顺序 trace→watch→tt+三条纪律，配图 1px 占位正文完整）
+- [[arthas-05-jad-hot-reload|改了代码没生效？先 jad 一下，再谈热更新]]（2026-10-31，Java/Arthas，jad/sc -d/sm 版本核实三件套+"改了没生效"四原因+redefine 边界与临时止血五步，配图 1px 占位正文完整）
 - [[arthas-mcp-ai-troubleshooting|让 AI 调 Arthas，Java 排障会快多少？]]（2026-10-14，AI/MCP/Java 诊断）
 - [[arthas-mcp-server-ai-diagnosis|Arthas 官方 MCP 实测：29 个诊断命令交给 AI，凌晨排查省 40 分钟]]（2026-10-31，AI/MCP/Java 诊断，量化对比 45min vs 5min+生产红线，与前篇互证，单信源置信度高）
 - [[async-idempotency-local-message-table|异步链路幂等实战：本地消息表配套防重，解决重复扣款与消息重放]]（2026-10-23，架构/幂等）
@@ -347,6 +348,7 @@
 - [[local-message-table|本地消息表（Local Message Table）]]（同事务原子性+重试可靠性+至少一次投递+状态机流转+选型边界+6 条红线；三信源互证）
 - [[log4j2-async-logging-thread-blocking|Log4j2 异步日志线程阻塞]]（日志事件入队前触发类加载导致业务线程 Block；三阶段模型+ThrowableProxy 根因+避坑方案，单信源一手，置信度高）
 - [[mcp|MCP]]（LLM↔工具/数据纵向协议，Anthropic 2024）
+- [[jad-sc-sm-version-check|jad/sc -d/sm：核实线上跑的是哪版代码]]（版本/来源/签名三层核实+「改了没生效」四原因+五步处置，与 arthas-01 速查互证，单信源方法论，置信度高）
 - [[jmm-happens-before|Java 内存模型与 happens-before]]（JMM 抽象规范≠内存结构；主内存/工作内存副本模型；8 条 hb 规则；volatile 禁重排是 DCL 必须；单信源，置信度中）
 - [[live-message-drop-policy|直播消息丢弃策略]]（上行 200 条/s 硬丢弃 + 环形队列柔性丢弃 + 优先级三桶保必达，融云双信源）
 - [[mcast|长连接组播（mcast）]]（groupID 下沉长连接层，1:M×1:N 两级扩散；单实例 25w 连接 8w QPS，聚合+压缩消化峰值，百度一手）
@@ -397,6 +399,7 @@
 - [[rag-production-guardrails|企业级 RAG 生产护栏]]（容量/证据/权限/恢复四主线；证据门禁前置、发布目录原子切换；混合检索+存储分层+参数热调双信源互证）
 - [[reactive-tracing-context|响应式环境的全链路 traceId 传递]]（Reactor Context 替代 ThreadLocal；doOnEach 同步 MDC、doFinally 清除）
 - [[reactor-thread-model|主从 Reactor 线程模型（Netty 版）]]（Boss accept/Worker CPU×2/Channel 终身绑单 EventLoop 天然无锁；ServerBootstrapAcceptor 移交链路+三形态选型+SCG 双 Group 与中间件应用印证，八信源互证，置信度高）
+- [[redefine-hot-reload-boundaries|redefine 热替换边界：能改什么、不能改什么]]（只能改方法体/执行中方法退出才生效/三个风险+临时止血五步，与 arthas-01、MCP 实测信源互证，单信源方法论，置信度高）
 - [[rest-api-as-tools|REST 接口工具化模式]]（函数体换 HTTP 封装但工具形状不变；登录即工具+token 只活进程内存+统一 _call 注入+描述即流程+错误回喂 HTTP 化；换真后台只改 BASE_URL，单信源实测）
 - [[reentrantlock-internals|ReentrantLock 可重入锁设计]]（AQS 经典实现：非公平先抢/公平只差 hasQueuedPredecessors/state 累加可重入/多 Condition 精确唤醒，单信源，置信度中）
 - [[retry-governance|重试治理（Retry Governance）]]（唯一重试所有者+时间/次数/额度/并发/语义五边界；Retry Budget 按首次记账 β 上界、Full Jitter、错误分类、熔断只看真实下游结果、12 步执行链；双信源互证限流/熔断/隔离三件套，置信度中）
@@ -428,7 +431,7 @@
 - [[agent-lightning|Agent Lightning]]（微软研究院开源 Agent RL 训练框架，约 3500 行，真实工具链交互训练）
 - [[archunit|ArchUnit]]（Java 架构约束即测试，TNG，当前 1.5.1）
 - [[argo-rollouts|Argo Rollouts]]（K8s 渐进式交付控制器：Rollout CRD + AnalysisTemplate 门禁，blueGreen/canary，单信源）
-- [[arthas|Arthas]]（Java 线上诊断工具，4.3.5 起含实验性 MCP Server；七信源：MCP 双实测+人工入门/AI 协作/thread 深读/GC 实战/五场景事故）
+- [[arthas|Arthas]]（Java 线上诊断工具，4.3.5 起含实验性 MCP Server；九信源：MCP 双实测+人工入门/AI 协作/thread 深读/GC 实战/五场景事故/版本核实/热更新边界）
 - [[deepseek-harness|DeepSeek Harness]]（DeepSeek 模型的桌面 Agent 客户端，v0.2 预览版）
 - [[deepagents|deepagents]]（LangChain 官方 batteries-included agent harness 库，create_deep_agent 一个函数带齐八件套，LangGraph 底座）
 - [[drawio-skill|drawio-skill]]（代码/配置→可编辑 .drawio 架构图，增量同步 + CI 架构检查）
