@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026-10/weixin-20261031-OWGCpNVxy0HpPvn8aq1eCA.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 高频面试题：ForkJoinPool 凭什么比 ThreadPoolExecutor 快？工作窃取算法与 join 的真相

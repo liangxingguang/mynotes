@@ -277,6 +277,7 @@
 - [[writing-craft-training-system|拆解《写作是门手艺》：普通人可复刻的完整写作训练体系]]（2026-10-31，写作/方法论，论证/结构/标题/故事/过程管理五块+兰德法则+四库积累，单信源，置信度中）
 - [[writing-8-frameworks|21 天学写作 Day10：让文章结构清晰的 8 个框架]]（2026-10-20，写作/方法论，置信度低）
 - [[zhihu-agent-column-index|知乎专栏《Agent》系列索引（10 篇合集）]]（2026-10-28，AI/Agent/系列导航，10 篇教程索引，已收录 9 篇独立 source 页，Part 9 缺失，置信度高）
+- [[forkjoinpool-vs-threadpoolexecutor|高频面试题：ForkJoinPool 凭什么比 ThreadPoolExecutor 快？（工作窃取与 join 的真相）]]（2026-10-31，Java/JUC/面试，工作窃取两端方向错开+join 不空等+commonPool 共享坑+虚拟线程调度器，单信源置信度高）
 
 ## concept（概念）
 
@@ -331,6 +332,7 @@
 - [[interaction-write-path|互动数据写路径治理（Interaction Write Path Governance）]]（缓存扛读、异步削写、原子幂等、最终一致；先更缓存立即返回+三死穴+热点三板斧+落库三层压缩+对账降级；单信源，置信度中）
 - [[exploratory-learning|探索式学习（知识 DAG）]]（目标→节点 DAG，导师写 JS 经沙箱改写文档教学；Unyra 提出）
 - [[fail-fast-modcount|Fail-Fast 迭代器（modCount）]]（结构修改计数器+迭代器快照比对抛 CME；检测单线程编程错误而非线程安全机制；含 fail-safe 对比与 subList 陷阱，同作者六信源）
+- [[forkjoinpool-internals|ForkJoinPool 核心设计（每线程双端队列 + 工作窃取 + join 不空等）]]（每线程 WorkQueue 双端队列+主人 LIFO/小偷 FIFO+CAS 窃取+fork 认当前池+join 偷活不空等+阻塞假死+ManagedBlocker 补偿+无拒绝策略+commonPool CPU-1，单信源置信度高）
 - [[framework-first-migration|框架先行的规模化运行时迁移]]（BOM 收口+框架分代并行+AI 批量改造+检查单收敛，货拉拉 JDK 21 实践）
 - [[futuretask-internals|FutureTask 内部设计（单向状态机 + CAS + Treiber 等待栈）]]（七态单向递增+CAS 推进+WaitNode 无锁栈 park/unpark；cancel 仅设中断标志；异常包装 ExecutionException；单信源，置信度中）
 - [[g1-gc|G1 垃圾收集器]]（Region 分区+RSet+SATB+Mixed GC，可预测停顿，JDK 9+ 默认；单信源）
@@ -473,6 +475,7 @@
 - [[a2a-vs-mcp|A2A vs MCP]]（横向多 Agent 协作 vs 纵向单 Agent 能力拓展，互补关系）
 - [[netty-vs-tomcat-vs-undertow|Netty vs Tomcat vs Undertow]]（同机 wrk 横评：QPS/GC/高并发衰减+线程模型/内存/零拷贝/TCP 参数四层归因与选型分档，单信源自测，置信度中）
 - [[ot-vs-crdt|OT vs CRDT]]（中心变换 vs 数据结构天然收敛；取舍点=是否需要端侧完全自治；中心化选 OT、离线/去中心化选 CRDT，单信源）
+- [[forkjoinpool-vs-threadpoolexecutor-comparison|ForkJoinPool vs ThreadPoolExecutor]]（11 维对比矩阵+选型结论「任务能不能拆」，单信源置信度高）
 - [[sse-vs-websocket|SSE vs WebSocket]]（通信方向/数据形式/浏览器支持/常见场景四维矩阵+部署注意事项+百万连接说法，单信源置信度中）
 
 ## synthesis（综述）
