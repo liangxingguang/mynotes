@@ -3221,7 +3221,7 @@
       "path": "raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md",
       "sha256": "fbac38443f6cb6116595ba80e48b145183066207e97f5169cf4e8df254579ead",
       "registered_at": "2026-10-31",
-      "inbox_ref": "Inbox/2026-10-31-codex-agent-harness-architecture-6.md",
+      "inbox_ref": "Archive/2026-10-31-codex-agent-harness-architecture-6.md",
       "pages": [
         "wiki/sources/codex-agent-harness-architecture-6.md",
         "wiki/concepts/agent-state-separation.md",

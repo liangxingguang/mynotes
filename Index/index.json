@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31 17:39",
+  "updated_at": "2026-10-31 17:42",
   "notes": [
     {
       "id": "2026-10-31-arthas-mcp-server-ai-diagnosis",
@@ -21,23 +21,22 @@
       "wiki_status": "pending"
     },
     {
-      "id": "2026-10-31-codex-agent-harness-architecture-6",
-      "title": "Codex 桌面客户端开发（六）：Agent Harness 的架构设计",
-      "path": "Inbox/2026-10-31-codex-agent-harness-architecture-6.md",
+      "id": "2026-10-31-erp-architecture-design-8-part-index",
+      "title": "5.8 万字、23 章、48 张图：大型 ERP 产品架构设计（八篇全集）",
+      "path": "Inbox/2026-10-31-erp-architecture-design-8-part-index.md",
       "created": "2026-10-31",
       "category": "技术",
       "tags": [
-        "工程实践",
-        "AI"
+        "工程实践"
       ],
       "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/V-xHPeOXQk78iVLKaAPSTQ",
+      "source_url": "https://mp.weixin.qq.com/s/0lfZ0_CfM7KO59pXVYyPyw",
       "source_type": "article",
       "platform": "微信公众号",
-      "summary": "Agent Harness 是组织模型与工具执行、管理任务进度、处理结束条件的运行时。本文阐述其模块边界（任务控制、操作记录、产物核验三模块分管状态）、状态模型（执行/操作/产物三种状态分离）、中断恢复与产物核验机制，并用 E1-E4 四组工程实验验证设计，最后给出架构改动的评测标准。",
+      "summary": "大型 ERP 产品架构设计 8 篇连载的合集目录页。回答\"为什么 ERP 是企业软件里最难做的一门生意\"：同一系统要同时满足法定账与管理账、兼容集权与分权、支撑稳定与变化，扛住组织调整/并购/准则变化/技术换代。八篇从概念到落地：开篇（演化史）→ 骨架（架构方法论）→ 内核（组织/数据/协作/权限四大模型、应用架构、数据与技术架构）→ 运行（业财一体化、计划体系、关账全球化与性能）→ 反思（反模式、智能体时代）。",
       "summary_status": "",
-      "asset_ref": "Assets/2026/10/codex-agent-harness-architecture-6.md",
-      "wiki_status": "ingesting"
+      "asset_ref": "Assets/2026/10/erp-architecture-design-8-part-index.md",
+      "wiki_status": "pending"
     },
     {
       "id": "2026-10-31-perf-cpu-hotspot-analysis",
@@ -5098,6 +5097,25 @@
       "summary": "电商大促中优惠券贪心策略算出非全局最优实付引发客诉的治理方案。核心不是算法题，而是\"规则控制面 + 寻优计算面\"分离的控制面设计：DDD 领域模型收敛多变规则、规则引擎与 DFS 回溯算法职责隔离、四层剪枝压缩搜索空间、降级与快照兜底守住预计算链路。贪心的缺陷是策略边界（只看单券局部收益），DP 则被异构约束（互斥/门槛/优先级/赠品）的爆炸状态空间排除。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/coupon-optimal-combination-dfs-ddd.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-codex-agent-harness-architecture-6",
+      "title": "Codex 桌面客户端开发（六）：Agent Harness 的架构设计",
+      "path": "Archive/2026-10-31-codex-agent-harness-architecture-6.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/V-xHPeOXQk78iVLKaAPSTQ",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "Agent Harness 是组织模型与工具执行、管理任务进度、处理结束条件的运行时。本文阐述其模块边界（任务控制、操作记录、产物核验三模块分管状态）、状态模型（执行/操作/产物三种状态分离）、中断恢复与产物核验机制，并用 E1-E4 四组工程实验验证设计，最后给出架构改动的评测标准。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/codex-agent-harness-architecture-6.md",
       "wiki_status": "ingested"
     },
     {

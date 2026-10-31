@@ -45,6 +45,7 @@
 - [[baidu-live-mcast-message-architecture|百度直播海量用户实时消息系统架构：长连接组播 mcast 实践]]（2026-10-23，IM/直播消息/组播）
 - [[claude-howto-github-tutorial|claude-howto：一套完整的 Claude Code 开源教程（GitHub 仓库）]]（2026-10-23，AI/资源，置信度低）
 - [[claude-skills-guide|从 0 到 1 拆解 Claude Skills：一次构建，永久生效（SKILLS 专栏 01）]]（2026-10-28，AI/Claude，置信度中）
+- [[codex-agent-harness-architecture-6|Codex 桌面客户端开发（六）：Agent Harness 的架构设计]]（2026-10-31，AI/Agent/Harness，三模块状态所有权+三态分离+产物核验 E1–E4+评测标准，系列首篇入 wiki，单信源置信度中）
 - [[business-risk-control-redis-lua-annotation|业务风控组件设计：Redis+Lua 计数规则 + @Detect 注解 + SpEL 接入]]（2026-10-21，风控/Redis）
 - [[career-sharing-website-195|我发现了一个收录195篇真实职业分享的网站（把抽象变具象）]]（2026-10-28，职业/资源，置信度中）
 - [[collaborative-doc-editor-design|设计一个在线文档协同编辑系统：WebSocket、OT/CRDT 到快照回放]]（2026-10-28，系统设计/协同编辑）
@@ -268,10 +269,12 @@
 - [[agent-loop|Agent Loop]]（Runtime 驱动的模型-工具循环；Tool Call/Result、Message/Context/State/Session、Runtime vs Harness）
 - [[agent-permission-model|Agent 权限模型（平台授权与本地运行）]]（权限=静态基线+指令临时授权+动态校验；租户划边界/Agent 定上限/指令收范围/MCP 网关兜底；本地 CLI 五模式+只读证明式放行 Unknown≠Safe；A2A 委派子授权⊆父授权；双信源，置信度中）
 - [[agent-sandboxing|Agent 沙箱隔离]]（能力限制而非行为审查；四条路径收窄可达面；脚本级/命令级/工具级/整体隔离）
+- [[agent-state-separation|Agent 状态分离（执行状态/操作状态/产物核验）]]（三态分离+多身份+恢复决策顺序+停止非回滚，Codex Harness 实践，单信源置信度中）
 - [[aqs-internals|AQS（AbstractQueuedSynchronizer）核心机制]]（volatile state + CLH 变体 FIFO 队列 + acquire/release 模板方法；JUC 锁体系基座，单信源）
 - [[arrays-utility-class|Arrays 工具类设计]]（排序按类型/规模分派：双轴快排/TimSort/<47 插入排序；parallelSort/parallelPrefix 走 ForkJoinPool；asList 固定视图坑；单信源，置信度中）
 - [[atomic-variables-cas|Atomic 原子类设计（volatile + CAS 自旋）]]（Unsafe→lock cmpxchg 硬件原子；ABA 需 StampedReference；万级争抢改 LongAdder；单信源，置信度中）
 - [[aho-corasick|AC 自动机（Aho-Corasick）]]（Trie+Fail 指针多模式匹配，近似线性；vivo 谛听改造：组合词后置聚合、拼音图 DFS，单信源一手）
+- [[artifact-verification-delivery|产物核验与独立交付]]（核验输入三组成+确定性读取/模型核验分工+核验预算+交付入口独立于最终回复，Codex Harness 实践，单信源置信度中）
 - [[arrayblockingqueue-internals|ArrayBlockingQueue 单锁阻塞队列设计]]（循环数组+一把锁+双条件变量，put/take 对称闭环；数组不可分离队头队尾故只能单锁；单信源，置信度中）
 - [[arraydeque-internals|ArrayDeque 循环数组设计]]（2 的幂容量+位运算取模；head/tail 追赶、head==tail 翻倍扩容分两段拷贝重排；弱 fail-fast 用 fence 非 modCount；单信源，置信度中）
 - [[ai-native-organization|AI 原生研发组织]]（工具原生→工作流原生→组织原生）
