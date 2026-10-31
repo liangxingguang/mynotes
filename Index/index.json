@@ -1,63 +1,6 @@
 {
-  "updated_at": "2026-10-31 12:58",
+  "updated_at": "2026-10-31 13:40",
   "notes": [
-    {
-      "id": "2026-10-28-netty-source-series-album",
-      "title": "Netty 源码系列合集（28篇）",
-      "path": "Inbox/2026-10-28-netty-source-series-album.md",
-      "created": "2026-10-28",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "Java"
-      ],
-      "source": "微信公众号·程序员行一（合集页）",
-      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzI3NzQ1MTI4OQ==&action=getalbum&album_id=1946733195882708993",
-      "source_type": "合集",
-      "platform": "微信公众号",
-      "summary": "公众号「程序员行一」的 Netty 源码合集，28 篇成体系：从启动、EventLoop、Pipeline 到 ByteBuf 内存池、定时轮、优雅停机、Epoll 原生传输，覆盖 Netty 核心链路源码。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/netty-source-series-full.md",
-      "wiki_status": "ingesting"
-    },
-    {
-      "id": "2026-10-28-pi-series-full",
-      "title": "Pi 实战系列（01~17，共 16 篇）",
-      "path": "Inbox/2026-10-28-pi-series-full.md",
-      "created": "2026-10-28",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "AI Coding"
-      ],
-      "source": "微信公众号（合集页）",
-      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzkwOTAxOTY4Nw==&action=getalbum&album_id=3391836763593359360",
-      "source_type": "合集",
-      "platform": "微信公众号",
-      "summary": "编码 Agent「Pi」的系统化实战系列：从配置调教、提示词固化、自行扩展、多智能体工作流，到本地模型/MCP/沙箱、调试、TDD、代码库上手、重构避坑、技能实战、树状会话历史，最后把 Pi 打造成 Claude Code。全部 16 篇正文已抓取（合集无第 08 篇）。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/pi-series-full.md",
-      "wiki_status": "ingesting"
-    },
-    {
-      "id": "2026-10-28-programmer-overseas-remote-work",
-      "title": "程序员出海远程，是一条好出路吗？",
-      "path": "Inbox/2026-10-28-programmer-overseas-remote-work.md",
-      "created": "2026-10-28",
-      "category": "随笔",
-      "tags": [
-        "个人成长",
-        "创业"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/06rlJbQzvreFfbIE1iHqHQ",
-      "source_type": "文章",
-      "platform": "微信公众号",
-      "summary": "出海远程不是躺赢：平台接单供需比 1:23、800 人仅 1 个月入破千美元。真正的杠杆是\"花人民币赚美元\"的汇率差与地域价格带。三条路天花板差十倍：卖时间 < 卖技能 < 卖资产。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/programmer-overseas-remote-work.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-10-28-tcp-connection-full-lifecycle",
       "title": "从SYN到FIN：一个TCP连接的完整过程",
@@ -4964,6 +4907,63 @@
       "summary": "Netty 源码分析番外篇：从源码视角识别 Netty 中散落的设计模式——模板方法（ChannelHandler 骨架）、责任链（Pipeline 双向链表）、观察者（ChannelFuture 异步回调）、装饰器（ByteBuf 功能增强）、策略（EventExecutorChooser 位运算优化）等 16 种模式的工程化运用，附全景对照表。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/netty-design-patterns.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-28-netty-source-series-album",
+      "title": "Netty 源码系列合集（28篇）",
+      "path": "Archive/2026-10-28-netty-source-series-album.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "Java"
+      ],
+      "source": "微信公众号·程序员行一（合集页）",
+      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzI3NzQ1MTI4OQ==&action=getalbum&album_id=1946733195882708993",
+      "source_type": "合集",
+      "platform": "微信公众号",
+      "summary": "公众号「程序员行一」的 Netty 源码合集，28 篇成体系：从启动、EventLoop、Pipeline 到 ByteBuf 内存池、定时轮、优雅停机、Epoll 原生传输，覆盖 Netty 核心链路源码。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/netty-source-series-full.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-28-pi-series-full",
+      "title": "Pi 实战系列（01~17，共 16 篇）",
+      "path": "Archive/2026-10-28-pi-series-full.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "AI Coding"
+      ],
+      "source": "微信公众号（合集页）",
+      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzkwOTAxOTY4Nw==&action=getalbum&album_id=3391836763593359360",
+      "source_type": "合集",
+      "platform": "微信公众号",
+      "summary": "编码 Agent「Pi」的系统化实战系列：从配置调教、提示词固化、自行扩展、多智能体工作流，到本地模型/MCP/沙箱、调试、TDD、代码库上手、重构避坑、技能实战、树状会话历史，最后把 Pi 打造成 Claude Code。全部 16 篇正文已抓取（合集无第 08 篇）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/pi-series-full.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-28-programmer-overseas-remote-work",
+      "title": "程序员出海远程，是一条好出路吗？",
+      "path": "Archive/2026-10-28-programmer-overseas-remote-work.md",
+      "created": "2026-10-28",
+      "category": "随笔",
+      "tags": [
+        "个人成长",
+        "创业"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/06rlJbQzvreFfbIE1iHqHQ",
+      "source_type": "文章",
+      "platform": "微信公众号",
+      "summary": "出海远程不是躺赢：平台接单供需比 1:23、800 人仅 1 个月入破千美元。真正的杠杆是\"花人民币赚美元\"的汇率差与地域价格带。三条路天花板差十倍：卖时间 < 卖技能 < 卖资产。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/programmer-overseas-remote-work.md",
       "wiki_status": "ingested"
     },
     {
