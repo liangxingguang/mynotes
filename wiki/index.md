@@ -46,6 +46,8 @@
 - [[arthas-03-thread-command|CPU 打满、接口卡住、线程池耗尽：thread 命令怎么读]]（2026-10-31，Java/Arthas，三种「卡」分类+三步读栈+线程池耗尽识别+三个误判）
 - [[arthas-04-watch-trace-tt|watch、trace、tt：把方法看透的三件套]]（2026-10-31，Java/Arthas，时间/数据/现场三命令分工+排查顺序 trace→watch→tt+三条纪律，配图 1px 占位正文完整）
 - [[arthas-05-jad-hot-reload|改了代码没生效？先 jad 一下，再谈热更新]]（2026-10-31，Java/Arthas，jad/sc -d/sm 版本核实三件套+"改了没生效"四原因+redefine 边界与临时止血五步，配图 1px 占位正文完整）
+- [[arthas-06-flame-graph|一张火焰图，看懂慢在哪]]（2026-10-31，Java/Arthas/profiler，三条读图规则+三个误读+对照表+采样 30-60s，配图 1px 占位正文完整）
+- [[arthas-07-when-not-to-use|什么时候不该用 Arthas]]（2026-10-31，Java/Arthas/工具选型，四种观测手段分工+四个信号+三个场景+三项成本+决策顺序，系列收尾，配图 1px 占位正文完整）
 - [[arthas-mcp-ai-troubleshooting|让 AI 调 Arthas，Java 排障会快多少？]]（2026-10-14，AI/MCP/Java 诊断）
 - [[arthas-mcp-server-ai-diagnosis|Arthas 官方 MCP 实测：29 个诊断命令交给 AI，凌晨排查省 40 分钟]]（2026-10-31，AI/MCP/Java 诊断，量化对比 45min vs 5min+生产红线，与前篇互证，单信源置信度高）
 - [[async-idempotency-local-message-table|异步链路幂等实战：本地消息表配套防重，解决重复扣款与消息重放]]（2026-10-23，架构/幂等）
@@ -56,6 +58,7 @@
 - [[claude-howto-github-tutorial|claude-howto：一套完整的 Claude Code 开源教程（GitHub 仓库）]]（2026-10-23，AI/资源，置信度低）
 - [[claude-skills-guide|从 0 到 1 拆解 Claude Skills：一次构建，永久生效（SKILLS 专栏 01）]]（2026-10-28，AI/Claude，置信度中）
 - [[codex-agent-harness-architecture-6|Codex 桌面客户端开发（六）：Agent Harness 的架构设计]]（2026-10-31，AI/Agent/Harness，三模块状态所有权+三态分离+产物核验 E1–E4+评测标准，系列首篇入 wiki，单信源置信度中）
+- [[coding-agent-ai-native-workflow|驾驭 Coding Agent：打造 AI 原生研发工作流]]（2026-10-31，AI/Coding Agent/AI Native，架构先行+规约工程+上下文工程+五要素模型+Assistant→Agent+验证护城河，配图 1px 占位正文完整，单信源置信度中）
 - [[business-risk-control-redis-lua-annotation|业务风控组件设计：Redis+Lua 计数规则 + @Detect 注解 + SpEL 接入]]（2026-10-21，风控/Redis）
 - [[career-sharing-website-195|我发现了一个收录195篇真实职业分享的网站（把抽象变具象）]]（2026-10-28，职业/资源，置信度中）
 - [[collaborative-doc-editor-design|设计一个在线文档协同编辑系统：WebSocket、OT/CRDT 到快照回放]]（2026-10-28，系统设计/协同编辑）

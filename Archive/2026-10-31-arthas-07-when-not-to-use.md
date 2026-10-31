@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026-10/weixin-scenenote-article.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 什么时候不该用 Arthas

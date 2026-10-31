@@ -1,63 +1,6 @@
 {
-  "updated_at": "2026-10-31 22:49",
+  "updated_at": "2026-11-01 00:41",
   "notes": [
-    {
-      "id": "2026-10-31-arthas-06-flame-graph",
-      "title": "一张火焰图，看懂慢在哪",
-      "path": "Inbox/2026-10-31-arthas-06-flame-graph.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg4MjE2Nzk0NQ==&mid=2247483865&idx=1&sn=02da0e85b73e30d03e83a6d74c97396a&chksm=cf5b983ff82c112968d70cb7070fb0eadd2a171d15a1a8a8e0e8fc8eee77a51507340fd8a688",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "火焰图第一次看像天书：那么多方块，谁宽谁窄。这篇讲清三件事——横轴不是时间线而是样本占比、怎么找\"平顶\"、以及为什么明明很慢图上却看不到，顺带说清 profiler 该采多久。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-arthas-06-flame-graph.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-31-arthas-07-when-not-to-use",
-      "title": "什么时候不该用 Arthas",
-      "path": "Inbox/2026-10-31-arthas-07-when-not-to-use.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg4MjE2Nzk0NQ==&mid=2247483866&idx=1&sn=98c364d2d1f36b918f81d26178993544&chksm=cf5b983cf82c112a86d0cca252b1a10721ddb7d9e7f2db38ed58fd38a28a157867a76d3ec56d",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "会用一个工具之后，下一课是知道什么时候不用它。这篇把日志、指标、链路、动态诊断四种手段的分工摆清楚，给出该用 Arthas 的四个信号、不该用的三个场景、三项成本，以及一条从告警到定位的决策顺序。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-scenenote-article.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-31-coding-agent-ai-native-workflow",
-      "title": "驾驭 Coding Agent：打造 AI 原生研发工作流",
-      "path": "Inbox/2026-10-31-coding-agent-ai-native-workflow.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "AI"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/gIgcMT13oQyaL_KP6jSR_A",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "继上篇\"生产代码边际成本趋近于零、生产好软件成本依然高昂\"之后，本文拆解如何用工程化思维驾驭 Coding Agent、告别提示词玄学。主线：架构决策必须在 AI 写码之前完成；真正的杠杆是规约工程 + 上下文工程而非措辞；落地为\"AI 研发任务五要素模型\"；从 Assistant 到 Agent 让开发者实际扮演技术负责人；最后用测试、Review 与可观测性守住最后一公里。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-gIgcMT13oQyaL_KP6jSR_A.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-31-forkjoinpool-vs-threadpoolexecutor",
       "title": "高频面试题：ForkJoinPool 凭什么比 ThreadPoolExecutor 快？工作窃取算法与 join 的真相",
@@ -5841,6 +5784,44 @@
       "wiki_status": "ingested"
     },
     {
+      "id": "2026-10-31-arthas-06-flame-graph",
+      "title": "一张火焰图，看懂慢在哪",
+      "path": "Archive/2026-10-31-arthas-06-flame-graph.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg4MjE2Nzk0NQ==&mid=2247483865&idx=1&sn=02da0e85b73e30d03e83a6d74c97396a&chksm=cf5b983ff82c112968d70cb7070fb0eadd2a171d15a1a8a8e0e8fc8eee77a51507340fd8a688",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "火焰图第一次看像天书：那么多方块，谁宽谁窄。这篇讲清三件事——横轴不是时间线而是样本占比、怎么找\"平顶\"、以及为什么明明很慢图上却看不到，顺带说清 profiler 该采多久。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-arthas-06-flame-graph.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-arthas-07-when-not-to-use",
+      "title": "什么时候不该用 Arthas",
+      "path": "Archive/2026-10-31-arthas-07-when-not-to-use.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg4MjE2Nzk0NQ==&mid=2247483866&idx=1&sn=98c364d2d1f36b918f81d26178993544&chksm=cf5b983cf82c112a86d0cca252b1a10721ddb7d9e7f2db38ed58fd38a28a157867a76d3ec56d",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "会用一个工具之后，下一课是知道什么时候不用它。这篇把日志、指标、链路、动态诊断四种手段的分工摆清楚，给出该用 Arthas 的四个信号、不该用的三个场景、三项成本，以及一条从告警到定位的决策顺序。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-scenenote-article.md",
+      "wiki_status": "ingested"
+    },
+    {
       "id": "2026-10-31-arthas-mcp-server-ai-diagnosis",
       "title": "Arthas 官方 MCP 实测：29 个诊断命令交给 AI，凌晨排查省 40 分钟",
       "path": "Archive/2026-10-31-arthas-mcp-server-ai-diagnosis.md",
@@ -5895,6 +5876,25 @@
       "summary": "Agent Harness 是组织模型与工具执行、管理任务进度、处理结束条件的运行时。本文阐述其模块边界（任务控制、操作记录、产物核验三模块分管状态）、状态模型（执行/操作/产物三种状态分离）、中断恢复与产物核验机制，并用 E1-E4 四组工程实验验证设计，最后给出架构改动的评测标准。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/codex-agent-harness-architecture-6.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-coding-agent-ai-native-workflow",
+      "title": "驾驭 Coding Agent：打造 AI 原生研发工作流",
+      "path": "Archive/2026-10-31-coding-agent-ai-native-workflow.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/gIgcMT13oQyaL_KP6jSR_A",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "继上篇\"生产代码边际成本趋近于零、生产好软件成本依然高昂\"之后，本文拆解如何用工程化思维驾驭 Coding Agent、告别提示词玄学。主线：架构决策必须在 AI 写码之前完成；真正的杠杆是规约工程 + 上下文工程而非措辞；落地为\"AI 研发任务五要素模型\"；从 Assistant 到 Agent 让开发者实际扮演技术负责人；最后用测试、Review 与可观测性守住最后一公里。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-gIgcMT13oQyaL_KP6jSR_A.md",
       "wiki_status": "ingested"
     },
     {

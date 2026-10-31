@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - AI
 asset_ref: Assets/2026-10/weixin-20261031-gIgcMT13oQyaL_KP6jSR_A.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 驾驭 Coding Agent：打造 AI 原生研发工作流

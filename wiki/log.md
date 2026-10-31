@@ -14,6 +14,7 @@
 -->
 
 - （暂无记录）
+- 2026-10-31 16:30 | ingest | raw/sources/architecture/2026-10-31-arthas-06-flame-graph.md, raw/sources/architecture/2026-10-31-arthas-07-when-not-to-use.md, raw/sources/ai/2026-10-31-coding-agent-ai-native-workflow.md | wiki/sources/arthas-06-flame-graph.md（新建）, wiki/sources/arthas-07-when-not-to-use.md（新建）, wiki/sources/coding-agent-ai-native-workflow.md（新建）, wiki/entities/arthas.md（更新：第十/十一信源/时间线/当前认知/证据）, wiki/concepts/ai-native-sdlc.md（更新：第6信源/演进/证据）, wiki/index.md, wiki/log.md, state/manifest.json
 - 2026-10-31 09:45 | ingest | raw/sources/ai/2026-10-31-arthas-mcp-server-ai-diagnosis.md | wiki/sources/arthas-mcp-server-ai-diagnosis.md（新建）, wiki/entities/arthas.md（更新：第四信源/协议版本2025-06-18/29工具分类/JDK8+/量化对比45min vs 5min/生产红线）, wiki/sources/arthas-mcp-ai-troubleshooting.md（更新：局限-量化对比缺口已补/交叉链接）, wiki/index.md, wiki/log.md, state/manifest.json
 - 2026-10-31 07:20 | ingest | raw/sources/architecture/2026-10-31-agent-platform-retry-resilience.md | wiki/sources/agent-platform-retry-resilience.md, wiki/concepts/retry-governance.md（新建）, wiki/concepts/durable-execution.md（更新：跨 Worker 字段清单/崩溃窗口）, wiki/concepts/idempotency-design.md（更新：幂等键服务端协议五要素）, wiki/index.md, wiki/log.md, state/manifest.json
 - 2026-10-31 07:40 | ingest | raw/sources/architecture/2026-10-31-ai-coding-eight-stage-workflow.md | wiki/sources/ai-coding-eight-stage-workflow.md（新建）, wiki/concepts/ai-native-sdlc.md（更新：孔明八阶段工作流实例）, wiki/entities/kongming-ai-dev-platform.md（更新：八阶段工作流细节/提效数据）, wiki/index.md, wiki/log.md, state/manifest.json

@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026-10/weixin-20261031-arthas-06-flame-graph.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 一张火焰图，看懂慢在哪
