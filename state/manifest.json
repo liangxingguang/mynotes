@@ -3205,6 +3205,17 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/j5jttq6rZ6LP7VVX-EeIcQ",
       "asset_ref": "Assets/2026/10/coupon-optimal-combination-dfs-ddd.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-31-minimax-mcode-stack-agent-workflow.md",
+      "sha256": "9233e54ebba37d77b9f97f98e7a4c40c5691dc2048dd9cf7887564d4c2402767",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-31-minimax-mcode-stack-agent-workflow.md",
+      "pages": [
+        "wiki/sources/minimax-mcode-stack-agent-workflow.md"
+      ],
+      "source_url": "https://weibo.com/2194035935/5359269681561901",
+      "asset_ref": "Assets/2026-10/weibo-2194035935-5359269681561901.md"
     }
   ]
 }

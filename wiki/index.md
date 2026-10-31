@@ -152,6 +152,7 @@
 - [[meituan-waimai-search-elasticsearch-rle|美团外卖搜索基于Elasticsearch的优化实践]]（2026-10-31，ES/搜索/倒排索引/性能）
 - [[message-system-design-part1|消息系统设计与实现「上篇」：概念与领域建模]]（2026-10-23，站内消息/领域建模，置信度中）
 - [[message-system-design-part2|消息系统设计与实现「下篇」：模型与服务层实现]]（2026-10-23，站内消息/库表与服务层，置信度中）
+- [[minimax-mcode-stack|MiniMax 开源「mcode-stack」：用 MiniMax Code 写 MiniMax Code 的全套工作流]]（2026-10-31，AI/AI Coding/工作流，五个工程问题视角，微博转发，置信度中）
 - [[ms-agent-lightning-rl-framework|知乎想法：微软开源 Agent Lightning——3500 行框架让 AI 自己练级]]（2026-10-14，AI/Agent RL）
 - [[mysql-10b-bulk-import-guide|100 亿条数据如何快速写入 MySQL？从 231 天到 3.5 小时]]（2026-10-31，数据库/MySQL/批量导入）
 - [[mysql-replication-lag-optimization|数据库主从同步延迟，业务还能稳吗？一线优化实战全解析]]（2026-10-22，MySQL/主从延迟，置信度中）
