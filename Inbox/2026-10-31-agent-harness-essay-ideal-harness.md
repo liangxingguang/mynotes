@@ -16,18 +16,17 @@ wiki_status: pending
 
 # Agent Harness 随笔：我理想中的 Harness
 
-> 摘要：作者手搓 Harness 后的思考：软件行业当下的第一要务是找到自己顺手的工作流、靠高质量 SOTA model token 快速迭代，即 personal RSI；而 Harness 作为人与 AI 的对接口是关键。核心主张：以 Session 为核心重构、做 Harness of Harness（集成各厂原生 CLI）、审美是 Harness 寿命与粘性的底层保障、Agent as Memory、Agent Search 的价值、多模型分工。
+> 摘要：作者手搓 Harness 后的思考：软件行业当下的第一要务是找到顺手的工作流、靠高质量 SOTA model token 快速迭代（personal RSI），而 Harness 作为人与 AI 的对接口是关键。核心主张：以 Session 为核心重构、做 Harness of Harness、审美是 Harness 寿命与粘性的底层保障、Agent as Memory、Agent Search 二分法。
 
 ## 核心要点
 
-- **对现有 Harness 都不满意**：官方的（Codex、Claude Code）UI 不够美观，且只对自家模型做极致优化、无意做多模型协作；第三方分两类——一类（Pi、Cursor、Devin）用一套工具 + System Prompt + 压缩策略适配所有模型，但工具集与模型原生 CLI 不一致 → **性能无法得到足够保证**；另一类（T3 Code、Synara/Monocode）集成多个原生 CLI，即「Harness of Harness」，保住模型表现但实现复杂、bug 多，且 ACP 这类协议兼容性仍不足。作者倾向后者。
-- **以 Session 为核心重构**：以 Session/Thread 为核心构建的 Harness 可天然克服多 Agent 协作（orchestrator、主模型带辅模型、subagent）的问题。官方 Codex App 与 Claude Desktop 已具备成熟 Session 功能，但很多 App 还没做到这种 Session 级重构。理想 Harness 应以 Session 为单位做底层重构，每个 Session 下可挂不同 Provider 与原生 CLI，像 Monocode 那样把不同 Provider/Harness 映射为同一套体系、可相互转换。
-- **多模型分工的想象空间**：以 Session 为核心后，可让 Claude 做总览规划，实现任务分给 Codex、要速度的分给 DeepSeek、文字类分给 Gemini；Muse、OpenAI Dot、Grok bot 等底层的 Personal Agent 也需要这种重构——**维护单个 Agent 的超长上下文很难，上下文会被多次 Compact 污染，更好的做法是同一个 Bot 管着多个 session。**
-- **注入方式：MCP vs Skill**：T3 Code / Synara 走 MCP 注入，代价是大量工具描述与描述性 token——新对话只说「你好」也要付几万 token，且每轮都要 cache read，**Cache read 在 Agent 账单里的占比通常非常高，可能到 97% 以上**（MCP 注入 30K token × cache read 1000 次 = 30M token）；社区实测 Claude Desktop 比 CLI 少约 10% 额度，正因 Desktop 注入额外 MCP token。而 256K 之后很多模型性能仍显著下降，MCP 占的 30K 就是少 30K 有效窗口。作者更倾向**把 Session 操作做成 CLI + 斜杠命令（近似 Skill），不激活就不付这部分 Token tax**，子对话也不会因循环嵌套 Spawn 而付这笔税。
-- **UI 与审美是未来主要分歧点**：很多厂商做 Harness 根本不在意 UI；「纯粹的 AI vibe 产品有浓浓的 AI Slop 的味道」。底层技术、存储大家会趋同，审美与 Design 会百花齐放。作者主张把 UI 展示为独特卡片（Session 卡片、Artifact 卡片、HTML 卡片），而让模型产出这些 Artifact 的做法也要 Skill 化——他把 Artifact 作为这个 CLI 的单独一部分。
-- **Agent as Memory**：尽管社区有知识图谱、SQLite 等 Memory 实现，最前沿 AI 实验室仍选最简单的方案（Claude Auto-Memory、Codex Memory）——「Simple is effective」。Memory 分两部分：**长期记忆**（偏好、要注意的点）以 Markdown 形式文件化保存；**短期记忆**（如 todo list 到哪一步）传统留在 Context 里。作者提出 Agent as Memory：由主 Agent 控制整个项目进展与用户需求，需要具体实现时 spawn 子 Session，主 Agent 负责协调子 Session 并只与用户对接——因为用户心智有限，自己手动频繁切换多个 Session 会很快消耗精力。
-- **Agent Search 的价值**：很多时候需要的不是 Agent 去做一件事，而是 search 出一个足够成熟的解决方案——由 Agent 本身思考出的方案大概率无法打破信息壁垒，只有搜索社交平台等多信息源才可能。现状方案很 naive（Web Search / Web Fetch / 百度 / Google），做不到「去小红书搜某家公司的社会评论」「去 Linux.do 搜技术帖」「去知乎搜大 V 评论」。作者主张二分：**有事实标准答案的走 API；偏主观、讨论性的走 OpenCLI 这类复用登录态的方案**——个人本地工具在这点上比大厂更有优势。
-- **结尾经验**：多模型协作不只是为了更低的成本，也是为了更好的效果——Claude 的审美、进度把控、任务分配与洞察无可替代；给定计划书与具体指导时 GPT 的实现能力与测试完善度是 Claude 无法媲美的；Gemini 的文字能力更是 Claude 和 GPT 望尘莫及；为平衡速度与成本还会引入 DeepSeek。作者目前在自己搭建的 Harness 上，由 Claude 作主 Agent，协调 Claude / GPT / Gemini / DeepSeek 子 Session 完成任务。
+- **对现有 Harness 都不满意**：官方的（Codex、Claude Code）UI 不美观，且只对自家模型做极致优化、无意做多模型协作；第三方一类（Pi、Cursor、Devin）用一套工具 + System Prompt 适配所有模型，但工具集与模型原生 CLI 不一致 → 性能无保证；另一类（T3 Code、Synara/Monocode）集成多套原生 CLI，即「Harness of Harness」，保住表现但实现复杂。作者倾向后者。
+- **以 Session 为核心重构**：以 Session/Thread 为核心可天然克服多 Agent 协作（orchestrator、主模型带辅模型、subagent）的问题；官方 Codex App 与 Claude Desktop 已有成熟 Session 功能，但多数 App 还没做到。理想形态是以 Session 为单位做底层重构，每个 Session 下挂不同 Provider 与原生 CLI，像 Monocode 那样把多 Provider/Harness 映射为同一套体系。
+- **多模型分工**：以 Session 为核心后，可让 Claude 总览规划、实现分给 Codex、要速度的分给 DeepSeek、文字类分给 Gemini；Muse、OpenAI Dot、Grok bot 底层的 Personal Agent 也需要这种重构——**维护单个 Agent 的超长上下文很难，会被多次 Compact 污染，更好的做法是同一个 Bot 管多个 session。**
+- **MCP vs Skill 的 token 账本**：MCP 注入带来大量工具描述 token，新对话只说「你好」也要付几万，且每轮都要 cache read，**Cache read 在 Agent 账单里占比常超 97%**（30K × 1000 次 = 30M）；社区实测 Claude Desktop 比 CLI 少约 10% 额度，正因注入额外 MCP token；256K 后模型性能显著下降，MCP 占的 30K 就是少 30K 有效窗口。作者更倾向**把 Session 操作做成 CLI + 斜杠命令（近似 Skill），不激活就不付 Token tax**。
+- **UI 与审美是未来主要分歧点**：底层技术、存储会趋同，审美与 Design 会百花齐放；「纯粹的 AI vibe 产品有浓浓的 AI Slop 的味道」。作者主张把 UI 展示为独特卡片（Session 卡片、Artifact 卡片、HTML 卡片），让模型产出 Artifact 的做法也要 Skill 化。
+- **Agent as Memory**：最前沿实验室仍选最简单的方案（Claude Auto-Memory、Codex Memory）——「Simple is effective」。长期记忆（偏好、注意点）以 Markdown 文件化保存，短期记忆（如 todo 进度）传统留在 Context 里；作者主张**由主 Agent 控制项目进展、需要实现时 spawn 子 Session 并协调它们，用户只与主 Agent 对接**——用户心智有限，频繁手动切换 Session 会很快耗尽精力。
+- **Agent Search 二分法**：很多时候需要的不是 Agent 去做，而是 search 出一个足够成熟的方案——Agent 自己想出的方案大概率无法打破信息壁垒。现状方案很 naive，做不到「去小红书搜某家公司的社会评论」「去 Linux.do 搜技术帖」。作者主张**有事实标准答案的走 API；偏主观、讨论性的走 OpenCLI 这类复用登录态的方案**——个人本地工具在这点上比大厂更有优势。
 
 ## 正文
 
