@@ -11,7 +11,9 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026-10/weixin-20261031-dfDkmuLgFb6HIyhOKduPZg.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-31T11:40:12.405Z"
+ingest_claim_id: 37936-1793446812405-0
 ---
 
 # 第70篇：批量消息推送优化——百万级推送如何避免内存爆炸（分片 + 线程池 + 异步）

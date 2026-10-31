@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31 19:39",
+  "updated_at": "2026-10-31 19:45",
   "notes": [
     {
       "id": "2026-10-31-batch-push-sharding-threadpool",
@@ -18,6 +18,25 @@
       "summary": "Java 架构实战笔记·消息与任务处理系列第 70 篇。从一次双十一 100 万条短信推送 OOM 事故出发，拆解百万级批量推送的三对核心矛盾（内存/性能/可靠性），给出一套可落地的 Java 方案：游标分片（每批 1000 条，避免深分页）+ 专用线程池（有界队列、按 IO 密集估算 10-50 线程）+ Redis 进度追踪 + 单条失败重试（3 次后入死信表）+ 任务 ID 去重与断点续跑。附踩坑清单（OOM、线程池耗尽、服务商限流、任务重复执行等 7 项）与按规模选型表。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-dfDkmuLgFb6HIyhOKduPZg.md",
+      "wiki_status": "ingesting"
+    },
+    {
+      "id": "2026-10-31-niche-product-selection-methodology",
+      "title": "“小众需求”选品方法论：如何发现未被满足的细分需求",
+      "path": "Inbox/2026-10-31-niche-product-selection-methodology.md",
+      "created": "2026-10-31",
+      "category": "学习",
+      "tags": [
+        "课程",
+        "创业"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/J_990Xv2Hsqlh0NmOYLujw",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "给独立开发者的选品方法论。定义\"小众需求\"为第三条路——**一个足够具体、有人愿意付钱、但大公司嫌市场太小不值得做**的问题，这是独立开发者的天然生态位。给出 7 个需求发现渠道（差评挖掘 / Reddit·V2EX·HN 的\"有没有…\"帖 / 自己的痛点 / 垂直行业×通用工具交集 / 趋势前沿 / 竞品停更后的用户流失 / 现有用户的新功能请求）、5 维需求评估（支付意愿、市场规模、竞争程度、能力匹配、获客渠道）、两层市场规模算账公式，以及 3 种 MVP 快速验证方式与两个可查证案例（Plausible Analytics、Sidekiq）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-J990Xv2Hsqlh0NmOYLujw.md",
       "wiki_status": "pending"
     },
     {
