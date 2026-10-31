@@ -9,7 +9,7 @@ created: 2026-10-29
 category: 技术
 tags: [AI, 行业动态]
 asset_ref: Assets/2026/10/ai-education-three-old-questions.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # AI 回答教育界的三个老问题

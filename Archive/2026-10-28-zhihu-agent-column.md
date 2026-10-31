@@ -9,7 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [AI, Harness, 课程]
 asset_ref: Assets/2026/10/zhihu-agent-column-index.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 知乎专栏《Agent》：从理论到手写 harness 的 10 篇系列教程

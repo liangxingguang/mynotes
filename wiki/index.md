@@ -22,6 +22,7 @@
 - [[agent-tool-security-whitelist|Agent - 工具全谱系与安全边界（10）：注入原理 + 参数层白名单]]（2026-10-28，AI/安全教程）
 - [[ai-agent-series-album|AI Agent 系列合集（82 篇：官方指南/Context Engineering/OpenClaw/Pi Harness，含全文快照）]]（2026-10-28，AI/资源导航，置信度中）
 - [[ai-agents-definitive-guide-notebooks|知乎想法：O'Reilly《AI Agents》配套代码全开源（12 章 35 Notebook）]]（2026-10-20，AI/资源，置信度低）
+- [[ai-education-three-old-questions|AI 没有发明新教育理念，只是让老目标有了实现条件]]（2026-10-29，AI/教育观察，惰性观念/难度取舍/因材施教三问，微博帖子，置信度中）
 - [[agent-loop-production-boundaries|从 Chatbot 到 AI Agent：为什么一个 while 循环撑不起生产系统]]（2026-10-15，AI/Agent 工程）
 - [[agent-platform-architecture|高性能弹性扩展智能体中台架构：FastAPI+Nacos+RocketMQ+LangGraph+Milvus+ES 实践]]（2026-10-27，AI/架构）
 - [[agent-software-architecture-task-run-step-event|第 5 章：Agent 的软件架构设计（Task/Run/Step/Event 领域模型）]]（2026-10-23，AI/Agent 架构）
@@ -73,6 +74,7 @@
 - [[gc-log-tuning-practice|GC 日志分析与调优实战]]（2026-10-21，Java/JVM）
 - [[github-niche-usage-tips|三个小众但实用的 GitHub 用法（zread / Deepwiki / gitingest）]]（2026-10-14，工具）
 - [[github-open-source-ai-books-6|知乎专栏：6 本 GitHub 开源 AI 宝典（Agent/Infra/DL/RL）]]（2026-10-23，AI/学习资源，置信度低）
+- [[google-prompt-engineering-whitepaper|Google 官方提示工程白皮书（Prompt Engineering，宝玉译）]]（2026-10-29，AI/提示工程，输出配置+11 种技巧梯度+最佳实践，Google 官方出品，置信度高）
 - [[harness-engineering-11-agents-study|从 11 款 Agent 的源码研究，看懂 Harness Engineering]]（2026-10-27，AI/Harness，置信度高）
 - [[hot-cold-data-separation-archive|微服务架构落地：大表治理与冷热分离——历史单据到底怎么存？]]（2026-10-28，数据库/大表治理）
 - [[how-to-get-startup-ideas|如何找到创业点子（YC 合伙人 Jared Friedman 演讲）]]（2026-10-27，创业/方法论，置信度中）
@@ -248,6 +250,7 @@
 - [[weibo-gpt2-to-llama-tutorial|从零手写大模型进阶教程：从 GPT-2 到 LLaMA 的 4 个关键零件]]（2026-10-22，AI/教程资源，置信度中）
 - [[writing-craft-training-system|拆解《写作是门手艺》：普通人可复刻的完整写作训练体系]]（2026-10-31，写作/方法论，论证/结构/标题/故事/过程管理五块+兰德法则+四库积累，单信源，置信度中）
 - [[writing-8-frameworks|21 天学写作 Day10：让文章结构清晰的 8 个框架]]（2026-10-20，写作/方法论，置信度低）
+- [[zhihu-agent-column-index|知乎专栏《Agent》系列索引（10 篇合集）]]（2026-10-28，AI/Agent/系列导航，10 篇教程索引，已收录 9 篇独立 source 页，Part 9 缺失，置信度高）
 
 ## concept（概念）
 
@@ -353,6 +356,7 @@
 - [[phaser-internals|Phaser 分阶段同步屏障设计]]（单 volatile long 位编码 unarrived/parties/phase/终止位+一次 CAS 推进；arrive 三变体动态增减；树形分层分散 CAS 竞争；单信源，置信度中）
 - [[priorityqueue-internals|PriorityQueue 二叉堆设计]]（Object[] 数组承载隐式完全二叉堆；siftUp/siftDown 维护堆序；扩容 <64 翻倍+2、≥64 扩 50%；Floyd 建堆 O(n)；双信源，置信度中）
 - [[prompt-injection|提示词注入（Prompt Injection）]]（模型分不清指令与数据且无参数化查询解药；三条注入路径+四环模型；确认闸门拦不住；OWASP LLM01 连续两年榜首，单信源，置信度中）
+- [[prompt-engineering|提示工程（Prompt Engineering）]]（输出配置温度/Top-K/Top-P+11 种技巧梯度从零样本到 APE+最佳实践；Google 官方白皮书为基准信源，置信度高）
 - [[task-run-step-event-model|Task/Run/Step/Event 领域模型]]（Agent Runtime 控制平面四元分离；Run 聚合根+状态机守卫+纯函数投影+OCC；replay≠Durable Execution）
 - [[raft-membership-change-barrier|Raft 成员变更的日志 Barrier]]（公共 config 提交当前 term 日志登记 term；joint 无需/单步必需/回退双向必需）
 - [[read-fanout|读扩散（Fan-out on Read）]]（会话队列+syncId 位点同步把 1:N 写压成 1:1；99.99% 非个性化消息前提；阿里混合模式 500ms 端到端，双信源）

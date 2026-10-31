@@ -9,7 +9,7 @@ created: 2026-10-29
 category: 学习
 tags: [AI, 课程, 工程实践]
 asset_ref: Assets/2026/10/9ed65982-d90c-4a44-bf08-403c8e02281d_google_________prompt_engineering____-baoyu.io__1_-pdf.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Google 官方提示工程白皮书（Prompt Engineering，宝玉译）

@@ -3083,6 +3083,40 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/oiPx6PmVr9PXroE_pBcQhg",
       "asset_ref": "Assets/2026/10/writing-craft-training-system.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-28-zhihu-agent-column-index.md",
+      "sha256": "a1a21208eef5fbc75fe635b88f66e2fbfd54d9b9a77e1fdaf5e410d9141692f3",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-28-zhihu-agent-column.md",
+      "pages": [
+        "wiki/sources/zhihu-agent-column-index.md"
+      ],
+      "source_url": "https://www.zhihu.com/column/c_2094113198626686177",
+      "asset_ref": "Assets/2026/10/zhihu-agent-column-index.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-28-ai-education-three-old-questions.md",
+      "sha256": "2dbbda7ac335895bd680bb30213231e08744bb5a96532375939d12996784ab08",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-29-ai-education-three-old-questions.md",
+      "pages": [
+        "wiki/sources/ai-education-three-old-questions.md"
+      ],
+      "source_url": "https://weibo.com/5078115336/5359214998585501",
+      "asset_ref": "Assets/2026/10/ai-education-three-old-questions.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-28-google-prompt-engineering-whitepaper.md",
+      "sha256": "9d0796f3efdac71d3987cca177547d98902f9137435b238c8ee9a5296a64efe1",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-29-google-prompt-engineering-whitepaper.md",
+      "pages": [
+        "wiki/sources/google-prompt-engineering-whitepaper.md",
+        "wiki/concepts/prompt-engineering.md"
+      ],
+      "source_url": "gptaiflow.tech",
+      "asset_ref": "Assets/2026/10/9ed65982-d90c-4a44-bf08-403c8e02281d_google_________prompt_engineering____-baoyu.io__1_-pdf.md"
     }
   ]
 }
