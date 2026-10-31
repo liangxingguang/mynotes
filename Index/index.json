@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31 20:32",
+  "updated_at": "2026-10-31 20:59",
   "notes": [
     {
       "id": "2026-10-31-agent-harness-essay-ideal-harness",
@@ -18,6 +18,139 @@
       "summary": "作者手搓 Harness 后的思考：软件行业当下的第一要务是找到顺手的工作流、靠高质量 SOTA model token 快速迭代（personal RSI），而 Harness 作为人与 AI 的对接口是关键。核心主张：以 Session 为核心重构、做 Harness of Harness、审美是 Harness 寿命与粘性的底层保障、Agent as Memory、Agent Search 二分法。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/zhihu-20261031-2096275149876216777.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-arthas-01-attach-first-conclusion",
+      "title": "Arthas 上手：从 attach 到第一个结论，6 个命令够用",
+      "path": "Inbox/2026-10-31-arthas-01-attach-first-conclusion.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg4MjE2Nzk0NQ==&mid=2247483859&idx=1&sn=c4145cbf200355f92a50d1ca87cebf67&chksm=cf5b9835f82c11238d04a4f1895891c9990f92a8e8cf00c3d1029242767db939ecd806777003",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "官方文档很全，但新手卡在三件事：怎么挂、挂上去敲什么、什么时候退出。这篇按顺序讲清 attach 的两种方式与三类失败原因、6 个命令对应 6 类问题、三个最容易踩的参数细节、退出清理，以及 4 条生产纪律。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-arthas-01-attach-first-conclusion.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-arthas-02-ai-arthas",
+      "title": "AI + Arthas 排查线上问题：4 个环节，AI 该在哪一步上手",
+      "path": "Inbox/2026-10-31-arthas-02-ai-arthas.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg4MjE2Nzk0NQ==&mid=2247483860&idx=1&sn=7cb1aeae24e118883216e976f01e0d3a&chksm=cf5b9832f82c1124f1b39ee2b1ff5f24f3934fcafa722466d86d45e03edaff1933e8b995a248",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "Arthas 命令不多，真正难的是看到输出之后怎么判断。这篇把排查拆成 4 个环节——从现象选命令、读懂线程栈、写对 watch 表达式、把结论变成下一步，说明 AI 在哪一步最有用，以及三件绝对不能交给它做的事。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-arthas-02-ai-arthas.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-arthas-03-thread-command",
+      "title": "CPU 打满、接口卡住、线程池耗尽：thread 命令怎么读",
+      "path": "Inbox/2026-10-31-arthas-03-thread-command.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg4MjE2Nzk0NQ==&mid=2247483861&idx=1&sn=48e17d6de6e4c2eecb0b9151f04041de&chksm=cf5b9833f82c11257f96c5790ad9f1b17054e315999c77a8e7e182cc24925c76d2dc9499e5c8",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "线程问题的难点不在命令，在读栈：同样是\"卡住\"，可能是 RUNNABLE 在等 IO、BLOCKED 在等锁、或者线程池根本没空闲线程。这篇讲 thread 的三条用法、读栈的顺序、线程池耗尽的识别方法，以及三个最容易误判的地方。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-arthas-03-thread-command.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-arthas-04-watch-trace-tt",
+      "title": "watch、trace、tt：把方法看透的三件套",
+      "path": "Inbox/2026-10-31-arthas-04-watch-trace-tt.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg4MjE2Nzk0NQ==&mid=2247483862&idx=1&sn=c71b3c4a7e050062cd5a2cc432ec1797&chksm=cf5b9830f82c11265bd1a443f20e7dd1eb4e1ecf3a1554c59439f58916708ab77151104a3812",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "三个命令都在\"看方法\"，分工却完全不同：trace 看耗时卡在哪一层，watch 看数据对不对，tt 把一次调用的现场存下来、事后回放。这篇讲清三者的选择、各自的参数纪律，以及为什么 trace 一定要加次数限制。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-arthas-04-watch-trace-tt.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-arthas-05-jad-hot-reload",
+      "title": "改了代码没生效？先 jad 一下，再谈热更新",
+      "path": "Inbox/2026-10-31-arthas-05-jad-hot-reload.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg4MjE2Nzk0NQ==&mid=2247483863&idx=1&sn=af74fa9982ecebd5c9b8131ad158b774&chksm=cf5b9831f82c112771d7ac9575be8268a90089a93cd2077110097a04e429c3fb3da79515351e",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "最冤的一类线上问题：代码明明改了，行为还是旧的。这篇讲三件事——用 jad / sc / sm 确认线上跑的是哪版代码、\"改了没生效\"通常有哪四个原因、以及 redefine 能改什么不能改什么、为什么它只适合临时止血。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-arthas-05-jad-hot-reload.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-arthas-06-flame-graph",
+      "title": "一张火焰图，看懂慢在哪",
+      "path": "Inbox/2026-10-31-arthas-06-flame-graph.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg4MjE2Nzk0NQ==&mid=2247483865&idx=1&sn=02da0e85b73e30d03e83a6d74c97396a&chksm=cf5b983ff82c112968d70cb7070fb0eadd2a171d15a1a8a8e0e8fc8eee77a51507340fd8a688",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "火焰图第一次看像天书：那么多方块，谁宽谁窄。这篇讲清三件事——横轴不是时间线而是样本占比、怎么找\"平顶\"、以及为什么明明很慢图上却看不到，顺带说清 profiler 该采多久。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-arthas-06-flame-graph.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-arthas-07-when-not-to-use",
+      "title": "什么时候不该用 Arthas",
+      "path": "Inbox/2026-10-31-arthas-07-when-not-to-use.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg4MjE2Nzk0NQ==&mid=2247483866&idx=1&sn=98c364d2d1f36b918f81d26178993544&chksm=cf5b983cf82c112a86d0cca252b1a10721ddb7d9e7f2db38ed58fd38a28a157867a76d3ec56d",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "会用一个工具之后，下一课是知道什么时候不用它。这篇把日志、指标、链路、动态诊断四种手段的分工摆清楚，给出该用 Arthas 的四个信号、不该用的三个场景、三项成本，以及一条从告警到定位的决策顺序。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-scenenote-article.md",
       "wiki_status": "pending"
     },
     {
@@ -148,7 +281,7 @@
       "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg4MjE2Nzk0NQ==&action=getalbum&album_id=4743203736426643461&subscene=169",
       "source_type": "album",
       "platform": "微信公众号",
-      "summary": "这是公众号「奇点智慧小助手」的一个图文专辑《arthas使用》，共 7 篇 Arthas 线上问题排查系列，按正序编号 1–7 排布：从 attach 入门到火焰图、jad 热更新、watch/trace/tt 三件套、thread 命令、AI + Arthas，最后一篇是「什么时候不该用 Arthas」。**本次只抓到专辑目录，7 篇文章的正文与链接均未获取到**——专辑页为 JS 动态渲染，HTTP 层只拿到 1px 占位图，jina 兜底只给出标题与时间戳、条目链接被丢弃。",
+      "summary": "这是公众号「奇点智慧小助手」的图文专辑《arthas使用》，共 7 篇 Arthas 线上问题排查系列，按正序编号 1–7。**7 篇正文与链接已全部采集完成**（见文末清单）：专辑页本体是 JS 动态渲染、正文拿不到，但给专辑链接加 `&f=json` 会直接返回含全部条目 URL 的 JSON，据此逐篇抓取成功。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-album-4743203736426643461.md",
       "wiki_status": "pending"
