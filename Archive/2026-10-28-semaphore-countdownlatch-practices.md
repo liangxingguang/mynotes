@@ -9,7 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [Java, 工程实践]
 asset_ref: Assets/2026/10/semaphore-countdownlatch-practices.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 并发编程"黑科技"：Semaphore和CountDownLatch的5个实战技巧

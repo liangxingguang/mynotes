@@ -2968,6 +2968,42 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/SgdVCOgPuv-Lp0VBCADzRQ",
       "asset_ref": "Assets/2026/10/mysql-10b-bulk-import-guide.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-28-semaphore-countdownlatch-practices.md",
+      "sha256": "eab5c3aa97decd2a7f441fe888de540645f0fb62b99678299ecc7c764381b40e",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-28-semaphore-countdownlatch-practices.md",
+      "pages": [
+        "wiki/sources/semaphore-countdownlatch-practices.md",
+        "wiki/concepts/countdownlatch-internals.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/EQgBlIUavYhSAp6NN2cdUg",
+      "asset_ref": "Assets/2026/10/semaphore-countdownlatch-practices.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-28-slg-red-dot-tree-system.md",
+      "sha256": "c034538bd5da6d997d1ed957bcfa4cd21cfb7158439fd71a26e1bebf2543cc44",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-28-slg-red-dot-tree-system.md",
+      "pages": [
+        "wiki/sources/slg-red-dot-tree-system.md",
+        "wiki/concepts/red-dot-tree-system.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2093767907499161439",
+      "asset_ref": "Assets/2026/10/slg-red-dot-tree-system.md"
+    },
+    {
+      "path": "raw/sources/enterprise/2026-10-28-spring-security-oauth2-sso-demo.md",
+      "sha256": "2bff18cbe33530fffad2bcbf48d1829f789f19190462424af731577740c2ebf7",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-28-spring-security-oauth2-sso-demo.md",
+      "pages": [
+        "wiki/sources/spring-security-oauth2-sso-demo.md",
+        "wiki/concepts/sso-oauth2-oidc.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/zTLDAj6072ItrqFWWIuZ_Q",
+      "asset_ref": "Assets/2026/10/spring-security-oauth2-sso-demo.md"
     }
   ]
 }

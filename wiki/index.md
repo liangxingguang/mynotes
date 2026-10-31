@@ -214,13 +214,16 @@
 - [[rongyun-million-online-live-message-distribution|融云：百万人在线的直播间实时聊天消息分发技术实践]]（2026-10-24，IM/直播分发/丢弃策略）
 - [[scg-traceid-full-chain|Spring Cloud Gateway 全链路 traceId 传递方案]]（2026-10-21，Java/网关/链路追踪）
 - [[scopedvalue-vs-threadlocal-virtual-threads|Java 21 虚拟线程下 ThreadLocal 怎么办？ScopedValue 实战替代方案]]（2026-10-24，Java/虚拟线程）
+- [[semaphore-countdownlatch-practices|并发编程"黑科技"：Semaphore和CountDownLatch的5个实战技巧]]（2026-10-28，Java/并发/入门科普，用法模式+选型对比，置信度中）
 - [[signin-system-distributed-evolution|从 0 到 1 亿：Spring Boot 签到打卡系统的分布式架构演进]]（2026-10-22，Redis/架构演进）
+- [[slg-red-dot-tree-system|用一棵树管住 100+ 个红点：SLG 红点系统实现详解]]（2026-10-28，游戏/红点系统/UI架构，一手技术长文，置信度高）
 - [[spring-20-extension-points|Spring 留了 20 个扩展点，你能按顺序说出几个？]]（2026-10-20，Java/Spring）
 - [[spring-ai-milvus-rag-production|Spring AI + Milvus 企业级 RAG 生产工程实践]]（2026-10-21，AI/RAG，设计示例）
 - [[spring-async-to-task-table|@Async 扛不住长任务？用任务表 + Worker 把它管起来]]（2026-10-20，Java/Spring）
 - [[spring-boot-startup-speedup|Spring Boot 启动加速实战：从 8 秒到 2 秒的 5 个优化点]]（2026-10-22，Java/性能，置信度中）
 - [[spring-cloud-gateway-advanced|Spring Cloud Gateway 高级玩法：动态路由、请求日志、限流、灰度发布全方案]]（2026-10-20，Java/网关）
 - [[spring-insight-lightweight-monitoring|Spring Insight 0.1.0：轻量级 Spring 链路追踪]]（2026-10-21，Spring/可观测，置信度中）
+- [[spring-security-oauth2-sso-demo|使用 Spring Security OAuth2 实现简单的单点登录]]（2026-10-28，安全/SSO/OAuth2/OIDC，Spring Authorization Server Demo，置信度高）
 - [[springboot-disruptor-event-bus|Spring Boot 集成 Disruptor 无锁事件总线：RingBuffer 原理到百万级吞吐]]（2026-10-21，Java/并发性能）
 - [[springboot-global-exception-handling|Spring Boot 3.x 全局异常处理最佳实践]]（2026-10-23，Java/Spring，置信度中）
 - [[springboot-structured-logging|SpringBoot 结构化日志实战（3.4 内置 JSON/ECS）]]（2026-10-23，Java/可观测，置信度中）
@@ -344,6 +347,7 @@
 - [[task-run-step-event-model|Task/Run/Step/Event 领域模型]]（Agent Runtime 控制平面四元分离；Run 聚合根+状态机守卫+纯函数投影+OCC；replay≠Durable Execution）
 - [[raft-membership-change-barrier|Raft 成员变更的日志 Barrier]]（公共 config 提交当前 term 日志登记 term；joint 无需/单步必需/回退双向必需）
 - [[read-fanout|读扩散（Fan-out on Read）]]（会话队列+syncId 位点同步把 1:N 写压成 1:1；99.99% 非个性化消息前提；阿里混合模式 500ms 端到端，双信源）
+- [[red-dot-tree-system|拉模式红点树系统（游戏 UI 提示徽标）]]（路径树+脏标记冒泡+每帧合批+拉模式，叶子自订阅自计算；先取走脏标记再计算；全树遍历顺带时间驱动红点；五方案对比+完整 C# 实现，单信源一手，置信度高）
 - [[rag-production-guardrails|企业级 RAG 生产护栏]]（容量/证据/权限/恢复四主线；证据门禁前置、发布目录原子切换；混合检索+存储分层+参数热调双信源互证）
 - [[reactive-tracing-context|响应式环境的全链路 traceId 传递]]（Reactor Context 替代 ThreadLocal；doOnEach 同步 MDC、doFinally 清除）
 - [[reactor-thread-model|主从 Reactor 线程模型（Netty 版）]]（Boss accept/Worker CPU×2/Channel 终身绑单 EventLoop 天然无锁；ServerBootstrapAcceptor 移交链路+三形态选型+SCG 双 Group 与中间件应用印证，八信源互证，置信度高）
@@ -351,6 +355,7 @@
 - [[reentrantlock-internals|ReentrantLock 可重入锁设计]]（AQS 经典实现：非公平先抢/公平只差 hasQueuedPredecessors/state 累加可重入/多 Condition 精确唤醒，单信源，置信度中）
 - [[rle-inverted-index|RLE 倒排索引（Run-Length Encoding Inverted Index）]]（Index Sorting 使 Doc ID 连续+RLE 编码 [start,length]+SparseRoaringDocIdSet 消除空置 bucket，合并 O(K×M)→O(M log M)，倒排链合并 TP99 -96%，全链路 TP99 -84%，美团一手）
 - [[scheduledthreadpoolexecutor-internals|ScheduledThreadPoolExecutor 调度设计]]（DelayedWorkQueue 数组最小堆+Leader-Follower 等待；period 正负号编码 fixedRate/fixedDelay；周期任务异常静默取消，单信源，置信度中）
+- [[sso-oauth2-oidc|单点登录 SSO（OAuth2 Authorization Code + OIDC）]]（共享认证服务器 Session；两条安全链+OIDC Discovery+oidc(withDefaults())；客户端一行 issuer-uri 自动配置；生产优先 Keycloak；Spring Authorization Server Demo，单信源一手，置信度高）
 - [[synchronousqueue-internals|SynchronousQueue 直接交接设计]]（零容量不存储+单 transfer 双角色；TransferStack Treiber 栈 FULFILLING 配对/TransferQueue FIFO；先自旋后 park；newCachedThreadPool 之选，单信源，置信度中）
 - [[scene-quest-orchestration|场景任务流程编排（SceneQuest）]]（任务即流程编排器：目标+进度+结果处理；生命周期 FSM 硬编码与流程数据驱动分离；事件立即更新数据心跳再切状态；单信源，置信度中）
 - [[scopedvalue|ScopedValue（作用域值）]]（JDK 25 正式：作用域共享不可变快照，终结 VT 下 ThreadLocal 内存膨胀/泄漏/脏值，Old Gen -61% 实测）

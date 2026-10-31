@@ -15,10 +15,12 @@ tags:
 sources:
   - raw/sources/misc/2026-10-27-jdk-10-countdownlatch.md
   - raw/sources/misc/2026-10-27-jdk-11-cyclicbarrier.md
+  - raw/sources/misc/2026-10-28-semaphore-countdownlatch-practices.md
 related:
   - wiki/concepts/aqs-internals.md
   - wiki/concepts/cyclicbarrier-internals.md
   - wiki/sources/jdk-10-countdownlatch.md
+  - wiki/sources/semaphore-countdownlatch-practices.md
 ---
 # CountDownLatch 门闩设计（AQS 共享模式）
 
@@ -56,7 +58,8 @@ await() → `sync.acquireSharedInterruptibly(1)` → state≠0 时 tryAcquireSha
 
 ## Evolution（演进）
 
-单信源（公众号源码解读）；doReleaseShared 的 propagate 级联唤醒细节未逐行展开。
+- 2026-10-27 单信源（公众号源码解读）；doReleaseShared 的 propagate 级联唤醒细节未逐行展开。
+- 2026-10-31: [[semaphore-countdownlatch-practices]] 第三信源补用法模式：`await(timeout)` 避免无限阻塞便于降级、配合线程池优雅关闭（全部 countDown 后 await 再 shutdown）；并印证"计数不可重置"是与 CyclicBarrier 的核心区分（见 Distinctions 选型对比）。
 
 ## Open Questions（开放问题）
 
@@ -65,7 +68,8 @@ await() → `sync.acquireSharedInterruptibly(1)` → state≠0 时 tryAcquireSha
 
 ## Evidence（证据）
 
-- Source: `raw/sources/misc/2026-10-27-jdk-10-countdownlatch.md`
+- Source: `raw/sources/misc/2026-10-27-jdk-10-countdownlatch.md`（AQS 共享模式机制）
+- Source: `raw/sources/misc/2026-10-28-semaphore-countdownlatch-practices.md`（用法模式：await 超时降级、优雅关闭、3 个坑、选型对比表）
 
 ## Related Knowledge（相关知识）
 

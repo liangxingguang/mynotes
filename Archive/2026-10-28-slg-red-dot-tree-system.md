@@ -9,7 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [游戏开发, 游戏架构, 工程实践]
 asset_ref: Assets/2026/10/slg-red-dot-tree-system.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 用一棵树管住 100+ 个红点：SLG 红点系统实现详解

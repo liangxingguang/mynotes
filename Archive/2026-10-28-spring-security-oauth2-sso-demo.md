@@ -9,7 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [spring, 工程实践]
 asset_ref: Assets/2026/10/spring-security-oauth2-sso-demo.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 使用 Spring Security OAuth2 实现简单的单点登录
