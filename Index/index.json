@@ -1,6 +1,25 @@
 {
-  "updated_at": "2026-10-31 19:57",
+  "updated_at": "2026-10-31 20:02",
   "notes": [
+    {
+      "id": "2026-10-31-architecture-science-and-art-42-rules",
+      "title": "架构是学问，也是艺术：42 条架构取舍法则",
+      "path": "Inbox/2026-10-31-architecture-science-and-art-42-rules.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/lo2sfHDOp9Irlgu3EZ593Q",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "一篇架构取舍方法论，11 个主题 42 条法则。架构是学问（知道每种工具各自解决什么问题）也是艺术（取舍发生在\"眼下最该解决什么、团队能承受多少复杂度、哪些风险必须现在处理、哪些可以等业务真的走到那一步\"）。开篇判断：服务要不要拆、数据该放哪儿很少有现成答案，架构师像厨师——懂多少技法重要，但真到灶台前还得知道这顿饭做给谁吃、预算多少、几点必须上桌。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-lo2sfHDOp9Irlgu3EZ593Q.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-31-coding-agent-ai-native-workflow",
       "title": "驾驭 Coding Agent：打造 AI 原生研发工作流",
