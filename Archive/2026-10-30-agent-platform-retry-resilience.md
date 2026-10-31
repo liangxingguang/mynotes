@@ -9,7 +9,7 @@ created: 2026-10-30
 category: 技术
 tags: [分布式系统, 工程实践, AI]
 asset_ref: Assets/2026/10/agent-platform-retry-resilience.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 从重试风暴到可控恢复：Agent 平台超时、退避、熔断与背压的系统设计

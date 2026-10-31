@@ -3154,6 +3154,57 @@
       ],
       "source_url": "https://weibo.com/2194035935/5358923348710037",
       "asset_ref": "Assets/2026/10/survival-llm-offline-assistant.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-31-agent-platform-retry-resilience.md",
+      "sha256": "23779314901fee2f35615de8eb3ca310dafd7b11a70d5d09e56cec122becc3a2",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-30-agent-platform-retry-resilience.md",
+      "pages": [
+        "wiki/sources/agent-platform-retry-resilience.md",
+        "wiki/concepts/retry-governance.md",
+        "wiki/concepts/durable-execution.md",
+        "wiki/concepts/idempotency-design.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/bEuxXk_f9GSBoZH5a5_RxA",
+      "asset_ref": "Assets/2026/10/agent-platform-retry-resilience.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-31-ai-coding-eight-stage-workflow.md",
+      "sha256": "01ae6ee42960f11f1b06fbf879f098d354a1b91846eacd818ce2ac268e823c58",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-30-ai-coding-eight-stage-workflow.md",
+      "pages": [
+        "wiki/sources/ai-coding-eight-stage-workflow.md",
+        "wiki/concepts/ai-native-sdlc.md",
+        "wiki/entities/kongming-ai-dev-platform.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/1fj2mu8DZubFAibM_Z2sxw",
+      "asset_ref": "Assets/2026/10/ai-coding-eight-stage-workflow.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-30-alibaba-ai-native-dev-handbook.md",
+      "sha256": "cc1eb4a88d28e339d15092e5990841d1c57fb4e5a5a9103ae87a710f84211979",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-30-alibaba-ai-native-dev-handbook.md",
+      "pages": [
+        "wiki/sources/alibaba-ai-native-dev-handbook.md",
+        "wiki/concepts/ai-native-sdlc.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/ilYbYgZRB63nSMCw4MnVRA",
+      "asset_ref": "Assets/2026/10/alibaba-ai-native-dev-handbook.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-30-coupon-optimal-combination-dfs-ddd.md",
+      "sha256": "2e51dac86d54d2917efab3126554cf7571f9d1841563cbd733271a405bea3157",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-30-coupon-optimal-combination-dfs-ddd.md",
+      "pages": [
+        "wiki/sources/coupon-optimal-combination-dfs-ddd.md",
+        "wiki/concepts/control-plane-design.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/j5jttq6rZ6LP7VVX-EeIcQ",
+      "asset_ref": "Assets/2026/10/coupon-optimal-combination-dfs-ddd.md"
     }
   ]
 }

@@ -14,6 +14,10 @@
 -->
 
 - （暂无记录）
+- 2026-10-31 07:20 | ingest | raw/sources/architecture/2026-10-31-agent-platform-retry-resilience.md | wiki/sources/agent-platform-retry-resilience.md, wiki/concepts/retry-governance.md（新建）, wiki/concepts/durable-execution.md（更新：跨 Worker 字段清单/崩溃窗口）, wiki/concepts/idempotency-design.md（更新：幂等键服务端协议五要素）, wiki/index.md, wiki/log.md, state/manifest.json
+- 2026-10-31 07:40 | ingest | raw/sources/architecture/2026-10-31-ai-coding-eight-stage-workflow.md | wiki/sources/ai-coding-eight-stage-workflow.md（新建）, wiki/concepts/ai-native-sdlc.md（更新：孔明八阶段工作流实例）, wiki/entities/kongming-ai-dev-platform.md（更新：八阶段工作流细节/提效数据）, wiki/index.md, wiki/log.md, state/manifest.json
+- 2026-10-31 08:10 | ingest | raw/sources/ai/2026-10-30-alibaba-ai-native-dev-handbook.md | wiki/sources/alibaba-ai-native-dev-handbook.md（新建）, wiki/concepts/ai-native-sdlc.md（更新：第5信源/主战场论断/约束vs假设/阿姆达尔实证）, wiki/index.md, wiki/log.md, state/manifest.json
+- 2026-10-31 08:10 | ingest | raw/sources/architecture/2026-10-30-coupon-optimal-combination-dfs-ddd.md | wiki/sources/coupon-optimal-combination-dfs-ddd.md（新建）, wiki/concepts/control-plane-design.md（新建）, wiki/index.md, wiki/log.md, state/manifest.json
 - 2026-10-31 03:55 | ingest | raw/sources/architecture/2026-10-28-log4j2-thread-block-pitfalls.md | wiki/sources/log4j2-thread-block-pitfalls.md, wiki/concepts/log4j2-async-logging-thread-blocking.md
 - 2026-10-15 08:10 | migration | 采集→wiki 衔接契约（留证+pending 队列+跨层去重） | AGENTS.md §2.1/附录B.7, schemas/Source_Schema.md, .claude/skills/wiki-ingest/SKILL.md, CLAUDE.md, scripts/skills/index-rebuild.js, scripts/skills/daily-digest.js
 - 2026-10-15 23:37 | migration | 采集→wiki 异步贯通（队列状态机+queue-trigger/cron+存量回填） | AGENTS.md §2.1/附录B.8, CLAUDE.md, .claude/skills/wiki-ingest/SKILL.md, .claude/skills/git-backup/SKILL.md, scripts/skills/queue-claim.js, scripts/skills/queue-trigger.js, scripts/skills/queue-backfill.js, scripts/skills/lib/frontmatter.js

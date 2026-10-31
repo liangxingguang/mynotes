@@ -19,6 +19,7 @@ sources:
   - raw/sources/architecture/2026-10-28-like-follow-high-concurrency-design.md
   - raw/sources/architecture/2026-10-28-local-message-table-distributed-transaction.md
   - raw/sources/architecture/2026-10-28-mysql-10b-bulk-import-guide.md
+  - raw/sources/architecture/2026-10-31-agent-platform-retry-resilience.md
 related:
   - wiki/concepts/durable-execution.md
   - wiki/concepts/blue-green-deployment.md
@@ -88,6 +89,7 @@ related:
 - 2026-10-31：[[like-follow-high-concurrency-design]] 第五信源补充缓存层幂等形态：Redis Lua 脚本返回值即幂等裁决（`1` 生效 / `0` 重复拦截 / `-1` 参数错误），`SETBIT` 旧值当幂等标记；取消操作先判存在防负数；DB 唯一索引 `(user_id, target_id)` + `ON DUPLICATE KEY UPDATE`/`INSERT IGNORE` 双层保险——与第 1 条同构的"判重与变更原子化"，只是发生在缓存层而非 DB 事务层。
 - 2026-10-31：[[local-message-table-distributed-transaction]] 第六信源印证同事务铁律：本地消息表只保证至少一次投递，案例 3 以"状态更新超时无幂等导致重复业务"给出违反同事务铁律的事故侧证据；幂等键用业务唯一流水号。
 - 2026-10-31：[[mysql-10b-bulk-import-guide]] 第七信源在批量导入重跑场景印证：幂等键（`shard_id + biz_id` 唯一）+ `ON DUPLICATE KEY UPDATE`/`INSERT IGNORE` 让分片失败重跑安全，配合水位表断点续传可无限重试——重试与幂等共生在"可重入导入"场景的落地。
+- 2026-10-31：[[agent-platform-retry-resilience]] 第八信源把幂等键明确为"服务端协议"而非请求头一行：工具端至少实现五项——对 `tenant_id + idempotency_key` 建立唯一约束、保存请求摘要拒绝同键不同参数、返回已完成结果并建立执行中/结果未知明确状态、保留去重记录覆盖恢复窗口、存在执行权竞争时验证 fencing 语义；键稳定派生自 `tenant_id + task_id + step_id + operation_id` 不含 attempt 序号，Worker 重启/接管/策略恢复不得改变键。Fencing Token 保护任务状态不被旧 Worker 覆盖，但不能单独阻止外部系统重复副作用——与第 3 信源"fencing 局限"互为印证。
 
 ## Open Questions（开放问题）
 
@@ -101,6 +103,7 @@ related:
 - Source: `raw/sources/architecture/2026-10-27-k8s-blue-green-release-trading.md`（发布回退下订单+幂等键+Outbox 同事务、对账键与业务门禁）
 - Source: `raw/sources/architecture/2026-10-28-like-follow-high-concurrency-design.md`（Lua 返回值 1/0/-1 幂等裁决、SETBIT 旧值标记、唯一索引 UPSERT 双保险、SETNX 消费标记 24h）
 - Source: `raw/sources/architecture/2026-10-28-mysql-10b-bulk-import-guide.md`（批量导入幂等键 `shard_id+biz_id` + ON DUPLICATE KEY UPDATE/INSERT IGNORE 重跑安全、水位表断点续传可重入）
+- Source: `raw/sources/architecture/2026-10-31-agent-platform-retry-resilience.md`（幂等键服务端协议五要素、键派生规则、fencing 局限的独立印证）
 
 ## Related Knowledge（相关知识）
 

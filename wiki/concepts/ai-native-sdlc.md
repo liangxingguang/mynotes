@@ -15,9 +15,13 @@ sources:
   - raw/sources/ai/2026-10-14-anthropic-ai-native-sdlc-handbook.md
   - raw/sources/ai/2026-10-17-ai-coding-delivery-evolution.md
   - raw/sources/enterprise/2026-10-20-huolala-ai-coding-workflow.md
+  - raw/sources/architecture/2026-10-31-ai-coding-eight-stage-workflow.md
+  - raw/sources/ai/2026-10-30-alibaba-ai-native-dev-handbook.md
 related:
   - wiki/concepts/ai-native-organization.md
   - wiki/concepts/mcp.md
+  - wiki/entities/kongming-ai-dev-platform.md
+  - wiki/sources/alibaba-ai-native-dev-handbook.md
 ---
 # AI 原生 SDLC
 
@@ -71,6 +75,8 @@ Agent 编码使构建阶段塌缩到以小时计，而规划、评审/测试、�
 - 2026-08-21：Anthropic（Louis Claxton，Applied AI 团队）发布《The AI-Native SDLC playbook》，系统化六阶段打法与治理配置。
 - 2026-10-17：公众号「架构师」《AI 写代码越来越快，研发交付系统该怎么演进？》从交付系统视角印证同一命题：交付建模为七态状态机（当前意图→候选变更→已持久化→已合并→已验证→可部署→已生效），每次推进记录状态/版本/证据/发起者五要素，证据绑定不可变版本；提出"人从 in the loop 移到 on the loop"（Kief Morris）与本概念"人守闸门"呼应，并引 METR 实验（熟悉仓库的开发者用 AI 反慢 19%）与 DORA 2025（AI 是组织能力放大器）佐证局部提速 ≠ 端到端提速。
 - 2026-10-20：货拉拉技术公开千人规模落地实践（普及→规范驱动→AI Native 三阶段），提供国内大厂一手印证：SDD 五步产线（澄清/方案/拆任务/实现/审查）对应本概念制品链；spec 打分回写/下架机制是"知识当缓存"的治理实例；度量三层（AI 代码占比三层签名、FPY 首次正确率、全链路 trace）落地了"衡量取自系统级指标"；主从双 Agent 对抗审查（副 Agent 独立回源码核对）与"评审=Agent 一审+人复审"是"人守闸门"的工程化；自治分级 L1-L3（当前 L2：人定目标、AI 起草、人决审）。
+- 2026-10-31：银河智学「孔明」AI Coding 框架的八阶段工作流信源（第 4 信源）提供国内自研平台的执行流程实例：需求拆成可逐项核对的验收项（每项挂实现任务+验证方式+负责人+运行编号，定时任务/配置变更也进清单）、规范按框架/阶段/任务类型装配且装配本身被检查、验证快照绑定代码状态（收尾比对，快照缺失不阻断）、问题带触发条件退回原验收项修复、完成由脚本核对而非 AI 自述、评分 10 分制由脚本算（工具采集分模型不能抬）。与 Anthropic 手册六阶段（按 SDLC 阶段切分）互补：孔明按执行流程阶段切分，两者是不同粒度的同一命题。
+- 2026-10-31：阿里巴巴 AI Native 研发实践手册（第 5 信源）提供国内大厂多团队一手实践与核心论断：SWE-bench Verified <30%→~80%，Coding 正被解决，瓶颈转移到验证与环境（占研发生命周期 70%～80%）；按阿姆达尔定律，编码只占 20%～30%，压缩三成环节后整体收益有上限；「主战场在验证与环境」是全文最锋利的判断。三个案例（AIDC 数字投手的超级个体→数字员工→云上 Scrum、千问用增 Agent 的三阶段与四个环节、万有无界平台的三元拆分）印证「先建闭环再谈规模」与「人的价值上移到定义与判断」。「约束 vs 假设」的 Spec 新写法（约束→自动门禁、假设→AI 试错空间）直接决定 Agent 自主性上限。万有无界 auto bug fix 60%+ 但 bug 日清率仅 53%→63% 的数据，实证「单点自动化率高≠端到端吞吐提升」——触发与校验依赖人是阿姆达尔定律的现实版。
 
 ## Open Questions（开放问题）
 
@@ -83,6 +89,8 @@ Agent 编码使构建阶段塌缩到以小时计，而规划、评审/测试、�
 - Source: `raw/sources/ai/2026-10-14-anthropic-ai-native-sdlc-handbook.md`
 - Source: `raw/sources/ai/2026-10-17-ai-coding-delivery-evolution.md`（印证：制品链↔交付状态机、人守闸门↔on the loop；补充交付质量指标与证据链五要素）
 - Source: `raw/sources/enterprise/2026-10-20-huolala-ai-coding-workflow.md`（印证：千人规模 SDD 产线/spec 治理/FPY 度量/主从双 Agent 评审，国内大厂一手案例）
+- Source: `raw/sources/architecture/2026-10-31-ai-coding-eight-stage-workflow.md`（第 4 信源：孔明八阶段验收工作流——验收项原子化、规范装配自检、验证快照、脚本核对完成、评分算法；国内自研平台执行流程实例）
+- Source: `raw/sources/ai/2026-10-30-alibaba-ai-native-dev-handbook.md`（第 5 信源：阿里多团队 AI Native 实践——「主战场在验证与环境」核心论断、三案例演进路径、约束 vs 假设 Spec 新写法、阿姆达尔定律实证；国内大厂一手案例）
 
 ## Related Knowledge（相关知识）
 
@@ -90,3 +98,4 @@ Agent 编码使构建阶段塌缩到以小时计，而规划、评审/测试、�
 - [[ai-coding-delivery-evolution|AI 写代码越来越快，研发交付系统该怎么演进？（信源页）]]
 - [[huolala-ai-coding-workflow|货拉拉 AI Coding 流程化落地（信源页）]]
 - [[ai-native-organization|AI 原生研发组织]]
+- [[alibaba-ai-native-dev-handbook|阿里巴巴 AI Native 研发实践手册（信源页）]]

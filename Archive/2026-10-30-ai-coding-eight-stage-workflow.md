@@ -9,7 +9,7 @@ created: 2026-10-30
 category: 技术
 tags: [AI Coding, AI, 工程实践]
 asset_ref: Assets/2026/10/ai-coding-eight-stage-workflow.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 【实战系列】AI 开发的八个阶段：一套从需求到验收的工作流设计

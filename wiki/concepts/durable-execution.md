@@ -17,6 +17,7 @@ sources:
   - raw/sources/architecture/2026-10-22-async-task-system-design.md
   - raw/sources/ai/2026-10-23-agent-software-architecture-task-run-step-event.md
   - raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md
+  - raw/sources/architecture/2026-10-31-agent-platform-retry-resilience.md
 related:
   - wiki/entities/pi.md
   - wiki/entities/kiso.md
@@ -26,6 +27,7 @@ related:
   - wiki/concepts/task-run-step-event-model.md
   - wiki/concepts/agent-loop.md
   - wiki/concepts/mysql-bulk-import.md
+  - wiki/concepts/retry-governance.md
 ---
 # 持久执行（Durable Execution）
 
@@ -85,6 +87,7 @@ Harness 里发生的每件事都是一个任务（效应三明治）：生成 LL
 
 - 2026-10-31：Kiso 信源（第 6 信源）以 append-only Event Log + uncertain 裁决补上"事件溯源式账本"路线（日志即真相、其余皆投影），与 Pi 的取舍形成路线对照；其 uncertain → 人工 rerun/abandon 裁决与第 3 信源 PAUSED_INDOUBT 冻结对账同族（一者冻结等对账、一者停原地等人裁决），为"结果未知"场景提供第二种收敛路径；Turn Commit（draft 与执行资格分离）补充"模型输出不完整时不得改现实"的边界；真实 kill -9（PTY 进程组 SIGKILL）测试是本页首个崩溃恢复级别的实证证据，此前信源均为设计/测试级描述。
 - 2026-10-31：[[mysql-10b-bulk-import-guide]] 第七信源在数据库批量导入领域独立复现"checkpoint + 幂等重放"不变量——水位表 `import_checkpoint`（batch_id/start_id/end_id/offset/status）记录分片导入位点，宕机恢复从位点继续，配合幂等键可无限重试、可重入；与 Agent/任务系统的 checkpoint 同构（状态推进与可重放位点原子落库），印证 checkpoint 是跨域通用原语而非 Agent 专属。
+- 2026-10-31：第八信源（agent-platform-retry-resilience）从"跨 Worker 恢复不得重置尝试数"角度补充持久化字段清单：`operation_id`/`idempotency_key`、`policy_version`、`attempt_reserved_count`（跨接管累计）、`operation_deadline`/`next_run_at`、`last_error_class`/`outcome_state`、`lease_owner`/`fencing_token`、`last_attempt_at`/`last_provider_request_id`；并确认两个不可消除的崩溃窗口（尝试预留与发送之间保守消耗机会、远程副作用提交与本地记录之间形成结果未知）——与第 3/4 信源的 fencing/对账机制同族，为"接管不重置次数"提供 Agent 平台语境下的字段级印证。
 
 ## Open Questions（开放问题）
 
@@ -99,6 +102,7 @@ Harness 里发生的每件事都是一个任务（效应三明治）：生成 LL
 - Source: `raw/sources/architecture/2026-10-22-async-task-system-design.md`（第 4 信源：业务异步任务系统完整清单——条件领取/租约/幂等/错误三级/协作取消/Outbox/背压）
 - Source: `raw/sources/ai/2026-10-23-agent-software-architecture-task-run-step-event.md`（第 5 信源：三种 replay 区分、失败窗口 A–D、六步生产化路径、事件溯源取舍判据）
 - Source: `raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md`（第 6 信源：Event Log 账本、Turn Commit、Persist Before Effect、uncertain 人工裁决、kill -9 实测）
+- Source: `raw/sources/architecture/2026-10-31-agent-platform-retry-resilience.md`（第 8 信源：跨 Worker 恢复字段清单、两个不可消除崩溃窗口、attempt_reserved_count 跨接管累计）
 - 同构印证（未列入 sources）：`raw/sources/architecture/2026-10-20-spring-async-to-task-table.md`（Java 任务表+Worker，业务系统版同一套三要素）
 
 ## Related Knowledge（相关知识）

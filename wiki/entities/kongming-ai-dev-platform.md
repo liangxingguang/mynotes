@@ -4,7 +4,7 @@ type: entity
 title: 孔明（AI 研发平台）
 status: active
 created: 2026-10-30
-updated: 2026-10-30
+updated: 2026-10-31
 confidence: medium
 tags:
   - entity
@@ -12,8 +12,10 @@ tags:
   - dev-platform
 sources:
   - raw/sources/enterprise/2026-10-28-ai-native-dev-org-transformation.md
+  - raw/sources/architecture/2026-10-31-ai-coding-eight-stage-workflow.md
 related:
   - wiki/concepts/ai-native-organization.md
+  - wiki/concepts/ai-native-sdlc.md
   - wiki/entities/aibox.md
 ---
 # 孔明（AI 研发平台）
@@ -36,6 +38,8 @@ related:
 - 知识底座：项目知识库（代码结构、业务流程、工程约束）+ 研发知识图谱（从代码抽取服务与调用关系，支撑跨服务影响分析）。
 - 配套质量/环境体系：API 自动测试平台、AI 自动化测试平台、星枢共同测试环境。
 - 效果（团队口径）：80 个项目纯编码 354.5 vs 人工评估 741.0 人日（-52.2%）；月度普及率 9.8% → 70.2%（2026 年 3–9 月）。
+- 后端开发八阶段工作流（2026-10 实战系列披露的设计细节）：①解析项目（查目录/框架/设计/环境，缺必需信息再问人）→ ②拆验收项（每项挂实现任务+验证方式+负责人+运行编号，表结构/消息/定时任务/配置变更也进清单）→ ③规范与测试装配（按框架/阶段/任务类型挑规则文件，装配本身被检查——文件存在性/新旧混装/同名冲突/基础集意外为空；先写测试确认缺实现时确实失败）→ ④实现与验证（构建/安全/竞态/覆盖率/依赖方向检查）→ ⑤真实链路验证（真启服务连真依赖，HTTP 200 ≠ 业务做成，下游消费专门验链路）→ ⑥评审与验收（漏测并发退回原验收项，带触发条件/影响/复验要求）→ ⑦完成核对（脚本核材料：每项任务/验证/回执、检查结论、运行编号与产物摘要、验证快照与代码状态比对）→ ⑧设计核对（有条件执行，差异转人工）。配套机制：开工前存检查基线区分新旧问题（不可重录）、验证快照绑定代码状态、评分 10 分制由脚本算（总分≥9、单项<7 处理、≤4 否决、工具采集分模型不能抬）、质量看交付前检查标准+交付后缺陷记录两份结果。
+- 提效数据（八阶段工作流口径，作者如实标注非受控对照）：人工投入省约 46%、效率约 1.8 倍；预计投入 10 小时折算实际约 5.4 小时。
 
 ## Relationships（关系）
 
@@ -51,6 +55,7 @@ related:
 - 2026-07 — 全栈推进（9 月扩大），对应 Max/Fast 能力补齐
 - 2026-09 — 普及率达 70.2%，全程周期降至 14.6 天
 - 2026-10 — 信源发布；RDO + Ultra 试点、Auto 规划中
+- 2026-10 — 八阶段后端开发工作流设计经实战系列公开（作者 Damon）
 
 ## Current Understanding（当前认知）
 
@@ -59,3 +64,4 @@ related:
 ## Evidence（证据）
 
 - `raw/sources/enterprise/2026-10-28-ai-native-dev-org-transformation.md`
+- `raw/sources/architecture/2026-10-31-ai-coding-eight-stage-workflow.md`（后端八阶段工作流设计细节）

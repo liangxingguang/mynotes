@@ -25,14 +25,17 @@
 - [[ai-education-three-old-questions|AI 没有发明新教育理念，只是让老目标有了实现条件]]（2026-10-29，AI/教育观察，惰性观念/难度取舍/因材施教三问，微博帖子，置信度中）
 - [[agent-loop-production-boundaries|从 Chatbot 到 AI Agent：为什么一个 while 循环撑不起生产系统]]（2026-10-15，AI/Agent 工程）
 - [[agent-platform-architecture|高性能弹性扩展智能体中台架构：FastAPI+Nacos+RocketMQ+LangGraph+Milvus+ES 实践]]（2026-10-27，AI/架构）
+- [[agent-platform-retry-resilience|从重试风暴到可控恢复：Agent 平台超时、退避、熔断与背压的系统设计]]（2026-10-31，架构/可靠性/Agent，唯一重试所有者+五边界+Retry Budget+12 步执行链+A–F 消融实验，单信源置信度中）
 - [[agent-software-architecture-task-run-step-event|第 5 章：Agent 的软件架构设计（Task/Run/Step/Event 领域模型）]]（2026-10-23，AI/Agent 架构）
 - [[ai-coding-delivery-evolution|AI 写代码越来越快，研发交付系统该怎么演进？]]（2026-10-17，AI/交付系统）
 - [[ai-coding-workflow-skill-prompt|一位 Agent 开发者的 AI Coding 工作流：轻 Skill、方法论 Prompt 与端到端测试]]（2026-10-16，AI/工作流）
+- [[ai-coding-eight-stage-workflow|【实战系列】AI 开发的八个阶段：一套从需求到验收的工作流设计]]（2026-10-31，AI/AI Coding/SDLC，孔明八阶段验收工作流，单信源置信度高）
 - [[ai-engineering-interview-questions|AI Engineering Interview Questions：公开 AI 工程面试题库]]（2026-10-23，AI/资源，置信度低）
 - [[ai-native-dev-org-transformation|一支百人研发团队的 AI Native 真实转型实录（黑夜路人）]]（2026-10-28，AI/组织，一手复盘）
 - [[ai-native-rd-org-forum|AI 进入生产后，研发组织怎么变（阿里云 AI 原生研发组织论坛回顾）]]（2026-10-14，AI/组织）
 - [[ai-native-sdlc-playbook|Anthropic AI 原生 SDLC 实施手册]]（2026-10-14，AI/SDLC）
 - [[alibaba-ecommerce-im-group-live|阿里电商IM消息平台在群聊、直播场景下的技术实践]]（2026-10-23，IM/读写扩散/直播分发）
+- [[alibaba-ai-native-dev-handbook|阿里巴巴 AI Native 研发实践手册：从代码补全到自主交付]]（2026-10-31，AI/AI Native/SDLC，阿里多团队一手实践+「主战场在验证与环境」核心论断，置信度高）
 - [[architect-road-2025-digest|架构师之路：2025 年干货精选（343 篇链接索引）]]（2026-10-22，架构/资源导航，置信度低）
 - [[archunit-java-architecture-guardrails|架构图不会报警，但 ArchUnit 会：给 Java 项目装一套架构门禁]]（2026-10-14，Java/架构治理）
 - [[arthas-mcp-ai-troubleshooting|让 AI 调 Arthas，Java 排障会快多少？]]（2026-10-14，AI/MCP/Java 诊断）
@@ -46,6 +49,7 @@
 - [[career-sharing-website-195|我发现了一个收录195篇真实职业分享的网站（把抽象变具象）]]（2026-10-28，职业/资源，置信度中）
 - [[collaborative-doc-editor-design|设计一个在线文档协同编辑系统：WebSocket、OT/CRDT 到快照回放]]（2026-10-28，系统设计/协同编辑）
 - [[completablefuture-async-orchestration|CompletableFuture：异步编排的正确写法]]（2026-10-20，Java/并发）
+- [[coupon-optimal-combination-dfs-ddd|优惠券最优组合设计：DFS 四层剪枝 + DDD 建模]]（2026-10-31，架构/算法/DDD，控制面设计+四层剪枝+降级兜底，单信源置信度高）
 - [[craft-of-selfteaching|微博推荐：GitHub 万星项目《自学是门手艺》]]（2026-10-16，学习/资源）
 - [[critical-thinking-six-priorities|教了快十年批判性思维，我越来越看重这六件事]]（2026-10-22，思维方法论，置信度中）
 - [[database-high-availability|当我谈数据库高可用时是在谈些什么（京东技术五层主线）]]（2026-10-22，数据库/MySQL 高可用）
@@ -270,7 +274,7 @@
 - [[arrayblockingqueue-internals|ArrayBlockingQueue 单锁阻塞队列设计]]（循环数组+一把锁+双条件变量，put/take 对称闭环；数组不可分离队头队尾故只能单锁；单信源，置信度中）
 - [[arraydeque-internals|ArrayDeque 循环数组设计]]（2 的幂容量+位运算取模；head/tail 追赶、head==tail 翻倍扩容分两段拷贝重排；弱 fail-fast 用 fence 非 modCount；单信源，置信度中）
 - [[ai-native-organization|AI 原生研发组织]]（工具原生→工作流原生→组织原生）
-- [[ai-native-sdlc|AI 原生 SDLC]]（制品提交链驱动的六阶段闭环，Anthropic 2026）
+- [[ai-native-sdlc|AI 原生 SDLC]]（制品提交链驱动的闭环，Anthropic 2026；人守闸门/三层控制模型；货拉拉千人落地+孔明八阶段工作流实例，四信源）
 - [[blue-green-deployment|蓝绿发布（Blue-Green Deployment）]]（Preview+全量切换+自动观察回退；selector 只影响新连接；四层门禁先过样本量；蓝绿实战单信源）
 - [[cache-line-and-false-sharing|CPU 缓存行效应：局部性与伪共享]]（64 字节行为失效粒度；数组胜链表、Disruptor Sequence 填充、LinkedList Node 32B 三倍内存、AtomicLong/LongAdder Cell/Exchanger Node 伪共享与 @Contended，六信源）
 - [[cdn-broadcast-fanout|CDN 广播（弹幕下行）]]（千万级在线下行外包 CDN 边缘：推流伪装视频流 vs 静态文件周期拉取，多 CDN 权重轮询融合；网易云信一手）
@@ -281,6 +285,7 @@
 - [[context-management|上下文管理（Context Management）]]（messages 全量重发下的体积工程：裁剪/压缩/隔离三手段+成对保留与磁盘全量两铁律；Claude Code 分层裁剪实证；Kiso 投影观+缓存经济学双信源）
 - [[concurrenthashmap-internals|ConcurrentHashMap 并发设计（JDK 8+）]]（读无锁+CAS 空桶插+synchronized 桶头+sizeCtl 三态+协作扩容；单信源，置信度中）
 - [[consumer-lag-governance|消费积压治理（Consumer Lag Governance）]]（Kafka 消费端 Lag 治理：四步法+三底线+增速告警，单信源，置信度中）
+- [[control-plane-design|规则控制面与寻优计算面分离]]（DDD 领域契约收敛规则+规则引擎前置过滤+算法只在合法空间搜索+降级兜底；电商优惠券场景完整实例，单信源置信度中）
 - [[copyonwritearraylist-internals|CopyOnWriteArrayList 写时复制设计]]（volatile 数组引用替换+写时 O(n) 复制换读零锁；快照迭代不抛 CME；读多写极少专用，单信源，置信度中）
 - [[countdownlatch-internals|CountDownLatch 门闩设计（AQS 共享模式）]]（state 即计数器+CAS 减一归零广播唤醒；一次性不可重置，区别于 CyclicBarrier；双信源，置信度中）
 - [[cyclicbarrier-internals|CyclicBarrier 循环屏障设计（Generation 换代）]]（ReentrantLock+Condition，parties 凑齐破障，最后线程执行 barrierAction 并换代唤醒；BrokenBarrierException 传播，单信源，置信度中）
@@ -290,12 +295,12 @@
 - [[cross-process-surface-rendering|Surface 跨进程渲染]]（Surface Parcelable + SurfaceFlinger 跨进程合成，Binder 传 Surface 零拷贝传画面；Renderer 3→1，微信小游戏一手）
 - [[deep-thinking-five-tools|深度思考五工具（澄清-拆解-追问-反证-逆向）]]（按序收敛四步+发散出口一步，反认知闭合；YouCore 单信源，置信度中）
 - [[design-patterns-in-netty|Netty 设计模式全景（源码视角的模式识别）]]（十大模式源码落点+16 模式对照表；机制概念页的模式视角索引；单信源，置信度中）
-- [[durable-execution|持久执行（Durable Execution）]]（崩溃后断点精确恢复；效应三明治 + 版本化文档存储，非事件溯源；Kiso 补 Event Log 账本+uncertain 裁决+kill -9 实测路线，六信源）
+- [[durable-execution|持久执行（Durable Execution）]]（崩溃后断点精确恢复；效应三明治 + 版本化文档存储，非事件溯源；Kiso 补 Event Log 账本+uncertain 裁决+kill -9 实测路线；重试治理信源补跨 Worker 字段清单，八信源）
 - [[enummap-enumset-internals|EnumMap / EnumSet 枚举专用集合设计]]（ordinal 直接索引：Object[] 数组下标 / long 位向量，≤64 自动选型 RegularEnumSet；集合运算一条位运算；单信源，置信度中）
 - [[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]（先目标基线、JFR/GC 日志归因，证据指向 JVM 才动参数，单变量实验）
 - [[exchanger-internals|Exchanger 双向交换设计]]（JUC 唯一双向交换；Slot 单槽→Arena 多槽渐进扩容；@Contended+手动填充防伪共享；SPINS=1024 按核数/hash 动态自旋；线程须成对，单信源，置信度中）
 - [[expand-migrate-contract|Expand/Migrate/Contract（Schema 跨版本演进）]]（Expand 只加兼容结构→Migrate 双写限速回填→回退窗口关闭后才 Contract；蓝绿回退的数据前提，单信源）
-- [[idempotency-design|幂等设计]]（重试与幂等共生；同事务铁律+幂等键三要素+分层防护闭环，五信源互证）
+- [[idempotency-design|幂等设计]]（重试与幂等共生；同事务铁律+幂等键三要素+分层防护闭环；幂等键服务端协议五要素，八信源互证）
 - [[interaction-write-path|互动数据写路径治理（Interaction Write Path Governance）]]（缓存扛读、异步削写、原子幂等、最终一致；先更缓存立即返回+三死穴+热点三板斧+落库三层压缩+对账降级；单信源，置信度中）
 - [[exploratory-learning|探索式学习（知识 DAG）]]（目标→节点 DAG，导师写 JS 经沙箱改写文档教学；Unyra 提出）
 - [[fail-fast-modcount|Fail-Fast 迭代器（modCount）]]（结构修改计数器+迭代器快照比对抛 CME；检测单线程编程错误而非线程安全机制；含 fail-safe 对比与 subList 陷阱，同作者六信源）
@@ -369,6 +374,7 @@
 - [[reactor-thread-model|主从 Reactor 线程模型（Netty 版）]]（Boss accept/Worker CPU×2/Channel 终身绑单 EventLoop 天然无锁；ServerBootstrapAcceptor 移交链路+三形态选型+SCG 双 Group 与中间件应用印证，八信源互证，置信度高）
 - [[rest-api-as-tools|REST 接口工具化模式]]（函数体换 HTTP 封装但工具形状不变；登录即工具+token 只活进程内存+统一 _call 注入+描述即流程+错误回喂 HTTP 化；换真后台只改 BASE_URL，单信源实测）
 - [[reentrantlock-internals|ReentrantLock 可重入锁设计]]（AQS 经典实现：非公平先抢/公平只差 hasQueuedPredecessors/state 累加可重入/多 Condition 精确唤醒，单信源，置信度中）
+- [[retry-governance|重试治理（Retry Governance）]]（唯一重试所有者+时间/次数/额度/并发/语义五边界；Retry Budget 按首次记账 β 上界、Full Jitter、错误分类、熔断只看真实下游结果、12 步执行链；单信源置信度中）
 - [[rle-inverted-index|RLE 倒排索引（Run-Length Encoding Inverted Index）]]（Index Sorting 使 Doc ID 连续+RLE 编码 [start,length]+SparseRoaringDocIdSet 消除空置 bucket，合并 O(K×M)→O(M log M)，倒排链合并 TP99 -96%，全链路 TP99 -84%，美团一手）
 - [[scheduledthreadpoolexecutor-internals|ScheduledThreadPoolExecutor 调度设计]]（DelayedWorkQueue 数组最小堆+Leader-Follower 等待；period 正负号编码 fixedRate/fixedDelay；周期任务异常静默取消，单信源，置信度中）
 - [[sso-oauth2-oidc|单点登录 SSO（OAuth2 Authorization Code + OIDC）]]（共享认证服务器 Session；两条安全链+OIDC Discovery+oidc(withDefaults())；客户端一行 issuer-uri 自动配置；生产优先 Keycloak；Spring Authorization Server Demo，单信源一手，置信度高）
@@ -404,7 +410,7 @@
 - [[jd-haibo|京东海博]]（京东本地生活即时零售 SaaS，780+ 商家/10 万+ 门店，AI 知识库实践标杆）
 - [[kafka|Apache Kafka]]（高吞吐事件管道；顺序写+PageCache+零拷贝+批量四板斧；2.0 起网络层自研 NIO→Netty，机制+运维+IoT 场景+网络层四信源）
 - [[kiso|Kiso]]（开源极简 Agent 框架/Runtime：Event Log 执行账本+uncertain 裁决、只读证明式 shell、五运行模式、2200 行内核门禁；vs Pi Benchmark 单信源自述，置信度中）
-- [[kongming-ai-dev-platform|孔明（AI 研发平台）]]（某教育产品百人团队自研研发交付 Harness：Fly/Pro/Max/Fast/Flow/Ultra 版本阶梯随组织演进扩张，普及率 9.8%→70.2%，团队自述单信源）
+- [[kongming-ai-dev-platform|孔明（AI 研发平台）]]（某教育产品百人团队自研研发交付 Harness：Fly/Pro/Max/Fast/Flow/Ultra 版本阶梯随组织演进扩张，普及率 9.8%→70.2%；后端八阶段验收工作流+验证快照+脚本核对，双信源）
 - [[langgraph|LangGraph]]（LangChain 生态 Agent 编排状态机；原生非分布式，RedisSaver+MySQL 快照+外部锁补齐，双信源）
 - [[learn-harness-engineering-course|Learn Harness Engineering]]（Walking Labs 开源 Coding Agent 工程课程：14 讲 + 8 递进项目，单一微博推荐信源）
 - [[netty|Netty]]（Java 异步事件驱动网络框架；Reactor+ByteBuf+零拷贝三支柱+Pipeline/EventLoop/Bootstrap/内存池/Native Transport/流量控制/ChannelFuture 源码机制+RPC 实战/版本演进/调试排障/设计模式全景+生产调优五维度+SCG/Kafka/中间件应用+系列目录，机制+教程+IoT 工程三十五信源）

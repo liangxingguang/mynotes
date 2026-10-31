@@ -9,7 +9,7 @@ created: 2026-10-30
 category: 技术
 tags: [AI, 工程实践, AI Coding]
 asset_ref: Assets/2026/10/alibaba-ai-native-dev-handbook.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 阿里巴巴《AI Native 研发范式实践手册》解读

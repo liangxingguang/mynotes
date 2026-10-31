@@ -9,7 +9,7 @@ created: 2026-10-30
 category: 技术
 tags: [工程实践, Java]
 asset_ref: Assets/2026/10/coupon-optimal-combination-dfs-ddd.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 优惠券最优组合设计：DFS 四层剪枝 + DDD 建模，商城结算工业级落地
