@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31 17:22",
+  "updated_at": "2026-10-31 17:27",
   "notes": [
     {
       "id": "2026-10-31-codex-agent-harness-architecture-6",
@@ -18,6 +18,25 @@
       "summary": "Agent Harness 是组织模型与工具执行、管理任务进度、处理结束条件的运行时。本文阐述其模块边界（任务控制、操作记录、产物核验三模块分管状态）、状态模型（执行/操作/产物三种状态分离）、中断恢复与产物核验机制，并用 E1-E4 四组工程实验验证设计，最后给出架构改动的评测标准。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/codex-agent-harness-architecture-6.md",
+      "wiki_status": "ingesting"
+    },
+    {
+      "id": "2026-10-31-perf-cpu-hotspot-analysis",
+      "title": "性能分析 02｜如何使用 perf 排查：定位系统的性能问题",
+      "path": "Inbox/2026-10-31-perf-cpu-hotspot-analysis.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "工具"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/oddXrYU4WDJFAEbLUG10Gw",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "本文是《性能分析》系列第 2 篇，讲解用 Linux perf 做 CPU 采样排查性能问题的完整路径：先确认工具、权限、符号与回溯方式四类前置条件，再以 `perf record`（cpu-clock:u、199Hz、帧指针）采集问题现场，用 `perf report` 交互界面先看大头热点、展开调用树把热点函数连回业务路径，最后给出 demo 复现命令与文本导出参数。火焰图留待下篇。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/perf-cpu-hotspot-analysis.md",
       "wiki_status": "pending"
     },
     {

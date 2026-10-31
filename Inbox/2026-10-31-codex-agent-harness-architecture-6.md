@@ -11,7 +11,9 @@ tags:
   - 工程实践
   - AI
 asset_ref: Assets/2026/10/codex-agent-harness-architecture-6.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-31T09:23:30.353Z"
+ingest_claim_id: 17016-1793438610353-0
 ---
 
 # Codex 桌面客户端开发（六）：Agent Harness 的架构设计
