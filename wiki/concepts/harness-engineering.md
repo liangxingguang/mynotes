@@ -134,6 +134,7 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 - Source: `raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md`（第 4 信源：内核门禁与决策所有权、TCB 诚实披露、评测纪律与 Trace 验证）
 - Source: `raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md`（第 5 信源：复杂度治理——设计时 vs 运行时控制、可逆组合、自进化宪法）
 - Source: `raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md`（第 6 信源：三控制模块状态所有权、Harness/Infra 边界、三态分离与多身份）
+- Source: `raw/sources/ai/2026-10-31-agent-harness-essay-ideal-harness.md`（第 7 信源：Session 为核心重构、注入式 token 账、UI 审美分歧点论；97% cache read 与 10% 额度差异为社区说法，未经核验）
 
 ## Related Knowledge（相关知识）
 
@@ -148,3 +149,5 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 - [[codex-agent-harness-architecture-6|Codex 桌面客户端开发（六）：Agent Harness 的架构设计（信源页）]]
 - [[agent-state-separation|Agent 状态分离]]
 - [[artifact-verification-delivery|产物核验与独立交付]]
+- [[agent-as-memory|Agent as Memory]]
+- [[agent-harness-essay-ideal-harness|Agent Harness 随笔：我理想中的 Harness（信源页）]]

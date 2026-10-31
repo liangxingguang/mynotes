@@ -13,9 +13,11 @@ tags:
 sources:
   - raw/sources/ai/2026-10-28-agent-loop-context-management.md
   - raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md
+  - raw/sources/ai/2026-10-31-agent-harness-essay-ideal-harness.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/concepts/harness-engineering.md
+  - wiki/concepts/agent-as-memory.md
   - wiki/concepts/llm-call-protocol.md
   - wiki/concepts/durable-execution.md
   - wiki/sources/kiso-minimal-agent-framework.md
@@ -78,6 +80,8 @@ Claude Code 官方做法分两层（信源 §3.4 引用核验）：先清旧工�
 - 2026-10-29 — 新建，信源为知乎《Agent》系列第 3 篇（Claude Code / OpenClaw 官方文档行为均经作者 2026-10-15 实测核验）。
 - 2026-10-31 — Kiso 信源（第 2 信源）补上"投影观 + 缓存经济学"：四层分离（Event Log=Truth / Context=Projection / Summary=有损投影 / Cache=投影的经济属性）；撤掉固定比例 microcompact（须过 break-even 判断）；Summary Compaction 双阈值：Soft 400K（进入 Eligible，等自然 phase boundary——刚跑完测试、编辑告一段落——再摘要；作者明示 400K 是质量取舍非成本最优，更早摘要在部分负载下反而更便宜）/ Hard 700K 强制处理 / Raw Tail 100K 原样保留；In-Band Summary（复用当前 session 系统提示词与消息 prefix、只在末尾追加总结指令，保住 Cache 前缀命中）。与第 1 信源"磁盘全量、窗口有损"铁律互证（可见性与有损性分离），并把"压缩时机"从固定比例推进到语义边界 + 经济性判断。
 
+- 2026-10-31 — Harness 随笔（第 3 信源）补上**注入式 token 账**视角：MCP 注入会带入大量工具描述 token（示例：注入 30K，新对话只说"你好"也要付几万）；这部分 token 虽可被 cache 住，但 Agent 是多轮对话、每轮都 cache read——30K × 1000 次 = 30M，社区称 Agent 账单中 Cache read 占比常超 97%（"社区里有人说"，未经核验）；社区称 Claude Desktop 比 CLI 少约 10% 额度，差异来源即 Desktop 注入的额外 MCP token。有效窗口侧：很多模型 256K 之后性能仍显著下降，MCP 占 30K 即少 30K 有效窗口。作者据此主张注入形式选择（MCP 全量 vs Skill/CLI 激活式、不激活不付 token tax）应纳入上下文管理的账本核算，并与 [[claude-skills|Claude Skills]] 的"按需加载"特性互证。
+
 ## Open Questions（开放问题）
 
 - 三层记忆（工作记忆 Redis / 长期记忆 pgvector）与 RAG 的分界，待该系列第 11 篇信源补充。
@@ -86,6 +90,7 @@ Claude Code 官方做法分两层（信源 §3.4 引用核验）：先清旧工�
 
 - Source: `raw/sources/ai/2026-10-28-agent-loop-context-management.md`
 - Source: `raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md`（第 2 信源：投影四句式、microcompact 撤除、Soft/Hard/Raw Tail 阈值、In-Band Summary）
+- Source: `raw/sources/ai/2026-10-31-agent-harness-essay-ideal-harness.md`（第 3 信源：注入式 token 账——MCP 30K 注入示例、cache read 占比 97%、Desktop 10% 额度差、256K 有效窗口；均为社区说法，confidence 中）
 
 ## Related Knowledge（相关知识）
 
