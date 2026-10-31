@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-10-31 10:41",
+  "updated_at": "2026-10-31 11:50",
   "notes": [
-    {
-      "id": "2026-10-28-local-message-table-distributed-transaction",
-      "title": "本地消息表终极实战：商城分布式事务最终一致性避坑",
-      "path": "Inbox/2026-10-28-local-message-table-distributed-transaction.md",
-      "created": "2026-10-28",
-      "category": "技术",
-      "tags": [
-        "分布式事务",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/ypHhsVCifGc3yaSBBN7YaQ",
-      "source_type": "文章",
-      "platform": "微信公众号",
-      "summary": "商城真实事故复盘：不是所有最终一致场景都要上 Seata。本地消息表 = 单库事务原子性 + 重试可靠性，轻量可控，但消息丢失、重试风暴、无幂等三大坑任一上线即资损。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/local-message-table-distributed-transaction.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-28-log4j2-thread-block-pitfalls",
       "title": "日志导致线程Block的这些坑，你不得不防",
@@ -5022,6 +5003,25 @@
       "summary": "大规模 LLM 应用工程实战合集，172 篇含原文链接。主要板块：Pi 实战 17 篇、Harness/Loop Engineering、Claude Code 原理、RAG 实战（dify/LightRAG/LlamaIndex/LangGraph）、MCP 实战、本地 LLM（Ollama）、OpenClaw 与 AI 编程助手产品分析。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/llm-rag-agent-series-album.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-28-local-message-table-distributed-transaction",
+      "title": "本地消息表终极实战：商城分布式事务最终一致性避坑",
+      "path": "Archive/2026-10-28-local-message-table-distributed-transaction.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "分布式事务",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/ypHhsVCifGc3yaSBBN7YaQ",
+      "source_type": "文章",
+      "platform": "微信公众号",
+      "summary": "商城真实事故复盘：不是所有最终一致场景都要上 Seata。本地消息表 = 单库事务原子性 + 重试可靠性，轻量可控，但消息丢失、重试风暴、无幂等三大坑任一上线即资损。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/local-message-table-distributed-transaction.md",
       "wiki_status": "ingested"
     }
   ]
