@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31 22:44",
+  "updated_at": "2026-10-31 22:47",
   "notes": [
     {
       "id": "2026-10-31-arthas-06-flame-graph",
@@ -645,6 +645,44 @@
       "summary": "《需求分析》专辑第 15 篇。把上一篇的拆模块放进完整流程，给一套可直接使用的核心步骤：澄清目标 → 识别用户与场景 → 拆出\"用户要完成的事\"并归模块 → 界定范围 → 补充关键规则与异常 → 确定优先级 → 写出验收标准 → 对齐确认形成基线。每步都给\"输出\"。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-15-hexin-buchou.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-xuqiufenxi-16-jieding-fanwei",
+      "title": "如何界定需求范围，避免无限蔓延",
+      "path": "Inbox/2026-10-31-xuqiufenxi-16-jieding-fanwei.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483976&idx=1&sn=5941313051e1b7f7a900d4e1bcf817a4&chksm=c1d0b6c9f6a73fdf301021524885a7ef1dee6900ff88403ca9109cc24efdaf5b6e834383c076",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "《需求分析》专辑第 16 篇。执行中最容易出问题的是\"范围守不住\"。界定范围的核心原则：先服务好当前目标，再谈理想价值。对每个候选功能用目标做一次分类——本期必须做／本期可后做／本期明确不做，这个分类既是范围也是优先级。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-16-jieding-fanwei.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-xuqiufenxi-17-yonghu-gushi",
+      "title": "用户故事怎么写，才真正有用",
+      "path": "Inbox/2026-10-31-xuqiufenxi-17-yonghu-gushi.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483994&idx=1&sn=de761ff5898b41fc15677e4edfb78d56&chksm=c1d0b6dbf6a73fcdc7cf9b2ed0f1ad3711cbf7ce2a726f787650802f435b2ede3db80afafd55",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "《需求分析》专辑第 17 篇（收官）。范围敲定不等于开发能直接开工。好的用户故事是业务、产品、开发、测试多方对齐的统一语言。全文给 5 条硬性标准 + 一个\"坏写法 vs 好写法\"五维对照 + 可直接复制的模板 + 自检清单。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-17-yonghu-gushi.md",
       "wiki_status": "pending"
     },
     {
