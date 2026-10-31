@@ -12,7 +12,7 @@ tags:
   - 工具
   - AI
 asset_ref: Assets/2026/10/pi-coding-agent-getting-started-guide.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Pi 保姆级教程：7000 字手把手从 0 到 1，把扩展生态一起打通

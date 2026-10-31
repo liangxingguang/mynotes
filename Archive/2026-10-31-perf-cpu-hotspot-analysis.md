@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - 工具
 asset_ref: Assets/2026/10/perf-cpu-hotspot-analysis.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 性能分析 02｜如何使用 perf 排查：定位系统的性能问题

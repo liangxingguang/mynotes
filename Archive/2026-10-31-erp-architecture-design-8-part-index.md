@@ -10,7 +10,7 @@ category: 技术
 tags:
   - 工程实践
 asset_ref: Assets/2026/10/erp-architecture-design-8-part-index.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 5.8 万字、23 章、48 张图：大型 ERP 产品架构设计（八篇全集）

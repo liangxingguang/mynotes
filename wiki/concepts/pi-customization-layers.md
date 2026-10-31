@@ -15,6 +15,7 @@ sources:
   - raw/sources/ai/2026-10-14-pi-setup-mcp-codemode-guide.md
   - raw/sources/products/2026-10-17-pi-custom-agent-setup.md
   - raw/sources/products/2026-10-17-pi-embedded-sdk-agent-engine.md
+  - raw/sources/products/2026-10-31-pi-coding-agent-getting-started-guide.md
 related:
   - wiki/entities/pi.md
   - wiki/concepts/agent-sandboxing.md
@@ -34,6 +35,17 @@ related:
 1. **成本阶梯**：五层按改动成本递增排序，官方建议永远从便宜层往贵层走——能用 Prompt 解决的不动 AGENTS.md，能用 Skill 解决的不动 Extension。
 2. **官方扩展点**：五层均为官方支持的接口，而非对内部实现的 hack，升级不冲突。
 3. **说明书 vs 代码的分界**：第 3、4 层最易纠结，判断标准只有一句话——这套东西是"给模型看的说明书"（Skill：零代码、跨模型、升级无风险），还是"给运行时跑的代码"（Extension：需要副作用，TypeScript 跑在运行时里）。互补判据（来自作者本人动手篇）：Skill/Prompt 模板只能影响模型怎么想，**不能保证"必定发生"**——强制行为（如改完代码必评审）必须用 Extension 监听事件实现。
+4. **扩展 vs MCP vs Skills 三方对比**（2026-10-31 保姆级教程信源）：扩展=装在 Pi 里的代码（TypeScript，加工具/改行为，只对 Pi）；MCP=外面另起的服务（Pi 经协议调，Claude Code/Cursor 也能用，跨工具通用，多一层进程略慢）；Skills=一段说明书（Markdown，不执行代码，只告诉模型按什么顺序干/有什么禁忌，只对 Pi）。选择建议：要加能力先看现成扩展→没有再看 MCP→两样都没有才自写；只想让它按你的规矩干活，写 Skill，别写扩展。
+
+三方对比表：
+
+| | 扩展 | MCP | Skills |
+| --- | --- | --- | --- |
+| 是什么 | 装在 Pi 里的代码 | 外面另起的服务 | 一段说明书 |
+| 会不会执行代码 | 会 | 会，在它自己的进程里 | 不会 |
+| 写起来要会什么 | TypeScript | 看服务本身 | Markdown |
+| 跨工具通用 | 只对 Pi | Claude Code、Cursor 都能用 | 只对 Pi |
+| 什么时候用 | 加工具、改行为 | 已有现成服务想复用 | 定规矩、定流程 |
 
 ## Structure（结构）
 

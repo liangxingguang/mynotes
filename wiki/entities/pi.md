@@ -23,6 +23,7 @@ sources:
   - raw/sources/products/2026-10-20-pi-tips-4-web-parallel.md
   - raw/sources/ai/2026-10-28-pi-series.md
   - raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md
+  - raw/sources/products/2026-10-31-pi-coding-agent-getting-started-guide.md
 related:
   - wiki/concepts/mcp.md
   - wiki/concepts/agent-loop.md
@@ -35,7 +36,7 @@ related:
 
 ## Overview（概览）
 
-Pi 是一款极简风格的 Agent CLI：默认只内置 read、write、edit、bash 四个工具，其余能力（MCP、联网、子代理、待办、诊断等）全部交给扩展目录按需安装。作者 Mario Zechner（libGDX 游戏框架作者），仓库 earendil-works/pi，MIT 协议，GitHub 星数 2026-09-30 达 11.1 万。官方文档在 pi.dev/docs。被部分 Claude Code 用户视为迁移替代选项。
+Pi 是一款极简风格的 Agent CLI：默认只内置 read、write、edit、bash 四个工具，其余能力（MCP、联网、子代理、待办、诊断等）全部交给扩展目录按需安装。作者 Mario Zechner（libGDX 游戏框架作者），仓库 earendil-works/pi，MIT 协议，GitHub 星数 2026-09-30 达 11.1 万、2026-10-29（1.4.0 教程时点）达 11.45 万，npm 一周下载 454 万次。官方文档在 pi.dev/docs。被部分 Claude Code 用户视为迁移替代选项。
 
 ## Identity（身份信息）
 
@@ -65,6 +66,19 @@ Pi 是一款极简风格的 Agent CLI：默认只内置 read、write、edit、ba
 - **四种运行模式**：interactive（日常）、print/JSON（`pi -p`，脚本管道）、RPC（`--mode rpc`，stdin/stdout JSON，供非 Node 集成）、SDK 嵌入（社区文包名 `@mariozechner/pi-coding-agent`，与本页四包结构的 `@earendil-works/pi-coding-agent` 命名口径不一，疑为历史包名，未裁决）。
 - **社区选型共识**（2026-10 汇编）："Pi is the Emacs of coding AI agents"（HN）；composio.dev 实测 100 小时 Pi vs OpenCode 平局（面向不同人群）；受监管行业（无 SaaS 后端+本地端点+可审计）被视为顶层优势；短板为本地模型体验与无内置权限弹窗（需自建 permission-gate）。
 - **默认离线是设计立场**：核心不内置联网（Mario Zechner：联网是扩展的事）；连接外界四路线——内置 MCP（0.99 原生、1.0 补 OAuth，pi-mcp-adapter 仅历史兼容）、pi-web-access（搜索+内容提取）、自建 Skill+CDP（Armin Ronacher 的浏览器自动化路线）、pi-side-agents（子代理并行，非真进程隔离）；装社区扩展前须自查行为范围/权限/Maintainer/包来源（扩展以宿主完整权限运行）。
+- **1.4.0 版本与生态**（2026-10-21 发布，教程时点八天后）：GitHub 11.45 万星、npm 一周下载 454 万次；`pi-web-access` 1738 星、推 0.46 版。
+- **Windows 安装**：官网 `curl ... | sh` 仅 macOS/Linux；Windows 走 PowerShell 安装器或 `npm install -g --ignore-scripts @earendil-works/pi-coding-agent`（Node ≥ 22.19）；公司电脑限制全局安装时装固定目录加 PATH；网络卡换 npmmirror 镜像；`pi update` 自更新不动 models.json/扩展列表；`(Get-Command pi).Source` 查安装路径。
+- **接国内模型**：`/login` 无 SiliconFlow/DeepSeek/中转站，需自写 `~/.pi/agent/models.json`（providers：`name`/`baseUrl`/`api: openai-completions`/`apiKey: $环境变量`/`models`）；兼容 OpenAI 协议覆盖九成中转站；`pi --list-models` 验证、128K 上下文；模型分工：Kimi K2.7 Code 改代码/长任务（工具调用稳）、DeepSeek V3.2 轻活（便宜）。
+- **界面口诀**：斜杠管命令（/model /compact /resume /tree）、@ 管文件、感叹号管终端（!命令不经过模型）；/compact 在 1.4.0 改为按模型输出上限算；首次启动三问（模型服务/登录/目录信任，信任只对自己可控目录点）；进项目先 `cd` 到项目根（当前目录=项目范围）。
+- **四类资源**（~/.pi/agent/ 下）：扩展加能力、Skills 加知识、模板加熟练、主题加好看。
+- **设置别动**：新手期只改 `models.json` + `settings.json`；`settings.json` 的 `packages` 数组别手改（用 `pi install`/`pi remove` 维护）；`mcp.json`/`auth.json`/`models-store.json` 不用碰。
+- **pi install 六源格式**：`npm:@foo/bar`、`git:github.com/user/repo`（git: 后直接跟域名无斜杠）、`git:git@github.com:user/repo`、`https://...`、`ssh://...`、`./local/path`；`github:` 前缀报错（当本地路径）；npm 源快一个数量级（10s vs git 3min）；装扩展多会占 token（1.4.0 延迟加载+工具搜索缓解，装到十个以上易选错工具）。
+- **pi mcp add**：`pi mcp add fs -- npx -y @modelcontextprotocol/server-filesystem .`（`.`=授权目录，别给盘符根目录）；`pi mcp list` → connected + 14 tools。
+- **-p（--print）模式**：一句话进一个改好的项目出，适合脚本/CI/批量；demo expenses.csv 去重 12→11 条、4196.50→2996.50；但会造数据糊弄人（week 分组把日期截前七位当周）；交互模式适合探索、-p 适合确定的事。
+- **委派三判据**：结果有客观对错 + 改动能回滚（git 提交）+ 两分钟能验完，三条满足才放手；写文案/定方案/判断设计好坏只能当草稿。
+- **五类活提示词**（各带验收话术/防幻觉边界句）：看懂陌生项目（点名文件必须真实存在）、修已知毛病（不许改测试文件，跑完 git diff）、批量整理（先计划→等确认→再执行）、从零造小工具（只用标准库，看 import）、查资料落文件（查不到写"未查到"防编来源）。
+- **10 坑速查**：`github:` 前缀、`curl|sh` on Windows、Node<22.19（报像权限的错）、`/login` 找 SiliconFlow、`api` 填 `openai`、key 写死传群、`pi remove` Windows `[safe-delete] genie-trash ETIMEDOUT`（手动清 settings.json+node_modules）、MCP 目录给盘符根目录、未提交仓库先跑、装一堆扩展。
+- **进阶**：`pi-web-access` 零配置走 Exa（可换 Brave/Tavily/博查 via `web-search.json`），能读页面/抓 PDF/克隆 GitHub 仓库；自写扩展一个文件导出函数 `registerCommand` 丢 `~/.pi/agent/extensions/` 重启即用；Codemode 沙箱批量调工具压提示词四成；Pi Durable/容器化新手期别碰。
 
 ## Products / Projects（产品／项目）
 
@@ -94,6 +108,7 @@ Pi 是一款极简风格的 Agent CLI：默认只内置 read、write、edit、ba
 - 2026-10-20 — 实用技巧系列第四篇发布，系统梳理联网/浏览器/并行四路线选型与社区扩展安全核查
 - 2026-10-31 — Pi 实战系列 16 篇合集采集入库，覆盖配置/提示词/扩展/多智能体/本地模型/调试/TDD 等全流程实操
 - 2026-10-31 — Pi 与 DSH 复杂度之争采集入库，补充"举证责任倒置"复杂度观与设计时控制立场
+- 2026-10-31 — Pi 1.4.0 保姆级教程采集入库，补充 Windows 安装/models.json 接国内模型/界面口诀/四类资源/pi install 六源/-p 模式/委派三判据/五类活提示词/10 坑
 
 ## Current Understanding（当前认知）
 
@@ -113,3 +128,4 @@ Pi 代表了 Agent CLI 的另一种产品哲学：内核极简、能力清单交
 - `raw/sources/products/2026-10-20-pi-tips-4-web-parallel.md`
 - `raw/sources/ai/2026-10-28-pi-series.md`
 - `raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md`
+- `raw/sources/products/2026-10-31-pi-coding-agent-getting-started-guide.md`

@@ -66,6 +66,7 @@
 - [[elasticsearch-interview-deep-dive|Elasticsearch 面试万字长文：倒排索引/集群/写入/查询/分词/深分页/索引优化]]（2026-10-21，ES/面试）
 - [[elasticsearch-search-tuning-production|从 10s 到 10ms：Elasticsearch 生产级搜索性能调优实战]]（2026-10-21，ES/性能）
 - [[eight-fields-booklist|八大领域通识书单：32 部书]]（2026-10-20，书单，置信度低）
+- [[erp-architecture-design-8-part-index|大型 ERP 产品架构设计（八篇全集·合集目录）]]（2026-10-31，企业软件/架构导航，8 篇连载目录页+立论，各篇正文待采集，置信度高）
 - [[distributed-systems-introduction|第一章：分布式系统概述（codedump 教程）]]（2026-10-16，分布式系统/教程）
 - [[distributed-transaction-six-solutions|分布式事务最全图解（6种方案）：从 2PC 到最终对账]]（2026-10-22，分布式/事务一致性）
 - [[drawio-skill-arch-diagram|drawio-skill：把代码与配置变成可编辑架构图的开源 Skill]]（2026-10-14，架构/工具）
@@ -201,10 +202,12 @@
 - [[netty-redis-kafka-iot-gateway|扛住百万设备长连接：Netty+Redis+Kafka 搭建 IoT 接入平台]]（2026-10-22，Netty/IoT 架构）
 - [[netty-three-skills-high-performance|为什么几个线程就能扛住上万连接？Netty 三大技能]]（2026-10-20，Java/网络）
 - [[nginx-websocket-million-connections|百万 WebSocket 长连接背后的 Nginx 架构设计与踩坑实录]]（2026-10-22，Nginx/WebSocket 长连接）
+- [[perf-cpu-hotspot-analysis|性能分析 02｜如何使用 perf 排查：定位系统的性能问题]]（2026-10-31，性能/perf/Linux，CPU 采样排查链路+demo 实测，单信源置信度高）
 - [[pi-6-extensions|从 Claude Code 搬到 Pi：6 个扩展补回熟悉体验]]（2026-10-14，AI/Agent CLI）
 - [[pi-durable-architecture|开源 Pi-durable：把持久化做进协议，架构是如何支持的]]（2026-10-17，AI/Agent 基础设施）
 - [[pi-embedded-sdk-agent-engine|从 Pi SDK 看懂怎样把 Agent 引擎塞进自己的系统]]（2026-10-17，AI/Pi SDK）
 - [[pi-custom-agent-setup|用 Pi 搭一个自己的 Agent：Skills、Extensions、Subagents 和定时任务]]（2026-10-17，AI/Pi）
+- [[pi-coding-agent-getting-started-guide|Pi 保姆级教程：7000 字手把手从 0 到 1，把扩展生态一起打通]]（2026-10-31，AI/Pi/教程，1.4.0 Windows 视角，补 pi 实体与五层定制页）
 - [[pi-practice-06-daily-patterns-selection|Pi实战 06：日常实战 · 模式 · 选型篇]]（2026-10-16，AI/Pi）
 - [[pi-practice-series|Pi 实战系列（16 篇全文本合集）]]（2026-10-31，AI/Pi/资源导航，16 篇实操合集，无新概念页，回链 pi/codemode/mcp 等，置信度中）
 - [[pi-dsh-agent-complexity|复杂度归谁：Pi 与 DSH 把 Agent 带向了两种未来]]（2026-10-29，AI/Agent/Harness，Pi 举证责任倒置 vs DSH 可逆组合，设计时 vs 运行时控制，自进化需要宪法，知乎深度分析，置信度高）
@@ -362,6 +365,7 @@
 - [[okf-knowledge-format|OKF（面向 AI Agent 的知识包装规范）]]（入库时编译为互链 Markdown 树，运行时只做导航+摘录）
 - [[oom-troubleshooting|OOM 排查方法论]]（6 类 OOM 速查表 + 五步法 + 生产纪律：禁直接 jmap -dump、90% 代码问题、溢出≠泄漏、GC overhead limit 最危险，双信源，置信度中）
 - [[operational-transformation|Operational Transformation（OT，操作转换）]]（中心定序+变换调整偏移量收敛并发编辑；siteId tie-break 命门+TP1/TP2 验证；文档级 Actor 串行+pending/buffer 客户端，单信源）
+- [[perf-cpu-sampling|perf CPU 采样排查法]]（采集→看热点→追调用者链路，四类前置+符号≠调用栈+Self/Children 读数纪律，demo 742 样本实测，单信源置信度高）
 - [[pi-customization-layers|Pi 五层定制模型]]（Prompt 模板→AGENTS.md→Skill→Extension→SDK，官方扩展点成本阶梯）
 - [[pm-decision-frameworks|产品决策四框架]]（3步止损/反向假设/杠杆率排序/信号噪音过滤；单一自媒体信源，置信度低）
 - [[pmta-framework|PMTA 框架]]（Planning/Memory/Tool use/Action 四要素，CoALA 谱系；现代 agent 框架的能力清单原型，单信源）
@@ -429,6 +433,7 @@
 
 ## topic（主题）
 
+- [[erp-architecture-design|大型 ERP 产品架构设计]]（2026-10-31，企业软件/架构主题导航，立论+8 部路线图，各篇正文待采集，单信源置信度中）
 - [[jvm-gc|JVM 垃圾回收]]（判定/算法/收集器演进与选型/调优主线枢纽；G1/ZGC 原理 + 证据驱动调优，四信源）
 - [[live-streaming-messaging|直播实时消息分发]]（拉 vs 推路线图谱：读扩散通知拉取 / longpolling / 短轮询 / mcast 组播 / CDN 广播；允许策略性丢消息是与 IM 的根本分界，八信源）
 - [[programmer-overseas-remote-work|程序员出海远程]]（汇率杠杆/价格带定价/卖资产 vs 卖时间；AI 一人公司技术前提；收款/时差/合规三实操；单信源，置信度中）

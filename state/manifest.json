@@ -547,6 +547,19 @@
       "asset_ref": "Assets/2026/10/pi-embedded-sdk-agent-engine.md"
     },
     {
+      "path": "raw/sources/products/2026-10-31-pi-coding-agent-getting-started-guide.md",
+      "sha256": "c61269c8b581d30e4a20f2b245aece0d51aee49ecc0c1e655e0661c0fee10bb5",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-31-pi-coding-agent-getting-started-guide.md",
+      "pages": [
+        "wiki/sources/pi-coding-agent-getting-started-guide.md",
+        "wiki/entities/pi.md",
+        "wiki/concepts/pi-customization-layers.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/jLDgnYOymoIjrZTduazyyg",
+      "asset_ref": "Assets/2026/10/pi-coding-agent-getting-started-guide.md"
+    },
+    {
       "path": "raw/sources/misc/2026-10-20-15-books-understand-world.md",
       "sha256": "76128759c9f34da7737729e1d3e6e50ffbdcb608ed61a1d39204c7837a3a4ff0",
       "registered_at": "2026-10-23",
@@ -3247,6 +3260,30 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/P4Baj-4PX5nQVrVOmXijQg",
       "asset_ref": "Assets/2026/10/arthas-mcp-server-ai-diagnosis.md"
+    },
+    {
+      "path": "raw/sources/enterprise/2026-10-31-erp-architecture-design-8-part-index.md",
+      "sha256": "28a53ff364e4ef5fc196cfd3ac3d77ce282df947043a9e698837071bbbaa6582",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-31-erp-architecture-design-8-part-index.md",
+      "pages": [
+        "wiki/sources/erp-architecture-design-8-part-index.md",
+        "wiki/topics/erp-architecture-design.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/0lfZ0_CfM7KO59pXVYyPyw",
+      "asset_ref": "Assets/2026/10/erp-architecture-design-8-part-index.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-31-perf-cpu-hotspot-analysis.md",
+      "sha256": "5648456f2a97b653c24f87002450a95af30380a4c11d754464b6cc565a9bb2dd",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-31-perf-cpu-hotspot-analysis.md",
+      "pages": [
+        "wiki/sources/perf-cpu-hotspot-analysis.md",
+        "wiki/concepts/perf-cpu-sampling.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/oddXrYU4WDJFAEbLUG10Gw",
+      "asset_ref": "Assets/2026/10/perf-cpu-hotspot-analysis.md"
     }
   ]
 }

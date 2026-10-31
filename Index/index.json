@@ -1,63 +1,6 @@
 {
-  "updated_at": "2026-10-31 17:51",
+  "updated_at": "2026-10-31 18:52",
   "notes": [
-    {
-      "id": "2026-10-31-erp-architecture-design-8-part-index",
-      "title": "5.8 万字、23 章、48 张图：大型 ERP 产品架构设计（八篇全集）",
-      "path": "Inbox/2026-10-31-erp-architecture-design-8-part-index.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/0lfZ0_CfM7KO59pXVYyPyw",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "大型 ERP 产品架构设计 8 篇连载的合集目录页。回答\"为什么 ERP 是企业软件里最难做的一门生意\"：同一系统要同时满足法定账与管理账、兼容集权与分权、支撑稳定与变化，扛住组织调整/并购/准则变化/技术换代。八篇从概念到落地：开篇（演化史）→ 骨架（架构方法论）→ 内核（组织/数据/协作/权限四大模型、应用架构、数据与技术架构）→ 运行（业财一体化、计划体系、关账全球化与性能）→ 反思（反模式、智能体时代）。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/erp-architecture-design-8-part-index.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-31-perf-cpu-hotspot-analysis",
-      "title": "性能分析 02｜如何使用 perf 排查：定位系统的性能问题",
-      "path": "Inbox/2026-10-31-perf-cpu-hotspot-analysis.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "工具"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/oddXrYU4WDJFAEbLUG10Gw",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "本文是《性能分析》系列第 2 篇，讲解用 Linux perf 做 CPU 采样排查性能问题的完整路径：先确认工具、权限、符号与回溯方式四类前置条件，再以 `perf record`（cpu-clock:u、199Hz、帧指针）采集问题现场，用 `perf report` 交互界面先看大头热点、展开调用树把热点函数连回业务路径，最后给出 demo 复现命令与文本导出参数。火焰图留待下篇。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/perf-cpu-hotspot-analysis.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-31-pi-coding-agent-getting-started-guide",
-      "title": "Pi 保姆级教程：7000 字手把手从 0 到 1，把扩展生态一起打通",
-      "path": "Inbox/2026-10-31-pi-coding-agent-getting-started-guide.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "工具",
-        "AI"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/jLDgnYOymoIjrZTduazyyg",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "Pi（pi-coding-agent）1.4.0 保姆级实战教程（Windows 视角）。从两条安装路径（PowerShell / npm，Node ≥ 22.19）、自写 `~/.pi/agent/models.json` 接国内模型（SiliconFlow/DeepSeek/中转站，`api` 填 `openai-completions`）、界面三区与斜杠/@/感叹号口诀，到四类资源（扩展加能力、Skills 加知识、模板加熟练、主题加好看）、`-p` 批处理模式、五类任务提示词（每类带验收话术）、扩展 vs MCP vs Skills 差异、10 个踩坑速查。核心提醒：默认无沙箱继承账户权限，跑真项目先 git commit。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/pi-coding-agent-getting-started-guide.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-31-spring-ai-2-rag-mcp-full-flow",
       "title": "新玩具到货：Spring AI 2.0 + RAG + MCP，Java生态的AI开发全流程",
@@ -5119,6 +5062,24 @@
       "wiki_status": "ingested"
     },
     {
+      "id": "2026-10-31-erp-architecture-design-8-part-index",
+      "title": "5.8 万字、23 章、48 张图：大型 ERP 产品架构设计（八篇全集）",
+      "path": "Archive/2026-10-31-erp-architecture-design-8-part-index.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/0lfZ0_CfM7KO59pXVYyPyw",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "大型 ERP 产品架构设计 8 篇连载的合集目录页。回答\"为什么 ERP 是企业软件里最难做的一门生意\"：同一系统要同时满足法定账与管理账、兼容集权与分权、支撑稳定与变化，扛住组织调整/并购/准则变化/技术换代。八篇从概念到落地：开篇（演化史）→ 骨架（架构方法论）→ 内核（组织/数据/协作/权限四大模型、应用架构、数据与技术架构）→ 运行（业财一体化、计划体系、关账全球化与性能）→ 反思（反模式、智能体时代）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/erp-architecture-design-8-part-index.md",
+      "wiki_status": "ingested"
+    },
+    {
       "id": "2026-10-31-minimax-mcode-stack-agent-workflow",
       "title": "MiniMax 开源「mcode-stack」：用 MiniMax Code 写 MiniMax Code 的全套工作流",
       "path": "Archive/2026-10-31-minimax-mcode-stack-agent-workflow.md",
@@ -5136,6 +5097,45 @@
       "summary": "微博博主「蚁工厂」转发 MiniMax 开源项目 mcode-stack（github.com/MiniMax-AI/mcode-stack）：一套\"用 MiniMax Code 写 MiniMax Code\"的全套工作流。聚焦 AI 编程工作流里的五个核心问题——代码质量保持、subagent 拆分判断、长命令等待、长会话防\"变傻\"、每轮上下文注入管理。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weibo-2194035935-5359269681561901.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-perf-cpu-hotspot-analysis",
+      "title": "性能分析 02｜如何使用 perf 排查：定位系统的性能问题",
+      "path": "Archive/2026-10-31-perf-cpu-hotspot-analysis.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "工具"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/oddXrYU4WDJFAEbLUG10Gw",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "本文是《性能分析》系列第 2 篇，讲解用 Linux perf 做 CPU 采样排查性能问题的完整路径：先确认工具、权限、符号与回溯方式四类前置条件，再以 `perf record`（cpu-clock:u、199Hz、帧指针）采集问题现场，用 `perf report` 交互界面先看大头热点、展开调用树把热点函数连回业务路径，最后给出 demo 复现命令与文本导出参数。火焰图留待下篇。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/perf-cpu-hotspot-analysis.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-pi-coding-agent-getting-started-guide",
+      "title": "Pi 保姆级教程：7000 字手把手从 0 到 1，把扩展生态一起打通",
+      "path": "Archive/2026-10-31-pi-coding-agent-getting-started-guide.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "工具",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/jLDgnYOymoIjrZTduazyyg",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "Pi（pi-coding-agent）1.4.0 保姆级实战教程（Windows 视角）。从两条安装路径（PowerShell / npm，Node ≥ 22.19）、自写 `~/.pi/agent/models.json` 接国内模型（SiliconFlow/DeepSeek/中转站，`api` 填 `openai-completions`）、界面三区与斜杠/@/感叹号口诀，到四类资源（扩展加能力、Skills 加知识、模板加熟练、主题加好看）、`-p` 批处理模式、五类任务提示词（每类带验收话术）、扩展 vs MCP vs Skills 差异、10 个踩坑速查。核心提醒：默认无沙箱继承账户权限，跑真项目先 git commit。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/pi-coding-agent-getting-started-guide.md",
       "wiki_status": "ingested"
     }
   ]
