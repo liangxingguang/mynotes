@@ -9,7 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [Java, 工程实践, 工具]
 asset_ref: Assets/2026/10/log4j2-thread-block-pitfalls.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 日志导致线程Block的这些坑，你不得不防

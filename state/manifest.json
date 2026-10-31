@@ -2926,6 +2926,18 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/ypHhsVCifGc3yaSBBN7YaQ",
       "asset_ref": "Assets/2026/10/local-message-table-distributed-transaction.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-28-log4j2-thread-block-pitfalls.md",
+      "sha256": "1d3506c64b45199bb0f1a530560b914781ff71c583d03f66a90684925bd57a02",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-28-log4j2-thread-block-pitfalls.md",
+      "pages": [
+        "wiki/sources/log4j2-thread-block-pitfalls.md",
+        "wiki/concepts/log4j2-async-logging-thread-blocking.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/nowNpIOHBFHD0pctcKr2UA",
+      "asset_ref": "Assets/2026/10/log4j2-thread-block-pitfalls.md"
     }
   ]
 }

@@ -9,7 +9,9 @@ created: 2026-10-28
 category: 技术
 tags: [Elasticsearch, 工程实践, Java]
 asset_ref: Assets/2026/10/meituan-waimai-search-elasticsearch-rle.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-31T03:51:50.886Z"
+ingest_claim_id: 56348-1793418710886-0
 ---
 
 # 美团外卖搜索基于Elasticsearch的优化实践

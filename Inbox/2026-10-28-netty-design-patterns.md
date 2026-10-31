@@ -9,7 +9,9 @@ created: 2026-10-28
 category: 技术
 tags: [netty, Java, 工程实践]
 asset_ref: Assets/2026/10/netty-design-patterns.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-31T03:51:59.985Z"
+ingest_claim_id: 25000-1793418719985-0
 ---
 
 # Netty中的设计模式：23种经典模式的工程实践

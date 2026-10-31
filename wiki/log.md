@@ -14,6 +14,7 @@
 -->
 
 - （暂无记录）
+- 2026-10-31 03:55 | ingest | raw/sources/architecture/2026-10-28-log4j2-thread-block-pitfalls.md | wiki/sources/log4j2-thread-block-pitfalls.md, wiki/concepts/log4j2-async-logging-thread-blocking.md
 - 2026-10-15 08:10 | migration | 采集→wiki 衔接契约（留证+pending 队列+跨层去重） | AGENTS.md §2.1/附录B.7, schemas/Source_Schema.md, .claude/skills/wiki-ingest/SKILL.md, CLAUDE.md, scripts/skills/index-rebuild.js, scripts/skills/daily-digest.js
 - 2026-10-15 23:37 | migration | 采集→wiki 异步贯通（队列状态机+queue-trigger/cron+存量回填） | AGENTS.md §2.1/附录B.8, CLAUDE.md, .claude/skills/wiki-ingest/SKILL.md, .claude/skills/git-backup/SKILL.md, scripts/skills/queue-claim.js, scripts/skills/queue-trigger.js, scripts/skills/queue-backfill.js, scripts/skills/lib/frontmatter.js
 - 2026-10-16 23:30 | migration | raw 信源页改为收录原文全文（不再写摘要；缺失则重抓，抓不到 fail） | AGENTS.md 附录B.7, schemas/Source_Schema.md, .claude/skills/wiki-ingest/SKILL.md（人工决策：raw 应自含全文证据）
