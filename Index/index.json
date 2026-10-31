@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31 19:45",
+  "updated_at": "2026-10-31 19:50",
   "notes": [
     {
       "id": "2026-10-31-batch-push-sharding-threadpool",
@@ -56,6 +56,25 @@
       "summary": "Java 程序员的 AI 应用开发教程——不用学 Python、不碰 LangChain，用 Spring AI 2.0 以写 Service 的姿势搭一个\"私人助手\"。七步走通全流程：ChatClient 对话 → defaultSystem 人设 → MessageChatMemoryAdvisor 记忆 → QuestionAnswerAdvisor + PgVector 读笔记（RAG）→ @Tool 方法查实时数据（Tool Calling）→ .entity() 返回结构化 Java 对象 → MCP Server 把工具暴露给其他 AI 客户端。核心卖点：换模型只改配置不改代码；MCP 是 AI 应用间的\"USB 接口\"。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/spring-ai-2-rag-mcp-full-flow.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-spring-interview-11-high-freq-topics",
+      "title": "Spring 面试 11 大高频考点全解：从 IOC/AOP 到事务失效与事件机制",
+      "path": "Inbox/2026-10-31-spring-interview-11-high-freq-topics.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "课程",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/SpHaBjO13VfcQap34ajgDg",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "Spring 面试八股总纲，11 大考点：BeanFactory vs ApplicationContext、IOC、DI、AOP、Spring MVC、`refresh()` 十二步、Bean 生命周期、三级缓存、JDK vs CGLIB、事务传播与隔离级别、事务失效 10 场景、`@Autowired` vs `@Resource`、事件机制。每个考点配对比表与面试话术。主线：Spring 高级能力全落在 `BeanPostProcessor` 扩展点；三级缓存存在的根本理由是让 AOP 代理在循环依赖时保持一致。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-SpHaBjO13VfcQap34ajgDg.md",
       "wiki_status": "pending"
     },
     {
