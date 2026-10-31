@@ -1,6 +1,25 @@
 {
-  "updated_at": "2026-10-31 16:49",
+  "updated_at": "2026-10-31 17:22",
   "notes": [
+    {
+      "id": "2026-10-31-codex-agent-harness-architecture-6",
+      "title": "Codex 桌面客户端开发（六）：Agent Harness 的架构设计",
+      "path": "Inbox/2026-10-31-codex-agent-harness-architecture-6.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/V-xHPeOXQk78iVLKaAPSTQ",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "Agent Harness 是组织模型与工具执行、管理任务进度、处理结束条件的运行时。本文阐述其模块边界（任务控制、操作记录、产物核验三模块分管状态）、状态模型（执行/操作/产物三种状态分离）、中断恢复与产物核验机制，并用 E1-E4 四组工程实验验证设计，最后给出架构改动的评测标准。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/codex-agent-harness-architecture-6.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
