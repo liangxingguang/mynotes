@@ -238,12 +238,15 @@
 - [[system-design-proximity-service|系统设计面试（第二卷）第01章：邻近服务]]（2026-10-24，系统设计/LBS）
 - [[system-design-notes-28-cases|知乎想法：system-design-notes——把系统设计面试浓缩成 28 个经典架构案例的开源笔记]]（2026-10-14，系统设计/学习资源）
 - [[tcp-retransmission-visualized|可视化 TCP 重传：终于有人将 TCP 传输讲明白了]]（2026-10-16，网络/TCP）
+- [[tcp-connection-full-lifecycle|从SYN到FIN：一个TCP连接的完整过程是怎样的？]]（2026-10-31，网络/TCP/状态机排障，四大功能+握手挥手+RTO/快重传/拥塞控制+Wireshark 实战，单信源一手，置信度高）
 - [[unyra-local-first-ai-learning-app|归一 Unyra：本地优先的探索式学习 AI 桌面应用（Electron + React）]]（2026-10-14，AI/学习工具）
+- [[uncle-bob-ub-mode-skill|Uncle Bob 给 Agent 写了一份开发 Skill（ub-mode）]]（2026-10-31，AI/Agent Skill/TDD，三段式执行+确定性工具验证+Clean 系纪律，单信源，置信度中）
 - [[vivo-diting-sensitive-word-matching|vivo谛听敏感词匹配系统技术实践：AC自动机+组合/拼音敏感词]]（2026-10-24，内容审核/算法）
 - [[vivo-live-im-message-architecture|vivo直播系统中IM消息模块的架构实践]]（2026-10-24，IM/直播消息/推拉结合）
 - [[wechat-live-chatroom-15m-online|微信直播聊天室单房间1500万在线的消息架构演进之路]]（2026-10-24，IM/直播聊天室/longpolling）
 - [[wechat-minigame-android-cross-process-livestream|微信小游戏直播在Android端的跨进程渲染推流实践]]（2026-10-24，Android/跨进程渲染）
 - [[weibo-gpt2-to-llama-tutorial|从零手写大模型进阶教程：从 GPT-2 到 LLaMA 的 4 个关键零件]]（2026-10-22，AI/教程资源，置信度中）
+- [[writing-craft-training-system|拆解《写作是门手艺》：普通人可复刻的完整写作训练体系]]（2026-10-31，写作/方法论，论证/结构/标题/故事/过程管理五块+兰德法则+四库积累，单信源，置信度中）
 - [[writing-8-frameworks|21 天学写作 Day10：让文章结构清晰的 8 个框架]]（2026-10-20，写作/方法论，置信度低）
 
 ## concept（概念）
@@ -338,6 +341,7 @@
 - [[netty-rpc-framework|基于 Netty 的轻量级 RPC 框架实现模式]]（协议信封 requestId 关联+长度域 mark/reset 拆粘包+JDK 动态代理+RpcFuture(CountDownLatch) 异步转同步+反射调用；与 Dubbo 八维工程化差距；系列收官实战单信源，置信度中）
 - [[netty-write-flush|Netty 写缓冲与背压（ChannelOutboundBuffer/writeAndFlush/高低水位）]]（write 入队 O(1)+flush 移指针+doWrite 才调 JDK 写；写自旋 16/OP_WRITE 半包续写/水位 64KB/32KB 背压；三信源互证，置信度高）
 - [[netty-zero-copy|Netty 零拷贝机制（FileRegion/CompositeByteBuf/wrappedBuffer/堆外内存）]]（零拷贝=无 CPU 参与的拷贝；sendfile 4 拷贝压成 2 次 DMA+doWrite 专门分支；Composite 组件数组逻辑拼接二分定位；FileRegion 单次使用+编解码跳过+Windows fallback；单信源，置信度中）
+- [[tcp-connection-lifecycle|TCP 连接生命周期与状态机]]（四大功能/三次握手/四次挥手/RTO/快重传/拥塞控制/TIME_WAIT 2MSL/状态机排障四场景；发送窗口=min(rwnd,cwnd)；Linux 默认 CUBIC；tcp_tw_recycle 已移除；单信源一手，置信度高）
 - [[notification-system-design|站内消息系统领域模型]]（公告/提醒/私信三分类+提醒四元组；拉（订阅驱动）/推（私信直写）按类选型；免打扰后置读路径，简书上下篇双信源）
 - [[okf-knowledge-format|OKF（面向 AI Agent 的知识包装规范）]]（入库时编译为互链 Markdown 树，运行时只做导航+摘录）
 - [[oom-troubleshooting|OOM 排查方法论]]（6 类 OOM 速查表 + 五步法 + 生产纪律：禁直接 jmap -dump、90% 代码问题、溢出≠泄漏、GC overhead limit 最危险，双信源，置信度中）

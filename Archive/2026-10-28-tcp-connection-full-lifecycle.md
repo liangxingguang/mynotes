@@ -9,7 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [计算机网络, 工程实践]
 asset_ref: Assets/2026/10/tcp-connection-full-lifecycle.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 从SYN到FIN：一个TCP连接的完整过程

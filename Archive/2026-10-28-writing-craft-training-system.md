@@ -9,7 +9,7 @@ created: 2026-10-28
 category: 学习
 tags: [写作, 思维方式]
 asset_ref: Assets/2026/10/writing-craft-training-system.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 拆解《写作是门手艺》：普通人可复刻的完整写作训练体系

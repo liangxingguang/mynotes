@@ -9,7 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [AI Coding, 工程实践]
 asset_ref: Assets/2026/10/uncle-bob-ub-mode-skill.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Uncle Bob 给 Agent 写了一份开发 Skill（ub-mode）

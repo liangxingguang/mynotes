@@ -3048,6 +3048,41 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/06rlJbQzvreFfbIE1iHqHQ",
       "asset_ref": "Assets/2026/10/programmer-overseas-remote-work.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-28-tcp-connection-full-lifecycle.md",
+      "sha256": "1d081c4563983e548f6f511d8f47d591fa26e287f6e35c9e3adc7b544327a7e0",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-28-tcp-connection-full-lifecycle.md",
+      "pages": [
+        "wiki/sources/tcp-connection-full-lifecycle.md",
+        "wiki/concepts/tcp-connection-lifecycle.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/oU6Zmnh0j3VmBw6DzYbYRQ",
+      "asset_ref": "Assets/2026/10/tcp-connection-full-lifecycle.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-28-uncle-bob-ub-mode-skill.md",
+      "sha256": "595cf6f0bd9f9239e37827f3306dfec6cf34540ac49030f9e412ea7020e3361f",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-28-uncle-bob-ub-mode-skill.md",
+      "pages": [
+        "wiki/sources/uncle-bob-ub-mode-skill.md",
+        "wiki/concepts/claude-skills.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/V24Epigc4bxE7vjufOOZ5Q",
+      "asset_ref": "Assets/2026/10/uncle-bob-ub-mode-skill.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-28-writing-craft-training-system.md",
+      "sha256": "f372f39a67ca51f7aae125e311b23f25272bce76e57cdf358ea8a5169b7676ee",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-28-writing-craft-training-system.md",
+      "pages": [
+        "wiki/sources/writing-craft-training-system.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/oiPx6PmVr9PXroE_pBcQhg",
+      "asset_ref": "Assets/2026/10/writing-craft-training-system.md"
     }
   ]
 }

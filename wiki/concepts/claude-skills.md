@@ -4,7 +4,7 @@ type: concept
 title: Claude Skills
 status: active
 created: 2026-10-30
-updated: 2026-10-30
+updated: 2026-10-31
 confidence: medium
 tags:
   - concept
@@ -12,6 +12,7 @@ tags:
   - claude
 sources:
   - raw/sources/ai/2026-10-28-claude-skills-guide.md
+  - raw/sources/ai/2026-10-28-uncle-bob-ub-mode-skill.md
 related:
   - wiki/concepts/prompt-injection.md
   - wiki/concepts/pi-customization-layers.md
@@ -32,6 +33,7 @@ Claude Skills 是 Anthropic 推出的模块化技能包机制：一个装着指�
 2. **按需加载**：存入账户后一句话唤醒，未用到不占用上下文。
 3. **可组合、可执行**：多个 Skill 可互相组合，也可写代码完成复杂任务。
 4. **构建元技能**：官方预置 Skill-Creator 专门帮助构建其他 Skill。
+5. **专业纪律包**：Skill 可将领域开发纪律（如 TDD、重构、Clean 系原则）固化为可执行指令，配合确定性工具验证质量——代表案例：Uncle Bob 的 ub-mode（见 [[uncle-bob-ub-mode-skill]]）。
 
 ## How It Works（运作方式）
 
@@ -52,6 +54,7 @@ Claude Skills 是 Anthropic 推出的模块化技能包机制：一个装着指�
 ## Evolution（演进）
 
 - 2026-10（信源时间）：Skills 2.0 增加内置断言评估、A/B 测试与触发词优化；第三方市场（SkillsMSP）与精选列表（Awesome Claude Skills）出现。
+- 2026-10-26：Uncle Bob 发布 `unclebob/ub-mode`——把 TDD/重构/Clean 系纪律压成一份 Agent Skill，三段式执行（先让它能工作→再把它做好→遵循实践要求），质量靠 Crapper/Dryer/Mutator 确定性工具验证而非 Agent 自述。标志着 Skills 从"通用知识包"向"专业开发纪律包"演进。
 
 ## Open Questions（开放问题）
 
@@ -61,9 +64,11 @@ Claude Skills 是 Anthropic 推出的模块化技能包机制：一个装着指�
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-10-28-claude-skills-guide.md`（专栏导览文，功能描述未经独立核验，confidence=medium）
+- Source: `raw/sources/ai/2026-10-28-uncle-bob-ub-mode-skill.md`（ub-mode 实测案例，SKILL.md 中文译文未经原作者审校，confidence=medium）
 
 ## Related Knowledge（相关知识）
 
 - [[claude-skills-guide|从 0 到 1 拆解 Claude Skills（SKILLS 专栏 01）]]
+- [[uncle-bob-ub-mode-skill|Uncle Bob 给 Agent 写了一份开发 Skill（ub-mode）]]
 - [[ai-coding-workflow-skill-prompt|一位 Agent 开发者的 AI Coding 工作流：轻 Skill、方法论 Prompt 与端到端测试]]
 - [[drawio-skill|drawio-skill]]（具体 Skill 实例）

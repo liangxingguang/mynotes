@@ -1,0 +1,149 @@
+---
+title: 从SYN到FIN：一个TCP连接的完整过程是怎样的？
+source: 微信公众号·dbaplus社群（原作者：知乎用户琳）
+source_url: https://mp.weixin.qq.com/s/oU6Zmnh0j3VmBw6DzYbYRQ
+source_type: article
+platform: 微信公众号
+captured: 2026-10-28
+registered_at: 2026-10-31
+inbox_ref: Inbox/2026-10-28-tcp-connection-full-lifecycle.md
+asset_ref: Assets/2026/10/tcp-connection-full-lifecycle.md
+---
+
+# 从SYN到FIN：一个TCP连接的完整过程是怎样的？
+
+跟着一个 TCP 连接从生到死走一遍，把零散知识点串成完整故事线，附 Wireshark 抓包实战。
+
+## 一、全局认知：TCP 到底在哪一层？
+
+TCP 工作在 OSI 第 4 层传输层，上是应用层（HTTP、Redis、MySQL），下是网络层（IP）。网络层不可靠——包可能丢、乱序、重复，TCP 在 IP 之上提供"可靠交付"抽象。
+
+一句话定义：**面向连接的、可靠的、基于字节流的、全双工的传输层协议**。
+
+**面试视角**：TCP vs UDP 不要只背"可靠/不可靠"。本质区别：TCP 在不可靠 IP 层上通过序列号、确认、重传、窗口等机制模拟出"可靠管道"；UDP 只是对 IP 包做薄封装（端口+校验和），几乎不提供额外保证。
+
+## 二、TCP 的核心功能：它到底解决了什么问题？
+
+握手只是手段，核心目标是四件事：
+
+| 功能 | 解决的问题 | 关键机制 |
+|---|---|---|
+| 可靠交付 | 丢包 | 序列号 + ACK + 超时重传 + 快速重传 |
+| 有序性 | 数据包乱序到达 | 序列号排序 + 接收缓冲区重组 |
+| 流量控制 | 发送太快，接收方处理不过来 | 滑动窗口（rwnd） |
+| 拥塞控制 | 发送太快，网络处理不过来 | 拥塞窗口（cwnd）+ 慢启动/拥塞避免/快恢复 |
+
+后两者区别：**流量控制是端到端的（怕接收方扛不住），拥塞控制是全局的（怕网络扛不住）**。
+
+## 三、连接建立：三次握手
+
+**1、为什么需要握手？** "面向连接"不是物理专线，而是传输前协商参数：初始序列号（ISN）、窗口大小、MSS、是否支持 SACK 等。
+
+**2、过程**：
+
+- 第一次：客户端 SYN=1, seq=x → SYN_SENT
+- 第二次：服务器 SYN=1, ACK=1, seq=y, ack=x+1 → SYN_RCVD
+- 第三次：客户端 ACK=1, seq=x+1, ack=y+1 → 双方 ESTABLISHED
+
+细节：SYN 和 FIN 包都消耗一个序列号，所以确认号 +1；普通数据包确认号是"期望收到的下一个字节序号"。
+
+**3、为什么三次不是两次？**
+
+1. **防止失效连接请求到达**：老 SYN 延迟到达时，两次握手会让服务器建多余连接；三次握手中客户端发现 seq 不对会回 RST 拒绝。
+2. **双方都需确认对方收发能力**：三次是"各发一个 SYN、各收一个 ACK"的最小次数。
+
+工程视角：第三次 ACK 可携带数据（HTTP/2 连接前言就是在第三次 ACK 后立刻发送的）。
+
+**4、SYN 洪水与半连接队列**：服务器收到 SYN 放入半连接队列并分配资源；攻击者大量发 SYN 不回 ACK 就占满队列。防御：SYN Cookies（连接信息编码进 seq，ACK 时再验证重建）、调大 tcp_max_syn_backlog、开 tcp_syncookies。
+
+## 四、数据传输：可靠交付与速率控制
+
+两条线：可靠性线（序列号、确认、重传）+ 速率控制线（流量控制、拥塞控制）。
+
+**1、序列号与确认号**：TCP 把数据看成无结构字节流，每字节有编号；ISN 握手时随机生成（防冲突和安全）。seq=本报文段首字节编号；ack=期望收到的下一字节编号，即"之前的全收到了"——**累计确认**。例：发 seq=100 带 20 字节 → 回 ack=120。
+
+**2、超时重传（RTO）**：RTO 按 RTT 动态计算（Jacobson 算法）：
+
+- SRTT ← (1-α)×SRTT + α×RTT_sample（α=1/8）
+- RTTVAR ← (1-β)×RTTVAR + β×|SRTT-RTT_sample|（β=1/4）
+- RTO = SRTT + 4×RTTVAR
+
+网络越不稳 RTO 越大。超时重传惩罚很重：ssthresh 降为窗口一半，cwnd 降为 1 重新慢启动。
+
+工程视角：`ss -ti dst 10.0.0.1` 查看连接的 RTT、RTO、cwnd，排查"连接为什么这么慢"。
+
+**3、快速重传**：收到 3 个重复 ACK（共 4 个相同 ack）直接重传不等超时。1-2 个重复 ACK 可能只是乱序，3 个以上基本确定丢包。之后进快恢复而非 cwnd 降 1。
+
+**4、滑动窗口**：告别"停等协议"，可连续发多个报文段不等逐个确认。收到新 ACK → 左边界右移；接收方处理数据 → 右边界右移。窗口越大在途数据越多，吞吐越高。窗口能开多大由 rwnd 和 cwnd 共同约束。
+
+**5、流量控制（rwnd）**：接收方在 ACK 的 Window 字段告知缓冲区剩余空间，发送窗口不超 rwnd。rwnd=0 时发送方停发，靠**零窗口探测**（定期发 1 字节探测包）等恢复。经典坑**糊涂窗口综合征**：接收方每次只释放 1 字节导致网络充斥小包；解法：接收方攒够大窗口再通知，发送方用 Nagle 合并小包。
+
+**6、拥塞控制（cwnd）**四个算法：
+
+1. **慢启动**：cwnd 从 1 MSS 起，每 ACK +1，每 RTT 翻倍（指数增长，一点也不慢），到 ssthresh 切换拥塞避免。
+2. **拥塞避免**：每 RTT cwnd +1 线性增长。AIMD（加性增、乘性减），让所有连接公平共享带宽。
+3. **快重传**：3 个重复 ACK 即重传。
+4. **快恢复**：ssthresh=cwnd/2；cwnd=ssthresh+3；每重复 ACK cwnd+1；收到新 ACK 后 cwnd=ssthresh 进拥塞避免。
+
+工程视角：Linux 默认用 **CUBIC**（RFC 8312）而非经典 Reno，三次曲线增长在高带宽长延迟网络更好。`sysctl net.ipv4.tcp_congestion_control` 查看。
+
+**7、三者协作一个公式**：
+
+```
+实际发送窗口 = min(rwnd, cwnd)
+```
+
+滑动窗口提供"可以连续发多少"的框架；rwnd 端到端匹配；cwnd 全局匹配。取小值，既不淹没接收方也不淹没网络。
+
+## 五、连接关闭：四次挥手与 TIME_WAIT
+
+**1、为什么四次**：全双工两个方向分别关闭。客户端 FIN → FIN_WAIT_1；服务器 ACK → 客户端 FIN_WAIT_2、服务器 CLOSE_WAIT；服务器 FIN → LAST_ACK；客户端 ACK → TIME_WAIT，服务器 CLOSED；客户端等 2MSL 后 CLOSED。ACK 和 FIN 不能合并：服务器收到 FIN 时可能还有数据没发完，只能先 ACK，发完再 FIN。
+
+**2、TIME_WAIT 为什么等 2MSL**：
+
+1. 保证最后一个 ACK 能到达：丢了服务器会重发 FIN，客户端还有机会重发 ACK；
+2. 让旧连接残留报文在网络中消失，防被同四元组新连接误收。
+
+MSL 建议 2 分钟，Linux 实际 30 秒，TIME_WAIT 约 1 分钟。
+
+**3、CLOSE_WAIT 堆积**：说明服务器没调 close()。常见原因：异常分支没关连接、连接池泄漏、对方关了但你还在等数据。
+
+```bash
+ss -ant | awk '{print $1}' | sort | uniq -c    # 各状态连接数
+ss -antp state close-wait                      # CLOSE_WAIT 连接的进程
+```
+
+**TIME_WAIT 过多通常不是问题（有 tcp_tw_reuse 可优化），CLOSE_WAIT 过多一定是应用层 bug，别搞混。**
+
+## 六、TCP 有限状态机：排障实战
+
+核心三阶段：建立 → 传输 → 关闭。理解"为什么需要这个中间状态"就不用死记。状态机让你从"记步骤"升级到"看全局"——netstat/ss 看到异常状态立刻知道卡在哪。
+
+**场景一：CLOSE_WAIT 大量堆积**——几千几万 100% 应用层 bug。下一步是 LAST_ACK，触发条件是应用层 close()；卡住说明对方发了 FIN 而你的程序没 close。原因：异常分支没关连接、连接池泄漏、线程阻塞在 read。
+
+**场景二：SYN_RECV 大量堆积**——半连接队列爆，SYN 洪水特征。`ss -lnt | grep :80`（Send-Q 是当前 SYN_RECV 数，Recv-Q 是全连接队列 backlog）。防御：tcp_syncookies、调大 tcp_max_syn_backlog。
+
+**场景三：FIN_WAIT_2 大量堆积**——主动关闭方等对方 FIN。卡住说明对方收到 FIN 回了 ACK 但迟迟不发 FIN：对方应用层也在 CLOSE_WAIT（对方有 bug）或对方宕机。tcp_fin_timeout 默认 60 秒超时回收。
+
+**场景四：TIME_WAIT 过多**——高并发短连接几万个 TIME_WAIT 常见，不一定是问题。耗尽端口时优化：tcp_tw_reuse=1、调大 ip_local_port_range、根本解法是长连接替短连接。**注意 tcp_tw_recycle 已在 Linux 4.12 移除，不要再用。**
+
+## 七、Wireshark 实战
+
+**TCP 首部 6 个标志位**：SYN（建连）、ACK（确认有效）、FIN（请求关闭）、RST（异常复位）、PSH（立即交应用层）、URG（紧急指针有效）。
+
+**抓包序列号变化**（curl 一次 HTTP）：
+
+- 第 1 包 SYN，seq=0（Wireshark 显示相对序列号）
+- 第 2 包 SYN+ACK，ack=1（SYN 消耗一个序列号）
+- 第 4 包发 77 字节，seq=1；第 5 包 ack=78（1+77）
+- 第 9 包 FIN，seq=78；第 10 包 ack=79（FIN 也消耗一个序列号）
+
+**过滤技巧**：`tcp.flags.syn==1` 过滤握手包；`tcp.analysis.retransmission` 找重传。
+
+## 八、复盘总结
+
+TCP 设计极其精妙：从 1981 年 RFC 793 至今四十多年仍是互联网基石。"序列号 + 确认 + 重传 + 窗口"背后是对"如何在不可靠网络上构建可靠服务"的深刻回答。
+
+**参考资料**：RFC 793（TCP 基础）、RFC 5681（拥塞控制）、RFC 8312（CUBIC）、《TCP/IP 详解 卷 1》
+
+作者丨知乎用户琳｜来源：https://zhuanlan.zhihu.com/p/2075189264237838600 ｜via dbaplus 社群
