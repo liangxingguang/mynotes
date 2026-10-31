@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31 21:01",
+  "updated_at": "2026-10-31 21:05",
   "notes": [
     {
       "id": "2026-10-31-agent-harness-essay-ideal-harness",
@@ -18,7 +18,7 @@
       "summary": "作者手搓 Harness 后的思考：软件行业当下的第一要务是找到顺手的工作流、靠高质量 SOTA model token 快速迭代（personal RSI），而 Harness 作为人与 AI 的对接口是关键。核心主张：以 Session 为核心重构、做 Harness of Harness、审美是 Harness 寿命与粘性的底层保障、Agent as Memory、Agent Search 二分法。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/zhihu-20261031-2096275149876216777.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-31-arthas-01-attach-first-conclusion",
@@ -189,6 +189,25 @@
       "summary": "一道并发高频面试题。表面考池子实现，实际考「分治型任务怎么调度」；准确答案不是「它更快」，而是「它在一种特定任务上更快」——能递归拆分的 CPU 密集任务。快在两层：队列分散到每线程一个双端队列、工作窃取两端取方向错开；`join` 等待时顺手干活不空转。命门是对阻塞任务毫无办法，`commonPool` 里千万别放阻塞逻辑。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-OWGCpNVxy0HpPvn8aq1eCA.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-openfeign-thread-pool-isolation",
+      "title": "OpenFeign 服务远程调用 + 线程池隔离架构实战（连载十）",
+      "path": "Inbox/2026-10-31-openfeign-thread-pool-isolation.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/4XSWHzkY-8smMJ7pOGIatQ",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "公众号「架构落地笔记」大宗商品销采运储系统六层架构连载第十篇（公共中间件层），讲服务间远程调用治理：OpenFeign 的超时/重试/日志三项生产配置、四类线程池隔离、5 条避坑规范。定调一句——Sentinel 守入口、OpenFeign 守通信。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-4XSWHzkY-8smMJ7pOGIatQ.md",
       "wiki_status": "pending"
     },
     {
