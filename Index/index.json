@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31 21:41",
+  "updated_at": "2026-10-31 22:05",
   "notes": [
     {
       "id": "2026-10-31-arthas-04-watch-trace-tt",
@@ -265,6 +265,120 @@
       "summary": "这是公众号「Leo聊系统思维」的图文专辑《系统思维》，共 6 篇，主题是系统架构设计与系统底层思维。6 篇的条目链接已全部拿到（靠专辑 URL 加 `&f=json`），但**正文尚未采集**——本次只落了专辑目录，单篇正文需要逐篇抓取，说一声就抓。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-album-4732715055413035015-json.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-xitongsiwei-01-gaogao-chengben",
+      "title": "架构最高的成本：不是技术选错，是同一个概念，大家理解不一致",
+      "path": "Inbox/2026-10-31-xitongsiwei-01-gaogao-chengben.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzk2NDg1NzQ2NQ==&mid=2247483871&idx=1&sn=6cbf4dd499608f1cd338ac26ae1a1a6d&chksm=c46c5ac9f31bd3df8c44da74f78580251f8001856104a59c88c7133075462c29ec1bad184300",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "系统思维专辑第 1 篇。以\"域控制器\"一词为例讲清一件事：架构里最贵的成本不是技术选错，是同一个词没人说清它的边界——硬件、软件、系统三种说法各自都对，但边界从不重合。全文讲清概念的内涵与外延、\"系统概念\"与\"概念\"方向相反、以及\"概念不是系统\"。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xitongsiwei-01-gaogao-chengben.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-xitongsiwei-02-baowen-shujuliu-kongzhiliu",
+      "title": "同一个报文，一半是数据流，一半是控制流",
+      "path": "Inbox/2026-10-31-xitongsiwei-02-baowen-shujuliu-kongzhiliu.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzk2NDg1NzQ2NQ==&mid=2247483902&idx=1&sn=2acae563f7917c769d937ce31a2b2e3c&chksm=c46c5ae8f31bd3fe111089fda20d0901e51a42c6a95545d9acf64e2e6d8a9e2d28f175ed2c9f",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "系统思维专辑第 2 篇。用一段支付报文讲清数据流与控制流的分界——判断依据不是格式而是用途，同一个 JSON 里 `action`/`timeout` 是控制数据，`order_no`/`user_id`/`amount`/`goods_name` 是业务数据。讲清标准 DFD 该怎么画、控制流该换哪三种图表达。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xitongsiwei-02-baowen-shujuliu-kongzhiliu.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-xitongsiwei-03-8-difang-nengli",
+      "title": "架构师必须具备的 8 个底层能力",
+      "path": "Inbox/2026-10-31-xitongsiwei-03-8-difang-nengli.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzk2NDg1NzQ2NQ==&mid=2247483912&idx=1&sn=a7aea77a98d098b78340384567fcc883&chksm=c46c591ef31bd0080b53063ccbaa274ee666a9b18dfdc79933ce6cd0db0381959eebcb9d46f8",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "系统思维专辑第 3 篇（也是你发来链接里 `scenenote=` 指向的那篇）。先分清\"架构\"与\"架构描述\"：架构在系统里，描述在纸面上，图不是架构、是对架构的一次拍照。然后拆成八个动作：抽象、聚焦、分解、边界、契约、权衡、适配约束、可演化。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xitongsiwei-03-8-difang-nengli.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-xitongsiwei-04-concept-design",
+      "title": "手把手教你如何做系统概念设计",
+      "path": "Inbox/2026-10-31-xitongsiwei-04-concept-design.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzk2NDg1NzQ2NQ==&mid=2247483942&idx=1&sn=cd1b761bf8cf7ac338cfde71747553b9&chksm=c46c5930f31bd0261ffa81c73718795ef1c2294af7ab938b3d9183e7205f2fafb71958b9b21b",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "系统思维专辑第 4 篇。系统概念 = 在系统还没拆开之前，对它的角色、对外能力、边界和约束做的一次整体描述。全文给六步：运行分析、划边界、黑盒能力、约束与假设、候选概念权衡、定指标冻结基线，并给四问验收。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xitongsiwei-04-concept-design.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-xitongsiwei-05-gainian-guanxitu",
+      "title": "系统工程师必须掌握的架构概念关系图",
+      "path": "Inbox/2026-10-31-xitongsiwei-05-gainian-guanxitu.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzk2NDg1NzQ2NQ==&mid=2247484017&idx=1&sn=e12e2a2f113c00ee1a67449f1764d067&chksm=c46c5967f31bd0710443d434fa4bb45dfeeb4d6309eaa5c420ccab4172fb17c9935dd0d29060",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "系统思维专辑第 5 篇。以评审会上五层十二模块的架构图开场——它没有错误，只是回避了架构最核心的问题。全文拆解 ISO/IEC/IEEE 42010 的架构概念元模型：左侧是人与诉求（关注对象/环境/干系人/立场/关注点），右侧是视图与设计（视点/视图/架构描述/架构），四条逻辑线顺序不能颠倒。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xitongsiwei-05-gainian-guanxitu.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-xitongsiwei-06-workbuddy-manage",
+      "title": "用不好 workbuddy 智能体？你需要掌握这三个管理工具",
+      "path": "Inbox/2026-10-31-xitongsiwei-06-workbuddy-manage.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工具"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzk2NDg1NzQ2NQ==&mid=2247484036&idx=1&sn=4847913a39b975d248eab34473dbaea3&chksm=c46c5992f31bd0843a390729e98216c6844deef55f6589b2035292b33f8367ad2213fef71921",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "系统思维专辑第 6 篇。100 天 WorkBuddy 落地，很少遇到\"模型能力不够\"——真正限制智能体效果的不是模型能力，而是人的管理能力。全文给三套工具：WBS 工作包拆解（事前）、交付约定（事中）、Scrum Sprint 迭代（事后），并强调顺序就是完整闭环。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xitongsiwei-06-workbuddy-manage.md",
       "wiki_status": "pending"
     },
     {
