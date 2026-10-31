@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31 20:03",
+  "updated_at": "2026-10-31 20:09",
   "notes": [
     {
       "id": "2026-10-31-architecture-science-and-art-42-rules",
@@ -40,25 +40,6 @@
       "wiki_status": "pending"
     },
     {
-      "id": "2026-10-31-niche-product-selection-methodology",
-      "title": "“小众需求”选品方法论：如何发现未被满足的细分需求",
-      "path": "Inbox/2026-10-31-niche-product-selection-methodology.md",
-      "created": "2026-10-31",
-      "category": "学习",
-      "tags": [
-        "课程",
-        "创业"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/J_990Xv2Hsqlh0NmOYLujw",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "给独立开发者的选品方法论。定义\"小众需求\"为第三条路——**一个足够具体、有人愿意付钱、但大公司嫌市场太小不值得做**的问题，这是独立开发者的天然生态位。给出 7 个需求发现渠道（差评挖掘 / Reddit·V2EX·HN 的\"有没有…\"帖 / 自己的痛点 / 垂直行业×通用工具交集 / 趋势前沿 / 竞品停更后的用户流失 / 现有用户的新功能请求）、5 维需求评估（支付意愿、市场规模、竞争程度、能力匹配、获客渠道）、两层市场规模算账公式，以及 3 种 MVP 快速验证方式与两个可查证案例（Plausible Analytics、Sidekiq）。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-J990Xv2Hsqlh0NmOYLujw.md",
-      "wiki_status": "ingesting"
-    },
-    {
       "id": "2026-10-31-points-system-architecture-design",
       "title": "架构设计 | 积分系统：并发扣减、分批过期、幂等、冲正与对账",
       "path": "Inbox/2026-10-31-points-system-architecture-design.md",
@@ -75,6 +56,25 @@
       "summary": "从一笔积分消费推演整个积分系统架构——110 积分（50 于 9/30 到期 + 60 于 12/31 到期）消费 80，客户端超时重试、几天后订单退款。难点不在加减，而在回答\"第一次成功没有、重试会不会重复扣、80 来自哪些批次、退款怎么退、缓存/MQ/过期任务失败后怎样证明余额仍正确\"。八步推演：定不变量 → 总体架构 → 6 类数据模型 → 写入链路 → 异常恢复 → 扩展 → 上线 → 演进。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-o5i4O-fJItMXZO3vnv4AQ.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-scaling-pain-coding-agent-inference",
+      "title": "Scaling Pain：超大规模 Coding Agent 推理实践（GLM-5 / SGLang）",
+      "path": "Inbox/2026-10-31-scaling-pain-coding-agent-inference.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "AI"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2033130936229959142",
+      "source_type": "article",
+      "platform": "知乎",
+      "summary": "GLM-5 线上 Coding Agent 场景出现乱码、复读、偶现生僻字，标准推理环境不复现、只在高并发长上下文下触发。团队数周定位出两个相互独立的底层竞态（PD 分离下 KV Cache 复用竞态、HiCache 加载时序缺失），并给出 LayerSplit 分层存储优化。方法论亮点：用**投机采样指标**做异常检测，把一项性能优化技术变成输出质量的实时监控信号。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/zhihu-20261031-2033130936229959142.md",
       "wiki_status": "pending"
     },
     {
@@ -5211,6 +5211,25 @@
       "summary": "微博博主「蚁工厂」转发 MiniMax 开源项目 mcode-stack（github.com/MiniMax-AI/mcode-stack）：一套\"用 MiniMax Code 写 MiniMax Code\"的全套工作流。聚焦 AI 编程工作流里的五个核心问题——代码质量保持、subagent 拆分判断、长命令等待、长会话防\"变傻\"、每轮上下文注入管理。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weibo-2194035935-5359269681561901.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-niche-product-selection-methodology",
+      "title": "“小众需求”选品方法论：如何发现未被满足的细分需求",
+      "path": "Archive/2026-10-31-niche-product-selection-methodology.md",
+      "created": "2026-10-31",
+      "category": "学习",
+      "tags": [
+        "课程",
+        "创业"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/J_990Xv2Hsqlh0NmOYLujw",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "给独立开发者的选品方法论。定义\"小众需求\"为第三条路——**一个足够具体、有人愿意付钱、但大公司嫌市场太小不值得做**的问题，这是独立开发者的天然生态位。给出 7 个需求发现渠道（差评挖掘 / Reddit·V2EX·HN 的\"有没有…\"帖 / 自己的痛点 / 垂直行业×通用工具交集 / 趋势前沿 / 竞品停更后的用户流失 / 现有用户的新功能请求）、5 维需求评估（支付意愿、市场规模、竞争程度、能力匹配、获客渠道）、两层市场规模算账公式，以及 3 种 MVP 快速验证方式与两个可查证案例（Plausible Analytics、Sidekiq）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-J990Xv2Hsqlh0NmOYLujw.md",
       "wiki_status": "ingested"
     },
     {

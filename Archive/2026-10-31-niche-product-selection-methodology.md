@@ -11,9 +11,7 @@ tags:
   - 课程
   - 创业
 asset_ref: Assets/2026-10/weixin-20261031-J990Xv2Hsqlh0NmOYLujw.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-10-31T11:55:42.054Z"
-ingest_claim_id: 32600-1793447742054-0
+wiki_status: ingested
 ---
 
 # “小众需求”选品方法论：如何发现未被满足的细分需求

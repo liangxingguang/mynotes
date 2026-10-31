@@ -4,7 +4,7 @@ type: concept
 title: 创业点子生成与评估框架（YC）
 status: active
 created: 2026-10-27
-updated: 2026-10-27
+updated: 2026-10-31
 confidence: medium
 tags:
   - concept
@@ -61,6 +61,7 @@ Q1 创始人-市场匹配（最重要）→ Q2 市场规模（大或高增长）
 ### Related Concepts（相关概念）
 
 - [[pm-decision-frameworks|产品决策四框架]]：同为决策方法论；四框架面向产品决策取舍，本框架面向点子生成与筛选。
+- [[niche-product-selection|小众选品方法论（独立开发者）]]：面向单人独立开发场景，强调细分市场发现与支付意愿验证；与本框架（一般创业点子生成与评估）互补。
 
 ### Distinctions（区分）
 
