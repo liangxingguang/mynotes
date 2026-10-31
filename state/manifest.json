@@ -3284,6 +3284,19 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/oddXrYU4WDJFAEbLUG10Gw",
       "asset_ref": "Assets/2026/10/perf-cpu-hotspot-analysis.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-31-batch-push-sharding-threadpool.md",
+      "sha256": "65bb5068f683f4edfc324db80481596308ac9718ac690e60bcb0adfffa14db9b",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-31-batch-push-sharding-threadpool.md",
+      "pages": [
+        "wiki/sources/batch-push-sharding-threadpool.md",
+        "wiki/concepts/batch-message-push.md",
+        "wiki/concepts/cursor-sharding.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/dfDkmuLgFb6HIyhOKduPZg",
+      "asset_ref": "Assets/2026/10/weixin-20261031-dfDkmuLgFb6HIyhOKduPZg.md"
     }
   ]
 }
