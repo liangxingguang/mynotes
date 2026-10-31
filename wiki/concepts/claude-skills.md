@@ -14,6 +14,7 @@ sources:
   - raw/sources/ai/2026-10-28-claude-skills-guide.md
   - raw/sources/ai/2026-10-28-uncle-bob-ub-mode-skill.md
   - raw/sources/ai/2026-10-28-ste-zh-skill.md
+  - raw/sources/ai/2026-10-31-agent-harness-essay-ideal-harness.md
 related:
   - wiki/concepts/prompt-injection.md
   - wiki/concepts/pi-customization-layers.md
@@ -36,6 +37,7 @@ Claude Skills 是 Anthropic 推出的模块化技能包机制：一个装着指�
 4. **构建元技能**：官方预置 Skill-Creator 专门帮助构建其他 Skill。
 5. **专业纪律包**：Skill 可将领域开发纪律（如 TDD、重构、Clean 系原则）固化为可执行指令，配合确定性工具验证质量——代表案例：Uncle Bob 的 ub-mode（见 [[uncle-bob-ub-mode-skill]]）。
 6. **行为规范化包**：Skill 也可约束 Agent 的行为输出——如 ste-zh 借鉴 ASD-STE100 受控语言原则规范 Agent 的中文汇报（见 [[ste-zh-skill]]），与 ub-mode 管开发纪律互补，一个管"怎么说"，一个管"怎么做"。
+7. **激活式 token 账**：Skill 的描述只在激活时进入上下文——Harness 随笔作者据此主张把 Session 级管理做成 CLI + 斜杠命令（近似 Skill），"不激活这个 Skill，就不用让模型付出这部分 Token tax"，并与 MCP 全量注入的 token 成本对照（见 [[agent-harness-essay-ideal-harness]]）；作者同时指出严格说这更像斜杠命令——只有用户手动激活，模型才能得到这部分描述。
 
 ## How It Works（运作方式）
 
@@ -57,6 +59,7 @@ Claude Skills 是 Anthropic 推出的模块化技能包机制：一个装着指�
 
 - 2026-10（信源时间）：Skills 2.0 增加内置断言评估、A/B 测试与触发词优化；第三方市场（SkillsMSP）与精选列表（Awesome Claude Skills）出现。
 - 2026-10-26：Uncle Bob 发布 `unclebob/ub-mode`——把 TDD/重构/Clean 系纪律压成一份 Agent Skill，三段式执行（先让它能工作→再把它做好→遵循实践要求），质量靠 Crapper/Dryer/Mutator 确定性工具验证而非 Agent 自述。标志着 Skills 从"通用知识包"向"专业开发纪律包"演进。
+- 2026-10-31：Harness 随笔（第 4 信源）补上**激活式 token 账**视角——Skill 描述按需加载的特性使其可作为"不激活不付费"的 Session 管理入口，与 MCP 全量注入形成成本对照；作者称其理想形态更接近用户手动激活的斜杠命令（同一主张在 [[context-management|上下文管理]] 第 3 信源同步记录）。
 
 ## Open Questions（开放问题）
 
@@ -68,6 +71,7 @@ Claude Skills 是 Anthropic 推出的模块化技能包机制：一个装着指�
 - Source: `raw/sources/ai/2026-10-28-claude-skills-guide.md`（专栏导览文，功能描述未经独立核验，confidence=medium）
 - Source: `raw/sources/ai/2026-10-28-uncle-bob-ub-mode-skill.md`（ub-mode 实测案例，SKILL.md 中文译文未经原作者审校，confidence=medium）
 - Source: `raw/sources/ai/2026-10-28-ste-zh-skill.md`（ste-zh 汇报规范 Skill，微博帖子信息量有限，confidence=medium）
+- Source: `raw/sources/ai/2026-10-31-agent-harness-essay-ideal-harness.md`（第 4 信源：激活式 token 账主张，个人体验随笔，confidence=medium）
 
 ## Related Knowledge（相关知识）
 
@@ -76,3 +80,4 @@ Claude Skills 是 Anthropic 推出的模块化技能包机制：一个装着指�
 - [[ste-zh-skill|ste-zh：借鉴 ASD-STE100 的 AI Agent 中文汇报规范 Skill]]
 - [[ai-coding-workflow-skill-prompt|一位 Agent 开发者的 AI Coding 工作流：轻 Skill、方法论 Prompt 与端到端测试]]
 - [[drawio-skill|drawio-skill]]（具体 Skill 实例）
+- [[agent-harness-essay-ideal-harness|Agent Harness 随笔：我理想中的 Harness（信源页）]]

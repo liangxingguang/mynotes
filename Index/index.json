@@ -1,44 +1,6 @@
 {
-  "updated_at": "2026-10-31 21:14",
+  "updated_at": "2026-10-31 21:26",
   "notes": [
-    {
-      "id": "2026-10-31-agent-harness-essay-ideal-harness",
-      "title": "Agent Harness 随笔：我理想中的 Harness",
-      "path": "Inbox/2026-10-31-agent-harness-essay-ideal-harness.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "AI"
-      ],
-      "source": "知乎专栏",
-      "source_url": "https://zhuanlan.zhihu.com/p/2096275149876216777",
-      "source_type": "article",
-      "platform": "知乎",
-      "summary": "作者手搓 Harness 后的思考：软件行业当下的第一要务是找到顺手的工作流、靠高质量 SOTA model token 快速迭代（personal RSI），而 Harness 作为人与 AI 的对接口是关键。核心主张：以 Session 为核心重构、做 Harness of Harness、审美是 Harness 寿命与粘性的底层保障、Agent as Memory、Agent Search 二分法。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/zhihu-20261031-2096275149876216777.md",
-      "wiki_status": "ingesting"
-    },
-    {
-      "id": "2026-10-31-ai-kb-build-workbuddy-ima-wiki",
-      "title": "分享一套超赞的AI知识库搭建方法，让沉睡的数据变成可复用的经验",
-      "path": "Inbox/2026-10-31-ai-kb-build-workbuddy-ima-wiki.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "工具"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/qggQE_Au5uhVK9yGAgbl6g",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "公众号「咘噜鸭」讲用 WorkBuddy + ima + Wiki 的思路搭建可复用知识库。出发点是 Karpathy 的主张：不要把 LLM 当搜索引擎，而是让它像程序员写代码一样持续维护一个 Markdown 知识库。文章给出 7 步搭建流程、三个文件夹的分工，以及一份让 AI 真能连得上页面的维护约定。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-qggQE_Au5uhVK9yGAgbl6g.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-31-arthas-01-attach-first-conclusion",
       "title": "Arthas 上手：从 attach 到第一个结论，6 个命令够用",
@@ -56,7 +18,7 @@
       "summary": "官方文档很全，但新手卡在三件事：怎么挂、挂上去敲什么、什么时候退出。这篇按顺序讲清 attach 的两种方式与三类失败原因、6 个命令对应 6 类问题、三个最容易踩的参数细节、退出清理，以及 4 条生产纪律。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-arthas-01-attach-first-conclusion.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-31-arthas-02-ai-arthas",
@@ -75,7 +37,7 @@
       "summary": "Arthas 命令不多，真正难的是看到输出之后怎么判断。这篇把排查拆成 4 个环节——从现象选命令、读懂线程栈、写对 watch 表达式、把结论变成下一步，说明 AI 在哪一步最有用，以及三件绝对不能交给它做的事。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-arthas-02-ai-arthas.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-31-arthas-03-thread-command",
@@ -94,7 +56,7 @@
       "summary": "线程问题的难点不在命令，在读栈：同样是\"卡住\"，可能是 RUNNABLE 在等 IO、BLOCKED 在等锁、或者线程池根本没空闲线程。这篇讲 thread 的三条用法、读栈的顺序、线程池耗尽的识别方法，以及三个最容易误判的地方。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-arthas-03-thread-command.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-31-arthas-04-watch-trace-tt",
@@ -113,7 +75,7 @@
       "summary": "三个命令都在\"看方法\"，分工却完全不同：trace 看耗时卡在哪一层，watch 看数据对不对，tt 把一次调用的现场存下来、事后回放。这篇讲清三者的选择、各自的参数纪律，以及为什么 trace 一定要加次数限制。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-arthas-04-watch-trace-tt.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-31-arthas-05-jad-hot-reload",
@@ -341,6 +303,25 @@
       "summary": "这是公众号「奇点智慧小助手」的图文专辑《arthas使用》，共 7 篇 Arthas 线上问题排查系列，按正序编号 1–7。**7 篇正文与链接已全部采集完成**（见文末清单）：专辑页本体是 JS 动态渲染、正文拿不到，但给专辑链接加 `&f=json` 会直接返回含全部条目 URL 的 JSON，据此逐篇抓取成功。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-album-4743203736426643461.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-weixin-album-system-thinking",
+      "title": "公众号图文专辑《系统思维》目录（Leo聊系统思维 · 6 篇）",
+      "path": "Inbox/2026-10-31-weixin-album-system-thinking.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk2NDg1NzQ2NQ==&action=getalbum&album_id=4732715055413035015&subscene=169",
+      "source_type": "album",
+      "platform": "微信公众号",
+      "summary": "这是公众号「Leo聊系统思维」的图文专辑《系统思维》，共 6 篇，主题是系统架构设计与系统底层思维。6 篇的条目链接已全部拿到（靠专辑 URL 加 `&f=json`），但**正文尚未采集**——本次只落了专辑目录，单篇正文需要逐篇抓取，说一声就抓。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-album-4732715055413035015-json.md",
       "wiki_status": "pending"
     },
     {
@@ -5344,6 +5325,44 @@
       "summary": "电商大促中优惠券贪心策略算出非全局最优实付引发客诉的治理方案。核心不是算法题，而是\"规则控制面 + 寻优计算面\"分离的控制面设计：DDD 领域模型收敛多变规则、规则引擎与 DFS 回溯算法职责隔离、四层剪枝压缩搜索空间、降级与快照兜底守住预计算链路。贪心的缺陷是策略边界（只看单券局部收益），DP 则被异构约束（互斥/门槛/优先级/赠品）的爆炸状态空间排除。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/coupon-optimal-combination-dfs-ddd.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-agent-harness-essay-ideal-harness",
+      "title": "Agent Harness 随笔：我理想中的 Harness",
+      "path": "Archive/2026-10-31-agent-harness-essay-ideal-harness.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "AI"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2096275149876216777",
+      "source_type": "article",
+      "platform": "知乎",
+      "summary": "作者手搓 Harness 后的思考：软件行业当下的第一要务是找到顺手的工作流、靠高质量 SOTA model token 快速迭代（personal RSI），而 Harness 作为人与 AI 的对接口是关键。核心主张：以 Session 为核心重构、做 Harness of Harness、审美是 Harness 寿命与粘性的底层保障、Agent as Memory、Agent Search 二分法。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/zhihu-20261031-2096275149876216777.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-ai-kb-build-workbuddy-ima-wiki",
+      "title": "分享一套超赞的AI知识库搭建方法，让沉睡的数据变成可复用的经验",
+      "path": "Archive/2026-10-31-ai-kb-build-workbuddy-ima-wiki.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工具"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/qggQE_Au5uhVK9yGAgbl6g",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "公众号「咘噜鸭」讲用 WorkBuddy + ima + Wiki 的思路搭建可复用知识库。出发点是 Karpathy 的主张：不要把 LLM 当搜索引擎，而是让它像程序员写代码一样持续维护一个 Markdown 知识库。文章给出 7 步搭建流程、三个文件夹的分工，以及一份让 AI 真能连得上页面的维护约定。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-qggQE_Au5uhVK9yGAgbl6g.md",
       "wiki_status": "ingested"
     },
     {

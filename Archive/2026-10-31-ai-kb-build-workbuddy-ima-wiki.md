@@ -11,7 +11,7 @@ tags:
   - AI
   - 工具
 asset_ref: Assets/2026-10/weixin-20261031-qggQE_Au5uhVK9yGAgbl6g.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 分享一套超赞的AI知识库搭建方法，让沉睡的数据变成可复用的经验

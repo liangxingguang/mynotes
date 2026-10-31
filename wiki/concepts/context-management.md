@@ -98,3 +98,5 @@ Claude Code 官方做法分两层（信源 §3.4 引用核验）：先清旧工�
 - [[kiso-minimal-agent-framework|Kiso：极简 Agent 框架（信源页）]]
 - [[kiso|Kiso]]
 - [[durable-execution|持久执行（Durable Execution）]]
+- [[agent-as-memory|Agent as Memory]]
+- [[agent-harness-essay-ideal-harness|Agent Harness 随笔：我理想中的 Harness（信源页）]]

@@ -11,7 +11,9 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026-10/weixin-20261031-arthas-01-attach-first-conclusion.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-31T13:20:32.229Z"
+ingest_claim_id: 47964-1793452832229-0
 ---
 
 # Arthas 上手：从 attach 到第一个结论，6 个命令够用

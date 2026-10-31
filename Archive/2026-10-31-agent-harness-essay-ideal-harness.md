@@ -11,9 +11,7 @@ tags:
   - 工程实践
   - AI
 asset_ref: Assets/2026-10/zhihu-20261031-2096275149876216777.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-10-31T13:02:05.551Z"
-ingest_claim_id: 62864-1793451725551-0
+wiki_status: ingested
 ---
 
 # Agent Harness 随笔：我理想中的 Harness

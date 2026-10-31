@@ -12,6 +12,7 @@
 - [[agent-long-task-reliable-execution|AI Agent 长任务可靠执行：Go+PG 状态机/Checkpoint/Fencing/对账]]（2026-10-21，AI/Agent 基础设施）
 - [[agent-minimal-handwritten|Agent - 手写最小 agent（7）：五阶段 loop + schema 即 prompt + 四类错误兜底]]（2026-10-28，AI/教程）
 - [[agent-classic-agent-theory|Agent - 经典 Agent 理论：AIMA 五分类与 PMTA 框架]]（2026-10-28，AI/理论）
+- [[agent-harness-essay-ideal-harness|Agent Harness 随笔：我理想中的 Harness]]（2026-10-31，AI/Harness，Session 为核心重构+注入式 token 账+UI 审美分歧点+Agent as Memory+Search 二分法，知乎随笔单信源，置信度中）
 - [[agent-harness-framework-selection|Agent - harness 框架怎么选（5）：deepagents 首选]]（2026-10-28，AI/Harness 选型）
 - [[agent-llm-call-patterns|Agent - 调用 LLM 的三种姿势（6）：REST/SDK/agent SDK 同一 wire 协议]]（2026-10-28，AI/LLM API）
 - [[agent-loop-context-management|Agent - agent loop 与上下文管理（3）：五阶段 loop + harness 六件套 + 裁剪/压缩/隔离]]（2026-10-28，AI/Agent 工程）
@@ -23,6 +24,7 @@
 - [[ai-agent-series-album|AI Agent 系列合集（82 篇：官方指南/Context Engineering/OpenClaw/Pi Harness，含全文快照）]]（2026-10-28，AI/资源导航，置信度中）
 - [[ai-agents-definitive-guide-notebooks|知乎想法：O'Reilly《AI Agents》配套代码全开源（12 章 35 Notebook）]]（2026-10-20，AI/资源，置信度低）
 - [[ai-education-three-old-questions|AI 没有发明新教育理念，只是让老目标有了实现条件]]（2026-10-29，AI/教育观察，惰性观念/难度取舍/因材施教三问，微博帖子，置信度中）
+- [[ai-kb-build-workbuddy-ima-wiki|分享一套超赞的AI知识库搭建方法，让沉睡的数据变成可复用的经验]]（2026-10-31，AI/知识库，WorkBuddy+ima+Wiki 七步落地+三文件夹分工+维护约定，公众号推广文，置信度中）
 - [[agent-loop-production-boundaries|从 Chatbot 到 AI Agent：为什么一个 while 循环撑不起生产系统]]（2026-10-15，AI/Agent 工程）
 - [[agent-platform-architecture|高性能弹性扩展智能体中台架构：FastAPI+Nacos+RocketMQ+LangGraph+Milvus+ES 实践]]（2026-10-27，AI/架构）
 - [[agent-platform-retry-resilience|从重试风暴到可控恢复：Agent 平台超时、退避、熔断与背压的系统设计]]（2026-10-31，架构/可靠性/Agent，唯一重试所有者+五边界+Retry Budget+12 步执行链+A–F 消融实验，单信源置信度中）
@@ -273,6 +275,7 @@
 - [[a2a-protocol|A2A 协议]]（Agent↔Agent 横向协作协议，Google 2025）
 - [[aima-agent-taxonomy|AIMA Agent 分类]]（简单反射/基于模型/基于目标/基于效用/学习五类 + 环境四属性；经典理论单信源）
 - [[agent-evaluation|业务 Agent 全生命周期评测]]（规则+LLM 裁判+人工复核，覆盖准入/门禁/压测/巡检，货拉拉实践）
+- [[agent-as-memory|Agent as Memory（主 Agent 承担记忆职责）]]（主 Agent 协调子 Session 承担项目进展记忆；用户单点对接；长期记忆 Markdown 文件化+短期记忆主 Agent 化；单信源，置信度中）
 - [[agent-loop|Agent Loop]]（Runtime 驱动的模型-工具循环；Tool Call/Result、Message/Context/State/Session、Runtime vs Harness）
 - [[agent-permission-model|Agent 权限模型（平台授权与本地运行）]]（权限=静态基线+指令临时授权+动态校验；租户划边界/Agent 定上限/指令收范围/MCP 网关兜底；本地 CLI 五模式+只读证明式放行 Unknown≠Safe；A2A 委派子授权⊆父授权；双信源，置信度中）
 - [[agent-sandboxing|Agent 沙箱隔离]]（能力限制而非行为审查；四条路径收窄可达面；脚本级/命令级/工具级/整体隔离）
@@ -293,10 +296,10 @@
 - [[cap-theorem|CAP 定理与最终一致性取舍]]（CAP 是分区时的选择非永久标签+最终一致性收敛三条件+不一致窗口是选择依据+一致性哈希/Gossip 边界，单信源置信度中）
 - [[cdn-broadcast-fanout|CDN 广播（弹幕下行）]]（千万级在线下行外包 CDN 边缘：推流伪装视频流 vs 静态文件周期拉取，多 CDN 权重轮询融合；网易云信一手）
 - [[class-loading-parent-delegation|类加载与双亲委派]]（五阶段 + 准备阶段默认值/final 特例 + 初始化 6 触发 + 双亲委派意义与 4 破坏场景 SPI/Tomcat/OSGi，单信源，置信度中）
-- [[claude-skills|Claude Skills]]（Markdown 文件即资产：判断/偏好/标准固化、按需加载、一句话唤醒；Skill-Creator 构建 + 2.0 断言评估/A-B/触发词优化；单信源导览，置信度中）
+- [[claude-skills|Claude Skills]]（Markdown 文件即资产：判断/偏好/标准固化、按需加载、一句话唤醒；Skill-Creator 构建 + 2.0 断言评估/A-B/触发词优化；ub-mode 纪律包+ste-zh 行为包+激活式 token 账，四信源，置信度中）
 - [[codemode|Codemode（代码模式工具编排）]]（模型写 JS 沙箱脚本编排工具调用，只回筛选结果；固定开销约减半，单次收益看返回格式）
 - [[collections-utility-class|Collections 工具类设计]]（算法委托+三类包装器工厂；同步/不可变均为视图，迭代须外部加锁；emptyList 单例零分配；单信源，置信度中）
-- [[context-management|上下文管理（Context Management）]]（messages 全量重发下的体积工程：裁剪/压缩/隔离三手段+成对保留与磁盘全量两铁律；Claude Code 分层裁剪实证；Kiso 投影观+缓存经济学双信源）
+- [[context-management|上下文管理（Context Management）]]（messages 全量重发下的体积工程：裁剪/压缩/隔离三手段+成对保留与磁盘全量两铁律；Claude Code 分层裁剪实证；Kiso 投影观+缓存经济学；注入式 token 账三信源）
 - [[concurrenthashmap-internals|ConcurrentHashMap 并发设计（JDK 8+）]]（读无锁+CAS 空桶插+synchronized 桶头+sizeCtl 三态+协作扩容；单信源，置信度中）
 - [[consumer-lag-governance|消费积压治理（Consumer Lag Governance）]]（Kafka 消费端 Lag 治理：四步法+三底线+增速告警，单信源，置信度中）
 - [[control-plane-design|规则控制面与寻优计算面分离]]（DDD 领域契约收敛规则+规则引擎前置过滤+算法只在合法空间搜索+降级兜底；电商优惠券场景完整实例，单信源置信度中）
@@ -326,7 +329,7 @@
 - [[game-mail-system|游戏邮件系统的分布式设计]]（弱时序+独立队列；公共邮件读裂变+标记撤回；Seq+Ack 与合服 DomainEvent；一切领奖皆邮件 Channel；单信源，置信度中）
 - [[game-quest-system|游戏任务系统设计（Quest/Goal 合一与进度建模）]]（限定单 Goal 组合 Quest；子任务表步骤任务即章节；Git 参照系；Ready 中间态；Progress/Score 分离；前置索引+等级二分；任务侧掉落+公共管理器；单信源，置信度中）
 - [[geohash|Geohash（地理哈希）]]（经纬度降维前缀编码；边界问题+8 邻居、截短扩半径、缓存键归一；邻近索引+地图瓦片双信源）
-- [[harness-engineering|Harness Engineering（Agent 执行系统工程）]]（Agent ≈ Model + Harness；七观察面+信息三层+安全四层+B0~B5 单变量评测；11 系统源码研究解读；Kiso 内核门禁+决策所有权四信源）
+- [[harness-engineering|Harness Engineering（Agent 执行系统工程）]]（Agent ≈ Model + Harness；七观察面+信息三层+安全四层+B0~B5 单变量评测；11 系统源码研究解读；Kiso 内核门禁+Codex 状态所有权+Session 核心重构七信源）
 - [[hashmap-internals|HashMap 核心设计（JDK 8）]]（2 的幂容量+扰动+0.75 负载因子+8/6/64 树化阈值+高低位链扩容拆分；单信源，置信度中）
 - [[hashset-internals|HashSet / LinkedHashSet 去重设计]]（HashMap key 视图+PRESENT 占位；hashCode+equals 双写铁律；dummy 构造换 LinkedHashMap 得插入序；双信源互证，置信度中）
 - [[hot-cold-data-separation|冷热分离（Hot/Cold Data Separation）]]（状态+时间双维划分；热/温/冷三层异构存储；先复制后删除分批限速；报表走数仓 T+1，单信源）
@@ -334,7 +337,7 @@
 - [[linkedblockingqueue-internals|LinkedBlockingQueue 双锁阻塞队列设计]]（takeLock/putLock 读写分离+滚动哨兵+跨锁信号传递+计数旧值精确唤醒；默认近无界须显式容量防 OOM；单信源，置信度中）
 - [[longadder-internals|LongAdder 分段累加设计（Striped64）]]（base 快速路径+Cell 数组分散 CAS+@Contended 128B 防伪共享+cellsBusy 自旋扩容≤CPU 核数；sum 近似无 addAndGet；LongAccumulator 泛化任意二元聚合；双信源：JDK 源码+点赞系统本地聚合 flush 用法，置信度中）
 - [[linkedhashmap-internals|LinkedHashMap 有序化设计（双链表 + 模板方法钩子）]]（Entry 身兼桶节点+双链节点；三钩子维护插入/访问序；两行核心代码 LRU，单信源，置信度中）
-- [[llm-wiki|LLM Wiki]]（原始来源不可变 + 模型持续编译互链知识页面，Karpathy 模式；本仓库即实例，双信源）
+- [[llm-wiki|LLM Wiki]]（原始来源不可变 + 模型持续编译互链知识页面，Karpathy 模式；本仓库即实例，三信源：综述+教程+WorkBuddy/ima 落地案例）
 - [[llm-call-protocol|OpenAI 兼容 Chat Completions 调用协议]]（messages 四角色+tool_call_id 配对+finish_reason 续轮判据+SDK 默认 timeout 10min/重试 2；单信源）
 - [[local-message-table|本地消息表（Local Message Table）]]（同事务原子性+重试可靠性+至少一次投递+状态机流转+选型边界+6 条红线；三信源互证）
 - [[log4j2-async-logging-thread-blocking|Log4j2 异步日志线程阻塞]]（日志事件入队前触发类加载导致业务线程 Block；三阶段模型+ThrowableProxy 根因+避坑方案，单信源一手，置信度高）
