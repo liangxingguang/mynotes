@@ -2901,6 +2901,17 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/K33QsP6ohLbBLQsEbzyZgA",
       "asset_ref": "Assets/2026/10/like-follow-high-concurrency-design.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-28-llm-rag-agent-series-album.md",
+      "sha256": "a8c4718095c09358eb490e08d0a9eb8d2496e5372986fbeaff2a0ecd3dd6e0db",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-28-llm-rag-agent-series-album.md",
+      "pages": [
+        "wiki/sources/llm-rag-agent-series-album.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzkwOTAxOTY4Nw==&action=getalbum&album_id=3391836763593359360",
+      "asset_ref": "Assets/2026/10/llm-rag-agent-series-album.md"
     }
   ]
 }

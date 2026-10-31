@@ -136,6 +136,7 @@
 - [[like-follow-high-concurrency-design|别再上来就堆 Redis！点赞系统从打挂数据库到 18w 写峰值（信源页）]]（2026-10-28，架构/高并发/Redis，作者自述线上落地 2 年，置信度中）
 - [[linked-list-vs-array-cache|链表已死？C++ 之父：O(1) 不一定比 O(N) 快]]（2026-10-21，性能/体系结构）
 - [[llm-from-scratch-primer|三万字长文：大语言模型从零入门]]（2026-10-14，AI/教程）
+- [[llm-rag-agent-series-album|LLM/RAG/Agent 实战合集（172 篇：Pi实战/Harness Engineering/RAG实战/MCP实战/LLM基础/OpenClaw）]]（2026-10-28，AI/资源导航，纯链接目录型，置信度中）
 - [[llm-wiki-advanced-four-steps|LLM Wiki 搭建教程·进阶篇一：四步搭建完整系统（本仓库模式出处）]]（2026-10-14，AI/知识库）
 - [[logical-thinking-models|分析问题的逻辑思考方法（14个模型）]]（2026-10-23，思维方法论，置信度中）
 - [[lovart-2-arti-design-agent|Lovart 2.0 发布：设计 Personal Agent Arti 上手体验]]（2026-10-21，AI/产品，置信度低）

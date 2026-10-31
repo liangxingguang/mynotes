@@ -9,7 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [AI, AI Coding]
 asset_ref: Assets/2026/10/llm-rag-agent-series-album.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # LLM/RAG/Agent 实战合集（172 篇）
