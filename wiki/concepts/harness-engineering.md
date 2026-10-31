@@ -17,6 +17,7 @@ sources:
   - raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md
   - raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md
   - raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md
+  - raw/sources/ai/2026-10-31-agent-harness-essay-ideal-harness.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/concepts/context-management.md
@@ -31,7 +32,9 @@ related:
   - wiki/sources/kiso-minimal-agent-framework.md
   - wiki/concepts/agent-state-separation.md
   - wiki/concepts/artifact-verification-delivery.md
+  - wiki/concepts/agent-as-memory.md
   - wiki/sources/codex-agent-harness-architecture-6.md
+  - wiki/sources/agent-harness-essay-ideal-harness.md
 ---
 # Harness Engineering（Agent 执行系统工程）
 
@@ -50,7 +53,7 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 1. **执行循环**：如何推进任务、何时停止、异常与取消处理
 2. **模型适配**：不同 API、消息格式、模型能力与缓存机制
 3. **工具系统**：动作表达、参数校验、可靠返回
-4. **上下文与记忆**：哪些信息进模型、哪些状态长期保存
+4. **上下文与记忆**：哪些信息进模型、哪些状态长期保存；注入形式决定 token 税——MCP 全量注入 vs Skill/CLI 激活式（不激活不付，见第 7 信源）
 5. **权限与隔离**：任务允许做什么、执行环境实际能做什么
 6. **多 Agent 协调**：分工、并发限制、结果合并与冲突处理
 7. **扩展机制**：Skills、Hooks、协议与外部服务接入
@@ -115,6 +118,8 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 - 2026-10-31 — 新增 Pi 与 DSH 复杂度之争信源 `raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md`（第 5 信源）。补上**复杂度治理**维度（第 8 观察面）：Pi 的"举证责任倒置"（默认 4 工具、三重成本门槛）与 DSH 的"可逆组合"（Cordis 插件架构、运行时自我改装）代表两种工程理性——前者要求复杂度先证明价值，后者要求复杂度可隔离可撤销。两者不互相替代：Pi 适合边界稳定/可观察性优先，DSH 适合能力组合多变/多 Agent 共存。自进化需要"宪法"四问（资源访问/有效性验证/回滚能力/转正资格），否则自我扩展自动生成技术债。
 
 - 2026-10-31 — 新增 Codex 桌面客户端 Harness 架构信源 `raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md`（第 6 信源）。补上**状态所有权与 Harness/Infra 边界**两块细节：①三控制模块（任务控制/操作记录/产物记录）各有状态所有权，状态变化必须经各模块提交接口——工具执行器只能提交"本次写入"事实、核验器只能提交检查缺口，都不能自行宣布任务完成，为"执行循环"观察面补上状态提交纪律；②Harness vs Infra 职责二分（Infra 提供模型访问/身份凭据/执行环境/存储/日志，Harness 决定派发/等待/重试/恢复/核验/交付；Anthropic Managed Agents 将 Harness、会话记录与沙箱拆开，允许分别失败或替换），与本页"权限与隔离"观察面及 [[agent-sandboxing|Agent 沙箱隔离]] 互证。其"三种状态分别记录"与"多身份"设计落成概念页 [[agent-state-separation|Agent 状态分离]]；"产物核验+独立交付入口"落成概念页 [[artifact-verification-delivery|产物核验与独立交付]]。
+
+- 2026-10-31 — 新增知乎 Harness 随笔信源 `raw/sources/ai/2026-10-31-agent-harness-essay-ideal-harness.md`（第 7 信源）。补上三块此前缺位的主张：①**Session 为核心重构**——每个 Session 下挂不同 Provider/原生 CLI（Monocode 的多 Provider 映射为同一体系），多模型协作与多 Session 协作因此解耦，Codex App/Claude Desktop 已有成熟 Session、多数 App 未做到；②**注入式 token 账**——MCP 全量注入 30K 描述 token（新对话只说"你好"也付几万、cache read 1000 次=30M、社区称 Agent 账单 cache read 占比常超 97%、Desktop 比 CLI 少约 10% 额度、256K 后性能显著下降故 MCP 占 30K=少 30K 有效窗口），作者主张 Session 管理做成 CLI + 斜杠命令（近似 Skill）、不激活不付 token tax，并质疑 Tool Search 相对 Skill 的必要性；③**UI 审美分歧点论**——底层技术趋同后审美百花齐放，是 Harness 寿命与粘性的底层保障。其多模型分工实例（Claude 规划/Codex 实现/DeepSeek 速度/Gemini 文字）为"模型适配"观察面提供落地图景；"Agent as Memory"主张落成概念页 [[agent-as-memory|Agent as Memory]]；"Agent Search 二分法"（事实型走 API、主观型走复用登录态的 OpenCLI）收于 [[agent-harness-essay-ideal-harness|信源页]]。
 
 ## Open Questions（开放问题）
 
