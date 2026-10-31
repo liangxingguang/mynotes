@@ -1,6 +1,25 @@
 {
-  "updated_at": "2026-10-31 20:11",
+  "updated_at": "2026-10-31 20:14",
   "notes": [
+    {
+      "id": "2026-10-31-agent-harness-essay-ideal-harness",
+      "title": "Agent Harness 随笔：我理想中的 Harness",
+      "path": "Inbox/2026-10-31-agent-harness-essay-ideal-harness.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "AI"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2096275149876216777",
+      "source_type": "article",
+      "platform": "知乎",
+      "summary": "作者手搓 Harness 后的思考：软件行业当下的第一要务是找到自己顺手的工作流、靠高质量 SOTA model token 快速迭代，即 personal RSI；而 Harness 作为人与 AI 的对接口是关键。核心主张：以 Session 为核心重构、做 Harness of Harness（集成各厂原生 CLI）、审美是 Harness 寿命与粘性的底层保障、Agent as Memory、Agent Search 的价值、多模型分工。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/zhihu-20261031-2096275149876216777.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-31-architecture-science-and-art-42-rules",
       "title": "架构是学问，也是艺术：42 条架构取舍法则",
@@ -18,7 +37,7 @@
       "summary": "一篇架构取舍方法论，11 个主题 42 条法则。架构是学问（知道每种工具各自解决什么问题）也是艺术（取舍发生在\"眼下最该解决什么、团队能承受多少复杂度、哪些风险必须现在处理、哪些可以等业务真的走到那一步\"）。开篇判断：服务要不要拆、数据该放哪儿很少有现成答案，架构师像厨师——懂多少技法重要，但真到灶台前还得知道这顿饭做给谁吃、预算多少、几点必须上桌。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-lo2sfHDOp9Irlgu3EZ593Q.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-31-coding-agent-ai-native-workflow",

@@ -11,7 +11,9 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026-10/weixin-20261031-lo2sfHDOp9Irlgu3EZ593Q.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-10-31T12:13:49.734Z"
+ingest_claim_id: 59236-1793448829734-0
 ---
 
 # 架构是学问，也是艺术：42 条架构取舍法则
