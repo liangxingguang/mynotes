@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-10-31T13:15:00.000Z",
+  "updated_at": "2026-10-31T14:15:52.734Z",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -3390,6 +3390,19 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg4MjE2Nzk0NQ==&mid=2247483861&idx=1&sn=48e17d6de6e4c2eecb0b9151f04041de&chksm=cf5b9833f82c11257f96c5790ad9f1b17054e315999c77a8e7e182cc24925c76d2dc9499e5c8",
       "asset_ref": "Assets/2026-10/weixin-20261031-arthas-03-thread-command.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-31-arthas-04-watch-trace-tt.md",
+      "sha256": "5e6eebe3c39e48b7cd3d053cf067ff9f1232b17160abf7f4fa57abc789fda5a2",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-31-arthas-04-watch-trace-tt.md",
+      "pages": [
+        "wiki/sources/arthas-04-watch-trace-tt.md",
+        "wiki/concepts/watch-trace-tt.md",
+        "wiki/entities/arthas.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg4MjE2Nzk0NQ==&mid=2247483862&idx=1&sn=c71b3c4a7e050062cd5a2cc432ec1797&chksm=cf5b9830f82c11265bd1a443f20e7dd1eb4e1ecf3a1554c59439f58916708ab77151104a3812",
+      "asset_ref": "Assets/2026-10/weixin-20261031-arthas-04-watch-trace-tt.md"
     }
   ]
 }

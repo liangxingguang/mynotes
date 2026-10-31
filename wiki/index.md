@@ -44,6 +44,7 @@
 - [[arthas-01-attach-first-conclusion|Arthas 上手：从 attach 到第一个结论，6 个命令够用]]（2026-10-31，Java/Arthas 入门，attach 两种方式+三类失败原因+6 命令速查+生产纪律，配图 1px 占位正文完整）
 - [[arthas-02-ai-arthas|AI + Arthas 排查线上问题：4 个环节，AI 该在哪一步上手]]（2026-10-31，AI/Arthas，贴文本模式四环节+三件不交给 AI+脱敏前提，与 MCP 信源互证）
 - [[arthas-03-thread-command|CPU 打满、接口卡住、线程池耗尽：thread 命令怎么读]]（2026-10-31，Java/Arthas，三种「卡」分类+三步读栈+线程池耗尽识别+三个误判）
+- [[arthas-04-watch-trace-tt|watch、trace、tt：把方法看透的三件套]]（2026-10-31，Java/Arthas，时间/数据/现场三命令分工+排查顺序 trace→watch→tt+三条纪律，配图 1px 占位正文完整）
 - [[arthas-mcp-ai-troubleshooting|让 AI 调 Arthas，Java 排障会快多少？]]（2026-10-14，AI/MCP/Java 诊断）
 - [[arthas-mcp-server-ai-diagnosis|Arthas 官方 MCP 实测：29 个诊断命令交给 AI，凌晨排查省 40 分钟]]（2026-10-31，AI/MCP/Java 诊断，量化对比 45min vs 5min+生产红线，与前篇互证，单信源置信度高）
 - [[async-idempotency-local-message-table|异步链路幂等实战：本地消息表配套防重，解决重复扣款与消息重放]]（2026-10-23，架构/幂等）
@@ -409,6 +410,7 @@
 - [[table-sharding-migration|分表平滑迁移策略]]（五种读写策略矩阵 + 双写双读 SQL 重写，京东大表治理实践）
 - [[thinking-mode|思考模式（Thinking Mode）与模型路由]]（通用 vs 推理已制度化为 thinking 开关两态；reasoning_content 回传 400 规则+参数坑+reasoning_tokens 计费；两行规则表最小路由，单信源）
 - [[thread-stack-reading|线程栈读法]]（三种「卡」先分类：RUNNABLE 在算/BLOCKED 等锁/RUNNABLE 等外部响应；读栈顺序 状态→自己的包→卡在等什么；线程池耗尽看分布；RUNNABLE 但 CPU 不高多半在等 IO；隔时二次采样，三信源）
+- [[watch-trace-tt|watch/trace/tt 方法级观察三件套]]（时间/数据/现场三命令分工+四时机参数+tt 三步+排查顺序 trace→watch→tt+三条纪律，与 arthas-01 参数细节互证，单信源方法论，置信度高）
 - [[threadpoolexecutor-internals|ThreadPoolExecutor 核心设计]]（ctl 单 int 打包状态+线程数；execute 四级漏斗+二次检查；Worker 继承 AQS 不可重入锁；四种拒绝策略，单信源，置信度中）
 - [[tool-parameter-whitelist|参数层白名单防线]]（白名单优于黑名单；两段式校验先形状后语义挂必经之路；强度跟参数熵走、事实来源在服务端；error:rejected 与运行时兜底分开审计；29 项断言实测，单信源）
 - [[tool-schema-as-prompt|Tool Schema as Prompt]]（模型只见 name/description/parameters，写描述即写 prompt/写流程；schema 软约束须执行前校验（两段式）；禁 eval 用 ast 白名单；三信源互证）

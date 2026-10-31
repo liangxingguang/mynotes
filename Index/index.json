@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-10-31 22:08",
+  "updated_at": "2026-10-31 22:16",
   "notes": [
-    {
-      "id": "2026-10-31-arthas-04-watch-trace-tt",
-      "title": "watch、trace、tt：把方法看透的三件套",
-      "path": "Inbox/2026-10-31-arthas-04-watch-trace-tt.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg4MjE2Nzk0NQ==&mid=2247483862&idx=1&sn=c71b3c4a7e050062cd5a2cc432ec1797&chksm=cf5b9830f82c11265bd1a443f20e7dd1eb4e1ecf3a1554c59439f58916708ab77151104a3812",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "三个命令都在\"看方法\"，分工却完全不同：trace 看耗时卡在哪一层，watch 看数据对不对，tt 把一次调用的现场存下来、事后回放。这篇讲清三者的选择、各自的参数纪律，以及为什么 trace 一定要加次数限制。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-arthas-04-watch-trace-tt.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-10-31-arthas-05-jad-hot-reload",
       "title": "改了代码没生效？先 jad 一下，再谈热更新",
@@ -266,6 +247,25 @@
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-album-4732715055413035015-json.md",
       "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-weixin-album-xuqiufenxi",
+      "title": "专辑目录 · 需求分析（赢在菲墨间）",
+      "path": "Inbox/2026-10-31-weixin-album-xuqiufenxi.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号图文专辑",
+      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzkyNDY4OTkwMg==&action=getalbum&album_id=4718445477979848706&subscene=169&nolastread=1#wechat_redirect",
+      "source_type": "album",
+      "platform": "微信公众号",
+      "summary": "公众号「赢在菲墨间」的图文专辑《需求分析》，`article_count: 17`，按发布时间正序。专辑本体是 JS 渲染拿不到正文，改用 `&f=json` 拿到全部 17 篇的标题与直链，再逐篇抓取。你发来的链接里 `scenenote=` 解码后是第 9 篇（mid=2247483914）。",
+      "summary_status": "",
+      "asset_ref": "",
+      "wiki_status": "skipped"
     },
     {
       "id": "2026-10-31-xitongsiwei-01-gaogao-chengben",
@@ -5496,6 +5496,25 @@
       "summary": "线程问题的难点不在命令，在读栈：同样是\"卡住\"，可能是 RUNNABLE 在等 IO、BLOCKED 在等锁、或者线程池根本没空闲线程。这篇讲 thread 的三条用法、读栈的顺序、线程池耗尽的识别方法，以及三个最容易误判的地方。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-arthas-03-thread-command.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-arthas-04-watch-trace-tt",
+      "title": "watch、trace、tt：把方法看透的三件套",
+      "path": "Archive/2026-10-31-arthas-04-watch-trace-tt.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg4MjE2Nzk0NQ==&mid=2247483862&idx=1&sn=c71b3c4a7e050062cd5a2cc432ec1797&chksm=cf5b9830f82c11265bd1a443f20e7dd1eb4e1ecf3a1554c59439f58916708ab77151104a3812",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "三个命令都在\"看方法\"，分工却完全不同：trace 看耗时卡在哪一层，watch 看数据对不对，tt 把一次调用的现场存下来、事后回放。这篇讲清三者的选择、各自的参数纪律，以及为什么 trace 一定要加次数限制。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-arthas-04-watch-trace-tt.md",
       "wiki_status": "ingested"
     },
     {

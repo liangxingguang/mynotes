@@ -19,6 +19,7 @@ sources:
   - raw/sources/architecture/2026-10-31-arthas-01-attach-first-conclusion.md
   - raw/sources/architecture/2026-10-31-arthas-02-ai-arthas.md
   - raw/sources/architecture/2026-10-31-arthas-03-thread-command.md
+  - raw/sources/architecture/2026-10-31-arthas-04-watch-trace-tt.md
 related:
   - wiki/concepts/mcp.md
   - wiki/concepts/evidence-first-jvm-tuning.md
@@ -29,7 +30,7 @@ related:
 
 ## Overview（概览）
 
-Arthas 是 Java 线上诊断工具，提供 dashboard、thread、trace、watch、heapdump 等诊断命令。4.3.5 版本（截至 2026-10）官方文档把 MCP Server 标为实验性模块，使诊断能力可作为标准工具被 AI 客户端发现与调用。第四信源（2026-10-31 独立实测）给出量化对比：CPU 98% 排查传统 45 分钟 vs AI 驱动 5 分钟（作者实测均值区间，非官方基准）。第五至第七信源（2026-10-31 同专辑三篇）补齐人工侧入门（attach 两种方式与三类失败原因、6 命令速查、生产纪律）、贴文本模式 AI 协作四环节、thread 命令的线程栈读法（三种「卡」分类、读栈顺序、线程池耗尽识别）。
+Arthas 是 Java 线上诊断工具，提供 dashboard、thread、trace、watch、heapdump 等诊断命令。4.3.5 版本（截至 2026-10）官方文档把 MCP Server 标为实验性模块，使诊断能力可作为标准工具被 AI 客户端发现与调用。第四信源（2026-10-31 独立实测）给出量化对比：CPU 98% 排查传统 45 分钟 vs AI 驱动 5 分钟（作者实测均值区间，非官方基准）。第五至第八信源（2026-10-31 同专辑四篇）补齐人工侧入门（attach 两种方式与三类失败原因、6 命令速查、生产纪律）、贴文本模式 AI 协作四环节、thread 命令的线程栈读法（三种「卡」分类、读栈顺序、线程池耗尽识别）、watch/trace/tt 方法级观察三件套（时间/数据/现场分工、排查顺序、三条纪律）。
 
 ## Identity（身份信息）
 
@@ -62,10 +63,11 @@ Arthas 是 Java 线上诊断工具，提供 dashboard、thread、trace、watch�
 - 2026-10-31 — 第五信源（专辑《arthas使用》第 1 篇，入门）补 attach 侧实践：`java -jar arthas-boot.jar` 列进程输序号 / `--select <pid>` 两种方式、成功提示符 `[arthas@进程号]$`；挂不上三因（用户不一致、telnet 3658/web 8563 端口被占、JDK 太老依赖 attach API）；attach 本身造成极短停顿勿在峰值反复挂退；6 命令速查表（dashboard 排除方向 / thread / trace 必加 `-n` / watch `'{params,returnObj,throwExp}' -x 2` / jad·sc -d·sm 查代码版本 / profiler 出火焰图）；三参数细节（忘加次数限制、`-x` 深度先小后大、条件表达式写错不报错只是不输出）；`stop` 只退诊断工具不停业务进程但须先停挂起的 trace/watch/monitor；4 条生产纪律（测试环境先跑、热点别长挂 trace、redefine/retransform 慎用、操作留记录）
 - 2026-10-31 — 第六信源（同专辑第 2 篇，AI 协作）确立贴文本模式 AI 排障四环节（现象选命令→读线程栈→写 watch/trace 表达式→结论变下一步分叉），前提先脱敏；三件不交给 AI（猜类名方法名、直贴生产完整输出、照抄 redefine/retransform）；核心分工「它负责翻译，你负责判断」，合理性判断只能来自业务认知
 - 2026-10-31 — 第七信源（同专辑第 3 篇，thread 深读）补线程栈读法：三种「卡」分类（RUNNABLE 在算 / BLOCKED 等锁 / RUNNABLE 等外部响应），解法分别改代码、拆锁降并发、看下游；读栈顺序「状态→自己的包名→卡在等什么」；RUNNABLE 但 CPU 不高多半在等 IO；线程池耗尽识别（线程名成批、编号连片、停同一提交点，看总量分布，根因在下游）；三个误判（RUNNABLE≠在算、CPU 高可能是 GC 线程、一次采样不算持续需隔时二次采样）
+- 2026-10-31 — 第八信源（同专辑第 4 篇，方法级观察）补 watch/trace/tt 分工：一个管时间（trace 找「哪一层突然变宽」，别看最外层，加 `-n`、一次一个方法）、一个管数据（watch 观察点 `'{params,returnObj,throwExp}' -x 2`，四时机 `-b/-s/-e/-f`，`-x` 调展开深度）、一个管现场（tt 三步 `-t` 录 / `-l` 列 / `-i` 看 `-p` 回放，也要限次数）；排查顺序先 trace 再 watch 最后 tt（先定位层、再定位数据、最后录现场）；三条纪律（都要加次数上限、一次只挂一个观察点、测试环境先验证表达式——写错不报错只是不输出）；共同点「工具给事实，判断还得你来」（与第六信源翻译/判断分工互证）
 
 ## Current Understanding（当前认知）
 
-Java 排障领域接入 AI 的代表性路径：把诊断命令封装为 MCP 工具后，AI 可保留上下文组织多步诊断；但危险命令管控、字节码增强开销与敏感数据保护都需在 Arthas 之外自建。第二信源显示人工侧同样成熟——Full GC 排查已沉淀为 dashboard→根因表→dump/类加载分支→验证 的固定流程，与 [[evidence-first-jvm-tuning]] 的证据驱动方法论一致。第四信源（独立实测）补上量化对比（45 分钟 vs 5 分钟，作者实测口径）并给出可复用的生产红线与 prompt 模板，与第一信源的危险能力分级互相印证（MCP 模块仍处实验阶段，量化数据非官方基准）。第五信源（入门）确立「学习成本在判断不在命令」与 6 命令速查的人工基线；第六信源确立贴文本模式 AI 协作的分工（它翻译、你判断，[[ai-assisted-troubleshooting-workflow]]）；第七信源把 thread 读栈沉淀为可复用方法论（[[thread-stack-reading]]），与第二、四信源的 thread 实战互证。人工侧与 AI 侧两条线均已成型，且共享同一组生产红线（测试环境先验证、危险命令慎用、操作留记录）。
+Java 排障领域接入 AI 的代表性路径：把诊断命令封装为 MCP 工具后，AI 可保留上下文组织多步诊断；但危险命令管控、字节码增强开销与敏感数据保护都需在 Arthas 之外自建。第二信源显示人工侧同样成熟——Full GC 排查已沉淀为 dashboard→根因表→dump/类加载分支→验证 的固定流程，与 [[evidence-first-jvm-tuning]] 的证据驱动方法论一致。第四信源（独立实测）补上量化对比（45 分钟 vs 5 分钟，作者实测口径）并给出可复用的生产红线与 prompt 模板，与第一信源的危险能力分级互相印证（MCP 模块仍处实验阶段，量化数据非官方基准）。第五信源（入门）确立「学习成本在判断不在命令」与 6 命令速查的人工基线；第六信源确立贴文本模式 AI 协作的分工（它翻译、你判断，[[ai-assisted-troubleshooting-workflow]]）；第七信源把 thread 读栈沉淀为可复用方法论（[[thread-stack-reading]]），与第二、四信源的 thread 实战互证。人工侧与 AI 侧两条线均已成型，且共享同一组生产红线（测试环境先验证、危险命令慎用、操作留记录）。第八信源把方法级观察沉淀为可复用方法论（[[watch-trace-tt]]），与 thread 层（[[thread-stack-reading]]）构成排障的两块拼图；其「工具给事实、判断在人」与第六信源的翻译/判断分工互证。
 
 ## Evidence（证据）
 
