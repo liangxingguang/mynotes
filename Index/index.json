@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31 21:05",
+  "updated_at": "2026-10-31 21:08",
   "notes": [
     {
       "id": "2026-10-31-agent-harness-essay-ideal-harness",
@@ -19,6 +19,25 @@
       "summary_status": "",
       "asset_ref": "Assets/2026-10/zhihu-20261031-2096275149876216777.md",
       "wiki_status": "ingesting"
+    },
+    {
+      "id": "2026-10-31-ai-kb-build-workbuddy-ima-wiki",
+      "title": "分享一套超赞的AI知识库搭建方法，让沉睡的数据变成可复用的经验",
+      "path": "Inbox/2026-10-31-ai-kb-build-workbuddy-ima-wiki.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工具"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/qggQE_Au5uhVK9yGAgbl6g",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "公众号「咘噜鸭」讲用 WorkBuddy + ima + Wiki 的思路搭建可复用知识库。出发点是 Karpathy 的主张：不要把 LLM 当搜索引擎，而是让它像程序员写代码一样持续维护一个 Markdown 知识库。文章给出 7 步搭建流程、三个文件夹的分工，以及一份让 AI 真能连得上页面的维护约定。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-qggQE_Au5uhVK9yGAgbl6g.md",
+      "wiki_status": "pending"
     },
     {
       "id": "2026-10-31-arthas-01-attach-first-conclusion",
