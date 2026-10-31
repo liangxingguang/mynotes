@@ -1,6 +1,25 @@
 {
-  "updated_at": "2026-10-31 19:54",
+  "updated_at": "2026-10-31 19:57",
   "notes": [
+    {
+      "id": "2026-10-31-coding-agent-ai-native-workflow",
+      "title": "驾驭 Coding Agent：打造 AI 原生研发工作流",
+      "path": "Inbox/2026-10-31-coding-agent-ai-native-workflow.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/gIgcMT13oQyaL_KP6jSR_A",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "继上篇\"生产代码边际成本趋近于零、生产好软件成本依然高昂\"之后，本文拆解如何用工程化思维驾驭 Coding Agent、告别提示词玄学。主线：架构决策必须在 AI 写码之前完成；真正的杠杆是规约工程 + 上下文工程而非措辞；落地为\"AI 研发任务五要素模型\"；从 Assistant 到 Agent 让开发者实际扮演技术负责人；最后用测试、Review 与可观测性守住最后一公里。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-gIgcMT13oQyaL_KP6jSR_A.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-31-niche-product-selection-methodology",
       "title": "“小众需求”选品方法论：如何发现未被满足的细分需求",
@@ -18,7 +37,7 @@
       "summary": "给独立开发者的选品方法论。定义\"小众需求\"为第三条路——**一个足够具体、有人愿意付钱、但大公司嫌市场太小不值得做**的问题，这是独立开发者的天然生态位。给出 7 个需求发现渠道（差评挖掘 / Reddit·V2EX·HN 的\"有没有…\"帖 / 自己的痛点 / 垂直行业×通用工具交集 / 趋势前沿 / 竞品停更后的用户流失 / 现有用户的新功能请求）、5 维需求评估（支付意愿、市场规模、竞争程度、能力匹配、获客渠道）、两层市场规模算账公式，以及 3 种 MVP 快速验证方式与两个可查证案例（Plausible Analytics、Sidekiq）。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-J990Xv2Hsqlh0NmOYLujw.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-31-points-system-architecture-design",
