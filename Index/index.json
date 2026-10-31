@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31 20:30",
+  "updated_at": "2026-10-31 20:31",
   "notes": [
     {
       "id": "2026-10-31-agent-harness-essay-ideal-harness",
@@ -19,25 +19,6 @@
       "summary_status": "",
       "asset_ref": "Assets/2026-10/zhihu-20261031-2096275149876216777.md",
       "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-31-architecture-science-and-art-42-rules",
-      "title": "架构是学问，也是艺术：42 条架构取舍法则",
-      "path": "Inbox/2026-10-31-architecture-science-and-art-42-rules.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/lo2sfHDOp9Irlgu3EZ593Q",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "一篇架构取舍方法论，11 个主题 42 条法则。架构是学问（知道每种工具各自解决什么问题）也是艺术（取舍发生在\"眼下最该解决什么、团队能承受多少复杂度、哪些风险必须现在处理、哪些可以等业务真的走到那一步\"）。开篇判断：服务要不要拆、数据该放哪儿很少有现成答案，架构师像厨师——懂多少技法重要，但真到灶台前还得知道这顿饭做给谁吃、预算多少、几点必须上桌。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-lo2sfHDOp9Irlgu3EZ593Q.md",
-      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-31-coding-agent-ai-native-workflow",
@@ -5173,6 +5154,25 @@
       "summary": "电商大促中优惠券贪心策略算出非全局最优实付引发客诉的治理方案。核心不是算法题，而是\"规则控制面 + 寻优计算面\"分离的控制面设计：DDD 领域模型收敛多变规则、规则引擎与 DFS 回溯算法职责隔离、四层剪枝压缩搜索空间、降级与快照兜底守住预计算链路。贪心的缺陷是策略边界（只看单券局部收益），DP 则被异构约束（互斥/门槛/优先级/赠品）的爆炸状态空间排除。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/coupon-optimal-combination-dfs-ddd.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-architecture-science-and-art-42-rules",
+      "title": "架构是学问，也是艺术：42 条架构取舍法则",
+      "path": "Archive/2026-10-31-architecture-science-and-art-42-rules.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/lo2sfHDOp9Irlgu3EZ593Q",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "一篇架构取舍方法论，11 个主题 42 条法则。架构是学问（知道每种工具各自解决什么问题）也是艺术（取舍发生在\"眼下最该解决什么、团队能承受多少复杂度、哪些风险必须现在处理、哪些可以等业务真的走到那一步\"）。开篇判断：服务要不要拆、数据该放哪儿很少有现成答案，架构师像厨师——懂多少技法重要，但真到灶台前还得知道这顿饭做给谁吃、预算多少、几点必须上桌。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-lo2sfHDOp9Irlgu3EZ593Q.md",
       "wiki_status": "ingested"
     },
     {

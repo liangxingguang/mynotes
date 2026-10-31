@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-10-31T12:18:44.802Z",
+  "updated_at": "2026-10-31T12:31:30.945Z",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -3315,8 +3315,14 @@
       "path": "raw/sources/architecture/2026-10-31-architecture-science-and-art-42-rules.md",
       "sha256": "e95618d5bc4c324839f3da304ae2f26883d6a55874f8b20f047c85f82c612ebe",
       "registered_at": "2026-10-31",
-      "inbox_ref": "Inbox/2026-10-31-architecture-science-and-art-42-rules.md",
-      "pages": [],
+      "inbox_ref": "Archive/2026-10-31-architecture-science-and-art-42-rules.md",
+      "pages": [
+        "wiki/sources/architecture-science-and-art-42-rules.md",
+        "wiki/concepts/architecture-tradeoff-methodology.md",
+        "wiki/concepts/cap-theorem.md",
+        "wiki/comparisons/sse-vs-websocket.md",
+        "wiki/concepts/retry-governance.md"
+      ],
       "source_url": "https://mp.weixin.qq.com/s/lo2sfHDOp9Irlgu3EZ593Q",
       "asset_ref": "Assets/2026-10/weixin-20261031-lo2sfHDOp9Irlgu3EZ593Q.md"
     }
