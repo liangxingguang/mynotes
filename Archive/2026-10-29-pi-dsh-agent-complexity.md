@@ -9,7 +9,7 @@ created: 2026-10-29
 category: 技术
 tags: [AI, 工程实践]
 asset_ref: Assets/2026/10/pi-dsh-agent-complexity.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 复杂度归谁：Pi 与 DSH 把 Agent 带向了两种未来

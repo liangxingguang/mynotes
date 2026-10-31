@@ -15,6 +15,7 @@ sources:
   - raw/sources/ai/2026-10-28-agent-harness-framework-selection.md
   - raw/sources/ai/2026-10-28-agent-loop-context-management.md
   - raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md
+  - raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/concepts/context-management.md
@@ -49,6 +50,7 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 5. **权限与隔离**：任务允许做什么、执行环境实际能做什么
 6. **多 Agent 协调**：分工、并发限制、结果合并与冲突处理
 7. **扩展机制**：Skills、Hooks、协议与外部服务接入
+8. **复杂度治理**：复杂度何时进入系统、由谁决定——设计时控制（举证责任倒置，默认能力越少行为越易理解）vs 运行时控制（可逆组合，能力可装卸可撤销）；自进化需要"宪法"（验证/回滚/权限/淘汰制度化）
 
 ## Structure（结构）
 
@@ -106,6 +108,8 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 
 - 2026-10-31 — 新增 Kiso 信源 `raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md`（第 4 信源）。补上两块此前缺失的维度：①**内核治理**——2,200 行核心包硬门禁（Tripwire）保护"决策所有权"、分层结构（Product Shell→Composition→Agent→Session→Run→Kernel Loop+Store）、TCB 诚实披露（小内核≠可靠性只靠内核）；②**评测纪律**——对照 Benchmark 的诚实报告（不是全赢）与"Trace 先于解释"的方法论。其"Event Log 即真相、其余皆投影""执行者与裁判者分离"与本页"审计恢复"观察面及 [[durable-execution|持久执行]] 概念互为支撑。
 
+- 2026-10-31 — 新增 Pi 与 DSH 复杂度之争信源 `raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md`（第 5 信源）。补上**复杂度治理**维度（第 8 观察面）：Pi 的"举证责任倒置"（默认 4 工具、三重成本门槛）与 DSH 的"可逆组合"（Cordis 插件架构、运行时自我改装）代表两种工程理性——前者要求复杂度先证明价值，后者要求复杂度可隔离可撤销。两者不互相替代：Pi 适合边界稳定/可观察性优先，DSH 适合能力组合多变/多 Agent 共存。自进化需要"宪法"四问（资源访问/有效性验证/回滚能力/转正资格），否则自我扩展自动生成技术债。
+
 ## Open Questions（开放问题）
 
 - 论文原始统计口径与当前产品能力的时差（快照为历史版本）？
@@ -117,6 +121,7 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 - Source: `raw/sources/ai/2026-10-28-agent-harness-framework-selection.md`（印证：harness 八件套 vs 七观察面；选型决策树）
 - Source: `raw/sources/ai/2026-10-28-agent-loop-context-management.md`（组装视角：harness 六件套；Claude Code 上下文分层裁剪实例）
 - Source: `raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md`（第 4 信源：内核门禁与决策所有权、TCB 诚实披露、评测纪律与 Trace 验证）
+- Source: `raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md`（第 5 信源：复杂度治理——设计时 vs 运行时控制、可逆组合、自进化宪法）
 
 ## Related Knowledge（相关知识）
 
@@ -127,3 +132,4 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 - [[deepagents|deepagents]]
 - [[kiso|Kiso]]、[[kiso-minimal-agent-framework|Kiso：极简 Agent 框架（信源页）]]
 - [[durable-execution|持久执行（Durable Execution）]]
+- [[pi-dsh-agent-complexity|复杂度归谁：Pi 与 DSH 把 Agent 带向了两种未来（信源页）]]

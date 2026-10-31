@@ -200,6 +200,7 @@
 - [[pi-custom-agent-setup|用 Pi 搭一个自己的 Agent：Skills、Extensions、Subagents 和定时任务]]（2026-10-17，AI/Pi）
 - [[pi-practice-06-daily-patterns-selection|Pi实战 06：日常实战 · 模式 · 选型篇]]（2026-10-16，AI/Pi）
 - [[pi-practice-series|Pi 实战系列（16 篇全文本合集）]]（2026-10-31，AI/Pi/资源导航，16 篇实操合集，无新概念页，回链 pi/codemode/mcp 等，置信度中）
+- [[pi-dsh-agent-complexity|复杂度归谁：Pi 与 DSH 把 Agent 带向了两种未来]]（2026-10-29，AI/Agent/Harness，Pi 举证责任倒置 vs DSH 可逆组合，设计时 vs 运行时控制，自进化需要宪法，知乎深度分析，置信度高）
 - [[pi-school-official-course|Pi School 官方课程主页：在 Pi 里边用边学的免费 Agent 入门课]]（2026-10-16，AI/课程）
 - [[pi-1-0-durable-mcp-update|Pi 1.0：原生 MCP + Code Mode 稳定版与 Pi Durable 持久执行框架]]（2026-10-14，AI/Agent 基础设施）
 - [[pi-sandbox-two-layer-isolation|Pi 支持沙箱吗：从什么是沙箱，到 Pi 的两层隔离]]（2026-10-14，AI/安全）
@@ -232,6 +233,8 @@
 - [[springboot-disruptor-event-bus|Spring Boot 集成 Disruptor 无锁事件总线：RingBuffer 原理到百万级吞吐]]（2026-10-21，Java/并发性能）
 - [[springboot-global-exception-handling|Spring Boot 3.x 全局异常处理最佳实践]]（2026-10-23，Java/Spring，置信度中）
 - [[springboot-structured-logging|SpringBoot 结构化日志实战（3.4 内置 JSON/ECS）]]（2026-10-23，Java/可观测，置信度中）
+- [[ste-zh-skill|ste-zh：借鉴 ASD-STE100 的 AI Agent 中文汇报规范 Skill]]（2026-10-29，AI/Skill/写作，受控语言约束 Agent 汇报，对标 ASD-STE100，微博帖子，置信度中）
+- [[survival-llm-offline-assistant|survival-llm：完全离线运行的 AI 生存知识助手]]（2026-10-29，AI/离线/RAG，本地 LLM+150 万篇离线文档，断网/灾害/野外场景，微博帖子，置信度中）
 - [[pi-school-agent-course|这门免费课表面在教 Pi，其实在教你 Agent 到底怎么工作]]（2026-10-14，AI/教程）
 - [[state-of-ai-report-2026|State of AI Report 2026 中文要点（Datawhale 译）]]（2026-10-14，AI/行业报告）
 - [[stress-test-capacity-planning|第二十课：高并发系统压测与容量规划（架构师之路）]]（2026-10-22，压测/容量规划）

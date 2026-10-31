@@ -9,7 +9,7 @@ created: 2026-10-29
 category: 技术
 tags: [AI, 工具]
 asset_ref: Assets/2026/10/survival-llm-offline-assistant.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # survival-llm：离线 AI 生存知识助手

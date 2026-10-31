@@ -9,7 +9,7 @@ created: 2026-10-29
 category: 技术
 tags: [AI, 工具]
 asset_ref: Assets/2026/10/ste-zh-skill.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # ste-zh：简化技术中文规范 Skill

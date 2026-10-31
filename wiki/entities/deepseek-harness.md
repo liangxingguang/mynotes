@@ -14,6 +14,7 @@ tags:
 sources:
   - raw/sources/products/2026-10-14-deepseek-harness-7day-day1.md
   - raw/sources/ai/2026-10-28-agent-harness-framework-selection.md
+  - raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md
 related:
   - wiki/decisions/harness-selection-deepagents.md
   - wiki/entities/deepagents.md
@@ -39,6 +40,9 @@ DeepSeek Harness 是调用 DeepSeek 模型的桌面 Agent 客户端（作者称"
 - 支持子 Agent、工作流与插件扩展（标准模式即含；插件机制为系列教程第 5 天主题）。
 - 计费：模型 API 按量付费，key 在 DeepSeek 开放平台创建且只显示一次。
 - 在 harness 选型对比中，其"多模式（标准/PTC/极简/创造）+ 插件化"为 deepagents / MAF / DSH 三家中最全；但因 developer preview（官方明示将有破坏性变更），生产场景暂作架构参考/POC（2026-10-28 选型信源）。
+- **基于 Cordis 的插件架构**（2026-10-29 信源）：模型适配器、工具注册表、会话日志、Agent Loop 全部是可装卸插件；各项注册是可卸载的副作用，系统能力随插件装载和卸载而变化。Agent 接口刻意不依赖某一种具体循环实现，调度逻辑本身可以被替换。
+- **可逆组合是核心机制**：能力既能加入也能退出，使同一个 Harness 可以承载多种 Agent。`tool-cordis` 扩展允许 Agent 在沙箱中临时定义并挂载工具（进程内生效，重启消失，不写入配置）。
+- **运行时自我改装**（非"自我进化"）：当前临时插件只完成了"发现缺口→生成并挂载"的第一步；版本管理、长期持久化、回归测试、权限审计、能力淘汰均未解决。
 
 ## Products / Projects（产品／项目）
 
@@ -54,6 +58,7 @@ DeepSeek Harness 是调用 DeepSeek 模型的桌面 Agent 客户端（作者称"
 - 2026-09-29 — v0.2 预览版发布，提供 macOS/Windows 桌面端
 - 2026-10-14 — 7 天系列实操手册 Day 1 发布（本信源）
 - 2026-10-28 — 知乎《Agent》系列第 5 篇 harness 选型文将其列为三家候选之一，因 developer preview 暂缓生产采用
+- 2026-10-31 — Pi 与 DSH 复杂度之争采集入库，补充 Cordis 插件架构、可逆组合机制与运行时自我改装视角
 
 ## Current Understanding（当前认知）
 
@@ -63,3 +68,4 @@ Harness 把 Agent 能力组织为"模式预设"，降低新手配置门槛；PTC
 
 - `raw/sources/products/2026-10-14-deepseek-harness-7day-day1.md`
 - `raw/sources/ai/2026-10-28-agent-harness-framework-selection.md`（官方仓库 developer preview 声明；三家中多模式+插件化最全）
+- `raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md`（Cordis 插件架构、可逆组合、运行时自我改装视角）

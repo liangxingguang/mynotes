@@ -22,6 +22,7 @@ sources:
   - raw/sources/products/2026-10-16-pi-school-official-course.md
   - raw/sources/products/2026-10-20-pi-tips-4-web-parallel.md
   - raw/sources/ai/2026-10-28-pi-series.md
+  - raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md
 related:
   - wiki/concepts/mcp.md
   - wiki/concepts/agent-loop.md
@@ -46,6 +47,7 @@ Pi 是一款极简风格的 Agent CLI：默认只内置 read、write、edit、ba
 ## Important Facts（重要事实）
 
 - 默认工具仅 read/write/edit/bash 四个（grep/find/ls 需在 `defaultTools` 中开启）；2026-08 生态数据口径下无内置 MCP、子代理、待办。
+- **"举证责任倒置"复杂度观**（2026-10-29 信源）：任何内置能力都产生上下文成本、决策成本、维护成本三重成本，须先证明价值才能进入核心。核心信念："缺失的功能可以补，失控的复杂度很难拿掉"。优先用操作系统原语（文件、终端、容器），不造 Agent 专属抽象。
 - **2026-09-30 v0.99.0/0.99.1**（上一版 0.87.1，版本号跳升）：[[codemode|Codemode]] 与内置 [[mcp|MCP]] 首次进入核心（Armin Ronacher——Flask 作者、Pi 仓库提交数第二——的 PR #10040；MCP 工具默认藏在 Codemode 后面，接了 MCP 即自动开启），另有 system 主题、ChatGPT 订阅登录、虚拟模型（按请求分发真实模型分别计费）、分类模型四项更新。官网"不支持 MCP"一行被划掉，改标 "Now with MCP+Codemode"。
 - **2026-10 Pi 1.0**：Code Mode 与原生 MCP 转入稳定版（0.99 引入、1.0 稳定；转变原因：协议成熟与模型训练改善）；同日推出持久化框架 Pi Durable（约 1.2 万行代码，架构历经八轮迭代）。
 - Code Mode：模型在 QuickJS 沙箱内写 JS 编排工具调用，可并行调工具、过滤数据、循环内调 System 1 分类模型（如 Jev），只把汇总结果送回前沿模型以降低 Token 消耗；实测固定开销约减半、单次任务收益不稳定（详见 [[codemode|Codemode]]）。
@@ -91,6 +93,7 @@ Pi 是一款极简风格的 Agent CLI：默认只内置 read、write、edit、ba
 - 2026-10-16 — Pi School 官方课程主页采集入库，确认官方课程机制与免费无账号口径
 - 2026-10-20 — 实用技巧系列第四篇发布，系统梳理联网/浏览器/并行四路线选型与社区扩展安全核查
 - 2026-10-31 — Pi 实战系列 16 篇合集采集入库，覆盖配置/提示词/扩展/多智能体/本地模型/调试/TDD 等全流程实操
+- 2026-10-31 — Pi 与 DSH 复杂度之争采集入库，补充"举证责任倒置"复杂度观与设计时控制立场
 
 ## Current Understanding（当前认知）
 
@@ -109,3 +112,4 @@ Pi 代表了 Agent CLI 的另一种产品哲学：内核极简、能力清单交
 - `raw/sources/products/2026-10-16-pi-school-official-course.md`
 - `raw/sources/products/2026-10-20-pi-tips-4-web-parallel.md`
 - `raw/sources/ai/2026-10-28-pi-series.md`
+- `raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md`

@@ -3117,6 +3117,43 @@
       ],
       "source_url": "gptaiflow.tech",
       "asset_ref": "Assets/2026/10/9ed65982-d90c-4a44-bf08-403c8e02281d_google_________prompt_engineering____-baoyu.io__1_-pdf.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md",
+      "sha256": "33cf54ea3b3bda1dce54e21e31722faee39ca5a04be4027d89662ca112c98bf9",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-29-pi-dsh-agent-complexity.md",
+      "pages": [
+        "wiki/sources/pi-dsh-agent-complexity.md",
+        "wiki/entities/pi.md",
+        "wiki/entities/deepseek-harness.md",
+        "wiki/concepts/harness-engineering.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2077755886915810428",
+      "asset_ref": "Assets/2026/10/pi-dsh-agent-complexity.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-28-ste-zh-skill.md",
+      "sha256": "9d1584e852aa0889461b223da9f92957d7f4d0593ff5213bad217a3a0c3dd090",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-29-ste-zh-skill.md",
+      "pages": [
+        "wiki/sources/ste-zh-skill.md",
+        "wiki/concepts/claude-skills.md"
+      ],
+      "source_url": "https://weibo.com/2194035935/5359072102848033",
+      "asset_ref": "Assets/2026/10/ste-zh-skill.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-28-survival-llm-offline-assistant.md",
+      "sha256": "0e9cd819692b0b1c4240e9d3a73e7b5d10edc64700138ccbf537bba3f84fe7c5",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-29-survival-llm-offline-assistant.md",
+      "pages": [
+        "wiki/sources/survival-llm-offline-assistant.md"
+      ],
+      "source_url": "https://weibo.com/2194035935/5358923348710037",
+      "asset_ref": "Assets/2026/10/survival-llm-offline-assistant.md"
     }
   ]
 }
