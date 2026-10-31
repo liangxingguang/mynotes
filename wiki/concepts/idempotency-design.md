@@ -4,7 +4,7 @@ type: concept
 title: 幂等设计（Idempotency Design）
 status: active
 created: 2026-10-23
-updated: 2026-10-31
+updated: 2026-11-01
 confidence: high
 tags:
   - concept
@@ -20,12 +20,17 @@ sources:
   - raw/sources/architecture/2026-10-28-local-message-table-distributed-transaction.md
   - raw/sources/architecture/2026-10-28-mysql-10b-bulk-import-guide.md
   - raw/sources/architecture/2026-10-31-agent-platform-retry-resilience.md
+  - raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md
+  - raw/sources/architecture/2026-10-31-points-system-architecture-design.md
 related:
   - wiki/concepts/durable-execution.md
   - wiki/concepts/blue-green-deployment.md
   - wiki/concepts/interaction-write-path.md
   - wiki/concepts/redis.md
+  - wiki/concepts/points-system-design.md
   - wiki/sources/async-idempotency-local-message-table.md
+  - wiki/sources/llm-integration-engineering-hard-parts.md
+  - wiki/sources/points-system-architecture-design.md
   - wiki/sources/mq-transaction-idempotency-design.md
   - wiki/sources/async-task-system-design.md
   - wiki/sources/k8s-blue-green-release-trading.md
@@ -90,6 +95,8 @@ related:
 - 2026-10-31：[[local-message-table-distributed-transaction]] 第六信源印证同事务铁律：本地消息表只保证至少一次投递，案例 3 以"状态更新超时无幂等导致重复业务"给出违反同事务铁律的事故侧证据；幂等键用业务唯一流水号。
 - 2026-10-31：[[mysql-10b-bulk-import-guide]] 第七信源在批量导入重跑场景印证：幂等键（`shard_id + biz_id` 唯一）+ `ON DUPLICATE KEY UPDATE`/`INSERT IGNORE` 让分片失败重跑安全，配合水位表断点续传可无限重试——重试与幂等共生在"可重入导入"场景的落地。
 - 2026-10-31：[[agent-platform-retry-resilience]] 第八信源把幂等键明确为"服务端协议"而非请求头一行：工具端至少实现五项——对 `tenant_id + idempotency_key` 建立唯一约束、保存请求摘要拒绝同键不同参数、返回已完成结果并建立执行中/结果未知明确状态、保留去重记录覆盖恢复窗口、存在执行权竞争时验证 fencing 语义；键稳定派生自 `tenant_id + task_id + step_id + operation_id` 不含 attempt 序号，Worker 重启/接管/策略恢复不得改变键。Fencing Token 保护任务状态不被旧 Worker 覆盖，但不能单独阻止外部系统重复副作用——与第 3 信源"fencing 局限"互为印证。
+- 2026-11-01：面试深挖 84（第 9 信源）把幂等键的定法落到**模型调用链**：幂等键以业务维度的一次完整请求为单位，而非以单次模型调用为单位——一次用户提问可能触发多轮模型调用与多次工具调用，按单次调用定键会让重试只重放其中一环、状态错位。非确定性下幂等「更需要」：重试、超时重放、用户重复提交叠加，重复到达概率比传统链路更高。
+- 2026-11-01：积分系统架构（第 10 信源）在账户场景印证并细化：幂等键 = 业务方 + 业务单号 + 操作类型（消费/冻结/确认扣减/取消冻结是不同操作，不能共用含义模糊的键）；网关可拦重复流量但**最终幂等必须由积分核心持久化并用数据库唯一约束守住**；扣减绝不「先读余额、应用里判断后无条件覆盖」，原子扣减且 ≥0 由数据库并发控制保证——与本概念第 1 条同事务铁律同构的「变更本身必须原子」实例。
 
 ## Open Questions（开放问题）
 
@@ -104,11 +111,16 @@ related:
 - Source: `raw/sources/architecture/2026-10-28-like-follow-high-concurrency-design.md`（Lua 返回值 1/0/-1 幂等裁决、SETBIT 旧值标记、唯一索引 UPSERT 双保险、SETNX 消费标记 24h）
 - Source: `raw/sources/architecture/2026-10-28-mysql-10b-bulk-import-guide.md`（批量导入幂等键 `shard_id+biz_id` + ON DUPLICATE KEY UPDATE/INSERT IGNORE 重跑安全、水位表断点续传可重入）
 - Source: `raw/sources/architecture/2026-10-31-agent-platform-retry-resilience.md`（幂等键服务端协议五要素、键派生规则、fencing 局限的独立印证）
+- Source: `raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md`（第 9 信源：模型链路幂等键以业务完整请求为单位、非确定性下幂等更需要）
+- Source: `raw/sources/architecture/2026-10-31-points-system-architecture-design.md`（第 10 信源：积分幂等键三要素、DB 唯一约束守住、原子扣减不先读后覆盖）
 
 ## Related Knowledge（相关知识）
 
 - [[durable-execution|持久执行（概念页）]]
 - [[blue-green-deployment|蓝绿发布（概念页）]]（回退不造成二次业务执行以幂等为前提）
+- [[points-system-design|积分系统设计（概念页）]]
 - [[rocketmq|RocketMQ（实体页）]]（消息重放是异步重复流量来源之一）
 - [[interaction-write-path|互动数据写路径治理]]（缓存层幂等：Lua 判重+写入+计数原子合成）
 - [[redis|Redis（实体）]]（Lua 脚本原子性是缓存层幂等的基座）
+- [[llm-integration-engineering-hard-parts|大模型接进业务系统：工程难点在哪（信源页）]]
+- [[points-system-architecture-design|积分系统架构设计（信源页）]]

@@ -4,7 +4,7 @@ type: concept
 title: 重试治理（Retry Governance）
 status: active
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-01
 confidence: medium
 tags:
   - concept
@@ -14,10 +14,15 @@ tags:
 sources:
   - raw/sources/architecture/2026-10-31-agent-platform-retry-resilience.md
   - raw/sources/architecture/2026-10-31-architecture-science-and-art-42-rules.md
+  - raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md
+  - raw/sources/architecture/2026-10-31-openfeign-thread-pool-isolation.md
 related:
   - wiki/concepts/durable-execution.md
   - wiki/concepts/idempotency-design.md
+  - wiki/concepts/remote-call-governance.md
   - wiki/sources/agent-platform-retry-resilience.md
+  - wiki/sources/llm-integration-engineering-hard-parts.md
+  - wiki/sources/openfeign-thread-pool-isolation.md
 ---
 # 重试治理（Retry Governance）
 
@@ -83,6 +88,8 @@ related:
 
 - 2026-10-31：本页由单一信源（agent-platform-retry-resilience）建立。框架包含：五边界治理、Retry Budget 按首次记账、Full Jitter、错误分类、熔断只看真实下游结果、12 步执行链、跨 Worker 持久化字段、A–F 消融实验与 6 阶段上线路线。confidence: medium——目前为单一信源，且文中数值明确声明为"起始模板需校准"。
 - 2026-10-31：新增互证信源（architecture-science-and-art-42-rules 法则 36-38）——通用架构语言对限流/熔断/隔离三件套的定义：限流在容量边界前控制入口（被挡住的请求提示/入队/降级由业务决定）、熔断让异常依赖暂时退出调用链（关闭/打开/半开）、隔离限制一个故障最多占用多少资源。与本页 Bulkhead/熔断器机制一致，互为印证；Agent 平台框架与数值不变，confidence 维持 medium。
+- 2026-11-01：面试深挖 84（第 3 信源）把重试治理推进到**非确定性依赖**场景：对确定性依赖，重试是「把同一次尝试再做一遍」；对模型侧，重试是「从分布里再抽一个样本」——只能摊薄偶发坏样本、对系统性错误无效，多次采样取最优引入选择偏差且成本线性上升。验收从正确性变成分布：固定采样参数与回归集、多次采样看通过率分布、单次对比不作数。该信源「整链截止时间由编排层下发、每次调用前看剩余额度」的做法，是重试治理「时间边界」在模型链路的实例（与 durable-execution 的 Checkpoint/Deadline 同族）。
+- 2026-11-01：OpenFeign 实战（第 4 信源）给出「不盲目重试」的业务边界实例：查询接口可有限重试（相对安全）；开单接口不重试或谨慎重试（防重复下单）；**库存扣减与结算接口禁止自动重试**（防重复扣减/重复记账）。与本页「副作用语义边界决定重试资格」完全同构——写操作的重试资格由副作用可重复性决定，而非由失败率决定。
 
 ## Open Questions（开放问题）
 
@@ -93,11 +100,16 @@ related:
 ## Evidence（证据）
 
 - Source: `raw/sources/architecture/2026-10-31-agent-platform-retry-resilience.md`（五边界框架、乘法放大计算、Little 定律推演、Retry Budget 记账与上界证明、Full Jitter 公式、错误分类表、熔断状态机、12 步执行链、持久化字段清单、验收不变量、A–F 消融实验设计、6 阶段上线路线）
+- Source: `raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md`（第 3 信源：非确定性依赖下重试语义变为分布采样、验收从正确性变成分布、编排层持有整链截止时间）
+- Source: `raw/sources/architecture/2026-10-31-openfeign-thread-pool-isolation.md`（第 4 信源：查询可有限重试、库存扣减/结算禁止自动重试的业务边界实例）
 
 ## Related Knowledge（相关知识）
 
 - [[durable-execution|持久执行（概念页）]]
 - [[idempotency-design|幂等设计（概念页）]]
+- [[remote-call-governance|服务远程调用治理（概念页）]]
 - [[agent-platform-retry-resilience|从重试风暴到可控恢复（信源页）]]
+- [[llm-integration-engineering-hard-parts|大模型接进业务系统：工程难点在哪（信源页）]]
+- [[openfeign-thread-pool-isolation|OpenFeign 服务远程调用 + 线程池隔离架构实战（信源页）]]
 - [[agent-long-task-reliable-execution|AI Agent 长任务可靠执行（信源页）]]
 - [[async-task-system-design|异步任务系统怎么设计（信源页）]]

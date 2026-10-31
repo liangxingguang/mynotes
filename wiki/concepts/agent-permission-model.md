@@ -4,7 +4,7 @@ type: concept
 title: Agent 权限模型（平台授权与本地运行）
 status: active
 created: 2026-10-30
-updated: 2026-10-31
+updated: 2026-11-01
 confidence: medium
 tags:
   - concept
@@ -13,12 +13,14 @@ tags:
 sources:
   - raw/sources/ai/2026-10-28-agent-permission-model-design.md
   - raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md
+  - raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md
 related:
   - wiki/concepts/mcp.md
   - wiki/concepts/a2a-protocol.md
   - wiki/concepts/agent-sandboxing.md
   - wiki/concepts/durable-execution.md
   - wiki/sources/kiso-minimal-agent-framework.md
+  - wiki/sources/llm-integration-engineering-hard-parts.md
   - wiki/entities/kiso.md
 ---
 # Agent 权限模型（平台授权与本地运行）
@@ -65,6 +67,7 @@ A2A 委派：主管下发子 Instruction 时生成子 InstructionGrant，只能�
 
 - 2026-10-30 — 由信源 `raw/sources/ai/2026-10-28-agent-permission-model-design.md`（Agent架构设计15）建立。
 - 2026-10-31 — Kiso 信源（第 2 信源）补上本地运行时维度：五种 CLI 运行模式（含 `dontAsk` 的 deny 语义——无人值守不是"什么都允许"，而是"需人确认的都拒绝"，任务不挂在无人回答的确认框上）、只读证明式命令放行（Unknown≠Safe）、子 Agent 权限受限 + 父会话独立验收。与平台四层防线互补可组合（平台层管授权收窄、本地层管执行证明），页面标题由「四层防线」扩展为「平台授权与本地运行」。
+- 2026-11-01 — 面试深挖 84（第 3 信源）补上**凭证归属与校验位置**视角：工具调用产生的执行凭证是「发起方用户」的权限，不是模型/代理自身的；校验发生在**调用方这一侧**（工具提供方执行时校验），模型只是参数生成者——即使提示词注入伪造指令，也只能生成无权请求。只读工具同样过权限过滤（工具端有自己的授权链，不是免检通道）。与本页四层防线"MCP 网关二次鉴权兜底"同构：校验权在工具侧，不在模型侧；权限模型管"能调什么"，凭证归属管"以谁的身份调"。
 
 ## Open Questions（开放问题）
 
@@ -76,6 +79,7 @@ A2A 委派：主管下发子 Instruction 时生成子 InstructionGrant，只能�
 
 - Source: `raw/sources/ai/2026-10-28-agent-permission-model-design.md`
 - Source: `raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md`（第 2 信源：五种运行模式、只读证明式放行、环境变量清洗、执行者与裁判者分离）
+- Source: `raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md`（第 3 信源：执行凭证归属发起方用户、校验在调用方侧、模型只是参数生成者、只读也过权限过滤）
 
 ## Related Knowledge（相关知识）
 
@@ -83,3 +87,4 @@ A2A 委派：主管下发子 Instruction 时生成子 InstructionGrant，只能�
 - [[kiso-minimal-agent-framework|Kiso：极简 Agent 框架（信源页）]]
 - [[kiso|Kiso]]
 - [[durable-execution|持久执行（Durable Execution）]]
+- [[llm-integration-engineering-hard-parts|大模型接进业务系统：工程难点在哪（信源页）]]

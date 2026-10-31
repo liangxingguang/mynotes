@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-10-31T16:30:00Z",
+  "updated_at": "2026-11-01T00:00:00Z",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -3466,6 +3466,50 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/OWGCpNVxy0HpPvn8aq1eCA",
       "asset_ref": "Assets/2026-10/weixin-20261031-OWGCpNVxy0HpPvn8aq1eCA.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md",
+      "sha256": "9c4aaf00e1f51c24a22546b2c515dc1a4ed0c257e93b3059994abd46ddf6293e",
+      "registered_at": "2026-11-01",
+      "inbox_ref": "Archive/2026-10-31-llm-integration-engineering-hard-parts.md",
+      "pages": [
+        "wiki/sources/llm-integration-engineering-hard-parts.md",
+        "wiki/concepts/context-management.md",
+        "wiki/concepts/retry-governance.md",
+        "wiki/concepts/idempotency-design.md",
+        "wiki/concepts/agent-evaluation.md",
+        "wiki/concepts/agent-permission-model.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/FyagmlvUGDioU-bMUY9tyA",
+      "asset_ref": "Assets/2026-10/weixin-20261031-FyagmlvUGDioU-bMUY9tyA.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-31-openfeign-thread-pool-isolation.md",
+      "sha256": "91ed9dffc2f1549f11b8645191cc1b546c9e9ced16e0f3c8efef8510bb104203",
+      "registered_at": "2026-11-01",
+      "inbox_ref": "Archive/2026-10-31-openfeign-thread-pool-isolation.md",
+      "pages": [
+        "wiki/sources/openfeign-thread-pool-isolation.md",
+        "wiki/concepts/remote-call-governance.md",
+        "wiki/concepts/retry-governance.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/4XSWHzkY-8smMJ7pOGIatQ",
+      "asset_ref": "Assets/2026-10/weixin-20261031-4XSWHzkY-8smMJ7pOGIatQ.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-31-points-system-architecture-design.md",
+      "sha256": "bcbe971c1bc99f1cddb9e3222a734a2d26b81033d0bded4129f12476f336f53c",
+      "registered_at": "2026-11-01",
+      "inbox_ref": "Archive/2026-10-31-points-system-architecture-design.md",
+      "pages": [
+        "wiki/sources/points-system-architecture-design.md",
+        "wiki/concepts/points-system-design.md",
+        "wiki/concepts/idempotency-design.md",
+        "wiki/concepts/local-message-table.md",
+        "wiki/concepts/hot-cold-data-separation.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/-o5i4O-fJItMXZO3vnv4AQ",
+      "asset_ref": "Assets/2026-10/weixin-20261031-o5i4O-fJItMXZO3vnv4AQ.md"
     }
   ]
 }

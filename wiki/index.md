@@ -278,15 +278,18 @@
 - [[writing-8-frameworks|21 天学写作 Day10：让文章结构清晰的 8 个框架]]（2026-10-20，写作/方法论，置信度低）
 - [[zhihu-agent-column-index|知乎专栏《Agent》系列索引（10 篇合集）]]（2026-10-28，AI/Agent/系列导航，10 篇教程索引，已收录 9 篇独立 source 页，Part 9 缺失，置信度高）
 - [[forkjoinpool-vs-threadpoolexecutor|高频面试题：ForkJoinPool 凭什么比 ThreadPoolExecutor 快？（工作窃取与 join 的真相）]]（2026-10-31，Java/JUC/面试，工作窃取两端方向错开+join 不空等+commonPool 共享坑+虚拟线程调度器，单信源置信度高）
+- [[llm-integration-engineering-hard-parts|大模型接进业务系统：工程难点在哪（面试深挖 84）]]（2026-10-31，AI/Agent 工程，工具调用归属+上下文预算六类分配+意图路由+非确定性重试=分布采样+评测验收纪律，公众号单信源，置信度中）
+- [[openfeign-thread-pool-isolation|OpenFeign 服务远程调用 + 线程池隔离架构实战（连载十）]]（2026-10-31，架构/微服务/可靠性，超时/重试/日志三项生产配置+四类线程池隔离+降级红线，代码块采集丢失，单信源置信度中）
+- [[points-system-architecture-design|积分系统架构：并发扣减、分批过期、幂等、冲正与对账]]（2026-10-31，架构/账户系统，五条不变量+批次账务+写入链路 7 步+冲正对账+扩展顺序克制，公众号单信源，置信度中）
 
 ## concept（概念）
 
 - [[a2a-protocol|A2A 协议]]（Agent↔Agent 横向协作协议，Google 2025）
 - [[aima-agent-taxonomy|AIMA Agent 分类]]（简单反射/基于模型/基于目标/基于效用/学习五类 + 环境四属性；经典理论单信源）
-- [[agent-evaluation|业务 Agent 全生命周期评测]]（规则+LLM 裁判+人工复核，覆盖准入/门禁/压测/巡检，货拉拉实践）
+- [[agent-evaluation|业务 Agent 全生命周期评测]]（规则+LLM 裁判+人工复核，覆盖准入/门禁/压测/巡检；验收从正确性变成分布、单次对比不作数、回归集标注期望行为；货拉拉+叶小钗+Codex+面试深挖 84，四信源）
 - [[agent-as-memory|Agent as Memory（主 Agent 承担记忆职责）]]（主 Agent 协调子 Session 承担项目进展记忆；用户单点对接；长期记忆 Markdown 文件化+短期记忆主 Agent 化；单信源，置信度中）
 - [[agent-loop|Agent Loop]]（Runtime 驱动的模型-工具循环；Tool Call/Result、Message/Context/State/Session、Runtime vs Harness）
-- [[agent-permission-model|Agent 权限模型（平台授权与本地运行）]]（权限=静态基线+指令临时授权+动态校验；租户划边界/Agent 定上限/指令收范围/MCP 网关兜底；本地 CLI 五模式+只读证明式放行 Unknown≠Safe；A2A 委派子授权⊆父授权；双信源，置信度中）
+- [[agent-permission-model|Agent 权限模型（平台授权与本地运行）]]（权限=静态基线+指令临时授权+动态校验；租户划边界/Agent 定上限/指令收范围/MCP 网关兜底；凭证归属发起方用户+校验在调用方侧；本地 CLI 五模式+只读证明式放行 Unknown≠Safe；A2A 委派子授权⊆父授权；三信源，置信度中）
 - [[agent-sandboxing|Agent 沙箱隔离]]（能力限制而非行为审查；四条路径收窄可达面；脚本级/命令级/工具级/整体隔离）
 - [[agent-state-separation|Agent 状态分离（执行状态/操作状态/产物核验）]]（三态分离+多身份+恢复决策顺序+停止非回滚，Codex Harness 实践，单信源置信度中）
 - [[aqs-internals|AQS（AbstractQueuedSynchronizer）核心机制]]（volatile state + CLH 变体 FIFO 队列 + acquire/release 模板方法；JUC 锁体系基座，单信源）
@@ -309,7 +312,7 @@
 - [[claude-skills|Claude Skills]]（Markdown 文件即资产：判断/偏好/标准固化、按需加载、一句话唤醒；Skill-Creator 构建 + 2.0 断言评估/A-B/触发词优化；ub-mode 纪律包+ste-zh 行为包+激活式 token 账，四信源，置信度中）
 - [[codemode|Codemode（代码模式工具编排）]]（模型写 JS 沙箱脚本编排工具调用，只回筛选结果；固定开销约减半，单次收益看返回格式）
 - [[collections-utility-class|Collections 工具类设计]]（算法委托+三类包装器工厂；同步/不可变均为视图，迭代须外部加锁；emptyList 单例零分配；单信源，置信度中）
-- [[context-management|上下文管理（Context Management）]]（messages 全量重发下的体积工程：裁剪/压缩/隔离三手段+成对保留与磁盘全量两铁律；Claude Code 分层裁剪实证；Kiso 投影观+缓存经济学；注入式 token 账三信源）
+- [[context-management|上下文管理（Context Management）]]（messages 全量重发下的体积工程：裁剪/压缩/隔离三手段+成对保留与磁盘全量两铁律；Claude Code 分层裁剪实证；Kiso 投影观+缓存经济学；注入式 token 账+预算六类分配与输出预留，四信源）
 - [[concurrenthashmap-internals|ConcurrentHashMap 并发设计（JDK 8+）]]（读无锁+CAS 空桶插+synchronized 桶头+sizeCtl 三态+协作扩容；单信源，置信度中）
 - [[consumer-lag-governance|消费积压治理（Consumer Lag Governance）]]（Kafka 消费端 Lag 治理：四步法+三底线+增速告警，单信源，置信度中）
 - [[control-plane-design|规则控制面与寻优计算面分离]]（DDD 领域契约收敛规则+规则引擎前置过滤+算法只在合法空间搜索+降级兜底；电商优惠券场景完整实例，单信源置信度中）
@@ -328,7 +331,7 @@
 - [[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]（先目标基线、JFR/GC 日志归因，证据指向 JVM 才动参数，单变量实验）
 - [[exchanger-internals|Exchanger 双向交换设计]]（JUC 唯一双向交换；Slot 单槽→Arena 多槽渐进扩容；@Contended+手动填充防伪共享；SPINS=1024 按核数/hash 动态自旋；线程须成对，单信源，置信度中）
 - [[expand-migrate-contract|Expand/Migrate/Contract（Schema 跨版本演进）]]（Expand 只加兼容结构→Migrate 双写限速回填→回退窗口关闭后才 Contract；蓝绿回退的数据前提，单信源）
-- [[idempotency-design|幂等设计]]（重试与幂等共生；同事务铁律+幂等键三要素+分层防护闭环；幂等键服务端协议五要素，八信源互证）
+- [[idempotency-design|幂等设计]]（重试与幂等共生；同事务铁律+幂等键三要素+分层防护闭环；模型链路幂等键以完整请求为单位+积分幂等键三要素 DB 唯一约束守住，十信源互证）
 - [[interaction-write-path|互动数据写路径治理（Interaction Write Path Governance）]]（缓存扛读、异步削写、原子幂等、最终一致；先更缓存立即返回+三死穴+热点三板斧+落库三层压缩+对账降级；单信源，置信度中）
 - [[exploratory-learning|探索式学习（知识 DAG）]]（目标→节点 DAG，导师写 JS 经沙箱改写文档教学；Unyra 提出）
 - [[fail-fast-modcount|Fail-Fast 迭代器（modCount）]]（结构修改计数器+迭代器快照比对抛 CME；检测单线程编程错误而非线程安全机制；含 fail-safe 对比与 subList 陷阱，同作者六信源）
@@ -343,14 +346,14 @@
 - [[harness-engineering|Harness Engineering（Agent 执行系统工程）]]（Agent ≈ Model + Harness；七观察面+信息三层+安全四层+B0~B5 单变量评测；11 系统源码研究解读；Kiso 内核门禁+Codex 状态所有权+Session 核心重构七信源）
 - [[hashmap-internals|HashMap 核心设计（JDK 8）]]（2 的幂容量+扰动+0.75 负载因子+8/6/64 树化阈值+高低位链扩容拆分；单信源，置信度中）
 - [[hashset-internals|HashSet / LinkedHashSet 去重设计]]（HashMap key 视图+PRESENT 占位；hashCode+equals 双写铁律；dummy 构造换 LinkedHashMap 得插入序；双信源互证，置信度中）
-- [[hot-cold-data-separation|冷热分离（Hot/Cold Data Separation）]]（状态+时间双维划分；热/温/冷三层异构存储；先复制后删除分批限速；报表走数仓 T+1，单信源）
+- [[hot-cold-data-separation|冷热分离（Hot/Cold Data Separation）]]（状态+时间双维划分；热/温/冷三层异构存储；先复制后删除分批限速；先归档再决定分片+按账户标识稳定路由；报表走数仓 T+1，双信源）
 - [[hyperloglog|HyperLogLog（基数估算）]]（伯努利过程+分桶调和平均，12KB 估 64 位级基数；≤1w tablekv 精确、>1w HLL >95%，微信一手）
 - [[linkedblockingqueue-internals|LinkedBlockingQueue 双锁阻塞队列设计]]（takeLock/putLock 读写分离+滚动哨兵+跨锁信号传递+计数旧值精确唤醒；默认近无界须显式容量防 OOM；单信源，置信度中）
 - [[longadder-internals|LongAdder 分段累加设计（Striped64）]]（base 快速路径+Cell 数组分散 CAS+@Contended 128B 防伪共享+cellsBusy 自旋扩容≤CPU 核数；sum 近似无 addAndGet；LongAccumulator 泛化任意二元聚合；双信源：JDK 源码+点赞系统本地聚合 flush 用法，置信度中）
 - [[linkedhashmap-internals|LinkedHashMap 有序化设计（双链表 + 模板方法钩子）]]（Entry 身兼桶节点+双链节点；三钩子维护插入/访问序；两行核心代码 LRU，单信源，置信度中）
 - [[llm-wiki|LLM Wiki]]（原始来源不可变 + 模型持续编译互链知识页面，Karpathy 模式；本仓库即实例，三信源：综述+教程+WorkBuddy/ima 落地案例）
 - [[llm-call-protocol|OpenAI 兼容 Chat Completions 调用协议]]（messages 四角色+tool_call_id 配对+finish_reason 续轮判据+SDK 默认 timeout 10min/重试 2；单信源）
-- [[local-message-table|本地消息表（Local Message Table）]]（同事务原子性+重试可靠性+至少一次投递+状态机流转+选型边界+6 条红线；三信源互证）
+- [[local-message-table|本地消息表（Local Message Table）]]（同事务原子性+重试可靠性+至少一次投递+状态机流转+选型边界+6 条红线；MQ 非发件箱必选项、消费者仍要幂等，四信源互证）
 - [[log4j2-async-logging-thread-blocking|Log4j2 异步日志线程阻塞]]（日志事件入队前触发类加载导致业务线程 Block；三阶段模型+ThrowableProxy 根因+避坑方案，单信源一手，置信度高）
 - [[mcp|MCP]]（LLM↔工具/数据纵向协议，Anthropic 2024）
 - [[jad-sc-sm-version-check|jad/sc -d/sm：核实线上跑的是哪版代码]]（版本/来源/签名三层核实+「改了没生效」四原因+五步处置，与 arthas-01 速查互证，单信源方法论，置信度高）
@@ -407,7 +410,7 @@
 - [[redefine-hot-reload-boundaries|redefine 热替换边界：能改什么、不能改什么]]（只能改方法体/执行中方法退出才生效/三个风险+临时止血五步，与 arthas-01、MCP 实测信源互证，单信源方法论，置信度高）
 - [[rest-api-as-tools|REST 接口工具化模式]]（函数体换 HTTP 封装但工具形状不变；登录即工具+token 只活进程内存+统一 _call 注入+描述即流程+错误回喂 HTTP 化；换真后台只改 BASE_URL，单信源实测）
 - [[reentrantlock-internals|ReentrantLock 可重入锁设计]]（AQS 经典实现：非公平先抢/公平只差 hasQueuedPredecessors/state 累加可重入/多 Condition 精确唤醒，单信源，置信度中）
-- [[retry-governance|重试治理（Retry Governance）]]（唯一重试所有者+时间/次数/额度/并发/语义五边界；Retry Budget 按首次记账 β 上界、Full Jitter、错误分类、熔断只看真实下游结果、12 步执行链；双信源互证限流/熔断/隔离三件套，置信度中）
+- [[retry-governance|重试治理（Retry Governance）]]（唯一重试所有者+时间/次数/额度/并发/语义五边界；Retry Budget 按首次记账 β 上界、Full Jitter、错误分类、熔断只看真实下游结果、12 步执行链；非确定性依赖重试=分布采样+查询可重试写操作禁重试，四信源，置信度中）
 - [[rle-inverted-index|RLE 倒排索引（Run-Length Encoding Inverted Index）]]（Index Sorting 使 Doc ID 连续+RLE 编码 [start,length]+SparseRoaringDocIdSet 消除空置 bucket，合并 O(K×M)→O(M log M)，倒排链合并 TP99 -96%，全链路 TP99 -84%，美团一手）
 - [[scheduledthreadpoolexecutor-internals|ScheduledThreadPoolExecutor 调度设计]]（DelayedWorkQueue 数组最小堆+Leader-Follower 等待；period 正负号编码 fixedRate/fixedDelay；周期任务异常静默取消，单信源，置信度中）
 - [[sso-oauth2-oidc|单点登录 SSO（OAuth2 Authorization Code + OIDC）]]（共享认证服务器 Session；两条安全链+OIDC Discovery+oidc(withDefaults())；客户端一行 issuer-uri 自动配置；生产优先 Keycloak；Spring Authorization Server Demo，单信源一手，置信度高）
@@ -429,6 +432,8 @@
 - [[workflow-vs-agent|Workflow vs Agent（控制流分界）]]（Anthropic 定义：路径写死在代码 vs 模型运行时动态决定；三级能力阶梯+选型纪律"能用 workflow 别上 agent"，单信源）
 - [[websocket-heartbeat-reconnect|WebSocket 心跳保活与断线重连]]（双向心跳判假死+指数退避防风暴+离线队列补发三段式，单教程信源置信度中）
 - [[zgc|ZGC]]（染色指针+多视图映射+读屏障自愈实现并发整理，停顿 <10ms 与堆大小无关，JDK 15 转正；单信源）
+- [[points-system-design|积分系统设计（不变量/批次账务/并发扣减/冲正与对账）]]（五条不变量+批次账务较早到期优先+6 类数据模型+写入链路 7 步+冲正不删账+对账三类关系+扩展顺序克制，单信源，置信度中）
+- [[remote-call-governance|服务远程调用治理（超时/重试/线程池隔离/降级）]]（超时/重试/日志三项生产配置+四类线程池隔离+降级红线；入口防浪涌通信防阻塞；单信源，置信度中）
 
 ## entity（实体）
 

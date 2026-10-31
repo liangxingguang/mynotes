@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026-10/weixin-20261031-o5i4O-fJItMXZO3vnv4AQ.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 架构设计 | 积分系统：并发扣减、分批过期、幂等、冲正与对账

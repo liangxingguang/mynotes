@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - AI
 asset_ref: Assets/2026-10/weixin-20261031-FyagmlvUGDioU-bMUY9tyA.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 大模型接进业务系统：工程难点在哪（面试深挖 84）

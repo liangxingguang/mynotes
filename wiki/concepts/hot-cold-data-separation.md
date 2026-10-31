@@ -4,7 +4,7 @@ type: concept
 title: 冷热分离（Hot/Cold Data Separation）
 status: active
 created: 2026-10-30
-updated: 2026-10-30
+updated: 2026-11-01
 confidence: medium
 tags:
   - concept
@@ -12,10 +12,13 @@ tags:
   - archiving
 sources:
   - raw/sources/architecture/2026-10-28-hot-cold-data-separation-archive.md
+  - raw/sources/architecture/2026-10-31-points-system-architecture-design.md
 related:
   - wiki/concepts/table-sharding-migration.md
   - wiki/sources/hot-cold-data-separation-archive.md
   - wiki/concepts/mysql-bulk-import.md
+  - wiki/concepts/points-system-design.md
+  - wiki/sources/points-system-architecture-design.md
 ---
 # 冷热分离（Hot/Cold Data Separation）
 
@@ -66,6 +69,7 @@ related:
 
 - 2026-10-28：[[hot-cold-data-separation-archive|大表治理与冷热分离]] 立页：状态+时间双维划分、热/温/冷三层异构存储、先复制后删除分批限速、报表走数仓 T+1。
 - 2026-10-31：[[mysql-10b-bulk-import-guide]] 信源印证"MySQL 舒适区是分片后的热数据和在线事务"——冷数据归档/日志/时序数据不该硬塞 MySQL，是冷热分离立论的前提侧证据。
+- 2026-11-01：积分系统架构（第 2 信源）印证：①**先归档再决定是否分片**——核心数据多了第一步是把历史流水归档，不是先分片；②历史流水归档是分片的前提（归档后剩余核心数据规模下降，分片成本与收益才重新评估）；③路由维度的反面警示——按账户标识稳定路由，**不要只按时间把同一账户打散**（否则幂等键无法靠单库唯一约束全局去重）。与冷热分离按时间归档形成"时间维度归档 + 路由维度去重"的互补约束。
 
 ## Open Questions（开放问题）
 
@@ -76,8 +80,11 @@ related:
 ## Evidence（证据）
 
 - Source: `raw/sources/architecture/2026-10-28-hot-cold-data-separation-archive.md`
+- Source: `raw/sources/architecture/2026-10-31-points-system-architecture-design.md`（第 2 信源：先归档再决定分片、历史流水归档是分片前提、按账户标识稳定路由）
 
 ## Related Knowledge（相关知识）
 
 - [[hot-cold-data-separation-archive|信源：大表治理与冷热分离——历史单据到底怎么存？]]
 - [[db-table-sharding-practice|大表治理之分表实践]]
+- [[points-system-design|积分系统设计（概念页）]]
+- [[points-system-architecture-design|积分系统架构设计（信源页）]]

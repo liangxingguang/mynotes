@@ -4,7 +4,7 @@ type: concept
 title: 本地消息表（Local Message Table）
 status: active
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-01
 confidence: high
 tags:
   - concept
@@ -15,12 +15,15 @@ sources:
   - raw/sources/architecture/2026-10-28-local-message-table-distributed-transaction.md
   - raw/sources/architecture/2026-10-23-async-idempotency-local-message-table.md
   - raw/sources/architecture/2026-10-22-distributed-transaction-six-solutions.md
+  - raw/sources/architecture/2026-10-31-points-system-architecture-design.md
 related:
   - wiki/concepts/idempotency-design.md
   - wiki/concepts/durable-execution.md
+  - wiki/concepts/points-system-design.md
   - wiki/entities/rocketmq.md
   - wiki/sources/async-idempotency-local-message-table.md
   - wiki/sources/distributed-transaction-six-solutions.md
+  - wiki/sources/points-system-architecture-design.md
 ---
 # 本地消息表（Local Message Table）
 
@@ -77,6 +80,7 @@ related:
 - 2026-10-22：[[distributed-transaction-six-solutions|分布式事务 6 方案]] 将本地消息表列为六方案之一，定位"业务写库+写消息表同事务 + 后台重传 MQ + 消费端 ACK + 判重表"的最终一致组合。
 - 2026-10-23：[[async-idempotency-local-message-table|异步链路幂等实战]] 以重复扣券事故补全幂等侧证据：本地消息表重试是异步重复流量三大来源之一，幂等记录须与业务数据同事务提交。
 - 2026-10-31：本信源以三故障案例 + 状态流转表 + 退避参数 + 选型边界 + 6 条红线，补全本地消息表方案自身的完整工程画像。
+- 2026-11-01：积分系统架构（第 4 信源）在**事务发件箱**形态上印证：①MQ 不是发件箱的必选项——后台任务或 CDC 都能投递，发件箱与具体传输解耦；②事务发件箱不保证"只处理一次"——跨系统事件仍可能重复到达，消费者仍要幂等，与本概念第 3 条"至少一次投递、幂等必须由消费端自行保证"完全一致。积分系统的发件箱与核心变更同事务提交（订单状态 + 发件箱事件同事务），是"同事务原子性"在账户场景的实例。
 
 ## Open Questions（开放问题）
 
@@ -87,6 +91,7 @@ related:
 - Source: `raw/sources/architecture/2026-10-28-local-message-table-distributed-transaction.md`（三故障案例、状态流转表、退避参数 1/3/10/30min、8 次上限、选型边界、6 条红线）
 - Source: `raw/sources/architecture/2026-10-23-async-idempotency-local-message-table.md`（本地消息表重试是异步重复流量来源、同事务铁律）
 - Source: `raw/sources/architecture/2026-10-22-distributed-transaction-six-solutions.md`（本地消息表在 6 方案谱系中的位置）
+- Source: `raw/sources/architecture/2026-10-31-points-system-architecture-design.md`（第 4 信源：MQ 非发件箱必选项、事务发件箱不保证只处理一次、消费者仍要幂等）
 
 ## Related Knowledge（相关知识）
 
@@ -95,3 +100,5 @@ related:
 - [[rocketmq|RocketMQ（实体页）]]
 - [[async-idempotency-local-message-table|异步链路幂等实战（信源页）]]
 - [[distributed-transaction-six-solutions|分布式事务 6 方案（信源页）]]
+- [[points-system-design|积分系统设计（概念页）]]
+- [[points-system-architecture-design|积分系统架构设计（信源页）]]

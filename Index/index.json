@@ -1,63 +1,6 @@
 {
-  "updated_at": "2026-11-01 01:07",
+  "updated_at": "2026-11-01 04:14",
   "notes": [
-    {
-      "id": "2026-10-31-llm-integration-engineering-hard-parts",
-      "title": "大模型接进业务系统：工程难点在哪（面试深挖 84）",
-      "path": "Inbox/2026-10-31-llm-integration-engineering-hard-parts.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "AI"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/FyagmlvUGDioU-bMUY9tyA",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "「Java 架构师面试深挖」系列第 84 篇，主题是工具调用、上下文预算、意图路由、成本控制。定调：模型接进业务系统，难点不在调通那次接口，而是这条链路上几乎所有此前成立的假设都要重做一遍。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-FyagmlvUGDioU-bMUY9tyA.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-31-openfeign-thread-pool-isolation",
-      "title": "OpenFeign 服务远程调用 + 线程池隔离架构实战（连载十）",
-      "path": "Inbox/2026-10-31-openfeign-thread-pool-isolation.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/4XSWHzkY-8smMJ7pOGIatQ",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "公众号「架构落地笔记」大宗商品销采运储系统六层架构连载第十篇（公共中间件层），讲服务间远程调用治理：OpenFeign 的超时/重试/日志三项生产配置、四类线程池隔离、5 条避坑规范。定调一句——Sentinel 守入口、OpenFeign 守通信。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-4XSWHzkY-8smMJ7pOGIatQ.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-31-points-system-architecture-design",
-      "title": "架构设计 | 积分系统：并发扣减、分批过期、幂等、冲正与对账",
-      "path": "Inbox/2026-10-31-points-system-architecture-design.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/-o5i4O-fJItMXZO3vnv4AQ",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "从一笔积分消费推演整个积分系统架构——110 积分（50 于 9/30 到期 + 60 于 12/31 到期）消费 80，客户端超时重试、几天后订单退款。难点不在加减，而在回答\"第一次成功没有、重试会不会重复扣、80 来自哪些批次、退款怎么退、缓存/MQ/过期任务失败后怎样证明余额仍正确\"。八步推演：定不变量 → 总体架构 → 6 类数据模型 → 写入链路 → 异常恢复 → 扩展 → 上线 → 演进。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-o5i4O-fJItMXZO3vnv4AQ.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-31-scaling-pain-coding-agent-inference",
       "title": "Scaling Pain：超大规模 Coding Agent 推理实践（GLM-5 / SGLang）",
@@ -5916,6 +5859,25 @@
       "wiki_status": "ingested"
     },
     {
+      "id": "2026-10-31-llm-integration-engineering-hard-parts",
+      "title": "大模型接进业务系统：工程难点在哪（面试深挖 84）",
+      "path": "Archive/2026-10-31-llm-integration-engineering-hard-parts.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/FyagmlvUGDioU-bMUY9tyA",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "「Java 架构师面试深挖」系列第 84 篇，主题是工具调用、上下文预算、意图路由、成本控制。定调：模型接进业务系统，难点不在调通那次接口，而是这条链路上几乎所有此前成立的假设都要重做一遍。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-FyagmlvUGDioU-bMUY9tyA.md",
+      "wiki_status": "ingested"
+    },
+    {
       "id": "2026-10-31-minimax-mcode-stack-agent-workflow",
       "title": "MiniMax 开源「mcode-stack」：用 MiniMax Code 写 MiniMax Code 的全套工作流",
       "path": "Archive/2026-10-31-minimax-mcode-stack-agent-workflow.md",
@@ -5955,6 +5917,25 @@
       "wiki_status": "ingested"
     },
     {
+      "id": "2026-10-31-openfeign-thread-pool-isolation",
+      "title": "OpenFeign 服务远程调用 + 线程池隔离架构实战（连载十）",
+      "path": "Archive/2026-10-31-openfeign-thread-pool-isolation.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/4XSWHzkY-8smMJ7pOGIatQ",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "公众号「架构落地笔记」大宗商品销采运储系统六层架构连载第十篇（公共中间件层），讲服务间远程调用治理：OpenFeign 的超时/重试/日志三项生产配置、四类线程池隔离、5 条避坑规范。定调一句——Sentinel 守入口、OpenFeign 守通信。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-4XSWHzkY-8smMJ7pOGIatQ.md",
+      "wiki_status": "ingested"
+    },
+    {
       "id": "2026-10-31-perf-cpu-hotspot-analysis",
       "title": "性能分析 02｜如何使用 perf 排查：定位系统的性能问题",
       "path": "Archive/2026-10-31-perf-cpu-hotspot-analysis.md",
@@ -5991,6 +5972,25 @@
       "summary": "Pi（pi-coding-agent）1.4.0 保姆级实战教程（Windows 视角）。从两条安装路径（PowerShell / npm，Node ≥ 22.19）、自写 `~/.pi/agent/models.json` 接国内模型（SiliconFlow/DeepSeek/中转站，`api` 填 `openai-completions`）、界面三区与斜杠/@/感叹号口诀，到四类资源（扩展加能力、Skills 加知识、模板加熟练、主题加好看）、`-p` 批处理模式、五类任务提示词（每类带验收话术）、扩展 vs MCP vs Skills 差异、10 个踩坑速查。核心提醒：默认无沙箱继承账户权限，跑真项目先 git commit。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/pi-coding-agent-getting-started-guide.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-points-system-architecture-design",
+      "title": "架构设计 | 积分系统：并发扣减、分批过期、幂等、冲正与对账",
+      "path": "Archive/2026-10-31-points-system-architecture-design.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/-o5i4O-fJItMXZO3vnv4AQ",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "从一笔积分消费推演整个积分系统架构——110 积分（50 于 9/30 到期 + 60 于 12/31 到期）消费 80，客户端超时重试、几天后订单退款。难点不在加减，而在回答\"第一次成功没有、重试会不会重复扣、80 来自哪些批次、退款怎么退、缓存/MQ/过期任务失败后怎样证明余额仍正确\"。八步推演：定不变量 → 总体架构 → 6 类数据模型 → 写入链路 → 异常恢复 → 扩展 → 上线 → 演进。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-o5i4O-fJItMXZO3vnv4AQ.md",
       "wiki_status": "ingested"
     }
   ]
