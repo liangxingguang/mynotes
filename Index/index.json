@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31 17:31",
+  "updated_at": "2026-10-31 17:36",
   "notes": [
     {
       "id": "2026-10-31-arthas-mcp-server-ai-diagnosis",
@@ -56,6 +56,26 @@
       "summary": "本文是《性能分析》系列第 2 篇，讲解用 Linux perf 做 CPU 采样排查性能问题的完整路径：先确认工具、权限、符号与回溯方式四类前置条件，再以 `perf record`（cpu-clock:u、199Hz、帧指针）采集问题现场，用 `perf report` 交互界面先看大头热点、展开调用树把热点函数连回业务路径，最后给出 demo 复现命令与文本导出参数。火焰图留待下篇。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/perf-cpu-hotspot-analysis.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-pi-coding-agent-getting-started-guide",
+      "title": "Pi 保姆级教程：7000 字手把手从 0 到 1，把扩展生态一起打通",
+      "path": "Inbox/2026-10-31-pi-coding-agent-getting-started-guide.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "工具",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/jLDgnYOymoIjrZTduazyyg",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "Pi（pi-coding-agent）1.4.0 保姆级实战教程（Windows 视角）。从两条安装路径（PowerShell / npm，Node ≥ 22.19）、自写 `~/.pi/agent/models.json` 接国内模型（SiliconFlow/DeepSeek/中转站，`api` 填 `openai-completions`）、界面三区与斜杠/@/感叹号口诀，到四类资源（扩展加能力、Skills 加知识、模板加熟练、主题加好看）、`-p` 批处理模式、五类任务提示词（每类带验收话术）、扩展 vs MCP vs Skills 差异、10 个踩坑速查。核心提醒：默认无沙箱继承账户权限，跑真项目先 git commit。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/pi-coding-agent-getting-started-guide.md",
       "wiki_status": "pending"
     },
     {
