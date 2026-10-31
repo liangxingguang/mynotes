@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31 20:21",
+  "updated_at": "2026-10-31 20:30",
   "notes": [
     {
       "id": "2026-10-31-agent-harness-essay-ideal-harness",
@@ -151,6 +151,25 @@
       "summary": "Spring 面试八股总纲，11 大考点：BeanFactory vs ApplicationContext、IOC、DI、AOP、Spring MVC、`refresh()` 十二步、Bean 生命周期、三级缓存、JDK vs CGLIB、事务传播与隔离级别、事务失效 10 场景、`@Autowired` vs `@Resource`、事件机制。每个考点配对比表与面试话术。主线：Spring 高级能力全落在 `BeanPostProcessor` 扩展点；三级缓存存在的根本理由是让 AOP 代理在循环依赖时保持一致。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-SpHaBjO13VfcQap34ajgDg.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-10-31-weixin-album-arthas-usage",
+      "title": "公众号图文专辑《arthas使用》目录（奇点智慧小助手 · 7 篇）",
+      "path": "Inbox/2026-10-31-weixin-album-arthas-usage.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg4MjE2Nzk0NQ==&action=getalbum&album_id=4743203736426643461&subscene=169",
+      "source_type": "album",
+      "platform": "微信公众号",
+      "summary": "这是公众号「奇点智慧小助手」的一个图文专辑《arthas使用》，共 7 篇 Arthas 线上问题排查系列，按正序编号 1–7 排布：从 attach 入门到火焰图、jad 热更新、watch/trace/tt 三件套、thread 命令、AI + Arthas，最后一篇是「什么时候不该用 Arthas」。**本次只抓到专辑目录，7 篇文章的正文与链接均未获取到**——专辑页为 JS 动态渲染，HTTP 层只拿到 1px 占位图，jina 兜底只给出标题与时间戳、条目链接被丢弃。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-album-4743203736426643461.md",
       "wiki_status": "pending"
     },
     {

@@ -37,6 +37,7 @@
 - [[alibaba-ecommerce-im-group-live|阿里电商IM消息平台在群聊、直播场景下的技术实践]]（2026-10-23，IM/读写扩散/直播分发）
 - [[alibaba-ai-native-dev-handbook|阿里巴巴 AI Native 研发实践手册：从代码补全到自主交付]]（2026-10-31，AI/AI Native/SDLC，阿里多团队一手实践+「主战场在验证与环境」核心论断，置信度高）
 - [[architect-road-2025-digest|架构师之路：2025 年干货精选（343 篇链接索引）]]（2026-10-22，架构/资源导航，置信度低）
+- [[architecture-science-and-art-42-rules|架构是学问，也是艺术：42 条架构取舍法则]]（2026-10-31，架构/方法论，11 章 42 条法则，先定约束再挑技术+三高量化+数据放置 8 条+稳定性三件套，配图 1px 占位正文完整，单信源置信度中）
 - [[archunit-java-architecture-guardrails|架构图不会报警，但 ArchUnit 会：给 Java 项目装一套架构门禁]]（2026-10-14，Java/架构治理）
 - [[arthas-mcp-ai-troubleshooting|让 AI 调 Arthas，Java 排障会快多少？]]（2026-10-14，AI/MCP/Java 诊断）
 - [[arthas-mcp-server-ai-diagnosis|Arthas 官方 MCP 实测：29 个诊断命令交给 AI，凌晨排查省 40 分钟]]（2026-10-31，AI/MCP/Java 诊断，量化对比 45min vs 5min+生产红线，与前篇互证，单信源置信度高）
@@ -285,9 +286,11 @@
 - [[arraydeque-internals|ArrayDeque 循环数组设计]]（2 的幂容量+位运算取模；head/tail 追赶、head==tail 翻倍扩容分两段拷贝重排；弱 fail-fast 用 fence 非 modCount；单信源，置信度中）
 - [[ai-native-organization|AI 原生研发组织]]（工具原生→工作流原生→组织原生）
 - [[ai-native-sdlc|AI 原生 SDLC]]（制品提交链驱动的闭环，Anthropic 2026；人守闸门/三层控制模型；货拉拉千人落地+孔明八阶段工作流实例，四信源）
+- [[architecture-tradeoff-methodology|架构取舍方法论（先定约束，再挑技术）]]（四问前置+演进式架构+三高量化+对症优化+选型看访问路径+稳定性工具箱，单信源置信度中）
 - [[batch-message-push|批量消息推送（百万级短信推送）]]（内存/性能/可靠性三对矛盾 + 游标分片+专用线程池+Redis 进度+重试死信+断点续跑，单信源置信度中）
 - [[blue-green-deployment|蓝绿发布（Blue-Green Deployment）]]（Preview+全量切换+自动观察回退；selector 只影响新连接；四层门禁先过样本量；蓝绿实战单信源）
 - [[cache-line-and-false-sharing|CPU 缓存行效应：局部性与伪共享]]（64 字节行为失效粒度；数组胜链表、Disruptor Sequence 填充、LinkedList Node 32B 三倍内存、AtomicLong/LongAdder Cell/Exchanger Node 伪共享与 @Contended，六信源）
+- [[cap-theorem|CAP 定理与最终一致性取舍]]（CAP 是分区时的选择非永久标签+最终一致性收敛三条件+不一致窗口是选择依据+一致性哈希/Gossip 边界，单信源置信度中）
 - [[cdn-broadcast-fanout|CDN 广播（弹幕下行）]]（千万级在线下行外包 CDN 边缘：推流伪装视频流 vs 静态文件周期拉取，多 CDN 权重轮询融合；网易云信一手）
 - [[class-loading-parent-delegation|类加载与双亲委派]]（五阶段 + 准备阶段默认值/final 特例 + 初始化 6 触发 + 双亲委派意义与 4 破坏场景 SPI/Tomcat/OSGi，单信源，置信度中）
 - [[claude-skills|Claude Skills]]（Markdown 文件即资产：判断/偏好/标准固化、按需加载、一句话唤醒；Skill-Creator 构建 + 2.0 断言评估/A-B/触发词优化；单信源导览，置信度中）
@@ -388,7 +391,7 @@
 - [[reactor-thread-model|主从 Reactor 线程模型（Netty 版）]]（Boss accept/Worker CPU×2/Channel 终身绑单 EventLoop 天然无锁；ServerBootstrapAcceptor 移交链路+三形态选型+SCG 双 Group 与中间件应用印证，八信源互证，置信度高）
 - [[rest-api-as-tools|REST 接口工具化模式]]（函数体换 HTTP 封装但工具形状不变；登录即工具+token 只活进程内存+统一 _call 注入+描述即流程+错误回喂 HTTP 化；换真后台只改 BASE_URL，单信源实测）
 - [[reentrantlock-internals|ReentrantLock 可重入锁设计]]（AQS 经典实现：非公平先抢/公平只差 hasQueuedPredecessors/state 累加可重入/多 Condition 精确唤醒，单信源，置信度中）
-- [[retry-governance|重试治理（Retry Governance）]]（唯一重试所有者+时间/次数/额度/并发/语义五边界；Retry Budget 按首次记账 β 上界、Full Jitter、错误分类、熔断只看真实下游结果、12 步执行链；单信源置信度中）
+- [[retry-governance|重试治理（Retry Governance）]]（唯一重试所有者+时间/次数/额度/并发/语义五边界；Retry Budget 按首次记账 β 上界、Full Jitter、错误分类、熔断只看真实下游结果、12 步执行链；双信源互证限流/熔断/隔离三件套，置信度中）
 - [[rle-inverted-index|RLE 倒排索引（Run-Length Encoding Inverted Index）]]（Index Sorting 使 Doc ID 连续+RLE 编码 [start,length]+SparseRoaringDocIdSet 消除空置 bucket，合并 O(K×M)→O(M log M)，倒排链合并 TP99 -96%，全链路 TP99 -84%，美团一手）
 - [[scheduledthreadpoolexecutor-internals|ScheduledThreadPoolExecutor 调度设计]]（DelayedWorkQueue 数组最小堆+Leader-Follower 等待；period 正负号编码 fixedRate/fixedDelay；周期任务异常静默取消，单信源，置信度中）
 - [[sso-oauth2-oidc|单点登录 SSO（OAuth2 Authorization Code + OIDC）]]（共享认证服务器 Session；两条安全链+OIDC Discovery+oidc(withDefaults())；客户端一行 issuer-uri 自动配置；生产优先 Keycloak；Spring Authorization Server Demo，单信源一手，置信度高）
@@ -454,6 +457,7 @@
 - [[a2a-vs-mcp|A2A vs MCP]]（横向多 Agent 协作 vs 纵向单 Agent 能力拓展，互补关系）
 - [[netty-vs-tomcat-vs-undertow|Netty vs Tomcat vs Undertow]]（同机 wrk 横评：QPS/GC/高并发衰减+线程模型/内存/零拷贝/TCP 参数四层归因与选型分档，单信源自测，置信度中）
 - [[ot-vs-crdt|OT vs CRDT]]（中心变换 vs 数据结构天然收敛；取舍点=是否需要端侧完全自治；中心化选 OT、离线/去中心化选 CRDT，单信源）
+- [[sse-vs-websocket|SSE vs WebSocket]]（通信方向/数据形式/浏览器支持/常见场景四维矩阵+部署注意事项+百万连接说法，单信源置信度中）
 
 ## synthesis（综述）
 

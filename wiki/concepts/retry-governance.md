@@ -13,6 +13,7 @@ tags:
   - ai-agent
 sources:
   - raw/sources/architecture/2026-10-31-agent-platform-retry-resilience.md
+  - raw/sources/architecture/2026-10-31-architecture-science-and-art-42-rules.md
 related:
   - wiki/concepts/durable-execution.md
   - wiki/concepts/idempotency-design.md
@@ -81,6 +82,7 @@ related:
 ## Evolution（演进）
 
 - 2026-10-31：本页由单一信源（agent-platform-retry-resilience）建立。框架包含：五边界治理、Retry Budget 按首次记账、Full Jitter、错误分类、熔断只看真实下游结果、12 步执行链、跨 Worker 持久化字段、A–F 消融实验与 6 阶段上线路线。confidence: medium——目前为单一信源，且文中数值明确声明为"起始模板需校准"。
+- 2026-10-31：新增互证信源（architecture-science-and-art-42-rules 法则 36-38）——通用架构语言对限流/熔断/隔离三件套的定义：限流在容量边界前控制入口（被挡住的请求提示/入队/降级由业务决定）、熔断让异常依赖暂时退出调用链（关闭/打开/半开）、隔离限制一个故障最多占用多少资源。与本页 Bulkhead/熔断器机制一致，互为印证；Agent 平台框架与数值不变，confidence 维持 medium。
 
 ## Open Questions（开放问题）
 
