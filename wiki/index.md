@@ -120,10 +120,12 @@
 - [[jenkins-gitlab-cicd-pipeline|Jenkins + GitLab CI/CD 流水线落地实战（完整配置）]]（2026-10-21，CI/CD，置信度中）
 - [[jvm-gc-interview-guide|JVM 垃圾回收面试全讲透：从引用计数到 ZGC 调优]]（2026-10-27，Java/JVM/GC 理论）
 - [[jvm-gc-troubleshooting-arthas|JVM GC 排查实战（Arthas 版）]]（2026-10-21，Java/JVM）
+- [[jvm-interview-guide|JVM 面试题最全整理：从内存模型到 OOM 排查]]（2026-10-28，Java/JVM/面试，置信度中）
 - [[jvm-troubleshooting-six-tools|JVM 排查别乱试：6 个工具各管什么]]（2026-10-21，Java/JVM）
 - [[jvm-tuning-core-approach|一文掌握 JVM 调优核心思路]]（2026-10-14，Java/性能）
 - [[k8s-blue-green-release-trading|从零构建 K8s 蓝绿发布：日千万级交易系统的渐进式交付实战]]（2026-10-27，K8s/渐进式交付）
 - [[k8s-ha-cluster-setup-guide|K8s 从零搭建高可用集群：3 Master + 2 Worker 保姆级实战]]（2026-10-22，K8s/高可用）
+- [[kafka-consumer-lag-backlog-guide|Kafka 消费积压实战：Lag 从 0 飙到百万——扩容、批量、多线程消费的正确姿势]]（2026-10-31，Kafka/消费治理，置信度中）
 - [[kafka-fast-four-mechanisms|Kafka 为什么这么快？——顺序写+页缓存+零拷贝+批量四板斧]]（2026-10-21，Kafka/性能）
 - [[kafka-ops-tools-five-essentials|Kafka 运维必备工具清单：5 个工具让排障快 10 倍]]（2026-10-21，Kafka/运维）
 - [[knowledge-base-tech-evolution|一文搞懂知识库的技术演进：从关键词检索、向量 RAG 到 GraphRAG、LLM Wiki、本体论与 Agent]]（2026-10-16，AI/知识库）
@@ -250,11 +252,13 @@
 - [[blue-green-deployment|蓝绿发布（Blue-Green Deployment）]]（Preview+全量切换+自动观察回退；selector 只影响新连接；四层门禁先过样本量；蓝绿实战单信源）
 - [[cache-line-and-false-sharing|CPU 缓存行效应：局部性与伪共享]]（64 字节行为失效粒度；数组胜链表、Disruptor Sequence 填充、LinkedList Node 32B 三倍内存、AtomicLong/LongAdder Cell/Exchanger Node 伪共享与 @Contended，六信源）
 - [[cdn-broadcast-fanout|CDN 广播（弹幕下行）]]（千万级在线下行外包 CDN 边缘：推流伪装视频流 vs 静态文件周期拉取，多 CDN 权重轮询融合；网易云信一手）
+- [[class-loading-parent-delegation|类加载与双亲委派]]（五阶段 + 准备阶段默认值/final 特例 + 初始化 6 触发 + 双亲委派意义与 4 破坏场景 SPI/Tomcat/OSGi，单信源，置信度中）
 - [[claude-skills|Claude Skills]]（Markdown 文件即资产：判断/偏好/标准固化、按需加载、一句话唤醒；Skill-Creator 构建 + 2.0 断言评估/A-B/触发词优化；单信源导览，置信度中）
 - [[codemode|Codemode（代码模式工具编排）]]（模型写 JS 沙箱脚本编排工具调用，只回筛选结果；固定开销约减半，单次收益看返回格式）
 - [[collections-utility-class|Collections 工具类设计]]（算法委托+三类包装器工厂；同步/不可变均为视图，迭代须外部加锁；emptyList 单例零分配；单信源，置信度中）
 - [[context-management|上下文管理（Context Management）]]（messages 全量重发下的体积工程：裁剪/压缩/隔离三手段+成对保留与磁盘全量两铁律；Claude Code 分层裁剪实证，单信源）
 - [[concurrenthashmap-internals|ConcurrentHashMap 并发设计（JDK 8+）]]（读无锁+CAS 空桶插+synchronized 桶头+sizeCtl 三态+协作扩容；单信源，置信度中）
+- [[consumer-lag-governance|消费积压治理（Consumer Lag Governance）]]（Kafka 消费端 Lag 治理：四步法+三底线+增速告警，单信源，置信度中）
 - [[copyonwritearraylist-internals|CopyOnWriteArrayList 写时复制设计]]（volatile 数组引用替换+写时 O(n) 复制换读零锁；快照迭代不抛 CME；读多写极少专用，单信源，置信度中）
 - [[countdownlatch-internals|CountDownLatch 门闩设计（AQS 共享模式）]]（state 即计数器+CAS 减一归零广播唤醒；一次性不可重置，区别于 CyclicBarrier；双信源，置信度中）
 - [[cyclicbarrier-internals|CyclicBarrier 循环屏障设计（Generation 换代）]]（ReentrantLock+Condition，parties 凑齐破障，最后线程执行 barrierAction 并换代唤醒；BrokenBarrierException 传播，单信源，置信度中）
@@ -290,6 +294,7 @@
 - [[llm-wiki|LLM Wiki]]（原始来源不可变 + 模型持续编译互链知识页面，Karpathy 模式；本仓库即实例，双信源）
 - [[llm-call-protocol|OpenAI 兼容 Chat Completions 调用协议]]（messages 四角色+tool_call_id 配对+finish_reason 续轮判据+SDK 默认 timeout 10min/重试 2；单信源）
 - [[mcp|MCP]]（LLM↔工具/数据纵向协议，Anthropic 2024）
+- [[jmm-happens-before|Java 内存模型与 happens-before]]（JMM 抽象规范≠内存结构；主内存/工作内存副本模型；8 条 hb 规则；volatile 禁重排是 DCL 必须；单信源，置信度中）
 - [[live-message-drop-policy|直播消息丢弃策略]]（上行 200 条/s 硬丢弃 + 环形队列柔性丢弃 + 优先级三桶保必达，融云双信源）
 - [[mcast|长连接组播（mcast）]]（groupID 下沉长连接层，1:M×1:N 两级扩散；单实例 25w 连接 8w QPS，聚合+压缩消化峰值，百度一手）
 - [[message-bus|业务消息总线]]（哑管道式配置路由：履约异步分发+topic 治理收拢；与 ESB/Pipeline 的区分，信鸽单一信源）
@@ -316,6 +321,7 @@
 - [[netty-zero-copy|Netty 零拷贝机制（FileRegion/CompositeByteBuf/wrappedBuffer/堆外内存）]]（零拷贝=无 CPU 参与的拷贝；sendfile 4 拷贝压成 2 次 DMA+doWrite 专门分支；Composite 组件数组逻辑拼接二分定位；FileRegion 单次使用+编解码跳过+Windows fallback；单信源，置信度中）
 - [[notification-system-design|站内消息系统领域模型]]（公告/提醒/私信三分类+提醒四元组；拉（订阅驱动）/推（私信直写）按类选型；免打扰后置读路径，简书上下篇双信源）
 - [[okf-knowledge-format|OKF（面向 AI Agent 的知识包装规范）]]（入库时编译为互链 Markdown 树，运行时只做导航+摘录）
+- [[oom-troubleshooting|OOM 排查方法论]]（6 类 OOM 速查表 + 五步法 + 生产纪律：禁直接 jmap -dump、90% 代码问题、溢出≠泄漏、GC overhead limit 最危险，双信源，置信度中）
 - [[operational-transformation|Operational Transformation（OT，操作转换）]]（中心定序+变换调整偏移量收敛并发编辑；siteId tie-break 命门+TP1/TP2 验证；文档级 Actor 串行+pending/buffer 客户端，单信源）
 - [[pi-customization-layers|Pi 五层定制模型]]（Prompt 模板→AGENTS.md→Skill→Extension→SDK，官方扩展点成本阶梯）
 - [[pm-decision-frameworks|产品决策四框架]]（3步止损/反向假设/杠杆率排序/信号噪音过滤；单一自媒体信源，置信度低）

@@ -4,7 +4,7 @@ type: concept
 title: 证据驱动的 JVM 调优
 status: active
 created: 2026-10-22
-updated: 2026-10-30
+updated: 2026-10-31
 confidence: high
 tags:
   - concept
@@ -17,6 +17,7 @@ sources:
   - raw/sources/architecture/2026-10-23-jdk21-migration-huolala.md
   - raw/sources/architecture/2026-10-27-jvm-gc-interview-guide.md
   - raw/sources/architecture/2026-10-28-java-online-troubleshooting-arthas.md
+  - raw/sources/architecture/2026-10-28-jvm-interview-guide.md
 related:
   - wiki/concepts/cpu-funnel-coding.md
   - wiki/concepts/virtual-threads-production.md
@@ -68,6 +69,8 @@ related:
 - 2026-10-27 — 《JVM 垃圾回收面试全讲透》第四信源印证同一闭环：「黄金 6 步」（定位→定目标→选收集器→调内存→调参数→压测验证）与先证据后参数同构；补充监控阈值经验值（Minor GC >100ms 关注、Full GC 一小时多次为严重、平均 >2s 影响可用性、老年代 >80% 持续上涨需关注）与「90% 问题靠选对收集器+合理内存、代码优化 > GC 调优」的优先级判断。
 - 2026-10-28 — 《Java 线上排查实战：OOM、超时、闪退、GC 抖动、死锁》第五信源以真实复现数据印证「拿到证据再动手」：P99 尖刺先查 GC（jstat 看频率 + GC 日志看停顿），超时用 trace 逐层剥占比最大的方法 + watch 确认现场；补充调优权衡表述「不是让每次 GC 更快，而是让 GC 总共更少」与单变量案例（年轻代 32M→256M：YGC 2.3 次/s→0.5 次/s、单次停顿 5-10ms→13-16ms 反而变长、RT 30-37ms→稳定 30ms），并给出「进程在→实时诊断 / 不在→看日志现场」的排查第一分叉与必开 heap dump + GC 日志的生产基线。
 
+- 2026-10-31 — 《JVM 面试题最全整理》第六信源在 OOM 场景印证同一纪律：生产禁直接 `jmap -dump`（进程停顿）→ 先日志定类型、jstat/jstack 轻量快查、确认必要才 MAT；「90%+ 的 OOM 是代码问题、JVM 参数只是缓兵之计」与本文「代码优化 > GC 调优、调参是最后手段」同构；`GC overhead limit exceeded`（98% 时间 GC 只回收 2%）比 heap space 更危险，是「先看证据再动手」的反面教材（近耗尽时盲目扩堆会掩盖代码问题）。详见 [[oom-troubleshooting]]。
+
 ## Open Questions（开放问题）
 
 - JFR 标准 profile 开销 <2% 为 Oracle 说法，在不同负载形态下的真实开销需各自验证。
@@ -80,6 +83,7 @@ related:
 - Source: `raw/sources/architecture/2026-10-23-jdk21-migration-huolala.md`（印证 + 容器化细则：堆百分比、ZGC 堆占比、ExplicitGCInvokesConcurrent、观测换代）
 - Source: `raw/sources/architecture/2026-10-27-jvm-gc-interview-guide.md`（印证：黄金 6 步闭环 + 监控阈值经验值）
 - Source: `raw/sources/architecture/2026-10-28-java-online-troubleshooting-arthas.md`（印证：先证据后动手 + GC 调优「更少而非更快」权衡 + 五场景工具路由）
+- Source: `raw/sources/architecture/2026-10-28-jvm-interview-guide.md`（印证：OOM 场景的「先轻后重」工具纪律 + 代码问题优先于参数）
 
 ## Related Knowledge（相关知识）
 

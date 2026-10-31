@@ -9,7 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [Java, 工程实践]
 asset_ref: Assets/2026/10/jvm-interview-guide.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # JVM面试题最全整理：从内存模型到OOM排查

@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-10-30",
+  "updated_at": "2026-10-31",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -2826,6 +2826,49 @@
       ],
       "source_url": "https://weibo.com/1890573293/5358247088750818",
       "asset_ref": "Assets/2026/10/investing-for-beginners.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-28-java-online-troubleshooting-arthas.md",
+      "sha256": "85419a665484589c54b84faae0179de7f03980b35b25f4daf40f57d0ad73ba5e",
+      "registered_at": "2026-10-30",
+      "inbox_ref": "Archive/2026-10-28-java-online-troubleshooting-arthas.md",
+      "pages": [
+        "wiki/sources/java-online-troubleshooting-arthas.md",
+        "wiki/concepts/evidence-first-jvm-tuning.md",
+        "wiki/topics/jvm-gc.md",
+        "wiki/entities/arthas.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/jHZuIXbFH7Rt03FC4jCzKw",
+      "asset_ref": "Assets/2026/10/java-online-troubleshooting-arthas.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-28-jvm-interview-guide.md",
+      "sha256": "8d8cf32d06c58c843ed9fc52c456042cfac01e51c468cf933c13603782c7c992",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-28-jvm-interview-guide.md",
+      "pages": [
+        "wiki/sources/jvm-interview-guide.md",
+        "wiki/concepts/jmm-happens-before.md",
+        "wiki/concepts/class-loading-parent-delegation.md",
+        "wiki/concepts/oom-troubleshooting.md",
+        "wiki/topics/jvm-gc.md",
+        "wiki/concepts/evidence-first-jvm-tuning.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/kKcYVmrZ8LwUtgxghzGBcQ",
+      "asset_ref": "Assets/2026/10/jvm-interview-guide.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-28-kafka-consumer-lag-backlog-guide.md",
+      "sha256": "edff1338af144f4e18576f29b56aab9b232bd1d37f95691ea63efc972ccdedd5",
+      "registered_at": "2026-10-31",
+      "inbox_ref": "Archive/2026-10-28-kafka-consumer-lag-backlog-guide.md",
+      "pages": [
+        "wiki/sources/kafka-consumer-lag-backlog-guide.md",
+        "wiki/concepts/consumer-lag-governance.md",
+        "wiki/entities/kafka.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/ZvwtpNmW1jPqtnCl1_2QpA",
+      "asset_ref": "Assets/2026/10/kafka-consumer-lag-backlog-guide.md"
     }
   ]
 }

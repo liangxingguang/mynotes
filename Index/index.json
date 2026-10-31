@@ -1,64 +1,6 @@
 {
-  "updated_at": "2026-10-31 09:19",
+  "updated_at": "2026-10-31 09:43",
   "notes": [
-    {
-      "id": "2026-10-28-java-online-troubleshooting-arthas",
-      "title": "Java线上排查实战：OOM、超时、闪退、GC抖动、死锁",
-      "path": "Inbox/2026-10-28-java-online-troubleshooting-arthas.md",
-      "created": "2026-10-28",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/jHZuIXbFH7Rt03FC4jCzKw",
-      "source_type": "文章",
-      "platform": "微信公众号",
-      "summary": "真实环境（JDK17 + Arthas）复现五类线上事故并完整走排查流程：OOM 用 jmap+MAT，超时用 trace 逐层剥，闪退分 JVM OOM 与 OOM Killer，GC 抖动用 jstat，死锁阻塞用 jstack + thread -b。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/java-online-troubleshooting-arthas.md",
-      "wiki_status": "ingesting"
-    },
-    {
-      "id": "2026-10-28-jvm-interview-guide",
-      "title": "JVM面试题最全整理：从内存模型到OOM排查",
-      "path": "Inbox/2026-10-28-jvm-interview-guide.md",
-      "created": "2026-10-28",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/kKcYVmrZ8LwUtgxghzGBcQ",
-      "source_type": "文章",
-      "platform": "微信公众号",
-      "summary": "JVM 七大高频考点一篇打通：运行时数据区、对象分配三板斧（逃逸分析/TLAB/栈上分配）、类加载五阶段、双亲委派与四种破坏场景、JMM 与 happens-before、四种引用、6 类 OOM 速查与排查五步法。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/jvm-interview-guide.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-28-kafka-consumer-lag-backlog-guide",
-      "title": "Kafka 消费积压实战：Lag 从 0 飙到百万——扩容、批量、多线程消费的正确姿势",
-      "path": "Inbox/2026-10-28-kafka-consumer-lag-backlog-guide.md",
-      "created": "2026-10-28",
-      "category": "技术",
-      "tags": [
-        "Kafka",
-        "工程实践",
-        "分布式系统"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/ZvwtpNmW1jPqtnCl1_2QpA",
-      "source_type": "link",
-      "platform": "wechat",
-      "summary": "消费积压的本质是\"生产速度 > 消费速度\"的算术题：消费速度 ≥ 生产峰值 × 1.5 才不会积压。文章以一次凌晨 Lag 飙到 200 万的实战为例，给出四步处理法——扩分区+扩消费者止血、批量拉取摊薄网络往返、poll 与处理解耦的异步化、耗时埋点定位慢消息——并强调消化期须守住幂等、下游容量、retention 三条底线。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/10/kafka-consumer-lag-backlog-guide.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-28-kiso-minimal-agent-framework",
       "title": "我开源了一个极简 Agent 框架，叫 Kiso",
@@ -77,7 +19,7 @@
       "summary": "作者自研极简 Coding Agent 框架 Kiso 的设计复盘：从\"更简单、更稳定、更省 token\"出发，最终收敛为 Agent Runtime——模型负责扩大问题空间，Runtime 负责限定\"什么才有资格被称为事实\"。核心机制：Event Log 执行账本、Context 投影观、只读证明式权限、2,200 行内核门禁，附与 Pi 的 48 对 Benchmark。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/kiso-minimal-agent-framework.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-28-like-follow-high-concurrency-design",
@@ -97,7 +39,7 @@
       "summary": "高并发互动系统完整方案：业务画像（写多读更多、强依赖去重、容忍最终一致）→ 同步直写三个死穴 → V1~V4 架构演进 → Lua 原子/分桶破热点/MQ 攒批削峰/对账降级全链路。主线三句话：把集中的写打散、把高频的写合并、把不重要的一致性后置。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/like-follow-high-concurrency-design.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-28-llm-rag-agent-series-album",
@@ -5022,6 +4964,64 @@
       "summary": "微博博主张岱樾推荐的开源项目《投资入门指南》：面向普通人的投资基础知识与专业术语合集，已完成第一阶段整理，新版新增《投资第一课》，分享普通人投资最值得了解的几条成功路径。",
       "summary_status": "",
       "asset_ref": "Assets/2026/10/investing-for-beginners.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-28-java-online-troubleshooting-arthas",
+      "title": "Java线上排查实战：OOM、超时、闪退、GC抖动、死锁",
+      "path": "Archive/2026-10-28-java-online-troubleshooting-arthas.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/jHZuIXbFH7Rt03FC4jCzKw",
+      "source_type": "文章",
+      "platform": "微信公众号",
+      "summary": "真实环境（JDK17 + Arthas）复现五类线上事故并完整走排查流程：OOM 用 jmap+MAT，超时用 trace 逐层剥，闪退分 JVM OOM 与 OOM Killer，GC 抖动用 jstat，死锁阻塞用 jstack + thread -b。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/java-online-troubleshooting-arthas.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-28-jvm-interview-guide",
+      "title": "JVM面试题最全整理：从内存模型到OOM排查",
+      "path": "Archive/2026-10-28-jvm-interview-guide.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/kKcYVmrZ8LwUtgxghzGBcQ",
+      "source_type": "文章",
+      "platform": "微信公众号",
+      "summary": "JVM 七大高频考点一篇打通：运行时数据区、对象分配三板斧（逃逸分析/TLAB/栈上分配）、类加载五阶段、双亲委派与四种破坏场景、JMM 与 happens-before、四种引用、6 类 OOM 速查与排查五步法。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/jvm-interview-guide.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-28-kafka-consumer-lag-backlog-guide",
+      "title": "Kafka 消费积压实战：Lag 从 0 飙到百万——扩容、批量、多线程消费的正确姿势",
+      "path": "Archive/2026-10-28-kafka-consumer-lag-backlog-guide.md",
+      "created": "2026-10-28",
+      "category": "技术",
+      "tags": [
+        "Kafka",
+        "工程实践",
+        "分布式系统"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/ZvwtpNmW1jPqtnCl1_2QpA",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "消费积压的本质是\"生产速度 > 消费速度\"的算术题：消费速度 ≥ 生产峰值 × 1.5 才不会积压。文章以一次凌晨 Lag 飙到 200 万的实战为例，给出四步处理法——扩分区+扩消费者止血、批量拉取摊薄网络往返、poll 与处理解耦的异步化、耗时埋点定位慢消息——并强调消化期须守住幂等、下游容量、retention 三条底线。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/10/kafka-consumer-lag-backlog-guide.md",
       "wiki_status": "ingested"
     }
   ]

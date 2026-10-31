@@ -16,12 +16,15 @@ sources:
   - raw/sources/architecture/2026-10-21-kafka-ops-tools-five-essentials.md
   - raw/sources/architecture/2026-10-22-netty-redis-kafka-iot-gateway.md
   - raw/sources/architecture/2026-10-27-netty-kafka.md
+  - raw/sources/architecture/2026-10-28-kafka-consumer-lag-backlog-guide.md
 related:
   - wiki/sources/kafka-fast-four-mechanisms.md
   - wiki/sources/kafka-ops-tools-five-essentials.md
   - wiki/sources/ecommerce-search-realtime-personalization.md
   - wiki/sources/netty-redis-kafka-iot-gateway.md
   - wiki/sources/netty-kafka-network-layer.md
+  - wiki/sources/kafka-consumer-lag-backlog-guide.md
+  - wiki/concepts/consumer-lag-governance.md
   - wiki/decisions/kafka-adopts-netty.md
   - wiki/entities/netty.md
 ---
@@ -47,6 +50,7 @@ related:
 - 分工哲学：CLI 定义事实，UI 降低门槛；Exporter 出面板（人看），Burrow 出决策（机器判）。
 - IoT 接入层用法（第 3 信源）：`key=deviceId` 按设备分区保单设备状态机顺序（插枪→充电→停止→结算乱序即错乱），消费端设备维度串行；生产者 acks=all+幂等+`max.in.flight=1` 保顺序；边界互证"只保证分区内有序"——超级热点设备会拖慢同分区其他设备，强一致场景消费侧仍需版本号/序列号校验。
 - 网络层架构（第 4 信源，基于 3.9.0 源码拆解）：2.0 起从自研 NIO 迁到 Netty（约 3800 行→约 950 行，决策详见 [[kafka-adopts-netty]]）；boss/worker 复用同一 EventLoopGroup（num.network.threads 默认 3），业务交 RequestHandler 线程池故网络线程很轻；七层 Pipeline（SSL→流量统计→帧解码 LengthFieldBasedFrameDecoder maxFrame 默认 100MB→帧编码→correlationId 绑定→业务入口→异常兜底）；帧解码用 readRetainedSlice 零拷贝传引用、finally 手动 release 防泄漏；背压为 RequestChannel 有界队列满则阻塞网络线程、TCP 接收窗口收缩把压力传导到客户端；响应在 channelReadComplete 批量 flush 降系统调用。协议帧=[4B 长度][数据]，变长字段用 ZigZag+Varint 编码。
+- 消费积压治理（第 5 信源，实战复盘）：Lag = 分区 LogEndOffset − CommittedOffset 求和，看 Lag 要到分区粒度（总量掩盖单分区倾斜）；根治铁律"消费速度 ≥ 生产峰值 × 1.5"；扩容止血（消费者数 ≤ 分区数、分区只加不减、顺序敏感扩分区注意 hash 漂移）；批量拉取 2-5 倍（`max.poll.interval.ms ≥ max.poll.records × 单条最坏耗时 × 1.5`，否则 rebalance 死循环）；处理异步化 16 worker 达 15 倍（有界队列 + CallerRunsPolicy 反压、整批完成才提交位点、超时不提交靠幂等）；慢消息木桶（3% 的 2s 消息拖垮 87% 吞吐，隔离/降级/修复）；消化期三坑（重复洪峰、下游被打爆、retention 过期静默丢消息）。方法论详见 [[consumer-lag-governance]]。
 
 ## Products / Projects（产品／项目）
 
@@ -67,7 +71,7 @@ related:
 
 ## Current Understanding（当前认知）
 
-四个信源构成"机制+运维+场景+网络层"互补：理解四板斧才能解释集群参数（小堆、关 swap、batch 调优），理解工具栈才能落地日常运维，IoT 场景把"分区内有序+幂等生产者"落到设备状态机保序，网络层信源补全了"连接怎么进来"——Netty 化的七层 Pipeline 与 RequestChannel 应用层背压（与 [[netty-flow-control]] 三层背压互证）。一致立场：Kafka 的快来自"不浪费"——磁盘顺序、内存靠 OS、CPU 不当搬运工、网络省次数（四信源互证，置信度高）。
+五个信源构成"机制+运维+场景+网络层+消费治理"互补：理解四板斧才能解释集群参数（小堆、关 swap、batch 调优），理解工具栈才能落地日常运维，IoT 场景把"分区内有序+幂等生产者"落到设备状态机保序，网络层信源补全了"连接怎么进来"——Netty 化的七层 Pipeline 与 RequestChannel 应用层背压（与 [[netty-flow-control]] 三层背压互证），消费治理信源则补齐了"消息进来后怎么不积压"的运维闭环（见 [[consumer-lag-governance]]）。一致立场：Kafka 的快来自"不浪费"——磁盘顺序、内存靠 OS、CPU 不当搬运工、网络省次数（信源互证，置信度高）。
 
 ## Evidence（证据）
 

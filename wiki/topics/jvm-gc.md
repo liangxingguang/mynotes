@@ -4,7 +4,7 @@ type: topic
 title: JVM 垃圾回收
 status: active
 created: 2026-10-27
-updated: 2026-10-30
+updated: 2026-10-31
 confidence: medium
 tags:
   - topic
@@ -17,6 +17,7 @@ sources:
   - raw/sources/architecture/2026-10-21-gc-log-tuning-practice.md
   - raw/sources/architecture/2026-10-21-jvm-gc-troubleshooting-arthas.md
   - raw/sources/architecture/2026-10-28-java-online-troubleshooting-arthas.md
+  - raw/sources/architecture/2026-10-28-jvm-interview-guide.md
 ---
 # JVM 垃圾回收
 
@@ -30,6 +31,7 @@ JVM GC 的判定、算法、收集器、原理、选型与调优：对象可回�
 - **算法落地**：新生代标记-复制（Eden:Survivor = 8:1:1，默认 15 次 Minor GC 晋升），老年代标记-清除/整理；依据弱分代假说。
 - **选型主线**（多信源一致）：JDK 8 默认 Parallel、JDK 9+ 默认 G1；通用场景 2~8GB 用 G1，延迟敏感上 ZGC；CMS 已废弃。
 - **调优主线**：[[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]——先定量化目标与基线、JFR/GC 日志归因，证据指向 JVM 才动收集器与参数；「90% 问题靠选对收集器+合理内存」。
+- **OOM 侧**：6 类 OOM 速查表（heap space/Metaspace/Direct buffer/StackOverflow/native thread/GC overhead limit）与「内存溢出 ≠ 内存泄漏」的概念区分由 [[oom-troubleshooting|OOM 排查方法论]] 承接；GC 侧的直接关联是「GC overhead limit exceeded」——98% 时间 GC 只回收 2%，是比 heap space 更危险的近耗尽信号。
 
 ## Key Concepts（关键概念）
 
@@ -56,4 +58,5 @@ JVM GC 的判定、算法、收集器、原理、选型与调优：对象可回�
 
 ## Related Topics（相关主题）
 
-- 信源页：[[jvm-gc-interview-guide|JVM GC 面试全讲透]]、[[jvm-tuning-core-approach|JVM 调优核心思路]]、[[gc-log-tuning-practice|GC 日志分析与调优实战]]、[[jvm-gc-troubleshooting-arthas|JVM GC 排查实战（Arthas）]]、[[jvm-troubleshooting-six-tools|JVM 排查 6 工具]]、[[jdk21-migration-huolala|JDK 21 规模化落地（货拉拉）]]、[[java-online-troubleshooting-arthas|Java 线上排查实战（OOM/超时/闪退/GC 抖动/死锁）]]
+- 信源页：[[jvm-gc-interview-guide|JVM GC 面试全讲透]]、[[jvm-tuning-core-approach|JVM 调优核心思路]]、[[gc-log-tuning-practice|GC 日志分析与调优实战]]、[[jvm-gc-troubleshooting-arthas|JVM GC 排查实战（Arthas）]]、[[jvm-troubleshooting-six-tools|JVM 排查 6 工具]]、[[jdk21-migration-huolala|JDK 21 规模化落地（货拉拉）]]、[[java-online-troubleshooting-arthas|Java 线上排查实战（OOM/超时/闪退/GC 抖动/死锁）]]、[[jvm-interview-guide|JVM 面试题最全整理（内存模型→OOM 排查）]]
+- 相邻概念：[[oom-troubleshooting|OOM 排查方法论]]（6 类 OOM 速查 + 五步法）、[[jmm-happens-before|Java 内存模型与 happens-before]]、[[class-loading-parent-delegation|类加载与双亲委派]]

@@ -9,7 +9,7 @@ created: 2026-10-28
 category: 技术
 tags: [Kafka, 工程实践, 分布式系统]
 asset_ref: Assets/2026/10/kafka-consumer-lag-backlog-guide.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Kafka 消费积压实战：Lag 从 0 飙到百万——扩容、批量、多线程消费的正确姿势
