@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01 21:33",
+  "updated_at": "2026-11-02 00:37",
   "notes": [
     {
       "id": "2026-10-31-weixin-album-xuqiufenxi",
@@ -19,63 +19,6 @@
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "skipped"
-    },
-    {
-      "id": "2026-10-31-xuqiufenxi-13-yewu-yanfa-dui-bulai",
-      "title": "需求分析从业务到研发对不齐，中间缺什么",
-      "path": "Inbox/2026-10-31-xuqiufenxi-13-yewu-yanfa-dui-bulai.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483936&idx=1&sn=63b269ba87044644cf7e493fa43f0739&chksm=c1d0b6a1f6a73fb7be0e90ec298bdfe8401096ec7a4a77b494425a09b7623f1808d211f4e49b",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "《需求分析》专辑第 13 篇。需求对不齐往往不是态度问题，而是业务思维（目标与结果）与实现思维（可执行、可判断、可验证）本身不同。真正缺的是一层结构化的翻译与对齐工作——把结果变成规则、把期望变成可执行说明。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-13-yewu-yanfa-dui-bulai.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-31-xuqiufenxi-14-mohu-xuqiu-bian-qingxi",
-      "title": "如何把模糊需求一步步变成清晰的功能模块",
-      "path": "Inbox/2026-10-31-xuqiufenxi-14-mohu-xuqiu-bian-qingxi.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483945&idx=1&sn=85f0c23455bd56059778551a3bf0805f&chksm=c1d0b6a8f6a73fbe281c4f2a3c74ea3938edd88141255560c0b30af315ed70952c26a3097edb",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "《需求分析》专辑第 14 篇。给了需求后常见困境：听起来都对，却不知道从哪里开始拆解。本篇给六步可直接使用的拆解法——固定目标 → 找场景 → 抽出\"用户要完成的事\" → 归类模块 → 做\"做与不做\"判断 → 检查模块关系与缺口。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-14-mohu-xuqiu-bian-qingxi.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-31-xuqiufenxi-15-hexin-buchou",
-      "title": "需求分析的核心步骤（一套可重复使用的实战流程）",
-      "path": "Inbox/2026-10-31-xuqiufenxi-15-hexin-buchou.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483958&idx=1&sn=f44e46b32b747071ba03fda8976c839c&chksm=c1d0b6b7f6a73fa136cfb4798e237c7e07b263ec2469dcc9b145b71dd2b2dd9cde2b205b146f",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "《需求分析》专辑第 15 篇。把上一篇的拆模块放进完整流程，给一套可直接使用的核心步骤：澄清目标 → 识别用户与场景 → 拆出\"用户要完成的事\"并归模块 → 界定范围 → 补充关键规则与异常 → 确定优先级 → 写出验收标准 → 对齐确认形成基线。每步都给\"输出\"。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-15-hexin-buchou.md",
-      "wiki_status": "pending"
     },
     {
       "id": "2026-10-31-xuqiufenxi-16-jieding-fanwei",
@@ -6031,6 +5974,63 @@
       "summary": "《需求分析》专辑第 12 篇。澄清一个常见误区：篇幅和价值之间不是简单正比。写厚背后常是怕遗漏、怕被追责、把\"完整\"理解成\"面面俱到\"。全文给一条判断标准——这个信息缺了，会不会导致理解偏差、返工或验收争议。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-12-wei-hou-haoma.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-xuqiufenxi-13-yewu-yanfa-dui-bulai",
+      "title": "需求分析从业务到研发对不齐，中间缺什么",
+      "path": "Archive/2026-10-31-xuqiufenxi-13-yewu-yanfa-dui-bulai.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483936&idx=1&sn=63b269ba87044644cf7e493fa43f0739&chksm=c1d0b6a1f6a73fb7be0e90ec298bdfe8401096ec7a4a77b494425a09b7623f1808d211f4e49b",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "《需求分析》专辑第 13 篇。需求对不齐往往不是态度问题，而是业务思维（目标与结果）与实现思维（可执行、可判断、可验证）本身不同。真正缺的是一层结构化的翻译与对齐工作——把结果变成规则、把期望变成可执行说明。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-13-yewu-yanfa-dui-bulai.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-xuqiufenxi-14-mohu-xuqiu-bian-qingxi",
+      "title": "如何把模糊需求一步步变成清晰的功能模块",
+      "path": "Archive/2026-10-31-xuqiufenxi-14-mohu-xuqiu-bian-qingxi.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483945&idx=1&sn=85f0c23455bd56059778551a3bf0805f&chksm=c1d0b6a8f6a73fbe281c4f2a3c74ea3938edd88141255560c0b30af315ed70952c26a3097edb",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "《需求分析》专辑第 14 篇。给了需求后常见困境：听起来都对，却不知道从哪里开始拆解。本篇给六步可直接使用的拆解法——固定目标 → 找场景 → 抽出\"用户要完成的事\" → 归类模块 → 做\"做与不做\"判断 → 检查模块关系与缺口。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-14-mohu-xuqiu-bian-qingxi.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-xuqiufenxi-15-hexin-buchou",
+      "title": "需求分析的核心步骤（一套可重复使用的实战流程）",
+      "path": "Archive/2026-10-31-xuqiufenxi-15-hexin-buchou.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483958&idx=1&sn=f44e46b32b747071ba03fda8976c839c&chksm=c1d0b6b7f6a73fa136cfb4798e237c7e07b263ec2469dcc9b145b71dd2b2dd9cde2b205b146f",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "《需求分析》专辑第 15 篇。把上一篇的拆模块放进完整流程，给一套可直接使用的核心步骤：澄清目标 → 识别用户与场景 → 拆出\"用户要完成的事\"并归模块 → 界定范围 → 补充关键规则与异常 → 确定优先级 → 写出验收标准 → 对齐确认形成基线。每步都给\"输出\"。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-15-hexin-buchou.md",
       "wiki_status": "ingested"
     }
   ]
