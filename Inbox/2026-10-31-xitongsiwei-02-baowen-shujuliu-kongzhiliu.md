@@ -11,7 +11,9 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026-10/weixin-20261031-xitongsiwei-02-baowen-shujuliu-kongzhiliu.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-11-01T01:48:12.063Z"
+ingest_claim_id: 58388-1793497692063-0
 ---
 
 # 同一个报文，一半是数据流，一半是控制流
