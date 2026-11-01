@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026-10/weixin-20261031-xuqiufenxi-01-ruanjian-xiangmu-shibai.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 软件项目失败，很多时候不是技术问题，而是需求问题

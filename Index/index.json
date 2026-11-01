@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01 13:17",
+  "updated_at": "2026-11-01 13:26",
   "notes": [
     {
       "id": "2026-10-31-weixin-album-xuqiufenxi",
@@ -19,25 +19,6 @@
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "skipped"
-    },
-    {
-      "id": "2026-10-31-xuqiufenxi-01-ruanjian-xiangmu-shibai",
-      "title": "软件项目失败，很多时候不是技术问题，而是需求问题",
-      "path": "Inbox/2026-10-31-xuqiufenxi-01-ruanjian-xiangmu-shibai.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483800&idx=1&sn=d80add1c630e10d34fadfe0e239926ca&chksm=c1d0b519f6a73c0f31a5596084a913ac4a5c59cc5cd1c902b4746448e63e818323522ac751b0",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "《需求分析》专辑第 1 篇，也是整个系列的开篇。技术问题显性、看得见、能解决；需求问题隐性，藏在开发甚至测试阶段才暴露，像隐形裂缝越裂越大。全文用典型场景说明：业务说\"我要一个能管理客户的功能\"，开发做完才发现理解不一致，业务又冒出新要求。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-01-ruanjian-xiangmu-shibai.md",
-      "wiki_status": "pending"
     },
     {
       "id": "2026-10-31-xuqiufenxi-02-zaogao-xuqiu-wendang-daijia",
@@ -6031,6 +6012,25 @@
       "summary": "系统思维专辑第 6 篇。100 天 WorkBuddy 落地，很少遇到\"模型能力不够\"——真正限制智能体效果的不是模型能力，而是人的管理能力。全文给三套工具：WBS 工作包拆解（事前）、交付约定（事中）、Scrum Sprint 迭代（事后），并强调顺序就是完整闭环。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-xitongsiwei-06-workbuddy-manage.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-xuqiufenxi-01-ruanjian-xiangmu-shibai",
+      "title": "软件项目失败，很多时候不是技术问题，而是需求问题",
+      "path": "Archive/2026-10-31-xuqiufenxi-01-ruanjian-xiangmu-shibai.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483800&idx=1&sn=d80add1c630e10d34fadfe0e239926ca&chksm=c1d0b519f6a73c0f31a5596084a913ac4a5c59cc5cd1c902b4746448e63e818323522ac751b0",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "《需求分析》专辑第 1 篇，也是整个系列的开篇。技术问题显性、看得见、能解决；需求问题隐性，藏在开发甚至测试阶段才暴露，像隐形裂缝越裂越大。全文用典型场景说明：业务说\"我要一个能管理客户的功能\"，开发做完才发现理解不一致，业务又冒出新要求。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-01-ruanjian-xiangmu-shibai.md",
       "wiki_status": "ingested"
     }
   ]

@@ -12,6 +12,7 @@
 - 2026-10-14 21:00 | ingest | raw/sources/misc/2026-10-14-example.md | wiki/sources/example.md, wiki/concepts/demo.md
 - 2026-10-14 21:05 | lint | wiki | findings=2 fixed=1 needs_human=1
 -->
+- 2026-11-01 05:20 | ingest | raw/sources/misc/2026-10-31-xuqiufenxi-01-ruanjian-xiangmu-shibai.md | wiki/sources/2026-10-31-xuqiufenxi-01-ruanjian-xiangmu-shibai.md
 
 - （暂无记录）
 - 2026-11-01 12:41 | ingest | raw/sources/architecture/2026-10-31-xitongsiwei-03-8-difang-nengli.md, raw/sources/architecture/2026-10-31-xitongsiwei-04-concept-design.md, raw/sources/architecture/2026-10-31-xitongsiwei-05-gainian-guanxitu.md | wiki/sources/xitongsiwei-03-8-difang-nengli.md（新建）, wiki/sources/xitongsiwei-04-concept-design.md（新建）, wiki/sources/xitongsiwei-05-gainian-guanxitu.md（新建）, wiki/concepts/architecture-design-capabilities.md（新建）, wiki/concepts/system-concept-design.md（新建）, wiki/concepts/architecture-description-metamodel.md（新建）, wiki/sources/system-thinking-album.md（更新：第3-5篇已摄入/概念/局限/相关）, wiki/concepts/system-concept.md（更新：交叉链接 system-concept-design）, wiki/index.md, wiki/log.md, state/manifest.json

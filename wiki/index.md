@@ -6,6 +6,7 @@
 
 - [[15-books-understand-world|看懂世界运转的 15 本书单]]（2026-10-20，书单，置信度低）
 - [[475-claude-opus-demos-repo|微博分享：475 个 Claude Opus 5.5 生成的视频演示仓库]]（2026-10-20，AI/资源，置信度低）
+- [[2026-10-31-xuqiufenxi-01-ruanjian-xiangmu-shibai|软件项目失败，很多时候不是技术问题，而是需求问题]]（2026-10-31，工程实践/需求分析，系列开篇立论：技术问题显性 vs 需求问题隐性+隐形裂缝+动手前想清做什么，公众号单信源，置信度中）
 - [[a2a-multi-agent-langgraph|A2A 实战：从零搭建工业级多 Agent 协作系统]]（2026-10-13，AI/多 Agent）
 - [[agent-2026-midyear-architecture-review|2026 Agent 年中总结：从整体架构到关键细节（叶小钗）]]（2026-10-21，AI/架构综述）
 - [[agent-context-tutorial|Agent 入门教程：上下文里的 Agent（nano-ai 可交互演示）]]（2026-10-25，AI/教程资源，置信度中）
