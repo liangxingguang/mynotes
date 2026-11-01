@@ -3751,6 +3751,39 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483914&idx=1&sn=8d6f7f2184de6dd8f776141973f8ecbb&chksm=c1d0b68bf6a73f9d494e73df6ea0dcc5feed0a19ab2982fa7a2835a4b88a420e903773550227",
       "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-09-hao-wendang-daodi.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-31-xuqiufenxi-10-yangli-fenxi.md",
+      "sha256": "613c9d5ea97d533c6b96cab0b5fa1e00e249c2b2077f2b104a700ec92c77158e",
+      "registered_at": "2026-11-01",
+      "inbox_ref": "Archive/2026-10-31-xuqiufenxi-10-yangli-fenxi.md",
+      "pages": [
+        "wiki/sources/2026-10-31-xuqiufenxi-10-yangli-fenxi.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483920&idx=1&sn=6f575eefd5656d150a9c60146fd2d7fc&chksm=c1d0b691f6a73f875178ac57ec3e5c44166911af5a5cd8bbe95c846e3416e705a776835f2b65",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-10-yangli-fenxi.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-31-xuqiufenxi-11-jiazhi-shishi.md",
+      "sha256": "ec5d13bd1a3dc52ed311045728cfd111d31d95167eabbc7712b9365b8158dc0c",
+      "registered_at": "2026-11-01",
+      "inbox_ref": "Archive/2026-10-31-xuqiufenxi-11-jiazhi-shishi.md",
+      "pages": [
+        "wiki/sources/2026-10-31-xuqiufenxi-11-jiazhi-shishi.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483926&idx=1&sn=12326c94ca319104c43532901884470a&chksm=c1d0b697f6a73f8116741d633ed6c960d78267e431f9aac52ecaf21bc8bf9b73232fe243d95a",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-11-jiazhi-shishi.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-31-xuqiufenxi-12-wei-hou-haoma.md",
+      "sha256": "b541c933bd09d4fee999e8c810b05031ff802e8f407163c05a0934c5f2e3b06c",
+      "registered_at": "2026-11-01",
+      "inbox_ref": "Archive/2026-10-31-xuqiufenxi-12-wei-hou-haoma.md",
+      "pages": [
+        "wiki/sources/2026-10-31-xuqiufenxi-12-wei-hou-haoma.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483931&idx=1&sn=d0baa9eb2d7a984cea54bc4352439c3e&chksm=c1d0b69af6a73f8c0f67f1e70816fb07f637175c9b4a7c9238428116c750f7f660663388b526",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-12-wei-hou-haoma.md"
     }
   ]
 }

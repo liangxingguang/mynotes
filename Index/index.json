@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01 18:48",
+  "updated_at": "2026-11-01 21:33",
   "notes": [
     {
       "id": "2026-10-31-weixin-album-xuqiufenxi",
@@ -19,63 +19,6 @@
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "skipped"
-    },
-    {
-      "id": "2026-10-31-xuqiufenxi-10-yangli-fenxi",
-      "title": "根据好文档的标准，看一个需求分析样例",
-      "path": "Inbox/2026-10-31-xuqiufenxi-10-yangli-fenxi.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483920&idx=1&sn=6f575eefd5656d150a9c60146fd2d7fc&chksm=c1d0b691f6a73f875178ac57ec3e5c44166911af5a5cd8bbe95c846e3416e705a776835f2b65",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "《需求分析》专辑第 10 篇。上一篇明确了好需求文档的核心部分，本篇用一个接近真实的需求（销售线索自动分配 + 智能提醒）完整演示一遍分析过程。样例刻意写出\"本次不做\"和优先级排序，用分析把冲突前置、范围锁住、验证路径变短。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-10-yangli-fenxi.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-31-xuqiufenxi-11-jiazhi-shishi",
-      "title": "需求分析真正的价值是什么",
-      "path": "Inbox/2026-10-31-xuqiufenxi-11-jiazhi-shishi.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483926&idx=1&sn=12326c94ca319104c43532901884470a&chksm=c1d0b697f6a73f8116741d633ed6c960d78267e431f9aac52ecaf21bc8bf9b73232fe243d95a",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "《需求分析》专辑第 11 篇。写文档本身不是最重要的事。需求分析的真正价值，在于需求还模糊、相关方还没共识的时候，把问题澄清、把冲突暴露、把范围和优先级定下来，并推动大家达成可执行的一致。文档只是过程的载体，不是价值的全部。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-11-jiazhi-shishi.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-31-xuqiufenxi-12-wei-hou-haoma",
-      "title": "需求文档写得越厚，就一定越好吗？",
-      "path": "Inbox/2026-10-31-xuqiufenxi-12-wei-hou-haoma.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483931&idx=1&sn=d0baa9eb2d7a984cea54bc4352439c3e&chksm=c1d0b69af6a73f8c0f67f1e70816fb07f637175c9b4a7c9238428116c750f7f660663388b526",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "《需求分析》专辑第 12 篇。澄清一个常见误区：篇幅和价值之间不是简单正比。写厚背后常是怕遗漏、怕被追责、把\"完整\"理解成\"面面俱到\"。全文给一条判断标准——这个信息缺了，会不会导致理解偏差、返工或验收争议。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-12-wei-hou-haoma.md",
-      "wiki_status": "pending"
     },
     {
       "id": "2026-10-31-xuqiufenxi-13-yewu-yanfa-dui-bulai",
@@ -6031,6 +5974,63 @@
       "summary": "《需求分析》专辑第 9 篇，也是你发来链接里 `scenenote=` 解码后指向的那篇（mid=2247483914）。从问题篇转向建设篇：一份真正有用的需求文档应该长什么样。核心标准只有一个——让相关角色读完后能对齐理解，并能相对独立地往下推进。全文给七块必备内容。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-09-hao-wendang-daodi.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-xuqiufenxi-10-yangli-fenxi",
+      "title": "根据好文档的标准，看一个需求分析样例",
+      "path": "Archive/2026-10-31-xuqiufenxi-10-yangli-fenxi.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483920&idx=1&sn=6f575eefd5656d150a9c60146fd2d7fc&chksm=c1d0b691f6a73f875178ac57ec3e5c44166911af5a5cd8bbe95c846e3416e705a776835f2b65",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "《需求分析》专辑第 10 篇。上一篇明确了好需求文档的核心部分，本篇用一个接近真实的需求（销售线索自动分配 + 智能提醒）完整演示一遍分析过程。样例刻意写出\"本次不做\"和优先级排序，用分析把冲突前置、范围锁住、验证路径变短。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-10-yangli-fenxi.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-xuqiufenxi-11-jiazhi-shishi",
+      "title": "需求分析真正的价值是什么",
+      "path": "Archive/2026-10-31-xuqiufenxi-11-jiazhi-shishi.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483926&idx=1&sn=12326c94ca319104c43532901884470a&chksm=c1d0b697f6a73f8116741d633ed6c960d78267e431f9aac52ecaf21bc8bf9b73232fe243d95a",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "《需求分析》专辑第 11 篇。写文档本身不是最重要的事。需求分析的真正价值，在于需求还模糊、相关方还没共识的时候，把问题澄清、把冲突暴露、把范围和优先级定下来，并推动大家达成可执行的一致。文档只是过程的载体，不是价值的全部。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-11-jiazhi-shishi.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-xuqiufenxi-12-wei-hou-haoma",
+      "title": "需求文档写得越厚，就一定越好吗？",
+      "path": "Archive/2026-10-31-xuqiufenxi-12-wei-hou-haoma.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483931&idx=1&sn=d0baa9eb2d7a984cea54bc4352439c3e&chksm=c1d0b69af6a73f8c0f67f1e70816fb07f637175c9b4a7c9238428116c750f7f660663388b526",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "《需求分析》专辑第 12 篇。澄清一个常见误区：篇幅和价值之间不是简单正比。写厚背后常是怕遗漏、怕被追责、把\"完整\"理解成\"面面俱到\"。全文给一条判断标准——这个信息缺了，会不会导致理解偏差、返工或验收争议。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-12-wei-hou-haoma.md",
       "wiki_status": "ingested"
     }
   ]
