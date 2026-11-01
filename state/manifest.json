@@ -3591,6 +3591,19 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s?__biz=Mzk2NDg1NzQ2NQ==&mid=2247483871&idx=1&sn=6cbf4dd499608f1cd338ac26ae1a1a6d&chksm=c46c5ac9f31bd3df8c44da74f78580251f8001856104a59c88c7133075462c29ec1bad184300",
       "asset_ref": "Assets/2026-10/weixin-20261031-xitongsiwei-01-gaogao-chengben.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-31-xitongsiwei-02-baowen-shujuliu-kongzhiliu.md",
+      "sha256": "6fb0a6deac599d4ee856b4ffd625ac6eabda2bad45cba5ebe3f47ed6e91c9f93",
+      "registered_at": "2026-11-01",
+      "inbox_ref": "Archive/2026-10-31-xitongsiwei-02-baowen-shujuliu-kongzhiliu.md",
+      "pages": [
+        "wiki/sources/xitongsiwei-02-baowen-shujuliu-kongzhiliu.md",
+        "wiki/concepts/data-flow-vs-control-flow.md",
+        "wiki/concepts/dfd.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzk2NDg1NzQ2NQ==&mid=2247483902&idx=1&sn=2acae563f7917c769d937ce31a2b2e3c&chksm=c46c5ae8f31bd3fe111089fda20d0901e51a42c6a95545d9acf64e2e6d8a9e2d28f175ed2c9f",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xitongsiwei-02-baowen-shujuliu-kongzhiliu.md"
     }
   ]
 }

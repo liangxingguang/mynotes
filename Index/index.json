@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01 09:49",
+  "updated_at": "2026-11-01 10:02",
   "notes": [
     {
       "id": "2026-10-31-weixin-album-xuqiufenxi",
@@ -19,25 +19,6 @@
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "skipped"
-    },
-    {
-      "id": "2026-10-31-xitongsiwei-02-baowen-shujuliu-kongzhiliu",
-      "title": "同一个报文，一半是数据流，一半是控制流",
-      "path": "Inbox/2026-10-31-xitongsiwei-02-baowen-shujuliu-kongzhiliu.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzk2NDg1NzQ2NQ==&mid=2247483902&idx=1&sn=2acae563f7917c769d937ce31a2b2e3c&chksm=c46c5ae8f31bd3fe111089fda20d0901e51a42c6a95545d9acf64e2e6d8a9e2d28f175ed2c9f",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "系统思维专辑第 2 篇。用一段支付报文讲清数据流与控制流的分界——判断依据不是格式而是用途，同一个 JSON 里 `action`/`timeout` 是控制数据，`order_no`/`user_id`/`amount`/`goods_name` 是业务数据。讲清标准 DFD 该怎么画、控制流该换哪三种图表达。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-xitongsiwei-02-baowen-shujuliu-kongzhiliu.md",
-      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-31-xitongsiwei-03-8-difang-nengli",
@@ -6031,6 +6012,25 @@
       "summary": "系统思维专辑第 1 篇。以\"域控制器\"一词为例讲清一件事：架构里最贵的成本不是技术选错，是同一个词没人说清它的边界——硬件、软件、系统三种说法各自都对，但边界从不重合。全文讲清概念的内涵与外延、\"系统概念\"与\"概念\"方向相反、以及\"概念不是系统\"。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-xitongsiwei-01-gaogao-chengben.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-xitongsiwei-02-baowen-shujuliu-kongzhiliu",
+      "title": "同一个报文，一半是数据流，一半是控制流",
+      "path": "Archive/2026-10-31-xitongsiwei-02-baowen-shujuliu-kongzhiliu.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzk2NDg1NzQ2NQ==&mid=2247483902&idx=1&sn=2acae563f7917c769d937ce31a2b2e3c&chksm=c46c5ae8f31bd3fe111089fda20d0901e51a42c6a95545d9acf64e2e6d8a9e2d28f175ed2c9f",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "系统思维专辑第 2 篇。用一段支付报文讲清数据流与控制流的分界——判断依据不是格式而是用途，同一个 JSON 里 `action`/`timeout` 是控制数据，`order_no`/`user_id`/`amount`/`goods_name` 是业务数据。讲清标准 DFD 该怎么画、控制流该换哪三种图表达。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xitongsiwei-02-baowen-shujuliu-kongzhiliu.md",
       "wiki_status": "ingested"
     }
   ]

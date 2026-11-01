@@ -259,7 +259,7 @@
 - [[springboot-structured-logging|SpringBoot 结构化日志实战（3.4 内置 JSON/ECS）]]（2026-10-23，Java/可观测，置信度中）
 - [[ste-zh-skill|ste-zh：借鉴 ASD-STE100 的 AI Agent 中文汇报规范 Skill]]（2026-10-29，AI/Skill/写作，受控语言约束 Agent 汇报，对标 ASD-STE100，微博帖子，置信度中）
 - [[survival-llm-offline-assistant|survival-llm：完全离线运行的 AI 生存知识助手]]（2026-10-29，AI/离线/RAG，本地 LLM+150 万篇离线文档，断网/灾害/野外场景，微博帖子，置信度中）
-- [[system-thinking-album|《系统思维》图文专辑（Leo聊系统思维 · 6 篇系列索引）]]（2026-10-31，架构/系统设计/系列索引，6 篇目录，仅第 1 篇正文已采集摄入，导航型，置信度中）
+- [[system-thinking-album|《系统思维》图文专辑（Leo聊系统思维 · 6 篇系列索引）]]（2026-10-31，架构/系统设计/系列索引，6 篇目录，第 1–2 篇正文已采集摄入，导航型，置信度中）
 - [[pi-school-agent-course|这门免费课表面在教 Pi，其实在教你 Agent 到底怎么工作]]（2026-10-14，AI/教程）
 - [[state-of-ai-report-2026|State of AI Report 2026 中文要点（Datawhale 译）]]（2026-10-14，AI/行业报告）
 - [[stress-test-capacity-planning|第二十课：高并发系统压测与容量规划（架构师之路）]]（2026-10-22，压测/容量规划）
@@ -279,6 +279,7 @@
 - [[writing-craft-training-system|拆解《写作是门手艺》：普通人可复刻的完整写作训练体系]]（2026-10-31，写作/方法论，论证/结构/标题/故事/过程管理五块+兰德法则+四库积累，单信源，置信度中）
 - [[writing-8-frameworks|21 天学写作 Day10：让文章结构清晰的 8 个框架]]（2026-10-20，写作/方法论，置信度低）
 - [[xitongsiwei-01-gaogao-chengben|架构最高的成本：不是技术选错，是同一个概念，大家理解不一致]]（2026-10-31，架构/系统工程/方法论，域控制器三种边界+内涵外延+系统概念≠概念+概念≠系统，公众号原创全文完整，单信源置信度中）
+- [[xitongsiwei-02-baowen-shujuliu-kongzhiliu|同一个报文，一半是数据流，一半是控制流]]（2026-10-31，架构/系统设计/建模，支付报文数据流控制流分界+DFD 四元素+控制流三图，公众号原创全文约 2500 字，单信源置信度中）
 - [[zhihu-agent-column-index|知乎专栏《Agent》系列索引（10 篇合集）]]（2026-10-28，AI/Agent/系列导航，10 篇教程索引，已收录 9 篇独立 source 页，Part 9 缺失，置信度高）
 - [[forkjoinpool-vs-threadpoolexecutor|高频面试题：ForkJoinPool 凭什么比 ThreadPoolExecutor 快？（工作窃取与 join 的真相）]]（2026-10-31，Java/JUC/面试，工作窃取两端方向错开+join 不空等+commonPool 共享坑+虚拟线程调度器，单信源置信度高）
 - [[llm-integration-engineering-hard-parts|大模型接进业务系统：工程难点在哪（面试深挖 84）]]（2026-10-31，AI/Agent 工程，工具调用归属+上下文预算六类分配+意图路由+非确定性重试=分布采样+评测验收纪律，公众号单信源，置信度中）
@@ -327,10 +328,12 @@
 - [[countdownlatch-internals|CountDownLatch 门闩设计（AQS 共享模式）]]（state 即计数器+CAS 减一归零广播唤醒；一次性不可重置，区别于 CyclicBarrier；双信源，置信度中）
 - [[cyclicbarrier-internals|CyclicBarrier 循环屏障设计（Generation 换代）]]（ReentrantLock+Condition，parties 凑齐破障，最后线程执行 barrierAction 并换代唤醒；BrokenBarrierException 传播，单信源，置信度中）
 - [[delayqueue-internals|DelayQueue 延迟阻塞队列设计]]（PriorityQueue 小顶堆+单锁+leader-follower 精确等待消惊群；offer 仅队首变更才唤醒；单信源，置信度中）
+- [[dfd|DFD（数据流图）]]（四类元素+三个画错点+不画控制流+控制流三图分工，DeMarco/Gane-Sarson 经典出处转述，单信源，置信度中）
 - [[cpu-funnel-coding|CPU 漏斗（编码级性能模型）]]（砍掉无效解析/转换/对象，让 CPU 只做核心运算）
 - [[crdt|CRDT（无冲突复制数据类型）]]（交换律+结合律+幂等天然收敛；LSEQ/RGA/墓碑 GC 三拼图；离线友好，代价是每字符带 ID 内存膨胀 3~5 倍，单信源）
 - [[cross-process-surface-rendering|Surface 跨进程渲染]]（Surface Parcelable + SurfaceFlinger 跨进程合成，Binder 传 Surface 零拷贝传画面；Renderer 3→1，微信小游戏一手）
 - [[cursor-sharding|游标分片（Keyset Pagination 批扫）]]（WHERE id > lastId LIMIT size，性能恒定避免深分页，四种分片方式对比，哈希分片可并行，断点续跑，单信源置信度中）
+- [[data-flow-vs-control-flow|数据流与控制流的边界]]（看用途不看载体+两条定义+报文字段分类，单信源，置信度中）
 - [[deep-thinking-five-tools|深度思考五工具（澄清-拆解-追问-反证-逆向）]]（按序收敛四步+发散出口一步，反认知闭合；YouCore 单信源，置信度中）
 - [[design-patterns-in-netty|Netty 设计模式全景（源码视角的模式识别）]]（十大模式源码落点+16 模式对照表；机制概念页的模式视角索引；单信源，置信度中）
 - [[durable-execution|持久执行（Durable Execution）]]（崩溃后断点精确恢复；效应三明治 + 版本化文档存储，非事件溯源；Kiso 补 Event Log 账本+uncertain 裁决+kill -9 实测路线；重试治理信源补跨 Worker 字段清单，八信源）
