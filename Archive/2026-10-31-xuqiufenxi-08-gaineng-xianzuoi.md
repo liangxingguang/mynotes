@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026-10/weixin-20261031-xuqiufenxi-08-gaineng-xianzuoi.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 功能列了很多，团队却不知道哪些该先做

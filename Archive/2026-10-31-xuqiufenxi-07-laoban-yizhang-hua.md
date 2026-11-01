@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026-10/weixin-20261031-xuqiufenxi-07-laoban-yizhang-hua.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 老板的一句话需求，为什么常常会演变成后来的灾难

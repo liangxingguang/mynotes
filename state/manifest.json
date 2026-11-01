@@ -3707,6 +3707,39 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483847&idx=1&sn=8d97c08b539f7711735f02af88920a84&chksm=c1d0b546f6a73c50d2c89144c80c3a83227266c97376a065eb34a2961f0f9bc74c31dcb492d3",
       "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-05-kaifa-kanbudong.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-31-xuqiufenxi-06-xuqiu-luan.md",
+      "sha256": "50dbe93674e624ff402eaf47be6e856dda637065f0b191f6da9ee3146181b4a2",
+      "registered_at": "2026-11-01",
+      "inbox_ref": "Archive/2026-10-31-xuqiufenxi-06-xuqiu-luan.md",
+      "pages": [
+        "wiki/sources/2026-10-31-xuqiufenxi-06-xuqiu-luan.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483876&idx=1&sn=d10e051d1d576b5787b3e0a52dc19885&chksm=c1d0b565f6a73c73738e2e739a351db4eb5ad9f5ef6abafd49308a351a199b43e0021b52598d",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-06-xuqiu-luan.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-31-xuqiufenxi-07-laoban-yizhang-hua.md",
+      "sha256": "451b8e6d3b9b0d26d717149838a901c95ac37a37aa8323b60c6015f5acee1e53",
+      "registered_at": "2026-11-01",
+      "inbox_ref": "Archive/2026-10-31-xuqiufenxi-07-laoban-yizhang-hua.md",
+      "pages": [
+        "wiki/sources/2026-10-31-xuqiufenxi-07-laoban-yizhang-hua.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483893&idx=1&sn=32736127b7b8228cbdb5ddff934b58d6&chksm=c1d0b574f6a73c62363f9635f44603e91eb46ddae4ea60f1d02baf9fa4cf3353d00f13a754c1",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-07-laoban-yizhang-hua.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-31-xuqiufenxi-08-gaineng-xianzuoi.md",
+      "sha256": "a522e6af91d6299f0064fc1c9a7274c336aa3811192ee0fb655dc2e2312f399d",
+      "registered_at": "2026-11-01",
+      "inbox_ref": "Archive/2026-10-31-xuqiufenxi-08-gaineng-xianzuoi.md",
+      "pages": [
+        "wiki/sources/2026-10-31-xuqiufenxi-08-gaineng-xianzuoi.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483898&idx=1&sn=9e0720f1919c40094d93621a8265e2d5&chksm=c1d0b57bf6a73c6d384fe80e3501e87ff15564b59639636897e0ca86fcce54e4505b561b30d8",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-08-gaineng-xianzuoi.md"
     }
   ]
 }

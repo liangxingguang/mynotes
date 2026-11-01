@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026-10/weixin-20261031-xuqiufenxi-06-xuqiu-luan.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 需求乱成一锅粥，项目一步步失控

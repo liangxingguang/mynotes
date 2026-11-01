@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01 15:54",
+  "updated_at": "2026-11-01 18:32",
   "notes": [
     {
       "id": "2026-10-31-weixin-album-xuqiufenxi",
@@ -19,63 +19,6 @@
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "skipped"
-    },
-    {
-      "id": "2026-10-31-xuqiufenxi-06-xuqiu-luan",
-      "title": "需求乱成一锅粥，项目一步步失控",
-      "path": "Inbox/2026-10-31-xuqiufenxi-06-xuqiu-luan.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483876&idx=1&sn=d10e051d1d576b5787b3e0a52dc19885&chksm=c1d0b565f6a73c73738e2e739a351db4eb5ad9f5ef6abafd49308a351a199b43e0021b52598d",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "《需求分析》专辑第 6 篇。项目失控很少一夜发生，复盘时总能发现隐患早就暴露。全文把失控拆成四个阶段：表面还能推进实则埋下隐患 → 理解偏差显现、返工出现 → 变更频繁且缺乏控制 → 全面被动、节奏失控。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-06-xuqiu-luan.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-31-xuqiufenxi-07-laoban-yizhang-hua",
-      "title": "老板的一句话需求，为什么常常会演变成后来的灾难",
-      "path": "Inbox/2026-10-31-xuqiufenxi-07-laoban-yizhang-hua.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483893&idx=1&sn=32736127b7b8228cbdb5ddff934b58d6&chksm=c1d0b574f6a73c62363f9635f44603e91eb46ddae4ea60f1d02baf9fa4cf3353d00f13a754c1",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "《需求分析》专辑第 7 篇。在需求问题的连锁反应里，有一个极其常见的触发点——\"老板随口的一句话需求\"。这句话本身没错，问题在于它被直接当成\"已经明确的需求\"立刻开工。全文给五个必澄清的信息缺口，以及一个\"慢半拍\"的解法。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-07-laoban-yizhang-hua.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-31-xuqiufenxi-08-gaineng-xianzuoi",
-      "title": "功能列了很多，团队却不知道哪些该先做",
-      "path": "Inbox/2026-10-31-xuqiufenxi-08-gaineng-xianzuoi.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483898&idx=1&sn=9e0720f1919c40094d93621a8265e2d5&chksm=c1d0b57bf6a73c6d384fe80e3501e87ff15564b59639636897e0ca86fcce54e4505b561b30d8",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "《需求分析》专辑第 8 篇。另一个几乎同样普遍的困境：功能清单很长，却没有人说得清该先做哪个。优先级缺失会直接放大前面提到的所有代价——需求膨胀、返工成本更高、团队难以建立成就感。全文给四个判断维度。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-08-gaineng-xianzuoi.md",
-      "wiki_status": "pending"
     },
     {
       "id": "2026-10-31-xuqiufenxi-09-hao-wendang-daodi",
@@ -6031,6 +5974,63 @@
       "summary": "《需求分析》专辑第 5 篇。即便知道要站在读者角度写，现实中最常见的依然是\"文档写完了，开发看完还是一脸懵\"。全文拆四个原因：描述停在\"做什么\"却缺\"为什么/怎么算对\"、业务规则和边界条件模糊遗漏、缺真实使用场景只剩功能罗列、结构和表达只方便自己写。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-05-kaifa-kanbudong.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-xuqiufenxi-06-xuqiu-luan",
+      "title": "需求乱成一锅粥，项目一步步失控",
+      "path": "Archive/2026-10-31-xuqiufenxi-06-xuqiu-luan.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483876&idx=1&sn=d10e051d1d576b5787b3e0a52dc19885&chksm=c1d0b565f6a73c73738e2e739a351db4eb5ad9f5ef6abafd49308a351a199b43e0021b52598d",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "《需求分析》专辑第 6 篇。项目失控很少一夜发生，复盘时总能发现隐患早就暴露。全文把失控拆成四个阶段：表面还能推进实则埋下隐患 → 理解偏差显现、返工出现 → 变更频繁且缺乏控制 → 全面被动、节奏失控。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-06-xuqiu-luan.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-xuqiufenxi-07-laoban-yizhang-hua",
+      "title": "老板的一句话需求，为什么常常会演变成后来的灾难",
+      "path": "Archive/2026-10-31-xuqiufenxi-07-laoban-yizhang-hua.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483893&idx=1&sn=32736127b7b8228cbdb5ddff934b58d6&chksm=c1d0b574f6a73c62363f9635f44603e91eb46ddae4ea60f1d02baf9fa4cf3353d00f13a754c1",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "《需求分析》专辑第 7 篇。在需求问题的连锁反应里，有一个极其常见的触发点——\"老板随口的一句话需求\"。这句话本身没错，问题在于它被直接当成\"已经明确的需求\"立刻开工。全文给五个必澄清的信息缺口，以及一个\"慢半拍\"的解法。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-07-laoban-yizhang-hua.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-xuqiufenxi-08-gaineng-xianzuoi",
+      "title": "功能列了很多，团队却不知道哪些该先做",
+      "path": "Archive/2026-10-31-xuqiufenxi-08-gaineng-xianzuoi.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483898&idx=1&sn=9e0720f1919c40094d93621a8265e2d5&chksm=c1d0b57bf6a73c6d384fe80e3501e87ff15564b59639636897e0ca86fcce54e4505b561b30d8",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "《需求分析》专辑第 8 篇。另一个几乎同样普遍的困境：功能清单很长，却没有人说得清该先做哪个。优先级缺失会直接放大前面提到的所有代价——需求膨胀、返工成本更高、团队难以建立成就感。全文给四个判断维度。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-08-gaineng-xianzuoi.md",
       "wiki_status": "ingested"
     }
   ]
