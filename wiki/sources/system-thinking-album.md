@@ -16,12 +16,16 @@ sources:
   - raw/sources/misc/2026-10-31-weixin-album-system-thinking.md
 related:
   - wiki/sources/xitongsiwei-01-gaogao-chengben.md
+  - wiki/sources/xitongsiwei-02-baowen-shujuliu-kongzhiliu.md
+  - wiki/sources/xitongsiwei-03-8-difang-nengli.md
+  - wiki/sources/xitongsiwei-04-concept-design.md
+  - wiki/sources/xitongsiwei-05-gainian-guanxitu.md
 ---
 # 《系统思维》图文专辑（Leo聊系统思维 · 6 篇系列索引）
 
 ## Overview（概览）
 
-公众号「Leo聊系统思维」的图文专辑《系统思维》目录页（album_id=4732715055413035015），共 6 篇，主题是系统架构设计与系统底层思维。目录条目链接已全部拿到（专辑 URL 加 `&f=json` 接口）；**第 1、2 篇正文已采集并摄入，第 3–6 篇正文尚未采集**。
+公众号「Leo聊系统思维」的图文专辑《系统思维》目录页（album_id=4732715055413035015），共 6 篇，主题是系统架构设计与系统底层思维。目录条目链接已全部拿到（专辑 URL 加 `&f=json` 接口）；**第 1–5 篇正文已采集并摄入，第 6 篇正文尚未采集**。
 
 ## Key Facts（关键事实）
 
@@ -29,9 +33,9 @@ related:
 - 6 篇正序清单（msgid / create_time 为秒级 Unix 时间，约 2026 年 10 月中下旬）：
   1. 架构最高的成本：不是技术选错，是同一个概念，大家理解不一致（2247483871 / 1791675000）——正文已采集并摄入
   2. 同一个报文，一半是数据流，一半是控制流（2247483902 / 1791930600）——正文已采集并摄入
-  3. 架构师必须具备的 8 个底层能力（2247483912 / 1792364400）
-  4. 手把手教你如何做系统概念设计（2247483942 / 1792537200）
-  5. 系统工程师必须掌握的架构概念关系图（2247484017 / 1792794600）
+  3. 架构师必须具备的 8 个底层能力（2247483912 / 1792364400）——正文已采集并摄入
+  4. 手把手教你如何做系统概念设计（2247483942 / 1792537200）——正文已采集并摄入
+  5. 系统工程师必须掌握的架构概念关系图（2247484017 / 1792794600）——正文已采集并摄入
   6. 用不好 workbuddy 智能体？你需要掌握这三个管理工具（2247484036 / 1792908000）
 - 目录获取方式：专辑页本体为 JS 动态渲染、HTTP 层约 12 万字符全是 1px SVG 占位符；同一 URL 加 `&f=json` 返回 4939 字符 JSON，`getalbum_resp.article_list[]` 每条含 `pos_num`/`msgid`/`title`/`create_time`/`url`，6 条一条不缺。
 
@@ -41,7 +45,7 @@ related:
 
 ## Concepts Introduced（引入的概念）
 
-（无——第 1 篇概念页已建立：[[system-concept]]、[[concept-boundary-definition]]；第 2 篇概念页已建立：[[data-flow-vs-control-flow]]、[[dfd]]；其余 4 篇待采集后补）
+（无——第 1 篇：[[system-concept]]、[[concept-boundary-definition]]；第 2 篇：[[data-flow-vs-control-flow]]、[[dfd]]；第 3 篇：[[architecture-design-capabilities]]（兼引出架构 vs 架构描述之辨，见第 5 篇 [[architecture-description-metamodel]]）；第 4 篇：[[system-concept-design]]；第 5 篇：[[architecture-description-metamodel]]；第 6 篇待采集）
 
 ## Entities Mentioned（提及的实体）
 
@@ -55,14 +59,14 @@ related:
 
 ## Limitations（局限）
 
-- 除第 1 篇外正文未采集，本信源仅目录，无法核验各篇实际内容。
+- 第 1–5 篇正文已摄入、可核验；仅第 6 篇未采集。本信源本为目录索引，各篇实际内容以其正文信源页为准。
 - 专辑页为动态接口数据，后续新增篇目不在本信源内。
 - 同标签下 1868 篇内容仅说明账号产量规模，未逐一核验。
 
 ## Related Knowledge（相关知识）
 
-- 已摄入：[[xitongsiwei-01-gaogao-chengben]]（第 1 篇正文信源页）、[[xitongsiwei-02-baowen-shujuliu-kongzhiliu]]（第 2 篇正文信源页）
-- 系列后续待采集：第 3–6 篇（Inbox 待摄入队列）
+- 已摄入：[[xitongsiwei-01-gaogao-chengben]]（第 1 篇）、[[xitongsiwei-02-baowen-shujuliu-kongzhiliu]]（第 2 篇）、[[xitongsiwei-03-8-difang-nengli]]（第 3 篇）、[[xitongsiwei-04-concept-design]]（第 4 篇）、[[xitongsiwei-05-gainian-guanxitu]]（第 5 篇）正文信源页
+- 系列后续待采集：第 6 篇（WorkBuddy 三个管理工具）
 
 ## Source（信源）
 

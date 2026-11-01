@@ -280,6 +280,9 @@
 - [[writing-8-frameworks|21 天学写作 Day10：让文章结构清晰的 8 个框架]]（2026-10-20，写作/方法论，置信度低）
 - [[xitongsiwei-01-gaogao-chengben|架构最高的成本：不是技术选错，是同一个概念，大家理解不一致]]（2026-10-31，架构/系统工程/方法论，域控制器三种边界+内涵外延+系统概念≠概念+概念≠系统，公众号原创全文完整，单信源置信度中）
 - [[xitongsiwei-02-baowen-shujuliu-kongzhiliu|同一个报文，一半是数据流，一半是控制流]]（2026-10-31，架构/系统设计/建模，支付报文数据流控制流分界+DFD 四元素+控制流三图，公众号原创全文约 2500 字，单信源置信度中）
+- [[xitongsiwei-03-8-difang-nengli|架构师必须具备的 8 个底层能力]]（2026-10-31，架构/系统工程/方法论，架构 vs 架构描述 AD+八动作链抽象/聚焦/分解/边界/契约/权衡/约束/可演化+ISO 42010/Parnas 1972，公众号原创约 5000 字，单信源置信度中）
+- [[xitongsiwei-04-concept-design|手把手教你如何做系统概念设计]]（2026-10-31，架构/系统工程/方法论，判定四问+概念与需求/方案/架构分界+Arcadia 四层定位+六步方法论+trade study+冻结基线+四问验收，公众号原创约 4100 字，单信源置信度中）
+- [[xitongsiwei-05-gainian-guanxitu|系统工程师必须掌握的架构概念关系图]]（2026-10-31，架构/系统工程/方法论，ISO 42010 元模型左右双结构+四条逻辑线+AD≠架构+车载域控五团队冲突+架构师四件事+ADR+四道校验，公众号原创约 4100 字，单信源置信度中）
 - [[zhihu-agent-column-index|知乎专栏《Agent》系列索引（10 篇合集）]]（2026-10-28，AI/Agent/系列导航，10 篇教程索引，已收录 9 篇独立 source 页，Part 9 缺失，置信度高）
 - [[forkjoinpool-vs-threadpoolexecutor|高频面试题：ForkJoinPool 凭什么比 ThreadPoolExecutor 快？（工作窃取与 join 的真相）]]（2026-10-31，Java/JUC/面试，工作窃取两端方向错开+join 不空等+commonPool 共享坑+虚拟线程调度器，单信源置信度高）
 - [[llm-integration-engineering-hard-parts|大模型接进业务系统：工程难点在哪（面试深挖 84）]]（2026-10-31，AI/Agent 工程，工具调用归属+上下文预算六类分配+意图路由+非确定性重试=分布采样+评测验收纪律，公众号单信源，置信度中）
@@ -309,6 +312,8 @@
 - [[ai-assisted-troubleshooting-workflow|AI 辅助排障工作流]]（贴文本模式四环节：现象选命令/读栈/写表达式/结论分叉；三件不交给 AI；脱敏前提；它翻译你判断，双信源）
 - [[ai-native-organization|AI 原生研发组织]]（工具原生→工作流原生→组织原生）
 - [[ai-native-sdlc|AI 原生 SDLC]]（制品提交链驱动的闭环，Anthropic 2026；人守闸门/三层控制模型；货拉拉千人落地+孔明八阶段工作流实例，四信源）
+- [[architecture-description-metamodel|ISO 42010 架构概念元模型]]（左侧人与诉求五要素+右侧视图与设计四要素+四条逻辑线不可颠倒+AD≠架构+车载域控五团队对立+ADR 决策记录，单信源置信度中）
+- [[architecture-design-capabilities|架构设计能力（8 个底层动作）]]（架构 vs 架构描述+八动作链抽象/聚焦/分解/边界/契约/权衡/约束/可演化+Parnas 信息隐藏+隐式契约+二十指标等于零，单信源置信度中）
 - [[architecture-tradeoff-methodology|架构取舍方法论（先定约束，再挑技术）]]（四问前置+演进式架构+三高量化+对症优化+选型看访问路径+稳定性工具箱，单信源置信度中）
 - [[batch-message-push|批量消息推送（百万级短信推送）]]（内存/性能/可靠性三对矛盾 + 游标分片+专用线程池+Redis 进度+重试死信+断点续跑，单信源置信度中）
 - [[blue-green-deployment|蓝绿发布（Blue-Green Deployment）]]（Preview+全量切换+自动观察回退；selector 只影响新连接；四层门禁先过样本量；蓝绿实战单信源）
@@ -454,6 +459,7 @@
 - [[spring-transaction|Spring 事务传播/隔离/失效]]（REQUIRED/REQUIRES_NEW/NESTED；RR/RC 须与库对齐；失效 10 场景前 4 种占 90%，单信源）
 - [[spring-event-mechanism|Spring 事件机制]]（观察者模式；默认同步；@Async/@TransactionalEventListener 三大坑，单信源）
 - [[system-concept|系统概念（System Concept）]]（向前构想≠向上归纳+ISO/IEC/IEEE 15288 概念阶段+固定术语坑+概念≠系统蓝图，单信源，置信度中）
+- [[system-concept-design|系统概念设计方法论（六步 + Arcadia）]]（判定四问+概念与需求/方案/架构分界+Arcadia OA/SA/LA/PA 概念层黑盒+六步链+trade study+冻结基线六类制品+四问验收，单信源，置信度中）
 
 ## entity（实体）
 

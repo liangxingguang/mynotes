@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-11-01T00:00:00Z",
+  "updated_at": "2026-11-01",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -3604,6 +3604,42 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s?__biz=Mzk2NDg1NzQ2NQ==&mid=2247483902&idx=1&sn=2acae563f7917c769d937ce31a2b2e3c&chksm=c46c5ae8f31bd3fe111089fda20d0901e51a42c6a95545d9acf64e2e6d8a9e2d28f175ed2c9f",
       "asset_ref": "Assets/2026-10/weixin-20261031-xitongsiwei-02-baowen-shujuliu-kongzhiliu.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-31-xitongsiwei-03-8-difang-nengli.md",
+      "sha256": "d562f3e227ff653a8b4c14153c1f96cf93a0c8efae51619dc9898e2a8cd47a45",
+      "registered_at": "2026-11-01",
+      "inbox_ref": "Archive/2026-10-31-xitongsiwei-03-8-difang-nengli.md",
+      "pages": [
+        "wiki/sources/xitongsiwei-03-8-difang-nengli.md",
+        "wiki/concepts/architecture-design-capabilities.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzk2NDg1NzQ2NQ==&mid=2247483912&idx=1&sn=a7aea77a98d098b78340384567fcc883&chksm=c46c591ef31bd0080b53063ccbaa274ee666a9b18dfdc79933ce6cd0db0381959eebcb9d46f8",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xitongsiwei-03-8-difang-nengli.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-31-xitongsiwei-04-concept-design.md",
+      "sha256": "84c8539cd8d49fe71c337452ed87ee2bed86c415fe68e4d6f19cbd858858d1f3",
+      "registered_at": "2026-11-01",
+      "inbox_ref": "Archive/2026-10-31-xitongsiwei-04-concept-design.md",
+      "pages": [
+        "wiki/sources/xitongsiwei-04-concept-design.md",
+        "wiki/concepts/system-concept-design.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzk2NDg1NzQ2NQ==&mid=2247483942&idx=1&sn=cd1b761bf8cf7ac338cfde71747553b9&chksm=c46c5930f31bd0261ffa81c73718795ef1c2294af7ab938b3d9183e7205f2fafb71958b9b21b",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xitongsiwei-04-concept-design.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-31-xitongsiwei-05-gainian-guanxitu.md",
+      "sha256": "d745cbcd874a8ecc01a4c41fce686e675f451424f08f74bb036b809923a69d14",
+      "registered_at": "2026-11-01",
+      "inbox_ref": "Archive/2026-10-31-xitongsiwei-05-gainian-guanxitu.md",
+      "pages": [
+        "wiki/sources/xitongsiwei-05-gainian-guanxitu.md",
+        "wiki/concepts/architecture-description-metamodel.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzk2NDg1NzQ2NQ==&mid=2247484017&idx=1&sn=e12e2a2f113c00ee1a67449f1764d067&chksm=c46c5967f31bd0710443d434fa4bb45dfeeb4d6309eaa5c420ccab4172fb17c9935dd0d29060",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xitongsiwei-05-gainian-guanxitu.md"
     }
   ]
 }

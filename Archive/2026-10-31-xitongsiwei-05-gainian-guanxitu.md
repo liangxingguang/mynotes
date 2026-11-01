@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026-10/weixin-20261031-xitongsiwei-05-gainian-guanxitu.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 系统工程师必须掌握的架构概念关系图

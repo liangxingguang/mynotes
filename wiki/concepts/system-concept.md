@@ -15,6 +15,7 @@ sources:
   - raw/sources/architecture/2026-10-31-xitongsiwei-01-gaogao-chengben.md
 related:
   - wiki/concepts/concept-boundary-definition.md
+  - wiki/concepts/system-concept-design.md
   - wiki/sources/xitongsiwei-01-gaogao-chengben.md
   - wiki/sources/system-thinking-album.md
 ---
@@ -53,6 +54,7 @@ related:
 
 ### Related Concepts（相关概念）
 
+- [[system-concept-design|系统概念设计方法论]]：如何产出一个系统概念——六步方法论（运行分析／划边界／黑盒能力／约束与假设／候选概念权衡／定指标冻结基线），按 Arcadia 定位概念层（黑盒），附四问验收（第 4 篇）。
 - [[concept-boundary-definition|概念边界界定（内涵/外延与三问）]]：系统概念是该方法论在系统工程中的术语层应用；「系统概念」本身也需按三问界定边界。
 
 ### Dependencies（依赖项）
@@ -67,7 +69,7 @@ related:
 
 ## Evolution（演进）
 
-（暂无后续信源；本页为单一信源建立）
+（暂无后续信源；本页为第 1 篇单一信源建立。第 4 篇「系统概念设计」提供了产出系统概念的实践方法论，见 [[system-concept-design]]）
 
 ## Open Questions（开放问题）
 

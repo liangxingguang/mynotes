@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026-10/weixin-20261031-xitongsiwei-04-concept-design.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 手把手教你如何做系统概念设计
