@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026-10/weixin-20261031-xuqiufenxi-14-mohu-xuqiu-bian-qingxi.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 如何把模糊需求一步步变成清晰的功能模块

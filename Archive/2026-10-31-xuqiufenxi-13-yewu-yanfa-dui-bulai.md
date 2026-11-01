@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026-10/weixin-20261031-xuqiufenxi-13-yewu-yanfa-dui-bulai.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 需求分析从业务到研发对不齐，中间缺什么

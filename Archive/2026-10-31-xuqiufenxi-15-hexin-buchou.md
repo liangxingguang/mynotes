@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026-10/weixin-20261031-xuqiufenxi-15-hexin-buchou.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 需求分析的核心步骤（一套可重复使用的实战流程）
