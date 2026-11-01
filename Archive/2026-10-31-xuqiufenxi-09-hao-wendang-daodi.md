@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026-10/weixin-20261031-xuqiufenxi-09-hao-wendang-daodi.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 好的需求文档到底应该什么样
