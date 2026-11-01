@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01 15:42",
+  "updated_at": "2026-11-01 15:54",
   "notes": [
     {
       "id": "2026-10-31-weixin-album-xuqiufenxi",
@@ -19,25 +19,6 @@
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "skipped"
-    },
-    {
-      "id": "2026-10-31-xuqiufenxi-05-kaifa-kanbudong",
-      "title": "需求文档写完开发还是看不懂，问题出在这几点",
-      "path": "Inbox/2026-10-31-xuqiufenxi-05-kaifa-kanbudong.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483847&idx=1&sn=8d97c08b539f7711735f02af88920a84&chksm=c1d0b546f6a73c50d2c89144c80c3a83227266c97376a065eb34a2961f0f9bc74c31dcb492d3",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "《需求分析》专辑第 5 篇。即便知道要站在读者角度写，现实中最常见的依然是\"文档写完了，开发看完还是一脸懵\"。全文拆四个原因：描述停在\"做什么\"却缺\"为什么/怎么算对\"、业务规则和边界条件模糊遗漏、缺真实使用场景只剩功能罗列、结构和表达只方便自己写。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-05-kaifa-kanbudong.md",
-      "wiki_status": "pending"
     },
     {
       "id": "2026-10-31-xuqiufenxi-06-xuqiu-luan",
@@ -6031,6 +6012,25 @@
       "summary": "《需求分析》专辑第 4 篇。前三篇讲了需求问题的代价与创业场景，这一篇落到更基础的一点：文档到底写给谁看。需求文档的本质是跨角色的沟通工具，不是需求笔记、更不是给自己留的备忘。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-04-wendang-xiegei-kan.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-xuqiufenxi-05-kaifa-kanbudong",
+      "title": "需求文档写完开发还是看不懂，问题出在这几点",
+      "path": "Archive/2026-10-31-xuqiufenxi-05-kaifa-kanbudong.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483847&idx=1&sn=8d97c08b539f7711735f02af88920a84&chksm=c1d0b546f6a73c50d2c89144c80c3a83227266c97376a065eb34a2961f0f9bc74c31dcb492d3",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "《需求分析》专辑第 5 篇。即便知道要站在读者角度写，现实中最常见的依然是\"文档写完了，开发看完还是一脸懵\"。全文拆四个原因：描述停在\"做什么\"却缺\"为什么/怎么算对\"、业务规则和边界条件模糊遗漏、缺真实使用场景只剩功能罗列、结构和表达只方便自己写。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-05-kaifa-kanbudong.md",
       "wiki_status": "ingested"
     }
   ]
