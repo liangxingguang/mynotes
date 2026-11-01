@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026-10/weixin-album-4732715055413035015-json.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 公众号图文专辑《系统思维》目录（Leo聊系统思维 · 6 篇）

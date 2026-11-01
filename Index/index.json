@@ -1,44 +1,6 @@
 {
-  "updated_at": "2026-11-01 07:04",
+  "updated_at": "2026-11-01 09:37",
   "notes": [
-    {
-      "id": "2026-10-31-weixin-album-arthas-usage",
-      "title": "公众号图文专辑《arthas使用》目录（奇点智慧小助手 · 7 篇）",
-      "path": "Inbox/2026-10-31-weixin-album-arthas-usage.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg4MjE2Nzk0NQ==&action=getalbum&album_id=4743203736426643461&subscene=169",
-      "source_type": "album",
-      "platform": "微信公众号",
-      "summary": "这是公众号「奇点智慧小助手」的图文专辑《arthas使用》，共 7 篇 Arthas 线上问题排查系列，按正序编号 1–7。**7 篇正文与链接已全部采集完成**（见文末清单）：专辑页本体是 JS 动态渲染、正文拿不到，但给专辑链接加 `&f=json` 会直接返回含全部条目 URL 的 JSON，据此逐篇抓取成功。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-album-4743203736426643461.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-31-weixin-album-system-thinking",
-      "title": "公众号图文专辑《系统思维》目录（Leo聊系统思维 · 6 篇）",
-      "path": "Inbox/2026-10-31-weixin-album-system-thinking.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk2NDg1NzQ2NQ==&action=getalbum&album_id=4732715055413035015&subscene=169",
-      "source_type": "album",
-      "platform": "微信公众号",
-      "summary": "这是公众号「Leo聊系统思维」的图文专辑《系统思维》，共 6 篇，主题是系统架构设计与系统底层思维。6 篇的条目链接已全部拿到（靠专辑 URL 加 `&f=json`），但**正文尚未采集**——本次只落了专辑目录，单篇正文需要逐篇抓取，说一声就抓。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-album-4732715055413035015-json.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-31-weixin-album-xuqiufenxi",
       "title": "专辑目录 · 需求分析（赢在菲墨间）",
@@ -57,25 +19,6 @@
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "skipped"
-    },
-    {
-      "id": "2026-10-31-xitongsiwei-01-gaogao-chengben",
-      "title": "架构最高的成本：不是技术选错，是同一个概念，大家理解不一致",
-      "path": "Inbox/2026-10-31-xitongsiwei-01-gaogao-chengben.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzk2NDg1NzQ2NQ==&mid=2247483871&idx=1&sn=6cbf4dd499608f1cd338ac26ae1a1a6d&chksm=c46c5ac9f31bd3df8c44da74f78580251f8001856104a59c88c7133075462c29ec1bad184300",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "系统思维专辑第 1 篇。以\"域控制器\"一词为例讲清一件事：架构里最贵的成本不是技术选错，是同一个词没人说清它的边界——硬件、软件、系统三种说法各自都对，但边界从不重合。全文讲清概念的内涵与外延、\"系统概念\"与\"概念\"方向相反、以及\"概念不是系统\"。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-xitongsiwei-01-gaogao-chengben.md",
-      "wiki_status": "pending"
     },
     {
       "id": "2026-10-31-xitongsiwei-02-baowen-shujuliu-kongzhiliu",
@@ -5991,6 +5934,63 @@
       "summary": "Spring 面试八股总纲，11 大考点：BeanFactory vs ApplicationContext、IOC、DI、AOP、Spring MVC、`refresh()` 十二步、Bean 生命周期、三级缓存、JDK vs CGLIB、事务传播与隔离级别、事务失效 10 场景、`@Autowired` vs `@Resource`、事件机制。每个考点配对比表与面试话术。主线：Spring 高级能力全落在 `BeanPostProcessor` 扩展点；三级缓存存在的根本理由是让 AOP 代理在循环依赖时保持一致。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-SpHaBjO13VfcQap34ajgDg.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-weixin-album-arthas-usage",
+      "title": "公众号图文专辑《arthas使用》目录（奇点智慧小助手 · 7 篇）",
+      "path": "Archive/2026-10-31-weixin-album-arthas-usage.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg4MjE2Nzk0NQ==&action=getalbum&album_id=4743203736426643461&subscene=169",
+      "source_type": "album",
+      "platform": "微信公众号",
+      "summary": "这是公众号「奇点智慧小助手」的图文专辑《arthas使用》，共 7 篇 Arthas 线上问题排查系列，按正序编号 1–7。**7 篇正文与链接已全部采集完成**（见文末清单）：专辑页本体是 JS 动态渲染、正文拿不到，但给专辑链接加 `&f=json` 会直接返回含全部条目 URL 的 JSON，据此逐篇抓取成功。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-album-4743203736426643461.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-weixin-album-system-thinking",
+      "title": "公众号图文专辑《系统思维》目录（Leo聊系统思维 · 6 篇）",
+      "path": "Archive/2026-10-31-weixin-album-system-thinking.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk2NDg1NzQ2NQ==&action=getalbum&album_id=4732715055413035015&subscene=169",
+      "source_type": "album",
+      "platform": "微信公众号",
+      "summary": "这是公众号「Leo聊系统思维」的图文专辑《系统思维》，共 6 篇，主题是系统架构设计与系统底层思维。6 篇的条目链接已全部拿到（靠专辑 URL 加 `&f=json`），但**正文尚未采集**——本次只落了专辑目录，单篇正文需要逐篇抓取，说一声就抓。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-album-4732715055413035015-json.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-xitongsiwei-01-gaogao-chengben",
+      "title": "架构最高的成本：不是技术选错，是同一个概念，大家理解不一致",
+      "path": "Archive/2026-10-31-xitongsiwei-01-gaogao-chengben.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzk2NDg1NzQ2NQ==&mid=2247483871&idx=1&sn=6cbf4dd499608f1cd338ac26ae1a1a6d&chksm=c46c5ac9f31bd3df8c44da74f78580251f8001856104a59c88c7133075462c29ec1bad184300",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "系统思维专辑第 1 篇。以\"域控制器\"一词为例讲清一件事：架构里最贵的成本不是技术选错，是同一个词没人说清它的边界——硬件、软件、系统三种说法各自都对，但边界从不重合。全文讲清概念的内涵与外延、\"系统概念\"与\"概念\"方向相反、以及\"概念不是系统\"。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xitongsiwei-01-gaogao-chengben.md",
       "wiki_status": "ingested"
     }
   ]

@@ -50,6 +50,7 @@
 - [[arthas-07-when-not-to-use|什么时候不该用 Arthas]]（2026-10-31，Java/Arthas/工具选型，四种观测手段分工+四个信号+三个场景+三项成本+决策顺序，系列收尾，配图 1px 占位正文完整）
 - [[arthas-mcp-ai-troubleshooting|让 AI 调 Arthas，Java 排障会快多少？]]（2026-10-14，AI/MCP/Java 诊断）
 - [[arthas-mcp-server-ai-diagnosis|Arthas 官方 MCP 实测：29 个诊断命令交给 AI，凌晨排查省 40 分钟]]（2026-10-31，AI/MCP/Java 诊断，量化对比 45min vs 5min+生产红线，与前篇互证，单信源置信度高）
+- [[arthas-usage-album|《arthas使用》图文专辑（奇点智慧小助手 · 7 篇系列索引）]]（2026-10-31，Java/Arthas/系列索引，7 篇目录+全部正文已摄入，八篇口径差异已标注，导航型，置信度中）
 - [[async-idempotency-local-message-table|异步链路幂等实战：本地消息表配套防重，解决重复扣款与消息重放]]（2026-10-23，架构/幂等）
 - [[async-task-system-design|异步任务系统怎么设计？从提交、排队、执行到幂等和重试]]（2026-10-22，架构/可靠性）
 - [[awesome-design-md|用 DESIGN.md 治 AI 生成的丑 UI：awesome-design-md 仓库]]（2026-10-16，AI/工具）
@@ -258,6 +259,7 @@
 - [[springboot-structured-logging|SpringBoot 结构化日志实战（3.4 内置 JSON/ECS）]]（2026-10-23，Java/可观测，置信度中）
 - [[ste-zh-skill|ste-zh：借鉴 ASD-STE100 的 AI Agent 中文汇报规范 Skill]]（2026-10-29，AI/Skill/写作，受控语言约束 Agent 汇报，对标 ASD-STE100，微博帖子，置信度中）
 - [[survival-llm-offline-assistant|survival-llm：完全离线运行的 AI 生存知识助手]]（2026-10-29，AI/离线/RAG，本地 LLM+150 万篇离线文档，断网/灾害/野外场景，微博帖子，置信度中）
+- [[system-thinking-album|《系统思维》图文专辑（Leo聊系统思维 · 6 篇系列索引）]]（2026-10-31，架构/系统设计/系列索引，6 篇目录，仅第 1 篇正文已采集摄入，导航型，置信度中）
 - [[pi-school-agent-course|这门免费课表面在教 Pi，其实在教你 Agent 到底怎么工作]]（2026-10-14，AI/教程）
 - [[state-of-ai-report-2026|State of AI Report 2026 中文要点（Datawhale 译）]]（2026-10-14，AI/行业报告）
 - [[stress-test-capacity-planning|第二十课：高并发系统压测与容量规划（架构师之路）]]（2026-10-22，压测/容量规划）
@@ -276,6 +278,7 @@
 - [[weibo-gpt2-to-llama-tutorial|从零手写大模型进阶教程：从 GPT-2 到 LLaMA 的 4 个关键零件]]（2026-10-22，AI/教程资源，置信度中）
 - [[writing-craft-training-system|拆解《写作是门手艺》：普通人可复刻的完整写作训练体系]]（2026-10-31，写作/方法论，论证/结构/标题/故事/过程管理五块+兰德法则+四库积累，单信源，置信度中）
 - [[writing-8-frameworks|21 天学写作 Day10：让文章结构清晰的 8 个框架]]（2026-10-20，写作/方法论，置信度低）
+- [[xitongsiwei-01-gaogao-chengben|架构最高的成本：不是技术选错，是同一个概念，大家理解不一致]]（2026-10-31，架构/系统工程/方法论，域控制器三种边界+内涵外延+系统概念≠概念+概念≠系统，公众号原创全文完整，单信源置信度中）
 - [[zhihu-agent-column-index|知乎专栏《Agent》系列索引（10 篇合集）]]（2026-10-28，AI/Agent/系列导航，10 篇教程索引，已收录 9 篇独立 source 页，Part 9 缺失，置信度高）
 - [[forkjoinpool-vs-threadpoolexecutor|高频面试题：ForkJoinPool 凭什么比 ThreadPoolExecutor 快？（工作窃取与 join 的真相）]]（2026-10-31，Java/JUC/面试，工作窃取两端方向错开+join 不空等+commonPool 共享坑+虚拟线程调度器，单信源置信度高）
 - [[llm-integration-engineering-hard-parts|大模型接进业务系统：工程难点在哪（面试深挖 84）]]（2026-10-31，AI/Agent 工程，工具调用归属+上下文预算六类分配+意图路由+非确定性重试=分布采样+评测验收纪律，公众号单信源，置信度中）
@@ -315,6 +318,7 @@
 - [[claude-skills|Claude Skills]]（Markdown 文件即资产：判断/偏好/标准固化、按需加载、一句话唤醒；Skill-Creator 构建 + 2.0 断言评估/A-B/触发词优化；ub-mode 纪律包+ste-zh 行为包+激活式 token 账，四信源，置信度中）
 - [[codemode|Codemode（代码模式工具编排）]]（模型写 JS 沙箱脚本编排工具调用，只回筛选结果；固定开销约减半，单次收益看返回格式）
 - [[collections-utility-class|Collections 工具类设计]]（算法委托+三类包装器工厂；同步/不可变均为视图，迭代须外部加锁；emptyList 单例零分配；单信源，置信度中）
+- [[concept-boundary-definition|概念边界界定（内涵/外延与三问）]]（内涵外延反变关系+界定范围三问+人为认知切片+按目的三种切法，单信源方法论，置信度中）
 - [[context-management|上下文管理（Context Management）]]（messages 全量重发下的体积工程：裁剪/压缩/隔离三手段+成对保留与磁盘全量两铁律；Claude Code 分层裁剪实证；Kiso 投影观+缓存经济学；注入式 token 账+预算六类分配与输出预留，四信源）
 - [[concurrenthashmap-internals|ConcurrentHashMap 并发设计（JDK 8+）]]（读无锁+CAS 空桶插+synchronized 桶头+sizeCtl 三态+协作扩容；单信源，置信度中）
 - [[consumer-lag-governance|消费积压治理（Consumer Lag Governance）]]（Kafka 消费端 Lag 治理：四步法+三底线+增速告警，单信源，置信度中）
@@ -446,6 +450,7 @@
 - [[spring-circular-dependency|Spring 三级缓存解循环依赖]]（一级成品/二级早期引用/三级工厂；三级存在的根本理由是 AOP 代理一致性；仅支持单例 setter 注入，单信源）
 - [[spring-transaction|Spring 事务传播/隔离/失效]]（REQUIRED/REQUIRES_NEW/NESTED；RR/RC 须与库对齐；失效 10 场景前 4 种占 90%，单信源）
 - [[spring-event-mechanism|Spring 事件机制]]（观察者模式；默认同步；@Async/@TransactionalEventListener 三大坑，单信源）
+- [[system-concept|系统概念（System Concept）]]（向前构想≠向上归纳+ISO/IEC/IEEE 15288 概念阶段+固定术语坑+概念≠系统蓝图，单信源，置信度中）
 
 ## entity（实体）
 
@@ -453,7 +458,7 @@
 - [[agent-lightning|Agent Lightning]]（微软研究院开源 Agent RL 训练框架，约 3500 行，真实工具链交互训练）
 - [[archunit|ArchUnit]]（Java 架构约束即测试，TNG，当前 1.5.1）
 - [[argo-rollouts|Argo Rollouts]]（K8s 渐进式交付控制器：Rollout CRD + AnalysisTemplate 门禁，blueGreen/canary，单信源）
-- [[arthas|Arthas]]（Java 线上诊断工具，4.3.5 起含实验性 MCP Server；九信源：MCP 双实测+人工入门/AI 协作/thread 深读/GC 实战/五场景事故/版本核实/热更新边界）
+- [[arthas|Arthas]]（Java 线上诊断工具，4.3.5 起含实验性 MCP Server；十二信源：专辑目录+MCP 双实测+系列七篇+GC 实战+五场景事故+版本核实/热更新边界）
 - [[deepseek-harness|DeepSeek Harness]]（DeepSeek 模型的桌面 Agent 客户端，v0.2 预览版）
 - [[deepagents|deepagents]]（LangChain 官方 batteries-included agent harness 库，create_deep_agent 一个函数带齐八件套，LangGraph 底座）
 - [[drawio-skill|drawio-skill]]（代码/配置→可编辑 .drawio 架构图，增量同步 + CI 架构检查）

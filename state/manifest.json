@@ -3555,6 +3555,42 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/SpHaBjO13VfcQap34ajgDg",
       "asset_ref": "Assets/2026-10/weixin-20261031-SpHaBjO13VfcQap34ajgDg.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-31-weixin-album-arthas-usage.md",
+      "sha256": "8ad9910f73d78df13566aeb693b08307bdc639526ae7df99cd51f639fe338b15",
+      "registered_at": "2026-11-01",
+      "inbox_ref": "Archive/2026-10-31-weixin-album-arthas-usage.md",
+      "pages": [
+        "wiki/sources/arthas-usage-album.md",
+        "wiki/entities/arthas.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg4MjE2Nzk0NQ==&action=getalbum&album_id=4743203736426643461&subscene=169",
+      "asset_ref": "Assets/2026-10/weixin-album-4743203736426643461.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-31-weixin-album-system-thinking.md",
+      "sha256": "623025480eb72473840e7e297b5c56e79f811c469ded2c995013aa86ad1f00f9",
+      "registered_at": "2026-11-01",
+      "inbox_ref": "Archive/2026-10-31-weixin-album-system-thinking.md",
+      "pages": [
+        "wiki/sources/system-thinking-album.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk2NDg1NzQ2NQ==&action=getalbum&album_id=4732715055413035015&subscene=169",
+      "asset_ref": "Assets/2026-10/weixin-album-4732715055413035015-json.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-10-31-xitongsiwei-01-gaogao-chengben.md",
+      "sha256": "565f8fc56c3847321092f14b81a2f4eb35a4fc3e3402f4dd4f490471444b4750",
+      "registered_at": "2026-11-01",
+      "inbox_ref": "Archive/2026-10-31-xitongsiwei-01-gaogao-chengben.md",
+      "pages": [
+        "wiki/sources/xitongsiwei-01-gaogao-chengben.md",
+        "wiki/concepts/system-concept.md",
+        "wiki/concepts/concept-boundary-definition.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzk2NDg1NzQ2NQ==&mid=2247483871&idx=1&sn=6cbf4dd499608f1cd338ac26ae1a1a6d&chksm=c46c5ac9f31bd3df8c44da74f78580251f8001856104a59c88c7133075462c29ec1bad184300",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xitongsiwei-01-gaogao-chengben.md"
     }
   ]
 }

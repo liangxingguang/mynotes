@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026-10/weixin-20261031-xitongsiwei-01-gaogao-chengben.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 架构最高的成本：不是技术选错，是同一个概念，大家理解不一致

@@ -23,6 +23,7 @@ sources:
   - raw/sources/architecture/2026-10-31-arthas-05-jad-hot-reload.md
   - raw/sources/architecture/2026-10-31-arthas-06-flame-graph.md
   - raw/sources/architecture/2026-10-31-arthas-07-when-not-to-use.md
+  - raw/sources/misc/2026-10-31-weixin-album-arthas-usage.md
 related:
   - wiki/concepts/mcp.md
   - wiki/concepts/evidence-first-jvm-tuning.md
@@ -70,6 +71,7 @@ Arthas 是 Java 线上诊断工具，提供 dashboard、thread、trace、watch�
 - 2026-10-31 — 第九信源（同专辑第 5 篇，版本核实与热更新）补「改了没生效」排查路径：jad/sc -d/sm 三件套各看什么（实际加载的字节码/ClassLoader 标识与代码来源/方法签名）、同名单双 ClassLoader 即根因信号；「改了没生效」四原因（发布未到机器、多 ClassLoader 加载旧类、热部署未真正生效、改的分支没合进去——第四个最常见且命令查不到只能查发布记录）；redefine 边界（只能改方法体内部逻辑、不能增删字段/方法与改签名、执行中的方法退出才生效、内存编译不改变边界）、三个风险（框架字节码增强冲突、类结构不一致、下次发布即被覆盖）与临时止血五步（jad 确认→sc -d 查 ClassLoader→测试环境验证→生产止血记 TODO→正常发布覆盖）
 - 2026-10-31 — 第十信源（同专辑第 6 篇，火焰图）补 profiler 读图方法论：三条读图规则（横轴是样本占比非时间线、上下是调用关系、找"平顶"热点）、三个常见误读（横轴当时间线、宽=慢、图上看不到等待）、从图到动作对照表（业务代码→优化算法、框架→查配置、零星分布→GC/锁/线程）、采样 30–60s 且必须覆盖问题时段、profiler 做不到的三件事（不判断对错、只看本进程、采样窗口外看不到）
 - 2026-10-31 — 第十一信源（同专辑第 7 篇，工具选型收尾）补「什么时候不该用 Arthas」决策框架：四种观测手段分工矩阵（日志/指标/链路/动态诊断的强弱对比）、该用四个信号（日志没打但代码走到、指标异常但不知哪个方法、怀疑线上代码不一致、问题偶发现场留不住）、不该用三个场景（当监控、跨服务排查、无预案紧急止损）、三项成本（attach 停顿、采样开销、redefine 风险）、决策顺序（先止损→看指标→查日志→看链路→动态诊断，越便宜越全局越靠前），为整个系列收尾
+- 2026-11-01 — 专辑目录信源：本系列目录页《arthas使用》（奇点智慧小助手，album_id=4743203736426643461，7 篇、倒序展示、read_count 153）登记为导航型信源；系列 7 篇已各自建独立信源页，目录信源记录内容脉络与「系列自称八篇 vs 专辑 7 篇」的口径差异
 
 ## Current Understanding（当前认知）
 
@@ -88,3 +90,4 @@ Java 排障领域接入 AI 的代表性路径：把诊断命令封装为 MCP 工
 - `raw/sources/architecture/2026-10-31-arthas-05-jad-hot-reload.md`（版本核实与热更新：jad/sc -d/sm 三件套、「改了没生效」四原因、redefine 边界与临时止血五步）
 - `raw/sources/architecture/2026-10-31-arthas-06-flame-graph.md`（profiler 火焰图读法：三条读图规则、三个误读、从图到动作对照表、采样 30–60s、profiler 做不到的三件事）
 - `raw/sources/architecture/2026-10-31-arthas-07-when-not-to-use.md`（工具选型收尾：四种观测手段分工、该用四个信号、不该用三个场景、三项成本、决策顺序）
+- `raw/sources/misc/2026-10-31-weixin-album-arthas-usage.md`（系列目录页：7 篇正序清单与内容脉络、目录获取方式、八篇口径差异）

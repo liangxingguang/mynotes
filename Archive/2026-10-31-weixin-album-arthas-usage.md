@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026-10/weixin-album-4743203736426643461.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 公众号图文专辑《arthas使用》目录（奇点智慧小助手 · 7 篇）
