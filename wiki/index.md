@@ -259,7 +259,7 @@
 - [[springboot-structured-logging|SpringBoot 结构化日志实战（3.4 内置 JSON/ECS）]]（2026-10-23，Java/可观测，置信度中）
 - [[ste-zh-skill|ste-zh：借鉴 ASD-STE100 的 AI Agent 中文汇报规范 Skill]]（2026-10-29，AI/Skill/写作，受控语言约束 Agent 汇报，对标 ASD-STE100，微博帖子，置信度中）
 - [[survival-llm-offline-assistant|survival-llm：完全离线运行的 AI 生存知识助手]]（2026-10-29，AI/离线/RAG，本地 LLM+150 万篇离线文档，断网/灾害/野外场景，微博帖子，置信度中）
-- [[system-thinking-album|《系统思维》图文专辑（Leo聊系统思维 · 6 篇系列索引）]]（2026-10-31，架构/系统设计/系列索引，6 篇目录，第 1–2 篇正文已采集摄入，导航型，置信度中）
+- [[system-thinking-album|《系统思维》图文专辑（Leo聊系统思维 · 6 篇系列索引）]]（2026-10-31，架构/系统设计/系列索引，6 篇目录，6 篇正文已全部采集摄入，导航型，置信度中）
 - [[pi-school-agent-course|这门免费课表面在教 Pi，其实在教你 Agent 到底怎么工作]]（2026-10-14，AI/教程）
 - [[state-of-ai-report-2026|State of AI Report 2026 中文要点（Datawhale 译）]]（2026-10-14，AI/行业报告）
 - [[stress-test-capacity-planning|第二十课：高并发系统压测与容量规划（架构师之路）]]（2026-10-22，压测/容量规划）
@@ -283,6 +283,7 @@
 - [[xitongsiwei-03-8-difang-nengli|架构师必须具备的 8 个底层能力]]（2026-10-31，架构/系统工程/方法论，架构 vs 架构描述 AD+八动作链抽象/聚焦/分解/边界/契约/权衡/约束/可演化+ISO 42010/Parnas 1972，公众号原创约 5000 字，单信源置信度中）
 - [[xitongsiwei-04-concept-design|手把手教你如何做系统概念设计]]（2026-10-31，架构/系统工程/方法论，判定四问+概念与需求/方案/架构分界+Arcadia 四层定位+六步方法论+trade study+冻结基线+四问验收，公众号原创约 4100 字，单信源置信度中）
 - [[xitongsiwei-05-gainian-guanxitu|系统工程师必须掌握的架构概念关系图]]（2026-10-31，架构/系统工程/方法论，ISO 42010 元模型左右双结构+四条逻辑线+AD≠架构+车载域控五团队冲突+架构师四件事+ADR+四道校验，公众号原创约 4100 字，单信源置信度中）
+- [[xitongsiwei-06-workbuddy-manage|用不好 workbuddy 智能体？你需要掌握这三个管理工具]]（2026-10-31，AI/智能体管理/方法论，WBS 工作包拆解+人机分工准则+交付约定六维度+验收准则打勾表+Scrum Sprint 变量唯一迭代+三工具闭环顺序，公众号原创约 2500 字，单信源置信度中）
 - [[zhihu-agent-column-index|知乎专栏《Agent》系列索引（10 篇合集）]]（2026-10-28，AI/Agent/系列导航，10 篇教程索引，已收录 9 篇独立 source 页，Part 9 缺失，置信度高）
 - [[forkjoinpool-vs-threadpoolexecutor|高频面试题：ForkJoinPool 凭什么比 ThreadPoolExecutor 快？（工作窃取与 join 的真相）]]（2026-10-31，Java/JUC/面试，工作窃取两端方向错开+join 不空等+commonPool 共享坑+虚拟线程调度器，单信源置信度高）
 - [[llm-integration-engineering-hard-parts|大模型接进业务系统：工程难点在哪（面试深挖 84）]]（2026-10-31，AI/Agent 工程，工具调用归属+上下文预算六类分配+意图路由+非确定性重试=分布采样+评测验收纪律，公众号单信源，置信度中）
@@ -299,6 +300,7 @@
 - [[agent-evaluation|业务 Agent 全生命周期评测]]（规则+LLM 裁判+人工复核，覆盖准入/门禁/压测/巡检；验收从正确性变成分布、单次对比不作数、回归集标注期望行为；货拉拉+叶小钗+Codex+面试深挖 84，四信源）
 - [[agent-as-memory|Agent as Memory（主 Agent 承担记忆职责）]]（主 Agent 协调子 Session 承担项目进展记忆；用户单点对接；长期记忆 Markdown 文件化+短期记忆主 Agent 化；单信源，置信度中）
 - [[agent-loop|Agent Loop]]（Runtime 驱动的模型-工具循环；Tool Call/Result、Message/Context/State/Session、Runtime vs Harness）
+- [[agent-management-methodology|智能体管理方法论（WBS·交付约定·Scrum Sprint 三工具闭环）]]（瓶颈在人的管理能力而非模型能力；拆到能独立验收为止+人机分工准则+交付约定六维度+验收准则打勾表+每轮只改 1–2 条规则变量唯一，单信源置信度中）
 - [[agent-permission-model|Agent 权限模型（平台授权与本地运行）]]（权限=静态基线+指令临时授权+动态校验；租户划边界/Agent 定上限/指令收范围/MCP 网关兜底；凭证归属发起方用户+校验在调用方侧；本地 CLI 五模式+只读证明式放行 Unknown≠Safe；A2A 委派子授权⊆父授权；三信源，置信度中）
 - [[agent-sandboxing|Agent 沙箱隔离]]（能力限制而非行为审查；四条路径收窄可达面；脚本级/命令级/工具级/整体隔离）
 - [[agent-state-separation|Agent 状态分离（执行状态/操作状态/产物核验）]]（三态分离+多身份+恢复决策顺序+停止非回滚，Codex Harness 实践，单信源置信度中）

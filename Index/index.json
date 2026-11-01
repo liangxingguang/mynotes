@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01 12:49",
+  "updated_at": "2026-11-01 13:17",
   "notes": [
     {
       "id": "2026-10-31-weixin-album-xuqiufenxi",
@@ -19,25 +19,6 @@
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "skipped"
-    },
-    {
-      "id": "2026-10-31-xitongsiwei-06-workbuddy-manage",
-      "title": "用不好 workbuddy 智能体？你需要掌握这三个管理工具",
-      "path": "Inbox/2026-10-31-xitongsiwei-06-workbuddy-manage.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "工具"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzk2NDg1NzQ2NQ==&mid=2247484036&idx=1&sn=4847913a39b975d248eab34473dbaea3&chksm=c46c5992f31bd0843a390729e98216c6844deef55f6589b2035292b33f8367ad2213fef71921",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "系统思维专辑第 6 篇。100 天 WorkBuddy 落地，很少遇到\"模型能力不够\"——真正限制智能体效果的不是模型能力，而是人的管理能力。全文给三套工具：WBS 工作包拆解（事前）、交付约定（事中）、Scrum Sprint 迭代（事后），并强调顺序就是完整闭环。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-xitongsiwei-06-workbuddy-manage.md",
-      "wiki_status": "pending"
     },
     {
       "id": "2026-10-31-xuqiufenxi-01-ruanjian-xiangmu-shibai",
@@ -6031,6 +6012,25 @@
       "summary": "系统思维专辑第 5 篇。以评审会上五层十二模块的架构图开场——它没有错误，只是回避了架构最核心的问题。全文拆解 ISO/IEC/IEEE 42010 的架构概念元模型：左侧是人与诉求（关注对象/环境/干系人/立场/关注点），右侧是视图与设计（视点/视图/架构描述/架构），四条逻辑线顺序不能颠倒。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-xitongsiwei-05-gainian-guanxitu.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-xitongsiwei-06-workbuddy-manage",
+      "title": "用不好 workbuddy 智能体？你需要掌握这三个管理工具",
+      "path": "Archive/2026-10-31-xitongsiwei-06-workbuddy-manage.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工具"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzk2NDg1NzQ2NQ==&mid=2247484036&idx=1&sn=4847913a39b975d248eab34473dbaea3&chksm=c46c5992f31bd0843a390729e98216c6844deef55f6589b2035292b33f8367ad2213fef71921",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "系统思维专辑第 6 篇。100 天 WorkBuddy 落地，很少遇到\"模型能力不够\"——真正限制智能体效果的不是模型能力，而是人的管理能力。全文给三套工具：WBS 工作包拆解（事前）、交付约定（事中）、Scrum Sprint 迭代（事后），并强调顺序就是完整闭环。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xitongsiwei-06-workbuddy-manage.md",
       "wiki_status": "ingested"
     }
   ]

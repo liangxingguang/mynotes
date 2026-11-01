@@ -3640,6 +3640,18 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s?__biz=Mzk2NDg1NzQ2NQ==&mid=2247484017&idx=1&sn=e12e2a2f113c00ee1a67449f1764d067&chksm=c46c5967f31bd0710443d434fa4bb45dfeeb4d6309eaa5c420ccab4172fb17c9935dd0d29060",
       "asset_ref": "Assets/2026-10/weixin-20261031-xitongsiwei-05-gainian-guanxitu.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-10-31-xitongsiwei-06-workbuddy-manage.md",
+      "sha256": "1e839bcb0468b3dc36ee57447389493d06bd7f77d0f9a06a55c97bdf86ac1e94",
+      "registered_at": "2026-11-01",
+      "inbox_ref": "Archive/2026-10-31-xitongsiwei-06-workbuddy-manage.md",
+      "pages": [
+        "wiki/sources/xitongsiwei-06-workbuddy-manage.md",
+        "wiki/concepts/agent-management-methodology.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzk2NDg1NzQ2NQ==&mid=2247484036&idx=1&sn=4847913a39b975d248eab34473dbaea3&chksm=c46c5992f31bd0843a390729e98216c6844deef55f6589b2035292b33f8367ad2213fef71921",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xitongsiwei-06-workbuddy-manage.md"
     }
   ]
 }

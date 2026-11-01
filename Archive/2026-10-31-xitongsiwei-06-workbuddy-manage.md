@@ -11,7 +11,7 @@ tags:
   - AI
   - 工具
 asset_ref: Assets/2026-10/weixin-20261031-xitongsiwei-06-workbuddy-manage.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 用不好 workbuddy 智能体？你需要掌握这三个管理工具
