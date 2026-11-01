@@ -4,7 +4,7 @@ type: concept
 title: 重试治理（Retry Governance）
 status: active
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-02
 confidence: medium
 tags:
   - concept
@@ -16,13 +16,16 @@ sources:
   - raw/sources/architecture/2026-10-31-architecture-science-and-art-42-rules.md
   - raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md
   - raw/sources/architecture/2026-10-31-openfeign-thread-pool-isolation.md
+  - raw/sources/architecture/2026-11-01-spring-boot-webhook-delivery-platform.md
 related:
   - wiki/concepts/durable-execution.md
   - wiki/concepts/idempotency-design.md
   - wiki/concepts/remote-call-governance.md
+  - wiki/concepts/dead-letter-governance.md
   - wiki/sources/agent-platform-retry-resilience.md
   - wiki/sources/llm-integration-engineering-hard-parts.md
   - wiki/sources/openfeign-thread-pool-isolation.md
+  - wiki/sources/2026-11-01-spring-boot-webhook-delivery-platform.md
 ---
 # 重试治理（Retry Governance）
 
@@ -90,6 +93,7 @@ related:
 - 2026-10-31：新增互证信源（architecture-science-and-art-42-rules 法则 36-38）——通用架构语言对限流/熔断/隔离三件套的定义：限流在容量边界前控制入口（被挡住的请求提示/入队/降级由业务决定）、熔断让异常依赖暂时退出调用链（关闭/打开/半开）、隔离限制一个故障最多占用多少资源。与本页 Bulkhead/熔断器机制一致，互为印证；Agent 平台框架与数值不变，confidence 维持 medium。
 - 2026-11-01：面试深挖 84（第 3 信源）把重试治理推进到**非确定性依赖**场景：对确定性依赖，重试是「把同一次尝试再做一遍」；对模型侧，重试是「从分布里再抽一个样本」——只能摊薄偶发坏样本、对系统性错误无效，多次采样取最优引入选择偏差且成本线性上升。验收从正确性变成分布：固定采样参数与回归集、多次采样看通过率分布、单次对比不作数。该信源「整链截止时间由编排层下发、每次调用前看剩余额度」的做法，是重试治理「时间边界」在模型链路的实例（与 durable-execution 的 Checkpoint/Deadline 同族）。
 - 2026-11-01：OpenFeign 实战（第 4 信源）给出「不盲目重试」的业务边界实例：查询接口可有限重试（相对安全）；开单接口不重试或谨慎重试（防重复下单）；**库存扣减与结算接口禁止自动重试**（防重复扣减/重复记账）。与本页「副作用语义边界决定重试资格」完全同构——写操作的重试资格由副作用可重复性决定，而非由失败率决定。
+- 2026-11-02：大规模 Webhook 投递平台实战（第 5 信源）从 2000+ 订阅方、峰值 8000 TPS 的实战侧印证并扩展重试治理框架：①**退避+抖动+封顶**——指数退避（10s→85min）必须加抖动（±20%），否则同一批失败任务同一毫秒重试形成脉冲；429 优先听 `Retry-After`；踩坑：指数截断位写错导致封顶成死代码（`Math.min(attempt-1,10)` 已把指数截在 1024 上，永远够不到 21600 秒封顶）——印证本页「Full Jitter 退避」并补充了实现陷阱。②**失败分级**——2xx 成功；408/429/5xx/连接异常可重试；400/404/405/422 永久失败进死信；3xx 不跟随直接判永久失败；401/403 先重试 2 次再死信（密钥轮换/权限误配常是瞬时故障）——印证本页「错误分类决定重试资格」并给出更细的分级表。③**熔断按租户隔离**——按 subscriptionId 隔离（连续 20 次可重试失败 OPEN，HALF_OPEN 探 3 个探针，冷却翻倍上限 10 分钟）；熔断期间不消耗重试次数，但设 defer 闸（24h/200 次）防无限延期转死信——印证本页「熔断只看真实下游结果」并新增「熔断期间不消耗重试次数」与「defer 闸防无限延期」两条边界。④**三层令牌桶限速**——应用级/订阅级/全局，执行顺序：熔断→应用限流→订阅限流→HTTP，任何一层没过直接 deferred 返回，连接都不建（最便宜的判断放最前面）——印证本页「准入管首次流量、预算管额外尝试」并给出限速层级与执行顺序。⑤**幂等只能外置**——承认重复躲不掉（At-Least-Once + eventId 锚点，订阅方用 eventId 建 uk 幂等），收到重复事件直接返回 200 不要回 409（回 409 平台会当成失败继续重试，两边无限循环）——印证本页 [[idempotency-design|幂等设计]] 并给出投递侧的具体契约。⑥**DB 是唯一真相**——MQ/延迟队列都是加速器，任何一环丢了靠扫任务表都能自己爬起来；对账兜底不能简单重跑 fanout（INSERT IGNORE 会把已存在任务忽略掉，对账白跑），要走单独补投入口——印证本页 [[durable-execution|持久执行]] 并给出对账兜底的实现细节。⑦**Outbox+事务钩子**——业务写库与事件发布必须原子（本地消息表+事务钩子）；踩坑：`afterCommit` 里别用 `@TransactionalEventListener`（事务已提交，fallbackExecution=false 意味着它根本不执行且不报错）——印证本页「持久化尝试预留」并给出事务钩子的正确写法。⑧**虚拟线程必须配信号量限并发**——虚拟线程是便宜了，MySQL 连接池和出口端口不会跟着便宜，先炸的一定是它们——印证本页「并发边界」并给出虚拟线程场景下的具体约束。
 
 ## Open Questions（开放问题）
 
@@ -102,14 +106,17 @@ related:
 - Source: `raw/sources/architecture/2026-10-31-agent-platform-retry-resilience.md`（五边界框架、乘法放大计算、Little 定律推演、Retry Budget 记账与上界证明、Full Jitter 公式、错误分类表、熔断状态机、12 步执行链、持久化字段清单、验收不变量、A–F 消融实验设计、6 阶段上线路线）
 - Source: `raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md`（第 3 信源：非确定性依赖下重试语义变为分布采样、验收从正确性变成分布、编排层持有整链截止时间）
 - Source: `raw/sources/architecture/2026-10-31-openfeign-thread-pool-isolation.md`（第 4 信源：查询可有限重试、库存扣减/结算禁止自动重试的业务边界实例）
+- Source: `raw/sources/architecture/2026-11-01-spring-boot-webhook-delivery-platform.md`（第 5 信源：退避+抖动+封顶的实现细节与踩坑、失败分级表、熔断按租户隔离+defer 闸、三层令牌桶限速与执行顺序、幂等外置契约、DB 是唯一真相、Outbox+事务钩子正确写法、虚拟线程配信号量限并发、对账兜底补投入口）
 
 ## Related Knowledge（相关知识）
 
 - [[durable-execution|持久执行（概念页）]]
 - [[idempotency-design|幂等设计（概念页）]]
 - [[remote-call-governance|服务远程调用治理（概念页）]]
+- [[dead-letter-governance|死信治理（概念页）]]
 - [[agent-platform-retry-resilience|从重试风暴到可控恢复（信源页）]]
 - [[llm-integration-engineering-hard-parts|大模型接进业务系统：工程难点在哪（信源页）]]
 - [[openfeign-thread-pool-isolation|OpenFeign 服务远程调用 + 线程池隔离架构实战（信源页）]]
+- [[2026-11-01-spring-boot-webhook-delivery-platform|Spring Boot 构建可靠 Webhook 投递平台（信源页）]]
 - [[agent-long-task-reliable-execution|AI Agent 长任务可靠执行（信源页）]]
 - [[async-task-system-design|异步任务系统怎么设计（信源页）]]

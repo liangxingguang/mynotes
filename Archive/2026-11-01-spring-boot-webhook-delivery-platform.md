@@ -9,7 +9,7 @@ created: 2026-11-01
 category: 技术
 tags: [工程实践, Java, 分布式系统]
 asset_ref: Assets/2026-11/weixin-1d-S86DBwWJR3o2-8aq5fw.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 > 摘要：基于 Spring Boot 的大规模 Webhook 投递平台实战复盘：2000+ 订阅方、30+ 事件、峰值 8000 TPS。围绕"任务可靠落库调度、失败分级退避、异常隔离兜底"三个问题，给出六表模型（配置/运行时分离、任务/执行记录分离）、Outbox+事务钩子、两级触发出队、指数退避+抖动、失败分级、租户级熔断与三层限速、SSRF 四层校验、密钥重叠轮换、死信治理与对账兜底的完整方案，上线后投递成功率从 95% 稳到 99.9%+。

@@ -9,7 +9,7 @@ created: 2026-11-01
 category: 技术
 tags: [工程实践, AI, RAG]
 asset_ref: Assets/2026-11/weixin-Hx-qH9Gd3yXEcUxmMrZdtw.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 > 摘要：企业级 RAG 平台完整落地架构：5 个应用进程（Vue3 业务台/管理台 + Spring Cloud Gateway + Spring Boot 4 业务中台 + FastAPI/LangGraph 智能体中台）+ 6 类中间件（Nacos/RocketMQ/Milvus/ES/Redis/MySQL）。解决 Demo 到企业产品的核心门槛——多租户隔离、权限、限流、Token 对账、审计、异步导入、幻觉拒答。两大链路：文档导入走 RocketMQ 异步化（上传立即返回，解析分块向量化交给 Python 消费者）；问答走 LangGraph 工作流（混合检索 RRF 融合+gte-rerank、相关性裁判拒答、MCP 工具调用查实时业务数据、五层记忆+加权遗忘）。全部代码开源。

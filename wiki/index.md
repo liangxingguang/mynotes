@@ -22,6 +22,7 @@
 - [[2026-10-31-xuqiufenxi-14-mohu-xuqiu-bian-qingxi|如何把模糊需求一步步变成清晰的功能模块]]（2026-10-31，工程实践/需求分析，系列第14篇：六步拆解法（固定目标→找场景→抽出用户要完成的事→归类模块→做与不做判断→检查关系与缺口）+示例「给销售做自动分配+提醒」全程演示（目标/场景/模块/本期不做清单）+场景比功能列表更重要，公众号单信源，置信度中）
 - [[2026-10-31-xuqiufenxi-15-hexin-buchou|需求分析的核心步骤（一套可重复使用的实战流程）]]（2026-10-31，工程实践/需求分析，系列第15篇：八步核心步骤（澄清目标→识别用户场景→拆事归模块→界定范围三档→补充规则异常→优先级四维度排P0-P2→验收标准三段式→对齐形成基线）每步含输出物+三易错点+基线责任界定功能+反对流程形式化，公众号单信源，置信度中）
 - [[2026-10-31-xuqiufenxi-16-jieding-fanwei|如何界定需求范围，避免无限蔓延]]（2026-10-31，工程实践/需求分析，系列第16篇：范围专题——两条边界（不做=范围边界/先做后做=边界内优先级）+范围膨胀五因（没人喊停/不愿取舍/只写要做/全高优声音大者插队/无基线）+核心原则「先服务好当前目标再谈理想价值」+界定范围六步（目标三问→三档分类（本期必须做/可后做/明确不做）→必须做内排优先级→写清不做与后做两栏清单（与第10/14篇案例同源）→场景验证→确认基线、变更默认重做范围优先级决策）+对齐四建议+下篇预告用户故事，三档口径与第15篇「必须/应该/可以不做」措辞分歧已标注，公众号单信源，置信度中）
+- [[2026-10-31-xuqiufenxi-17-yonghu-gushi|用户故事怎么写，才真正有用]]（2026-10-31，工程实践/需求分析，系列第17篇收官：5条硬性标准（角色清晰/粒度适中/只写业务规则与边界/严格锁定本期范围/配套可客观核验的验收标准）+五维坏vs好对照（角色与业务价值/故事粒度/关键规则与边界条件/严格对齐本期范围/可落地的验收标准）+可直接复制模板+自检清单，公众号单信源，置信度中）
 - [[a2a-multi-agent-langgraph|A2A 实战：从零搭建工业级多 Agent 协作系统]]（2026-10-13，AI/多 Agent）
 - [[agent-2026-midyear-architecture-review|2026 Agent 年中总结：从整体架构到关键细节（叶小钗）]]（2026-10-21，AI/架构综述）
 - [[agent-context-tutorial|Agent 入门教程：上下文里的 Agent（nano-ai 可交互演示）]]（2026-10-25，AI/教程资源，置信度中）
@@ -308,6 +309,8 @@
 - [[scaling-pain-glm5-coding-agent-inference|Scaling Pain：超大规模 Coding Agent 推理实践（GLM-5 / SGLang）]]（2026-10-31，AI/推理基础设施，PD 分离 KV Cache 竞态+HiCache read-before-ready+投机采样质量监控+LayerSplit，官方博客一手，置信度高）
 - [[spring-ai-2-rag-mcp-full-flow|新玩具到货：Spring AI 2.0 + RAG + MCP，Java生态的AI开发全流程]]（2026-10-31，AI/Java/Spring，七步全流程+换模型只改配置+Advisor 横切+MCP 工具暴露，公众号教程单信源，置信度中）
 - [[spring-interview-11-high-freq-topics|Spring 面试 11 大高频考点全解：从 IOC/AOP 到事务失效与事件机制]]（2026-10-31，Java/Spring/面试，容器差异+refresh 十二步+Bean 生命周期+三级缓存+JDK/CGLIB+事务传播隔离失效+事件机制，面试八股总纲单信源，置信度中）
+- [[2026-11-01-enterprise-rag-platform-langgraph-mcp|Spring Boot 4 × LangGraph × MCP × Milvus：企业级 RAG 平台｜会记忆、能查业务、绝不瞎编，完整落地架构]]（2026-11-01，AI/RAG/架构，5进程+6中间件全景架构+六大设计原则（重活异步化/影子模式/旁路降级/框架兜底/契约对齐/记忆可度量）+文档导入RocketMQ异步链路+混合检索RRF融合+gte-rerank+相关性裁判拒答+SSE事件契约+MCP工具调用真实用户身份+五层记忆模型+加权遗忘公式+线上三坑，公众号单信源，置信度高）
+- [[2026-11-01-spring-boot-webhook-delivery-platform|Spring Boot 构建可靠 Webhook 投递平台：事件订阅、签名验签、重试补偿与死信治理]]（2026-11-01，架构/分布式系统/Java，2000+订阅方/峰值8000TPS实战+六表模型+Outbox+事务钩子+两级触发出队+指数退避+抖动+封顶+失败分级+租户级熔断+三层令牌桶+SSRF四层校验+密钥重叠轮换+死信治理+对账兜底+虚拟线程配信号量，公众号单信源，置信度高）
 
 ## concept（概念）
 
@@ -437,13 +440,14 @@
 - [[raft-membership-change-barrier|Raft 成员变更的日志 Barrier]]（公共 config 提交当前 term 日志登记 term；joint 无需/单步必需/回退双向必需）
 - [[read-fanout|读扩散（Fan-out on Read）]]（会话队列+syncId 位点同步把 1:N 写压成 1:1；99.99% 非个性化消息前提；阿里混合模式 500ms 端到端，双信源）
 - [[red-dot-tree-system|拉模式红点树系统（游戏 UI 提示徽标）]]（路径树+脏标记冒泡+每帧合批+拉模式，叶子自订阅自计算；先取走脏标记再计算；全树遍历顺带时间驱动红点；五方案对比+完整 C# 实现，单信源一手，置信度高）
-- [[rag-production-guardrails|企业级 RAG 生产护栏]]（容量/证据/权限/恢复四主线；证据门禁前置、发布目录原子切换；混合检索+存储分层+参数热调双信源互证）
+- [[rag-production-guardrails|企业级 RAG 生产护栏]]（容量/证据/权限/恢复四主线；证据门禁前置、发布目录原子切换；混合检索+存储分层+参数热调+重活异步化+影子模式+旁路降级+RRF融合+相关性裁判拒答+SSE契约+MCP工具调用真实用户身份+五层记忆+加权遗忘，三信源，置信度中）
 - [[reactive-tracing-context|响应式环境的全链路 traceId 传递]]（Reactor Context 替代 ThreadLocal；doOnEach 同步 MDC、doFinally 清除）
 - [[reactor-thread-model|主从 Reactor 线程模型（Netty 版）]]（Boss accept/Worker CPU×2/Channel 终身绑单 EventLoop 天然无锁；ServerBootstrapAcceptor 移交链路+三形态选型+SCG 双 Group 与中间件应用印证，八信源互证，置信度高）
 - [[redefine-hot-reload-boundaries|redefine 热替换边界：能改什么、不能改什么]]（只能改方法体/执行中方法退出才生效/三个风险+临时止血五步，与 arthas-01、MCP 实测信源互证，单信源方法论，置信度高）
 - [[rest-api-as-tools|REST 接口工具化模式]]（函数体换 HTTP 封装但工具形状不变；登录即工具+token 只活进程内存+统一 _call 注入+描述即流程+错误回喂 HTTP 化；换真后台只改 BASE_URL，单信源实测）
 - [[reentrantlock-internals|ReentrantLock 可重入锁设计]]（AQS 经典实现：非公平先抢/公平只差 hasQueuedPredecessors/state 累加可重入/多 Condition 精确唤醒，单信源，置信度中）
-- [[retry-governance|重试治理（Retry Governance）]]（唯一重试所有者+时间/次数/额度/并发/语义五边界；Retry Budget 按首次记账 β 上界、Full Jitter、错误分类、熔断只看真实下游结果、12 步执行链；非确定性依赖重试=分布采样+查询可重试写操作禁重试，四信源，置信度中）
+- [[retry-governance|重试治理（Retry Governance）]]（唯一重试所有者+时间/次数/额度/并发/语义五边界；Retry Budget 按首次记账 β 上界、Full Jitter、错误分类、熔断只看真实下游结果、12 步执行链；非确定性依赖重试=分布采样+查询可重试写操作禁重试+退避抖动+封顶实现细节+熔断按租户+defer闸+三层令牌桶+幂等外置+DB唯一真相+Outbox事务钩子+虚拟线程配信号量，五信源，置信度中）
+- [[dead-letter-governance|死信治理（Dead Letter Governance）]]（死信不是垃圾桶而是等人工拍板的队列；归因/重放/归档三件事；reason四种类型（EXHAUSTED/PERMANENT_4XX/URL_INVALID/BREAKER_TIMEOUT）；重放上限3次+ON DUPLICATE KEY UPDATE；T+7归档180天；78%死信是地址配错驱动产品改进；死信是系统健康度领先指标；单信源，置信度中）
 - [[rle-inverted-index|RLE 倒排索引（Run-Length Encoding Inverted Index）]]（Index Sorting 使 Doc ID 连续+RLE 编码 [start,length]+SparseRoaringDocIdSet 消除空置 bucket，合并 O(K×M)→O(M log M)，倒排链合并 TP99 -96%，全链路 TP99 -84%，美团一手）
 - [[scheduledthreadpoolexecutor-internals|ScheduledThreadPoolExecutor 调度设计]]（DelayedWorkQueue 数组最小堆+Leader-Follower 等待；period 正负号编码 fixedRate/fixedDelay；周期任务异常静默取消，单信源，置信度中）
 - [[sso-oauth2-oidc|单点登录 SSO（OAuth2 Authorization Code + OIDC）]]（共享认证服务器 Session；两条安全链+OIDC Discovery+oidc(withDefaults())；客户端一行 issuer-uri 自动配置；生产优先 Keycloak；Spring Authorization Server Demo，单信源一手，置信度高）

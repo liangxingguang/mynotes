@@ -3828,6 +3828,42 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483976&idx=1&sn=5941313051e1b7f7a900d4e1bcf817a4&chksm=c1d0b6c9f6a73fdf301021524885a7ef1dee6900ff88403ca9109cc24efdaf5b6e834383c076",
       "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-16-jieding-fanwei.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-31-xuqiufenxi-17-yonghu-gushi.md",
+      "sha256": "849a7b1b4a8ede2e498e62e367495b7d5c638cb5831cff839fee25e6eb506ebc",
+      "registered_at": "2026-11-02",
+      "inbox_ref": "Inbox/2026-10-31-xuqiufenxi-17-yonghu-gushi.md",
+      "pages": [
+        "wiki/sources/2026-10-31-xuqiufenxi-17-yonghu-gushi.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483994&idx=1&sn=de761ff5898b41fc15677e4edfb78d56&chksm=c1d0b6dbf6a73fcdc7cf9b2ed0f1ad3711cbf7ce2a72726f787650802f435b2ede3db80afafd55",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-17-yonghu-gushi.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-01-enterprise-rag-platform-langgraph-mcp.md",
+      "sha256": "dbca13419185e7c58ca780f67602359ae69ed5fd32769c5dd33f515ff3b8aa87",
+      "registered_at": "2026-11-02",
+      "inbox_ref": "Inbox/2026-11-01-enterprise-rag-platform-langgraph-mcp.md",
+      "pages": [
+        "wiki/sources/2026-11-01-enterprise-rag-platform-langgraph-mcp.md",
+        "wiki/concepts/rag-production-guardrails.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/Hx-qH9Gd3yXEcUxmMrZdtw",
+      "asset_ref": "Assets/2026-11/weixin-Hx-qH9Gd3yXEcUxmMrZdtw.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-01-spring-boot-webhook-delivery-platform.md",
+      "sha256": "d4dceb52541af384067bc0f1a57ec521eb3ce877054b26ca3142663a9c0e6394",
+      "registered_at": "2026-11-02",
+      "inbox_ref": "Inbox/2026-11-01-spring-boot-webhook-delivery-platform.md",
+      "pages": [
+        "wiki/sources/2026-11-01-spring-boot-webhook-delivery-platform.md",
+        "wiki/concepts/retry-governance.md",
+        "wiki/concepts/dead-letter-governance.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/1d-S86DBwWJR3o2-8aq5fw",
+      "asset_ref": "Assets/2026-11/weixin-1d-S86DBwWJR3o2-8aq5fw.md"
     }
   ]
 }

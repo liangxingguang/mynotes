@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02 00:53",
+  "updated_at": "2026-11-02 04:02",
   "notes": [
     {
       "id": "2026-10-31-weixin-album-xuqiufenxi",
@@ -19,65 +19,6 @@
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "skipped"
-    },
-    {
-      "id": "2026-10-31-xuqiufenxi-17-yonghu-gushi",
-      "title": "用户故事怎么写，才真正有用",
-      "path": "Inbox/2026-10-31-xuqiufenxi-17-yonghu-gushi.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483994&idx=1&sn=de761ff5898b41fc15677e4edfb78d56&chksm=c1d0b6dbf6a73fcdc7cf9b2ed0f1ad3711cbf7ce2a726f787650802f435b2ede3db80afafd55",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "《需求分析》专辑第 17 篇（收官）。范围敲定不等于开发能直接开工。好的用户故事是业务、产品、开发、测试多方对齐的统一语言。全文给 5 条硬性标准 + 一个\"坏写法 vs 好写法\"五维对照 + 可直接复制的模板 + 自检清单。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-17-yonghu-gushi.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "inbox-2026-11-01-002",
-      "title": "2026-11-01-enterprise-rag-platform-langgraph-mcp",
-      "path": "Inbox/2026-11-01-enterprise-rag-platform-langgraph-mcp.md",
-      "created": "2026-11-01",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "AI",
-        "RAG"
-      ],
-      "source": "AI技术达摩院（微信公众号）",
-      "source_url": "https://mp.weixin.qq.com/s/Hx-qH9Gd3yXEcUxmMrZdtw",
-      "source_type": "web",
-      "platform": "微信公众号",
-      "summary": "企业级 RAG 平台完整落地架构：5 个应用进程（Vue3 业务台/管理台 + Spring Cloud Gateway + Spring Boot 4 业务中台 + FastAPI/LangGraph 智能体中台）+ 6 类中间件（Nacos/RocketMQ/Milvus/ES/Redis/MySQL）。解决 Demo 到企业产品的核心门槛——多租户隔离、权限、限流、Token 对账、审计、异步导入、幻觉拒答。两大链路：文档导入走 RocketMQ 异步化（上传立即返回，解析分块向量化交给 Python 消费者）；问答走 LangGraph 工作流（混合检索 RRF 融合+gte-rerank、相关性裁判拒答、MCP 工具调用查实时业务数据、五层记忆+加权遗忘）。全部代码开源。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/weixin-Hx-qH9Gd3yXEcUxmMrZdtw.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "inbox-2026-11-01-001",
-      "title": "2026-11-01-spring-boot-webhook-delivery-platform",
-      "path": "Inbox/2026-11-01-spring-boot-webhook-delivery-platform.md",
-      "created": "2026-11-01",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "Java",
-        "分布式系统"
-      ],
-      "source": "farerboy（微信公众号）",
-      "source_url": "https://mp.weixin.qq.com/s/1d-S86DBwWJR3o2-8aq5fw",
-      "source_type": "web",
-      "platform": "微信公众号",
-      "summary": "基于 Spring Boot 的大规模 Webhook 投递平台实战复盘：2000+ 订阅方、30+ 事件、峰值 8000 TPS。围绕\"任务可靠落库调度、失败分级退避、异常隔离兜底\"三个问题，给出六表模型（配置/运行时分离、任务/执行记录分离）、Outbox+事务钩子、两级触发出队、指数退避+抖动、失败分级、租户级熔断与三层限速、SSRF 四层校验、密钥重叠轮换、死信治理与对账兜底的完整方案，上线后投递成功率从 95% 稳到 99.9%+。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/weixin-1d-S86DBwWJR3o2-8aq5fw.md",
-      "wiki_status": "pending"
     },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -6031,6 +5972,65 @@
       "summary": "《需求分析》专辑第 16 篇。执行中最容易出问题的是\"范围守不住\"。界定范围的核心原则：先服务好当前目标，再谈理想价值。对每个候选功能用目标做一次分类——本期必须做／本期可后做／本期明确不做，这个分类既是范围也是优先级。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-16-jieding-fanwei.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-xuqiufenxi-17-yonghu-gushi",
+      "title": "用户故事怎么写，才真正有用",
+      "path": "Archive/2026-10-31-xuqiufenxi-17-yonghu-gushi.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483994&idx=1&sn=de761ff5898b41fc15677e4edfb78d56&chksm=c1d0b6dbf6a73fcdc7cf9b2ed0f1ad3711cbf7ce2a726f787650802f435b2ede3db80afafd55",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "《需求分析》专辑第 17 篇（收官）。范围敲定不等于开发能直接开工。好的用户故事是业务、产品、开发、测试多方对齐的统一语言。全文给 5 条硬性标准 + 一个\"坏写法 vs 好写法\"五维对照 + 可直接复制的模板 + 自检清单。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-17-yonghu-gushi.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-01-002",
+      "title": "2026-11-01-enterprise-rag-platform-langgraph-mcp",
+      "path": "Archive/2026-11-01-enterprise-rag-platform-langgraph-mcp.md",
+      "created": "2026-11-01",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "AI",
+        "RAG"
+      ],
+      "source": "AI技术达摩院（微信公众号）",
+      "source_url": "https://mp.weixin.qq.com/s/Hx-qH9Gd3yXEcUxmMrZdtw",
+      "source_type": "web",
+      "platform": "微信公众号",
+      "summary": "企业级 RAG 平台完整落地架构：5 个应用进程（Vue3 业务台/管理台 + Spring Cloud Gateway + Spring Boot 4 业务中台 + FastAPI/LangGraph 智能体中台）+ 6 类中间件（Nacos/RocketMQ/Milvus/ES/Redis/MySQL）。解决 Demo 到企业产品的核心门槛——多租户隔离、权限、限流、Token 对账、审计、异步导入、幻觉拒答。两大链路：文档导入走 RocketMQ 异步化（上传立即返回，解析分块向量化交给 Python 消费者）；问答走 LangGraph 工作流（混合检索 RRF 融合+gte-rerank、相关性裁判拒答、MCP 工具调用查实时业务数据、五层记忆+加权遗忘）。全部代码开源。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-Hx-qH9Gd3yXEcUxmMrZdtw.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-01-001",
+      "title": "2026-11-01-spring-boot-webhook-delivery-platform",
+      "path": "Archive/2026-11-01-spring-boot-webhook-delivery-platform.md",
+      "created": "2026-11-01",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "Java",
+        "分布式系统"
+      ],
+      "source": "farerboy（微信公众号）",
+      "source_url": "https://mp.weixin.qq.com/s/1d-S86DBwWJR3o2-8aq5fw",
+      "source_type": "web",
+      "platform": "微信公众号",
+      "summary": "基于 Spring Boot 的大规模 Webhook 投递平台实战复盘：2000+ 订阅方、30+ 事件、峰值 8000 TPS。围绕\"任务可靠落库调度、失败分级退避、异常隔离兜底\"三个问题，给出六表模型（配置/运行时分离、任务/执行记录分离）、Outbox+事务钩子、两级触发出队、指数退避+抖动、失败分级、租户级熔断与三层限速、SSRF 四层校验、密钥重叠轮换、死信治理与对账兜底的完整方案，上线后投递成功率从 95% 稳到 99.9%+。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-1d-S86DBwWJR3o2-8aq5fw.md",
       "wiki_status": "ingested"
     }
   ]

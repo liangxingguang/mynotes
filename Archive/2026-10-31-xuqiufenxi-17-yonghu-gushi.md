@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026-10/weixin-20261031-xuqiufenxi-17-yonghu-gushi.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 用户故事怎么写，才真正有用
