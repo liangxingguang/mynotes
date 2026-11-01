@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01 09:37",
+  "updated_at": "2026-11-01 09:47",
   "notes": [
     {
       "id": "2026-10-31-weixin-album-xuqiufenxi",
@@ -436,6 +436,26 @@
       "summary": "《需求分析》专辑第 17 篇（收官）。范围敲定不等于开发能直接开工。好的用户故事是业务、产品、开发、测试多方对齐的统一语言。全文给 5 条硬性标准 + 一个\"坏写法 vs 好写法\"五维对照 + 可直接复制的模板 + 自检清单。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-17-yonghu-gushi.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "inbox-2026-11-01-001",
+      "title": "2026-11-01-spring-boot-webhook-delivery-platform",
+      "path": "Inbox/2026-11-01-spring-boot-webhook-delivery-platform.md",
+      "created": "2026-11-01",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "Java",
+        "分布式系统"
+      ],
+      "source": "farerboy（微信公众号）",
+      "source_url": "https://mp.weixin.qq.com/s/1d-S86DBwWJR3o2-8aq5fw",
+      "source_type": "web",
+      "platform": "微信公众号",
+      "summary": "基于 Spring Boot 的大规模 Webhook 投递平台实战复盘：2000+ 订阅方、30+ 事件、峰值 8000 TPS。围绕\"任务可靠落库调度、失败分级退避、异常隔离兜底\"三个问题，给出六表模型（配置/运行时分离、任务/执行记录分离）、Outbox+事务钩子、两级触发出队、指数退避+抖动、失败分级、租户级熔断与三层限速、SSRF 四层校验、密钥重叠轮换、死信治理与对账兜底的完整方案，上线后投递成功率从 95% 稳到 99.9%+。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-1d-S86DBwWJR3o2-8aq5fw.md",
       "wiki_status": "pending"
     },
     {
