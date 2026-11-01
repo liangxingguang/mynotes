@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01 13:26",
+  "updated_at": "2026-11-01 15:42",
   "notes": [
     {
       "id": "2026-10-31-weixin-album-xuqiufenxi",
@@ -19,63 +19,6 @@
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "skipped"
-    },
-    {
-      "id": "2026-10-31-xuqiufenxi-02-zaogao-xuqiu-wendang-daijia",
-      "title": "一份糟糕的需求文档，让团队付出什么代价？",
-      "path": "Inbox/2026-10-31-xuqiufenxi-02-zaogao-xuqiu-wendang-daijia.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483808&idx=1&sn=00a20c2cf5e48f07f8611844cadc8ae6&chksm=c1d0b521f6a73c37114ae3cd846ba356a565739de4364803cae22837261492eb95f2def0bd29",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "《需求分析》专辑第 2 篇。质量差的需求文档代价远比想象沉重，而且会层层叠加产生乘数效应。全文四条显性代价（开发反复返工、测试验收混乱、沟通成本剧增、项目延期超预算甚至失败）加一条隐性伤害（团队士气与离职率）。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-02-zaogao-xuqiu-wendang-daijia.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-31-xuqiufenxi-03-chuangyegongsi-yizheng",
-      "title": "创业公司最容易忽略的需求阶段",
-      "path": "Inbox/2026-10-31-xuqiufenxi-03-chuangyegongsi-yizheng.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483818&idx=1&sn=f52587099ff0b423ff0170f525e4473d&chksm=c1d0b52bf6a73c3dfad19c8fb9d324e98fa06717a0cde31725ba770ab004bb61e0f97ef627fa",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "《需求分析》专辑第 3 篇。前两篇的问题在大公司也存在，但在创业公司里更集中、更致命。创业公司天然有\"快\"的压力，需求阶段被看成写文档、开会议、浪费时间的环节，能压缩就压缩——结果是表面进度快，实际方向一直在漂。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-03-chuangyegongsi-yizheng.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-10-31-xuqiufenxi-04-wendang-xiegei-kan",
-      "title": "需求文档不是写给自己看的，是写给开发、测试、老板看的",
-      "path": "Inbox/2026-10-31-xuqiufenxi-04-wendang-xiegei-kan.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483829&idx=1&sn=2484cda1022cb06e8f434b6fd4406d4a&chksm=c1d0b534f6a73c22149533b98ab538f8feeedf5b035af57c04bba8736214ea9d1ae17d6a5dcc",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "《需求分析》专辑第 4 篇。前三篇讲了需求问题的代价与创业场景，这一篇落到更基础的一点：文档到底写给谁看。需求文档的本质是跨角色的沟通工具，不是需求笔记、更不是给自己留的备忘。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-04-wendang-xiegei-kan.md",
-      "wiki_status": "pending"
     },
     {
       "id": "2026-10-31-xuqiufenxi-05-kaifa-kanbudong",
@@ -6031,6 +5974,63 @@
       "summary": "《需求分析》专辑第 1 篇，也是整个系列的开篇。技术问题显性、看得见、能解决；需求问题隐性，藏在开发甚至测试阶段才暴露，像隐形裂缝越裂越大。全文用典型场景说明：业务说\"我要一个能管理客户的功能\"，开发做完才发现理解不一致，业务又冒出新要求。",
       "summary_status": "",
       "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-01-ruanjian-xiangmu-shibai.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-xuqiufenxi-02-zaogao-xuqiu-wendang-daijia",
+      "title": "一份糟糕的需求文档，让团队付出什么代价？",
+      "path": "Archive/2026-10-31-xuqiufenxi-02-zaogao-xuqiu-wendang-daijia.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483808&idx=1&sn=00a20c2cf5e48f07f8611844cadc8ae6&chksm=c1d0b521f6a73c37114ae3cd846ba356a565739de4364803cae22837261492eb95f2def0bd29",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "《需求分析》专辑第 2 篇。质量差的需求文档代价远比想象沉重，而且会层层叠加产生乘数效应。全文四条显性代价（开发反复返工、测试验收混乱、沟通成本剧增、项目延期超预算甚至失败）加一条隐性伤害（团队士气与离职率）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-02-zaogao-xuqiu-wendang-daijia.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-xuqiufenxi-03-chuangyegongsi-yizheng",
+      "title": "创业公司最容易忽略的需求阶段",
+      "path": "Archive/2026-10-31-xuqiufenxi-03-chuangyegongsi-yizheng.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483818&idx=1&sn=f52587099ff0b423ff0170f525e4473d&chksm=c1d0b52bf6a73c3dfad19c8fb9d324e98fa06717a0cde31725ba770ab004bb61e0f97ef627fa",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "《需求分析》专辑第 3 篇。前两篇的问题在大公司也存在，但在创业公司里更集中、更致命。创业公司天然有\"快\"的压力，需求阶段被看成写文档、开会议、浪费时间的环节，能压缩就压缩——结果是表面进度快，实际方向一直在漂。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-03-chuangyegongsi-yizheng.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-10-31-xuqiufenxi-04-wendang-xiegei-kan",
+      "title": "需求文档不是写给自己看的，是写给开发、测试、老板看的",
+      "path": "Archive/2026-10-31-xuqiufenxi-04-wendang-xiegei-kan.md",
+      "created": "2026-10-31",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483829&idx=1&sn=2484cda1022cb06e8f434b6fd4406d4a&chksm=c1d0b534f6a73c22149533b98ab538f8feeedf5b035af57c04bba8736214ea9d1ae17d6a5dcc",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "《需求分析》专辑第 4 篇。前三篇讲了需求问题的代价与创业场景，这一篇落到更基础的一点：文档到底写给谁看。需求文档的本质是跨角色的沟通工具，不是需求笔记、更不是给自己留的备忘。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-04-wendang-xiegei-kan.md",
       "wiki_status": "ingested"
     }
   ]

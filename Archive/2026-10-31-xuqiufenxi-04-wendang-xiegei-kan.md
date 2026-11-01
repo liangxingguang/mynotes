@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - 课程
 asset_ref: Assets/2026-10/weixin-20261031-xuqiufenxi-04-wendang-xiegei-kan.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 需求文档不是写给自己看的，是写给开发、测试、老板看的

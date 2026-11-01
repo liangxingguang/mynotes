@@ -3663,6 +3663,39 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483800&idx=1&sn=d80add1c630e10d34fadfe0e239926ca&chksm=c1d0b519f6a73c0f31a5596084a913ac4a5c59cc5cd1c902b4746448e63e818323522ac751b0",
       "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-01-ruanjian-xiangmu-shibai.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-31-xuqiufenxi-02-zaogao-xuqiu-wendang-daijia.md",
+      "sha256": "4c5b5978c30c27c0e9f7767e565a6c46552ed3251978230ba94623358bfc0c72",
+      "registered_at": "2026-11-01",
+      "inbox_ref": "Archive/2026-10-31-xuqiufenxi-02-zaogao-xuqiu-wendang-daijia.md",
+      "pages": [
+        "wiki/sources/2026-10-31-xuqiufenxi-02-zaogao-xuqiu-wendang-daijia.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483808&idx=1&sn=00a20c2cf5e48f07f8611844cadc8ae6&chksm=c1d0b521f6a73c37114ae3cd846ba356a565739de4364803cae22837261492eb95f2def0bd29",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-02-zaogao-xuqiu-wendang-daijia.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-31-xuqiufenxi-03-chuangyegongsi-yizheng.md",
+      "sha256": "1a104ef44ca32bb6e896fd7b188292244830a88aee708582de188fd93946c87e",
+      "registered_at": "2026-11-01",
+      "inbox_ref": "Archive/2026-10-31-xuqiufenxi-03-chuangyegongsi-yizheng.md",
+      "pages": [
+        "wiki/sources/2026-10-31-xuqiufenxi-03-chuangyegongsi-yizheng.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483818&idx=1&sn=f52587099ff0b423ff0170f525e4473d&chksm=c1d0b52bf6a73c3dfad19c8fb9d324e98fa06717a0cde31725ba770ab004bb61e0f97ef627fa",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-03-chuangyegongsi-yizheng.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-10-31-xuqiufenxi-04-wendang-xiegei-kan.md",
+      "sha256": "1176b540a7ef11dbad2d23226449f954ab65a29ca9eec02324b1fee99396d016",
+      "registered_at": "2026-11-01",
+      "inbox_ref": "Archive/2026-10-31-xuqiufenxi-04-wendang-xiegei-kan.md",
+      "pages": [
+        "wiki/sources/2026-10-31-xuqiufenxi-04-wendang-xiegei-kan.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzkyNDY4OTkwMg==&mid=2247483829&idx=1&sn=2484cda1022cb06e8f434b6fd4406d4a&chksm=c1d0b534f6a73c22149533b98ab538f8feeedf5b035af57c04bba8736214ea9d1ae17d6a5dcc",
+      "asset_ref": "Assets/2026-10/weixin-20261031-xuqiufenxi-04-wendang-xiegei-kan.md"
     }
   ]
 }
