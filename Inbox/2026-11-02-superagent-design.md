@@ -11,7 +11,9 @@ tags:
   - AI
   - 工程实践
 asset_ref: Assets/2026-11/wx-superagent-design.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-11-02T07:20:45.645Z"
+ingest_claim_id: 40664-1793604045645-0
 ---
 
 # Super-agent 设计探索：迈向更自主的 Agent 系统
