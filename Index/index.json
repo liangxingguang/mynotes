@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02 11:48",
+  "updated_at": "2026-11-02 11:50",
   "notes": [
     {
       "id": "2026-10-31-weixin-album-xuqiufenxi",
@@ -37,6 +37,25 @@
       "summary": "微博博主「蚁工厂」推荐斯坦福 CS329Z 教程的中文翻译稿（GitHub 仓库 wanghao-SunSky/cs329z-chinese）。CS329Z 是面向 Python 开发者的 AI 智能体（Agent）自学教程，含练习与配套代码架构导读。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weibo-cs329z-chinese.md",
+      "wiki_status": "ingesting"
+    },
+    {
+      "id": "2026-11-02-namiagent-agent-tutorial",
+      "title": "NamiAgent：零基础 AI Agent 本地实战教程",
+      "path": "Inbox/2026-11-02-namiagent-agent-tutorial.md",
+      "created": "2026-11-02",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "课程"
+      ],
+      "source": "微博帖子（蚁工厂）",
+      "source_url": "https://weibo.com/2194035935/5360094013557700",
+      "source_type": "weibo",
+      "platform": "微博",
+      "summary": "微博博主「蚁工厂」推荐 NamiAgent——零基础入门 AI Agent 的基础教程，同时也是一个能在本地跑起来的 Agent（读写文件、执行命令、MCP、长期记忆，自带网页端可视化每一步）。从 100 行最小循环开始，一课加一个能力，最后拆解 Claude Code、Codex 等主流 Agent。仓库 github.com/aa1143/NamiAgent。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weibo-namiagent.md",
       "wiki_status": "pending"
     },
     {

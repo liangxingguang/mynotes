@@ -11,7 +11,9 @@ tags:
   - AI
   - 课程
 asset_ref: Assets/2026-11/weibo-cs329z-chinese.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-11-02T03:48:52.254Z"
+ingest_claim_id: 40920-1793591332254-0
 ---
 
 # 斯坦福 CS329Z 教程中文翻译（AI Agent 自学）
