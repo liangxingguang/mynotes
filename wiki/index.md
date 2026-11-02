@@ -232,6 +232,7 @@
 - [[netty-iot-gateway-resilient-design|百万 IoT 设备并发接入：把 Netty 网关做成可恢复、可验证的连接系统]]（2026-10-22，Netty/IoT/可靠性）
 - [[netty-redis-kafka-iot-gateway|扛住百万设备长连接：Netty+Redis+Kafka 搭建 IoT 接入平台]]（2026-10-22，Netty/IoT 架构）
 - [[netty-three-skills-high-performance|为什么几个线程就能扛住上万连接？Netty 三大技能]]（2026-10-20，Java/网络）
+- [[netty-pipeline-handler-order|一条消息的全程：pipeline 和 handler 到底谁先谁后]]（2026-11-02，Java/Netty/Pipeline 排障，公众号科普实操：双向链方向/症状对照表/三大坑/@Sharable 陷阱/EventLoop 阻塞代价/批量写，单信源，置信度高）
 - [[nginx-websocket-million-connections|百万 WebSocket 长连接背后的 Nginx 架构设计与踩坑实录]]（2026-10-22，Nginx/WebSocket 长连接）
 - [[perf-cpu-hotspot-analysis|性能分析 02｜如何使用 perf 排查：定位系统的性能问题]]（2026-10-31，性能/perf/Linux，CPU 采样排查链路+demo 实测，单信源置信度高）
 - [[pi-6-extensions|从 Claude Code 搬到 Pi：6 个扩展补回熟悉体验]]（2026-10-14，AI/Agent CLI）

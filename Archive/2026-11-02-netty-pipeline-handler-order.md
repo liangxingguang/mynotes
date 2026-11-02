@@ -11,7 +11,7 @@ tags:
   - netty
   - 工程实践
 asset_ref: Assets/2026-11/netty-pipeline-handler-order.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 一条消息的全程：pipeline 和 handler 到底谁先谁后

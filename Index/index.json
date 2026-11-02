@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02 17:24",
+  "updated_at": "2026-11-02 17:40",
   "notes": [
     {
       "id": "2026-10-31-weixin-album-xuqiufenxi",
@@ -19,25 +19,6 @@
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "skipped"
-    },
-    {
-      "id": "2026-11-02-netty-pipeline-handler-order",
-      "title": "一条消息的全程：pipeline 和 handler 到底谁先谁后",
-      "path": "Inbox/2026-11-02-netty-pipeline-handler-order.md",
-      "created": "2026-11-02",
-      "category": "技术",
-      "tags": [
-        "netty",
-        "工程实践"
-      ],
-      "source": "微信公众号文章",
-      "source_url": "https://mp.weixin.qq.com/s/6akSvZW-gEm_PZJMri2OfQ",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "Netty pipeline 是双向链——inbound 事件从 head 到 tail 正序传播，outbound 操作从 tail 到 head 逆序传播；ctx.write 只走当前 handler 之前的 outbound，channel.write 从 tail 走全链；write 只是入队、flush 才真正发出。编解码器必须加在业务 handler 的 head 一侧。附症状对照表、@Sharable 陷阱与三大常见坑（不往下传/忘释放/误用 channel.write）。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/netty-pipeline-handler-order.md",
-      "wiki_status": "pending"
     },
     {
       "id": "2026-11-02-weixin-superagent-teardown",
@@ -6126,6 +6107,25 @@
       "summary": "微博博主「蚁工厂」推荐 NamiAgent——零基础入门 AI Agent 的基础教程，同时也是一个能在本地跑起来的 Agent（读写文件、执行命令、MCP、长期记忆，自带网页端可视化每一步）。从 100 行最小循环开始，一课加一个能力，最后拆解 Claude Code、Codex 等主流 Agent。仓库 github.com/aa1143/NamiAgent。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weibo-namiagent.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-02-netty-pipeline-handler-order",
+      "title": "一条消息的全程：pipeline 和 handler 到底谁先谁后",
+      "path": "Archive/2026-11-02-netty-pipeline-handler-order.md",
+      "created": "2026-11-02",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "工程实践"
+      ],
+      "source": "微信公众号文章",
+      "source_url": "https://mp.weixin.qq.com/s/6akSvZW-gEm_PZJMri2OfQ",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "Netty pipeline 是双向链——inbound 事件从 head 到 tail 正序传播，outbound 操作从 tail 到 head 逆序传播；ctx.write 只走当前 handler 之前的 outbound，channel.write 从 tail 走全链；write 只是入队、flush 才真正发出。编解码器必须加在业务 handler 的 head 一侧。附症状对照表、@Sharable 陷阱与三大常见坑（不往下传/忘释放/误用 channel.write）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/netty-pipeline-handler-order.md",
       "wiki_status": "ingested"
     },
     {

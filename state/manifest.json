@@ -3948,6 +3948,21 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/pBD5PTQ5f0nJUzbL4ql-ng",
       "asset_ref": "Assets/2026-11/weixin-seckill-100k-qps.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-02-netty-pipeline-handler-order.md",
+      "sha256": "570bc20f9929f9fcc11c8679a9bfdb00ca53d1d8059f52ca1c4bde3b0af631bf",
+      "registered_at": "2026-11-02",
+      "inbox_ref": "Archive/2026-11-02-netty-pipeline-handler-order.md",
+      "pages": [
+        "wiki/sources/netty-pipeline-handler-order.md",
+        "wiki/concepts/netty-channel-pipeline.md",
+        "wiki/concepts/netty-write-flush.md",
+        "wiki/concepts/netty-eventloop.md",
+        "wiki/entities/netty.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/6akSvZW-gEm_PZJMri2OfQ",
+      "asset_ref": "Assets/2026-11/netty-pipeline-handler-order.md"
     }
   ]
 }
