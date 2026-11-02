@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02 11:50",
+  "updated_at": "2026-11-02 11:55",
   "notes": [
     {
       "id": "2026-10-31-weixin-album-xuqiufenxi",
@@ -19,6 +19,25 @@
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "skipped"
+    },
+    {
+      "id": "2026-11-02-accidental-cto-book",
+      "title": "《The Accidental CTO》：创业公司 CTO 的系统架构实战手册",
+      "path": "Inbox/2026-11-02-accidental-cto-book.md",
+      "created": "2026-11-02",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "阅读"
+      ],
+      "source": "微博帖子（蚁工厂）",
+      "source_url": "https://weibo.com/2194035935/5360503708190911",
+      "source_type": "weibo",
+      "platform": "微博",
+      "summary": "微博博主「蚁工厂」推荐电子书《The Accidental CTO》（意外成为 CTO），作者 Subhash Choudhary，仓库 github.com/subhashchy/The-Accidental-CTO。以印度电商 SaaS 平台 Dukaan 的技术成长为主线，从凌晨宕机、复制延迟、队列积压、云成本失控等真实工程问题切入，讲系统架构如何在业务增长、故障与成本约束中演化出来。覆盖架构扩展、数据层设计、异步架构、可观测性、系统韧性、成本优化六类问题。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weibo-accidental-cto.md",
+      "wiki_status": "pending"
     },
     {
       "id": "2026-11-02-cs329z-agent-chinese",

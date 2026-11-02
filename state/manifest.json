@@ -3864,6 +3864,18 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/1d-S86DBwWJR3o2-8aq5fw",
       "asset_ref": "Assets/2026-11/weixin-1d-S86DBwWJR3o2-8aq5fw.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-02-cs329z-chinese-weibo-recommendation.md",
+      "sha256": "7be86f97d01f9668eea408db4386be3d68881f7de0ff84e31653015b6803c97b",
+      "registered_at": "2026-11-02",
+      "inbox_ref": "Inbox/2026-11-02-cs329z-agent-chinese.md",
+      "pages": [
+        "wiki/sources/cs329z-chinese-weibo-recommendation.md",
+        "wiki/entities/cs329z.md"
+      ],
+      "source_url": "https://weibo.com/2194035935/5360524092508414",
+      "asset_ref": "Assets/2026-11/weibo-cs329z-chinese.md"
     }
   ]
 }
