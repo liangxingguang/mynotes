@@ -3876,6 +3876,32 @@
       ],
       "source_url": "https://weibo.com/2194035935/5360524092508414",
       "asset_ref": "Assets/2026-11/weibo-cs329z-chinese.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-02-accidental-cto-book.md",
+      "sha256": "7ff78e1d530a7bf6456789cfe0e7ecd3c467aaf1a201538203b2f7973e464a5f",
+      "registered_at": "2026-11-02",
+      "inbox_ref": "Archive/2026-11-02-accidental-cto-book.md",
+      "pages": [
+        "wiki/sources/accidental-cto-book.md",
+        "wiki/topics/system-design-core-components.md"
+      ],
+      "source_url": "https://weibo.com/2194035935/5360503708190911",
+      "asset_ref": "Assets/2026-11/weibo-accidental-cto.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-02-namiagent-agent-tutorial.md",
+      "sha256": "45851e8aa3e1fdd4d2cfb9a02f16c38df3cbe09300d8903d23eee781113e36cf",
+      "registered_at": "2026-11-02",
+      "inbox_ref": "Archive/2026-11-02-namiagent-agent-tutorial.md",
+      "pages": [
+        "wiki/sources/namiagent-agent-tutorial.md",
+        "wiki/entities/namiagent.md",
+        "wiki/concepts/agent-loop.md",
+        "wiki/concepts/context-management.md"
+      ],
+      "source_url": "https://weibo.com/2194035935/5360094013557700",
+      "asset_ref": "Assets/2026-11/weibo-namiagent.md"
     }
   ]
 }

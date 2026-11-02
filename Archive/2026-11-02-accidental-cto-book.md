@@ -11,9 +11,7 @@ tags:
   - 工程实践
   - 阅读
 asset_ref: Assets/2026-11/weibo-accidental-cto.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-02T04:20:58.993Z"
-ingest_claim_id: 54644-1793593258993-0
+wiki_status: ingested
 ---
 
 # 《The Accidental CTO》：创业公司 CTO 的系统架构实战手册

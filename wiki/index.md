@@ -312,6 +312,8 @@
 - [[2026-11-01-enterprise-rag-platform-langgraph-mcp|Spring Boot 4 × LangGraph × MCP × Milvus：企业级 RAG 平台｜会记忆、能查业务、绝不瞎编，完整落地架构]]（2026-11-01，AI/RAG/架构，5进程+6中间件全景架构+六大设计原则（重活异步化/影子模式/旁路降级/框架兜底/契约对齐/记忆可度量）+文档导入RocketMQ异步链路+混合检索RRF融合+gte-rerank+相关性裁判拒答+SSE事件契约+MCP工具调用真实用户身份+五层记忆模型+加权遗忘公式+线上三坑，公众号单信源，置信度高）
 - [[2026-11-01-spring-boot-webhook-delivery-platform|Spring Boot 构建可靠 Webhook 投递平台：事件订阅、签名验签、重试补偿与死信治理]]（2026-11-01，架构/分布式系统/Java，2000+订阅方/峰值8000TPS实战+六表模型+Outbox+事务钩子+两级触发出队+指数退避+抖动+封顶+失败分级+租户级熔断+三层令牌桶+SSRF四层校验+密钥重叠轮换+死信治理+对账兜底+虚拟线程配信号量，公众号单信源，置信度高）
 - [[cs329z-chinese-weibo-recommendation|微博推荐：斯坦福 CS329Z 教程中文翻译（AI Agent 自学）]]（2026-11-02，AI/课程资源/微博，推荐 CS329Z 中文翻译稿 github.com/wanghao-SunSky/cs329z-chinese，含练习+代码架构导读，微博单信源，置信度高）
+- [[accidental-cto-book|微博推荐：《The Accidental CTO》——创业公司 CTO 的系统架构实战手册]]（2026-11-02，架构/书籍/微博，六类问题框架（架构扩展/数据层设计/异步架构/可观测性/系统韧性/成本优化）+架构演化论，微博单信源，置信度中）
+- [[namiagent-agent-tutorial|微博推荐：NamiAgent——零基础 AI Agent 本地实战教程]]（2026-11-02，AI/Agent/教程/微博，100 行最小循环教学路径+本地 Agent+网页端上下文可视化，微博单信源，置信度中）
 
 ## concept（概念）
 
@@ -492,6 +494,7 @@
 - [[argo-rollouts|Argo Rollouts]]（K8s 渐进式交付控制器：Rollout CRD + AnalysisTemplate 门禁，blueGreen/canary，单信源）
 - [[arthas|Arthas]]（Java 线上诊断工具，4.3.5 起含实验性 MCP Server；十二信源：专辑目录+MCP 双实测+系列七篇+GC 实战+五场景事故+版本核实/热更新边界）
 - [[cs329z|CS329Z]]（斯坦福 AI Agent 自学课程，面向 Python 开发者，含练习+代码架构导读；中文翻译稿 wanghao-SunSky/cs329z-chinese，微博单信源，置信度低）
+- [[namiagent|NamiAgent]]（开源 AI Agent 教程项目+本地可运行 Agent，100 行最小循环教学，读写文件/命令/MCP/长期记忆+网页端可视化，微博单信源，置信度中）
 - [[deepseek-harness|DeepSeek Harness]]（DeepSeek 模型的桌面 Agent 客户端，v0.2 预览版）
 - [[deepagents|deepagents]]（LangChain 官方 batteries-included agent harness 库，create_deep_agent 一个函数带齐八件套，LangGraph 底座）
 - [[drawio-skill|drawio-skill]]（代码/配置→可编辑 .drawio 架构图，增量同步 + CI 架构检查）
@@ -519,7 +522,7 @@
 - [[jvm-gc|JVM 垃圾回收]]（判定/算法/收集器演进与选型/调优主线枢纽；G1/ZGC 原理 + 证据驱动调优，四信源）
 - [[live-streaming-messaging|直播实时消息分发]]（拉 vs 推路线图谱：读扩散通知拉取 / longpolling / 短轮询 / mcast 组播 / CDN 广播；允许策略性丢消息是与 IM 的根本分界，八信源）
 - [[programmer-overseas-remote-work|程序员出海远程]]（汇率杠杆/价格带定价/卖资产 vs 卖时间；AI 一人公司技术前提；收款/时差/合规三实操；单信源，置信度中）
-- [[system-design-core-components|系统设计核心组件]]（分布式系统 12 个核心组件清单）
+- [[system-design-core-components|系统设计核心组件]]（分布式系统 12 个核心组件清单，组件驱动；另收问题驱动六类框架见 [[accidental-cto-book]]，双信源）
 
 ## decision（决策）
 

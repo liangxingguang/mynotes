@@ -11,9 +11,7 @@ tags:
   - AI
   - 课程
 asset_ref: Assets/2026-11/weibo-namiagent.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-02T04:20:58.993Z"
-ingest_claim_id: 54644-1793593258993-1
+wiki_status: ingested
 ---
 
 # NamiAgent：零基础 AI Agent 本地实战教程

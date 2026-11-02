@@ -4,7 +4,7 @@ type: concept
 title: 上下文管理（Context Management）
 status: active
 created: 2026-10-29
-updated: 2026-11-01
+updated: 2026-11-02
 confidence: high
 tags:
   - concept
@@ -15,6 +15,7 @@ sources:
   - raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md
   - raw/sources/ai/2026-10-31-agent-harness-essay-ideal-harness.md
   - raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md
+  - raw/sources/ai/2026-11-02-namiagent-agent-tutorial.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/concepts/harness-engineering.md
@@ -24,6 +25,8 @@ related:
   - wiki/sources/kiso-minimal-agent-framework.md
   - wiki/sources/llm-integration-engineering-hard-parts.md
   - wiki/entities/kiso.md
+  - wiki/entities/namiagent.md
+  - wiki/sources/namiagent-agent-tutorial.md
 ---
 # 上下文管理（Context Management）
 
@@ -86,6 +89,8 @@ Claude Code 官方做法分两层（信源 §3.4 引用核验）：先清旧工�
 
 - 2026-11-01 — 面试深挖 84（第 4 信源）补上**预算分配与组装归属**视角：上下文是预算而非容量，至少分六类——系统约定、工具定义、检索资料、历史对话、中间结果、**输出预留**（最常被漏，漏了就会出现回答被截断、结构没闭合）；压缩四招（只留最近若干轮、早期摘要化、稳定内容做前缀、长结果换引用标识）；丢上下文的判据是「对当前决策的边际贡献低于它占据的成本与噪声」；上下文由编排层组装与裁剪（检索/裁剪/排序/引用都在编排层），模型只消费拼好的那一份；不可压缩的结构化事实（用户已确认参数、已生成单据标识）落独立存储而非只留摘要。与 Kiso「投影观」（Context=Projection、Event Log=Truth）互证：编排层即投影的执行者，裁剪权=预算控制权。
 
+- 2026-11-02 — 新增教学实现信源 `raw/sources/ai/2026-11-02-namiagent-agent-tutorial.md`（微博推荐 NamiAgent）。其网页端"右侧看每次发给模型的完整上下文，一圈圈怎么变长"是本概念"每轮全量重发、窗口是一块有预算的内存"的直观可视化演示——把抽象的 token 预算变成可见的逐轮增长，可作为入门教学的演示材料（教程站点本身未经抓取核验）。
+
 ## Open Questions（开放问题）
 
 - 三层记忆（工作记忆 Redis / 长期记忆 pgvector）与 RAG 的分界，待该系列第 11 篇信源补充。
@@ -96,6 +101,7 @@ Claude Code 官方做法分两层（信源 §3.4 引用核验）：先清旧工�
 - Source: `raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md`（第 2 信源：投影四句式、microcompact 撤除、Soft/Hard/Raw Tail 阈值、In-Band Summary）
 - Source: `raw/sources/ai/2026-10-31-agent-harness-essay-ideal-harness.md`（第 3 信源：注入式 token 账——MCP 30K 注入示例、cache read 占比 97%、Desktop 10% 额度差、256K 有效窗口；均为社区说法，confidence 中）
 - Source: `raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md`（第 4 信源：预算六类分配与输出预留、压缩四招、编排层组装裁剪、不可压缩结构化事实落独立存储、丢上下文判据）
+- Source: `raw/sources/ai/2026-11-02-namiagent-agent-tutorial.md`（教学实现：网页端上下文逐轮可视化演示每轮全量重发）
 
 ## Related Knowledge（相关知识）
 
@@ -106,3 +112,5 @@ Claude Code 官方做法分两层（信源 §3.4 引用核验）：先清旧工�
 - [[agent-as-memory|Agent as Memory]]
 - [[agent-harness-essay-ideal-harness|Agent Harness 随笔：我理想中的 Harness（信源页）]]
 - [[llm-integration-engineering-hard-parts|大模型接进业务系统：工程难点在哪（信源页）]]
+- [[namiagent|NamiAgent]]（网页端上下文逐轮可视化的教学演示）
+- [[namiagent-agent-tutorial|微博推荐：NamiAgent——零基础 AI Agent 本地实战教程（信源页）]]

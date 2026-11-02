@@ -4,7 +4,7 @@ type: topic
 title: 系统设计核心组件
 status: active
 created: 2026-10-16
-updated: 2026-10-16
+updated: 2026-11-02
 confidence: medium
 tags:
   - topic
@@ -12,12 +12,16 @@ tags:
   - system-design
 sources:
   - raw/sources/architecture/2026-10-13-system-design-12-components.md
+  - raw/sources/architecture/2026-11-02-accidental-cto-book.md
+related:
+  - wiki/sources/accidental-cto-book.md
+  - wiki/concepts/architecture-tradeoff-methodology.md
 ---
 # 系统设计核心组件
 
 ## Scope（范围）
 
-分布式系统设计中反复出现的核心基础设施组件。当前收录 12 个组件的概念性定义，来源于单一综述性信源；各组件待专门信源补充后再拆分为独立概念页。
+分布式系统设计中反复出现的核心基础设施组件。当前收录 12 个组件的概念性定义（组件驱动视角），另收录《The Accidental CTO》一书的六类工程问题框架（问题驱动视角，见 [[accidental-cto-book]]），两种视角互补；各组件待专门信源补充后再拆分为独立概念页。
 
 ## Current Understanding（当前认知）
 
@@ -52,7 +56,7 @@ sources:
 
 ## Major Developments（重大进展）
 
-- 暂无。
+- 2026-11-02 — 新增问题驱动视角信源《The Accidental CTO》（[[accidental-cto-book]]）：按六类工程问题组织系统设计内容（架构扩展/数据层设计/异步架构/可观测性/系统韧性/成本优化）。与本页组件驱动视角互补——组件清单回答"系统里有什么"，问题框架回答"成长中会遇到什么、怎么应对"；其核心观点"架构在业务增长、故障与成本约束中演化"为本页清单补充了演进语境（书籍内容未经原书核验，confidence 中）。
 
 ## Disagreements（分歧）
 
@@ -64,9 +68,12 @@ sources:
 
 ## Related Topics（相关主题）
 
-- 暂无。
+- [[accidental-cto-book|微博推荐：《The Accidental CTO》——创业公司 CTO 的系统架构实战手册]]（问题驱动视角互补）
+- [[architecture-tradeoff-methodology|架构取舍方法论]]（架构演化的方法论注脚）
 
 ## Evidence（证据）
 
 - `raw/sources/architecture/2026-10-13-system-design-12-components.md`
+- `raw/sources/architecture/2026-11-02-accidental-cto-book.md`（问题驱动六类框架：架构扩展/数据层设计/异步架构/可观测性/系统韧性/成本优化）
 - 信源页：[[system-design-12-components|一次讲清 12 个系统设计核心组件]]
+- 信源页：[[accidental-cto-book|微博推荐：《The Accidental CTO》——创业公司 CTO 的系统架构实战手册]]
