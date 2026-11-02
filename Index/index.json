@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-11-02 21:23",
+  "updated_at": "2026-11-03 00:21",
   "notes": [
-    {
-      "id": "2026-10-31-weixin-album-xuqiufenxi",
-      "title": "专辑目录 · 需求分析（赢在菲墨间）",
-      "path": "Inbox/2026-10-31-weixin-album-xuqiufenxi.md",
-      "created": "2026-10-31",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "微信公众号图文专辑",
-      "source_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzkyNDY4OTkwMg==&action=getalbum&album_id=4718445477979848706&subscene=169&nolastread=1#wechat_redirect",
-      "source_type": "album",
-      "platform": "微信公众号",
-      "summary": "公众号「赢在菲墨间」的图文专辑《需求分析》，`article_count: 17`，按发布时间正序。专辑本体是 JS 渲染拿不到正文，改用 `&f=json` 拿到全部 17 篇的标题与直链，再逐篇抓取。你发来的链接里 `scenenote=` 解码后是第 9 篇（mid=2247483914）。",
-      "summary_status": "",
-      "asset_ref": "",
-      "wiki_status": "skipped"
-    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
