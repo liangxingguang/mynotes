@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02 16:03",
+  "updated_at": "2026-11-02 17:24",
   "notes": [
     {
       "id": "2026-10-31-weixin-album-xuqiufenxi",
@@ -19,6 +19,25 @@
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "skipped"
+    },
+    {
+      "id": "2026-11-02-netty-pipeline-handler-order",
+      "title": "一条消息的全程：pipeline 和 handler 到底谁先谁后",
+      "path": "Inbox/2026-11-02-netty-pipeline-handler-order.md",
+      "created": "2026-11-02",
+      "category": "技术",
+      "tags": [
+        "netty",
+        "工程实践"
+      ],
+      "source": "微信公众号文章",
+      "source_url": "https://mp.weixin.qq.com/s/6akSvZW-gEm_PZJMri2OfQ",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "Netty pipeline 是双向链——inbound 事件从 head 到 tail 正序传播，outbound 操作从 tail 到 head 逆序传播；ctx.write 只走当前 handler 之前的 outbound，channel.write 从 tail 走全链；write 只是入队、flush 才真正发出。编解码器必须加在业务 handler 的 head 一侧。附症状对照表、@Sharable 陷阱与三大常见坑（不往下传/忘释放/误用 channel.write）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/netty-pipeline-handler-order.md",
+      "wiki_status": "pending"
     },
     {
       "id": "2026-11-02-weixin-superagent-teardown",
