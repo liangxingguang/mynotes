@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02 11:55",
+  "updated_at": "2026-11-02 12:23",
   "notes": [
     {
       "id": "2026-10-31-weixin-album-xuqiufenxi",
@@ -37,25 +37,6 @@
       "summary": "微博博主「蚁工厂」推荐电子书《The Accidental CTO》（意外成为 CTO），作者 Subhash Choudhary，仓库 github.com/subhashchy/The-Accidental-CTO。以印度电商 SaaS 平台 Dukaan 的技术成长为主线，从凌晨宕机、复制延迟、队列积压、云成本失控等真实工程问题切入，讲系统架构如何在业务增长、故障与成本约束中演化出来。覆盖架构扩展、数据层设计、异步架构、可观测性、系统韧性、成本优化六类问题。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weibo-accidental-cto.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-11-02-cs329z-agent-chinese",
-      "title": "斯坦福 CS329Z 教程中文翻译（AI Agent 自学）",
-      "path": "Inbox/2026-11-02-cs329z-agent-chinese.md",
-      "created": "2026-11-02",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "课程"
-      ],
-      "source": "微博帖子（蚁工厂）",
-      "source_url": "https://weibo.com/2194035935/5360524092508414",
-      "source_type": "weibo",
-      "platform": "微博",
-      "summary": "微博博主「蚁工厂」推荐斯坦福 CS329Z 教程的中文翻译稿（GitHub 仓库 wanghao-SunSky/cs329z-chinese）。CS329Z 是面向 Python 开发者的 AI 智能体（Agent）自学教程，含练习与配套代码架构导读。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/weibo-cs329z-chinese.md",
       "wiki_status": "ingesting"
     },
     {
@@ -75,6 +56,25 @@
       "summary": "微博博主「蚁工厂」推荐 NamiAgent——零基础入门 AI Agent 的基础教程，同时也是一个能在本地跑起来的 Agent（读写文件、执行命令、MCP、长期记忆，自带网页端可视化每一步）。从 100 行最小循环开始，一课加一个能力，最后拆解 Claude Code、Codex 等主流 Agent。仓库 github.com/aa1143/NamiAgent。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weibo-namiagent.md",
+      "wiki_status": "ingesting"
+    },
+    {
+      "id": "2026-11-02-superagent-design",
+      "title": "Super-agent 设计探索：迈向更自主的 Agent 系统",
+      "path": "Inbox/2026-11-02-superagent-design.md",
+      "created": "2026-11-02",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
+      "source": "微信公众号文章（DeepSeek Harness 团队）",
+      "source_url": "https://mp.weixin.qq.com/s/zoS7GlReWPhfCjENGxXCdg",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "DeepSeek Harness 团队（作者 Yujia Qiao）的架构探索：针对\"人只能同时跟进 3-5 个 Session\"的瓶颈，提出 Super-agent——以 Router/Worker 双层架构、事件驱动（Trigger + 两级过滤 + 订阅直通）、异步全双工多信道交互、存算分离与端侧 daemon（BYOM）、外部 Watchdog 五大模块，实现连续、高效、主动、持久的 Agent 系统。消融实验显示双层架构完成时间显著优于单 Session + Subagent。核心思想是把计算机系统的经典设计（Fast/Slow Path、投机执行、存算分离）应用到 Agent 构建中。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wx-superagent-design.md",
       "wiki_status": "pending"
     },
     {
@@ -6088,6 +6088,25 @@
       "summary": "基于 Spring Boot 的大规模 Webhook 投递平台实战复盘：2000+ 订阅方、30+ 事件、峰值 8000 TPS。围绕\"任务可靠落库调度、失败分级退避、异常隔离兜底\"三个问题，给出六表模型（配置/运行时分离、任务/执行记录分离）、Outbox+事务钩子、两级触发出队、指数退避+抖动、失败分级、租户级熔断与三层限速、SSRF 四层校验、密钥重叠轮换、死信治理与对账兜底的完整方案，上线后投递成功率从 95% 稳到 99.9%+。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-1d-S86DBwWJR3o2-8aq5fw.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-02-cs329z-agent-chinese",
+      "title": "斯坦福 CS329Z 教程中文翻译（AI Agent 自学）",
+      "path": "Archive/2026-11-02-cs329z-agent-chinese.md",
+      "created": "2026-11-02",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "课程"
+      ],
+      "source": "微博帖子（蚁工厂）",
+      "source_url": "https://weibo.com/2194035935/5360524092508414",
+      "source_type": "weibo",
+      "platform": "微博",
+      "summary": "微博博主「蚁工厂」推荐斯坦福 CS329Z 教程的中文翻译稿（GitHub 仓库 wanghao-SunSky/cs329z-chinese）。CS329Z 是面向 Python 开发者的 AI 智能体（Agent）自学教程，含练习与配套代码架构导读。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weibo-cs329z-chinese.md",
       "wiki_status": "ingested"
     }
   ]

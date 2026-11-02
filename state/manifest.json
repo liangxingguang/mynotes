@@ -3869,7 +3869,7 @@
       "path": "raw/sources/ai/2026-11-02-cs329z-chinese-weibo-recommendation.md",
       "sha256": "7be86f97d01f9668eea408db4386be3d68881f7de0ff84e31653015b6803c97b",
       "registered_at": "2026-11-02",
-      "inbox_ref": "Inbox/2026-11-02-cs329z-agent-chinese.md",
+      "inbox_ref": "Archive/2026-11-02-cs329z-agent-chinese.md",
       "pages": [
         "wiki/sources/cs329z-chinese-weibo-recommendation.md",
         "wiki/entities/cs329z.md"
