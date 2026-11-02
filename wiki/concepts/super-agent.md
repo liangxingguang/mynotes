@@ -12,10 +12,12 @@ tags:
   - architecture
 sources:
   - raw/sources/ai/2026-11-02-superagent-design.md
+  - raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md
 related:
   - wiki/concepts/router-worker-architecture.md
   - wiki/concepts/event-driven-agent.md
   - wiki/concepts/watchdog-control-loop.md
+  - wiki/concepts/ticket-task-persistence.md
   - wiki/concepts/agent-loop.md
   - wiki/concepts/context-management.md
   - wiki/concepts/durable-execution.md
@@ -50,6 +52,7 @@ Super-agent 是打破 Agent 与单次手动会话绑定的 Agent 形态及其系
 | 面向人的交互 | 连续 + 高效 | 异步 [[agent-loop|ReAct Loop]]（start/stop 全双工）+ 多信道适配 |
 | 存算分离 | 持久 | 计算与状态分离 + 计算与执行环境分离（BYOM） |
 | Watchdog | 持久 | [[watchdog-control-loop|Watchdog 外部控制回路]]：外部 Control Loop 监控基础设施与任务进展 |
+| Ticket 持久化 | 持久 | [[ticket-task-persistence|Ticket 任务持久化模型]]：Assignment/Executor Session/Mandate 挂同一 Ticket，`ready` 释放名额、跟踪 PR 判结束 |
 
 ## How It Works（运作方式）
 
@@ -82,6 +85,7 @@ Super-agent 是打破 Agent 与单次手动会话绑定的 Agent 形态及其系
 ## Evolution（演进）
 
 - 2026-11-02 — 新建，信源为 DeepSeek Harness 团队架构探索文（微信公众号，作者 Yujia Qiao）。
+- 2026-11-02 — 新增「架构师」公众号原型拆解信源（第 2 信源）：补上 Ticket 持久化模型（[[ticket-task-persistence]]）、Engine 事务先行 + SQLite Store + Effects/Outbox 工程细节、WorkerSlots 人跟进优先、observe/auto 接单三路径；实验再解读——基线中性提示下模型一次都没调 Subagent（改提示后才委派），去直通 Router 决定数 +30%、缓存 token +37%（开直通省约 27%），完成时间不变因 Router 未到吞吐瓶颈、省在推理开销。
 
 ## Open Questions（开放问题）
 
@@ -93,8 +97,11 @@ Super-agent 是打破 Agent 与单次手动会话绑定的 Agent 形态及其系
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-11-02-superagent-design.md`
+- Source: `raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md`（原型拆解：Ticket/Engine/WorkerSlots/observe-auto/实验再解读）
 
 ## Related Knowledge（相关知识）
 
 - [[superagent-design|Super-agent 设计探索（信源页）]]
+- [[weixin-superagent-architecture-teardown|架构拆解：DeepSeek 刚发布的 Super-agent（信源页）]]
+- [[ticket-task-persistence|Ticket 任务持久化模型]]
 - [[deepseek-harness|DeepSeek Harness]]

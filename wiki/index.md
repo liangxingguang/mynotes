@@ -316,6 +316,7 @@
 - [[accidental-cto-book|微博推荐：《The Accidental CTO》——创业公司 CTO 的系统架构实战手册]]（2026-11-02，架构/书籍/微博，六类问题框架（架构扩展/数据层设计/异步架构/可观测性/系统韧性/成本优化）+架构演化论，微博单信源，置信度中）
 - [[namiagent-agent-tutorial|微博推荐：NamiAgent——零基础 AI Agent 本地实战教程]]（2026-11-02，AI/Agent/教程/微博，100 行最小循环教学路径+本地 Agent+网页端上下文可视化，微博单信源，置信度中）
 - [[superagent-design|Super-agent 设计探索：迈向更自主的 Agent 系统]]（2026-11-02，AI/架构/Agent/微信，Super-agent 打破单 Session 绑定+双层架构+事件驱动+异步 ReAct+存算分离+BYOM+Watchdog，微信单信源，置信度中）
+- [[weixin-superagent-architecture-teardown|架构拆解：DeepSeek 刚发布的 Super-agent]]（2026-11-02，AI/架构/Agent/微信，Super-agent 原型机制级拆解：Ticket/Assignment/Mandate 持久化+Engine 事务先行+WorkerSlots+observe/auto 接单+实验再解读，「架构师」公众号单信源，置信度中）
 - [[weixin-jvm-gc-log-heap|一行 log.info 打掉 8G 堆：每秒 500MB 大对象，是怎么把老年代喂满的]]（2026-11-02，Java/JVM/GC/日志/微信，log.info 打 35MB JSON 致 G1 humongous+异步队列钉住+Full GC 空转+jstat→histo→dump 三步定位+Arthas 改级别止血，微信单信源，置信度高）
 - [[weixin-seckill-100k-qps|从 0 设计 10 万 QPS 秒杀系统：10 万请求进来，只有 1000 个能碰到数据库]]（2026-11-02，架构/分布式系统/秒杀/Redis/Kafka/微信，三层漏斗压 10 万→2 万→1000+Redis Lua 预扣+32 桶散热+Kafka 削峰+DB 唯一索引幂等+容量推导表，微信单信源，置信度高）
 
@@ -492,6 +493,7 @@
 - [[event-driven-agent|事件驱动 Agent]]（环境事件驱动+Trigger+两级过滤+订阅直通+投机执行，DeepSeek Harness 团队架构探索文，单信源，置信度中）
 - [[router-worker-architecture|Router/Worker 双层架构]]（Router 常驻全局+Worker 上下文隔离+批处理+压测数据，DeepSeek Harness 团队架构探索文，单信源，置信度中）
 - [[super-agent|Super-agent]]（打破 Agent-单 Session 绑定+连续/高效/主动/持久四特征+五大模块，DeepSeek Harness 团队架构探索文，单信源，置信度中）
+- [[ticket-task-persistence|Ticket 任务持久化模型]]（Assignment/Executor Session/Mandate 挂同一 Ticket+`ready` 释放名额+跟踪 PR 判结束，Super-agent 原型拆解信源，单信源，置信度中）
 - [[watchdog-control-loop|Watchdog 外部控制回路]]（主系统外独立 Control Loop+双重监控+定时驱动+自然语言交互，DeepSeek Harness 团队架构探索文，单信源，置信度中）
 
 ## entity（实体）

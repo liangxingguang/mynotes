@@ -12,11 +12,13 @@ tags:
   - architecture
 sources:
   - raw/sources/ai/2026-11-02-superagent-design.md
+  - raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md
 related:
   - wiki/concepts/super-agent.md
   - wiki/concepts/router-worker-architecture.md
   - wiki/concepts/context-management.md
   - wiki/concepts/agent-loop.md
+  - wiki/concepts/ticket-task-persistence.md
 ---
 # 事件驱动 Agent
 
@@ -35,6 +37,7 @@ related:
 3. **订阅直通**：同一 Thread 后续事件由程序直通已订阅 Worker，不经 Router 转发（Fast Path）；未订阅事件仍由 Router 判断分派（Slow Path）。
 4. **Thread 多对多订阅**：一个 Worker 可订阅多个 Thread，一个 Thread 可被多个 Worker 订阅，使多 Worker 在共享工作环境中自行发现冲突。
 5. **投机执行**：据环境信号后台提前行动，结果有价值就交付、无价值就丢弃。
+6. **observe/auto/明确请求三路径**（原型拆解信源）：系统从讨论里自行推断的任务默认 `observe` 模式（记录本来会接下什么，先不启动执行）；启用 `auto` 后按预写规则评估；人的明确请求另有处理路径。Mandate 定接单范围，订阅本身不扩大工作范围。
 
 ## Structure（结构）
 
@@ -73,6 +76,7 @@ Fast/Slow Path 思想：大模型推理是灵活但高成本的 Slow Path，确�
 ## Evolution（演进）
 
 - 2026-11-02 — 新建，信源为 DeepSeek Harness 团队架构探索文。
+- 2026-11-02 — 新增「架构师」公众号原型拆解信源（第 2 信源）：补上 observe/auto/明确请求三路径接单、Mandate 定范围而订阅不扩范围、订阅直通前检查人的跟进还是机器人消息与任务是否已结束。
 
 ## Open Questions（开放问题）
 
@@ -82,8 +86,10 @@ Fast/Slow Path 思想：大模型推理是灵活但高成本的 Slow Path，确�
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-11-02-superagent-design.md`
+- Source: `raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md`（observe/auto/明确请求三路径、Mandate 定范围、订阅前检查）
 
 ## Related Knowledge（相关知识）
 
 - [[superagent-design|Super-agent 设计探索（信源页）]]
+- [[weixin-superagent-architecture-teardown|架构拆解：DeepSeek 刚发布的 Super-agent（信源页）]]
 - [[super-agent]]

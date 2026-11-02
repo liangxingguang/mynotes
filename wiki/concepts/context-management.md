@@ -17,6 +17,7 @@ sources:
   - raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md
   - raw/sources/ai/2026-11-02-namiagent-agent-tutorial.md
   - raw/sources/ai/2026-11-02-superagent-design.md
+  - raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/concepts/harness-engineering.md
@@ -101,6 +102,8 @@ Super-agent 信源把上下文窗口当作 Cache 管理，归纳两个注入操�
 
 - 2026-11-02 — 新增 Super-agent 架构信源 `raw/sources/ai/2026-11-02-superagent-design.md`（DeepSeek Harness 团队）。补上**事件注入的 Inline & Spill 方法**与**链式召回（Chain of Recall）**机制：把上下文窗口当 Cache 管理，Inline 近期高概率用到的信息、Spill 超预算内容留引用；为 Trigger/Thread/Worker 等对象赋唯一 ID 构成引用图，模型顺引用关系多跳按需召回，缓解长程丢失上下文。这是对本概念"裁剪/压缩/隔离"三手段在事件驱动场景下的补充（Inline & Spill 侧重注入时机与引用图召回，与三手段不互斥）。由此新建概念页 [[super-agent]]、[[router-worker-architecture]]、[[event-driven-agent]]、[[watchdog-control-loop]]。
 
+- 2026-11-02 — 新增 Super-agent 原型拆解信源 `raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md`（第 7 信源）。补上**链式召回的实例与动机**：旧版客户端限制留在群聊里，后续修改需沿消息/Thread/Worker 引用找回那条补充；记录留在数据库中还得在需要时读到，否则模型仍按旧条件继续改。与第 6 信源互证：引用图召回是"磁盘全量、窗口有损"铁律在事件驱动场景的延伸——可见性靠引用链按需恢复，有损性靠 Spill 摘要兜底。
+
 ## Open Questions（开放问题）
 
 - 三层记忆（工作记忆 Redis / 长期记忆 pgvector）与 RAG 的分界，待该系列第 11 篇信源补充。
@@ -113,6 +116,7 @@ Super-agent 信源把上下文窗口当作 Cache 管理，归纳两个注入操�
 - Source: `raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md`（第 4 信源：预算六类分配与输出预留、压缩四招、编排层组装裁剪、不可压缩结构化事实落独立存储、丢上下文判据）
 - Source: `raw/sources/ai/2026-11-02-namiagent-agent-tutorial.md`（教学实现：网页端上下文逐轮可视化演示每轮全量重发）
 - Source: `raw/sources/ai/2026-11-02-superagent-design.md`（Inline & Spill 注入方法、链式召回引用图多跳召回）
+- Source: `raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md`（第 7 信源：链式召回实例——旧版客户端限制沿引用找回、记录读到否则按旧条件改）
 
 ## Related Knowledge（相关知识）
 

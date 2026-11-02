@@ -12,11 +12,13 @@ tags:
   - architecture
 sources:
   - raw/sources/ai/2026-11-02-superagent-design.md
+  - raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md
 related:
   - wiki/concepts/super-agent.md
   - wiki/concepts/event-driven-agent.md
   - wiki/concepts/agent-loop.md
   - wiki/concepts/context-management.md
+  - wiki/concepts/ticket-task-persistence.md
 ---
 # Router/Worker 双层架构
 
@@ -48,6 +50,8 @@ related:
 - 各 Worker 上下文隔离、独立推进任务
 - 同层 Worker 通常不需直接通信；冲突通过订阅同一 Thread 自行发现解决
 - Worker 内部可再创建 Subagent 或本身即 Agent Team，对 Router 透明
+- **WorkerSlots 人跟进优先**（原型拆解信源）：人的跟进可使用普通并发上限之外的额外名额，唤醒已有工作的优先级高于启动新工作；额外名额用满后仍需等待（拆解文第四节）
+- **observe/auto/明确请求三路径接单**（原型拆解信源）：系统从讨论里自行推断的任务默认 `observe` 模式（记录本来会接下什么，先不启动执行）；启用 `auto` 后按预写规则评估；人的明确请求另有处理路径（拆解文第四节）
 
 ## How It Works（运作方式）
 
@@ -76,6 +80,7 @@ related:
 ## Evolution（演进）
 
 - 2026-11-02 — 新建，信源为 DeepSeek Harness 团队架构探索文。
+- 2026-11-02 — 新增「架构师」公众号原型拆解信源（第 2 信源）：补上 WorkerSlots 人跟进额外名额与唤醒优先、observe/auto/明确请求三路径接单、批处理压测细节（批次 1.0→2.8、单请求 2.5s→3.9s，Prefill 并行分摊）、恢复前先查目录/Git/GitHub 再决定是否重做外部操作。
 
 ## Open Questions（开放问题）
 
@@ -86,8 +91,10 @@ related:
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-11-02-superagent-design.md`
+- Source: `raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md`（WorkerSlots/observe-auto/批处理压测/恢复核实）
 
 ## Related Knowledge（相关知识）
 
 - [[superagent-design|Super-agent 设计探索（信源页）]]
+- [[weixin-superagent-architecture-teardown|架构拆解：DeepSeek 刚发布的 Super-agent（信源页）]]
 - [[super-agent]]

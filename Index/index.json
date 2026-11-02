@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02 17:40",
+  "updated_at": "2026-11-02 18:43",
   "notes": [
     {
       "id": "2026-10-31-weixin-album-xuqiufenxi",
@@ -19,25 +19,6 @@
       "summary_status": "",
       "asset_ref": "",
       "wiki_status": "skipped"
-    },
-    {
-      "id": "2026-11-02-weixin-superagent-teardown",
-      "title": "架构拆解：DeepSeek 刚发布的 Super-agent",
-      "path": "Inbox/2026-11-02-weixin-superagent-teardown.md",
-      "created": "2026-11-02",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "工程实践"
-      ],
-      "source": "微信公众号文章（架构师 JiaGouX）",
-      "source_url": "https://mp.weixin.qq.com/s/cxfdWtDRfVunY5FU75oQGA",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "「架构师」公众号对 DeepSeek Super-agent 设计（详见 [[2026-11-02-weixin-superagent-design|库内已采集的 DeepSeek 原文]]）的独立拆解，结合公开原型 `dsh-superagent-prototype`（6337fc8）源码逐层解读：以\"导出文件打不开\"修复为贯穿案例，讲透 Router/Worker 两层职责、Trigger/Thread 订阅直通与批处理、Ticket/Assignment/Mandate 持久化、SQLite Store 事务先行启动、WorkerSlots 人跟进优先、observe/auto 接单模式、Inline & Spill 链式召回、Watchdog 停滞检测，以及实验数据的再解读（直通省约 27% 缓存 token，完成时间不变因 Router 未到吞吐瓶颈）。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/weixin-superagent-architecture-teardown.md",
-      "wiki_status": "pending"
     },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -6184,6 +6165,25 @@
       "summary": "一篇秒杀系统容量设计实战：以 1 个爆款 SKU、1000 件库存、下单接口 10 万 QPS 为假设，演示从预约量反推峰值（300 万预约 × 首秒 3%~5% 点击 ≈ 10 万），用三层漏斗把 10 万压到 2 万再压到 1000——DB 只按 1000 TPS 设计，而非按入口 QPS 等比放大。核心方案是 Redis Lua 原子预扣 + 32 库存分桶散热 key + Kafka 削峰落账 + DB 唯一索引兜底幂等，附每层组件容量推导与五条避坑清单。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-seckill-100k-qps.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-02-weixin-superagent-teardown",
+      "title": "架构拆解：DeepSeek 刚发布的 Super-agent",
+      "path": "Archive/2026-11-02-weixin-superagent-teardown.md",
+      "created": "2026-11-02",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
+      "source": "微信公众号文章（架构师 JiaGouX）",
+      "source_url": "https://mp.weixin.qq.com/s/cxfdWtDRfVunY5FU75oQGA",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "「架构师」公众号对 DeepSeek Super-agent 设计（详见 [[2026-11-02-weixin-superagent-design|库内已采集的 DeepSeek 原文]]）的独立拆解，结合公开原型 `dsh-superagent-prototype`（6337fc8）源码逐层解读：以\"导出文件打不开\"修复为贯穿案例，讲透 Router/Worker 两层职责、Trigger/Thread 订阅直通与批处理、Ticket/Assignment/Mandate 持久化、SQLite Store 事务先行启动、WorkerSlots 人跟进优先、observe/auto 接单模式、Inline & Spill 链式召回、Watchdog 停滞检测，以及实验数据的再解读（直通省约 27% 缓存 token，完成时间不变因 Router 未到吞吐瓶颈）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-superagent-architecture-teardown.md",
       "wiki_status": "ingested"
     }
   ]

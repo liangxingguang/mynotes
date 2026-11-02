@@ -3963,6 +3963,24 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/6akSvZW-gEm_PZJMri2OfQ",
       "asset_ref": "Assets/2026-11/netty-pipeline-handler-order.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md",
+      "sha256": "53bbba32c4ef30b663e8aec40fc999f2fdf2f7c9d2967be7f748246d216d67ed",
+      "registered_at": "2026-11-02",
+      "inbox_ref": "Archive/2026-11-02-weixin-superagent-teardown.md",
+      "pages": [
+        "wiki/sources/weixin-superagent-architecture-teardown.md",
+        "wiki/concepts/ticket-task-persistence.md",
+        "wiki/concepts/super-agent.md",
+        "wiki/concepts/router-worker-architecture.md",
+        "wiki/concepts/event-driven-agent.md",
+        "wiki/concepts/durable-execution.md",
+        "wiki/entities/deepseek-harness.md",
+        "wiki/concepts/context-management.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/cxfdWtDRfVunY5FU75oQGA",
+      "asset_ref": "Assets/2026-11/weixin-superagent-architecture-teardown.md"
     }
   ]
 }

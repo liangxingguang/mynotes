@@ -11,7 +11,7 @@ tags:
   - AI
   - 工程实践
 asset_ref: Assets/2026-11/weixin-superagent-architecture-teardown.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 架构拆解：DeepSeek 刚发布的 Super-agent

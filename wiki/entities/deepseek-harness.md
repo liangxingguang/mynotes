@@ -16,6 +16,7 @@ sources:
   - raw/sources/ai/2026-10-28-agent-harness-framework-selection.md
   - raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md
   - raw/sources/ai/2026-11-02-superagent-design.md
+  - raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md
 related:
   - wiki/decisions/harness-selection-deepagents.md
   - wiki/entities/deepagents.md
@@ -48,7 +49,9 @@ DeepSeek Harness 是调用 DeepSeek 模型的桌面 Agent 客户端（作者称"
 - **运行时自我改装**（非"自我进化"）：当前临时插件只完成了"发现缺口→生成并挂载"的第一步；版本管理、长期持久化、回归测试、权限审计、能力淘汰均未解决。
 - **Super-agent 内部实例**（2026-11-02 信源）：基于本 Harness 运行的 Super-agent 已在内部持续运行，参与问题复现与修复、代码审查响应与 Harness 自身迭代；同一任务可在 IM 与 GitHub 之间连续推进，实例可主动观察群聊并在无人 @ 时提交修复 PR。
 - **异步 ReAct Loop**（2026-11-02 信源）：耗时命令与子任务工具调用改为异步 `start()`/`stop()`，构成全双工交互，前台对话不被后台任务阻塞；该机制已在 Harness 中实现但尚未默认开启。
-- **dsh-superagent-prototype**（2026-11-02 信源）：验证 Super-agent 技术路线的 GitHub 原型插件，非 DeepSeek 正式产品。
+- **dsh-superagent-prototype**（2026-11-02 信源）：验证 Super-agent 技术路线的 GitHub 原型插件，非 DeepSeek 正式产品。拆解文对照版本 `6337fc8`（<https://github.com/deepseek-ai/dsh-superagent-prototype/tree/6337fc823ce20251c8de8085948165c81aaa701e>）；仓库明确说明与内部版本、设计文章并不完全一致，部分方向尚未实现。
+- **对照版本 ce7073d**（2026-11-02 拆解信源）：Super-agent 依托的 Harness 版本 `ce7073d51254c26cd63b22a60835b8f948deb447`，含会话持久化、子 Agent 与实验性 Agent Teams 文档（会话恢复、子 Agent 恢复、持久成员与共享任务板、消息唤醒未加载成员）。
+- **Ticket/Store/Engine 实现**（2026-11-02 拆解信源）：原型以 SQLite `Store` 持久化事件/任务关系/接单决定/待执行动作/消息发送状态；`Engine` 事务先行（任务+授权+派工+待执行动作同笔事务提交后才启动执行器）；`Effects` 队列退避重试 + `Outbox` 记发送状态。
 
 ## Products / Projects（产品／项目）
 
@@ -66,6 +69,7 @@ DeepSeek Harness 是调用 DeepSeek 模型的桌面 Agent 客户端（作者称"
 - 2026-10-28 — 知乎《Agent》系列第 5 篇 harness 选型文将其列为三家候选之一，因 developer preview 暂缓生产采用
 - 2026-10-31 — Pi 与 DSH 复杂度之争采集入库，补充 Cordis 插件架构、可逆组合机制与运行时自我改装视角
 - 2026-11-02 — Super-agent 架构探索文采集入库，补充 Super-agent 内部实例、异步 ReAct Loop（已实现未默认开启）、dsh-superagent-prototype 原型
+- 2026-11-02 — 「架构师」公众号原型拆解采集入库，补充 dsh-superagent-prototype 对照版本 6337fc8、Harness 对照版本 ce7073d（会话持久化/子 Agent/实验性 Agent Teams）、SQLite Store + Engine 事务先行 + Effects/Outbox 实现细节
 
 ## Current Understanding（当前认知）
 
@@ -77,3 +81,4 @@ Harness 把 Agent 能力组织为"模式预设"，降低新手配置门槛；PTC
 - `raw/sources/ai/2026-10-28-agent-harness-framework-selection.md`（官方仓库 developer preview 声明；三家中多模式+插件化最全）
 - `raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md`（Cordis 插件架构、可逆组合、运行时自我改装视角）
 - `raw/sources/ai/2026-11-02-superagent-design.md`（Super-agent 内部实例、异步 ReAct Loop 已实现未默认开启、dsh-superagent-prototype 原型、存算分离与 BYOM）
+- `raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md`（原型 6337fc8、Harness 对照版本 ce7073d、SQLite Store + Engine 事务先行 + Effects/Outbox、WorkerSlots、observe/auto 接单）

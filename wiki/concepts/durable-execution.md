@@ -19,6 +19,7 @@ sources:
   - raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md
   - raw/sources/architecture/2026-10-31-agent-platform-retry-resilience.md
   - raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md
+  - raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md
 related:
   - wiki/entities/pi.md
   - wiki/entities/kiso.md
@@ -68,6 +69,8 @@ Event Log 账本路线（Kiso 信源，第 6 信源）：Session 建立在只追
 
 Harness 里发生的每件事都是一个任务（效应三明治）：生成 LLM 回复=创建任务（保存"即将调用"记录→调用→持久化回答）；工具调用同理。重启后扫描存储，发现等待执行的操作接着运行。不可撤销效应（删文件、刷卡）要求效应本身能与持久性系统组合。
 
+Super-agent 原型实现（第 10 信源，拆解文第三节）：`Store` 用 SQLite 保存事件、任务关系、接单决定、待执行动作和消息发送状态；`Engine` 先把任务、授权依据、派工和待执行动作放进同一笔事务，提交后才启动执行器、投递输入或发送消息——解决"刚决定接单就在启动 Worker 前退出"的持久化缺口。发送失败时 `Effects` 队列记录失败并退避重试，`Outbox` 保存发送状态。但数据库事务覆盖不了外部副作用：平台已收到消息而本地未记成功时，重试会重复发送；运行中断的任务给新 Assignment 加恢复提示，先查目录、Git 历史和 GitHub 再决定是否重做外部操作。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -92,6 +95,7 @@ Harness 里发生的每件事都是一个任务（效应三明治）：生成 LL
 - 2026-10-31：[[mysql-10b-bulk-import-guide]] 第七信源在数据库批量导入领域独立复现"checkpoint + 幂等重放"不变量——水位表 `import_checkpoint`（batch_id/start_id/end_id/offset/status）记录分片导入位点，宕机恢复从位点继续，配合幂等键可无限重试、可重入；与 Agent/任务系统的 checkpoint 同构（状态推进与可重放位点原子落库），印证 checkpoint 是跨域通用原语而非 Agent 专属。
 - 2026-10-31：第八信源（agent-platform-retry-resilience）从"跨 Worker 恢复不得重置尝试数"角度补充持久化字段清单：`operation_id`/`idempotency_key`、`policy_version`、`attempt_reserved_count`（跨接管累计）、`operation_deadline`/`next_run_at`、`last_error_class`/`outcome_state`、`lease_owner`/`fencing_token`、`last_attempt_at`/`last_provider_request_id`；并确认两个不可消除的崩溃窗口（尝试预留与发送之间保守消耗机会、远程副作用提交与本地记录之间形成结果未知）——与第 3/4 信源的 fencing/对账机制同族，为"接管不重置次数"提供 Agent 平台语境下的字段级印证。
 - 2026-10-31：第九信源（Codex Harness 架构第六篇）从**恢复决策顺序与回执确认**角度补充：恢复入口先读持久记录区分界面断连与引擎中断，原执行仍在推进则重新订阅、已结束则读回结果、确认继续才进入新尝试；结果不明的外部写入按查询能力分级处理（业务单号查询/幂等键复用/保留未知状态待确认）——与第 3 信源 PAUSED_INDOUBT 冻结对账、「没有远端支持时保留未知状态比作出无法兑现的自动恢复承诺更符合实际接口能力」同调；其"数据库事务覆盖不了外部工具"（工具可能已完成写入而记录尚未保存）印证第 3/8 信源的出网三段式动机。E1 实测（原稿字节与修改时间均未变化才算保留）为恢复保留性提供第二个工程实证。
+- 2026-11-02：第十信源（Super-agent 原型拆解）从 **Engine 事务先行 + SQLite Store + Effects/Outbox** 角度补充：任务、授权依据、派工与待执行动作同笔事务提交后才启动执行器；发送失败经 Effects 队列退避重试、Outbox 记发送状态；并再次印证"数据库事务覆盖不了外部副作用"（平台已收到而本地未记成功时重试会重复发送，恢复前先查目录/Git/GitHub）。与第 3/8/9 信源的出网三段式、IN_DOUBT 冻结对账同族，为"先写存储、后可见"提供 Agent Harness 语境下的第三个实现实例。
 
 ## Open Questions（开放问题）
 
@@ -108,6 +112,7 @@ Harness 里发生的每件事都是一个任务（效应三明治）：生成 LL
 - Source: `raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md`（第 6 信源：Event Log 账本、Turn Commit、Persist Before Effect、uncertain 人工裁决、kill -9 实测）
 - Source: `raw/sources/architecture/2026-10-31-agent-platform-retry-resilience.md`（第 8 信源：跨 Worker 恢复字段清单、两个不可消除崩溃窗口、attempt_reserved_count 跨接管累计）
 - Source: `raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md`（第 9 信源：恢复决策四步顺序、回执分级处理、E1 原稿保留实测）
+- Source: `raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md`（第 10 信源：Engine 事务先行、SQLite Store、Effects 退避重试 + Outbox、外部副作用重复发送风险与恢复核实）
 - 同构印证（未列入 sources）：`raw/sources/architecture/2026-10-20-spring-async-to-task-table.md`（Java 任务表+Worker，业务系统版同一套三要素）
 
 ## Related Knowledge（相关知识）
