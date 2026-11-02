@@ -14,10 +14,12 @@ tags:
   - architecture
 sources:
   - raw/sources/architecture/2026-10-22-stress-test-capacity-planning.md
+  - raw/sources/architecture/2026-11-02-weixin-seckill-100k-qps.md
 related:
   - wiki/sources/netty-iot-gateway-resilient-design.md
   - wiki/sources/spring-boot-startup-speedup.md
   - wiki/sources/architect-road-2025-digest.md
+  - wiki/sources/weixin-seckill-100k-qps.md
 ---
 # 第二十课：高并发系统压测与容量规划（架构师之路）
 
@@ -36,6 +38,7 @@ related:
 - 机器数公式：峰值 QPS ÷ 单机容量（压测拐点值）× 冗余系数 1.3~1.5，反验水位 ≤70%。
 - 5 个失真坑：环境规格不一致、压测数据污染生产、连接池太小测的是池、参数全热缓存 TPS 虚高（CSV 参数化构造冷热分布：热点 5% 承担 60% 请求）、JVM 未预热。
 - 估算第一步是让监控数据说话：PromQL 取去年峰值、日均、接口占比、链路 TPS 比例。
+- 2026-11-02 信源补上**漏斗容量评估**的具体案例：秒杀场景 10 万 QPS 经三层漏斗（前端验证码 50% 通过→网关令牌桶→Redis 预扣）压到 2 万→1000，DB 按 1000 TPS 设计而非按入口 QPS 等比放大；并发用 Little's Law 换算（并发≈QPS×RT），DB 并发仅约 5，连接池按并发配；容量从预约量倒推（300 万预约×首秒 3%~5%≈10 万），"先有预约量输入再有 QPS 输出"；压测三段走（单机基线→集群线性→全链路峰值），与本页三板斧互证。
 
 ## Important Claims（重要论断）
 
@@ -69,3 +72,4 @@ related:
 ## Source（信源）
 
 - `raw/sources/architecture/2026-10-22-stress-test-capacity-planning.md`
+- `raw/sources/architecture/2026-11-02-weixin-seckill-100k-qps.md`（漏斗容量评估案例：三层漏斗压流量、Little's Law 并发换算、预约量倒推 QPS）

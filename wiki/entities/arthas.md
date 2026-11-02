@@ -24,11 +24,13 @@ sources:
   - raw/sources/architecture/2026-10-31-arthas-06-flame-graph.md
   - raw/sources/architecture/2026-10-31-arthas-07-when-not-to-use.md
   - raw/sources/misc/2026-10-31-weixin-album-arthas-usage.md
+  - raw/sources/architecture/2026-11-02-weixin-jvm-gc-log-heap.md
 related:
   - wiki/concepts/mcp.md
   - wiki/concepts/evidence-first-jvm-tuning.md
   - wiki/concepts/thread-stack-reading.md
   - wiki/concepts/ai-assisted-troubleshooting-workflow.md
+  - wiki/sources/weixin-jvm-gc-log-heap.md
 ---
 # Arthas
 
@@ -72,6 +74,7 @@ Arthas 是 Java 线上诊断工具，提供 dashboard、thread、trace、watch�
 - 2026-10-31 — 第十信源（同专辑第 6 篇，火焰图）补 profiler 读图方法论：三条读图规则（横轴是样本占比非时间线、上下是调用关系、找"平顶"热点）、三个常见误读（横轴当时间线、宽=慢、图上看不到等待）、从图到动作对照表（业务代码→优化算法、框架→查配置、零星分布→GC/锁/线程）、采样 30–60s 且必须覆盖问题时段、profiler 做不到的三件事（不判断对错、只看本进程、采样窗口外看不到）
 - 2026-10-31 — 第十一信源（同专辑第 7 篇，工具选型收尾）补「什么时候不该用 Arthas」决策框架：四种观测手段分工矩阵（日志/指标/链路/动态诊断的强弱对比）、该用四个信号（日志没打但代码走到、指标异常但不知哪个方法、怀疑线上代码不一致、问题偶发现场留不住）、不该用三个场景（当监控、跨服务排查、无预案紧急止损）、三项成本（attach 停顿、采样开销、redefine 风险）、决策顺序（先止损→看指标→查日志→看链路→动态诊断，越便宜越全局越靠前），为整个系列收尾
 - 2026-11-01 — 专辑目录信源：本系列目录页《arthas使用》（奇点智慧小助手，album_id=4743203736426643461，7 篇、倒序展示、read_count 153）登记为导航型信源；系列 7 篇已各自建独立信源页，目录信源记录内容脉络与「系列自称八篇 vs 专辑 7 篇」的口径差异
+- 2026-11-02 — GC 故障复盘信源：动态调日志级别止血——`logger --name com.example.report.ReportService --level WARN`（logback 生效），不重启、不掉流量，1 分钟把 Full GC 从 2 分钟一次压到 40 分钟一次；建议团队把 Arthas 预装在镜像里，出事时省下的是"先止血还是先定位"的判断空间
 
 ## Current Understanding（当前认知）
 
@@ -91,3 +94,4 @@ Java 排障领域接入 AI 的代表性路径：把诊断命令封装为 MCP 工
 - `raw/sources/architecture/2026-10-31-arthas-06-flame-graph.md`（profiler 火焰图读法：三条读图规则、三个误读、从图到动作对照表、采样 30–60s、profiler 做不到的三件事）
 - `raw/sources/architecture/2026-10-31-arthas-07-when-not-to-use.md`（工具选型收尾：四种观测手段分工、该用四个信号、不该用三个场景、三项成本、决策顺序）
 - `raw/sources/misc/2026-10-31-weixin-album-arthas-usage.md`（系列目录页：7 篇正序清单与内容脉络、目录获取方式、八篇口径差异）
+- `raw/sources/architecture/2026-11-02-weixin-jvm-gc-log-heap.md`（动态调日志级别止血：`logger --level WARN` 对 logback 生效，1 分钟 FGC 频率 2min→40min）

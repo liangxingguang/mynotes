@@ -3902,6 +3902,52 @@
       ],
       "source_url": "https://weibo.com/2194035935/5360094013557700",
       "asset_ref": "Assets/2026-11/weibo-namiagent.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-02-superagent-design.md",
+      "sha256": "504e702ffca6bb86cf9b281a792b71f4cb9e0179728b82906a091eda31bceb53",
+      "registered_at": "2026-11-02",
+      "inbox_ref": "Archive/2026-11-02-superagent-design.md",
+      "pages": [
+        "wiki/sources/superagent-design.md",
+        "wiki/concepts/super-agent.md",
+        "wiki/concepts/router-worker-architecture.md",
+        "wiki/concepts/event-driven-agent.md",
+        "wiki/concepts/watchdog-control-loop.md",
+        "wiki/concepts/context-management.md",
+        "wiki/concepts/agent-loop.md",
+        "wiki/entities/deepseek-harness.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/zoS7GlReWPhfCjENGxXCdg",
+      "asset_ref": "Assets/2026-11/wx-superagent-design.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-02-weixin-jvm-gc-log-heap.md",
+      "sha256": "d598f563c3a59691ed1677e5726b4c5c30bc6b983986eb2b5533d501b3a11e98",
+      "registered_at": "2026-11-02",
+      "inbox_ref": "Archive/2026-11-02-weixin-jvm-gc-log-heap.md",
+      "pages": [
+        "wiki/sources/weixin-jvm-gc-log-heap.md",
+        "wiki/concepts/g1-gc.md",
+        "wiki/concepts/log4j2-async-logging-thread-blocking.md",
+        "wiki/entities/arthas.md",
+        "wiki/sources/jvm-gc-troubleshooting-arthas.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/m8-jUMxd-_GUG6BXbl_J9A",
+      "asset_ref": "Assets/2026-11/weixin-jvm-gc-log-heap.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-02-weixin-seckill-100k-qps.md",
+      "sha256": "f02782e2b7b1e0844c020d99f239af21b61a49a051fb743981447f1d708f840c",
+      "registered_at": "2026-11-02",
+      "inbox_ref": "Archive/2026-11-02-weixin-seckill-100k-qps.md",
+      "pages": [
+        "wiki/sources/weixin-seckill-100k-qps.md",
+        "wiki/concepts/idempotency-design.md",
+        "wiki/sources/stress-test-capacity-planning.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/pBD5PTQ5f0nJUzbL4ql-ng",
+      "asset_ref": "Assets/2026-11/weixin-seckill-100k-qps.md"
     }
   ]
 }

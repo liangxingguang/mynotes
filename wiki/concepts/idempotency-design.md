@@ -22,6 +22,7 @@ sources:
   - raw/sources/architecture/2026-10-31-agent-platform-retry-resilience.md
   - raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md
   - raw/sources/architecture/2026-10-31-points-system-architecture-design.md
+  - raw/sources/architecture/2026-11-02-weixin-seckill-100k-qps.md
 related:
   - wiki/concepts/durable-execution.md
   - wiki/concepts/blue-green-deployment.md
@@ -39,6 +40,7 @@ related:
   - wiki/sources/local-message-table-distributed-transaction.md
   - wiki/concepts/mysql-bulk-import.md
   - wiki/sources/mysql-10b-bulk-import-guide.md
+  - wiki/sources/weixin-seckill-100k-qps.md
 ---
 # 幂等设计（Idempotency Design）
 
@@ -97,6 +99,7 @@ related:
 - 2026-10-31：[[agent-platform-retry-resilience]] 第八信源把幂等键明确为"服务端协议"而非请求头一行：工具端至少实现五项——对 `tenant_id + idempotency_key` 建立唯一约束、保存请求摘要拒绝同键不同参数、返回已完成结果并建立执行中/结果未知明确状态、保留去重记录覆盖恢复窗口、存在执行权竞争时验证 fencing 语义；键稳定派生自 `tenant_id + task_id + step_id + operation_id` 不含 attempt 序号，Worker 重启/接管/策略恢复不得改变键。Fencing Token 保护任务状态不被旧 Worker 覆盖，但不能单独阻止外部系统重复副作用——与第 3 信源"fencing 局限"互为印证。
 - 2026-11-01：面试深挖 84（第 9 信源）把幂等键的定法落到**模型调用链**：幂等键以业务维度的一次完整请求为单位，而非以单次模型调用为单位——一次用户提问可能触发多轮模型调用与多次工具调用，按单次调用定键会让重试只重放其中一环、状态错位。非确定性下幂等「更需要」：重试、超时重放、用户重复提交叠加，重复到达概率比传统链路更高。
 - 2026-11-01：积分系统架构（第 10 信源）在账户场景印证并细化：幂等键 = 业务方 + 业务单号 + 操作类型（消费/冻结/确认扣减/取消冻结是不同操作，不能共用含义模糊的键）；网关可拦重复流量但**最终幂等必须由积分核心持久化并用数据库唯一约束守住**；扣减绝不「先读余额、应用里判断后无条件覆盖」，原子扣减且 ≥0 由数据库并发控制保证——与本概念第 1 条同事务铁律同构的「变更本身必须原子」实例。
+- 2026-11-02：秒杀系统设计（第 11 信源）补上**三层幂等防御**模式：Redis 买家标记挡活动期重复点击（会过期、会随重启丢失）、Kafka 幂等挡重复投递、DB 唯一索引 (user_id, sku_id) 挡最终结果（不会过期、不随重启丢失）；消费端遇 `DuplicateKeyException` 直接当"已处理"跳过并 ack，不重试。三层各管一段，最终防线必须在数据库而非缓存——与第 5 信源"Lua 返回值幂等裁决"同构但层级不同（第 5 信源是缓存层内自洽裁决，本信源是跨层分级防御）。
 
 ## Open Questions（开放问题）
 
@@ -113,6 +116,7 @@ related:
 - Source: `raw/sources/architecture/2026-10-31-agent-platform-retry-resilience.md`（幂等键服务端协议五要素、键派生规则、fencing 局限的独立印证）
 - Source: `raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md`（第 9 信源：模型链路幂等键以业务完整请求为单位、非确定性下幂等更需要）
 - Source: `raw/sources/architecture/2026-10-31-points-system-architecture-design.md`（第 10 信源：积分幂等键三要素、DB 唯一约束守住、原子扣减不先读后覆盖）
+- Source: `raw/sources/architecture/2026-11-02-weixin-seckill-100k-qps.md`（第 11 信源：三层幂等防御——Redis 标记→Kafka→DB 唯一索引，DuplicateKeyException 当已处理跳过）
 
 ## Related Knowledge（相关知识）
 

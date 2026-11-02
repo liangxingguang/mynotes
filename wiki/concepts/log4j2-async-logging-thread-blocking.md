@@ -13,9 +13,11 @@ tags:
   - concurrency
 sources:
   - raw/sources/architecture/2026-10-28-log4j2-thread-block-pitfalls.md
+  - raw/sources/architecture/2026-11-02-weixin-jvm-gc-log-heap.md
 related:
   - wiki/sources/log4j2-thread-block-pitfalls.md
   - wiki/concepts/class-loading-parent-delegation.md
+  - wiki/sources/weixin-jvm-gc-log-heap.md
 ---
 # Log4j2 异步日志线程阻塞
 
@@ -66,6 +68,12 @@ AsyncAppender 的 BlockingQueue（默认 128）打满且 blocking=false 时，De
 - **入队时**：队列满丢弃日志（Discard 策略/自定义 Appender 忽略）
 - **出队后**：显式配置 `%ex` 代替默认 `%xEx`
 
+### 异步队列的内存钉住视角（Super-agent 信源补充）
+
+本页上述内容聚焦**线程阻塞**（入队前/入队时/出队后的 synchronized 类加载与队列满阻塞）。2026-11-02 信源从**内存钉住**角度补充同一机制的另一面：异步日志队列持有 LoggingEvent 的强引用，若事件中包含大对象（如 35MB 的 JSON 字符串），这些对象在队列排空前不会被 GC 回收——落盘速度跟不上生产速度时，队列成为大对象的"停尸房"。关键判据：队列未满、无丢日志、无阻塞业务线程，但大对象被稳稳钉在老年代，Full GC 反复触发却收不掉（回收后水位不降）。
+
+该信源使用 logback（AsyncAppender / ArrayBlockingQueue），但强引用钉住大对象的机制在 log4j2 的 AsyncAppender 中同样存在。两条视角互补：线程阻塞回答"什么时候业务线程被拖死"，内存钉住回答"什么时候内存被悄悄吃满"——两者都源于异步队列的有界强引用设计。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -90,6 +98,7 @@ AsyncAppender 的 BlockingQueue（默认 128）打满且 blocking=false 时，De
 - LOG4J2-2389（ThrowableProxy 缓存 key 不一致）在 2.11.1 修复 key 不一致，但 Map 仍每个 Throwable 新建
 - JDK-8145964 / JDK-8158475（Lambda $$Lambda$ 类名泄漏）在 JDK9 / 8U171 修复
 - 反射类加载问题（GeneratedMethodAccessor）至今未根治——JDK 高版本仍可能触发，取决于 inflationThreshold 配置
+- 2026-11-02 — 新增故障复盘信源 `raw/sources/architecture/2026-11-02-weixin-jvm-gc-log-heap.md`（logback）。补上**异步队列内存钉住**视角：队列持有 LoggingEvent 强引用，大对象在队列排空前不被 GC 回收；落盘速度跟不上生产速度时队列成为大对象"停尸间"。与本页线程阻塞视角互补——前者回答"什么时候业务线程被拖死"，后者回答"什么时候内存被悄悄吃满"。
 
 ## Open Questions（开放问题）
 
@@ -100,6 +109,7 @@ AsyncAppender 的 BlockingQueue（默认 128）打满且 blocking=false 时，De
 ## Evidence（证据）
 
 - Source: `raw/sources/architecture/2026-10-28-log4j2-thread-block-pitfalls.md`
+- Source: `raw/sources/architecture/2026-11-02-weixin-jvm-gc-log-heap.md`（异步队列内存钉住视角：logback AsyncAppender 强引用钉住 62 个 35MB 字符串共 2.1GB）
 
 ## Related Knowledge（相关知识）
 

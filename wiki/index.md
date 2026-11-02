@@ -314,6 +314,9 @@
 - [[cs329z-chinese-weibo-recommendation|微博推荐：斯坦福 CS329Z 教程中文翻译（AI Agent 自学）]]（2026-11-02，AI/课程资源/微博，推荐 CS329Z 中文翻译稿 github.com/wanghao-SunSky/cs329z-chinese，含练习+代码架构导读，微博单信源，置信度高）
 - [[accidental-cto-book|微博推荐：《The Accidental CTO》——创业公司 CTO 的系统架构实战手册]]（2026-11-02，架构/书籍/微博，六类问题框架（架构扩展/数据层设计/异步架构/可观测性/系统韧性/成本优化）+架构演化论，微博单信源，置信度中）
 - [[namiagent-agent-tutorial|微博推荐：NamiAgent——零基础 AI Agent 本地实战教程]]（2026-11-02，AI/Agent/教程/微博，100 行最小循环教学路径+本地 Agent+网页端上下文可视化，微博单信源，置信度中）
+- [[superagent-design|Super-agent 设计探索：迈向更自主的 Agent 系统]]（2026-11-02，AI/架构/Agent/微信，Super-agent 打破单 Session 绑定+双层架构+事件驱动+异步 ReAct+存算分离+BYOM+Watchdog，微信单信源，置信度中）
+- [[weixin-jvm-gc-log-heap|一行 log.info 打掉 8G 堆：每秒 500MB 大对象，是怎么把老年代喂满的]]（2026-11-02，Java/JVM/GC/日志/微信，log.info 打 35MB JSON 致 G1 humongous+异步队列钉住+Full GC 空转+jstat→histo→dump 三步定位+Arthas 改级别止血，微信单信源，置信度高）
+- [[weixin-seckill-100k-qps|从 0 设计 10 万 QPS 秒杀系统：10 万请求进来，只有 1000 个能碰到数据库]]（2026-11-02，架构/分布式系统/秒杀/Redis/Kafka/微信，三层漏斗压 10 万→2 万→1000+Redis Lua 预扣+32 桶散热+Kafka 削峰+DB 唯一索引幂等+容量推导表，微信单信源，置信度高）
 
 ## concept（概念）
 
@@ -485,6 +488,10 @@
 - [[spring-event-mechanism|Spring 事件机制]]（观察者模式；默认同步；@Async/@TransactionalEventListener 三大坑，单信源）
 - [[system-concept|系统概念（System Concept）]]（向前构想≠向上归纳+ISO/IEC/IEEE 15288 概念阶段+固定术语坑+概念≠系统蓝图，单信源，置信度中）
 - [[system-concept-design|系统概念设计方法论（六步 + Arcadia）]]（判定四问+概念与需求/方案/架构分界+Arcadia OA/SA/LA/PA 概念层黑盒+六步链+trade study+冻结基线六类制品+四问验收，单信源，置信度中）
+- [[event-driven-agent|事件驱动 Agent]]（环境事件驱动+Trigger+两级过滤+订阅直通+投机执行，DeepSeek Harness 团队架构探索文，单信源，置信度中）
+- [[router-worker-architecture|Router/Worker 双层架构]]（Router 常驻全局+Worker 上下文隔离+批处理+压测数据，DeepSeek Harness 团队架构探索文，单信源，置信度中）
+- [[super-agent|Super-agent]]（打破 Agent-单 Session 绑定+连续/高效/主动/持久四特征+五大模块，DeepSeek Harness 团队架构探索文，单信源，置信度中）
+- [[watchdog-control-loop|Watchdog 外部控制回路]]（主系统外独立 Control Loop+双重监控+定时驱动+自然语言交互，DeepSeek Harness 团队架构探索文，单信源，置信度中）
 
 ## entity（实体）
 

@@ -15,9 +15,12 @@ sources:
   - raw/sources/products/2026-10-14-deepseek-harness-7day-day1.md
   - raw/sources/ai/2026-10-28-agent-harness-framework-selection.md
   - raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md
+  - raw/sources/ai/2026-11-02-superagent-design.md
 related:
   - wiki/decisions/harness-selection-deepagents.md
   - wiki/entities/deepagents.md
+  - wiki/sources/superagent-design.md
+  - wiki/concepts/super-agent.md
 ---
 # DeepSeek Harness
 
@@ -43,6 +46,9 @@ DeepSeek Harness 是调用 DeepSeek 模型的桌面 Agent 客户端（作者称"
 - **基于 Cordis 的插件架构**（2026-10-29 信源）：模型适配器、工具注册表、会话日志、Agent Loop 全部是可装卸插件；各项注册是可卸载的副作用，系统能力随插件装载和卸载而变化。Agent 接口刻意不依赖某一种具体循环实现，调度逻辑本身可以被替换。
 - **可逆组合是核心机制**：能力既能加入也能退出，使同一个 Harness 可以承载多种 Agent。`tool-cordis` 扩展允许 Agent 在沙箱中临时定义并挂载工具（进程内生效，重启消失，不写入配置）。
 - **运行时自我改装**（非"自我进化"）：当前临时插件只完成了"发现缺口→生成并挂载"的第一步；版本管理、长期持久化、回归测试、权限审计、能力淘汰均未解决。
+- **Super-agent 内部实例**（2026-11-02 信源）：基于本 Harness 运行的 Super-agent 已在内部持续运行，参与问题复现与修复、代码审查响应与 Harness 自身迭代；同一任务可在 IM 与 GitHub 之间连续推进，实例可主动观察群聊并在无人 @ 时提交修复 PR。
+- **异步 ReAct Loop**（2026-11-02 信源）：耗时命令与子任务工具调用改为异步 `start()`/`stop()`，构成全双工交互，前台对话不被后台任务阻塞；该机制已在 Harness 中实现但尚未默认开启。
+- **dsh-superagent-prototype**（2026-11-02 信源）：验证 Super-agent 技术路线的 GitHub 原型插件，非 DeepSeek 正式产品。
 
 ## Products / Projects（产品／项目）
 
@@ -59,13 +65,15 @@ DeepSeek Harness 是调用 DeepSeek 模型的桌面 Agent 客户端（作者称"
 - 2026-10-14 — 7 天系列实操手册 Day 1 发布（本信源）
 - 2026-10-28 — 知乎《Agent》系列第 5 篇 harness 选型文将其列为三家候选之一，因 developer preview 暂缓生产采用
 - 2026-10-31 — Pi 与 DSH 复杂度之争采集入库，补充 Cordis 插件架构、可逆组合机制与运行时自我改装视角
+- 2026-11-02 — Super-agent 架构探索文采集入库，补充 Super-agent 内部实例、异步 ReAct Loop（已实现未默认开启）、dsh-superagent-prototype 原型
 
 ## Current Understanding（当前认知）
 
-Harness 把 Agent 能力组织为"模式预设"，降低新手配置门槛；PTC 模式体现了"以程序代替多轮工具往返"的省 token 思路（解读：与业界 programmatic tool calling 趋势一致）。2026-10-29 新增选型信源：引官方仓库声明基本确立"DeepSeek 官方出品"，此前"是否官方出品"的存疑解除；但其处 developer preview（官方明示将有兼容性破坏变更），生产采用须等稳定版。
+Harness 把 Agent 能力组织为"模式预设"，降低新手配置门槛；PTC 模式体现了"以程序代替多轮工具往返"的省 token 思路（解读：与业界 programmatic tool calling 趋势一致）。2026-10-29 新增选型信源：引官方仓库声明基本确立"DeepSeek 官方出品"，此前"是否官方出品"的存疑解除；但其处 developer preview（官方明示将有兼容性破坏变更），生产采用须等稳定版。2026-11-02 新增 Super-agent 架构信源：Harness 不仅是桌面客户端，更是 Super-agent 的承载平台——内部 Super-agent 实例已基于其运行，异步 ReAct Loop 已实现，存算分离与 BYOM 架构思路与其开放架构设计互证。
 
 ## Evidence（证据）
 
 - `raw/sources/products/2026-10-14-deepseek-harness-7day-day1.md`
 - `raw/sources/ai/2026-10-28-agent-harness-framework-selection.md`（官方仓库 developer preview 声明；三家中多模式+插件化最全）
 - `raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md`（Cordis 插件架构、可逆组合、运行时自我改装视角）
+- `raw/sources/ai/2026-11-02-superagent-design.md`（Super-agent 内部实例、异步 ReAct Loop 已实现未默认开启、dsh-superagent-prototype 原型、存算分离与 BYOM）

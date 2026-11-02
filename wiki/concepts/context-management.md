@@ -16,6 +16,7 @@ sources:
   - raw/sources/ai/2026-10-31-agent-harness-essay-ideal-harness.md
   - raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md
   - raw/sources/ai/2026-11-02-namiagent-agent-tutorial.md
+  - raw/sources/ai/2026-11-02-superagent-design.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/concepts/harness-engineering.md
@@ -27,6 +28,7 @@ related:
   - wiki/entities/kiso.md
   - wiki/entities/namiagent.md
   - wiki/sources/namiagent-agent-tutorial.md
+  - wiki/sources/superagent-design.md
 ---
 # 上下文管理（Context Management）
 
@@ -67,6 +69,12 @@ Claude Code 官方做法分两层（信源 §3.4 引用核验）：先清旧工�
 
 配套机制：`/compact`（手动压缩，可带聚焦指令——有损所以要让用户指定保什么）、`/context`（先看见开销）；**压缩本身也要有终止条件**——单文件大到「压缩完立刻又满」时 Claude Code 报 thrashing error 而非无限循环。设计规则三条：当前任务必要事实留窗口；确定性规则进持久文件；超大工具结果先在工具端截断/摘要再进窗口。
 
+### Inline & Spill 与链式召回（Super-agent 信源）
+
+Super-agent 信源把上下文窗口当作 Cache 管理，归纳两个注入操作：**Inline**（近期很可能用到的信息直接内联进窗口，省工具调用往返）、**Spill**（超出预算或低频的完整信息留窗口外，仅留引用或摘要供按需读取）。结合局部性思想逐步优化：①从最少信息开始（对象 ID + 摘要）；②逐步 Inline 关联信息（先附紧密关联对象 ID，再附带时空相邻内容如消息前后文、相邻评论）；③超出上限则 Spill（截断并保留续读入口）。
+
+**链式召回（Chain of Recall）**：为 Trigger、Thread、Worker Session 等对象赋予唯一 ID，注入时内联关联对象 ID，构成引用图；每次工具召回的对象本身也遵循 Inline & Spill，返回结果内联下一跳摘要与 ID，模型可从当前事件顺引用关系多跳按需召回上下文。这缓解了 Router 层在长程中丢失先前信息的问题。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -91,6 +99,8 @@ Claude Code 官方做法分两层（信源 §3.4 引用核验）：先清旧工�
 
 - 2026-11-02 — 新增教学实现信源 `raw/sources/ai/2026-11-02-namiagent-agent-tutorial.md`（微博推荐 NamiAgent）。其网页端"右侧看每次发给模型的完整上下文，一圈圈怎么变长"是本概念"每轮全量重发、窗口是一块有预算的内存"的直观可视化演示——把抽象的 token 预算变成可见的逐轮增长，可作为入门教学的演示材料（教程站点本身未经抓取核验）。
 
+- 2026-11-02 — 新增 Super-agent 架构信源 `raw/sources/ai/2026-11-02-superagent-design.md`（DeepSeek Harness 团队）。补上**事件注入的 Inline & Spill 方法**与**链式召回（Chain of Recall）**机制：把上下文窗口当 Cache 管理，Inline 近期高概率用到的信息、Spill 超预算内容留引用；为 Trigger/Thread/Worker 等对象赋唯一 ID 构成引用图，模型顺引用关系多跳按需召回，缓解长程丢失上下文。这是对本概念"裁剪/压缩/隔离"三手段在事件驱动场景下的补充（Inline & Spill 侧重注入时机与引用图召回，与三手段不互斥）。由此新建概念页 [[super-agent]]、[[router-worker-architecture]]、[[event-driven-agent]]、[[watchdog-control-loop]]。
+
 ## Open Questions（开放问题）
 
 - 三层记忆（工作记忆 Redis / 长期记忆 pgvector）与 RAG 的分界，待该系列第 11 篇信源补充。
@@ -102,6 +112,7 @@ Claude Code 官方做法分两层（信源 §3.4 引用核验）：先清旧工�
 - Source: `raw/sources/ai/2026-10-31-agent-harness-essay-ideal-harness.md`（第 3 信源：注入式 token 账——MCP 30K 注入示例、cache read 占比 97%、Desktop 10% 额度差、256K 有效窗口；均为社区说法，confidence 中）
 - Source: `raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md`（第 4 信源：预算六类分配与输出预留、压缩四招、编排层组装裁剪、不可压缩结构化事实落独立存储、丢上下文判据）
 - Source: `raw/sources/ai/2026-11-02-namiagent-agent-tutorial.md`（教学实现：网页端上下文逐轮可视化演示每轮全量重发）
+- Source: `raw/sources/ai/2026-11-02-superagent-design.md`（Inline & Spill 注入方法、链式召回引用图多跳召回）
 
 ## Related Knowledge（相关知识）
 

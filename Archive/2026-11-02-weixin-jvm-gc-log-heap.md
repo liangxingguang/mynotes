@@ -11,7 +11,7 @@ tags:
   - 工程实践
   - Java
 asset_ref: Assets/2026-11/weixin-jvm-gc-log-heap.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 一行 log.info 打掉 8G 堆：每秒 500MB 大对象，是怎么把老年代喂满的

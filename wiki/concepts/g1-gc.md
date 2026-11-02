@@ -13,10 +13,12 @@ tags:
   - gc
 sources:
   - raw/sources/architecture/2026-10-27-jvm-gc-interview-guide.md
+  - raw/sources/architecture/2026-11-02-weixin-jvm-gc-log-heap.md
 related:
   - wiki/concepts/zgc.md
   - wiki/concepts/evidence-first-jvm-tuning.md
   - wiki/topics/jvm-gc.md
+  - wiki/sources/weixin-jvm-gc-log-heap.md
 ---
 # G1 垃圾收集器（Garbage-First）
 
@@ -55,6 +57,7 @@ GC 模式：Young GC（只清 Eden/Survivor，STW）→ 老年代占用达 IHOP�
 ## Evolution（演进）
 
 - JDK 7u4 引入 → JDK 9 成为默认收集器（取代 Parallel）。
+- 2026-11-02 — 新增故障复盘信源 `raw/sources/architecture/2026-11-02-weixin-jvm-gc-log-heap.md`。补上 **humongous 分配的具体数值与诊断信号**：单对象超过 region 一半（2MB，8G 堆默认 2048 个 4MB region）即按 humongous 分配，不经年轻代筛选，35MB 的 JSON 字符串横跨 9 个 region 直接算进老年代占用；humongous region 要等并发标记周期结束才真正释放，分配速率跑赢回收速率时 JVM 退回 Full GC 兜底；GC 日志里出现 `Humongous allocation` 或 `To-space exhausted` 字样时直接往"谁在分配大对象"上查。该信源同时把 humongous 分配与异步日志队列强引用钉住结合为完整根因链（日志大对象 → humongous 入老年代 → 队列引用延长生命周期 → Full GC 空转），是 humongous 分配从机制到实战的完整案例。
 
 ## Open Questions（开放问题）
 
@@ -63,6 +66,7 @@ GC 模式：Young GC（只清 Eden/Survivor，STW）→ 老年代占用达 IHOP�
 ## Evidence（证据）
 
 - Source: `raw/sources/architecture/2026-10-27-jvm-gc-interview-guide.md`
+- Source: `raw/sources/architecture/2026-11-02-weixin-jvm-gc-log-heap.md`（humongous 分配实战：2MB 阈值、35MB 跨 9 region、Humongous allocation 诊断信号、与异步队列引用结合的完整根因链）
 
 ## Related Knowledge（相关知识）
 

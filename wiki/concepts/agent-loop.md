@@ -24,6 +24,7 @@ sources:
   - raw/sources/ai/2026-10-28-agent-model-selection-reasoning.md
   - raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md
   - raw/sources/ai/2026-11-02-namiagent-agent-tutorial.md
+  - raw/sources/ai/2026-11-02-superagent-design.md
 related:
   - wiki/concepts/harness-engineering.md
   - wiki/entities/pi.md
@@ -40,6 +41,8 @@ related:
   - wiki/concepts/thinking-mode.md
   - wiki/entities/namiagent.md
   - wiki/sources/namiagent-agent-tutorial.md
+  - wiki/sources/superagent-design.md
+  - wiki/concepts/super-agent.md
 ---
 # Agent Loop
 
@@ -139,6 +142,8 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 
 - 2026-11-02 — 新增教学实现信源 `raw/sources/ai/2026-11-02-namiagent-agent-tutorial.md`（微博推荐 NamiAgent）。把本页 Loop 落到"100 行最小循环"的教学实现：从最小可运行循环开始、一课加一个能力（读写文件、执行命令、MCP、长期记忆）、最后拆解 Claude Code/Codex 等主流 Agent——印证本页"可靠 Loop 五条边界"是逐课叠加的能力而非一次性设计；其网页端左侧展示每轮推理与工具调用、右侧展示完整上下文逐轮变长，是 [[context-management|上下文管理]]"每轮重备 Context"的可视化演示（教程站点本身未经抓取核验）。由此新建实体页 [[namiagent|NamiAgent]]。
 
+- 2026-11-02 — 新增 Super-agent 架构信源 `raw/sources/ai/2026-11-02-superagent-design.md`（DeepSeek Harness 团队）。补上**异步 ReAct Loop** 机制：经典同步 `run()` 调用会阻塞循环直到工具完成，期间会话无法响应新输入；改为异步 `start()`/`stop()` 后模型调用 `start()` 立即收到"已启动"返回、循环不再等待，后台工具完成后结果作为新事件投递进会话，模型也可 `stop()` 终止过长命令——前台对话与后台任务解耦，全双工。该机制已在 DeepSeek Harness 实现但未默认开启。这是对本页"停止信号多源性""每轮重备 Context"在交互层的具体演进（后台任务不再阻塞前台推理步）。由此新建概念页 [[super-agent]]、[[router-worker-architecture]]、[[event-driven-agent]]、[[watchdog-control-loop]]。
+
 ## Open Questions（开放问题）
 
 - 不同框架（LangGraph、AutoGen、各厂商 Agent SDK）对 Runtime/Harness 的划分与本文是否一致？
@@ -160,6 +165,7 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 - Source: `raw/sources/ai/2026-10-28-agent-model-selection-reasoning.md`（模型层：LLM() 默认填法、思考档的预算影响）
 - Source: `raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md`（印证：流结束≠任务终态、状态提交纪律、停止非回滚）
 - Source: `raw/sources/ai/2026-11-02-namiagent-agent-tutorial.md`（教学实现：100 行最小循环、一课加一个能力、网页端可视化每轮推理与上下文）
+- Source: `raw/sources/ai/2026-11-02-superagent-design.md`（异步 ReAct Loop：start/stop 全双工、前台后台解耦、已在 DeepSeek Harness 实现未默认开启）
 
 ## Related Knowledge（相关知识）
 

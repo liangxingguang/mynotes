@@ -13,10 +13,12 @@ tags:
   - arthas
 sources:
   - raw/sources/architecture/2026-10-21-jvm-gc-troubleshooting-arthas.md
+  - raw/sources/architecture/2026-11-02-weixin-jvm-gc-log-heap.md
 related:
   - wiki/entities/arthas.md
   - wiki/concepts/evidence-first-jvm-tuning.md
   - wiki/sources/gc-log-tuning-practice.md
+  - wiki/sources/weixin-jvm-gc-log-heap.md
 ---
 # JVM GC 排查实战（Arthas 版）
 
@@ -33,6 +35,7 @@ related:
 - 元空间/类加载器泄漏：`classloader` 看 numberOfInstances（同一 ClassLoader 多份=泄漏）与 loadedCountTotal；隔几分钟对比是否增长；`stack java.lang.ClassLoader loadClass` 定位加载源；`sc *CGLIB*/*Proxy*/*Lambda*` 查动态生成类；参考值：Spring Boot 正常 5000-20000 类、Metaspace 50-120MB，超 200MB 要查。
 - 五个处置场景：A 晋升过快（调年轻代）、B 内存泄漏（MAT 定位修代码：缓存上限/remove ThreadLocal/WeakHashMap）、C CMS 碎片（换 G1）、D 元空间（无泄漏设 MaxMetaspaceSize=512M 兜底，有泄漏修 CGLIB/Groovy/反射缓存）、E System.gc()（删代码或 -XX:+DisableExplicitGC）。
 - 收尾必须验证：dashboard 对比修复前后 YGC/FGC 频率、单次耗时、OU 趋势、Metaspace 稳定性。
+- 2026-11-02 信源补上**不依赖 Arthas 的轻量三步排查法**：`jstat -gcutil` 初筛（不停不触发 GC，看 Full GC 后老年代水位降不降——不降即强引用钉住）→ `GC.class_histogram` 摘流后看大对象分布（`[C` char[] 476 万个占 3.8GB 锁定字符串方向）→ heap_dump + MAT Path to GC Roots（排除弱引用，沿引用链找到 LoggingEvent 队列钉住 62 个 35MB 字符串共 2.1GB）。关键判据：Full GC 频繁分两种——垃圾太多（加内存能缓解）vs 活对象太多（只能改代码）；`jmap -histo:live` 和 `GC.class_histogram` 都会触发 Full GC，线上优先用 jstat 初筛、确认要 dump 了再摘流量。与本页 Arthas 七步法互补——jstat/jcmd 不依赖 attach，适合快速初筛；Arthas 适合需要动态诊断和止血的场景。
 
 ## Important Claims（重要论断）
 
@@ -62,3 +65,4 @@ related:
 ## Source（信源）
 
 - `raw/sources/architecture/2026-10-21-jvm-gc-troubleshooting-arthas.md`
+- `raw/sources/architecture/2026-11-02-weixin-jvm-gc-log-heap.md`（轻量三步排查法：jstat→GC.class_histogram→heap_dump，不依赖 Arthas attach；Full GC 频繁两分法判据）

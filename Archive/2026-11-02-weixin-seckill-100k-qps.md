@@ -12,7 +12,7 @@ tags:
   - 分布式系统
   - Kafka
 asset_ref: Assets/2026-11/weixin-seckill-100k-qps.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 从 0 设计 10 万 QPS 秒杀系统：10 万请求进来，只有 1000 个能碰到数据库
