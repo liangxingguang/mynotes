@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03 21:00",
+  "updated_at": "2026-11-03 21:05",
   "notes": [
     {
       "id": "20261103-bend-ai-agent-legacy-21",
@@ -17,7 +17,7 @@
       "summary": "旧系统对接是 Agent 落地的首要关卡（无标准接口/文档缺失/权限申请周期长）。本文给五步框架：系统盘点（九字段盘点表：API/认证/实时性/文档/负责人/变更频率/历史故障）、四类对接模式选型（API / 数据库只读+事件表 / RPA 界面自动化 / 中间件网关）、字段映射（数据字典/状态流转/异常码/幂等键）、灰度验证（先只读后写、白名单限流人工确认）、复盘总结。连锁零售案例：10 年旧 CRM，工单录入人力降 40%、录入 T+1→准实时、RPA 写回成功率 95%+。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-bend-ai-agent-legacy-21.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "20261103-bend-ai-approval-15",
@@ -671,6 +671,25 @@
       "summary": "线程数的关键不是任务\"名字\"，而是实际计算与等待比例。CPU 密集型从 N 或 N+1 开始（避免争抢 CPU）；阻塞式 I/O 密集型从 2N 开始（等待与计算交错），更一般估算公式：线程数 ≈ N × U × (1 + W/C)，最终须压测并受下游容量约束。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-article-9ulr.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-weixin-full-gc-troubleshooting",
+      "title": "一次Full GC排查实录——从GC日志到根因，完整推理链拆给你看",
+      "path": "Inbox/2026-11-03-weixin-full-gc-troubleshooting.md",
+      "created": "2026-11-03",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/iXh44LieBvK9vlm_RDSLHA",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "核心理念：GC排查本质是刑侦——GC日志是现场、dump是尸检、根因是凶手。\"重启能解决\"只是销毁证据，一个月后必复发。案例：服务每 20 秒一次 Full GC、暂停 800ms-1.2s、P99 飙到 3 秒；GC 日志显示老年代 409598K→409596K 只回收 2K（活对象占满）；jmap dump + MAT 定位 ConcurrentHashMap 占 2.1GB/52% 堆，key 为\"user:风险标签:88123xxx\"，GC Roots 指向静态字段 RiskLabelCache；代码只有 putIfAbsent 无 remove/无上限/无过期，40 万日活日涨 400MB，4G 堆约十天打满，与重启时间线吻合。修法三层：止血（监控+临时清理）、治本（Caffeine 有界缓存 maximumSize=50万+expireAfterWrite=1h，命中率 93%）、防线（static 集合类 code review 必查、老年代 80% 告警、GC.class_histogram 巡检）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-full-gc-troubleshooting.md",
       "wiki_status": "pending"
     },
     {
