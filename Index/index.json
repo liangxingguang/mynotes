@@ -17,7 +17,7 @@
       "summary": "本文从智能填单、风险识别、自动审批、异常预警四个维度，结合制造企业 OA 审批流 AI 改造案例，给出 AI+审批流设计框架：传统四大痛点、四大核心模块拆解、改造效果数据（填单时间减 85%、60% 单据自动审批、审批时长 3.5 天→4 小时），以及 PM 落地六步 SOP。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-bend-ai-approval-15.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "20261103-bend-ai-ticket-prd-16",

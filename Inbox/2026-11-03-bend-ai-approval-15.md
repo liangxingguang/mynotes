@@ -10,7 +10,9 @@ category: 学习
 tags: [产品]
 album: B端产品经理（专辑，32 篇，作者 大皮不皮）
 asset_ref: Assets/2026-11-03/weixin-bend-ai-approval-15.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-11-03T13:20:38.703Z"
+ingest_claim_id: 39224-1793712038703-0
 ---
 
 # AI+审批流：B端产品经理的智能化落地指南
