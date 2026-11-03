@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03 18:40",
+  "updated_at": "2026-11-03 18:42",
   "notes": [
     {
       "id": "2026-11-03-harvard-cs2680-agent-to-gpu",
@@ -57,6 +57,25 @@
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-article-qnf7.md",
       "wiki_status": "ingesting"
+    },
+    {
+      "id": "2026-11-03-thread-pool-core-size-n-plus-1-2n",
+      "title": "线程池核心线程数怎么配置？为什么 CPU 密集型常用 N+1，I/O 密集型常用 2N？",
+      "path": "Inbox/2026-11-03-thread-pool-core-size-n-plus-1-2n.md",
+      "created": "2026-11-03",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/9ulRxgGVj-8X9zbo6yycPA",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "线程数的关键不是任务\"名字\"，而是实际计算与等待比例。CPU 密集型从 N 或 N+1 开始（避免争抢 CPU）；阻塞式 I/O 密集型从 2N 开始（等待与计算交错），更一般估算公式：线程数 ≈ N × U × (1 + W/C)，最终须压测并受下游容量约束。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-article-9ulr.md",
+      "wiki_status": "pending"
     },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
