@@ -1,24 +1,6 @@
 {
-  "updated_at": "2026-11-03 21:06",
+  "updated_at": "2026-11-03 21:15",
   "notes": [
-    {
-      "id": "20261103-bend-ai-agent-legacy-21",
-      "title": "B端产品经理实操：AI Agent落地旧系统对接的完整框架",
-      "path": "Inbox/2026-11-03-bend-ai-agent-legacy-21.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484757&idx=1&sn=117baec9a73ce7ae952b07a342d57ca2&chksm=c4d184f9f3a60def21c41709c4d2ea24b7669a4f3dfa2221cbd48e8d5235f6aa3ef5fd343f4e#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "旧系统对接是 Agent 落地的首要关卡（无标准接口/文档缺失/权限申请周期长）。本文给五步框架：系统盘点（九字段盘点表：API/认证/实时性/文档/负责人/变更频率/历史故障）、四类对接模式选型（API / 数据库只读+事件表 / RPA 界面自动化 / 中间件网关）、字段映射（数据字典/状态流转/异常码/幂等键）、灰度验证（先只读后写、白名单限流人工确认）、复盘总结。连锁零售案例：10 年旧 CRM，工单录入人力降 40%、录入 T+1→准实时、RPA 写回成功率 95%+。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-ai-agent-legacy-21.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "20261103-bend-ai-approval-15",
       "title": "AI+审批流：B端产品经理的智能化落地指南",
@@ -6856,6 +6838,24 @@
       "summary": "「架构师」公众号对 DeepSeek Super-agent 设计（详见 [[2026-11-02-weixin-superagent-design|库内已采集的 DeepSeek 原文]]）的独立拆解，结合公开原型 `dsh-superagent-prototype`（6337fc8）源码逐层解读：以\"导出文件打不开\"修复为贯穿案例，讲透 Router/Worker 两层职责、Trigger/Thread 订阅直通与批处理、Ticket/Assignment/Mandate 持久化、SQLite Store 事务先行启动、WorkerSlots 人跟进优先、observe/auto 接单模式、Inline & Spill 链式召回、Watchdog 停滞检测，以及实验数据的再解读（直通省约 27% 缓存 token，完成时间不变因 Router 未到吞吐瓶颈）。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-superagent-architecture-teardown.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-ai-agent-legacy-21",
+      "title": "B端产品经理实操：AI Agent落地旧系统对接的完整框架",
+      "path": "Archive/2026-11-03-bend-ai-agent-legacy-21.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484757&idx=1&sn=117baec9a73ce7ae952b07a342d57ca2&chksm=c4d184f9f3a60def21c41709c4d2ea24b7669a4f3dfa2221cbd48e8d5235f6aa3ef5fd343f4e#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "旧系统对接是 Agent 落地的首要关卡（无标准接口/文档缺失/权限申请周期长）。本文给五步框架：系统盘点（九字段盘点表：API/认证/实时性/文档/负责人/变更频率/历史故障）、四类对接模式选型（API / 数据库只读+事件表 / RPA 界面自动化 / 中间件网关）、字段映射（数据字典/状态流转/异常码/幂等键）、灰度验证（先只读后写、白名单限流人工确认）、复盘总结。连锁零售案例：10 年旧 CRM，工单录入人力降 40%、录入 T+1→准实时、RPA 写回成功率 95%+。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-ai-agent-legacy-21.md",
       "wiki_status": "ingested"
     },
     {

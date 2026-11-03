@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-11-03 10:50:26",
+  "updated_at": "2026-11-03 13:13:24",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -4004,6 +4004,19 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484267&idx=1&sn=cb6e0abf87f2060aba5b944bb2821003&chksm=c4d182c7f3a60bd1384cd3f96e676aa85eb55261a7841c02bbf603c90708b7488560725c1427",
       "asset_ref": "Assets/2026-11-03/weixin-bend-rbac-01.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-03-weixin-bend-ai-agent-legacy-21.md",
+      "sha256": "3c0af6ba05865e61ad249fd57ee2d2e6fb13063e62e996e6e2d35c1dc0cb82c2",
+      "registered_at": "2026-11-03",
+      "inbox_ref": "Archive/2026-11-03-bend-ai-agent-legacy-21.md",
+      "pages": [
+        "wiki/sources/bend-ai-agent-legacy-integration.md",
+        "wiki/concepts/agent-legacy-system-integration.md",
+        "wiki/concepts/idempotency-design.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484757&idx=1&sn=117baec9a73ce7ae952b07a342d57ca2&chksm=c4d184f9f3a60def21c41709c4d2ea24b7669a4f3dfa2221cbd48e8d5235f6aa3ef5fd343f4e",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-ai-agent-legacy-21.md"
     }
   ]
 }

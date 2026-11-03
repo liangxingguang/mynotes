@@ -10,9 +10,7 @@ category: 学习
 tags: [产品]
 album: B端产品经理（专辑，32 篇，作者 大皮不皮）
 asset_ref: Assets/2026-11-03/weixin-bend-ai-agent-legacy-21.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-03T13:02:24.359Z"
-ingest_claim_id: 59920-1793710944359-0
+wiki_status: ingested
 ---
 
 # B端产品经理实操：AI Agent落地旧系统对接的完整框架

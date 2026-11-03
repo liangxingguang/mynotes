@@ -73,6 +73,7 @@
 - [[awesome-design-md|用 DESIGN.md 治 AI 生成的丑 UI：awesome-design-md 仓库]]（2026-10-16，AI/工具）
 - [[baidu-live-mcast-message-architecture|百度直播海量用户实时消息系统架构：长连接组播 mcast 实践]]（2026-10-23，IM/直播消息/组播）
 - [[batch-push-sharding-threadpool|第70篇：批量消息推送优化——百万级推送如何避免内存爆炸（分片 + 线程池 + 异步）]]（2026-10-31，Java/批量推送，游标分片+专用线程池+进度追踪+重试死信，代码块被采集器截断，单信源置信度中）
+- [[bend-ai-agent-legacy-integration|B端产品经理实操：AI Agent落地旧系统对接的完整框架]]（2026-11-03，产品/AI-Agent/旧系统对接，盘点九字段+四类对接模式选型+字段映射+灰度五步SOP+旧CRM工单Agent案例（人力降40%/T+1→准实时/RPA写回95%+），单信源置信度中）
 - [[bend-rbac-permission-system-design|B端RBAC权限系统完整产品设计：从需求梳理到落地验收]]（2026-11-03，产品/权限/RBAC，四核心对象+RBAC0-3模型层级+需求三梳理+七大功能模块+关键流程+异常边界+验收清单，与 Agent 权限模型互补，单信源置信度中）
 - [[claude-howto-github-tutorial|claude-howto：一套完整的 Claude Code 开源教程（GitHub 仓库）]]（2026-10-23，AI/资源，置信度低）
 - [[claude-skills-guide|从 0 到 1 拆解 Claude Skills：一次构建，永久生效（SKILLS 专栏 01）]]（2026-10-28，AI/Claude，置信度中）
@@ -329,6 +330,7 @@
 - [[agent-evaluation|业务 Agent 全生命周期评测]]（规则+LLM 裁判+人工复核，覆盖准入/门禁/压测/巡检；验收从正确性变成分布、单次对比不作数、回归集标注期望行为；货拉拉+叶小钗+Codex+面试深挖 84，四信源）
 - [[agent-as-memory|Agent as Memory（主 Agent 承担记忆职责）]]（主 Agent 协调子 Session 承担项目进展记忆；用户单点对接；长期记忆 Markdown 文件化+短期记忆主 Agent 化；单信源，置信度中）
 - [[agent-loop|Agent Loop]]（Runtime 驱动的模型-工具循环；Tool Call/Result、Message/Context/State/Session、Runtime vs Harness）
+- [[agent-legacy-system-integration|Agent 对接旧系统（Legacy System Integration）]]（盘点九字段+四类对接模式（API/只读+事件表/RPA/网关）选型五维度+字段映射四件套+灰度先只读后写+中间表人工确认安全边界+连锁零售旧CRM工单Agent案例，单信源置信度中）
 - [[agent-management-methodology|智能体管理方法论（WBS·交付约定·Scrum Sprint 三工具闭环）]]（瓶颈在人的管理能力而非模型能力；拆到能独立验收为止+人机分工准则+交付约定六维度+验收准则打勾表+每轮只改 1–2 条规则变量唯一，单信源置信度中）
 - [[agent-permission-model|Agent 权限模型（平台授权与本地运行）]]（权限=静态基线+指令临时授权+动态校验；租户划边界/Agent 定上限/指令收范围/MCP 网关兜底；凭证归属发起方用户+校验在调用方侧；本地 CLI 五模式+只读证明式放行 Unknown≠Safe；A2A 委派子授权⊆父授权；三信源，置信度中）
 - [[agent-sandboxing|Agent 沙箱隔离]]（能力限制而非行为审查；四条路径收窄可达面；脚本级/命令级/工具级/整体隔离）

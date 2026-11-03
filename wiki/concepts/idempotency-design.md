@@ -23,6 +23,7 @@ sources:
   - raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md
   - raw/sources/architecture/2026-10-31-points-system-architecture-design.md
   - raw/sources/architecture/2026-11-02-weixin-seckill-100k-qps.md
+  - raw/sources/ai/2026-11-03-weixin-bend-ai-agent-legacy-21.md
 related:
   - wiki/concepts/durable-execution.md
   - wiki/concepts/blue-green-deployment.md
@@ -100,6 +101,7 @@ related:
 - 2026-11-01：面试深挖 84（第 9 信源）把幂等键的定法落到**模型调用链**：幂等键以业务维度的一次完整请求为单位，而非以单次模型调用为单位——一次用户提问可能触发多轮模型调用与多次工具调用，按单次调用定键会让重试只重放其中一环、状态错位。非确定性下幂等「更需要」：重试、超时重放、用户重复提交叠加，重复到达概率比传统链路更高。
 - 2026-11-01：积分系统架构（第 10 信源）在账户场景印证并细化：幂等键 = 业务方 + 业务单号 + 操作类型（消费/冻结/确认扣减/取消冻结是不同操作，不能共用含义模糊的键）；网关可拦重复流量但**最终幂等必须由积分核心持久化并用数据库唯一约束守住**；扣减绝不「先读余额、应用里判断后无条件覆盖」，原子扣减且 ≥0 由数据库并发控制保证——与本概念第 1 条同事务铁律同构的「变更本身必须原子」实例。
 - 2026-11-02：秒杀系统设计（第 11 信源）补上**三层幂等防御**模式：Redis 买家标记挡活动期重复点击（会过期、会随重启丢失）、Kafka 幂等挡重复投递、DB 唯一索引 (user_id, sku_id) 挡最终结果（不会过期、不随重启丢失）；消费端遇 `DuplicateKeyException` 直接当"已处理"跳过并 ack，不重试。三层各管一段，最终防线必须在数据库而非缓存——与第 5 信源"Lua 返回值幂等裁决"同构但层级不同（第 5 信源是缓存层内自洽裁决，本信源是跨层分级防御）。
+- 2026-11-03：[[bend-ai-agent-legacy-integration]]（第 12 信源）补上 **Agent 写回旧系统的跨系统写**场景：幂等键+重试机制避免重复写单；与"中间表+人工确认"的安全边界配合，写动作一致性由幂等键与人工确认双重守住（案例量化数据为作者自述，未经独立验证）。
 
 ## Open Questions（开放问题）
 
