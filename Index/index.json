@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03 21:23",
+  "updated_at": "2026-11-03 21:27",
   "notes": [
     {
       "id": "20261103-bend-ai-approval-15",
@@ -653,6 +653,25 @@
       "summary": "线程数的关键不是任务\"名字\"，而是实际计算与等待比例。CPU 密集型从 N 或 N+1 开始（避免争抢 CPU）；阻塞式 I/O 密集型从 2N 开始（等待与计算交错），更一般估算公式：线程数 ≈ N × U × (1 + W/C)，最终须压测并受下游容量约束。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-article-9ulr.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-weixin-ai-architecture-design",
+      "title": "AI辅助架构设计：技术方案评审的智能搭档",
+      "path": "Inbox/2026-11-03-weixin-ai-architecture-design.md",
+      "created": "2026-11-03",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/6xfzXPlvEw0lohY-x9-AlQ",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "技术方案设计三个\"老大难\"：写方案到半夜（文档两天还没算思考）、评审会默契沉默（方案通过上线后才发现积压吞吐问题）、A 方案还是 B 方案（\"先上 B 后面再优化\"然后就没有后面了）。AI 不是替代架构师判断力，而是扩展认知带宽——四个角色：方案起草助手、评审预检员、Trade-off 分析师、接口与建模辅助。没有完美的架构，只有特定约束下的最优解；AI 帮你把约束显性化，让 trade-off 可讨论。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-ai-architecture-design.md",
       "wiki_status": "pending"
     },
     {
