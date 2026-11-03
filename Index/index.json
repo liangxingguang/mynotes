@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03 18:42",
+  "updated_at": "2026-11-03 18:44",
   "notes": [
     {
       "id": "2026-11-03-harvard-cs2680-agent-to-gpu",
@@ -18,6 +18,25 @@
       "summary": "哈佛 2026 秋季新课 CS2680《Modern AI Systems: Agents and System Optimizations》由 Juncheng Yang 主讲，围绕同一个 Agent 系统从应用层 Agent Loop 一路拆到推理服务与 GPU；5 个递进作业（Mads 系列）+ 期末项目，附 Agent/AI Infra 论文地图式阅读清单，课程主页资源值得收藏。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-article-wrhh.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-11-03-mica-voice-java-offline-speech-sdk",
+      "title": "告别云语音 API！Java 离线语音 SDK，一行 Maven 依赖，7 大音频能力本地运行",
+      "path": "Inbox/2026-11-03-mica-voice-java-offline-speech-sdk.md",
+      "created": "2026-11-03",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "AI"
+      ],
+      "source": "IT开源项目精选（微信公众号）",
+      "source_url": "https://mp.weixin.qq.com/s/o0OBULKXFmZEJCXA66Rzbg",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "mica-voice 把 sherpa-onnx 用纯 Java 重包装成\"声音 AI 全家桶\"SDK：一行 Maven 依赖即可离线跑通 ASR、TTS、声纹识别、VAD、说话人分离、降噪、关键词唤醒七大能力，Spring Boot/Solon 自动装配，音频数据不出本地，适合内网与隐私敏感场景。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-article-o0ob.md",
       "wiki_status": "pending"
     },
     {
