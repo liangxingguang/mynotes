@@ -1,60 +1,6 @@
 {
-  "updated_at": "2026-11-04 00:56",
+  "updated_at": "2026-11-04 03:48",
   "notes": [
-    {
-      "id": "20261103-bend-demand-review-04",
-      "title": "B端产品经理如何做需求评审，才能减少开发冲突？",
-      "path": "Inbox/2026-11-03-bend-demand-review-04.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484315&idx=1&sn=10e6510f9b024cf70f43a2c5a310f618&chksm=c4d18237f3a60b21106f0cfaed6451341c3e5195d3494e2dfb1d79d60da3bd6454bde8ebbb75#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "本文给出B端需求评审的可落地SOP，通过评审前三张表（目标范围/角色权限异常/验收回归）前置冲突、评审中先讲场景再讲功能、评审后用确认单锁定结论，以及常见冲突场景话术，帮助减少开发冲突。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-demand-review-04.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "20261103-bend-dynamic-form-13",
-      "title": "动态表单引擎从设计到落地：B端产品经理的实战框架",
-      "path": "Inbox/2026-11-03-bend-dynamic-form-13.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484568&idx=1&sn=c22243cc2ef5967abc2dd64d8ff01c9e&chksm=c4d18534f3a60c2273e0a70878b4651f3ed0709006f494724063c40ce59fd518d2298e81f1e0#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "本文结合 ERP 采购申请表单案例拆解动态表单引擎：四层能力（动态表单/校验/联动/版本管理）、Schema 描述一切、校验引擎六类规则、字段联动五种类型与防循环机制、版本管理兼容存量数据策略，落地后交付周期从 5 工作日缩到 1 工作日。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-dynamic-form-13.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "20261103-bend-engine-comparison-14",
-      "title": "B端产品经理实战：规则引擎、流程引擎、动态表单，什么场景用哪个？",
-      "path": "Inbox/2026-11-03-bend-engine-comparison-14.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484594&idx=1&sn=e6a8f953adc03c14b7df61fa50d5c8f1&chksm=c4d1851ef3a60c08ae120f9d45b04842267a5059f9f7a8ae451e8342576d4629ee86f20220cc#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "本文厘清三大引擎的本质边界与选型方法：动态表单管数据（字段/校验/布局）、流程引擎管流转（节点/审批/网关）、规则引擎管决策（条件/动作/优先级），用三个真实案例（车贷/ERP采购/CRM客户运营）说明组合用法，附选型 SOP 与常见误区。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-engine-comparison-14.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "20261103-bend-enterprise-systems-07",
       "title": "B端产品经理必懂的10个企业系统：从ERP到ITSM的实战地图",
@@ -6932,6 +6878,60 @@
       "summary": "本文给出B端产品需求调研的可复用SOP，覆盖调研准备、干系人识别、现场观察、五层提问框架、需求整理与优先级判断、调研报告输出六个环节，适合ERP/CRM/OA/供应链等系统直接使用。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-bend-demand-research-03.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-demand-review-04",
+      "title": "B端产品经理如何做需求评审，才能减少开发冲突？",
+      "path": "Archive/2026-11-03-bend-demand-review-04.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484315&idx=1&sn=10e6510f9b024cf70f43a2c5a310f618&chksm=c4d18237f3a60b21106f0cfaed6451341c3e5195d3494e2dfb1d79d60da3bd6454bde8ebbb75#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文给出B端需求评审的可落地SOP，通过评审前三张表（目标范围/角色权限异常/验收回归）前置冲突、评审中先讲场景再讲功能、评审后用确认单锁定结论，以及常见冲突场景话术，帮助减少开发冲突。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-demand-review-04.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-dynamic-form-13",
+      "title": "动态表单引擎从设计到落地：B端产品经理的实战框架",
+      "path": "Archive/2026-11-03-bend-dynamic-form-13.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484568&idx=1&sn=c22243cc2ef5967abc2dd64d8ff01c9e&chksm=c4d18534f3a60c2273e0a70878b4651f3ed0709006f494724063c40ce59fd518d2298e81f1e0#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文结合 ERP 采购申请表单案例拆解动态表单引擎：四层能力（动态表单/校验/联动/版本管理）、Schema 描述一切、校验引擎六类规则、字段联动五种类型与防循环机制、版本管理兼容存量数据策略，落地后交付周期从 5 工作日缩到 1 工作日。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-dynamic-form-13.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-engine-comparison-14",
+      "title": "B端产品经理实战：规则引擎、流程引擎、动态表单，什么场景用哪个？",
+      "path": "Archive/2026-11-03-bend-engine-comparison-14.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484594&idx=1&sn=e6a8f953adc03c14b7df61fa50d5c8f1&chksm=c4d1851ef3a60c08ae120f9d45b04842267a5059f9f7a8ae451e8342576d4629ee86f20220cc#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文厘清三大引擎的本质边界与选型方法：动态表单管数据（字段/校验/布局）、流程引擎管流转（节点/审批/网关）、规则引擎管决策（条件/动作/优先级），用三个真实案例（车贷/ERP采购/CRM客户运营）说明组合用法，附选型 SOP 与常见误区。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-engine-comparison-14.md",
       "wiki_status": "ingested"
     },
     {
