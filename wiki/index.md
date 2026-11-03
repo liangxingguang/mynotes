@@ -80,6 +80,9 @@
 - [[bend-batch-import-design|B端批量导入3个坑：校验、性能、异常处理（大皮不皮 第28篇）]]（2026-11-03，产品/B端/批量导入，数据治理本质+三层校验模型+异步六步+6态状态机（部分成功为常态）+错误报告7要素+部分成功策略+上线前自查8项，正文自 Assets 采集稿逐字收录，1px 占位图剔除，单信源置信度中）
 - [[bend-rbac-permission-system-design|B端RBAC权限系统完整产品设计：从需求梳理到落地验收]]（2026-11-03，产品/权限/RBAC，四核心对象+RBAC0-3模型层级+需求三梳理+七大功能模块+关键流程+异常边界+验收清单，与 Agent 权限模型互补，单信源置信度中）
 - [[bend-complex-system-breakdown-20|复杂B端系统拆解方法论：业务对象、单据、状态机、权限、异常（大皮不皮 第20篇）]]（2026-11-03，产品/B端/系统拆解，五件套框架（业务对象/单据/状态机/权限/异常）+业务对象三类与5-8个核心+单据四问+状态机四要素「先画状态再画页面」+RBAC双权限+异常三类六要素+车贷提前结清案例+SOP五步，正文自 Assets 采集稿逐字收录、1px 占位图剔除，单信源置信度中）
+- [[bend-contract-management-17|B端产品经理实战：合同管理系统从起草到归档的SOP（大皮不皮 第17篇）]]（2026-11-04，产品/B端/合同管理，全生命周期五阶段（起草/审批/签署/履约/归档）+只做审批流的漏损+装备制造案例（评审7天→2天/审计准备3天→0.5天）+PM六步SOP+AI提效五场景+面试答题框架，正文自 Assets 采集稿逐字收录、1px 占位图剔除，单信源置信度中）
+- [[bend-crm-manual-06|CRM产品经理实战手册：从业务建模到系统落地（大皮不皮 第6篇）]]（2026-11-04，产品/B端/CRM，客户资产经营系统定位+全生命周期五阶段+五大核心模块+CRM/ERP边界+三大业务建模方法+面试五问（CRM vs SCRM/标签体系/漏斗建模）+落地SOP六步，正文自 Assets 采集稿逐字收录、1px 占位图剔除，单信源置信度中）
+- [[bend-data-dashboard-25|B端数据看板怎么搭？指标树这样做，老板一眼看懂（大皮不皮 第25篇）]]（2026-11-04，产品/B端/数据看板，决策三问（达成/异常/责任人）+问句驱动指标树+三层指标树（结果/过程/执行）+首屏三级布局+指标字典7字段+口径治理+落地5步+PRD要点，6个案例指标树，正文自 Assets 采集稿逐字收录、1px 占位图剔除，单信源置信度中）
 - [[claude-howto-github-tutorial|claude-howto：一套完整的 Claude Code 开源教程（GitHub 仓库）]]（2026-10-23，AI/资源，置信度低）
 - [[claude-skills-guide|从 0 到 1 拆解 Claude Skills：一次构建，永久生效（SKILLS 专栏 01）]]（2026-10-28，AI/Claude，置信度中）
 - [[codex-agent-harness-architecture-6|Codex 桌面客户端开发（六）：Agent Harness 的架构设计]]（2026-10-31，AI/Agent/Harness，三模块状态所有权+三态分离+产物核验 E1–E4+评测标准，系列首篇入 wiki，单信源置信度中）
@@ -366,6 +369,7 @@
 - [[codemode|Codemode（代码模式工具编排）]]（模型写 JS 沙箱脚本编排工具调用，只回筛选结果；固定开销约减半，单次收益看返回格式）
 - [[collections-utility-class|Collections 工具类设计]]（算法委托+三类包装器工厂；同步/不可变均为视图，迭代须外部加锁；emptyList 单例零分配；单信源，置信度中）
 - [[complex-system-breakdown|复杂B端系统拆解方法论（五件套）]]（业务对象/单据/状态机/权限/异常五件套+SOP五步顺序；对象三类与核心5-8个；单据四问；状态机四要素；RBAC功能/数据权限+权限矩阵表；异常三类六要素；产出先文档表格后原型，单信源置信度中）
+- [[contract-lifecycle-management|合同全生命周期管理（CLM，B端）]]（起草→审批→签署→履约→归档五阶段链路，只做审批流的漏损；起草模板库/智能填充、审批动态路由、签署电子签、履约里程碑预警（易忽略价值高）、归档非终点（检索/审计/借阅）；PM六步SOP+AI提效五场景+装备制造案例指标，单信源置信度中）
 - [[concept-boundary-definition|概念边界界定（内涵/外延与三问）]]（内涵外延反变关系+界定范围三问+人为认知切片+按目的三种切法，单信源方法论，置信度中）
 - [[context-management|上下文管理（Context Management）]]（messages 全量重发下的体积工程：裁剪/压缩/隔离三手段+成对保留与磁盘全量两铁律；Claude Code 分层裁剪实证；Kiso 投影观+缓存经济学；注入式 token 账+预算六类分配与输出预留，四信源）
 - [[concurrenthashmap-internals|ConcurrentHashMap 并发设计（JDK 8+）]]（读无锁+CAS 空桶插+synchronized 桶头+sizeCtl 三态+协作扩容；单信源，置信度中）
@@ -378,9 +382,11 @@
 - [[dfd|DFD（数据流图）]]（四类元素+三个画错点+不画控制流+控制流三图分工，DeMarco/Gane-Sarson 经典出处转述，单信源，置信度中）
 - [[cpu-funnel-coding|CPU 漏斗（编码级性能模型）]]（砍掉无效解析/转换/对象，让 CPU 只做核心运算）
 - [[crdt|CRDT（无冲突复制数据类型）]]（交换律+结合律+幂等天然收敛；LSEQ/RGA/墓碑 GC 三拼图；离线友好，代价是每字符带 ID 内存膨胀 3~5 倍，单信源）
+- [[crm-system-design|CRM 系统设计框架（B端客户资产经营）]]（客户资产经营系统定位+全生命周期五阶段（获客→跟进→成交→履约→重复采买）+五大核心模块拆解+CRM/ERP边界+商机状态机+三大业务建模方法+面试五问+落地SOP六步+AI+CRM场景，单信源置信度中）
 - [[cross-process-surface-rendering|Surface 跨进程渲染]]（Surface Parcelable + SurfaceFlinger 跨进程合成，Binder 传 Surface 零拷贝传画面；Renderer 3→1，微信小游戏一手）
 - [[cursor-sharding|游标分片（Keyset Pagination 批扫）]]（WHERE id > lastId LIMIT size，性能恒定避免深分页，四种分片方式对比，哈希分片可并行，断点续跑，单信源置信度中）
 - [[data-flow-vs-control-flow|数据流与控制流的边界]]（看用途不看载体+两条定义+报文字段分类，单信源，置信度中）
+- [[dashboard-metric-tree|B端数据看板与指标树设计]]（决策三问（达成/异常/责任人）+问句驱动指标树+三层指标树（结果/过程/执行，每指标挂责任岗位与阈值）+首屏三级布局（结论卡→趋势→清单）+指标字典7字段与口径治理+灰模验证+落地5步+PRD五要点，单信源置信度中）
 - [[deep-thinking-five-tools|深度思考五工具（澄清-拆解-追问-反证-逆向）]]（按序收敛四步+发散出口一步，反认知闭合；YouCore 单信源，置信度中）
 - [[design-patterns-in-netty|Netty 设计模式全景（源码视角的模式识别）]]（十大模式源码落点+16 模式对照表；机制概念页的模式视角索引；单信源，置信度中）
 - [[durable-execution|持久执行（Durable Execution）]]（崩溃后断点精确恢复；效应三明治 + 版本化文档存储，非事件溯源；Kiso 补 Event Log 账本+uncertain 裁决+kill -9 实测路线；重试治理信源补跨 Worker 字段清单，八信源）

@@ -10,7 +10,7 @@ category: 学习
 tags: [产品]
 album: B端产品经理（专辑，32 篇，作者 大皮不皮）
 asset_ref: Assets/2026-11-03/weixin-bend-crm-manual-06.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # CRM产品经理实战手册：从业务建模到系统落地

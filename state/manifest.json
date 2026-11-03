@@ -4080,6 +4080,42 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484730&idx=1&sn=26f55c6b9c001fc14c43140c6e1253cf&chksm=c4d18496f3a60d8011c6f9891b0f0dc8d9b2448e66ab048b1026480c4ee9b8cbc7593752ba40",
       "asset_ref": "Assets/2026-11-03/weixin-bend-complex-system-breakdown-20.md"
+    },
+    {
+      "path": "raw/sources/products/2026-11-03-weixin-bend-contract-management-17.md",
+      "sha256": "fc8a6d9653cf871837c76e01b532d077f9f9ade0c6699ae323c40965fb6d72c5",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-bend-contract-management-17.md",
+      "pages": [
+        "wiki/sources/bend-contract-management-17.md",
+        "wiki/concepts/contract-lifecycle-management.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484661&idx=1&sn=ce8cace1f8fbef64b740817ac03794aa&chksm=c4d18559f3a60c4fa5fc0c215e6f2aba926a469a6ed17d3d87e4694476ed192e07b074115f8d",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-contract-management-17.md"
+    },
+    {
+      "path": "raw/sources/products/2026-11-03-weixin-bend-crm-manual-06.md",
+      "sha256": "da0b0712756f58dc3040ee4f50b504bdf626fe54b7e4ef0da317f67dc5bf53cb",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-bend-crm-manual-06.md",
+      "pages": [
+        "wiki/sources/bend-crm-manual-06.md",
+        "wiki/concepts/crm-system-design.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484343&idx=1&sn=bf9d22f5539caef9ff9616db6d59af36&chksm=c4d1821bf3a60b0dba1bbf17f951c613723928e728890552b0155e68636a1e590ce976485683",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-crm-manual-06.md"
+    },
+    {
+      "path": "raw/sources/products/2026-11-03-weixin-bend-data-dashboard-25.md",
+      "sha256": "96f11e62608193c086fe12eecaa2f7fa3b88cc76399ef0d1c34f0a4e176e2d03",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-bend-data-dashboard-25.md",
+      "pages": [
+        "wiki/sources/bend-data-dashboard-25.md",
+        "wiki/concepts/dashboard-metric-tree.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484879&idx=1&sn=9a0867be1f506e7d814d209c77a4b307&chksm=c4d18463f3a60d75475994c6b7f1245bde4b490036cbd48fefe8d902dae55ff97d61fe44f793",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-data-dashboard-25.md"
     }
   ]
 }

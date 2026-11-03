@@ -1,60 +1,6 @@
 {
-  "updated_at": "2026-11-03 23:12",
+  "updated_at": "2026-11-04 00:42",
   "notes": [
-    {
-      "id": "20261103-bend-contract-management-17",
-      "title": "B端产品经理实战：合同管理系统从起草到归档的SOP",
-      "path": "Inbox/2026-11-03-bend-contract-management-17.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484661&idx=1&sn=ce8cace1f8fbef64b740817ac03794aa&chksm=c4d18559f3a60c4fa5fc0c215e6f2aba926a469a6ed17d3d87e4694476ed192e07b074115f8d#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "合同管理系统远不止审批流，是从起草→审批→签署→履约→归档的全生命周期链路。五阶段设计要点：起草（模板库/条款库/相对方/智能填充）、审批（动态路由/会签或签加签）、签署（电子签/用印/实名）、履约（里程碑/提醒/风险预警，易忽略但价值高）、归档（全文检索/审计日志）。装备制造案例：评审周期 7 天→2 天，审计抽检准备 3 天→0.5 天。附 PM 六步 SOP 与 AI 提效点。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-contract-management-17.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "20261103-bend-crm-manual-06",
-      "title": "CRM产品经理实战手册：从业务建模到系统落地",
-      "path": "Inbox/2026-11-03-bend-crm-manual-06.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484343&idx=1&sn=bf9d22f5539caef9ff9616db6d59af36&chksm=c4d1821bf3a60b0dba1bbf17f951c613723928e728890552b0155e68636a1e590ce976485683#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "本文从业务建模、核心模块、数据指标、落地SOP四个维度整理 CRM 实战框架：客户全生命周期五阶段、五大核心模块拆解、三大业务建模方法、CRM 面试高频题与回答框架，以及从需求到上线的六步落地 SOP。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-crm-manual-06.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "20261103-bend-data-dashboard-25",
-      "title": "B端数据看板怎么搭？指标树这样做，老板一眼看懂",
-      "path": "Inbox/2026-11-03-bend-data-dashboard-25.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484879&idx=1&sn=9a0867be1f506e7d814d209c77a4b307&chksm=c4d18463f3a60d75475994c6b7f1245bde4b490036cbd48fefe8d902dae55ff97d61fe44f793#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "数据看板常见坑是把\"数据陈列\"当\"决策看板\"。老板打开看板要短时间回答三个问题：目标有没有达成？哪里出了异常？谁在负责处理？指标树三层：结果层（生意好不好：回款达成率/毛利达成率/准时交付率，面向老板）→过程层（为什么好/差：商机转化周期/报价审批时长/工单齐套率，面向管理岗）→执行层（谁在做什么：销售日均外呼量/实施任务及时完成率，面向一线）；每个指标必须挂责任岗位和预警阈值。首屏布局：顶部结论卡→中部趋势→下部清单。指标字典 7 字段先行。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-data-dashboard-25.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "20261103-bend-demand-research-03",
       "title": "B端产品经理怎么做需求调研？这套SOP建议收藏",
@@ -6932,6 +6878,60 @@
       "summary": "本文给出复杂 B 端系统拆解五件套：业务对象（主数据/业务凭证/配置数据三类，先抓核心 5-8 个）、单据（类型/要素/关系/审批流/打印/回单，分清谁发起/从哪来/经哪些环节/关联哪些对象）、状态机（状态/事件/动作/守卫条件，先画状态再画页面）、权限（RBAC，功能权限+数据权限，输出权限矩阵表）、异常（业务/系统/边界三类，明确触发条件/文案/是否可重试/谁处理/时限/冲正补偿）。车贷\"提前结清\"功能五件套串讲 + PM 执行 SOP 五步。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-bend-complex-system-breakdown-20.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-contract-management-17",
+      "title": "B端产品经理实战：合同管理系统从起草到归档的SOP",
+      "path": "Archive/2026-11-03-bend-contract-management-17.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484661&idx=1&sn=ce8cace1f8fbef64b740817ac03794aa&chksm=c4d18559f3a60c4fa5fc0c215e6f2aba926a469a6ed17d3d87e4694476ed192e07b074115f8d#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "合同管理系统远不止审批流，是从起草→审批→签署→履约→归档的全生命周期链路。五阶段设计要点：起草（模板库/条款库/相对方/智能填充）、审批（动态路由/会签或签加签）、签署（电子签/用印/实名）、履约（里程碑/提醒/风险预警，易忽略但价值高）、归档（全文检索/审计日志）。装备制造案例：评审周期 7 天→2 天，审计抽检准备 3 天→0.5 天。附 PM 六步 SOP 与 AI 提效点。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-contract-management-17.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-crm-manual-06",
+      "title": "CRM产品经理实战手册：从业务建模到系统落地",
+      "path": "Archive/2026-11-03-bend-crm-manual-06.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484343&idx=1&sn=bf9d22f5539caef9ff9616db6d59af36&chksm=c4d1821bf3a60b0dba1bbf17f951c613723928e728890552b0155e68636a1e590ce976485683#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文从业务建模、核心模块、数据指标、落地SOP四个维度整理 CRM 实战框架：客户全生命周期五阶段、五大核心模块拆解、三大业务建模方法、CRM 面试高频题与回答框架，以及从需求到上线的六步落地 SOP。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-crm-manual-06.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-data-dashboard-25",
+      "title": "B端数据看板怎么搭？指标树这样做，老板一眼看懂",
+      "path": "Archive/2026-11-03-bend-data-dashboard-25.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484879&idx=1&sn=9a0867be1f506e7d814d209c77a4b307&chksm=c4d18463f3a60d75475994c6b7f1245bde4b490036cbd48fefe8d902dae55ff97d61fe44f793#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "数据看板常见坑是把\"数据陈列\"当\"决策看板\"。老板打开看板要短时间回答三个问题：目标有没有达成？哪里出了异常？谁在负责处理？指标树三层：结果层（生意好不好：回款达成率/毛利达成率/准时交付率，面向老板）→过程层（为什么好/差：商机转化周期/报价审批时长/工单齐套率，面向管理岗）→执行层（谁在做什么：销售日均外呼量/实施任务及时完成率，面向一线）；每个指标必须挂责任岗位和预警阈值。首屏布局：顶部结论卡→中部趋势→下部清单。指标字典 7 字段先行。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-data-dashboard-25.md",
       "wiki_status": "ingested"
     },
     {
