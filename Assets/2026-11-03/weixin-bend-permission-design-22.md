@@ -1,0 +1,104 @@
+![图片](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
+
+B端产品经理做后台系统，权限设计是绕不开的硬能力。权限不是登录校验那么简单，而是功能权限、数据权限、字段权限三层交叉。很多系统上线后出现越权、数据泄露、审计不合规，问题不在代码，而在需求阶段权限边界没有画清。本文结合ERP、EHR、OA、CRM、车贷、物流、HIS等实际业务场景，拆解三层权限的设计方法。
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+后台💬关键词【权限模板】，自动获取功能《权限矩阵、数据权限规则、字段权限清单和SOP附件》
+
+## 一、功能权限：先管住“能做什么”
+
+功能权限控制用户能查看哪些菜单、进入哪些页面、执行哪些按钮。常见模型是RBAC：用户-角色-权限点。角色可继承，权限点拆分到按钮级，避免只控制到菜单。
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+示例
+
+OA审批中，普通员工只有“提交申请”和“查看本人流程”；部门经理增加“审批通过”“驳回”；HR可查看全公司考勤流程但不可编辑。
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+## 二、数据权限：再管住“能看哪些行”
+
+数据权限控制同一页面中，不同用户能浏览的数据范围。常见规则：全部、本部门及下级、本部门、本人、自定义。
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+案例
+
+CRM用户数据。销售员仅看自己的客户；销售经理看本团队客户；财务仅看回款相关客户。
+
+车贷系统中，风控专员仅看本人分配案件，组长看本组，贷后管理看逾期案件。
+
+物流系统里，仓库管理员仅看本仓库存，区域经理看区域内所有仓。
+
+实现上，数据权限要和功能权限解耦，在查询层注入数据范围条件，避免每个接口都写一遍。
+
+## 三、字段权限：精细控制“能看哪些列”
+
+字段权限是列级控制，处理敏感信息。权限类型分为可见、可编辑、加密。敏感字段包括薪资、身份证号、手机号、采买价、利润、供应商账户等。
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+案例
+
+EHR员工档案。HR可见薪资与证件号；部门经理仅看绩效与职级；员工仅看基础信息与考勤。字段控制到列，不是整页隐藏。
+
+车贷系统里，身份证号仅风控与合规可见完整值，用户支持团队查看掩码，如410\*\*\*\*\*\*\*\*\*\*\*1234。
+
+ERP中，采买价仅采买经理和财务可见，仓库只看数量、库位。HIS系统中，医师看诊疗字段，收费员看费用字段，库房看库存字段。
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+## 四、三张表把权限讲清楚
+
+很多权限返工，是因为需求文档里只写“管理员可查看”，没有写清范围。建议B端产品经理产出三张表：
+
+1.  功能权限矩阵：角色×菜单/按钮。
+    
+2.  数据权限规则表：角色×数据对象×数据范围。
+    
+3.  字段权限清单：对象×字段×角色×权限类型×加密规则。
+    
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+## 五、权限设计SOP
+
+1.  梳理角色与岗位：先识别用户类型，避免角色爆炸。
+    
+2.  列出功能点：菜单、页面、按钮、接口。
+    
+3.  定义数据范围：每个角色在核心对象上的数据边界。
+    
+4.  标记敏感字段：隐私、财务、合规相关字段。
+    
+5.  输出三张表：功能、数据、字段。
+    
+6.  开发评审与越权测试：前端隐藏不等于权限管控，接口层必须二次校验。
+    
+7.  上线后权限审计与变更流程：权限变更要有工单和留痕。
+    
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+## 六、权限设计常见问题
+
+*   只控菜单不控按钮，导致越权行为。
+    
+*   数据权限写死在页面，换个入口就绕过。
+    
+*   字段只在UI层隐藏，接口返回全部字段。
+    
+*   角色与权限点绑定太死，后续维护投入高。
+    
+*   没有权限审计，出了问题就无法定位。
+    
+
+👇👇过往同类文章，传送门👇👇
+
+[B端RBAC权限系统完整产品设计：从需求梳理到落地验收](https://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484267&idx=1&sn=cb6e0abf87f2060aba5b944bb2821003&scene=21#wechat_redirect)
+
+[复杂B端系统拆解方法论：业务对象、单据、状态机、权限、异常](https://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484730&idx=1&sn=26f55c6b9c001fc14c43140c6e1253cf&scene=21#wechat_redirect)
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)

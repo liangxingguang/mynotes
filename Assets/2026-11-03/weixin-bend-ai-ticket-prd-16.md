@@ -1,0 +1,254 @@
+![图片](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
+
+作为B端产品经理的你，如果正在负责用户支持/售后/ITSM工单系统升级，这篇PRD 2.0实战拆解会给你一套可直接复用的框架。希望对你有帮助。
+
+👉👉💬【工单系统PRD】，自动领取《AI工单系统 PRD 2.0 模板》👈👈
+
+工单系统不是新鲜事物，但AI能力的加入让它的产品设计逻辑发生了根本变化。过去我们设计工单，重点在状态流转、角色权限、SLA提醒；现在重点变成了：如何让机器理解工单内容、如何让派单更合理、如何让每次处理都沉淀为知识资产。
+
+## 一个实际案例：某电商售后工单系统升级
+
+某电商公司售后工单系统日均工单量 3.2 万，原人工分单平均耗时 4 分钟，错分率 7.5%。升级 AI 工单 2.0 后，智能分类准确率 91.6%，自动派单覆盖率 68.3%，知识库引用率从 11% 提升到 37%。一线处理人员平均处理时长从 6 分钟降到 2.4 分钟。
+
+这个案例的升级重点，正是本文要拆解的三个模块：智能分类、自动派单、知识库闭环。
+
+## PRD 2.0 核心升级点
+
+模块
+
+1.0 做法
+
+2.0 做法
+
+分类
+
+关键词规则、固定分类树
+
+大模型意图识别 + 多标签分类 + 置信度阈值
+
+派单
+
+固定队列、人工派单
+
+技能标签 + 负载均衡 + SLA优先级 + 自动派单
+
+知识库
+
+人工录入、更新慢
+
+工单处理完成后自动生成知识草稿，审核后闭环沉淀
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+## 一、背景与问题定义
+
+B端产品经理在设计 AI 工单系统时，需要先定义清楚问题边界。这里的问题不是“没有工单系统”，而是：
+
+*   工单量持续增长，人工分类效率低、错分率高；
+    
+*   派单依赖经验，负载不均衡，部分人员积压严重；
+    
+*   知识沉淀不足，重复问题反复处理，新员工上手门槛高；
+    
+*   管理者缺少数据抓手，无法准确判断瓶颈在分类、派单还是处理环节。
+    
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+## 二、目标与成功指标
+
+产品目标要可量化。建议 B 端产品经理在 PRD 中直接写清楚以下指标：
+
+*   智能分类准确率 ≥ 90%；
+    
+*   自动派单覆盖率 ≥ 65%；
+    
+*   知识库引用率 ≥ 30%；
+    
+*   平均初次响应时间下降 25%；
+    
+*   重复工单占比下降 20%。
+    
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+## 三、范围与用户故事
+
+本次 2.0 范围包含：工单创建、智能分类、自动派单、处理中知识推荐、处理完成知识沉淀、数据看板。
+
+核心用户故事：
+
+*   作为用户支持人员，我希望系统自动推荐分类，以减少手动选择时间；
+    
+*   作为工单处理人员，我希望系统在处理中推荐相关知识，以缩短处理时长；
+    
+*   作为管理者，我希望查看分类、派单、知识引用的数据，以优化团队负载。
+    
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+## 四、核心功能需求
+
+### 4.1 智能分类
+
+智能分类模块是 AI 工单系统的入口。设计时建议包含以下能力：
+
+1.  多模态输入：支持文本、图片 OCR、语音转文字；
+    
+2.  意图识别与多标签分类：大模型输出问题类型、业务线、紧急程度、情绪标签；
+    
+3.  置信度阈值：高于阈值自动分类，低于阈值转人工审核；
+    
+4.  人工纠偏回流：人工审核结果作为标注数据回流训练集，持续优化模型；
+    
+5.  多级分类树：一级分类为业务线，二级分类为问题类型，三级分类为具体场景。
+    
+
+实际案例中，系统将“订单退款未到账”自动分类为：一级分类“售后”，二级分类“退款”，三级分类“未到账”，紧急程度“普通”，情绪标签“中性偏负向”。
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+### 4.2 自动派单
+
+自动派单不是简单的“谁有空派给谁”，而是要综合多种因素：
+
+*   技能标签匹配：处理人员具备“退款”“订购”等标签才可接单；
+    
+*   当前负载：当前未结工单数、积压时长；
+    
+*   SLA 优先级：高优先级工单优先派给低负载、高技能匹配度人员；
+    
+*   历史处理质量评分：质量分高的人员优先接到复杂工单；
+    
+*   转派与升级规则：处理中若发现技能不匹配，可转派或升级至专家队列。
+    
+
+派单引擎可执行自动派单、抢单、指派、转派、升级五种模式。低置信度分类或高情绪风险工单自动转人工派单。
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+### 4.3 知识库闭环
+
+知识库闭环是 AI 工单系统 2.0 区别于传统工单系统的关键。设计要点包括：
+
+1.  处理中实时推荐：系统根据分类结果自动推荐知识库文章，处理人员可直接引用；
+    
+2.  处理完成自动摘要：工单关闭后，系统自动生成知识草稿，包含问题描述、处理步骤、处理结果；
+    
+3.  人工审核发布：知识草稿由知识管理员审核，通过后正式发布；
+    
+4.  检索与反馈：支持自然语言检索，处理人员可评价“有帮助/无帮助”；
+    
+5.  知识淘汰机制：长期无引用、负面反馈较多的知识自动下线或重审。
+    
+
+实际案例中，“订单退款未到账”工单处理完成后，系统自动生成知识草稿《退款时效与异常处理执行步骤》，审核发布后，后续同类工单处理时长从 6 分钟降到 2.4 分钟。
+
+> 工单系统的本质不是流程流转，而是知识的生产与复用。AI 让每一次处理都沉淀为资产。
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+## 五、流程与状态流转
+
+PRD 中建议用泳道图说明端到端流程，文字版如下：
+
+主流程：新建 → 智能分类 → 自动派单 → 处理中 → 处理完成 → 自动摘要 → 知识审核 → 已关闭
+
+异常流程：低置信度分类 → 人工分类 → 派单处理中技能不匹配 → 转派/升级知识审核不通过 → 返回草稿修改高情绪风险 → 人工派单 + 优先处理
+
+## 六、数据埋点与看板
+
+B 端产品经理需要定义清楚数据埋点，帮助团队判断系统是否达到预期。核心指标如下：
+
+指标
+
+说明
+
+分类准确率
+
+人工审核通过数 / 总工单数
+
+自动派单覆盖率
+
+自动派单数 / 总派单数
+
+知识库引用率
+
+引用知识工单数 / 总工单数
+
+重复工单占比
+
+命中重复工单数 / 总工单数
+
+平均初次响应时间
+
+工单新建到初次响应的平均时长
+
+人工纠偏率
+
+人工修改分类/派单结果的比例
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+## 七、验收标准
+
+PRD 上线前建议明确验收标准，例如：
+
+*   智能分类准确率 ≥ 90%；
+    
+*   自动派单覆盖率 ≥ 65%；
+    
+*   知识库引用率 ≥ 30%；
+    
+*   平均初次响应时间下降 25%；
+    
+*   知识库新条目从工单生成的比例 ≥ 20%。
+    
+
+## 八、风险与对策
+
+风险
+
+对策
+
+冷启动阶段数据不足
+
+规则兜底，逐步放量，积累标注数据
+
+模型误判
+
+低置信度人工审核，纠偏数据回流
+
+数据
+
+个体信息加密后再进入模型训练
+
+知识库质量参差
+
+审核机制 + 反馈淘汰机制
+
+处理人员抵触
+
+将知识推荐作为辅助而非强制，减少额外负担
+
+这篇文章的核心不是让你记住某个功能清单，而是帮助你建立一套AI 工单系统 PRD 2.0 的思考框架：从问题定义、指标设定，到智能分类、自动派单、知识库闭环，再到数据埋点、验收标准与风险对策。
+
+如果你正遇到工单系统升级的难题可以【工单系统PRD】，自动领取《AI工单系统 PRD 2.0 模板》查看附件资料，希望本篇对你有帮助。
+
+往期关联文章：[工单系统PRD撰写实战：一套可复用的需求文档拆解](https://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484284&idx=1&sn=7d46039bddd9c261039f89540622e9ce&scene=21#wechat_redirect)
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)

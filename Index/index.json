@@ -1,6 +1,564 @@
 {
-  "updated_at": "2026-11-03 19:17",
+  "updated_at": "2026-11-03 20:56",
   "notes": [
+    {
+      "id": "20261103-bend-ai-agent-legacy-21",
+      "title": "B端产品经理实操：AI Agent落地旧系统对接的完整框架",
+      "path": "Inbox/2026-11-03-bend-ai-agent-legacy-21.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484757&idx=1&sn=117baec9a73ce7ae952b07a342d57ca2&chksm=c4d184f9f3a60def21c41709c4d2ea24b7669a4f3dfa2221cbd48e8d5235f6aa3ef5fd343f4e#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "旧系统对接是 Agent 落地的首要关卡（无标准接口/文档缺失/权限申请周期长）。本文给五步框架：系统盘点（九字段盘点表：API/认证/实时性/文档/负责人/变更频率/历史故障）、四类对接模式选型（API / 数据库只读+事件表 / RPA 界面自动化 / 中间件网关）、字段映射（数据字典/状态流转/异常码/幂等键）、灰度验证（先只读后写、白名单限流人工确认）、复盘总结。连锁零售案例：10 年旧 CRM，工单录入人力降 40%、录入 T+1→准实时、RPA 写回成功率 95%+。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-ai-agent-legacy-21.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-ai-approval-15",
+      "title": "AI+审批流：B端产品经理的智能化落地指南",
+      "path": "Inbox/2026-11-03-bend-ai-approval-15.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484619&idx=1&sn=faba1bd4bb43f42a96d4331df557d1ab&chksm=c4d18567f3a60c71eb5fbfec3f51451c4e6d27910dab6efa95c953c4aeef0b0cc31450272094#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文从智能填单、风险识别、自动审批、异常预警四个维度，结合制造企业 OA 审批流 AI 改造案例，给出 AI+审批流设计框架：传统四大痛点、四大核心模块拆解、改造效果数据（填单时间减 85%、60% 单据自动审批、审批时长 3.5 天→4 小时），以及 PM 落地六步 SOP。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-ai-approval-15.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-ai-ticket-prd-16",
+      "title": "B端产品经理实战：AI工单系统PRD 2.0——从智能分类、自动派单到知识库闭环",
+      "path": "Inbox/2026-11-03-bend-ai-ticket-prd-16.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484642&idx=1&sn=4a693c61f045d70d2985885ebe065589&chksm=c4d1854ef3a60c5854ba23e70f43d35aa5111a8ed0cbded27beabcc7d114b42bee691f339e68#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文拆解 AI 工单系统 PRD 2.0 三模块：智能分类（大模型意图识别+多标签+置信度阈值）、自动派单（技能标签+负载均衡+SLA 优先级）、知识库闭环（处理完成自动生成知识草稿+审核+检索淘汰）。电商售后案例：分类准确率 91.6%、自动派单覆盖 68.3%、知识引用率 11%→37%、处理时长 6 分钟→2.4 分钟。附目标指标、数据埋点、验收标准与风险对策。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-ai-ticket-prd-16.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-approval-engine-08",
+      "title": "B端产品经理如何设计审批流引擎？节点流转、条件分支到落地验收全框架",
+      "path": "Inbox/2026-11-03-bend-approval-engine-08.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484401&idx=1&sn=7cc382b74f4e46072b7fc794050ffd2d&chksm=c4d1825df3a60b4b888d67c14d4c776653434702cc234b3ae11830cbe9ea40263b836f65b61e#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文给出审批流引擎的完整设计框架：节点流转（类型/处理人规则/超时策略/执行权限）、条件分支（核心要素/案例/设计建议）、落地验收（清单模板/验收过程/常见坑与处理），强调 60% 精力放在条件分支边界与异常流上。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-approval-engine-08.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-batch-import-28",
+      "title": "B端批量导入3个坑：校验、性能、异常处理",
+      "path": "Inbox/2026-11-03-bend-batch-import-28.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484950&idx=1&sn=66d977441498ef12f16d1dded00d55af&chksm=c4d187baf3a60eac234083d8e4cb0a1c01984bb67ee8ab2f8cb89962e4583a98e9b61943cc9e#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "批量导入终点不是\"导进去\"而是\"能处理、能追踪、能重来\"。坑一：只做前端校验不做后端业务校验——前端只处理格式（手机号 11 位/日期合法），业务规则（撞单/物料停用/账户匹配）必须后端三层校验模型（字段格式层/业务实体层/跨单据规则层）。坑二：同步导入大文件性能崩——异步任务+分片处理（1000-2000 行/片，每片独立事务）+进度可感知，任务状态机 6 态（部分成功是 B 端常态）。坑三：异常处理不清——错误报告文件（行号/主键/字段/级别/错误码/中文原因/处理建议）+三档错误级别（致命/行级/警告）+部分成功策略+失败行重试。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-batch-import-28.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-complex-system-breakdown-20",
+      "title": "复杂B端系统拆解方法论：业务对象、单据、状态机、权限、异常",
+      "path": "Inbox/2026-11-03-bend-complex-system-breakdown-20.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484730&idx=1&sn=26f55c6b9c001fc14c43140c6e1253cf&chksm=c4d18496f3a60d8011c6f9891b0f0dc8d9b2448e66ab048b1026480c4ee9b8cbc7593752ba40#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文给出复杂 B 端系统拆解五件套：业务对象（主数据/业务凭证/配置数据三类，先抓核心 5-8 个）、单据（类型/要素/关系/审批流/打印/回单，分清谁发起/从哪来/经哪些环节/关联哪些对象）、状态机（状态/事件/动作/守卫条件，先画状态再画页面）、权限（RBAC，功能权限+数据权限，输出权限矩阵表）、异常（业务/系统/边界三类，明确触发条件/文案/是否可重试/谁处理/时限/冲正补偿）。车贷\"提前结清\"功能五件套串讲 + PM 执行 SOP 五步。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-complex-system-breakdown-20.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-contract-management-17",
+      "title": "B端产品经理实战：合同管理系统从起草到归档的SOP",
+      "path": "Inbox/2026-11-03-bend-contract-management-17.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484661&idx=1&sn=ce8cace1f8fbef64b740817ac03794aa&chksm=c4d18559f3a60c4fa5fc0c215e6f2aba926a469a6ed17d3d87e4694476ed192e07b074115f8d#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "合同管理系统远不止审批流，是从起草→审批→签署→履约→归档的全生命周期链路。五阶段设计要点：起草（模板库/条款库/相对方/智能填充）、审批（动态路由/会签或签加签）、签署（电子签/用印/实名）、履约（里程碑/提醒/风险预警，易忽略但价值高）、归档（全文检索/审计日志）。装备制造案例：评审周期 7 天→2 天，审计抽检准备 3 天→0.5 天。附 PM 六步 SOP 与 AI 提效点。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-contract-management-17.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-crm-manual-06",
+      "title": "CRM产品经理实战手册：从业务建模到系统落地",
+      "path": "Inbox/2026-11-03-bend-crm-manual-06.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484343&idx=1&sn=bf9d22f5539caef9ff9616db6d59af36&chksm=c4d1821bf3a60b0dba1bbf17f951c613723928e728890552b0155e68636a1e590ce976485683#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文从业务建模、核心模块、数据指标、落地SOP四个维度整理 CRM 实战框架：客户全生命周期五阶段、五大核心模块拆解、三大业务建模方法、CRM 面试高频题与回答框架，以及从需求到上线的六步落地 SOP。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-crm-manual-06.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-data-dashboard-25",
+      "title": "B端数据看板怎么搭？指标树这样做，老板一眼看懂",
+      "path": "Inbox/2026-11-03-bend-data-dashboard-25.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484879&idx=1&sn=9a0867be1f506e7d814d209c77a4b307&chksm=c4d18463f3a60d75475994c6b7f1245bde4b490036cbd48fefe8d902dae55ff97d61fe44f793#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "数据看板常见坑是把\"数据陈列\"当\"决策看板\"。老板打开看板要短时间回答三个问题：目标有没有达成？哪里出了异常？谁在负责处理？指标树三层：结果层（生意好不好：回款达成率/毛利达成率/准时交付率，面向老板）→过程层（为什么好/差：商机转化周期/报价审批时长/工单齐套率，面向管理岗）→执行层（谁在做什么：销售日均外呼量/实施任务及时完成率，面向一线）；每个指标必须挂责任岗位和预警阈值。首屏布局：顶部结论卡→中部趋势→下部清单。指标字典 7 字段先行。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-data-dashboard-25.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-demand-research-03",
+      "title": "B端产品经理怎么做需求调研？这套SOP建议收藏",
+      "path": "Inbox/2026-11-03-bend-demand-research-03.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484297&idx=1&sn=d9fd3d04d43775e5bc9bd59a1b63cf7b&chksm=c4d18225f3a60b33c80ecb315817127f955c7a53c47d11c73055632a6494b99e8e196adebeb3#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文给出B端产品需求调研的可复用SOP，覆盖调研准备、干系人识别、现场观察、五层提问框架、需求整理与优先级判断、调研报告输出六个环节，适合ERP/CRM/OA/供应链等系统直接使用。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-demand-research-03.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-demand-review-04",
+      "title": "B端产品经理如何做需求评审，才能减少开发冲突？",
+      "path": "Inbox/2026-11-03-bend-demand-review-04.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484315&idx=1&sn=10e6510f9b024cf70f43a2c5a310f618&chksm=c4d18237f3a60b21106f0cfaed6451341c3e5195d3494e2dfb1d79d60da3bd6454bde8ebbb75#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文给出B端需求评审的可落地SOP，通过评审前三张表（目标范围/角色权限异常/验收回归）前置冲突、评审中先讲场景再讲功能、评审后用确认单锁定结论，以及常见冲突场景话术，帮助减少开发冲突。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-demand-review-04.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-dynamic-form-13",
+      "title": "动态表单引擎从设计到落地：B端产品经理的实战框架",
+      "path": "Inbox/2026-11-03-bend-dynamic-form-13.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484568&idx=1&sn=c22243cc2ef5967abc2dd64d8ff01c9e&chksm=c4d18534f3a60c2273e0a70878b4651f3ed0709006f494724063c40ce59fd518d2298e81f1e0#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文结合 ERP 采购申请表单案例拆解动态表单引擎：四层能力（动态表单/校验/联动/版本管理）、Schema 描述一切、校验引擎六类规则、字段联动五种类型与防循环机制、版本管理兼容存量数据策略，落地后交付周期从 5 工作日缩到 1 工作日。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-dynamic-form-13.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-engine-comparison-14",
+      "title": "B端产品经理实战：规则引擎、流程引擎、动态表单，什么场景用哪个？",
+      "path": "Inbox/2026-11-03-bend-engine-comparison-14.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484594&idx=1&sn=e6a8f953adc03c14b7df61fa50d5c8f1&chksm=c4d1851ef3a60c08ae120f9d45b04842267a5059f9f7a8ae451e8342576d4629ee86f20220cc#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文厘清三大引擎的本质边界与选型方法：动态表单管数据（字段/校验/布局）、流程引擎管流转（节点/审批/网关）、规则引擎管决策（条件/动作/优先级），用三个真实案例（车贷/ERP采购/CRM客户运营）说明组合用法，附选型 SOP 与常见误区。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-engine-comparison-14.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-enterprise-systems-07",
+      "title": "B端产品经理必懂的10个企业系统：从ERP到ITSM的实战地图",
+      "path": "Inbox/2026-11-03-bend-enterprise-systems-07.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484361&idx=1&sn=cc56ab06a344cecdc3cd09596ea8bf40&chksm=c4d18265f3a60b73e46841477a629ca14dc49f2593fcee45382bdc3290a898e2b2d6e212f793#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文梳理 10 个 B 端产品经理必须掌握的企业系统，每个系统给出定位、核心模块、关键指标和产品经理注意点，覆盖从内部资源到外部协同的全局框架。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-enterprise-systems-07.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-finance-reconciliation-10",
+      "title": "B端产品经理如何设计财务对账系统？从资金收付、ERP到物流结算的实战框架",
+      "path": "Inbox/2026-11-03-bend-finance-reconciliation-10.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484479&idx=1&sn=7b63fcb20196b6ed65de151654de4b11&chksm=c4d18593f3a60c858ea06de68b6a717c40a3ff89b3bfecab8bc13595276b05a5bdf5ddb4687f#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文用 7 个实际案例拆解财务对账系统设计：对账本质（业务/资金/财务三源一致性）、七层架构模型、电商日对账/SaaS银行流水认领/物流运费/ERP三单匹配/车贷还款/HIS医疗收费/AI智能对账，以及 PM 实操九步 SOP 和常见坑。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-finance-reconciliation-10.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-finance-reconciliation-prd-26",
+      "title": "B端PM财务对账与异常冲正：底层逻辑+落地框架",
+      "path": "Inbox/2026-11-03-bend-finance-reconciliation-prd-26.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484915&idx=1&sn=0a260eb1da20b52c2a5990be6dabc2a9&chksm=c4d1845ff3a60d4914f96b12e6a08365470413ec5faae8cafc34f2e515a660a0aa7edcdf8bec#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "对账底层是三角模型：业务单、内部资金流水、外部渠道流水三条线的一致性。差异三类：长款（渠道有业务无）、短款（业务有渠道无）、不一致（金额/状态/手续费/时间）。冲正不是删除原记录，而是生成可追溯的反向记录：红冲（负数冲销，财务账务调整）与蓝冲（方向相反新交易，资金流水层反向）。四原则：原单不可变、冲正单可追溯、幂等控制、资金保障优先。状态机 + 数据模型 7 张表 + 三个工作台。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-finance-reconciliation-prd-26.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-legacy-rebuild-32",
+      "title": "B端系统重构：接手烂摊子，先别画原型（附3天重构清单）",
+      "path": "Inbox/2026-11-03-bend-legacy-rebuild-32.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247485039&idx=1&sn=abed9c27cc389617f36a092795dd7288&chksm=c4d187c3f3a60ed54b0dc526bf0abd5e04c10c49a172eaaef69aaa3536f8be72f314f5c7cefa#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "接手老系统先别画原型——老系统问题不在界面，在边界、流程和数据。先拿\"三层地图\"（权限门/流程行/数据列）再动手，任何原型都是在给危房刷漆。老系统有三笔账：认知账（历史版本埋了多少判断逻辑未知）、依赖账（与账号/组织/主数据/消息/支付耦合，单点改动牵一发动全身）、风险账（口径不清改得越多越固化历史隐患）。3天清单：Day1 盘权限与身份边界（三清册）；Day2 对核心流程与状态机（抓核心5条流程，画实际发生的状态机）；Day3 统一数据字段与口径（三张表）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-legacy-rebuild-32.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-message-center-09",
+      "title": "B端产品经理实操框架：消息中心从0到1复盘",
+      "path": "Inbox/2026-11-03-bend-message-center-09.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484439&idx=1&sn=b4935e5e98ad146e82b3cf52dcdc5c8f&chksm=c4d185bbf3a60cadce9b5819cc992a7effa05e752ce1a3d078af9320a4973ce3c975f2571768#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文用 CRM 产品案例完整复盘统一消息中心：四层架构（接入/策略/渲染/通道）、消息模板（文案与数据分离）、订阅偏好（控制权给用户）、触达策略（优先级/频控/通道路由）、失败重试（指数退避+降级），上线后发送成功率从 82% 提升至 96%，打扰投诉降 40%。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-message-center-09.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-multi-agent-saas-24",
+      "title": "B端系统多智能体重构SaaS业务流：产品经理建议收藏",
+      "path": "Inbox/2026-11-03-bend-multi-agent-saas-24.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484851&idx=1&sn=ff731e5d45779c441e7777d10723f6ce&chksm=c4d1841ff3a60d09ea6d3792dcd902dd9ece109dab0e4a62ba827db87b8e3e024123fa6eb7bd#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "多智能体不是给 SaaS 加聊天机器人，而是把\"人找功能\"改成\"Agent 找决策\"：把流程中的判断从人身上剥离，交给多个 Agent 协作执行。三层架构（交互层意图与槽位/编排层 Orchestrator 任务卡片/执行层工具 API 调用）、业务流重构五步法（拆业务事件找决策点→定义 Agent 角色与边界→设计结构化协作协议→嵌入权限审计与人工干预→离线评测集+影子模式回滚）、四个案例（ERP 采买到付款/车贷审批/OA 差旅报销/CRM 线索培育）、Agent 化 PRD 新增五模块（Agent 能力卡片/协作时序/护栏机制/评测集/指标）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-multi-agent-saas-24.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-operation-log-27",
+      "title": "B端系统操作日志设计：审计、溯源、合规一次说透",
+      "path": "Inbox/2026-11-03-bend-operation-log-27.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484925&idx=1&sn=132e6bdfd0bfafcf8960c9373e411c68&chksm=c4d18451f3a60d47715b88d657ae7e6db9ec5bbd37c0ed18e1ae656944f3df7b91f203f051ee#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "操作日志是 B 端系统的\"黑匣子\"，是审计、溯源、合规的基础设施。留痕三问：谁在什么时间什么环境什么设备？对哪个对象哪个字段哪个单据？做了什么动作、改前值改后值、结果是否成功？表结构：一张核心表 audit_log + 三张扩展表（字段 diff 表/镜像表/登录日志表）。策略：记录范围分层（必记/选记/不记）、字段级 diff、异步落库、防篡改（只允许插入+哈希链）、敏感字段加密展示、热 ES/冷 OSS 分层存储。7 个行业落地案例。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-operation-log-27.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-permission-design-22",
+      "title": "B端权限设计别只控菜单：功能、数据、字段三层拆解",
+      "path": "Inbox/2026-11-03-bend-permission-design-22.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484772&idx=1&sn=abad5ca6c7539f88ddf5bb3b7f5fdc72&chksm=c4d184c8f3a60dde057da051aea51b054e2e9a6a94554202b69524897e972a6aaf3201bb656c#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "权限不是登录校验那么简单，而是功能权限、数据权限、字段权限三层交叉。功能权限（RBAC 拆到按钮级）：普通员工提交申请/查看本人流程，部门经理增加审批通过/驳回，HR 可看全公司考勤但不可编辑。数据权限（全部/本部门及下级/本部门/本人/自定义，查询层注入避免每个接口重写）。字段权限（可见/可编辑/加密，列级控制：薪资/证件号/采买价/利润等）。输出三张表：功能权限矩阵、数据权限规则表、字段权限清单。前端隐藏不等于权限管控，接口层必须二次校验。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-permission-design-22.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-permission-refactor-29",
+      "title": "B端系统权限重构指南：接手烂摊子，用这5步直接抄",
+      "path": "Inbox/2026-11-03-bend-permission-refactor-29.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484969&idx=1&sn=f1e5f06e933872debb4ae35226dee1f5&chksm=c4d18785f3a60e932d57d7d15d6de81b1e0d9adc68b81b92cdc968a1dee1dbf552582ee0bde2#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "权限混乱三类病灶：管门层（身份边界：账号共用/一人多岗/离职回收不及时/认证薄弱）、管行层（功能权限：角色爆炸/菜单硬编码/按钮级缺失/申请随意）、管列层（数据权限：数据越权/行级缺失/列级缺失/跨租户风险）。诊断三张表：权限矩阵现状表、角色/用户画像表、数据资产分级表。目标\"三管模型\"：以 RBAC 为基础用 ABAC 补数据权限。重构五步法：先冻结高风险越权→权限资产盘点建字典→功能走 RBAC 数据走规则引擎→灰度双轨迁移→审计流程文档沉淀。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-permission-refactor-29.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-prd-writing-30",
+      "title": "B端PRD怎么写不被开发骂？一份开发不骂人的PRD自检清单",
+      "path": "Inbox/2026-11-03-bend-prd-writing-30.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484981&idx=1&sn=d67a01d3f53fc5f14aa98d76fc626ae1&chksm=c4d18799f3a60e8fc23d5f892b23639e09b43b0c37286da66289fc2ee591e37e25fdd68c72ea#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "开发骂 PRD 的三原因：背景价值缺失（不知道为什么做）、范围边界不清（没写\"不做什么\"）、异常状态漏写（逆向流程/并发/幂等没写清）。核心框架\"一图三表一份清单\"：一图=主流程图（正向+核心逆向，用泳道图）；三表=状态流转表（当前状态/触发事件/前置条件/后置动作/下一状态/异常处理）、字段规则表（字段名/类型/必填/枚举/校验规则/权限/示例）、异常边界表（异常场景/触发条件/系统行为/提示文案/处理人）；一份清单=上线前自检（非功能/权限/埋点/验收）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-prd-writing-30.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-rule-engine-11",
+      "title": "规则引擎：B端产品经理如何把复杂业务规则做成可配置决策中台？",
+      "path": "Inbox/2026-11-03-bend-rule-engine-11.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484517&idx=1&sn=405814dccb4a26b56c136e21ff4e780e&chksm=c4d185c9f3a60cdffae11252888de80f4b8bafd56e18eeed2129f7cb7d57ae93461603d1326a#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文用三个真实场景讲透规则引擎设计：车贷审批、CRM客户分层、物流运费计算。核心组成（事实/条件/动作/规则集/决策表/优先级/互斥组/默认规则/版本）、通用产品设计框架（六模块）、规则引擎与机器学习的配合方式，以及面试高频题。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-rule-engine-11.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-saas-multitenant-05",
+      "title": "SaaS多租户系统实战：B端产品经理从架构设计到落地SOP全指南",
+      "path": "Inbox/2026-11-03-bend-saas-multitenant-05.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484330&idx=1&sn=c375311bd81969573bee2b31249ef17e&chksm=c4d18206f3a60b108588ac8d5c72d958c0e748fdb5ff08bf8120d6d4ef83053d20dc4146281b#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文给出 SaaS 多租户系统的完整产品框架：数据隔离三模式选型、租户识别链路、RBAC+数据权限拆分、计费配额中心、租户生命周期状态机、配置化扩展点，以及 B 端产品经理从调研到灰度的六步落地 SOP。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-saas-multitenant-05.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-supply-chain-finance-18",
+      "title": "B端产品经理实战：供应链金融系统从0到1的落地框架",
+      "path": "Inbox/2026-11-03-bend-supply-chain-finance-18.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484681&idx=1&sn=f47c4f2eb4b9339a3458b0b13a808a43&chksm=c4d184a5f3a60db3161a69b09ac64307082bb78e1bbef8f7c9c034f3b7cb1f1543c927af064c#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "供应链金融不是借贷，而是核心企业信用沿供应链向上游传递。本文拆解应收账融资系统：四方角色（供应商/核心企业/资金方/平台运营）诉求与抗拒点、汽配平台案例（1200 供应商，确权 3 天→4 小时，放款 5 天→T+1）、六中心架构（企业/资产/确权/风控/资金/报表）、资产状态机（待提交→待确权→已确权→待放款→已放款→已结清+异常分支）、六项硬指标（确权时效/放款时效/重复融资拦截率/逾期率/清分准确率）与 PM 避坑清单。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-supply-chain-finance-18.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-third-party-integration-31",
+      "title": "B端产品经理对接第三方接口：从需求到联调的完整SOP",
+      "path": "Inbox/2026-11-03-bend-third-party-integration-31.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247485021&idx=1&sn=a722ed4f459b75c0a893eb180e077676&chksm=c4d187f1f3a60ee7e6a9d1cfa371b47e3eee57496a47b91427dab8294fd076212cb3c0bebb7b#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "第三方接口对接五阶段九要素。五阶段：需求与边界评估、供应商选型与商务评审、方案设计与字段映射、联调与验收、上线与运维。九要素贯穿始终：业务场景、数据范围、字段标准、调用频率、鉴权方式、异常码、重试策略、对账机制、退出机制。核心理念：接口不是联调通了才叫完成，是异常发生时业务还能被兜住。PM 不是传话筒，是第三方接口项目的业务负责人。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-third-party-integration-31.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-ticket-prd-02",
+      "title": "工单系统PRD撰写实战：一套可复用的需求文档拆解",
+      "path": "Inbox/2026-11-03-bend-ticket-prd-02.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484284&idx=1&sn=7d46039bddd9c261039f89540622e9ce&chksm=c4d182d0f3a60bc6bebd91a392b6ae628d8c4089be782cc20b29d9a26ac4f558e0d51dba7a71#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文拆解工单系统PRD的完整撰写方法，涵盖需求背景、角色权限矩阵、工单状态机流转、功能需求拆解（创建/分配/处理/关闭/统计）、字段设计、非功能需求与验收标准，提供可直接套用的模板思路。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-ticket-prd-02.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-tracking-system-23",
+      "title": "B端埋点体系怎么搭？建议收藏的落地框架",
+      "path": "Inbox/2026-11-03-bend-tracking-system-23.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484838&idx=1&sn=8f5b8f191b7749dd4f6e5f73e40345d3&chksm=c4d1840af3a60d1cb8f5108954197f9598ff36186d2fd1a015eb9faf65ae1351838482b9cdbe#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "B 端埋点核心不是\"用户看了什么\"而是\"业务发生了什么\"，不能照搬 C 端。4 类事件：页面浏览（page_view）、元素交互（button_submit）、业务事件（purchase_order_create）、异常事件（permission_denied）。2 层参数：公共参数（tenant/user/role/org/page/module/app/device/timestamp/session）+ 业务参数。埋点设计 5 步法：定目标→拆指标→建事件（模块_动作_对象命名）→写参数（类型/必填/枚举）→验数据。9 个业务系统案例（ERP 采买/OA 审批/财务对账/权限拒绝/CRM 跟进/车贷进件/物流轨迹/规则命中/中台接口）+ 质量校验 4 必查项（非空/枚举/范围/逻辑）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-tracking-system-23.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-wms-oms-tms-19",
+      "title": "B端产品经理实战：WMS、OMS、TMS，什么场景用哪个？",
+      "path": "Inbox/2026-11-03-bend-wms-oms-tms-19.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484709&idx=1&sn=33c5308e5f04be9fcf9a2526413685bd&chksm=c4d18489f3a60d9f84716babbbf0156167406df6e4a3e1ad904779efafc0bf36eea9d47f6664#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文厘清供应链三大系统的边界与串联：OMS 管订单中枢（接入/拆单/合并/路由/库存占用/售后）、WMS 管仓库执行（库位/库存/批次/效期/出入库）、TMS 管运输配送（计划/调度/在途/签收/结算）。订单完整旅程：OMS 接收路由 → WMS 拣货出库 → TMS 运单调度 → 签收回传 → OMS 完成订单 → 财务结算。选型判断：订单乱先上 OMS、仓库乱先上 WMS、运输乱先上 TMS、都乱先打主流程闭环。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-wms-oms-tms-19.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-bend-workflow-engine-12",
+      "title": "B端产品经理如何吃透流程引擎？用一个报销流程讲清节点、网关与异常处理",
+      "path": "Inbox/2026-11-03-bend-workflow-engine-12.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484551&idx=1&sn=588bcb7caca01f3ceb57a53b9189cbda&chksm=c4d1852bf3a60c3d0f4e20a674cca822a79088cd54f4f429cf938d1d43d9cd14153bd77c60c7#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文用员工报销流程案例拆解流程引擎：四大核心对象（流程定义/实例/任务/变量）、六类节点（开始/用户任务/排他网关/并行网关/服务任务/结束）、六种异常处理（驳回/撤回/转办/加签/超时提醒/版本管理）、PRD 必备五张表，以及面试回答框架。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-workflow-engine-12.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-11-03-go-microservice-gitlab-cicd-delivery",
       "title": "Go 微服务 GitLab CI/CD 工程实战：构建可验证、可晋级、可恢复的交付系统",

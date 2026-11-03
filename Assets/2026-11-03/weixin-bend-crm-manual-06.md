@@ -1,0 +1,177 @@
+![图片](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
+
+作为B端产品经理，尤其是CRM产品经理，在面试和日常工作中经常被问到：CRM系统到底该怎么设计？如果你也在准备产品经理面试，CRM与AI结合的场景同样是高频延伸题。本文从业务建模、核心模块、数据指标、落地SOP四个维度，整理一份可复用的实战框架。
+
+> CRM不是销售工具，而是企业客户资产的经营系统。
+
+## 一、CRM系统的本质：管理客户全生命周期
+
+很多B端产品经理把CRM简单理解成“用户信息表”，这是比较片面的。CRM的核心是围绕客户全生命周期，打通市场、销售、服务三个环节，让企业能够更有效地获取客户、推进成交、提升重复采买。
+
+客户全生命周期通常分为五个阶段：获客、跟进、成交、履约、重复采买。每个阶段对应不同的业务目标和产品能力：
+
+*   获客阶段：线索管理、市场活动管理、线索评分
+    
+*   跟进阶段：商机管理、销售阶段、跟进记录
+    
+*   成交阶段：订单管理、合同管理、回款管理
+    
+*   履约阶段：服务工单、交付管理、用户支持
+    
+*   重复采买阶段：客户成功、满意度管理、增购/续费
+    
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+产品经理要做的，就是把这些业务过程抽象成系统模块，并且让数据在不同模块之间顺畅流转。
+
+## 二、CRM核心模块拆解
+
+### 1\. 客户管理
+
+客户管理是CRM的基石。它不只是存储客户名称和联络方式，更重要的是建立客户主数据模型。
+
+*   客户主数据：客户名称、统一社会信用代码、行业、规模、区域
+    
+*   标签体系：客户分层、价值等级、行为偏好、流失风险
+    
+*   客户关系：联络人、决策链、组织架构
+    
+
+设计客户管理时，B端产品经理需要重点处理两个问题：一是客户去重与合并，二是用户数据权限。
+
+### 2\. 商机管理
+
+商机管理是销售团队使用频率较高的模块。它把销售过程拆成多个阶段，比如：初步接洽、需求确认、方案报价、谈判、赢单/输单。
+
+每个阶段需要定义：
+
+*   进入条件：满足什么条件可以进入该阶段
+    
+*   退出条件：满足什么条件可以进入下一阶段
+    
+*   赢单率：基于历史数据估算
+    
+*   关键动作：销售在该阶段需要执行的任务
+    
+
+销售漏斗是商机管理的核心分析工具。通过漏斗图，可以直观看到各阶段的商机数量和金额，帮助销售管理者判断哪些阶段需要投入资源。
+
+### 3\. 订单管理
+
+订单管理在CRM中通常负责成交后的合同、回款和开票流程。
+
+B端产品经理要注意：CRM的订单管理与ERP的订单管理边界需要划清。CRM侧重客户侧的交易记录和回款计划，ERP侧重财务核算和库存管理。两者可以通过接口同步数据，避免重复录入。
+
+### 4\. 服务管理
+
+服务管理对应客户生命周期的履约和重复采买阶段。常见功能包括：服务工单、SLA管理、满意度调查、知识库。
+
+服务工单的来源可以是用户支持团队、销售转交、客户自助提交。产品经理需要设计工单的流转规则、处理时限和升级机制。
+
+### 5\. 数据看板
+
+数据看板是CRM价值的体现。常用指标包括：
+
+*   销售漏斗转化率
+    
+*   客户获取投入
+    
+*   客户生命周期价值
+    
+*   销售周期
+    
+*   重复采买率
+    
+*   客户健康度
+    
+
+数据看板不是简单地展示数字，而是要帮助管理者发现问题和做出决策。比如，某个销售阶段的赢单率明显偏低，就需要分析是话术问题还是线索质量下降。
+
+## 三、CRM产品经理的三大业务建模方法
+
+### 1\. 业务流程图
+
+用泳道图梳理客户全生命周期中各个角色的职责和流转。比如市场、销售、用户支持、财务分别在不同阶段做什么，信息如何传递。
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+### 2\. 状态机
+
+客户、商机、工单等对象都有明确的状态流转。状态机可以帮助产品经理定义每个状态的前置条件、后置动作和异常分支。例如商机的状态：新建→跟进中→方案报价→谈判→赢单/输单/搁置。
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+### 3\. 数据模型
+
+CRM的数据模型主要包括：
+
+*   客户主数据
+    
+*   联络人
+    
+*   商机
+    
+*   订单
+    
+*   工单
+    
+*   产品
+    
+*   员工
+    
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+产品经理需要明确这些实体之间的关系，比如一个客户可以有多个联络人，一个商机关联一个客户，一个订单关联一个商机。
+
+## 四、CRM面试高频题与回答框架
+
+准备B端产品经理面试时，CRM相关题目出现频率相当高。下面整理几道典型题和回答思路。
+
+问题1：CRM和SCRM有什么区别？
+
+回答框架：CRM侧重企业内部用户数据管理和销售流程自动化；SCRM强调社交渠道的客户互动和裂变，更偏向营销侧。两者可以互补，SCRM获取的社交数据可以回流到CRM，丰富客户画像。
+
+问题2：如何设计客户标签体系？
+
+回答框架：先明确标签的使用场景，比如销售分层、营销触达、服务优先级；再确定标签来源，包括手动打标、规则打标、模型打标；然后建立标签生命周期管理，定期清理无效标签。
+
+问题3：销售漏斗如何建模？
+
+回答框架：先梳理销售流程，确认阶段划分；再定义每个阶段的进入/退出条件；然后结合历史数据估算各阶段赢单率；接着用漏斗图监控转化情况，并持续优化阶段定义。
+
+问题4：如何提升销售团队的使用意愿？
+
+回答框架：一是减少录入负担，能自动获取的数据不让销售手动填写；二是让系统为销售提供价值，比如自动生成跟进提醒、客户画像；三是与管理动作结合，用数据看板驱动销售行为。
+
+问题5：CRM与AI结合有哪些场景？
+
+回答框架：AI线索评分、销售预判、客户流失预警、AI推荐下一步动作、自动生成跟进摘要。AI产品经理面试中，这类问题会考察你如何把AI能力嵌入业务流程，而不是只讲算法。
+
+## 五、CRM落地SOP：从需求到上线
+
+B端产品经理在推进CRM项目时，可以按照以下SOP执行：
+
+1.  业务调研：访谈销售、用户支持、市场团队，了解现状和痛点
+    
+2.  流程梳理：绘制客户全生命周期流程图，识别断点和重复环节
+    
+3.  需求分析：区分核心需求和边缘需求，确定优先级
+    
+4.  方案设计：模块划分、权限设计、数据模型、接口方案
+    
+5.  开发与测试：迭代交付，每个迭代聚焦一个核心模块
+    
+6.  上线与推广：培训、数据迁移、反馈收集，持续优化
+    
+
+执行过程中，要特别留意数据迁移和权限设计。数据迁移前需要清理历史数据，权限设计要平衡数据安防与销售效率。
+
+如果你正在准备B端产品经理或AI产品经理面试，希望这篇文章可以帮助到你。
+
+回复【CRM】，附件资料包含CRM核心模块清单、面试题库和落地SOP模板，可以直接使用。
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)

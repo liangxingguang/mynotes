@@ -1,0 +1,154 @@
+![图片](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
+
+B端产品经理在做供应链系统规划时，有时候会搞混：WMS、OMS、TMS 分别管什么？什么场景下该先上哪个？今天这篇文章从实战视角把三者的边界、串联逻辑和选型判断讲清楚。无论你正在做仓配项目，还是准备跳槽到供应链产品岗，都可以把这套框架收好。
+
+👉👉后台💬【供应链】，自动获取《WMS/OMS/TMS的差异》资料👈👈
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+## 一、OMS：订单中枢，先理清“订单从哪里来、到哪里去”
+
+OMS（订单管理系统）负责订单全生命周期管理。核心能力包括：订单接入、拆单、合并、路由、库存占用、售后处理。
+
+适合场景：
+
+*   订单来源多：某猫、某东、抖音、门店、分销商等渠道同时接入
+    
+*   拆单复杂：预售、赠品、缺货拆分、跨仓发货
+    
+*   库存分配规则复杂：需要按仓库距离、库存深度、快递时效做路由
+    
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+实际案例：
+
+某服装品牌之前由各渠道分别传订单到仓库，经常出现超卖和重复发货。上线 OMS 后，所有订单统一进入订单池，按仓库库存和时效规则自动路由，超卖情况明显下降，缺货订单也能自动挂起等待补货。
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+## 二、WMS：仓库执行系统，管好每一件货
+
+WMS（仓储管理系统）负责仓库内部的库位、库存、批次、效期和作业效率。核心能力包括：入库、上架、拣货、复核、盘点、出库。
+
+适合场景：
+
+*   SKU 多、库位复杂
+    
+*   批次/效期要求高，如食品、医药、化妆品
+    
+*   多仓协同，需要统一库存视图
+    
+*   库存差异大，需要提升盘点准确率
+    
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+实际案例：
+
+某快消品牌在多仓管理时，经常出现同一商品在不同仓库存不一致。上线 WMS 后，库位、批次、效期全部纳入系统管理，盘点差异率从原来的 1.8% 降到 0.3% 以内，拣货效率也明显提升。
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+## 三、TMS：运输配送，管好出库后的每一公里
+
+TMS（运输管理系统）负责运输计划、调度、在途跟踪、签收和运费结算。核心能力包括：运单生成、车辆调度、承运商协同、在途节点管理、异常预警。
+
+适合场景：
+
+*   承运商多、运输链条长
+    
+*   需要实时查看在途状态
+    
+*   需要管理运费结算和考核
+    
+*   冷链、危险品等对运输环境有要求
+    
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+实际案例：
+
+某生鲜电商上线 TMS 后，冷链车辆温度数据实时回传，温度异常时系统自动预警并通知司机调整。运输损耗下降，签收准时率也提升到 97% 以上。
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+## 四、三者怎么串联：一张订单的完整旅程
+
+很多 B 端产品经理容易把三个系统割裂开看，但实际项目中，三者必须串成一条流：
+
+订单生成 → OMS 接收并路由 → WMS 分配库存并出库 → TMS 创建运单并调度 → 司机运输 → 客户签收 → TMS 回传签收状态 → OMS 完成订单 → 财务结算
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+关键点：
+
+*   OMS 管“要不要发、发哪仓、发几件”
+    
+*   WMS 管“怎么拣、怎么发、库存准不准”
+    
+*   TMS 管“谁去送、送到哪、签没签”
+    
+
+B端产品经理在设计时要先画清状态机和数据流，尤其是异常流：缺货、拦截、拒收、退货、二次派送等。
+
+## 五、什么场景先上哪个？选型判断清单
+
+不要一上来做全套，先判断业务当前的主要矛盾在哪里。
+
+1\. 订单乱：先上 OMS
+
+*   多渠道订单无法统一处理
+    
+*   超卖、重复发货多
+    
+*   库存分配规则靠人脑
+    
+
+2\. 仓库乱：先上 WMS
+
+*   库存差异大、盘点难
+    
+*   拣货效率低、库位混乱
+    
+*   批次效期无法追踪
+    
+
+3\. 运输乱：先上 TMS
+
+*   承运商多、对账难
+    
+*   运输过程不可视
+    
+*   签收回单滞后
+    
+
+4\. 三个都乱：也建议先打主流程，而不是同时上三套
+
+*   先统一主数据
+    
+*   先做订单-出库-运输的基础闭环
+    
+*   后续再逐步扩展
+    
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+## 六、B端产品经理落地建议
+
+1.  主数据先行：商品、仓库、店铺、承运商、快递公司必须统一。
+    
+2.  接口预留：ERP、POS、电子面单、三方物流、财务系统要提前规划。
+    
+3.  指标前置：上线前就定好订单处理时效、库存准确率、运输准时率、异常率。
+    
+4.  异常流别忽略：缺货、拦截、拒收、退货、二次派送往往比正向流更考验产品设计。
+    
+5.  用基础闭环验证：先跑通一个仓、一个渠道、一条线路，再复制。
+    
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+如果你正在做供应链相关项目，或准备跳槽到供应链产品岗，可以把这篇文章收好。也欢迎在评论区说说你遇到过的 WMS/OMS/TMS 相关问题，我会抽时间回复大家。
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
