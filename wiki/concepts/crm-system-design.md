@@ -13,11 +13,13 @@ tags:
   - crm
 sources:
   - raw/sources/products/2026-11-03-weixin-bend-crm-manual-06.md
+  - raw/sources/products/2026-11-03-weixin-bend-enterprise-systems-07.md
 related:
   - wiki/concepts/dashboard-metric-tree.md
   - wiki/concepts/complex-system-breakdown.md
   - wiki/concepts/contract-lifecycle-management.md
   - wiki/sources/bend-crm-manual-06.md
+  - wiki/topics/enterprise-systems-map.md
 ---
 # CRM 系统设计框架（B端客户资产经营）
 
@@ -89,6 +91,7 @@ AI+CRM 五场景（2026-11-03 信源）：AI 线索评分、销售预判、客�
 ## Evidence（证据）
 
 - Source: `raw/sources/products/2026-11-03-weixin-bend-crm-manual-06.md`（微信公众号 · 大皮不皮《B端产品经理》专辑第 6 篇，单信源，框架为作者经验总结）
+- 印证: `raw/sources/products/2026-11-03-weixin-bend-enterprise-systems-07.md`（第 7 篇企业系统地图）：CRM 定位"管理客户全生命周期，从线索获取到成交转化、售后服务"、指标"线索转化率/客户留存率/销售周期长度"与本页一致；PM 注意"使用意愿比功能更重要、减少录入负担"与本页落地 SOP 呼应。模块口径差异：该文为"线索/客户/商机/报价/服务"（产品地图口径），本页为"客户/商机/订单/服务/看板"（系统设计口径），非矛盾。
 
 ## Related Knowledge（相关知识）
 

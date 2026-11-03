@@ -1,24 +1,6 @@
 {
-  "updated_at": "2026-11-04 03:48",
+  "updated_at": "2026-11-04 04:07",
   "notes": [
-    {
-      "id": "20261103-bend-enterprise-systems-07",
-      "title": "B端产品经理必懂的10个企业系统：从ERP到ITSM的实战地图",
-      "path": "Inbox/2026-11-03-bend-enterprise-systems-07.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484361&idx=1&sn=cc56ab06a344cecdc3cd09596ea8bf40&chksm=c4d18265f3a60b73e46841477a629ca14dc49f2593fcee45382bdc3290a898e2b2d6e212f793#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "本文梳理 10 个 B 端产品经理必须掌握的企业系统，每个系统给出定位、核心模块、关键指标和产品经理注意点，覆盖从内部资源到外部协同的全局框架。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-enterprise-systems-07.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "20261103-bend-finance-reconciliation-10",
       "title": "B端产品经理如何设计财务对账系统？从资金收付、ERP到物流结算的实战框架",
@@ -6932,6 +6914,24 @@
       "summary": "本文厘清三大引擎的本质边界与选型方法：动态表单管数据（字段/校验/布局）、流程引擎管流转（节点/审批/网关）、规则引擎管决策（条件/动作/优先级），用三个真实案例（车贷/ERP采购/CRM客户运营）说明组合用法，附选型 SOP 与常见误区。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-bend-engine-comparison-14.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-enterprise-systems-07",
+      "title": "B端产品经理必懂的10个企业系统：从ERP到ITSM的实战地图",
+      "path": "Archive/2026-11-03-bend-enterprise-systems-07.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484361&idx=1&sn=cc56ab06a344cecdc3cd09596ea8bf40&chksm=c4d18265f3a60b73e46841477a629ca14dc49f2593fcee45382bdc3290a898e2b2d6e212f793#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文梳理 10 个 B 端产品经理必须掌握的企业系统，每个系统给出定位、核心模块、关键指标和产品经理注意点，覆盖从内部资源到外部协同的全局框架。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-enterprise-systems-07.md",
       "wiki_status": "ingested"
     },
     {

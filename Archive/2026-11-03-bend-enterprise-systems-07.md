@@ -10,7 +10,7 @@ category: 学习
 tags: [产品]
 album: B端产品经理（专辑，32 篇，作者 大皮不皮）
 asset_ref: Assets/2026-11-03/weixin-bend-enterprise-systems-07.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # B端产品经理必懂的10个企业系统：从ERP到ITSM的实战地图

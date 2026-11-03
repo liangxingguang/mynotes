@@ -4,7 +4,7 @@ type: topic
 title: 大型 ERP 产品架构设计
 status: active
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-04
 confidence: medium
 tags:
   - enterprise
@@ -14,6 +14,8 @@ sources:
   - raw/sources/enterprise/2026-10-31-erp-architecture-design-8-part-index.md
 related:
   - wiki/sources/erp-architecture-design-8-part-index.md
+  - wiki/topics/enterprise-systems-map.md
+  - wiki/sources/bend-enterprise-systems-07.md
 ---
 # 大型 ERP 产品架构设计
 
@@ -85,3 +87,8 @@ ERP 要在同一套系统中同时满足四组相互拉扯的要求：
 ## Related Topics（相关主题）
 
 - [[erp-architecture-design-8-part-index]]（本主题的信源页）
+- [[enterprise-systems-map]]（B端企业系统全景地图：ERP 的 PM 速查口径——总调度中心/五大核心模块/库存周转率等指标，与本页架构视角互补）
+
+## Corroboration（印证）
+
+2026-11-04 新增信源 `raw/sources/products/2026-11-03-weixin-bend-enterprise-systems-07.md`（公众号《B端产品经理》专辑第 7 篇）印证：ERP 定位"企业内部资源总调度中心，打通采购/生产/销售/库存/财务"，与本页立论一致（"ERP 是所有企业级软件中约束最强、变化维度最多、错误代价最大的一类问题"的 PM 化表述）；其"全局流程视角做取舍"与"跨部门协同"判断可作为本页"立论"的 PM 侧注脚。该信源为概览口径，未改变本页架构深水区内容。
