@@ -4178,6 +4178,42 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484361&idx=1&sn=cc56ab06a344cecdc3cd09596ea8bf40&chksm=c4d18265f3a60b73e46841477a629ca14dc49f2593fcee45382bdc3290a898e2b2d6e212f793",
       "asset_ref": "Assets/2026-11-03/weixin-bend-enterprise-systems-07.md"
+    },
+    {
+      "path": "raw/sources/products/2026-11-03-weixin-bend-finance-reconciliation-10.md",
+      "sha256": "2fcaf18cb5e33ec24dffb1e19a8a10900a1cbdb749c885ebe2d0339a7dc0f3ee",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-bend-finance-reconciliation-10.md",
+      "pages": [
+        "wiki/sources/bend-finance-reconciliation-10.md",
+        "wiki/concepts/finance-reconciliation-design.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484479&idx=1&sn=7b63fcb20196b6ed65de151654de4b11&chksm=c4d18593f3a60c858ea06de68b6a717c40a3ff89b3bfecab8bc13595276b05a5bdf5ddb4687f",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-finance-reconciliation-10.md"
+    },
+    {
+      "path": "raw/sources/products/2026-11-03-weixin-bend-finance-reconciliation-prd-26.md",
+      "sha256": "118115c9e33cfe056a29333893dc5f072b0e1bd05112da64711a0e9897f67e8a",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-bend-finance-reconciliation-prd-26.md",
+      "pages": [
+        "wiki/sources/bend-finance-reconciliation-prd-26.md",
+        "wiki/concepts/finance-reconciliation-design.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484915&idx=1&sn=0a260eb1da20b52c2a5990be6dabc2a9&chksm=c4d1855ff3a60d4914f96b12e6a08365470413ec5faae8cafc34f2e515a660a0aa7edcdf8bec",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-finance-reconciliation-prd-26.md"
+    },
+    {
+      "path": "raw/sources/products/2026-11-03-weixin-bend-legacy-rebuild-32.md",
+      "sha256": "cdc52d505afb34939e3478910d26a4dd053a7a8ba2b8225cc38237b5c0d04d65",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-bend-legacy-rebuild-32.md",
+      "pages": [
+        "wiki/sources/bend-legacy-rebuild-32.md",
+        "wiki/concepts/legacy-system-rebuild.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247485039&idx=1&sn=abed9c27cc389617f36a092795dd7288&chksm=c4d187c3f3a60ed54b0dc526bf0abd5e04c10c49a172eaaef69aaa3536f8be72f314f5c7cefa",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-legacy-rebuild-32.md"
     }
   ]
 }

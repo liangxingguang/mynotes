@@ -10,7 +10,7 @@ category: 学习
 tags: [产品]
 album: B端产品经理（专辑，32 篇，作者 大皮不皮）
 asset_ref: Assets/2026-11-03/weixin-bend-legacy-rebuild-32.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # B端系统重构：接手烂摊子，先别画原型（附3天重构清单）

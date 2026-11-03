@@ -10,7 +10,7 @@ category: 学习
 tags: [产品]
 album: B端产品经理（专辑，32 篇，作者 大皮不皮）
 asset_ref: Assets/2026-11-03/weixin-bend-finance-reconciliation-10.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # B端产品经理如何设计财务对账系统？从资金收付、ERP到物流结算的实战框架

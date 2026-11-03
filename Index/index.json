@@ -1,60 +1,6 @@
 {
-  "updated_at": "2026-11-04 04:07",
+  "updated_at": "2026-11-04 06:52",
   "notes": [
-    {
-      "id": "20261103-bend-finance-reconciliation-10",
-      "title": "B端产品经理如何设计财务对账系统？从资金收付、ERP到物流结算的实战框架",
-      "path": "Inbox/2026-11-03-bend-finance-reconciliation-10.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484479&idx=1&sn=7b63fcb20196b6ed65de151654de4b11&chksm=c4d18593f3a60c858ea06de68b6a717c40a3ff89b3bfecab8bc13595276b05a5bdf5ddb4687f#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "本文用 7 个实际案例拆解财务对账系统设计：对账本质（业务/资金/财务三源一致性）、七层架构模型、电商日对账/SaaS银行流水认领/物流运费/ERP三单匹配/车贷还款/HIS医疗收费/AI智能对账，以及 PM 实操九步 SOP 和常见坑。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-finance-reconciliation-10.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "20261103-bend-finance-reconciliation-prd-26",
-      "title": "B端PM财务对账与异常冲正：底层逻辑+落地框架",
-      "path": "Inbox/2026-11-03-bend-finance-reconciliation-prd-26.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484915&idx=1&sn=0a260eb1da20b52c2a5990be6dabc2a9&chksm=c4d1845ff3a60d4914f96b12e6a08365470413ec5faae8cafc34f2e515a660a0aa7edcdf8bec#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "对账底层是三角模型：业务单、内部资金流水、外部渠道流水三条线的一致性。差异三类：长款（渠道有业务无）、短款（业务有渠道无）、不一致（金额/状态/手续费/时间）。冲正不是删除原记录，而是生成可追溯的反向记录：红冲（负数冲销，财务账务调整）与蓝冲（方向相反新交易，资金流水层反向）。四原则：原单不可变、冲正单可追溯、幂等控制、资金保障优先。状态机 + 数据模型 7 张表 + 三个工作台。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-finance-reconciliation-prd-26.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "20261103-bend-legacy-rebuild-32",
-      "title": "B端系统重构：接手烂摊子，先别画原型（附3天重构清单）",
-      "path": "Inbox/2026-11-03-bend-legacy-rebuild-32.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247485039&idx=1&sn=abed9c27cc389617f36a092795dd7288&chksm=c4d187c3f3a60ed54b0dc526bf0abd5e04c10c49a172eaaef69aaa3536f8be72f314f5c7cefa#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "接手老系统先别画原型——老系统问题不在界面，在边界、流程和数据。先拿\"三层地图\"（权限门/流程行/数据列）再动手，任何原型都是在给危房刷漆。老系统有三笔账：认知账（历史版本埋了多少判断逻辑未知）、依赖账（与账号/组织/主数据/消息/支付耦合，单点改动牵一发动全身）、风险账（口径不清改得越多越固化历史隐患）。3天清单：Day1 盘权限与身份边界（三清册）；Day2 对核心流程与状态机（抓核心5条流程，画实际发生的状态机）；Day3 统一数据字段与口径（三张表）。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-legacy-rebuild-32.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "20261103-bend-message-center-09",
       "title": "B端产品经理实操框架：消息中心从0到1复盘",
@@ -6932,6 +6878,60 @@
       "summary": "本文梳理 10 个 B 端产品经理必须掌握的企业系统，每个系统给出定位、核心模块、关键指标和产品经理注意点，覆盖从内部资源到外部协同的全局框架。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-bend-enterprise-systems-07.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-finance-reconciliation-10",
+      "title": "B端产品经理如何设计财务对账系统？从资金收付、ERP到物流结算的实战框架",
+      "path": "Archive/2026-11-03-bend-finance-reconciliation-10.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484479&idx=1&sn=7b63fcb20196b6ed65de151654de4b11&chksm=c4d18593f3a60c858ea06de68b6a717c40a3ff89b3bfecab8bc13595276b05a5bdf5ddb4687f#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文用 7 个实际案例拆解财务对账系统设计：对账本质（业务/资金/财务三源一致性）、七层架构模型、电商日对账/SaaS银行流水认领/物流运费/ERP三单匹配/车贷还款/HIS医疗收费/AI智能对账，以及 PM 实操九步 SOP 和常见坑。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-finance-reconciliation-10.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-finance-reconciliation-prd-26",
+      "title": "B端PM财务对账与异常冲正：底层逻辑+落地框架",
+      "path": "Archive/2026-11-03-bend-finance-reconciliation-prd-26.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484915&idx=1&sn=0a260eb1da20b52c2a5990be6dabc2a9&chksm=c4d1845ff3a60d4914f96b12e6a08365470413ec5faae8cafc34f2e515a660a0aa7edcdf8bec#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "对账底层是三角模型：业务单、内部资金流水、外部渠道流水三条线的一致性。差异三类：长款（渠道有业务无）、短款（业务有渠道无）、不一致（金额/状态/手续费/时间）。冲正不是删除原记录，而是生成可追溯的反向记录：红冲（负数冲销，财务账务调整）与蓝冲（方向相反新交易，资金流水层反向）。四原则：原单不可变、冲正单可追溯、幂等控制、资金保障优先。状态机 + 数据模型 7 张表 + 三个工作台。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-finance-reconciliation-prd-26.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-legacy-rebuild-32",
+      "title": "B端系统重构：接手烂摊子，先别画原型（附3天重构清单）",
+      "path": "Archive/2026-11-03-bend-legacy-rebuild-32.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247485039&idx=1&sn=abed9c27cc389617f36a092795dd7288&chksm=c4d187c3f3a60ed54b0dc526bf0abd5e04c10c49a172eaaef69aaa3536f8be72f314f5c7cefa#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "接手老系统先别画原型——老系统问题不在界面，在边界、流程和数据。先拿\"三层地图\"（权限门/流程行/数据列）再动手，任何原型都是在给危房刷漆。老系统有三笔账：认知账（历史版本埋了多少判断逻辑未知）、依赖账（与账号/组织/主数据/消息/支付耦合，单点改动牵一发动全身）、风险账（口径不清改得越多越固化历史隐患）。3天清单：Day1 盘权限与身份边界（三清册）；Day2 对核心流程与状态机（抓核心5条流程，画实际发生的状态机）；Day3 统一数据字段与口径（三张表）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-legacy-rebuild-32.md",
       "wiki_status": "ingested"
     },
     {
