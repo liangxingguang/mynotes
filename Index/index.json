@@ -1,60 +1,6 @@
 {
-  "updated_at": "2026-11-03 21:39",
+  "updated_at": "2026-11-03 22:00",
   "notes": [
-    {
-      "id": "20261103-bend-ai-approval-15",
-      "title": "AI+审批流：B端产品经理的智能化落地指南",
-      "path": "Inbox/2026-11-03-bend-ai-approval-15.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484619&idx=1&sn=faba1bd4bb43f42a96d4331df557d1ab&chksm=c4d18567f3a60c71eb5fbfec3f51451c4e6d27910dab6efa95c953c4aeef0b0cc31450272094#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "本文从智能填单、风险识别、自动审批、异常预警四个维度，结合制造企业 OA 审批流 AI 改造案例，给出 AI+审批流设计框架：传统四大痛点、四大核心模块拆解、改造效果数据（填单时间减 85%、60% 单据自动审批、审批时长 3.5 天→4 小时），以及 PM 落地六步 SOP。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-ai-approval-15.md",
-      "wiki_status": "ingesting"
-    },
-    {
-      "id": "20261103-bend-ai-ticket-prd-16",
-      "title": "B端产品经理实战：AI工单系统PRD 2.0——从智能分类、自动派单到知识库闭环",
-      "path": "Inbox/2026-11-03-bend-ai-ticket-prd-16.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484642&idx=1&sn=4a693c61f045d70d2985885ebe065589&chksm=c4d1854ef3a60c5854ba23e70f43d35aa5111a8ed0cbded27beabcc7d114b42bee691f339e68#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "本文拆解 AI 工单系统 PRD 2.0 三模块：智能分类（大模型意图识别+多标签+置信度阈值）、自动派单（技能标签+负载均衡+SLA 优先级）、知识库闭环（处理完成自动生成知识草稿+审核+检索淘汰）。电商售后案例：分类准确率 91.6%、自动派单覆盖 68.3%、知识引用率 11%→37%、处理时长 6 分钟→2.4 分钟。附目标指标、数据埋点、验收标准与风险对策。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-ai-ticket-prd-16.md",
-      "wiki_status": "ingesting"
-    },
-    {
-      "id": "20261103-bend-approval-engine-08",
-      "title": "B端产品经理如何设计审批流引擎？节点流转、条件分支到落地验收全框架",
-      "path": "Inbox/2026-11-03-bend-approval-engine-08.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484401&idx=1&sn=7cc382b74f4e46072b7fc794050ffd2d&chksm=c4d1825df3a60b4b888d67c14d4c776653434702cc234b3ae11830cbe9ea40263b836f65b61e#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "本文给出审批流引擎的完整设计框架：节点流转（类型/处理人规则/超时策略/执行权限）、条件分支（核心要素/案例/设计建议）、落地验收（清单模板/验收过程/常见坑与处理），强调 60% 精力放在条件分支边界与异常流上。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-approval-engine-08.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "20261103-bend-batch-import-28",
       "title": "B端批量导入3个坑：校验、性能、异常处理",
@@ -6932,6 +6878,60 @@
       "summary": "旧系统对接是 Agent 落地的首要关卡（无标准接口/文档缺失/权限申请周期长）。本文给五步框架：系统盘点（九字段盘点表：API/认证/实时性/文档/负责人/变更频率/历史故障）、四类对接模式选型（API / 数据库只读+事件表 / RPA 界面自动化 / 中间件网关）、字段映射（数据字典/状态流转/异常码/幂等键）、灰度验证（先只读后写、白名单限流人工确认）、复盘总结。连锁零售案例：10 年旧 CRM，工单录入人力降 40%、录入 T+1→准实时、RPA 写回成功率 95%+。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-bend-ai-agent-legacy-21.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-ai-approval-15",
+      "title": "AI+审批流：B端产品经理的智能化落地指南",
+      "path": "Archive/2026-11-03-bend-ai-approval-15.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484619&idx=1&sn=faba1bd4bb43f42a96d4331df557d1ab&chksm=c4d18567f3a60c71eb5fbfec3f51451c4e6d27910dab6efa95c953c4aeef0b0cc31450272094#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文从智能填单、风险识别、自动审批、异常预警四个维度，结合制造企业 OA 审批流 AI 改造案例，给出 AI+审批流设计框架：传统四大痛点、四大核心模块拆解、改造效果数据（填单时间减 85%、60% 单据自动审批、审批时长 3.5 天→4 小时），以及 PM 落地六步 SOP。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-ai-approval-15.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-ai-ticket-prd-16",
+      "title": "B端产品经理实战：AI工单系统PRD 2.0——从智能分类、自动派单到知识库闭环",
+      "path": "Archive/2026-11-03-bend-ai-ticket-prd-16.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484642&idx=1&sn=4a693c61f045d70d2985885ebe065589&chksm=c4d1854ef3a60c5854ba23e70f43d35aa5111a8ed0cbded27beabcc7d114b42bee691f339e68#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文拆解 AI 工单系统 PRD 2.0 三模块：智能分类（大模型意图识别+多标签+置信度阈值）、自动派单（技能标签+负载均衡+SLA 优先级）、知识库闭环（处理完成自动生成知识草稿+审核+检索淘汰）。电商售后案例：分类准确率 91.6%、自动派单覆盖 68.3%、知识引用率 11%→37%、处理时长 6 分钟→2.4 分钟。附目标指标、数据埋点、验收标准与风险对策。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-ai-ticket-prd-16.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-approval-engine-08",
+      "title": "B端产品经理如何设计审批流引擎？节点流转、条件分支到落地验收全框架",
+      "path": "Archive/2026-11-03-bend-approval-engine-08.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484401&idx=1&sn=7cc382b74f4e46072b7fc794050ffd2d&chksm=c4d1825df3a60b4b888d67c14d4c776653434702cc234b3ae11830cbe9ea40263b836f65b61e#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文给出审批流引擎的完整设计框架：节点流转（类型/处理人规则/超时策略/执行权限）、条件分支（核心要素/案例/设计建议）、落地验收（清单模板/验收过程/常见坑与处理），强调 60% 精力放在条件分支边界与异常流上。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-approval-engine-08.md",
       "wiki_status": "ingested"
     },
     {
