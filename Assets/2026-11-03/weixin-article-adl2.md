@@ -1,0 +1,185 @@
+原创 易海工程AI 易海工程AI _2026年11月1日 09:37_
+
+![图片](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+WHITE PAPER · AI AGENT 2026
+
+三阶段跃迁、四块底座、九章案例，以及一群企业高管给出的落地时间表
+
+易海工程AI · 行业观察
+
+10 月 29 日至 30 日，2026 腾讯全球数字生态大会在互联网与数字技术专场发布了一本 78 页的《AI Agent 企业解决方案及落地实践》。它不像产品说明书，更像一张时间表：什么阶段该上、从哪一层上、哪条业务线先跑通。
+
+01 / THREE STAGES
+
+三阶段跃迁：从能对话，到能干活，再到能上岗
+
+白皮书把企业智能体切成三段。第一段是知识问答，代表是 DeepSeek、ChatGPT 这类，本质是问答工具。第二段是办公助手，形态变成 Agent 工作台加业务系统集成，能嵌进工作流、调用工具、操作文档。第三段才是数字员工，进入系统、操作数据、完成业务闭环，并且对结果负责。
+
+三段的真正分界线不是模型强弱，是责任边界。第一段只对你的提问负责，第二段对动作负责，第三段才开始对结果负责。手册里对第三代办公范式的描述很直白：人负责给目标、设边界、做判断，数字员工理解上下文、持续执行、交付结果。
+
+阶段
+
+形态
+
+角色定位
+
+能对话
+
+问答工具
+
+知识检索
+
+能干活
+
+Agent 工作台
+
+流程连接器
+
+能上岗
+
+数字员工
+
+按 KPI 交付
+
+这一段对企业最有用的地方，是它把“我们公司 AI 用得怎么样”变成了可以自查的问题。多数工程企业今天就停在第一段：买了几个能问答的工具，写方案时查一查规范，改一改措辞。真正省人天的是第二段和第三段，因为它们接的是流程，不是聊天框。
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+▲ 白皮书内页（图源：大会报道配图）
+
+02 / THE STACK
+
+四块底座：手册的产品骨架，正好是一条立项拆解线
+
+整本手册的产品骨架只有四件：WorkBuddy、ClawPro、Agent Runtime、TokenHub。名字不重要，重要的是它把“Agent 能上岗”这件事拆成了四层可采购的东西——谁干活、谁管、跑在哪、用哪个模型。
+
+WorkBuddy · 企业级智能体
+
+第三代办公范式的执行主体。你给目标和边界，它调工具、操作文档、持续执行，交付一项完成的工作，而不是交付一份文件或一次协作过程。
+
+ClawPro · Agent 管控台
+
+管权限、管边界、管审计的那一层。企业真正卡住的地方往往不是模型不够聪明，而是不敢把核心系统交给一个说不清权限的助手。
+
+Agent Runtime · 基础设施
+
+执行引擎、云沙箱、记忆、网关、可观测，五件套。长任务跑到一半断了怎么续、跑错了怎么回溯，靠的都是这一层。
+
+TokenHub · 模型服务入口
+
+混元、第三方、开源模型统一调度，按场景路由。对企业的意义是：不必把身家押在某一个模型上，换模型不该等于重做一遍系统。
+
+这四层对工程企业的用处很实际：做预算、写立项报告的时候，照着这四层拆，就不会出现“我们上一个 AI，到底买的是哪部分”这种糊涂账。也提醒一句，第四层最容易被高估——模型换来换去，往往不如把第二层的权限和审计先理清。
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+▲ 白皮书内页（图源：大会报道配图）
+
+03 / NINE CHAPTERS
+
+九章目录：篇幅最重的不是对外的创新，是对内的提效
+
+手册九章，覆盖 AI 整体方案、内部提效、技术底座、SaaS Agent、内容生产、AI 社交陪伴、游戏内 AI 玩法、运营与智能客服、WorkBuddy 生态共建。把目录摊开看，有两个信号值得注意。
+
+章节
+
+讲什么
+
+谁该看
+
+内部提效
+
+研发运维全链路
+
+技术与管理岗
+
+技术底座
+
+训练到应用
+
+IT 负责人
+
+SaaS Agent
+
+重塑行业软件
+
+信息化选型
+
+内容生产
+
+规模化创意
+
+市场与品牌
+
+智能客服
+
+客户全生命周期
+
+商务与客服
+
+第一个信号：全书篇幅最厚的一块是内部提效，而不是对外卖钱的业务创新。这是一个很清楚的判断——Agent 的第一波价值在对内省，不在对外卖。第二波才是把 Agent 做成产品卖给客户。
+
+第二个信号：被重点展开的业务方向，几乎都符合同一个形状——人天密集、动作重复、结果可验收。内容生产是这样，智能客服是这样，研发运维也是这样。反过来，动作模糊、结果难验收的活，手册里谈得就少。
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+▲ 白皮书内页（图源：大会报道配图）
+
+04 / TAKEAWAYS
+
+三条判断，和一个 5 到 8 年的时间表
+
+比手册正文更有信息量的，是发布会后的媒体群访。腾讯云互联网行业技术总经理陈亮和钛动科技“钛极”大模型负责人丁俊玮，各给了一张进度表。
+
+具身智能　80 分模型 2 年内，通用机器人 5 到 8 年
+
+出海营销　90% 以上任务可被 Agent 实现
+
+素材产能　一人一天从 10 条到上千条
+
+陈亮的说法是，AI 在游戏行业的降本增效“落地和验证最多”，但业态级创新还在试点——游戏生产过程太复杂。丁俊玮那边已经跑出结果：广告营销中的洞察、创意生产、投放调优，九成以上的任务可以交给 Agent。
+
+但真正值得记下来的一句是后面这句：人的精力成了卡点。模型能逐帧描述一条广告的内容，却说不出哪几秒最关键——真金白银的预算决策，还得人来拍板。技术瓶颈正在让位给判断瓶颈，这条规律移植到工程行业同样成立。
+
+所以这本手册对工程企业真正的用法，不是看完感叹一句“AI 真快”，而是从中抽出三个动作：
+
+1从岗位立项，不从平台立项
+
+挑一个具体岗位的重复动作：投标资料整理、图纸会审纪要、进度周报汇总、材料询价比价。先算它一周吃掉多少人天，再谈要不要上系统。
+
+2把 SOP 写成能被调用的 Skill
+
+手册反复讲 Skill：把部门的标准作业程序沉淀成 Agent 可以直接调用的能力库。工程企业的 SOP 其实是最全的——工序、验收、标书模板，这是被严重低估的资产。
+
+3先内部跑通，再对外交付
+
+内部提效不用给客户看，容错高、验收快，是最适合做第一个 PoC 的地方。等内部跑顺了，再谈把 Agent 嵌进交付物。
+
+∞ / SUMMARY
+
+结语
+
+78 页翻完，能带走的一句话是：Agent 的门槛不在模型，在流程有没有被写清楚。三阶段跃迁的前提，是企业先把自己的流程讲得明白到机器能听懂。
+
+工程行业最不缺流程，缺的是把流程翻译成机器能执行的那一步。这一步没人能替你做，包括出这本手册的人。
+
+我是工程AI团队，AI建筑领域的创业者。
+
+如果你觉得今天这篇有收获，欢迎点赞、在看、转发三连，我们下篇见。
+
+编辑 |Leo
+
+校对 |Leo
+
+审核丨阿良
+
+[更多AI场景](https://mp.weixin.qq.com/s?__biz=MzY5NDEzMjU5Ng==&mid=2247488216&idx=1&sn=c80021bb649ef4007a857c9d873f8405&scene=21#wechat_redirect)  [全民营销](https://mp.weixin.qq.com/s?__biz=MzY5NDEzMjU5Ng==&mid=2247488428&idx=1&sn=9d516db558fc55a55e5d3fab69fd86f2&scene=21#wechat_redirect)[工程AI事业团队产品与服务手册](https://mp.weixin.qq.com/s?__biz=MzY5NDEzMjU5Ng==&mid=2247490062&idx=1&sn=c660b0938467ec14145fe3093f857c06&scene=21#wechat_redirect)
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)

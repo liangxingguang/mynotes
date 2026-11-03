@@ -319,6 +319,7 @@
 - [[weixin-superagent-architecture-teardown|架构拆解：DeepSeek 刚发布的 Super-agent]]（2026-11-02，AI/架构/Agent/微信，Super-agent 原型机制级拆解：Ticket/Assignment/Mandate 持久化+Engine 事务先行+WorkerSlots+observe/auto 接单+实验再解读，「架构师」公众号单信源，置信度中）
 - [[weixin-jvm-gc-log-heap|一行 log.info 打掉 8G 堆：每秒 500MB 大对象，是怎么把老年代喂满的]]（2026-11-02，Java/JVM/GC/日志/微信，log.info 打 35MB JSON 致 G1 humongous+异步队列钉住+Full GC 空转+jstat→histo→dump 三步定位+Arthas 改级别止血，微信单信源，置信度高）
 - [[weixin-seckill-100k-qps|从 0 设计 10 万 QPS 秒杀系统：10 万请求进来，只有 1000 个能碰到数据库]]（2026-11-02，架构/分布式系统/秒杀/Redis/Kafka/微信，三层漏斗压 10 万→2 万→1000+Redis Lua 预扣+32 桶散热+Kafka 削峰+DB 唯一索引幂等+容量推导表，微信单信源，置信度高）
+- [[2026-11-03-thinking-speaking-diagrams|提升自己的思维和讲话能力 20 张图解]]（2026-11-03，个人成长/思维方式/微信，20 张手绘图承载核心方法论（图片无法文字化）+随笔正文：目标感→路径→模板→可训练+从固定型到成长型思维跨越+自我觉察四阶段+反馈与盲区，公众号随笔单信源，置信度低）
 
 ## concept（概念）
 

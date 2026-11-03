@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03 18:48",
+  "updated_at": "2026-11-03 18:51",
   "notes": [
     {
       "id": "2026-11-03-go-microservice-gitlab-cicd-delivery",
@@ -75,6 +75,25 @@
       "summary": "针对\"想法很多落笔难、越想越乱、信息越多判断越模糊\"，作者给出 18 本书书单，分基础（整理思路）、进阶（检验判断）、应用（处理复杂问题）三阶段递进，每阶段 6 本，主张读一点、拿真实问题练一点。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-article-s7eu.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-11-03-tencent-agent-whitepaper-78-pages",
+      "title": "78 页讲透 Agent 落地：腾讯企业智能体路线图",
+      "path": "Inbox/2026-11-03-tencent-agent-whitepaper-78-pages.md",
+      "created": "2026-11-03",
+      "category": "资讯",
+      "tags": [
+        "AI",
+        "行业动态"
+      ],
+      "source": "易海工程AI（微信公众号）",
+      "source_url": "https://mp.weixin.qq.com/s/aDl2PkLxSibQf8lqGYXHBA",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "腾讯 2026 全球数字生态大会发布 78 页《AI Agent 企业解决方案及落地实践》。核心观点：企业智能体三阶段跃迁（能对话→能干活→能上岗），分界线不是模型强弱而是责任边界；产品骨架四层（WorkBuddy/ClawPro/Agent Runtime/TokenHub）可当立项拆解线；白皮书篇幅最重的是内部提效而非对外创新；Agent 第一波价值在对内省钱，第二波才是卖产品；落地门槛不在模型，在流程有没有被写清楚。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-article-adl2.md",
       "wiki_status": "pending"
     },
     {
