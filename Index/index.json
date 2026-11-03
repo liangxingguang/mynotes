@@ -1,6 +1,25 @@
 {
-  "updated_at": "2026-11-03 18:35",
+  "updated_at": "2026-11-03 18:38",
   "notes": [
+    {
+      "id": "2026-11-03-harvard-cs2680-agent-to-gpu",
+      "title": "哈佛新课 CS2680：从 Agent 一路拆到 GPU",
+      "path": "Inbox/2026-11-03-harvard-cs2680-agent-to-gpu.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "课程",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/wRhw_hgSVCTR7YBXRp8eqw",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "哈佛 2026 秋季新课 CS2680《Modern AI Systems: Agents and System Optimizations》由 Juncheng Yang 主讲，围绕同一个 Agent 系统从应用层 Agent Loop 一路拆到推理服务与 GPU；5 个递进作业（Mads 系列）+ 期末项目，附 Agent/AI Infra 论文地图式阅读清单，课程主页资源值得收藏。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-article-wrhh.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-11-03-thinking-speaking-diagrams",
       "title": "提升自己的思维和讲话能力 20 张图解",
@@ -18,7 +37,7 @@
       "summary": "作者用 20 张手绘简笔画复盘自己提升思维与表达能力的迭代过程，主张\"有目标、有路径、有模板、可训练\"，从固定型思维跨越到成长型思维，并用反馈与自我觉察打破认知盲区。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-article-qnf7.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",

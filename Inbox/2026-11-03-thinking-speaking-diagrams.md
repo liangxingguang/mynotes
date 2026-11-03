@@ -9,7 +9,9 @@ created: 2026-11-03
 category: 学习
 tags: [思维方式, 个人成长]
 asset_ref: Assets/2026-11-03/weixin-article-qnf7.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-11-03T10:36:31.569Z"
+ingest_claim_id: 39180-1793702191569-0
 ---
 
 # 提升自己的思维和讲话能力 20 张图解
