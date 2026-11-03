@@ -1,24 +1,6 @@
 {
-  "updated_at": "2026-11-04 00:42",
+  "updated_at": "2026-11-04 00:56",
   "notes": [
-    {
-      "id": "20261103-bend-demand-research-03",
-      "title": "B端产品经理怎么做需求调研？这套SOP建议收藏",
-      "path": "Inbox/2026-11-03-bend-demand-research-03.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484297&idx=1&sn=d9fd3d04d43775e5bc9bd59a1b63cf7b&chksm=c4d18225f3a60b33c80ecb315817127f955c7a53c47d11c73055632a6494b99e8e196adebeb3#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "本文给出B端产品需求调研的可复用SOP，覆盖调研准备、干系人识别、现场观察、五层提问框架、需求整理与优先级判断、调研报告输出六个环节，适合ERP/CRM/OA/供应链等系统直接使用。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-demand-research-03.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "20261103-bend-demand-review-04",
       "title": "B端产品经理如何做需求评审，才能减少开发冲突？",
@@ -6932,6 +6914,24 @@
       "summary": "数据看板常见坑是把\"数据陈列\"当\"决策看板\"。老板打开看板要短时间回答三个问题：目标有没有达成？哪里出了异常？谁在负责处理？指标树三层：结果层（生意好不好：回款达成率/毛利达成率/准时交付率，面向老板）→过程层（为什么好/差：商机转化周期/报价审批时长/工单齐套率，面向管理岗）→执行层（谁在做什么：销售日均外呼量/实施任务及时完成率，面向一线）；每个指标必须挂责任岗位和预警阈值。首屏布局：顶部结论卡→中部趋势→下部清单。指标字典 7 字段先行。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-bend-data-dashboard-25.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-demand-research-03",
+      "title": "B端产品经理怎么做需求调研？这套SOP建议收藏",
+      "path": "Archive/2026-11-03-bend-demand-research-03.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484297&idx=1&sn=d9fd3d04d43775e5bc9bd59a1b63cf7b&chksm=c4d18225f3a60b33c80ecb315817127f955c7a53c47d11c73055632a6494b99e8e196adebeb3#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文给出B端产品需求调研的可复用SOP，覆盖调研准备、干系人识别、现场观察、五层提问框架、需求整理与优先级判断、调研报告输出六个环节，适合ERP/CRM/OA/供应链等系统直接使用。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-demand-research-03.md",
       "wiki_status": "ingested"
     },
     {

@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-11-03 23:10:00",
+  "updated_at": "2026-11-04 00:53:00",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -4116,6 +4116,18 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484879&idx=1&sn=9a0867be1f506e7d814d209c77a4b307&chksm=c4d18463f3a60d75475994c6b7f1245bde4b490036cbd48fefe8d902dae55ff97d61fe44f793",
       "asset_ref": "Assets/2026-11-03/weixin-bend-data-dashboard-25.md"
+    },
+    {
+      "path": "raw/sources/products/2026-11-03-weixin-bend-demand-research-03.md",
+      "sha256": "38916ef8bfe39f33c0cd86afff4b4546c39a0d140f3746469d8426d9f99c7d1e",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-bend-demand-research-03.md",
+      "pages": [
+        "wiki/sources/bend-demand-research-03.md",
+        "wiki/concepts/demand-research-sop.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484297&idx=1&sn=d9fd3d04d43775e5bc9bd59a1b63cf7b&chksm=c4d18225f3a60b33c80ecb315817127f955c7a53c47d11c73055632a6494b99e8e196adebeb3",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-demand-research-03.md"
     }
   ]
 }
