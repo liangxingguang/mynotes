@@ -1,6 +1,25 @@
 {
-  "updated_at": "2026-11-03 18:44",
+  "updated_at": "2026-11-03 18:48",
   "notes": [
+    {
+      "id": "2026-11-03-go-microservice-gitlab-cicd-delivery",
+      "title": "Go 微服务 GitLab CI/CD 工程实战：构建可验证、可晋级、可恢复的交付系统",
+      "path": "Inbox/2026-11-03-go-microservice-gitlab-cicd-delivery.md",
+      "created": "2026-11-03",
+      "category": "技术",
+      "tags": [
+        "CI/CD",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/H_r_gaQgplJHjBBWG80f_g",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "面向 Go + GitLab CI/CD + 容器仓库 + K8s 的后端/平台团队，以订单、支付、通知三个服务为例，给出一条完整交付链路：静态检查 → 竞态测试 → 一次编译 → 镜像打包（仅打包不编译）→ 扫描/SBOM/签名 → staging 验证 → 生产人工门禁 → 部署观察 → 发布证据与恢复记录，全程同一不可变镜像（repository@digest）晋级，附可复用的实验协议与发布前验收清单。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-article-hrga.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-11-03-harvard-cs2680-agent-to-gpu",
       "title": "哈佛新课 CS2680：从 Agent 一路拆到 GPU",
