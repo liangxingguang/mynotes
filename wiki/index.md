@@ -74,6 +74,9 @@
 - [[baidu-live-mcast-message-architecture|百度直播海量用户实时消息系统架构：长连接组播 mcast 实践]]（2026-10-23，IM/直播消息/组播）
 - [[batch-push-sharding-threadpool|第70篇：批量消息推送优化——百万级推送如何避免内存爆炸（分片 + 线程池 + 异步）]]（2026-10-31，Java/批量推送，游标分片+专用线程池+进度追踪+重试死信，代码块被采集器截断，单信源置信度中）
 - [[bend-ai-agent-legacy-integration|B端产品经理实操：AI Agent落地旧系统对接的完整框架]]（2026-11-03，产品/AI-Agent/旧系统对接，盘点九字段+四类对接模式选型+字段映射+灰度五步SOP+旧CRM工单Agent案例（人力降40%/T+1→准实时/RPA写回95%+），单信源置信度中）
+- [[bend-ai-approval-flow|AI+审批流：B端产品经理的智能化落地指南]]（2026-11-03，产品/AI/审批流，传统四大痛点+智能填单/风险识别/自动审批/异常预警四模块+制造企业案例（填单-85%/准确率92%/60%自动/超时-70%）+六步SOP+灰度策略，单信源置信度中）
+- [[bend-ai-ticket-system-prd-2|B端产品经理实战：AI工单系统PRD 2.0——从智能分类、自动派单到知识库闭环]]（2026-11-03，产品/AI/工单，智能分类五能力+自动派单五因素+知识库闭环五要点+目标指标/六项埋点/验收标准/风险对策+电商案例（准确率91.6%/覆盖率68.3%/引用率11%→37%），单信源置信度中）
+- [[bend-approval-workflow-engine|B端产品经理如何设计审批流引擎？节点流转、条件分支到落地验收全框架]]（2026-11-03，产品/审批流/B端，六类节点+处理人规则六种+条件分支五要素+5000元边界值卡单教训+十项验收清单+常见坑六类，单信源置信度中）
 - [[bend-rbac-permission-system-design|B端RBAC权限系统完整产品设计：从需求梳理到落地验收]]（2026-11-03，产品/权限/RBAC，四核心对象+RBAC0-3模型层级+需求三梳理+七大功能模块+关键流程+异常边界+验收清单，与 Agent 权限模型互补，单信源置信度中）
 - [[claude-howto-github-tutorial|claude-howto：一套完整的 Claude Code 开源教程（GitHub 仓库）]]（2026-10-23，AI/资源，置信度低）
 - [[claude-skills-guide|从 0 到 1 拆解 Claude Skills：一次构建，永久生效（SKILLS 专栏 01）]]（2026-10-28，AI/Claude，置信度中）
@@ -335,6 +338,7 @@
 - [[agent-permission-model|Agent 权限模型（平台授权与本地运行）]]（权限=静态基线+指令临时授权+动态校验；租户划边界/Agent 定上限/指令收范围/MCP 网关兜底；凭证归属发起方用户+校验在调用方侧；本地 CLI 五模式+只读证明式放行 Unknown≠Safe；A2A 委派子授权⊆父授权；三信源，置信度中）
 - [[agent-sandboxing|Agent 沙箱隔离]]（能力限制而非行为审查；四条路径收窄可达面；脚本级/命令级/工具级/整体隔离）
 - [[agent-state-separation|Agent 状态分离（执行状态/操作状态/产物核验）]]（三态分离+多身份+恢复决策顺序+停止非回滚，Codex Harness 实践，单信源置信度中）
+- [[approval-workflow-engine|审批流引擎（含 AI 改造层）]]（六类节点+处理人规则六种+条件分支五要素+边界值卡单教训+十项验收清单；AI 改造层叠加智能填单/风险识别/自动审批/异常预警+三级风险阈值+六步SOP，合并同专辑第 8+15 篇双信源，置信度中）
 - [[aqs-internals|AQS（AbstractQueuedSynchronizer）核心机制]]（volatile state + CLH 变体 FIFO 队列 + acquire/release 模板方法；JUC 锁体系基座，单信源）
 - [[arrays-utility-class|Arrays 工具类设计]]（排序按类型/规模分派：双轴快排/TimSort/<47 插入排序；parallelSort/parallelPrefix 走 ForkJoinPool；asList 固定视图坑；单信源，置信度中）
 - [[atomic-variables-cas|Atomic 原子类设计（volatile + CAS 自旋）]]（Unsafe→lock cmpxchg 硬件原子；ABA 需 StampedReference；万级争抢改 LongAdder；单信源，置信度中）
@@ -345,6 +349,7 @@
 - [[ai-assisted-troubleshooting-workflow|AI 辅助排障工作流]]（贴文本模式四环节：现象选命令/读栈/写表达式/结论分叉；三件不交给 AI；脱敏前提；它翻译你判断，双信源）
 - [[ai-native-organization|AI 原生研发组织]]（工具原生→工作流原生→组织原生）
 - [[ai-native-sdlc|AI 原生 SDLC]]（制品提交链驱动的闭环，Anthropic 2026；人守闸门/三层控制模型；货拉拉千人落地+孔明八阶段工作流实例，四信源）
+- [[ai-ticket-system|AI 工单系统]]（智能分类五能力+置信度阈值+人工纠偏回流；自动派单五因素+五种模式；知识库闭环五要点；目标指标/六项埋点/验收标准/风险对策，电商案例，单信源置信度中）
 - [[architecture-description-metamodel|ISO 42010 架构概念元模型]]（左侧人与诉求五要素+右侧视图与设计四要素+四条逻辑线不可颠倒+AD≠架构+车载域控五团队对立+ADR 决策记录，单信源置信度中）
 - [[architecture-design-capabilities|架构设计能力（8 个底层动作）]]（架构 vs 架构描述+八动作链抽象/聚焦/分解/边界/契约/权衡/约束/可演化+Parnas 信息隐藏+隐式契约+二十指标等于零，单信源置信度中）
 - [[architecture-tradeoff-methodology|架构取舍方法论（先定约束，再挑技术）]]（四问前置+演进式架构+三高量化+对症优化+选型看访问路径+稳定性工具箱，单信源置信度中）

@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-11-03 13:13:24",
+  "updated_at": "2026-11-03 21:55:00",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -4017,6 +4017,42 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484757&idx=1&sn=117baec9a73ce7ae952b07a342d57ca2&chksm=c4d184f9f3a60def21c41709c4d2ea24b7669a4f3dfa2221cbd48e8d5235f6aa3ef5fd343f4e",
       "asset_ref": "Assets/2026-11-03/weixin-bend-ai-agent-legacy-21.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-03-weixin-bend-approval-engine-08.md",
+      "sha256": "1780339d7c1b6fba21dfd6d1f63fbf7990a350f7b84d15237632306671012524",
+      "registered_at": "2026-11-03",
+      "inbox_ref": "Archive/2026-11-03-bend-approval-engine-08.md",
+      "pages": [
+        "wiki/sources/bend-approval-workflow-engine.md",
+        "wiki/concepts/approval-workflow-engine.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484401&idx=1&sn=7cc382b74f4e46072b7fc794050ffd2d&chksm=c4d1825df3a60b4b888d67c14d4c776653434702cc234b3ae11830cbe9ea40263b836f65b61e",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-approval-engine-08.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-03-weixin-bend-ai-approval-15.md",
+      "sha256": "a91b9f72c8fe34d284b70f99b17ed142da5d463d6a7205810a7b6ba8876f23c9",
+      "registered_at": "2026-11-03",
+      "inbox_ref": "Archive/2026-11-03-bend-ai-approval-15.md",
+      "pages": [
+        "wiki/sources/bend-ai-approval-flow.md",
+        "wiki/concepts/approval-workflow-engine.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484619&idx=1&sn=faba1bd4bb43f42a96d4331df557d1ab&chksm=c4d18567f3a60c71eb5fbfec3f51451c4e6d27910dab6efa95c953c4aeef0b0cc31450272094",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-ai-approval-15.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-03-weixin-bend-ai-ticket-prd-16.md",
+      "sha256": "b62b5ccbad096ce1f2faf93609f078af02ac77b0367cd17859a72a21964a4cbd",
+      "registered_at": "2026-11-03",
+      "inbox_ref": "Archive/2026-11-03-bend-ai-ticket-prd-16.md",
+      "pages": [
+        "wiki/sources/bend-ai-ticket-system-prd-2.md",
+        "wiki/concepts/ai-ticket-system.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484642&idx=1&sn=4a693c61f045d70d2985885ebe065589&chksm=c4d1854ef3a60c5854ba23e70f43d35aa5111a8ed0cbded27beabcc7d114b42bee691f339e68",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-ai-ticket-prd-16.md"
     }
   ]
 }
