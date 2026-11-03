@@ -4053,6 +4053,20 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484642&idx=1&sn=4a693c61f045d70d2985885ebe065589&chksm=c4d1854ef3a60c5854ba23e70f43d35aa5111a8ed0cbded27beabcc7d114b42bee691f339e68",
       "asset_ref": "Assets/2026-11-03/weixin-bend-ai-ticket-prd-16.md"
+    },
+    {
+      "path": "raw/sources/enterprise/2026-11-03-weixin-bend-batch-import-28.md",
+      "sha256": "384ca6bb6dace6e0ebb583537c946b8b80bee3e1ce2c41aecdf633535cd9ec97",
+      "registered_at": "2026-11-03",
+      "inbox_ref": "Archive/2026-11-03-bend-batch-import-28.md",
+      "pages": [
+        "wiki/sources/bend-batch-import-design.md",
+        "wiki/concepts/batch-import-design.md",
+        "wiki/concepts/idempotency-design.md",
+        "wiki/sources/async-task-system-design.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484950&idx=1&sn=66d977441498ef12f16d1dded00d55af&chksm=c4d187baf3a60eac234083d8e4cb0a1c01984bb67ee8ab2f8cb89962e4583a98e9b61943cc9e",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-batch-import-28.md"
     }
   ]
 }

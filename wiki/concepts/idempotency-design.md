@@ -4,7 +4,7 @@ type: concept
 title: 幂等设计（Idempotency Design）
 status: active
 created: 2026-10-23
-updated: 2026-11-01
+updated: 2026-11-03
 confidence: high
 tags:
   - concept
@@ -24,6 +24,7 @@ sources:
   - raw/sources/architecture/2026-10-31-points-system-architecture-design.md
   - raw/sources/architecture/2026-11-02-weixin-seckill-100k-qps.md
   - raw/sources/ai/2026-11-03-weixin-bend-ai-agent-legacy-21.md
+  - raw/sources/enterprise/2026-11-03-weixin-bend-batch-import-28.md
 related:
   - wiki/concepts/durable-execution.md
   - wiki/concepts/blue-green-deployment.md
@@ -42,6 +43,8 @@ related:
   - wiki/concepts/mysql-bulk-import.md
   - wiki/sources/mysql-10b-bulk-import-guide.md
   - wiki/sources/weixin-seckill-100k-qps.md
+  - wiki/concepts/batch-import-design.md
+  - wiki/sources/bend-batch-import-design.md
 ---
 # 幂等设计（Idempotency Design）
 
@@ -102,6 +105,7 @@ related:
 - 2026-11-01：积分系统架构（第 10 信源）在账户场景印证并细化：幂等键 = 业务方 + 业务单号 + 操作类型（消费/冻结/确认扣减/取消冻结是不同操作，不能共用含义模糊的键）；网关可拦重复流量但**最终幂等必须由积分核心持久化并用数据库唯一约束守住**；扣减绝不「先读余额、应用里判断后无条件覆盖」，原子扣减且 ≥0 由数据库并发控制保证——与本概念第 1 条同事务铁律同构的「变更本身必须原子」实例。
 - 2026-11-02：秒杀系统设计（第 11 信源）补上**三层幂等防御**模式：Redis 买家标记挡活动期重复点击（会过期、会随重启丢失）、Kafka 幂等挡重复投递、DB 唯一索引 (user_id, sku_id) 挡最终结果（不会过期、不随重启丢失）；消费端遇 `DuplicateKeyException` 直接当"已处理"跳过并 ack，不重试。三层各管一段，最终防线必须在数据库而非缓存——与第 5 信源"Lua 返回值幂等裁决"同构但层级不同（第 5 信源是缓存层内自洽裁决，本信源是跨层分级防御）。
 - 2026-11-03：[[bend-ai-agent-legacy-integration]]（第 12 信源）补上 **Agent 写回旧系统的跨系统写**场景：幂等键+重试机制避免重复写单；与"中间表+人工确认"的安全边界配合，写动作一致性由幂等键与人工确认双重守住（案例量化数据为作者自述，未经独立验证）。
+- 2026-11-03：[[bend-batch-import-design]]（第 13 信源）补上 **B 端批量导入重试**场景：幂等键 = 任务 ID+行号，重复提交不重复写入；并发控制（同一组织同一导入类型只允许一个"处理中"任务）从任务层阻断交叉覆盖；部分成功策略下重试仅重失败行、过滤已成功行——幂等是"只重失败行"重试语义的前提（案例数字为作者自述，未经独立验证）。
 
 ## Open Questions（开放问题）
 
@@ -119,6 +123,7 @@ related:
 - Source: `raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md`（第 9 信源：模型链路幂等键以业务完整请求为单位、非确定性下幂等更需要）
 - Source: `raw/sources/architecture/2026-10-31-points-system-architecture-design.md`（第 10 信源：积分幂等键三要素、DB 唯一约束守住、原子扣减不先读后覆盖）
 - Source: `raw/sources/architecture/2026-11-02-weixin-seckill-100k-qps.md`（第 11 信源：三层幂等防御——Redis 标记→Kafka→DB 唯一索引，DuplicateKeyException 当已处理跳过）
+- Source: `raw/sources/enterprise/2026-11-03-weixin-bend-batch-import-28.md`（第 13 信源：导入幂等键=任务 ID+行号、并发控制单任务、部分成功后仅重试失败行）
 
 ## Related Knowledge（相关知识）
 
@@ -130,3 +135,4 @@ related:
 - [[redis|Redis（实体）]]（Lua 脚本原子性是缓存层幂等的基座）
 - [[llm-integration-engineering-hard-parts|大模型接进业务系统：工程难点在哪（信源页）]]
 - [[points-system-architecture-design|积分系统架构设计（信源页）]]
+- [[batch-import-design|B端批量导入设计（概念页）]]（导入幂等键=任务 ID+行号、部分成功后仅重试失败行）

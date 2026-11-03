@@ -77,6 +77,7 @@
 - [[bend-ai-approval-flow|AI+审批流：B端产品经理的智能化落地指南]]（2026-11-03，产品/AI/审批流，传统四大痛点+智能填单/风险识别/自动审批/异常预警四模块+制造企业案例（填单-85%/准确率92%/60%自动/超时-70%）+六步SOP+灰度策略，单信源置信度中）
 - [[bend-ai-ticket-system-prd-2|B端产品经理实战：AI工单系统PRD 2.0——从智能分类、自动派单到知识库闭环]]（2026-11-03，产品/AI/工单，智能分类五能力+自动派单五因素+知识库闭环五要点+目标指标/六项埋点/验收标准/风险对策+电商案例（准确率91.6%/覆盖率68.3%/引用率11%→37%），单信源置信度中）
 - [[bend-approval-workflow-engine|B端产品经理如何设计审批流引擎？节点流转、条件分支到落地验收全框架]]（2026-11-03，产品/审批流/B端，六类节点+处理人规则六种+条件分支五要素+5000元边界值卡单教训+十项验收清单+常见坑六类，单信源置信度中）
+- [[bend-batch-import-design|B端批量导入3个坑：校验、性能、异常处理（大皮不皮 第28篇）]]（2026-11-03，产品/B端/批量导入，数据治理本质+三层校验模型+异步六步+6态状态机（部分成功为常态）+错误报告7要素+部分成功策略+上线前自查8项，正文自 Assets 采集稿逐字收录，1px 占位图剔除，单信源置信度中）
 - [[bend-rbac-permission-system-design|B端RBAC权限系统完整产品设计：从需求梳理到落地验收]]（2026-11-03，产品/权限/RBAC，四核心对象+RBAC0-3模型层级+需求三梳理+七大功能模块+关键流程+异常边界+验收清单，与 Agent 权限模型互补，单信源置信度中）
 - [[claude-howto-github-tutorial|claude-howto：一套完整的 Claude Code 开源教程（GitHub 仓库）]]（2026-10-23，AI/资源，置信度低）
 - [[claude-skills-guide|从 0 到 1 拆解 Claude Skills：一次构建，永久生效（SKILLS 专栏 01）]]（2026-10-28，AI/Claude，置信度中）
@@ -353,6 +354,7 @@
 - [[architecture-description-metamodel|ISO 42010 架构概念元模型]]（左侧人与诉求五要素+右侧视图与设计四要素+四条逻辑线不可颠倒+AD≠架构+车载域控五团队对立+ADR 决策记录，单信源置信度中）
 - [[architecture-design-capabilities|架构设计能力（8 个底层动作）]]（架构 vs 架构描述+八动作链抽象/聚焦/分解/边界/契约/权衡/约束/可演化+Parnas 信息隐藏+隐式契约+二十指标等于零，单信源置信度中）
 - [[architecture-tradeoff-methodology|架构取舍方法论（先定约束，再挑技术）]]（四问前置+演进式架构+三高量化+对症优化+选型看访问路径+稳定性工具箱，单信源置信度中）
+- [[batch-import-design|B端批量导入设计]]（数据治理本质：三层校验模型（字段格式/业务实体/跨单据）+异步六步流水线+6态状态机（部分成功为常态）+错误报告7要素与三档错误级别+部分成功策略+配置化校验规则，与 mysql-bulk-import（DB层吞吐）互补分层，单信源置信度中）
 - [[batch-message-push|批量消息推送（百万级短信推送）]]（内存/性能/可靠性三对矛盾 + 游标分片+专用线程池+Redis 进度+重试死信+断点续跑，单信源置信度中）
 - [[blue-green-deployment|蓝绿发布（Blue-Green Deployment）]]（Preview+全量切换+自动观察回退；selector 只影响新连接；四层门禁先过样本量；蓝绿实战单信源）
 - [[cache-line-and-false-sharing|CPU 缓存行效应：局部性与伪共享]]（64 字节行为失效粒度；数组胜链表、Disruptor Sequence 填充、LinkedList Node 32B 三倍内存、AtomicLong/LongAdder Cell/Exchanger Node 伪共享与 @Contended，六信源）
@@ -384,7 +386,7 @@
 - [[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]（先目标基线、JFR/GC 日志归因，证据指向 JVM 才动参数，单变量实验）
 - [[exchanger-internals|Exchanger 双向交换设计]]（JUC 唯一双向交换；Slot 单槽→Arena 多槽渐进扩容；@Contended+手动填充防伪共享；SPINS=1024 按核数/hash 动态自旋；线程须成对，单信源，置信度中）
 - [[expand-migrate-contract|Expand/Migrate/Contract（Schema 跨版本演进）]]（Expand 只加兼容结构→Migrate 双写限速回填→回退窗口关闭后才 Contract；蓝绿回退的数据前提，单信源）
-- [[idempotency-design|幂等设计]]（重试与幂等共生；同事务铁律+幂等键三要素+分层防护闭环；模型链路幂等键以完整请求为单位+积分幂等键三要素 DB 唯一约束守住，十信源互证）
+- [[idempotency-design|幂等设计]]（重试与幂等共生；同事务铁律+幂等键三要素+分层防护闭环；模型链路幂等键以完整请求为单位+积分幂等键三要素 DB 唯一约束守住+导入幂等键=任务ID+行号/部分成功后仅重试失败行，十三信源互证）
 - [[interaction-write-path|互动数据写路径治理（Interaction Write Path Governance）]]（缓存扛读、异步削写、原子幂等、最终一致；先更缓存立即返回+三死穴+热点三板斧+落库三层压缩+对账降级；单信源，置信度中）
 - [[exploratory-learning|探索式学习（知识 DAG）]]（目标→节点 DAG，导师写 JS 经沙箱改写文档教学；Unyra 提出）
 - [[fail-fast-modcount|Fail-Fast 迭代器（modCount）]]（结构修改计数器+迭代器快照比对抛 CME；检测单线程编程错误而非线程安全机制；含 fail-safe 对比与 subList 陷阱，同作者六信源）

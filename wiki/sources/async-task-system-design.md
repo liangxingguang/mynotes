@@ -4,7 +4,7 @@ type: source
 title: 异步任务系统怎么设计？从提交、排队、执行到幂等和重试
 status: active
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-11-03
 confidence: high
 tags:
   - source
@@ -17,6 +17,7 @@ sources:
 related:
   - wiki/concepts/durable-execution.md
   - wiki/concepts/idempotency-design.md
+  - wiki/concepts/batch-import-design.md
   - wiki/sources/spring-async-to-task-table.md
   - wiki/sources/agent-long-task-reliable-execution.md
   - wiki/sources/async-idempotency-local-message-table.md
@@ -69,6 +70,7 @@ related:
 - [[spring-async-to-task-table|任务表 + Worker（信源页）]]
 - [[agent-long-task-reliable-execution|Agent 长任务可靠执行 Go+PG（信源页）]]
 - [[async-idempotency-local-message-table|异步链路幂等实战（信源页）]]
+- [[batch-import-design|B端批量导入设计（概念页）]]——互证：B 端导入场景把任务状态机特化为含"部分成功"终态的 6 态（待处理→处理中→部分成功→全部成功→全部失败→已取消），且"部分成功"是常态而非异常；进度更新（百分比/成功/失败行数）与幂等键 (task_id, row_number) 与本页逐条对应（解读）
 
 ## Source（信源）
 
