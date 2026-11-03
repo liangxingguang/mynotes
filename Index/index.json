@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03 18:38",
+  "updated_at": "2026-11-03 18:40",
   "notes": [
     {
       "id": "2026-11-03-harvard-cs2680-agent-to-gpu",
@@ -18,6 +18,25 @@
       "summary": "哈佛 2026 秋季新课 CS2680《Modern AI Systems: Agents and System Optimizations》由 Juncheng Yang 主讲，围绕同一个 Agent 系统从应用层 Agent Loop 一路拆到推理服务与 GPU；5 个递进作业（Mads 系列）+ 期末项目，附 Agent/AI Infra 论文地图式阅读清单，课程主页资源值得收藏。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-article-wrhh.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-11-03-structured-thinking-18-books",
+      "title": "一定要大量读书：结构化思维的18本书，彻底不再逻辑混乱",
+      "path": "Inbox/2026-11-03-structured-thinking-18-books.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "阅读",
+        "思维方式"
+      ],
+      "source": "李子会（微信公众号）",
+      "source_url": "https://mp.weixin.qq.com/s/S7_eu4Q8M1jBahj0USFN3w",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "针对\"想法很多落笔难、越想越乱、信息越多判断越模糊\"，作者给出 18 本书书单，分基础（整理思路）、进阶（检验判断）、应用（处理复杂问题）三阶段递进，每阶段 6 本，主张读一点、拿真实问题练一点。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-article-s7eu.md",
       "wiki_status": "pending"
     },
     {
