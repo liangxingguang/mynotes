@@ -10,7 +10,9 @@ category: 学习
 tags: [产品]
 album: B端产品经理（专辑，32 篇，作者 大皮不皮）
 asset_ref: Assets/2026-11-03/weixin-bend-approval-engine-08.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-11-03T13:21:21.687Z"
+ingest_claim_id: 60756-1793712081687-1
 ---
 
 # B端产品经理如何设计审批流引擎？节点流转、条件分支到落地验收全框架

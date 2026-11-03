@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03 21:20",
+  "updated_at": "2026-11-03 21:23",
   "notes": [
     {
       "id": "20261103-bend-ai-approval-15",
@@ -35,7 +35,7 @@
       "summary": "本文拆解 AI 工单系统 PRD 2.0 三模块：智能分类（大模型意图识别+多标签+置信度阈值）、自动派单（技能标签+负载均衡+SLA 优先级）、知识库闭环（处理完成自动生成知识草稿+审核+检索淘汰）。电商售后案例：分类准确率 91.6%、自动派单覆盖 68.3%、知识引用率 11%→37%、处理时长 6 分钟→2.4 分钟。附目标指标、数据埋点、验收标准与风险对策。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-bend-ai-ticket-prd-16.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "20261103-bend-approval-engine-08",
@@ -53,7 +53,7 @@
       "summary": "本文给出审批流引擎的完整设计框架：节点流转（类型/处理人规则/超时策略/执行权限）、条件分支（核心要素/案例/设计建议）、落地验收（清单模板/验收过程/常见坑与处理），强调 60% 精力放在条件分支边界与异常流上。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-bend-approval-engine-08.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "20261103-bend-batch-import-28",
@@ -653,6 +653,25 @@
       "summary": "线程数的关键不是任务\"名字\"，而是实际计算与等待比例。CPU 密集型从 N 或 N+1 开始（避免争抢 CPU）；阻塞式 I/O 密集型从 2N 开始（等待与计算交错），更一般估算公式：线程数 ≈ N × U × (1 + W/C)，最终须压测并受下游容量约束。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-article-9ulr.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-weixin-ai-requirements-analysis",
+      "title": "AI赋能需求分析：从\"差不多\"到\"精确无误\"",
+      "path": "Inbox/2026-11-03-weixin-ai-requirements-analysis.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "AI",
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/dcpDETy9cha6z0GL_acvqQ",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "需求漏斗效应：上游一个模糊点，下游变成三个问题、五次返工、十倍成本。AI 的价值不是替决策，而是扩展认知带宽——你没想到的它帮你想到、你来不及写的它帮你起草、你不确定的它帮你验证。四个环节：需求拆解与用户故事生成、需求文档自动撰写、需求评审智能查漏、需求变更影响分析。三个落地建议：建立需求模板而非从零对话、用历史需求做\"训练集\"、AI 是副驾驶不是自动驾驶。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-ai-requirements-analysis.md",
       "wiki_status": "pending"
     },
     {
