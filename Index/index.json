@@ -1,6 +1,25 @@
 {
-  "updated_at": "2026-11-03 18:22",
+  "updated_at": "2026-11-03 18:35",
   "notes": [
+    {
+      "id": "2026-11-03-thinking-speaking-diagrams",
+      "title": "提升自己的思维和讲话能力 20 张图解",
+      "path": "Inbox/2026-11-03-thinking-speaking-diagrams.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "思维方式",
+        "个人成长"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/Qnf7_3IgN98ifuDzGLeMuQ",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "作者用 20 张手绘简笔画复盘自己提升思维与表达能力的迭代过程，主张\"有目标、有路径、有模板、可训练\"，从固定型思维跨越到成长型思维，并用反馈与自我觉察打破认知盲区。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-article-qnf7.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
