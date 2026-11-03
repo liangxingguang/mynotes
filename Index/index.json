@@ -1,24 +1,6 @@
 {
-  "updated_at": "2026-11-03 22:59",
+  "updated_at": "2026-11-03 23:12",
   "notes": [
-    {
-      "id": "20261103-bend-complex-system-breakdown-20",
-      "title": "复杂B端系统拆解方法论：业务对象、单据、状态机、权限、异常",
-      "path": "Inbox/2026-11-03-bend-complex-system-breakdown-20.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484730&idx=1&sn=26f55c6b9c001fc14c43140c6e1253cf&chksm=c4d18496f3a60d8011c6f9891b0f0dc8d9b2448e66ab048b1026480c4ee9b8cbc7593752ba40#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "本文给出复杂 B 端系统拆解五件套：业务对象（主数据/业务凭证/配置数据三类，先抓核心 5-8 个）、单据（类型/要素/关系/审批流/打印/回单，分清谁发起/从哪来/经哪些环节/关联哪些对象）、状态机（状态/事件/动作/守卫条件，先画状态再画页面）、权限（RBAC，功能权限+数据权限，输出权限矩阵表）、异常（业务/系统/边界三类，明确触发条件/文案/是否可重试/谁处理/时限/冲正补偿）。车贷\"提前结清\"功能五件套串讲 + PM 执行 SOP 五步。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-complex-system-breakdown-20.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "20261103-bend-contract-management-17",
       "title": "B端产品经理实战：合同管理系统从起草到归档的SOP",
@@ -6932,6 +6914,24 @@
       "summary": "批量导入终点不是\"导进去\"而是\"能处理、能追踪、能重来\"。坑一：只做前端校验不做后端业务校验——前端只处理格式（手机号 11 位/日期合法），业务规则（撞单/物料停用/账户匹配）必须后端三层校验模型（字段格式层/业务实体层/跨单据规则层）。坑二：同步导入大文件性能崩——异步任务+分片处理（1000-2000 行/片，每片独立事务）+进度可感知，任务状态机 6 态（部分成功是 B 端常态）。坑三：异常处理不清——错误报告文件（行号/主键/字段/级别/错误码/中文原因/处理建议）+三档错误级别（致命/行级/警告）+部分成功策略+失败行重试。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-bend-batch-import-28.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-complex-system-breakdown-20",
+      "title": "复杂B端系统拆解方法论：业务对象、单据、状态机、权限、异常",
+      "path": "Archive/2026-11-03-bend-complex-system-breakdown-20.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484730&idx=1&sn=26f55c6b9c001fc14c43140c6e1253cf&chksm=c4d18496f3a60d8011c6f9891b0f0dc8d9b2448e66ab048b1026480c4ee9b8cbc7593752ba40#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文给出复杂 B 端系统拆解五件套：业务对象（主数据/业务凭证/配置数据三类，先抓核心 5-8 个）、单据（类型/要素/关系/审批流/打印/回单，分清谁发起/从哪来/经哪些环节/关联哪些对象）、状态机（状态/事件/动作/守卫条件，先画状态再画页面）、权限（RBAC，功能权限+数据权限，输出权限矩阵表）、异常（业务/系统/边界三类，明确触发条件/文案/是否可重试/谁处理/时限/冲正补偿）。车贷\"提前结清\"功能五件套串讲 + PM 执行 SOP 五步。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-complex-system-breakdown-20.md",
       "wiki_status": "ingested"
     },
     {

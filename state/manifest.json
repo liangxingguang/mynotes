@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-11-03 21:55:00",
+  "updated_at": "2026-11-03 23:10:00",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -4067,6 +4067,19 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484950&idx=1&sn=66d977441498ef12f16d1dded00d55af&chksm=c4d187baf3a60eac234083d8e4cb0a1c01984bb67ee8ab2f8cb89962e4583a98e9b61943cc9e",
       "asset_ref": "Assets/2026-11-03/weixin-bend-batch-import-28.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-03-weixin-bend-complex-system-breakdown-20.md",
+      "sha256": "397aba0eb326c272c6d089a6a101230ceb00907453a93776ce303d76ce93cf58",
+      "registered_at": "2026-11-03",
+      "inbox_ref": "Archive/2026-11-03-bend-complex-system-breakdown-20.md",
+      "pages": [
+        "wiki/sources/bend-complex-system-breakdown-20.md",
+        "wiki/concepts/complex-system-breakdown.md",
+        "wiki/concepts/rbac-permission-system.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484730&idx=1&sn=26f55c6b9c001fc14c43140c6e1253cf&chksm=c4d18496f3a60d8011c6f9891b0f0dc8d9b2448e66ab048b1026480c4ee9b8cbc7593752ba40",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-complex-system-breakdown-20.md"
     }
   ]
 }
