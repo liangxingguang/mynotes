@@ -1,6 +1,24 @@
 {
-  "updated_at": "2026-11-03 18:52",
+  "updated_at": "2026-11-03 18:59",
   "notes": [
+    {
+      "id": "2026-11-03-bend-rbac-permission-system-design",
+      "title": "B端RBAC权限系统完整产品设计：从需求梳理到落地验收",
+      "path": "Inbox/2026-11-03-bend-rbac-permission-system-design.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "大皮不皮（微信公众号）",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484267&idx=1&sn=cb6e0abf87f2060aba5b944bb2821003&chksm=c4d182c7f3a60bd1384cd3f96e676aa85eb55261a7841c02bbf603c90708b7488560725c1427",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "B端权限系统是底层能力，直接决定数据合规与使用边界。本文拆解 RBAC 完整产品设计：四个核心对象（用户/角色/权限/资源）、RBAC0-3 模型层级、需求调研三梳理（角色/权限点/数据权限）、七大功能模块、关键流程、原型交互、异常边界与验收清单。多数 B 端产品用 RBAC1/2 混合即可，避免过度设计。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-rbac-01.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-11-03-go-microservice-gitlab-cicd-delivery",
       "title": "Go 微服务 GitLab CI/CD 工程实战：构建可验证、可晋级、可恢复的交付系统",
