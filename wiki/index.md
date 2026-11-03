@@ -338,6 +338,7 @@
 - [[weixin-jvm-gc-log-heap|一行 log.info 打掉 8G 堆：每秒 500MB 大对象，是怎么把老年代喂满的]]（2026-11-02，Java/JVM/GC/日志/微信，log.info 打 35MB JSON 致 G1 humongous+异步队列钉住+Full GC 空转+jstat→histo→dump 三步定位+Arthas 改级别止血，微信单信源，置信度高）
 - [[weixin-seckill-100k-qps|从 0 设计 10 万 QPS 秒杀系统：10 万请求进来，只有 1000 个能碰到数据库]]（2026-11-02，架构/分布式系统/秒杀/Redis/Kafka/微信，三层漏斗压 10 万→2 万→1000+Redis Lua 预扣+32 桶散热+Kafka 削峰+DB 唯一索引幂等+容量推导表，微信单信源，置信度高）
 - [[2026-11-03-thinking-speaking-diagrams|提升自己的思维和讲话能力 20 张图解]]（2026-11-03，个人成长/思维方式/微信，20 张手绘图承载核心方法论（图片无法文字化）+随笔正文：目标感→路径→模板→可训练+从固定型到成长型思维跨越+自我觉察四阶段+反馈与盲区，公众号随笔单信源，置信度低）
+- [[bend-message-center-09|B端产品经理实操框架：消息中心从0到1复盘（大皮不皮 第9篇）]]（2026-11-04，产品/B端/消息中心，四层架构（接入/策略/渲染/通道）+生命周期七步+模板六字段（文案与数据分离）+订阅偏好六字段（投诉-40%）+触达优先级五级+频控（1h1条短信/1天3条营销）+失败重试矩阵（指数退避1→5→15min/降级/死信）+CRM案例（82%→96%、接入效率+60%），正文自 Assets 采集稿逐字收录（含 1px 占位图），单信源置信度中）
 
 ## concept（概念）
 
@@ -528,6 +529,7 @@
 - [[super-agent|Super-agent]]（打破 Agent-单 Session 绑定+连续/高效/主动/持久四特征+五大模块，DeepSeek Harness 团队架构探索文，单信源，置信度中）
 - [[ticket-task-persistence|Ticket 任务持久化模型]]（Assignment/Executor Session/Mandate 挂同一 Ticket+`ready` 释放名额+跟踪 PR 判结束，Super-agent 原型拆解信源，单信源，置信度中）
 - [[watchdog-control-loop|Watchdog 外部控制回路]]（主系统外独立 Control Loop+双重监控+定时驱动+自然语言交互，DeepSeek Harness 团队架构探索文，单信源，置信度中）
+- [[unified-message-center|统一消息中心（Unified Message Center）]]（四层架构（接入/策略/渲染/通道）+生命周期七步+四核心模块（模板/订阅偏好/触达策略/失败重试）+触达优先级五级+频控参考值+失败处理矩阵（按失败类型分流），B端消息中心信源编译，与消息总线/批量推送区分，单信源置信度中）
 
 ## entity（实体）
 
