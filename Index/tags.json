@@ -1,4 +1,15 @@
 {
-  "updated_at": "2026-11-04 06:52",
-  "tags": []
+  "updated_at": "2026-11-04 07:23",
+  "tags": [
+    {
+      "name": "RAG",
+      "status": "new",
+      "count": 4
+    },
+    {
+      "name": "pgvector",
+      "status": "new",
+      "count": 1
+    }
+  ]
 }

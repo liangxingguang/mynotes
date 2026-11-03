@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04 06:52",
+  "updated_at": "2026-11-04 07:23",
   "notes": [
     {
       "id": "20261103-bend-message-center-09",
@@ -460,6 +460,25 @@
       "summary": "核心心智模型切换：对象不会因有引用就自动被 GC 回收，资源在所有者离开作用域时立即释放；赋值可能移动值而非复制引用；`&T`/`&mut T` 是带规则的临时借用；enum 可携带数据是建模状态与失败的利器；trait 表达共享行为但无类继承；显式可变性、错误和并发边界是语言设计的一部分。所有权三规则：每个值有一个所有者、同一时刻通常只有一个所有者、离开作用域自动清理（Drop）。",
       "summary_status": "partial",
       "asset_ref": "Assets/2026-11-03/weixin-java-rust-learning-guide.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261104-pgvector-rag-retrieval-engineering",
+      "title": "别急着换向量库：PostgreSQL + pgvector 的生产级 RAG 检索工程",
+      "path": "Inbox/2026-11-04-pgvector-rag-retrieval-engineering.md",
+      "created": "2026-11-04",
+      "category": "技术",
+      "tags": [
+        "RAG",
+        "pgvector"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/YLTmBHYPhNR0lnCx9RhHLw",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "以多租户客服知识库为例的生产级 RAG 检索设计：五条正确性契约（租户隔离/授权有效/版本原子性/新鲜度/资源有界），模型空间注册、文档版本化+ACL、RLS 第二道防线、混合检索（向量+词法+RRF）、发布 CAS、缓存失效与物理清理、评测验收矩阵。核心主张：向量索引只产生候选，权限与版本的最终解释权在关系层；换专用向量库的决策也应由契约与证据驱动。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-YLTmBHYPhNR0lnCx9RhHLw.md",
       "wiki_status": "pending"
     },
     {
