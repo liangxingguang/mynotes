@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03 21:27",
+  "updated_at": "2026-11-03 21:38",
   "notes": [
     {
       "id": "20261103-bend-ai-approval-15",
@@ -672,6 +672,25 @@
       "summary": "技术方案设计三个\"老大难\"：写方案到半夜（文档两天还没算思考）、评审会默契沉默（方案通过上线后才发现积压吞吐问题）、A 方案还是 B 方案（\"先上 B 后面再优化\"然后就没有后面了）。AI 不是替代架构师判断力，而是扩展认知带宽——四个角色：方案起草助手、评审预检员、Trade-off 分析师、接口与建模辅助。没有完美的架构，只有特定约束下的最优解；AI 帮你把约束显性化，让 trade-off 可讨论。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-ai-architecture-design.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "20261103-weixin-ai-coding-storage-practice",
+      "title": "如何在\"不能出错\"的系统里使用 AI Coding？分布式存储实践与边界",
+      "path": "Inbox/2026-11-03-weixin-ai-coding-storage-practice.md",
+      "created": "2026-11-03",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/ubhctSeCv5NVrBzlBaL3AQ",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "美团基础技术部分布式存储团队实践：AI Coding 提速后缺陷绝对数仍涨——缺陷率持平但交付功能更多，瓶颈从\"写\"移到\"验证\"。本文按三类任务定边界：AI 评审（结论按证据等级输出，可执行证据四层：构建/单测、集成测试、运行时日志、静态推理互补）、AI Debug（定位=假设生成器+验证助手，输出候选集合不接受单根因，统一七类命名防结论悄悄升级）、AI 自动化（先明确目标边界与验收标准，测试变绿≠解决）。方法论 6 条：低风险易验证开始、每个结论可证伪、测试必须能变红、变绿≠解决、领域知识显式化只沉淀稳定部分、分层授权。结论：AI 负责扩大搜索空间与加速迭代验证，人负责系统语义与最终判断，边界靠可复现证据划定。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-ai-coding-storage-practice.md",
       "wiki_status": "pending"
     },
     {
