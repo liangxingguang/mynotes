@@ -73,6 +73,7 @@
 - [[awesome-design-md|用 DESIGN.md 治 AI 生成的丑 UI：awesome-design-md 仓库]]（2026-10-16，AI/工具）
 - [[baidu-live-mcast-message-architecture|百度直播海量用户实时消息系统架构：长连接组播 mcast 实践]]（2026-10-23，IM/直播消息/组播）
 - [[batch-push-sharding-threadpool|第70篇：批量消息推送优化——百万级推送如何避免内存爆炸（分片 + 线程池 + 异步）]]（2026-10-31，Java/批量推送，游标分片+专用线程池+进度追踪+重试死信，代码块被采集器截断，单信源置信度中）
+- [[bend-rbac-permission-system-design|B端RBAC权限系统完整产品设计：从需求梳理到落地验收]]（2026-11-03，产品/权限/RBAC，四核心对象+RBAC0-3模型层级+需求三梳理+七大功能模块+关键流程+异常边界+验收清单，与 Agent 权限模型互补，单信源置信度中）
 - [[claude-howto-github-tutorial|claude-howto：一套完整的 Claude Code 开源教程（GitHub 仓库）]]（2026-10-23，AI/资源，置信度低）
 - [[claude-skills-guide|从 0 到 1 拆解 Claude Skills：一次构建，永久生效（SKILLS 专栏 01）]]（2026-10-28，AI/Claude，置信度中）
 - [[codex-agent-harness-architecture-6|Codex 桌面客户端开发（六）：Agent Harness 的架构设计]]（2026-10-31，AI/Agent/Harness，三模块状态所有权+三态分离+产物核验 E1–E4+评测标准，系列首篇入 wiki，单信源置信度中）
@@ -447,6 +448,7 @@
 - [[prompt-engineering|提示工程（Prompt Engineering）]]（输出配置温度/Top-K/Top-P+11 种技巧梯度从零样本到 APE+最佳实践；Google 官方白皮书为基准信源，置信度高）
 - [[task-run-step-event-model|Task/Run/Step/Event 领域模型]]（Agent Runtime 控制平面四元分离；Run 聚合根+状态机守卫+纯函数投影+OCC；replay≠Durable Execution）
 - [[raft-membership-change-barrier|Raft 成员变更的日志 Barrier]]（公共 config 提交当前 term 日志登记 term；joint 无需/单步必需/回退双向必需）
+- [[rbac-permission-system|RBAC 权限系统（传统 B 端角色访问控制）]]（用户→角色→权限→资源静态绑定；RBAC0-3 模型层级；权限点编码模块_资源_动作；七大功能模块；与 [[agent-permission-model]] 互补而非替代，单信源置信度中）
 - [[read-fanout|读扩散（Fan-out on Read）]]（会话队列+syncId 位点同步把 1:N 写压成 1:1；99.99% 非个性化消息前提；阿里混合模式 500ms 端到端，双信源）
 - [[red-dot-tree-system|拉模式红点树系统（游戏 UI 提示徽标）]]（路径树+脏标记冒泡+每帧合批+拉模式，叶子自订阅自计算；先取走脏标记再计算；全树遍历顺带时间驱动红点；五方案对比+完整 C# 实现，单信源一手，置信度高）
 - [[rag-production-guardrails|企业级 RAG 生产护栏]]（容量/证据/权限/恢复四主线；证据门禁前置、发布目录原子切换；混合检索+存储分层+参数热调+重活异步化+影子模式+旁路降级+RRF融合+相关性裁判拒答+SSE契约+MCP工具调用真实用户身份+五层记忆+加权遗忘，三信源，置信度中）

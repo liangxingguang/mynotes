@@ -3992,6 +3992,18 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/Qnf7_3IgN98ifuDzGLeMuQ",
       "asset_ref": "Assets/2026-11-03/weixin-article-qnf7.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-03-bend-rbac-permission-system-design.md",
+      "sha256": "15b25a2c54b660cd089013e91e4c4c0e1f18ddd94ad670c99d150db4a205af98",
+      "registered_at": "2026-11-03",
+      "inbox_ref": "Archive/2026-11-03-bend-rbac-permission-system-design.md",
+      "pages": [
+        "wiki/sources/bend-rbac-permission-system-design.md",
+        "wiki/concepts/rbac-permission-system.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484267&idx=1&sn=cb6e0abf87f2060aba5b944bb2821003&chksm=c4d182c7f3a60bd1384cd3f96e676aa85eb55261a7841c02bbf603c90708b7488560725c1427",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-rbac-01.md"
     }
   ]
 }

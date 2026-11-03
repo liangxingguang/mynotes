@@ -19,6 +19,7 @@ related:
   - wiki/concepts/a2a-protocol.md
   - wiki/concepts/agent-sandboxing.md
   - wiki/concepts/durable-execution.md
+  - wiki/concepts/rbac-permission-system.md
   - wiki/sources/kiso-minimal-agent-framework.md
   - wiki/sources/llm-integration-engineering-hard-parts.md
   - wiki/entities/kiso.md
@@ -59,7 +60,7 @@ A2A 委派：主管下发子 Instruction 时生成子 InstructionGrant，只能�
 
 ### Distinctions（区分）
 
-- 与**传统 RBAC**：主体从单一用户扩为三层；授权从静态长期变为「基线 + 指令级临时授权 + 动态校验」。
+- 与**传统 RBAC**（[[rbac-permission-system|RBAC 权限系统]]）：主体从单一用户扩为三层；授权从静态长期变为「基线 + 指令级临时授权 + 动态校验」。
 - 与**参数层校验**（[[tool-parameter-whitelist|参数层白名单]]）：权限模型管「这个会话能不能调这个工具」，白名单管「这次调用的参数值可不可信」，两道独立防线。
 - 与**黑名单式命令过滤**：本地 Shell 放行不应靠危险命令黑名单（Shell 表达能力太强，`$()`/重定向/subshell/环境变量都能借道产生副作用），正确方向是只读证明式放行——无法证明只读即 abstain（Kiso 信源）。
 

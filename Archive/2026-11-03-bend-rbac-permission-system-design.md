@@ -9,7 +9,7 @@ created: 2026-11-03
 category: 学习
 tags: [产品]
 asset_ref: Assets/2026-11-03/weixin-bend-rbac-01.md
-wiki_status: pending
+wiki_status: ingested
 album: B端产品经理（专辑，32 篇，作者 大皮不皮）
 ---
 
