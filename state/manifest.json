@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-11-04 00:53:00",
+  "updated_at": "2026-11-04 03:45:33",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -4128,6 +4128,42 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484297&idx=1&sn=d9fd3d04d43775e5bc9bd59a1b63cf7b&chksm=c4d18225f3a60b33c80ecb315817127f955c7a53c47d11c73055632a6494b99e8e196adebeb3",
       "asset_ref": "Assets/2026-11-03/weixin-bend-demand-research-03.md"
+    },
+    {
+      "path": "raw/sources/products/2026-11-03-weixin-bend-demand-review-04.md",
+      "sha256": "28ac81aa3de3f504f7c277fe23a7eed206366d1620759d0a9bc9aab372e823c5",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-bend-demand-review-04.md",
+      "pages": [
+        "wiki/sources/bend-demand-review-04.md",
+        "wiki/concepts/demand-review-sop.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484315&idx=1&sn=10e6510f9b024cf70f43a2c5a310f618&chksm=c4d18237f3a60b21106f0cfaed6451341c3e5195d3494e2dfb1d79d60da3bd6454bde8ebbb75",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-demand-review-04.md"
+    },
+    {
+      "path": "raw/sources/products/2026-11-03-weixin-bend-dynamic-form-13.md",
+      "sha256": "602e5bd3459d9bff3657fb6440b39cfd1f2b08a488b5107a36e34ec3b4d455c0",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-bend-dynamic-form-13.md",
+      "pages": [
+        "wiki/sources/bend-dynamic-form-13.md",
+        "wiki/concepts/dynamic-form-engine.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484568&idx=1&sn=c22243cc2ef5967abc2dd64d8ff01c9e&chksm=c4d18534f3a60c2273e0a70878b4651f3ed0709006f494724063c40ce59fd518d2298e81f1e0",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-dynamic-form-13.md"
+    },
+    {
+      "path": "raw/sources/products/2026-11-03-weixin-bend-engine-comparison-14.md",
+      "sha256": "c8806c44ec392689f97cbedb7333fcadf9e9a408aa1cdeda3ee97838882eb65b",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-bend-engine-comparison-14.md",
+      "pages": [
+        "wiki/sources/bend-engine-comparison-14.md",
+        "wiki/comparisons/dynamic-form-vs-workflow-vs-rule-engine.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484594&idx=1&sn=e6a8f953adc03c14b7df61fa50d5c8f1&chksm=c4d1851ef3a60c08ae120f9d45b04842267a5059f9f7a8ae451e8342576d4629ee86f20220cc",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-engine-comparison-14.md"
     }
   ]
 }
