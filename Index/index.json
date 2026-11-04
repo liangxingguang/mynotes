@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04 11:30",
+  "updated_at": "2026-11-04 11:37",
   "notes": [
     {
       "id": "20261103-bend-rule-engine-11",
@@ -426,6 +426,24 @@
       "summary": "作者推荐 6 本免费开源 AI 书，按用途分四路：入门基础（邱锡鹏蒲公英书）、搭建 Agent（Agentic Design Patterns 中文版 + 深入理解 AI Agent）、AI 产品成本测算（深入理解 AI Infra）、强化学习（数学原理 + Hands-On Modern RL）。主张花一个月读完一本胜过长期刷碎片教程。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-04/zhihu-pin-github-ai-books.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-11-04-jvm-memory-model",
+      "title": "2026-11-04-jvm-memory-model",
+      "path": "Inbox/2026-11-04-jvm-memory-model.md",
+      "created": "2026-11-04",
+      "category": "学习",
+      "tags": [
+        "java"
+      ],
+      "source": "微信公众号「从CRUD到架构师」· 专辑《架构师之路》第 02 期",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzY4NTAxMTAwMA==&mid=2247483714&idx=1&sn=b250fca4485c6c4cf32ac943a1b2d9d3",
+      "source_type": "article",
+      "platform": "微信",
+      "summary": "JVM 运行时数据区全景拆解：线程私有（程序计数器、虚拟机栈、本地方法栈）vs 线程共享（堆、元空间）。程序计数器是唯一不会 OOM 的区域；虚拟机栈以栈帧为单位（局部变量表/操作数栈/动态链接/返回地址），递归过深引发 StackOverflowError 用 -Xss 调大；堆是唯一 GC 主战场，分代模型：Eden→S0/S1 复制、年龄达 15 晋升老年代、大对象直接进老年代；元空间（JDK8 起取代永久代，移至本地内存）。附经典内存分析题与 JVM 参数速查。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/jvm-memory-model.md",
       "wiki_status": "pending"
     },
     {
