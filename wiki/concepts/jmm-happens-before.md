@@ -4,7 +4,7 @@ type: concept
 title: Java 内存模型与 happens-before
 status: active
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-05
 confidence: medium
 tags:
   - concept
@@ -17,6 +17,7 @@ related:
   - wiki/concepts/oom-troubleshooting.md
   - wiki/sources/jvm-interview-guide.md
   - wiki/topics/jvm-gc.md
+  - wiki/concepts/jvm-runtime-memory-areas.md
 ---
 # Java 内存模型与 happens-before
 
@@ -49,11 +50,12 @@ Java Memory Model（JMM）是定义多线程程序中共享变量可见性与有
 
 - [[oom-troubleshooting|OOM 排查方法论]]：JMM 属 JVM 运行时机制谱系，同出一篇面试题信源。
 - [[jvm-gc|JVM 垃圾回收（主题）]]：GC 的可达性分析与 JMM 的引用语义互补（回收看可达性，并发看可见性）。
+- [[jvm-runtime-memory-areas|JVM 运行时内存区域]]：JMM 的实现载体层；讨论「线程私有/共享内存分区」用该页，讨论「可见性契约」用本页，两者互补不重叠。
 
 ### Distinctions（区分）
 
 - **时间先后 ≠ happens-before**：先发生的写若不在 hb 链上，对后续读不保证可见。
-- **JMM vs JVM 内存结构**：JMM 是并发语义规范，JVM 内存区域是实现载体；讨论「线程私有/共享内存」用后者，讨论「可见性契约」用前者。
+- **JMM vs JVM 内存结构**：JMM 是并发语义规范，JVM 内存区域是实现载体；讨论「线程私有/共享内存」用后者，讨论「可见性契约」用前者。JVM 内存区域的具体划分见 [[jvm-runtime-memory-areas]]。
 
 ## Open Questions（开放问题）
 
@@ -67,3 +69,4 @@ Java Memory Model（JMM）是定义多线程程序中共享变量可见性与有
 
 - [[jvm-interview-guide|JVM 面试题最全整理（信源页）]]
 - [[oom-troubleshooting|OOM 排查方法论]]
+- [[jvm-runtime-memory-areas|JVM 运行时内存区域]]

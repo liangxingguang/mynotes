@@ -4,7 +4,7 @@ type: concept
 title: OOM 排查方法论
 status: active
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-05
 confidence: medium
 tags:
   - concept
@@ -15,6 +15,7 @@ sources:
   - raw/sources/architecture/2026-10-28-jvm-interview-guide.md
   - raw/sources/architecture/2026-10-28-java-online-troubleshooting-arthas.md
   - raw/sources/architecture/2026-11-03-weixin-full-gc-troubleshooting.md
+  - raw/sources/architecture/2026-11-04-jvm-memory-model.md
 related:
   - wiki/concepts/evidence-first-jvm-tuning.md
   - wiki/topics/jvm-gc.md
@@ -76,7 +77,7 @@ OOM 是线上最常见也最致命的 JVM 事故，且错误信息只告诉你�
 
 - 2026-10-28 — 随 JVM 面试题信源提出 6 类 OOM 速查表与排查五步法（理论框架）。
 - 2026-10-28 — Java 线上排查实战信源以真实复现数据印证同一流程：`-Xmx128m -XX:+HeapDumpOnOutOfMemoryError` 自动留现场 → `jmap -histo` 看大户（byte 数组 7434 实例占 63MB）→ MAT 分析引用链；并补充闪退场景的 OOM Killer 区分法（dmesg）。
-- 2026-11-05 — 《一次 Full GC 排查实录》以完整真实案例印证同一闭环，并补两个可复用模板：①"GC 刑侦三步"（日志看现场 → dump 做尸检 → 代码定罪）+ 时间线交叉验证（重启后十天复发解释"重启能解决"）；②"static + 无界 + 只进不出"作为 Java 内存泄漏头号模板的完整定罪链（ConcurrentHashMap 占 2.1GB/52% 堆，持有者为静态字段）。修法三层（止血/治本 Caffeine/防线）补全处置维度。分歧记录：该信源老年代告警口径为"80% 持续 5 分钟"，与本页"老年代 >85% 持续 5 分钟"不一致，未统一。
+- 2026-11-05 — 《JVM 内存模型深度解析》以科普口径独立印证本页两条：OOM 错误关键词直接指向区域（`Java heap space`→堆、`Metaspace`→元空间）与排查动作（`-XX:+HeapDumpOnOutOfMemoryError` 导出 dump 后用 MAT/JProfiler 分析）；并补充堆 OOM 的典型诱因清单（while 循环不断 new 且被引用持有、一次性加载大量数据、集合忘记清理）与元空间 OOM 的动态类生成诱因（CGLIB 代理、JSP 编译、Lambda 表达式），与本页速查表病灶列一致。
 
 ## Open Questions（开放问题）
 
@@ -88,11 +89,13 @@ OOM 是线上最常见也最致命的 JVM 事故，且错误信息只告诉你�
 - Source: `raw/sources/architecture/2026-10-28-jvm-interview-guide.md`（6 类 OOM 速查表、五步法、生产纪律、监控口径）
 - Source: `raw/sources/architecture/2026-10-28-java-online-troubleshooting-arthas.md`（印证：heap dump 参数+jmap -histo+MAT 实战；OOM Killer 与 JVM OOM 的闪退区分）
 - Source: `raw/sources/architecture/2026-11-03-weixin-full-gc-troubleshooting.md`（印证：GC 刑侦三步+时间线交叉验证；静态缓存泄漏完整案例；修法三层）
+- Source: `raw/sources/architecture/2026-11-04-jvm-memory-model.md`（印证：heap space/Metaspace 区域判定与 dump 排查动作；补堆 OOM 与元空间 OOM 诱因清单）
 
 ## Related Knowledge（相关知识）
 
 - [[jvm-interview-guide|JVM 面试题最全整理（信源页）]]
 - [[java-online-troubleshooting-arthas|Java 线上排查实战（信源页）]]
 - [[2026-11-03-weixin-full-gc-troubleshooting|一次 Full GC 排查实录（信源页）]]
+- [[2026-11-04-jvm-memory-model|JVM内存模型深度解析（信源页）]]
 - [[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]
 - [[jvm-gc|JVM 垃圾回收（主题）]]

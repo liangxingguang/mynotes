@@ -369,6 +369,8 @@
 - [[2026-11-04-zhihu-column-agent-long-term-memory|从零构建Agent(十二)：长期Memory管理]]（2026-11-05，AI/Agent/Memory，Hermes 四层记忆模型+MemoryProvider retain/recall 接口+Hindsight documents/memory_units/entities/memory_links 结构化存储+ZeroAgent Extension 接入，知乎专栏单信源，置信度中）
 - [[2026-11-04-ai-native-team-org-reconstruction|构建 AI Native 团队：从工具采用到组织重构]]（2026-11-05，AI/组织/企业，AI-Augmented vs AI-Native 五维对比+平台先行建造顺序+人才/流程/治理三重重构+Pomelo/Snowflake/Money Forward 数据+Gartner 40% 预测，微信公众号单信源，置信度中）
 - [[2026-11-04-arraylist-vs-linkedlist|为什么 ArrayList 比 LinkedList 快？集合框架底层原理，一次讲清]]（2026-11-05，Java/JDK/集合，ArrayList 动态数组 vs LinkedList 双向链表复杂度与选型表+HashMap 四层考点+JDK 7/8 并发坑+ArrayDeque 替代，微信公众号单信源，置信度高）
+- [[2026-11-04-jvm-memory-model|JVM内存模型深度解析 —— 搞清楚堆和栈，告别OOM]]（2026-11-04，架构/Java/JVM，运行时数据区全解（PC唯一不OOM/VM栈栈帧四组件/堆分代/元空间）+经典内存分析题+JVM参数速查，微信公众号「从CRUD到架构师」单信源，置信度中）
+- [[2026-11-04-pgvector-rag-retrieval-engineering|别急着换向量库：PostgreSQL + pgvector 的生产级 RAG 检索工程]]（2026-11-04，AI/RAG/数据库，五条正确性契约+模型空间注册+版本化+ACL+RLS+检索路由分叉+混合检索RRF+发布CAS+删除两步走+评测矩阵，微信公众号单信源，置信度中）
 
 ## concept（概念）
 
@@ -473,6 +475,7 @@
 - [[mcp|MCP]]（LLM↔工具/数据纵向协议，Anthropic 2024）
 - [[jad-sc-sm-version-check|jad/sc -d/sm：核实线上跑的是哪版代码]]（版本/来源/签名三层核实+「改了没生效」四原因+五步处置，与 arthas-01 速查互证，单信源方法论，置信度高）
 - [[jmm-happens-before|Java 内存模型与 happens-before]]（JMM 抽象规范≠内存结构；主内存/工作内存副本模型；8 条 hb 规则；volatile 禁重排是 DCL 必须；单信源，置信度中）
+- [[jvm-runtime-memory-areas|JVM 运行时内存区域]]（2026-11-05，Java/JVM/内存，线程私有vs共享五区域（PC唯一不OOM/VM栈栈帧四组件/堆分代Eden→S0/S1→15岁晋升/元空间）+经典内存分析题+参数速查，与 [[jmm-happens-before]] 互补不重叠，单信源置信度中）
 - [[live-message-drop-policy|直播消息丢弃策略]]（上行 200 条/s 硬丢弃 + 环形队列柔性丢弃 + 优先级三桶保必达，融云双信源）
 - [[mcast|长连接组播（mcast）]]（groupID 下沉长连接层，1:M×1:N 两级扩散；单实例 25w 连接 8w QPS，聚合+压缩消化峰值，百度一手）
 - [[message-bus|业务消息总线]]（哑管道式配置路由：履约异步分发+topic 治理收拢；与 ESB/Pipeline 的区分，信鸽单一信源）
@@ -506,7 +509,7 @@
 - [[tcp-connection-lifecycle|TCP 连接生命周期与状态机]]（四大功能/三次握手/四次挥手/RTO/快重传/拥塞控制/TIME_WAIT 2MSL/状态机排障四场景；发送窗口=min(rwnd,cwnd)；Linux 默认 CUBIC；tcp_tw_recycle 已移除；单信源一手，置信度高）
 - [[notification-system-design|站内消息系统领域模型]]（公告/提醒/私信三分类+提醒四元组；拉（订阅驱动）/推（私信直写）按类选型；免打扰后置读路径，简书上下篇双信源）
 - [[okf-knowledge-format|OKF（面向 AI Agent 的知识包装规范）]]（入库时编译为互链 Markdown 树，运行时只做导航+摘录）
-- [[oom-troubleshooting|OOM 排查方法论]]（6 类 OOM 速查表 + 五步法 + 生产纪律：禁直接 jmap -dump、90% 代码问题、溢出≠泄漏、GC overhead limit 最危险，双信源，置信度中）
+- [[oom-troubleshooting|OOM 排查方法论]]（6 类 OOM 速查表 + 五步法 + 生产纪律：禁直接 jmap -dump、90% 代码问题、溢出≠泄漏、GC overhead limit 最危险、GC刑侦三步+时间线交叉验证+静态无界泄漏模板，四信源，置信度中）
 - [[operational-transformation|Operational Transformation（OT，操作转换）]]（中心定序+变换调整偏移量收敛并发编辑；siteId tie-break 命门+TP1/TP2 验证；文档级 Actor 串行+pending/buffer 客户端，单信源）
 - [[perf-cpu-sampling|perf CPU 采样排查法]]（采集→看热点→追调用者链路，四类前置+符号≠调用栈+Self/Children 读数纪律，demo 742 样本实测，单信源置信度高）
 - [[pi-customization-layers|Pi 五层定制模型]]（Prompt 模板→AGENTS.md→Skill→Extension→SDK，官方扩展点成本阶梯）
@@ -524,7 +527,7 @@
 - [[rbac-permission-system|RBAC 权限系统（传统 B 端角色访问控制）]]（用户→角色→权限→资源静态绑定；RBAC0-3 模型层级；权限点编码模块_资源_动作；七大功能模块；权限矩阵表落地；字段权限（列级）层与三张表产出物（第三信源）+多租户租户维度数据权限与 ABAC 适用场景（第四信源），与 [[agent-permission-model]] 互补而非替代，四信源置信度中）
 - [[read-fanout|读扩散（Fan-out on Read）]]（会话队列+syncId 位点同步把 1:N 写压成 1:1；99.99% 非个性化消息前提；阿里混合模式 500ms 端到端，双信源）
 - [[red-dot-tree-system|拉模式红点树系统（游戏 UI 提示徽标）]]（路径树+脏标记冒泡+每帧合批+拉模式，叶子自订阅自计算；先取走脏标记再计算；全树遍历顺带时间驱动红点；五方案对比+完整 C# 实现，单信源一手，置信度高）
-- [[rag-production-guardrails|企业级 RAG 生产护栏]]（容量/证据/权限/恢复四主线；证据门禁前置、发布目录原子切换；混合检索+存储分层+参数热调+重活异步化+影子模式+旁路降级+RRF融合+相关性裁判拒答+SSE契约+MCP工具调用真实用户身份+五层记忆+加权遗忘，三信源，置信度中）
+- [[rag-production-guardrails|企业级 RAG 生产护栏]]（容量/证据/权限/恢复四主线；证据门禁前置、发布目录原子切换；混合检索+存储分层+参数热调+重活异步化+影子模式+旁路降级+RRF融合+相关性裁判拒答+SSE契约+MCP工具调用真实用户身份+五层记忆+加权遗忘+pgvector五契约/检索路由分叉/发布CAS/两步删除/RLS双保险/缓存键九段/评测矩阵，四信源，置信度中）
 - [[reactive-tracing-context|响应式环境的全链路 traceId 传递]]（Reactor Context 替代 ThreadLocal；doOnEach 同步 MDC、doFinally 清除）
 - [[reactor-thread-model|主从 Reactor 线程模型（Netty 版）]]（Boss accept/Worker CPU×2/Channel 终身绑单 EventLoop 天然无锁；ServerBootstrapAcceptor 移交链路+三形态选型+SCG 双 Group 与中间件应用印证，八信源互证，置信度高）
 - [[redefine-hot-reload-boundaries|redefine 热替换边界：能改什么、不能改什么]]（只能改方法体/执行中方法退出才生效/三个风险+临时止血五步，与 arthas-01、MCP 实测信源互证，单信源方法论，置信度高）
@@ -623,7 +626,7 @@
 
 - [[enterprise-systems-map|B端企业系统全景地图（10 大系统）]]（2026-11-04，产品/B端/企业系统主题导航，10 系统四段式速查表+OMS 补充行（第19篇口径）+内部资源→外部协同框架+供应链域选型深水见 [[wms-vs-oms-vs-tms]]，三信源置信度中）
 - [[erp-architecture-design|大型 ERP 产品架构设计]]（2026-10-31，企业软件/架构主题导航，立论+8 部路线图，各篇正文待采集，单信源置信度中）
-- [[jvm-gc|JVM 垃圾回收]]（判定/算法/收集器演进与选型/调优主线枢纽；G1/ZGC 原理 + 证据驱动调优，四信源）
+- [[jvm-gc|JVM 垃圾回收]]（判定/算法/收集器演进与选型/调优主线枢纽；G1/ZGC 原理 + 证据驱动调优 + 分代模型独立印证，八信源）
 - [[live-streaming-messaging|直播实时消息分发]]（拉 vs 推路线图谱：读扩散通知拉取 / longpolling / 短轮询 / mcast 组播 / CDN 广播；允许策略性丢消息是与 IM 的根本分界，八信源）
 - [[programmer-overseas-remote-work|程序员出海远程]]（汇率杠杆/价格带定价/卖资产 vs 卖时间；AI 一人公司技术前提；收款/时差/合规三实操；单信源，置信度中）
 - [[system-design-core-components|系统设计核心组件]]（分布式系统 12 个核心组件清单，组件驱动；另收问题驱动六类框架见 [[accidental-cto-book]]，双信源）

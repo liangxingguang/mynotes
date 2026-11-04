@@ -4603,6 +4603,33 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/jD5ecXWaruhDwST6AQ9tGQ",
       "asset_ref": "Assets/2026/11/nginx-gateway-production.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-04-jvm-memory-model.md",
+      "sha256": "6133134def1b2478ab187953aed084d94e851508a97a6eaf71fb2360449273d3",
+      "registered_at": "2026-11-05",
+      "inbox_ref": "Archive/2026-11-04-jvm-memory-model.md",
+      "pages": [
+        "wiki/sources/2026-11-04-jvm-memory-model.md",
+        "wiki/concepts/jvm-runtime-memory-areas.md",
+        "wiki/topics/jvm-gc.md",
+        "wiki/concepts/jmm-happens-before.md",
+        "wiki/concepts/oom-troubleshooting.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzY4NTAxMTAwMA==&mid=2247483714&idx=1&sn=b250fca4485c6c4cf32ac943a1b2d9d3",
+      "asset_ref": "Assets/2026-11/jvm-memory-model.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-04-pgvector-rag-retrieval-engineering.md",
+      "sha256": "b3abbb2847b9257ae0271f5edfdebd749a2a2555ebdf53693740c67b4aad5f7b",
+      "registered_at": "2026-11-05",
+      "inbox_ref": "Archive/2026-11-04-pgvector-rag-retrieval-engineering.md",
+      "pages": [
+        "wiki/sources/2026-11-04-pgvector-rag-retrieval-engineering.md",
+        "wiki/concepts/rag-production-guardrails.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/YLTmBHYPhNR0lnCx9RhHLw",
+      "asset_ref": "Assets/2026-11/weixin-YLTmBHYPhNR0lnCx9RhHLw.md"
     }
   ]
 }

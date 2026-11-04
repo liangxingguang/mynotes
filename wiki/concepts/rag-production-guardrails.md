@@ -4,7 +4,7 @@ type: concept
 title: 企业级 RAG 生产护栏
 status: active
 created: 2026-10-23
-updated: 2026-10-27
+updated: 2026-11-05
 confidence: medium
 tags:
   - concept
@@ -14,10 +14,12 @@ sources:
   - raw/sources/ai/2026-10-21-spring-ai-milvus-rag-production.md
   - raw/sources/ai/2026-10-27-agent-platform-architecture.md
   - raw/sources/ai/2026-11-01-enterprise-rag-platform-langgraph-mcp.md
+  - raw/sources/ai/2026-11-04-pgvector-rag-retrieval-engineering.md
 related:
   - wiki/sources/spring-ai-milvus-rag-production.md
   - wiki/sources/agent-platform-architecture.md
   - wiki/sources/2026-11-01-enterprise-rag-platform-langgraph-mcp.md
+  - wiki/sources/2026-11-04-pgvector-rag-retrieval-engineering.md
 ---
 # 企业级 RAG 生产护栏
 
@@ -36,6 +38,7 @@ Spring AI/Milvus 等框架只解决集成与检索，不替应用保证：用户
 3. **权限/版本/向量空间不可拆**：AccessScope 服务端构造；过滤表达式只能由适配层生成；`embeddingSpaceId`（模型+维度+归一化+预处理）隔离语义空间，禁止混写。
 4. **发布与恢复语义**：版本状态机 + 发布目录原子切换（条件更新/单调序号）；写入 ACK ≠ 全局可见；撤权先禁新请求再异步清理，不等 TTL。
 5. **流式治理**：SSE 事件协议（meta/delta/done/error/revoked）；断连/Deadline/撤权走同一幂等取消路径，许可在流结束才释放。
+6. **候选生成与权威复核分离**：五个正确性契约（租户隔离/授权有效/版本原子性/新鲜度/资源有界）中，向量索引只参与候选生成；权限与版本的最终解释权在关系层（RLS 第二道防线 + active_version 指针 + ACL 复核）；检索路由按合法集合大小分叉——小集合用 MATERIALIZED CTE 固定授权集后精确排序（最便宜路径），大集合才走 HNSW 迭代扫描（iterative_scan/strict_order + 超时预算），过滤后 ANN 返回不足不代表合法内容不存在（pgvector 第 4 信源）。
 
 ## How It Works（运作方式）
 
@@ -44,6 +47,8 @@ Spring AI/Milvus 等框架只解决集成与检索，不替应用保证：用户
 第二信源（智能体中台架构，FastAPI+LangGraph 技术栈）从平台侧独立印证了其中多条形态：Milvus 向量召回 + ES 全文召回 + 重排的混合检索被其称为「企业 RAG 中台标配」；存储分层各司其职（Milvus 只存向量、ES 存原文、MySQL 只存元数据）；离线解析/Embedding 走 MQ 异步 Worker 且绝不进在线链路，与本页「离线路径独立 Worker」一致；召回 topk/相似度阈值/重排策略经配置中心（Nacos）热更新不重启调参；MySQL/Milvus/ES 多写放弃分布式事务、走最终一致 + 定时校对。该信源同时给出两条本页未覆盖的工程边界：Embedding 服务独立扩缩容不混部（CPU 密集），Milvus 生产环境用 HNSW 索引而非 FLAT。
 
 第三信源（Spring Boot 4 × LangGraph × MCP × Milvus 企业级 RAG 平台）从更完整的平台架构侧给出六大设计原则与两条核心链路的实现细节，印证并扩展了本页框架：①**重活异步化**——文档上传走 RocketMQ 异步（上传立即返回 docId，解析/分块/向量化交给 Python 消费者），与本页「离线路径独立 Worker」同构；②**治理能力默认影子模式**——强管控开关（Casbin 强制、配额管控、条件访问）默认观察态运行一周，校验无误再逐项开启强制拦截，避免误伤导致业务方否定整套系统；③**增强能力全是旁路，失败自动降级不阻断主链路**——记忆检索失败降级会话摘要、Rerank 失败降级 RRF 排序、PII 脱敏失败返回原文不阻断问答——本页「证据门禁前置」与「流式治理」在异常路径上的具体化；④**多租户隔离靠 MyBatis-Plus TenantLineInnerInterceptor 框架兜底**——与本页「AccessScope 服务端构造」同一条线，框架层自动注入租户条件防漏写；⑤**混合检索 RRF 融合 + gte-rerank 精排**——双路召回（Milvus 向量 + ES BM25）各 20 条，RRF 融合（只依赖排名不依赖分数，K=60）再 gte-rerank-v2 精排取 top5，印证本页「受限检索与混合召回」；⑥**幻觉拒答底线**——相关性裁判两层闸门（相关性地板 max<0.15 直接拒答省 LLM 调用 + LLM 裁判），资料不足走 intent_route→MCP 工具→无工具则 refuse，拒答时清空引用列表——印证本页「证据不足显式短路拒答」；⑦**SSE 事件契约**——refs/delta/done/error 四类事件，refs 延迟到 generate 启动才下发（避免拒答时已渲染卡片再撤回），前端必须用 fetch 不用 EventSource（无法带 JWT），网关必须 WebFlux 响应式版本才能不缓冲透传——印证并细化本页「流式治理」；⑧**MCP 工具调用真实用户身份**——grade 判定资料不足先意图路由（动态拉 MCP 工具列表转 Function Calling），工具调用必须携带真实用户身份（uid/tid/role 5 分钟短时 JWT），用 contextExtractor 而非 ThreadLocal（SSE 长连接异步线程会丢上下文）——这是企业 RAG 平台「能查业务」的安全红线；⑨**五层记忆模型 + 加权遗忘**——工作/情景/语义/程序/归档五层记忆，score = relevance × importance × exp(−λ·Δt) 加权遗忘（importance≥2 豁免遗忘），Milvus 只存向量+引用 ID 保证删除一致性——扩展本页未覆盖的「长期记忆」维度；⑩**跨语言契约字段逐字对齐**——Python 侧 Pydantic 驼峰 = Java 侧 Record，不依赖 Jackson 自动命名策略转换，少一层配置少一层静默 null 的隐性 Bug。
+
+第四信源（PostgreSQL + pgvector 生产级 RAG 检索工程，多租户客服知识库示例）把本页四条主线落到关系型技术栈的可实现设计上，并给出两条本页未展开的边界：①**五条正确性契约显式化**——租户隔离/授权有效/版本原子性/新鲜度/资源有界逐条定义可观察行为与失败语义（如"撤权后新请求不再使用旧证据，失败关闭不以 TTL 替代"），向量索引只参与候选生成、不拥有权限与版本的最终解释权；②**发布 CAS 与两步删除的具体化**——building/ready 状态机 + Outbox 解耦 Worker，发布事务校验 manifest 后以条件更新（`active_version IS NOT DISTINCT FROM` 旧值）切指针，零行返回即请求过期、禁止重试到成功；删除先逻辑删除（deleted_at + epoch，新请求立刻拒绝）再物理清理（先置空 active_version 解除外键，否则直接删版本会失败）。该信源同时印证并细化本页多条形态：缓存键必须含 authorization_scope_version 与 retrieval_epoch（与发布/删除/ACL 同事务更新）对应本页「缓存键必须含知识修订、ACL 修订、向量空间与模型版本」；RLS+显式 tenant 谓词双保险（业务账号不能是表所有者/superuser/BYPASSRLS）对应「AccessScope 服务端构造」；混合检索 RRF 1/(60+rank) 融合对应「受限检索与混合召回」（但 k=60 为待验证参数而非业务置信度）；评测矩阵（ANN Recall@K 同快照对比、六类实验、上线门槛演练清单由业务签字不伪造"已通过"）对应「故障实验矩阵驱动验收」；其"换库迁移的是契约不是状态、主库权威复核与评测体系保留"与本页「无法满足前提时安全且可解释地拒答」的契约观一致。
 
 ## Relationships（关系）
 
@@ -59,17 +64,20 @@ Spring AI/Milvus 等框架只解决集成与检索，不替应用保证：用户
 ## Open Questions（开放问题）
 
 - 文中所有容量数字为设计示例，真实生产基线（不同过滤选择率下的召回/P99）当前信源未确立，需自行压测。
+- 第 4 信源的参数（RRF k=60、ef_search=80、400ms 超时、statement_timeout 250ms 等）均为实验起点，作者自述不应被理解为通用生产推荐值；部署须锁定 PostgreSQL、pgvector、镜像与驱动的具体验证版本。
 
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-10-21-spring-ai-milvus-rag-production.md`
 - Source: `raw/sources/ai/2026-10-27-agent-platform-architecture.md`（第 2 信源：平台侧印证混合检索/存储分层/异步离线链路/参数热调/最终一致，新增 Embedding 独立部署与 Milvus 生产用 HNSW 两条边界）
 - Source: `raw/sources/ai/2026-11-01-enterprise-rag-platform-langgraph-mcp.md`（第 3 信源：六大设计原则、重活异步化、影子模式治理、旁路降级、RRF 融合+gte-rerank、相关性裁判拒答、SSE 事件契约、MCP 工具调用真实用户身份、五层记忆模型+加权遗忘、跨语言契约字段逐字对齐）
+- Source: `raw/sources/ai/2026-11-04-pgvector-rag-retrieval-engineering.md`（第 4 信源：五条正确性契约显式化、模型空间注册、active_version 发布 CAS、两步删除、RLS 双保险、检索路由分叉、RRF 融合、缓存键九段、评测矩阵六类实验与上线门槛、换库信号）
 
 ## Related Knowledge（相关知识）
 
 - [[spring-ai-milvus-rag-production|Spring AI + Milvus 企业级 RAG 生产工程实践（信源页）]]
 - [[agent-platform-architecture|高性能弹性扩展智能体中台架构实践（信源页）]]
 - [[2026-11-01-enterprise-rag-platform-langgraph-mcp|Spring Boot 4 × LangGraph × MCP × Milvus：企业级 RAG 平台（信源页）]]
+- [[2026-11-04-pgvector-rag-retrieval-engineering|别急着换向量库：PostgreSQL + pgvector 的生产级 RAG 检索工程（信源页）]]
 - [[langchain4j-multimodal-rag|LangChain4j 多模态 RAG 实战]]
 - [[knowledge-base-tech-evolution|知识库的技术演进]]
