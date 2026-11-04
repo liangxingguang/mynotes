@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04 07:38",
+  "updated_at": "2026-11-04 08:58",
   "notes": [
     {
       "id": "20261103-bend-multi-agent-saas-24",
@@ -442,6 +442,25 @@
       "summary": "核心心智模型切换：对象不会因有引用就自动被 GC 回收，资源在所有者离开作用域时立即释放；赋值可能移动值而非复制引用；`&T`/`&mut T` 是带规则的临时借用；enum 可携带数据是建模状态与失败的利器；trait 表达共享行为但无类继承；显式可变性、错误和并发边界是语言设计的一部分。所有权三规则：每个值有一个所有者、同一时刻通常只有一个所有者、离开作用域自动清理（Drop）。",
       "summary_status": "partial",
       "asset_ref": "Assets/2026-11-03/weixin-java-rust-learning-guide.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-11-04-github-open-source-ai-books",
+      "title": "6 本 GitHub 开源 AI 书籍推荐（全部免费）",
+      "path": "Inbox/2026-11-04-github-open-source-ai-books.md",
+      "created": "2026-11-04",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "GitHub"
+      ],
+      "source": "知乎想法",
+      "source_url": "https://www.zhihu.com/pin/2093665067325714865",
+      "source_type": "article",
+      "platform": "知乎",
+      "summary": "作者推荐 6 本免费开源 AI 书，按用途分四路：入门基础（邱锡鹏蒲公英书）、搭建 Agent（Agentic Design Patterns 中文版 + 深入理解 AI Agent）、AI 产品成本测算（深入理解 AI Infra）、强化学习（数学原理 + Hands-On Modern RL）。主张花一个月读完一本胜过长期刷碎片教程。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-04/zhihu-pin-github-ai-books.md",
       "wiki_status": "pending"
     },
     {

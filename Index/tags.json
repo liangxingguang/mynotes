@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04 07:38",
+  "updated_at": "2026-11-04 08:58",
   "tags": [
     {
       "name": "RAG",
@@ -8,6 +8,16 @@
     },
     {
       "name": "pgvector",
+      "status": "new",
+      "count": 1
+    },
+    {
+      "name": "AI",
+      "status": "new",
+      "count": 91
+    },
+    {
+      "name": "GitHub",
       "status": "new",
       "count": 1
     }
