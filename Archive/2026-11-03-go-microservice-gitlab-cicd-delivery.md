@@ -9,7 +9,7 @@ created: 2026-11-03
 category: 技术
 tags: [CI/CD, 工程实践]
 asset_ref: Assets/2026-11-03/weixin-article-hrga.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Go 微服务 GitLab CI/CD 工程实战：构建可验证、可晋级、可恢复的交付系统

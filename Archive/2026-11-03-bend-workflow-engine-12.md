@@ -10,7 +10,7 @@ category: 学习
 tags: [产品]
 album: B端产品经理（专辑，32 篇，作者 大皮不皮）
 asset_ref: Assets/2026-11-03/weixin-bend-workflow-engine-12.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # B端产品经理如何吃透流程引擎？用一个报销流程讲清节点、网关与异常处理

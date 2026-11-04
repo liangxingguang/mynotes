@@ -4383,6 +4383,45 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484709&idx=1&sn=33c5308e5f04be9fcf9a2526413685bd&chksm=c4d18489f3a60d9f84716babbbf0156167406df6e4a3e1ad904779efafc0bf36eea9d47f6664",
       "asset_ref": "Assets/2026-11-03/weixin-bend-wms-oms-tms-19.md"
+    },
+    {
+      "path": "raw/sources/products/2026-11-03-weixin-bend-workflow-engine-12.md",
+      "sha256": "9ecc3084a0f8afe66840aefe4ffda470c4baaec20dd07d893e305e24f3f12f1a",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-bend-workflow-engine-12.md",
+      "pages": [
+        "wiki/sources/bend-workflow-engine-12.md",
+        "wiki/concepts/approval-workflow-engine.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484551&idx=1&sn=588bcb7caca01f3ceb57a53b9189cbda&chksm=c4d1852bf3a60c3d0f4e20a674cca822a79088cd54f4f429cf938d1d43d9cd14153bd77c60c7",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-workflow-engine-12.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-03-weixin-go-gitlab-cicd-delivery.md",
+      "sha256": "5fdee8785c1ae00b1e5719da5394103e47894cee8c6bd10cb824f8af619baf7e",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-go-microservice-gitlab-cicd-delivery.md",
+      "pages": [
+        "wiki/sources/2026-11-03-go-gitlab-cicd-delivery.md",
+        "wiki/concepts/delivery-time-metrics.md",
+        "wiki/concepts/immutable-image-promotion.md",
+        "wiki/concepts/release-manifest-recovery.md",
+        "wiki/concepts/expand-migrate-contract.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/H_r_gaQgplJHjBBWG80f_g",
+      "asset_ref": "Assets/2026-11-03/weixin-article-hrga.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-03-weixin-cs2680-agent-to-gpu.md",
+      "sha256": "150d53bece5bdbb9998d27c55cf574870c0bac6f676e1d8b703cba0f6776ca67",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-harvard-cs2680-agent-to-gpu.md",
+      "pages": [
+        "wiki/sources/2026-11-03-harvard-cs2680-agent-to-gpu.md",
+        "wiki/entities/cs2680.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/wRhw_hgSVCTR7YBXRp8eqw",
+      "asset_ref": "Assets/2026-11-03/weixin-article-wrhh.md"
     }
   ]
 }

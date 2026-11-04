@@ -4,7 +4,7 @@ type: concept
 title: Expand/Migrate/Contract（Schema 跨版本演进）
 status: active
 created: 2026-10-27
-updated: 2026-10-27
+updated: 2026-11-04
 confidence: high
 tags:
   - concept
@@ -13,10 +13,12 @@ tags:
   - schema-migration
 sources:
   - raw/sources/architecture/2026-10-27-k8s-blue-green-release-trading.md
+  - raw/sources/architecture/2026-11-03-weixin-go-gitlab-cicd-delivery.md
 related:
   - wiki/concepts/blue-green-deployment.md
   - wiki/concepts/idempotency-design.md
   - wiki/concepts/table-sharding-migration.md
+  - wiki/concepts/release-manifest-recovery.md
 ---
 # Expand/Migrate/Contract（Schema 跨版本演进）
 
@@ -34,6 +36,8 @@ related:
 2. **Migrate 可控回填**：按主键区间分批（如每批 5000 行）、限速、可暂停续跑；双读双写期间新旧结构并存。
 3. **Contract 最后且可推迟**：仅在回退窗口关闭、旧版本彻底离场后执行；事故复盘案例中明确"本次不做 Contract，保留兼容窗口"。
 4. **migration ID 可追踪**：每次变更登记 migration ID，进入发布证据链，支撑审计与回退决策。
+5. **迁移操作五要求**（第二信源补强）：迁移要有唯一执行者、幂等判断、超时、可观测性和失败恢复；稳妥顺序为新增兼容结构 → 发布兼容新旧结构的代码 → 回填并校验 → 切换读写 → 经过明确回滚窗口后删除旧结构。
+6. **回滚不撤销副作用**（第二信源补强）：Helm 回滚不会撤销数据库数据或已发送的 Kafka 消息；支付恢复依赖幂等、状态机、对账与补偿，而不是"镜像回到上一版"；迁移越过兼容窗口时优先修复前进，不能机械回退二进制。
 
 ## Structure（结构）
 
@@ -62,6 +66,7 @@ Release N+2   Contract: remove legacy structure after rollback window closes（�
 ## Evolution（演进）
 
 - 2026-10-27：[[k8s-blue-green-release-trading|日千万级交易系统蓝绿实战]] 立页：四种回退边界图 + `risk_level` 三 release SQL 示例 + 事故复盘（Blue 能读 Green 数据正因 Expand 阶段保持可空兼容）。
+- 2026-11-04：[[2026-11-03-go-gitlab-cicd-delivery|Go 微服务 GitLab CI/CD 工程实战]] 升为第二信源：补迁移操作五要求（唯一执行者/幂等/超时/可观测/失败恢复）、Helm 回滚不撤销数据与消息、支付恢复靠幂等+状态机+对账+补偿、越过兼容窗口优先修复前进。
 
 ## Open Questions（开放问题）
 
@@ -70,9 +75,11 @@ Release N+2   Contract: remove legacy structure after rollback window closes（�
 ## Evidence（证据）
 
 - Source: `raw/sources/architecture/2026-10-27-k8s-blue-green-release-trading.md`（三阶段定义、SQL 示例、回填批大小 5000、事故复盘中的兼容窗口决策）
+- Source: `raw/sources/architecture/2026-11-03-weixin-go-gitlab-cicd-delivery.md`（§11.3 expand-contract 操作要求、Helm 回滚不撤销副作用、支付恢复四件套）
 
 ## Related Knowledge（相关知识）
 
 - [[blue-green-deployment|蓝绿发布（概念页）]]
 - [[idempotency-design|幂等设计（概念页）]]
 - [[table-sharding-migration|分表平滑迁移策略（概念页）]]
+- [[release-manifest-recovery|发布集合与恢复决策（概念页）]]

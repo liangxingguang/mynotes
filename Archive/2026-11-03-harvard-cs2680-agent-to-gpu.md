@@ -9,7 +9,7 @@ created: 2026-11-03
 category: 学习
 tags: [课程, AI]
 asset_ref: Assets/2026-11-03/weixin-article-wrhh.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 哈佛新课 CS2680：从 Agent 一路拆到 GPU
