@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04 08:58",
+  "updated_at": "2026-11-04 09:03",
   "notes": [
     {
       "id": "20261103-bend-multi-agent-saas-24",
@@ -17,7 +17,7 @@
       "summary": "多智能体不是给 SaaS 加聊天机器人，而是把\"人找功能\"改成\"Agent 找决策\"：把流程中的判断从人身上剥离，交给多个 Agent 协作执行。三层架构（交互层意图与槽位/编排层 Orchestrator 任务卡片/执行层工具 API 调用）、业务流重构五步法（拆业务事件找决策点→定义 Agent 角色与边界→设计结构化协作协议→嵌入权限审计与人工干预→离线评测集+影子模式回滚）、四个案例（ERP 采买到付款/车贷审批/OA 差旅报销/CRM 线索培育）、Agent 化 PRD 新增五模块（Agent 能力卡片/协作时序/护栏机制/评测集/指标）。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-bend-multi-agent-saas-24.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "20261103-bend-operation-log-27",
@@ -442,6 +442,25 @@
       "summary": "核心心智模型切换：对象不会因有引用就自动被 GC 回收，资源在所有者离开作用域时立即释放；赋值可能移动值而非复制引用；`&T`/`&mut T` 是带规则的临时借用；enum 可携带数据是建模状态与失败的利器；trait 表达共享行为但无类继承；显式可变性、错误和并发边界是语言设计的一部分。所有权三规则：每个值有一个所有者、同一时刻通常只有一个所有者、离开作用域自动清理（Drop）。",
       "summary_status": "partial",
       "asset_ref": "Assets/2026-11-03/weixin-java-rust-learning-guide.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-11-04-agent-long-term-memory",
+      "title": "从零构建Agent(十二)：长期Memory管理",
+      "path": "Inbox/2026-11-04-agent-long-term-memory.md",
+      "created": "2026-11-04",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent"
+      ],
+      "source": "知乎专栏（从零构建Agent系列）",
+      "source_url": "https://zhuanlan.zhihu.com/p/2100962312010065146",
+      "source_type": "article",
+      "platform": "知乎",
+      "summary": "\"从零构建 Agent\"系列第 12 篇。分析 Hermes 的长期记忆设计（四层能力模型），为 ZeroAgent 定义统一的 MemoryProvider 接口（retain/recall），经 Extension 的 before_agent_start / turn_end 扩展点接入 Hindsight 作为默认后端，实现跨 Session 长期记忆，并解析 Hindsight 的 documents/memory_units/entities/memory_links 结构化存储原理。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-04/zhihu-column-agent-long-term-memory.md",
       "wiki_status": "pending"
     },
     {
