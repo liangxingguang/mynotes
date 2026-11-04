@@ -1,6 +1,24 @@
 {
-  "updated_at": "2026-11-05 07:17",
+  "updated_at": "2026-11-05 07:59",
   "notes": [
+    {
+      "id": "2026-11-05-system-design-notes-zhihu-pin",
+      "title": "系统设计面试没思路？Alex Xu《System Design Interview》开源笔记",
+      "path": "Inbox/2026-11-05-system-design-notes-zhihu-pin.md",
+      "created": "2026-11-05",
+      "category": "技术",
+      "tags": [
+        "GitHub"
+      ],
+      "source": "知乎用户「格律诗」（mtoxhr）",
+      "source_url": "https://www.zhihu.com/pin/2096915265510438786",
+      "source_type": "article",
+      "platform": "知乎",
+      "summary": "知乎想法推荐开源仓库 liquidslr/system-design-notes：将 Alex Xu《System Design Interview》一、二卷整理成 28 章，涵盖从单机扩展到百万用户、限流设计、面试答题框架等主题，适合梳理知识结构、练习答题思路；仓库仍在持续完善中，不能完全替代原书。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/zhihu-pin-system-design-notes.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
