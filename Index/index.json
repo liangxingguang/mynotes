@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04 11:07",
+  "updated_at": "2026-11-04 11:10",
   "notes": [
     {
       "id": "20261103-bend-prd-writing-30",
@@ -17,7 +17,7 @@
       "summary": "开发骂 PRD 的三原因：背景价值缺失（不知道为什么做）、范围边界不清（没写\"不做什么\"）、异常状态漏写（逆向流程/并发/幂等没写清）。核心框架\"一图三表一份清单\"：一图=主流程图（正向+核心逆向，用泳道图）；三表=状态流转表（当前状态/触发事件/前置条件/后置动作/下一状态/异常处理）、字段规则表（字段名/类型/必填/枚举/校验规则/权限/示例）、异常边界表（异常场景/触发条件/系统行为/提示文案/处理人）；一份清单=上线前自检（非功能/权限/埋点/验收）。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-bend-prd-writing-30.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "20261103-bend-rule-engine-11",
@@ -389,6 +389,24 @@
       "summary": "\"从零构建 Agent\"系列第 12 篇。分析 Hermes 的长期记忆设计（四层能力模型），为 ZeroAgent 定义统一的 MemoryProvider 接口（retain/recall），经 Extension 的 before_agent_start / turn_end 扩展点接入 Hindsight 作为默认后端，实现跨 Session 长期记忆，并解析 Hindsight 的 documents/memory_units/entities/memory_links 结构化存储原理。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-04/zhihu-column-agent-long-term-memory.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-11-04-ai-native-team-org-reconstruction",
+      "title": "2026-11-04-ai-native-team-org-reconstruction",
+      "path": "Inbox/2026-11-04-ai-native-team-org-reconstruction.md",
+      "created": "2026-11-04",
+      "category": "技术",
+      "tags": [
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/J0eepG34Jfu4jiu2aHzjmQ",
+      "source_type": "article",
+      "platform": "微信",
+      "summary": "一篇 AI Native 组织方法论长文。核心主张：AI Native 不是让工程师用 AI 写代码更快，而是把 AI 当一等公民，从平台、流程到角色全面重构组织。用 Pomelo、Snowflake、Money Forward 的公开数据佐证五个重构维度：平台先行、人才重构、流程重构（Spec Driven Development）、治理闭环（Evaluation 作控制层）、踩坑实录（Credential Walls、Build vs Buy）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/ai-native-team-org-reconstruction.md",
       "wiki_status": "pending"
     },
     {
