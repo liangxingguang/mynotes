@@ -10,9 +10,7 @@ category: 学习
 tags: [产品]
 album: B端产品经理（专辑，32 篇，作者 大皮不皮）
 asset_ref: Assets/2026-11-03/weixin-bend-prd-writing-30.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-04T03:09:03.077Z"
-ingest_claim_id: 24976-1793761743077-0
+wiki_status: ingested
 ---
 
 # B端PRD怎么写不被开发骂？一份开发不骂人的PRD自检清单

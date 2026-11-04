@@ -18,6 +18,7 @@ related:
   - wiki/concepts/approval-workflow-engine.md
   - wiki/concepts/ai-ticket-system.md
   - wiki/concepts/demand-review-sop.md
+  - wiki/concepts/bend-prd-writing-framework.md
 ---
 # Agent 化 PRD 模板（Agent-ified PRD Template）
 
@@ -84,12 +85,13 @@ Agent 化 PRD
 
 ### Distinctions（区分）
 
-- 与传统 PRD（页面/字段/流程）：本页是增量改造而非替代，传统部分保留（信源）。
+- 与传统 PRD 写作框架：本页是增量改造而非替代，传统部分（页面/字段/流程）保留（信源）；传统框架本身（一图三表一份清单）编译于 [[bend-prd-writing-framework|B端PRD写作框架]]，两页互为底稿与增量的关系（解读）。
 - 与 [[ai-native-sdlc|AI 原生 SDLC]]：本页面向产品需求文档，后者面向研发交付流程（解读）。
 
 ## Evolution（演进）
 
 - 2026-11-04：建页。首信源：B 端 PM 视角的 Agent 化 PRD 五模块（能力卡片/协作时序/护栏机制/评测集/指标），单信源，置信度中。
+- 2026-11-04：第二信源（专辑第 30 篇）印证"传统 PRD 部分（页面/字段/流程）保留"的表述，并经 [[bend-prd-writing-framework|B端PRD写作框架]] 页固化传统写法底稿（解读）。
 
 ## Open Questions（开放问题）
 
@@ -100,6 +102,7 @@ Agent 化 PRD
 ## Evidence（证据）
 
 - Agent 能力卡片/协作时序/护栏机制/评测集/指标五模块：`raw/sources/products/2026-11-03-weixin-bend-multi-agent-saas-24.md`（公众号《B端产品经理》专辑第 24 篇，2026-11-03 采集）
+- "传统 PRD 部分保留"的表述印证：`raw/sources/products/2026-11-03-weixin-bend-prd-writing-30.md`（专辑第 30 篇，传统 PRD 写作框架信源）
 - 五模块与五步法的对应关系为本 wiki 编译者的解读（信源只并列列出五模块），案例为作者匿名口述。
 
 ## Related Knowledge（相关知识）
@@ -108,3 +111,5 @@ Agent 化 PRD
 - [[multi-agent-saas-refactoring|多智能体重构 SaaS 业务流（概念页）]]
 - [[bend-ai-ticket-system-prd-2|B端产品经理实战：AI工单系统PRD 2.0（信源页）]]
 - [[demand-review-sop|B端需求评审SOP（概念页）]]
+- [[bend-prd-writing-30|B端PRD怎么写不被开发骂（专辑第30篇信源页）]]
+- [[bend-prd-writing-framework|B端PRD写作框架（概念页，传统写法底稿）]]

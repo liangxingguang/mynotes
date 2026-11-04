@@ -1,24 +1,6 @@
 {
-  "updated_at": "2026-11-04 11:18",
+  "updated_at": "2026-11-04 11:30",
   "notes": [
-    {
-      "id": "20261103-bend-prd-writing-30",
-      "title": "B端PRD怎么写不被开发骂？一份开发不骂人的PRD自检清单",
-      "path": "Inbox/2026-11-03-bend-prd-writing-30.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484981&idx=1&sn=d67a01d3f53fc5f14aa98d76fc626ae1&chksm=c4d18799f3a60e8fc23d5f892b23639e09b43b0c37286da66289fc2ee591e37e25fdd68c72ea#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "开发骂 PRD 的三原因：背景价值缺失（不知道为什么做）、范围边界不清（没写\"不做什么\"）、异常状态漏写（逆向流程/并发/幂等没写清）。核心框架\"一图三表一份清单\"：一图=主流程图（正向+核心逆向，用泳道图）；三表=状态流转表（当前状态/触发事件/前置条件/后置动作/下一状态/异常处理）、字段规则表（字段名/类型/必填/枚举/校验规则/权限/示例）、异常边界表（异常场景/触发条件/系统行为/提示文案/处理人）；一份清单=上线前自检（非功能/权限/埋点/验收）。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-prd-writing-30.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "20261103-bend-rule-engine-11",
       "title": "规则引擎：B端产品经理如何把复杂业务规则做成可配置决策中台？",
@@ -7043,6 +7025,24 @@
       "summary": "权限混乱三类病灶：管门层（身份边界：账号共用/一人多岗/离职回收不及时/认证薄弱）、管行层（功能权限：角色爆炸/菜单硬编码/按钮级缺失/申请随意）、管列层（数据权限：数据越权/行级缺失/列级缺失/跨租户风险）。诊断三张表：权限矩阵现状表、角色/用户画像表、数据资产分级表。目标\"三管模型\"：以 RBAC 为基础用 ABAC 补数据权限。重构五步法：先冻结高风险越权→权限资产盘点建字典→功能走 RBAC 数据走规则引擎→灰度双轨迁移→审计流程文档沉淀。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-bend-permission-refactor-29.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-prd-writing-30",
+      "title": "B端PRD怎么写不被开发骂？一份开发不骂人的PRD自检清单",
+      "path": "Archive/2026-11-03-bend-prd-writing-30.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484981&idx=1&sn=d67a01d3f53fc5f14aa98d76fc626ae1&chksm=c4d18799f3a60e8fc23d5f892b23639e09b43b0c37286da66289fc2ee591e37e25fdd68c72ea#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "开发骂 PRD 的三原因：背景价值缺失（不知道为什么做）、范围边界不清（没写\"不做什么\"）、异常状态漏写（逆向流程/并发/幂等没写清）。核心框架\"一图三表一份清单\"：一图=主流程图（正向+核心逆向，用泳道图）；三表=状态流转表（当前状态/触发事件/前置条件/后置动作/下一状态/异常处理）、字段规则表（字段名/类型/必填/枚举/校验规则/权限/示例）、异常边界表（异常场景/触发条件/系统行为/提示文案/处理人）；一份清单=上线前自检（非功能/权限/埋点/验收）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-prd-writing-30.md",
       "wiki_status": "ingested"
     },
     {

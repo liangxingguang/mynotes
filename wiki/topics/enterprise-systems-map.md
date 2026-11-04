@@ -13,10 +13,13 @@ tags:
   - enterprise-systems
 sources:
   - raw/sources/products/2026-11-03-weixin-bend-enterprise-systems-07.md
+  - raw/sources/products/2026-11-03-weixin-bend-prd-writing-30.md
 related:
   - wiki/sources/bend-enterprise-systems-07.md
+  - wiki/sources/bend-prd-writing-30.md
   - wiki/topics/erp-architecture-design.md
   - wiki/concepts/crm-system-design.md
+  - wiki/concepts/bend-prd-writing-framework.md
 ---
 # B端企业系统全景地图（10 大系统）
 
@@ -42,6 +45,8 @@ related:
 | ITSM | IT 服务请求/故障处理/变更发布/知识库 | 事件管理、问题管理、变更管理、资产管理、知识库 | 平均响应时间、服务台解决率、用户满意度 | 分类与流程标准化是难点，SLA 拆解到每个环节 |
 
 框架逻辑（信源论断）：10 个系统覆盖"从内部管理到外部协同"的全局场景——ERP/HRM/FMS 管内部资源与人力财务，OA 管内部协同，WMS/TMS/MES 管现场作业，CRM/SRM 管外部客户与供应商双边协同，ITSM 管企业 IT 服务。
+
+印证与补充（第二信源，专辑第 30 篇）：从 PRD 写作角度给出 ERP/EHR/车贷/OA/物流/CRM/业务中台/财务中台/规则引擎/用户中心 10 个业务模块的 PRD 重点（如 ERP 重单据/状态/库存/账实一致与红冲蓝冲、CRM 重客户归属/公海规则/数据权限、OA 重会签或签与每动作权限边界），与本页四段式速查口径互补；详见 [[bend-prd-writing-framework]]。注意两信源模块口径不同：第 7 篇为 10 系统（含 WMS/TMS/MES/SRM/ITSM），第 30 篇为 10 业务模块（含车贷/业务中台/财务中台/规则引擎/用户中心，HIS 仅导语提及），是产品地图与 PRD 写作两个视角，非冲突。
 
 ## Key Concepts（关键概念）
 
@@ -75,3 +80,5 @@ related:
 - [[erp-architecture-design|大型 ERP 产品架构设计]]（ERP 深水区）
 - [[bend-enterprise-systems-07|信源页：B端产品经理必懂的10个企业系统]]
 - [[crm-system-design|CRM 系统设计框架]]（概念页，CRM 互证）
+- [[bend-prd-writing-30|信源页：B端PRD怎么写不被开发骂（专辑第30篇）]]
+- [[bend-prd-writing-framework|B端PRD写作框架]]（专辑第 30 篇，PRD 重点角度补充）
