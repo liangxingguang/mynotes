@@ -1,61 +1,6 @@
 {
-  "updated_at": "2026-11-05 01:40",
+  "updated_at": "2026-11-05 03:53",
   "notes": [
-    {
-      "id": "2026-11-04-agent-long-term-memory",
-      "title": "从零构建Agent(十二)：长期Memory管理",
-      "path": "Inbox/2026-11-04-agent-long-term-memory.md",
-      "created": "2026-11-04",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "Agent"
-      ],
-      "source": "知乎专栏（从零构建Agent系列）",
-      "source_url": "https://zhuanlan.zhihu.com/p/2100962312010065146",
-      "source_type": "article",
-      "platform": "知乎",
-      "summary": "\"从零构建 Agent\"系列第 12 篇。分析 Hermes 的长期记忆设计（四层能力模型），为 ZeroAgent 定义统一的 MemoryProvider 接口（retain/recall），经 Extension 的 before_agent_start / turn_end 扩展点接入 Hindsight 作为默认后端，实现跨 Session 长期记忆，并解析 Hindsight 的 documents/memory_units/entities/memory_links 结构化存储原理。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-04/zhihu-column-agent-long-term-memory.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-11-04-ai-native-team-org-reconstruction",
-      "title": "2026-11-04-ai-native-team-org-reconstruction",
-      "path": "Inbox/2026-11-04-ai-native-team-org-reconstruction.md",
-      "created": "2026-11-04",
-      "category": "技术",
-      "tags": [
-        "AI"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/J0eepG34Jfu4jiu2aHzjmQ",
-      "source_type": "article",
-      "platform": "微信",
-      "summary": "一篇 AI Native 组织方法论长文。核心主张：AI Native 不是让工程师用 AI 写代码更快，而是把 AI 当一等公民，从平台、流程到角色全面重构组织。用 Pomelo、Snowflake、Money Forward 的公开数据佐证五个重构维度：平台先行、人才重构、流程重构（Spec Driven Development）、治理闭环（Evaluation 作控制层）、踩坑实录（Credential Walls、Build vs Buy）。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/11/ai-native-team-org-reconstruction.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-11-04-arraylist-vs-linkedlist",
-      "title": "2026-11-04-arraylist-vs-linkedlist",
-      "path": "Inbox/2026-11-04-arraylist-vs-linkedlist.md",
-      "created": "2026-11-04",
-      "category": "学习",
-      "tags": [
-        "java"
-      ],
-      "source": "微信公众号「从CRUD到架构师」· 专辑《架构师之路》第 01 期",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzY4NTAxMTAwMA==&mid=2247483675&idx=1&sn=c1b12538797c7f76868ff961e5f12657",
-      "source_type": "article",
-      "platform": "微信",
-      "summary": "Java 集合框架三件套底层原理拆解。ArrayList 是动态数组（初始容量 10、扩容 1.5 倍），随机读取 O(1) 但中间插入 O(n)；LinkedList 是双向链表，头尾操作 O(1) 但 get(i) 要从头遍历 O(n)——循环里用下标遍历 LinkedList 是 O(n²) 的经典坑。HashMap 四层考点：哈希桶数组、冲突链表、JDK 8 链表≥8 且数组≥64 转红黑树、负载因子 0.75 触发扩容。附面试答法与加分项。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/11/arraylist-vs-linkedlist.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-11-04-github-open-source-ai-books",
       "title": "6 本 GitHub 开源 AI 书籍推荐（全部免费）",
@@ -7098,6 +7043,61 @@
       "summary": "核心心智模型切换：对象不会因有引用就自动被 GC 回收，资源在所有者离开作用域时立即释放；赋值可能移动值而非复制引用；`&T`/`&mut T` 是带规则的临时借用；enum 可携带数据是建模状态与失败的利器；trait 表达共享行为但无类继承；显式可变性、错误和并发边界是语言设计的一部分。所有权三规则：每个值有一个所有者、同一时刻通常只有一个所有者、离开作用域自动清理（Drop）。",
       "summary_status": "partial",
       "asset_ref": "Assets/2026-11-03/weixin-java-rust-learning-guide.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-04-agent-long-term-memory",
+      "title": "从零构建Agent(十二)：长期Memory管理",
+      "path": "Archive/2026-11-04-agent-long-term-memory.md",
+      "created": "2026-11-04",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent"
+      ],
+      "source": "知乎专栏（从零构建Agent系列）",
+      "source_url": "https://zhuanlan.zhihu.com/p/2100962312010065146",
+      "source_type": "article",
+      "platform": "知乎",
+      "summary": "\"从零构建 Agent\"系列第 12 篇。分析 Hermes 的长期记忆设计（四层能力模型），为 ZeroAgent 定义统一的 MemoryProvider 接口（retain/recall），经 Extension 的 before_agent_start / turn_end 扩展点接入 Hindsight 作为默认后端，实现跨 Session 长期记忆，并解析 Hindsight 的 documents/memory_units/entities/memory_links 结构化存储原理。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-04/zhihu-column-agent-long-term-memory.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-04-ai-native-team-org-reconstruction",
+      "title": "2026-11-04-ai-native-team-org-reconstruction",
+      "path": "Archive/2026-11-04-ai-native-team-org-reconstruction.md",
+      "created": "2026-11-04",
+      "category": "技术",
+      "tags": [
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/J0eepG34Jfu4jiu2aHzjmQ",
+      "source_type": "article",
+      "platform": "微信",
+      "summary": "一篇 AI Native 组织方法论长文。核心主张：AI Native 不是让工程师用 AI 写代码更快，而是把 AI 当一等公民，从平台、流程到角色全面重构组织。用 Pomelo、Snowflake、Money Forward 的公开数据佐证五个重构维度：平台先行、人才重构、流程重构（Spec Driven Development）、治理闭环（Evaluation 作控制层）、踩坑实录（Credential Walls、Build vs Buy）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/ai-native-team-org-reconstruction.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-04-arraylist-vs-linkedlist",
+      "title": "2026-11-04-arraylist-vs-linkedlist",
+      "path": "Archive/2026-11-04-arraylist-vs-linkedlist.md",
+      "created": "2026-11-04",
+      "category": "学习",
+      "tags": [
+        "java"
+      ],
+      "source": "微信公众号「从CRUD到架构师」· 专辑《架构师之路》第 01 期",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzY4NTAxMTAwMA==&mid=2247483675&idx=1&sn=c1b12538797c7f76868ff961e5f12657",
+      "source_type": "article",
+      "platform": "微信",
+      "summary": "Java 集合框架三件套底层原理拆解。ArrayList 是动态数组（初始容量 10、扩容 1.5 倍），随机读取 O(1) 但中间插入 O(n)；LinkedList 是双向链表，头尾操作 O(1) 但 get(i) 要从头遍历 O(n)——循环里用下标遍历 LinkedList 是 O(n²) 的经典坑。HashMap 四层考点：哈希桶数组、冲突链表、JDK 8 链表≥8 且数组≥64 转红黑树、负载因子 0.75 触发扩容。附面试答法与加分项。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/arraylist-vs-linkedlist.md",
       "wiki_status": "ingested"
     }
   ]

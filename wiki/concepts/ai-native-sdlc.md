@@ -4,7 +4,7 @@ type: concept
 title: AI 原生 SDLC
 status: active
 created: 2026-10-17
-updated: 2026-10-31
+updated: 2026-11-05
 confidence: medium
 tags:
   - concept
@@ -18,10 +18,13 @@ sources:
   - raw/sources/architecture/2026-10-31-ai-coding-eight-stage-workflow.md
   - raw/sources/ai/2026-10-30-alibaba-ai-native-dev-handbook.md
   - raw/sources/ai/2026-10-31-coding-agent-ai-native-workflow.md
+  - raw/sources/enterprise/2026-11-04-ai-native-team-org-reconstruction.md
 related:
   - wiki/concepts/ai-native-organization.md
   - wiki/concepts/mcp.md
+  - wiki/concepts/agent-evaluation.md
   - wiki/entities/kongming-ai-dev-platform.md
+  - wiki/sources/ai-native-team-org-reconstruction.md
   - wiki/sources/alibaba-ai-native-dev-handbook.md
   - wiki/sources/coding-agent-ai-native-workflow.md
 ---
@@ -80,6 +83,7 @@ Agent 编码使构建阶段塌缩到以小时计，而规划、评审/测试、�
 - 2026-10-31：银河智学「孔明」AI Coding 框架的八阶段工作流信源（第 4 信源）提供国内自研平台的执行流程实例：需求拆成可逐项核对的验收项（每项挂实现任务+验证方式+负责人+运行编号，定时任务/配置变更也进清单）、规范按框架/阶段/任务类型装配且装配本身被检查、验证快照绑定代码状态（收尾比对，快照缺失不阻断）、问题带触发条件退回原验收项修复、完成由脚本核对而非 AI 自述、评分 10 分制由脚本算（工具采集分模型不能抬）。与 Anthropic 手册六阶段（按 SDLC 阶段切分）互补：孔明按执行流程阶段切分，两者是不同粒度的同一命题。
 - 2026-10-31：阿里巴巴 AI Native 研发实践手册（第 5 信源）提供国内大厂多团队一手实践与核心论断：SWE-bench Verified <30%→~80%，Coding 正被解决，瓶颈转移到验证与环境（占研发生命周期 70%～80%）；按阿姆达尔定律，编码只占 20%～30%，压缩三成环节后整体收益有上限；「主战场在验证与环境」是全文最锋利的判断。三个案例（AIDC 数字投手的超级个体→数字员工→云上 Scrum、千问用增 Agent 的三阶段与四个环节、万有无界平台的三元拆分）印证「先建闭环再谈规模」与「人的价值上移到定义与判断」。「约束 vs 假设」的 Spec 新写法（约束→自动门禁、假设→AI 试错空间）直接决定 Agent 自主性上限。万有无界 auto bug fix 60%+ 但 bug 日清率仅 53%→63% 的数据，实证「单点自动化率高≠端到端吞吐提升」——触发与校验依赖人是阿姆达尔定律的现实版。
 - 2026-10-31：驾驭 Coding Agent（第 6 信源）从个体开发者视角补充 AI 原生研发工作流的操作框架：架构决策必须在 AI 写码之前完成（3 人团队选模块化单体而非微服务）；真正的杠杆是规约工程 + 上下文工程而非提示词措辞；落地为"AI 研发任务五要素模型"（Goal/Scope/Context/Constraints/Done）；从 Assistant 到 Agent 让开发者实际扮演技术负责人（任务拆解、变更边界锁定、及时熔断）；验证是生死护城河（AI 用最自信的语气写致命漏洞，错误代码和正确代码看起来一样漂亮）；工程铁律——AI 永不替你在凌晨三点的线上故障复盘会上背锅。与前 5 信源互补：前 5 信源从组织/平台/流程视角论述，本信源从个体开发者视角论述。
+- 2026-11-04 — 微信公众号方法论长文（第 7 信源）从组织层印证"制品链即唯一事实来源"机制：文档进化为 Spec——连接业务、产品、工程和 Agent 的共同语言，MCP 是当前最可行的连接层；业务决策变更时 Spec 自动同步到所有依赖方包括 Agent。判断标准：不能被 Agent 消费的活上下文就不是 Spec，只是过期文档。这是"How It Works"中遗留系统"每种制品指定唯一事实来源"规则的组织层重述，其治理层评估闭环见 [[agent-evaluation]]。
 
 ## Open Questions（开放问题）
 
@@ -95,6 +99,7 @@ Agent 编码使构建阶段塌缩到以小时计，而规划、评审/测试、�
 - Source: `raw/sources/architecture/2026-10-31-ai-coding-eight-stage-workflow.md`（第 4 信源：孔明八阶段验收工作流——验收项原子化、规范装配自检、验证快照、脚本核对完成、评分算法；国内自研平台执行流程实例）
 - Source: `raw/sources/ai/2026-10-30-alibaba-ai-native-dev-handbook.md`（第 5 信源：阿里多团队 AI Native 实践——「主战场在验证与环境」核心论断、三案例演进路径、约束 vs 假设 Spec 新写法、阿姆达尔定律实证；国内大厂一手案例）
 - Source: `raw/sources/ai/2026-10-31-coding-agent-ai-native-workflow.md`（第 6 信源：个体开发者视角的 AI 原生研发工作流——架构先行、规约工程+上下文工程、五要素模型、Assistant→Agent、验证护城河、人类责任铁律）
+- Source: `raw/sources/enterprise/2026-11-04-ai-native-team-org-reconstruction.md`（第 7 信源：Spec 为唯一真实来源、MCP 连接层、业务决策变更自动同步所有依赖方含 Agent；组织层重述）
 
 ## Related Knowledge（相关知识）
 

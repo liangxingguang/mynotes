@@ -4,7 +4,7 @@ type: concept
 title: Agent as Memory（主 Agent 承担记忆职责）
 status: active
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-05
 confidence: medium
 tags:
   - concept
@@ -17,6 +17,7 @@ related:
   - wiki/concepts/harness-engineering.md
   - wiki/concepts/agent-loop.md
   - wiki/concepts/agent-state-separation.md
+  - wiki/concepts/agent-long-term-memory.md
   - wiki/entities/pi.md
 ---
 # Agent as Memory（主 Agent 承担记忆职责）
@@ -63,7 +64,7 @@ Agent as Memory 是知乎 Harness 随笔作者提出的架构主张：**用一�
 
 ### Distinctions（区分）
 
-- **Agent as Memory vs 文件化记忆（Auto-Memory/Codex Memory）**：前者把记忆职责交给主 Agent 的协调过程，后者把记忆落成 Markdown 文件/记忆目录；作者主张两者并用——长期记忆文件化、短期记忆走主 Agent。
+- **Agent as Memory vs 文件化记忆（Auto-Memory/Codex Memory）**：前者把记忆职责交给主 Agent 的协调过程，后者把记忆落成 Markdown 文件/记忆目录；作者主张两者并用——长期记忆文件化、短期记忆走主 Agent。长期记忆的结构化存储路线（MemoryProvider 接口 + 事实/实体/关系记忆库）另见 [[agent-long-term-memory]]（2026-11-05 新建，两条路线可并用）。
 - **Agent as Memory vs 用户手动管理多 Session**：前者自动协调、用户单点对接；后者依赖人做 Session 切换，心智成本高。
 
 ## Evolution（演进）
@@ -85,3 +86,4 @@ Agent as Memory 是知乎 Harness 随笔作者提出的架构主张：**用一�
 - [[harness-engineering|Harness Engineering（Agent 执行系统工程）]]
 - [[context-management|上下文管理（Context Management）]]
 - [[codex-agent-harness-architecture-6|Codex 桌面客户端开发（六）：Agent Harness 的架构设计]]
+- [[agent-long-term-memory|Agent 长期记忆]]（记忆的"结构化存储 + 统一接口"路线，与本页"主 Agent 协调职责"路线互补）

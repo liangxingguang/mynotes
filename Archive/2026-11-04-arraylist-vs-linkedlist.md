@@ -9,7 +9,7 @@ created: 2026-11-04
 category: 学习
 tags: [java]
 asset_ref: Assets/2026/11/arraylist-vs-linkedlist.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 > 摘要：Java 集合框架三件套底层原理拆解。ArrayList 是动态数组（初始容量 10、扩容 1.5 倍），随机读取 O(1) 但中间插入 O(n)；LinkedList 是双向链表，头尾操作 O(1) 但 get(i) 要从头遍历 O(n)——循环里用下标遍历 LinkedList 是 O(n²) 的经典坑。HashMap 四层考点：哈希桶数组、冲突链表、JDK 8 链表≥8 且数组≥64 转红黑树、负载因子 0.75 触发扩容。附面试答法与加分项。

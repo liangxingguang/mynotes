@@ -4,7 +4,7 @@ type: concept
 title: HashMap 核心设计（JDK 8）
 status: active
 created: 2026-10-28
-updated: 2026-10-28
+updated: 2026-11-05
 confidence: medium
 tags:
   - concept
@@ -14,12 +14,15 @@ tags:
   - hashmap
 sources:
   - raw/sources/misc/2026-10-27-jdk-03-hashmap.md
+  - raw/sources/misc/2026-11-04-arraylist-vs-linkedlist.md
 related:
   - wiki/concepts/fail-fast-modcount.md
   - wiki/concepts/concurrenthashmap-internals.md
   - wiki/concepts/linkedhashmap-internals.md
   - wiki/concepts/enummap-enumset-internals.md
+  - wiki/concepts/arraylist-vs-linkedlist.md
   - wiki/sources/jdk-03-hashmap.md
+  - wiki/sources/arraylist-vs-linkedlist.md
 ---
 # HashMap 核心设计（JDK 8）
 
@@ -61,6 +64,7 @@ put：扰动后的 hash 定位桶 → 空桶直接放 / 同 key（hash 相等且
 ## Evolution（演进）
 
 - 2026-10-28 — 由《JDK源码阅读(3) — HashMap》单信源建立；同日 ConcurrentHashMap 篇摄入，回填 [[concurrenthashmap-internals]] 交叉引用（存储基座关系）。
+- 2026-11-05 — 新增面试向信源 `raw/sources/misc/2026-11-04-arraylist-vs-linkedlist.md`（第 2 信源），印证"四层考点"框架（桶数组 → 冲突链 → JDK 8 树化 → 负载因子扩容），并补充：JDK 7 并发 put 死循环的成因是扩容时链表倒序（头插），JDK 8 改尾插并以 tail 指针避免成环、但仍有数据覆盖风险；null key 处理（hash 特殊处理为 0、固定放桶 0 位）；HashTable 不允许 null；Vector 2 倍扩容与 ArrayList 1.5 倍的对比。见 [[arraylist-vs-linkedlist]]。
 
 ## Open Questions（开放问题）
 
@@ -70,8 +74,10 @@ put：扰动后的 hash 定位桶 → 空桶直接放 / 同 key（hash 相等且
 ## Evidence（证据）
 
 - Source: `raw/sources/misc/2026-10-27-jdk-03-hashmap.md`（常量定义、put/resize/treeifyBin 源码注释、JDK 7 vs 8 对比表、面试问答）
+- Source: `raw/sources/misc/2026-11-04-arraylist-vs-linkedlist.md`（第 2 信源：四层考点印证；JDK 7 死循环成因、JDK 8 tail 指针、null key 处理、Vector/HashTable 对比；面试向口径）
 
 ## Related Knowledge（相关知识）
 
 - [[jdk-03-hashmap|JDK源码阅读(3) — HashMap（信源页）]]
 - [[hashset-internals|HashSet / LinkedHashSet 去重设计]]（HashMap 的 key 视图应用）
+- [[arraylist-vs-linkedlist|为什么 ArrayList 比 LinkedList 快？（信源页）]]（含 HashMap 四层考点互证）

@@ -4539,6 +4539,47 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/Ej6XQlvizUeZViDhO4CKLw",
       "asset_ref": "Assets/2026-11-03/weixin-java-rust-learning-guide.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-04-zhihu-column-agent-long-term-memory.md",
+      "sha256": "2b751bfba87cc60a526f529e03b0a9d169eb0a9a5ff6b45764e87506d8e9ddcc",
+      "registered_at": "2026-11-05",
+      "inbox_ref": "Archive/2026-11-04-agent-long-term-memory.md",
+      "pages": [
+        "wiki/sources/zhihu-column-agent-long-term-memory.md",
+        "wiki/concepts/agent-long-term-memory.md",
+        "wiki/concepts/context-management.md",
+        "wiki/concepts/agent-as-memory.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2100962312010065146",
+      "asset_ref": "Assets/2026-11-04/zhihu-column-agent-long-term-memory.md"
+    },
+    {
+      "path": "raw/sources/enterprise/2026-11-04-ai-native-team-org-reconstruction.md",
+      "sha256": "186db2b4dd9098fb781ea4cc6f4fa62e91c7a98d1fe8595ab5413cdc0a889fd5",
+      "registered_at": "2026-11-05",
+      "inbox_ref": "Archive/2026-11-04-ai-native-team-org-reconstruction.md",
+      "pages": [
+        "wiki/sources/ai-native-team-org-reconstruction.md",
+        "wiki/concepts/ai-native-organization.md",
+        "wiki/concepts/ai-native-sdlc.md",
+        "wiki/concepts/agent-evaluation.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/J0eepG34Jfu4jiu2aHzjmQ",
+      "asset_ref": "Assets/2026-11/ai-native-team-org-reconstruction.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-11-04-arraylist-vs-linkedlist.md",
+      "sha256": "581158b6c363c24ccb815bb6f87d86f2aa2fbdda7ca2843a7f092bf513805d67",
+      "registered_at": "2026-11-05",
+      "inbox_ref": "Archive/2026-11-04-arraylist-vs-linkedlist.md",
+      "pages": [
+        "wiki/sources/arraylist-vs-linkedlist.md",
+        "wiki/concepts/arraylist-vs-linkedlist.md",
+        "wiki/concepts/hashmap-internals.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzY4NTAxMTAwMA==&mid=2247483675&idx=1&sn=c1b12538797c7f76868ff961e5f12657",
+      "asset_ref": "Assets/2026-11/arraylist-vs-linkedlist.md"
     }
   ]
 }

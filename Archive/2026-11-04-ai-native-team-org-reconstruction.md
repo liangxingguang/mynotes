@@ -9,7 +9,7 @@ created: 2026-11-04
 category: 技术
 tags: [AI]
 asset_ref: Assets/2026/11/ai-native-team-org-reconstruction.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 > 摘要：一篇 AI Native 组织方法论长文。核心主张：AI Native 不是让工程师用 AI 写代码更快，而是把 AI 当一等公民，从平台、流程到角色全面重构组织。用 Pomelo、Snowflake、Money Forward 的公开数据佐证五个重构维度：平台先行、人才重构、流程重构（Spec Driven Development）、治理闭环（Evaluation 作控制层）、踩坑实录（Credential Walls、Build vs Buy）。

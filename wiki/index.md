@@ -365,6 +365,9 @@
 - [[2026-11-03-weixin-full-gc-troubleshooting|一次Full GC排查实录——从GC日志到根因，完整推理链拆给你看]]（2026-11-05，Java/JVM/GC/排障，GC 刑侦三步（日志看现场→dump 尸检→代码定罪）+时间线交叉验证+静态无界缓存泄漏完整案例（ConcurrentHashMap 2.1GB/52%堆、持有者静态字段）+修法三层（止血/Caffeine 治本/防线），微信公众号单信源，置信度中）
 
 - [[java-rust-learning-guide|Java工程师的Rust语言学习指南]]（2026-11-03，技术/Rust/Java，30 章 Java 工程师 Rust 学习指南：13 维对照+所有权/借用/生命周期+trait/错误处理/RAII+并发异步+Spring 迁移示例+18 陷阱+6 原则+5 阶段路线+16 项清单，微信公众号单信源，置信度中）
+- [[2026-11-04-zhihu-column-agent-long-term-memory|从零构建Agent(十二)：长期Memory管理]]（2026-11-05，AI/Agent/Memory，Hermes 四层记忆模型+MemoryProvider retain/recall 接口+Hindsight documents/memory_units/entities/memory_links 结构化存储+ZeroAgent Extension 接入，知乎专栏单信源，置信度中）
+- [[2026-11-04-ai-native-team-org-reconstruction|构建 AI Native 团队：从工具采用到组织重构]]（2026-11-05，AI/组织/企业，AI-Augmented vs AI-Native 五维对比+平台先行建造顺序+人才/流程/治理三重重构+Pomelo/Snowflake/Money Forward 数据+Gartner 40% 预测，微信公众号单信源，置信度中）
+- [[2026-11-04-arraylist-vs-linkedlist|为什么 ArrayList 比 LinkedList 快？集合框架底层原理，一次讲清]]（2026-11-05，Java/JDK/集合，ArrayList 动态数组 vs LinkedList 双向链表复杂度与选型表+HashMap 四层考点+JDK 7/8 并发坑+ArrayDeque 替代，微信公众号单信源，置信度高）
 
 ## concept（概念）
 
@@ -372,6 +375,7 @@
 - [[aima-agent-taxonomy|AIMA Agent 分类]]（简单反射/基于模型/基于目标/基于效用/学习五类 + 环境四属性；经典理论单信源）
 - [[agent-evaluation|业务 Agent 全生命周期评测]]（规则+LLM 裁判+人工复核，覆盖准入/门禁/压测/巡检；验收从正确性变成分布、单次对比不作数、回归集标注期望行为；货拉拉+叶小钗+Codex+面试深挖 84，四信源）
 - [[agent-as-memory|Agent as Memory（主 Agent 承担记忆职责）]]（主 Agent 协调子 Session 承担项目进展记忆；用户单点对接；长期记忆 Markdown 文件化+短期记忆主 Agent 化；单信源，置信度中）
+- [[agent-long-term-memory|Agent 长期记忆]]（跨 Session 保留与检索：记忆三分类+Hermes 四层模型+MemoryProvider retain/recall 接口+Hindsight 结构化存储+Extension 接入点，单信源，置信度中）
 - [[agent-loop|Agent Loop]]（Runtime 驱动的模型-工具循环；Tool Call/Result、Message/Context/State/Session、Runtime vs Harness）
 - [[agent-legacy-system-integration|Agent 对接旧系统（Legacy System Integration）]]（盘点九字段+四类对接模式（API/只读+事件表/RPA/网关）选型五维度+字段映射四件套+灰度先只读后写+中间表人工确认安全边界+连锁零售旧CRM工单Agent案例，单信源置信度中）
 - [[agent-management-methodology|智能体管理方法论（WBS·交付约定·Scrum Sprint 三工具闭环）]]（瓶颈在人的管理能力而非模型能力；拆到能独立验收为止+人机分工准则+交付约定六维度+验收准则打勾表+每轮只改 1–2 条规则变量唯一，单信源置信度中）
@@ -381,6 +385,7 @@
 - [[agent-state-separation|Agent 状态分离（执行状态/操作状态/产物核验）]]（三态分离+多身份+恢复决策顺序+停止非回滚，Codex Harness 实践，单信源置信度中）
 - [[approval-workflow-engine|审批流引擎（含 AI 改造层）]]（六类节点+处理人规则六种+条件分支五要素+边界值卡单教训+十项验收清单；AI 改造层叠加智能填单/风险识别/自动审批/异常预警+三级风险阈值+六步SOP，合并同专辑第 8+15 篇双信源，置信度中）
 - [[aqs-internals|AQS（AbstractQueuedSynchronizer）核心机制]]（volatile state + CLH 变体 FIFO 队列 + acquire/release 模板方法；JUC 锁体系基座，单信源）
+- [[arraylist-vs-linkedlist|ArrayList vs LinkedList 选型]]（动态数组 vs 双向链表复杂度与选型表+O(n²) 遍历坑+ArrayDeque 替代，JDK 源码阅读系列三信源互证，置信度高）
 - [[arrays-utility-class|Arrays 工具类设计]]（排序按类型/规模分派：双轴快排/TimSort/<47 插入排序；parallelSort/parallelPrefix 走 ForkJoinPool；asList 固定视图坑；单信源，置信度中）
 - [[atomic-variables-cas|Atomic 原子类设计（volatile + CAS 自旋）]]（Unsafe→lock cmpxchg 硬件原子；ABA 需 StampedReference；万级争抢改 LongAdder；单信源，置信度中）
 - [[aho-corasick|AC 自动机（Aho-Corasick）]]（Trie+Fail 指针多模式匹配，近似线性；vivo 谛听改造：组合词后置聚合、拼音图 DFS，单信源一手）

@@ -4,7 +4,7 @@ type: concept
 title: 上下文管理（Context Management）
 status: active
 created: 2026-10-29
-updated: 2026-11-02
+updated: 2026-11-05
 confidence: high
 tags:
   - concept
@@ -18,10 +18,12 @@ sources:
   - raw/sources/ai/2026-11-02-namiagent-agent-tutorial.md
   - raw/sources/ai/2026-11-02-superagent-design.md
   - raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md
+  - raw/sources/ai/2026-11-04-zhihu-column-agent-long-term-memory.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/concepts/harness-engineering.md
   - wiki/concepts/agent-as-memory.md
+  - wiki/concepts/agent-long-term-memory.md
   - wiki/concepts/llm-call-protocol.md
   - wiki/concepts/durable-execution.md
   - wiki/sources/kiso-minimal-agent-framework.md
@@ -86,7 +88,7 @@ Super-agent 信源把上下文窗口当作 Cache 管理，归纳两个注入操�
 
 ### Distinctions（区分）
 
-- **in-context 记忆 vs 会话外记忆**：本概念只管前者；跨会话的工作记忆/长期记忆、向量检索与 RAG 是另一层（该系列 P4·11 主题）。
+- **in-context 记忆 vs 会话外记忆**：本概念只管前者；跨会话的工作记忆/长期记忆、向量检索与 RAG 是另一层（该系列 P4·11 主题，现由 [[agent-long-term-memory|Agent 长期记忆]] 概念页承载）。
 - **压缩 vs 摘要续接**：同族手段，前者会话内替换原文，后者跨会话以「上下文：会话摘要」开场。
 
 ## Evolution（演进）
@@ -104,6 +106,8 @@ Super-agent 信源把上下文窗口当作 Cache 管理，归纳两个注入操�
 
 - 2026-11-02 — 新增 Super-agent 原型拆解信源 `raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md`（第 7 信源）。补上**链式召回的实例与动机**：旧版客户端限制留在群聊里，后续修改需沿消息/Thread/Worker 引用找回那条补充；记录留在数据库中还得在需要时读到，否则模型仍按旧条件继续改。与第 6 信源互证：引用图召回是"磁盘全量、窗口有损"铁律在事件驱动场景的延伸——可见性靠引用链按需恢复，有损性靠 Spill 摘要兜底。
 
+- 2026-11-05 — 新增知乎「从零构建 Agent」第 12 篇信源 `raw/sources/ai/2026-11-04-zhihu-column-agent-long-term-memory.md`（第 8 信源）。补上**长期记忆与 in-context 管理的边界**：跨 Session 记忆不是把历史全量带进窗口，而是结构化提取后按需检索（召回注入会话前、写入轮次后），其"全量历史进 Prompt 不可行"四问题（成本/噪音/重点淹没/记忆失维护）从成本侧印证本概念的 token 预算纪律。新建概念页 [[agent-long-term-memory]]。
+
 ## Open Questions（开放问题）
 
 - 三层记忆（工作记忆 Redis / 长期记忆 pgvector）与 RAG 的分界，待该系列第 11 篇信源补充。
@@ -117,6 +121,7 @@ Super-agent 信源把上下文窗口当作 Cache 管理，归纳两个注入操�
 - Source: `raw/sources/ai/2026-11-02-namiagent-agent-tutorial.md`（教学实现：网页端上下文逐轮可视化演示每轮全量重发）
 - Source: `raw/sources/ai/2026-11-02-superagent-design.md`（Inline & Spill 注入方法、链式召回引用图多跳召回）
 - Source: `raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md`（第 7 信源：链式召回实例——旧版客户端限制沿引用找回、记录读到否则按旧条件改）
+- Source: `raw/sources/ai/2026-11-04-zhihu-column-agent-long-term-memory.md`（第 8 信源：跨 Session 长期记忆为 in-context 管理的会话外对应物；全量历史进 Prompt 四问题）
 
 ## Related Knowledge（相关知识）
 
@@ -129,3 +134,4 @@ Super-agent 信源把上下文窗口当作 Cache 管理，归纳两个注入操�
 - [[llm-integration-engineering-hard-parts|大模型接进业务系统：工程难点在哪（信源页）]]
 - [[namiagent|NamiAgent]]（网页端上下文逐轮可视化的教学演示）
 - [[namiagent-agent-tutorial|微博推荐：NamiAgent——零基础 AI Agent 本地实战教程（信源页）]]
+- [[agent-long-term-memory|Agent 长期记忆]]（跨 Session 对应物，2026-11-05 新建）

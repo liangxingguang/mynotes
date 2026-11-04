@@ -9,7 +9,7 @@ created: 2026-11-04
 category: 技术
 tags: [AI, Agent]
 asset_ref: Assets/2026-11-04/zhihu-column-agent-long-term-memory.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 从零构建Agent(十二)：长期Memory管理
