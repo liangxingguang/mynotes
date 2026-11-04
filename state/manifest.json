@@ -4302,6 +4302,45 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484517&idx=1&sn=405814dccb4a26b56c136e21ff4e780e&chksm=c4d185c9f3a60cdffae11252888de80f4b8bafd56e18eeed2129f7cb7d57ae93461603d1326a",
       "asset_ref": "Assets/2026-11-03/weixin-bend-rule-engine-11.md"
+    },
+    {
+      "path": "raw/sources/products/2026-11-03-weixin-bend-saas-multitenant-05.md",
+      "sha256": "17ed0024836ebc7a6a0d3e1e5324667acb5247f569a69acecd29d0093914c3b3",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-bend-saas-multitenant-05.md",
+      "pages": [
+        "wiki/sources/bend-saas-multitenant-05.md",
+        "wiki/concepts/saas-multi-tenancy.md",
+        "wiki/concepts/rbac-permission-system.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484330&idx=1&sn=c375311bd81969573bee2b31249ef17e&chksm=c4d18206f3a60b108588ac8d5c72d958c0e748fdb5ff08bf8120d6d4ef83053d20dc4146281b",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-saas-multitenant-05.md"
+    },
+    {
+      "path": "raw/sources/products/2026-11-03-weixin-bend-supply-chain-finance-18.md",
+      "sha256": "6063f841dc2120ab6d9a6a67e55fb9210c90f2f1a659cabe5cde2d0c8eb0481a",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-bend-supply-chain-finance-18.md",
+      "pages": [
+        "wiki/sources/bend-supply-chain-finance-18.md",
+        "wiki/concepts/supply-chain-finance.md",
+        "wiki/concepts/finance-reconciliation-design.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484681&idx=1&sn=f47c4f2eb4b9339a3458b0b13a808a43&chksm=c4d184a5f3a60db3161a69b09ac64307082bb78e1bbef8f7c9c034f3b7cb1f1543c927af064c",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-supply-chain-finance-18.md"
+    },
+    {
+      "path": "raw/sources/products/2026-11-03-weixin-bend-third-party-integration-31.md",
+      "sha256": "f1a23161b894d6d3ef4e6bddc482a4760d73ce5282bf17011713cd23df6e2762",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-bend-third-party-integration-31.md",
+      "pages": [
+        "wiki/sources/bend-third-party-integration-31.md",
+        "wiki/concepts/third-party-api-integration.md",
+        "wiki/concepts/finance-reconciliation-design.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247485021&idx=1&sn=a722ed4f459b75c0a893eb180e077676&chksm=c4d187f1f3a60ee7e6a9d1cfa371b47eee57496a47b91427dab8294fd076212cb3c0bebb7b",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-third-party-integration-31.md"
     }
   ]
 }

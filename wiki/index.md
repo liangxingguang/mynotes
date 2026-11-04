@@ -345,6 +345,9 @@
 - [[bend-permission-refactor-29|B端系统权限重构指南：接手烂摊子，用这5步直接抄（大皮不皮 第29篇）]]（2026-11-04，产品/B端/权限/重构，三类病灶（管门/管行/管列）+诊断三表（权限矩阵/角色画像/数据资产分级）+三管模型（RBAC打底+ABAC补数据权限，别一上来就ABAC）+五步法（冻结高风险/资产盘点/模型规则/灰度双轨迁移/审计沉淀）+ERP案例角色412→32工单-58%+10类系统重构重点+避坑6条，正文自 Assets 采集稿逐字收录、1px 占位图剔除，单信源置信度中）
 - [[bend-prd-writing-30|B端PRD怎么写不被开发骂？一份开发不骂人的PRD自检清单（大皮不皮 第30篇）]]（2026-11-04，产品/B端/PRD，三原因（背景价值缺失/范围边界不清/异常状态漏写）+一图三表一份清单框架（主流程图泳道图/状态流转表六字段/字段规则表七字段/异常边界表五字段/上线前自检）+四案例（EHR转岗试岗期/ERP部分入库差异处理/CRM公海状态枚举/车贷反欺诈灰名单）+10业务模块PRD重点速查，自检清单原文未展开（在配套资料包），正文自 Assets 采集稿逐字收录、1px 占位图剔除，单信源置信度中）
 - [[bend-rule-engine-11|规则引擎：B端产品经理如何把复杂业务规则做成可配置决策中台？]]（2026-11-04，产品/B端/规则引擎，专辑第11篇：九大核心组成+三案例（车贷R001-R006决策表/CRM RFM分层C001-C004/物流运费规则链L001-L004）+六模块产品框架+规则引擎vs机器学习组合，正文自 Assets 采集稿逐字收录、1px 占位图剔除，单信源置信度中）
+- [[bend-saas-multitenant-05|SaaS多租户系统实战：B端产品经理从架构设计到落地SOP全指南]]（2026-11-04，产品/B端/SaaS，隔离三模式/租户识别后端强制/RBAC+数据权限拆分/计费配额中心/生命周期状态机/配置化三层/六步SOP，正文自 Assets 采集稿逐字收录、1px 占位图剔除，单信源置信度中）
+- [[bend-supply-chain-finance-18|B端产品经理实战：供应链金融系统从0到1的落地框架]]（2026-11-04，产品/B端/供应链金融，信用流转本质/四方角色对齐/汽配案例（确权3天→4小时）/六中心架构/状态机每状态四件事/六项硬指标/PM七步清单，正文自 Assets 采集稿逐字收录、1px 占位图剔除，单信源置信度中）
+- [[bend-third-party-integration-31|B端产品经理对接第三方接口：从需求到联调的完整SOP]]（2026-11-04，产品/B端/接口对接，五阶段九要素/字段映射表九列/未知状态码待人工确认/逐笔对账四类差异/熔断降级/退出机制，正文自 Assets 采集稿逐字收录、1px 占位图剔除，单信源置信度中）
 
 ## concept（概念）
 
@@ -386,7 +389,7 @@
 - [[codemode|Codemode（代码模式工具编排）]]（模型写 JS 沙箱脚本编排工具调用，只回筛选结果；固定开销约减半，单次收益看返回格式）
 - [[collections-utility-class|Collections 工具类设计]]（算法委托+三类包装器工厂；同步/不可变均为视图，迭代须外部加锁；emptyList 单例零分配；单信源，置信度中）
 - [[complex-system-breakdown|复杂B端系统拆解方法论（五件套）]]（业务对象/单据/状态机/权限/异常五件套+SOP五步顺序；对象三类与核心5-8个；单据四问；状态机四要素；RBAC功能/数据权限+权限矩阵表；异常三类六要素；产出先文档表格后原型，单信源置信度中）
-- [[finance-reconciliation-design|财务对账与异常冲正系统设计]]（三角模型（业务单/内部资金流水/外部渠道流水）+七层架构（数据源→采集→标准化→匹配→差异→处理→报表凭证）+差异三类型（长款/短款/不一致）+差异处理闭环+容差规则（物流<3%且单日<500元）+冲正不删原单/红冲vs蓝冲+冲正四原则（原单不可变/可追溯/幂等/资金保障优先）+7张表+6类接口+三工作台+PM九步SOP+七行业对账重点，双信源互证（第10篇+第26篇），置信度中）
+- [[finance-reconciliation-design|财务对账与异常冲正系统设计]]（三角模型（业务单/内部资金流水/外部渠道流水）+七层架构（数据源→采集→标准化→匹配→差异→处理→报表凭证）+差异三类型（长款/短款/不一致）+差异处理闭环+容差规则（物流<3%且单日<500元）+冲正不删原单/红冲vs蓝冲+冲正四原则（原单不可变/可追溯/幂等/资金保障优先）+7张表+6类接口+三工作台+PM九步SOP+七行业对账重点，四信源互证（第10篇+第26篇+第31篇逐笔对账+第18篇清分对账），置信度中）
 - [[legacy-system-rebuild|存量B端系统重构方法论（三层地图）]]（权限门/流程行/数据列三层地图+三笔账（认知/依赖/风险）+Day1权限三清册+Day2抓核心5条流程画实际发生的状态机+Day3三张表（字段血缘/口径差异/主数据治理）+7跨系统案例；与五件套（从0拆解）互补而非重复（存量重构先盘现状），单信源置信度中）
 - [[contract-lifecycle-management|合同全生命周期管理（CLM，B端）]]（起草→审批→签署→履约→归档五阶段链路，只做审批流的漏损；起草模板库/智能填充、审批动态路由、签署电子签、履约里程碑预警（易忽略价值高）、归档非终点（检索/审计/借阅）；PM六步SOP+AI提效五场景+装备制造案例指标，单信源置信度中）
 - [[concept-boundary-definition|概念边界界定（内涵/外延与三问）]]（内涵外延反变关系+界定范围三问+人为认知切片+按目的三种切法，单信源方法论，置信度中）
@@ -490,7 +493,7 @@
 - [[raft-membership-change-barrier|Raft 成员变更的日志 Barrier]]（公共 config 提交当前 term 日志登记 term；joint 无需/单步必需/回退双向必需）
 - [[operation-log-design|B端操作日志设计（审计、溯源、合规的基础设施）]]（留痕三问+五维日志模型+一核三扩表结构+六策略（分层记录/字段级diff/异步落库/哈希链防篡改/加密展示/冷热分层）+金融留存≥5年+7行业案例；与登录日志、业务流水、权限审计日志区分，单信源置信度中）
 - [[permission-refactoring|B端权限重构方法论（存量权限混乱的诊断与五步法）]]（三类病灶（管门/管行/管列）+诊断三表+三管模型（RBAC打底别一上来就ABAC）+五步法（冻结/盘点/建模/灰度迁移/审计沉淀）+10类系统重构重点+避坑6条；与三层地图（[[legacy-system-rebuild]]）、三层权限（[[rbac-permission-system]]）三套三层框架须区分，单信源置信度中）
-- [[rbac-permission-system|RBAC 权限系统（传统 B 端角色访问控制）]]（用户→角色→权限→资源静态绑定；RBAC0-3 模型层级；权限点编码模块_资源_动作；七大功能模块；权限矩阵表落地；字段权限（列级）层与三张表产出物已补充（第三信源），与 [[agent-permission-model]] 互补而非替代，三信源置信度中）
+- [[rbac-permission-system|RBAC 权限系统（传统 B 端角色访问控制）]]（用户→角色→权限→资源静态绑定；RBAC0-3 模型层级；权限点编码模块_资源_动作；七大功能模块；权限矩阵表落地；字段权限（列级）层与三张表产出物（第三信源）+多租户租户维度数据权限与 ABAC 适用场景（第四信源），与 [[agent-permission-model]] 互补而非替代，四信源置信度中）
 - [[read-fanout|读扩散（Fan-out on Read）]]（会话队列+syncId 位点同步把 1:N 写压成 1:1；99.99% 非个性化消息前提；阿里混合模式 500ms 端到端，双信源）
 - [[red-dot-tree-system|拉模式红点树系统（游戏 UI 提示徽标）]]（路径树+脏标记冒泡+每帧合批+拉模式，叶子自订阅自计算；先取走脏标记再计算；全树遍历顺带时间驱动红点；五方案对比+完整 C# 实现，单信源一手，置信度高）
 - [[rag-production-guardrails|企业级 RAG 生产护栏]]（容量/证据/权限/恢复四主线；证据门禁前置、发布目录原子切换；混合检索+存储分层+参数热调+重活异步化+影子模式+旁路降级+RRF融合+相关性裁判拒答+SSE契约+MCP工具调用真实用户身份+五层记忆+加权遗忘，三信源，置信度中）
@@ -502,14 +505,17 @@
 - [[retry-governance|重试治理（Retry Governance）]]（唯一重试所有者+时间/次数/额度/并发/语义五边界；Retry Budget 按首次记账 β 上界、Full Jitter、错误分类、熔断只看真实下游结果、12 步执行链；非确定性依赖重试=分布采样+查询可重试写操作禁重试+退避抖动+封顶实现细节+熔断按租户+defer闸+三层令牌桶+幂等外置+DB唯一真相+Outbox事务钩子+虚拟线程配信号量，五信源，置信度中）
 - [[dead-letter-governance|死信治理（Dead Letter Governance）]]（死信不是垃圾桶而是等人工拍板的队列；归因/重放/归档三件事；reason四种类型（EXHAUSTED/PERMANENT_4XX/URL_INVALID/BREAKER_TIMEOUT）；重放上限3次+ON DUPLICATE KEY UPDATE；T+7归档180天；78%死信是地址配错驱动产品改进；死信是系统健康度领先指标；单信源，置信度中）
 - [[rle-inverted-index|RLE 倒排索引（Run-Length Encoding Inverted Index）]]（Index Sorting 使 Doc ID 连续+RLE 编码 [start,length]+SparseRoaringDocIdSet 消除空置 bucket，合并 O(K×M)→O(M log M)，倒排链合并 TP99 -96%，全链路 TP99 -84%，美团一手）
+- [[saas-multi-tenancy|SaaS 多租户（Multi-Tenancy）]]（2026-11-04，产品/B端/SaaS/多租户，隔离三模式/租户识别后端强制/权限双轨拆分/计费配额中心/生命周期状态机/配置化三层/六步SOP，与 rbac-permission-system（第四信源）互链，单信源置信度中）
 - [[scheduledthreadpoolexecutor-internals|ScheduledThreadPoolExecutor 调度设计]]（DelayedWorkQueue 数组最小堆+Leader-Follower 等待；period 正负号编码 fixedRate/fixedDelay；周期任务异常静默取消，单信源，置信度中）
 - [[sso-oauth2-oidc|单点登录 SSO（OAuth2 Authorization Code + OIDC）]]（共享认证服务器 Session；两条安全链+OIDC Discovery+oidc(withDefaults())；客户端一行 issuer-uri 自动配置；生产优先 Keycloak；Spring Authorization Server Demo，单信源一手，置信度高）
 - [[synchronousqueue-internals|SynchronousQueue 直接交接设计]]（零容量不存储+单 transfer 双角色；TransferStack Treiber 栈 FULFILLING 配对/TransferQueue FIFO；先自旋后 park；newCachedThreadPool 之选，单信源，置信度中）
 - [[scene-quest-orchestration|场景任务流程编排（SceneQuest）]]（任务即流程编排器：目标+进度+结果处理；生命周期 FSM 硬编码与流程数据驱动分离；事件立即更新数据心跳再切状态；单信源，置信度中）
 - [[scopedvalue|ScopedValue（作用域值）]]（JDK 25 正式：作用域共享不可变快照，终结 VT 下 ThreadLocal 内存膨胀/泄漏/脏值，Old Gen -61% 实测）
 - [[startup-ideas-framework|创业点子生成与评估框架（YC）]]（四错误避坑+十问评估+七配方生成；YC 前 100 公司 70% 点子自然注意到；演讲整理稿单信源）
+- [[supply-chain-finance|供应链金融（Supply Chain Finance）]]（2026-11-04，产品/B端/供应链金融，信用流转本质/四方角色对齐/六中心架构/状态机为骨架每状态四件事/六项硬指标前置/PM七步避坑，与 complex-system-breakdown 互证，单信源置信度中）
 - [[table-sharding-migration|分表平滑迁移策略]]（五种读写策略矩阵 + 双写双读 SQL 重写，京东大表治理实践）
 - [[thinking-mode|思考模式（Thinking Mode）与模型路由]]（通用 vs 推理已制度化为 thinking 开关两态；reasoning_content 回传 400 规则+参数坑+reasoning_tokens 计费；两行规则表最小路由，单信源）
+- [[third-party-api-integration|第三方接口对接（Third-Party API Integration）]]（2026-11-04，产品/B端/接口对接，五阶段九要素/字段映射表三方契约/未知状态码待人工确认/逐笔对账四类差异/熔断降级/退出机制，与 remote-call-governance 区分（PM 外部供应商对接 vs 服务间治理），单信源置信度中）
 - [[thread-stack-reading|线程栈读法]]（三种「卡」先分类：RUNNABLE 在算/BLOCKED 等锁/RUNNABLE 等外部响应；读栈顺序 状态→自己的包→卡在等什么；线程池耗尽看分布；RUNNABLE 但 CPU 不高多半在等 IO；隔时二次采样，三信源）
 - [[watch-trace-tt|watch/trace/tt 方法级观察三件套]]（时间/数据/现场三命令分工+四时机参数+tt 三步+排查顺序 trace→watch→tt+三条纪律，与 arthas-01 参数细节互证，单信源方法论，置信度高）
 - [[threadpoolexecutor-internals|ThreadPoolExecutor 核心设计]]（ctl 单 int 打包状态+线程数；execute 四级漏斗+二次检查；Worker 继承 AQS 不可重入锁；四种拒绝策略，单信源，置信度中）

@@ -10,7 +10,7 @@ category: 学习
 tags: [产品]
 album: B端产品经理（专辑，32 篇，作者 大皮不皮）
 asset_ref: Assets/2026-11-03/weixin-bend-saas-multitenant-05.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # SaaS多租户系统实战：B端产品经理从架构设计到落地SOP全指南

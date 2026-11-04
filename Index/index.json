@@ -1,60 +1,6 @@
 {
-  "updated_at": "2026-11-04 11:56",
+  "updated_at": "2026-11-04 13:03",
   "notes": [
-    {
-      "id": "20261103-bend-saas-multitenant-05",
-      "title": "SaaS多租户系统实战：B端产品经理从架构设计到落地SOP全指南",
-      "path": "Inbox/2026-11-03-bend-saas-multitenant-05.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484330&idx=1&sn=c375311bd81969573bee2b31249ef17e&chksm=c4d18206f3a60b108588ac8d5c72d958c0e748fdb5ff08bf8120d6d4ef83053d20dc4146281b#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "本文给出 SaaS 多租户系统的完整产品框架：数据隔离三模式选型、租户识别链路、RBAC+数据权限拆分、计费配额中心、租户生命周期状态机、配置化扩展点，以及 B 端产品经理从调研到灰度的六步落地 SOP。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-saas-multitenant-05.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "20261103-bend-supply-chain-finance-18",
-      "title": "B端产品经理实战：供应链金融系统从0到1的落地框架",
-      "path": "Inbox/2026-11-03-bend-supply-chain-finance-18.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484681&idx=1&sn=f47c4f2eb4b9339a3458b0b13a808a43&chksm=c4d184a5f3a60db3161a69b09ac64307082bb78e1bbef8f7c9c034f3b7cb1f1543c927af064c#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "供应链金融不是借贷，而是核心企业信用沿供应链向上游传递。本文拆解应收账融资系统：四方角色（供应商/核心企业/资金方/平台运营）诉求与抗拒点、汽配平台案例（1200 供应商，确权 3 天→4 小时，放款 5 天→T+1）、六中心架构（企业/资产/确权/风控/资金/报表）、资产状态机（待提交→待确权→已确权→待放款→已放款→已结清+异常分支）、六项硬指标（确权时效/放款时效/重复融资拦截率/逾期率/清分准确率）与 PM 避坑清单。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-supply-chain-finance-18.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "20261103-bend-third-party-integration-31",
-      "title": "B端产品经理对接第三方接口：从需求到联调的完整SOP",
-      "path": "Inbox/2026-11-03-bend-third-party-integration-31.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247485021&idx=1&sn=a722ed4f459b75c0a893eb180e077676&chksm=c4d187f1f3a60ee7e6a9d1cfa371b47e3eee57496a47b91427dab8294fd076212cb3c0bebb7b#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "第三方接口对接五阶段九要素。五阶段：需求与边界评估、供应商选型与商务评审、方案设计与字段映射、联调与验收、上线与运维。九要素贯穿始终：业务场景、数据范围、字段标准、调用频率、鉴权方式、异常码、重试策略、对账机制、退出机制。核心理念：接口不是联调通了才叫完成，是异常发生时业务还能被兜住。PM 不是传话筒，是第三方接口项目的业务负责人。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-third-party-integration-31.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "20261103-bend-ticket-prd-02",
       "title": "工单系统PRD撰写实战：一套可复用的需求文档拆解",
@@ -7079,6 +7025,60 @@
       "summary": "本文用三个真实场景讲透规则引擎设计：车贷审批、CRM客户分层、物流运费计算。核心组成（事实/条件/动作/规则集/决策表/优先级/互斥组/默认规则/版本）、通用产品设计框架（六模块）、规则引擎与机器学习的配合方式，以及面试高频题。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-bend-rule-engine-11.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-saas-multitenant-05",
+      "title": "SaaS多租户系统实战：B端产品经理从架构设计到落地SOP全指南",
+      "path": "Archive/2026-11-03-bend-saas-multitenant-05.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484330&idx=1&sn=c375311bd81969573bee2b31249ef17e&chksm=c4d18206f3a60b108588ac8d5c72d958c0e748fdb5ff08bf8120d6d4ef83053d20dc4146281b#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文给出 SaaS 多租户系统的完整产品框架：数据隔离三模式选型、租户识别链路、RBAC+数据权限拆分、计费配额中心、租户生命周期状态机、配置化扩展点，以及 B 端产品经理从调研到灰度的六步落地 SOP。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-saas-multitenant-05.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-supply-chain-finance-18",
+      "title": "B端产品经理实战：供应链金融系统从0到1的落地框架",
+      "path": "Archive/2026-11-03-bend-supply-chain-finance-18.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484681&idx=1&sn=f47c4f2eb4b9339a3458b0b13a808a43&chksm=c4d184a5f3a60db3161a69b09ac64307082bb78e1bbef8f7c9c034f3b7cb1f1543c927af064c#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "供应链金融不是借贷，而是核心企业信用沿供应链向上游传递。本文拆解应收账融资系统：四方角色（供应商/核心企业/资金方/平台运营）诉求与抗拒点、汽配平台案例（1200 供应商，确权 3 天→4 小时，放款 5 天→T+1）、六中心架构（企业/资产/确权/风控/资金/报表）、资产状态机（待提交→待确权→已确权→待放款→已放款→已结清+异常分支）、六项硬指标（确权时效/放款时效/重复融资拦截率/逾期率/清分准确率）与 PM 避坑清单。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-supply-chain-finance-18.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-third-party-integration-31",
+      "title": "B端产品经理对接第三方接口：从需求到联调的完整SOP",
+      "path": "Archive/2026-11-03-bend-third-party-integration-31.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247485021&idx=1&sn=a722ed4f459b75c0a893eb180e077676&chksm=c4d187f1f3a60ee7e6a9d1cfa371b47e3eee57496a47b91427dab8294fd076212cb3c0bebb7b#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "第三方接口对接五阶段九要素。五阶段：需求与边界评估、供应商选型与商务评审、方案设计与字段映射、联调与验收、上线与运维。九要素贯穿始终：业务场景、数据范围、字段标准、调用频率、鉴权方式、异常码、重试策略、对账机制、退出机制。核心理念：接口不是联调通了才叫完成，是异常发生时业务还能被兜住。PM 不是传话筒，是第三方接口项目的业务负责人。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-third-party-integration-31.md",
       "wiki_status": "ingested"
     },
     {

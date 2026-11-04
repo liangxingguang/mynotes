@@ -14,12 +14,18 @@ tags:
 sources:
   - raw/sources/products/2026-11-03-weixin-bend-finance-reconciliation-10.md
   - raw/sources/products/2026-11-03-weixin-bend-finance-reconciliation-prd-26.md
+  - raw/sources/products/2026-11-03-weixin-bend-third-party-integration-31.md
+  - raw/sources/products/2026-11-03-weixin-bend-supply-chain-finance-18.md
 related:
   - wiki/concepts/complex-system-breakdown.md
   - wiki/concepts/rbac-permission-system.md
   - wiki/concepts/idempotency-design.md
   - wiki/concepts/local-message-table.md
   - wiki/concepts/retry-governance.md
+  - wiki/concepts/third-party-api-integration.md
+  - wiki/concepts/supply-chain-finance.md
+  - wiki/sources/bend-third-party-integration-31.md
+  - wiki/sources/bend-supply-chain-finance-18.md
 ---
 # 财务对账与异常冲正系统设计
 
@@ -39,12 +45,14 @@ related:
 1. **三角模型**（信源二）：业务单（订单/应收单/应付单/报销单/结算单）、内部资金流水（余额/保障金/红包/减免券/虚拟账户）、外部渠道流水（商行/第三方支付/清算机构/医保结算平台）。任何一笔资金收付同时在三条线产生记录。
 2. **七层架构**（信源一）：数据源层 → 采集层 → 标准化层 → 匹配层 → 差异层 → 处理层 → 报表与凭证层。数据源含业务库/资金网关/银行/渠道/ERP/发票/HIS；采集用 API/文件/SFTP/email/RPA。
 3. **差异三类型**：长款（渠道有流水、业务无单据）、短款（业务有单据、渠道无流水）、不一致（金额/状态/手续费/时间不一致）。
-4. **差异处理闭环**：数据获取 → 标准化 → 匹配 → 差异处理 → 复核 → 关账。把差异规则化交给规则引擎，而非「自动匹配失败就人工调账」（会越对越乱）。
-5. **容差规则示例**：物流运费对账——单笔差异 <3% 且单日累计 <500 元自动通过，超容差才进人工调账（信源二）。
-6. **冲正不删除原记录**：冲正单必须关联原单、说明原因、携带审批人与时间；原单一旦生成不可修改。
-7. **红冲 vs 蓝冲**：红冲用负数冲销原金额保留原始记录（财务账务调整）；蓝冲生成金额相等方向相反的新交易（资金流水层反向）。
-8. **冲正四原则**：原单不可变、冲正单可追溯、幂等控制（同一原单同一原因只能生成一笔成功冲正单）、资金保障优先（发起前校验余额/渠道状态/风险策略）。
-9. **七行业对账重点**：ERP（应收应付核销/账龄）、EHR（薪资发放失败重发/重复发放）、OA（报销支付失败冲正重发）、车贷金融（代扣超时/重复扣款/逾期补扣防重复）、物流（承运商结算容差）、CRM 电商（订单回款/减免券/退款与冲正区分）、业务中台用户中心（余额/积分/保障金流水准确）。
+4. **逐笔对账而非只对总额**（第三信源）：对账必须按流水号逐笔核对，只对总金额会漏掉单笔差异；每笔差异区分我方有他方无、他方有我方无、金额不一致、状态不一致四类，差异进入差错处理流程并设定处理时效。
+5. **差异处理闭环**：数据获取 → 标准化 → 匹配 → 差异处理 → 复核 → 关账。把差异规则化交给规则引擎，而非「自动匹配失败就人工调账」（会越对越乱）。
+6. **容差规则示例**：物流运费对账——单笔差异 <3% 且单日累计 <500 元自动通过，超容差才进人工调账（信源二）。
+7. **清分与对账对应**（第四信源）：清分准确率指标直接对应清分规则与资金对账能力——到期核心企业付款后按规则自动清分给资金方，对账保障清分结果与资金流水一致；指标需前置到需求阶段定义。
+8. **冲正不删除原记录**：冲正单必须关联原单、说明原因、携带审批人与时间；原单一旦生成不可修改。
+9. **红冲 vs 蓝冲**：红冲用负数冲销原金额保留原始记录（财务账务调整）；蓝冲生成金额相等方向相反的新交易（资金流水层反向）。
+10. **冲正四原则**：原单不可变、冲正单可追溯、幂等控制（同一原单同一原因只能生成一笔成功冲正单）、资金保障优先（发起前校验余额/渠道状态/风险策略）。
+11. **七行业对账重点**：ERP（应收应付核销/账龄）、EHR（薪资发放失败重发/重复发放）、OA（报销支付失败冲正重发）、车贷金融（代扣超时/重复扣款/逾期补扣防重复）、物流（承运商结算容差）、CRM 电商（订单回款/减免券/退款与冲正区分）、业务中台用户中心（余额/积分/保障金流水准确）。
 
 ## Structure（结构）
 
@@ -99,6 +107,7 @@ CRM 案例：支付宝支付订单已成功但财务未核销，因渠道流水 
 ## Evolution（演进）
 
 - 2026-11-04：信源一（对账系统设计框架，七层架构+6案例+SOP）+ 信源二（底层逻辑+冲正+PRD状态机）合并为一概念页。两信源互证：信源一补七层架构与SOP，信源二补三角模型/冲正四原则/7张表/三工作台。
+- 2026-11-04：据第三信源（《对接第三方接口SOP》）补充逐笔对账原则与四类差异分类（我方有他方无/他方有我方无/金额不一致/状态不一致）；据第四信源（《供应链金融系统落地框架》）补充清分准确率与资金对账的对应关系。
 
 ## Open Questions（开放问题）
 
@@ -110,6 +119,8 @@ CRM 案例：支付宝支付订单已成功但财务未核销，因渠道流水 
 
 - Source 1: `raw/sources/products/2026-11-03-weixin-bend-finance-reconciliation-10.md`
 - Source 2: `raw/sources/products/2026-11-03-weixin-bend-finance-reconciliation-prd-26.md`
+- Source 3: `raw/sources/products/2026-11-03-weixin-bend-third-party-integration-31.md`（补逐笔对账原则与四类差异分类）
+- Source 4: `raw/sources/products/2026-11-03-weixin-bend-supply-chain-finance-18.md`（补清分准确率与资金对账对应关系）
 
 ## Related Knowledge（相关知识）
 
@@ -118,3 +129,5 @@ CRM 案例：支付宝支付订单已成功但财务未核销，因渠道流水 
 - [[complex-system-breakdown|复杂B端系统拆解方法论]]
 - [[idempotency-design|幂等设计]]
 - [[local-message-table|本地消息表]]
+- [[third-party-api-integration|第三方接口对接]]（逐笔对账原则来源）
+- [[supply-chain-finance|供应链金融]]（清分与对账对应关系来源）

@@ -14,12 +14,15 @@ sources:
   - raw/sources/architecture/2026-11-03-bend-rbac-permission-system-design.md
   - raw/sources/architecture/2026-11-03-weixin-bend-complex-system-breakdown-20.md
   - raw/sources/products/2026-11-03-weixin-bend-permission-design-22.md
+  - raw/sources/products/2026-11-03-weixin-bend-saas-multitenant-05.md
 related:
   - wiki/concepts/agent-permission-model.md
   - wiki/concepts/complex-system-breakdown.md
   - wiki/concepts/permission-refactoring.md
+  - wiki/concepts/saas-multi-tenancy.md
   - wiki/sources/bend-rbac-permission-system-design.md
   - wiki/sources/bend-permission-design-22.md
+  - wiki/sources/bend-saas-multitenant-05.md
 ---
 # RBAC 权限系统（传统 B 端角色访问控制）
 
@@ -36,7 +39,7 @@ B 端权限系统是底层能力，直接决定数据合规与使用边界。RBA
 1. **四核心对象**：用户（使用主体）、角色（用户与权限的桥梁）、权限（对资源的执行能力）、资源（菜单/按钮/接口/数据）。
 2. **模型层级递进**：RBAC0（基础三角）→ RBAC1（角色继承）→ RBAC2（约束：互斥/基数/先决条件）→ RBAC3（继承+约束）。多数 B 端产品 RBAC1/2 混合即可。
 3. **权限点编码规范**：模块_资源_动作（如 order_view/order_export/order_approve），颗粒度到按钮和接口级，数据级权限单独管理。
-4. **数据权限维度**：本人/本部门及下级/全部/自定义，维度可含部门、项目、区域、产品线。
+4. **数据权限维度**：本人/本部门及下级/全部/自定义，维度可含部门、项目、区域、产品线；多租户场景下租户维度是隔离底线——共享表每条数据带 tenant_id/org_id/owner_id，数据权限按"租户+组织+资源 Owner+数据规则"组合过滤，租户识别从登录态 token 解析（前端传参不可作后端过滤依据）（第四信源补充）。
 5. **前后端一致**：前端控菜单按钮显示，后端校验权限标识防越权，数据权限在查询层拼接条件。
 6. **权限矩阵表落地**：拆解阶段建议输出角色×功能/数据矩阵（横轴角色、纵轴功能/数据，逐项标注可执行/可查看/禁止），如车贷系统客户经理（创建申请单、看本人客户）/风控岗（审批）/财务岗（放款）/管理员（配置角色）的四角色示例（第二信源印证）。
 7. **字段权限（列级控制）**：权限类型分可见、可编辑、加密；薪资、身份证号、手机号、采买价、利润、供应商账户等敏感字段控制到列而非整页隐藏（EHR/车贷/ERP/HIS 案例）；三张表产出物（功能权限矩阵、数据权限规则表、字段权限清单）与 SOP 七步（梳理角色→列功能点→定数据范围→标敏感字段→输出三表→评审越权测试→上线后审计变更）是该层的落地形态（第三信源补充）。
@@ -83,7 +86,8 @@ B 端权限系统是底层能力，直接决定数据合规与使用边界。RBA
 - RBAC0 → RBAC1 → RBAC2 → RBAC3：从简单三角到继承再到约束，复杂度递增。
 - 传统 RBAC → Agent 平台权限模型：从静态角色绑定演进为动态基线+指令授权+调用时校验。
 - 2026-11-04：据第三信源（《B端权限设计别只控菜单》）补充字段权限（列级）层，权限模型升级为功能/数据/字段三层交叉，并补三张表产出物与 SOP 七步。
-- 未来方向：ABAC（属性访问控制）、多租户权限隔离；从 RBAC 向 ABAC 演进的务实路径（RBAC 打底 + 规则引擎补数据权限 + 灰度双轨迁移）见 [[permission-refactoring]]。
+- 未来方向：ABAC（属性访问控制）、多租户权限隔离；从 RBAC 向 ABAC 演进的务实路径（RBAC 打底 + 规则引擎补数据权限 + 灰度双轨迁移）见 [[permission-refactoring]]。ABAC 适用场景示例（第四信源）："仅允许查看本人所在部门且金额大于 10 万的合同"，用属性规则引擎处理；权限表至少含用户、角色、角色菜单关系、角色数据范围、租户、组织、资源类型，并需画出"同一角色在不同租户下看到不同数据范围"的用例。
+- 2026-11-04：据第四信源（《SaaS多租户系统实战》）补充多租户场景的租户维度数据权限（tenant_id/org_id/owner_id 组合过滤、token 解析租户识别）与 ABAC 属性规则引擎适用场景示例。
 
 ## Open Questions（开放问题）
 
@@ -96,6 +100,7 @@ B 端权限系统是底层能力，直接决定数据合规与使用边界。RBA
 - Source: `raw/sources/architecture/2026-11-03-bend-rbac-permission-system-design.md`
 - Source: `raw/sources/architecture/2026-11-03-weixin-bend-complex-system-breakdown-20.md`（印证功能/数据权限二分与权限矩阵表实践）
 - Source: `raw/sources/products/2026-11-03-weixin-bend-permission-design-22.md`（补充字段权限层、三张表产出物与 SOP 七步）
+- Source: `raw/sources/products/2026-11-03-weixin-bend-saas-multitenant-05.md`（补充多租户租户维度数据权限与 ABAC 适用场景）
 
 ## Related Knowledge（相关知识）
 
@@ -104,3 +109,5 @@ B 端权限系统是底层能力，直接决定数据合规与使用边界。RBA
 - [[bend-permission-design-22|信源：B端权限设计三层拆解]]
 - [[permission-refactoring|B端权限重构方法论]]
 - [[complex-system-breakdown|复杂B端系统拆解方法论（五件套）]]（五件套中的权限件）
+- [[saas-multi-tenancy|SaaS 多租户]]（租户维度数据权限）
+- [[bend-saas-multitenant-05|信源：SaaS多租户系统实战全指南]]
