@@ -4226,6 +4226,19 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484439&idx=1&sn=b4935e5e98ad146e82b3cf52dcdc5c8f&chksm=c4d185bbf3a60cadce9b5819cc992a7effa05e752ce1a3d078af9320a4973ce3c975f2571768",
       "asset_ref": "Assets/2026-11-03/weixin-bend-message-center-09.md"
+    },
+    {
+      "path": "raw/sources/products/2026-11-03-weixin-bend-multi-agent-saas-24.md",
+      "sha256": "6ace1041b006329ddb67b74b6fc220ac3bb4d00642cf70aea4ae27399defac1a",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-bend-multi-agent-saas-24.md",
+      "pages": [
+        "wiki/sources/bend-multi-agent-saas-24.md",
+        "wiki/concepts/multi-agent-saas-refactoring.md",
+        "wiki/concepts/agent-prd-template.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484851&idx=1&sn=ff731e5d45779c441e7777d10723f6ce&chksm=c4d1841ff3a60d09ea6d3792dcd902dd9ece109dab0e4a62ba827db87b8e3e024123fa6eb7bd",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-multi-agent-saas-24.md"
     }
   ]
 }

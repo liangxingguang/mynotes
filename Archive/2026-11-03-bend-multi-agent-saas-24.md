@@ -10,9 +10,7 @@ category: 学习
 tags: [产品]
 album: B端产品经理（专辑，32 篇，作者 大皮不皮）
 asset_ref: Assets/2026-11-03/weixin-bend-multi-agent-saas-24.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-04T00:59:28.338Z"
-ingest_claim_id: 15312-1793753968338-0
+wiki_status: ingested
 ---
 
 # B端系统多智能体重构SaaS业务流：产品经理建议收藏

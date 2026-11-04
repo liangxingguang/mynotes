@@ -1,24 +1,6 @@
 {
-  "updated_at": "2026-11-04 09:03",
+  "updated_at": "2026-11-04 09:20",
   "notes": [
-    {
-      "id": "20261103-bend-multi-agent-saas-24",
-      "title": "B端系统多智能体重构SaaS业务流：产品经理建议收藏",
-      "path": "Inbox/2026-11-03-bend-multi-agent-saas-24.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484851&idx=1&sn=ff731e5d45779c441e7777d10723f6ce&chksm=c4d1841ff3a60d09ea6d3792dcd902dd9ece109dab0e4a62ba827db87b8e3e024123fa6eb7bd#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "多智能体不是给 SaaS 加聊天机器人，而是把\"人找功能\"改成\"Agent 找决策\"：把流程中的判断从人身上剥离，交给多个 Agent 协作执行。三层架构（交互层意图与槽位/编排层 Orchestrator 任务卡片/执行层工具 API 调用）、业务流重构五步法（拆业务事件找决策点→定义 Agent 角色与边界→设计结构化协作协议→嵌入权限审计与人工干预→离线评测集+影子模式回滚）、四个案例（ERP 采买到付款/车贷审批/OA 差旅报销/CRM 线索培育）、Agent 化 PRD 新增五模块（Agent 能力卡片/协作时序/护栏机制/评测集/指标）。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-multi-agent-saas-24.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "20261103-bend-operation-log-27",
       "title": "B端系统操作日志设计：审计、溯源、合规一次说透",
@@ -6989,6 +6971,24 @@
       "summary": "本文用 CRM 产品案例完整复盘统一消息中心：四层架构（接入/策略/渲染/通道）、消息模板（文案与数据分离）、订阅偏好（控制权给用户）、触达策略（优先级/频控/通道路由）、失败重试（指数退避+降级），上线后发送成功率从 82% 提升至 96%，打扰投诉降 40%。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-bend-message-center-09.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-multi-agent-saas-24",
+      "title": "B端系统多智能体重构SaaS业务流：产品经理建议收藏",
+      "path": "Archive/2026-11-03-bend-multi-agent-saas-24.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484851&idx=1&sn=ff731e5d45779c441e7777d10723f6ce&chksm=c4d1841ff3a60d09ea6d3792dcd902dd9ece109dab0e4a62ba827db87b8e3e024123fa6eb7bd#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "多智能体不是给 SaaS 加聊天机器人，而是把\"人找功能\"改成\"Agent 找决策\"：把流程中的判断从人身上剥离，交给多个 Agent 协作执行。三层架构（交互层意图与槽位/编排层 Orchestrator 任务卡片/执行层工具 API 调用）、业务流重构五步法（拆业务事件找决策点→定义 Agent 角色与边界→设计结构化协作协议→嵌入权限审计与人工干预→离线评测集+影子模式回滚）、四个案例（ERP 采买到付款/车贷审批/OA 差旅报销/CRM 线索培育）、Agent 化 PRD 新增五模块（Agent 能力卡片/协作时序/护栏机制/评测集/指标）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-multi-agent-saas-24.md",
       "wiki_status": "ingested"
     },
     {

@@ -339,6 +339,7 @@
 - [[weixin-seckill-100k-qps|从 0 设计 10 万 QPS 秒杀系统：10 万请求进来，只有 1000 个能碰到数据库]]（2026-11-02，架构/分布式系统/秒杀/Redis/Kafka/微信，三层漏斗压 10 万→2 万→1000+Redis Lua 预扣+32 桶散热+Kafka 削峰+DB 唯一索引幂等+容量推导表，微信单信源，置信度高）
 - [[2026-11-03-thinking-speaking-diagrams|提升自己的思维和讲话能力 20 张图解]]（2026-11-03，个人成长/思维方式/微信，20 张手绘图承载核心方法论（图片无法文字化）+随笔正文：目标感→路径→模板→可训练+从固定型到成长型思维跨越+自我觉察四阶段+反馈与盲区，公众号随笔单信源，置信度低）
 - [[bend-message-center-09|B端产品经理实操框架：消息中心从0到1复盘（大皮不皮 第9篇）]]（2026-11-04，产品/B端/消息中心，四层架构（接入/策略/渲染/通道）+生命周期七步+模板六字段（文案与数据分离）+订阅偏好六字段（投诉-40%）+触达优先级五级+频控（1h1条短信/1天3条营销）+失败重试矩阵（指数退避1→5→15min/降级/死信）+CRM案例（82%→96%、接入效率+60%），正文自 Assets 采集稿逐字收录（含 1px 占位图），单信源置信度中）
+- [[bend-multi-agent-saas-24|B端系统多智能体重构SaaS业务流：产品经理建议收藏（大皮不皮 第24篇）]]（2026-11-03，产品/AI-Agent/多智能体，三层架构（交互层意图与槽位/编排层Orchestrator任务卡片/执行层工具API调用）+业务流重构五步法+四案例（ERP采买到付款/车贷审批/OA差旅报销/CRM线索培育）+Agent化PRD五模块，正文自 Assets 采集稿逐字收录、1px 占位图剔除，单信源置信度中）
 
 ## concept（概念）
 
@@ -349,6 +350,7 @@
 - [[agent-loop|Agent Loop]]（Runtime 驱动的模型-工具循环；Tool Call/Result、Message/Context/State/Session、Runtime vs Harness）
 - [[agent-legacy-system-integration|Agent 对接旧系统（Legacy System Integration）]]（盘点九字段+四类对接模式（API/只读+事件表/RPA/网关）选型五维度+字段映射四件套+灰度先只读后写+中间表人工确认安全边界+连锁零售旧CRM工单Agent案例，单信源置信度中）
 - [[agent-management-methodology|智能体管理方法论（WBS·交付约定·Scrum Sprint 三工具闭环）]]（瓶颈在人的管理能力而非模型能力；拆到能独立验收为止+人机分工准则+交付约定六维度+验收准则打勾表+每轮只改 1–2 条规则变量唯一，单信源置信度中）
+- [[agent-prd-template|Agent 化 PRD 模板]]（2026-11-04，产品/B端/PRD/多智能体，传统PRD写页面字段流程之外新增五模块（Agent能力卡片/协作时序/护栏机制/评测集/指标），与五步法一一对应，单信源置信度中）
 - [[agent-permission-model|Agent 权限模型（平台授权与本地运行）]]（权限=静态基线+指令临时授权+动态校验；租户划边界/Agent 定上限/指令收范围/MCP 网关兜底；凭证归属发起方用户+校验在调用方侧；本地 CLI 五模式+只读证明式放行 Unknown≠Safe；A2A 委派子授权⊆父授权；三信源，置信度中）
 - [[agent-sandboxing|Agent 沙箱隔离]]（能力限制而非行为审查；四条路径收窄可达面；脚本级/命令级/工具级/整体隔离）
 - [[agent-state-separation|Agent 状态分离（执行状态/操作状态/产物核验）]]（三态分离+多身份+恢复决策顺序+停止非回滚，Codex Harness 实践，单信源置信度中）
@@ -439,6 +441,7 @@
 - [[mcast|长连接组播（mcast）]]（groupID 下沉长连接层，1:M×1:N 两级扩散；单实例 25w 连接 8w QPS，聚合+压缩消化峰值，百度一手）
 - [[message-bus|业务消息总线]]（哑管道式配置路由：履约异步分发+topic 治理收拢；与 ESB/Pipeline 的区分，信鸽单一信源）
 - [[mirror-team-architecture|互为镜像式队伍架构]]（Game 服与跨服双队伍服务双向全量同步，冲突以单服队伍为准；限定副本只建单服队伍拿回单线程体验；单信源，置信度中）
+- [[multi-agent-saas-refactoring|多智能体重构 SaaS 业务流]]（2026-11-04，产品/B端/多智能体/方法论，核心转变=把流程判断从人身上剥离交给多Agent协作执行（"人找功能"→"Agent找决策"）+三层架构+五步法（拆业务事件/定义角色边界/协作协议/权限审计人工干预/评测回滚）+四案例，与 Agent 对接旧系统互补，单信源置信度中）
 - [[mysql-bulk-import|MySQL 大批量导入优化（Bulk Import Optimization）]]（攒批+并行+少刷盘；B+ 树算账/rewriteBatchedStatements 灵魂参数/LOAD DATA/先灌后建索引/分片并行/收尾四件套，单信源）
 - [[next-token-prediction|下一 token 预测]]（LLM 的统一目标：交叉熵训练、自回归生成，能力与幻觉同根）
 - [[netty-bootstrap|Netty Bootstrap 启动引导]]（initAndRegister 三件套：反射建 Channel→init 组装 Pipeline→注册 Selector；interestOps=0 vs OP_ACCEPT 不对称；ServerBootstrapAcceptor 装配移交 worker；三信源互证，置信度高）
