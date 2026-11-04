@@ -129,7 +129,7 @@
 - [[game-server-elastic-scaling|游戏开发：服务器弹性伸缩（负载均衡、路由服与数据迁移）]]（2026-10-20，游戏服务器/分布式）
 - [[gc-log-tuning-practice|GC 日志分析与调优实战]]（2026-10-21，Java/JVM）
 - [[github-niche-usage-tips|三个小众但实用的 GitHub 用法（zread / Deepwiki / gitingest）]]（2026-10-14，工具）
-- [[github-open-source-ai-books-6|知乎专栏：6 本 GitHub 开源 AI 宝典（Agent/Infra/DL/RL）]]（2026-10-23，AI/学习资源，置信度低）
+- [[github-open-source-ai-books-6|知乎专栏+想法：6 本 GitHub 开源 AI 宝典（Agent/Infra/DL/RL）]]（2026-10-23 初版 / 2026-11-04 更新星数与阅读指南，AI/学习资源，置信度低）
 - [[google-prompt-engineering-whitepaper|Google 官方提示工程白皮书（Prompt Engineering，宝玉译）]]（2026-10-29，AI/提示工程，输出配置+11 种技巧梯度+最佳实践，Google 官方出品，置信度高）
 - [[harness-engineering-11-agents-study|从 11 款 Agent 的源码研究，看懂 Harness Engineering]]（2026-10-27，AI/Harness，置信度高）
 - [[hot-cold-data-separation-archive|微服务架构落地：大表治理与冷热分离——历史单据到底怎么存？]]（2026-10-28，数据库/大表治理）
@@ -249,6 +249,7 @@
 - [[netty-vs-tomcat-undertow|Netty vs Tomcat vs Undertow：HTTP 服务器性能横评（番外篇8）]]（2026-10-29，Netty/性能横评，系列收官实证，置信度中）
 - [[niche-product-selection-methodology|“小众需求”选品方法论：如何发现未被满足的细分需求]]（2026-10-31，创业/方法论，7 发现渠道+5 维评估+两层算账+MVP 验证，案例 Plausible/Sidekiq，单信源置信度中）
 - [[nginx-websocket-load-balancing|Nginx生产级WebSocket实时长连接负载均衡，一文搞定（银河技术）]]（2026-10-24，Nginx/WebSocket/云环境断连）
+- [[nginx-gateway-production|从部署到上线：搭建生产可用的 Nginx 网关（微信公众号）]]（2026-11-05，Nginx/网关/基础设施，21 章生产级长文：四个危险默认值+六核心机制+五层配置+超时分级+TLS/HTTP2/3+限流+灰度+可观测+故障决策表+变更流程，环境 Rocky 9.4+Nginx 1.30.6+双机 Keepalived，单信源置信度高）
 - [[netty-iot-gateway-resilient-design|百万 IoT 设备并发接入：把 Netty 网关做成可恢复、可验证的连接系统]]（2026-10-22，Netty/IoT/可靠性）
 - [[netty-redis-kafka-iot-gateway|扛住百万设备长连接：Netty+Redis+Kafka 搭建 IoT 接入平台]]（2026-10-22，Netty/IoT 架构）
 - [[netty-three-skills-high-performance|为什么几个线程就能扛住上万连接？Netty 三大技能]]（2026-10-20，Java/网络）
@@ -500,6 +501,7 @@
 - [[netty-rpc-framework|基于 Netty 的轻量级 RPC 框架实现模式]]（协议信封 requestId 关联+长度域 mark/reset 拆粘包+JDK 动态代理+RpcFuture(CountDownLatch) 异步转同步+反射调用；与 Dubbo 八维工程化差距；系列收官实战单信源，置信度中）
 - [[netty-write-flush|Netty 写缓冲与背压（ChannelOutboundBuffer/writeAndFlush/高低水位）]]（write 入队 O(1)+flush 移指针+doWrite 才调 JDK 写；写自旋 16/OP_WRITE 半包续写/水位 64KB/32KB 背压；三信源互证，置信度高）
 - [[netty-zero-copy|Netty 零拷贝机制（FileRegion/CompositeByteBuf/wrappedBuffer/堆外内存）]]（零拷贝=无 CPU 参与的拷贝；sendfile 4 拷贝压成 2 次 DMA+doWrite 专门分支；Composite 组件数组逻辑拼接二分定位；FileRegion 单次使用+编解码跳过+Windows fallback；单信源，置信度中）
+- [[nginx-gateway-production-design|生产级 Nginx 网关设计]]（网关≠反向代理；四个危险默认值+六核心机制+五层配置+超时按接口分级+限流先观测再拦截+变更流程五件事+可观测最小信息集+故障决策表；单信源，置信度中）
 - [[niche-product-selection|小众选品方法论（独立开发者）]]（7 发现渠道+5 维评估+两层市场规模算账+MVP 验证，案例 Plausible/Sidekiq，与 YC 创业点子框架互补区分，单信源置信度中）
 - [[tcp-connection-lifecycle|TCP 连接生命周期与状态机]]（四大功能/三次握手/四次挥手/RTO/快重传/拥塞控制/TIME_WAIT 2MSL/状态机排障四场景；发送窗口=min(rwnd,cwnd)；Linux 默认 CUBIC；tcp_tw_recycle 已移除；单信源一手，置信度高）
 - [[notification-system-design|站内消息系统领域模型]]（公告/提醒/私信三分类+提醒四元组；拉（订阅驱动）/推（私信直写）按类选型；免打扰后置读路径，简书上下篇双信源）

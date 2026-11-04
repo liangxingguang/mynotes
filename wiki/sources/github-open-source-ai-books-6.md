@@ -4,7 +4,7 @@ type: source
 title: 这 6 本 GitHub 上的开源 AI 宝典，那是相当有真东西（知乎专栏）
 status: active
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-11-05
 confidence: low
 tags:
   - source
@@ -12,6 +12,7 @@ tags:
   - AI
 sources:
   - raw/sources/ai/2026-10-23-github-open-source-ai-books-6.md
+  - raw/sources/ai/2026-11-04-zhihu-pin-github-ai-books.md
 related:
   - wiki/sources/craft-of-selfteaching.md
   - wiki/sources/ai-agents-definitive-guide-notebooks.md
@@ -20,20 +21,22 @@ related:
 
 ## Overview（概览）
 
-知乎专栏推荐的 6 个高质量开源 AI 书籍/教程项目，覆盖 Agent 工程、AI Infra、深度学习理论、强化学习数学与实战。全部免费开源，附 GitHub 仓库地址。
+知乎专栏（2026-10-23）与知乎想法（2026-11-04）两次推荐的 6 个高质量开源 AI 书籍/教程项目，覆盖 Agent 工程、AI Infra、深度学习理论、强化学习数学与实战。全部免费开源，附 GitHub 仓库地址。
 
 ## Key Facts（关键事实）
 
-- 《深入理解 AI Agent：设计原理与工程实践》（bojieli）：4.9 万 Star；核心公式 Agent = LLM + 上下文 + 工具，主张 Harness 工程能力是竞争力；含后训练、Agent 进化、多 Agent 协作；github.com/bojieli/ai-agent-book。
+- 《深入理解 AI Agent：设计原理与工程实践》（bojieli）：5.4 万 Star（2026-11-04 更新）；核心公式 Agent = LLM + 上下文 + 工具，主张 Harness 工程能力是竞争力；含后训练、Agent 进化、多 Agent 协作；github.com/bojieli/ai-agent-book。
 - 《深入理解 AI Infra：量化分析与系统设计》（同作者姊妹篇）：4600+ Star；大模型计算量/显存/带宽/功耗的量化估算与系统设计；github.com/bojieli/ai-infra-book。
 - 《神经网络与深度学习》「蒲公英书」（邱锡鹏）：1.9 万 Star；第二版（理论）+ 通识版（直觉）双电子稿免费下载；github.com/nndl/nndl。
 - 《强化学习的数学原理》：1.8 万 Star；数学视角讲 RL 设计动机，需概率论与线代基础；配套中英文课程全网播放 270 万+；github.com/MathFoundationRL/Book-Mathematical-Foundation-of-Reinforcement-Learning。
-- 《Agentic Design Patterns》中文版：8K+ Star；谷歌工程师整理的 21 个 Agent 设计模式（提示链/路由/并行化/规划/多智能体/RAG/安全/评估），xindoo 牵头翻译，中文站 adp.xindoo.xyz；github.com/xindoo/agentic-design-patterns。
-- Hands-On Modern RL（WalkingLab）：4400+ Star；7 部分 26 章，从 CartPole 到 DQN/PPO/RLHF/DPO/GRPO，每章可运行代码+训练曲线；github.com/walkinglabs/hands-on-modern-rl。
+- 《Agentic Design Patterns》中文版：8100+ Star；谷歌工程师整理的 21 个 Agent 设计模式（提示链/工具调用/多 Agent 协作/安全/落地评估），xindoo 牵头翻译，中文站 adp.xindoo.xyz；github.com/xindoo/agentic-design-patterns。
+- Hands-On Modern RL（WalkingLab）：4500+ Star（2026-11-04 更新）；从倒立摆案例入门到 Agent 实战，每章附可运行 Python 代码；github.com/walkinglabs/hands-on-modern-rl。
 
 ## Important Claims（重要论断）
 
-（无承重论断；Star 数为撰文时点口径，荐书评价为主观推荐。）
+- 阅读选择指南（2026-11-04 新增）：只想看懂 AI 基础 → 蒲公英书通识版；搭建 Agent → 先《Agentic Design Patterns》再《深入理解 AI Agent》；AI 产品成本测算 → 《深入理解 AI Infra》；深耕 RL → 数学原理搭配实战教程。
+- 「工具和教程会过时，但底层原理相对稳定」「花一个月读完一本书，比长期刷碎片化教程收获更大」（2026-11-04 知乎想法，作者观点）。
+- （Star 数为撰文时点口径，荐书评价为主观推荐。）
 
 ## Concepts Introduced（引入的概念）
 
@@ -58,4 +61,5 @@ related:
 
 ## Source（信源）
 
-- `raw/sources/ai/2026-10-23-github-open-source-ai-books-6.md`
+- `raw/sources/ai/2026-10-23-github-open-source-ai-books-6.md`（知乎专栏，2026-10-23）
+- `raw/sources/ai/2026-11-04-zhihu-pin-github-ai-books.md`（知乎想法，2026-11-04）

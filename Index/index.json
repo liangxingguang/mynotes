@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-11-05 03:53",
+  "updated_at": "2026-11-05 04:09",
   "notes": [
-    {
-      "id": "2026-11-04-github-open-source-ai-books",
-      "title": "6 本 GitHub 开源 AI 书籍推荐（全部免费）",
-      "path": "Inbox/2026-11-04-github-open-source-ai-books.md",
-      "created": "2026-11-04",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "GitHub"
-      ],
-      "source": "知乎想法",
-      "source_url": "https://www.zhihu.com/pin/2093665067325714865",
-      "source_type": "article",
-      "platform": "知乎",
-      "summary": "作者推荐 6 本免费开源 AI 书，按用途分四路：入门基础（邱锡鹏蒲公英书）、搭建 Agent（Agentic Design Patterns 中文版 + 深入理解 AI Agent）、AI 产品成本测算（深入理解 AI Infra）、强化学习（数学原理 + Hands-On Modern RL）。主张花一个月读完一本胜过长期刷碎片教程。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-04/zhihu-pin-github-ai-books.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-11-04-jvm-memory-model",
       "title": "2026-11-04-jvm-memory-model",
@@ -36,25 +17,7 @@
       "summary": "JVM 运行时数据区全景拆解：线程私有（程序计数器、虚拟机栈、本地方法栈）vs 线程共享（堆、元空间）。程序计数器是唯一不会 OOM 的区域；虚拟机栈以栈帧为单位（局部变量表/操作数栈/动态链接/返回地址），递归过深引发 StackOverflowError 用 -Xss 调大；堆是唯一 GC 主战场，分代模型：Eden→S0/S1 复制、年龄达 15 晋升老年代、大对象直接进老年代；元空间（JDK8 起取代永久代，移至本地内存）。附经典内存分析题与 JVM 参数速查。",
       "summary_status": "",
       "asset_ref": "Assets/2026/11/jvm-memory-model.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-11-04-nginx-gateway-production",
-      "title": "2026-11-04-nginx-gateway-production",
-      "path": "Inbox/2026-11-04-nginx-gateway-production.md",
-      "created": "2026-11-04",
-      "category": "技术",
-      "tags": [
-        "nginx"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/jD5ecXWaruhDwST6AQ9tGQ",
-      "source_type": "article",
-      "platform": "微信",
-      "summary": "一篇按\"生产网关\"而非\"反向代理\"标准写的 Nginx 长文（21 章）。核心主张：生产事故几乎都不是配置写错，而是默认值、日志、容量、变更流程没按生产标准设计。给出从环境准备、安装锁版本、配置骨架、upstream/TLS/限流/灰度、可观测到上线演练与故障排查的完整路径，环境为 Rocky Linux 9.4 + Nginx 1.30.6 + 双机 Keepalived。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/11/nginx-gateway-production.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "20261104-pgvector-rag-retrieval-engineering",
@@ -73,7 +36,7 @@
       "summary": "以多租户客服知识库为例的生产级 RAG 检索设计：五条正确性契约（租户隔离/授权有效/版本原子性/新鲜度/资源有界），模型空间注册、文档版本化+ACL、RLS 第二道防线、混合检索（向量+词法+RRF）、发布 CAS、缓存失效与物理清理、评测验收矩阵。核心主张：向量索引只产生候选，权限与版本的最终解释权在关系层；换专用向量库的决策也应由契约与证据驱动。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-YLTmBHYPhNR0lnCx9RhHLw.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -7098,6 +7061,43 @@
       "summary": "Java 集合框架三件套底层原理拆解。ArrayList 是动态数组（初始容量 10、扩容 1.5 倍），随机读取 O(1) 但中间插入 O(n)；LinkedList 是双向链表，头尾操作 O(1) 但 get(i) 要从头遍历 O(n)——循环里用下标遍历 LinkedList 是 O(n²) 的经典坑。HashMap 四层考点：哈希桶数组、冲突链表、JDK 8 链表≥8 且数组≥64 转红黑树、负载因子 0.75 触发扩容。附面试答法与加分项。",
       "summary_status": "",
       "asset_ref": "Assets/2026/11/arraylist-vs-linkedlist.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-04-github-open-source-ai-books",
+      "title": "6 本 GitHub 开源 AI 书籍推荐（全部免费）",
+      "path": "Archive/2026-11-04-github-open-source-ai-books.md",
+      "created": "2026-11-04",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "GitHub"
+      ],
+      "source": "知乎想法",
+      "source_url": "https://www.zhihu.com/pin/2093665067325714865",
+      "source_type": "article",
+      "platform": "知乎",
+      "summary": "作者推荐 6 本免费开源 AI 书，按用途分四路：入门基础（邱锡鹏蒲公英书）、搭建 Agent（Agentic Design Patterns 中文版 + 深入理解 AI Agent）、AI 产品成本测算（深入理解 AI Infra）、强化学习（数学原理 + Hands-On Modern RL）。主张花一个月读完一本胜过长期刷碎片教程。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-04/zhihu-pin-github-ai-books.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-04-nginx-gateway-production",
+      "title": "2026-11-04-nginx-gateway-production",
+      "path": "Archive/2026-11-04-nginx-gateway-production.md",
+      "created": "2026-11-04",
+      "category": "技术",
+      "tags": [
+        "nginx"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/jD5ecXWaruhDwST6AQ9tGQ",
+      "source_type": "article",
+      "platform": "微信",
+      "summary": "一篇按\"生产网关\"而非\"反向代理\"标准写的 Nginx 长文（21 章）。核心主张：生产事故几乎都不是配置写错，而是默认值、日志、容量、变更流程没按生产标准设计。给出从环境准备、安装锁版本、配置骨架、upstream/TLS/限流/灰度、可观测到上线演练与故障排查的完整路径，环境为 Rocky Linux 9.4 + Nginx 1.30.6 + 双机 Keepalived。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/nginx-gateway-production.md",
       "wiki_status": "ingested"
     }
   ]

@@ -4580,6 +4580,29 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=MzY4NTAxMTAwMA==&mid=2247483675&idx=1&sn=c1b12538797c7f76868ff961e5f12657",
       "asset_ref": "Assets/2026-11/arraylist-vs-linkedlist.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-04-zhihu-pin-github-ai-books.md",
+      "sha256": "263cced7d05a7b08a1b1b75931276094ab5d736fc11fd9872649bca40caba12a",
+      "registered_at": "2026-11-05",
+      "inbox_ref": "Archive/2026-11-04-github-open-source-ai-books.md",
+      "pages": [
+        "wiki/sources/github-open-source-ai-books-6.md"
+      ],
+      "source_url": "https://www.zhihu.com/pin/2093665067325714865",
+      "asset_ref": "Assets/2026-11-04/zhihu-pin-github-ai-books.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-04-nginx-gateway-production.md",
+      "sha256": "4209ae9dd38f4fc7f5ecb84f881991e6cc6fc03396cbc3ddebc0ceb28690d9ac",
+      "registered_at": "2026-11-05",
+      "inbox_ref": "Archive/2026-11-04-nginx-gateway-production.md",
+      "pages": [
+        "wiki/sources/nginx-gateway-production.md",
+        "wiki/concepts/nginx-gateway-production-design.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/jD5ecXWaruhDwST6AQ9tGQ",
+      "asset_ref": "Assets/2026/11/nginx-gateway-production.md"
     }
   ]
 }

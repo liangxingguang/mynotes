@@ -9,7 +9,7 @@ created: 2026-11-04
 category: 技术
 tags: [AI, GitHub]
 asset_ref: Assets/2026-11-04/zhihu-pin-github-ai-books.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 6 本 GitHub 开源 AI 书籍推荐（全部免费）

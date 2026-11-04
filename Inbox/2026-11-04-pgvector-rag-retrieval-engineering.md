@@ -9,7 +9,9 @@ created: 2026-11-04
 category: 技术
 tags: [RAG, pgvector]
 asset_ref: Assets/2026-11/weixin-YLTmBHYPhNR0lnCx9RhHLw.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-11-04T20:07:27.435Z"
+ingest_claim_id: 30576-1793822847435-0
 ---
 
 # 别急着换向量库：PostgreSQL + pgvector 的生产级 RAG 检索工程

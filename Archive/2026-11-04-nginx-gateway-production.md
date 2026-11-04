@@ -9,7 +9,7 @@ created: 2026-11-04
 category: 技术
 tags: [nginx]
 asset_ref: Assets/2026/11/nginx-gateway-production.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 > 摘要：一篇按"生产网关"而非"反向代理"标准写的 Nginx 长文（21 章）。核心主张：生产事故几乎都不是配置写错，而是默认值、日志、容量、变更流程没按生产标准设计。给出从环境准备、安装锁版本、配置骨架、upstream/TLS/限流/灰度、可观测到上线演练与故障排查的完整路径，环境为 Rocky Linux 9.4 + Nginx 1.30.6 + 双机 Keepalived。

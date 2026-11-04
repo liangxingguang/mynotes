@@ -9,7 +9,9 @@ created: 2026-11-04
 category: 学习
 tags: [java]
 asset_ref: Assets/2026/11/jvm-memory-model.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-11-04T19:59:51.643Z"
+ingest_claim_id: 61032-1793822391643-0
 ---
 
 > 摘要：JVM 运行时数据区全景拆解：线程私有（程序计数器、虚拟机栈、本地方法栈）vs 线程共享（堆、元空间）。程序计数器是唯一不会 OOM 的区域；虚拟机栈以栈帧为单位（局部变量表/操作数栈/动态链接/返回地址），递归过深引发 StackOverflowError 用 -Xss 调大；堆是唯一 GC 主战场，分代模型：Eden→S0/S1 复制、年龄达 15 晋升老年代、大对象直接进老年代；元空间（JDK8 起取代永久代，移至本地内存）。附经典内存分析题与 JVM 参数速查。
