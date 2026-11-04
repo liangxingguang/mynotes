@@ -13,9 +13,12 @@ tags:
   - rd-efficiency
 sources:
   - raw/sources/ai/2026-11-03-weixin-ai-architecture-design.md
+  - raw/sources/ai/2026-11-03-weixin-ai-requirements-analysis.md
 related:
   - wiki/sources/2026-11-03-weixin-ai-architecture-design.md
   - wiki/concepts/ai-assisted-architecture-design.md
+  - wiki/sources/2026-11-03-weixin-ai-requirements-analysis.md
+  - wiki/concepts/ai-assisted-requirements-analysis.md
 ---
 # AI 赋能研发效能系列（10 篇）
 
@@ -36,6 +39,7 @@ related:
 ## Concepts Introduced（引入的概念）
 
 - [[ai-assisted-architecture-design|AI 辅助架构设计]]（设计篇编译）
+- [[ai-assisted-requirements-analysis|AI 辅助需求分析]]（需求篇编译）
 - 系列总主题"AI 重塑研发效能：从工具到伙伴"（各篇待摄入后补充）
 
 ## Entities Mentioned（提及的实体）
@@ -48,7 +52,8 @@ related:
 
 ## Limitations（局限）
 
-- 专辑页证据当前仅来自设计篇文末的进度清单；总览篇/需求篇已发布但尚未摄入（Inbox 中 pending），其余篇目未发布或未采集。
+- 专辑页证据来自设计篇与需求篇文末的进度清单；总览篇已发布但尚未采集/摄入，其余篇目未发布或未采集。
+- 发布时线存疑：需求篇文末署名"2026年8月"，与本页此前"2026 年 10 月起发布、周更"的描述不一致（设计篇采集于 2026-11-03）；以信源署名为准应为 2026 年 8 月起，标注为未解决分歧，待总览篇摄入时核验。
 
 ## Related Knowledge（相关知识）
 
@@ -59,8 +64,8 @@ related:
 
 | 篇序 | 篇名 | 发布状态 | Wiki 摄入 |
 |---|---|---|---|
-| 1 | 总览篇 | ✓ 已发布 | 未摄入（Inbox pending） |
-| 2 | 需求篇 | ✓ 已发布 | 未摄入（Inbox pending） |
+| 1 | 总览篇 | ✓ 已发布 | 未摄入（未采集） |
+| 2 | 需求篇 | ✓ 已发布 | ✓ 2026-11-05 已摄入 |
 | 3 | 设计篇 | ✓ 已发布 | ✓ 2026-11-04 已摄入 |
 | 4 | 开发篇 | 待发布 | — |
 | 5 | 测试篇 | 待发布 | — |
@@ -73,3 +78,4 @@ related:
 ## Source（信源）
 
 - `raw/sources/ai/2026-11-03-weixin-ai-architecture-design.md`（设计篇，含系列进度清单与总览篇链接）
+- `raw/sources/ai/2026-11-03-weixin-ai-requirements-analysis.md`（需求篇，含系列进度清单与总览篇链接、署名 2026 年 8 月）

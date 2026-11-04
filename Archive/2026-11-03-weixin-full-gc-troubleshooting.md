@@ -9,7 +9,7 @@ created: 2026-11-03
 category: 技术
 tags: [Java, 工程实践]
 asset_ref: Assets/2026-11-03/weixin-full-gc-troubleshooting.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 一次Full GC排查实录——从GC日志到根因，完整推理链拆给你看

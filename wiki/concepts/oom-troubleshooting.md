@@ -14,11 +14,13 @@ tags:
 sources:
   - raw/sources/architecture/2026-10-28-jvm-interview-guide.md
   - raw/sources/architecture/2026-10-28-java-online-troubleshooting-arthas.md
+  - raw/sources/architecture/2026-11-03-weixin-full-gc-troubleshooting.md
 related:
   - wiki/concepts/evidence-first-jvm-tuning.md
   - wiki/topics/jvm-gc.md
   - wiki/sources/jvm-interview-guide.md
   - wiki/sources/java-online-troubleshooting-arthas.md
+  - wiki/sources/2026-11-03-weixin-full-gc-troubleshooting.md
   - wiki/concepts/jmm-happens-before.md
   - wiki/concepts/class-loading-parent-delegation.md
   - wiki/entities/arthas.md
@@ -56,6 +58,7 @@ OOM 是线上最常见也最致命的 JVM 事故，且错误信息只告诉你�
 4. **概念区分**：内存溢出（确实不够）≠ 内存泄漏（不用了但回收不掉，最终导致溢出）。`GC overhead limit exceeded` 比 heap space 更危险——98% 时间花在 GC 只回收 2%，堆接近耗尽且回收无效。
 
 5. **结论导向**：JVM 参数只是缓兵之计，90%+ 的 OOM 是代码问题（集合只增不减、无上限缓存、ThreadLocal 未 remove、大对象加载、静态集合持有）。
+6. **GC 刑侦三步（Full GC 场景）**：GC 日志是现场（回收前后老年代几乎不变 = 活对象占满 = 泄漏嫌疑）、jmap+MAT 是尸检（Leak Suspects 锁定大户、Dominator Tree 看内容模式、Path to GC Roots 找持有者）、代码定罪（static + 无界集合 + 只进不出 = 泄漏模板）；修法三层：止血（监控 + 临时清理）、治本（Caffeine 有界缓存 maximumSize + expireAfterWrite 等）、防线（静态集合字段列入 code review 必查项、老年代使用率告警、GC.class_histogram 巡检）。"重启能解决"只是销毁证据，必复发。
 
 ## Relationships（关系）
 
@@ -73,6 +76,7 @@ OOM 是线上最常见也最致命的 JVM 事故，且错误信息只告诉你�
 
 - 2026-10-28 — 随 JVM 面试题信源提出 6 类 OOM 速查表与排查五步法（理论框架）。
 - 2026-10-28 — Java 线上排查实战信源以真实复现数据印证同一流程：`-Xmx128m -XX:+HeapDumpOnOutOfMemoryError` 自动留现场 → `jmap -histo` 看大户（byte 数组 7434 实例占 63MB）→ MAT 分析引用链；并补充闪退场景的 OOM Killer 区分法（dmesg）。
+- 2026-11-05 — 《一次 Full GC 排查实录》以完整真实案例印证同一闭环，并补两个可复用模板：①"GC 刑侦三步"（日志看现场 → dump 做尸检 → 代码定罪）+ 时间线交叉验证（重启后十天复发解释"重启能解决"）；②"static + 无界 + 只进不出"作为 Java 内存泄漏头号模板的完整定罪链（ConcurrentHashMap 占 2.1GB/52% 堆，持有者为静态字段）。修法三层（止血/治本 Caffeine/防线）补全处置维度。分歧记录：该信源老年代告警口径为"80% 持续 5 分钟"，与本页"老年代 >85% 持续 5 分钟"不一致，未统一。
 
 ## Open Questions（开放问题）
 
@@ -83,10 +87,12 @@ OOM 是线上最常见也最致命的 JVM 事故，且错误信息只告诉你�
 
 - Source: `raw/sources/architecture/2026-10-28-jvm-interview-guide.md`（6 类 OOM 速查表、五步法、生产纪律、监控口径）
 - Source: `raw/sources/architecture/2026-10-28-java-online-troubleshooting-arthas.md`（印证：heap dump 参数+jmap -histo+MAT 实战；OOM Killer 与 JVM OOM 的闪退区分）
+- Source: `raw/sources/architecture/2026-11-03-weixin-full-gc-troubleshooting.md`（印证：GC 刑侦三步+时间线交叉验证；静态缓存泄漏完整案例；修法三层）
 
 ## Related Knowledge（相关知识）
 
 - [[jvm-interview-guide|JVM 面试题最全整理（信源页）]]
 - [[java-online-troubleshooting-arthas|Java 线上排查实战（信源页）]]
+- [[2026-11-03-weixin-full-gc-troubleshooting|一次 Full GC 排查实录（信源页）]]
 - [[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]
 - [[jvm-gc|JVM 垃圾回收（主题）]]

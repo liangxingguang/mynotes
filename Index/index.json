@@ -1,63 +1,6 @@
 {
-  "updated_at": "2026-11-04 22:33",
+  "updated_at": "2026-11-05 00:55",
   "notes": [
-    {
-      "id": "20261103-weixin-ai-coding-storage-practice",
-      "title": "如何在\"不能出错\"的系统里使用 AI Coding？分布式存储实践与边界",
-      "path": "Inbox/2026-11-03-weixin-ai-coding-storage-practice.md",
-      "created": "2026-11-03",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/ubhctSeCv5NVrBzlBaL3AQ",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "美团基础技术部分布式存储团队实践：AI Coding 提速后缺陷绝对数仍涨——缺陷率持平但交付功能更多，瓶颈从\"写\"移到\"验证\"。本文按三类任务定边界：AI 评审（结论按证据等级输出，可执行证据四层：构建/单测、集成测试、运行时日志、静态推理互补）、AI Debug（定位=假设生成器+验证助手，输出候选集合不接受单根因，统一七类命名防结论悄悄升级）、AI 自动化（先明确目标边界与验收标准，测试变绿≠解决）。方法论 6 条：低风险易验证开始、每个结论可证伪、测试必须能变红、变绿≠解决、领域知识显式化只沉淀稳定部分、分层授权。结论：AI 负责扩大搜索空间与加速迭代验证，人负责系统语义与最终判断，边界靠可复现证据划定。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-ai-coding-storage-practice.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "20261103-weixin-ai-requirements-analysis",
-      "title": "AI赋能需求分析：从\"差不多\"到\"精确无误\"",
-      "path": "Inbox/2026-11-03-weixin-ai-requirements-analysis.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "AI",
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/dcpDETy9cha6z0GL_acvqQ",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "需求漏斗效应：上游一个模糊点，下游变成三个问题、五次返工、十倍成本。AI 的价值不是替决策，而是扩展认知带宽——你没想到的它帮你想到、你来不及写的它帮你起草、你不确定的它帮你验证。四个环节：需求拆解与用户故事生成、需求文档自动撰写、需求评审智能查漏、需求变更影响分析。三个落地建议：建立需求模板而非从零对话、用历史需求做\"训练集\"、AI 是副驾驶不是自动驾驶。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-ai-requirements-analysis.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "20261103-weixin-full-gc-troubleshooting",
-      "title": "一次Full GC排查实录——从GC日志到根因，完整推理链拆给你看",
-      "path": "Inbox/2026-11-03-weixin-full-gc-troubleshooting.md",
-      "created": "2026-11-03",
-      "category": "技术",
-      "tags": [
-        "Java",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/iXh44LieBvK9vlm_RDSLHA",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "核心理念：GC排查本质是刑侦——GC日志是现场、dump是尸检、根因是凶手。\"重启能解决\"只是销毁证据，一个月后必复发。案例：服务每 20 秒一次 Full GC、暂停 800ms-1.2s、P99 飙到 3 秒；GC 日志显示老年代 409598K→409596K 只回收 2K（活对象占满）；jmap dump + MAT 定位 ConcurrentHashMap 占 2.1GB/52% 堆，key 为\"user:风险标签:88123xxx\"，GC Roots 指向静态字段 RiskLabelCache；代码只有 putIfAbsent 无 remove/无上限/无过期，40 万日活日涨 400MB，4G 堆约十天打满，与重启时间线吻合。修法三层：止血（监控+临时清理）、治本（Caffeine 有界缓存 maximumSize=50万+expireAfterWrite=1h，命中率 93%）、防线（static 集合类 code review 必查、老年代 80% 告警、GC.class_histogram 巡检）。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-full-gc-troubleshooting.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "20261103-weixin-java-rust-learning-guide",
       "title": "Java工程师的Rust语言学习指南",
@@ -7098,6 +7041,63 @@
       "summary": "技术方案设计三个\"老大难\"：写方案到半夜（文档两天还没算思考）、评审会默契沉默（方案通过上线后才发现积压吞吐问题）、A 方案还是 B 方案（\"先上 B 后面再优化\"然后就没有后面了）。AI 不是替代架构师判断力，而是扩展认知带宽——四个角色：方案起草助手、评审预检员、Trade-off 分析师、接口与建模辅助。没有完美的架构，只有特定约束下的最优解；AI 帮你把约束显性化，让 trade-off 可讨论。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-ai-architecture-design.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-weixin-ai-coding-storage-practice",
+      "title": "如何在\"不能出错\"的系统里使用 AI Coding？分布式存储实践与边界",
+      "path": "Archive/2026-11-03-weixin-ai-coding-storage-practice.md",
+      "created": "2026-11-03",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/ubhctSeCv5NVrBzlBaL3AQ",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "美团基础技术部分布式存储团队实践：AI Coding 提速后缺陷绝对数仍涨——缺陷率持平但交付功能更多，瓶颈从\"写\"移到\"验证\"。本文按三类任务定边界：AI 评审（结论按证据等级输出，可执行证据四层：构建/单测、集成测试、运行时日志、静态推理互补）、AI Debug（定位=假设生成器+验证助手，输出候选集合不接受单根因，统一七类命名防结论悄悄升级）、AI 自动化（先明确目标边界与验收标准，测试变绿≠解决）。方法论 6 条：低风险易验证开始、每个结论可证伪、测试必须能变红、变绿≠解决、领域知识显式化只沉淀稳定部分、分层授权。结论：AI 负责扩大搜索空间与加速迭代验证，人负责系统语义与最终判断，边界靠可复现证据划定。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-ai-coding-storage-practice.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-weixin-ai-requirements-analysis",
+      "title": "AI赋能需求分析：从\"差不多\"到\"精确无误\"",
+      "path": "Archive/2026-11-03-weixin-ai-requirements-analysis.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "AI",
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/dcpDETy9cha6z0GL_acvqQ",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "需求漏斗效应：上游一个模糊点，下游变成三个问题、五次返工、十倍成本。AI 的价值不是替决策，而是扩展认知带宽——你没想到的它帮你想到、你来不及写的它帮你起草、你不确定的它帮你验证。四个环节：需求拆解与用户故事生成、需求文档自动撰写、需求评审智能查漏、需求变更影响分析。三个落地建议：建立需求模板而非从零对话、用历史需求做\"训练集\"、AI 是副驾驶不是自动驾驶。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-ai-requirements-analysis.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-weixin-full-gc-troubleshooting",
+      "title": "一次Full GC排查实录——从GC日志到根因，完整推理链拆给你看",
+      "path": "Archive/2026-11-03-weixin-full-gc-troubleshooting.md",
+      "created": "2026-11-03",
+      "category": "技术",
+      "tags": [
+        "Java",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/iXh44LieBvK9vlm_RDSLHA",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "核心理念：GC排查本质是刑侦——GC日志是现场、dump是尸检、根因是凶手。\"重启能解决\"只是销毁证据，一个月后必复发。案例：服务每 20 秒一次 Full GC、暂停 800ms-1.2s、P99 飙到 3 秒；GC 日志显示老年代 409598K→409596K 只回收 2K（活对象占满）；jmap dump + MAT 定位 ConcurrentHashMap 占 2.1GB/52% 堆，key 为\"user:风险标签:88123xxx\"，GC Roots 指向静态字段 RiskLabelCache；代码只有 putIfAbsent 无 remove/无上限/无过期，40 万日活日涨 400MB，4G 堆约十天打满，与重启时间线吻合。修法三层：止血（监控+临时清理）、治本（Caffeine 有界缓存 maximumSize=50万+expireAfterWrite=1h，命中率 93%）、防线（static 集合类 code review 必查、老年代 80% 告警、GC.class_histogram 巡检）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-full-gc-troubleshooting.md",
       "wiki_status": "ingested"
     }
   ]

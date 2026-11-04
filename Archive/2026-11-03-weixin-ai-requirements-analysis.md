@@ -10,7 +10,7 @@ category: 学习
 tags: [AI, 产品]
 album: AI赋能研发效能系列（10 篇，第 2 篇·需求篇，2026 年 8 月）
 asset_ref: Assets/2026-11-03/weixin-ai-requirements-analysis.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # AI赋能需求分析：从"差不多"到"精确无误"

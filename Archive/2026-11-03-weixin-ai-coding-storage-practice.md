@@ -9,7 +9,7 @@ created: 2026-11-03
 category: 技术
 tags: [AI, 工程实践]
 asset_ref: Assets/2026-11-03/weixin-ai-coding-storage-practice.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 如何在"不能出错"的系统里使用 AI Coding？分布式存储实践与边界

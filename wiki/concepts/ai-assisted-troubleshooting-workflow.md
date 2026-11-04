@@ -14,10 +14,12 @@ tags:
 sources:
   - raw/sources/architecture/2026-10-31-arthas-02-ai-arthas.md
   - raw/sources/ai/2026-10-14-arthas-mcp-ai-troubleshooting.md
+  - raw/sources/ai/2026-11-03-weixin-ai-coding-storage-practice.md
 related:
   - wiki/entities/arthas.md
   - wiki/concepts/mcp.md
   - wiki/concepts/evidence-first-jvm-tuning.md
+  - wiki/concepts/ai-coding-evidence-boundary.md
   - wiki/sources/arthas-mcp-server-ai-diagnosis.md
 ---
 # AI 辅助排障工作流
@@ -54,6 +56,7 @@ related:
 
 - [[mcp|MCP]]：MCP 工具模式是本工作流的「AI 可直接执行命令」变体，两种模式并存且互补。
 - [[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]：同属排障方法论上游；AI 分叉清单即「逐个排除」的证据收集计划。
+- [[ai-coding-evidence-boundary|证据边界驱动的 AI Coding]]：美团分布式存储实践互证——AI Debug 定位为「假设生成器+验证助手」，输出候选集合（七类命名）不接受单根因，人确认根因；与本页「它翻译你判断」的分工同构。
 - [[thread-stack-reading|线程栈读法]]：环节二的具体读栈方法论。
 
 ### Dependencies（依赖项）
@@ -68,6 +71,7 @@ related:
 
 - 2026-10-14 — 互证信源（Arthas MCP）确立「AI 接到哪里」：MCP Server 实验性模块 + 29 个工具 + 危险能力分级 + 接入边界。
 - 2026-10-31 — 主信源（贴文本模式）确立四环节分工、三件不交给 AI 的事与「它翻译你判断」的核心分工；与 MCP 模式互补，量化对比见 [[arthas-mcp-server-ai-diagnosis|Arthas 官方 MCP 实测]]（45min vs 5min，作者实测口径）。
+- 2026-11-05 — 美团分布式存储实践（第三信源）互证 Debug 分工：AI 是「假设生成器和验证助手」（扩大搜索范围、压缩排查空间、执行可控验证），人负责补充系统语义、判断证据强度、确认根因；输出候选集合、统一七类命名（观察事实/候选/已验证因素/根因/放大因素/缓解方案/未验证风险）防结论悄悄升级；先保存事实再提假设（事实底稿分原始日志/业务转述/静态推导）。与本页「它翻译你判断」同构，见 [[ai-coding-evidence-boundary]]。
 
 ## Open Questions（开放问题）
 
@@ -77,6 +81,7 @@ related:
 
 - Source: `raw/sources/architecture/2026-10-31-arthas-02-ai-arthas.md`（四环节、三件不做、脱敏前提、翻译/判断分工）
 - Source: `raw/sources/ai/2026-10-14-arthas-mcp-ai-troubleshooting.md`（MCP 工具模式互证：29 工具、危险能力、接入边界）
+- Source: `raw/sources/ai/2026-11-03-weixin-ai-coding-storage-practice.md`（互证：假设生成器+验证助手定位、七类命名、事实底稿）
 
 ## Related Knowledge（相关知识）
 

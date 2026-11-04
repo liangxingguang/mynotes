@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-11-04",
+  "updated_at": "2026-11-05",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -4484,6 +4484,45 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/6xfzXPlvEw0lohY-x9-AlQ",
       "asset_ref": "Assets/2026-11-03/weixin-ai-architecture-design.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-03-weixin-ai-coding-storage-practice.md",
+      "sha256": "795313fde59bb71838f546c6aee9fa4ef48c44311cda17632c46f21f6b2c9711",
+      "registered_at": "2026-11-05",
+      "inbox_ref": "Archive/2026-11-03-weixin-ai-coding-storage-practice.md",
+      "pages": [
+        "wiki/sources/2026-11-03-weixin-ai-coding-storage-practice.md",
+        "wiki/concepts/ai-coding-evidence-boundary.md",
+        "wiki/concepts/ai-assisted-troubleshooting-workflow.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/ubhctSeCv5NVrBzlBaL3AQ",
+      "asset_ref": "Assets/2026-11-03/weixin-ai-coding-distributed-storage.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-03-weixin-ai-requirements-analysis.md",
+      "sha256": "527fc6aff3397fc109c8ecec380f1acf7c7eedf9807a7b2c70643978c17502c7",
+      "registered_at": "2026-11-05",
+      "inbox_ref": "Archive/2026-11-03-weixin-ai-requirements-analysis.md",
+      "pages": [
+        "wiki/sources/2026-11-03-weixin-ai-requirements-analysis.md",
+        "wiki/concepts/ai-assisted-requirements-analysis.md",
+        "wiki/sources/ai-rd-efficiency-series-album.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/dcpDETy9cha6z0GL_acvqQ",
+      "asset_ref": "Assets/2026-11-03/weixin-ai-requirements-analysis.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-03-weixin-full-gc-troubleshooting.md",
+      "sha256": "0ba5f98612278c85c56217b6d0834ea3c1e25e4cbe0c30e3124adf137c0c1844",
+      "registered_at": "2026-11-05",
+      "inbox_ref": "Archive/2026-11-03-weixin-full-gc-troubleshooting.md",
+      "pages": [
+        "wiki/sources/2026-11-03-weixin-full-gc-troubleshooting.md",
+        "wiki/concepts/oom-troubleshooting.md",
+        "wiki/topics/jvm-gc.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/iXh44LieBvK9vlm_RDSLHA",
+      "asset_ref": "Assets/2026-11-03/weixin-full-gc-troubleshooting.md"
     }
   ]
 }
