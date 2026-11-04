@@ -1,60 +1,6 @@
 {
-  "updated_at": "2026-11-04 09:20",
+  "updated_at": "2026-11-04 09:54",
   "notes": [
-    {
-      "id": "20261103-bend-operation-log-27",
-      "title": "B端系统操作日志设计：审计、溯源、合规一次说透",
-      "path": "Inbox/2026-11-03-bend-operation-log-27.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484925&idx=1&sn=132e6bdfd0bfafcf8960c9373e411c68&chksm=c4d18451f3a60d47715b88d657ae7e6db9ec5bbd37c0ed18e1ae656944f3df7b91f203f051ee#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "操作日志是 B 端系统的\"黑匣子\"，是审计、溯源、合规的基础设施。留痕三问：谁在什么时间什么环境什么设备？对哪个对象哪个字段哪个单据？做了什么动作、改前值改后值、结果是否成功？表结构：一张核心表 audit_log + 三张扩展表（字段 diff 表/镜像表/登录日志表）。策略：记录范围分层（必记/选记/不记）、字段级 diff、异步落库、防篡改（只允许插入+哈希链）、敏感字段加密展示、热 ES/冷 OSS 分层存储。7 个行业落地案例。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-operation-log-27.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "20261103-bend-permission-design-22",
-      "title": "B端权限设计别只控菜单：功能、数据、字段三层拆解",
-      "path": "Inbox/2026-11-03-bend-permission-design-22.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484772&idx=1&sn=abad5ca6c7539f88ddf5bb3b7f5fdc72&chksm=c4d184c8f3a60dde057da051aea51b054e2e9a6a94554202b69524897e972a6aaf3201bb656c#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "权限不是登录校验那么简单，而是功能权限、数据权限、字段权限三层交叉。功能权限（RBAC 拆到按钮级）：普通员工提交申请/查看本人流程，部门经理增加审批通过/驳回，HR 可看全公司考勤但不可编辑。数据权限（全部/本部门及下级/本部门/本人/自定义，查询层注入避免每个接口重写）。字段权限（可见/可编辑/加密，列级控制：薪资/证件号/采买价/利润等）。输出三张表：功能权限矩阵、数据权限规则表、字段权限清单。前端隐藏不等于权限管控，接口层必须二次校验。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-permission-design-22.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "20261103-bend-permission-refactor-29",
-      "title": "B端系统权限重构指南：接手烂摊子，用这5步直接抄",
-      "path": "Inbox/2026-11-03-bend-permission-refactor-29.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484969&idx=1&sn=f1e5f06e933872debb4ae35226dee1f5&chksm=c4d18785f3a60e932d57d7d15d6de81b1e0d9adc68b81b92cdc968a1dee1dbf552582ee0bde2#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "权限混乱三类病灶：管门层（身份边界：账号共用/一人多岗/离职回收不及时/认证薄弱）、管行层（功能权限：角色爆炸/菜单硬编码/按钮级缺失/申请随意）、管列层（数据权限：数据越权/行级缺失/列级缺失/跨租户风险）。诊断三张表：权限矩阵现状表、角色/用户画像表、数据资产分级表。目标\"三管模型\"：以 RBAC 为基础用 ABAC 补数据权限。重构五步法：先冻结高风险越权→权限资产盘点建字典→功能走 RBAC 数据走规则引擎→灰度双轨迁移→审计流程文档沉淀。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-permission-refactor-29.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "20261103-bend-prd-writing-30",
       "title": "B端PRD怎么写不被开发骂？一份开发不骂人的PRD自检清单",
@@ -6989,6 +6935,60 @@
       "summary": "多智能体不是给 SaaS 加聊天机器人，而是把\"人找功能\"改成\"Agent 找决策\"：把流程中的判断从人身上剥离，交给多个 Agent 协作执行。三层架构（交互层意图与槽位/编排层 Orchestrator 任务卡片/执行层工具 API 调用）、业务流重构五步法（拆业务事件找决策点→定义 Agent 角色与边界→设计结构化协作协议→嵌入权限审计与人工干预→离线评测集+影子模式回滚）、四个案例（ERP 采买到付款/车贷审批/OA 差旅报销/CRM 线索培育）、Agent 化 PRD 新增五模块（Agent 能力卡片/协作时序/护栏机制/评测集/指标）。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-bend-multi-agent-saas-24.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-operation-log-27",
+      "title": "B端系统操作日志设计：审计、溯源、合规一次说透",
+      "path": "Archive/2026-11-03-bend-operation-log-27.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484925&idx=1&sn=132e6bdfd0bfafcf8960c9373e411c68&chksm=c4d18451f3a60d47715b88d657ae7e6db9ec5bbd37c0ed18e1ae656944f3df7b91f203f051ee#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "操作日志是 B 端系统的\"黑匣子\"，是审计、溯源、合规的基础设施。留痕三问：谁在什么时间什么环境什么设备？对哪个对象哪个字段哪个单据？做了什么动作、改前值改后值、结果是否成功？表结构：一张核心表 audit_log + 三张扩展表（字段 diff 表/镜像表/登录日志表）。策略：记录范围分层（必记/选记/不记）、字段级 diff、异步落库、防篡改（只允许插入+哈希链）、敏感字段加密展示、热 ES/冷 OSS 分层存储。7 个行业落地案例。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-operation-log-27.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-permission-design-22",
+      "title": "B端权限设计别只控菜单：功能、数据、字段三层拆解",
+      "path": "Archive/2026-11-03-bend-permission-design-22.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484772&idx=1&sn=abad5ca6c7539f88ddf5bb3b7f5fdc72&chksm=c4d184c8f3a60dde057da051aea51b054e2e9a6a94554202b69524897e972a6aaf3201bb656c#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "权限不是登录校验那么简单，而是功能权限、数据权限、字段权限三层交叉。功能权限（RBAC 拆到按钮级）：普通员工提交申请/查看本人流程，部门经理增加审批通过/驳回，HR 可看全公司考勤但不可编辑。数据权限（全部/本部门及下级/本部门/本人/自定义，查询层注入避免每个接口重写）。字段权限（可见/可编辑/加密，列级控制：薪资/证件号/采买价/利润等）。输出三张表：功能权限矩阵、数据权限规则表、字段权限清单。前端隐藏不等于权限管控，接口层必须二次校验。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-permission-design-22.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-permission-refactor-29",
+      "title": "B端系统权限重构指南：接手烂摊子，用这5步直接抄",
+      "path": "Archive/2026-11-03-bend-permission-refactor-29.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484969&idx=1&sn=f1e5f06e933872debb4ae35226dee1f5&chksm=c4d18785f3a60e932d57d7d15d6de81b1e0d9adc68b81b92cdc968a1dee1dbf552582ee0bde2#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "权限混乱三类病灶：管门层（身份边界：账号共用/一人多岗/离职回收不及时/认证薄弱）、管行层（功能权限：角色爆炸/菜单硬编码/按钮级缺失/申请随意）、管列层（数据权限：数据越权/行级缺失/列级缺失/跨租户风险）。诊断三张表：权限矩阵现状表、角色/用户画像表、数据资产分级表。目标\"三管模型\"：以 RBAC 为基础用 ABAC 补数据权限。重构五步法：先冻结高风险越权→权限资产盘点建字典→功能走 RBAC 数据走规则引擎→灰度双轨迁移→审计流程文档沉淀。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-permission-refactor-29.md",
       "wiki_status": "ingested"
     },
     {

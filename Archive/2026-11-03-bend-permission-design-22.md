@@ -10,7 +10,7 @@ category: 学习
 tags: [产品]
 album: B端产品经理（专辑，32 篇，作者 大皮不皮）
 asset_ref: Assets/2026-11-03/weixin-bend-permission-design-22.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # B端权限设计别只控菜单：功能、数据、字段三层拆解

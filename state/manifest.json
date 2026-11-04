@@ -4239,6 +4239,42 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484851&idx=1&sn=ff731e5d45779c441e7777d10723f6ce&chksm=c4d1841ff3a60d09ea6d3792dcd902dd9ece109dab0e4a62ba827db87b8e3e024123fa6eb7bd",
       "asset_ref": "Assets/2026-11-03/weixin-bend-multi-agent-saas-24.md"
+    },
+    {
+      "path": "raw/sources/products/2026-11-03-weixin-bend-operation-log-27.md",
+      "sha256": "9448a5ebe4098fbb59a664f7d133c17f6d9852a3d3b9bf20756f4545b66bf33e",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-bend-operation-log-27.md",
+      "pages": [
+        "wiki/sources/bend-operation-log-27.md",
+        "wiki/concepts/operation-log-design.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484925&idx=1&sn=132e6bdfd0bfafcf8960c9373e411c68&chksm=c4d18451f3a60d47715b88d657ae7e6db9ec5bbd37c0ed18e1ae656944f3df7b91f203f051ee",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-operation-log-27.md"
+    },
+    {
+      "path": "raw/sources/products/2026-11-03-weixin-bend-permission-design-22.md",
+      "sha256": "d2535bceff53d29a1ccf5fabc6d6db7193c4d3188d2c9d26439c725cd695945f",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-bend-permission-design-22.md",
+      "pages": [
+        "wiki/sources/bend-permission-design-22.md",
+        "wiki/concepts/rbac-permission-system.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247474772&idx=1&sn=abad5ca6c7539f88ddf5bb3b7f5fdc72&chksm=c4d184c8f3a60dde057da051aea51b054e2e9a6a94554202b69524897e972a6aaf3201bb656c",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-permission-design-22.md"
+    },
+    {
+      "path": "raw/sources/products/2026-11-03-weixin-bend-permission-refactor-29.md",
+      "sha256": "c609f6ec897ad8fcfd26a99ad57b3f79328b29baaa80bc121f79005d38d4a6a7",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-bend-permission-refactor-29.md",
+      "pages": [
+        "wiki/sources/bend-permission-refactor-29.md",
+        "wiki/concepts/permission-refactoring.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484969&idx=1&sn=f1e5f06e933872debb4ae35226dee1f5&chksm=c4d18785f3a60e932d57d7d15d6de81b1e0d9adc68b81b92cdc968a1dee1dbf552582ee0bde2",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-permission-refactor-29.md"
     }
   ]
 }
