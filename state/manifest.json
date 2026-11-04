@@ -4456,6 +4456,18 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/aDl2PkLxSibQf8lqGYXHBA",
       "asset_ref": "Assets/2026-11-03/weixin-article-adl2.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-04-thread-pool-core-size.md",
+      "sha256": "4366cf222b8c39181dd3cee344afed682f35d9eabb7a28502e95c917c8ed4307",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-thread-pool-core-size-n-plus-1-2n.md",
+      "pages": [
+        "wiki/sources/thread-pool-core-size.md",
+        "wiki/concepts/thread-pool-sizing.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/9ulRxgGVj-8X9zbo6yycPA",
+      "asset_ref": "Assets/2026-11-03/weixin-article-9ulr.md"
     }
   ]
 }

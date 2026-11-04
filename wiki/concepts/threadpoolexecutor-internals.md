@@ -74,7 +74,7 @@ execute(command) → ① `workerCountOf(c) < corePoolSize` 则 addWorker(command
 ## Open Questions（开放问题）
 
 - addWorker 完整状态检查分支（SHUTDOWN 下空任务 Worker 的接纳条件等）信源做了精简，未逐行覆盖（部分未知）。
-- 核心线程数/队列容量的量化调参方法（信源只给经验起点，须压测确定）。
+- 核心线程数/队列容量的量化调参方法（信源只给经验起点，须压测确定；方法见 [[thread-pool-sizing|线程池大小估算]]）。
 
 ## Evidence（证据）
 
@@ -83,4 +83,5 @@ execute(command) → ① `workerCountOf(c) < corePoolSize` 则 addWorker(command
 ## Related Knowledge（相关知识）
 
 - [[jdk-14-threadpoolexecutor|ThreadPoolExecutor 源码篇（信源页）]]
+- [[thread-pool-sizing|线程池大小估算]]（本页 Open Question「量化调参方法」的方法论补充）
 - [[jdk-source-reading-album|JDK 源码阅读合集（30 篇系列索引）]]

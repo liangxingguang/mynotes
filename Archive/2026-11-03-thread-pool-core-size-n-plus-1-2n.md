@@ -9,7 +9,7 @@ created: 2026-11-03
 category: 技术
 tags: [Java, 工程实践]
 asset_ref: Assets/2026-11-03/weixin-article-9ulr.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 线程池核心线程数怎么配置？为什么 CPU 密集型常用 N+1，I/O 密集型常用 2N？
