@@ -18,6 +18,7 @@ related:
   - wiki/concepts/approval-workflow-engine.md
   - wiki/concepts/control-plane-design.md
   - wiki/concepts/crm-system-design.md
+  - wiki/concepts/ai-assisted-architecture-design.md
   - wiki/sources/bend-rule-engine-11.md
 ---
 # 规则引擎（B端可配置决策中台）
@@ -88,7 +89,7 @@ related:
 
 ## Evolution（演进）
 
-（暂无后续信源）
+- 2026-11-04：新信源《AI辅助架构设计》（[[2026-11-03-weixin-ai-architecture-design|设计篇]]）给出 AIoT 告警引擎技术选型矩阵（Drools vs 自研表达式引擎 vs Flink CEP：性能 4/5/5 星、规则灵活性 5/3/4 星、运维成本低/低/高、私有化交付复杂度低/低/高、扩展性 4/3/5 星），为本页补充 AIoT 场景的技术选型视角（本页既有内容偏 B 端产品视角）；矩阵编译与讨论见 [[ai-assisted-architecture-design]]。
 
 ## Open Questions（开放问题）
 

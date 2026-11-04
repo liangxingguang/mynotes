@@ -10,7 +10,7 @@ category: 技术
 tags: [AI, 工程实践]
 album: AI赋能研发效能系列（10 篇，第 3 篇·设计篇，2026 年 10 月）
 asset_ref: Assets/2026-11-03/weixin-ai-architecture-design.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # AI辅助架构设计：技术方案评审的智能搭档

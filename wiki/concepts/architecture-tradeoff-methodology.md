@@ -16,6 +16,7 @@ related:
   - wiki/concepts/retry-governance.md
   - wiki/concepts/idempotency-design.md
   - wiki/concepts/cap-theorem.md
+  - wiki/concepts/ai-assisted-architecture-design.md
   - wiki/sources/architecture-science-and-art-42-rules.md
 ---
 # 架构取舍方法论（先定约束，再挑技术）
@@ -69,6 +70,7 @@ related:
 ## Evolution（演进）
 
 - 2026-10-31：本页由单一信源（architecture-science-and-art-42-rules，微信公众号方法论长文）建立。confidence: medium——单一二次信源、作者身份未标注；内容为原则性判断，未给量化阈值（除可用性换算）。
+- 2026-11-04：新信源《AI辅助架构设计》（[[2026-11-03-weixin-ai-architecture-design|设计篇]]）直接印证"没有完美的架构，只有特定约束下的最优解"与"先定约束再选型"主张，并提供取舍方法的实操实例——量化对比矩阵（7 维度打分）+ "AI 给建议、架构师拍板"的决策权归属；编译为 [[ai-assisted-architecture-design]]。
 
 ## Open Questions（开放问题）
 
@@ -85,3 +87,4 @@ related:
 - [[retry-governance|重试治理（概念页）]]
 - [[cap-theorem|CAP 定理与最终一致性取舍（概念页）]]
 - [[sse-vs-websocket|SSE vs WebSocket（对比页）]]
+- [[ai-assisted-architecture-design|AI 辅助架构设计（概念页）]]

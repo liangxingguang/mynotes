@@ -42,6 +42,7 @@
 - [[ai-agents-definitive-guide-notebooks|知乎想法：O'Reilly《AI Agents》配套代码全开源（12 章 35 Notebook）]]（2026-10-20，AI/资源，置信度低）
 - [[ai-education-three-old-questions|AI 没有发明新教育理念，只是让老目标有了实现条件]]（2026-10-29，AI/教育观察，惰性观念/难度取舍/因材施教三问，微博帖子，置信度中）
 - [[ai-kb-build-workbuddy-ima-wiki|分享一套超赞的AI知识库搭建方法，让沉睡的数据变成可复用的经验]]（2026-10-31，AI/知识库，WorkBuddy+ima+Wiki 七步落地+三文件夹分工+维护约定，公众号推广文，置信度中）
+- [[ai-rd-efficiency-series-album|AI 赋能研发效能系列（10 篇）]]（2026-11-04，AI/系列索引，十篇路线+总览篇链接+摄入进度表，设计篇已摄入，导航型，置信度中）
 - [[agent-loop-production-boundaries|从 Chatbot 到 AI Agent：为什么一个 while 循环撑不起生产系统]]（2026-10-15，AI/Agent 工程）
 - [[agent-platform-architecture|高性能弹性扩展智能体中台架构：FastAPI+Nacos+RocketMQ+LangGraph+Milvus+ES 实践]]（2026-10-27，AI/架构）
 - [[agent-platform-retry-resilience|从重试风暴到可控恢复：Agent 平台超时、退避、熔断与背压的系统设计]]（2026-10-31，架构/可靠性/Agent，唯一重试所有者+五边界+Retry Budget+12 步执行链+A–F 消融实验，单信源置信度中）
@@ -343,6 +344,7 @@
 - [[2026-11-03-harvard-cs2680-agent-to-gpu|哈佛新课 CS2680：从 Agent 一路拆到 GPU]]（2026-11-04，学习/AI/课程，CS2680《Modern AI Systems》Juncheng Yang 主讲 MaDSys 支持+两部分（Agent 应用层/系统层 KV Cache→GPU）+Mads 五件套递进作业+无考试期末项目+阅读清单论文地图+80 人已满可旁听，公众号单信源，置信度中）
 - [[tencent-agent-whitepaper-78-pages|78 页讲透 Agent 落地：腾讯企业智能体路线图]]（2026-11-03，AI/行业动态/企业落地，三阶段跃迁+四层底座+九章目录，第一波价值在对内省，单信源置信度中）
 - [[2026-11-03-thinking-speaking-diagrams|提升自己的思维和讲话能力 20 张图解]]（2026-11-03，个人成长/思维方式/微信，20 张手绘图承载核心方法论（图片无法文字化）+随笔正文：目标感→路径→模板→可训练+从固定型到成长型思维跨越+自我觉察四阶段+反馈与盲区，公众号随笔单信源，置信度低）
+- [[2026-11-03-weixin-ai-architecture-design|AI辅助架构设计：技术方案评审的智能搭档]]（2026-11-04，AI/架构/方法论，AI赋能研发效能系列第3篇·设计篇：四角色+9维评审预检+AIoT告警引擎对比矩阵+ADR/模板/度量建议，公众号单信源，置信度中）
 - [[bend-message-center-09|B端产品经理实操框架：消息中心从0到1复盘（大皮不皮 第9篇）]]（2026-11-04，产品/B端/消息中心，四层架构（接入/策略/渲染/通道）+生命周期七步+模板六字段（文案与数据分离）+订阅偏好六字段（投诉-40%）+触达优先级五级+频控（1h1条短信/1天3条营销）+失败重试矩阵（指数退避1→5→15min/降级/死信）+CRM案例（82%→96%、接入效率+60%），正文自 Assets 采集稿逐字收录（含 1px 占位图），单信源置信度中）
 - [[bend-multi-agent-saas-24|B端系统多智能体重构SaaS业务流：产品经理建议收藏（大皮不皮 第24篇）]]（2026-11-03，产品/AI-Agent/多智能体，三层架构（交互层意图与槽位/编排层Orchestrator任务卡片/执行层工具API调用）+业务流重构五步法+四案例（ERP采买到付款/车贷审批/OA差旅报销/CRM线索培育）+Agent化PRD五模块，正文自 Assets 采集稿逐字收录、1px 占位图剔除，单信源置信度中）
 - [[bend-operation-log-27|B端系统操作日志设计：审计、溯源、合规一次说透（大皮不皮 第27篇）]]（2026-11-04，产品/B端/日志/审计，留痕三问+五维日志模型（主体/环境/对象/内容/追溯）+一核三扩表结构（audit_log/field_diff/snapshot/login_log）+六策略（记录范围分层/字段级diff/异步落库/哈希链防篡改/敏感字段加密展示/冷热分层存储）+金融日志留存≥5年+7行业案例（ERP改价/EHR导出/车贷哈希链/OA撤回/物流改址/CRM归属/财务凭证），正文自 Assets 采集稿逐字收录、1px 占位图剔除，单信源置信度中）
@@ -380,6 +382,7 @@
 - [[artifact-verification-delivery|产物核验与独立交付]]（核验输入三组成+确定性读取/模型核验分工+核验预算+交付入口独立于最终回复，Codex Harness 实践，单信源置信度中）
 - [[arrayblockingqueue-internals|ArrayBlockingQueue 单锁阻塞队列设计]]（循环数组+一把锁+双条件变量，put/take 对称闭环；数组不可分离队头队尾故只能单锁；单信源，置信度中）
 - [[arraydeque-internals|ArrayDeque 循环数组设计]]（2 的幂容量+位运算取模；head/tail 追赶、head==tail 翻倍扩容分两段拷贝重排；弱 fail-fast 用 fence 非 modCount；单信源，置信度中）
+- [[ai-assisted-architecture-design|AI 辅助架构设计（方案起草 / 评审预检 / Trade-off 分析 / 接口建模）]]（2026-11-04，AI/架构/方法论，四角色+9维评审预检+量化对比矩阵+约束优先提示词+AI参谋人拍板，与取舍方法论/8动作/规则引擎互证，单信源置信度中）
 - [[ai-assisted-troubleshooting-workflow|AI 辅助排障工作流]]（贴文本模式四环节：现象选命令/读栈/写表达式/结论分叉；三件不交给 AI；脱敏前提；它翻译你判断，双信源）
 - [[ai-native-organization|AI 原生研发组织]]（工具原生→工作流原生→组织原生）
 - [[ai-native-sdlc|AI 原生 SDLC]]（制品提交链驱动的闭环，Anthropic 2026；人守闸门/三层控制模型；货拉拉千人落地+孔明八阶段工作流实例，四信源）

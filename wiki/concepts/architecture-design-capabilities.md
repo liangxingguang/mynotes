@@ -18,6 +18,7 @@ related:
   - wiki/concepts/architecture-tradeoff-methodology.md
   - wiki/concepts/concept-boundary-definition.md
   - wiki/concepts/system-concept-design.md
+  - wiki/concepts/ai-assisted-architecture-design.md
 ---
 # 架构设计能力（8 个底层动作）
 
@@ -72,6 +73,7 @@ related:
 ## Evolution（演进）
 
 - 2026-11-01：本页由单一信源（《系统思维》专辑第 3 篇，公众号 Leo聊系统思维）建立。confidence: medium——单一二次信源、标准引用为转述；八个动作为作者框架、非标准化分类。
+- 2026-11-04：新信源《AI辅助架构设计》（[[2026-11-03-weixin-ai-architecture-design|设计篇]]）为八个动作提供工具层印证——AI 方案起草/评审预检/对比矩阵分别外部化"抽象/分解/契约/权衡/适配约束"等动作，但判断仍在架构师手里（"AI 是参谋不是指挥官"）；工具层编译见 [[ai-assisted-architecture-design]]。
 
 ## Open Questions（开放问题）
 

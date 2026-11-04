@@ -4468,6 +4468,22 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/9ulRxgGVj-8X9zbo6yycPA",
       "asset_ref": "Assets/2026-11-03/weixin-article-9ulr.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-03-weixin-ai-architecture-design.md",
+      "sha256": "3b24107324e6d266afddd1ede7dd8d8dbc87672b17e5ef32f56237b3bcebd70b",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-weixin-ai-architecture-design.md",
+      "pages": [
+        "wiki/sources/2026-11-03-weixin-ai-architecture-design.md",
+        "wiki/concepts/ai-assisted-architecture-design.md",
+        "wiki/sources/ai-rd-efficiency-series-album.md",
+        "wiki/concepts/architecture-tradeoff-methodology.md",
+        "wiki/concepts/architecture-design-capabilities.md",
+        "wiki/concepts/rule-engine.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/6xfzXPlvEw0lohY-x9-AlQ",
+      "asset_ref": "Assets/2026-11-03/weixin-ai-architecture-design.md"
     }
   ]
 }
