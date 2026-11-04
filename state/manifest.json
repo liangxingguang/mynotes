@@ -4422,6 +4422,40 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/wRhw_hgSVCTR7YBXRp8eqw",
       "asset_ref": "Assets/2026-11-03/weixin-article-wrhh.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-03-mica-voice-java-offline-speech-sdk.md",
+      "sha256": "651fb6cf1221884cdfc7ac6c61b5e496ba6d45503adcf4882e4862906bce67b9",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-mica-voice-java-offline-speech-sdk.md",
+      "pages": [
+        "wiki/sources/mica-voice.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/o0OBULKXFmZJCXA66Rzbg",
+      "asset_ref": "Assets/2026-11-03/weixin-article-o0ob.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-11-03-structured-thinking-18-books.md",
+      "sha256": "27c4582838052052e2143ef371aa216526ce5d7389adb78527b71f424e89ac2a",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-structured-thinking-18-books.md",
+      "pages": [
+        "wiki/sources/structured-thinking-18-books.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/S7_eu4Q8M1jBahj0USFN3w",
+      "asset_ref": "Assets/2026-11-03/weixin-article-s7eu.md"
+    },
+    {
+      "path": "raw/sources/enterprise/2026-11-03-tencent-agent-whitepaper-78-pages.md",
+      "sha256": "56603df04d305de911dd500d1df69f2e5021d1b678b062174a31578822d6bdbe",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-tencent-agent-whitepaper-78-pages.md",
+      "pages": [
+        "wiki/sources/tencent-agent-whitepaper-78-pages.md",
+        "wiki/concepts/enterprise-agent-three-stage-transition.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/aDl2PkLxSibQf8lqGYXHBA",
+      "asset_ref": "Assets/2026-11-03/weixin-article-adl2.md"
     }
   ]
 }

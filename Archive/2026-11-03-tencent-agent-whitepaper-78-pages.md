@@ -9,7 +9,7 @@ created: 2026-11-03
 category: 资讯
 tags: [AI, 行业动态]
 asset_ref: Assets/2026-11-03/weixin-article-adl2.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 78 页讲透 Agent 落地：腾讯企业智能体路线图

@@ -9,7 +9,7 @@ created: 2026-11-03
 category: 技术
 tags: [Java, AI]
 asset_ref: Assets/2026-11-03/weixin-article-o0ob.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 告别云语音 API！Java 离线语音 SDK，一行 Maven 依赖，7 大音频能力本地运行

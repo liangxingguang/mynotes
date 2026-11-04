@@ -201,6 +201,7 @@
 - [[lovart-2-arti-design-agent|Lovart 2.0 发布：设计 Personal Agent Arti 上手体验]]（2026-10-21，AI/产品，置信度低）
 - [[meipai-live-danmu-realtime-push|百万在线的美拍直播弹幕系统实时推送技术实践]]（2026-10-23，IM/直播弹幕/Redis+长连接）
 - [[meituan-waimai-search-elasticsearch-rle|美团外卖搜索基于Elasticsearch的优化实践]]（2026-10-31，ES/搜索/倒排索引/性能）
+- [[mica-voice|告别云语音 API！Java 离线语音 SDK，一行 Maven 依赖，7 大音频能力本地运行]]（2026-11-03，Java/离线语音/SDK，mica-voice 纯 Java 包装 sherpa-onnx 离线七大能力，四模块+3 步接入+模型家族+注意事项，单信源置信度中）
 - [[message-system-design-part1|消息系统设计与实现「上篇」：概念与领域建模]]（2026-10-23，站内消息/领域建模，置信度中）
 - [[message-system-design-part2|消息系统设计与实现「下篇」：模型与服务层实现]]（2026-10-23，站内消息/库表与服务层，置信度中）
 - [[minimax-mcode-stack|MiniMax 开源「mcode-stack」：用 MiniMax Code 写 MiniMax Code 的全套工作流]]（2026-10-31，AI/AI Coding/工作流，五个工程问题视角，微博转发，置信度中）
@@ -299,6 +300,7 @@
 - [[pi-school-agent-course|这门免费课表面在教 Pi，其实在教你 Agent 到底怎么工作]]（2026-10-14，AI/教程）
 - [[state-of-ai-report-2026|State of AI Report 2026 中文要点（Datawhale 译）]]（2026-10-14，AI/行业报告）
 - [[stress-test-capacity-planning|第二十课：高并发系统压测与容量规划（架构师之路）]]（2026-10-22，压测/容量规划）
+- [[structured-thinking-18-books|一定要大量读书：结构化思维的18本书]]（2026-11-03，学习/书单，三阶段×6 本（基础整理思路/进阶检验判断/应用处理复杂问题）+训练四问，单信源置信度低）
 - [[system-design-12-components|一次讲清 12 个系统设计核心组件]]（2026-10-13，系统设计）
 - [[system-design-google-maps|系统设计面试（第二卷）第03章：谷歌地图]]（2026-10-24，系统设计/地理空间）
 - [[system-design-proximity-service|系统设计面试（第二卷）第01章：邻近服务]]（2026-10-24，系统设计/LBS）
@@ -339,6 +341,7 @@
 - [[weixin-seckill-100k-qps|从 0 设计 10 万 QPS 秒杀系统：10 万请求进来，只有 1000 个能碰到数据库]]（2026-11-02，架构/分布式系统/秒杀/Redis/Kafka/微信，三层漏斗压 10 万→2 万→1000+Redis Lua 预扣+32 桶散热+Kafka 削峰+DB 唯一索引幂等+容量推导表，微信单信源，置信度高）
 - [[2026-11-03-go-gitlab-cicd-delivery|Go 微服务 GitLab CI/CD 工程实战：构建可验证、可晋级、可恢复的交付系统]]（2026-11-04，技术/CI-CD/交付，四套时间口径+编译一次镜像只打包+同一 repository@digest 晋级+五误区（race/覆盖率/needs/RollingUpdate/manual）+缓存净收益公式+resource_group 同锁+发布清单 JSON+known-good 回滚三恢复路径+12 项验收清单，占位示例未经真实环境验证，公众号单信源，置信度中）
 - [[2026-11-03-harvard-cs2680-agent-to-gpu|哈佛新课 CS2680：从 Agent 一路拆到 GPU]]（2026-11-04，学习/AI/课程，CS2680《Modern AI Systems》Juncheng Yang 主讲 MaDSys 支持+两部分（Agent 应用层/系统层 KV Cache→GPU）+Mads 五件套递进作业+无考试期末项目+阅读清单论文地图+80 人已满可旁听，公众号单信源，置信度中）
+- [[tencent-agent-whitepaper-78-pages|78 页讲透 Agent 落地：腾讯企业智能体路线图]]（2026-11-03，AI/行业动态/企业落地，三阶段跃迁+四层底座+九章目录，第一波价值在对内省，单信源置信度中）
 - [[2026-11-03-thinking-speaking-diagrams|提升自己的思维和讲话能力 20 张图解]]（2026-11-03，个人成长/思维方式/微信，20 张手绘图承载核心方法论（图片无法文字化）+随笔正文：目标感→路径→模板→可训练+从固定型到成长型思维跨越+自我觉察四阶段+反馈与盲区，公众号随笔单信源，置信度低）
 - [[bend-message-center-09|B端产品经理实操框架：消息中心从0到1复盘（大皮不皮 第9篇）]]（2026-11-04，产品/B端/消息中心，四层架构（接入/策略/渲染/通道）+生命周期七步+模板六字段（文案与数据分离）+订阅偏好六字段（投诉-40%）+触达优先级五级+频控（1h1条短信/1天3条营销）+失败重试矩阵（指数退避1→5→15min/降级/死信）+CRM案例（82%→96%、接入效率+60%），正文自 Assets 采集稿逐字收录（含 1px 占位图），单信源置信度中）
 - [[bend-multi-agent-saas-24|B端系统多智能体重构SaaS业务流：产品经理建议收藏（大皮不皮 第24篇）]]（2026-11-03，产品/AI-Agent/多智能体，三层架构（交互层意图与槽位/编排层Orchestrator任务卡片/执行层工具API调用）+业务流重构五步法+四案例（ERP采买到付款/车贷审批/OA差旅报销/CRM线索培育）+Agent化PRD五模块，正文自 Assets 采集稿逐字收录、1px 占位图剔除，单信源置信度中）
@@ -421,6 +424,7 @@
 - [[design-patterns-in-netty|Netty 设计模式全景（源码视角的模式识别）]]（十大模式源码落点+16 模式对照表；机制概念页的模式视角索引；单信源，置信度中）
 - [[durable-execution|持久执行（Durable Execution）]]（崩溃后断点精确恢复；效应三明治 + 版本化文档存储，非事件溯源；Kiso 补 Event Log 账本+uncertain 裁决+kill -9 实测路线；重试治理信源补跨 Worker 字段清单，八信源）
 - [[dynamic-form-engine|动态表单引擎（B端表单配置引擎）]]（2026-11-04，产品/B端/动态表单，四层能力（动态表单/校验/联动/版本管理）+Schema七项字段配置+校验六类规则三种触发时机+字段联动五型+5层防循环+版本管理三策略（不可变版本号/schema_version渲染/删除只停用），ERP案例交付5→1工作日投入降60%，与 approval-workflow-engine/control-plane-design/expand-migrate-contract 互链，单信源置信度中）
+- [[enterprise-agent-three-stage-transition|企业 Agent 三阶段跃迁（能对话 → 能干活 → 能上岗）]]（2026-11-04，AI/企业落地/成熟度模型，责任边界分界线+四层底座立项拆解线（WorkBuddy/ClawPro/Agent Runtime/TokenHub）+落地三动作（岗位立项/SOP→Skill/先内后外），腾讯白皮书解读单信源，置信度中）
 - [[enummap-enumset-internals|EnumMap / EnumSet 枚举专用集合设计]]（ordinal 直接索引：Object[] 数组下标 / long 位向量，≤64 自动选型 RegularEnumSet；集合运算一条位运算；单信源，置信度中）
 - [[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]（先目标基线、JFR/GC 日志归因，证据指向 JVM 才动参数，单变量实验）
 - [[exchanger-internals|Exchanger 双向交换设计]]（JUC 唯一双向交换；Slot 单槽→Arena 多槽渐进扩容；@Contended+手动填充防伪共享；SPINS=1024 按核数/hash 动态自旋；线程须成对，单信源，置信度中）

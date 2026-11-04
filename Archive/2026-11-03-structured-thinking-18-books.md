@@ -9,7 +9,7 @@ created: 2026-11-03
 category: 学习
 tags: [阅读, 思维方式]
 asset_ref: Assets/2026-11-03/weixin-article-s7eu.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 一定要大量读书：结构化思维的18本书，彻底不再逻辑混乱
