@@ -13,11 +13,14 @@ tags:
 sources:
   - raw/sources/products/2026-11-03-weixin-bend-engine-comparison-14.md
   - raw/sources/products/2026-11-03-weixin-bend-dynamic-form-13.md
+  - raw/sources/products/2026-11-03-weixin-bend-rule-engine-11.md
 related:
   - wiki/concepts/dynamic-form-engine.md
   - wiki/concepts/approval-workflow-engine.md
   - wiki/concepts/control-plane-design.md
+  - wiki/concepts/rule-engine.md
   - wiki/sources/bend-engine-comparison-14.md
+  - wiki/sources/bend-rule-engine-11.md
 ---
 
 # 动态表单 vs 流程引擎 vs 规则引擎（B端引擎选型）
@@ -38,7 +41,7 @@ related:
 | 典型系统 | 申请/线索/问卷 | OA/订单/工单 | 风控/营销/定价 |
 | 优势 | 业务人员可自建表单；ERP 案例交付周期 5→1 工作日、开发投入降约 60% | 多角色协作与状态流转可配置化 | 高频调整判断逻辑，CRM 案例运营可直接维护无需发版 |
 | 劣势 | 不擅长跨角色审批（缺状态管理/任务分配） | 不擅长硬写复杂规则（流程图堆条件分支） | 不擅长持久化表单与业务明细 |
-| 内部设计详见 | [[dynamic-form-engine]] | [[approval-workflow-engine]] | [[control-plane-design]] |
+| 内部设计详见 | [[dynamic-form-engine]] | [[approval-workflow-engine]] | [[rule-engine]] |
 
 ## Analysis（分析）
 
@@ -46,6 +49,7 @@ related:
 - 组合案例（车贷）：表单采集车型/贷款金额/收入/征信 → 流程驱动"提交申请—风控初审—人工复审—放款—还款" → 规则在风控节点判断收入负债比/黑名单/车辆评估价与贷款成数；组合后不同资方只调整规则和字段即可，不必重复开发。
 - 组合案例（ERP 采购）：表单按物资类型配置字段 → 流程按金额/部门/供应商走审批链 → 规则做预算校验/超额拦截/供应商优选（<5000 自动通过、>5000 财务审批、>10 万总经理审批）；"金额>5000 触发特殊审批"与第 13 篇（表单校验触发）互证。
 - 组合案例（CRM 客户运营）：表单按渠道配置字段 → 流程处理线索分配/跟进/升降级 → 规则做评分/自动打标签/活动门槛；规则调整时运营直接维护，无需研发发版。
+- 第二信源印证（第 11 篇规则引擎专文）：车贷审批决策表 R001-R006（优先级/互斥组/默认规则）与物流运费规则链（计费重量→基础运费→附加费嵌套）印证"规则引擎管决策"的边界定位；并补充规则引擎与机器学习的组合范式——模型输出风险分、规则引擎按分执行动作（欺骗概率 >0.9 拒绝、0.5-0.9 人工复核、<0.5 通过），即"确定性决策骨架 + 概率预见皮肤"。规则引擎内部设计详见 [[rule-engine]]。
 
 ## Best Fit（适用场景）
 
@@ -73,5 +77,6 @@ related:
 
 ## Evidence（证据）
 
-- Source: `raw/sources/products/2026-11-03-weixin-bend-engine-comparison-14.md`（微信公众号 · 大皮不皮《B端产品经理》专辑第 14 篇，单信源）
+- Source: `raw/sources/products/2026-11-03-weixin-bend-engine-comparison-14.md`（微信公众号 · 大皮不皮《B端产品经理》专辑第 14 篇，选型框架出处）
 - 互证: `raw/sources/products/2026-11-03-weixin-bend-dynamic-form-13.md`（第 13 篇，ERP 采购 5000 元阈值与审批触发）
+- 印证: `raw/sources/products/2026-11-03-weixin-bend-rule-engine-11.md`（第 11 篇，规则引擎设计专文：车贷/CRM/物流三案例 + 六模块框架 + 规则引擎 vs 机器学习组合）

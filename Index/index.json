@@ -1,24 +1,6 @@
 {
-  "updated_at": "2026-11-04 11:37",
+  "updated_at": "2026-11-04 11:56",
   "notes": [
-    {
-      "id": "20261103-bend-rule-engine-11",
-      "title": "规则引擎：B端产品经理如何把复杂业务规则做成可配置决策中台？",
-      "path": "Inbox/2026-11-03-bend-rule-engine-11.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484517&idx=1&sn=405814dccb4a26b56c136e21ff4e780e&chksm=c4d185c9f3a60cdffae11252888de80f4b8bafd56e18eeed2129f7cb7d57ae93461603d1326a#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "本文用三个真实场景讲透规则引擎设计：车贷审批、CRM客户分层、物流运费计算。核心组成（事实/条件/动作/规则集/决策表/优先级/互斥组/默认规则/版本）、通用产品设计框架（六模块）、规则引擎与机器学习的配合方式，以及面试高频题。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-rule-engine-11.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "20261103-bend-saas-multitenant-05",
       "title": "SaaS多租户系统实战：B端产品经理从架构设计到落地SOP全指南",
@@ -7079,6 +7061,24 @@
       "summary": "B端权限系统是底层能力，直接决定数据合规与使用边界。本文拆解 RBAC 完整产品设计：四个核心对象（用户/角色/权限/资源）、RBAC0-3 模型层级、需求调研三梳理（角色/权限点/数据权限）、七大功能模块、关键流程、原型交互、异常边界与验收清单。多数 B 端产品用 RBAC1/2 混合即可，避免过度设计。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-bend-rbac-01.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-rule-engine-11",
+      "title": "规则引擎：B端产品经理如何把复杂业务规则做成可配置决策中台？",
+      "path": "Archive/2026-11-03-bend-rule-engine-11.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484517&idx=1&sn=405814dccb4a26b56c136e21ff4e780e&chksm=c4d185c9f3a60cdffae11252888de80f4b8bafd56e18eeed2129f7cb7d57ae93461603d1326a#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文用三个真实场景讲透规则引擎设计：车贷审批、CRM客户分层、物流运费计算。核心组成（事实/条件/动作/规则集/决策表/优先级/互斥组/默认规则/版本）、通用产品设计框架（六模块）、规则引擎与机器学习的配合方式，以及面试高频题。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-rule-engine-11.md",
       "wiki_status": "ingested"
     },
     {

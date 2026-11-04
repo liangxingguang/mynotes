@@ -4289,6 +4289,19 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484981&idx=1&sn=d67a01d3f53fc5f14aa98d76fc626ae1&chksm=c4d18799f3a60e8fc23d5f892b23639e09b43b0c37286da66289fc2ee591e37e25fdd68c72ea",
       "asset_ref": "Assets/2026-11-03/weixin-bend-prd-writing-30.md"
+    },
+    {
+      "path": "raw/sources/products/2026-11-03-weixin-bend-rule-engine-11.md",
+      "sha256": "97c2916625909159fda947d82ce4bf6239e389cf06e14f06c55a8defbd155d02",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-bend-rule-engine-11.md",
+      "pages": [
+        "wiki/sources/bend-rule-engine-11.md",
+        "wiki/concepts/rule-engine.md",
+        "wiki/comparisons/dynamic-form-vs-workflow-vs-rule-engine.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484517&idx=1&sn=405814dccb4a26b56c136e21ff4e780e&chksm=c4d185c9f3a60cdffae11252888de80f4b8bafd56e18eeed2129f7cb7d57ae93461603d1326a",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-rule-engine-11.md"
     }
   ]
 }
