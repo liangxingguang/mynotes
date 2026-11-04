@@ -1,62 +1,6 @@
 {
-  "updated_at": "2026-11-04 15:50",
+  "updated_at": "2026-11-04 18:45",
   "notes": [
-    {
-      "id": "20261103-bend-workflow-engine-12",
-      "title": "B端产品经理如何吃透流程引擎？用一个报销流程讲清节点、网关与异常处理",
-      "path": "Inbox/2026-11-03-bend-workflow-engine-12.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484551&idx=1&sn=588bcb7caca01f3ceb57a53b9189cbda&chksm=c4d1852bf3a60c3d0f4e20a674cca822a79088cd54f4f429cf938d1d43d9cd14153bd77c60c7#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "本文用员工报销流程案例拆解流程引擎：四大核心对象（流程定义/实例/任务/变量）、六类节点（开始/用户任务/排他网关/并行网关/服务任务/结束）、六种异常处理（驳回/撤回/转办/加签/超时提醒/版本管理）、PRD 必备五张表，以及面试回答框架。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-workflow-engine-12.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-11-03-go-microservice-gitlab-cicd-delivery",
-      "title": "Go 微服务 GitLab CI/CD 工程实战：构建可验证、可晋级、可恢复的交付系统",
-      "path": "Inbox/2026-11-03-go-microservice-gitlab-cicd-delivery.md",
-      "created": "2026-11-03",
-      "category": "技术",
-      "tags": [
-        "CI/CD",
-        "工程实践"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/H_r_gaQgplJHjBBWG80f_g",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "面向 Go + GitLab CI/CD + 容器仓库 + K8s 的后端/平台团队，以订单、支付、通知三个服务为例，给出一条完整交付链路：静态检查 → 竞态测试 → 一次编译 → 镜像打包（仅打包不编译）→ 扫描/SBOM/签名 → staging 验证 → 生产人工门禁 → 部署观察 → 发布证据与恢复记录，全程同一不可变镜像（repository@digest）晋级，附可复用的实验协议与发布前验收清单。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-article-hrga.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-11-03-harvard-cs2680-agent-to-gpu",
-      "title": "哈佛新课 CS2680：从 Agent 一路拆到 GPU",
-      "path": "Inbox/2026-11-03-harvard-cs2680-agent-to-gpu.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "课程",
-        "AI"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/wRhw_hgSVCTR7YBXRp8eqw",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "哈佛 2026 秋季新课 CS2680《Modern AI Systems: Agents and System Optimizations》由 Juncheng Yang 主讲，围绕同一个 Agent 系统从应用层 Agent Loop 一路拆到推理服务与 GPU；5 个递进作业（Mads 系列）+ 期末项目，附 Agent/AI Infra 论文地图式阅读清单，课程主页资源值得收藏。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-article-wrhh.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-11-03-mica-voice-java-offline-speech-sdk",
       "title": "告别云语音 API！Java 离线语音 SDK，一行 Maven 依赖，7 大音频能力本地运行",
@@ -7079,6 +7023,62 @@
       "summary": "本文厘清供应链三大系统的边界与串联：OMS 管订单中枢（接入/拆单/合并/路由/库存占用/售后）、WMS 管仓库执行（库位/库存/批次/效期/出入库）、TMS 管运输配送（计划/调度/在途/签收/结算）。订单完整旅程：OMS 接收路由 → WMS 拣货出库 → TMS 运单调度 → 签收回传 → OMS 完成订单 → 财务结算。选型判断：订单乱先上 OMS、仓库乱先上 WMS、运输乱先上 TMS、都乱先打主流程闭环。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-bend-wms-oms-tms-19.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-workflow-engine-12",
+      "title": "B端产品经理如何吃透流程引擎？用一个报销流程讲清节点、网关与异常处理",
+      "path": "Archive/2026-11-03-bend-workflow-engine-12.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484551&idx=1&sn=588bcb7caca01f3ceb57a53b9189cbda&chksm=c4d1852bf3a60c3d0f4e20a674cca822a79088cd54f4f429cf938d1d43d9cd14153bd77c60c7#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文用员工报销流程案例拆解流程引擎：四大核心对象（流程定义/实例/任务/变量）、六类节点（开始/用户任务/排他网关/并行网关/服务任务/结束）、六种异常处理（驳回/撤回/转办/加签/超时提醒/版本管理）、PRD 必备五张表，以及面试回答框架。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-workflow-engine-12.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-03-go-microservice-gitlab-cicd-delivery",
+      "title": "Go 微服务 GitLab CI/CD 工程实战：构建可验证、可晋级、可恢复的交付系统",
+      "path": "Archive/2026-11-03-go-microservice-gitlab-cicd-delivery.md",
+      "created": "2026-11-03",
+      "category": "技术",
+      "tags": [
+        "CI/CD",
+        "工程实践"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/H_r_gaQgplJHjBBWG80f_g",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "面向 Go + GitLab CI/CD + 容器仓库 + K8s 的后端/平台团队，以订单、支付、通知三个服务为例，给出一条完整交付链路：静态检查 → 竞态测试 → 一次编译 → 镜像打包（仅打包不编译）→ 扫描/SBOM/签名 → staging 验证 → 生产人工门禁 → 部署观察 → 发布证据与恢复记录，全程同一不可变镜像（repository@digest）晋级，附可复用的实验协议与发布前验收清单。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-article-hrga.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-03-harvard-cs2680-agent-to-gpu",
+      "title": "哈佛新课 CS2680：从 Agent 一路拆到 GPU",
+      "path": "Archive/2026-11-03-harvard-cs2680-agent-to-gpu.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "课程",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/wRhw_hgSVCTR7YBXRp8eqw",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "哈佛 2026 秋季新课 CS2680《Modern AI Systems: Agents and System Optimizations》由 Juncheng Yang 主讲，围绕同一个 Agent 系统从应用层 Agent Loop 一路拆到推理服务与 GPU；5 个递进作业（Mads 系列）+ 期末项目，附 Agent/AI Infra 论文地图式阅读清单，课程主页资源值得收藏。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-article-wrhh.md",
       "wiki_status": "ingested"
     },
     {
