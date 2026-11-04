@@ -364,6 +364,8 @@
 - [[2026-11-03-weixin-ai-requirements-analysis|AI赋能需求分析：从"差不多"到"精确无误"]]（2026-11-05，AI/需求/方法论，AI赋能研发效能系列第2篇·需求篇：四环节（拆解与用户故事/文档撰写/评审智能查漏/变更影响分析）+查漏五维度+拆解提示词结构+副驾驶定位+三条落地建议与四项度量，微信公众号单信源，置信度中）
 - [[2026-11-03-weixin-full-gc-troubleshooting|一次Full GC排查实录——从GC日志到根因，完整推理链拆给你看]]（2026-11-05，Java/JVM/GC/排障，GC 刑侦三步（日志看现场→dump 尸检→代码定罪）+时间线交叉验证+静态无界缓存泄漏完整案例（ConcurrentHashMap 2.1GB/52%堆、持有者静态字段）+修法三层（止血/Caffeine 治本/防线），微信公众号单信源，置信度中）
 
+- [[java-rust-learning-guide|Java工程师的Rust语言学习指南]]（2026-11-03，技术/Rust/Java，30 章 Java 工程师 Rust 学习指南：13 维对照+所有权/借用/生命周期+trait/错误处理/RAII+并发异步+Spring 迁移示例+18 陷阱+6 原则+5 阶段路线+16 项清单，微信公众号单信源，置信度中）
+
 ## concept（概念）
 
 - [[a2a-protocol|A2A 协议]]（Agent↔Agent 横向协作协议，Google 2025）
@@ -574,6 +576,11 @@
 - [[release-manifest-recovery|发布集合与恢复决策]]（2026-11-04，CI-CD/交付/恢复，发布=镜像digest+Chart+配置+迁移+验证集合+发布决策记录 JSON+Nacos 配置发布八步+热更新值更新vs资源重建+失败三阶段+known-good 回滚+三恢复路径边界+八类演练，单信源置信度中）
 - [[thread-pool-sizing|线程池大小估算（N/N+1/2N 经验值与 W/C 公式）]]（2026-11-04，Java/并发/容量规划，线程数取决于 W/C 比例而非任务名+CPU 密集 N/N+1+I/O 密集 2N+通用公式 N×U×(1+W/C)+下游容量天花板+四步配置法，微信公众号单信源，置信度中）
 
+- [[rust-ownership-borrowing|Rust 所有权与借用]]（ownership 三规则+move/Copy/Clone+&T/&mut T 借用规则+生命周期省略+RAII/Drop+智能指针，Java 工程师 Rust 指南第 6-9/16 章，单信源，置信度高）
+- [[rust-traits|Rust trait]]（trait vs interface：无字段无继承；trait bound/静态分派 vs dyn Trait/关联类型/孤儿规则，Java 工程师 Rust 指南第 14 章，单信源，置信度高）
+- [[rust-error-handling|Rust 错误处理（Result/Option）]]（Option/Result 把失败建模为值；? 传播/自定义错误枚举/unwrap 纪律/panic 定位，Java 工程师 Rust 指南第 11/15/24 章，单信源，置信度高）
+- [[rust-concurrency|Rust 并发模型（Send/Sync/async）]]（Send/Sync 编译期排除数据竞争；线程/channel/Arc<Mutex>；async 惰性 Future/取消安全/Pin 初步，Java 工程师 Rust 指南第 16/20/21 章，单信源，置信度高）
+
 ## entity（实体）
 
 - [[aibox|AiBox]]（货拉拉自建 AI Coding Harness/管控面：Rules/Skills/Commands/MCP 下发 + 网关四统一 + 三层度量，千人规模）
@@ -613,6 +620,8 @@
 - [[live-streaming-messaging|直播实时消息分发]]（拉 vs 推路线图谱：读扩散通知拉取 / longpolling / 短轮询 / mcast 组播 / CDN 广播；允许策略性丢消息是与 IM 的根本分界，八信源）
 - [[programmer-overseas-remote-work|程序员出海远程]]（汇率杠杆/价格带定价/卖资产 vs 卖时间；AI 一人公司技术前提；收款/时差/合规三实操；单信源，置信度中）
 - [[system-design-core-components|系统设计核心组件]]（分布式系统 12 个核心组件清单，组件驱动；另收问题驱动六类框架见 [[accidental-cto-book]]，双信源）
+
+- [[java-to-rust-migration|Java 到 Rust 迁移]]（2026-11-05，Rust/Java/语言迁移，13 维对照+6 心智模型切换+语言特性映射+Spring 风格迁移示例+Java 开发者 18 陷阱+6 风格原则+5 阶段学习路线+16 项提交前清单，单信源置信度中）
 
 ## decision（决策）
 

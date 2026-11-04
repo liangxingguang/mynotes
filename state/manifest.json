@@ -4523,6 +4523,22 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/iXh44LieBvK9vlm_RDSLHA",
       "asset_ref": "Assets/2026-11-03/weixin-full-gc-troubleshooting.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-11-03-weixin-java-rust-learning-guide.md",
+      "sha256": "81ceda8a5773c6b88aa8030d39d818b6038e90c4c7173fcbdb1b47d29962c4cc",
+      "registered_at": "2026-11-05",
+      "inbox_ref": "Archive/2026-11-03-weixin-java-rust-learning-guide.md",
+      "pages": [
+        "wiki/sources/java-rust-learning-guide.md",
+        "wiki/topics/java-to-rust-migration.md",
+        "wiki/concepts/rust-ownership-borrowing.md",
+        "wiki/concepts/rust-traits.md",
+        "wiki/concepts/rust-error-handling.md",
+        "wiki/concepts/rust-concurrency.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/Ej6XQlvizUeZViDhO4CKLw",
+      "asset_ref": "Assets/2026-11-03/weixin-java-rust-learning-guide.md"
     }
   ]
 }

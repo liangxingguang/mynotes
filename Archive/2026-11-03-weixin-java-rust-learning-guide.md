@@ -9,7 +9,7 @@ created: 2026-11-03
 category: 技术
 tags: [Rust, Java]
 asset_ref: Assets/2026-11-03/weixin-java-rust-learning-guide.md
-wiki_status: pending
+wiki_status: ingested
 summary: Rust 不是"带手动内存管理的 Java"，核心是把所有权、别名规则和线程安全提前到编译期验证。30 章完整指南：Java/Rust 整体对照、Cargo 工具链、变量可变性、所有权/move/借用/生命周期、字符串切片集合、struct/enum/模式匹配、trait/泛型、Option/Result 错误处理、RAII/Drop/智能指针、模块/crate/workspace、依赖/Feature/构建、测试与质量门禁、线程/channel/Arc/Mutex、async/await、宏/unsafe/FFI、Spring 风格迁移完整示例、18 个 Java 开发者常见陷阱、6 条风格原则、语法速查表、5 阶段学习路线、提交前 16 项检查清单。
 summary_status: partial
 ---
