@@ -17,6 +17,7 @@ related:
   - wiki/concepts/rbac-permission-system.md
   - wiki/concepts/agent-legacy-system-integration.md
   - wiki/concepts/approval-workflow-engine.md
+  - wiki/concepts/ticket-system-design.md
   - wiki/sources/bend-ai-ticket-system-prd-2.md
   - wiki/sources/knowledge-base-tech-evolution.md
 ---
@@ -85,7 +86,7 @@ AI 工单系统 2.0
 
 ### Distinctions（区分）
 
-- AI 工单系统（知识沉淀导向）vs 传统工单系统（状态流转/角色权限/SLA 提醒导向）：2.0 的关键差异是知识库闭环与自动分类/派单。
+- AI 工单系统（知识沉淀导向）vs 传统工单系统（状态流转/角色权限/SLA 提醒导向）：2.0 的关键差异是知识库闭环与自动分类/派单。传统工单系统的基础结构（权限矩阵/状态机/五模块/字段设计/验收）见 [[ticket-system-design]]。
 
 ## Evolution（演进）
 

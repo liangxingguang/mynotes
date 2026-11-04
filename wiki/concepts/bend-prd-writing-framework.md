@@ -13,12 +13,16 @@ tags:
   - writing-methodology
 sources:
   - raw/sources/products/2026-11-03-weixin-bend-prd-writing-30.md
+  - raw/sources/products/2026-11-03-weixin-bend-ticket-prd-02.md
+  - raw/sources/products/2026-11-03-weixin-bend-tracking-system-23.md
 related:
   - wiki/sources/bend-prd-writing-30.md
   - wiki/concepts/complex-system-breakdown.md
   - wiki/concepts/demand-review-sop.md
   - wiki/concepts/agent-prd-template.md
   - wiki/topics/enterprise-systems-map.md
+  - wiki/concepts/ticket-system-design.md
+  - wiki/concepts/tracking-system-design.md
 ---
 # B端PRD写作框架（一图三表一份清单）
 
@@ -113,21 +117,29 @@ B端PRD（开发不骂人）
 ## Evolution（演进）
 
 - 2026-11-04：建页。首信源：B 端 PM 视角的"一图三表一份清单"框架与 10 业务模块 PRD 重点（专辑第 30 篇），单信源，置信度中。
+- 2026-11-04：第二信源印证（专辑第 2 篇，工单系统 PRD）：流转表/字段表/验收标准三件套与"三表一份清单"同构——工单案例以状态机流转表（8 条流转规则）、18 字段表、五类可验证验收落地了框架主张"难点不是功能清单而是状态/权限/规则清晰"（详见 [[ticket-system-design]]）。
+- 2026-11-04：第三信源印证（专辑第 23 篇，B 端埋点体系）：自检清单中"埋点"项展开为独立框架——埋点 PRD 六模块（文档信息/目标/事件清单/参数字典/上报策略/验收标准），详见 [[tracking-system-design]]。
 
 ## Open Questions（开放问题）
 
-- "一份清单"（上线前自检清单）的具体内容原文未展开（在配套资料包《B端PRD开发不骂人模板》中，未抓取到）——如需完整清单需补抓或人工录入。
+- "一份清单"（上线前自检清单）的具体内容原文未展开（在配套资料包《B端PRD开发不骂人模板》中，未抓取到）——如需完整清单需补抓或人工录入。其中"埋点"项已由第三信源展开为 [[tracking-system-design]] 六模块框架。
 - 框架对 C 端 PRD、AI 产品 PRD 的适用性信源未覆盖。
 - 各表字段是否为最低必备集、能否裁剪，信源未给。
 
 ## Evidence（证据）
 
 - 一图三表一份清单框架、三原因、四案例（EHR 转岗/ERP 部分入库/CRM 公海/车贷反欺诈）、10 业务模块 PRD 重点：`raw/sources/products/2026-11-03-weixin-bend-prd-writing-30.md`（公众号《B端产品经理》专辑第 30 篇，2026-11-03 采集）
+- 工单 PRD 三件套印证（状态机流转表/18 字段表/五类验收）：`raw/sources/products/2026-11-03-weixin-bend-ticket-prd-02.md`（专辑第 2 篇）
+- 埋点自检项展开（埋点 PRD 六模块）：`raw/sources/products/2026-11-03-weixin-bend-tracking-system-23.md`（专辑第 23 篇）
 - 同构关系、评审衔接、与五件套/Agent 化 PRD 的区分：本 wiki 编译者解读。
 
 ## Related Knowledge（相关知识）
 
 - [[bend-prd-writing-30|信源页：B端PRD怎么写不被开发骂（专辑第30篇）]]
+- [[bend-ticket-prd-02|信源页：工单系统PRD撰写实战（专辑第2篇）]]
+- [[bend-tracking-system-23|信源页：B端埋点体系怎么搭（专辑第23篇）]]
+- [[ticket-system-design|工单系统设计（概念页）]]
+- [[tracking-system-design|B端埋点系统设计（概念页）]]
 - [[complex-system-breakdown|五件套拆解（概念页）]]
 - [[demand-review-sop|B端需求评审SOP（概念页）]]
 - [[agent-prd-template|Agent 化 PRD 模板（概念页）]]

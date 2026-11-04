@@ -1,60 +1,6 @@
 {
-  "updated_at": "2026-11-04 13:03",
+  "updated_at": "2026-11-04 15:50",
   "notes": [
-    {
-      "id": "20261103-bend-ticket-prd-02",
-      "title": "工单系统PRD撰写实战：一套可复用的需求文档拆解",
-      "path": "Inbox/2026-11-03-bend-ticket-prd-02.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484284&idx=1&sn=7d46039bddd9c261039f89540622e9ce&chksm=c4d182d0f3a60bc6bebd91a392b6ae628d8c4089be782cc20b29d9a26ac4f558e0d51dba7a71#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "本文拆解工单系统PRD的完整撰写方法，涵盖需求背景、角色权限矩阵、工单状态机流转、功能需求拆解（创建/分配/处理/关闭/统计）、字段设计、非功能需求与验收标准，提供可直接套用的模板思路。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-ticket-prd-02.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "20261103-bend-tracking-system-23",
-      "title": "B端埋点体系怎么搭？建议收藏的落地框架",
-      "path": "Inbox/2026-11-03-bend-tracking-system-23.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484838&idx=1&sn=8f5b8f191b7749dd4f6e5f73e40345d3&chksm=c4d1840af3a60d1cb8f5108954197f9598ff36186d2fd1a015eb9faf65ae1351838482b9cdbe#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "B 端埋点核心不是\"用户看了什么\"而是\"业务发生了什么\"，不能照搬 C 端。4 类事件：页面浏览（page_view）、元素交互（button_submit）、业务事件（purchase_order_create）、异常事件（permission_denied）。2 层参数：公共参数（tenant/user/role/org/page/module/app/device/timestamp/session）+ 业务参数。埋点设计 5 步法：定目标→拆指标→建事件（模块_动作_对象命名）→写参数（类型/必填/枚举）→验数据。9 个业务系统案例（ERP 采买/OA 审批/财务对账/权限拒绝/CRM 跟进/车贷进件/物流轨迹/规则命中/中台接口）+ 质量校验 4 必查项（非空/枚举/范围/逻辑）。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-tracking-system-23.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "20261103-bend-wms-oms-tms-19",
-      "title": "B端产品经理实战：WMS、OMS、TMS，什么场景用哪个？",
-      "path": "Inbox/2026-11-03-bend-wms-oms-tms-19.md",
-      "created": "2026-11-03",
-      "category": "学习",
-      "tags": [
-        "产品"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484709&idx=1&sn=33c5308e5f04be9fcf9a2526413685bd&chksm=c4d18489f3a60d9f84716babbbf0156167406df6e4a3e1ad904779efafc0bf36eea9d47f6664#rd",
-      "source_type": "网页",
-      "platform": "微信公众号",
-      "summary": "本文厘清供应链三大系统的边界与串联：OMS 管订单中枢（接入/拆单/合并/路由/库存占用/售后）、WMS 管仓库执行（库位/库存/批次/效期/出入库）、TMS 管运输配送（计划/调度/在途/签收/结算）。订单完整旅程：OMS 接收路由 → WMS 拣货出库 → TMS 运单调度 → 签收回传 → OMS 完成订单 → 财务结算。选型判断：订单乱先上 OMS、仓库乱先上 WMS、运输乱先上 TMS、都乱先打主流程闭环。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11-03/weixin-bend-wms-oms-tms-19.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "20261103-bend-workflow-engine-12",
       "title": "B端产品经理如何吃透流程引擎？用一个报销流程讲清节点、网关与异常处理",
@@ -7079,6 +7025,60 @@
       "summary": "第三方接口对接五阶段九要素。五阶段：需求与边界评估、供应商选型与商务评审、方案设计与字段映射、联调与验收、上线与运维。九要素贯穿始终：业务场景、数据范围、字段标准、调用频率、鉴权方式、异常码、重试策略、对账机制、退出机制。核心理念：接口不是联调通了才叫完成，是异常发生时业务还能被兜住。PM 不是传话筒，是第三方接口项目的业务负责人。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11-03/weixin-bend-third-party-integration-31.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-ticket-prd-02",
+      "title": "工单系统PRD撰写实战：一套可复用的需求文档拆解",
+      "path": "Archive/2026-11-03-bend-ticket-prd-02.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484284&idx=1&sn=7d46039bddd9c261039f89540622e9ce&chksm=c4d182d0f3a60bc6bebd91a392b6ae628d8c4089be782cc20b29d9a26ac4f558e0d51dba7a71#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文拆解工单系统PRD的完整撰写方法，涵盖需求背景、角色权限矩阵、工单状态机流转、功能需求拆解（创建/分配/处理/关闭/统计）、字段设计、非功能需求与验收标准，提供可直接套用的模板思路。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-ticket-prd-02.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-tracking-system-23",
+      "title": "B端埋点体系怎么搭？建议收藏的落地框架",
+      "path": "Archive/2026-11-03-bend-tracking-system-23.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484838&idx=1&sn=8f5b8f191b7749dd4f6e5f73e40345d3&chksm=c4d1840af3a60d1cb8f5108954197f9598ff36186d2fd1a015eb9faf65ae1351838482b9cdbe#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "B 端埋点核心不是\"用户看了什么\"而是\"业务发生了什么\"，不能照搬 C 端。4 类事件：页面浏览（page_view）、元素交互（button_submit）、业务事件（purchase_order_create）、异常事件（permission_denied）。2 层参数：公共参数（tenant/user/role/org/page/module/app/device/timestamp/session）+ 业务参数。埋点设计 5 步法：定目标→拆指标→建事件（模块_动作_对象命名）→写参数（类型/必填/枚举）→验数据。9 个业务系统案例（ERP 采买/OA 审批/财务对账/权限拒绝/CRM 跟进/车贷进件/物流轨迹/规则命中/中台接口）+ 质量校验 4 必查项（非空/枚举/范围/逻辑）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-tracking-system-23.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "20261103-bend-wms-oms-tms-19",
+      "title": "B端产品经理实战：WMS、OMS、TMS，什么场景用哪个？",
+      "path": "Archive/2026-11-03-bend-wms-oms-tms-19.md",
+      "created": "2026-11-03",
+      "category": "学习",
+      "tags": [
+        "产品"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484709&idx=1&sn=33c5308e5f04be9fcf9a2526413685bd&chksm=c4d18489f3a60d9f84716babbbf0156167406df6e4a3e1ad904779efafc0bf36eea9d47f6664#rd",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "本文厘清供应链三大系统的边界与串联：OMS 管订单中枢（接入/拆单/合并/路由/库存占用/售后）、WMS 管仓库执行（库位/库存/批次/效期/出入库）、TMS 管运输配送（计划/调度/在途/签收/结算）。订单完整旅程：OMS 接收路由 → WMS 拣货出库 → TMS 运单调度 → 签收回传 → OMS 完成订单 → 财务结算。选型判断：订单乱先上 OMS、仓库乱先上 WMS、运输乱先上 TMS、都乱先打主流程闭环。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-wms-oms-tms-19.md",
       "wiki_status": "ingested"
     },
     {

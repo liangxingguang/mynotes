@@ -4341,6 +4341,48 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247485021&idx=1&sn=a722ed4f459b75c0a893eb180e077676&chksm=c4d187f1f3a60ee7e6a9d1cfa371b47eee57496a47b91427dab8294fd076212cb3c0bebb7b",
       "asset_ref": "Assets/2026-11-03/weixin-bend-third-party-integration-31.md"
+    },
+    {
+      "path": "raw/sources/products/2026-11-03-weixin-bend-ticket-prd-02.md",
+      "sha256": "c5a6704dd279ff51139959fe782bf5812cd9509d3941648edcdab62a20ea355b",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-bend-ticket-prd-02.md",
+      "pages": [
+        "wiki/sources/bend-ticket-prd-02.md",
+        "wiki/concepts/ticket-system-design.md",
+        "wiki/concepts/bend-prd-writing-framework.md",
+        "wiki/concepts/ai-ticket-system.md",
+        "wiki/topics/enterprise-systems-map.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484284&idx=1&sn=7d46039bddd9c261039f89540622e9ce&chksm=c4d182d0f3a60bc6bebd91a392b6ae628d8c4089be782cc20b29d9a26ac4f558e0d51dba7a71",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-ticket-prd-02.md"
+    },
+    {
+      "path": "raw/sources/products/2026-11-03-weixin-bend-tracking-system-23.md",
+      "sha256": "e6a03d90a03dd978666e6d380ef389e2433531830a56f28bd90b30d07cac5bbe",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-bend-tracking-system-23.md",
+      "pages": [
+        "wiki/sources/bend-tracking-system-23.md",
+        "wiki/concepts/tracking-system-design.md",
+        "wiki/concepts/bend-prd-writing-framework.md",
+        "wiki/concepts/ticket-system-design.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484838&idx=1&sn=8f5b8f191b7749dd4f6e5f73e40345d3&chksm=c4d1840af3a60d1cb8f5108954197f9598ff36186d2fd1a015eb9faf65ae1351838482b9cdbe",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-tracking-system-23.md"
+    },
+    {
+      "path": "raw/sources/products/2026-11-03-weixin-bend-wms-oms-tms-19.md",
+      "sha256": "c57aa2559abedfa9ed69dcbe2315d10d0cd5f98d46b4e072ac54298799d71076",
+      "registered_at": "2026-11-04",
+      "inbox_ref": "Archive/2026-11-03-bend-wms-oms-tms-19.md",
+      "pages": [
+        "wiki/sources/bend-wms-oms-tms-19.md",
+        "wiki/comparisons/wms-vs-oms-vs-tms.md",
+        "wiki/topics/enterprise-systems-map.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzk3NTEwMDA5OQ==&mid=2247484709&idx=1&sn=33c5308e5f04be9fcf9a2526413685bd&chksm=c4d18489f3a60d9f84716babbbf0156167406df6e4a3e1ad904779efafc0bf36eea9d47f6664",
+      "asset_ref": "Assets/2026-11-03/weixin-bend-wms-oms-tms-19.md"
     }
   ]
 }
