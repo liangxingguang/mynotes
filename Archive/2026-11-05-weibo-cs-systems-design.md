@@ -9,7 +9,7 @@ created: 2026-11-05
 category: 学习
 tags: [GitHub]
 asset_ref: Assets/2026-11/weibo-cs-systems-design.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 蚁工厂推荐：计算机系统知识交互式学习站 cs-systems-design

@@ -4655,6 +4655,18 @@
       ],
       "source_url": "https://www.zhihu.com/pin/2098721479923975004",
       "asset_ref": "Assets/2026-11/zhihu-pin-two-good-sites-for-devs.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-05-cs-systems-design-weibo-recommendation.md",
+      "sha256": "c625f55ee66f088febc19962d4821d40addb86f7813cc1930dce51252c6da2f7",
+      "registered_at": "2026-11-05",
+      "inbox_ref": "Archive/2026-11-05-weibo-cs-systems-design.md",
+      "pages": [
+        "wiki/sources/cs-systems-design-weibo-recommendation.md",
+        "wiki/entities/cs-systems-design.md"
+      ],
+      "source_url": "https://weibo.com/2194035935/5361450285793760",
+      "asset_ref": "Assets/2026-11/weibo-cs-systems-design.md"
     }
   ]
 }
