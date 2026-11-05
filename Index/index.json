@@ -1,6 +1,24 @@
 {
-  "updated_at": "2026-11-05 08:27",
+  "updated_at": "2026-11-05 08:57",
   "notes": [
+    {
+      "id": "2026-11-05-weibo-cs-systems-design",
+      "title": "蚁工厂推荐：计算机系统知识交互式学习站 cs-systems-design",
+      "path": "Inbox/2026-11-05-weibo-cs-systems-design.md",
+      "created": "2026-11-05",
+      "category": "学习",
+      "tags": [
+        "GitHub"
+      ],
+      "source": "微博",
+      "source_url": "https://weibo.com/2194035935/5361450285793760",
+      "source_type": "link",
+      "platform": "微博",
+      "summary": "微博博主「蚁工厂」推荐一个计算机系统知识交互式学习站 kejun.github.io/cs-systems-design/，作者 kejun，附他整理的系统学习路线图。站点定位是作者本人\"重学\"用，没有基础概念介绍，不适合初学者入门，更适合已有概念框架后查漏补缺。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weibo-cs-systems-design.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
