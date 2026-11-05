@@ -19,6 +19,7 @@ sources:
   - raw/sources/ai/2026-11-02-superagent-design.md
   - raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md
   - raw/sources/ai/2026-11-04-zhihu-column-agent-long-term-memory.md
+  - raw/sources/ai/2026-11-05-multi-agent-control-shift.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/concepts/harness-engineering.md
@@ -32,6 +33,7 @@ related:
   - wiki/entities/namiagent.md
   - wiki/sources/namiagent-agent-tutorial.md
   - wiki/sources/superagent-design.md
+  - wiki/topics/multi-agent-collaboration-architecture.md
 ---
 # 上下文管理（Context Management）
 
@@ -108,6 +110,9 @@ Super-agent 信源把上下文窗口当作 Cache 管理，归纳两个注入操�
 
 - 2026-11-05 — 新增知乎「从零构建 Agent」第 12 篇信源 `raw/sources/ai/2026-11-04-zhihu-column-agent-long-term-memory.md`（第 8 信源）。补上**长期记忆与 in-context 管理的边界**：跨 Session 记忆不是把历史全量带进窗口，而是结构化提取后按需检索（召回注入会话前、写入轮次后），其"全量历史进 Prompt 不可行"四问题（成本/噪音/重点淹没/记忆失维护）从成本侧印证本概念的 token 预算纪律。新建概念页 [[agent-long-term-memory]]。
 
+- 2026-11-05 — 新增得物技术信源 `raw/sources/ai/2026-11-05-multi-agent-control-shift.md`（第 9 信源）。补上**上下文边界设计原则**：多 Agent 切分应按"看见什么／产出什么"（上下文边界 + 信息压缩边界）而非职业标签——代码分析 Agent 把调用关系/错误堆栈/实现细节压缩成核心 Agent 可直接使用的结论，数据探索 Agent 把原始数据/分布/异常蒸馏成少量关键发现，核心 Agent 只接收与当前决策最相关的上下文。这印证并具体化了本概念"隔离"手段（subagent 独立窗口）：隔离的价值在于划清输入边界与压缩责任；"后端 Agent／数据库 Agent"式标签只是"容易被提示词放大的职业想象"（信源论断，未独立核验）。
+
+
 ## Open Questions（开放问题）
 
 - 三层记忆（工作记忆 Redis / 长期记忆 pgvector）与 RAG 的分界，待该系列第 11 篇信源补充。
@@ -122,6 +127,7 @@ Super-agent 信源把上下文窗口当作 Cache 管理，归纳两个注入操�
 - Source: `raw/sources/ai/2026-11-02-superagent-design.md`（Inline & Spill 注入方法、链式召回引用图多跳召回）
 - Source: `raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md`（第 7 信源：链式召回实例——旧版客户端限制沿引用找回、记录读到否则按旧条件改）
 - Source: `raw/sources/ai/2026-11-04-zhihu-column-agent-long-term-memory.md`（第 8 信源：跨 Session 长期记忆为 in-context 管理的会话外对应物；全量历史进 Prompt 四问题）
+- Source: `raw/sources/ai/2026-11-05-multi-agent-control-shift.md`（第 9 信源：上下文边界按"看见什么／产出什么"切分，职业标签是提示词放大的想象）
 
 ## Related Knowledge（相关知识）
 

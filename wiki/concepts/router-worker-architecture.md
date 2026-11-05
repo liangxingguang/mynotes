@@ -4,7 +4,7 @@ type: concept
 title: Router/Worker 双层架构
 status: active
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-05
 confidence: medium
 tags:
   - concept
@@ -13,12 +13,16 @@ tags:
 sources:
   - raw/sources/ai/2026-11-02-superagent-design.md
   - raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md
+  - raw/sources/ai/2026-11-05-multi-agent-control-shift.md
 related:
   - wiki/concepts/super-agent.md
   - wiki/concepts/event-driven-agent.md
   - wiki/concepts/agent-loop.md
   - wiki/concepts/context-management.md
   - wiki/concepts/ticket-task-persistence.md
+  - wiki/concepts/task-board-coordination.md
+  - wiki/concepts/advisor-on-demand-consultation.md
+  - wiki/topics/multi-agent-collaboration-architecture.md
 ---
 # Router/Worker 双层架构
 
@@ -81,6 +85,7 @@ related:
 
 - 2026-11-02 — 新建，信源为 DeepSeek Harness 团队架构探索文。
 - 2026-11-02 — 新增「架构师」公众号原型拆解信源（第 2 信源）：补上 WorkerSlots 人跟进额外名额与唤醒优先、observe/auto/明确请求三路径接单、批处理压测细节（批次 1.0→2.8、单请求 2.5s→3.9s，Prefill 并行分摊）、恢复前先查目录/Git/GitHub 再决定是否重做外部操作。
+- 2026-11-05 — 新增得物技术信源（第 3 信源）：印证并补充 Master Agent 模式——中心节点理解目标、拆解、路由、汇总，控制流清楚、权限/预算/超时集中管理；风险是任务变复杂后膨胀成"超级 Agent"（既要理解业务又要维护调度器/状态机/异常处理），且"下一步该叫谁"的判断随并行度上升越来越沉重——这正是双层架构把 Router 层职责限定在任务间高层协调的动机。巡检案例给出规避手段：入口中心只做组件级路由，组件内规划/证据汇总/完整性检查下放 Inspector（详见 [[multi-agent-collaboration-architecture]]）。由此交叉链接 [[task-board-coordination]]、[[advisor-on-demand-consultation]]。
 
 ## Open Questions（开放问题）
 
@@ -92,9 +97,13 @@ related:
 
 - Source: `raw/sources/ai/2026-11-02-superagent-design.md`
 - Source: `raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md`（WorkerSlots/observe-auto/批处理压测/恢复核实）
+- Source: `raw/sources/ai/2026-11-05-multi-agent-control-shift.md`（Master Agent 模式印证：中心膨胀风险与组件级路由规避手段）
 
 ## Related Knowledge（相关知识）
 
 - [[superagent-design|Super-agent 设计探索（信源页）]]
 - [[weixin-superagent-architecture-teardown|架构拆解：DeepSeek 刚发布的 Super-agent（信源页）]]
+- [[2026-11-05-weixin-multi-agent-control-shift|多 Agent 架构的三次反转（信源页）]]
+- [[multi-agent-collaboration-architecture|多 Agent 协作架构与控制权下沉（主题页）]]
+- [[task-board-coordination|任务看板（共享状态协作）]]
 - [[super-agent]]

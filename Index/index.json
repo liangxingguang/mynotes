@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-11-05 09:59",
+  "updated_at": "2026-11-05 10:21",
   "notes": [
-    {
-      "id": "note-2026-11-05-001",
-      "title": "2026-11-05-multi-agent-control-shift",
-      "path": "Inbox/2026-11-05-multi-agent-control-shift.md",
-      "created": "2026-11-05",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "Agent"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/C9A9ZEw_EPPaFyxhKjD05A",
-      "source_type": "article",
-      "platform": "wechat",
-      "summary": "多 Agent 架构的核心不是\"调用更多模型\"，而是控制权放在哪里：Master Agent 集中调度、任务看板共享状态、Advisor 按需咨询，构成一条控制权逐步下沉的路径。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/multi-agent-control-shift.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
@@ -7117,6 +7098,25 @@
       "summary": "以多租户客服知识库为例的生产级 RAG 检索设计：五条正确性契约（租户隔离/授权有效/版本原子性/新鲜度/资源有界），模型空间注册、文档版本化+ACL、RLS 第二道防线、混合检索（向量+词法+RRF）、发布 CAS、缓存失效与物理清理、评测验收矩阵。核心主张：向量索引只产生候选，权限与版本的最终解释权在关系层；换专用向量库的决策也应由契约与证据驱动。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-YLTmBHYPhNR0lnCx9RhHLw.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "note-2026-11-05-001",
+      "title": "2026-11-05-multi-agent-control-shift",
+      "path": "Archive/2026-11-05-multi-agent-control-shift.md",
+      "created": "2026-11-05",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/C9A9ZEw_EPPaFyxhKjD05A",
+      "source_type": "article",
+      "platform": "wechat",
+      "summary": "多 Agent 架构的核心不是\"调用更多模型\"，而是控制权放在哪里：Master Agent 集中调度、任务看板共享状态、Advisor 按需咨询，构成一条控制权逐步下沉的路径。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/multi-agent-control-shift.md",
       "wiki_status": "ingested"
     },
     {

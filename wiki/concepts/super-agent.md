@@ -4,7 +4,7 @@ type: concept
 title: Super-agent
 status: active
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-05
 confidence: medium
 tags:
   - concept
@@ -13,6 +13,7 @@ tags:
 sources:
   - raw/sources/ai/2026-11-02-superagent-design.md
   - raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md
+  - raw/sources/ai/2026-11-05-multi-agent-control-shift.md
 related:
   - wiki/concepts/router-worker-architecture.md
   - wiki/concepts/event-driven-agent.md
@@ -22,6 +23,9 @@ related:
   - wiki/concepts/context-management.md
   - wiki/concepts/durable-execution.md
   - wiki/concepts/harness-engineering.md
+  - wiki/concepts/task-board-coordination.md
+  - wiki/concepts/advisor-on-demand-consultation.md
+  - wiki/topics/multi-agent-collaboration-architecture.md
   - wiki/entities/deepseek-harness.md
 ---
 # Super-agent
@@ -81,11 +85,13 @@ Super-agent 是打破 Agent 与单次手动会话绑定的 Agent 形态及其系
 
 - **Super-agent vs 单 Session Agent**：后者以单一 Session 为基本单位，前者跨会话保持上下文、并发执行
 - **Super-agent vs Agent Team**：Agent Team 用于单任务内步骤拆解与角色协作，Team Lead 深入任务细节；Super-agent 的 Router 层只处理任务间高层关联与分派，不介入单任务内部拆解
+- **术语差异：「超级 Agent」同名不同义**（非矛盾）：本页为褒义——DeepSeek 提出的跨会话连续、并发推进多任务的 Agent 形态；得物技术信源中为贬义——Master Agent 任务变复杂后膨胀成既要理解业务又要维护调度器/状态机/异常处理的臃肿中心（信源 §3.1）。检索"超级 Agent"时需按语境区分
 
 ## Evolution（演进）
 
 - 2026-11-02 — 新建，信源为 DeepSeek Harness 团队架构探索文（微信公众号，作者 Yujia Qiao）。
 - 2026-11-02 — 新增「架构师」公众号原型拆解信源（第 2 信源）：补上 Ticket 持久化模型（[[ticket-task-persistence]]）、Engine 事务先行 + SQLite Store + Effects/Outbox 工程细节、WorkerSlots 人跟进优先、observe/auto 接单三路径；实验再解读——基线中性提示下模型一次都没调 Subagent（改提示后才委派），去直通 Router 决定数 +30%、缓存 token +37%（开直通省约 27%），完成时间不变因 Router 未到吞吐瓶颈、省在推理开销。
+- 2026-11-05 — 新增得物技术信源（第 3 信源）：记录「超级 Agent」术语差异（该信源中为贬义的臃肿中心，与本页褒义用法不同，见 Distinctions）；其三种协作架构（Master Agent／任务看板／Advisor）与本页 Router/Worker 双层架构构成同一控制权问题的上下游形态，新建 [[multi-agent-collaboration-architecture]] 主题页与 [[task-board-coordination]]、[[advisor-on-demand-consultation]] 概念页并交叉链接。
 
 ## Open Questions（开放问题）
 
@@ -98,10 +104,13 @@ Super-agent 是打破 Agent 与单次手动会话绑定的 Agent 形态及其系
 
 - Source: `raw/sources/ai/2026-11-02-superagent-design.md`
 - Source: `raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md`（原型拆解：Ticket/Engine/WorkerSlots/observe-auto/实验再解读）
+- Source: `raw/sources/ai/2026-11-05-multi-agent-control-shift.md`（「超级 Agent」术语差异 + 三种协作架构的上下游形态）
 
 ## Related Knowledge（相关知识）
 
 - [[superagent-design|Super-agent 设计探索（信源页）]]
 - [[weixin-superagent-architecture-teardown|架构拆解：DeepSeek 刚发布的 Super-agent（信源页）]]
+- [[2026-11-05-weixin-multi-agent-control-shift|多 Agent 架构的三次反转（信源页）]]
+- [[multi-agent-collaboration-architecture|多 Agent 协作架构与控制权下沉（主题页）]]
 - [[ticket-task-persistence|Ticket 任务持久化模型]]
 - [[deepseek-harness|DeepSeek Harness]]

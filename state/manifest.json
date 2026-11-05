@@ -4667,6 +4667,23 @@
       ],
       "source_url": "https://weibo.com/2194035935/5361450285793760",
       "asset_ref": "Assets/2026-11/weibo-cs-systems-design.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-05-multi-agent-control-shift.md",
+      "sha256": "3672b6586409af6a101176372ef1c31a20079fd75edbc3975546480872f805c5",
+      "registered_at": "2026-11-05",
+      "inbox_ref": "Archive/2026-11-05-multi-agent-control-shift.md",
+      "pages": [
+        "wiki/sources/2026-11-05-weixin-multi-agent-control-shift.md",
+        "wiki/concepts/task-board-coordination.md",
+        "wiki/concepts/advisor-on-demand-consultation.md",
+        "wiki/topics/multi-agent-collaboration-architecture.md",
+        "wiki/concepts/router-worker-architecture.md",
+        "wiki/concepts/super-agent.md",
+        "wiki/concepts/context-management.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/C9A9ZEw_EPPaFyxhKjD05A",
+      "asset_ref": "Assets/2026-11/multi-agent-control-shift.md"
     }
   ]
 }

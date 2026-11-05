@@ -374,6 +374,7 @@
 - [[2026-11-04-pgvector-rag-retrieval-engineering|别急着换向量库：PostgreSQL + pgvector 的生产级 RAG 检索工程]]（2026-11-04，AI/RAG/数据库，五条正确性契约+模型空间注册+版本化+ACL+RLS+检索路由分叉+混合检索RRF+发布CAS+删除两步走+评测矩阵，微信公众号单信源，置信度中）
 - [[two-good-sites-for-devs|给程序员推荐两个良心网站（知乎想法：systemdesign.io + AI 系统学习教程）]]（2026-11-05，AI/学习资源/系统设计，知乎想法单信源，推荐 systemdesign.io + aiengineeringfromscratch 两个网站，置信度中）
 - [[cs-systems-design-weibo-recommendation|微博推荐：计算机系统知识交互式学习站 cs-systems-design]]（2026-11-05，架构/学习资源/微博，推荐 kejun.github.io/cs-systems-design 交互式学习站+5 张学习路线图，作者自述「重学」定位无基础介绍、不适合初学者，微博单信源，置信度中）
+- [[2026-11-05-weixin-multi-agent-control-shift|多 Agent 架构的三次反转：从中心调度到自驱协作]]（2026-11-05，AI/多 Agent/架构，四个组织问题=控制权归属；上下文边界+模型边界；Master Agent/任务看板/Advisor 三种架构=控制权下沉路径；中间件巡检三模式混用案例，得物技术公众号单信源，置信度中）
 
 ## concept（概念）
 
@@ -593,6 +594,8 @@
 - [[rust-traits|Rust trait]]（trait vs interface：无字段无继承；trait bound/静态分派 vs dyn Trait/关联类型/孤儿规则，Java 工程师 Rust 指南第 14 章，单信源，置信度高）
 - [[rust-error-handling|Rust 错误处理（Result/Option）]]（Option/Result 把失败建模为值；? 传播/自定义错误枚举/unwrap 纪律/panic 定位，Java 工程师 Rust 指南第 11/15/24 章，单信源，置信度高）
 - [[rust-concurrency|Rust 并发模型（Send/Sync/async）]]（Send/Sync 编译期排除数据竞争；线程/channel/Arc<Mutex>；async 惰性 Future/取消安全/Pin 初步，Java 工程师 Rust 指南第 16/20/21 章，单信源，置信度高）
+- [[task-board-coordination|任务看板（共享状态协作）]]（2026-11-05，AI/多 Agent/架构，调度=共享状态暴露机会；任务状态机 PENDING→CLAIMED→RUNNING→SUCCEEDED/FAILED/RETRYING；锁/租约领取竞争、租约到期接管自愈、幂等提交只补做未完成批次、产出经稳定引用传递，与 Ticket 持久化模型互证，单信源置信度中）
+- [[advisor-on-demand-consultation|Advisor（按需咨询）]]（2026-11-05，AI/多 Agent/架构，执行 Agent 自主推进、仅高风险判断时征求第二意见；方向与 Master Agent 相反；Advisor 不接管任务无执行权；咨询有成本+超时兜底输出基础结论，单信源置信度中）
 
 ## entity（实体）
 
@@ -638,6 +641,8 @@
 - [[system-design-core-components|系统设计核心组件]]（分布式系统 12 个核心组件清单，组件驱动；另收问题驱动六类框架见 [[accidental-cto-book]]，双信源）
 
 - [[java-to-rust-migration|Java 到 Rust 迁移]]（2026-11-05，Rust/Java/语言迁移，13 维对照+6 心智模型切换+语言特性映射+Spring 风格迁移示例+Java 开发者 18 陷阱+6 风格原则+5 阶段学习路线+16 项提交前清单，单信源置信度中）
+
+- [[multi-agent-collaboration-architecture|多 Agent 协作架构与控制权下沉]]（2026-11-05，AI/多 Agent/主题导航，三种协作架构（Master Agent/任务看板/Advisor）+控制权下沉框架+两个设计前提（上下文边界/模型边界）+巡检三模式混用案例+「超级 Agent」术语差异（贬义 vs [[super-agent]] 褒义），单信源置信度中）
 
 ## decision（决策）
 

@@ -9,7 +9,7 @@ created: 2026-11-05
 category: 技术
 tags: [AI, Agent]
 asset_ref: Assets/2026-11/multi-agent-control-shift.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 > 多 Agent 架构的核心不是"调用更多模型"，而是控制权放在哪里：Master Agent 集中调度、任务看板共享状态、Advisor 按需咨询，构成一条控制权逐步下沉的路径。
