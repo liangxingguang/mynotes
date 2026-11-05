@@ -372,6 +372,7 @@
 - [[2026-11-04-arraylist-vs-linkedlist|为什么 ArrayList 比 LinkedList 快？集合框架底层原理，一次讲清]]（2026-11-05，Java/JDK/集合，ArrayList 动态数组 vs LinkedList 双向链表复杂度与选型表+HashMap 四层考点+JDK 7/8 并发坑+ArrayDeque 替代，微信公众号单信源，置信度高）
 - [[2026-11-04-jvm-memory-model|JVM内存模型深度解析 —— 搞清楚堆和栈，告别OOM]]（2026-11-04，架构/Java/JVM，运行时数据区全解（PC唯一不OOM/VM栈栈帧四组件/堆分代/元空间）+经典内存分析题+JVM参数速查，微信公众号「从CRUD到架构师」单信源，置信度中）
 - [[2026-11-04-pgvector-rag-retrieval-engineering|别急着换向量库：PostgreSQL + pgvector 的生产级 RAG 检索工程]]（2026-11-04，AI/RAG/数据库，五条正确性契约+模型空间注册+版本化+ACL+RLS+检索路由分叉+混合检索RRF+发布CAS+删除两步走+评测矩阵，微信公众号单信源，置信度中）
+- [[two-good-sites-for-devs|给程序员推荐两个良心网站（知乎想法：systemdesign.io + AI 系统学习教程）]]（2026-11-05，AI/学习资源/系统设计，知乎想法单信源，推荐 systemdesign.io + aiengineeringfromscratch 两个网站，置信度中）
 
 ## concept（概念）
 
@@ -595,6 +596,7 @@
 ## entity（实体）
 
 - [[aibox|AiBox]]（货拉拉自建 AI Coding Harness/管控面：Rules/Skills/Commands/MCP 下发 + 网关四统一 + 三层度量，千人规模）
+- [[aiengineeringfromscratch|aiengineeringfromscratch.com]]（2026-11-05，AI/学习资源，免费开源 AI 系统学习教程网站，20 章 542 节课 + learning path，单信源未独立验证，置信度低）
 - [[agent-lightning|Agent Lightning]]（微软研究院开源 Agent RL 训练框架，约 3500 行，真实工具链交互训练）
 - [[archunit|ArchUnit]]（Java 架构约束即测试，TNG，当前 1.5.1）
 - [[argo-rollouts|Argo Rollouts]]（K8s 渐进式交付控制器：Rollout CRD + AnalysisTemplate 门禁，blueGreen/canary，单信源）
@@ -620,6 +622,7 @@
 - [[rocketmq|Apache RocketMQ]]（高性能分布式 MQ；事务消息+回查保发送、业务幂等保消费，运维+一致性+机制+存储+事务谱系+Netty 网络层六信源）
 - [[rongyun|融云]]（IM 云服务厂商；直播聊天室通知拉取+丢弃策略路线代表，双信源）
 - [[system-design-notes|system-design-notes]]（按 Alex Xu 两卷书体系整理的 28 章开源系统设计笔记，GitHub liquidslr）
+- [[systemdesign-io|systemdesign.io]]（2026-11-05，AI/系统设计/学习资源，收集 50+ 架构设计问题的网站，原用于面试准备、作者建议交给 Agent 做架构参考，单信源未独立验证，置信度低）
 - [[unyra|归一 Unyra]]（本地优先探索式学习 AI 桌面应用，知识 DAG + 超级导师沙箱改文档，仅 Windows 安装链）
 - [[spring-ai|Spring AI]]（Java 应用与模型间的中间层，屏蔽模型差异，Java 版 LangChain；七步能力栈+版本基线 1.0.9→2.0.2+MCP Server 暴露工具，双信源，置信度中）
 

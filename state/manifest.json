@@ -4642,6 +4642,19 @@
       ],
       "source_url": "https://www.zhihu.com/pin/2096915265510438786",
       "asset_ref": "Assets/2026-11/zhihu-pin-system-design-notes.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-05-two-good-sites-for-devs-zhihu-pin.md",
+      "sha256": "0ac61018053f7a60aee00410e85d74c1c854130561518076fdc7e41d502cc659",
+      "registered_at": "2026-11-05",
+      "inbox_ref": "Archive/2026-11-05-two-good-sites-for-devs-zhihu-pin.md",
+      "pages": [
+        "wiki/sources/two-good-sites-for-devs.md",
+        "wiki/entities/systemdesign-io.md",
+        "wiki/entities/aiengineeringfromscratch.md"
+      ],
+      "source_url": "https://www.zhihu.com/pin/2098721479923975004",
+      "asset_ref": "Assets/2026-11/zhihu-pin-two-good-sites-for-devs.md"
     }
   ]
 }

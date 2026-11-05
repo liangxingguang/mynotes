@@ -9,7 +9,7 @@ created: 2026-11-05
 category: 技术
 tags: [AI]
 asset_ref: Assets/2026-11/zhihu-pin-two-good-sites-for-devs.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 给程序员推荐两个良心网站（知乎想法）
