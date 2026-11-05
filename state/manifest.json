@@ -4630,6 +4630,18 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/YLTmBHYPhNR0lnCx9RhHLw",
       "asset_ref": "Assets/2026-11/weixin-YLTmBHYPhNR0lnCx9RhHLw.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-05-system-design-notes-zhihu-pin.md",
+      "sha256": "e15e9eec8c0c17f17f0fb5a035d05b6e6206a46504b1c3b2cfacef7304f40f07",
+      "registered_at": "2026-11-05",
+      "inbox_ref": "Archive/2026-11-05-system-design-notes-zhihu-pin.md",
+      "pages": [
+        "wiki/sources/system-design-notes-zhihu-pin.md",
+        "wiki/entities/system-design-notes.md"
+      ],
+      "source_url": "https://www.zhihu.com/pin/2096915265510438786",
+      "asset_ref": "Assets/2026-11/zhihu-pin-system-design-notes.md"
     }
   ]
 }

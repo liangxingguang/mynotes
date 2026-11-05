@@ -307,6 +307,7 @@
 - [[system-design-google-maps|系统设计面试（第二卷）第03章：谷歌地图]]（2026-10-24，系统设计/地理空间）
 - [[system-design-proximity-service|系统设计面试（第二卷）第01章：邻近服务]]（2026-10-24，系统设计/LBS）
 - [[system-design-notes-28-cases|知乎想法：system-design-notes——把系统设计面试浓缩成 28 个经典架构案例的开源笔记]]（2026-10-14，系统设计/学习资源）
+- [[system-design-notes-zhihu-pin|知乎想法（2026-10-23 编辑）：system-design-notes 开源笔记再推荐]]（2026-11-05，系统设计/学习资源，同作者 10-14 帖后再推荐+「不能完全替代原书」提醒，单信源三次，置信度中）
 - [[tcp-retransmission-visualized|可视化 TCP 重传：终于有人将 TCP 传输讲明白了]]（2026-10-16，网络/TCP）
 - [[tcp-connection-full-lifecycle|从SYN到FIN：一个TCP连接的完整过程是怎样的？]]（2026-10-31，网络/TCP/状态机排障，四大功能+握手挥手+RTO/快重传/拥塞控制+Wireshark 实战，单信源一手，置信度高）
 - [[unyra-local-first-ai-learning-app|归一 Unyra：本地优先的探索式学习 AI 桌面应用（Electron + React）]]（2026-10-14，AI/学习工具）

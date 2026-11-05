@@ -1,22 +1,22 @@
 {
-  "updated_at": "2026-11-05 07:59",
+  "updated_at": "2026-11-05 08:10",
   "notes": [
     {
-      "id": "2026-11-05-system-design-notes-zhihu-pin",
-      "title": "系统设计面试没思路？Alex Xu《System Design Interview》开源笔记",
-      "path": "Inbox/2026-11-05-system-design-notes-zhihu-pin.md",
+      "id": "2026-11-05-two-good-sites-for-devs-zhihu-pin",
+      "title": "给程序员推荐两个良心网站（知乎想法）",
+      "path": "Inbox/2026-11-05-two-good-sites-for-devs-zhihu-pin.md",
       "created": "2026-11-05",
       "category": "技术",
       "tags": [
-        "GitHub"
+        "AI"
       ],
-      "source": "知乎用户「格律诗」（mtoxhr）",
-      "source_url": "https://www.zhihu.com/pin/2096915265510438786",
+      "source": "知乎想法",
+      "source_url": "https://www.zhihu.com/pin/2098721479923975004",
       "source_type": "article",
       "platform": "知乎",
-      "summary": "知乎想法推荐开源仓库 liquidslr/system-design-notes：将 Alex Xu《System Design Interview》一、二卷整理成 28 章，涵盖从单机扩展到百万用户、限流设计、面试答题框架等主题，适合梳理知识结构、练习答题思路；仓库仍在持续完善中，不能完全替代原书。",
+      "summary": "推荐两个免费良心网站：① systemdesign.io 收集 50+ 常见软件系统架构设计问题与解答（网盘、分布式消息队列、AutoComplete 等），原为系统架构师面试准备，作者认为更适合作为给 Agent 做软件架构设计的参考；② aiengineeringfromscratch.com 系统学习 AI 的免费开源教程，20 章 542 节课，覆盖数学基础到模型训练再到 Agent 应用与多模态，并提供按需求挑选的 learning path。",
       "summary_status": "",
-      "asset_ref": "Assets/2026-11/zhihu-pin-system-design-notes.md",
+      "asset_ref": "Assets/2026-11/zhihu-pin-two-good-sites-for-devs.md",
       "wiki_status": "pending"
     },
     {
@@ -7116,6 +7116,24 @@
       "summary": "以多租户客服知识库为例的生产级 RAG 检索设计：五条正确性契约（租户隔离/授权有效/版本原子性/新鲜度/资源有界），模型空间注册、文档版本化+ACL、RLS 第二道防线、混合检索（向量+词法+RRF）、发布 CAS、缓存失效与物理清理、评测验收矩阵。核心主张：向量索引只产生候选，权限与版本的最终解释权在关系层；换专用向量库的决策也应由契约与证据驱动。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-YLTmBHYPhNR0lnCx9RhHLw.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-05-system-design-notes-zhihu-pin",
+      "title": "系统设计面试没思路？Alex Xu《System Design Interview》开源笔记",
+      "path": "Archive/2026-11-05-system-design-notes-zhihu-pin.md",
+      "created": "2026-11-05",
+      "category": "技术",
+      "tags": [
+        "GitHub"
+      ],
+      "source": "知乎用户「格律诗」（mtoxhr）",
+      "source_url": "https://www.zhihu.com/pin/2096915265510438786",
+      "source_type": "article",
+      "platform": "知乎",
+      "summary": "知乎想法推荐开源仓库 liquidslr/system-design-notes：将 Alex Xu《System Design Interview》一、二卷整理成 28 章，涵盖从单机扩展到百万用户、限流设计、面试答题框架等主题，适合梳理知识结构、练习答题思路；仓库仍在持续完善中，不能完全替代原书。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/zhihu-pin-system-design-notes.md",
       "wiki_status": "ingested"
     }
   ]

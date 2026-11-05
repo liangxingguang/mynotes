@@ -9,7 +9,7 @@ created: 2026-11-05
 category: 技术
 tags: [GitHub]
 asset_ref: Assets/2026-11/zhihu-pin-system-design-notes.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 系统设计面试没思路？Alex Xu《System Design Interview》开源笔记
