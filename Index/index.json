@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06 16:54",
+  "updated_at": "2026-11-06 16:57",
   "notes": [
     {
       "id": "2026-11-06-auth-authz-selection-part1",
@@ -53,6 +53,25 @@
       "summary": "权限专题下篇，聚焦工程落地：RBAC 标准五表结构、注解+AOP 校验、按钮级/接口级/菜单级双端配合、多租户三种隔离方案、PBAC 策略引擎与分场景选型，附源码分析、单测要点与最佳实践速查。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/permission-rbac-abac-part2.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-11-06-weknora-dept-knowledge-base",
+      "title": "我用腾讯开源的 WeKnora 搭部门知识库：检索很准，但它只有一半功能",
+      "path": "Inbox/2026-11-06-weknora-dept-knowledge-base.md",
+      "created": "2026-11-06",
+      "category": "技术",
+      "tags": [
+        "RAG",
+        "AI"
+      ],
+      "source": "微信公众号 · 硬件AI工坊（作者 hardvis）",
+      "source_url": "https://mp.weixin.qq.com/s/byg5LP34T5XL8LKe08CxOw",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "硬件工程师 hardvis 部门知识库实战实录：个人库（Obsidian+AI）不够用、RAG 框架太费劲，选中腾讯开源 WeKnora（3w+ star，微信对话平台技术沉淀），Docker 私有化部署 + fork 二开。跑了才发现：检索那半已经很好，缺的是知识维护那半——没有在线编辑，维护只能\"删了重传\"。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weKnora-dept-knowledge-base.md",
       "wiki_status": "pending"
     },
     {
