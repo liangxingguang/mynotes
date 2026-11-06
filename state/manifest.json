@@ -4698,6 +4698,20 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/7JmAOJUCiXOzyzAE7y7VJg",
       "asset_ref": "Assets/2026-11/httpclient-optimization-high-concurrency.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-06-auth-authz-selection-part1.md",
+      "sha256": "cd9e0c6f6e766a499b918b5a736f56cc52a8f139e8fb80625384d924cc3e7ae7",
+      "registered_at": "2026-11-06",
+      "inbox_ref": "Archive/2026-11-06-auth-authz-selection-part1.md",
+      "pages": [
+        "wiki/sources/auth-authz-selection-part1.md",
+        "wiki/concepts/authn-authz-framework.md",
+        "wiki/concepts/sso-oauth2-oidc.md",
+        "wiki/concepts/rbac-permission-system.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/gW1ZQfUaKDcXkT1D-z3etw",
+      "asset_ref": "Assets/2026-11/auth-authz-selection-part1.md"
     }
   ]
 }
