@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06 17:33",
+  "updated_at": "2026-11-06 17:41",
   "notes": [
     {
       "id": "2026-11-06-auth-authz-selection-part1",
@@ -17,7 +17,7 @@
       "summary": "选 Sa-Token 还是 Keycloak？两派吵一下午没结论。本文结论：这不是\"哪个框架更好\"，而是\"什么场景选什么方案\"。小 A 两次翻车（内部后台硬上 Keycloak = 过度设计；对外 SaaS 用私有协议 = 选型过浅）引出一套选型决策框架。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/auth-authz-selection-part1.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-11-06-nginx-rate-limiting-practice",
@@ -72,6 +72,25 @@
       "summary": "硬件工程师 hardvis 部门知识库实战实录：个人库（Obsidian+AI）不够用、RAG 框架太费劲，选中腾讯开源 WeKnora（3w+ star，微信对话平台技术沉淀），Docker 私有化部署 + fork 二开。跑了才发现：检索那半已经很好，缺的是知识维护那半——没有在线编辑，维护只能\"删了重传\"。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weKnora-dept-knowledge-base.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-11-06-xuqiufenxi-18-xingquanxian",
+      "title": "行权限：同一张表，不同单位看到不同的行",
+      "path": "Inbox/2026-11-06-xuqiufenxi-18-xingquanxian.md",
+      "created": "2026-11-06",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "赢在菲墨间（微信公众号）",
+      "source_url": "https://mp.weixin.qq.com/s/bnISBVZk1bAWKgZHauWESw",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "需求分析系列第 18 篇。集团统一交易明细表开放给各单位，华东分析师导出时看到全集团 1200 万行——问题不在表权限不够，而在授权粒度太粗：表权限只能回答\"能不能查这张表\"，回答不了\"能看哪些行\"。全文用一个真实场景讲清行权限：同一张表按查询者身份自动追加过滤条件。落地需要三件事——用户数据范围（从组织和岗位带出）、每行归属字段、匹配规则（查询时自动追加）。组织范围按层级继承。行权限区分于页面筛选的关键：系统强制、用户看不见也去不掉。两个常见误区：归属口径必须业务确认（商户归属 vs 交易发生地，两家子公司看到完全不同的行）、行权限必须放在所有出口（BI/导出/API/智能问数）共用的那一层。文末给上线前 5 项检查清单。",
+      "summary_status": "",
+      "asset_ref": "\"Assets/2026-11/weixin-bnISBVZk1bAWKgZHauWESw-xuqiufenxi-18.md\"",
       "wiki_status": "pending"
     },
     {

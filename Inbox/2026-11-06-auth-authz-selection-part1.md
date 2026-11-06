@@ -9,7 +9,9 @@ created: 2026-11-06
 category: 技术
 tags: [java]
 asset_ref: Assets/2026-11/auth-authz-selection-part1.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-11-06T09:34:33.263Z"
+ingest_claim_id: 19620-1793957673263-0
 ---
 
 # 认证与授权选型拆解（上篇）：五种候选矩阵——自研 Redis、Sa-Token、Spring Security、Keycloak、JWT
