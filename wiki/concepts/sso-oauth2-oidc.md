@@ -13,7 +13,9 @@ tags:
   - spring
 sources:
   - raw/sources/enterprise/2026-10-28-spring-security-oauth2-sso-demo.md
+  - raw/sources/architecture/2026-11-06-auth-authz-selection-part1.md
 related:
+  - wiki/concepts/authn-authz-selection-framework.md
   - wiki/sources/spring-security-oauth2-sso-demo.md
 ---
 # 单点登录 SSO（OAuth2 Authorization Code + OIDC）
@@ -65,6 +67,7 @@ related:
 ## Evolution（演进）
 
 - 2026-10-28 原始方案：Spring Boot 3.2 + Spring Authorization Server 三应用 SSO Demo；认证服务器两条安全链+OIDC Discovery+客户端注册，客户端一行 `issuer-uri` 自动配置。完整可运行源码在 Gitee。
+- 2026-11-06：新增第 2 信源《认证与授权选型拆解（上篇）》（[[authn-authz-selection-framework]]）印证"生产优先 Keycloak"：该信源以作者两次翻车为据——单后台硬上 Keycloak=过度设计（内部无 SSO/联邦需求时能力 90% 用不上），对外 SaaS 用私有协议=选型过浅（半年后对接 AD 域/开放 API/多租户 SSO 全部推倒重来）；进一步确认本框架适用前提：Keycloak 的价值在多系统 SSO+标准协议+用户联邦，场景不匹配时上它就是负资产。另其五方案矩阵印证本页的「SSO 本质=共享 Session」与 OIDC 标准协议实践。
 
 ## Open Questions（开放问题）
 

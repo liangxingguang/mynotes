@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06 17:48",
+  "updated_at": "2026-11-06 17:54",
   "notes": [
     {
       "id": "2026-11-06-auth-authz-selection-part1",
@@ -72,6 +72,25 @@
       "summary": "权限专题下篇，聚焦工程落地：RBAC 标准五表结构、注解+AOP 校验、按钮级/接口级/菜单级双端配合、多租户三种隔离方案、PBAC 策略引擎与分场景选型，附源码分析、单测要点与最佳实践速查。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/permission-rbac-abac-part2.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-11-06-pi-loop-engineering",
+      "title": "从 Pi 窥见 Loop Engineering 的递归美学",
+      "path": "Inbox/2026-11-06-pi-loop-engineering.md",
+      "created": "2026-11-06",
+      "category": "技术",
+      "tags": [
+        "Agent",
+        "AI"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2061271933296154175",
+      "source_type": "web",
+      "platform": "知乎",
+      "summary": "作者工作用特斯拉 Eino（Graph 框架，服务端批量部署成本低），对 Agent 模式（Claude Code、Manus、Pi）与 Graph 模式的深层差异存疑，遂把 OpenClaw 背后的引擎 Pi 源码 clone 通读，结论是\"递归美学\"——整个引擎只有一种原语：循环，复杂行为都是循环套循环长出来的。Pi 架构四层（pi-ai / pi-agent-core / pi-coding-agent / TUI-JSON-RPC），核心 agent-loop 数百行，脏活（持久化、压缩、扩展、重试）全挡在 AgentSession 层。事件流 + run/turn 两层循环 + steering/follow-up 两个队列构成高层交互模型。对比结论：Graph 把控制流写进图结构，Agent 把控制流交给模型、确定性做进运行时。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/zhihu-2061271933296154175.md",
       "wiki_status": "pending"
     },
     {

@@ -15,11 +15,13 @@ sources:
   - raw/sources/architecture/2026-11-03-weixin-bend-complex-system-breakdown-20.md
   - raw/sources/products/2026-11-03-weixin-bend-permission-design-22.md
   - raw/sources/products/2026-11-03-weixin-bend-saas-multitenant-05.md
+  - raw/sources/architecture/2026-11-06-auth-authz-selection-part1.md
 related:
   - wiki/concepts/agent-permission-model.md
   - wiki/concepts/complex-system-breakdown.md
   - wiki/concepts/permission-refactoring.md
   - wiki/concepts/saas-multi-tenancy.md
+  - wiki/concepts/authn-authz-selection-framework.md
   - wiki/sources/bend-rbac-permission-system-design.md
   - wiki/sources/bend-permission-design-22.md
   - wiki/sources/bend-saas-multitenant-05.md
