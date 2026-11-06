@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06 22:38",
+  "updated_at": "2026-11-06 22:42",
   "notes": [
     {
       "id": "2026-11-06-jvm-memory-overview",
@@ -17,6 +17,25 @@
       "summary": "讲清 JVM 六大内存区域的职责（堆/栈/方法区/元空间/程序计数器/直接内存），为什么按生命周期与访问方式分区，并给出 OOM 报错对号入座表与默认配置查看命令。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/jvm-memory-overview.md",
+      "wiki_status": "ingesting"
+    },
+    {
+      "id": "2026-11-07-agent-memory-system-design",
+      "title": "企业级 Agent 记忆系统设计拆解",
+      "path": "Inbox/2026-11-07-agent-memory-system-design.md",
+      "created": "2026-11-07",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/TMnVMTMm0aKH8eWb9nxipQ",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "从零拆解 Agent 记忆系统：区分上下文/聊天记录/记忆三个概念，按七个模块、16 个步骤讲透检索链路与写入流程，核心是反馈闭环与记忆生命周期管理，并给出六阶段工程落地路线与五个常见坑。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/agent-memory-system-design.md",
       "wiki_status": "pending"
     },
     {

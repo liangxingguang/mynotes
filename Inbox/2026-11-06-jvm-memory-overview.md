@@ -9,7 +9,9 @@ created: 2026-11-06
 category: 技术
 tags: [java]
 asset_ref: Assets/2026-11/jvm-memory-overview.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-11-06T14:39:46.894Z"
+ingest_claim_id: 26084-1793975986894-0
 ---
 
 # JVM 内存全景图
