@@ -9,7 +9,7 @@ created: 2026-11-06
 category: 技术
 tags: [nginx]
 asset_ref: Assets/2026-11/nginx-rate-limiting-practice.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 接口被刷爆？Nginx 限流四步实战

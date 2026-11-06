@@ -9,7 +9,7 @@ created: 2026-11-06
 category: 技术
 tags: [java]
 asset_ref: Assets/2026-11/permission-rbac-abac-part2.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 权限模型与 RBAC-ABAC 全解析（下篇）：RBAC 工程实现、多租户隔离与场景选型

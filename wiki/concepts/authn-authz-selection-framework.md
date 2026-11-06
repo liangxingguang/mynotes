@@ -14,12 +14,14 @@ tags:
   - selection
 sources:
   - raw/sources/architecture/2026-11-06-auth-authz-selection-part1.md
+  - raw/sources/architecture/2026-11-06-permission-rbac-abac-engineering.md
 related:
   - wiki/concepts/sso-oauth2-oidc.md
   - wiki/concepts/rbac-permission-system.md
   - wiki/concepts/permission-refactoring.md
   - wiki/concepts/agent-permission-model.md
   - wiki/concepts/architecture-tradeoff-methodology.md
+  - wiki/concepts/pbac-policy-engine.md
   - wiki/sources/auth-authz-selection-part1.md
 ---
 
@@ -81,7 +83,7 @@ related:
 
 ## Evolution（演进）
 
-- 2026-11-06：信源新建概念页。来源为《认证与授权选型拆解（上篇）》（公众号认证授权选型系列）。五维模型、L1-L5 分层、门禁类比、场景清单与反模式均由该序引两例（过度设计 + 选型过浅）实证推导。系列下篇（权限模型与 RBAC-ABAC 工程篇）为授权层深水区，尚未采集——届时可深化授权层选型部分。
+- 2026-11-06：信源新建概念页。来源为《认证与授权选型拆解（上篇）》（公众号认证授权选型系列）。五维模型、L1-L5 分层、门禁类比、场景清单与反模式均由该序引两例（过度设计 + 选型过浅）实证推导。系列下篇《权限模型与 RBAC-ABAC 全解析（下篇）》已于 2026-11-06 采集并编译为工程落地篇（本文第二信源）：五档场景选型（§13：简单后台 RBAC0 / 中型企业 RBAC3+数据级 ABAC / SaaS 租户隔离 RBAC3+tenant_id / 复杂合规 PBAC / 开放平台 RBAC+OAuth2 scope+ABAC）印证并细化本文「授权层统一 RBAC/ABAC」结论；§18.1 模型选型优先级（默认 RBAC0、角色继承 RBAC1、财务/审批 RBAC2、数据级 ABAC、复杂合规才上 PBAC）与本文「过度设计」反模式在边界上互证——本文给「简单需求勿上重方案」，下篇给「何时才够上策略引擎」；策略引擎独立成 [[pbac-policy-engine]]。
 
 ## Open Questions（开放问题）
 
@@ -93,10 +95,12 @@ related:
 ## Evidence（证据）
 
 - Source: `raw/sources/architecture/2026-11-06-auth-authz-selection-part1.md`（微信公众号原文，采集稿 390 行全文逐字收录；含五方案评分矩阵、L1-L5 分层、门禁类比、10 条场景清单、四种反模式；作者小 A 两次翻车案例为全文核心经验来源）
+- Source: `raw/sources/architecture/2026-11-06-permission-rbac-abac-engineering.md`（系列第二篇：五档场景选型（§13）、模型选型优先级（§18.1）、PBAC 何时上判断（§12.4）、RBAC/ABAC 注解承载边界（§9/§10）——授权层深水区，与上篇互证）
 
 ## Related Knowledge（相关知识）
 
 - [[auth-authz-selection-part1|认证与授权选型拆解（上篇）]]（信源页）
+- [[pbac-policy-engine|PBAC 策略引擎（下篇授权层深水区，独立概念页）]]
 - [[sso-oauth2-oidc|单点登录 SSO]]
 - [[rbac-permission-system|RBAC 权限系统]]
 - [[permission-refactoring|B端权限重构方法论]]

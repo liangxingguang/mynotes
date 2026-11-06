@@ -4,7 +4,7 @@ type: concept
 title: 生产级 Nginx 网关设计
 status: active
 created: 2026-11-05
-updated: 2026-11-05
+updated: 2026-11-06
 confidence: medium
 tags:
   - concept
@@ -13,9 +13,11 @@ tags:
   - infrastructure
 sources:
   - raw/sources/architecture/2026-11-04-nginx-gateway-production.md
+  - raw/sources/architecture/2026-11-06-nginx-rate-limiting-practice.md
 related:
   - wiki/sources/nginx-gateway-production.md
   - wiki/sources/nginx-websocket-load-balancing.md
+  - wiki/concepts/nginx-rate-limiting.md
   - wiki/concepts/harness-engineering.md
 ---
 # 生产级 Nginx 网关设计
@@ -35,7 +37,7 @@ Nginx 的默认配置追求「任何场景都能跑起来」，不是「任何�
 3. **变更流程 > 配置本身**：配置进 Git、CI 跑 `nginx -t`、双机灰度 reload、带时间戳备份、回滚脚本演练过——五件事做到，即使配置写错，影响也能控制在单台、几分钟内。
 4. **可观测做在前面**：结构化日志（`$request_time`/`$upstream_response_time`/`$upstream_addr`/`$upstream_status`）+ stub_status 四数字构成排查最小信息集。没有这些，出故障只能猜。
 5. **超时按接口分级**：不搞全局一套超时。普通 API 10s、报表 180s、上传 300s、SSE 3600s——超时需求由接口类型决定。
-6. **限流先观测再拦截**：`limit_req_dry_run on` 观察 24h 的 excess 再定 burst，避免误伤正常用户或拦不住攻击。
+6. **限流先观测再拦截**：`limit_req_dry_run on` 观察 24h 的 excess 再定 burst，避免误伤正常用户或拦不住攻击。落地链路四步（第二信源）：看 access.log 辨攻击特征 → limit_req 限平均速率 → limit_conn 控并发+白名单 → 压测验证灰度收紧；细节见 [[nginx-rate-limiting]]。
 
 ## Structure（结构）
 
@@ -108,11 +110,13 @@ master 收 HUP → 校验配置 → 启新 worker → 旧 worker 优雅退出。
 
 ## Evidence（证据）
 
-- Source: `raw/sources/architecture/2026-11-04-nginx-gateway-production.md`
+- Source: `raw/sources/architecture/2026-11-04-nginx-gateway-production.md`（机制优先于配置、变更流程、版本要点）
+- Source: `raw/sources/architecture/2026-11-06-nginx-rate-limiting-practice.md`（限流四步链路互证）
 
 ## Related Knowledge（相关知识）
 
 - [[nginx-gateway-production|从部署到上线：搭建生产可用的 Nginx 网关（信源页）]]
+- [[nginx-rate-limiting|Nginx 限流（limit_req / limit_conn）]]
 - [[nginx-websocket-load-balancing|Nginx WebSocket 负载均衡（信源页）]]
 - [[nginx-websocket-million-connections|Nginx WebSocket 百万连接（信源页）]]
 - [[harness-engineering|Harness 工程能力（概念页）]]

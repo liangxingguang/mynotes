@@ -9,7 +9,7 @@ created: 2026-11-06
 category: 技术
 tags: [java, 工程实践]
 asset_ref: "Assets/2026-11/weixin-lJeAoFSP1-qryUweBnjkeQ-jvm-parameters.md"
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # JVM 参数：一份按版本对账的手册

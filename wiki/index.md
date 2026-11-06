@@ -601,6 +601,10 @@
 - [[task-board-coordination|任务看板（共享状态协作）]]（2026-11-05，AI/多 Agent/架构，调度=共享状态暴露机会；任务状态机 PENDING→CLAIMED→RUNNING→SUCCEEDED/FAILED/RETRYING；锁/租约领取竞争、租约到期接管自愈、幂等提交只补做未完成批次、产出经稳定引用传递，与 Ticket 持久化模型互证，单信源置信度中）
 - [[advisor-on-demand-consultation|Advisor（按需咨询）]]（2026-11-05，AI/多 Agent/架构，执行 Agent 自主推进、仅高风险判断时征求第二意见；方向与 Master Agent 相反；Advisor 不接管任务无执行权；咨询有成本+超时兜底输出基础结论，单信源置信度中）
 
+- [[jvm-parameter-versioning|JVM 参数体系与版本对账]]（2026-11-06，Java/JVM/工程实践，-D/-X/-XX 三写法与四类 -XX 档、JDK 8/17/21/25 对账矩阵「参数是版本的函数、不是知识」、容器感知世界线差异、升级四坑、JDK 21+ 与 25 新参数（-XX:+UseCompactObjectHeaders/AOT 缓存）、紧凑对象头 JNI/JOL 风险，公众号单信源置信度中，与 [[zgc]]/[[gc-log-tuning-practice]] 互证）
+- [[nginx-rate-limiting|Nginx 限流（limit_req / limit_conn）]]（2026-11-06，Nginx/网关/流量控制，四步落地链路「日志识别特征→limit_req 按平均速率→limit_conn 控并发+geo+map 白名单→压测灰度收紧」、漏桶三参数语义 rate/burst/nodelay、429 与默认 503、$binary_remote_addr 二进制 key、多层代理 realip 陷阱、先松后紧观测期，公众号单信源置信度中，[[nginx-gateway-production]] 为第二信源但限流细节仅本文）
+- [[pbac-policy-engine|PBAC 策略引擎]]（2026-11-06，安全/授权/架构选型，四大痛点驱动（规则重/散落/易变/多系统不统一）、四步决策流（主/客/动/环境→引擎→允许拒绝）、OPA Rego 三示例、ACL→RBAC→ABAC→PBAC 五模型谱系、何时上策略引擎判断、Java 接入点为 AuthorizationManager/StpInterface、复杂合规与开放平台场景，公众号单信源置信度中，与 [[rbac-permission-system]]「注解承载上限」互证）
+
 ## entity（实体）
 
 - [[aibox|AiBox]]（货拉拉自建 AI Coding Harness/管控面：Rules/Skills/Commands/MCP 下发 + 网关四统一 + 三层度量，千人规模）

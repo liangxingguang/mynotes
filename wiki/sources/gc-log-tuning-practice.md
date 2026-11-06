@@ -4,7 +4,7 @@ type: source
 title: GC 日志分析与调优实战
 status: active
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-11-06
 confidence: high
 tags:
   - source
@@ -13,8 +13,10 @@ tags:
   - gc
 sources:
   - raw/sources/architecture/2026-10-21-gc-log-tuning-practice.md
+  - raw/sources/architecture/2026-11-06-jvm-parameters-by-version.md
 related:
   - wiki/concepts/evidence-first-jvm-tuning.md
+  - wiki/concepts/jvm-parameter-versioning.md
   - wiki/sources/jvm-tuning-core-approach.md
 ---
 # GC 日志分析与调优实战
@@ -26,6 +28,7 @@ related:
 ## Key Facts（关键事实）
 
 - 开日志（JDK9+ 统一 -Xlog）：`-Xlog:gc*:file=gc-%t.log:time,uptime,level,tags:filecount=10,filesize=100M`；JDK8 用老式 PrintGCDetails 系列，目的一样。
+- **版本切换的隐蔽坑**（第二信源）：JDK 17 上 `-XX:+PrintGCDetails` 只给「已废弃，将使用 `-Xlog:gc*` 代替」的警告、进程照跑，但 `-XX:+PrintGCDateStamps` 直接 unrecognized、JVM 拒绝启动。"迁移迁了一半"的结果是启动成功、日志目录空着、以为在采实际一行都没有，到线上出事才发现。`-Xlog` 语法三段式：标签（打什么）/目标（打到哪）/装饰器（每行加什么），默认输出只有 JVM 启动后秒数、没有日期时间，所以 `time` 装饰器基本必加。另：`jstat -gcutil` 在 17 上多了 `CGC/CGCT` 两列，按列号取数的老监控脚本从这版起取错。
 - 读日志：Minor GC 看 Eden 清空、Survivors 自适应、Heap 回收量；`Times: real` 才是真实停顿，user+sys>real 是多线程并行累加。Full GC 重点看 real 与触发原因（Allocation Failure/Metadata GC Threshold/Ergonomics/System.gc()），频繁 Full GC 是红色警报。
 - 三项量化指标：吞吐量=(运行时间−GC时间)/运行时间（后台服务经验值 >95%~99%）；平均/最大停顿（SLA 卡最大停顿）；停顿频率。`jstat -gcutil pid 1s` 实时看，`FGCT` 在涨立刻警惕。
 - 四步闭环：定目标（吞吐 vs 延迟，调法相反）→ 看现状（开日志+压测留基线）→ 定假设（最可能改善的那一个参数）→ 压测验证（**改一处量一次**，有效固化、无效回滚）——"调优是科学实验不是玄学"。
@@ -66,4 +69,5 @@ related:
 
 ## Source（信源）
 
-- `raw/sources/architecture/2026-10-21-gc-log-tuning-practice.md`
+- `raw/sources/architecture/2026-10-21-gc-log-tuning-practice.md`（方法论与读法）
+- `raw/sources/architecture/2026-11-06-jvm-parameters-by-version.md`（JDK 9 -Xlog 代际切换、「迁移一半」坑、jstat -gcutil 列变化）

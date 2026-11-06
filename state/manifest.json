@@ -4712,6 +4712,46 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/gW1ZQfUaKDcXkT1D-z3etw",
       "asset_ref": "Assets/2026-11/auth-authz-selection-part1.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-06-jvm-parameters-by-version.md",
+      "sha256": "4d7c4a31fbd4121de7834ba7851972e72d96dfe17addde392953f46734f388ae",
+      "registered_at": "2026-11-06",
+      "inbox_ref": "Archive/2026-11-06-jvm-parameters-by-version.md",
+      "pages": [
+        "wiki/concepts/jvm-parameter-versioning.md",
+        "wiki/concepts/zgc.md",
+        "wiki/sources/gc-log-tuning-practice.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/lJeAoFSP1-qryUweBnjkeQ",
+      "asset_ref": "Assets/2026-11/weixin-lJeAoFSP1-qryUweBnjkeQ-jvm-parameters.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-06-nginx-rate-limiting-practice.md",
+      "sha256": "73bb7a19786eed337260ddafa351746e45d59330c7a059816549758f68767fa6",
+      "registered_at": "2026-11-06",
+      "inbox_ref": "Archive/2026-11-06-nginx-rate-limiting-practice.md",
+      "pages": [
+        "wiki/concepts/nginx-rate-limiting.md",
+        "wiki/concepts/nginx-gateway-production-design.md",
+        "wiki/sources/nginx-gateway-production.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/DF3wi-A4cML097iqfC1suQ",
+      "asset_ref": "Assets/2026-11/nginx-rate-limiting-practice.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-06-permission-rbac-abac-engineering.md",
+      "sha256": "c1bda58e2ea38ec59ebb43ff52796e84c5c3e9f6f72fc3772e0f580c68612b7e",
+      "registered_at": "2026-11-06",
+      "inbox_ref": "Archive/2026-11-06-permission-rbac-abac-part2.md",
+      "pages": [
+        "wiki/concepts/pbac-policy-engine.md",
+        "wiki/concepts/rbac-permission-system.md",
+        "wiki/concepts/saas-multi-tenancy.md",
+        "wiki/concepts/authn-authz-selection-framework.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/tzqNby5ujNjfBtIvN1DgZQ",
+      "asset_ref": "Assets/2026-11/permission-rbac-abac-engineering-part2.md"
     }
   ]
 }

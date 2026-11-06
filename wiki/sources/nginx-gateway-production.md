@@ -4,7 +4,7 @@ type: source
 title: 从部署到上线：搭建生产可用的 Nginx 网关（微信公众号）
 status: active
 created: 2026-11-05
-updated: 2026-11-05
+updated: 2026-11-06
 confidence: high
 tags:
   - source
@@ -13,9 +13,11 @@ tags:
   - infrastructure
 sources:
   - raw/sources/architecture/2026-11-04-nginx-gateway-production.md
+  - raw/sources/architecture/2026-11-06-nginx-rate-limiting-practice.md
 related:
   - wiki/sources/nginx-websocket-load-balancing.md
   - wiki/sources/nginx-websocket-million-connections.md
+  - wiki/concepts/nginx-rate-limiting.md
 ---
 # 从部署到上线：搭建生产可用的 Nginx 网关（微信公众号）
 
@@ -34,7 +36,7 @@ related:
 - **upstream zone 必开**：不开则每个 worker 各自计数失败，`max_fails=3` 实际要失败 3×worker 数才摘除节点。开源版只有被动健康检查，无主动探测。
 - **TLS**：TLSv1.2/1.3；`ssl_session_cache shared:SSL:50m`（1MB≈4000 会话，50m≈20 万）；OCSP stapling 需配 resolver 与 `ssl_trusted_certificate`；HSTS 必须分步上线（300s→86400→一年），`preload` 不可逆。双证书（RSA+ECDSA）Nginx 自动按客户端套件选择。
 - **HTTP/2**：1.25.1 起 `listen ... http2` 废弃，改用独立 `http2 on` 指令。HTTP/3 需 UDP 443 放通 + L4 LB 转发 UDP + `Alt-Svc` 头 `always`。
-- **限流先观测再拦截**：`limit_req_dry_run on` 观察 24h 的 excess 再定 burst；分层限流（IP + 域名 + 登录接口 5r/m）；429 响应带 `Retry-After`；后端整体不可用时 `error_page` 返回静态兜底。
+- **限流先观测再拦截**：`limit_req_dry_run on` 观察 24h 的 excess 再定 burst；分层限流（IP + 域名 + 登录接口 5r/m）；429 响应带 `Retry-After`；后端整体不可用时 `error_page` 返回静态兜底。（第二信源印证：限流落地四步——日志辨特征 → limit_req → limit_conn+白名单 → 压测灰度；细节见 [[nginx-rate-limiting]]）
 - **可观测最小信息集**：结构化日志的 `$request_time`、`$upstream_response_time`、`$upstream_addr`、`$upstream_status` + stub_status 四数字（active/accepts/handled/requests）。`requests/handled` 接近 1 说明 keepalive 没生效。stub_status 无状态码维度，5xx 告警要靠日志侧。
 - **变更流程五件事**：配置进 Git、CI 跑 `nginx -t`（容器内跑以暴露路径问题）、双机灰度 reload（先一台观察 10 分钟）、带时间戳备份目录、回滚脚本演练过且 1 分钟内可回。
 - **故障排查决策表**：502 分四种文案（111 拒绝/110 超时/prematurely closed/too big header）；504 看 `$upstream_response_time` 是否恰好等于超时阈值；499 突增是用户等不及（修后端不修 Nginx）；413 注意前置 LB 也有 body 限制。
@@ -60,6 +62,7 @@ related:
 ## Concepts Introduced（引入的概念）
 
 - [[nginx-gateway-production-design]]
+- [[nginx-rate-limiting]]（第二信源互证）
 
 ## Entities Mentioned（提及的实体）
 
@@ -79,8 +82,10 @@ related:
 
 - [[nginx-websocket-load-balancing|Nginx WebSocket 负载均衡（信源页）]]
 - [[nginx-websocket-million-connections|Nginx WebSocket 百万连接（信源页）]]
+- [[nginx-rate-limiting|Nginx 限流（概念页）]]
 - [[harness-engineering|Harness 工程能力（概念页）]]
 
 ## Source（信源）
 
-- `raw/sources/architecture/2026-11-04-nginx-gateway-production.md`
+- `raw/sources/architecture/2026-11-04-nginx-gateway-production.md`（原文：从部署到上线：搭建生产可用的 Nginx 网关）
+- `raw/sources/architecture/2026-11-06-nginx-rate-limiting-practice.md`（第二信源：接口被刷爆？Nginx 限流四步实战，限流链路互证）

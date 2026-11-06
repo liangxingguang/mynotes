@@ -4,7 +4,7 @@ type: concept
 title: ZGC（低延迟垃圾收集器）
 status: active
 created: 2026-10-27
-updated: 2026-10-27
+updated: 2026-11-06
 confidence: high
 tags:
   - concept
@@ -13,16 +13,18 @@ tags:
   - gc
 sources:
   - raw/sources/architecture/2026-10-27-jvm-gc-interview-guide.md
+  - raw/sources/architecture/2026-11-06-jvm-parameters-by-version.md
 related:
   - wiki/concepts/g1-gc.md
   - wiki/concepts/evidence-first-jvm-tuning.md
+  - wiki/concepts/jvm-parameter-versioning.md
   - wiki/topics/jvm-gc.md
 ---
 # ZGC（低延迟垃圾收集器）
 
 ## Definition（定义）
 
-ZGC 是 JDK 11 引入、JDK 15 转正的低延迟垃圾收集器，基于 Region、（该信源所述）不分代，目标是停顿时间 <10ms 且与堆大小无关，支持 8GB 至 TB 级堆。核心技术三件套：染色指针（Colored Pointers）、读屏障自愈、完全并发整理。
+ZGC 是 JDK 11 引入、JDK 15 转正的低延迟垃圾收集器，基于 Region，目标是停顿时间 <10ms 且与堆大小无关，支持 8GB 至 TB 级堆。核心技术三件套：染色指针（Colored Pointers）、读屏障自愈、完全并发整理。分代状态随版本变化：JDK 21 分代需显式开启，JDK 23 起分代为默认，JDK 24 起仅剩分代（见 Evolution）。
 
 ## Why It Matters（为什么重要）
 
@@ -55,6 +57,9 @@ ZGC 是 JDK 11 引入、JDK 15 转正的低延迟垃圾收集器，基于 Region
 ## Evolution（演进）
 
 - JDK 11 实验引入 → JDK 15 正式转正 → JDK 17+ 被推荐用于低延迟生产场景（该信源观点）。
+- **分代 ZGC 版本线**（第二信源印证并细化）：JDK 21 引入分代但需显式 `-XX:+ZGenerational`（此时 `-XX:+UseZGC` 给的是传统单代）→ JDK 23 分代成为默认（同时非分代模式废弃）→ JDK 24 移除非分代 ZGC → JDK 25 写 `-XX:-ZGenerational` 不再报错，只打一行 `Ignoring option ZGenerational; support was removed in 24.0` 然后照样用分代模式。含义：**同一行 `-XX:+UseZGC` 在 JDK 21 与 JDK 25 上跑的不是同一个 GC**；若曾在 21 上按单代 ZGC 调过堆和停顿，升 25 必须重新压测。
+- **分代 ZGC 可调参数（JDK 21+）**：`-XX:SoftMaxHeapSize`（在软上限附近保持，不急着扩到 `-Xmx`）、`-XX:ZUncommit`/`-XX:ZUncommitDelay`（控制空闲内存多久还给操作系统）。选型代价：堆几十 G、P99 硬指标时选分代 ZGC，代价是多烧 10%–15% CPU。
+- 另见 [[jvm-parameter-versioning]]：JDK 25 起紧凑对象头 `-XX:+UseCompactObjectHeaders` 与低延迟叠加时受限——x64 上 ZGC 对紧凑头的支持尚在完善，目前低延迟+紧凑头只能用 G1。
 
 ## Open Questions（开放问题）
 
@@ -63,7 +68,8 @@ ZGC 是 JDK 11 引入、JDK 15 转正的低延迟垃圾收集器，基于 Region
 
 ## Evidence（证据）
 
-- Source: `raw/sources/architecture/2026-10-27-jvm-gc-interview-guide.md`
+- Source: `raw/sources/architecture/2026-10-27-jvm-gc-interview-guide.md`（定义与三件套，JDK 11/15 节点）
+- Source: `raw/sources/architecture/2026-11-06-jvm-parameters-by-version.md`（分代版本线、可调参数、选型代价）
 
 ## Related Knowledge（相关知识）
 

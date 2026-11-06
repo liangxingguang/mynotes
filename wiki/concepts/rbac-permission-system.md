@@ -4,7 +4,7 @@ type: concept
 title: RBAC 权限系统（传统 B 端角色访问控制）
 status: active
 created: 2026-11-03
-updated: 2026-11-04
+updated: 2026-11-06
 confidence: medium
 tags:
   - concept
@@ -16,12 +16,14 @@ sources:
   - raw/sources/products/2026-11-03-weixin-bend-permission-design-22.md
   - raw/sources/products/2026-11-03-weixin-bend-saas-multitenant-05.md
   - raw/sources/architecture/2026-11-06-auth-authz-selection-part1.md
+  - raw/sources/architecture/2026-11-06-permission-rbac-abac-engineering.md
 related:
   - wiki/concepts/agent-permission-model.md
   - wiki/concepts/complex-system-breakdown.md
   - wiki/concepts/permission-refactoring.md
   - wiki/concepts/saas-multi-tenancy.md
   - wiki/concepts/authn-authz-selection-framework.md
+  - wiki/concepts/pbac-policy-engine.md
   - wiki/sources/bend-rbac-permission-system-design.md
   - wiki/sources/bend-permission-design-22.md
   - wiki/sources/bend-saas-multitenant-05.md
@@ -45,6 +47,11 @@ B 端权限系统是底层能力，直接决定数据合规与使用边界。RBA
 5. **前后端一致**：前端控菜单按钮显示，后端校验权限标识防越权，数据权限在查询层拼接条件。
 6. **权限矩阵表落地**：拆解阶段建议输出角色×功能/数据矩阵（横轴角色、纵轴功能/数据，逐项标注可执行/可查看/禁止），如车贷系统客户经理（创建申请单、看本人客户）/风控岗（审批）/财务岗（放款）/管理员（配置角色）的四角色示例（第二信源印证）。
 7. **字段权限（列级控制）**：权限类型分可见、可编辑、加密；薪资、身份证号、手机号、采买价、利润、供应商账户等敏感字段控制到列而非整页隐藏（EHR/车贷/ERP/HIS 案例）；三张表产出物（功能权限矩阵、数据权限规则表、字段权限清单）与 SOP 七步（梳理角色→列功能点→定数据范围→标敏感字段→输出三表→评审越权测试→上线后审计变更）是该层的落地形态（第三信源补充）。
+
+8. **标准 RBAC 六表落地结构**（第六信源 §9.1）：`sys_user`（含 `dept_id` 数据权限、`tenant_id` 多租户）、`sys_role`（`role_code` + `parent_id` 继承 + `status`）、`sys_permission`（`type` 区分菜单/按钮/接口）、`sys_user_role`、`sys_role_permission` 两多对多关联表、`sys_role_conflict` 互斥表（RBAC2 静态职责分离）；用户-角色、角色-权限均多对多。
+9. **权限编码三段式与统一管理**（§9.2）：`模块:资源:动作` 三段式编码（`user:delete`/`order:approve`），支持 `user:*` 通配匹配，权限点统一进 `sys_permission` 表管理、接口注解引用编码——编码方向与第五信源「模块_资源_动作」一致，第六信源补充通配匹配与「权限点不得硬编码散落各接口注解」的审计要求。
+10. **缓存失效矩阵是落地最易漏点**（§9.5/§14.3）：三场景——用户角色变更清该用户缓存；角色权限变更清**所有持有该角色的用户**缓存（最易漏：只清单个用户导致权限变更不生效）；登录/登出重新加载。大角色（如 10 万用户持同一角色）批量清缓存可能打爆 Redis，优化方案：版本号机制（缓存 key 带 `roleVersion`、变更时 version+1、老缓存自然过期）、MQ 异步清、短 TTL 容忍短暂不一致。
+11. **后端独立校验铁律**（§10）：前端按钮隐藏只是体验优化（不让用户点无效按钮），后端接口必须独立校验权限编码（`@RequiresPermission` + AOP，`Logical.AND/OR` 组合）——只隐藏前端按钮会被构造请求直接绕过；与本页既有「前后端一致」原则互证并给出硬约束。
 
 ## Structure（结构）
 
@@ -92,6 +99,8 @@ B 端权限系统是底层能力，直接决定数据合规与使用边界。RBA
 - 2026-11-04：据第四信源（《SaaS多租户系统实战》）补充多租户场景的租户维度数据权限（tenant_id/org_id/owner_id 组合过滤、token 解析租户识别）与 ABAC 属性规则引擎适用场景示例。
 - 2026-11-06：据第五信源（《认证与授权选型拆解（上篇）》认证侧选型框架，[[authn-authz-selection-framework]]）印证 RBAC/ABAC 全任务统一选型结论——授权层不管认证层选谁，业务细粒度权限（按钮、数据）统一用 RBAC/ABAC 注解+拦截器；与 [[permission-refactoring]]「RBAC 打底、ABAC 补数据权限」的演进路径互证：两处结论一致（业务系统实现细粒度授权，认证框架只做认证与粗粒度 scope），第五信源为认证层视角（对内私有/对外标准协议），本文为服务端实现视角，不影响既有 RBAC 结论。
 
+- 2026-11-06：据第六信源（《权限模型与 RBAC-ABAC 全解析（下篇）》工程实现篇）补充 RBAC 落地细节——六表结构（含 RBAC1 `parent_id` 递归继承与 `sys_role_conflict` 静态互斥表）、权限编码三段式通配匹配、权限缓存失效矩阵（角色权限变更需批量清所有持有该角色的用户缓存、版本号机制优化）、后端接口独立校验铁律；场景选型五档与「复杂合规上 PBAC」判断见 [[pbac-policy-engine]]，租户隔离工程细节见 [[saas-multi-tenancy]]。
+
 ## Open Questions（开放问题）
 
 - 多角色数据权限并集 vs 交集的策略选择需结合业务定义，无统一标准。
@@ -104,6 +113,7 @@ B 端权限系统是底层能力，直接决定数据合规与使用边界。RBA
 - Source: `raw/sources/architecture/2026-11-03-weixin-bend-complex-system-breakdown-20.md`（印证功能/数据权限二分与权限矩阵表实践）
 - Source: `raw/sources/products/2026-11-03-weixin-bend-permission-design-22.md`（补充字段权限层、三张表产出物与 SOP 七步）
 - Source: `raw/sources/products/2026-11-03-weixin-bend-saas-multitenant-05.md`（补充多租户租户维度数据权限与 ABAC 适用场景）
+- Source: `raw/sources/architecture/2026-11-06-permission-rbac-abac-engineering.md`（第六信源：§9 六表结构/三段式编码/缓存失效矩阵/注解+AOP、§10 前后端铁律、§15 单元测试、§17 模型对比；与 §16 常见误区互证）
 
 ## Related Knowledge（相关知识）
 

@@ -4,7 +4,7 @@ type: concept
 title: SaaS 多租户（Multi-Tenancy）
 status: active
 created: 2026-11-04
-updated: 2026-11-04
+updated: 2026-11-06
 confidence: medium
 tags:
   - concept
@@ -14,11 +14,13 @@ tags:
   - 产品
 sources:
   - raw/sources/products/2026-11-03-weixin-bend-saas-multitenant-05.md
+  - raw/sources/architecture/2026-11-06-permission-rbac-abac-engineering.md
 related:
   - wiki/concepts/rbac-permission-system.md
   - wiki/concepts/rule-engine.md
   - wiki/concepts/dynamic-form-engine.md
   - wiki/concepts/multi-agent-saas-refactoring.md
+  - wiki/concepts/pbac-policy-engine.md
   - wiki/sources/bend-saas-multitenant-05.md
 ---
 # SaaS 多租户（Multi-Tenancy）
@@ -40,6 +42,10 @@ SaaS 多租户系统指一套软件实例同时服务多个租户（客户组织
 5. **租户生命周期状态机**：尝试使用中→正式开通→续费/升配→欠费冻结→恢复→注销；每状态切换明确数据保留策略/登录限制/通知方式/数据导出窗口；冻结后只允许登录和导出；注销后 15 天软删除、30 天物理清理。
 6. **配置化三层扩展**：租户级（品牌/域名/语言/时区）、业务级（字段/流程/审批）、个性化扩展（自定义字段/对象/API/Webhook）；能用配置处理的不改代码，配置项支持导入导出、版本管理与回滚。
 7. **性能/安防/运维基线**：共享表对 tenant_id 建联合索引、大租户慢查询识别隔离、越权用例与审计日志必覆盖、租户级发布开关灰度。
+
+8. **数据隔离三方案成本/强度对比**（第二信源 §11.1/§17.3）：独立数据库（隔离最强、成本最高、大客户/强合规）→ 共享库独立 schema（中等）→ 共享表 + `tenant_id`（隔离最弱、靠代码保证、成本最低、小租户量大）——与第一条模式框架互证，补充「灵活性」维度（共享表方案迁移最灵活、独立库迁移最难）。
+9. **共享表方案：拦截器自动注入 + 跨租户返 404**（§11.2/§11.3）：MyBatis 拦截器（`StatementHandler.prepare` 阶段）用 JSqlParser 解析 SQL 自动追加 `AND tenant_id = ?`，业务代码不手写查询条件；用户-角色、角色-权限关联表全程带 `tenant_id`。租户越权是 SaaS 最严重事故类型，防护 = 拦截器统一注入 + 关键接口专门测试（用租户 A 身份访问租户 B 资源必须返 404 而非 200/403，避免泄露资源存在性）+ 定期扫描裸 SQL。
+10. **超管平台与租户后台物理分离**（§11.4）：超管需跨租户操作、不能用 `tenant_id` 隔离——独立「平台管理后台」、接口显式 `@IgnoreTenant` 跳过租户拦截、全程审计。这也是「租户内角色继承、租户间完全隔离」规则（§13.3）的必然推论。
 
 ## Structure（结构）
 
@@ -81,6 +87,8 @@ B 端 PM 落地 SOP 六步（原文）：
 
 - 2026-11-04：由信源《SaaS多租户系统实战》（大皮不皮专辑第 5 篇）首次编译为本概念页。
 
+- 2026-11-06：据第二信源（《权限模型与 RBAC-ABAC 全解析（下篇）》§11–§16 多租户隔离与测试）补充隔离三方案对比维度、TenantInterceptor 自动注入实现、跨租户返 404 原则、超管物理分离与租户隔离单元测试形态；与第一信源（租户识别后端强制 + SOP）互证。
+
 ## Open Questions（开放问题）
 
 - 三模式选型的具体分界标准（客户规模/数据量阈值）原文未给数值，需结合行业案例补充。
@@ -90,9 +98,11 @@ B 端 PM 落地 SOP 六步（原文）：
 ## Evidence（证据）
 
 - Source: `raw/sources/products/2026-11-03-weixin-bend-saas-multitenant-05.md`
+- Source: `raw/sources/architecture/2026-11-06-permission-rbac-abac-engineering.md`（§11 三方案对比/TenantInterceptor/跨租户 404/超管分离、§15.5 租户隔离测试）
 
 ## Related Knowledge（相关知识）
 
 - [[bend-saas-multitenant-05|信源：SaaS多租户系统实战全指南]]
 - [[rbac-permission-system|RBAC 权限系统]]
+- [[pbac-policy-engine|PBAC 策略引擎（复杂合规场景可映射为本页环境属性）]]
 - [[multi-agent-saas-refactoring|多智能体重构 SaaS 业务流]]
