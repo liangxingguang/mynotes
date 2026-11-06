@@ -12,8 +12,11 @@ tags:
   - memory
 sources:
   - raw/sources/ai/2026-11-04-zhihu-column-agent-long-term-memory.md
+  - raw/sources/ai/2026-11-07-agent-memory-system-design.md
 related:
   - wiki/concepts/context-management.md
+  - wiki/concepts/agent-memory-system.md
+  - wiki/sources/weixin-agent-memory-system-design.md
   - wiki/concepts/agent-as-memory.md
   - wiki/concepts/agent-loop.md
   - wiki/concepts/harness-engineering.md
@@ -70,6 +73,7 @@ Hindsight 的内部组织：核心操作 Retain（提取保存）/ Recall（检�
 - [[context-management|上下文管理]]：in-context 记忆层（窗口预算、裁剪/压缩/隔离）；本概念是其跨 Session 对应物，两层互补——会话内管"窗口放得下什么"，长期记忆管"窗口外存什么、回来时找回什么"。
 - [[agent-as-memory|Agent as Memory]]：另一条路线——把短期记忆职责交给主 Agent 的协调过程（用户单点对接），长期记忆仍文件化；本概念走"结构化记忆库 + 统一接口"路线，两条路线可并用（作者主张长期记忆文件化、短期记忆走主 Agent）。
 - [[agent-loop|Agent Loop]]：记忆读写挂在 Loop 的扩展点上（会话前/轮次后），是 Loop 生命周期的标准挂载位。
+- [[agent-memory-system|Agent 记忆系统]]：全链路视角（七模块双链路、检索 10 步、写回四步、反馈闭环）由 2026-11-07 新信源补全；本页是其"长期记忆存什么、接口怎么接"的具体化。全链路系统 ↔ 存储与接口，互补。
 - [[harness-engineering|Harness Engineering]]：记忆能力属于 harness 的"上下文与记忆"观察面；扩展点机制是 harness 给第三方能力的标准接入方式。
 
 ### Distinctions（区分）
@@ -79,19 +83,23 @@ Hindsight 的内部组织：核心操作 Retain（提取保存）/ Recall（检�
 ## Evolution（演进）
 
 - 2026-11-05 — 由知乎「从零构建 Agent」系列第 12 篇单信源建立（Hermes 四层模型析出、MemoryProvider 接口、Hindsight 存储结构、ZeroAgent 扩展点接入）。Hermes 模型为作者转述分析、未引官方文档核验，confidence=medium。
+- 2026-11-07 — 新增微信信源 `raw/sources/ai/2026-11-07-agent-memory-system-design.md`（第 2 信源，公众号作者不署名）。补上本页缺失的"检索/写入/管理与反馈闭环"全链路视角：三路召回（短期接进度/长期补背景/外部给事实）、五维融合（相关性/时效性/可信度/重要性/冲突，预算 100 万→120 万→110 万示例）、写回三态（新增/合并/更新，旧记录标记已被替代并保留版本）、生命周期（过期/降优先级/去重合并/重新确认/删除与审计保留，区分有效性与重要性）、反馈五类指标（记忆准确性为核心维度之一）。互补关系经分析成立后新建概念页 [[agent-memory-system]]，本页保持存储与接口视角不变。
 
 ## Open Questions（开放问题）
 
 - 召回质量（准确率/延迟）无实测数据：信源仅给出定性示例（跨会话正确回忆 Frank）。
-- 记忆的遗忘/更新/纠错策略（冲突事实如何裁决、过期记忆如何降权）：信源未讨论。
+- 记忆的遗忘/更新/纠错策略（冲突事实如何裁决、过期记忆如何降权）：2026-11-07 新信源给出原则（写回三态、旧记录标记已被替代、生命周期五动作、区分有效性与重要性），但裁决边界（什么算"可按时间和权威来源确定"）仍无量化口径。
 - 多用户/多租户下的记忆隔离与权限：信源未讨论。
 
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-11-04-zhihu-column-agent-long-term-memory.md`（Hermes 四层模型、记忆三分类、MemoryProvider 接口、before_agent_start/turn_end 扩展点、Hindsight documents/memory_units/entities/memory_links、ZeroAgent chapter12 源码）
+- Source: `raw/sources/ai/2026-11-07-agent-memory-system-design.md`（第 2 信源：检索/写入/管理与反馈全链路——三路召回、五维融合、写回三态、生命周期、记忆准确性指标）
 
 ## Related Knowledge（相关知识）
 
 - [[zhihu-column-agent-long-term-memory|从零构建Agent(十二)：长期Memory管理（信源页）]]
 - [[context-management|上下文管理（概念页）]]
 - [[agent-as-memory|Agent as Memory（概念页）]]
+- [[weixin-agent-memory-system-design|企业级 Agent 记忆系统设计拆解（信源页）]]
+- [[agent-memory-system|Agent 记忆系统（概念页）]]

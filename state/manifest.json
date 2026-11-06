@@ -4807,6 +4807,21 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=MzU2MjgxNzA4OA==&mid=2247483991&idx=1&sn=c089e7cfff639e37881c8b5530fb9370&chksm=fc62f378cb157a6e3e24b41cd90eeebbbbb1c261df162b8622b5cfc9de01dc7e14eb788d6278",
       "asset_ref": "Assets/2026-11/jvm-memory-overview.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-07-agent-memory-system-design.md",
+      "sha256": "4396c649b7ec4bf24834fed5da62fc80f56c9268d69ea1011e7f9e6acbe16859",
+      "registered_at": "2026-11-07",
+      "inbox_ref": "Archive/2026-11-07-agent-memory-system-design.md",
+      "pages": [
+        "wiki/sources/weixin-agent-memory-system-design.md",
+        "wiki/concepts/agent-memory-system.md",
+        "wiki/concepts/agent-long-term-memory.md",
+        "wiki/concepts/context-management.md",
+        "wiki/concepts/agent-evaluation.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/TMnVMTMm0aKH8eWb9nxipQ",
+      "asset_ref": "Assets/2026-11/agent-memory-system-design.md"
     }
   ]
 }

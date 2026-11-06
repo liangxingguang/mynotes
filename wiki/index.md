@@ -382,13 +382,15 @@
 - [[httpclient-optimization-high-concurrency|高并发场景下的 HttpClient 优化方案，QPS 大大提升！]]（2026-11-06，架构/Java/HttpClient，单例 client+PoolingHttpClientConnectionManager(maxTotal 500/perRoute 50)+ConnectionKeepAliveStrategy+空闲连接监控线程+ResponseHandler+三段超时+重试取舍+nginx 双端 keepalive；250ms→80ms 实测，单信源微信公众号转载 CSDN，置信度中）
 - [[auth-authz-selection-part1|认证与授权选型拆解（上篇）：五种候选矩阵——自研 Redis、Sa-Token、Spring Security、Keycloak、JWT]]（2026-11-06，安全/选型，认证授权选型系列·上篇：两种翻车代价（过度设计/选型过浅）+认证vs授权概念分层+凭证/Token/会话三层+有状态vs无状态权衡+L1-L5 分层+五维模型与五方案评分矩阵+门禁类比+授权层统一RBAC/ABAC+AuthService接口隔离+10条场景决策清单+4类反模式，单信源微信公众号，置信度中）
 - [[weknora-dept-knowledge-base|我用腾讯开源的 WeKnora 搭部门知识库：检索很准，但它只有一半功能]]（2026-11-06，AI/知识库，硬件工程师部门实战：个人库vs框架两难+WeKnora（3w+ star/腾讯开源/微信对话平台沉淀）私有化Docker部署+HUB底座4子应用互供经验+两试点方向+三条边界（不把没异常当通过/AI不当计算器/人工确认前不进正式库）+核心短板=只能删了重传无在线编辑，"检索半已不难、维护半才是难的那半"，公众号单信源，置信度中）
+- [[weixin-agent-memory-system-design|企业级 Agent 记忆系统设计拆解]]（2026-11-07，AI/Agent/Memory，七模块16步+检索10步+三路并行召回+五维融合+写回四步/三态/生命周期+反馈闭环五指标+六阶段路线+11字段数据结构+五坑，公众号单信源，置信度中）
 ## concept（概念）
 
 - [[a2a-protocol|A2A 协议]]（Agent↔Agent 横向协作协议，Google 2025）
 - [[aima-agent-taxonomy|AIMA Agent 分类]]（简单反射/基于模型/基于目标/基于效用/学习五类 + 环境四属性；经典理论单信源）
-- [[agent-evaluation|业务 Agent 全生命周期评测]]（规则+LLM 裁判+人工复核，覆盖准入/门禁/压测/巡检；验收从正确性变成分布、单次对比不作数、回归集标注期望行为；货拉拉+叶小钗+Codex+面试深挖 84，四信源）
+- [[agent-evaluation|业务 Agent 全生命周期评测]]（规则+LLM 裁判+人工复核，覆盖准入/门禁/压测/巡检；验收从正确性变成分布、单次对比不作数、回归集标注期望行为；记忆评测五指标（检索质量/任务效果/记忆准确性/运行成本/安全权限）；货拉拉+叶小钗+Codex+面试深挖 84+记忆系统，五信源）
 - [[agent-as-memory|Agent as Memory（主 Agent 承担记忆职责）]]（主 Agent 协调子 Session 承担项目进展记忆；用户单点对接；长期记忆 Markdown 文件化+短期记忆主 Agent 化；单信源，置信度中）
-- [[agent-long-term-memory|Agent 长期记忆]]（跨 Session 保留与检索：记忆三分类+Hermes 四层模型+MemoryProvider retain/recall 接口+Hindsight 结构化存储+Extension 接入点，单信源，置信度中）
+- [[agent-long-term-memory|Agent 长期记忆]]（跨 Session 保留与检索：记忆三分类+Hermes 四层模型+MemoryProvider retain/recall 接口+Hindsight 结构化存储+Extension 接入点，知乎存储接口路线+微信全链路检索写回视角双信源，置信度中）
+- [[agent-memory-system|Agent 记忆系统]]（面向任务的信息管理机制：上下文≠记忆/聊天记录≠记忆五问；七模块双链路+检索10步三路召回+写回四步三态+生命周期+反馈闭环五指标+六阶段落地路线+11字段，微信单信源，置信度中）
 - [[agent-loop|Agent Loop]]（Runtime 驱动的模型-工具循环；Tool Call/Result、Message/Context/State/Session、Runtime vs Harness）
 - [[agent-legacy-system-integration|Agent 对接旧系统（Legacy System Integration）]]（盘点九字段+四类对接模式（API/只读+事件表/RPA/网关）选型五维度+字段映射四件套+灰度先只读后写+中间表人工确认安全边界+连锁零售旧CRM工单Agent案例，单信源置信度中）
 - [[agent-management-methodology|智能体管理方法论（WBS·交付约定·Scrum Sprint 三工具闭环）]]（瓶颈在人的管理能力而非模型能力；拆到能独立验收为止+人机分工准则+交付约定六维度+验收准则打勾表+每轮只改 1–2 条规则变量唯一，单信源置信度中）
@@ -432,7 +434,7 @@
 - [[legacy-system-rebuild|存量B端系统重构方法论（三层地图）]]（权限门/流程行/数据列三层地图+三笔账（认知/依赖/风险）+Day1权限三清册+Day2抓核心5条流程画实际发生的状态机+Day3三张表（字段血缘/口径差异/主数据治理）+7跨系统案例；与五件套（从0拆解）互补而非重复（存量重构先盘现状），单信源置信度中）
 - [[contract-lifecycle-management|合同全生命周期管理（CLM，B端）]]（起草→审批→签署→履约→归档五阶段链路，只做审批流的漏损；起草模板库/智能填充、审批动态路由、签署电子签、履约里程碑预警（易忽略价值高）、归档非终点（检索/审计/借阅）；PM六步SOP+AI提效五场景+装备制造案例指标，单信源置信度中）
 - [[concept-boundary-definition|概念边界界定（内涵/外延与三问）]]（内涵外延反变关系+界定范围三问+人为认知切片+按目的三种切法，单信源方法论，置信度中）
-- [[context-management|上下文管理（Context Management）]]（messages 全量重发下的体积工程：裁剪/压缩/隔离三手段+成对保留与磁盘全量两铁律；Claude Code 分层裁剪实证；Kiso 投影观+缓存经济学；注入式 token 账+预算六类分配与输出预留，四信源）
+- [[context-management|上下文管理（Context Management）]]（messages 全量重发下的体积工程：裁剪/压缩/隔离三手段+成对保留与磁盘全量两铁律；Claude Code 分层裁剪实证；Kiso 投影观+缓存经济学；注入式 token 账+预算六类分配与输出预留；记忆系统三路召回为上下文组装供料，五信源）
 - [[concurrenthashmap-internals|ConcurrentHashMap 并发设计（JDK 8+）]]（读无锁+CAS 空桶插+synchronized 桶头+sizeCtl 三态+协作扩容；单信源，置信度中）
 - [[consumer-lag-governance|消费积压治理（Consumer Lag Governance）]]（Kafka 消费端 Lag 治理：四步法+三底线+增速告警，单信源，置信度中）
 - [[control-plane-design|规则控制面与寻优计算面分离]]（DDD 领域契约收敛规则+规则引擎前置过滤+算法只在合法空间搜索+降级兜底；电商优惠券场景完整实例，单信源置信度中）

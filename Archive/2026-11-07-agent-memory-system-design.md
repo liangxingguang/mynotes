@@ -9,7 +9,7 @@ created: 2026-11-07
 category: 技术
 tags: [AI, Agent]
 asset_ref: Assets/2026-11/agent-memory-system-design.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 企业级 Agent 记忆系统设计拆解

@@ -17,8 +17,11 @@ sources:
   - raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md
   - raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md
   - raw/sources/enterprise/2026-11-04-ai-native-team-org-reconstruction.md
+  - raw/sources/ai/2026-11-07-agent-memory-system-design.md
 related:
   - wiki/sources/huolala-agent-eval-platform.md
+  - wiki/concepts/agent-memory-system.md
+  - wiki/sources/weixin-agent-memory-system-design.md
   - wiki/concepts/artifact-verification-delivery.md
   - wiki/concepts/ai-native-organization.md
   - wiki/sources/llm-integration-engineering-hard-parts.md
@@ -68,6 +71,8 @@ LLM 概率输出 + 长工具调用链使传统确定性断言失效：单步推�
 - 2026-11-01 — 面试深挖 84（第 4 信源）补上**统计验收与断言分层**视角：回归集标注"期望行为"而非"期望文本"（模型输出不可逐字固定）；非确定性下验收从正确性变成分布——固定采样参数 + 多次采样看通过率分布，**单次对比不作数**；可断言的（结构化事实：单号、金额、字段值）与不可断言的（自由文本）分开观测，不可靠证据不进主链路；模型评测本身也需交叉验证并写明偏差方向（如"对冗长回答友好"）。与货拉拉"Judge 拉上限、多次采样去极值"同族，但本信源把"单次不作数"上升为验收纪律。
 - 2026-11-04 — 微信公众号方法论长文（第 5 信源）确立**评估作为控制层**的定位：自我改进 Agent 的三平面架构（运行时/学习/优化治理）中，评估承担控制层职能——没有评估，Agent 的变更无法声称是改进。并引 ANCHOR 框架实验（arXiv 2606.06114）：阶段条件化监督能缓解错误累积与安全漂移，低到中等监督频率即接近最大收益，关键在评估基准本身的质量与稳定性。与货拉拉"准出基准比对阻断"、叶小钗"证据导向"互证，并把评测从质量保障手段提升为 Agent 自我改进的控制面（组织层治理视角见 [[ai-native-organization]]）。
 
+- 2026-11-07 — 新增微信信源 `raw/sources/ai/2026-11-07-agent-memory-system-design.md`（第 6 信源）。补上**记忆系统五类指标**（检索质量、任务效果、记忆准确性、运行成本、安全与权限）作为本页评测体系的具体子集——记忆准确性（错事实/误把推断当事实/过期未更新）独立占一维，把本页"中间链路评估"细化到记忆维度；另有两条纪律可迁移：①五维须组合评估（单纯提高召回率不保证任务效果——与 [[artifact-verification-delivery]]"分项判定与零容忍发布"同调，不参与平均分补偿）；②反馈适用范围纪律——用户反馈须先判作用于单次任务/某项目/某类场景/长期偏好才能回流记忆更新，与本页"线上失败归因后回流数据集"同族（都防局部结论被错误推广）。记忆系统维度的评审细节落成概念页 [[agent-memory-system]]。
+
 ## Open Questions（开放问题）
 
 - Judge 模型自身的幻觉与偏见如何系统性校正（信源只给出采样聚合与转人工策略）。
@@ -80,6 +85,7 @@ LLM 概率输出 + 长工具调用链使传统确定性断言失效：单步推�
 - Source: `raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md`（第 3 信源：固定输入/环境/成功条件、分项判定、评分器漏检率/误拒率校准、发布阻断项）
 - Source: `raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md`（第 4 信源：回归集标注期望行为而非期望文本、验收从正确性变成分布、可断言/不可断言分开观测、评测交叉验证）
 - Source: `raw/sources/enterprise/2026-11-04-ai-native-team-org-reconstruction.md`（第 5 信源：三平面架构中评估为控制层、ANCHOR 阶段条件化监督、评估基准质量与稳定性；方法论长文口径）
+- Source: `raw/sources/ai/2026-11-07-agent-memory-system-design.md`（第 6 信源：记忆系统五类指标——检索质量/任务效果/记忆准确性/运行成本/安全与权限；五维组合评估；反馈适用范围纪律）
 
 ## Related Knowledge（相关知识）
 
@@ -88,3 +94,5 @@ LLM 概率输出 + 长工具调用链使传统确定性断言失效：单步推�
 - [[artifact-verification-delivery|产物核验与独立交付]]
 - [[codex-agent-harness-architecture-6|Codex 桌面客户端开发（六）：Agent Harness 的架构设计（信源页）]]
 - [[llm-integration-engineering-hard-parts|大模型接进业务系统：工程难点在哪（信源页）]]
+- [[weixin-agent-memory-system-design|企业级 Agent 记忆系统设计拆解（信源页）]]
+- [[agent-memory-system|Agent 记忆系统（概念页）]]

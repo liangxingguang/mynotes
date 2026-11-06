@@ -20,8 +20,10 @@ sources:
   - raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md
   - raw/sources/ai/2026-11-04-zhihu-column-agent-long-term-memory.md
   - raw/sources/ai/2026-11-05-multi-agent-control-shift.md
+  - raw/sources/ai/2026-11-07-agent-memory-system-design.md
 related:
   - wiki/concepts/agent-loop.md
+  - wiki/sources/weixin-agent-memory-system-design.md
   - wiki/concepts/harness-engineering.md
   - wiki/concepts/agent-as-memory.md
   - wiki/concepts/agent-long-term-memory.md
@@ -90,7 +92,7 @@ Super-agent 信源把上下文窗口当作 Cache 管理，归纳两个注入操�
 
 ### Distinctions（区分）
 
-- **in-context 记忆 vs 会话外记忆**：本概念只管前者；跨会话的工作记忆/长期记忆、向量检索与 RAG 是另一层（该系列 P4·11 主题，现由 [[agent-long-term-memory|Agent 长期记忆]] 概念页承载）。
+- **上下文窗口≠记忆**：跨会话的工作记忆/长期记忆、向量检索与 RAG 是另一层（该系列 P4·11 主题，现由 [[agent-long-term-memory|Agent 长期记忆]] 与 [[agent-memory-system|Agent 记忆系统]] 概念页承载）。
 - **压缩 vs 摘要续接**：同族手段，前者会话内替换原文，后者跨会话以「上下文：会话摘要」开场。
 
 ## Evolution（演进）
@@ -113,6 +115,8 @@ Super-agent 信源把上下文窗口当作 Cache 管理，归纳两个注入操�
 - 2026-11-05 — 新增得物技术信源 `raw/sources/ai/2026-11-05-multi-agent-control-shift.md`（第 9 信源）。补上**上下文边界设计原则**：多 Agent 切分应按"看见什么／产出什么"（上下文边界 + 信息压缩边界）而非职业标签——代码分析 Agent 把调用关系/错误堆栈/实现细节压缩成核心 Agent 可直接使用的结论，数据探索 Agent 把原始数据/分布/异常蒸馏成少量关键发现，核心 Agent 只接收与当前决策最相关的上下文。这印证并具体化了本概念"隔离"手段（subagent 独立窗口）：隔离的价值在于划清输入边界与压缩责任；"后端 Agent／数据库 Agent"式标签只是"容易被提示词放大的职业想象"（信源论断，未独立核验）。
 
 
+- 2026-11-07 — 新增微信信源 `raw/sources/ai/2026-11-07-agent-memory-system-design.md`（第 10 信源）。补强**窗口内 vs 会话外**的分层立场：「上下文窗口≠记忆、聊天记录≠记忆」——放大窗口缓解"放不下"不解决信息管理（筛选/组织/检索/更新），跨会话失忆（本概念"忘事的几种病"中的天然边界）由会话外记忆系统（七模块：触发器/短期/长期/记忆管理器/知识库）承接；其检索 10 步的三路并行召回（短期接进度、长期补背景、外部给事实）正是本概念"上下文组装"的内容供给方——融合排序后的素材由编排层投影进窗口，与 [[agent-memory-system]]、Kiso"投影观"（Context=Projection）互证。
+
 ## Open Questions（开放问题）
 
 - 三层记忆（工作记忆 Redis / 长期记忆 pgvector）与 RAG 的分界，待该系列第 11 篇信源补充。
@@ -128,6 +132,7 @@ Super-agent 信源把上下文窗口当作 Cache 管理，归纳两个注入操�
 - Source: `raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md`（第 7 信源：链式召回实例——旧版客户端限制沿引用找回、记录读到否则按旧条件改）
 - Source: `raw/sources/ai/2026-11-04-zhihu-column-agent-long-term-memory.md`（第 8 信源：跨 Session 长期记忆为 in-context 管理的会话外对应物；全量历史进 Prompt 四问题）
 - Source: `raw/sources/ai/2026-11-05-multi-agent-control-shift.md`（第 9 信源：上下文边界按"看见什么／产出什么"切分，职业标签是提示词放大的想象）
+- Source: `raw/sources/ai/2026-11-07-agent-memory-system-design.md`（第 10 信源：「上下文窗口≠记忆、聊天记录≠记忆」五问框架；窗口内管理 vs 会话外记忆的分层；三路召回为上下文组装供给内容）
 
 ## Related Knowledge（相关知识）
 
@@ -141,3 +146,5 @@ Super-agent 信源把上下文窗口当作 Cache 管理，归纳两个注入操�
 - [[namiagent|NamiAgent]]（网页端上下文逐轮可视化的教学演示）
 - [[namiagent-agent-tutorial|微博推荐：NamiAgent——零基础 AI Agent 本地实战教程（信源页）]]
 - [[agent-long-term-memory|Agent 长期记忆]]（跨 Session 对应物，2026-11-05 新建）
+- [[weixin-agent-memory-system-design|企业级 Agent 记忆系统设计拆解（信源页）]]
+- [[agent-memory-system|Agent 记忆系统（概念页）]]
