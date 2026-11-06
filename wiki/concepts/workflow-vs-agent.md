@@ -4,13 +4,14 @@ type: concept
 title: Workflow vs Agent（控制流分界）
 status: active
 created: 2026-10-29
-updated: 2026-10-29
+updated: 2026-11-06
 confidence: high
 tags:
   - concept
   - ai-agent
 sources:
   - raw/sources/ai/2026-10-28-agent-panorama-roadmap.md
+  - raw/sources/ai/2026-11-06-pi-loop-engineering.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/concepts/harness-engineering.md
@@ -63,6 +64,8 @@ Anthropic《Building Effective Agents》的开篇定调（信源 §1.2 引用并
 
 - 2026-10-29 — 新建，信源为知乎《Agent》系列第 1 篇（全景与路线图），workflow/agent 定义引自 Anthropic 原文并经作者 2026-10-15 在线核验。
 
+- 2026-11-06 — 新增 Pi 源码通读信源 `raw/sources/ai/2026-11-06-pi-loop-engineering.md`。给出 **三阶段演进口径**（解读：这是作者的工作流实践视角，与 Anthropic 两分式不直接等价）：① 工作流模式（Dify、早期 LangChain——"带 LLM 节点的 pipeline"，路径人为画、模型无决策权）→ ② Graph 模式（LangGraph、Eino——以 ReAct 为基础范式，"思考→调工具→拿结果→再思考"表达为节点与回边，具备基础 loop，作者称"今天绝大多数生产 Agent 产品属此类"）→ ③ Agent 模式（Claude Code、Manus、Pi——模型持通用工具在真实执行环境自己驱动循环）。同时以源码实例强化本页判据："Graph 把控制流写在图的结构里，每一条边都是开发者的预判；Agent 把控制流交给模型，把确定性做进运行时"（可观测、可插话、可持久化、出错不崩）；"Agent 能力上限看循环怎么设计，工具堆再多也没用"（四个工具撑起 OpenClaw 爆款，作者论断）。由此新建信源页 [[pi-loop-engineering-recursive-aesthetics]]。
+
 ## Open Questions（开放问题）
 
 - 混合形态（workflow 骨架内嵌 agent 子任务）的工程归类待更多信源补充。
@@ -70,6 +73,7 @@ Anthropic《Building Effective Agents》的开篇定调（信源 §1.2 引用并
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-10-28-agent-panorama-roadmap.md`
+- Source: `raw/sources/ai/2026-11-06-pi-loop-engineering.md`（三阶段演进口径、控制流归属源码印证、"循环设计决定能力上限"论断）
 
 ## Related Knowledge（相关知识）
 

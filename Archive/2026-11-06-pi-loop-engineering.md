@@ -9,7 +9,7 @@ created: 2026-11-06
 category: 技术
 tags: [Agent, AI]
 asset_ref: Assets/2026-11/zhihu-2061271933296154175.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 从 Pi 窥见 Loop Engineering 的递归美学

@@ -4,7 +4,7 @@ type: concept
 title: Agent Loop
 status: active
 created: 2026-10-22
-updated: 2026-11-02
+updated: 2026-11-06
 confidence: high
 tags:
   - concept
@@ -25,6 +25,7 @@ sources:
   - raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md
   - raw/sources/ai/2026-11-02-namiagent-agent-tutorial.md
   - raw/sources/ai/2026-11-02-superagent-design.md
+  - raw/sources/ai/2026-11-06-pi-loop-engineering.md
 related:
   - wiki/concepts/harness-engineering.md
   - wiki/entities/pi.md
@@ -144,6 +145,8 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 
 - 2026-11-02 — 新增 Super-agent 架构信源 `raw/sources/ai/2026-11-02-superagent-design.md`（DeepSeek Harness 团队）。补上**异步 ReAct Loop** 机制：经典同步 `run()` 调用会阻塞循环直到工具完成，期间会话无法响应新输入；改为异步 `start()`/`stop()` 后模型调用 `start()` 立即收到"已启动"返回、循环不再等待，后台工具完成后结果作为新事件投递进会话，模型也可 `stop()` 终止过长命令——前台对话与后台任务解耦，全双工。该机制已在 DeepSeek Harness 实现但未默认开启。这是对本页"停止信号多源性""每轮重备 Context"在交互层的具体演进（后台任务不再阻塞前台推理步）。由此新建概念页 [[super-agent]]、[[router-worker-architecture]]、[[event-driven-agent]]、[[watchdog-control-loop]]。
 
+- 2026-11-06 — 新增 Pi 源码通读信源 `raw/sources/ai/2026-11-06-pi-loop-engineering.md`（知乎随笔，OpenClaw 爆红背后的引擎即 Pi）。补强本页三处：① **双层 Loop 形态**——外层 agent-run loop（`agent_start`→`agent_end`，判定"用户请求是否真正结束"）套内层 turn loop（一次 assistant 响应 + 工具调用 + 结果，`turn_start`→`turn_end`），源码即 `runLoop` 中两个嵌套 while；子 Agent 跑同一个完整 loop，"循环里套循环"、loop 自嵌套，是其作者所称「递归美学」。② **交互队列补强"停止信号多源性"与续轮判据**——steering 队列处理中途插话（消息排队、当前 turn 结束后下一次请求模型前注入上下文，即"在两个 turn 的缝隙中注入"），follow-up 队列处理追问（agent 停前检查、有货再跑一轮）；"用户随时可以说话"最终落成一个普通状态检查，无特殊路径。③ **"响应完整性检查"的工程落点**——token 截断时 Pi 把该条消息里所有工具调用整批标失败：流式解析器对截断 JSON 的抢救可能通过校验但内容残缺，执行残缺参数（尤其 write）会毁文件；工具执行抛异常同样不中断循环、包装成结果喂回模型。后者与 [[workflow-vs-agent|Workflow vs Agent]]"把确定性做进运行时（可观测、可插话、可持久化、出错不崩）"的表述互证。由此新建信源页 [[pi-loop-engineering-recursive-aesthetics]]。
+
 ## Open Questions（开放问题）
 
 - 不同框架（LangGraph、AutoGen、各厂商 Agent SDK）对 Runtime/Harness 的划分与本文是否一致？
@@ -166,6 +169,7 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 - Source: `raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md`（印证：流结束≠任务终态、状态提交纪律、停止非回滚）
 - Source: `raw/sources/ai/2026-11-02-namiagent-agent-tutorial.md`（教学实现：100 行最小循环、一课加一个能力、网页端可视化每轮推理与上下文）
 - Source: `raw/sources/ai/2026-11-02-superagent-design.md`（异步 ReAct Loop：start/stop 全双工、前台后台解耦、已在 DeepSeek Harness 实现未默认开启）
+- Source: `raw/sources/ai/2026-11-06-pi-loop-engineering.md`（双层 run/turn Loop、steering/follow-up 双队列、token 截断整批 fail、工具异常包装回喂）
 
 ## Related Knowledge（相关知识）
 
@@ -186,3 +190,4 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 - [[artifact-verification-delivery|产物核验与独立交付]]
 - [[namiagent|NamiAgent]]（100 行最小循环的教学实现）
 - [[namiagent-agent-tutorial|微博推荐：NamiAgent——零基础 AI Agent 本地实战教程（信源页）]]
+- [[pi-loop-engineering-recursive-aesthetics|从 Pi 窥见 Loop Engineering 的递归美学（信源页）]]

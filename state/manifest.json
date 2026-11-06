@@ -4752,6 +4752,20 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/tzqNby5ujNjfBtIvN1DgZQ",
       "asset_ref": "Assets/2026-11/permission-rbac-abac-engineering-part2.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-06-pi-loop-engineering.md",
+      "sha256": "bf7737cf72e44436cdc7826f27ed41fabe23e8c6027362beffd144f6301c57e3",
+      "registered_at": "2026-11-06",
+      "inbox_ref": "Archive/2026-11-06-pi-loop-engineering.md",
+      "pages": [
+        "wiki/sources/pi-loop-engineering-recursive-aesthetics.md",
+        "wiki/entities/pi.md",
+        "wiki/concepts/agent-loop.md",
+        "wiki/concepts/workflow-vs-agent.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2061271933296154175",
+      "asset_ref": "Assets/2026-11/zhihu-2061271933296154175.md"
     }
   ]
 }

@@ -264,6 +264,7 @@
 - [[pi-practice-06-daily-patterns-selection|Pi实战 06：日常实战 · 模式 · 选型篇]]（2026-10-16，AI/Pi）
 - [[pi-practice-series|Pi 实战系列（16 篇全文本合集）]]（2026-10-31，AI/Pi/资源导航，16 篇实操合集，无新概念页，回链 pi/codemode/mcp 等，置信度中）
 - [[pi-dsh-agent-complexity|复杂度归谁：Pi 与 DSH 把 Agent 带向了两种未来]]（2026-10-29，AI/Agent/Harness，Pi 举证责任倒置 vs DSH 可逆组合，设计时 vs 运行时控制，自进化需要宪法，知乎深度分析，置信度高）
+- [[pi-loop-engineering-recursive-aesthetics|从 Pi 窥见 Loop Engineering 的递归美学]]（2026-11-06，AI/Agent Loop 源码通读，三阶段口径+双层循环/双队列/截断整批 fail，知乎单信源，置信度中）
 - [[pi-school-official-course|Pi School 官方课程主页：在 Pi 里边用边学的免费 Agent 入门课]]（2026-10-16，AI/课程）
 - [[pi-1-0-durable-mcp-update|Pi 1.0：原生 MCP + Code Mode 稳定版与 Pi Durable 持久执行框架]]（2026-10-14，AI/Agent 基础设施）
 - [[pi-sandbox-two-layer-isolation|Pi 支持沙箱吗：从什么是沙箱，到 Pi 的两层隔离]]（2026-10-14，AI/安全）

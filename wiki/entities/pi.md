@@ -4,7 +4,7 @@ type: entity
 title: Pi
 status: active
 created: 2026-10-20
-updated: 2026-10-31
+updated: 2026-11-06
 confidence: medium
 tags:
   - entity
@@ -24,6 +24,7 @@ sources:
   - raw/sources/ai/2026-10-28-pi-series.md
   - raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md
   - raw/sources/products/2026-10-31-pi-coding-agent-getting-started-guide.md
+  - raw/sources/ai/2026-11-06-pi-loop-engineering.md
 related:
   - wiki/concepts/mcp.md
   - wiki/concepts/agent-loop.md
@@ -78,6 +79,8 @@ Pi 是一款极简风格的 Agent CLI：默认只内置 read、write、edit、ba
 - **委派三判据**：结果有客观对错 + 改动能回滚（git 提交）+ 两分钟能验完，三条满足才放手；写文案/定方案/判断设计好坏只能当草稿。
 - **五类活提示词**（各带验收话术/防幻觉边界句）：看懂陌生项目（点名文件必须真实存在）、修已知毛病（不许改测试文件，跑完 git diff）、批量整理（先计划→等确认→再执行）、从零造小工具（只用标准库，看 import）、查资料落文件（查不到写"未查到"防编来源）。
 - **10 坑速查**：`github:` 前缀、`curl|sh` on Windows、Node<22.19（报像权限的错）、`/login` 找 SiliconFlow、`api` 填 `openai`、key 写死传群、`pi remove` Windows `[safe-delete] genie-trash ETIMEDOUT`（手动清 settings.json+node_modules）、MCP 目录给盘符根目录、未提交仓库先跑、装一堆扩展。
+- **OpenClaw 底层引擎即 Pi**（2026-11-06 源码通读信源）：作者口径"OpenClaw 火成那样，一周十几万 star，底下跑的就是 Pi 这套循环，几乎原样扛住了这波流量"；通读 agent-loop 的核心观察为「递归美学」——引擎只有一种原语「循环」，run/turn 双层结构，子 Agent 再嵌套完整 loop，复杂行为靠自嵌套长出（机制详见 [[agent-loop]]；星数历史口径以本页 Timeline 早前记录为准）。
+- **「循环干净，脏活外移」分层观**（同信源）：核心 agent-loop 数百行，产品层 AgentSession 体量四倍还多——会话保存、自动压缩、重试、扩展、模型切换全挡在 AgentSession，循环层只做一件事：驱动循环；TUI/JSON/RPC 只是事件消费者，换 UI 循环引擎一行不改。
 - **进阶**：`pi-web-access` 零配置走 Exa（可换 Brave/Tavily/博查 via `web-search.json`），能读页面/抓 PDF/克隆 GitHub 仓库；自写扩展一个文件导出函数 `registerCommand` 丢 `~/.pi/agent/extensions/` 重启即用；Codemode 沙箱批量调工具压提示词四成；Pi Durable/容器化新手期别碰。
 
 ## Products / Projects（产品／项目）
@@ -109,6 +112,7 @@ Pi 是一款极简风格的 Agent CLI：默认只内置 read、write、edit、ba
 - 2026-10-31 — Pi 实战系列 16 篇合集采集入库，覆盖配置/提示词/扩展/多智能体/本地模型/调试/TDD 等全流程实操
 - 2026-10-31 — Pi 与 DSH 复杂度之争采集入库，补充"举证责任倒置"复杂度观与设计时控制立场
 - 2026-10-31 — Pi 1.4.0 保姆级教程采集入库，补充 Windows 安装/models.json 接国内模型/界面口诀/四类资源/pi install 六源/-p 模式/委派三判据/五类活提示词/10 坑
+- 2026-11-06 — 知乎「通读 Pi 源码」随笔采集入库：OpenClaw 底层引擎即 Pi（作者口径一周十几万 star），补「递归美学」观察（单一循环原语 + run/turn 双层 + 子 Agent 嵌套）与「循环干净、脏活外移」分层观
 
 ## Current Understanding（当前认知）
 
