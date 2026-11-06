@@ -1,6 +1,24 @@
 {
-  "updated_at": "2026-11-06 21:39",
+  "updated_at": "2026-11-06 22:38",
   "notes": [
+    {
+      "id": "2026-11-06-jvm-memory-overview",
+      "title": "JVM 内存全景图",
+      "path": "Inbox/2026-11-06-jvm-memory-overview.md",
+      "created": "2026-11-06",
+      "category": "技术",
+      "tags": [
+        "java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU2MjgxNzA4OA==&mid=2247483991&idx=1&sn=c089e7cfff639e37881c8b5530fb9370&chksm=fc62f378cb157a6e3e24b41cd90eeebbbbb1c261df162b8622b5cfc9de01dc7e14eb788d6278#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "讲清 JVM 六大内存区域的职责（堆/栈/方法区/元空间/程序计数器/直接内存），为什么按生命周期与访问方式分区，并给出 OOM 报错对号入座表与默认配置查看命令。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/jvm-memory-overview.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
