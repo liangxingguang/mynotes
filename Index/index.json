@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06 16:59",
+  "updated_at": "2026-11-06 17:01",
   "notes": [
     {
       "id": "2026-11-06-auth-authz-selection-part1",
@@ -36,6 +36,24 @@
       "summary_status": "",
       "asset_ref": "Assets/2026-11/httpclient-optimization-high-concurrency.md",
       "wiki_status": "ingesting"
+    },
+    {
+      "id": "2026-11-06-nginx-rate-limiting-practice",
+      "title": "接口被刷爆？Nginx 限流四步实战",
+      "path": "Inbox/2026-11-06-nginx-rate-limiting-practice.md",
+      "created": "2026-11-06",
+      "category": "技术",
+      "tags": [
+        "nginx"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/DF3wi-A4cML097iqfC1suQ",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "半夜告警 QPS 从 50 冲到 3000、连接池打满、正常用户超时——十有八九是爬虫或失控客户端。别急着在后端加锁加缓存，先在 Nginx 层按住流量。四步落地：看日志辨特征 → limit_req 限平均速率 → limit_conn 控并发+白名单 → 压测验证灰度调参。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/nginx-rate-limiting-practice.md",
+      "wiki_status": "pending"
     },
     {
       "id": "2026-11-06-permission-rbac-abac-part2",
