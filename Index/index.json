@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06 16:40",
+  "updated_at": "2026-11-06 16:46",
   "notes": [
     {
       "id": "2026-11-06-httpclient-optimization-high-concurrency",
@@ -17,6 +17,24 @@
       "summary": "日调用千万级的 HTTP 接口调用，QPS 上不去：作者把 HttpClient 从\"每次请求新建 client\"改成**单例 + 连接池 + keep-alive + ResponseHandler**，平均耗时从 250ms 降到 80ms（降三分之二），容器线程耗尽报警消失。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/httpclient-optimization-high-concurrency.md",
+      "wiki_status": "ingesting"
+    },
+    {
+      "id": "2026-11-06-permission-rbac-abac-part2",
+      "title": "权限模型与 RBAC-ABAC 全解析（下篇）：RBAC 工程实现、多租户隔离与场景选型",
+      "path": "Inbox/2026-11-06-permission-rbac-abac-part2.md",
+      "created": "2026-11-06",
+      "category": "技术",
+      "tags": [
+        "java"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/tzqNby5ujNjfBtIvN1DgZQ",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "权限专题下篇，聚焦工程落地：RBAC 标准五表结构、注解+AOP 校验、按钮级/接口级/菜单级双端配合、多租户三种隔离方案、PBAC 策略引擎与分场景选型，附源码分析、单测要点与最佳实践速查。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/permission-rbac-abac-part2.md",
       "wiki_status": "pending"
     },
     {
