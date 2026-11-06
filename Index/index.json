@@ -1,24 +1,6 @@
 {
-  "updated_at": "2026-11-06 17:54",
+  "updated_at": "2026-11-06 18:07",
   "notes": [
-    {
-      "id": "2026-11-06-auth-authz-selection-part1",
-      "title": "认证与授权选型拆解（上篇）：五种候选矩阵——自研 Redis、Sa-Token、Spring Security、Keycloak、JWT",
-      "path": "Inbox/2026-11-06-auth-authz-selection-part1.md",
-      "created": "2026-11-06",
-      "category": "技术",
-      "tags": [
-        "java"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/gW1ZQfUaKDcXkT1D-z3etw",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "选 Sa-Token 还是 Keycloak？两派吵一下午没结论。本文结论：这不是\"哪个框架更好\"，而是\"什么场景选什么方案\"。小 A 两次翻车（内部后台硬上 Keycloak = 过度设计；对外 SaaS 用私有协议 = 选型过浅）引出一套选型决策框架。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/auth-authz-selection-part1.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-11-06-jvm-parameters-by-version",
       "title": "JVM 参数：一份按版本对账的手册",
@@ -7301,6 +7283,24 @@
       "summary": "微博博主「蚁工厂」推荐一个计算机系统知识交互式学习站 kejun.github.io/cs-systems-design/，作者 kejun，附他整理的系统学习路线图。站点定位是作者本人\"重学\"用，没有基础概念介绍，不适合初学者入门，更适合已有概念框架后查漏补缺。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weibo-cs-systems-design.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-06-auth-authz-selection-part1",
+      "title": "认证与授权选型拆解（上篇）：五种候选矩阵——自研 Redis、Sa-Token、Spring Security、Keycloak、JWT",
+      "path": "Archive/2026-11-06-auth-authz-selection-part1.md",
+      "created": "2026-11-06",
+      "category": "技术",
+      "tags": [
+        "java"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/gW1ZQfUaKDcXkT1D-z3etw",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "选 Sa-Token 还是 Keycloak？两派吵一下午没结论。本文结论：这不是\"哪个框架更好\"，而是\"什么场景选什么方案\"。小 A 两次翻车（内部后台硬上 Keycloak = 过度设计；对外 SaaS 用私有协议 = 选型过浅）引出一套选型决策框架。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/auth-authz-selection-part1.md",
       "wiki_status": "ingested"
     },
     {

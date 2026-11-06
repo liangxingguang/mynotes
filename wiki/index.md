@@ -377,6 +377,7 @@
 - [[2026-11-05-weixin-multi-agent-control-shift|多 Agent 架构的三次反转：从中心调度到自驱协作]]（2026-11-05，AI/多 Agent/架构，四个组织问题=控制权归属；上下文边界+模型边界；Master Agent/任务看板/Advisor 三种架构=控制权下沉路径；中间件巡检三模式混用案例，得物技术公众号单信源，置信度中）
 
 - [[httpclient-optimization-high-concurrency|高并发场景下的 HttpClient 优化方案，QPS 大大提升！]]（2026-11-06，架构/Java/HttpClient，单例 client+PoolingHttpClientConnectionManager(maxTotal 500/perRoute 50)+ConnectionKeepAliveStrategy+空闲连接监控线程+ResponseHandler+三段超时+重试取舍+nginx 双端 keepalive；250ms→80ms 实测，单信源微信公众号转载 CSDN，置信度中）
+- [[auth-authz-selection-part1|认证与授权选型拆解（上篇）：五种候选矩阵——自研 Redis、Sa-Token、Spring Security、Keycloak、JWT]]（2026-11-06，安全/选型，认证授权选型系列·上篇：两种翻车代价（过度设计/选型过浅）+认证vs授权概念分层+凭证/Token/会话三层+有状态vs无状态权衡+L1-L5 分层+五维模型与五方案评分矩阵+门禁类比+授权层统一RBAC/ABAC+AuthService接口隔离+10条场景决策清单+4类反模式，单信源微信公众号，置信度中）
 ## concept（概念）
 
 - [[a2a-protocol|A2A 协议]]（Agent↔Agent 横向协作协议，Google 2025）
@@ -410,6 +411,7 @@
 - [[architecture-description-metamodel|ISO 42010 架构概念元模型]]（左侧人与诉求五要素+右侧视图与设计四要素+四条逻辑线不可颠倒+AD≠架构+车载域控五团队对立+ADR 决策记录，单信源置信度中）
 - [[architecture-design-capabilities|架构设计能力（8 个底层动作）]]（架构 vs 架构描述+八动作链抽象/聚焦/分解/边界/契约/权衡/约束/可演化+Parnas 信息隐藏+隐式契约+二十指标等于零，单信源置信度中）
 - [[architecture-tradeoff-methodology|架构取舍方法论（先定约束，再挑技术）]]（四问前置+演进式架构+三高量化+对症优化+选型看访问路径+稳定性工具箱，单信源置信度中）
+- [[authn-authz-selection-framework|认证与授权选型决策框架（五维模型与 AuthN/AuthZ 分层）]]（认证与授权选型方法论：AuthN/AuthZ+凭证/Token/会话三层+有状态vs无状态权衡+五维模型+三层时间尺度+L1-L5分层+对外必须标准协议+五方案评分矩阵局限+10条场景清单+4类反模式+AuthService接口隔离，认证授权选型系列·上篇信源编译，与 [[sso-oauth2-oidc]] [[rbac-permission-system]] [[permission-refactoring]] 互证，单信源，置信度中）
 - [[batch-import-design|B端批量导入设计]]（数据治理本质：三层校验模型（字段格式/业务实体/跨单据）+异步六步流水线+6态状态机（部分成功为常态）+错误报告7要素与三档错误级别+部分成功策略+配置化校验规则，与 mysql-bulk-import（DB层吞吐）互补分层，单信源置信度中）
 - [[batch-message-push|批量消息推送（百万级短信推送）]]（内存/性能/可靠性三对矛盾 + 游标分片+专用线程池+Redis 进度+重试死信+断点续跑，单信源置信度中）
 - [[bend-prd-writing-framework|B端PRD写作框架（一图三表一份清单）]]（2026-11-04，产品/B端/PRD/方法论，开发不骂人的三根因+一图三表一份清单框架（主流程图/状态流转表/字段规则表/异常边界表/上线前自检）+四案例（EHR转岗/ERP部分入库/CRM公海/车贷反欺诈）+10业务模块PRD重点速查表，与五件套拆解同构、与 Agent 化 PRD 模板互为底稿与增量，工单PRD（第2篇）与埋点PRD（第23篇）两信源印证，三信源置信度中）
