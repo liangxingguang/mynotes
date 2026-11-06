@@ -1,0 +1,172 @@
+---
+title: JVM 内存模型全景（从一个 OOM 说起）
+source: 微信公众号 · 「JVM 与性能调优系列」第 1 篇（专辑栏目 JVM 系列）
+source_url: http://mp.weixin.qq.com/s?__biz=MzU2MjgxNzA4OA==&mid=2247483991&idx=1&sn=c089e7cfff639e37881c8b5530fb9370&chksm=fc62f378cb157a6e3e24b41cd90eeebbbbb1c261df162b8622b5cfc9de01dc7e14eb788d6278#rd
+source_type: article
+platform: 微信公众号
+captured: 2026-11-06
+registered_at: 2026-11-06
+inbox_ref: Inbox/2026-11-06-jvm-memory-overview.md
+asset_ref: Assets/2026-11/jvm-memory-overview.md
+---
+
+## JVM 内存模型全景（从一个 OOM 说起）
+
+> 本篇是「JVM 与性能调优系列」第 1 篇。关注公众号，追更不迷路。
+
+凌晨两点，告警群炸了：`java.lang.OutOfMemoryError: Java heap space`。你一边揉眼睛一边想：堆不是有 4G 吗？为什么还会满？
+
+如果你答不上来，说明你还没真正「看见」JVM 的内存。今天我们就把这个黑盒打开，从一次 OOM 讲清楚：**JVM 的内存到底分哪几块、每块装什么、为什么偏偏是这里爆了。**
+
+* * *
+
+## 一、先建立一张全景图
+
+JVM 在运行时，把内存切成几块各司其职的区域。先把这六块区域的职责记清楚，后面所有 OOM 都能在这里对号入座：
+
+*   **堆（Heap）**
+
+    ：所有对象实例的家园，GC 主战场
+
+*   **虚拟机栈（Stack）**
+
+    ：每个线程私有，存栈帧、局部变量、方法调用
+
+*   **本地方法栈（Native Method Stack）**
+
+    ：给 native 方法用，HotSpot 里和虚拟机栈合二为一
+
+*   **方法区 / 元空间（Method Area / Metaspace）**
+
+    ：类信息、常量、静态变量、即时编译后的代码
+
+*   **程序计数器（PC Register）**
+
+    ：当前线程执行到哪条字节码指令
+
+*   **直接内存（Direct Memory）**
+
+    ：堆外，NIO 的 `ByteBuffer.allocateDirect` 用，不受 GC 直接管理
+
+
+为什么 JVM 要把内存切成这么多块，而不是一整块？核心原因是**生命周期和访问方式不同**：线程私有的区域（栈、PC、本地栈）随线程生灭，天然不存在并发竞争；而共享的堆和元空间承载大量对象，需要 GC 和锁来保证一致。把「快变、私有、简单」和「慢变、共享、复杂」分开管理，是后面所有优化（分代、Region、并发回收）的底层逻辑。
+
+* * *
+
+## 二、堆：最大的那块，也是 OOM 重灾区
+
+堆是 JVM 启动时按 `-Xms`/`-Xmx` 划出来的，所有 `new` 出来的对象几乎都在这儿。它是**线程共享**的，也是垃圾回收的主要对象。
+
+为什么凌晨那次 OOM 是 `Java heap space`？因为对象一直被引用、回收不掉，堆被填满了。典型场景：
+
+*   缓存无上限地 `put`，从不失效
+
+*   一次查询把百万条记录全加载进 `List`
+
+*   内存泄漏：往 `static Map` 里塞数据忘了清理
+
+
+堆还分代（年轻代/老年代），这是后面 G1、ZGC 的基础——本篇先记住「堆是对象之家」，分代留到第 4 篇细讲。
+
+**一个常被忽略的点**：`-Xms` 和 `-Xmx` 设成不一样，JVM 会按需扩容，扩容本身要触发一次 Full GC；生产环境通常把两者设成相等，省掉抖动。
+
+* * *
+
+## 三、虚拟机栈：方法调用的「调用栈」
+
+每起一个线程，JVM 就给它分配一块栈。方法调用时压入一个**栈帧**，里面装着局部变量表、操作数栈、返回地址。
+
+栈有两个经典错误：
+
+*   `StackOverflowError`
+
+    ：递归没出口，栈帧层层压入直到撑爆——栈是**固定深度**的（由 `-Xss` 控制，默认几百 KB 到 1M）
+
+*   `OutOfMemoryError: unable to create new native thread`
+
+    ：线程数过多，操作系统连线程栈都分配不出来了
+
+
+注意：栈是**线程私有**的，不共享，所以不存在并发竞争问题——但线程太多会拖垮整个进程。曾经有个真实故障：每来一个请求就 `new Thread`，没用线程池，几千并发后 `unable to create new native thread` 全站雪崩。
+
+* * *
+
+## 四、方法区 / 元空间：类的「户口本」
+
+类被加载后，它的结构信息（字段、方法、字节码、常量池）都存在这里。JDK 8 以前叫「永久代（PermGen）」，放在堆里、容易 OOM；**JDK 8 起改成元空间（Metaspace），挪到本地内存**，默认无上限，但能靠 `-XX:MaxMetaspaceSize` 限制。
+
+所以你会看到另一种 OOM：`OutOfMemoryError: Metaspace`——一般是动态生成类太多（如 CGLIB 代理、Groovy 脚本、大量 JSP 预编译）导致元空间被撑爆。Spring 的 AOP 一旦用 CGLIB 给大量类生成代理，元空间就会涨；这也是为什么微服务里常把 `-XX:MaxMetaspaceSize` 显式设一个上限。
+
+* * *
+
+## 五、程序计数器：最不起眼却最不可或缺
+
+它是**线程私有**的很小一块内存，记录当前线程执行到哪条字节码指令的地址。如果正在执行 native 方法，计数器值为空（undefined）。
+
+为什么需要它？因为 CPU 时间片轮转时，线程会被挂起再恢复，恢复后得知道「接着哪条指令跑」。它是唯一一个规范里**不会 OOM** 的区域——所以排查 OOM 时它从不背锅，但理解它才能理解「线程切换」和后面安全点（Safepoint）的设计。
+
+* * *
+
+## 六、直接内存：藏在堆外的「隐形消耗」
+
+`ByteBuffer.allocateDirect(1024)` 分配的内存不在堆里，而在**堆外本地内存**。它不受 GC 管理（靠 `Cleaner` 机制回收，可能不及时），但算在 JVM 进程的总内存里。
+
+如果大量用 NIO、Netty，又忘了限制，会出现一种诡异现象：**堆还很空，但进程被 OS 杀掉（OOM Killer）**——因为直接内存把机器物理内存吃光了。它自己也会报 `OutOfMemoryError: Direct buffer memory`，上限由 `-XX:MaxDirectMemorySize` 控制（默认等于 `-Xmx`）。
+
+* * *
+
+## 七、把 OOM 对号入座
+
+错误信息
+
+爆在哪块
+
+典型原因
+
+`Java heap space`
+
+堆
+
+对象堆积 / 内存泄漏
+
+`Metaspace`
+
+元空间
+
+类加载过多（CGLIB/Groovy）
+
+`unable to create new native thread`
+
+栈（线程）
+
+线程数超限
+
+`Direct buffer memory`
+
+直接内存
+
+NIO/Netty 未限流
+
+`GC overhead limit exceeded`
+
+堆
+
+98% 时间 GC 却回收 <2%
+
+* * *
+
+## 八、动手看一下：你的 JVM 各区默认多大
+
+理论说完，跑一条命令更直观：
+
+```
+java -XshowSettings:vm -version# 或看 GC 详情：java -XX:+PrintGCDetails -version
+```
+
+你会看到堆的总量、各代默认比例（老年代:新生代=2:1，Eden:S0:S1=8:1:1），以及元空间、压缩类空间的预留值。很多团队从没看过这份默认配置，等到 OOM 才去翻文档——其实起步就该心里有数。
+
+> 小提示：容器环境里 JVM 早期版本会「误读」宿主机内存导致 `-Xmx` 设得过大，JDK 8u191+ / 11+ 已支持感知容器上限（`-XX:+UseContainerSupport`，默认开）。老版本在 Docker 里跑，记得手动 `-Xmx`。
+
+## 总结
+
+> JVM 的内存不是一整块，而是**堆（共享、对象之家）、栈（线程私有、方法调用）、元空间（类的户口本）、直接内存（堆外隐形）、程序计数器（执行指针）** 各司其职。绝大多数线上事故，都能在「哪块区域爆了」这件事上找到起点。把这张全景图刻进脑子里，后面讲回收算法、收集器、调优，你才会有「坐标系」。

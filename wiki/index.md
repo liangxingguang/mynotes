@@ -373,6 +373,7 @@
 - [[2026-11-04-ai-native-team-org-reconstruction|构建 AI Native 团队：从工具采用到组织重构]]（2026-11-05，AI/组织/企业，AI-Augmented vs AI-Native 五维对比+平台先行建造顺序+人才/流程/治理三重重构+Pomelo/Snowflake/Money Forward 数据+Gartner 40% 预测，微信公众号单信源，置信度中）
 - [[2026-11-04-arraylist-vs-linkedlist|为什么 ArrayList 比 LinkedList 快？集合框架底层原理，一次讲清]]（2026-11-05，Java/JDK/集合，ArrayList 动态数组 vs LinkedList 双向链表复杂度与选型表+HashMap 四层考点+JDK 7/8 并发坑+ArrayDeque 替代，微信公众号单信源，置信度高）
 - [[2026-11-04-jvm-memory-model|JVM内存模型深度解析 —— 搞清楚堆和栈，告别OOM]]（2026-11-04，架构/Java/JVM，运行时数据区全解（PC唯一不OOM/VM栈栈帧四组件/堆分代/元空间）+经典内存分析题+JVM参数速查，微信公众号「从CRUD到架构师」单信源，置信度中）
+- [[2026-11-06-jvm-memory-overview|JVM 内存模型全景（从一个 OOM 说起）]]（2026-11-06，Java/JVM/内存，六区域全景（堆/VM栈/本地栈/方法区·元空间/PC/直接内存）+分区根因（生命周期与访问方式二分法）+OOM对号入座表（五类）+-Xms=-Xmx生产实践+默认代比例2:1/8:1:1+容器感知（8u191+/11+），公众号「JVM与性能调优系列」第1篇，与 [[2026-11-04-jvm-memory-model]] 五区域口径互补对账，置信度中）
 - [[2026-11-04-pgvector-rag-retrieval-engineering|别急着换向量库：PostgreSQL + pgvector 的生产级 RAG 检索工程]]（2026-11-04，AI/RAG/数据库，五条正确性契约+模型空间注册+版本化+ACL+RLS+检索路由分叉+混合检索RRF+发布CAS+删除两步走+评测矩阵，微信公众号单信源，置信度中）
 - [[two-good-sites-for-devs|给程序员推荐两个良心网站（知乎想法：systemdesign.io + AI 系统学习教程）]]（2026-11-05，AI/学习资源/系统设计，知乎想法单信源，推荐 systemdesign.io + aiengineeringfromscratch 两个网站，置信度中）
 - [[cs-systems-design-weibo-recommendation|微博推荐：计算机系统知识交互式学习站 cs-systems-design]]（2026-11-05，架构/学习资源/微博，推荐 kejun.github.io/cs-systems-design 交互式学习站+5 张学习路线图，作者自述「重学」定位无基础介绍、不适合初学者，微博单信源，置信度中）
@@ -485,7 +486,7 @@
 - [[mcp|MCP]]（LLM↔工具/数据纵向协议，Anthropic 2024）
 - [[jad-sc-sm-version-check|jad/sc -d/sm：核实线上跑的是哪版代码]]（版本/来源/签名三层核实+「改了没生效」四原因+五步处置，与 arthas-01 速查互证，单信源方法论，置信度高）
 - [[jmm-happens-before|Java 内存模型与 happens-before]]（JMM 抽象规范≠内存结构；主内存/工作内存副本模型；8 条 hb 规则；volatile 禁重排是 DCL 必须；单信源，置信度中）
-- [[jvm-runtime-memory-areas|JVM 运行时内存区域]]（2026-11-05，Java/JVM/内存，线程私有vs共享五区域（PC唯一不OOM/VM栈栈帧四组件/堆分代Eden→S0/S1→15岁晋升/元空间）+经典内存分析题+参数速查，与 [[jmm-happens-before]] 互补不重叠，单信源置信度中）
+- [[jvm-runtime-memory-areas|JVM 运行时内存区域]]（2026-11-06 更新，Java/JVM/内存，规范五区域（线程私有vs共享：PC唯一不OOM/VM栈栈帧四组件/堆分代Eden→S0/S1→15岁晋升/元空间vs永久代）+分区根因（生命周期/访问方式二分法，解读）+直接内存全景图第六块（非规范数据区，视界说明）+生产实践（-Xms=-Xmx省抖动/容器感知UseContainerSupport）+经典内存分析题+参数速查，两信源口径对账（五区域 vs 六区域），置信度中）
 - [[live-message-drop-policy|直播消息丢弃策略]]（上行 200 条/s 硬丢弃 + 环形队列柔性丢弃 + 优先级三桶保必达，融云双信源）
 - [[mcast|长连接组播（mcast）]]（groupID 下沉长连接层，1:M×1:N 两级扩散；单实例 25w 连接 8w QPS，聚合+压缩消化峰值，百度一手）
 - [[message-bus|业务消息总线]]（哑管道式配置路由：履约异步分发+topic 治理收拢；与 ESB/Pipeline 的区分，信鸽单一信源）
@@ -520,7 +521,7 @@
 - [[tcp-connection-lifecycle|TCP 连接生命周期与状态机]]（四大功能/三次握手/四次挥手/RTO/快重传/拥塞控制/TIME_WAIT 2MSL/状态机排障四场景；发送窗口=min(rwnd,cwnd)；Linux 默认 CUBIC；tcp_tw_recycle 已移除；单信源一手，置信度高）
 - [[notification-system-design|站内消息系统领域模型]]（公告/提醒/私信三分类+提醒四元组；拉（订阅驱动）/推（私信直写）按类选型；免打扰后置读路径，简书上下篇双信源）
 - [[okf-knowledge-format|OKF（面向 AI Agent 的知识包装规范）]]（入库时编译为互链 Markdown 树，运行时只做导航+摘录）
-- [[oom-troubleshooting|OOM 排查方法论]]（6 类 OOM 速查表 + 五步法 + 生产纪律：禁直接 jmap -dump、90% 代码问题、溢出≠泄漏、GC overhead limit 最危险、GC刑侦三步+时间线交叉验证+静态无界泄漏模板，四信源，置信度中）
+- [[oom-troubleshooting|OOM 排查方法论]]（6 类 OOM 速查表 + 五步法 + 生产纪律：禁直接 jmap -dump、90% 代码问题、溢出≠泄漏、GC overhead limit 最危险、GC刑侦三步+时间线交叉验证+静态无界泄漏模板，第五信源（《JVM 内存模型全景》）印证区域路由+补 new Thread 雪崩案例与直接内存空堆被杀口径，五信源，置信度中）
 - [[operational-transformation|Operational Transformation（OT，操作转换）]]（中心定序+变换调整偏移量收敛并发编辑；siteId tie-break 命门+TP1/TP2 验证；文档级 Actor 串行+pending/buffer 客户端，单信源）
 - [[perf-cpu-sampling|perf CPU 采样排查法]]（采集→看热点→追调用者链路，四类前置+符号≠调用栈+Self/Children 读数纪律，demo 742 样本实测，单信源置信度高）
 - [[pi-customization-layers|Pi 五层定制模型]]（Prompt 模板→AGENTS.md→Skill→Extension→SDK，官方扩展点成本阶梯）

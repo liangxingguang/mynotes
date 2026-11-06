@@ -4794,6 +4794,19 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/bnISBVZk1bAWKgZHauWESw",
       "asset_ref": "Assets/2026-11/weixin-bnISBVZk1bAWKgZHauWESw-xuqiufenxi-18.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-06-jvm-memory-overview.md",
+      "sha256": "14be19493132eee21111c435eec0b049ab58fd9379cfc17dd11ad5f9fa46fa38",
+      "registered_at": "2026-11-06",
+      "inbox_ref": "Archive/2026-11-06-jvm-memory-overview.md",
+      "pages": [
+        "wiki/sources/2026-11-06-jvm-memory-overview.md",
+        "wiki/concepts/jvm-runtime-memory-areas.md",
+        "wiki/concepts/oom-troubleshooting.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU2MjgxNzA4OA==&mid=2247483991&idx=1&sn=c089e7cfff639e37881c8b5530fb9370&chksm=fc62f378cb157a6e3e24b41cd90eeebbbbb1c261df162b8622b5cfc9de01dc7e14eb788d6278",
+      "asset_ref": "Assets/2026-11/jvm-memory-overview.md"
     }
   ]
 }

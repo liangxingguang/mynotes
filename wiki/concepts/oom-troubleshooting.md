@@ -4,7 +4,7 @@ type: concept
 title: OOM 排查方法论
 status: active
 created: 2026-10-31
-updated: 2026-11-05
+updated: 2026-11-06
 confidence: medium
 tags:
   - concept
@@ -16,12 +16,15 @@ sources:
   - raw/sources/architecture/2026-10-28-java-online-troubleshooting-arthas.md
   - raw/sources/architecture/2026-11-03-weixin-full-gc-troubleshooting.md
   - raw/sources/architecture/2026-11-04-jvm-memory-model.md
+  - raw/sources/architecture/2026-11-06-jvm-memory-overview.md
 related:
   - wiki/concepts/evidence-first-jvm-tuning.md
   - wiki/topics/jvm-gc.md
   - wiki/sources/jvm-interview-guide.md
   - wiki/sources/java-online-troubleshooting-arthas.md
   - wiki/sources/2026-11-03-weixin-full-gc-troubleshooting.md
+  - wiki/sources/2026-11-04-jvm-memory-model.md
+  - wiki/sources/2026-11-06-jvm-memory-overview.md
   - wiki/concepts/jmm-happens-before.md
   - wiki/concepts/class-loading-parent-delegation.md
   - wiki/entities/arthas.md
@@ -78,11 +81,13 @@ OOM 是线上最常见也最致命的 JVM 事故，且错误信息只告诉你�
 - 2026-10-28 — 随 JVM 面试题信源提出 6 类 OOM 速查表与排查五步法（理论框架）。
 - 2026-10-28 — Java 线上排查实战信源以真实复现数据印证同一流程：`-Xmx128m -XX:+HeapDumpOnOutOfMemoryError` 自动留现场 → `jmap -histo` 看大户（byte 数组 7434 实例占 63MB）→ MAT 分析引用链；并补充闪退场景的 OOM Killer 区分法（dmesg）。
 - 2026-11-05 — 《JVM 内存模型深度解析》以科普口径独立印证本页两条：OOM 错误关键词直接指向区域（`Java heap space`→堆、`Metaspace`→元空间）与排查动作（`-XX:+HeapDumpOnOutOfMemoryError` 导出 dump 后用 MAT/JProfiler 分析）；并补充堆 OOM 的典型诱因清单（while 循环不断 new 且被引用持有、一次性加载大量数据、集合忘记清理）与元空间 OOM 的动态类生成诱因（CGLIB 代理、JSP 编译、Lambda 表达式），与本页速查表病灶列一致。
+- 2026-11-06 — 《JVM 内存模型全景》以六区域视界第三次印证"错误关键词→区域"路由（五类 OOM 对号入座表与本页速查表病灶列一致）；补真实故障案例（每请求 `new Thread`、未用线程池，几千并发后 `unable to create new native thread` 全站雪崩），印证"有界线程池"解药；补直接内存口径（NIO/Netty 未限流 → `Direct buffer memory` / 堆外吃光 → 堆还空被 OOM Killer 杀），印证本页 OOM Killer 区分法；补 `-XX:MaxDirectMemorySize` 默认等于 `-Xmx` 上限口径与微服务显式设 `MaxMetaspaceSize` 的实践。
 
 ## Open Questions（开放问题）
 
 - 6 类 OOM 速查表为单一二手信源归纳；Direct buffer memory 与 native thread 两类的排查细节（如 `jcmd GC.class_histogram`、`/proc/<pid>/task` 数线程）在本文中仅点到，未展开。
 - Metaspace 告警阈值（>85%）与 GC 调优阈值（老年代 >80%）出自不同信源、口径不同，未做统一。
+- `-XX:MaxDirectMemorySize` 默认"等于 `-Xmx`"为新信源口径，HotSpot 各版本行为（新版实际不再继承 `-Xmx`）尚未与规范对账，待核实。
 
 ## Evidence（证据）
 
@@ -90,6 +95,7 @@ OOM 是线上最常见也最致命的 JVM 事故，且错误信息只告诉你�
 - Source: `raw/sources/architecture/2026-10-28-java-online-troubleshooting-arthas.md`（印证：heap dump 参数+jmap -histo+MAT 实战；OOM Killer 与 JVM OOM 的闪退区分）
 - Source: `raw/sources/architecture/2026-11-03-weixin-full-gc-troubleshooting.md`（印证：GC 刑侦三步+时间线交叉验证；静态缓存泄漏完整案例；修法三层）
 - Source: `raw/sources/architecture/2026-11-04-jvm-memory-model.md`（印证：heap space/Metaspace 区域判定与 dump 排查动作；补堆 OOM 与元空间 OOM 诱因清单）
+- Source: `raw/sources/architecture/2026-11-06-jvm-memory-overview.md`（印证：五类 OOM 对号入座表与区域路由一致；补 new Thread 雪崩案例与直接内存 OOM Killer/MaxDirectMemorySize 口径）
 
 ## Related Knowledge（相关知识）
 
@@ -97,5 +103,7 @@ OOM 是线上最常见也最致命的 JVM 事故，且错误信息只告诉你�
 - [[java-online-troubleshooting-arthas|Java 线上排查实战（信源页）]]
 - [[2026-11-03-weixin-full-gc-troubleshooting|一次 Full GC 排查实录（信源页）]]
 - [[2026-11-04-jvm-memory-model|JVM内存模型深度解析（信源页）]]
+- [[2026-11-06-jvm-memory-overview|JVM 内存模型全景（信源页）]]
+- [[jvm-runtime-memory-areas|JVM 运行时内存区域]]（新增外挂块"直接内存"即本页 `Direct buffer memory` 分类的解剖学基础，两边互挂）
 - [[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]
 - [[jvm-gc|JVM 垃圾回收（主题）]]

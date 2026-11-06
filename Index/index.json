@@ -1,24 +1,6 @@
 {
-  "updated_at": "2026-11-06 22:42",
+  "updated_at": "2026-11-06 23:02",
   "notes": [
-    {
-      "id": "2026-11-06-jvm-memory-overview",
-      "title": "JVM 内存全景图",
-      "path": "Inbox/2026-11-06-jvm-memory-overview.md",
-      "created": "2026-11-06",
-      "category": "技术",
-      "tags": [
-        "java"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU2MjgxNzA4OA==&mid=2247483991&idx=1&sn=c089e7cfff639e37881c8b5530fb9370&chksm=fc62f378cb157a6e3e24b41cd90eeebbbbb1c261df162b8622b5cfc9de01dc7e14eb788d6278#rd",
-      "source_type": "link",
-      "platform": "微信公众号",
-      "summary": "讲清 JVM 六大内存区域的职责（堆/栈/方法区/元空间/程序计数器/直接内存），为什么按生命周期与访问方式分区，并给出 OOM 报错对号入座表与默认配置查看命令。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/jvm-memory-overview.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-11-07-agent-memory-system-design",
       "title": "企业级 Agent 记忆系统设计拆解",
@@ -7244,6 +7226,24 @@
       "summary": "日调用千万级的 HTTP 接口调用，QPS 上不去：作者把 HttpClient 从\"每次请求新建 client\"改成**单例 + 连接池 + keep-alive + ResponseHandler**，平均耗时从 250ms 降到 80ms（降三分之二），容器线程耗尽报警消失。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/httpclient-optimization-high-concurrency.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-06-jvm-memory-overview",
+      "title": "JVM 内存全景图",
+      "path": "Archive/2026-11-06-jvm-memory-overview.md",
+      "created": "2026-11-06",
+      "category": "技术",
+      "tags": [
+        "java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU2MjgxNzA4OA==&mid=2247483991&idx=1&sn=c089e7cfff639e37881c8b5530fb9370&chksm=fc62f378cb157a6e3e24b41cd90eeebbbbb1c261df162b8622b5cfc9de01dc7e14eb788d6278#rd",
+      "source_type": "link",
+      "platform": "微信公众号",
+      "summary": "讲清 JVM 六大内存区域的职责（堆/栈/方法区/元空间/程序计数器/直接内存），为什么按生命周期与访问方式分区，并给出 OOM 报错对号入座表与默认配置查看命令。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/jvm-memory-overview.md",
       "wiki_status": "ingested"
     },
     {
