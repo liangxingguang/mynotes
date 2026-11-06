@@ -9,7 +9,7 @@ created: 2026-11-06
 category: 技术
 tags: [工程实践, 课程]
 asset_ref: "Assets/2026-11/weixin-bnISBVZk1bAWKgZHauWESw-xuqiufenxi-18.md"
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 行权限：同一张表，不同单位看到不同的行

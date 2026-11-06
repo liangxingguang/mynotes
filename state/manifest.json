@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-11-05",
+  "updated_at": "2026-11-06",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -4766,6 +4766,34 @@
       ],
       "source_url": "https://zhuanlan.zhihu.com/p/2061271933296154175",
       "asset_ref": "Assets/2026-11/zhihu-2061271933296154175.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-06-weknora-dept-knowledge-base.md",
+      "sha256": "0dc76f28df481260b4e763977e355143b11433bffc8b1d3af46fb23f6dfdfd89",
+      "registered_at": "2026-11-06",
+      "inbox_ref": "Archive/2026-11-06-weknora-dept-knowledge-base.md",
+      "pages": [
+        "wiki/sources/weknora-dept-knowledge-base.md",
+        "wiki/entities/weknora.md",
+        "wiki/concepts/knowledge-base-maintenance.md",
+        "wiki/concepts/llm-wiki.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/byg5LP34T5XL8LKe08CxOw",
+      "asset_ref": "Assets/2026-11/weKnora-dept-knowledge-base.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-11-06-xuqiufenxi-18-xingquanxian.md",
+      "sha256": "7706e5a901251d945d09b8b0946a2c8c44465a4d0bf966e4b5a8f04b43ac87d6",
+      "registered_at": "2026-11-06",
+      "inbox_ref": "Archive/2026-11-06-xuqiufenxi-18-xingquanxian.md",
+      "pages": [
+        "wiki/sources/2026-11-06-xuqiufenxi-18-xingquanxian.md",
+        "wiki/concepts/row-level-permission.md",
+        "wiki/concepts/rbac-permission-system.md",
+        "wiki/concepts/permission-refactoring.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/bnISBVZk1bAWKgZHauWESw",
+      "asset_ref": "Assets/2026-11/weixin-bnISBVZk1bAWKgZHauWESw-xuqiufenxi-18.md"
     }
   ]
 }

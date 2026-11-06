@@ -4,7 +4,7 @@ type: concept
 title: B端权限重构方法论（存量权限混乱的诊断与五步法）
 status: active
 created: 2026-11-04
-updated: 2026-11-04
+updated: 2026-11-06
 confidence: medium
 tags:
   - concept
@@ -62,6 +62,7 @@ related:
 - [[rbac-permission-system|RBAC 权限系统]]——重构后的模型基础；本文是该概念页「从 RBAC 向 ABAC 演进」开放问题的实务回答之一。
 - [[legacy-system-rebuild|存量B端系统重构方法论]]——全系统视角（权限门/流程行/数据列三层地图 + 3 天清单），本文是权限专项视角；Day1 权限门的深化。
 - [[operation-log-design|B端操作日志设计]]——步骤 5 审计日志沉淀的基础设施；权限变更与敏感访问记录依赖操作日志能力。
+- [[row-level-permission|行权限]]——「管列层」病灶（行级数据权限缺失）的从 0 落地路径：用户范围+归属字段+匹配规则三件事、层级继承、出口统一；可作为步骤 3 数据权限规则设计的操作卡。
 
 ### Dependencies（依赖项）
 

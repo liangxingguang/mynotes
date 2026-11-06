@@ -4,7 +4,7 @@ type: concept
 title: LLM Wiki
 status: active
 created: 2026-10-23
-updated: 2026-10-31
+updated: 2026-11-06
 confidence: medium
 tags:
   - concept
@@ -13,10 +13,14 @@ sources:
   - raw/sources/ai/2026-10-16-knowledge-base-tech-evolution.md
   - raw/sources/ai/2026-10-14-llm-wiki-advanced-four-steps.md
   - raw/sources/ai/2026-10-31-ai-kb-build-workbuddy-ima-wiki.md
+  - raw/sources/ai/2026-11-06-weknora-dept-knowledge-base.md
 related:
   - wiki/concepts/okf-knowledge-format.md
   - wiki/sources/llm-wiki-advanced-four-steps.md
   - wiki/sources/ai-kb-build-workbuddy-ima-wiki.md
+  - wiki/sources/weknora-dept-knowledge-base.md
+  - wiki/entities/weknora.md
+  - wiki/concepts/knowledge-base-maintenance.md
 ---
 # LLM Wiki
 
@@ -62,6 +66,7 @@ related:
 
 - 2026-10 — 教程信源（进阶篇一）给出可落地的四层架构、8 页面类型与三工作流权限表，与综述信源互证；本仓库即按该模式运行（目录、AGENTS.md、页面类型、权限表一一对应）。Karpathy 原述仍待补一手信源。
 - 2026-10-31 — 新增 WorkBuddy + ima + Wiki 产品化落地信源（第 3 信源）。补上三块实践细节：①**非技术用户路径**——LLM Wiki 模式可借 WorkBuddy（读取/核对/分析/复盘）+ ima（保存资料/经验/任务结果）+ Wiki 交叉索引的组合低门槛落地，无需自建仓库；②**三文件夹工作区结构**——`01_原始资料`（不可改写的原始层）/ `02_经验档案`（编译层：背景画像、知识库导航、主题档案、方法页、常见问题、固定流程、指标口径）/ `03_任务结果`（按任务归档的报告与复盘），与本页"原始层→编译层"分离同构，报告按任务保存、Wiki 按主题维护；③**维护与体检机制**——七步流程（接 ima→建文件夹→首批资料跑通→生成三份约定文件→干一次活→经验更新回库→月度定时体检），印证"结构约定文件"特征与索引/日志的持续维护职责。其"约定才让 AI 连得上"与"每月体检"分别强化了结构约定与巡检机制两条特征。
+- 2026-11-06 — 新增硬件部门 WeKnora 实战信源（第 4 信源）。印证三点：①**框架与开箱之间的产品化空白**——作者（硬件工程师，非软件团队）明确把 LLM Wiki 归为"框架类"方案（只给骨架、自攒工作量大），与"个人库（Obsidian+AI）不够用"构成两难，落在 WeKnora 这类开箱产品上；②**维护职责缺位是模式级短板**——作者领导之问"文档能在线编辑保证最新吗"戳中 LLM Wiki 式自建库的共同痛点：重心全在解析/检索前半段，维护=删+重传，该信源直接催生 [[knowledge-base-maintenance]] 概念页；③**四层模型与维护纪律的互证**——"未经人工确认的结论不进正式知识库"与本仓库 pending→ingested 队列五态、"没发现异常≠通过"与 lint 巡检同构。
 
 ## Open Questions（开放问题）
 
@@ -72,10 +77,13 @@ related:
 - Source: `raw/sources/ai/2026-10-16-knowledge-base-tech-evolution.md`
 - Source: `raw/sources/ai/2026-10-14-llm-wiki-advanced-four-steps.md`（四原则/8 页面类型/证据不变量/Ingest-Query-Lint 权限表）
 - Source: `raw/sources/ai/2026-10-31-ai-kb-build-workbuddy-ima-wiki.md`（第 3 信源：WorkBuddy+ima+Wiki 产品化落地、三文件夹工作区、维护约定三纪律、月度体检）
+- Source: `raw/sources/ai/2026-11-06-weknora-dept-knowledge-base.md`（第 4 信源：硬件部门 WeKnora 实战——框架/个人库两难、维护入口缺失、人工确认门禁）
 
 ## Related Knowledge（相关知识）
 
 - [[knowledge-base-tech-evolution|一文搞懂知识库的技术演进]]
 - [[llm-wiki-advanced-four-steps|LLM Wiki 搭建教程·进阶篇一（信源页）]]（可落地架构与权限表）
 - [[ai-kb-build-workbuddy-ima-wiki|分享一套超赞的AI知识库搭建方法（信源页）]]（WorkBuddy+ima+Wiki 落地案例）
+- [[weknora-dept-knowledge-base|信源：我用腾讯开源的 WeKnora 搭部门知识库]]（部门落地与维护短板案例）
+- [[knowledge-base-maintenance|知识库维护：检索之后的另一半]]（本模式维护职责的产品化缺口，由第 4 信源催出）
 - [[jd-haibo-ai-knowledge-base|拆解京东海博 AI-Native 落地保障：海博团队 AI 知识库能力建设]]（团队知识库实践参照）

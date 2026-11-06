@@ -9,7 +9,7 @@ created: 2026-11-06
 category: 技术
 tags: [RAG, AI]
 asset_ref: Assets/2026-11/weKnora-dept-knowledge-base.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 我用腾讯开源的 WeKnora 搭部门知识库：检索很准，但它只有一半功能

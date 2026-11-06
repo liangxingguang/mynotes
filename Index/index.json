@@ -1,44 +1,6 @@
 {
-  "updated_at": "2026-11-06 20:38",
+  "updated_at": "2026-11-06 21:39",
   "notes": [
-    {
-      "id": "2026-11-06-weknora-dept-knowledge-base",
-      "title": "我用腾讯开源的 WeKnora 搭部门知识库：检索很准，但它只有一半功能",
-      "path": "Inbox/2026-11-06-weknora-dept-knowledge-base.md",
-      "created": "2026-11-06",
-      "category": "技术",
-      "tags": [
-        "RAG",
-        "AI"
-      ],
-      "source": "微信公众号 · 硬件AI工坊（作者 hardvis）",
-      "source_url": "https://mp.weixin.qq.com/s/byg5LP34T5XL8LKe08CxOw",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "硬件工程师 hardvis 部门知识库实战实录：个人库（Obsidian+AI）不够用、RAG 框架太费劲，选中腾讯开源 WeKnora（3w+ star，微信对话平台技术沉淀），Docker 私有化部署 + fork 二开。跑了才发现：检索那半已经很好，缺的是知识维护那半——没有在线编辑，维护只能\"删了重传\"。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/weKnora-dept-knowledge-base.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-11-06-xuqiufenxi-18-xingquanxian",
-      "title": "行权限：同一张表，不同单位看到不同的行",
-      "path": "Inbox/2026-11-06-xuqiufenxi-18-xingquanxian.md",
-      "created": "2026-11-06",
-      "category": "技术",
-      "tags": [
-        "工程实践",
-        "课程"
-      ],
-      "source": "赢在菲墨间（微信公众号）",
-      "source_url": "https://mp.weixin.qq.com/s/bnISBVZk1bAWKgZHauWESw",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "需求分析系列第 18 篇。集团统一交易明细表开放给各单位，华东分析师导出时看到全集团 1200 万行——问题不在表权限不够，而在授权粒度太粗：表权限只能回答\"能不能查这张表\"，回答不了\"能看哪些行\"。全文用一个真实场景讲清行权限：同一张表按查询者身份自动追加过滤条件。落地需要三件事——用户数据范围（从组织和岗位带出）、每行归属字段、匹配规则（查询时自动追加）。组织范围按层级继承。行权限区分于页面筛选的关键：系统强制、用户看不见也去不掉。两个常见误区：归属口径必须业务确认（商户归属 vs 交易发生地，两家子公司看到完全不同的行）、行权限必须放在所有出口（BI/导出/API/智能问数）共用的那一层。文末给上线前 5 项检查清单。",
-      "summary_status": "",
-      "asset_ref": "\"Assets/2026-11/weixin-bnISBVZk1bAWKgZHauWESw-xuqiufenxi-18.md\"",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
@@ -7319,6 +7281,44 @@
       "summary": "作者工作用特斯拉 Eino（Graph 框架，服务端批量部署成本低），对 Agent 模式（Claude Code、Manus、Pi）与 Graph 模式的深层差异存疑，遂把 OpenClaw 背后的引擎 Pi 源码 clone 通读，结论是\"递归美学\"——整个引擎只有一种原语：循环，复杂行为都是循环套循环长出来的。Pi 架构四层（pi-ai / pi-agent-core / pi-coding-agent / TUI-JSON-RPC），核心 agent-loop 数百行，脏活（持久化、压缩、扩展、重试）全挡在 AgentSession 层。事件流 + run/turn 两层循环 + steering/follow-up 两个队列构成高层交互模型。对比结论：Graph 把控制流写进图结构，Agent 把控制流交给模型、确定性做进运行时。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/zhihu-2061271933296154175.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-06-weknora-dept-knowledge-base",
+      "title": "我用腾讯开源的 WeKnora 搭部门知识库：检索很准，但它只有一半功能",
+      "path": "Archive/2026-11-06-weknora-dept-knowledge-base.md",
+      "created": "2026-11-06",
+      "category": "技术",
+      "tags": [
+        "RAG",
+        "AI"
+      ],
+      "source": "微信公众号 · 硬件AI工坊（作者 hardvis）",
+      "source_url": "https://mp.weixin.qq.com/s/byg5LP34T5XL8LKe08CxOw",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "硬件工程师 hardvis 部门知识库实战实录：个人库（Obsidian+AI）不够用、RAG 框架太费劲，选中腾讯开源 WeKnora（3w+ star，微信对话平台技术沉淀），Docker 私有化部署 + fork 二开。跑了才发现：检索那半已经很好，缺的是知识维护那半——没有在线编辑，维护只能\"删了重传\"。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weKnora-dept-knowledge-base.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-06-xuqiufenxi-18-xingquanxian",
+      "title": "行权限：同一张表，不同单位看到不同的行",
+      "path": "Archive/2026-11-06-xuqiufenxi-18-xingquanxian.md",
+      "created": "2026-11-06",
+      "category": "技术",
+      "tags": [
+        "工程实践",
+        "课程"
+      ],
+      "source": "赢在菲墨间（微信公众号）",
+      "source_url": "https://mp.weixin.qq.com/s/bnISBVZk1bAWKgZHauWESw",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "需求分析系列第 18 篇。集团统一交易明细表开放给各单位，华东分析师导出时看到全集团 1200 万行——问题不在表权限不够，而在授权粒度太粗：表权限只能回答\"能不能查这张表\"，回答不了\"能看哪些行\"。全文用一个真实场景讲清行权限：同一张表按查询者身份自动追加过滤条件。落地需要三件事——用户数据范围（从组织和岗位带出）、每行归属字段、匹配规则（查询时自动追加）。组织范围按层级继承。行权限区分于页面筛选的关键：系统强制、用户看不见也去不掉。两个常见误区：归属口径必须业务确认（商户归属 vs 交易发生地，两家子公司看到完全不同的行）、行权限必须放在所有出口（BI/导出/API/智能问数）共用的那一层。文末给上线前 5 项检查清单。",
+      "summary_status": "",
+      "asset_ref": "\"Assets/2026-11/weixin-bnISBVZk1bAWKgZHauWESw-xuqiufenxi-18.md\"",
       "wiki_status": "ingested"
     }
   ]

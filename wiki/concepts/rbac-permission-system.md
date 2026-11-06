@@ -17,6 +17,7 @@ sources:
   - raw/sources/products/2026-11-03-weixin-bend-saas-multitenant-05.md
   - raw/sources/architecture/2026-11-06-auth-authz-selection-part1.md
   - raw/sources/architecture/2026-11-06-permission-rbac-abac-engineering.md
+  - raw/sources/misc/2026-11-06-xuqiufenxi-18-xingquanxian.md
 related:
   - wiki/concepts/agent-permission-model.md
   - wiki/concepts/complex-system-breakdown.md
@@ -24,6 +25,7 @@ related:
   - wiki/concepts/saas-multi-tenancy.md
   - wiki/concepts/authn-authz-selection-framework.md
   - wiki/concepts/pbac-policy-engine.md
+  - wiki/concepts/row-level-permission.md
   - wiki/sources/bend-rbac-permission-system-design.md
   - wiki/sources/bend-permission-design-22.md
   - wiki/sources/bend-saas-multitenant-05.md
@@ -101,6 +103,8 @@ B 端权限系统是底层能力，直接决定数据合规与使用边界。RBA
 
 - 2026-11-06：据第六信源（《权限模型与 RBAC-ABAC 全解析（下篇）》工程实现篇）补充 RBAC 落地细节——六表结构（含 RBAC1 `parent_id` 递归继承与 `sys_role_conflict` 静态互斥表）、权限编码三段式通配匹配、权限缓存失效矩阵（角色权限变更需批量清所有持有该角色的用户缓存、版本号机制优化）、后端接口独立校验铁律；场景选型五档与「复杂合规上 PBAC」判断见 [[pbac-policy-engine]]，租户隔离工程细节见 [[saas-multi-tenancy]]。
 
+- 2026-11-06：据第七信源（《需求分析》第 18 篇·行权限案例）印证数据权限层的落地机制——「用户范围+归属字段+匹配规则」三件事是「数据范围维度」在查询层的实际算子；新增判别标准：系统强制过滤（行权限）vs 用户自选可去掉（页面筛选），把行权限做成默认选中的筛选框等于没做；归属口径（行属谁）与指标口径同级、须业务确认。行级专题见 [[row-level-permission]]。
+
 ## Open Questions（开放问题）
 
 - 多角色数据权限并集 vs 交集的策略选择需结合业务定义，无统一标准。
@@ -114,6 +118,7 @@ B 端权限系统是底层能力，直接决定数据合规与使用边界。RBA
 - Source: `raw/sources/products/2026-11-03-weixin-bend-permission-design-22.md`（补充字段权限层、三张表产出物与 SOP 七步）
 - Source: `raw/sources/products/2026-11-03-weixin-bend-saas-multitenant-05.md`（补充多租户租户维度数据权限与 ABAC 适用场景）
 - Source: `raw/sources/architecture/2026-11-06-permission-rbac-abac-engineering.md`（第六信源：§9 六表结构/三段式编码/缓存失效矩阵/注解+AOP、§10 前后端铁律、§15 单元测试、§17 模型对比；与 §16 常见误区互证）
+- Source: `raw/sources/misc/2026-11-06-xuqiufenxi-18-xingquanxian.md`（第七信源：行权限落地机制与系统强制 vs 用户自选判别标准、归属口径业务确认原则）
 
 ## Related Knowledge（相关知识）
 
@@ -124,3 +129,4 @@ B 端权限系统是底层能力，直接决定数据合规与使用边界。RBA
 - [[complex-system-breakdown|复杂B端系统拆解方法论（五件套）]]（五件套中的权限件）
 - [[saas-multi-tenancy|SaaS 多租户]]（租户维度数据权限）
 - [[bend-saas-multitenant-05|信源：SaaS多租户系统实战全指南]]
+- [[row-level-permission|行权限]]（数据权限层行级过滤的落地算子与判别标准）
