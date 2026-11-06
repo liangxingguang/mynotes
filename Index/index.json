@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06 17:01",
+  "updated_at": "2026-11-06 17:25",
   "notes": [
     {
       "id": "2026-11-06-auth-authz-selection-part1",
@@ -18,24 +18,6 @@
       "summary_status": "",
       "asset_ref": "Assets/2026-11/auth-authz-selection-part1.md",
       "wiki_status": "pending"
-    },
-    {
-      "id": "2026-11-06-httpclient-optimization-high-concurrency",
-      "title": "高并发场景下的 HttpClient 优化方案，QPS 大大提升！",
-      "path": "Inbox/2026-11-06-httpclient-optimization-high-concurrency.md",
-      "created": "2026-11-06",
-      "category": "技术",
-      "tags": [
-        "java"
-      ],
-      "source": "微信公众号（原始出处 CSDN blog.csdn.net/u010285974）",
-      "source_url": "https://mp.weixin.qq.com/s/7JmAOJUCiXOzyzAE7y7VJg",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "日调用千万级的 HTTP 接口调用，QPS 上不去：作者把 HttpClient 从\"每次请求新建 client\"改成**单例 + 连接池 + keep-alive + ResponseHandler**，平均耗时从 250ms 降到 80ms（降三分之二），容器线程耗尽报警消失。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/httpclient-optimization-high-concurrency.md",
-      "wiki_status": "ingesting"
     },
     {
       "id": "2026-11-06-nginx-rate-limiting-practice",
@@ -7262,6 +7244,24 @@
       "summary": "微博博主「蚁工厂」推荐一个计算机系统知识交互式学习站 kejun.github.io/cs-systems-design/，作者 kejun，附他整理的系统学习路线图。站点定位是作者本人\"重学\"用，没有基础概念介绍，不适合初学者入门，更适合已有概念框架后查漏补缺。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weibo-cs-systems-design.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-06-httpclient-optimization-high-concurrency",
+      "title": "高并发场景下的 HttpClient 优化方案，QPS 大大提升！",
+      "path": "Archive/2026-11-06-httpclient-optimization-high-concurrency.md",
+      "created": "2026-11-06",
+      "category": "技术",
+      "tags": [
+        "java"
+      ],
+      "source": "微信公众号（原始出处 CSDN blog.csdn.net/u010285974）",
+      "source_url": "https://mp.weixin.qq.com/s/7JmAOJUCiXOzyzAE7y7VJg",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "日调用千万级的 HTTP 接口调用，QPS 上不去：作者把 HttpClient 从\"每次请求新建 client\"改成**单例 + 连接池 + keep-alive + ResponseHandler**，平均耗时从 250ms 降到 80ms（降三分之二），容器线程耗尽报警消失。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/httpclient-optimization-high-concurrency.md",
       "wiki_status": "ingested"
     }
   ]

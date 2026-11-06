@@ -4,7 +4,7 @@ type: concept
 title: TCP 连接生命周期与状态机
 status: active
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-06
 confidence: high
 tags:
   - concept
@@ -12,6 +12,7 @@ tags:
   - networking
 sources:
   - raw/sources/architecture/2026-10-28-tcp-connection-full-lifecycle.md
+  - raw/sources/architecture/2026-11-06-httpclient-optimization-high-concurrency.md
 related:
   - wiki/sources/tcp-retransmission-visualized.md
   - wiki/sources/tcp-connection-full-lifecycle.md
@@ -71,11 +72,13 @@ LISTEN → SYN_SENT → SYN_RCVD → ESTABLISHED → FIN_WAIT_1 → FIN_WAIT_2 �
 - [[netty-flow-control]]：Netty 的高/低水位背压机制是 TCP rwnd/cwnd 在应用层的对应物
 - [[netty-reconnect]]：Netty 断线重连机制建立在 TCP 状态机之上
 - [[tcp-retransmission-visualized]]：TCP 重传的可视化分析（信源页）
+- [[http-client-connection-pooling]]：HTTP 层 keep-alive 连接复用建立在本页的握手/挥手机制之上（2026-11-06 新增互链）
 
 ### Distinctions（区分）
 
 - 与 UDP 的区别：TCP 在不可靠 IP 上通过序列号/确认/重传/窗口模拟"可靠管道"；UDP 只是薄封装（端口+校验和）
 - 流量控制 vs 拥塞控制：rwnd 是端到端的（怕接收方扛不住），cwnd 是全局的（怕网络扛不住）
+- HTTP keep-alive（应用层连接复用）与 TCP KEEPALIVE（传输层空闲探活）不是一个东西：前者在一条 TCP 连接上复用多次应用层请求，省去反复三次握手/四次挥手的协商成本；后者是 socket 选项层面的保活探针机制。高频调用下 keep-alive 复用的收益可达请求时间的可观比例（信源量化：每次协商 5ms、QPS 100 时每秒合计 500ms 用于握手挥手）
 
 ## Evolution（演进）
 
@@ -93,6 +96,7 @@ LISTEN → SYN_SENT → SYN_RCVD → ESTABLISHED → FIN_WAIT_1 → FIN_WAIT_2 �
 ## Evidence（证据）
 
 - Source: `raw/sources/architecture/2026-10-28-tcp-connection-full-lifecycle.md`（知乎用户琳，经 dbaplus 社群转载，一手技术长文，confidence=high）
+- Source: `raw/sources/architecture/2026-11-06-httpclient-optimization-high-concurrency.md`（2026-11-06 印证：HTTP keep-alive ≠ TCP KEEPALIVE 明确区分；连接复用收益量化——每次请求协商 5ms、QPS 100 时每秒 500ms 用于握手挥手）
 
 ## Related Knowledge（相关知识）
 
@@ -100,3 +104,4 @@ LISTEN → SYN_SENT → SYN_RCVD → ESTABLISHED → FIN_WAIT_1 → FIN_WAIT_2 �
 - [[tcp-retransmission-visualized|可视化 TCP 重传]]
 - [[netty-flow-control|Netty 流量控制]]
 - [[netty-reconnect|Netty 断线重连]]
+- [[http-client-connection-pooling|HTTP 客户端单例化与连接池复用]]

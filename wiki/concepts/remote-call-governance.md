@@ -4,7 +4,7 @@ type: concept
 title: 服务远程调用治理（超时/重试/线程池隔离/降级）
 status: active
 created: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-06
 confidence: medium
 tags:
   - concept
@@ -13,6 +13,7 @@ tags:
   - reliability
 sources:
   - raw/sources/architecture/2026-10-31-openfeign-thread-pool-isolation.md
+  - raw/sources/architecture/2026-11-06-httpclient-optimization-high-concurrency.md
 related:
   - wiki/concepts/retry-governance.md
   - wiki/concepts/batch-message-push.md
@@ -50,9 +51,10 @@ related:
 ## How It Works（运作方式）
 
 1. 每个重要客户端独立超时配置（如 OrderClient 3s/5s、InventoryClient 3s/6s、PriceClient 2s/4s、BatchClient 3s/10s——均为实战建议值）。
-2. 不同业务走不同线程池执行远程调用，避免批量任务变慢拖垮核心业务线程池。
-3. 调用异常必须统一处理并明确降级策略（异常直接抛到上层会影响主流程）。
-4. 连接池最大连接数、单路由连接数必须受控（高并发下连接数暴涨会压垮服务端）。
+2. 区分三类超时语义：connectTimeout（等建连）、readTimeout（等对端数据）、连接池内获取连接的等待（CONN_MANAGER_TIMEOUT，未设置时默认等于 connectTimeout）——「池内排队」被误当成「下游慢」会误导排障。
+3. 不同业务走不同线程池执行远程调用，避免批量任务变慢拖垮核心业务线程池。
+4. 调用异常必须统一处理并明确降级策略（异常直接抛到上层会影响主流程）。
+5. 连接池最大连接数、单路由连接数必须受控（高并发下连接数暴涨会压垮服务端）。HTTP client 侧由 [[http-client-connection-pooling|PoolingHttpClientConnectionManager（maxTotal/perRoute）]] 实现。
 
 ## Relationships（关系）
 

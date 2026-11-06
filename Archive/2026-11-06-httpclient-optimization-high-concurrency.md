@@ -9,9 +9,7 @@ created: 2026-11-06
 category: 技术
 tags: [java]
 asset_ref: Assets/2026-11/httpclient-optimization-high-concurrency.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-06T08:40:57.675Z"
-ingest_claim_id: 42028-1793954457675-0
+wiki_status: ingested
 ---
 
 # 高并发场景下的 HttpClient 优化方案，QPS 大大提升！

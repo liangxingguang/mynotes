@@ -376,6 +376,7 @@
 - [[cs-systems-design-weibo-recommendation|微博推荐：计算机系统知识交互式学习站 cs-systems-design]]（2026-11-05，架构/学习资源/微博，推荐 kejun.github.io/cs-systems-design 交互式学习站+5 张学习路线图，作者自述「重学」定位无基础介绍、不适合初学者，微博单信源，置信度中）
 - [[2026-11-05-weixin-multi-agent-control-shift|多 Agent 架构的三次反转：从中心调度到自驱协作]]（2026-11-05，AI/多 Agent/架构，四个组织问题=控制权归属；上下文边界+模型边界；Master Agent/任务看板/Advisor 三种架构=控制权下沉路径；中间件巡检三模式混用案例，得物技术公众号单信源，置信度中）
 
+- [[httpclient-optimization-high-concurrency|高并发场景下的 HttpClient 优化方案，QPS 大大提升！]]（2026-11-06，架构/Java/HttpClient，单例 client+PoolingHttpClientConnectionManager(maxTotal 500/perRoute 50)+ConnectionKeepAliveStrategy+空闲连接监控线程+ResponseHandler+三段超时+重试取舍+nginx 双端 keepalive；250ms→80ms 实测，单信源微信公众号转载 CSDN，置信度中）
 ## concept（概念）
 
 - [[a2a-protocol|A2A 协议]]（Agent↔Agent 横向协作协议，Google 2025）
@@ -508,6 +509,7 @@
 - [[netty-rpc-framework|基于 Netty 的轻量级 RPC 框架实现模式]]（协议信封 requestId 关联+长度域 mark/reset 拆粘包+JDK 动态代理+RpcFuture(CountDownLatch) 异步转同步+反射调用；与 Dubbo 八维工程化差距；系列收官实战单信源，置信度中）
 - [[netty-write-flush|Netty 写缓冲与背压（ChannelOutboundBuffer/writeAndFlush/高低水位）]]（write 入队 O(1)+flush 移指针+doWrite 才调 JDK 写；写自旋 16/OP_WRITE 半包续写/水位 64KB/32KB 背压；三信源互证，置信度高）
 - [[netty-zero-copy|Netty 零拷贝机制（FileRegion/CompositeByteBuf/wrappedBuffer/堆外内存）]]（零拷贝=无 CPU 参与的拷贝；sendfile 4 拷贝压成 2 次 DMA+doWrite 专门分支；Composite 组件数组逻辑拼接二分定位；FileRegion 单次使用+编解码跳过+Windows fallback；单信源，置信度中）
+- [[http-client-connection-pooling|HTTP 客户端单例化与连接池复用]]（单例 client+连接池受控+keep-alive 复用+ResponseHandler 关流+三段超时；HTTP keep-alive≠TCP KEEPALIVE；与 tcp-connection-lifecycle/remote-call-governance 互证，单信源置信度中）
 - [[nginx-gateway-production-design|生产级 Nginx 网关设计]]（网关≠反向代理；四个危险默认值+六核心机制+五层配置+超时按接口分级+限流先观测再拦截+变更流程五件事+可观测最小信息集+故障决策表；单信源，置信度中）
 - [[niche-product-selection|小众选品方法论（独立开发者）]]（7 发现渠道+5 维评估+两层市场规模算账+MVP 验证，案例 Plausible/Sidekiq，与 YC 创业点子框架互补区分，单信源置信度中）
 - [[tcp-connection-lifecycle|TCP 连接生命周期与状态机]]（四大功能/三次握手/四次挥手/RTO/快重传/拥塞控制/TIME_WAIT 2MSL/状态机排障四场景；发送窗口=min(rwnd,cwnd)；Linux 默认 CUBIC；tcp_tw_recycle 已移除；单信源一手，置信度高）
