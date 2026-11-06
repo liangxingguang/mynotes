@@ -4684,6 +4684,20 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/C9A9ZEw_EPPaFyxhKjD05A",
       "asset_ref": "Assets/2026-11/multi-agent-control-shift.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-06-httpclient-optimization-high-concurrency.md",
+      "sha256": "7d945cec34eb1bff922b89aeded2da79da6daafc61f09ef1cd58c000b8e96fee",
+      "registered_at": "2026-11-06",
+      "inbox_ref": "Archive/2026-11-06-httpclient-optimization-high-concurrency.md",
+      "pages": [
+        "wiki/sources/httpclient-optimization-high-concurrency.md",
+        "wiki/concepts/http-client-connection-pooling.md",
+        "wiki/concepts/tcp-connection-lifecycle.md",
+        "wiki/concepts/remote-call-governance.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/7JmAOJUCiXOzyzAE7y7VJg",
+      "asset_ref": "Assets/2026-11/httpclient-optimization-high-concurrency.md"
     }
   ]
 }
