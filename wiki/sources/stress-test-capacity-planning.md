@@ -15,6 +15,7 @@ tags:
 sources:
   - raw/sources/architecture/2026-10-22-stress-test-capacity-planning.md
   - raw/sources/architecture/2026-11-02-weixin-seckill-100k-qps.md
+  - raw/sources/architecture/2026-11-11-weixin-high-concurrency-qps-rt-thinking.md
 related:
   - wiki/sources/netty-iot-gateway-resilient-design.md
   - wiki/sources/spring-boot-startup-speedup.md
@@ -39,6 +40,7 @@ related:
 - 5 个失真坑：环境规格不一致、压测数据污染生产、连接池太小测的是池、参数全热缓存 TPS 虚高（CSV 参数化构造冷热分布：热点 5% 承担 60% 请求）、JVM 未预热。
 - 估算第一步是让监控数据说话：PromQL 取去年峰值、日均、接口占比、链路 TPS 比例。
 - 2026-11-02 信源补上**漏斗容量评估**的具体案例：秒杀场景 10 万 QPS 经三层漏斗（前端验证码 50% 通过→网关令牌桶→Redis 预扣）压到 2 万→1000，DB 按 1000 TPS 设计而非按入口 QPS 等比放大；并发用 Little's Law 换算（并发≈QPS×RT），DB 并发仅约 5，连接池按并发配；容量从预约量倒推（300 万预约×首秒 3%~5%≈10 万），"先有预约量输入再有 QPS 输出"；压测三段走（单机基线→集群线性→全链路峰值），与本页三板斧互证。
+- 2026-11-11 信源补上**并发换算的直接算例与各层天花板量级**（[[weixin-high-concurrency-qps-rt-thinking]]）：并发 = QPS × RT——QPS 1 万 × RT 100ms = 1000 并发在身，200 Tomcat 线程 ÷ RT 100ms → 吞吐上限 2000 QPS（CPU 才 40%）；各层实测量级：4C8G 纯 JSON ~5000 / +MySQL 点查 ~900 / +Redis 读 ~2500（卡线程与连接池非 CPU）、Redis 单实例 8~10 万（热点 key 单分片先塌）、MySQL 点查 ~1000 写入 1000~1500 TPS（连接池与行锁先到顶）；真实 QPS 从存储侧反推（`SHOW GLOBAL STATUS` 间隔 1 秒采 `Questions`/`Com_*` 差值，`Threads_running` 才是此刻排队数）。与本页 Little's Law 换算、漏斗容量评估、拐点水位共同构成容量规划闭环，编译为 [[concurrency-qps-rt]]。
 
 ## Important Claims（重要论断）
 

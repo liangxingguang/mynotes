@@ -19,6 +19,7 @@ related:
   - wiki/concepts/idempotency-design.md
   - wiki/sources/stress-test-capacity-planning.md
   - wiki/concepts/redis.md
+  - wiki/sources/weixin-high-concurrency-qps-rt-thinking.md
 ---
 # 从 0 设计 10 万 QPS 秒杀系统：10 万请求进来，只有 1000 个能碰到数据库
 

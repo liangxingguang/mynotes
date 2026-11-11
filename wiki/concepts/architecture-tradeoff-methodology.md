@@ -71,6 +71,7 @@ related:
 
 - 2026-10-31：本页由单一信源（architecture-science-and-art-42-rules，微信公众号方法论长文）建立。confidence: medium——单一二次信源、作者身份未标注；内容为原则性判断，未给量化阈值（除可用性换算）。
 - 2026-11-04：新信源《AI辅助架构设计》（[[2026-11-03-weixin-ai-architecture-design|设计篇]]）直接印证"没有完美的架构，只有特定约束下的最优解"与"先定约束再选型"主张，并提供取舍方法的实操实例——量化对比矩阵（7 维度打分）+ "AI 给建议、架构师拍板"的决策权归属；编译为 [[ai-assisted-architecture-design]]。
+- 2026-11-11：新信源《QPS 1 万、RT 100ms》（[[weixin-high-concurrency-qps-rt-thinking]]）给出"一致性按业务容忍度取舍"的可操作实例——"一致性、成本、复杂度只能保住两条"：库存扣减 DB 行锁事务 ~1000 TPS 强一致 vs Redis 扣减+MQ 异步落库 ~2 万 TPS（可能超卖），作者按 SKU 热度分流（90% 撞不上走 Redis，10% 热门走强一致），并明确"这不是技术选型，是业务判断"。同源还提供"三高量化"的实测量级（并发=QPS×RT 换算与各层天花板），编译为 [[concurrency-qps-rt]]。
 
 ## Open Questions（开放问题）
 

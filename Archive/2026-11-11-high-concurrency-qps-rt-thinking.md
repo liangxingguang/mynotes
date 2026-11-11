@@ -10,9 +10,7 @@ category: 技术
 tags:
   - java
 asset_ref: Assets/2026-11/weixin-jqiile-high-concurrency-qps-rt-breakdown.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-11T15:59:31.785Z"
-ingest_claim_id: 27604-1794412771785-0
+wiki_status: ingested
 ---
 
 # QPS 1 万、RT 100ms，就是 1,000 个请求同时压在你身上

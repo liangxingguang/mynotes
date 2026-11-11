@@ -383,6 +383,7 @@
 - [[auth-authz-selection-part1|认证与授权选型拆解（上篇）：五种候选矩阵——自研 Redis、Sa-Token、Spring Security、Keycloak、JWT]]（2026-11-06，安全/选型，认证授权选型系列·上篇：两种翻车代价（过度设计/选型过浅）+认证vs授权概念分层+凭证/Token/会话三层+有状态vs无状态权衡+L1-L5 分层+五维模型与五方案评分矩阵+门禁类比+授权层统一RBAC/ABAC+AuthService接口隔离+10条场景决策清单+4类反模式，单信源微信公众号，置信度中）
 - [[weknora-dept-knowledge-base|我用腾讯开源的 WeKnora 搭部门知识库：检索很准，但它只有一半功能]]（2026-11-06，AI/知识库，硬件工程师部门实战：个人库vs框架两难+WeKnora（3w+ star/腾讯开源/微信对话平台沉淀）私有化Docker部署+HUB底座4子应用互供经验+两试点方向+三条边界（不把没异常当通过/AI不当计算器/人工确认前不进正式库）+核心短板=只能删了重传无在线编辑，"检索半已不难、维护半才是难的那半"，公众号单信源，置信度中）
 - [[weixin-agent-memory-system-design|企业级 Agent 记忆系统设计拆解]]（2026-11-07，AI/Agent/Memory，七模块16步+检索10步+三路并行召回+五维融合+写回四步/三态/生命周期+反馈闭环五指标+六阶段路线+11字段数据结构+五坑，公众号单信源，置信度中）
+- [[weixin-high-concurrency-qps-rt-thinking|QPS 1 万、RT 100ms，就是 1,000 个请求同时压在你身上]]（2026-11-11，架构/高并发/容量规划，并发=QPS×RT 换算+各层天花板实测量级表+三档 QPS 代价阶梯+真实 QPS 存储侧反推+三选二取舍框架+三边界条件+五坑，编译为 [[concurrency-qps-rt]]，微信单信源，置信度中）
 - [[2026-11-11-spring-boot-4-agent-platform-migration|40 张表、20 层 e2e：把一个开源 Agent 平台迁到 Spring Boot 4.1]]（2026-11-11，架构/Java/Spring Boot，BizBuddy 迁移实战：四类改动（Jackson 3/starter 拆分/JSpecify/依赖坐标）+验证占七成+starter 改名与包名搬家+Jackson 3 七大坑+Jackson 2/3 并存边界+Flyway 双库+LiteFlow 启动失败+20 层 e2e 资产，公众号单信源，置信度中）
 ## concept（概念）
 
@@ -437,6 +438,7 @@
 - [[concept-boundary-definition|概念边界界定（内涵/外延与三问）]]（内涵外延反变关系+界定范围三问+人为认知切片+按目的三种切法，单信源方法论，置信度中）
 - [[context-management|上下文管理（Context Management）]]（messages 全量重发下的体积工程：裁剪/压缩/隔离三手段+成对保留与磁盘全量两铁律；Claude Code 分层裁剪实证；Kiso 投影观+缓存经济学；注入式 token 账+预算六类分配与输出预留；记忆系统三路召回为上下文组装供料，五信源）
 - [[concurrenthashmap-internals|ConcurrentHashMap 并发设计（JDK 8+）]]（读无锁+CAS 空桶插+synchronized 桶头+sizeCtl 三态+协作扩容；单信源，置信度中）
+- [[concurrency-qps-rt|并发与 QPS 换算（并发 = QPS × RT）]]（2026-11-11，架构/容量规划/并发，并发快照≠QPS 速率、吞吐上限=并发路数÷RT、各层天花板实测量级表、三档 QPS 代价阶梯、三边界条件、五坑，与压测容量规划/秒杀信源互证，微信单信源，置信度中）
 - [[consumer-lag-governance|消费积压治理（Consumer Lag Governance）]]（Kafka 消费端 Lag 治理：四步法+三底线+增速告警，单信源，置信度中）
 - [[control-plane-design|规则控制面与寻优计算面分离]]（DDD 领域契约收敛规则+规则引擎前置过滤+算法只在合法空间搜索+降级兜底；电商优惠券场景完整实例，单信源置信度中）
 - [[copyonwritearraylist-internals|CopyOnWriteArrayList 写时复制设计]]（volatile 数组引用替换+写时 O(n) 复制换读零锁；快照迭代不抛 CME；读多写极少专用，单信源，置信度中）
