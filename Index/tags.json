@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11 23:58",
+  "updated_at": "2026-11-11 23:59",
   "tags": [
     {
       "name": "java",
@@ -40,6 +40,11 @@
       "name": "rust",
       "status": "new",
       "count": 0
+    },
+    {
+      "name": "requirements",
+      "status": "new",
+      "count": 1
     }
   ]
 }
