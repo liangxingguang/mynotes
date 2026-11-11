@@ -1,6 +1,24 @@
 {
-  "updated_at": "2026-11-11 23:40",
+  "updated_at": "2026-11-11 23:43",
   "notes": [
+    {
+      "id": "inbox-20261111-2002",
+      "title": "QPS 1 万、RT 100ms，就是 1,000 个请求同时压在你身上",
+      "path": "Inbox/2026-11-11-high-concurrency-qps-rt-thinking.md",
+      "created": "2026-11-11",
+      "category": "技术",
+      "tags": [
+        "java"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/jQIILE7kauqsudlD2PKM3w",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "一篇把\"高并发\"从背组件变成可回答问题的方法论文章：并发=QPS×RT 的换算、各层天花板量级表、三档 QPS 的代价阶梯，以及\"为了扛住放弃什么\"的取舍框架。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-jqiile-high-concurrency-qps-rt-breakdown.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "inbox-20261111-2001",
       "title": "40 张表、20 层 e2e：把一个开源 Agent 平台迁到 Spring Boot 4.1",
@@ -18,7 +36,7 @@
       "summary": "BizBuddy 团队分享将开源 Agent 平台从 Spring Boot 3.5 升级到 4.1.1 的实战经验：真正要改的只有四类（Jackson 3、starter 拆分、JSpecify 空安全、依赖坐标），其余七成时间都在验证。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-2wzva-spring-boot-4-1-migration.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
