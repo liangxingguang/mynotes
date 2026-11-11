@@ -4,7 +4,7 @@ type: concept
 title: 上下文管理（Context Management）
 status: active
 created: 2026-10-29
-updated: 2026-11-05
+updated: 2026-11-12
 confidence: high
 tags:
   - concept
@@ -21,6 +21,7 @@ sources:
   - raw/sources/ai/2026-11-04-zhihu-column-agent-long-term-memory.md
   - raw/sources/ai/2026-11-05-multi-agent-control-shift.md
   - raw/sources/ai/2026-11-07-agent-memory-system-design.md
+  - raw/sources/ai/2026-11-11-llm-inference-cost-cps-governance.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/sources/weixin-agent-memory-system-design.md
@@ -36,6 +37,8 @@ related:
   - wiki/sources/namiagent-agent-tutorial.md
   - wiki/sources/superagent-design.md
   - wiki/topics/multi-agent-collaboration-architecture.md
+  - wiki/sources/llm-inference-cost-cps-governance.md
+  - wiki/concepts/llm-inference-cost-governance.md
 ---
 # 上下文管理（Context Management）
 
@@ -117,6 +120,8 @@ Super-agent 信源把上下文窗口当作 Cache 管理，归纳两个注入操�
 
 - 2026-11-07 — 新增微信信源 `raw/sources/ai/2026-11-07-agent-memory-system-design.md`（第 10 信源）。补强**窗口内 vs 会话外**的分层立场：「上下文窗口≠记忆、聊天记录≠记忆」——放大窗口缓解"放不下"不解决信息管理（筛选/组织/检索/更新），跨会话失忆（本概念"忘事的几种病"中的天然边界）由会话外记忆系统（七模块：触发器/短期/长期/记忆管理器/知识库）承接；其检索 10 步的三路并行召回（短期接进度、长期补背景、外部给事实）正是本概念"上下文组装"的内容供给方——融合排序后的素材由编排层投影进窗口，与 [[agent-memory-system]]、Kiso"投影观"（Context=Projection）互证。
 
+- 2026-11-12 — 新增微信信源 `raw/sources/ai/2026-11-11-llm-inference-cost-cps-governance.md`（第 11 信源）。补上**缓存盈亏平衡经济学的量化公式**：同一段稳定共享前缀 cache_cost = P×(w + n×r) vs normal_cost = P×(1 + n)，严格省钱条件 n > (w-1)/(1-r)（r<1）；w=1.25、r=0.1 一次实际命中即回本，w=2 至少需两次命中；线上统计按模型/区域/档位/TTL/前缀版本/真实复用间隔拆分，分别报告冷启动成本、写入失败、TTL 失效与净节省，不能用「缓存命中率」替代节省金额。Kiso「须过 break-even 判断」（第 2 信源）由此获得公式化量化印证；该信源还把上下文压缩列为六种降本手段之一（可用前提与发布必看指标），视角固定在推理成本侧，与本概念的窗口管理主题互补不重叠。
+
 ## Open Questions（开放问题）
 
 - 三层记忆（工作记忆 Redis / 长期记忆 pgvector）与 RAG 的分界，待该系列第 11 篇信源补充。
@@ -133,6 +138,7 @@ Super-agent 信源把上下文窗口当作 Cache 管理，归纳两个注入操�
 - Source: `raw/sources/ai/2026-11-04-zhihu-column-agent-long-term-memory.md`（第 8 信源：跨 Session 长期记忆为 in-context 管理的会话外对应物；全量历史进 Prompt 四问题）
 - Source: `raw/sources/ai/2026-11-05-multi-agent-control-shift.md`（第 9 信源：上下文边界按"看见什么／产出什么"切分，职业标签是提示词放大的想象）
 - Source: `raw/sources/ai/2026-11-07-agent-memory-system-design.md`（第 10 信源：「上下文窗口≠记忆、聊天记录≠记忆」五问框架；窗口内管理 vs 会话外记忆的分层；三路召回为上下文组装供给内容）
+- Source: `raw/sources/ai/2026-11-11-llm-inference-cost-cps-governance.md`（第 11 信源：缓存盈亏平衡公式 n > (w-1)/(1-r) 量化 Kiso 的 break-even 判断；w/r 为写入与读取计费倍率；净节省统计的拆分维度）
 
 ## Related Knowledge（相关知识）
 
@@ -148,3 +154,4 @@ Super-agent 信源把上下文窗口当作 Cache 管理，归纳两个注入操�
 - [[agent-long-term-memory|Agent 长期记忆]]（跨 Session 对应物，2026-11-05 新建）
 - [[weixin-agent-memory-system-design|企业级 Agent 记忆系统设计拆解（信源页）]]
 - [[agent-memory-system|Agent 记忆系统（概念页）]]
+- [[llm-inference-cost-cps-governance|LLM 推理成本治理：从 Token 单价到每个合格交付的真实成本（信源页）]]（缓存净收益经济学）

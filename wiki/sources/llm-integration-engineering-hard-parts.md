@@ -4,7 +4,7 @@ type: source
 title: 大模型接进业务系统：工程难点在哪（面试深挖 84）
 status: active
 created: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-12
 confidence: high
 tags:
   - ai
@@ -59,6 +59,8 @@ sources:
 
 每一笔用量至少带租户、场景、模型标识与链路标识。
 
+（2026-11-12 印证与深化：成本治理专文把「先计量」推进为完整治理闭环——CPS 指标（每个合格交付的成本）、幂等账本、预算状态机、路由期望成本、发布统计门禁，见 [[llm-inference-cost-cps-governance]]。）
+
 ### 观点七：能拉开差距的回答，是把不确定点的每一处都配上一个具体工程动作，而非停在承认它不确定
 
 ## Concepts Introduced（引入的概念）
@@ -92,6 +94,7 @@ sources:
 - [[agent-loop-context-management|Agent - agent loop 与上下文管理（3）（信源页）]]
 - [[agent-platform-retry-resilience|从重试风暴到可控恢复（信源页）]]
 - [[async-idempotency-local-message-table|异步链路幂等实战（信源页）]]
+- [[llm-inference-cost-cps-governance|LLM 推理成本治理：从 Token 单价到每个合格交付的真实成本（信源页）]]（成本治理专文，印证并深化观点六）
 
 ## Source（信源）
 

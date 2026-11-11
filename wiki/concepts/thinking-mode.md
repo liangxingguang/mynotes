@@ -4,7 +4,7 @@ type: concept
 title: 思考模式（Thinking Mode）与模型路由
 status: active
 created: 2026-10-29
-updated: 2026-10-29
+updated: 2026-11-12
 confidence: high
 tags:
   - concept
@@ -12,9 +12,11 @@ tags:
   - llm-api
 sources:
   - raw/sources/ai/2026-10-28-agent-model-selection-reasoning.md
+  - raw/sources/ai/2026-11-11-llm-inference-cost-cps-governance.md
 related:
   - wiki/concepts/llm-call-protocol.md
   - wiki/concepts/agent-loop.md
+  - wiki/concepts/llm-inference-cost-governance.md
 ---
 # 思考模式（Thinking Mode）与模型路由
 
@@ -56,6 +58,7 @@ DeepSeek 思考模式的工程约束（信源 §1.4-1.6，2026-10-15 实测官�
 
 - [[llm-call-protocol|OpenAI 兼容 Chat Completions 调用协议]]：reasoning_content 回传规则是该协议四条约束之一在思考模式下的展开。
 - [[agent-loop|Agent Loop]]：思考档放大单轮时延与 token 上限，loop 的预算熔断（最大迭代数）更要设；思考期间配事件流广播「正在思考」防黑屏。
+- [[llm-inference-cost-governance|LLM 推理成本治理]]：路由期望成本模型是该治理框架的核心组件（预算状态机与发布统计门禁同源）。
 
 ### Distinctions（区分）
 
@@ -66,13 +69,16 @@ DeepSeek 思考模式的工程约束（信源 §1.4-1.6，2026-10-15 实测官�
 
 - 2026-10-29 — 新建，信源为知乎《Agent》系列第 4 篇。版本考据：DeepSeek 现行仅 `deepseek-flash` / `deepseek-v4-pro` 两款，`deepseek-chat`/`deepseek-reasoner` 已于 2026-07-24 停用——「模型名是易变接口，概念比名字稳定」。
 
+- 2026-11-12 — 新增微信信源 `raw/sources/ai/2026-11-11-llm-inference-cost-cps-governance.md`（第 2 信源）。补上**路由期望成本模型**：E[cost] = route_cost + small_cost + q × E[escalation_cost | escalation]，CPS ≈ E[cost] / P(task_success)；升级概率 q 必须来自全链路生产样本，校验器未发现的错误仍计为潜在失败。按任务特征（diff 行数/涉及模块/跨文件/事务修改/并发路径/敏感目录/历史失败率）分层，先排除不满足能力/数据边界/上下文窗口/预算的候选，再比较预期总成本。部分回应「预算控制、路由评测」开放问题（见 Open Questions），降级链仍待该系列 P7·20 信源。
+
 ## Open Questions（开放问题）
 
-- 模型路由的完整实现（预算控制、降级链、路由评测）待该系列 P7·20 信源补充。
+- 模型路由的完整实现（预算控制、降级链、路由评测）：预算控制与路由评测已有方法论框架（路由期望成本模型 + 预算状态机 + 发布统计门禁，见 Evolution 2026-11-12 条目）；降级链仍待该系列 P7·20 信源补充。
 
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-10-28-agent-model-selection-reasoning.md`
+- Source: `raw/sources/ai/2026-11-11-llm-inference-cost-cps-governance.md`（第 2 信源：路由期望成本模型 E[cost] = route_cost + small_cost + q × E[escalation_cost | escalation]；任务特征分层与候选排除；CPS ≈ E[cost]/P(task_success)）
 
 ## Related Knowledge（相关知识）
 

@@ -385,6 +385,7 @@
 - [[weixin-agent-memory-system-design|企业级 Agent 记忆系统设计拆解]]（2026-11-07，AI/Agent/Memory，七模块16步+检索10步+三路并行召回+五维融合+写回四步/三态/生命周期+反馈闭环五指标+六阶段路线+11字段数据结构+五坑，公众号单信源，置信度中）
 - [[weixin-high-concurrency-qps-rt-thinking|QPS 1 万、RT 100ms，就是 1,000 个请求同时压在你身上]]（2026-11-11，架构/高并发/容量规划，并发=QPS×RT 换算+各层天花板实测量级表+三档 QPS 代价阶梯+真实 QPS 存储侧反推+三选二取舍框架+三边界条件+五坑，编译为 [[concurrency-qps-rt]]，微信单信源，置信度中）
 - [[2026-11-11-spring-boot-4-agent-platform-migration|40 张表、20 层 e2e：把一个开源 Agent 平台迁到 Spring Boot 4.1]]（2026-11-11，架构/Java/Spring Boot，BizBuddy 迁移实战：四类改动（Jackson 3/starter 拆分/JSpecify/依赖坐标）+验证占七成+starter 改名与包名搬家+Jackson 3 七大坑+Jackson 2/3 并存边界+Flyway 双库+LiteFlow 启动失败+20 层 e2e 资产，公众号单信源，置信度中）
+- [[llm-inference-cost-cps-governance|LLM 推理成本治理：从 Token 单价到每个合格交付的真实成本]]（2026-11-11，AI/FinOps，CPS 指标（每个合格交付的成本）+成本账本归因+预算状态机+缓存净收益经济学+路由期望成本+发布统计门禁，公众号单信源，置信度中）
 ## concept（概念）
 
 - [[a2a-protocol|A2A 协议]]（Agent↔Agent 横向协作协议，Google 2025）
@@ -551,6 +552,8 @@
 - [[rest-api-as-tools|REST 接口工具化模式]]（函数体换 HTTP 封装但工具形状不变；登录即工具+token 只活进程内存+统一 _call 注入+描述即流程+错误回喂 HTTP 化；换真后台只改 BASE_URL，单信源实测）
 - [[reentrantlock-internals|ReentrantLock 可重入锁设计]]（AQS 经典实现：非公平先抢/公平只差 hasQueuedPredecessors/state 累加可重入/多 Condition 精确唤醒，单信源，置信度中）
 - [[retry-governance|重试治理（Retry Governance）]]（唯一重试所有者+时间/次数/额度/并发/语义五边界；Retry Budget 按首次记账 β 上界、Full Jitter、错误分类、熔断只看真实下游结果、12 步执行链；非确定性依赖重试=分布采样+查询可重试写操作禁重试+退避抖动+封顶实现细节+熔断按租户+defer闸+三层令牌桶+幂等外置+DB唯一真相+Outbox事务钩子+虚拟线程配信号量，五信源，置信度中）
+- [[cps-cost-per-successful-task|CPS（Cost per Successful Task）]]（2026-11-12，AI/FinOps/指标，每个合格交付的成本=可归属净成本/通过同版验收的任务数；平均成本可降而 CPS 升；跨租户汇总不平均，微信单信源，置信度中）
+- [[llm-inference-cost-governance|LLM 推理成本治理]]（2026-11-12，AI/FinOps/多租户，CPS 固定账本+预算状态机+缓存净收益+路由期望成本+发布统计门禁；「先计量再设上限」被面试深挖 84 印证，微信单信源，置信度中）
 - [[dead-letter-governance|死信治理（Dead Letter Governance）]]（死信不是垃圾桶而是等人工拍板的队列；归因/重放/归档三件事；reason四种类型（EXHAUSTED/PERMANENT_4XX/URL_INVALID/BREAKER_TIMEOUT）；重放上限3次+ON DUPLICATE KEY UPDATE；T+7归档180天；78%死信是地址配错驱动产品改进；死信是系统健康度领先指标；单信源，置信度中）
 - [[rle-inverted-index|RLE 倒排索引（Run-Length Encoding Inverted Index）]]（Index Sorting 使 Doc ID 连续+RLE 编码 [start,length]+SparseRoaringDocIdSet 消除空置 bucket，合并 O(K×M)→O(M log M)，倒排链合并 TP99 -96%，全链路 TP99 -84%，美团一手）
 - [[saas-multi-tenancy|SaaS 多租户（Multi-Tenancy）]]（2026-11-04，产品/B端/SaaS/多租户，隔离三模式/租户识别后端强制/权限双轨拆分/计费配额中心/生命周期状态机/配置化三层/六步SOP，与 rbac-permission-system（第四信源）互链，单信源置信度中）

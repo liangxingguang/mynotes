@@ -4851,6 +4851,22 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/jQIILE7kauqsudlD2PKM3w",
       "asset_ref": "Assets/2026-11/weixin-jqiile-high-concurrency-qps-rt-breakdown.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-11-llm-inference-cost-cps-governance.md",
+      "sha256": "9a5dae40c14ac2e82d438f81da7b3462ec5f2661c3c5555e078f690eb6146b13",
+      "registered_at": "2026-11-12",
+      "inbox_ref": "Archive/2026-11-11-llm-inference-cost-cps-governance.md",
+      "pages": [
+        "wiki/sources/llm-inference-cost-cps-governance.md",
+        "wiki/concepts/cps-cost-per-successful-task.md",
+        "wiki/concepts/llm-inference-cost-governance.md",
+        "wiki/sources/llm-integration-engineering-hard-parts.md",
+        "wiki/concepts/context-management.md",
+        "wiki/concepts/thinking-mode.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/vySDY4f_8mceCdh7fyZEqA",
+      "asset_ref": "Assets/2026-11/weixin-llm-inference-cost-cps-governance.md"
     }
   ]
 }

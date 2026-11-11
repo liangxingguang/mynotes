@@ -11,7 +11,7 @@ tags:
   - AI
   - Agent
 asset_ref: Assets/2026-11/weixin-llm-inference-cost-cps-governance.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # LLM 推理成本治理：从 Token 单价到每个合格交付的真实成本
