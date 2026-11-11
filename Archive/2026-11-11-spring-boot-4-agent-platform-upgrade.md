@@ -11,9 +11,7 @@ tags:
   - java
   - Agent
 asset_ref: Assets/2026-11/weixin-2wzva-spring-boot-4-1-migration.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-11T15:41:30.711Z"
-ingest_claim_id: 7088-1794411690711-0
+wiki_status: ingested
 ---
 
 # 40 张表、20 层 e2e：把一个开源 Agent 平台迁到 Spring Boot 4.1

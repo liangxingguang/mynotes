@@ -383,6 +383,7 @@
 - [[auth-authz-selection-part1|认证与授权选型拆解（上篇）：五种候选矩阵——自研 Redis、Sa-Token、Spring Security、Keycloak、JWT]]（2026-11-06，安全/选型，认证授权选型系列·上篇：两种翻车代价（过度设计/选型过浅）+认证vs授权概念分层+凭证/Token/会话三层+有状态vs无状态权衡+L1-L5 分层+五维模型与五方案评分矩阵+门禁类比+授权层统一RBAC/ABAC+AuthService接口隔离+10条场景决策清单+4类反模式，单信源微信公众号，置信度中）
 - [[weknora-dept-knowledge-base|我用腾讯开源的 WeKnora 搭部门知识库：检索很准，但它只有一半功能]]（2026-11-06，AI/知识库，硬件工程师部门实战：个人库vs框架两难+WeKnora（3w+ star/腾讯开源/微信对话平台沉淀）私有化Docker部署+HUB底座4子应用互供经验+两试点方向+三条边界（不把没异常当通过/AI不当计算器/人工确认前不进正式库）+核心短板=只能删了重传无在线编辑，"检索半已不难、维护半才是难的那半"，公众号单信源，置信度中）
 - [[weixin-agent-memory-system-design|企业级 Agent 记忆系统设计拆解]]（2026-11-07，AI/Agent/Memory，七模块16步+检索10步+三路并行召回+五维融合+写回四步/三态/生命周期+反馈闭环五指标+六阶段路线+11字段数据结构+五坑，公众号单信源，置信度中）
+- [[2026-11-11-spring-boot-4-agent-platform-migration|40 张表、20 层 e2e：把一个开源 Agent 平台迁到 Spring Boot 4.1]]（2026-11-11，架构/Java/Spring Boot，BizBuddy 迁移实战：四类改动（Jackson 3/starter 拆分/JSpecify/依赖坐标）+验证占七成+starter 改名与包名搬家+Jackson 3 七大坑+Jackson 2/3 并存边界+Flyway 双库+LiteFlow 启动失败+20 层 e2e 资产，公众号单信源，置信度中）
 ## concept（概念）
 
 - [[a2a-protocol|A2A 协议]]（Agent↔Agent 横向协作协议，Google 2025）
@@ -612,6 +613,8 @@
 - [[pbac-policy-engine|PBAC 策略引擎]]（2026-11-06，安全/授权/架构选型，四大痛点驱动（规则重/散落/易变/多系统不统一）、四步决策流（主/客/动/环境→引擎→允许拒绝）、OPA Rego 三示例、ACL→RBAC→ABAC→PBAC 五模型谱系、何时上策略引擎判断、Java 接入点为 AuthorizationManager/StpInterface、复杂合规与开放平台场景，公众号单信源置信度中，与 [[rbac-permission-system]]「注解承载上限」互证）
 - [[knowledge-base-maintenance|知识库维护：检索之后的另一半]]（2026-11-06，AI/知识库，检索半（解析/切片/向量化/检索）已商品化、维护半（编辑更新/结论刷新/过期下掉/质量门禁）是空白；维护=删了重传不算维护（不保留条目身份）；三条维护边界（没发现异常≠通过/AI不当计算器/人工确认前不进正式库）+录入激励+HUB互供经验；理想形态=知识库系统+在线文档拼接，微信单信源，置信度中）
 - [[row-level-permission|行权限（行级数据权限）]]（2026-11-06，安全/权限/产品，系统强制的行过滤：表/行/列/页面筛选四层辨析（行权限去不掉、做成默认筛选框等于没做）+落地三件事（用户范围组织岗位带出/每行归属字段/匹配规则自动追加）+组织层级继承+两误区（归属口径须业务确认/规则须放所有出口共用层）+合计不一致须标注数据范围+上线5项检查，[[rbac-permission-system]] 数据权限层落地算子，微信单信源置信度中）
+- [[spring-boot-major-upgrade|Spring Boot 大版本升级方法论]]（2026-11-11，架构/Java/Spring Boot，四类改动（Jackson 3/starter 拆分/JSpecify/第三方坐标）+验证占七成+starter 改名/包名搬家+Jackson 2/3 并存不硬换+e2e 是升级最值钱资产+能启动只是第一道门禁+取舍（虚拟线程关/starter-web 弃用保留），微信单信源置信度中）
+- [[jackson-3-migration|Jackson 3 迁移]]（2026-11-11，架构/Java/Jackson，JsonMapper 不可变 builder+序列化器签名（ser.jdk/SerializationContext）+Redisson 4.x TypedJsonJackson3Codec（读缓存才炸）+activateDefaultTyping 显式校验器+缓存 key 前缀+注解包不变只换 databind+并存边界裁决标准，微信单信源置信度中，与 [[2026-11-01-enterprise-rag-platform-langgraph-mcp]] 互证）
 
 ## entity（实体）
 
@@ -647,6 +650,7 @@
 - [[unyra|归一 Unyra]]（本地优先探索式学习 AI 桌面应用，知识 DAG + 超级导师沙箱改文档，仅 Windows 安装链）
 - [[spring-ai|Spring AI]]（Java 应用与模型间的中间层，屏蔽模型差异，Java 版 LangChain；七步能力栈+版本基线 1.0.9→2.0.2+MCP Server 暴露工具，双信源，置信度中）
 - [[weknora|WeKnora]]（腾讯开源企业级知识库系统：RAG/Agent/Wiki 三能力共用一个知识库、混合检索（关键词+向量+知识图谱+引用溯源）、Docker 私有化+API；硬件部门 fork 二开当知识底座 HUB；短板=无在线编辑维护入口，微信单信源转述官方说法，置信度中）
+- [[bizbuddy|BizBuddy]]（开源企业级 Agent 平台：Spring Boot 4.1.1+AgentScope Java Harness+RuoYi-Vue-Plus，PG14/MySQL8 双栈，40 张 ai_* 表+20 层 e2e+18 条 Playwright，MIT，gitee 开源，单信源置信度中）
 
 ## topic（主题）
 

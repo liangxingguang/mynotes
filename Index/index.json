@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11 23:54",
+  "updated_at": "2026-11-11 23:58",
   "notes": [
     {
       "id": "inbox-20261111-2002",
@@ -37,25 +37,6 @@
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-llm-inference-cost-cps-governance.md",
       "wiki_status": "pending"
-    },
-    {
-      "id": "inbox-20261111-2001",
-      "title": "40 张表、20 层 e2e：把一个开源 Agent 平台迁到 Spring Boot 4.1",
-      "path": "Inbox/2026-11-11-spring-boot-4-agent-platform-upgrade.md",
-      "created": "2026-11-11",
-      "category": "技术",
-      "tags": [
-        "java",
-        "Agent"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/2wzVaKGTnsnNGmx3WpAhmQ",
-      "source_type": "link",
-      "platform": "wechat",
-      "summary": "BizBuddy 团队分享将开源 Agent 平台从 Spring Boot 3.5 升级到 4.1.1 的实战经验：真正要改的只有四类（Jackson 3、starter 拆分、JSpecify 空安全、依赖坐标），其余七成时间都在验证。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/weixin-2wzva-spring-boot-4-1-migration.md",
-      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -7412,6 +7393,25 @@
       "summary": "从零拆解 Agent 记忆系统：区分上下文/聊天记录/记忆三个概念，按七个模块、16 个步骤讲透检索链路与写入流程，核心是反馈闭环与记忆生命周期管理，并给出六阶段工程落地路线与五个常见坑。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/agent-memory-system-design.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-20261111-2001",
+      "title": "40 张表、20 层 e2e：把一个开源 Agent 平台迁到 Spring Boot 4.1",
+      "path": "Archive/2026-11-11-spring-boot-4-agent-platform-upgrade.md",
+      "created": "2026-11-11",
+      "category": "技术",
+      "tags": [
+        "java",
+        "Agent"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/2wzVaKGTnsnNGmx3WpAhmQ",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "BizBuddy 团队分享将开源 Agent 平台从 Spring Boot 3.5 升级到 4.1.1 的实战经验：真正要改的只有四类（Jackson 3、starter 拆分、JSpecify 空安全、依赖坐标），其余七成时间都在验证。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-2wzva-spring-boot-4-1-migration.md",
       "wiki_status": "ingested"
     }
   ]

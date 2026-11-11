@@ -4822,6 +4822,20 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/TMnVMTMm0aKH8eWb9nxipQ",
       "asset_ref": "Assets/2026-11/agent-memory-system-design.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-11-spring-boot-4-agent-platform-migration.md",
+      "sha256": "9d9f97d6676f30861905523eae64a9ee1354e5773cc0c9e1759e846080bf456e",
+      "registered_at": "2026-11-11",
+      "inbox_ref": "Archive/2026-11-11-spring-boot-4-agent-platform-upgrade.md",
+      "pages": [
+        "wiki/sources/2026-11-11-spring-boot-4-agent-platform-migration.md",
+        "wiki/concepts/spring-boot-major-upgrade.md",
+        "wiki/concepts/jackson-3-migration.md",
+        "wiki/entities/bizbuddy.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/2wzVaKGTnsnNGmx3WpAhmQ",
+      "asset_ref": "Assets/2026-11/weixin-2wzva-spring-boot-4-1-migration.md"
     }
   ]
 }
