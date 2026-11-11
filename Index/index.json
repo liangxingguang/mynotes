@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11 23:43",
+  "updated_at": "2026-11-11 23:54",
   "notes": [
     {
       "id": "inbox-20261111-2002",
@@ -17,6 +17,25 @@
       "summary": "一篇把\"高并发\"从背组件变成可回答问题的方法论文章：并发=QPS×RT 的换算、各层天花板量级表、三档 QPS 的代价阶梯，以及\"为了扛住放弃什么\"的取舍框架。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-jqiile-high-concurrency-qps-rt-breakdown.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "inbox-20261111-2352",
+      "title": "LLM 推理成本治理：从 Token 单价到每个合格交付的真实成本",
+      "path": "Inbox/2026-11-11-llm-inference-cost-cps-governance.md",
+      "created": "2026-11-11",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/vySDY4f_8mceCdh7fyZEqA",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "把「LLM 降本」从 Token 单价换算成可决策指标：给出 CPS（每个合格交付的成本）口径、四层成本全景、缓存盈亏平衡公式、预算预留状态机、路由升级的期望成本模型，以及「先过质量非劣门禁、再看成本」的发布流程。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-llm-inference-cost-cps-governance.md",
       "wiki_status": "pending"
     },
     {
