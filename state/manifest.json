@@ -4867,6 +4867,19 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/vySDY4f_8mceCdh7fyZEqA",
       "asset_ref": "Assets/2026-11/weixin-llm-inference-cost-cps-governance.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-11-11-requirements-doc-checklist.md",
+      "sha256": "419c60f0e826b670d62e4aec003ca7022426403c7065eb96e93ecd514020ccf4",
+      "registered_at": "2026-11-12",
+      "inbox_ref": "Archive/2026-11-11-requirements-doc-checklist.md",
+      "pages": [
+        "wiki/sources/2026-11-11-requirements-doc-checklist.md",
+        "wiki/concepts/requirements-doc-checklist.md",
+        "wiki/concepts/bend-prd-writing-framework.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/3wYC-4_NmuUgcdqywgypjA",
+      "asset_ref": "Assets/2026-11/weixin-3wyc-requirements-doc-checklist.md"
     }
   ]
 }

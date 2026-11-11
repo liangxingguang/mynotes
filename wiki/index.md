@@ -386,6 +386,12 @@
 - [[weixin-high-concurrency-qps-rt-thinking|QPS 1 万、RT 100ms，就是 1,000 个请求同时压在你身上]]（2026-11-11，架构/高并发/容量规划，并发=QPS×RT 换算+各层天花板实测量级表+三档 QPS 代价阶梯+真实 QPS 存储侧反推+三选二取舍框架+三边界条件+五坑，编译为 [[concurrency-qps-rt]]，微信单信源，置信度中）
 - [[2026-11-11-spring-boot-4-agent-platform-migration|40 张表、20 层 e2e：把一个开源 Agent 平台迁到 Spring Boot 4.1]]（2026-11-11，架构/Java/Spring Boot，BizBuddy 迁移实战：四类改动（Jackson 3/starter 拆分/JSpecify/依赖坐标）+验证占七成+starter 改名与包名搬家+Jackson 3 七大坑+Jackson 2/3 并存边界+Flyway 双库+LiteFlow 启动失败+20 层 e2e 资产，公众号单信源，置信度中）
 - [[llm-inference-cost-cps-governance|LLM 推理成本治理：从 Token 单价到每个合格交付的真实成本]]（2026-11-11，AI/FinOps，CPS 指标（每个合格交付的成本）+成本账本归因+预算状态机+缓存净收益经济学+路由期望成本+发布统计门禁，公众号单信源，置信度中）
+- [[ai-native-team-org-reconstruction|构建 AI Native 团队：从工具采用到组织重构]]（2026-11-05，source，置信度 medium）
+- [[java-online-troubleshooting-arthas|Java 线上排查实战：OOM、超时、闪退、GC 抖动、死锁]]（2026-10-30，source，置信度 high）
+- [[minimax-mcode-stack-agent-workflow|MiniMax 开源「mcode-stack」：用 MiniMax Code 写 MiniMax Code 的全套工作流]]（2026-10-31，source，置信度 medium）
+- [[zhihu-column-agent-long-term-memory|从零构建Agent(十二)：长期Memory管理]]（2026-11-05，source，置信度 medium）
+- [[2026-11-11-requirements-doc-checklist|一页完整需求分析文档结构检查清单]]（2026-11-12，工程实践/需求分析，系列总结篇：九段式检查清单（七必须有+两建议有）+各段检查点+用户故事/验收标准句式+功能清单七字段+一致性铁律+四条使用提醒，收束系列15/16/17篇环节并预告AI篇，公众号单信源，置信度中）
+
 ## concept（概念）
 
 - [[a2a-protocol|A2A 协议]]（Agent↔Agent 横向协作协议，Google 2025）
@@ -549,6 +555,7 @@
 - [[reactive-tracing-context|响应式环境的全链路 traceId 传递]]（Reactor Context 替代 ThreadLocal；doOnEach 同步 MDC、doFinally 清除）
 - [[reactor-thread-model|主从 Reactor 线程模型（Netty 版）]]（Boss accept/Worker CPU×2/Channel 终身绑单 EventLoop 天然无锁；ServerBootstrapAcceptor 移交链路+三形态选型+SCG 双 Group 与中间件应用印证，八信源互证，置信度高）
 - [[redefine-hot-reload-boundaries|redefine 热替换边界：能改什么、不能改什么]]（只能改方法体/执行中方法退出才生效/三个风险+临时止血五步，与 arthas-01、MCP 实测信源互证，单信源方法论，置信度高）
+- [[requirements-doc-checklist|需求分析文档九段检查清单]]（2026-11-12，概念/需求分析/写作方法论，系列总结篇编译：九段结构（七必须有+两建议有）+各段检查点+用户故事/验收标准句式+功能清单七字段+一致性铁律+使用提醒，收束系列15/16/17篇环节，单信源+系列三篇互证，置信度中）
 - [[rest-api-as-tools|REST 接口工具化模式]]（函数体换 HTTP 封装但工具形状不变；登录即工具+token 只活进程内存+统一 _call 注入+描述即流程+错误回喂 HTTP 化；换真后台只改 BASE_URL，单信源实测）
 - [[reentrantlock-internals|ReentrantLock 可重入锁设计]]（AQS 经典实现：非公平先抢/公平只差 hasQueuedPredecessors/state 累加可重入/多 Condition 精确唤醒，单信源，置信度中）
 - [[retry-governance|重试治理（Retry Governance）]]（唯一重试所有者+时间/次数/额度/并发/语义五边界；Retry Budget 按首次记账 β 上界、Full Jitter、错误分类、熔断只看真实下游结果、12 步执行链；非确定性依赖重试=分布采样+查询可重试写操作禁重试+退避抖动+封顶实现细节+熔断按租户+defer闸+三层令牌桶+幂等外置+DB唯一真相+Outbox事务钩子+虚拟线程配信号量，五信源，置信度中）

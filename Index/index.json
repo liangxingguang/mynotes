@@ -1,24 +1,6 @@
 {
-  "updated_at": "2026-11-12 00:51",
+  "updated_at": "2026-11-12 01:13",
   "notes": [
-    {
-      "id": "inbox-20261111-2003",
-      "title": "一页完整需求分析文档结构检查清单",
-      "path": "Inbox/2026-11-11-requirements-doc-checklist.md",
-      "created": "2026-11-11",
-      "category": "学习",
-      "tags": [
-        "requirements"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/3wYC-4_NmuUgcdqywgypjA",
-      "source_type": "link",
-      "platform": "wechat",
-      "summary": "把需求分析各环节（目标与场景、模块拆分、范围界定、用户故事、功能清单、验收标准）收束成一份九段式检查清单：写文档时搭结构、写完后自检、评审时当对照表。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/weixin-3wyc-requirements-doc-checklist.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
@@ -7411,6 +7393,24 @@
       "summary": "把「LLM 降本」从 Token 单价换算成可决策指标：给出 CPS（每个合格交付的成本）口径、四层成本全景、缓存盈亏平衡公式、预算预留状态机、路由升级的期望成本模型，以及「先过质量非劣门禁、再看成本」的发布流程。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-llm-inference-cost-cps-governance.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-20261111-2003",
+      "title": "一页完整需求分析文档结构检查清单",
+      "path": "Archive/2026-11-11-requirements-doc-checklist.md",
+      "created": "2026-11-11",
+      "category": "学习",
+      "tags": [
+        "requirements"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/3wYC-4_NmuUgcdqywgypjA",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "把需求分析各环节（目标与场景、模块拆分、范围界定、用户故事、功能清单、验收标准）收束成一份九段式检查清单：写文档时搭结构、写完后自检、评审时当对照表。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-3wyc-requirements-doc-checklist.md",
       "wiki_status": "ingested"
     },
     {

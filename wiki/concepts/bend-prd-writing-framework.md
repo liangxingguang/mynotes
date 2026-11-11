@@ -15,6 +15,7 @@ sources:
   - raw/sources/products/2026-11-03-weixin-bend-prd-writing-30.md
   - raw/sources/products/2026-11-03-weixin-bend-ticket-prd-02.md
   - raw/sources/products/2026-11-03-weixin-bend-tracking-system-23.md
+  - raw/sources/misc/2026-11-11-requirements-doc-checklist.md
 related:
   - wiki/sources/bend-prd-writing-30.md
   - wiki/concepts/complex-system-breakdown.md
@@ -119,6 +120,7 @@ B端PRD（开发不骂人）
 - 2026-11-04：建页。首信源：B 端 PM 视角的"一图三表一份清单"框架与 10 业务模块 PRD 重点（专辑第 30 篇），单信源，置信度中。
 - 2026-11-04：第二信源印证（专辑第 2 篇，工单系统 PRD）：流转表/字段表/验收标准三件套与"三表一份清单"同构——工单案例以状态机流转表（8 条流转规则）、18 字段表、五类可验证验收落地了框架主张"难点不是功能清单而是状态/权限/规则清晰"（详见 [[ticket-system-design]]）。
 - 2026-11-04：第三信源印证（专辑第 23 篇，B 端埋点体系）：自检清单中"埋点"项展开为独立框架——埋点 PRD 六模块（文档信息/目标/事件清单/参数字典/上报策略/验收标准），详见 [[tracking-system-design]]。
+- 2026-11-12：第四信源印证（需求分析系列总结篇，九段检查清单）：本框架"范围显式化"（必须写"不做什么"）与"清单收尾"（验收标准客观可测）两项主张获跨领域信源印证——该清单第六段验收标准明确"结果可客观检查，无'流畅''良好'等主观词"，第三段范围界定明确"必须做/可后做/明确不做"三栏，与本框架立论一致（见 [[requirements-doc-checklist]]）。
 
 ## Open Questions（开放问题）
 
@@ -131,6 +133,7 @@ B端PRD（开发不骂人）
 - 一图三表一份清单框架、三原因、四案例（EHR 转岗/ERP 部分入库/CRM 公海/车贷反欺诈）、10 业务模块 PRD 重点：`raw/sources/products/2026-11-03-weixin-bend-prd-writing-30.md`（公众号《B端产品经理》专辑第 30 篇，2026-11-03 采集）
 - 工单 PRD 三件套印证（状态机流转表/18 字段表/五类验收）：`raw/sources/products/2026-11-03-weixin-bend-ticket-prd-02.md`（专辑第 2 篇）
 - 埋点自检项展开（埋点 PRD 六模块）：`raw/sources/products/2026-11-03-weixin-bend-tracking-system-23.md`（专辑第 23 篇）
+- 范围显式化与验收客观可测的跨领域印证（九段检查清单第三/六段）：`raw/sources/misc/2026-11-11-requirements-doc-checklist.md`（需求分析系列总结篇，2026-11-11 采集）
 - 同构关系、评审衔接、与五件套/Agent 化 PRD 的区分：本 wiki 编译者解读。
 
 ## Related Knowledge（相关知识）

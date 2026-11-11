@@ -10,9 +10,7 @@ category: 学习
 tags:
   - requirements
 asset_ref: Assets/2026-11/weixin-3wyc-requirements-doc-checklist.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-11T16:20:35.592Z"
-ingest_claim_id: 12256-1794414035592-0
+wiki_status: ingested
 ---
 
 # 一页完整需求分析文档结构检查清单
