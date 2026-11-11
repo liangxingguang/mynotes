@@ -1,24 +1,6 @@
 {
-  "updated_at": "2026-11-11 23:59",
+  "updated_at": "2026-11-12 00:13",
   "notes": [
-    {
-      "id": "inbox-20261111-2002",
-      "title": "QPS 1 万、RT 100ms，就是 1,000 个请求同时压在你身上",
-      "path": "Inbox/2026-11-11-high-concurrency-qps-rt-thinking.md",
-      "created": "2026-11-11",
-      "category": "技术",
-      "tags": [
-        "java"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/jQIILE7kauqsudlD2PKM3w",
-      "source_type": "link",
-      "platform": "wechat",
-      "summary": "一篇把\"高并发\"从背组件变成可回答问题的方法论文章：并发=QPS×RT 的换算、各层天花板量级表、三档 QPS 的代价阶梯，以及\"为了扛住放弃什么\"的取舍框架。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/weixin-jqiile-high-concurrency-qps-rt-breakdown.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "inbox-20261111-2352",
       "title": "LLM 推理成本治理：从 Token 单价到每个合格交付的真实成本",
@@ -7411,6 +7393,24 @@
       "summary": "从零拆解 Agent 记忆系统：区分上下文/聊天记录/记忆三个概念，按七个模块、16 个步骤讲透检索链路与写入流程，核心是反馈闭环与记忆生命周期管理，并给出六阶段工程落地路线与五个常见坑。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/agent-memory-system-design.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-20261111-2002",
+      "title": "QPS 1 万、RT 100ms，就是 1,000 个请求同时压在你身上",
+      "path": "Archive/2026-11-11-high-concurrency-qps-rt-thinking.md",
+      "created": "2026-11-11",
+      "category": "技术",
+      "tags": [
+        "java"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/jQIILE7kauqsudlD2PKM3w",
+      "source_type": "link",
+      "platform": "wechat",
+      "summary": "一篇把\"高并发\"从背组件变成可回答问题的方法论文章：并发=QPS×RT 的换算、各层天花板量级表、三档 QPS 的代价阶梯，以及\"为了扛住放弃什么\"的取舍框架。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-jqiile-high-concurrency-qps-rt-breakdown.md",
       "wiki_status": "ingested"
     },
     {
