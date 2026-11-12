@@ -6,7 +6,7 @@ source_type: article
 platform: 知乎
 captured: 2026-11-12
 registered_at: 2026-11-12
-inbox_ref: Inbox/2026-11-12-jvm-memory-gc-jfr-heapdump.md
+inbox_ref: Archive/2026-11-12-jvm-memory-gc-jfr-heapdump.md
 asset_ref: Assets/2026/11/jvm-memory-gc-jfr-heapdump.md
 ---
 

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12 18:21",
+  "updated_at": "2026-11-12 18:28",
   "notes": [
     {
       "id": "2026-11-12-ai-era-framework-reflection",
@@ -20,9 +20,9 @@
       "wiki_status": "ingesting"
     },
     {
-      "id": "2026-11-12-jvm-memory-gc-jfr-heapdump",
-      "title": "JVM 内存排查实战：用 GC 日志、JFR 和堆转储串起证据链",
-      "path": "Inbox/2026-11-12-jvm-memory-gc-jfr-heapdump.md",
+      "id": "2026-11-12-jvm-reference-counting-reachability",
+      "title": "【JVM 底层修炼记】如何判断对象该不该回收？聊聊经典的引用计数法与可达性分析算法",
+      "path": "Inbox/2026-11-12-jvm-reference-counting-reachability.md",
       "created": "2026-11-12",
       "category": "技术",
       "tags": [
@@ -30,13 +30,13 @@
         "JVM"
       ],
       "source": "知乎",
-      "source_url": "https://zhuanlan.zhihu.com/p/2103923471818417605",
+      "source_url": "https://zhuanlan.zhihu.com/p/2103769210321105002",
       "source_type": "link",
       "platform": "知乎",
-      "summary": "以 Doris FE（HotSpot JDK 17、G1）排查实践为素材，总结\"GC 日志 + JFR + 堆转储\"三件套的 JVM 内存排查方法论：先分清\"内存高\"的三种病灶（分配过速、长期持有、堆外增长）与五个易混的量，再用三份证据分别回答时间、来源、结构三个问题，交叉印证形成可复核的因果链。核心结论：GC 日志判断\"病\"的性质，JFR 找到病灶入口，堆转储确认病灶结构；采集前想清代价、下结论前写明验收条件。",
+      "summary": "JVM 判断对象生死的两套经典机制：引用计数法为每个对象维护引用计数器，引用归零即可回收，实现直观但无法解决循环引用；现代 HotSpot 采用可达性分析，以 GC Roots 为起点向下搜索，只看能否到达而非被引用多少次，循环引用（整体不可达）也能回收。文章还讲清 finalize() 的两次标记、对象复活（仅一次）与四种引用（强/软/弱/虚）。",
       "summary_status": "",
-      "asset_ref": "Assets/2026/11/jvm-memory-gc-jfr-heapdump.md",
-      "wiki_status": "ingesting"
+      "asset_ref": "Assets/2026/11/jvm-reference-counting-reachability.md",
+      "wiki_status": "pending"
     },
     {
       "id": "2026-11-12-multi-agent-task-board-architecture",
@@ -7542,6 +7542,25 @@
       "summary": "vivo 互联研发效能团队的一篇 Agent 全景综述，按\"基石→核心→实战\"的因果链组织：从提示词工程、上下文工程（RAG）、Harness 运行时，到 ReAct 自主循环、工具/MCP/技能、记忆与知识库、多智能体协作，并给出应用场景、五大避坑要点与生产部署 Checklist，目标是构建能自主规划、调用工具、交付结果的\"数字员工\"。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/ai-agent-tech-overview.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-12-jvm-memory-gc-jfr-heapdump",
+      "title": "JVM 内存排查实战：用 GC 日志、JFR 和堆转储串起证据链",
+      "path": "Archive/2026-11-12-jvm-memory-gc-jfr-heapdump.md",
+      "created": "2026-11-12",
+      "category": "技术",
+      "tags": [
+        "java",
+        "JVM"
+      ],
+      "source": "知乎",
+      "source_url": "https://zhuanlan.zhihu.com/p/2103923471818417605",
+      "source_type": "link",
+      "platform": "知乎",
+      "summary": "以 Doris FE（HotSpot JDK 17、G1）排查实践为素材，总结\"GC 日志 + JFR + 堆转储\"三件套的 JVM 内存排查方法论：先分清\"内存高\"的三种病灶（分配过速、长期持有、堆外增长）与五个易混的量，再用三份证据分别回答时间、来源、结构三个问题，交叉印证形成可复核的因果链。核心结论：GC 日志判断\"病\"的性质，JFR 找到病灶入口，堆转储确认病灶结构；采集前想清代价、下结论前写明验收条件。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/jvm-memory-gc-jfr-heapdump.md",
       "wiki_status": "ingested"
     },
     {

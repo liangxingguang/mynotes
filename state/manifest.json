@@ -4912,6 +4912,17 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/sjeOryZ5H2ZZGQOKZ2YS4g",
       "asset_ref": "Assets/2026-11/ai-agent-tech-overview.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-12-jvm-memory-gc-jfr-heapdump.md",
+      "sha256": "0500e3f6bc80da7324feb77226f30f6a33c0cc5a678446acf1135d468029d2b5",
+      "registered_at": "2026-11-12",
+      "inbox_ref": "Archive/2026-11-12-jvm-memory-gc-jfr-heapdump.md",
+      "pages": [
+        "wiki/concepts/jvm-memory-evidence-chain-troubleshooting.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2103923471818417605",
+      "asset_ref": "Assets/2026/11/jvm-memory-gc-jfr-heapdump.md"
     }
   ]
 }

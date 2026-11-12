@@ -9,9 +9,7 @@ created: 2026-11-12
 category: 技术
 tags: [java, JVM]
 asset_ref: Assets/2026/11/jvm-memory-gc-jfr-heapdump.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-12T10:06:07.272Z"
-ingest_claim_id: 17464-1794477967272-0
+wiki_status: ingested
 ---
 
 # JVM 内存排查实战：用 GC 日志、JFR 和堆转储串起证据链
