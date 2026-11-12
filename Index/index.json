@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12 18:05",
+  "updated_at": "2026-11-12 18:08",
   "notes": [
     {
       "id": "2026-11-12-jvm-memory-gc-jfr-heapdump",
@@ -18,6 +18,25 @@
       "summary": "以 Doris FE（HotSpot JDK 17、G1）排查实践为素材，总结\"GC 日志 + JFR + 堆转储\"三件套的 JVM 内存排查方法论：先分清\"内存高\"的三种病灶（分配过速、长期持有、堆外增长）与五个易混的量，再用三份证据分别回答时间、来源、结构三个问题，交叉印证形成可复核的因果链。核心结论：GC 日志判断\"病\"的性质，JFR 找到病灶入口，堆转储确认病灶结构；采集前想清代价、下结论前写明验收条件。",
       "summary_status": "",
       "asset_ref": "Assets/2026/11/jvm-memory-gc-jfr-heapdump.md",
+      "wiki_status": "ingesting"
+    },
+    {
+      "id": "2026-11-12-pi-xfer-handoff-network",
+      "title": "我给 pi 做了一个交接工具，后来它长成了一张网络",
+      "path": "Inbox/2026-11-12-pi-xfer-handoff-network.md",
+      "created": "2026-11-12",
+      "category": "技术",
+      "tags": [
+        "Agent",
+        "AI"
+      ],
+      "source": "知乎",
+      "source_url": "https://zhuanlan.zhihu.com/p/2097748041361012308",
+      "source_type": "link",
+      "platform": "知乎",
+      "summary": "作者为 pi agent 开发的开源插件 pi-xfer（xfer = transfer）：解决 Agent 时代的\"上下文卫生\"问题——一个窗口混入多个任务会上下文腐坏，常规解法是压缩，pi-xfer 则走另一条路：让不同阶段的任务交给不同 Agent，像人类同事一样做正式 handoff 交接。插件从本地 unix socket 通讯起步，逐步长成一张多形态接入的 Agent 网络，已开源。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/pi-xfer-handoff-network.md",
       "wiki_status": "pending"
     },
     {
