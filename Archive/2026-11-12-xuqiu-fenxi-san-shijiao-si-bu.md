@@ -11,7 +11,7 @@ tags:
   - requirements
   - 产品设计
 asset_ref: Assets/2026/11/xuqiu-fenxi-san-shijiao-si-bu.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 > 摘要：一套在真实资产管理项目中跑通的需求分析框架：先用流程/数据/角色三个视角看懂业务，再用定义价值范围、结构化建模、设计最小价值单元、验证管理四步做成价值闭环，并在日志管理领域做迁移验证，证明框架本身可迁移。

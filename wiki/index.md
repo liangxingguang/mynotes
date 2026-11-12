@@ -391,6 +391,7 @@
 - [[minimax-mcode-stack-agent-workflow|MiniMax 开源「mcode-stack」：用 MiniMax Code 写 MiniMax Code 的全套工作流]]（2026-10-31，source，置信度 medium）
 - [[zhihu-column-agent-long-term-memory|从零构建Agent(十二)：长期Memory管理]]（2026-11-05，source，置信度 medium）
 - [[2026-11-11-requirements-doc-checklist|一页完整需求分析文档结构检查清单]]（2026-11-12，工程实践/需求分析，系列总结篇：九段式检查清单（七必须有+两建议有）+各段检查点+用户故事/验收标准句式+功能清单七字段+一致性铁律+四条使用提醒，收束系列15/16/17篇环节并预告AI篇，公众号单信源，置信度中）
+- [[2026-11-12-xuqiu-fenxi-san-shijiao-si-bu|需求分析怎么做？三个视角看业务，四步做成价值闭环]]（2026-11-12，工程实践/需求分析，三维认知（流程/数据/角色）+四步价值闭环（定义范围→结构化建模→MVU→验证管理）+日志管理迁移实验，公众号单信源，置信度中）
 
 ## concept（概念）
 
@@ -627,6 +628,7 @@
 - [[row-level-permission|行权限（行级数据权限）]]（2026-11-06，安全/权限/产品，系统强制的行过滤：表/行/列/页面筛选四层辨析（行权限去不掉、做成默认筛选框等于没做）+落地三件事（用户范围组织岗位带出/每行归属字段/匹配规则自动追加）+组织层级继承+两误区（归属口径须业务确认/规则须放所有出口共用层）+合计不一致须标注数据范围+上线5项检查，[[rbac-permission-system]] 数据权限层落地算子，微信单信源置信度中）
 - [[spring-boot-major-upgrade|Spring Boot 大版本升级方法论]]（2026-11-11，架构/Java/Spring Boot，四类改动（Jackson 3/starter 拆分/JSpecify/第三方坐标）+验证占七成+starter 改名/包名搬家+Jackson 2/3 并存不硬换+e2e 是升级最值钱资产+能启动只是第一道门禁+取舍（虚拟线程关/starter-web 弃用保留），微信单信源置信度中）
 - [[jackson-3-migration|Jackson 3 迁移]]（2026-11-11，架构/Java/Jackson，JsonMapper 不可变 builder+序列化器签名（ser.jdk/SerializationContext）+Redisson 4.x TypedJsonJackson3Codec（读缓存才炸）+activateDefaultTyping 显式校验器+缓存 key 前缀+注解包不变只换 databind+并存边界裁决标准，微信单信源置信度中，与 [[2026-11-01-enterprise-rag-platform-langgraph-mcp]] 互证）
+- [[three-perspective-four-step-framework|三维认知与四步闭环需求分析框架]]（2026-11-12，概念/需求分析/方法论，三维认知（流程/数据/角色）+四步价值闭环+MVU 公式+日志管理迁移实验，印证 [[complex-system-breakdown]] 业务对象件、补充规则四类分工，单信源，置信度中）
 
 ## entity（实体）
 

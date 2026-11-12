@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-11-12 09:06",
+  "updated_at": "2026-11-12 09:24",
   "notes": [
-    {
-      "id": "inbox-20261112-xuqiu-fenxi-san-shijiao-si-bu",
-      "title": "2026-11-12-xuqiu-fenxi-san-shijiao-si-bu",
-      "path": "Inbox/2026-11-12-xuqiu-fenxi-san-shijiao-si-bu.md",
-      "created": "2026-11-12",
-      "category": "学习",
-      "tags": [
-        "requirements",
-        "产品设计"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/M44iVNsv-2-wQpeJHOcK2A",
-      "source_type": "article",
-      "platform": "wechat",
-      "summary": "一套在真实资产管理项目中跑通的需求分析框架：先用流程/数据/角色三个视角看懂业务，再用定义价值范围、结构化建模、设计最小价值单元、验证管理四步做成价值闭环，并在日志管理领域做迁移验证，证明框架本身可迁移。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/11/xuqiu-fenxi-san-shijiao-si-bu.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
@@ -7449,6 +7430,25 @@
       "summary": "BizBuddy 团队分享将开源 Agent 平台从 Spring Boot 3.5 升级到 4.1.1 的实战经验：真正要改的只有四类（Jackson 3、starter 拆分、JSpecify 空安全、依赖坐标），其余七成时间都在验证。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-2wzva-spring-boot-4-1-migration.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-20261112-xuqiu-fenxi-san-shijiao-si-bu",
+      "title": "2026-11-12-xuqiu-fenxi-san-shijiao-si-bu",
+      "path": "Archive/2026-11-12-xuqiu-fenxi-san-shijiao-si-bu.md",
+      "created": "2026-11-12",
+      "category": "学习",
+      "tags": [
+        "requirements",
+        "产品设计"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/M44iVNsv-2-wQpeJHOcK2A",
+      "source_type": "article",
+      "platform": "wechat",
+      "summary": "一套在真实资产管理项目中跑通的需求分析框架：先用流程/数据/角色三个视角看懂业务，再用定义价值范围、结构化建模、设计最小价值单元、验证管理四步做成价值闭环，并在日志管理领域做迁移验证，证明框架本身可迁移。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/xuqiu-fenxi-san-shijiao-si-bu.md",
       "wiki_status": "ingested"
     }
   ]

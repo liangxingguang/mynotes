@@ -12,6 +12,7 @@ tags:
   - b-end
 sources:
   - raw/sources/architecture/2026-11-03-weixin-bend-complex-system-breakdown-20.md
+  - raw/sources/misc/2026-11-12-xuqiu-fenxi-san-shijiao-si-bu.md
 related:
   - wiki/concepts/rbac-permission-system.md
   - wiki/concepts/approval-workflow-engine.md
@@ -75,10 +76,11 @@ B 端产品经理面对复杂系统的高频能力是拆解：拆解不清，页
 ### Distinctions（区分）
 
 - 与页面驱动拆解的区分：五件套先文档/表格后原型，规则与边界先行；页面驱动先画界面，规则遗漏风险高。
+- 与流程/数据/规则建模三块的区分（[[three-perspective-four-step-framework|三维认知与四步闭环需求分析框架]]，第二信源印证）：对方按流程/数据/规则三块建模并前置三视角认知；其数据建模"实体货架→字段规则外键→关系"印证业务对象件，规则建模四类（数据验证/流程流转/业务逻辑/异常处理）补充状态机与异常件的分工，但对方无独立"单据/权限"件。
 
 ## Evolution（演进）
 
-- （当前仅有 1 信源）后续同专辑信源（批量导入、审批流引擎、AI 改造层等）持续印证/补充各件细节。
+- （当前 2 信源）后续同专辑信源（批量导入、审批流引擎、AI 改造层等）持续印证/补充各件细节；[[three-perspective-four-step-framework]] 的三块建模印证业务对象件、规则四类补充异常件分工。
 
 ## Open Questions（开放问题）
 
