@@ -146,6 +146,7 @@ Super-agent 信源把上下文窗口当作 Cache 管理，归纳两个注入操�
 - Source: `raw/sources/ai/2026-11-07-agent-memory-system-design.md`（第 10 信源：「上下文窗口≠记忆、聊天记录≠记忆」五问框架；窗口内管理 vs 会话外记忆的分层；三路召回为上下文组装供给内容）
 - Source: `raw/sources/ai/2026-11-11-llm-inference-cost-cps-governance.md`（第 11 信源：缓存盈亏平衡公式 n > (w-1)/(1-r) 量化 Kiso 的 break-even 判断；w/r 为写入与读取计费倍率；净节省统计的拆分维度）
 - Source: `raw/sources/ai/2026-11-12-ai-agent-tech-overview.md`（第 12 信源：压缩阈值实操纪律——20 条触发压缩、toolResultEviction 80K 落盘、记忆操作小模型省 80% 成本、上下文爆炸与"迷失在中间"）
+- Source: `raw/sources/ai/2026-11-12-pi-xfer-handoff-network.md`（第 13 信源：上下文腐坏与 handoff 路径——header+落盘文档+按需加载+反向回执，以独立窗口替代压缩）
 
 ## Related Knowledge（相关知识）
 
@@ -162,3 +163,4 @@ Super-agent 信源把上下文窗口当作 Cache 管理，归纳两个注入操�
 - [[weixin-agent-memory-system-design|企业级 Agent 记忆系统设计拆解（信源页）]]
 - [[agent-memory-system|Agent 记忆系统（概念页）]]
 - [[llm-inference-cost-cps-governance|LLM 推理成本治理：从 Token 单价到每个合格交付的真实成本（信源页）]]（缓存净收益经济学）
+- [[agent-handoff|Agent 交接（Handoff）]]（2026-11-12 新增：以独立窗口 + 材料化交接替代压缩的路径）

@@ -14,6 +14,7 @@ tags:
 sources:
   - raw/sources/ai/2026-11-05-multi-agent-control-shift.md
   - raw/sources/ai/2026-11-12-ai-agent-tech-overview.md
+  - raw/sources/ai/2026-11-12-pi-xfer-handoff-network.md
 ---
 # 多 Agent 协作架构与控制权下沉
 
@@ -47,10 +48,12 @@ sources:
 - [[ticket-task-persistence|Ticket 任务持久化模型]]（看板任务的持久化特化形态）
 - [[idempotency-design|幂等设计]]（看板可靠性依赖）
 - [[super-agent|Super-agent]]（"超级 Agent"术语差异见该页）
+- [[agent-handoff|Agent 交接（Handoff）]]（2026-11-12 新增：handoff 协作模式的具体机制与实现）
 
 ## Key Entities（关键实体）
 
-（本主题暂无达到实体页标准的对象；出处实体：得物技术公众号、作者微辣帝，见信源页）
+- [[pi-xfer]]（2026-11-12 新增：handoff 协作模式的开源实现，多形态接入的 Agent 网络）
+- 出处实体：得物技术公众号、作者微辣帝、vivo 互联研发效能团队（见信源页）
 
 ## Important Decisions（重要决策）
 
@@ -64,6 +67,8 @@ sources:
   3. RCA Advisor 按需解释根因：Inspector 自判是否提问，Advisor 返回可能原因+验证方向；超时/失败仍输出基础结论；报告区分当前异常/已恢复/数据不足，"没有数据"明确标注。
 
 - 2026-11-12 — 新增 vivo 信源 `raw/sources/ai/2026-11-12-ai-agent-tech-overview.md`（第 2 信源）。补上**单 Agent 三重瓶颈与四种协作模式**（与得物信源"三次反转"框架不同分类法，互补）：①单 Agent 三重瓶颈——上下文污染（子任务中间结果互相干扰、注意力被稀释）、工具过载（工具越多选错率上升）、串行瓶颈（无法并行处理独立子任务）；②子 Agent（Sub-Agent）核心思想是分工——每个子 Agent 有独立上下文、工具集、人格与推理循环，可并行执行互不污染；两种委派模式：同步委派（等结果返回再继续）与后台委派（完成后经 system-reminder 自动推送结果）；③四种协作模式——层级式（Supervisor，主管分配任务，适合任务可清晰拆分）、辩论式（Debate，多 Agent 对同一问题给不同观点，适合降低单一 Agent 偏差）、流水线式（Pipeline，前一个输出是后一个输入，适合顺序处理）、Handoffs（交接，各做各的部分后交给下一个，适合按角色交接）；④Tool/Skill/Subagent 层次关系——Tool=手脚（函数调用，无独立上下文）、Skill=方法手册（工作流指令，无独立上下文）、Subagent=另一个大脑（完整推理循环，有独立上下文与人格，能并行），三者不互斥、是不同层次抽象。该信源四种协作模式与得物信源三种架构（Master/任务看板/Advisor）是多 Agent 组织的两种不同分类——前者按"协作结构"划分，后者按"控制权归属"划分，可交叉参照。
+
+- 2026-11-12 — 新增知乎信源 `raw/sources/ai/2026-11-12-pi-xfer-handoff-network.md`（第 3 信源）。补上 **Handoffs 协作模式的落地机制与 Agent 组网形态**：handoff 不是聊天记录复制粘贴，而是"header（target/kind/summary）+ 正文落盘文档 + 按需加载 + 反向回执"的正式交接，解决一个窗口混多任务导致的上下文腐坏；同一套消息协议可多形态接入——本地 unix socket（装上即互通）、异构 Agent host（adapterd 收件箱）、浏览器（人以选择器灌数据）、跨机（SSH Link 隧道 / RivetKit actor 架构 Mesh，支持持久队列与休眠节点）。并附相关工具 pi-intercom、Reason Network。handoff 机制详见概念页 [[agent-handoff]]，实现实体见 [[pi-xfer]]。
 
 ## Disagreements（分歧）
 
