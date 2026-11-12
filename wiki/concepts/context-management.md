@@ -23,6 +23,7 @@ sources:
   - raw/sources/ai/2026-11-07-agent-memory-system-design.md
   - raw/sources/ai/2026-11-11-llm-inference-cost-cps-governance.md
   - raw/sources/ai/2026-11-12-ai-agent-tech-overview.md
+  - raw/sources/ai/2026-11-12-pi-xfer-handoff-network.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/sources/weixin-agent-memory-system-design.md

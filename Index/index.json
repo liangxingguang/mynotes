@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12 18:32",
+  "updated_at": "2026-11-12 18:35",
   "notes": [
     {
       "id": "2026-11-12-ai-era-framework-reflection",
@@ -18,6 +18,25 @@
       "summary_status": "",
       "asset_ref": "Assets/2026/11/ai-era-framework-reflection.md",
       "wiki_status": "ingesting"
+    },
+    {
+      "id": "2026-11-12-durable-agent-cloud-long-running",
+      "title": "Durable Agent 详解：如何让 Agent 在云端长期稳定运行",
+      "path": "Inbox/2026-11-12-durable-agent-cloud-long-running.md",
+      "created": "2026-11-12",
+      "category": "技术",
+      "tags": [
+        "Agent",
+        "AI"
+      ],
+      "source": "知乎",
+      "source_url": "https://zhuanlan.zhihu.com/p/2099469504237642789",
+      "source_type": "link",
+      "platform": "知乎",
+      "summary": "Durable（持久可恢复执行）解决云端长期运行任务的中断续接问题：会话恢复只保证对话连续，Durable 还要保证任务执行连续——把任务进度、调用意图和执行结果可靠地保存在进程之外，在模型调用、工具执行等关键环节建立恢复边界，使进程崩溃、实例替换后任务能从正确位置继续，避免重复执行与资源浪费。以 AgentScope 的 HarnessAgent 和阿里云 AgentCore 为例，讲透持久状态机与平台托管设计。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/durable-agent-cloud-long-running.md",
+      "wiki_status": "pending"
     },
     {
       "id": "2026-11-12-jvm-reference-counting-reachability",
