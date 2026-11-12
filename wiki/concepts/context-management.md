@@ -126,6 +126,8 @@ Super-agent 信源把上下文窗口当作 Cache 管理，归纳两个注入操�
 
 - 2026-11-12 — 新增 vivo 信源 `raw/sources/ai/2026-11-12-ai-agent-tech-overview.md`（第 12 信源）。补上**上下文压缩阈值的实操纪律**：①上下文爆炸是每轮 ReAct 循环叠加消息的必然结果——长对话中 token 消耗线性增长、效果反而变差（"迷失在中间"）；②压缩阈值宁低勿高——20 条消息触发压缩比 50 条再压缩效果更好，上下文越长 LLM 注意力越分散；③大工具结果必须落盘——`toolResultEviction` 让超 80K 的结果自动落盘，避免单次读 100KB 文件炸掉窗口；④记忆类操作（flush/consolidation）可用轻量模型（qwen-turbo）省约 80% 成本。Harness 层的"自动摘要 + 大结果落盘"对应本页压缩/裁剪手段，印证压缩不是可选项而是生产必备纪律。
 
+- 2026-11-12 — 新增知乎信源 `raw/sources/ai/2026-11-12-pi-xfer-handoff-network.md`（第 13 信源）。补上**"上下文卫生"与 handoff 路径**：一个窗口混入多个任务即"上下文腐坏（context rot）"；常规手段（summary/compaction/子代理）是"把池子里的水重新澄清"，另一条思路是"不让窗口变成池子"——不同阶段任务交给不同 Agent，做**正式交接（handoff）**：消息只带 header（target/kind/summary）、正文落盘到接收方 `$TMPDIR`、按需加载，task 类交接要求反向回执。这是对本页"隔离"手段的机制化补充：handoff 不澄清原窗口，而是以独立窗口 + 材料化交接替代（详见概念页 [[agent-handoff]] 与实体 [[pi-xfer]]）。
+
 ## Open Questions（开放问题）
 
 - 三层记忆（工作记忆 Redis / 长期记忆 pgvector）与 RAG 的分界，待该系列第 11 篇信源补充。
