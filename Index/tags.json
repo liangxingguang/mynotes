@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12 06:21",
+  "updated_at": "2026-11-12 09:06",
   "tags": [
     {
       "name": "java",
@@ -42,9 +42,14 @@
       "count": 0
     },
     {
-      "name": "requirements",
+      "name": "产品设计",
       "status": "new",
       "count": 1
+    },
+    {
+      "name": "requirements",
+      "status": "new",
+      "count": 2
     }
   ]
 }
