@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-12 15:21",
+  "updated_at": "2026-11-12 18:04",
   "tags": [
     {
       "name": "java",
       "status": "new",
-      "count": 9
+      "count": 10
     },
     {
       "name": "nginx",
@@ -50,6 +50,11 @@
       "name": "requirements",
       "status": "new",
       "count": 2
+    },
+    {
+      "name": "JVM",
+      "status": "new",
+      "count": 1
     }
   ]
 }

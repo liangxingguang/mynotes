@@ -1,6 +1,25 @@
 {
-  "updated_at": "2026-11-12 15:21",
+  "updated_at": "2026-11-12 18:04",
   "notes": [
+    {
+      "id": "2026-11-12-jvm-memory-gc-jfr-heapdump",
+      "title": "JVM 内存排查实战：用 GC 日志、JFR 和堆转储串起证据链",
+      "path": "Inbox/2026-11-12-jvm-memory-gc-jfr-heapdump.md",
+      "created": "2026-11-12",
+      "category": "技术",
+      "tags": [
+        "java",
+        "JVM"
+      ],
+      "source": "知乎",
+      "source_url": "https://zhuanlan.zhihu.com/p/2103923471818417605",
+      "source_type": "link",
+      "platform": "知乎",
+      "summary": "以 Doris FE（HotSpot JDK 17、G1）排查实践为素材，总结\"GC 日志 + JFR + 堆转储\"三件套的 JVM 内存排查方法论：先分清\"内存高\"的三种病灶（分配过速、长期持有、堆外增长）与五个易混的量，再用三份证据分别回答时间、来源、结构三个问题，交叉印证形成可复核的因果链。核心结论：GC 日志判断\"病\"的性质，JFR 找到病灶入口，堆转储确认病灶结构；采集前想清代价、下结论前写明验收条件。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/jvm-memory-gc-jfr-heapdump.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
