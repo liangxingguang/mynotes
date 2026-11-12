@@ -4,7 +4,7 @@ type: entity
 title: Apache RocketMQ
 status: active
 created: 2026-10-23
-updated: 2026-10-29
+updated: 2026-11-12
 confidence: high
 tags:
   - entity
@@ -18,6 +18,7 @@ sources:
   - raw/sources/architecture/2026-10-22-distributed-transaction-six-solutions.md
   - raw/sources/architecture/2026-10-23-netease-pigeon-message-bus-activity.md
   - raw/sources/architecture/2026-10-27-netty-in-mainstream-middleware.md
+  - raw/sources/architecture/2026-11-12-rocketmq-litetopic-session-level-mq.md
 related:
   - wiki/sources/mq-message-backlog-solutions.md
   - wiki/sources/mq-transaction-idempotency-design.md
@@ -25,6 +26,8 @@ related:
   - wiki/sources/rocketmq-interview-8-topics.md
   - wiki/sources/distributed-transaction-six-solutions.md
   - wiki/sources/async-task-system-design.md
+  - wiki/concepts/litetopic.md
+  - wiki/sources/rocketmq-litetopic-session-level-mq.md
   - wiki/entities/pigeon-message-bus.md
   - wiki/entities/netty.md
 ---
@@ -32,7 +35,7 @@ related:
 
 ## Overview（概览）
 
-阿里系开源的高性能分布式消息队列（后入 Apache，背景知识，信源未详述）。本库五个独立信源覆盖其运维（堆积治理）、一致性（事务消息+幂等）、机制全景、存储层与分布式事务谱系定位，构成本库证据最充分的实体之一。
+阿里系开源的高性能分布式消息队列（后入 Apache，背景知识，信源未详述）。本库六个独立信源覆盖其运维（堆积治理）、一致性（事务消息+幂等）、机制全景、存储层与分布式事务谱系定位，并延伸至面向 AI 场景的演进（LiteTopic，见 [[litetopic]]），构成本库证据最充分的实体之一。
 
 ## Identity（身份信息）
 
@@ -53,6 +56,7 @@ related:
 - 高可用边界（进阶+面试双信源）：NameServer 无状态（不用 ZK，最终一致优先可用性）；Broker Master 读写/Slave 只读，Consumer 自动切 Slave 读高可用；**4.x Slave 不能自动升 Master**（手动切换，对比 MySQL orc 是能力差距），**5.x 引入 DLedger（Raft）支持自动主从切换**——两信源口径经版本线对齐；生产可靠性常用"异步刷盘+同步复制"折中（同步刷盘+同步复制零丢失但吞吐骤降；异步复制 Master 宕机丢未同步消息，"很多线上事故的根源"）。
 - 存储架构（面试信源）：CommitLog+ConsumeQueue+IndexFile 三层——所有 Topic 消息混存顺序追加 CommitLog（≈600MB/s，单文件 1GB 文件名即偏移），ConsumeQueue 每队列 20 字节定长索引（物理偏移+大小+TagHash），哲学"写时合并，读时分治"；mmap 写 PageCache+sendfile 零拷贝读，与 [[kafka]] 四板斧同源（对比：Kafka 按分区文件组织，RocketMQ 全混存——前者读更局部，后者写更极致）。
 - 网络层（Netty 应用信源）：4.x 起 Remoting 层全面改用 [[netty|Netty]]（早期自研 NIO 的半包粘包/连接管理/背压/心跳边界情况太多）；`NettyRemotingServer`（`org.apache.rocketmq.remoting.netty`）boss 1 线程 + worker 默认 CPU 核数，SO_BACKLOG 1024、SNDBUF/RCVBUF 65535；Pipeline = NettyEncoder/NettyDecoder（自定义二进制协议 RemotingCommand：4B totalSize + 4B headerLength + JSON 头 + body）→ IdleStateHandler(0,0,60) → 连接管理 → 业务分发；IO 线程只做解码，业务按请求 code 分发到 Processor 独立线程池处理——"IO 线程不做业务"的生产样板。
+- **面向 AI 的演进（LiteTopic 信源）**：[[litetopic]] 将隔离粒度从 Topic 级下沉到会话级——Parent Topic（管控边界）+ LiteTopic（运行期会话通道，自动创建/TTL 回收）两层模型；存储层以 RocksDB 共享 KV 承载 LiteCQ 索引（Key=Topic+QueueID+Offset，O(1)），投递层以 Ready Set 事件驱动替代长轮询（调度成本 O(订阅总数)→O(活跃数)）；存储内核（顺序写/零拷贝/主从复制）不变，接入仅改会话标识与限速方式两处。已在 Qoder Cloud Agents（脑手分离、每会话一条 lane、进展权威为 Checkpoint）与百炼网关（漏桶阵列按 user+model 调速，限流比降至约 1/10）生产落地，**已合入 master 主干**；RocketMQ-A2A 论文（双平面架构、至少一次+可重放）入选 FSE 2026，10 Broker 承载 1500 万会话、50k TPS 延迟平稳（P95 71ms）。
 
 ## Products / Projects（产品／项目）
 
@@ -69,10 +73,11 @@ related:
 
 - 2012 — 阿里巴巴开源（背景知识，信源未详述）
 - 2017 — 进入 Apache 孵化器，后毕业为顶级项目（背景知识）
+- 2026 — LiteTopic 合入 master 主干，成为面向 AI 的会话级通道能力；RocketMQ-A2A 论文入选 FSE 2026，获信通院 OSCAR 与 InfoQ 奖项（LiteTopic 信源）
 
 ## Current Understanding（当前认知）
 
-六个信源互补：堆积治理给运维视角，事务消息信源给一致性视角，进阶信源补机制全景，面试信源补存储层与 5.x DLedger 分水岭，分布式事务综述把事务消息放进"本地消息表→事务消息→对账"责任转移谱系定位，Netty 应用信源补网络层（Remoting 的 Netty 化与协议设计）。一致纪律：至少一次投递下幂等是必修课（幂等键用业务唯一键而非 msgId），事务消息只用于核心单据，写高可用 4.x 须计入 Slave 不可自动升主（5.x DLedger 解）（六信源互证，置信度高）。
+七个信源互补：堆积治理给运维视角，事务消息信源给一致性视角，进阶信源补机制全景，面试信源补存储层与 5.x DLedger 分水岭，分布式事务综述把事务消息放进"本地消息表→事务消息→对账"责任转移谱系定位，Netty 应用信源补网络层（Remoting 的 Netty 化与协议设计），LiteTopic 信源补面向 AI 场景的演进（会话级通道、RocksDB 索引、Ready Set 投递与双生产案例）。一致纪律：至少一次投递下幂等是必修课（幂等键用业务唯一键而非 msgId），事务消息只用于核心单据，写高可用 4.x 须计入 Slave 不可自动升主（5.x DLedger 解），AI 场景的会话状态/任务交接/故障恢复应下沉到基础设施承载（七信源互证，置信度高）。
 
 ## Evidence（证据）
 
@@ -83,3 +88,4 @@ related:
 - `raw/sources/architecture/2026-10-22-distributed-transaction-six-solutions.md`（回查默认 1min/重试 3 次转人工/六方案谱系定位）
 - `raw/sources/architecture/2026-10-23-netease-pigeon-message-bus-activity.md`（信鸽业务总线选型理由/顺序消息注册/PushConsumer 接入）
 - `raw/sources/architecture/2026-10-27-netty-in-mainstream-middleware.md`（Remoting 层 Netty 化：协议设计/Pipeline 结构/Processor 线程池异步化）
+- `raw/sources/architecture/2026-11-12-rocketmq-litetopic-session-level-mq.md`（LiteTopic 会话级通道：两层 Topic 模型/RocksDB KV 索引/Ready Set 投递/Qoder 与百炼双案例/合入 master 与 FSE 2026）

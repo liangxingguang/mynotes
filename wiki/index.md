@@ -398,6 +398,7 @@
 - [[2026-11-12-durable-agent-cloud-long-running|Durable Agent 详解：如何让 Agent 在云端长期稳定运行]]（2026-11-12，AI/Agent/持久执行，Durable 四项保证+AgentScope HarnessAgent 持久执行内核（Session 六类对象/Task 六态状态机/原子提交顺序/工具 call-execute 两阶段）+阿里云 AgentCore 平台层（Session Store 五层状态/Brain-Hands 分离/Environment/Agent as a Service），知乎单信源，置信度高）
 - [[2026-11-12-jvm-reference-counting-reachability|JVM 如何判断对象该不该回收：引用计数法与可达性分析算法]]（2026-11-12，Java/JVM/GC 理论，引用计数法原理与循环引用缺陷+可达性分析与 GC Roots 四类来源（含"常量引用是 GC Roots"说法纠偏）+finalize() 两次标记与对象复活（仅一次）+JDK 终结机制版本演进（9 弃用/18 待移除/25 允许禁用）+四种引用（强/软/弱/虚），知乎单信源，置信度高）
 - [[2026-11-12-multi-agent-task-board-architecture|多 Agent 架构—任务看板（Team Agent）架构]]（2026-11-12，AI/多 Agent/架构，单 Agent 瓶颈（上下文污染+上下文长度）+拆分原则（上下文边界而非职业标签）+大模型小模型混合+三种架构（Orchestrator-Workers/任务看板/Advisor）+任务看板字段与状态机完整定义+双 Master 架构（Planner 只拆解+Scheduler 只调度巡检）+LangGraph 实现，知乎单信源，置信度高）
+- [[rocketmq-litetopic-session-level-mq|AI Agent 基础设施的新范式：如何将消息队列从"Topic 级"下沉到"Session 级"？]]（2026-11-12，AI/Agent/MQ/基础设施，AI 三项新约束（拓扑/时长/成本）与传统事件驱动三处不适配+LiteTopic 两层模型（Parent Topic/LiteTopic）+RocksDB KV 索引与 Ready Set 投递+Qoder Cloud Agents/百炼网关双生产案例+合入 master 与 RocketMQ-A2A 论文 FSE 2026，知乎单信源，置信度高）
 
 ## concept（概念）
 
@@ -498,6 +499,7 @@
 - [[linkedblockingqueue-internals|LinkedBlockingQueue 双锁阻塞队列设计]]（takeLock/putLock 读写分离+滚动哨兵+跨锁信号传递+计数旧值精确唤醒；默认近无界须显式容量防 OOM；单信源，置信度中）
 - [[longadder-internals|LongAdder 分段累加设计（Striped64）]]（base 快速路径+Cell 数组分散 CAS+@Contended 128B 防伪共享+cellsBusy 自旋扩容≤CPU 核数；sum 近似无 addAndGet；LongAccumulator 泛化任意二元聚合；双信源：JDK 源码+点赞系统本地聚合 flush 用法，置信度中）
 - [[linkedhashmap-internals|LinkedHashMap 有序化设计（双链表 + 模板方法钩子）]]（Entry 身兼桶节点+双链节点；三钩子维护插入/访问序；两行核心代码 LRU，单信源，置信度中）
+- [[litetopic|RocketMQ LiteTopic（会话级轻量消息通道）]]（会话级隔离的轻量消息通道模型：Parent Topic+LiteTopic 两层结构/订阅粒度 Group→Client/RocksDB 共享 KV 索引/Ready Set 事件驱动投递/四项业务能力（按需创建/自动过期/差异化订阅/消费挂起），已合入 RocketMQ master，单信源，置信度高）
 - [[llm-wiki|LLM Wiki]]（原始来源不可变 + 模型持续编译互链知识页面，Karpathy 模式；本仓库即实例，三信源：综述+教程+WorkBuddy/ima 落地案例）
 - [[llm-call-protocol|OpenAI 兼容 Chat Completions 调用协议]]（messages 四角色+tool_call_id 配对+finish_reason 续轮判据+SDK 默认 timeout 10min/重试 2；单信源）
 - [[local-message-table|本地消息表（Local Message Table）]]（同事务原子性+重试可靠性+至少一次投递+状态机流转+选型边界+6 条红线；MQ 非发件箱必选项、消费者仍要幂等，四信源互证）

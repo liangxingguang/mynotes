@@ -21,6 +21,7 @@ sources:
   - raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md
   - raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md
   - raw/sources/ai/2026-11-12-durable-agent-cloud-long-running.md
+  - raw/sources/architecture/2026-11-12-rocketmq-litetopic-session-level-mq.md
 related:
   - wiki/entities/pi.md
   - wiki/entities/kiso.md
@@ -35,6 +36,8 @@ related:
   - wiki/concepts/mysql-bulk-import.md
   - wiki/concepts/retry-governance.md
   - wiki/concepts/agent-state-separation.md
+  - wiki/concepts/litetopic.md
+  - wiki/sources/rocketmq-litetopic-session-level-mq.md
   - wiki/sources/codex-agent-harness-architecture-6.md
 ---
 # 持久执行（Durable Execution）
@@ -103,6 +106,7 @@ AgentScope HarnessAgent 实现形态（第 11 信源，知乎专栏）：将模�
 - 2026-10-31：第九信源（Codex Harness 架构第六篇）从**恢复决策顺序与回执确认**角度补充：恢复入口先读持久记录区分界面断连与引擎中断，原执行仍在推进则重新订阅、已结束则读回结果、确认继续才进入新尝试；结果不明的外部写入按查询能力分级处理（业务单号查询/幂等键复用/保留未知状态待确认）——与第 3 信源 PAUSED_INDOUBT 冻结对账、「没有远端支持时保留未知状态比作出无法兑现的自动恢复承诺更符合实际接口能力」同调；其"数据库事务覆盖不了外部工具"（工具可能已完成写入而记录尚未保存）印证第 3/8 信源的出网三段式动机。E1 实测（原稿字节与修改时间均未变化才算保留）为恢复保留性提供第二个工程实证。
 - 2026-11-02：第十信源（Super-agent 原型拆解）从 **Engine 事务先行 + SQLite Store + Effects/Outbox** 角度补充：任务、授权依据、派工与待执行动作同笔事务提交后才启动执行器；发送失败经 Effects 队列退避重试、Outbox 记发送状态；并再次印证"数据库事务覆盖不了外部副作用"（平台已收到而本地未记成功时重试会重复发送，恢复前先查目录/Git/GitHub）。与第 3/8/9 信源的出网三段式、IN_DOUBT 冻结对账同族，为"先写存储、后可见"提供 Agent Harness 语境下的第三个实现实例。
 - 2026-11-12：第十一信源（知乎专栏《Durable Agent 详解》）以 AgentScope HarnessAgent 与阿里云 AgentCore 为载体，补上 **Session 六类对象统一管理 + Task 六态状态机 + 原子提交顺序 + 工具 call/execute 两阶段 + Brain–Hands 分离** 的实现细节。该信源将框架层（AgentScope：从哪里继续、怎样继续）与平台层（AgentCore：状态保存在哪、由谁继续）的分工明确化，并再次强调"原子提交覆盖 Harness 管理数据、不覆盖外部动作"——外部动作的幂等与可查询是业务系统责任，持久机制无法凭空创造。与第 1/2 信源的 Pi Durable 五层结构、第 3 信源的出网三段式互证，为"持久执行向平台托管延伸"提供第四个实现实例。实体页见 [[agentscope]]、[[agentcore]]。
+- 2026-11-12：第十二信源（RocketMQ LiteTopic 技术分享）从**消息基础设施侧**补上"会话状态、任务交接与故障恢复由基础设施承担"的主张：AI 场景的中间状态需频繁读写、重复推理直接上成本，消息持久化+可重放（消息只传事件与引用、进展权威为 Checkpoint 而非消息 ACK）正是避免重复计算与进度失真的基础设施机制；双生产案例（Qoder Cloud Agents 挂起恢复、百炼网关非阻塞调速）与 RocketMQ-A2A 论文的至少一次+可重放语义，为"持久执行的恢复与交接责任可下沉到 MQ 层"提供第五个实现实例，与第 3/8/9/10/11 信源的"框架/平台管状态与恢复"分层同族。概念页见 [[litetopic]]。
 
 ## Open Questions（开放问题）
 
@@ -121,6 +125,7 @@ AgentScope HarnessAgent 实现形态（第 11 信源，知乎专栏）：将模�
 - Source: `raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md`（第 9 信源：恢复决策四步顺序、回执分级处理、E1 原稿保留实测）
 - Source: `raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md`（第 10 信源：Engine 事务先行、SQLite Store、Effects 退避重试 + Outbox、外部副作用重复发送风险与恢复核实）
 - Source: `raw/sources/ai/2026-11-12-durable-agent-cloud-long-running.md`（第 11 信源：AgentScope Session 六类对象、Task 六态状态机、原子提交顺序、工具 call/execute 两阶段、AgentCore 平台层与 Brain–Hands 分离）
+- Source: `raw/sources/architecture/2026-11-12-rocketmq-litetopic-session-level-mq.md`（第 12 信源：消息基础设施侧承载会话状态/任务交接/故障恢复，消息只传事件与引用、进展权威为 Checkpoint，至少一次+可重放语义）
 - 同构印证（未列入 sources）：`raw/sources/architecture/2026-10-20-spring-async-to-task-table.md`（Java 任务表+Worker，业务系统版同一套三要素）
 
 ## Related Knowledge（相关知识）
@@ -138,3 +143,5 @@ AgentScope HarnessAgent 实现形态（第 11 信源，知乎专栏）：将模�
 - [[2026-11-12-durable-agent-cloud-long-running|Durable Agent 详解：如何让 Agent 在云端长期稳定运行（信源页）]]
 - [[agentscope|AgentScope]]
 - [[agentcore|AgentCore]]
+- [[litetopic|RocketMQ LiteTopic]]
+- [[rocketmq-litetopic-session-level-mq|AI Agent 基础设施的新范式（信源页）]]

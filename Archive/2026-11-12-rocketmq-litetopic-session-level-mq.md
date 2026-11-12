@@ -9,7 +9,7 @@ created: 2026-11-12
 category: 技术
 tags: [Agent, AI]
 asset_ref: Assets/2026/11/rocketmq-litetopic-session-level-mq.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # AI Agent 基础设施的新范式：如何将消息队列从"Topic 级"下沉到"Session 级"？

@@ -5003,6 +5003,20 @@
       ],
       "source_url": "https://zhuanlan.zhihu.com/p/2103331588243248111",
       "asset_ref": "Assets/2026/11/multi-agent-task-board-architecture.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-12-rocketmq-litetopic-session-level-mq.md",
+      "sha256": "b891cee9d90f2eae4029ffa840bdc1c3a1a930bda981877be8ab61b188b3a3ed",
+      "registered_at": "2026-11-12",
+      "inbox_ref": "Archive/2026-11-12-rocketmq-litetopic-session-level-mq.md",
+      "pages": [
+        "wiki/sources/rocketmq-litetopic-session-level-mq.md",
+        "wiki/concepts/litetopic.md",
+        "wiki/entities/rocketmq.md",
+        "wiki/concepts/durable-execution.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2076694617697805752",
+      "asset_ref": "Assets/2026/11/rocketmq-litetopic-session-level-mq.md"
     }
   ]
 }

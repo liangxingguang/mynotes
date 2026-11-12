@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-11-12 22:01",
+  "updated_at": "2026-11-12 22:22",
   "notes": [
-    {
-      "id": "2026-11-12-rocketmq-litetopic-session-level-mq",
-      "title": "AI Agent 基础设施的新范式：如何将消息队列从\"Topic 级\"下沉到\"Session 级\"？",
-      "path": "Inbox/2026-11-12-rocketmq-litetopic-session-level-mq.md",
-      "created": "2026-11-12",
-      "category": "技术",
-      "tags": [
-        "Agent",
-        "AI"
-      ],
-      "source": "知乎",
-      "source_url": "https://zhuanlan.zhihu.com/p/2076694617697805752",
-      "source_type": "link",
-      "platform": "知乎",
-      "summary": "Apache 2026 技术分享（周礼）：AI 应用让消息队列的三个前提失效——拓扑无法设计期枚举、任务时长从毫秒到数天、GPU 算力成本使空转直接体现在账单上，传统事件驱动模型出现积压斜率、队头阻塞、重复推理成本三处不适配。RocketMQ 的 LiteTopic 将隔离粒度从 Topic 级下沉到会话级：每个 AI 会话映射为一个轻量级 Topic，按需创建、TTL 自动回收、会话级有序隔离，并在 Qoder Cloud Agents 与百炼网关两个生产案例中验证。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/11/rocketmq-litetopic-session-level-mq.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
@@ -7581,6 +7562,25 @@
       "summary": "作者为 pi agent 开发的开源插件 pi-xfer（xfer = transfer）：解决 Agent 时代的\"上下文卫生\"问题——一个窗口混入多个任务会上下文腐坏，常规解法是压缩，pi-xfer 则走另一条路：让不同阶段的任务交给不同 Agent，像人类同事一样做正式 handoff 交接。插件从本地 unix socket 通讯起步，逐步长成一张多形态接入的 Agent 网络，已开源。",
       "summary_status": "",
       "asset_ref": "Assets/2026/11/pi-xfer-handoff-network.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-12-rocketmq-litetopic-session-level-mq",
+      "title": "AI Agent 基础设施的新范式：如何将消息队列从\"Topic 级\"下沉到\"Session 级\"？",
+      "path": "Archive/2026-11-12-rocketmq-litetopic-session-level-mq.md",
+      "created": "2026-11-12",
+      "category": "技术",
+      "tags": [
+        "Agent",
+        "AI"
+      ],
+      "source": "知乎",
+      "source_url": "https://zhuanlan.zhihu.com/p/2076694617697805752",
+      "source_type": "link",
+      "platform": "知乎",
+      "summary": "Apache 2026 技术分享（周礼）：AI 应用让消息队列的三个前提失效——拓扑无法设计期枚举、任务时长从毫秒到数天、GPU 算力成本使空转直接体现在账单上，传统事件驱动模型出现积压斜率、队头阻塞、重复推理成本三处不适配。RocketMQ 的 LiteTopic 将隔离粒度从 Topic 级下沉到会话级：每个 AI 会话映射为一个轻量级 Topic，按需创建、TTL 自动回收、会话级有序隔离，并在 Qoder Cloud Agents 与百炼网关两个生产案例中验证。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/rocketmq-litetopic-session-level-mq.md",
       "wiki_status": "ingested"
     },
     {
