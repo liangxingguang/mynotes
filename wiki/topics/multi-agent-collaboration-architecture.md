@@ -4,7 +4,7 @@ type: topic
 title: 多 Agent 协作架构与控制权下沉
 status: active
 created: 2026-11-05
-updated: 2026-11-05
+updated: 2026-11-12
 confidence: medium
 tags:
   - topic
@@ -13,6 +13,7 @@ tags:
   - multi-agent
 sources:
   - raw/sources/ai/2026-11-05-multi-agent-control-shift.md
+  - raw/sources/ai/2026-11-12-ai-agent-tech-overview.md
 ---
 # 多 Agent 协作架构与控制权下沉
 
@@ -61,6 +62,8 @@ sources:
   1. 入口 Master 只做组件级路由：仅知各 Inspector 的能力描述、输入要求、调用入口；指标目录、目标发现、任务拆分由 Inspector 自己管理——把中心职责限定在组件级以规避"超级 Agent"膨胀。
   2. 组件内 Inspector+看板并行分析：拆"指标＋目标批次＋时间窗口"任务，Worker 并行领取；崩溃 Worker 的任务租约到期后被接管，只补做未完成批次（有限重试＋幂等提交）。
   3. RCA Advisor 按需解释根因：Inspector 自判是否提问，Advisor 返回可能原因+验证方向；超时/失败仍输出基础结论；报告区分当前异常/已恢复/数据不足，"没有数据"明确标注。
+
+- 2026-11-12 — 新增 vivo 信源 `raw/sources/ai/2026-11-12-ai-agent-tech-overview.md`（第 2 信源）。补上**单 Agent 三重瓶颈与四种协作模式**（与得物信源"三次反转"框架不同分类法，互补）：①单 Agent 三重瓶颈——上下文污染（子任务中间结果互相干扰、注意力被稀释）、工具过载（工具越多选错率上升）、串行瓶颈（无法并行处理独立子任务）；②子 Agent（Sub-Agent）核心思想是分工——每个子 Agent 有独立上下文、工具集、人格与推理循环，可并行执行互不污染；两种委派模式：同步委派（等结果返回再继续）与后台委派（完成后经 system-reminder 自动推送结果）；③四种协作模式——层级式（Supervisor，主管分配任务，适合任务可清晰拆分）、辩论式（Debate，多 Agent 对同一问题给不同观点，适合降低单一 Agent 偏差）、流水线式（Pipeline，前一个输出是后一个输入，适合顺序处理）、Handoffs（交接，各做各的部分后交给下一个，适合按角色交接）；④Tool/Skill/Subagent 层次关系——Tool=手脚（函数调用，无独立上下文）、Skill=方法手册（工作流指令，无独立上下文）、Subagent=另一个大脑（完整推理循环，有独立上下文与人格，能并行），三者不互斥、是不同层次抽象。该信源四种协作模式与得物信源三种架构（Master/任务看板/Advisor）是多 Agent 组织的两种不同分类——前者按"协作结构"划分，后者按"控制权归属"划分，可交叉参照。
 
 ## Disagreements（分歧）
 

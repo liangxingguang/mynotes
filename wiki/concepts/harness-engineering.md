@@ -4,7 +4,7 @@ type: concept
 title: Harness Engineering（Agent 执行系统工程）
 status: active
 created: 2026-10-27
-updated: 2026-10-31
+updated: 2026-11-12
 confidence: high
 tags:
   - concept
@@ -18,6 +18,7 @@ sources:
   - raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md
   - raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md
   - raw/sources/ai/2026-10-31-agent-harness-essay-ideal-harness.md
+  - raw/sources/ai/2026-11-12-ai-agent-tech-overview.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/concepts/context-management.md
@@ -86,6 +87,23 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 
 评测纪律（Kiso 信源，第 4 信源）：对照 Benchmark 的价值在于"不是全赢"的结果与失败模式的具体定位——跨文件修改 12:12 打平、隐藏题 22/24 且成本低 32%、长会话反而贵 19%；贵 19% 的根因先用真实 Trace 验证假说（"read_file 200 行太保守"被最长文件仅 132 行当场推翻），再定位到 edit_file 缺 append 原子操作（360 次编辑 26 次失败 vs 对照 3/287）。方法论原则：**工程解释须 Trace 验证，没有支持的解释只是一种故事**；工具拒绝正确 ≠ 接口设计良好——模型持续在同一调用模式上失败说明接口缺少合适原子操作。
 
+**Middleware 洋葱模型**（信源 2026-11-12，第 8 信源）：Harness 的核心扩展机制是 Middleware（中间件），借鉴 Web 框架（Express/Koa）的"洋葱模型"，在 ReAct 循环的关键时机插入自定义逻辑。每个 middleware 可在"前"和"后"两个时机介入——例如审计 middleware 在 `onActing` 前记录"即将调用什么工具"，在"后"记录"工具返回了什么"，不影响其他逻辑。关键设计：Harness 的内置能力（压缩、记忆、子 Agent、Plan Mode）全部以 middleware 形式实现，钩在 ReAct 循环上；核心推理算法不变，Harness 只往里加东西，不需要的全关掉，Agent 依然能跑。
+
+**框架选型对比**（信源 2026-11-12，第 8 信源）：
+
+| 维度 | LangChain | LlamaIndex | AgentScope 2.0 |
+|---|---|---|---|
+| 起源定位 | LLM 应用开发框架 | RAG 框架 | Agent 平台 |
+| 核心抽象 | Chain / Agent | Query Engine | ReActAgent + Harness |
+| 状态管理 | 需自己接 Memory | 需自己接 Storage | AgentState 内置，自动持久化 |
+| 多用户隔离 | 需自己实现 | 需自己实现 | (userId, sessionId) 内置 |
+| 长期运行 | 不擅长 | 不擅长 | Harness 专门解决 |
+| 生产部署 | 需自己搭 | 需自己搭 | 分布式、多租户、沙箱内置 |
+
+选型建议（解读）：简单 LLM 应用用 LangChain；以 RAG 为核心的用 LlamaIndex；需构建生产级自主 Agent 用 AgentScope。三者不互斥——AgentScope 可接入 LlamaIndex 的检索能力。
+
+**从"链"到"Harness"的演进**（信源 2026-11-12，第 8 信源）：2022 年 LangChain 提出"链（Chains）"概念，将多个 LLM 调用串成流水线。但"链"的根本局限是开发者硬编码的固定流程——走哪条路、在哪分叉、在哪循环都写死，一旦需"根据情况动态决定下一步"就力不从心。这催生了从"链"到"Agent"的转变，Agent 需要长期运行、状态管理、安全管控等工程基础设施，即 Harness 工程。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -121,6 +139,8 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 
 - 2026-10-31 — 新增知乎 Harness 随笔信源 `raw/sources/ai/2026-10-31-agent-harness-essay-ideal-harness.md`（第 7 信源）。补上三块此前缺位的主张：①**Session 为核心重构**——每个 Session 下挂不同 Provider/原生 CLI（Monocode 的多 Provider 映射为同一体系），多模型协作与多 Session 协作因此解耦，Codex App/Claude Desktop 已有成熟 Session、多数 App 未做到；②**注入式 token 账**——MCP 全量注入 30K 描述 token（新对话只说"你好"也付几万、cache read 1000 次=30M、社区称 Agent 账单 cache read 占比常超 97%、Desktop 比 CLI 少约 10% 额度、256K 后性能显著下降故 MCP 占 30K=少 30K 有效窗口），作者主张 Session 管理做成 CLI + 斜杠命令（近似 Skill）、不激活不付 token tax，并质疑 Tool Search 相对 Skill 的必要性；③**UI 审美分歧点论**——底层技术趋同后审美百花齐放，是 Harness 寿命与粘性的底层保障。其多模型分工实例（Claude 规划/Codex 实现/DeepSeek 速度/Gemini 文字）为"模型适配"观察面提供落地图景；"Agent as Memory"主张落成概念页 [[agent-as-memory|Agent as Memory]]；"Agent Search 二分法"（事实型走 API、主观型走复用登录态的 OpenCLI）收于 [[agent-harness-essay-ideal-harness|信源页]]。
 
+- 2026-11-12 — 新增 vivo《AI Agent 技术全景解析》信源（第 8 信源）。补上三块此前缺位的维度：①**Middleware 洋葱模型**——Harness 核心扩展机制，内置能力全部以 middleware 形式钩在 ReAct 循环上；②**框架选型对比**——LangChain/LlamaIndex/AgentScope 2.0 在状态管理、多用户隔离、长期运行、生产部署上的差异；③**从"链"到"Harness"的演进叙事**——Chains 的固定流程局限催生了 Agent 的工程基础设施需求。
+
 ## Open Questions（开放问题）
 
 - 论文原始统计口径与当前产品能力的时差（快照为历史版本）？
@@ -135,6 +155,7 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 - Source: `raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md`（第 5 信源：复杂度治理——设计时 vs 运行时控制、可逆组合、自进化宪法）
 - Source: `raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md`（第 6 信源：三控制模块状态所有权、Harness/Infra 边界、三态分离与多身份）
 - Source: `raw/sources/ai/2026-10-31-agent-harness-essay-ideal-harness.md`（第 7 信源：Session 为核心重构、注入式 token 账、UI 审美分歧点论；97% cache read 与 10% 额度差异为社区说法，未经核验）
+- Source: `raw/sources/ai/2026-11-12-ai-agent-tech-overview.md`（第 8 信源：Middleware 洋葱模型、框架选型对比、链→Harness 演进叙事）
 
 ## Related Knowledge（相关知识）
 

@@ -4,7 +4,7 @@ type: concept
 title: 提示工程（Prompt Engineering）
 status: active
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-12
 confidence: high
 tags:
   - concept
@@ -12,6 +12,7 @@ tags:
   - llm
 sources:
   - raw/sources/ai/2026-10-28-google-prompt-engineering-whitepaper.md
+  - raw/sources/ai/2026-11-12-ai-agent-tech-overview.md
 related:
   - wiki/concepts/thinking-mode.md
   - wiki/concepts/next-token-prediction.md
@@ -68,6 +69,19 @@ related:
 
 **技巧选用决策**：简单任务用零样本；需要格式引导时用少样本；需要精细控制输出风格时分层叠加系统/角色/上下文提示；复杂推理任务用 CoT（温度设 0）；需要多角度探索时用 ToT；需要调用外部工具时用 ReAct；需要规模化提示生成时用 APE。
 
+**CoT 的信息论解释**（信源 2026-11-12）：直接生成最终答案时，模型需在一个 step 内完成"从输入到答案"的全部映射，该映射熵很高（不确定性大），出错概率高。CoT 将映射拆为多步，每步的熵更低（从"当前推理状态"到"下一步推理状态"的映射更确定），单步出错率更低，整体准确率提升。该思想后演变为 Agent 的 ReAct 循环。
+
+**提示策略横向对比**（信源 2026-11-12）：
+
+| 策略 | 准确率提升 | Token 成本 | 延迟 | 适用场景 |
+|---|---|---|---|---|
+| Zero-shot | 基线 | 最低 | 最低 | 简单任务 |
+| Few-shot | 中等 | 低（加几个示例） | 低 | 格式控制、分类任务 |
+| CoT | 高（数学/推理题可提升 20%+） | 中（输出推理过程） | 中 | 多步推理任务 |
+| Self-Consistency | 最高 | 高（N 倍调用） | 高 | 对准确率要求极高的场景 |
+
+当前趋势（信源 2026-11-12）：新一代模型已将 CoT 内化到训练中，模型自行学会"内部思考"，用户不再需手动加 "think step by step"。但理解 CoT 原理仍重要——它是 ReAct 循环的思想源头。
+
 **代码提示四场景**：编写（直接描述功能）、解释（给代码让模型分析）、翻译（指定目标语言）、调试审查（把错误回溯连同代码一起给模型效果最好）。
 
 ## Relationships（关系）
@@ -90,6 +104,7 @@ related:
 - 2024-09：Google 发布官方提示工程白皮书，系统整理输出配置与 11 种技巧，成为行业基准参考。
 - 2025-2026：随着推理模型（o1/o3 等）普及，部分推理增强技巧（CoT/ToT）从提示层下沉到模型层，提示工程重心转向任务描述、输出格式约束与工具编排。
 - 当前：提示工程与 agent harness 工程融合——工具 schema 设计、上下文管理、错误回传策略成为提示工程在 agent 场景的延伸。
+- 2026-11-12 — 新增 vivo《AI Agent 技术全景解析》信源。补上 CoT 的信息论机制解释（拆步降熵）与提示策略横向对比表（Zero-shot/Few-shot/CoT/Self-Consistency 在准确率、成本、延迟上的取舍），并记录"新一代模型将 CoT 内化到训练中"的趋势判断。
 
 ## Open Questions（开放问题）
 
@@ -100,6 +115,7 @@ related:
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-10-28-google-prompt-engineering-whitepaper.md`（Google 官方白皮书，2024 年 9 月，宝玉译，confidence=high）
+- Source: `raw/sources/ai/2026-11-12-ai-agent-tech-overview.md`（vivo Agent 全景综述，2026-11-12，CoT 信息论机制与提示策略对比表）
 
 ## Related Knowledge（相关知识）
 

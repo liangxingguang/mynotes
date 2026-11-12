@@ -4,7 +4,7 @@ type: concept
 title: MCP
 status: active
 created: 2026-10-16
-updated: 2026-10-30
+updated: 2026-11-12
 confidence: medium
 tags:
   - concept
@@ -17,6 +17,7 @@ sources:
   - raw/sources/ai/2026-10-14-pi-1-0-durable-mcp-update.md
   - raw/sources/ai/2026-10-14-pi-setup-mcp-codemode-guide.md
   - raw/sources/ai/2026-10-28-agent-permission-model-design.md
+  - raw/sources/ai/2026-11-12-ai-agent-tech-overview.md
 related:
   - wiki/concepts/a2a-protocol.md
   - wiki/comparisons/a2a-vs-mcp.md
@@ -44,11 +45,21 @@ MCP 把"LLM 调用外部工具、数据库、文件、API"的方式协议化，�
 
 ## Structure（结构）
 
-当前信源未确立（仅给出协议定位与能力概述，未展开内部结构）。
+**三种连接方式**（信源 2026-11-12）：
+
+| 连接方式 | 通信方式 | 适合场景 |
+|---|---|---|
+| STDIO | 本地进程 stdin/stdout | 本地工具（如文件系统操作） |
+| SSE | HTTP 长连接 | 远程工具，需要实时推送 |
+| Streamable HTTP | HTTP 流式 | 远程工具，现代推荐方式 |
+
+MCP server 启动后暴露工具列表，客户端（Agent 框架）连接后自动发现可用工具——与微服务的"服务注册与发现"同一思想。
 
 ## How It Works（运作方式）
 
 已知其承担"工具发现 + 上下文注入 + 数据读取"三类职能。个案证据（[[arthas|Arthas]] MCP Server，4.3.5 实验性模块）：MCP Server 可经 HTTP 提供 JSON-RPC 2.0 接口，采用 Streamable HTTP 传输并保留会话状态（适合持续输出类工具），亦支持 STATELESS 一次性查询模式；工具以"命令名 + 参数 + 返回结果"标准化暴露，使 AI 能保留上一步输出、把多次调用串成一条会话。认证可简单到密码 + Bearer Token，但工具级权限管控不在协议内，需客户端或网关另加。
+
+**微服务类比与工具发现**（信源 2026-11-12）：MCP 让工具变成可复用、可独立部署的"微服务"——工具提供方按 MCP 协议实现 server，任何支持 MCP 的 Agent 框架都能接入，无需为每个框架重写工具。类比 HTTP 之于 Web 服务：标准协议让生产者与消费者解耦，不需关心工具跑在哪个 Agent 框架里。MCP server 启动后暴露工具列表，客户端连接后自动发现可用工具，与微服务的"服务注册与发现"同一思想。
 
 ## Relationships（关系）
 
@@ -69,10 +80,11 @@ MCP 把"LLM 调用外部工具、数据库、文件、API"的方式协议化，�
 - 2026-10：Pi 1.0 将原生 MCP 纳入稳定版（0.99 引入、1.0 稳定）——其团队曾公开批评 MCP 臃肿、官网写"不支持 MCP"，因协议成熟（一年六七轮调整）与模型训练改善而转变；接入方式为工具搜索 + 渐进式披露按需加载，避免上下文膨胀——"批评者转向采纳"可作为 MCP 协议成熟度的一个信号。
 - 2026-10：Pi 0.99.1 实测为 MCP 的上下文成本提供定量个案（GLM-5.3，3 个 MCP 共 11 工具）：工具说明固定开销 direct 12,878 → codemode 6,956 → deferred 1,780 token；但单次任务收益取决于 MCP 返回格式是否结构化（brave 非结构化 JSON 文本致模型试错，GPT-5.5 反多 63%）——MCP 服务端返回格式设计直接影响 Agent 侧成本。
 - 2026-10-30：[[agent-permission-model|Agent 权限模型]]信源确认「MCP 协议标准没有内置复杂权限，要在接入层补齐」，并给出两种落地：MCP 网关统一收口（校验签名 claim/授权记录/租户隔离/限流/审计，原生服务零改动，生产首选）vs 服务内置鉴权中间件（适合少量自建工具）；明确不推荐静态 Token（无法绑定 session/指令细粒度回收）。部分回答了下方工具级权限分级的开放问题。
+- 2026-11-12 — 新增 vivo《AI Agent 技术全景解析》信源。补上**三种连接方式**（STDIO/SSE/Streamable HTTP）对比表、MCP server 的"服务注册与发现"机制与微服务类比，回应此前"规范细节未确立"的开放问题（传输方式部分）。
 
 ## Open Questions（开放问题）
 
-- MCP 的规范细节与 Server/Client 模型的完整定义：当前信源未确立，需专门信源补充（传输方式已有个案证据：Streamable HTTP / JSON-RPC 2.0）。
+- MCP 的规范细节与 Server/Client 模型的完整定义：连接方式已有信源补充（STDIO/SSE/Streamable HTTP 三模式），但 Server/Client 模型的完整规范仍需专门信源补充。
 - 工具级权限分级在 MCP 生态中的通行做法：已有「协议不管、接入层网关补齐」的设计方案证据（2026-10-30），但缺乏多家实现的横向实证。
 
 ## Evidence（证据）
@@ -83,6 +95,7 @@ MCP 把"LLM 调用外部工具、数据库、文件、API"的方式协议化，�
 - Source: `raw/sources/ai/2026-10-14-pi-1-0-durable-mcp-update.md`
 - Source: `raw/sources/ai/2026-10-14-pi-setup-mcp-codemode-guide.md`
 - Source: `raw/sources/ai/2026-10-28-agent-permission-model-design.md`
+- Source: `raw/sources/ai/2026-11-12-ai-agent-tech-overview.md`（三种连接方式表、服务注册与发现机制、微服务类比）
 
 ## Related Knowledge（相关知识）
 

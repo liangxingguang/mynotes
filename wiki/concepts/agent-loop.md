@@ -4,7 +4,7 @@ type: concept
 title: Agent Loop
 status: active
 created: 2026-10-22
-updated: 2026-11-06
+updated: 2026-11-12
 confidence: high
 tags:
   - concept
@@ -26,6 +26,7 @@ sources:
   - raw/sources/ai/2026-11-02-namiagent-agent-tutorial.md
   - raw/sources/ai/2026-11-02-superagent-design.md
   - raw/sources/ai/2026-11-06-pi-loop-engineering.md
+  - raw/sources/ai/2026-11-12-ai-agent-tech-overview.md
 related:
   - wiki/concepts/harness-engineering.md
   - wiki/entities/pi.md
@@ -50,6 +51,8 @@ related:
 ## Definition（定义）
 
 Agent Loop 是 Runtime 把单次模型调用连成多步任务执行的重复过程：准备本轮输入（Context）→ 调用模型 → 模型直接回答或返回 Tool Call → 宿主校验并执行工具、把 Tool Result 写回 State → 带着新结果进入下一轮，直到任务完成或运行被终止。
+
+**控制权转移**（信源 2026-11-12，第 17 信源）：传统程序的控制流由开发者写死——if-else 怎么分叉、for 循环几次、调用哪个函数，均预先确定；Agent 的控制流由 LLM 在运行时动态决定——下一步做什么、调用什么工具、何时停止，均由 LLM 根据当前上下文判断。这是根本性转变：控制权从开发者转移到了 LLM，开发者不再编写"执行逻辑"，而是编写"执行框架"——框架定义 LLM 可在哪些点做决策，具体决策内容由 LLM 自行判断。
 
 由此得到 Agent 的定义（引自信源）："Agent 是一个由 Runtime 组织的运行系统：模型根据当前输入提出下一步，Runtime 执行被允许的动作，并把结果带入下一轮，直到任务完成或运行被终止。"
 
@@ -96,6 +99,17 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 - 工程上同时维护 `currentContext.messages`（下一轮完整工作集）与 `newMessages`（本次运行增量，供 UI/持久化），同一新消息写两处但 newMessages 不再追加回 Context。
 
 可靠 Agent Loop 至少要守住的五条边界：① 模型提出工具请求、宿主执行动作；② Call/Result 用标识关联；③ 每轮根据最新 State 重备 Context；④ 完成、失败、取消、未完整输出分开记录；⑤ 文件/网络/命令/数据库操作受宿主环境控制。
+
+**ReAct 提示格式**（信源 2026-11-12，第 17 信源）：ReAct 循环给 LLM 的 prompt 要求其按 Thought/Action/Observation 格式回答。每轮迭代中，LLM 能看到之前所有的 Thought、Action、Observation，据此根据执行结果动态调整后续计划——这是 Plan-then-Execute 做不到的。
+
+**核心循环五环节**（信源 2026-11-12，第 17 信源）：目标理解（自然语言请求转化为可执行目标）→ 规划（大目标拆成子步骤）→ 执行（调用工具完成子步骤）→ 观察（获取工具执行结果）→ 反思/修正（判断是否完成，未完成则调整计划）。
+
+**运行机制**（信源 2026-11-12，第 17 信源，AgentScope ReActAgent 实现）：
+
+- **迭代上限**：`maxIters`（默认 10）限制最大迭代次数，防止死循环
+- **并发工具调用**：LLM 一次返回多个工具调用时，Agent 可并发执行标记了 `concurrency-Safe` 的工具
+- **权限闸门**：每次工具执行前走权限检查（允许/询问/拒绝），敏感操作暂停等待人工确认
+- **中断恢复**：支持 `interrupt(userId, sessionId)` 精确中断某个 session，中断后状态自动保存，下次从中断点恢复
 
 ## Relationships（关系）
 
@@ -147,6 +161,8 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 
 - 2026-11-06 — 新增 Pi 源码通读信源 `raw/sources/ai/2026-11-06-pi-loop-engineering.md`（知乎随笔，OpenClaw 爆红背后的引擎即 Pi）。补强本页三处：① **双层 Loop 形态**——外层 agent-run loop（`agent_start`→`agent_end`，判定"用户请求是否真正结束"）套内层 turn loop（一次 assistant 响应 + 工具调用 + 结果，`turn_start`→`turn_end`），源码即 `runLoop` 中两个嵌套 while；子 Agent 跑同一个完整 loop，"循环里套循环"、loop 自嵌套，是其作者所称「递归美学」。② **交互队列补强"停止信号多源性"与续轮判据**——steering 队列处理中途插话（消息排队、当前 turn 结束后下一次请求模型前注入上下文，即"在两个 turn 的缝隙中注入"），follow-up 队列处理追问（agent 停前检查、有货再跑一轮）；"用户随时可以说话"最终落成一个普通状态检查，无特殊路径。③ **"响应完整性检查"的工程落点**——token 截断时 Pi 把该条消息里所有工具调用整批标失败：流式解析器对截断 JSON 的抢救可能通过校验但内容残缺，执行残缺参数（尤其 write）会毁文件；工具执行抛异常同样不中断循环、包装成结果喂回模型。后者与 [[workflow-vs-agent|Workflow vs Agent]]"把确定性做进运行时（可观测、可插话、可持久化、出错不崩）"的表述互证。由此新建信源页 [[pi-loop-engineering-recursive-aesthetics]]。
 
+- 2026-11-12 — 新增 vivo《AI Agent 技术全景解析》信源（第 17 信源）。补上四块此前缺位的细节：①**控制权转移**——Agent 控制流由 LLM 运行时动态决定，开发者写"执行框架"而非"执行逻辑"；②**ReAct 提示格式**——Thought/Action/Observation 循环，每轮可见全部历史；③**核心循环五环节**——目标理解→规划→执行→观察→反思修正；④**运行机制**——maxIters（默认 10）、并发工具调用、权限闸门（允许/询问/拒绝）、中断恢复（userId+sessionId）。
+
 ## Open Questions（开放问题）
 
 - 不同框架（LangGraph、AutoGen、各厂商 Agent SDK）对 Runtime/Harness 的划分与本文是否一致？
@@ -170,6 +186,7 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 - Source: `raw/sources/ai/2026-11-02-namiagent-agent-tutorial.md`（教学实现：100 行最小循环、一课加一个能力、网页端可视化每轮推理与上下文）
 - Source: `raw/sources/ai/2026-11-02-superagent-design.md`（异步 ReAct Loop：start/stop 全双工、前台后台解耦、已在 DeepSeek Harness 实现未默认开启）
 - Source: `raw/sources/ai/2026-11-06-pi-loop-engineering.md`（双层 run/turn Loop、steering/follow-up 双队列、token 截断整批 fail、工具异常包装回喂）
+- Source: `raw/sources/ai/2026-11-12-ai-agent-tech-overview.md`（第 17 信源：控制权转移、ReAct 提示格式、核心循环五环节、运行机制）
 
 ## Related Knowledge（相关知识）
 

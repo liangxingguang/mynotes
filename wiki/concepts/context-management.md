@@ -22,6 +22,7 @@ sources:
   - raw/sources/ai/2026-11-05-multi-agent-control-shift.md
   - raw/sources/ai/2026-11-07-agent-memory-system-design.md
   - raw/sources/ai/2026-11-11-llm-inference-cost-cps-governance.md
+  - raw/sources/ai/2026-11-12-ai-agent-tech-overview.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/sources/weixin-agent-memory-system-design.md
@@ -122,6 +123,8 @@ Super-agent 信源把上下文窗口当作 Cache 管理，归纳两个注入操�
 
 - 2026-11-12 — 新增微信信源 `raw/sources/ai/2026-11-11-llm-inference-cost-cps-governance.md`（第 11 信源）。补上**缓存盈亏平衡经济学的量化公式**：同一段稳定共享前缀 cache_cost = P×(w + n×r) vs normal_cost = P×(1 + n)，严格省钱条件 n > (w-1)/(1-r)（r<1）；w=1.25、r=0.1 一次实际命中即回本，w=2 至少需两次命中；线上统计按模型/区域/档位/TTL/前缀版本/真实复用间隔拆分，分别报告冷启动成本、写入失败、TTL 失效与净节省，不能用「缓存命中率」替代节省金额。Kiso「须过 break-even 判断」（第 2 信源）由此获得公式化量化印证；该信源还把上下文压缩列为六种降本手段之一（可用前提与发布必看指标），视角固定在推理成本侧，与本概念的窗口管理主题互补不重叠。
 
+- 2026-11-12 — 新增 vivo 信源 `raw/sources/ai/2026-11-12-ai-agent-tech-overview.md`（第 12 信源）。补上**上下文压缩阈值的实操纪律**：①上下文爆炸是每轮 ReAct 循环叠加消息的必然结果——长对话中 token 消耗线性增长、效果反而变差（"迷失在中间"）；②压缩阈值宁低勿高——20 条消息触发压缩比 50 条再压缩效果更好，上下文越长 LLM 注意力越分散；③大工具结果必须落盘——`toolResultEviction` 让超 80K 的结果自动落盘，避免单次读 100KB 文件炸掉窗口；④记忆类操作（flush/consolidation）可用轻量模型（qwen-turbo）省约 80% 成本。Harness 层的"自动摘要 + 大结果落盘"对应本页压缩/裁剪手段，印证压缩不是可选项而是生产必备纪律。
+
 ## Open Questions（开放问题）
 
 - 三层记忆（工作记忆 Redis / 长期记忆 pgvector）与 RAG 的分界，待该系列第 11 篇信源补充。
@@ -139,6 +142,7 @@ Super-agent 信源把上下文窗口当作 Cache 管理，归纳两个注入操�
 - Source: `raw/sources/ai/2026-11-05-multi-agent-control-shift.md`（第 9 信源：上下文边界按"看见什么／产出什么"切分，职业标签是提示词放大的想象）
 - Source: `raw/sources/ai/2026-11-07-agent-memory-system-design.md`（第 10 信源：「上下文窗口≠记忆、聊天记录≠记忆」五问框架；窗口内管理 vs 会话外记忆的分层；三路召回为上下文组装供给内容）
 - Source: `raw/sources/ai/2026-11-11-llm-inference-cost-cps-governance.md`（第 11 信源：缓存盈亏平衡公式 n > (w-1)/(1-r) 量化 Kiso 的 break-even 判断；w/r 为写入与读取计费倍率；净节省统计的拆分维度）
+- Source: `raw/sources/ai/2026-11-12-ai-agent-tech-overview.md`（第 12 信源：压缩阈值实操纪律——20 条触发压缩、toolResultEviction 80K 落盘、记忆操作小模型省 80% 成本、上下文爆炸与"迷失在中间"）
 
 ## Related Knowledge（相关知识）
 

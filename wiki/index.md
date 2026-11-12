@@ -392,6 +392,7 @@
 - [[zhihu-column-agent-long-term-memory|从零构建Agent(十二)：长期Memory管理]]（2026-11-05，source，置信度 medium）
 - [[2026-11-11-requirements-doc-checklist|一页完整需求分析文档结构检查清单]]（2026-11-12，工程实践/需求分析，系列总结篇：九段式检查清单（七必须有+两建议有）+各段检查点+用户故事/验收标准句式+功能清单七字段+一致性铁律+四条使用提醒，收束系列15/16/17篇环节并预告AI篇，公众号单信源，置信度中）
 - [[2026-11-12-xuqiu-fenxi-san-shijiao-si-bu|需求分析怎么做？三个视角看业务，四步做成价值闭环]]（2026-11-12，工程实践/需求分析，三维认知（流程/数据/角色）+四步价值闭环（定义范围→结构化建模→MVU→验证管理）+日志管理迁移实验，公众号单信源，置信度中）
+- [[2026-11-12-ai-agent-tech-overview|AI Agent 技术全景解析]]（2026-11-12，AI/Agent 综述，vivo 全景梳理：控制权转移/ReAct 循环/RAG/规划范式/记忆/多智能体，AgentScope 2.0 实现例，微信单信源，置信度中）
 
 ## concept（概念）
 
@@ -552,6 +553,7 @@
 - [[rbac-permission-system|RBAC 权限系统（传统 B 端角色访问控制）]]（用户→角色→权限→资源静态绑定；RBAC0-3 模型层级；权限点编码模块_资源_动作；七大功能模块；权限矩阵表落地；字段权限（列级）层与三张表产出物（第三信源）+多租户租户维度数据权限与 ABAC 适用场景（第四信源），与 [[agent-permission-model]] 互补而非替代，四信源置信度中）
 - [[read-fanout|读扩散（Fan-out on Read）]]（会话队列+syncId 位点同步把 1:N 写压成 1:1；99.99% 非个性化消息前提；阿里混合模式 500ms 端到端，双信源）
 - [[red-dot-tree-system|拉模式红点树系统（游戏 UI 提示徽标）]]（路径树+脏标记冒泡+每帧合批+拉模式，叶子自订阅自计算；先取走脏标记再计算；全树遍历顺带时间驱动红点；五方案对比+完整 C# 实现，单信源一手，置信度高）
+- [[rag|RAG（检索增强生成）]]（生成前检索注入知识；向量检索主流实现；RAG vs 微调对比；混合检索/查询改写/分块/多跳；知识库vs记忆vs技能三层，vivo 信源，置信度高）
 - [[rag-production-guardrails|企业级 RAG 生产护栏]]（容量/证据/权限/恢复四主线；证据门禁前置、发布目录原子切换；混合检索+存储分层+参数热调+重活异步化+影子模式+旁路降级+RRF融合+相关性裁判拒答+SSE契约+MCP工具调用真实用户身份+五层记忆+加权遗忘+pgvector五契约/检索路由分叉/发布CAS/两步删除/RLS双保险/缓存键九段/评测矩阵，四信源，置信度中）
 - [[reactive-tracing-context|响应式环境的全链路 traceId 传递]]（Reactor Context 替代 ThreadLocal；doOnEach 同步 MDC、doFinally 清除）
 - [[reactor-thread-model|主从 Reactor 线程模型（Netty 版）]]（Boss accept/Worker CPU×2/Channel 终身绑单 EventLoop 天然无锁；ServerBootstrapAcceptor 移交链路+三形态选型+SCG 双 Group 与中间件应用印证，八信源互证，置信度高）

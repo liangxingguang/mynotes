@@ -4893,6 +4893,22 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/M44iVNsv-2-wQpeJHOcK2A",
       "asset_ref": "Assets/2026/11/xuqiu-fenxi-san-shijiao-si-bu.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-12-ai-agent-tech-overview.md",
+      "sha256": "82378656e7252b54346e345d3dd8e0da8cab6daaec5c58b9e86f930ad8891b35",
+      "registered_at": "2026-11-12",
+      "inbox_ref": "Archive/2026-11-12-ai-agent-tech-overview.md",
+      "pages": [
+        "wiki/sources/2026-11-12-ai-agent-tech-overview.md",
+        "wiki/concepts/rag.md",
+        "wiki/concepts/prompt-engineering.md",
+        "wiki/concepts/harness-engineering.md",
+        "wiki/concepts/agent-loop.md",
+        "wiki/concepts/mcp.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/sjeOryZ5H2ZZGQOKZ2YS4g",
+      "asset_ref": "Assets/2026/11/ai-agent-tech-overview.md"
     }
   ]
 }

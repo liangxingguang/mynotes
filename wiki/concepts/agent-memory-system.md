@@ -4,7 +4,7 @@ type: concept
 title: Agent 记忆系统
 status: active
 created: 2026-11-07
-updated: 2026-11-07
+updated: 2026-11-12
 confidence: medium
 tags:
   - concept
@@ -12,6 +12,7 @@ tags:
   - memory
 sources:
   - raw/sources/ai/2026-11-07-agent-memory-system-design.md
+  - raw/sources/ai/2026-11-12-ai-agent-tech-overview.md
 related:
   - wiki/concepts/agent-long-term-memory.md
   - wiki/concepts/context-management.md
@@ -127,6 +128,8 @@ Agent 记忆系统是一套面向任务的信息管理机制，而非一个数�
 
 - 2026-11-07 — 由微信公众号信源 `raw/sources/ai/2026-11-07-agent-memory-system-design.md` 单信源建立（七模块/16 步骤、检索 10 步与三路召回、写回四步/三态/生命周期、反馈五指标、六阶段路线、11 字段、五坑）。与 [[agent-long-term-memory]]（知乎 Hermes 路线，2026-11-05）、[[context-management]]（in-context 层）互补关系成立：本概念补全"检索/写入/管理与反馈闭环"全链路视角，未与其任一页面重复。作者不署名，框架为个人设计经验，未经第三方核验，confidence=medium。
 
+- 2026-11-12 — 新增 vivo 信源 `raw/sources/ai/2026-11-12-ai-agent-tech-overview.md`（第 2 信源，AgentScope 实现视角）。补上**记忆问题三层拆分 + 短期/长期两层记忆实现**：①记忆问题本质分三层——单次调用内记忆（AgentState.context 把前一步结果传到下一步）、跨调用记忆（AgentState 持久化承接上次对话）、跨会话记忆（长期记忆系统承接经验），三层解决方案完全不同不可混为一谈。②短期/会话记忆以 AgentState 为核心载体，不只存对话历史，还存权限规则、任务清单、工具激活状态等影响推理的运行时状态；Agent 实例本身无状态，所有状态按 (userId, sessionId) 外部化存储（生产用 Redis），支持多用户并发与故障转移。③长期记忆三操作——Flush（从对话抽取长期事实 → memory/YYYY-MM-DD.md，每次 call() 结束可节流）、Consolidation（合并日流水 → MEMORY.md，后台节流默认 30min 一次）、Compaction（对话前缀蒸馏成摘要，超阈值触发）；另提供 `memory_search` 工具主动检索。④记忆方案对比表（全量上下文/摘要压缩/向量记忆库/分层记忆）与记忆 vs 知识库分工表（记忆=Agent 经历的事实，知识库=外部静态领域知识）。该信源"AgentScope 两层记忆 + 三操作"与 2026-11-07 信源"七模块全链路"是同一问题的两个互补视角——前者是实现机制，后者是设计框架，不重叠。
+
 ## Open Questions（开放问题）
 
 - 融合排序五维度的权重方案与量化口径：信源未给度量，只有定性原则与一个预算示例。
@@ -138,6 +141,7 @@ Agent 记忆系统是一套面向任务的信息管理机制，而非一个数�
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-11-07-agent-memory-system-design.md`（七模块、双链路、10 步检索、三路召回、五维融合（预算 100 万→120 万→110 万示例）、写回四步、三态（上线时间 11 月→12 月示例）、生命周期、五类指标、11 字段、六阶段、五坑、三层本质）
+- Source: `raw/sources/ai/2026-11-12-ai-agent-tech-overview.md`（第 2 信源：记忆问题三层拆分、短期/长期两层记忆、AgentState 按 userId+sessionId 外部化、Flush/Consolidation/Compaction 三操作、memory_search、记忆 vs 知识库分工、记忆方案对比表）
 
 ## Related Knowledge（相关知识）
 

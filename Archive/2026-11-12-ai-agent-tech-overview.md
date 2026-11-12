@@ -11,7 +11,7 @@ tags:
   - AI
   - Agent
 asset_ref: Assets/2026-11/ai-agent-tech-overview.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # AI Agent 技术全景解析 —— 从提示词工程到高级智能体构建
