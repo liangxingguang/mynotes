@@ -4915,7 +4915,7 @@
     },
     {
       "path": "raw/sources/architecture/2026-11-12-jvm-memory-gc-jfr-heapdump.md",
-      "sha256": "0500e3f6bc80da7324feb77226f30f6a33c0cc5a678446acf1135d468029d2b5",
+      "sha256": "a10b93eb2337f73400b93aa7a613f664e37e6a5174c918b41cece6d18bf10b12",
       "registered_at": "2026-11-12",
       "inbox_ref": "Archive/2026-11-12-jvm-memory-gc-jfr-heapdump.md",
       "pages": [
