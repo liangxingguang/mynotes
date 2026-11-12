@@ -1,6 +1,24 @@
 {
-  "updated_at": "2026-11-12 18:09",
+  "updated_at": "2026-11-12 18:12",
   "notes": [
+    {
+      "id": "2026-11-12-ai-era-framework-reflection",
+      "title": "在AI时代回顾互联网黄金时代技术框架",
+      "path": "Inbox/2026-11-12-ai-era-framework-reflection.md",
+      "created": "2026-11-12",
+      "category": "随笔",
+      "tags": [
+        "AI"
+      ],
+      "source": "知乎",
+      "source_url": "https://zhuanlan.zhihu.com/p/2094094295066325691",
+      "source_type": "link",
+      "platform": "知乎",
+      "summary": "一篇技术文化评论：作者在 LLM 重塑编程的节点回望互联网黄金时代，先定义\"真框架\"（用最小心智负担击穿底层物理复杂度，如 Spring Boot、Koa、Vue、Prisma）与\"伪框架\"的区别，再剖析大厂高薪催生的\"程序员的傲慢\"如何人为制造复杂，并指出这种傲慢在 AI 时代借尸还魂——以 DSH 的\"微内核、万物皆插件、时空可组合性\"等宏大叙事为典型；主张以 Claude Code 式的克制为锚，分清偶发复杂度与根本复杂度，vibe coding 不是工业工程的未来。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/ai-era-framework-reflection.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-11-12-jvm-memory-gc-jfr-heapdump",
       "title": "JVM 内存排查实战：用 GC 日志、JFR 和堆转储串起证据链",
