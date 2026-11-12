@@ -102,7 +102,7 @@
 - [[collaborative-doc-editor-design|设计一个在线文档协同编辑系统：WebSocket、OT/CRDT 到快照回放]]（2026-10-28，系统设计/协同编辑）
 - [[completablefuture-async-orchestration|CompletableFuture：异步编排的正确写法]]（2026-10-20，Java/并发）
 - [[coupon-optimal-combination-dfs-ddd|优惠券最优组合设计：DFS 四层剪枝 + DDD 建模]]（2026-10-31，架构/算法/DDD，控制面设计+四层剪枝+降级兜底，单信源置信度高）
-- [[craft-of-selfteaching|微博推荐：GitHub 万星项目《自学是门手艺》]]（2026-10-16，学习/资源）
+- [[craft-of-selfteaching|微博推荐：GitHub 万星项目《自学是门手艺》]]（2026-10-16 采集，2026-11-12 更新，学习/资源，微博帖+知乎想法双信源推荐：Python 入口讲自学方法论、核心"学不会自个儿学"、17.8K+ Stars、仓库 xiaolai/the-craft-of-selfteaching，置信度中）
 - [[critical-thinking-six-priorities|教了快十年批判性思维，我越来越看重这六件事]]（2026-10-22，思维方法论，置信度中）
 - [[database-high-availability|当我谈数据库高可用时是在谈些什么（京东技术五层主线）]]（2026-10-22，数据库/MySQL 高可用）
 - [[db-table-sharding-practice|大表治理之分表实践：手搓一个简单的数据库分表组件]]（2026-10-16，数据库/分表）
@@ -393,6 +393,8 @@
 - [[2026-11-11-requirements-doc-checklist|一页完整需求分析文档结构检查清单]]（2026-11-12，工程实践/需求分析，系列总结篇：九段式检查清单（七必须有+两建议有）+各段检查点+用户故事/验收标准句式+功能清单七字段+一致性铁律+四条使用提醒，收束系列15/16/17篇环节并预告AI篇，公众号单信源，置信度中）
 - [[2026-11-12-xuqiu-fenxi-san-shijiao-si-bu|需求分析怎么做？三个视角看业务，四步做成价值闭环]]（2026-11-12，工程实践/需求分析，三维认知（流程/数据/角色）+四步价值闭环（定义范围→结构化建模→MVU→验证管理）+日志管理迁移实验，公众号单信源，置信度中）
 - [[2026-11-12-ai-agent-tech-overview|AI Agent 技术全景解析]]（2026-11-12，AI/Agent 综述，vivo 全景梳理：控制权转移/ReAct 循环/RAG/规划范式/记忆/多智能体，AgentScope 2.0 实现例，微信单信源，置信度中）
+- [[ai-era-framework-reflection|在AI时代回顾互联网黄金时代技术框架（知乎）]]（2026-11-12，技术文化评论/框架，真框架vs伪框架+程序员的傲慢成因（时代红利误认个人卓越/中世纪教会类比）+伪框架生命周期+AI时代借尸还魂（DSH）+Claude Code 克制对照+复杂度二分法，知乎单信源，置信度中）
+- [[pi-xfer-handoff-network|我给 pi 做了一个交接工具，后来它长成了一张网络（知乎）]]（2026-11-12，AI/Agent 工具，pi-xfer 开源插件：handoff 交接（header+落盘文档+按需加载+反向回执）解决上下文腐坏+多形态 Agent 网络（本地 unix socket/adapterd/Web Picker/SSH Link/Mesh），知乎单信源，置信度中）
 
 ## concept（概念）
 
@@ -445,7 +447,7 @@
 - [[legacy-system-rebuild|存量B端系统重构方法论（三层地图）]]（权限门/流程行/数据列三层地图+三笔账（认知/依赖/风险）+Day1权限三清册+Day2抓核心5条流程画实际发生的状态机+Day3三张表（字段血缘/口径差异/主数据治理）+7跨系统案例；与五件套（从0拆解）互补而非重复（存量重构先盘现状），单信源置信度中）
 - [[contract-lifecycle-management|合同全生命周期管理（CLM，B端）]]（起草→审批→签署→履约→归档五阶段链路，只做审批流的漏损；起草模板库/智能填充、审批动态路由、签署电子签、履约里程碑预警（易忽略价值高）、归档非终点（检索/审计/借阅）；PM六步SOP+AI提效五场景+装备制造案例指标，单信源置信度中）
 - [[concept-boundary-definition|概念边界界定（内涵/外延与三问）]]（内涵外延反变关系+界定范围三问+人为认知切片+按目的三种切法，单信源方法论，置信度中）
-- [[context-management|上下文管理（Context Management）]]（messages 全量重发下的体积工程：裁剪/压缩/隔离三手段+成对保留与磁盘全量两铁律；Claude Code 分层裁剪实证；Kiso 投影观+缓存经济学；注入式 token 账+预算六类分配与输出预留；记忆系统三路召回为上下文组装供料，五信源）
+- [[context-management|上下文管理（Context Management）]]（messages 全量重发下的体积工程：裁剪/压缩/隔离三手段+成对保留与磁盘全量两铁律；Claude Code 分层裁剪实证；Kiso 投影观+缓存经济学；注入式 token 账+预算六类分配与输出预留；记忆系统三路召回为上下文组装供料；vivo 压缩阈值实操纪律；pi-xfer 上下文腐坏与 handoff 路径，十三信源）
 - [[concurrenthashmap-internals|ConcurrentHashMap 并发设计（JDK 8+）]]（读无锁+CAS 空桶插+synchronized 桶头+sizeCtl 三态+协作扩容；单信源，置信度中）
 - [[concurrency-qps-rt|并发与 QPS 换算（并发 = QPS × RT）]]（2026-11-11，架构/容量规划/并发，并发快照≠QPS 速率、吞吐上限=并发路数÷RT、各层天花板实测量级表、三档 QPS 代价阶梯、三边界条件、五坑，与压测容量规划/秒杀信源互证，微信单信源，置信度中）
 - [[consumer-lag-governance|消费积压治理（Consumer Lag Governance）]]（Kafka 消费端 Lag 治理：四步法+三底线+增速告警，单信源，置信度中）
@@ -632,6 +634,9 @@
 - [[spring-boot-major-upgrade|Spring Boot 大版本升级方法论]]（2026-11-11，架构/Java/Spring Boot，四类改动（Jackson 3/starter 拆分/JSpecify/第三方坐标）+验证占七成+starter 改名/包名搬家+Jackson 2/3 并存不硬换+e2e 是升级最值钱资产+能启动只是第一道门禁+取舍（虚拟线程关/starter-web 弃用保留），微信单信源置信度中）
 - [[jackson-3-migration|Jackson 3 迁移]]（2026-11-11，架构/Java/Jackson，JsonMapper 不可变 builder+序列化器签名（ser.jdk/SerializationContext）+Redisson 4.x TypedJsonJackson3Codec（读缓存才炸）+activateDefaultTyping 显式校验器+缓存 key 前缀+注解包不变只换 databind+并存边界裁决标准，微信单信源置信度中，与 [[2026-11-01-enterprise-rag-platform-langgraph-mcp]] 互证）
 - [[three-perspective-four-step-framework|三维认知与四步闭环需求分析框架]]（2026-11-12，概念/需求分析/方法论，三维认知（流程/数据/角色）+四步价值闭环+MVU 公式+日志管理迁移实验，印证 [[complex-system-breakdown]] 业务对象件、补充规则四类分工，单信源，置信度中）
+- [[true-vs-pseudo-framework|真框架与伪框架]]（2026-11-12，概念/框架文化，真框架=最小心智负担击穿物理复杂度（Spring Boot/Koa/Vue/Prisma）vs 伪框架=人为制造复杂（领域驱动/六边形/全家桶）；成因"程序员的傲慢"（时代红利误认个人卓越、中世纪教会类比）；伪框架生命周期随创始者离开终结；AI 时代借尸还魂（DSH 150+ 子包 vs Claude Code 克制），知乎单信源，置信度中）
+- [[accidental-vs-essential-complexity|偶发复杂度与根本复杂度]]（2026-11-12，概念/软件工程，《人月神话》二分法：偶发=技术摩擦（繁琐 API/构建/样板）、根本=问题内生（状态机/并发/数据自洽）；大模型可粉碎偶发不可抹平根本；AI 时代工程师三姿态（规格类型当锚点/精力收敛于根本问题/审阅每处 Git Diff），知乎单信源，置信度中）
+- [[agent-handoff|Agent 交接（Handoff）]]（2026-11-12，概念/多 Agent 协作，正式交接机制：header（target/kind/summary）+正文落盘 `$TMPDIR`+按需加载+反向回执；与压缩（澄清池子）相对的"不造池子"路径，解决上下文腐坏，知乎单信源，置信度中）
 
 ## entity（实体）
 
@@ -668,6 +673,8 @@
 - [[spring-ai|Spring AI]]（Java 应用与模型间的中间层，屏蔽模型差异，Java 版 LangChain；七步能力栈+版本基线 1.0.9→2.0.2+MCP Server 暴露工具，双信源，置信度中）
 - [[weknora|WeKnora]]（腾讯开源企业级知识库系统：RAG/Agent/Wiki 三能力共用一个知识库、混合检索（关键词+向量+知识图谱+引用溯源）、Docker 私有化+API；硬件部门 fork 二开当知识底座 HUB；短板=无在线编辑维护入口，微信单信源转述官方说法，置信度中）
 - [[bizbuddy|BizBuddy]]（开源企业级 Agent 平台：Spring Boot 4.1.1+AgentScope Java Harness+RuoYi-Vue-Plus，PG14/MySQL8 双栈，40 张 ai_* 表+20 层 e2e+18 条 Playwright，MIT，gitee 开源，单信源置信度中）
+- [[pi-xfer|pi-xfer]]（2026-11-12，AI/Agent 工具实体，pi agent 的 handoff 交接插件（xfer=transfer）：header+落盘文档+按需加载+反向回执，多形态接入的 Agent 网络（本地 unix socket/adapterd/Web Picker/SSH Link/RivetKit Mesh），已开源 `azzgo/pi-xfer`，知乎单信源，置信度中）
+- [[the-craft-of-selfteaching|《自学是门手艺》]]（2026-11-12，学习/书籍实体，李笑来开源书 xiaolai/the-craft-of-selfteaching，17.8K+ Stars，Python 入口讲自学方法论，核心"学不会自个儿学、先揣着一点点嚼"，微博+知乎想法双信源推荐，置信度中）
 
 ## topic（主题）
 
@@ -680,7 +687,7 @@
 
 - [[java-to-rust-migration|Java 到 Rust 迁移]]（2026-11-05，Rust/Java/语言迁移，13 维对照+6 心智模型切换+语言特性映射+Spring 风格迁移示例+Java 开发者 18 陷阱+6 风格原则+5 阶段学习路线+16 项提交前清单，单信源置信度中）
 
-- [[multi-agent-collaboration-architecture|多 Agent 协作架构与控制权下沉]]（2026-11-05，AI/多 Agent/主题导航，三种协作架构（Master Agent/任务看板/Advisor）+控制权下沉框架+两个设计前提（上下文边界/模型边界）+巡检三模式混用案例+「超级 Agent」术语差异（贬义 vs [[super-agent]] 褒义）+单 Agent 三重瓶颈（上下文污染/工具过载/串行）+四种协作模式（Supervisor/Debate/Pipeline/Handoffs）+Tool/Skill/Subagent 层次关系，双信源（得物+vivo）置信度中）
+- [[multi-agent-collaboration-architecture|多 Agent 协作架构与控制权下沉]]（2026-11-05，2026-11-12 更新，AI/多 Agent/主题导航，三种协作架构（Master Agent/任务看板/Advisor）+控制权下沉框架+两个设计前提（上下文边界/模型边界）+巡检三模式混用案例+「超级 Agent」术语差异（贬义 vs [[super-agent]] 褒义）+单 Agent 三重瓶颈（上下文污染/工具过载/串行）+四种协作模式（Supervisor/Debate/Pipeline/Handoffs）+Tool/Skill/Subagent 层次关系+Handoffs 落地机制（header+落盘文档+按需加载+反向回执）与 Agent 组网形态（[[pi-xfer]]），三信源（得物+vivo+知乎）置信度中）
 
 ## decision（决策）
 

@@ -9,9 +9,7 @@ created: 2026-11-12
 category: 学习
 tags: [自学]
 asset_ref: Assets/2026/11/self-teaching-craft-book.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-12T10:21:01.120Z"
-ingest_claim_id: 12856-1794478861120-0
+wiki_status: ingested
 ---
 
 # 写代码的也好，想一路往前冲的人也好，都该翻翻这本开源书《自学是门手艺》

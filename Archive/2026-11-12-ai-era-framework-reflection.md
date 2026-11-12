@@ -9,9 +9,7 @@ created: 2026-11-12
 category: 随笔
 tags: [AI]
 asset_ref: Assets/2026/11/ai-era-framework-reflection.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-12T10:20:33.290Z"
-ingest_claim_id: 29244-1794478833290-0
+wiki_status: ingested
 ---
 
 # 在AI时代回顾互联网黄金时代技术框架

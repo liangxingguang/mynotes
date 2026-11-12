@@ -4923,6 +4923,46 @@
       ],
       "source_url": "https://zhuanlan.zhihu.com/p/2103923471818417605",
       "asset_ref": "Assets/2026/11/jvm-memory-gc-jfr-heapdump.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-12-ai-era-framework-reflection.md",
+      "sha256": "180da8953bda1467ab92b24f55372bae5273a47752f436ec7bae8f64b4e97e71",
+      "registered_at": "2026-11-12",
+      "inbox_ref": "Archive/2026-11-12-ai-era-framework-reflection.md",
+      "pages": [
+        "wiki/sources/ai-era-framework-reflection.md",
+        "wiki/concepts/true-vs-pseudo-framework.md",
+        "wiki/concepts/accidental-vs-essential-complexity.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2094094295066325691",
+      "asset_ref": "Assets/2026/11/ai-era-framework-reflection.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-12-pi-xfer-handoff-network.md",
+      "sha256": "8c7dc2ccbac2687a0508c4b34645748ed153ec1fe812e73340bd25ef1037a4df",
+      "registered_at": "2026-11-12",
+      "inbox_ref": "Archive/2026-11-12-pi-xfer-handoff-network.md",
+      "pages": [
+        "wiki/sources/pi-xfer-handoff-network.md",
+        "wiki/entities/pi-xfer.md",
+        "wiki/concepts/agent-handoff.md",
+        "wiki/concepts/context-management.md",
+        "wiki/topics/multi-agent-collaboration-architecture.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2097748041361012308",
+      "asset_ref": "Assets/2026/11/pi-xfer-handoff-network.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-11-12-self-teaching-craft-book.md",
+      "sha256": "8bc9c0b69bfb273db073893920b26bac1e625d6161c69cdc53366dd574ad3905",
+      "registered_at": "2026-11-12",
+      "inbox_ref": "Archive/2026-11-12-self-teaching-craft-book.md",
+      "pages": [
+        "wiki/sources/craft-of-selfteaching.md",
+        "wiki/entities/the-craft-of-selfteaching.md"
+      ],
+      "source_url": "https://www.zhihu.com/pin/2097297236245987935",
+      "asset_ref": "Assets/2026/11/self-teaching-craft-book.md"
     }
   ]
 }

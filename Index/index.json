@@ -1,24 +1,6 @@
 {
-  "updated_at": "2026-11-12 18:39",
+  "updated_at": "2026-11-12 18:45",
   "notes": [
-    {
-      "id": "2026-11-12-ai-era-framework-reflection",
-      "title": "在AI时代回顾互联网黄金时代技术框架",
-      "path": "Inbox/2026-11-12-ai-era-framework-reflection.md",
-      "created": "2026-11-12",
-      "category": "随笔",
-      "tags": [
-        "AI"
-      ],
-      "source": "知乎",
-      "source_url": "https://zhuanlan.zhihu.com/p/2094094295066325691",
-      "source_type": "link",
-      "platform": "知乎",
-      "summary": "一篇技术文化评论：作者在 LLM 重塑编程的节点回望互联网黄金时代，先定义\"真框架\"（用最小心智负担击穿底层物理复杂度，如 Spring Boot、Koa、Vue、Prisma）与\"伪框架\"的区别，再剖析大厂高薪催生的\"程序员的傲慢\"如何人为制造复杂，并指出这种傲慢在 AI 时代借尸还魂——以 DSH 的\"微内核、万物皆插件、时空可组合性\"等宏大叙事为典型；主张以 Claude Code 式的克制为锚，分清偶发复杂度与根本复杂度，vibe coding 不是工业工程的未来。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/11/ai-era-framework-reflection.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-11-12-durable-agent-cloud-long-running",
       "title": "Durable Agent 详解：如何让 Agent 在云端长期稳定运行",
@@ -77,25 +59,6 @@
       "wiki_status": "pending"
     },
     {
-      "id": "2026-11-12-pi-xfer-handoff-network",
-      "title": "我给 pi 做了一个交接工具，后来它长成了一张网络",
-      "path": "Inbox/2026-11-12-pi-xfer-handoff-network.md",
-      "created": "2026-11-12",
-      "category": "技术",
-      "tags": [
-        "Agent",
-        "AI"
-      ],
-      "source": "知乎",
-      "source_url": "https://zhuanlan.zhihu.com/p/2097748041361012308",
-      "source_type": "link",
-      "platform": "知乎",
-      "summary": "作者为 pi agent 开发的开源插件 pi-xfer（xfer = transfer）：解决 Agent 时代的\"上下文卫生\"问题——一个窗口混入多个任务会上下文腐坏，常规解法是压缩，pi-xfer 则走另一条路：让不同阶段的任务交给不同 Agent，像人类同事一样做正式 handoff 交接。插件从本地 unix socket 通讯起步，逐步长成一张多形态接入的 Agent 网络，已开源。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/11/pi-xfer-handoff-network.md",
-      "wiki_status": "ingesting"
-    },
-    {
       "id": "2026-11-12-rocketmq-litetopic-session-level-mq",
       "title": "AI Agent 基础设施的新范式：如何将消息队列从\"Topic 级\"下沉到\"Session 级\"？",
       "path": "Inbox/2026-11-12-rocketmq-litetopic-session-level-mq.md",
@@ -113,24 +76,6 @@
       "summary_status": "",
       "asset_ref": "Assets/2026/11/rocketmq-litetopic-session-level-mq.md",
       "wiki_status": "pending"
-    },
-    {
-      "id": "2026-11-12-self-teaching-craft-book",
-      "title": "写代码的也好，想一路往前冲的人也好，都该翻翻这本开源书《自学是门手艺》",
-      "path": "Inbox/2026-11-12-self-teaching-craft-book.md",
-      "created": "2026-11-12",
-      "category": "学习",
-      "tags": [
-        "自学"
-      ],
-      "source": "知乎",
-      "source_url": "https://www.zhihu.com/pin/2097297236245987935",
-      "source_type": "link",
-      "platform": "知乎",
-      "summary": "知乎想法（向云向雾，243 赞同）：推荐开源书《自学是门手艺》（GitHub 17.8K+ Stars）。全书核心只有一句：学不会自个儿学，前头基本没什么指望——话扎耳但细品有理；想把长期学习磨成肌肉记忆，先揣着一点点嚼。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/11/self-teaching-craft-book.md",
-      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -7583,6 +7528,24 @@
       "wiki_status": "ingested"
     },
     {
+      "id": "2026-11-12-ai-era-framework-reflection",
+      "title": "在AI时代回顾互联网黄金时代技术框架",
+      "path": "Archive/2026-11-12-ai-era-framework-reflection.md",
+      "created": "2026-11-12",
+      "category": "随笔",
+      "tags": [
+        "AI"
+      ],
+      "source": "知乎",
+      "source_url": "https://zhuanlan.zhihu.com/p/2094094295066325691",
+      "source_type": "link",
+      "platform": "知乎",
+      "summary": "一篇技术文化评论：作者在 LLM 重塑编程的节点回望互联网黄金时代，先定义\"真框架\"（用最小心智负担击穿底层物理复杂度，如 Spring Boot、Koa、Vue、Prisma）与\"伪框架\"的区别，再剖析大厂高薪催生的\"程序员的傲慢\"如何人为制造复杂，并指出这种傲慢在 AI 时代借尸还魂——以 DSH 的\"微内核、万物皆插件、时空可组合性\"等宏大叙事为典型；主张以 Claude Code 式的克制为锚，分清偶发复杂度与根本复杂度，vibe coding 不是工业工程的未来。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/ai-era-framework-reflection.md",
+      "wiki_status": "ingested"
+    },
+    {
       "id": "2026-11-12-jvm-memory-gc-jfr-heapdump",
       "title": "JVM 内存排查实战：用 GC 日志、JFR 和堆转储串起证据链",
       "path": "Archive/2026-11-12-jvm-memory-gc-jfr-heapdump.md",
@@ -7599,6 +7562,43 @@
       "summary": "以 Doris FE（HotSpot JDK 17、G1）排查实践为素材，总结\"GC 日志 + JFR + 堆转储\"三件套的 JVM 内存排查方法论：先分清\"内存高\"的三种病灶（分配过速、长期持有、堆外增长）与五个易混的量，再用三份证据分别回答时间、来源、结构三个问题，交叉印证形成可复核的因果链。核心结论：GC 日志判断\"病\"的性质，JFR 找到病灶入口，堆转储确认病灶结构；采集前想清代价、下结论前写明验收条件。",
       "summary_status": "",
       "asset_ref": "Assets/2026/11/jvm-memory-gc-jfr-heapdump.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-12-pi-xfer-handoff-network",
+      "title": "我给 pi 做了一个交接工具，后来它长成了一张网络",
+      "path": "Archive/2026-11-12-pi-xfer-handoff-network.md",
+      "created": "2026-11-12",
+      "category": "技术",
+      "tags": [
+        "Agent",
+        "AI"
+      ],
+      "source": "知乎",
+      "source_url": "https://zhuanlan.zhihu.com/p/2097748041361012308",
+      "source_type": "link",
+      "platform": "知乎",
+      "summary": "作者为 pi agent 开发的开源插件 pi-xfer（xfer = transfer）：解决 Agent 时代的\"上下文卫生\"问题——一个窗口混入多个任务会上下文腐坏，常规解法是压缩，pi-xfer 则走另一条路：让不同阶段的任务交给不同 Agent，像人类同事一样做正式 handoff 交接。插件从本地 unix socket 通讯起步，逐步长成一张多形态接入的 Agent 网络，已开源。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/pi-xfer-handoff-network.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-12-self-teaching-craft-book",
+      "title": "写代码的也好，想一路往前冲的人也好，都该翻翻这本开源书《自学是门手艺》",
+      "path": "Archive/2026-11-12-self-teaching-craft-book.md",
+      "created": "2026-11-12",
+      "category": "学习",
+      "tags": [
+        "自学"
+      ],
+      "source": "知乎",
+      "source_url": "https://www.zhihu.com/pin/2097297236245987935",
+      "source_type": "link",
+      "platform": "知乎",
+      "summary": "知乎想法（向云向雾，243 赞同）：推荐开源书《自学是门手艺》（GitHub 17.8K+ Stars）。全书核心只有一句：学不会自个儿学，前头基本没什么指望——话扎耳但细品有理；想把长期学习磨成肌肉记忆，先揣着一点点嚼。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/self-teaching-craft-book.md",
       "wiki_status": "ingested"
     },
     {
