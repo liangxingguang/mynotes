@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12 09:24",
+  "updated_at": "2026-11-12 11:57",
   "tags": [
     {
       "name": "java",
@@ -24,7 +24,7 @@
     {
       "name": "AI",
       "status": "new",
-      "count": 99
+      "count": 100
     },
     {
       "name": "GitHub",
@@ -34,7 +34,7 @@
     {
       "name": "Agent",
       "status": "new",
-      "count": 6
+      "count": 7
     },
     {
       "name": "rust",

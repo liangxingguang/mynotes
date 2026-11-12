@@ -1,6 +1,25 @@
 {
-  "updated_at": "2026-11-12 09:24",
+  "updated_at": "2026-11-12 11:57",
   "notes": [
+    {
+      "id": "2026-11-12-ai-agent-tech-overview",
+      "title": "AI Agent 技术全景解析 —— 从提示词工程到高级智能体构建",
+      "path": "Inbox/2026-11-12-ai-agent-tech-overview.md",
+      "created": "2026-11-12",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent"
+      ],
+      "source": "vivo 互联研发效能团队（微信公众号）",
+      "source_url": "https://mp.weixin.qq.com/s/sjeOryZ5H2ZZGQOKZ2YS4g",
+      "source_type": "网页",
+      "platform": "微信公众号",
+      "summary": "vivo 互联研发效能团队的一篇 Agent 全景综述，按\"基石→核心→实战\"的因果链组织：从提示词工程、上下文工程（RAG）、Harness 运行时，到 ReAct 自主循环、工具/MCP/技能、记忆与知识库、多智能体协作，并给出应用场景、五大避坑要点与生产部署 Checklist，目标是构建能自主规划、调用工具、交付结果的\"数字员工\"。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/ai-agent-tech-overview.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
