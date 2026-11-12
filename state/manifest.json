@@ -4905,10 +4905,13 @@
         "wiki/concepts/prompt-engineering.md",
         "wiki/concepts/harness-engineering.md",
         "wiki/concepts/agent-loop.md",
-        "wiki/concepts/mcp.md"
+        "wiki/concepts/mcp.md",
+        "wiki/concepts/context-management.md",
+        "wiki/concepts/agent-memory-system.md",
+        "wiki/topics/multi-agent-collaboration-architecture.md"
       ],
       "source_url": "https://mp.weixin.qq.com/s/sjeOryZ5H2ZZGQOKZ2YS4g",
-      "asset_ref": "Assets/2026/11/ai-agent-tech-overview.md"
+      "asset_ref": "Assets/2026-11/ai-agent-tech-overview.md"
     }
   ]
 }

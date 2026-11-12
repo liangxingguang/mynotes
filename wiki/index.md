@@ -679,7 +679,7 @@
 
 - [[java-to-rust-migration|Java 到 Rust 迁移]]（2026-11-05，Rust/Java/语言迁移，13 维对照+6 心智模型切换+语言特性映射+Spring 风格迁移示例+Java 开发者 18 陷阱+6 风格原则+5 阶段学习路线+16 项提交前清单，单信源置信度中）
 
-- [[multi-agent-collaboration-architecture|多 Agent 协作架构与控制权下沉]]（2026-11-05，AI/多 Agent/主题导航，三种协作架构（Master Agent/任务看板/Advisor）+控制权下沉框架+两个设计前提（上下文边界/模型边界）+巡检三模式混用案例+「超级 Agent」术语差异（贬义 vs [[super-agent]] 褒义），单信源置信度中）
+- [[multi-agent-collaboration-architecture|多 Agent 协作架构与控制权下沉]]（2026-11-05，AI/多 Agent/主题导航，三种协作架构（Master Agent/任务看板/Advisor）+控制权下沉框架+两个设计前提（上下文边界/模型边界）+巡检三模式混用案例+「超级 Agent」术语差异（贬义 vs [[super-agent]] 褒义）+单 Agent 三重瓶颈（上下文污染/工具过载/串行）+四种协作模式（Supervisor/Debate/Pipeline/Handoffs）+Tool/Skill/Subagent 层次关系，双信源（得物+vivo）置信度中）
 
 ## decision（决策）
 
