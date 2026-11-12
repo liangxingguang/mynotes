@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12 18:13",
+  "updated_at": "2026-11-12 18:15",
   "tags": [
     {
       "name": "java",
@@ -53,6 +53,11 @@
     },
     {
       "name": "JVM",
+      "status": "new",
+      "count": 1
+    },
+    {
+      "name": "自学",
       "status": "new",
       "count": 1
     }
