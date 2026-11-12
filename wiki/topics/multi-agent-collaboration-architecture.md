@@ -15,6 +15,7 @@ sources:
   - raw/sources/ai/2026-11-05-multi-agent-control-shift.md
   - raw/sources/ai/2026-11-12-ai-agent-tech-overview.md
   - raw/sources/ai/2026-11-12-pi-xfer-handoff-network.md
+  - raw/sources/ai/2026-11-12-multi-agent-task-board-architecture.md
 ---
 # 多 Agent 协作架构与控制权下沉
 
@@ -70,6 +71,8 @@ sources:
 
 - 2026-11-12 — 新增知乎信源 `raw/sources/ai/2026-11-12-pi-xfer-handoff-network.md`（第 3 信源）。补上 **Handoffs 协作模式的落地机制与 Agent 组网形态**：handoff 不是聊天记录复制粘贴，而是"header（target/kind/summary）+ 正文落盘文档 + 按需加载 + 反向回执"的正式交接，解决一个窗口混多任务导致的上下文腐坏；同一套消息协议可多形态接入——本地 unix socket（装上即互通）、异构 Agent host（adapterd 收件箱）、浏览器（人以选择器灌数据）、跨机（SSH Link 隧道 / RivetKit actor 架构 Mesh，支持持久队列与休眠节点）。并附相关工具 pi-intercom、Reason Network。handoff 机制详见概念页 [[agent-handoff]]，实现实体见 [[pi-xfer]]。
 
+- 2026-11-12 — 新增知乎信源 `raw/sources/ai/2026-11-12-multi-agent-task-board-architecture.md`（第 4 信源）。补上**任务看板的完整任务字段、双 Master 架构与 LangGraph 实现**：①任务看板字段含 task_id/capability/lease_owner/retry_count/max_retry/dependencies/lease_expire_at/priority，状态机 `PENDING→CLAIMED→RUNNING→SUCCEEDED/FAILED/RETRYING` 完整定义；②**双 Master 架构**——Planner Master 只拆解（禁止回收租约/改状态/判结束）+ Scheduler Master 只调度巡检（租约超时回收、依赖校验、重试熔断、全局进度判断、优先级排序，禁止创建新任务），各司其职、禁止越界；③拆分原则重申"划分上下文边界和信息压缩边界"而非贴职业标签，"大模型+小模型"混合（小管快、大管深）；④核心判断：任务看板架构已成为工业落地中重要核心架构之一，核心架构正从 Orchestrator-Workers 过渡到任务看板。与第 1 信源"三次反转"框架同调，双 Master 是任务看板的工程改进。详见概念页 [[task-board-coordination]]。
+
 ## Disagreements（分歧）
 
 - **"超级 Agent"术语差异**（非事实矛盾，属同名不同义）：得物信源中"超级 Agent"为贬义——Master Agent 任务变复杂后膨胀成既要理解业务又要维护调度器/状态机/异常处理的臃肿中心；[[super-agent]] 页中为褒义——DeepSeek 提出的跨会话连续、并发推进多任务的 Agent 形态。两用法语境不同，不构成矛盾，但检索"超级 Agent"时需按语境区分。
@@ -82,4 +85,5 @@ sources:
 
 ## Related Topics（相关主题）
 
+信源页：[[2026-11-05-weixin-multi-agent-control-shift|多 Agent 架构的三次反转]]、[[2026-11-12-ai-agent-tech-overview|AI Agent 技术全景]]、[[pi-xfer-handoff-network|Pi-Xfer：Agent 交接网络（信源页）]]、[[2026-11-12-multi-agent-task-board-architecture|多 Agent 架构—任务看板（Team Agent）架构（信源页）]]
 （暂无直接相邻主题页；相关概念页见 Key Concepts）

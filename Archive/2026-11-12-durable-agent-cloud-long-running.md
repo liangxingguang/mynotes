@@ -9,7 +9,7 @@ created: 2026-11-12
 category: 技术
 tags: [Agent, AI]
 asset_ref: Assets/2026/11/durable-agent-cloud-long-running.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Durable Agent 详解：如何让 Agent 在云端长期稳定运行

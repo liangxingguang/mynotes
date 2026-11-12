@@ -9,7 +9,7 @@ created: 2026-11-12
 category: 技术
 tags: [Agent, AI]
 asset_ref: Assets/2026/11/multi-agent-task-board-architecture.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 多Agent 架构—任务看板（Team Agent）架构

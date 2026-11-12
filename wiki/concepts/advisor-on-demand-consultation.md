@@ -4,7 +4,7 @@ type: concept
 title: Advisor（按需咨询）
 status: active
 created: 2026-11-05
-updated: 2026-11-05
+updated: 2026-11-12
 confidence: medium
 tags:
   - concept
@@ -13,12 +13,14 @@ tags:
   - multi-agent
 sources:
   - raw/sources/ai/2026-11-05-multi-agent-control-shift.md
+  - raw/sources/ai/2026-11-12-multi-agent-task-board-architecture.md
 related:
   - wiki/topics/multi-agent-collaboration-architecture.md
   - wiki/concepts/task-board-coordination.md
   - wiki/concepts/router-worker-architecture.md
   - wiki/concepts/context-management.md
   - wiki/concepts/agent-permission-model.md
+  - wiki/sources/2026-11-12-multi-agent-task-board-architecture.md
 ---
 # Advisor（按需咨询）
 
@@ -75,6 +77,7 @@ related:
 ## Evolution（演进）
 
 - 2026-11-05 — 新建，信源为得物技术《多 Agent 架构的三次反转》（Advisor 一节 + 巡检案例 RCA Advisor）。
+- 2026-11-12 — 第二信源（知乎专栏《多 Agent 架构—任务看板》）重申 Advisor 方向与 Master Agent 相反（执行节点调用咨询者）、责任边界清晰（执行 Agent 保持完整上下文与主流程，Advisor 只在局部决策提供额外认知），但该信源作者明确表示"**Advisor 模式感觉用处不大，不如 Claude Code 提出的生成器-验证器架构实用**"，未做展开论述。这是信源间对 Advisor 适用性判断的一处分歧（第 1 信源给出巡检案例正面落地，第 2 信源持保留态度），需更多信源验证。
 
 ## Open Questions（开放问题）
 
@@ -85,9 +88,11 @@ related:
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-11-05-multi-agent-control-shift.md`（§3.3 Advisor：方向相反、责任边界、支付模块案例、咨询成本；§5 RCA Advisor：自判提问、可能原因+验证方向、超时兜底）
+- Source: `raw/sources/ai/2026-11-12-multi-agent-task-board-architecture.md`（第 2 信源：重申方向相反与责任边界，作者认为 Advisor 用处不大、不如生成器-验证器架构实用，未展开）
 
 ## Related Knowledge（相关知识）
 
 - [[2026-11-05-weixin-multi-agent-control-shift|多 Agent 架构的三次反转：从中心调度到自驱协作（信源页）]]
+- [[2026-11-12-multi-agent-task-board-architecture|多 Agent 架构—任务看板（Team Agent）架构（信源页）]]
 - [[multi-agent-collaboration-architecture|多 Agent 协作架构与控制权下沉（主题页）]]
 - [[task-board-coordination|任务看板（共享状态协作）]]

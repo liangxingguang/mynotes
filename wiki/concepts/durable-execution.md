@@ -4,7 +4,7 @@ type: concept
 title: 持久执行（Durable Execution）
 status: active
 created: 2026-10-23
-updated: 2026-10-31
+updated: 2026-11-12
 confidence: high
 tags:
   - concept
@@ -20,12 +20,16 @@ sources:
   - raw/sources/architecture/2026-10-31-agent-platform-retry-resilience.md
   - raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md
   - raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md
+  - raw/sources/ai/2026-11-12-durable-agent-cloud-long-running.md
 related:
   - wiki/entities/pi.md
   - wiki/entities/kiso.md
+  - wiki/entities/agentscope.md
+  - wiki/entities/agentcore.md
   - wiki/sources/spring-async-to-task-table.md
   - wiki/sources/async-task-system-design.md
   - wiki/sources/kiso-minimal-agent-framework.md
+  - wiki/sources/2026-11-12-durable-agent-cloud-long-running.md
   - wiki/concepts/task-run-step-event-model.md
   - wiki/concepts/agent-loop.md
   - wiki/concepts/mysql-bulk-import.md
@@ -71,6 +75,8 @@ Harness 里发生的每件事都是一个任务（效应三明治）：生成 LL
 
 Super-agent 原型实现（第 10 信源，拆解文第三节）：`Store` 用 SQLite 保存事件、任务关系、接单决定、待执行动作和消息发送状态；`Engine` 先把任务、授权依据、派工和待执行动作放进同一笔事务，提交后才启动执行器、投递输入或发送消息——解决"刚决定接单就在启动 Worker 前退出"的持久化缺口。发送失败时 `Effects` 队列记录失败并退避重试，`Outbox` 保存发送状态。但数据库事务覆盖不了外部副作用：平台已收到消息而本地未记成功时，重试会重复发送；运行中断的任务给新 Assignment 加恢复提示，先查目录、Git 历史和 GitHub 再决定是否重做外部操作。
 
+AgentScope HarnessAgent 实现形态（第 11 信源，知乎专栏）：将模型推理、上下文、工具和会话管理组织在一起，通过 Durable 执行内核管理整个运行过程——**模型生成、工具调用和业务流程都是持久任务，由任务状态驱动 Agent 循环**。Session 统一管理六类持久对象：Conversation（对话）、Entry（不可变记录）、Document（带类型版本的结构化业务状态）、Task（带检查点持久状态机）、Submission（应用提交）、Commit（原子提交）。Task 六态：pending/running/waiting/sleeping/completing/terminal，恢复从已保存阶段入口重新执行，不跳回崩溃前某一行。原子提交顺序：取得提交顺序→事务草稿准备→校验冻结写集合→Storage 原子保存→采纳→更新视图通知；模型请求与工具执行在提交事务之外推进，同一 Session 内状态提交串行化。普通工具分 call（保存意图）与 execute（恢复入口）两阶段，只有工具声明 safe 才能重放，否则记录 interrupted；自定义任务用 allSettled/failFast 汇合，每封邮件操作标识在外部调用前保存。平台层延伸：[[agentcore|AgentCore]] 以共同的 Session Store 连接原生状态与平台执行事实（五层状态层次表），Brain–Hands 分离让推理与工具拥有各自生命周期，Environment 为已保存状态提供继续执行条件，走向 Agent as a Service。该信源再次印证"框架管从哪里继续、平台管状态保存在哪与由谁继续"的分层，以及"原子提交覆盖 Harness 管理数据、不覆盖外部动作"的边界。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -96,6 +102,7 @@ Super-agent 原型实现（第 10 信源，拆解文第三节）：`Store` 用 S
 - 2026-10-31：第八信源（agent-platform-retry-resilience）从"跨 Worker 恢复不得重置尝试数"角度补充持久化字段清单：`operation_id`/`idempotency_key`、`policy_version`、`attempt_reserved_count`（跨接管累计）、`operation_deadline`/`next_run_at`、`last_error_class`/`outcome_state`、`lease_owner`/`fencing_token`、`last_attempt_at`/`last_provider_request_id`；并确认两个不可消除的崩溃窗口（尝试预留与发送之间保守消耗机会、远程副作用提交与本地记录之间形成结果未知）——与第 3/4 信源的 fencing/对账机制同族，为"接管不重置次数"提供 Agent 平台语境下的字段级印证。
 - 2026-10-31：第九信源（Codex Harness 架构第六篇）从**恢复决策顺序与回执确认**角度补充：恢复入口先读持久记录区分界面断连与引擎中断，原执行仍在推进则重新订阅、已结束则读回结果、确认继续才进入新尝试；结果不明的外部写入按查询能力分级处理（业务单号查询/幂等键复用/保留未知状态待确认）——与第 3 信源 PAUSED_INDOUBT 冻结对账、「没有远端支持时保留未知状态比作出无法兑现的自动恢复承诺更符合实际接口能力」同调；其"数据库事务覆盖不了外部工具"（工具可能已完成写入而记录尚未保存）印证第 3/8 信源的出网三段式动机。E1 实测（原稿字节与修改时间均未变化才算保留）为恢复保留性提供第二个工程实证。
 - 2026-11-02：第十信源（Super-agent 原型拆解）从 **Engine 事务先行 + SQLite Store + Effects/Outbox** 角度补充：任务、授权依据、派工与待执行动作同笔事务提交后才启动执行器；发送失败经 Effects 队列退避重试、Outbox 记发送状态；并再次印证"数据库事务覆盖不了外部副作用"（平台已收到而本地未记成功时重试会重复发送，恢复前先查目录/Git/GitHub）。与第 3/8/9 信源的出网三段式、IN_DOUBT 冻结对账同族，为"先写存储、后可见"提供 Agent Harness 语境下的第三个实现实例。
+- 2026-11-12：第十一信源（知乎专栏《Durable Agent 详解》）以 AgentScope HarnessAgent 与阿里云 AgentCore 为载体，补上 **Session 六类对象统一管理 + Task 六态状态机 + 原子提交顺序 + 工具 call/execute 两阶段 + Brain–Hands 分离** 的实现细节。该信源将框架层（AgentScope：从哪里继续、怎样继续）与平台层（AgentCore：状态保存在哪、由谁继续）的分工明确化，并再次强调"原子提交覆盖 Harness 管理数据、不覆盖外部动作"——外部动作的幂等与可查询是业务系统责任，持久机制无法凭空创造。与第 1/2 信源的 Pi Durable 五层结构、第 3 信源的出网三段式互证，为"持久执行向平台托管延伸"提供第四个实现实例。实体页见 [[agentscope]]、[[agentcore]]。
 
 ## Open Questions（开放问题）
 
@@ -113,6 +120,7 @@ Super-agent 原型实现（第 10 信源，拆解文第三节）：`Store` 用 S
 - Source: `raw/sources/architecture/2026-10-31-agent-platform-retry-resilience.md`（第 8 信源：跨 Worker 恢复字段清单、两个不可消除崩溃窗口、attempt_reserved_count 跨接管累计）
 - Source: `raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md`（第 9 信源：恢复决策四步顺序、回执分级处理、E1 原稿保留实测）
 - Source: `raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md`（第 10 信源：Engine 事务先行、SQLite Store、Effects 退避重试 + Outbox、外部副作用重复发送风险与恢复核实）
+- Source: `raw/sources/ai/2026-11-12-durable-agent-cloud-long-running.md`（第 11 信源：AgentScope Session 六类对象、Task 六态状态机、原子提交顺序、工具 call/execute 两阶段、AgentCore 平台层与 Brain–Hands 分离）
 - 同构印证（未列入 sources）：`raw/sources/architecture/2026-10-20-spring-async-to-task-table.md`（Java 任务表+Worker，业务系统版同一套三要素）
 
 ## Related Knowledge（相关知识）
@@ -127,3 +135,6 @@ Super-agent 原型实现（第 10 信源，拆解文第三节）：`Store` 用 S
 - [[spring-async-to-task-table|任务表 + Worker（信源页）]]
 - [[agent-state-separation|Agent 状态分离]]
 - [[codex-agent-harness-architecture-6|Codex 桌面客户端开发（六）：Agent Harness 的架构设计（信源页）]]
+- [[2026-11-12-durable-agent-cloud-long-running|Durable Agent 详解：如何让 Agent 在云端长期稳定运行（信源页）]]
+- [[agentscope|AgentScope]]
+- [[agentcore|AgentCore]]

@@ -395,6 +395,9 @@
 - [[2026-11-12-ai-agent-tech-overview|AI Agent 技术全景解析]]（2026-11-12，AI/Agent 综述，vivo 全景梳理：控制权转移/ReAct 循环/RAG/规划范式/记忆/多智能体，AgentScope 2.0 实现例，微信单信源，置信度中）
 - [[ai-era-framework-reflection|在AI时代回顾互联网黄金时代技术框架（知乎）]]（2026-11-12，技术文化评论/框架，真框架vs伪框架+程序员的傲慢成因（时代红利误认个人卓越/中世纪教会类比）+伪框架生命周期+AI时代借尸还魂（DSH）+Claude Code 克制对照+复杂度二分法，知乎单信源，置信度中）
 - [[pi-xfer-handoff-network|我给 pi 做了一个交接工具，后来它长成了一张网络（知乎）]]（2026-11-12，AI/Agent 工具，pi-xfer 开源插件：handoff 交接（header+落盘文档+按需加载+反向回执）解决上下文腐坏+多形态 Agent 网络（本地 unix socket/adapterd/Web Picker/SSH Link/Mesh），知乎单信源，置信度中）
+- [[2026-11-12-durable-agent-cloud-long-running|Durable Agent 详解：如何让 Agent 在云端长期稳定运行]]（2026-11-12，AI/Agent/持久执行，Durable 四项保证+AgentScope HarnessAgent 持久执行内核（Session 六类对象/Task 六态状态机/原子提交顺序/工具 call-execute 两阶段）+阿里云 AgentCore 平台层（Session Store 五层状态/Brain-Hands 分离/Environment/Agent as a Service），知乎单信源，置信度高）
+- [[2026-11-12-jvm-reference-counting-reachability|JVM 如何判断对象该不该回收：引用计数法与可达性分析算法]]（2026-11-12，Java/JVM/GC 理论，引用计数法原理与循环引用缺陷+可达性分析与 GC Roots 四类来源（含"常量引用是 GC Roots"说法纠偏）+finalize() 两次标记与对象复活（仅一次）+JDK 终结机制版本演进（9 弃用/18 待移除/25 允许禁用）+四种引用（强/软/弱/虚），知乎单信源，置信度高）
+- [[2026-11-12-multi-agent-task-board-architecture|多 Agent 架构—任务看板（Team Agent）架构]]（2026-11-12，AI/多 Agent/架构，单 Agent 瓶颈（上下文污染+上下文长度）+拆分原则（上下文边界而非职业标签）+大模型小模型混合+三种架构（Orchestrator-Workers/任务看板/Advisor）+任务看板字段与状态机完整定义+双 Master 架构（Planner 只拆解+Scheduler 只调度巡检）+LangGraph 实现，知乎单信源，置信度高）
 
 ## concept（概念）
 
@@ -643,6 +646,8 @@
 - [[aibox|AiBox]]（货拉拉自建 AI Coding Harness/管控面：Rules/Skills/Commands/MCP 下发 + 网关四统一 + 三层度量，千人规模）
 - [[aiengineeringfromscratch|aiengineeringfromscratch.com]]（2026-11-05，AI/学习资源，免费开源 AI 系统学习教程网站，20 章 542 节课 + learning path，单信源未独立验证，置信度低）
 - [[agent-lightning|Agent Lightning]]（微软研究院开源 Agent RL 训练框架，约 3500 行，真实工具链交互训练）
+- [[agentscope|AgentScope]]（2026-11-12，AI/Agent 框架实体，HarnessAgent 持久执行内核：Session 六类对象（Conversation/Entry/Document/Task/Submission/Commit）+Task 六态状态机+原子提交顺序+工具 call-execute 两阶段+自定义任务 allSettled/failFast 汇合，知乎单信源，置信度高）
+- [[agentcore|AgentCore]]（2026-11-12，AI/Agent 平台实体，阿里云云端 Agent 托管平台：Harness 托管+Session Store 五层状态层次+Brain-Hands 分离+Environment+Agent as a Service，知乎单信源，置信度高）
 - [[archunit|ArchUnit]]（Java 架构约束即测试，TNG，当前 1.5.1）
 - [[argo-rollouts|Argo Rollouts]]（K8s 渐进式交付控制器：Rollout CRD + AnalysisTemplate 门禁，blueGreen/canary，单信源）
 - [[arthas|Arthas]]（Java 线上诊断工具，4.3.5 起含实验性 MCP Server；十二信源：专辑目录+MCP 双实测+系列七篇+GC 实战+五场景事故+版本核实/热更新边界）
@@ -680,14 +685,14 @@
 
 - [[enterprise-systems-map|B端企业系统全景地图（10 大系统）]]（2026-11-04，产品/B端/企业系统主题导航，10 系统四段式速查表+OMS 补充行（第19篇口径）+内部资源→外部协同框架+供应链域选型深水见 [[wms-vs-oms-vs-tms]]，三信源置信度中）
 - [[erp-architecture-design|大型 ERP 产品架构设计]]（2026-10-31，企业软件/架构主题导航，立论+8 部路线图，各篇正文待采集，单信源置信度中）
-- [[jvm-gc|JVM 垃圾回收]]（判定/算法/收集器演进与选型/调优主线枢纽；G1/ZGC 原理 + 证据驱动调优 + 分代模型独立印证，八信源）
+- [[jvm-gc|JVM 垃圾回收]]（判定/算法/收集器演进与选型/调优主线枢纽；引用计数 vs 可达性分析+GC Roots 四来源+finalize 演进+四种引用+G1/ZGC 原理 + 证据驱动调优 + 分代模型独立印证，九信源）
 - [[live-streaming-messaging|直播实时消息分发]]（拉 vs 推路线图谱：读扩散通知拉取 / longpolling / 短轮询 / mcast 组播 / CDN 广播；允许策略性丢消息是与 IM 的根本分界，八信源）
 - [[programmer-overseas-remote-work|程序员出海远程]]（汇率杠杆/价格带定价/卖资产 vs 卖时间；AI 一人公司技术前提；收款/时差/合规三实操；单信源，置信度中）
 - [[system-design-core-components|系统设计核心组件]]（分布式系统 12 个核心组件清单，组件驱动；另收问题驱动六类框架见 [[accidental-cto-book]]，双信源）
 
 - [[java-to-rust-migration|Java 到 Rust 迁移]]（2026-11-05，Rust/Java/语言迁移，13 维对照+6 心智模型切换+语言特性映射+Spring 风格迁移示例+Java 开发者 18 陷阱+6 风格原则+5 阶段学习路线+16 项提交前清单，单信源置信度中）
 
-- [[multi-agent-collaboration-architecture|多 Agent 协作架构与控制权下沉]]（2026-11-05，2026-11-12 更新，AI/多 Agent/主题导航，三种协作架构（Master Agent/任务看板/Advisor）+控制权下沉框架+两个设计前提（上下文边界/模型边界）+巡检三模式混用案例+「超级 Agent」术语差异（贬义 vs [[super-agent]] 褒义）+单 Agent 三重瓶颈（上下文污染/工具过载/串行）+四种协作模式（Supervisor/Debate/Pipeline/Handoffs）+Tool/Skill/Subagent 层次关系+Handoffs 落地机制（header+落盘文档+按需加载+反向回执）与 Agent 组网形态（[[pi-xfer]]），三信源（得物+vivo+知乎）置信度中）
+- [[multi-agent-collaboration-architecture|多 Agent 协作架构与控制权下沉]]（2026-11-05，2026-11-12 更新，AI/多 Agent/主题导航，三种协作架构（Master Agent/任务看板/Advisor）+控制权下沉框架+两个设计前提（上下文边界/模型边界）+巡检三模式混用案例+「超级 Agent」术语差异（贬义 vs [[super-agent]] 褒义）+单 Agent 三重瓶颈（上下文污染/工具过载/串行）+四种协作模式（Supervisor/Debate/Pipeline/Handoffs）+Tool/Skill/Subagent 层次关系+Handoffs 落地机制（header+落盘文档+按需加载+反向回执）与 Agent 组网形态（[[pi-xfer]]）+任务看板字段与状态机完整定义+双 Master 架构（Planner 只拆解+Scheduler 只调度巡检），四信源（得物+vivo+知乎×2）置信度中）
 
 ## decision（决策）
 

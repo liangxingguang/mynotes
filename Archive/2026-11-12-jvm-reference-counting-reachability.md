@@ -9,7 +9,7 @@ created: 2026-11-12
 category: 技术
 tags: [java, JVM]
 asset_ref: Assets/2026/11/jvm-reference-counting-reachability.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 【JVM 底层修炼记】如何判断对象该不该回收？聊聊经典的引用计数法与可达性分析算法

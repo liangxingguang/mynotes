@@ -4963,6 +4963,46 @@
       ],
       "source_url": "https://www.zhihu.com/pin/2097297236245987935",
       "asset_ref": "Assets/2026/11/self-teaching-craft-book.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-12-durable-agent-cloud-long-running.md",
+      "sha256": "db6d1eac352d874ec7dae8cdc5d8da9c1365a84fb6b953b45392922f978f61e5",
+      "registered_at": "2026-11-12",
+      "inbox_ref": "Archive/2026-11-12-durable-agent-cloud-long-running.md",
+      "pages": [
+        "wiki/sources/2026-11-12-durable-agent-cloud-long-running.md",
+        "wiki/entities/agentscope.md",
+        "wiki/entities/agentcore.md",
+        "wiki/concepts/durable-execution.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2099469504237642789",
+      "asset_ref": "Assets/2026/11/durable-agent-cloud-long-running.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-12-jvm-reference-counting-reachability.md",
+      "sha256": "7095ce0840009025ef2accb677b0ba90898d7b9cda0efde4450d1dc287a8ddb0",
+      "registered_at": "2026-11-12",
+      "inbox_ref": "Archive/2026-11-12-jvm-reference-counting-reachability.md",
+      "pages": [
+        "wiki/sources/2026-11-12-jvm-reference-counting-reachability.md",
+        "wiki/topics/jvm-gc.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2103769210321105002",
+      "asset_ref": "Assets/2026/11/jvm-reference-counting-reachability.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-12-multi-agent-task-board-architecture.md",
+      "sha256": "055f609a7d2333f644009b47b1e60ed5f65ed3e2a8ef331cac2e085858bf1ebe",
+      "registered_at": "2026-11-12",
+      "inbox_ref": "Archive/2026-11-12-multi-agent-task-board-architecture.md",
+      "pages": [
+        "wiki/sources/2026-11-12-multi-agent-task-board-architecture.md",
+        "wiki/concepts/task-board-coordination.md",
+        "wiki/topics/multi-agent-collaboration-architecture.md",
+        "wiki/concepts/advisor-on-demand-consultation.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2103331588243248111",
+      "asset_ref": "Assets/2026/11/multi-agent-task-board-architecture.md"
     }
   ]
 }

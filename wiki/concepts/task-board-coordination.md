@@ -4,7 +4,7 @@ type: concept
 title: 任务看板（共享状态协作）
 status: active
 created: 2026-11-05
-updated: 2026-11-05
+updated: 2026-11-12
 confidence: medium
 tags:
   - concept
@@ -13,6 +13,7 @@ tags:
   - multi-agent
 sources:
   - raw/sources/ai/2026-11-05-multi-agent-control-shift.md
+  - raw/sources/ai/2026-11-12-multi-agent-task-board-architecture.md
 related:
   - wiki/topics/multi-agent-collaboration-architecture.md
   - wiki/concepts/advisor-on-demand-consultation.md
@@ -22,6 +23,7 @@ related:
   - wiki/concepts/idempotency-design.md
   - wiki/concepts/durable-execution.md
   - wiki/concepts/event-driven-agent.md
+  - wiki/sources/2026-11-12-multi-agent-task-board-architecture.md
 ---
 # 任务看板（共享状态协作）
 
@@ -44,7 +46,7 @@ related:
 
 ## Structure（结构）
 
-看板记录字段（信源 §3.2）：待处理任务、负责人、依赖关系、执行状态、产出物。
+看板记录字段（信源 §3.2）：待处理任务、负责人、依赖关系、执行状态、产出物。第 2 信源补充完整任务字段：`task_id`、`name`、`prompt`、`capability`（谁能认领）、`status`、`lease_owner`（租约持有者）、`retry_count`/`max_retry`（重试计数与上限）、`dependencies`（依赖其他 task_id）、`output`（产出物）、`error`；双 Master 版还含 `lease_expire_at`（租约超时时间戳）与 `priority`（优先级排序）。
 
 状态流转（信源 §3.2）：
 
@@ -53,11 +55,15 @@ PENDING → CLAIMED → RUNNING → SUCCEEDED
                         ↘ FAILED / RETRYING
 ```
 
+第 2 信源补充状态机完整定义：`TaskStatus = Literal["PENDING", "CLAIMED", "RUNNING", "SUCCEEDED", "RETRYING", "FAILED"]`，认领逻辑优先找 PENDING 或 RETRYING 且 capability 匹配、无未完成依赖、无租约的任务；抢到后状态置 CLAIMED 并打上租约持有者；RETRYING 时 retry_count+1、释放租约，超 max_retry 自动转 FAILED。
+
 ## How It Works（运作方式）
 
 典型链路（巡检案例，信源 §5）：Inspector Agent 把工作拆成"指标＋目标批次＋时间窗口"的独立任务发布到看板 → 多个 Worker 按能力和空闲容量并行领取 → Worker 调用确定性工具计算后提交精简证据（异常保留明细、正常压缩为汇总，原始时序留在工具层）→ 某 Worker 中途退出时，其已领取任务的租约到期后由其他 Worker 接管，只补做未完成批次 → Inspector 核对任务覆盖范围，区分当前异常、窗口内已恢复、数据不足。
 
 可靠性前提：任务协议（领取/回收/依赖/幂等四项协作协议）稳定；单纯"把任务写进数据库再定时读取"不会自动可靠。
+
+**双 Master 架构**（第 2 信源附录）：本质是任务看板的改进，把"拆解"与"调度巡检"分离为两个各司其职的 Master——**Planner Master 只拆解**：接收用户请求、拆成子任务 DAG 写入看板（状态 PENDING），禁止回收租约、修改任务状态、判断流程结束，看板已有任务时直接放行；**Scheduler Master 只调度巡检**：租约超时回收（卡在 CLAIMED/RUNNING 超时则释放租约退回 RETRYING，超重试上限转 FAILED）、依赖校验（上游全部 SUCCEEDED 下游才可认领）、重试熔断、全局进度判断（全部成功汇总 / 存在失败标记）、优先级排序，禁止创建新任务。Worker 仍以 Pull 模式认领，认领后 goto Scheduler Master 交回看板。第 2 信源判断：核心架构正从 Orchestrator-Workers 过渡到任务看板，主目标是减轻 Master Agent 压力；任务看板已成为工业落地中重要核心架构之一。
 
 ## Relationships（关系）
 
@@ -84,6 +90,7 @@ PENDING → CLAIMED → RUNNING → SUCCEEDED
 ## Evolution（演进）
 
 - 2026-11-05 — 新建，信源为得物技术《多 Agent 架构的三次反转》（任务看板一节 + 巡检案例）。与 [[ticket-task-persistence]]（DeepSeek Super-agent 拆解）互证：两者都强调状态机/租约/幂等是可靠性来源。
+- 2026-11-12 — 第二信源（知乎专栏《多 Agent 架构—任务看板（Team Agent）架构》）补上**任务字段完整定义（含 capability/lease_owner/retry_count/max_retry/dependencies/lease_expire_at/priority）与双 Master 架构**（Planner Master 只拆解 + Scheduler Master 只调度巡检，各禁越界），附 LangGraph 可运行代码（认领逻辑、状态机更新、租约 TTL、重试熔断）。该信源判断任务看板已成为工业落地核心架构之一，双 Master 是其改进，与第 1 信源的"控制权下沉"框架一致。
 
 ## Open Questions（开放问题）
 
@@ -94,10 +101,12 @@ PENDING → CLAIMED → RUNNING → SUCCEEDED
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-11-05-multi-agent-control-shift.md`（§3.2 任务看板：状态机/锁租约/幂等/稳定引用；§5 巡检案例：租约接管自愈、只补做未完成批次）
+- Source: `raw/sources/ai/2026-11-12-multi-agent-task-board-architecture.md`（第 2 信源：任务字段完整定义、TaskStatus 状态机、认领逻辑与依赖校验、双 Master 架构 Planner/Scheduler 分工、LangGraph 实现）
 
 ## Related Knowledge（相关知识）
 
 - [[2026-11-05-weixin-multi-agent-control-shift|多 Agent 架构的三次反转：从中心调度到自驱协作（信源页）]]
+- [[2026-11-12-multi-agent-task-board-architecture|多 Agent 架构—任务看板（Team Agent）架构（信源页）]]
 - [[multi-agent-collaboration-architecture|多 Agent 协作架构与控制权下沉（主题页）]]
 - [[ticket-task-persistence|Ticket 任务持久化模型]]
 - [[super-agent|Super-agent]]

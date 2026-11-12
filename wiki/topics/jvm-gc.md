@@ -4,7 +4,7 @@ type: topic
 title: JVM 垃圾回收
 status: active
 created: 2026-10-27
-updated: 2026-11-05
+updated: 2026-11-12
 confidence: medium
 tags:
   - topic
@@ -20,6 +20,7 @@ sources:
   - raw/sources/architecture/2026-10-28-jvm-interview-guide.md
   - raw/sources/architecture/2026-11-03-weixin-full-gc-troubleshooting.md
   - raw/sources/architecture/2026-11-04-jvm-memory-model.md
+  - raw/sources/architecture/2026-11-12-jvm-reference-counting-reachability.md
 ---
 # JVM 垃圾回收
 
@@ -29,7 +30,7 @@ JVM GC 的判定、算法、收集器、原理、选型与调优：对象可回�
 
 ## Current Understanding（当前认知）
 
-- **判定**：Java 用可达性分析（GC Roots：栈局部变量、JNI、static、final static 常量、synchronized 持有对象），解决引用计数的循环引用缺陷；两次标记 + finalize（Java 9 弃用）。
+- **判定**：Java 用可达性分析（GC Roots：栈局部变量、JNI、static、final static 常量、synchronized 持有对象），解决引用计数的循环引用缺陷；两次标记 + finalize（Java 9 弃用）。第 9 信源（2026-11-12）系统展开判定机制：引用计数法原理/优缺点（无法解决循环引用，Python 等用引用计数+循环垃圾检测结合，Java HotSpot 不依赖简单引用计数）；可达性分析以 GC Roots 为起点向下搜索、关注"能否到达"而非"被引用多少次"；**GC Roots 四类来源**——①活动线程栈帧引用（参数/局部变量，JIT 优化后失效引用提前剔除）②类静态字段引用 ③JNI 引用（Local/Global）④JVM 内部引用，并指出"方法区常量引用是 GC Roots"的说法过于简单（需看是否在根集合或可达路径上）；**finalize() 两次标记**（第一次发现不可达→安排终结→执行 finalize()→重新判断可达性，同一对象只自动调用一次）、对象复活（在 finalize() 中将 this 保存到外部可达位置如静态字段，只能发生一次）、JDK 版本演进（JDK 9 弃用、JDK 18 标记待移除+--finalization=disabled、JDK 25 允许禁用）；**四种引用**——强引用（可达即不回收）、软引用（内存不足时清，适合缓存）、弱引用（不再强/软可达即清，如 WeakHashMap）、虚引用（get() 取不到对象，配合 ReferenceQueue/Cleaner 感知回收），三者不是简单从根集合删除而是由 JVM 按可达性级别管理。核心结论：JVM 判断回收看"能否从 GC Roots 到达"，而非"被引用了多少次"。
 - **算法落地**：新生代标记-复制（Eden:Survivor = 8:1:1，默认 15 次 Minor GC 晋升），老年代标记-清除/整理；依据弱分代假说。本页分代口径（Eden 出生 → Minor GC 存活复制到 S0 → S0/S1 轮流复制 → 年龄超阈值晋升 → 大对象直入老年代）由 2026-11-04 JVM 内存模型信源独立印证。
 - **选型主线**（多信源一致）：JDK 8 默认 Parallel、JDK 9+ 默认 G1；通用场景 2~8GB 用 G1，延迟敏感上 ZGC；CMS 已废弃。
 - **调优主线**：[[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]——先定量化目标与基线、JFR/GC 日志归因，证据指向 JVM 才动收集器与参数；「90% 问题靠选对收集器+合理内存」。
@@ -60,5 +61,5 @@ JVM GC 的判定、算法、收集器、原理、选型与调优：对象可回�
 
 ## Related Topics（相关主题）
 
-- 信源页：[[jvm-gc-interview-guide|JVM GC 面试全讲透]]、[[jvm-tuning-core-approach|JVM 调优核心思路]]、[[gc-log-tuning-practice|GC 日志分析与调优实战]]、[[jvm-gc-troubleshooting-arthas|JVM GC 排查实战（Arthas）]]、[[jvm-troubleshooting-six-tools|JVM 排查 6 工具]]、[[jdk21-migration-huolala|JDK 21 规模化落地（货拉拉）]]、[[java-online-troubleshooting-arthas|Java 线上排查实战（OOM/超时/闪退/GC 抖动/死锁）]]、[[jvm-interview-guide|JVM 面试题最全整理（内存模型→OOM 排查）]]、[[2026-11-03-weixin-full-gc-troubleshooting|一次 Full GC 排查实录（刑侦三步）]]、[[2026-11-04-jvm-memory-model|JVM内存模型深度解析 —— 搞清楚堆和栈，告别OOM（信源页）]]
+- 信源页：[[jvm-gc-interview-guide|JVM GC 面试全讲透]]、[[jvm-tuning-core-approach|JVM 调优核心思路]]、[[gc-log-tuning-practice|GC 日志分析与调优实战]]、[[jvm-gc-troubleshooting-arthas|JVM GC 排查实战（Arthas）]]、[[jvm-troubleshooting-six-tools|JVM 排查 6 工具]]、[[jdk21-migration-huolala|JDK 21 规模化落地（货拉拉）]]、[[java-online-troubleshooting-arthas|Java 线上排查实战（OOM/超时/闪退/GC 抖动/死锁）]]、[[jvm-interview-guide|JVM 面试题最全整理（内存模型→OOM 排查）]]、[[2026-11-03-weixin-full-gc-troubleshooting|一次 Full GC 排查实录（刑侦三步）]]、[[2026-11-04-jvm-memory-model|JVM内存模型深度解析 —— 搞清楚堆和栈，告别OOM（信源页）]]、[[2026-11-12-jvm-reference-counting-reachability|JVM 如何判断对象该不该回收：引用计数法与可达性分析算法（信源页）]]
 - 相邻概念：[[oom-troubleshooting|OOM 排查方法论]]（6 类 OOM 速查 + 五步法）、[[jmm-happens-before|Java 内存模型与 happens-before]]、[[class-loading-parent-delegation|类加载与双亲委派]]
