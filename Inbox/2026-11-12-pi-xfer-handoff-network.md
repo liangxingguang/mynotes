@@ -9,7 +9,9 @@ created: 2026-11-12
 category: 技术
 tags: [Agent, AI]
 asset_ref: Assets/2026/11/pi-xfer-handoff-network.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-11-12T10:20:51.279Z"
+ingest_claim_id: 5580-1794478851279-0
 ---
 
 # 我给 pi 做了一个交接工具，后来它长成了一张网络

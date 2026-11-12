@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12 18:16",
+  "updated_at": "2026-11-12 18:21",
   "notes": [
     {
       "id": "2026-11-12-ai-era-framework-reflection",
@@ -17,7 +17,7 @@
       "summary": "一篇技术文化评论：作者在 LLM 重塑编程的节点回望互联网黄金时代，先定义\"真框架\"（用最小心智负担击穿底层物理复杂度，如 Spring Boot、Koa、Vue、Prisma）与\"伪框架\"的区别，再剖析大厂高薪催生的\"程序员的傲慢\"如何人为制造复杂，并指出这种傲慢在 AI 时代借尸还魂——以 DSH 的\"微内核、万物皆插件、时空可组合性\"等宏大叙事为典型；主张以 Claude Code 式的克制为锚，分清偶发复杂度与根本复杂度，vibe coding 不是工业工程的未来。",
       "summary_status": "",
       "asset_ref": "Assets/2026/11/ai-era-framework-reflection.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-11-12-jvm-memory-gc-jfr-heapdump",
@@ -39,6 +39,25 @@
       "wiki_status": "ingesting"
     },
     {
+      "id": "2026-11-12-multi-agent-task-board-architecture",
+      "title": "多Agent 架构—任务看板（Team Agent）架构",
+      "path": "Inbox/2026-11-12-multi-agent-task-board-architecture.md",
+      "created": "2026-11-12",
+      "category": "技术",
+      "tags": [
+        "Agent",
+        "AI"
+      ],
+      "source": "知乎",
+      "source_url": "https://zhuanlan.zhihu.com/p/2103331588243248111",
+      "source_type": "link",
+      "platform": "知乎",
+      "summary": "系统梳理多智能体架构的落地设计：单 Agent 的上下文污染与上下文长度两大瓶颈催生多智能体；拆分原则不按角色贴标签，而按上下文边界与信息压缩边界切分，并以\"大模型+小模型\"混合（小模型负责快、大模型负责深）组织协作；对比三种架构——调度者-执行者（Orchestrator-Workers）、任务看板（Team Agent，对应 Claude Code 提出的 Agent team 架构）、Advisor，核心主线是控制权逐步下沉，结论是任务看板架构已成为工业落地的核心架构之一。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/multi-agent-task-board-architecture.md",
+      "wiki_status": "pending"
+    },
+    {
       "id": "2026-11-12-pi-xfer-handoff-network",
       "title": "我给 pi 做了一个交接工具，后来它长成了一张网络",
       "path": "Inbox/2026-11-12-pi-xfer-handoff-network.md",
@@ -55,7 +74,7 @@
       "summary": "作者为 pi agent 开发的开源插件 pi-xfer（xfer = transfer）：解决 Agent 时代的\"上下文卫生\"问题——一个窗口混入多个任务会上下文腐坏，常规解法是压缩，pi-xfer 则走另一条路：让不同阶段的任务交给不同 Agent，像人类同事一样做正式 handoff 交接。插件从本地 unix socket 通讯起步，逐步长成一张多形态接入的 Agent 网络，已开源。",
       "summary_status": "",
       "asset_ref": "Assets/2026/11/pi-xfer-handoff-network.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-11-12-self-teaching-craft-book",
@@ -73,7 +92,7 @@
       "summary": "知乎想法（向云向雾，243 赞同）：推荐开源书《自学是门手艺》（GitHub 17.8K+ Stars）。全书核心只有一句：学不会自个儿学，前头基本没什么指望——话扎耳但细品有理；想把长期学习磨成肌肉记忆，先揣着一点点嚼。",
       "summary_status": "",
       "asset_ref": "Assets/2026/11/self-teaching-craft-book.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",

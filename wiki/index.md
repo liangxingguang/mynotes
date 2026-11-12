@@ -501,6 +501,7 @@
 - [[jad-sc-sm-version-check|jad/sc -d/sm：核实线上跑的是哪版代码]]（版本/来源/签名三层核实+「改了没生效」四原因+五步处置，与 arthas-01 速查互证，单信源方法论，置信度高）
 - [[jmm-happens-before|Java 内存模型与 happens-before]]（JMM 抽象规范≠内存结构；主内存/工作内存副本模型；8 条 hb 规则；volatile 禁重排是 DCL 必须；单信源，置信度中）
 - [[jvm-runtime-memory-areas|JVM 运行时内存区域]]（2026-11-06 更新，Java/JVM/内存，规范五区域（线程私有vs共享：PC唯一不OOM/VM栈栈帧四组件/堆分代Eden→S0/S1→15岁晋升/元空间vs永久代）+分区根因（生命周期/访问方式二分法，解读）+直接内存全景图第六块（非规范数据区，视界说明）+生产实践（-Xms=-Xmx省抖动/容器感知UseContainerSupport）+经典内存分析题+参数速查，两信源口径对账（五区域 vs 六区域），置信度中）
+- [[jvm-memory-evidence-chain-troubleshooting|JVM 内存排查证据链方法论]]（2026-11-12，Java/JVM/排障，GC 日志+JFR+堆转储三件套各答时间/来源/结构、交叉印证成因果链；三种病灶（分配过速/长期持有/堆外增长）与五个量区分；先对齐再分析；采集按影响分级；验证闭环，与证据驱动调优/OOM 排查互补，单信源置信度中）
 - [[live-message-drop-policy|直播消息丢弃策略]]（上行 200 条/s 硬丢弃 + 环形队列柔性丢弃 + 优先级三桶保必达，融云双信源）
 - [[mcast|长连接组播（mcast）]]（groupID 下沉长连接层，1:M×1:N 两级扩散；单实例 25w 连接 8w QPS，聚合+压缩消化峰值，百度一手）
 - [[message-bus|业务消息总线]]（哑管道式配置路由：履约异步分发+topic 治理收拢；与 ESB/Pipeline 的区分，信鸽单一信源）
