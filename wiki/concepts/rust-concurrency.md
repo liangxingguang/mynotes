@@ -4,16 +4,18 @@ type: concept
 title: Rust 并发模型（Send/Sync/async）
 status: active
 created: 2026-11-05
-updated: 2026-11-05
+updated: 2026-11-13
 confidence: high
 tags:
   - concept
   - rust
 sources:
   - raw/sources/misc/2026-11-03-weixin-java-rust-learning-guide.md
+  - raw/sources/architecture/2026-11-13-rust-coroutine-scheduler-mn.md
 related:
   - wiki/concepts/rust-ownership-borrowing.md
   - wiki/topics/java-to-rust-migration.md
+  - wiki/concepts/coroutine-scheduling.md
 ---
 # Rust 并发模型（Send/Sync/async）
 
@@ -34,7 +36,8 @@ Rust 并发编程范式：数据竞争防护由 `Send`/`Sync` 自动 trait 与�
 3. **Channel**：标准库 mpsc 为多生产者、单消费者；克隆发送端创建多生产者；所有发送端丢弃后接收端观察到断开。
 4. **共享状态 Arc<Mutex<T>>**：Arc 提供跨线程共享所有权，Mutex 提供独占内部可变性，锁守卫离开作用域自动解锁；线程持锁 panic 可能使锁进入 poisoned 状态，调用方选择恢复或传播；缩小持锁范围（提取快照后释放锁再做慢 I/O），不持锁执行网络 I/O 或不受控外部调用。
 5. **async/await**：Future 是惰性计算描述，调用 async fn 只产生 Future，需 executor poll 推进；标准库不提供完整异步运行时（定时器/异步 socket/任务调度由生态运行时提供）；阻塞 I/O 不混入异步任务（占用 executor 线程），用专用阻塞线程池或真异步 API；取消安全需设计（锁与连接释放、半写协议消息、重复扣款/写入）；同步 Mutex 守卫跨 `.await` 会阻塞 executor 或产生不可发送 Future。
-6. **Pin 初步**：异步状态机与自引用类型要求值在内存中不再移动，`Pin<P>` 以类型系统表达承诺；日常应用经 Box::pin/运行时 API/宏间接使用，初学不应手写复杂 Pin 投影。
+   - **路线选择动因（第二信源）**：Rust 无 GC、无运行时栈布局信息，有栈协程（stackful）库基本只能用固定大小的栈（栈溢出是最危险的 bug，不 panic 而静默写坏相邻内存，须靠 guard page 兜底）——这是 Rust 做协程相对 Go 的真实劣势。因此 Rust 生态最终选择 async/await **无栈协程**路线：编译器把状态机展开成一个结构体，不需要独立栈，也就没有栈溢出问题；代价是自引用结构（所以要 Pin）以及生态必须重写 IO（不能再直接用 `std::fs`/`std::net`）。
+6. **Pin 初步**：异步状态机与自引用类型要求值在内存中不再移动，`Pin<P>` 以类型系统表达承诺；自引用正是无栈协程状态机的固有形态（第二信源补充的动因）；日常应用经 Box::pin/运行时 API/宏间接使用，初学不应手写复杂 Pin 投影。
 
 ## Structure（结构）
 
@@ -64,17 +67,20 @@ Rust 并发编程范式：数据竞争防护由 `Send`/`Sync` 自动 trait 与�
 ## Evolution（演进）
 
 - 文章未覆盖并发机制的历史演进；async 运行时属生态层，标准库只定义 Future 等基础机制。
+- 第二信源补充 Rust 并发路线的演进动因：有栈协程受固定栈约束（无 GC、无运行时栈布局信息），生态从 stackful 协程转向 async/await 无栈协程（状态机展开为结构体、无独立栈、无栈溢出，代价 Pin + IO 生态重写）。
 
 ## Open Questions（开放问题）
 
-- 文章未比较具体 async 运行时（tokio 等）的选型依据；并发性能无实测数据。
+- 文章未比较具体 async 运行时（tokio 等）的选型依据；第二信源只论证了 async 路线的动因与代价（Pin、IO 生态重写），运行时选型仍未覆盖。
 - 取消安全的具体模式（如 select!、守护任务）文章未展开，属进阶主题。
 
 ## Evidence（证据）
 
 - Source: `raw/sources/misc/2026-11-03-weixin-java-rust-learning-guide.md`（信源第 16、20、21 章）
+- Source: `raw/sources/architecture/2026-11-13-rust-coroutine-scheduler-mn.md`（async/await 无栈协程路线动因与代价、Pin 自引用原因）
 
 ## Related Knowledge（相关知识）
 
 - [[java-to-rust-migration|Java 到 Rust 迁移]]
 - [[java-rust-learning-guide|Java工程师的Rust语言学习指南]]
+- [[coroutine-scheduling|协程调度（M:N）]]（有栈协程 vs 本页 async 无栈协程路线对照）

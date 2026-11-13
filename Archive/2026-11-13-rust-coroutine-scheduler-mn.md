@@ -10,7 +10,7 @@ category: 技术
 tags:
   - rust
 asset_ref: Assets/2026/11/rust-coroutine-scheduler-mn.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 用 Rust 从零实现协程调度器：M:N 用户态线程是怎么跑的

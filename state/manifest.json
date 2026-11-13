@@ -5029,6 +5029,19 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/IsubIhXkbziCqkFJhg2NSw",
       "asset_ref": "Assets/2026/11/springboot-doris-stream-load.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-13-rust-coroutine-scheduler-mn.md",
+      "sha256": "38bca68872ef5eeb8feb03ac286a789f98b782884e0d9d56098f9da588495d4d",
+      "registered_at": "2026-11-13",
+      "inbox_ref": "Archive/2026-11-13-rust-coroutine-scheduler-mn.md",
+      "pages": [
+        "wiki/sources/2026-11-13-rust-coroutine-scheduler-mn.md",
+        "wiki/concepts/coroutine-scheduling.md",
+        "wiki/concepts/rust-concurrency.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/KRAtC_fuYOoWofnb_xLEaQ",
+      "asset_ref": "Assets/2026/11/rust-coroutine-scheduler-mn.md"
     }
   ]
 }
