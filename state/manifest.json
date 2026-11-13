@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-11-12",
+  "updated_at": "2026-11-13",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -5017,6 +5017,18 @@
       ],
       "source_url": "https://zhuanlan.zhihu.com/p/2076694617697805752",
       "asset_ref": "Assets/2026/11/rocketmq-litetopic-session-level-mq.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-13-springboot-doris-stream-load.md",
+      "sha256": "20c39145f49807c230dd461addec33384d7101292f869141dba6fca0c69f4c29",
+      "registered_at": "2026-11-13",
+      "inbox_ref": "Archive/2026-11-13-springboot-doris-stream-load.md",
+      "pages": [
+        "wiki/sources/springboot-doris-stream-load.md",
+        "wiki/concepts/stream-load.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/IsubIhXkbziCqkFJhg2NSw",
+      "asset_ref": "Assets/2026/11/springboot-doris-stream-load.md"
     }
   ]
 }

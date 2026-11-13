@@ -9,7 +9,7 @@ created: 2026-11-13
 category: 技术
 tags: [java]
 asset_ref: Assets/2026/11/springboot-doris-stream-load.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # SpringBoot+Doris Stream Load 海量数据实时更新方案

@@ -4,7 +4,7 @@ type: source
 title: 100 亿条数据如何快速写入 MySQL？从 231 天到 3.5 小时
 status: active
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-13
 confidence: high
 tags:
   - source
@@ -85,6 +85,7 @@ related:
 - [[idempotency-design|幂等设计（概念页）]]（收尾幂等键+UPSERT）
 - [[durable-execution|持久执行（概念页）]]（水位表=checkpoint 实例）
 - [[hot-cold-data-separation|冷热分离（概念页）]]（MySQL 只留热数据）
+- [[stream-load|Stream Load（Doris HTTP 批量导入）]]（概念页，Doris 侧 HTTP 批量导入通道，与本文"攒批+并行"思路同源）
 
 ## Source（信源）
 

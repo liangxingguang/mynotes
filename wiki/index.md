@@ -399,6 +399,7 @@
 - [[2026-11-12-jvm-reference-counting-reachability|JVM 如何判断对象该不该回收：引用计数法与可达性分析算法]]（2026-11-12，Java/JVM/GC 理论，引用计数法原理与循环引用缺陷+可达性分析与 GC Roots 四类来源（含"常量引用是 GC Roots"说法纠偏）+finalize() 两次标记与对象复活（仅一次）+JDK 终结机制版本演进（9 弃用/18 待移除/25 允许禁用）+四种引用（强/软/弱/虚），知乎单信源，置信度高）
 - [[2026-11-12-multi-agent-task-board-architecture|多 Agent 架构—任务看板（Team Agent）架构]]（2026-11-12，AI/多 Agent/架构，单 Agent 瓶颈（上下文污染+上下文长度）+拆分原则（上下文边界而非职业标签）+大模型小模型混合+三种架构（Orchestrator-Workers/任务看板/Advisor）+任务看板字段与状态机完整定义+双 Master 架构（Planner 只拆解+Scheduler 只调度巡检）+LangGraph 实现，知乎单信源，置信度高）
 - [[rocketmq-litetopic-session-level-mq|AI Agent 基础设施的新范式：如何将消息队列从"Topic 级"下沉到"Session 级"？]]（2026-11-12，AI/Agent/MQ/基础设施，AI 三项新约束（拓扑/时长/成本）与传统事件驱动三处不适配+LiteTopic 两层模型（Parent Topic/LiteTopic）+RocksDB KV 索引与 Ready Set 投递+Qoder Cloud Agents/百炼网关双生产案例+合入 master 与 RocketMQ-A2A 论文 FSE 2026，知乎单信源，置信度高）
+- [[springboot-doris-stream-load|SpringBoot+Doris Stream Load 海量数据实时更新方案]]（2026-11-13，Java/Doris/批量导入，@DorisField 注解字段映射+分批并行推送+指数退避重试+LoadResponse 结果监控，宣称较 JDBC 批量更新提升 20-50 倍，正文自 Assets 采集稿逐字收录，微信单信源置信度中）
 
 ## concept（概念）
 
@@ -642,6 +643,7 @@
 - [[true-vs-pseudo-framework|真框架与伪框架]]（2026-11-12，概念/框架文化，真框架=最小心智负担击穿物理复杂度（Spring Boot/Koa/Vue/Prisma）vs 伪框架=人为制造复杂（领域驱动/六边形/全家桶）；成因"程序员的傲慢"（时代红利误认个人卓越、中世纪教会类比）；伪框架生命周期随创始者离开终结；AI 时代借尸还魂（DSH 150+ 子包 vs Claude Code 克制），知乎单信源，置信度中）
 - [[accidental-vs-essential-complexity|偶发复杂度与根本复杂度]]（2026-11-12，概念/软件工程，《人月神话》二分法：偶发=技术摩擦（繁琐 API/构建/样板）、根本=问题内生（状态机/并发/数据自洽）；大模型可粉碎偶发不可抹平根本；AI 时代工程师三姿态（规格类型当锚点/精力收敛于根本问题/审阅每处 Git Diff），知乎单信源，置信度中）
 - [[agent-handoff|Agent 交接（Handoff）]]（2026-11-12，概念/多 Agent 协作，正式交接机制：header（target/kind/summary）+正文落盘 `$TMPDIR`+按需加载+反向回执；与压缩（澄清池子）相对的"不造池子"路径，解决上下文腐坏，知乎单信源，置信度中）
+- [[stream-load|Stream Load（Doris HTTP 批量导入）]]（2026-11-13，Doris/批量导入/HTTP，PUT /api/{db}/{table}/_stream_load+Basic 认证，JSON/CSV/GZIP，LoadResponse 各阶段耗时监控，应用侧流水线字段映射→分批→并行→退避重试，与 MySQL 大批量导入同源思路，单信源置信度中）
 
 ## entity（实体）
 
