@@ -9,9 +9,7 @@ created: 2026-11-20
 category: 技术
 tags: [AI, Agent]
 asset_ref: Assets/2026-11/wechat-vlZKqsuG5ECeX1_0GoKW1A.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-20T10:58:49.393Z"
-ingest_claim_id: 28108-1795172329393-0
+wiki_status: ingested
 ---
 
 > **摘要**：按 star 排序的 30 个 Agent Skills 清单（2026-11-03 实测），每条一句"替你省什么"加开源地址。头部三名断层领先：Superpowers（31.1 万，TDD 七步方法论）、Matt Pocock Skills（31 万，grill-me/tdd/code-review 日常提效）、ECC（29.6 万，71 agents+314 skills 工程基建）。覆盖代码开发、文档办公、设计多媒体、效率工具、数据五组，Skills 生态已从"有没有"进入"装哪个"。

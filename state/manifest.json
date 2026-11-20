@@ -5127,6 +5127,19 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/JLnvspihR2iJg1deRUm-dQ",
       "asset_ref": "Assets/2026-11/wechat-JLnvspihR2iJg1deRUm-dQ.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-agent-skills-top30.md",
+      "sha256": "5f31412c7f5505e5c024ceca3a45d0b9c64103542fa7245c591b1156ccf67591",
+      "registered_at": "2026-11-20",
+      "inbox_ref": "Archive/2026-11-20-agent-skills-top30.md",
+      "pages": [
+        "wiki/sources/2026-11-20-weixin-agent-skills-top30.md",
+        "wiki/topics/github-open-agent-tools.md",
+        "wiki/concepts/claude-skills.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/vlZKqsuG5ECeX1_0GoKW1A",
+      "asset_ref": "Assets/2026-11/wechat-vlZKqsuG5ECeX1_0GoKW1A.md"
     }
   ]
 }
