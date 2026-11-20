@@ -18,6 +18,7 @@ sources:
   - raw/sources/ai/2026-10-14-pi-setup-mcp-codemode-guide.md
   - raw/sources/ai/2026-10-28-agent-permission-model-design.md
   - raw/sources/ai/2026-11-12-ai-agent-tech-overview.md
+  - raw/sources/ai/2026-11-20-agent-sandbox-mcp-k8s.md
 related:
   - wiki/concepts/a2a-protocol.md
   - wiki/comparisons/a2a-vs-mcp.md
@@ -25,6 +26,8 @@ related:
   - wiki/entities/pi.md
   - wiki/concepts/codemode.md
   - wiki/concepts/agent-permission-model.md
+  - wiki/concepts/agent-sandboxing.md
+  - wiki/sources/2026-11-20-agent-sandbox-mcp-k8s.md
 ---
 # MCP
 
@@ -42,6 +45,7 @@ MCP 把"LLM 调用外部工具、数据库、文件、API"的方式协议化，�
 2. **核心能力**：工具发现、上下文注入、数据读取。
 3. **通信主体**：LLM → 工具、数据库、文件、API。
 4. **典型场景**：调搜索、读文件、查数据库。
+5. **协议边界**：MCP 是交互协议，**不是沙箱或授权系统**。部署前须先明确工作负载属于哪种模型——**远程 MCP Server**（SaaS/内部服务/第三方集成：注册审核、服务端身份、地址/版本/schema 钉扎、逐次授权、出站代理）与**沙箱内 runner**（用户脚本/动态代码：一次性 Pod、最小能力、双向网络、资源限额、执行后销毁）是两个不同的安全边界，协议本身不提供其中任何一类。
 
 ## Structure（结构）
 
@@ -81,11 +85,13 @@ MCP server 启动后暴露工具列表，客户端（Agent 框架）连接后自
 - 2026-10：Pi 0.99.1 实测为 MCP 的上下文成本提供定量个案（GLM-5.3，3 个 MCP 共 11 工具）：工具说明固定开销 direct 12,878 → codemode 6,956 → deferred 1,780 token；但单次任务收益取决于 MCP 返回格式是否结构化（brave 非结构化 JSON 文本致模型试错，GPT-5.5 反多 63%）——MCP 服务端返回格式设计直接影响 Agent 侧成本。
 - 2026-10-30：[[agent-permission-model|Agent 权限模型]]信源确认「MCP 协议标准没有内置复杂权限，要在接入层补齐」，并给出两种落地：MCP 网关统一收口（校验签名 claim/授权记录/租户隔离/限流/审计，原生服务零改动，生产首选）vs 服务内置鉴权中间件（适合少量自建工具）；明确不推荐静态 Token（无法绑定 session/指令细粒度回收）。部分回答了下方工具级权限分级的开放问题。
 - 2026-11-12 — 新增 vivo《AI Agent 技术全景解析》信源。补上**三种连接方式**（STDIO/SSE/Streamable HTTP）对比表、MCP server 的"服务注册与发现"机制与微服务类比，回应此前"规范细节未确立"的开放问题（传输方式部分）。
+- 2026-11-20 — 平台级沙箱信源（第 8 信源）确立**部署模型边界**：MCP 是交互协议、不是沙箱或授权系统；远程 MCP Server 与沙箱内 runner 是两类不同的安全边界，各自控制点不同；同时补上网关逐次授权与能力票据的落地视角（详见 [[agent-permission-model]]）。MCP Tasks 扩展仍为 Draft（规范版本 2026-07-28），未协商能力时不能把 `202 Accepted + task_id` 伪装成通用 `tools/call` 响应。
 
 ## Open Questions（开放问题）
 
-- MCP 的规范细节与 Server/Client 模型的完整定义：连接方式已有信源补充（STDIO/SSE/Streamable HTTP 三模式），但 Server/Client 模型的完整规范仍需专门信源补充。
-- 工具级权限分级在 MCP 生态中的通行做法：已有「协议不管、接入层网关补齐」的设计方案证据（2026-10-30），但缺乏多家实现的横向实证。
+- MCP 的规范细节与 Server/Client 模型的完整定义：连接方式已有信源补充（STDIO/SSE/Streamable HTTP 三模式），但 Server/Client 模型的完整规范仍需专门信源补充；MCP Tasks 扩展仍为 Draft，须固定规范版本并在 SDK 升级前做兼容性与安全回归。
+- 工具级权限分级在 MCP 生态中的通行做法：已有「协议不管、接入层网关补齐」的设计方案证据（2026-10-30、2026-11-20），但缺乏多家实现的横向实证。
+- 远程 MCP Server 与沙箱内 runner 的边界划分：部署模型边界已由 2026-11-20 信源确立，但两类模型在真实平台的占比与演进路径当前信源未确立。
 
 ## Evidence（证据）
 
@@ -96,9 +102,12 @@ MCP server 启动后暴露工具列表，客户端（Agent 框架）连接后自
 - Source: `raw/sources/ai/2026-10-14-pi-setup-mcp-codemode-guide.md`
 - Source: `raw/sources/ai/2026-10-28-agent-permission-model-design.md`
 - Source: `raw/sources/ai/2026-11-12-ai-agent-tech-overview.md`（三种连接方式表、服务注册与发现机制、微服务类比）
+- Source: `raw/sources/ai/2026-11-20-agent-sandbox-mcp-k8s.md`（第 8 信源：部署模型边界——远程 MCP Server 与沙箱内 runner 两类安全边界；MCP 是交互协议而非沙箱/授权系统；MCP Tasks 扩展 Draft）
 
 ## Related Knowledge（相关知识）
 
 - [[a2a-vs-mcp|A2A vs MCP]]
 - [[a2a-multi-agent-langgraph|A2A 实战：从零搭建工业级多 Agent 协作系统]]
 - [[arthas-mcp-ai-troubleshooting|让 AI 调 Arthas，Java 排障会快多少？（信源页）]]
+- [[2026-11-20-agent-sandbox-mcp-k8s|生产级 AI Agent 执行沙箱实战（信源页）]]
+- [[agent-sandboxing|Agent 沙箱隔离]]

@@ -14,6 +14,7 @@ sources:
   - raw/sources/ai/2026-10-28-agent-permission-model-design.md
   - raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md
   - raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md
+  - raw/sources/ai/2026-11-20-agent-sandbox-mcp-k8s.md
 related:
   - wiki/concepts/mcp.md
   - wiki/concepts/a2a-protocol.md
@@ -22,6 +23,7 @@ related:
   - wiki/concepts/rbac-permission-system.md
   - wiki/sources/kiso-minimal-agent-framework.md
   - wiki/sources/llm-integration-engineering-hard-parts.md
+  - wiki/sources/2026-11-20-agent-sandbox-mcp-k8s.md
   - wiki/entities/kiso.md
 ---
 # Agent 权限模型（平台授权与本地运行）
@@ -41,12 +43,16 @@ related:
 3. **前置拦截**：权限拦截器放在 LLM 输出 tool_call 之后、发起 MCP 请求之前——直接不允许模型选择未授权工具，避免模型生成越权调用浪费 token。
 4. **凭证签名**：ToolPermissionClaim 携带 tenantId/sessionId/instructionId/agentCode/toolCode/grantId + claimSign，防篡改，序列化后传 MCP 网关。
 5. **读写分离**：只读工具自动授权（grantSource=AUTO），变更类工具强制人工审批（MANUAL）。
+6. **网关授权入口与不可变执行意图**（第 4 信源）：网关是唯一将不可信协议输入转换为可信执行意图的位置——验证令牌签名、`iss`、`aud`、时效和算法约束；限制请求体；按注册表校验工具版本与 JSON schema；拒绝未知字段；再将规范化结果交给策略引擎。策略决策的输入序列化、摘要并随执行记录保存，执行器只认这份规范化载荷，堵住"策略检查 A、实际执行 B"的 TOCTOU。
+7. **能力票据（权限按次绑定）**（第 4 信源）：每次执行签发短效 JWT 票据（`jti`/`sub`/`aud`/`execution_id`/`tenant`/`tool_digest`/`actions`/`scope`/`nbf`/`exp`），由控制面签名，数据/出口代理验证签名、受众、期限、一次性与范围；权限不随进程、镜像或平台服务账号长期存在，即使 runner 被完全控制，攻击者也只剩短时间、单租户、单工具、单范围的能力。数据服务是最终授权点，网关的 allow 决策不能替代数据库或业务服务权限。
 
 ## How It Works（运作方式）
 
 九步校验链路：建 Session/Instruction 定 agentCode → 读 AgentPolicy 基线 → 按指令内容自动裁剪生成 InstructionGrant（拿不准进人工审批）→ LLM 输出 tool_call 后框架侧先过滤（不在 grant 清单直接拦）→ 放行请求组装 ToolPermissionClaim 并签名 → MCP 网关验签 + 二次核对 grant → MCP 服务内做数据行级权限 → 结果返回并写审计日志（绑定 ToolCallRecord）→ Instruction 完成自动撤销 grant（REVOKED + expireAt 兜底）。
 
 A2A 委派：主管下发子 Instruction 时生成子 InstructionGrant，只能是主管当前 grant 的子集；主管可随时撤销，防止权限沿委派链放大。
+
+**网关到执行的链路**（第 4 信源）：网关验证身份并生成不可变执行意图 → 策略引擎判定（Rego 只判主体/工具/范围，不做 SQL 过滤，AST 解析不能替代数据库权限）→ 调度器发放一次性载荷与能力票据 → runner 凭票据向数据/出口代理发起受限请求（代理再次验证票据绑定、`execution_id` 未撤销、租户/操作/范围未扩大、`jti` 一次性与速率）→ 结果回传写入审计。生产代码还须处理身份验证失败、策略超时、策略版本回滚、审计投递失败的 fail-closed 行为；网关自身的 K8s 或数据库管理员凭据不得转发给工具，高价值写操作不应让 runner 持有下游秘密，由代理继续执行细粒度审批与幂等控制。
 
 本地运行模式维度（Kiso 信源，第 2 信源）：单用户 CLI 场景的权限面与平台授权不同，核心是"运行时能做什么 + 什么必须人批 + 无人值守怎么办"。五种运行模式：`default`（能证明只读的直接放行、副作用进审批）/ `accept-edits`（常规文件修改放行、Shell 等开放副作用仍校验）/ `plan`（纯只读，写入与副作用直接拒绝）/ `dontAsk`（无人值守：所有需人确认的操作直接 deny，模型只能在现有权限内另找路径，不允许任务挂在无人回答的确认框上——是 deny 语义而非 bypass 语义）/ `bypass`（尽量放行正常操作；但凭据与灾难性路径操作仍有底层保护，"放权是运行策略，灾难底线不是可关的 UI 选项"）。Shell 层采用"只有能够证明只读，才自动放行"：read-only-shell 解析命令，存在反引号、`$()`、subshell、后台执行等无法安全证明只读的结构直接 abstain；管道/分号组成的多命令每段分别满足只读条件；访问 `.env`/凭据路径仍进权限链；`git -c` 这类表面是 Git 命令、实际借配置触发外部程序的形式不视为只读——**Unknown 不等于 Safe**（解析器不知道就是不知道，不能默认安全）。环境变量清洗（工具叫 `shell` 而非 `bash`：系统 Shell 执行、工作目录绑定 Workspace、子进程 env 清洗，API Key/Token 不因 `env`/`printenv` 泄漏进 Context）。执行者与裁判者分离的延伸：子 Agent 可被限制修改路径、高风险能力不提供，且父 Session 持独立 acceptance check——子 Agent 自报"完成"不算完成。
 
@@ -69,18 +75,21 @@ A2A 委派：主管下发子 Instruction 时生成子 InstructionGrant，只能�
 - 2026-10-30 — 由信源 `raw/sources/ai/2026-10-28-agent-permission-model-design.md`（Agent架构设计15）建立。
 - 2026-10-31 — Kiso 信源（第 2 信源）补上本地运行时维度：五种 CLI 运行模式（含 `dontAsk` 的 deny 语义——无人值守不是"什么都允许"，而是"需人确认的都拒绝"，任务不挂在无人回答的确认框上）、只读证明式命令放行（Unknown≠Safe）、子 Agent 权限受限 + 父会话独立验收。与平台四层防线互补可组合（平台层管授权收窄、本地层管执行证明），页面标题由「四层防线」扩展为「平台授权与本地运行」。
 - 2026-11-01 — 面试深挖 84（第 3 信源）补上**凭证归属与校验位置**视角：工具调用产生的执行凭证是「发起方用户」的权限，不是模型/代理自身的；校验发生在**调用方这一侧**（工具提供方执行时校验），模型只是参数生成者——即使提示词注入伪造指令，也只能生成无权请求。只读工具同样过权限过滤（工具端有自己的授权链，不是免检通道）。与本页四层防线"MCP 网关二次鉴权兜底"同构：校验权在工具侧，不在模型侧；权限模型管"能调什么"，凭证归属管"以谁的身份调"。
+- 2026-11-20 — 平台级沙箱信源（第 4 信源）补上**网关授权入口与能力票据**视角：授权由可信控制面决定（模型、HTTP 头、工具参数只能提供待比对数据，租户取可信会话而非模型参数）、权限按本次执行绑定（短效能力票据，代理验证签名/期限/一次性/范围）、数据服务是最终授权点；Rego 职责边界明确为只判主体/工具/范围、不过滤 SQL，AST 不能替代数据库权限。与本页"MCP 网关二次鉴权兜底"互为印证并补上票据机制细节。
 
 ## Open Questions（开放问题）
 
 - 该模型的生产实证（性能开销、审批吞吐、误拦率）：当前信源为设计稿，无实现与数据。
 - 行级数据权限与四层防线的组合细节：信源仅一句带过。
 - 只读证明式命令解析的漏报率（abstain 误判/放行误判）未见第三方实测；`dontAsk` 模式下模型"在现有权限内另找路径"是否系统性降级任务成功率：未覆盖。
+- 能力票据（短效 JWT 按次签发）的签发开销与代理校验漏验率：当前信源为设计基线，无实现与压测数据。
 
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-10-28-agent-permission-model-design.md`
 - Source: `raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md`（第 2 信源：五种运行模式、只读证明式放行、环境变量清洗、执行者与裁判者分离）
 - Source: `raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md`（第 3 信源：执行凭证归属发起方用户、校验在调用方侧、模型只是参数生成者、只读也过权限过滤）
+- Source: `raw/sources/ai/2026-11-20-agent-sandbox-mcp-k8s.md`（第 4 信源：网关授权入口与不可变执行意图、能力票据按次绑定、Rego 职责边界、数据服务是最终授权点）
 
 ## Related Knowledge（相关知识）
 
@@ -89,3 +98,5 @@ A2A 委派：主管下发子 Instruction 时生成子 InstructionGrant，只能�
 - [[kiso|Kiso]]
 - [[durable-execution|持久执行（Durable Execution）]]
 - [[llm-integration-engineering-hard-parts|大模型接进业务系统：工程难点在哪（信源页）]]
+- [[2026-11-20-agent-sandbox-mcp-k8s|生产级 AI Agent 执行沙箱实战（信源页）]]
+- [[agent-sandboxing|Agent 沙箱隔离]]

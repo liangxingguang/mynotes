@@ -9,7 +9,7 @@ created: 2026-11-20
 category: 技术
 tags: [AI, Agent]
 asset_ref: Assets/2026-11/wechat-aIdeQfNmqi2HiVJr4OSsDA.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 > **摘要**：以"订单报告"工具为贯穿案例，给出 AI Agent 执行沙箱的完整工程闭环：MCP 网关授权、能力票据、一次性 K8s Pod 隔离、双向网络默认拒绝、调度账本与故障演练。核心主张是各信任边界（模型→工具→数据→沙箱→网络）各自验证，任一层失误都不能升级为跨租户读取、凭据外传或集群故障。

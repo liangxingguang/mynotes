@@ -405,6 +405,7 @@
 - [[2026-11-20-weibo-github-open-skills|微博盘点：5 个实用的 GitHub 开源 Skill/Agent 工具]]（2026-11-20，微博/Agent 工具盘点，5 个开源 Skill/Agent 工具：ffmpeg-skill 本地视频剪辑（42 工具+MCP 无云端）/univer 可嵌入 Office SDK（编辑计算协作文件处理，人与 AI 双受众）/firecrawl agent 爬虫基础设施（号称 550+ 数据源未核验）/CLI-Anything 任意软件转 CLI（CLI-Hub 统一入口）/minimind 从零训练 64M 小模型教程（两小时跑通），微博单信源，置信度中）
 - [[2026-11-20-weibo-openmotion-ai-video-platform|微博：OpenMotion——开源 AI 视频创作与剪辑平台]]（2026-11-20，微博/GitHub README，Claude Motion + CapCut 开源替代：BYOA 22 款 Agent + BYOK 多模态网关 + 300+ Motion.md 指南 + Video as Code 全栈，正文自 Assets 采集稿逐字收录，README 自述单信源，置信度中）
 - [[2026-11-20-weibo-tufazip-transformer-compression|微博：tufazip——用 Transformer 实现的无损压缩算法]]（2026-11-20，微博/作者长文，LTCB 第 2（2026-09-07 提交时），enwik9 10 亿字节 → 105.39 MB，免权重传输在线学习 + C2 离线迁移净省 0.59 MB，正文自 Assets 采集稿逐字收录，作者一手单信源，置信度高）
+- [[2026-11-20-agent-sandbox-mcp-k8s|生产级 AI Agent 执行沙箱实战：从 MCP 授权到 Kubernetes 隔离的工程闭环]]（2026-11-20，AI/Agent 安全/K8s，六层信任边界+六原则+能力票据+K8s 隔离基线+双向网络默认拒绝+CAS 调度账本+验收演练，微信单信源，置信度中）
 
 ## concept（概念）
 
@@ -418,8 +419,8 @@
 - [[agent-legacy-system-integration|Agent 对接旧系统（Legacy System Integration）]]（盘点九字段+四类对接模式（API/只读+事件表/RPA/网关）选型五维度+字段映射四件套+灰度先只读后写+中间表人工确认安全边界+连锁零售旧CRM工单Agent案例，单信源置信度中）
 - [[agent-management-methodology|智能体管理方法论（WBS·交付约定·Scrum Sprint 三工具闭环）]]（瓶颈在人的管理能力而非模型能力；拆到能独立验收为止+人机分工准则+交付约定六维度+验收准则打勾表+每轮只改 1–2 条规则变量唯一，单信源置信度中）
 - [[agent-prd-template|Agent 化 PRD 模板]]（2026-11-04，产品/B端/PRD/多智能体，传统PRD写页面字段流程之外新增五模块（Agent能力卡片/协作时序/护栏机制/评测集/指标），与五步法一一对应，单信源置信度中）
-- [[agent-permission-model|Agent 权限模型（平台授权与本地运行）]]（权限=静态基线+指令临时授权+动态校验；租户划边界/Agent 定上限/指令收范围/MCP 网关兜底；凭证归属发起方用户+校验在调用方侧；本地 CLI 五模式+只读证明式放行 Unknown≠Safe；A2A 委派子授权⊆父授权；三信源，置信度中）
-- [[agent-sandboxing|Agent 沙箱隔离]]（能力限制而非行为审查；四条路径收窄可达面；脚本级/命令级/工具级/整体隔离）
+- [[agent-permission-model|Agent 权限模型（平台授权与本地运行）]]（权限=静态基线+指令临时授权+动态校验；租户划边界/Agent 定上限/指令收范围/MCP 网关兜底；凭证归属发起方用户+校验在调用方侧；网关不可变执行意图+能力票据按次绑定；本地 CLI 五模式+只读证明式放行 Unknown≠Safe；A2A 委派子授权⊆父授权；四信源，置信度中）
+- [[agent-sandboxing|Agent 沙箱隔离]]（能力限制而非行为审查；四条路径收窄可达面；脚本级/命令级/工具级/整体隔离 + 平台级 K8s 隔离基线/双向网络默认拒绝/CAS 一次性调度账本；双信源，置信度中）
 - [[agent-state-separation|Agent 状态分离（执行状态/操作状态/产物核验）]]（三态分离+多身份+恢复决策顺序+停止非回滚，Codex Harness 实践，单信源置信度中）
 - [[approval-workflow-engine|审批流引擎（含 AI 改造层）]]（六类节点+处理人规则六种+条件分支五要素+边界值卡单教训+十项验收清单；AI 改造层叠加智能填单/风险识别/自动审批/异常预警+三级风险阈值+六步SOP，合并同专辑第 8+15 篇双信源，置信度中）
 - [[aqs-internals|AQS（AbstractQueuedSynchronizer）核心机制]]（volatile state + CLH 变体 FIFO 队列 + acquire/release 模板方法；JUC 锁体系基座，单信源）
@@ -511,7 +512,7 @@
 - [[llm-call-protocol|OpenAI 兼容 Chat Completions 调用协议]]（messages 四角色+tool_call_id 配对+finish_reason 续轮判据+SDK 默认 timeout 10min/重试 2；单信源）
 - [[local-message-table|本地消息表（Local Message Table）]]（同事务原子性+重试可靠性+至少一次投递+状态机流转+选型边界+6 条红线；MQ 非发件箱必选项、消费者仍要幂等，四信源互证）
 - [[log4j2-async-logging-thread-blocking|Log4j2 异步日志线程阻塞]]（日志事件入队前触发类加载导致业务线程 Block；三阶段模型+ThrowableProxy 根因+避坑方案，单信源一手，置信度高）
-- [[mcp|MCP]]（LLM↔工具/数据纵向协议，Anthropic 2024）
+- [[mcp|MCP]]（LLM↔工具/数据纵向协议，Anthropic 2024；交互协议非沙箱/授权系统，远程 Server 与沙箱内 runner 两类部署边界，八信源）
 - [[jad-sc-sm-version-check|jad/sc -d/sm：核实线上跑的是哪版代码]]（版本/来源/签名三层核实+「改了没生效」四原因+五步处置，与 arthas-01 速查互证，单信源方法论，置信度高）
 - [[jmm-happens-before|Java 内存模型与 happens-before]]（JMM 抽象规范≠内存结构；主内存/工作内存副本模型；8 条 hb 规则；volatile 禁重排是 DCL 必须；单信源，置信度中）
 - [[jvm-runtime-memory-areas|JVM 运行时内存区域]]（2026-11-06 更新，Java/JVM/内存，规范五区域（线程私有vs共享：PC唯一不OOM/VM栈栈帧四组件/堆分代Eden→S0/S1→15岁晋升/元空间vs永久代）+分区根因（生命周期/访问方式二分法，解读）+直接内存全景图第六块（非规范数据区，视界说明）+生产实践（-Xms=-Xmx省抖动/容器感知UseContainerSupport）+经典内存分析题+参数速查，两信源口径对账（五区域 vs 六区域），置信度中）
