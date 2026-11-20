@@ -9,9 +9,7 @@ created: 2026-11-20
 category: 技术
 tags: [AI, Agent]
 asset_ref: Assets/2026-11/wechat-k2LwwM4-u0OnPKvQqwlAWw.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-20T11:30:16.568Z"
-ingest_claim_id: 38468-1795174216568-0
+wiki_status: ingested
 ---
 
 > **摘要**：腾讯云开发者文章（作者吴思）：AI 让代码生成提速后，验收成为需求交付新瓶颈——接口返回 200 只说明调通一次，需求逻辑、边界条件、老数据兼容、异步任务、日志与 DB 状态仍需验证。作者团队在自建 OPT 平台（基于 CodeBuddy 等 CLI 的多 Agent 协同研发平台）的需求交付小队中补上"后端验收 Agent"，核心是 api-acceptance Skill，五阶段流程：变更接口分析（从 git diff 反推验收范围）→ 编译发布与接口验证（确认"能否验"，环境优先隔离环境）→ Gherkin 测试（Given-When-When 拆场景，人工确认后才真实执行）→ TAPD 预测试（补充用例来源）→ 验收结果输出（L1-L4 多层证据链，拒绝"code=0 即通过"）。异常分硬阻塞/软失败：能验证的尽量验证，不能验证的诚实标注。已运行 160+ 次，覆盖 30+ 需求，单次人工投入从约 2 小时降至 20 分钟（-80%+）。

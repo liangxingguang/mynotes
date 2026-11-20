@@ -406,12 +406,14 @@
 - [[2026-11-20-weibo-github-open-skills|微博盘点：5 个实用的 GitHub 开源 Skill/Agent 工具]]（2026-11-20，微博/Agent 工具盘点，5 个开源 Skill/Agent 工具：ffmpeg-skill 本地视频剪辑（42 工具+MCP 无云端）/univer 可嵌入 Office SDK（编辑计算协作文件处理，人与 AI 双受众）/firecrawl agent 爬虫基础设施（号称 550+ 数据源未核验）/CLI-Anything 任意软件转 CLI（CLI-Hub 统一入口）/minimind 从零训练 64M 小模型教程（两小时跑通），微博单信源，置信度中）
 - [[2026-11-20-weibo-openmotion-ai-video-platform|微博：OpenMotion——开源 AI 视频创作与剪辑平台]]（2026-11-20，微博/GitHub README，Claude Motion + CapCut 开源替代：BYOA 22 款 Agent + BYOK 多模态网关 + 300+ Motion.md 指南 + Video as Code 全栈，正文自 Assets 采集稿逐字收录，README 自述单信源，置信度中）
 - [[2026-11-20-weibo-tufazip-transformer-compression|微博：tufazip——用 Transformer 实现的无损压缩算法]]（2026-11-20，微博/作者长文，LTCB 第 2（2026-09-07 提交时），enwik9 10 亿字节 → 105.39 MB，免权重传输在线学习 + C2 离线迁移净省 0.59 MB，正文自 Assets 采集稿逐字收录，作者一手单信源，置信度高）
+- [[2026-11-20-acceptance-agent-opt|AI 10分钟写完代码，你2小时还在验？用验收Agent补上最后一公里]]（2026-11-20，AI/Agent/代码验收，腾讯云开发者·吴思：OPT 平台后端验收 Agent，五阶段流程+L1-L4 证据链+硬阻塞/软失败，微信单信源，置信度中）
 - [[2026-11-20-agent-sandbox-mcp-k8s|生产级 AI Agent 执行沙箱实战：从 MCP 授权到 Kubernetes 隔离的工程闭环]]（2026-11-20，AI/Agent 安全/K8s，六层信任边界+六原则+能力票据+K8s 隔离基线+双向网络默认拒绝+CAS 调度账本+验收演练，微信单信源，置信度中）
 - [[2026-11-20-weixin-agent-skills-top30|微信公众号：按 star 排序的 30 个 Agent Skills 挑选清单]]（2026-11-20，微信/GitHub/Agent Skills，头部三名 star 311k/310k/296k（2026-11-03 实测）+五组 30 项挑选+安装三法，作者未全装、star 未独立核验，单信源置信度中）
 
 ## concept（概念）
 
 - [[a2a-protocol|A2A 协议]]（Agent↔Agent 横向协作协议，Google 2025）
+- [[acceptance-agent|验收 Agent（AI 生成代码的验收）]]（编码之后真实调接口+多层证据链验收：五阶段流程、硬阻塞/软失败、Gherkin 人工确认、L1-L4 证据、人机协同，OPT 平台实践单信源，置信度中）
 - [[aima-agent-taxonomy|AIMA Agent 分类]]（简单反射/基于模型/基于目标/基于效用/学习五类 + 环境四属性；经典理论单信源）
 - [[agent-evaluation|业务 Agent 全生命周期评测]]（规则+LLM 裁判+人工复核，覆盖准入/门禁/压测/巡检；验收从正确性变成分布、单次对比不作数、回归集标注期望行为；记忆评测五指标（检索质量/任务效果/记忆准确性/运行成本/安全权限）；货拉拉+叶小钗+Codex+面试深挖 84+记忆系统，五信源）
 - [[agent-as-memory|Agent as Memory（主 Agent 承担记忆职责）]]（主 Agent 协调子 Session 承担项目进展记忆；用户单点对接；长期记忆 Markdown 文件化+短期记忆主 Agent 化；单信源，置信度中）
@@ -438,7 +440,7 @@
 - [[ai-assisted-troubleshooting-workflow|AI 辅助排障工作流]]（贴文本模式四环节：现象选命令/读栈/写表达式/结论分叉；三件不交给 AI；脱敏前提；它翻译你判断，双信源）
 - [[ai-coding-evidence-boundary|证据边界驱动的 AI Coding]]（2026-11-05，AI/AI Coding/证据，美团分布式存储实践：三类任务分别定边界（评审按证据四档输出/Debug 假设生成器+候选集合+七类命名/自动化先定目标与验收）+证据四层互补+可证伪与红绿闭环+变绿≠解决+分层授权，与 [[ai-assisted-troubleshooting-workflow]] 和 [[evidence-first-jvm-tuning]] 互证，单信源置信度中）
 - [[ai-native-organization|AI 原生研发组织]]（工具原生→工作流原生→组织原生）
-- [[ai-native-sdlc|AI 原生 SDLC]]（制品提交链驱动的闭环，Anthropic 2026；人守闸门/三层控制模型；货拉拉千人落地+孔明八阶段工作流实例，四信源）
+- [[ai-native-sdlc|AI 原生 SDLC]]（制品提交链驱动的闭环，Anthropic 2026；人守闸门/三层控制模型；货拉拉千人落地+孔明八阶段工作流+OPT 验收 Agent实例，五信源）
 - [[ai-ticket-system|AI 工单系统]]（智能分类五能力+置信度阈值+人工纠偏回流；自动派单五因素+五种模式；知识库闭环五要点；目标指标/六项埋点/验收标准/风险对策，电商案例，与 [[ticket-system-design]] 为 AI/传统代际关系，单信源置信度中）
 - [[architecture-description-metamodel|ISO 42010 架构概念元模型]]（左侧人与诉求五要素+右侧视图与设计四要素+四条逻辑线不可颠倒+AD≠架构+车载域控五团队对立+ADR 决策记录，单信源置信度中）
 - [[architecture-design-capabilities|架构设计能力（8 个底层动作）]]（架构 vs 架构描述+八动作链抽象/聚焦/分解/边界/契约/权衡/约束/可演化+Parnas 信息隐藏+隐式契约+二十指标等于零，单信源置信度中）
@@ -703,6 +705,7 @@
 - [[cli-anything|CLI-Anything]]（2026-11-20，AI/Agent CLI 工具实体，把任意软件变成 agent 可调用的 CLI，配套 CLI-Hub 统一入口，微博单信源，置信度中）
 - [[minimind|minimind]]（2026-11-20，AI/小模型训练教程实体，从零训练 64M 参数小模型的完整教程与代码，两小时可跑通（博主说法未实测），微博单信源，置信度中）
 - [[openmotion|OpenMotion]]（2026-11-20，AI/视频创作/Agent 实体，开源全栈 Agent 视频工作室：BYOA 22 款本地 Agent + BYOK 多模态网关（图/视频/音乐/TTS）+ 300+ Motion.md 指南 + Video as Code，Apache 2.0，stars 约 9.5k（2026-11-09 自报），README 单信源，置信度中）
+- [[opt-platform|OPT 平台（One Person Team）]]（2026-11-20，AI/Agent/平台实体，腾讯医疗业务自建人与 Agent 协同研发平台：CodeBuddy 等 CLI 运行时+需求交付小队编排（需求分析→方案规划→编码实现→代码验收）+后端验收 Agent 运行 160+ 次，微信单信源，置信度中）
 - [[tufazip|tufazip]]（2026-11-20，AI/压缩/Transformer 实体，Transformer 唯一预测模型无损压缩：LTCB 第 2（提交时点 2026-09-07），enwik9 10 亿字节 → 105.39 MB，12 层 163M + C2 共享块先验净省 0.56%，作者一手长文单信源，置信度高）
 
 ## topic（主题）

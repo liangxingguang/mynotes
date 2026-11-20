@@ -5140,6 +5140,20 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/vlZKqsuG5ECeX1_0GoKW1A",
       "asset_ref": "Assets/2026-11/wechat-vlZKqsuG5ECeX1_0GoKW1A.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-acceptance-agent-opt.md",
+      "sha256": "28059be45b6ad373661b4c19df05d1587c68cf468adcc06553ca01f5ced1ab4e",
+      "registered_at": "2026-11-20",
+      "inbox_ref": "Archive/2026-11-20-acceptance-agent-opt.md",
+      "pages": [
+        "wiki/sources/2026-11-20-acceptance-agent-opt.md",
+        "wiki/concepts/acceptance-agent.md",
+        "wiki/entities/opt-platform.md",
+        "wiki/concepts/ai-native-sdlc.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/k2LwwM4-u0OnPKvQqwlAWw",
+      "asset_ref": "Assets/2026-11/wechat-k2LwwM4-u0OnPKvQqwlAWw.md"
     }
   ]
 }
