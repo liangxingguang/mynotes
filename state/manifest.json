@@ -5193,6 +5193,17 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/RiyIJHDAzESiCaFXlzNTfA",
       "asset_ref": "Assets/2026-11/wechat-RiyIJHDAzESiCaFXlzNTfA.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-ai-llm-booklist.md",
+      "sha256": "9a5f76118312890bb21fe30253aab932a1859a28010e9a755abddb3c6995e34a",
+      "registered_at": "2026-11-20",
+      "inbox_ref": "Archive/2026-11-20-ai-llm-booklist.md",
+      "pages": [
+        "wiki/sources/2026-11-20-ai-llm-booklist.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/Pydv-gVq9aAJOIAbSvKjhg",
+      "asset_ref": "Assets/2026-11/wechat-Pydv-gVq9aAJOIAbSvKjhg.md"
     }
   ]
 }

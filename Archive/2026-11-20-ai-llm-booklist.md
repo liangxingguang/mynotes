@@ -9,7 +9,7 @@ created: 2026-11-20
 category: 学习
 tags: [AI]
 asset_ref: Assets/2026-11/wechat-Pydv-gVq9aAJOIAbSvKjhg.md
-wiki_status: pending
+wiki_status: ingested
 summary_status: partial
 ---
 

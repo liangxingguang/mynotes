@@ -1,22 +1,23 @@
 {
-  "updated_at": "2026-11-20 22:15",
+  "updated_at": "2026-11-20 22:22",
   "notes": [
     {
-      "id": "inbox-2026-11-20-ai-llm-booklist",
-      "title": "2026-11-20-ai-llm-booklist",
-      "path": "Inbox/2026-11-20-ai-llm-booklist.md",
+      "id": "inbox-2026-11-20-ai-coding-engineering",
+      "title": "2026-11-20-ai-coding-engineering",
+      "path": "Inbox/2026-11-20-ai-coding-engineering.md",
       "created": "2026-11-20",
-      "category": "学习",
+      "category": "技术",
       "tags": [
-        "AI"
+        "AI",
+        "Agent"
       ],
       "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/Pydv-gVq9aAJOIAbSvKjhg",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzE5ODQ3MDM4Mw==&mid=2247492726&idx=1&sn=3cc81746dc6c3352610147bc5418f15f&chksm=96999bf6a1ee12e0f5fdff9784d7382de9b85dcaa5e8fcac926dbab0799c99925d95fa33210e",
       "source_type": "web",
       "platform": "微信",
-      "summary": "**摘要**：一份 AI 工程师书单，将书籍按四个梯队分级：🟠 Must Read（必读）、🟡 Solid Book（扎实推荐）、🟨 Good Read（值得一读）、🟢 Read Later（可以稍后读），覆盖 AI 工程、大语言模型、机器学习、Prompt Engineering、Agent、多智能体系统与 AI 对齐。原图来源：Chandrakumar R Pillai（LinkedIn）。",
-      "summary_status": "partial",
-      "asset_ref": "Assets/2026-11/wechat-Pydv-gVq9aAJOIAbSvKjhg.md",
+      "summary": "**摘要**：AI Coding 降低编码门槛后，真实业务交付的瓶颈转向需求约束、跨仓依赖与验证环境缺口。高德搜广推团队把工程重点放在四个环节：意图（把隐含要求写进可验收规格）、上下文（让业务经验经得起代码核验）、评审（每个结论能回到具体变更）、评估（看改进能否在后续任务持续有效）。以四仓协同、双仓改造、96 模块真机验证三个实际交付为例，说明四环节如何配合；并按交付效率、质量、经验复用、综合成本四个维度衡量工程收益，目标是把个人提效转化为团队可持续的交付能力。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-ai-coding-team-1.md",
       "wiki_status": "pending"
     },
     {
@@ -91,6 +92,63 @@
       "summary": "**摘要**：事件溯源（Event Sourcing）入门科普：不直接存储实体当前状态，而是以追加方式保存导致状态变化的一系列事件（类似银行流水），写入后不可修改删除，当前状态通过按时间顺序回放事件重建。适合审计、追溯要求高的场景，配合快照解决长链路回放效率问题。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-zLuppepFzQBk-3MK1J1c7A.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "inbox-2026-11-20-gaode-ad-linglingqi",
+      "title": "2026-11-20-gaode-ad-linglingqi",
+      "path": "Inbox/2026-11-20-gaode-ad-linglingqi.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzE5ODQ3MDM4Mw==&mid=2247492867&idx=1&sn=e702e014680c4d100966af3d9e5e1569&chksm=96999a83a1ee139554bee54f36b2b8192db930b6a945b1f81328434fe03404d945c2aa022515",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：以\"17 项定向测试全通过却仍不能宣布需求完成\"为引，点明 AI 工程的核心是让数字员工持续工作、理解大型工程、并用真实证据交付。广告凌凌漆接入 22 项能力入口（六类：需求研发/代码质量/引擎实验/运维数据/客资计费/知识协同），架构分交互协作、任务控制（Main Agent）、研发执行（Codex Harness）、工程上下文与验收四部分。关键是执行引擎可替换（自主执行≠自主授权）、个人研发环境（Personal Dev，单 Writer 原则）、CodeGraph 影响分析、Knowledge+Mem0 经验治理。研发契约收敛为目标/约束/验收证据，验收结论分开发完成、交付完成、效果确认三层。截至 2026-09-18，台账 362 条任务、办结率 96.4%。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-gaode-ad-linglingqi-4.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "inbox-2026-11-20-gaode-search-linglingqi",
+      "title": "2026-11-20-gaode-search-linglingqi",
+      "path": "Inbox/2026-11-20-gaode-search-linglingqi.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzE5ODQ3MDM4Mw==&mid=2247492867&idx=2&sn=6c8abe212726d67376892576fbff6ebf&chksm=96999a83a1ee13958cd042563d5f6ab2bccedbf8cc1109069486da8ad09a070c61725a313055",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：搜索凌凌漆（007）基于 Hermes Agent 基座建设，解决海量 VOC 工单排查提效与经验沉淀。选 Hermes 因其\"开箱即用+记忆/技能反哺\"机制契合业务，虽存单用户设计、单实例文件读写、SQLite 写入上限三处不匹配，策略是跟随社区演进、仅在框架问题影响业务时才干预。核心是按需取证（接上百数据源，每条证据可回溯请求参数/配置/日志）与自进化飞轮：候选生成→隔离（Git 分支）→审核→发布回滚，审核前不生效。强调错误经验混入知识库比没有经验更糟，人工审核不能沦为橡皮图章。已累计处理上万条用户提问。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-gaode-search-linglingqi-5.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "inbox-2026-11-20-gaode-starship-10x",
+      "title": "2026-11-20-gaode-starship-10x",
+      "path": "Inbox/2026-11-20-gaode-starship-10x.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzE5ODQ3MDM4Mw==&mid=2247492800&idx=1&sn=a330991923d9d7e0d343d1cb8dedb55e&chksm=96999b40a1ee1256f0b25d879f88216f367b3cb725697a269e4d33a4645659c74c02c8dfe18d",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：星舰10X 把成熟 Coding Agent 的执行能力接入团队研发过程，解决\"Agent 能写代码、工程师仍要不断补背景/对齐目标/检查覆盖\"的问题。核心是知识库与长期记忆（Memory）分工：知识库给业务概念/模块关系/源码入口（渐进式披露四层），Memory 保留工作方法供下次起点。知识分仓库知识库与跨域 KBase，质量检查分脚本机械核对与 Agent 语义审查两条互补路径，经验经会话层→个人层→共享层三层提炼。以双仓缓存默认规则调整为例说明跨仓交付路径；2026 年 4-9 月已核验 1030 项开发任务、至少 676 项形成 MR。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-gaode-starship-10x-2.md",
       "wiki_status": "pending"
     },
     {
@@ -298,6 +356,25 @@
       "summary": "**摘要**：SDD（Specification-Driven Development，规范驱动开发）直播纪要：AI 编码效率高但缺约束时自由发挥，人与人沟通成为项目主要矛盾，破解之道是从\"人工驱动\"转向\"规范驱动\"、从\"人执行\"转向\"人定规范、AI 执行、人兜底\"。三大基线宪法（prd.md/design.md/arch.md）+ 三阶段实例化（prd-A/design-A/arch-A）+ PLAN/CODE 两执行模式，核心要诀：规范先行、人类决策、AI 执行、人类兜底。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-9MKGsp0NgxZZNeByCLCEbQ.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "inbox-2026-11-20-starship-cloud-agent",
+      "title": "2026-11-20-starship-cloud-agent",
+      "path": "Inbox/2026-11-20-starship-cloud-agent.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzE5ODQ3MDM4Mw==&mid=2247492800&idx=2&sn=b0c77d24d7cfeb22d41df7a8b2700463&chksm=96999b40a1ee12568050551aa6a36cf9be6948e2a015fd67fda629728bc91992b71817f2f6db",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：星舰是用户使用的协作平台，Cloud Agent 是其内部负责云端执行的后台服务——为 Agent 安排远程沙箱、启动并管理执行、收集结果交回星舰展示。本文以\"读取项目生成报告\"任务为例拆解架构：星舰接收要求→Cloud Agent 安排执行→沙箱中 Agent 读项目写报告→Cloud Agent 收集报告→星舰展示。任务生命周期六阶段（登记→找环境→备料→启动 Agent→收回报告→交回结论），强调执行结果与交付完整性分开表达。会话管理区分会话/轮次/执行环境三层，中断恢复分四种情况与三种粒度，更换引擎用适配层统一五类交互。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-starship-cloud-agent-3.md",
       "wiki_status": "pending"
     },
     {
@@ -8159,6 +8236,24 @@
       "summary": "**摘要**：AgentScope Java 源码图解指南（对应 2.1.0-SNAPSHOT，Java 17 + Project Reactor，源码分析项目 github.com/liulangjietou/AgentScope-source-analysis）。主线：输入进入会话，模型决定下一步，框架执行工具，结果回到上下文，直到产生终态。ReAct 两动作对应 `reasoning()`（请求模型）与 `acting()`（处理工具调用）；结束判断要求无工具调用且至少一个非空白文本块，`maxIters` 默认 10，达上限进入 `summarizing()` 标记 MAX_ITERATIONS。一次 call 经 AgentBase 生命周期（runInContext→serializeOnKey 同会话串行→runLifecycleBody→executeCallBody）。关键机制：pending 工具恢复（ASKING 确认走 `Msg.METADATA_CONFIRM_RESULTS` 直接从 acting(0) 继续；外部工具补 ToolResultBlock）、权限双层（ReAct 权限门 + Toolkit 执行器，直接调 callTool 不经过权限门）、人工确认跨两次调用（ALLOWED/DENIED，工具级 deny/ask 优先）、会话对象分层（Msg/AgentState/RuntimeContext/RunControl/Native Session）、结束四分支（正常/空结果/失败/中断各有保存路径）、Harness 组装（工作区+上下文预算+VerificationService 用已持久化证据验收）、结构化输出（原生 Schema 或 generate_response 兜底）。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-RiyIJHDAzESiCaFXlzNTfA.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-20-ai-llm-booklist",
+      "title": "2026-11-20-ai-llm-booklist",
+      "path": "Archive/2026-11-20-ai-llm-booklist.md",
+      "created": "2026-11-20",
+      "category": "学习",
+      "tags": [
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/Pydv-gVq9aAJOIAbSvKjhg",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：一份 AI 工程师书单，将书籍按四个梯队分级：🟠 Must Read（必读）、🟡 Solid Book（扎实推荐）、🟨 Good Read（值得一读）、🟢 Read Later（可以稍后读），覆盖 AI 工程、大语言模型、机器学习、Prompt Engineering、Agent、多智能体系统与 AI 对齐。原图来源：Chandrakumar R Pillai（LinkedIn）。",
+      "summary_status": "partial",
+      "asset_ref": "Assets/2026-11/wechat-Pydv-gVq9aAJOIAbSvKjhg.md",
       "wiki_status": "ingested"
     },
     {

@@ -409,6 +409,7 @@
 - [[2026-11-20-acceptance-agent-opt|AI 10分钟写完代码，你2小时还在验？用验收Agent补上最后一公里]]（2026-11-20，AI/Agent/代码验收，腾讯云开发者·吴思：OPT 平台后端验收 Agent，五阶段流程+L1-L4 证据链+硬阻塞/软失败，微信单信源，置信度中）
 - [[2026-11-20-agent-sandbox-mcp-k8s|生产级 AI Agent 执行沙箱实战：从 MCP 授权到 Kubernetes 隔离的工程闭环]]（2026-11-20，AI/Agent 安全/K8s，六层信任边界+六原则+能力票据+K8s 隔离基线+双向网络默认拒绝+CAS 调度账本+验收演练，微信单信源，置信度中）
 - [[2026-11-20-weixin-agent-skills-top30|微信公众号：按 star 排序的 30 个 Agent Skills 挑选清单]]（2026-11-20，微信/GitHub/Agent Skills，头部三名 star 311k/310k/296k（2026-11-03 实测）+五组 30 项挑选+安装三法，作者未全装、star 未独立核验，单信源置信度中）
+- [[2026-11-20-ai-llm-booklist|AI 工程师必备书单：LLM、Agent、机器学习一次整理（微信公众号）]]（2026-11-20，AI/书单/学习，四梯队分级（Must Read/Solid Book/Good Read/Read Later）+入门与进阶阅读建议，20 本书明细以图片呈现未数字化，微信单信源，置信度低）
 
 ## concept（概念）
 
