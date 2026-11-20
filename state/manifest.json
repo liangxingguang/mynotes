@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-11-21",
+  "updated_at": "2026-11-21T07:01:00Z",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -5320,6 +5320,21 @@
       "pages": [
         "wiki/entities/gaode-starship-10x.md",
         "wiki/concepts/agent-memory-system.md"
+      ]
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-ontology-rsi-coding-agent.md",
+      "sha256": "c6748a705cc52891d5e9c661d06eddd6fa4745750e96cbd8d7eabec90cfa205b",
+      "registered_at": "2026-11-21",
+      "inbox_ref": "Archive/2026-11-20-ontology-rsi-agent.md",
+      "source_url": "https://mp.weixin.qq.com/s/2IUREDltOXzXECO7tWIoPA",
+      "asset_ref": "Assets/2026-11/wechat-2IUREDltOXzXECO7tWIoPA.md",
+      "pages": [
+        "wiki/sources/ontology-rsi-agent.md",
+        "wiki/concepts/recursive-self-improvement.md",
+        "wiki/concepts/three-layer-project-graph.md",
+        "wiki/entities/tencentdb-agent-memory.md",
+        "wiki/concepts/ontology.md"
       ]
     }
   ]

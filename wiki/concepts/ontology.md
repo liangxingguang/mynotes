@@ -4,7 +4,7 @@ type: concept
 title: Ontology（企业本体／业务本体）
 status: active
 created: 2026-11-20
-updated: 2026-11-20
+updated: 2026-11-21
 confidence: medium
 tags:
   - concept
@@ -12,11 +12,15 @@ tags:
   - enterprise
 sources:
   - raw/sources/ai/2026-11-20-agent-knowledge-base.md
+  - raw/sources/ai/2026-11-20-ontology-rsi-coding-agent.md
 related:
   - wiki/concepts/rag.md
   - wiki/concepts/graphrag.md
   - wiki/concepts/llm-wiki.md
   - wiki/comparisons/agent-knowledge-base-capabilities.md
+  - wiki/concepts/recursive-self-improvement.md
+  - wiki/concepts/three-layer-project-graph.md
+  - wiki/sources/ontology-rsi-agent.md
 ---
 # Ontology（企业本体／业务本体）
 
@@ -62,10 +66,12 @@ Ontology（企业本体或业务本体）是把企业业务世界中的业务对
 ### Distinctions（区分）
 
 - **Ontology vs GraphRAG**：GraphRAG 仍在回答/检索层，把关系讲清楚但不一定能统一业务定义、不知实时状态；Ontology 定义业务对象、规则和关系语义，把不同系统的同名记录映射到共同业务对象（信源 2026-11-20）。
+- **Ontology vs Schema/知识图谱/RAG**：Schema 管数据组织、知识图谱管实体关联、RAG 管检索供给，本体强调对象与关系的共同含义与成立条件；"所有边都叫'相关'"的图谱解决不了含义澄清，本体真正要补的是"找到知识后判断它在说哪个对象、在什么条件下成立、能支持哪步推断"（信源 2026-11-21）。
 
 ## Evolution（演进）
 
 - 2026-11-20 — 新建本页。信源 `raw/sources/ai/2026-11-20-agent-knowledge-base.md` 给出 Ontology 的定义、Palantir Objects/Properties/Links 参考、与 GraphRAG 的边界及企业评估问题清单。
+- 2026-11-21 — 第二信源 `raw/sources/ai/2026-11-20-ontology-rsi-coding-agent.md` 补充 AI 时代 Ontology 的 Agent 视角：本体开始更直接地参与 Agent 的检索、判断和行动，并需随业务与执行反馈持续维护；EvoOntology 让本体根据 Agent 使用反馈演进（Content/Schema/Tool 三部分、browse/resolve 两类访问）；在研发 Loop 中，本体不必成为第四层，体现在三层项目图谱的第二层（项目语义）的概念与约束表达中。
 
 ## Open Questions（开放问题）
 
@@ -74,7 +80,11 @@ Ontology（企业本体或业务本体）是把企业业务世界中的业务对
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-11-20-agent-knowledge-base.md`
+- Source: `raw/sources/ai/2026-11-20-ontology-rsi-coding-agent.md`
 
 ## Related Knowledge（相关知识）
 
 - [[agent-knowledge-base-capabilities|Agent 知识库四种能力对照（RAG / GraphRAG / LLM Wiki / Ontology）]]
+- [[recursive-self-improvement|递归自我改进（RSI）]]
+- [[three-layer-project-graph|三层互索引项目图谱]]
+- [[ontology-rsi-agent|不只是Memory：Ontology如何让Coding Agent越用越懂项目？]]

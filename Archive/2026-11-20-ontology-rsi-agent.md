@@ -9,7 +9,7 @@ created: 2026-11-20
 category: 技术
 tags: [AI, Agent]
 asset_ref: Assets/2026-11/wechat-2IUREDltOXzXECO7tWIoPA.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 > **摘要**：腾讯云数据库团队的思考：让 Coding Agent 越用越懂项目，涉及两个问题——如何表达项目知识（本体/Ontology 从知识工程角度把领域概念、关系、成立条件表达成可共享模型，区别于 Schema/知识图谱/RAG）与如何利用执行反馈让后续任务受益（RSI 递归自我改进：Reflexion 留反馈经验、Agent Workflow Memory 归纳可复用工作流、EvoOntology 让本体根据 Agent 使用反馈演进、Skill∞ 把优化过程本身变成可修改对象）。团队实践：在研发 Loop（设计完成→上线前测试由 Agent 承担）中，用四类记忆资产（Chat Memory、Wiki、CodeGraph、Skill）加**三层互索引项目图谱**——工程事实（静态、函数/字段/跨仓契约关联）、项目语义（LLM 提取的功能职责/业务概念/跨仓映射，本体体现在此层）、错误与经验 bug_fixed（历史 Bug 挂到相关节点，渐进式披露）。Bug 定位成功率从 58% 提升到 65%。核心立场：经验要有归属、能被纠正，本体与 RSI 结合需同时具备"能关联"和"能纠正"的能力。项目已开源：TencentDB Agent Memory。

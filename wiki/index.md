@@ -417,6 +417,7 @@
 - [[2026-11-20-deepseek-harness-loopforge-voice|基于 DeepSeek Harness + LoopForge 开发 Asterisk+OpenSIPS 智能语音系统开发方案讨论]]（2026-11-20，AI/语音平台/交付编排，VoxForge 五层语音平台方案蓝图：OpenSIPS+Asterisk+AI 语音网关、dsh 编码执行器+LoopForge SOP 编排、时延预算/G0-G6 门禁/12 周里程碑，作者自述乌托邦模式未经验证，微信单信源，置信度低）
 - [[2026-11-20-event-sourcing|事件溯源：系统如何偷偷记下你的一举一动]]（2026-11-20，架构/系统设计/事件溯源，不存当前状态而追加保存事件、写入不可改删、按时间回放重建状态，快照加速重建，可审计/可调试/灵活 vs 复杂/存储/隐私，码农有道科普单信源，置信度中）
 - [[2026-11-20-gaode-ad-linglingqi|高德广告凌凌漆：研发任务的持续执行与可信验收]]（2026-11-20，AI/Agent/可信验收，17 项测试全过仍不能宣布完成：22 项能力入口/四层架构/可替换 Harness 边界（自主执行≠自主授权）/Personal Dev 单 Writer/Dev Loop 契约/验收三层次，台账 362 条办结率 96.4%，高德技术单信源，置信度中）
+- [[ontology-rsi-agent|不只是Memory：Ontology如何让Coding Agent越用越懂项目？]]（2026-11-20，AI/Agent/本体，腾讯云数据库团队：Ontology 区别于 Schema/知识图谱/RAG 强调对象与关系的共同含义与成立条件；RSI 三层次（执行内迭代/跨任务自改进/改进过程自改进）；EvoOntology 让本体根据 Agent 使用反馈演进；三层互索引项目图谱（工程事实/项目语义/bug_fixed）+Bug 定位 58%→65%；本体与 RSI 结合需"能关联"且"能纠正"，单信源，置信度中）
 
 ## concept（概念）
 
@@ -567,7 +568,9 @@
 - [[tcp-connection-lifecycle|TCP 连接生命周期与状态机]]（四大功能/三次握手/四次挥手/RTO/快重传/拥塞控制/TIME_WAIT 2MSL/状态机排障四场景；发送窗口=min(rwnd,cwnd)；Linux 默认 CUBIC；tcp_tw_recycle 已移除；单信源一手，置信度高）
 - [[notification-system-design|站内消息系统领域模型]]（公告/提醒/私信三分类+提醒四元组；拉（订阅驱动）/推（私信直写）按类选型；免打扰后置读路径，简书上下篇双信源）
 - [[okf-knowledge-format|OKF（面向 AI Agent 的知识包装规范）]]（入库时编译为互链 Markdown 树，运行时只做导航+摘录）
-- [[ontology|Ontology（企业本体／业务本体）]]（统一业务对象、属性、关系与术语语义；不同系统同名记录映射到共同业务对象；关键在业务含义；参考 Palantir Objects/Properties/Links；与 GraphRAG 分工不同，单信源，置信度中）
+- [[ontology|Ontology（企业本体／业务本体）]]（统一业务对象、属性、关系与术语语义；不同系统同名记录映射到共同业务对象；关键在业务含义；参考 Palantir Objects/Properties/Links；与 GraphRAG 分工不同；AI 时代参与 Agent 检索/判断/行动并随反馈持续维护，EvoOntology 让本体根据 Agent 使用反馈演进，本体体现在三层图谱第二层，双信源，置信度中）
+- [[recursive-self-improvement|递归自我改进（Recursive Self-Improvement / RSI）]]（2026-11-21，AI/Agent/自改进，系统改变自身改善后续表现，递归性体现在改进过程本身也能成为改进对象；三层改进层次（执行内迭代/跨任务自改进/改进过程自改进）；保存≠学会、复用≠改进；Reflexion/Agent Workflow Memory/Darwin Gödel Machine/Skill∞ 演进路线；与本体结合需"能关联"且"能纠正"，单信源，置信度中）
+- [[three-layer-project-graph|三层互索引项目图谱]]（2026-11-21，AI/Agent/知识图谱，腾讯云数据库团队研发 Loop 实践：工程事实（静态，函数/字段/跨仓契约，跨仓边须经 API/消息/Schema 契约核对）/项目语义（LLM 提取职责/概念/跨仓映射与约束，本体体现层，候选关系不能仅凭语言流畅升级为事实）/bug_fixed（历史 Bug 挂前两层节点，区分"一次事件"与"可复用经验"，渐进式披露）；三层双向互索引可从任意层进入，与四类记忆资产是两个维度非一一对应，单信源，置信度中）
 - [[oom-troubleshooting|OOM 排查方法论]]（6 类 OOM 速查表 + 五步法 + 生产纪律：禁直接 jmap -dump、90% 代码问题、溢出≠泄漏、GC overhead limit 最危险、GC刑侦三步+时间线交叉验证+静态无界泄漏模板，第五信源（《JVM 内存模型全景》）印证区域路由+补 new Thread 雪崩案例与直接内存空堆被杀口径，五信源，置信度中）
 - [[operational-transformation|Operational Transformation（OT，操作转换）]]（中心定序+变换调整偏移量收敛并发编辑；siteId tie-break 命门+TP1/TP2 验证；文档级 Actor 串行+pending/buffer 客户端，单信源）
 - [[perf-cpu-sampling|perf CPU 采样排查法]]（采集→看热点→追调用者链路，四类前置+符号≠调用栈+Self/Children 读数纪律，demo 742 样本实测，单信源置信度高）
@@ -726,6 +729,7 @@
 - [[gaode-search-linglingqi|搜索凌凌漆]]（2026-11-20，AI/Agent/问题归因实体，高德搜索 VOC 问题归因数字员工 Agent（007）：基于 Hermes Agent 基座、按需取证（上百数据源）、自进化四段链路（候选生成→隔离→审核→发布回滚）、经验治理（错误经验比没有更糟）、上万条提问，单信源，置信度中）
 - [[gaode-starship-10x|星舰 10X]]（2026-11-20，AI/Agent/研发交付实体，高德研发交付 Agent：知识库+Memory 分工、渐进式披露四层、知识订正双路径、Memory 三层提炼、跨仓交付，1030 任务/676 MR/65.6%，单信源，置信度中）
 - [[gaode-qingzhou-agent|轻舟 Agent]]（2026-11-20，AI/Agent/FDE/真机验证实体，高德现场篇研发工程化 Agent：FDE→部署工程能力、四主节点归并、Agent Teams 多实例、Aone Sandbox、AuthX 双令牌、真机验证 DOM 核对、108 模块案例，单信源，置信度中）
+- [[tencentdb-agent-memory|TencentDB Agent Memory]]（2026-11-21，AI/Agent/记忆系统实体，腾讯云数据库团队开源的 Agent 记忆系统，承载四类记忆资产（Chat Memory/Wiki/CodeGraph/Skill）与三层互索引项目图谱；内部 Bug 定位成功率 58%→65%（+7pp）为初步正向结果；开源仓库 github.com/Tencent/TencentDB-Agent-Memory，具体实现细节信源未详述需核验，单信源，置信度中）
 
 ## topic（主题）
 
