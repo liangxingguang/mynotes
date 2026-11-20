@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20 19:32",
+  "updated_at": "2026-11-20 19:36",
   "notes": [
     {
       "id": "inbox-2026-11-20-acceptance-agent-opt",
@@ -261,6 +261,25 @@
       "summary": "**摘要**：RAG 系列开篇。以企业内部制度问答为例：通用大模型给出的数字来自公开语料的常见做法，对不上自家条款。要答案贴合私有知识，工程上有四条路——长上下文、微调、Agent 编排、检索增强生成，实际改的变量不同：长上下文改\"一次能读多少\"（成本随语料量线性上升），微调改\"怎么说\"（知识更新须重训、删事实无法定点、过时知识会被复述），Agent 改\"做什么、按什么顺序做\"（事实仍需从别处取回，RAG 是 Agent 的事实来源）。只有 RAG 改\"依据哪些事实说\"，内部制度、客服售前、合规法务、研发运维四类场景（知识私有、更新快、答案要能核）非检索不可。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-rag-necessary-1.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "inbox-2026-11-20-rag-what-is",
+      "title": "2026-11-20-rag-what-is",
+      "path": "Inbox/2026-11-20-rag-what-is.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "RAG",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg2NDQzMzcyOQ==&mid=2247484554&idx=1&sn=03790db4cd8b2c87748ec9cfa29c658e&chksm=ce6827a4f91faeb2de32ecd582c65d644bb0cb2fa9bb559a6541a3a474db7f262544c1aed8c3",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：从\"模型答错的三种情形——编造、知识过期、不知道私有数据\"切入，指出根因相同：参数里存的是训练语料的统计模式，不是可逐条核对的事实记录，所以只调提示词没用。RAG 在生成前插一步检索：索引在提问前就已建好，提问时检索器取候选片段拼成上下文，与问题一起送进模型。**RAG 不提升模型能力上限，它改变的是这次回答依据什么**。检索质量与生成质量是相乘关系，排查按\"语料缺失→解析分块→召回→生成\"四层顺序，换模型是第四层手段、最常被浪费。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-rag-what-2.md",
       "wiki_status": "pending"
     },
     {
