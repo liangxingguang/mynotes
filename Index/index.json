@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20 18:37",
+  "updated_at": "2026-11-20 18:41",
   "notes": [
     {
       "id": "inbox-2026-11-20-agentscope-2",
@@ -18,6 +18,24 @@
       "summary": "**摘要**：AgentScope 2.0（阿里通义 SysML 团队，36k star、40 万月下载）不是\"又一个 Agent 框架\"，而是\"框架 + Agent 后端\"：不预设编排、把控制权交给模型，SDK 层给 8 块积木（ReAct/Toolkit/Model/Context/Event/Permission/Middleware/Memory/Workspace），并自带多租户、多会话、IM 渠道、RAG、MCP Hub 的 Agent Service。Loop 强、Graph 中、Harness 厚；适合要做 Agent 应用的团队，不适合单机脚本。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-TkqRdyMuhU2Z5LRIkHWFvw.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "inbox-2026-11-20-ai-llm-booklist",
+      "title": "2026-11-20-ai-llm-booklist",
+      "path": "Inbox/2026-11-20-ai-llm-booklist.md",
+      "created": "2026-11-20",
+      "category": "学习",
+      "tags": [
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/Pydv-gVq9aAJOIAbSvKjhg",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：一份 AI 工程师书单，将书籍按四个梯队分级：🟠 Must Read（必读）、🟡 Solid Book（扎实推荐）、🟨 Good Read（值得一读）、🟢 Read Later（可以稍后读），覆盖 AI 工程、大语言模型、机器学习、Prompt Engineering、Agent、多智能体系统与 AI 对齐。原图来源：Chandrakumar R Pillai（LinkedIn）。",
+      "summary_status": "partial",
+      "asset_ref": "Assets/2026-11/wechat-Pydv-gVq9aAJOIAbSvKjhg.md",
       "wiki_status": "pending"
     },
     {

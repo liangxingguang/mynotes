@@ -18,7 +18,9 @@ related:
   - wiki/concepts/crm-system-design.md
   - wiki/concepts/approval-workflow-engine.md
   - wiki/concepts/complex-system-breakdown.md
+  - wiki/concepts/b-end-report-design.md
   - wiki/sources/bend-data-dashboard-25.md
+  - wiki/sources/b-end-report-design.md
 ---
 # B端数据看板与指标树设计（Metric Tree & Dashboard Design）
 
@@ -77,6 +79,7 @@ PRD 必含 5 项：指标树图、首屏卡片字段/口径/阈值/交互说明�
 
 - 决策看板 vs 数据陈列：前者回答三问（达成/异常/责任人），后者只是图表堆砌。
 - 指标树 vs 指标清单：前者每层挂责任人和阈值形成责任链，后者无归属无阈值。
+- 看板 vs 报表：[[b-end-report-design]] 的报表设计方法论范围更宽（含明细表、筛选、权限、性能、导出），看板是其"决策展示子集"；两者指标字典字段数不同（看板 7 字段侧重责任与阈值，报表 9 字段侧重口径与计算），为维度差异非矛盾。
 
 ## Evolution（演进）
 
@@ -97,6 +100,7 @@ PRD 必含 5 项：指标树图、首屏卡片字段/口径/阈值/交互说明�
 ## Related Knowledge（相关知识）
 
 - [[bend-data-dashboard-25|信源页：B端数据看板怎么搭]]
+- [[b-end-report-design|B端报表设计方法论]]
 - [[crm-system-design|CRM 系统设计框架]]
 - [[approval-workflow-engine|审批流引擎]]
 - [[complex-system-breakdown|复杂 B 端系统拆解方法论]]
