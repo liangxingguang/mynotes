@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-11-13",
+  "updated_at": "2026-11-20",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -5042,6 +5042,23 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/KRAtC_fuYOoWofnb_xLEaQ",
       "asset_ref": "Assets/2026/11/rust-coroutine-scheduler-mn.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-weibo-github-open-skills.md",
+      "sha256": "792f57c06904c31fec55ce1a9fde3120baacdf7a53daf2dc278086519085474b",
+      "registered_at": "2026-11-20",
+      "inbox_ref": "Archive/2026-11-20-weibo-github-open-skills.md",
+      "pages": [
+        "wiki/sources/2026-11-20-weibo-github-open-skills.md",
+        "wiki/topics/github-open-agent-tools.md",
+        "wiki/entities/ffmpeg-skill.md",
+        "wiki/entities/univer.md",
+        "wiki/entities/firecrawl.md",
+        "wiki/entities/cli-anything.md",
+        "wiki/entities/minimind.md"
+      ],
+      "source_url": "https://weibo.com/6604581414/5367112379400413",
+      "asset_ref": "Assets/2026-11/weibo-post-5367112379400413.md"
     }
   ]
 }

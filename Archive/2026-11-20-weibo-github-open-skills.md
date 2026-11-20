@@ -9,9 +9,7 @@ created: 2026-11-20
 category: 技术
 tags: [AI, GitHub, Agent]
 asset_ref: Assets/2026-11/weibo-post-5367112379400413.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-20T02:43:15.855Z"
-ingest_claim_id: 38252-1795142595855-0
+wiki_status: ingested
 ---
 
 # 微博盘点：5 个实用的 GitHub 开源 Skill/Agent 工具

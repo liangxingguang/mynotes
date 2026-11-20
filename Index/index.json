@@ -1,26 +1,6 @@
 {
-  "updated_at": "2026-11-20 10:53",
+  "updated_at": "2026-11-20 11:02",
   "notes": [
-    {
-      "id": "inbox-20261120-weibo-github-open-skills",
-      "title": "微博盘点：5 个实用的 GitHub 开源 Skill/Agent 工具",
-      "path": "Inbox/2026-11-20-weibo-github-open-skills.md",
-      "created": "2026-11-20",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "GitHub",
-        "Agent"
-      ],
-      "source": "微博",
-      "source_url": "https://weibo.com/6604581414/5367112379400413",
-      "source_type": "link",
-      "platform": "微博",
-      "summary": "微博博主翻 GitHub 热榜，盘点了 5 个面向 Claude Code / Cursor / Codex 等 agent 的实用开源工具：本地视频剪辑、可嵌入 Office SDK、agent 爬虫基础设施、任意软件转 CLI、从零训练小模型，均为无云端、可直接上手的项目。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/weibo-post-5367112379400413.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "inbox-20261120-weibo-openmotion-ai-video-platform",
       "title": "微博：OpenMotion——开源 AI 视频创作与剪辑平台",
@@ -7713,6 +7693,26 @@
       "summary": "一套基于 Spring Boot + Apache HttpClient 的 Doris Stream Load 封装方案：用 `@DorisField` 注解自动完成实体到 Doris 字段的映射（重命名/排序/忽略），分批 + 多线程并行推送，支持 JSON/CSV、GZIP 压缩、指数退避重试与导入结果监控，号称较 JDBC 批量更新性能提升 20-50 倍。",
       "summary_status": "",
       "asset_ref": "Assets/2026/11/springboot-doris-stream-load.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-20261120-weibo-github-open-skills",
+      "title": "微博盘点：5 个实用的 GitHub 开源 Skill/Agent 工具",
+      "path": "Archive/2026-11-20-weibo-github-open-skills.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "GitHub",
+        "Agent"
+      ],
+      "source": "微博",
+      "source_url": "https://weibo.com/6604581414/5367112379400413",
+      "source_type": "link",
+      "platform": "微博",
+      "summary": "微博博主翻 GitHub 热榜，盘点了 5 个面向 Claude Code / Cursor / Codex 等 agent 的实用开源工具：本地视频剪辑、可嵌入 Office SDK、agent 爬虫基础设施、任意软件转 CLI、从零训练小模型，均为无云端、可直接上手的项目。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weibo-post-5367112379400413.md",
       "wiki_status": "ingested"
     }
   ]

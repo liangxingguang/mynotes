@@ -401,6 +401,7 @@
 - [[rocketmq-litetopic-session-level-mq|AI Agent 基础设施的新范式：如何将消息队列从"Topic 级"下沉到"Session 级"？]]（2026-11-12，AI/Agent/MQ/基础设施，AI 三项新约束（拓扑/时长/成本）与传统事件驱动三处不适配+LiteTopic 两层模型（Parent Topic/LiteTopic）+RocksDB KV 索引与 Ready Set 投递+Qoder Cloud Agents/百炼网关双生产案例+合入 master 与 RocketMQ-A2A 论文 FSE 2026，知乎单信源，置信度高）
 - [[springboot-doris-stream-load|SpringBoot+Doris Stream Load 海量数据实时更新方案]]（2026-11-13，Java/Doris/批量导入，@DorisField 注解字段映射+分批并行推送+指数退避重试+LoadResponse 结果监控，宣称较 JDBC 批量更新提升 20-50 倍，正文自 Assets 采集稿逐字收录，微信单信源置信度中）
 - [[2026-11-13-rust-coroutine-scheduler-mn|用 Rust 从零实现协程调度器：M:N 用户态线程是怎么跑的]]（2026-11-13，Rust/调度/微信公众号，从零实现 M:N 调度器：成本两数量级对比/切换=换寄存器/ucontext/四态与栈管理（guard page+trampoline）/两层队列工作窃取/yield 与唤醒（suspended 表）/阻塞调用三解法/栈增长与 Rust 固定栈→async 路线，正文自 Assets 采集稿逐字收录，微信单信源置信度中）
+- [[2026-11-20-weibo-github-open-skills|微博盘点：5 个实用的 GitHub 开源 Skill/Agent 工具]]（2026-11-20，微博/Agent 工具盘点，5 个开源 Skill/Agent 工具：ffmpeg-skill 本地视频剪辑（42 工具+MCP 无云端）/univer 可嵌入 Office SDK（编辑计算协作文件处理，人与 AI 双受众）/firecrawl agent 爬虫基础设施（号称 550+ 数据源未核验）/CLI-Anything 任意软件转 CLI（CLI-Hub 统一入口）/minimind 从零训练 64M 小模型教程（两小时跑通），微博单信源，置信度中）
 
 ## concept（概念）
 
@@ -686,6 +687,11 @@
 - [[bizbuddy|BizBuddy]]（开源企业级 Agent 平台：Spring Boot 4.1.1+AgentScope Java Harness+RuoYi-Vue-Plus，PG14/MySQL8 双栈，40 张 ai_* 表+20 层 e2e+18 条 Playwright，MIT，gitee 开源，单信源置信度中）
 - [[pi-xfer|pi-xfer]]（2026-11-12，AI/Agent 工具实体，pi agent 的 handoff 交接插件（xfer=transfer）：header+落盘文档+按需加载+反向回执，多形态接入的 Agent 网络（本地 unix socket/adapterd/Web Picker/SSH Link/RivetKit Mesh），已开源 `azzgo/pi-xfer`，知乎单信源，置信度中）
 - [[the-craft-of-selfteaching|《自学是门手艺》]]（2026-11-12，学习/书籍实体，李笑来开源书 xiaolai/the-craft-of-selfteaching，17.8K+ Stars，Python 入口讲自学方法论，核心"学不会自个儿学、先揣着一点点嚼"，微博+知乎想法双信源推荐，置信度中）
+- [[ffmpeg-skill|ffmpeg-skill]]（2026-11-20，AI/Agent 工具实体，本地 FFmpeg 视频编辑 skill：42 个工具 + MCP，面向 Claude Code/Cursor/Codex，无云端无 API Key，微博单信源，置信度中）
+- [[univer|Univer]]（2026-11-20，AI/Office SDK 实体，可嵌入产品的 Office SDK：编辑/计算/协作/文件处理，同时面向人与 AI agent，微博单信源，置信度中）
+- [[firecrawl|Firecrawl]]（2026-11-20，AI/Agent 爬虫基础设施实体，给 agent 用的网页搜索与爬取基础设施，号称接入 550+ 数据源（博主转述未核验），微博单信源，置信度中）
+- [[cli-anything|CLI-Anything]]（2026-11-20，AI/Agent CLI 工具实体，把任意软件变成 agent 可调用的 CLI，配套 CLI-Hub 统一入口，微博单信源，置信度中）
+- [[minimind|minimind]]（2026-11-20，AI/小模型训练教程实体，从零训练 64M 参数小模型的完整教程与代码，两小时可跑通（博主说法未实测），微博单信源，置信度中）
 
 ## topic（主题）
 
@@ -699,6 +705,7 @@
 - [[java-to-rust-migration|Java 到 Rust 迁移]]（2026-11-05，Rust/Java/语言迁移，13 维对照+6 心智模型切换+语言特性映射+Spring 风格迁移示例+Java 开发者 18 陷阱+6 风格原则+5 阶段学习路线+16 项提交前清单，单信源置信度中）
 
 - [[multi-agent-collaboration-architecture|多 Agent 协作架构与控制权下沉]]（2026-11-05，2026-11-12 更新，AI/多 Agent/主题导航，三种协作架构（Master Agent/任务看板/Advisor）+控制权下沉框架+两个设计前提（上下文边界/模型边界）+巡检三模式混用案例+「超级 Agent」术语差异（贬义 vs [[super-agent]] 褒义）+单 Agent 三重瓶颈（上下文污染/工具过载/串行）+四种协作模式（Supervisor/Debate/Pipeline/Handoffs）+Tool/Skill/Subagent 层次关系+Handoffs 落地机制（header+落盘文档+按需加载+反向回执）与 Agent 组网形态（[[pi-xfer]]）+任务看板字段与状态机完整定义+双 Master 架构（Planner 只拆解+Scheduler 只调度巡检），四信源（得物+vivo+知乎×2）置信度中）
+- [[github-open-agent-tools|GitHub 开源 Skill/Agent 工具盘点]]（2026-11-20，AI/Agent 工具/主题导航，微博盘点 5 个 GitHub 开源 Skill/Agent 工具：[[ffmpeg-skill]] 本地视频剪辑 / [[univer]] 可嵌入 Office SDK / [[firecrawl]] agent 爬虫基础设施 / [[cli-anything]] 任意软件转 CLI / [[minimind]] 从零训练小模型教程，均微博单信源待仓库核验，置信度中）
 
 ## decision（决策）
 
