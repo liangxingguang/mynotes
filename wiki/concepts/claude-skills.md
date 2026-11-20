@@ -4,7 +4,7 @@ type: concept
 title: Claude Skills
 status: active
 created: 2026-10-30
-updated: 2026-10-31
+updated: 2026-11-20
 confidence: medium
 tags:
   - concept
@@ -15,9 +15,11 @@ sources:
   - raw/sources/ai/2026-10-28-uncle-bob-ub-mode-skill.md
   - raw/sources/ai/2026-10-28-ste-zh-skill.md
   - raw/sources/ai/2026-10-31-agent-harness-essay-ideal-harness.md
+  - raw/sources/ai/2026-11-20-agent-skills-top30.md
 related:
   - wiki/concepts/prompt-injection.md
   - wiki/concepts/pi-customization-layers.md
+  - wiki/topics/github-open-agent-tools.md
 ---
 # Claude Skills
 
@@ -60,6 +62,7 @@ Claude Skills 是 Anthropic 推出的模块化技能包机制：一个装着指�
 - 2026-10（信源时间）：Skills 2.0 增加内置断言评估、A/B 测试与触发词优化；第三方市场（SkillsMSP）与精选列表（Awesome Claude Skills）出现。
 - 2026-10-26：Uncle Bob 发布 `unclebob/ub-mode`——把 TDD/重构/Clean 系纪律压成一份 Agent Skill，三段式执行（先让它能工作→再把它做好→遵循实践要求），质量靠 Crapper/Dryer/Mutator 确定性工具验证而非 Agent 自述。标志着 Skills 从"通用知识包"向"专业开发纪律包"演进。
 - 2026-10-31：Harness 随笔（第 4 信源）补上**激活式 token 账**视角——Skill 描述按需加载的特性使其可作为"不激活不付费"的 Session 管理入口，与 MCP 全量注入形成成本对照；作者称其理想形态更接近用户手动激活的斜杠命令（同一主张在 [[context-management|上下文管理]] 第 3 信源同步记录）。
+- 2026-11-03（信源实测日）：**生态进入"装哪个"阶段**——一份按 star 排序的 30 个 Agent Skills 挑选清单显示，头部项目已积累大规模共识：Superpowers 311,254、Matt Pocock Skills 310,242、ECC 295,677 star（2026-11-03 实测，单一微信信源，未经仓库核验），第四名掉到 18 万量级；awesome 类目录仓库（awesome-agent-skills 1000+、ComposioHQ 200 条集成等）成为选型入口，官方出品集中在 Agent 短板场景（审美/文档/测试）。选型口径：方法论选 Superpowers、日常提效选 Matt Pocock、搭基建选 ECC（信源建议，见 [[github-open-agent-tools]]）。
 
 ## Open Questions（开放问题）
 
