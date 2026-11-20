@@ -9,7 +9,9 @@ created: 2026-11-20
 category: 技术
 tags: [产品设计]
 asset_ref: Assets/2026-11/wechat-JLnvspihR2iJg1deRUm-dQ.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-11-20T10:32:35.496Z"
+ingest_claim_id: 19792-1795170755496-0
 ---
 
 > **摘要**：B 端报表设计方法论：起点不是可视化而是管理动作。先回答"给谁看、支撑什么业务动作、数据从哪里来"，用"用户-场景-动作-数据"四步法梳理；指标口径落成指标字典是报表混乱的根源；可视化按"总览-趋势-结构-明细"四层分层，首屏给结论、下钻给证据；辅以权限/性能设计，附 PRD 落地清单。
