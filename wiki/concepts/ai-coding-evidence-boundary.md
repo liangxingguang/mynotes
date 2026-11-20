@@ -4,7 +4,7 @@ type: concept
 title: 证据边界驱动的 AI Coding
 status: active
 created: 2026-11-05
-updated: 2026-11-05
+updated: 2026-11-21
 confidence: medium
 tags:
   - concept
@@ -14,11 +14,13 @@ tags:
   - evidence
 sources:
   - raw/sources/ai/2026-11-03-weixin-ai-coding-storage-practice.md
+  - raw/sources/ai/2026-11-20-gaode-ad-linglingqi.md
 related:
   - wiki/concepts/ai-assisted-troubleshooting-workflow.md
   - wiki/concepts/evidence-first-jvm-tuning.md
   - wiki/concepts/ai-coding-delivery-evolution.md
   - wiki/concepts/agent-permission-model.md
+  - wiki/entities/gaode-ad-linglingqi.md
 ---
 # 证据边界驱动的 AI Coding
 
@@ -58,6 +60,10 @@ AI 提速后缺陷绝对数仍会上涨——千行缺陷率持平但交付功�
 
 评审流程：AI 全仓评审输出疑似清单 → 逐条写测试把推理变成红绿（变红=确认，证伪=误报）→ 集成测试降误报、裁决分歧 → 运行时日志补充"已经发生"的证据 → 结论按四档输出，未验证条目汇总为测试基础设施待办。Debug 流程：先固定事实底稿（表现影响/经过/环境/操作历史分开记录，标注采集时间与来源实例）→ AI 输出候选集合 → 实验验证因果 → 沿"生产—传播—持久化—提交—消费—恢复—清理"完整链路找第一次错误 → 人确认根因后从全局不变量审查修复。
 
+**当前行为 vs 目标行为与记忆治理**（信源 2026-11-20，高德广告凌凌漆）：在 Knowledge + Mem0 的经验治理中，不能用一条固定的"可信优先级"同时回答不同问题，须区分四类信息用途：①**确认当前行为**——以绑定目标版本和时间窗口的源码、配置、权威系统记录、日志、运行数据为依据；②**判断目标行为**——以经责任人确认的业务规则、研发契约和验收标准为依据，**不能用错误实现反向定义正确预期**；③**缩小排查范围**——历史记忆提供过去任务的路径、失败尝试和纠正结果，但必须在当前任务中重新核实；④**形成待验证判断**——**模型推断只能作为假设，不能直接升级为事实或规则**。信息冲突时，应先区分是在讨论"系统现在怎样运行"还是"系统应该怎样运行"。
+
+记忆治理三要点：记录经验的来源、适用范围、对应版本，以及后来是否被采用、拒绝或纠正；Memory 评价分三层——能否检索到、执行时是否被真实采用、采用后是否降低耗时/返工/提升质量；"硬采用"只是过程指标，不能证明记忆正确或产生收益。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -76,6 +82,8 @@ AI 提速后缺陷绝对数仍会上涨——千行缺陷率持平但交付功�
 
 - 2026-11-05 — 美团基础技术部分布式存储团队实践（第一方信源）确立三类任务边界、证据四层、七类命名与方法论 6 条；与 [[ai-assisted-troubleshooting-workflow]]（贴文本排障分工）和 [[evidence-first-jvm-tuning]]（JVM 证据纪律）互为印证。
 
+- 2026-11-21 — 新增高德广告凌凌漆信源 `raw/sources/ai/2026-11-20-gaode-ad-linglingqi.md`，补充"当前行为 vs 目标行为"的区分（绑定版本的源码配置日志 vs 责任人确认的规则，不能用错误实现反向定义正确预期）、模型推断只能作假设不能升级为事实/规则，以及 Knowledge+Mem0 的记忆治理（来源/适用范围/版本/采纳拒绝纠正、三层评价、硬采用只是过程指标）。
+
 ## Open Questions（开放问题）
 
 - 证据四层的投入成本与收益未量化（117 疑似→36 确认的单次实验不足以外推）。
@@ -85,6 +93,7 @@ AI 提速后缺陷绝对数仍会上涨——千行缺陷率持平但交付功�
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-11-03-weixin-ai-coding-storage-practice.md`（三类任务边界、证据四层、七类命名、方法论 6 条、实验数据）
+- Source: `raw/sources/ai/2026-11-20-gaode-ad-linglingqi.md`（当前/目标行为区分、模型推断作假设、Knowledge+Mem0 记忆治理与三层评价）
 
 ## Related Knowledge（相关知识）
 

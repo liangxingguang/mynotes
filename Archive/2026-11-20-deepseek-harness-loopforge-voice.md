@@ -9,7 +9,7 @@ created: 2026-11-20
 category: 技术
 tags: [Agent, AI]
 asset_ref: Assets/2026-11/wechat-oJCiADArsydGR9nu9PGrvg.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 > **摘要**：一份用 AI 原生研发范式交付 VoxForge 智能语音平台的完整方案：DeepSeek Harness（dsh）做编码 Agent 执行器（"一切皆插件"），腾讯开源 LoopForge 做团队级交付编排（SOP = Agent/Script 节点 + 人签字门禁），核心是"DAG 管主干，Agent 管节点，人管签字"。系统分五层：L1 OpenSIPS（SIP 信令边界/负载均衡）→ L2 Asterisk（呼叫应用，PJSIP+ARI）→ L3 AI 语音网关（Python asyncio 状态机，ASR/TTS/LLM/RAG）→ L5 业务与数据层（CRM/CDR/PG/Redis），目标 IVR 自助解决率≥40%、P50 时延≤900ms、200 路并发、99.95% 可用性。

@@ -4,7 +4,7 @@ type: concept
 title: AI 原生 SDLC
 status: active
 created: 2026-10-17
-updated: 2026-11-20
+updated: 2026-11-21
 confidence: medium
 tags:
   - concept
@@ -20,6 +20,8 @@ sources:
   - raw/sources/ai/2026-10-31-coding-agent-ai-native-workflow.md
   - raw/sources/enterprise/2026-11-04-ai-native-team-org-reconstruction.md
   - raw/sources/ai/2026-11-20-acceptance-agent-opt.md
+  - raw/sources/ai/2026-11-20-deepseek-harness-loopforge-voice.md
+  - raw/sources/ai/2026-11-20-gaode-ad-linglingqi.md
 related:
   - wiki/concepts/ai-native-organization.md
   - wiki/concepts/mcp.md
@@ -28,6 +30,7 @@ related:
   - wiki/sources/ai-native-team-org-reconstruction.md
   - wiki/sources/alibaba-ai-native-dev-handbook.md
   - wiki/sources/coding-agent-ai-native-workflow.md
+  - wiki/entities/loopforge.md
 ---
 # AI 原生 SDLC
 
@@ -64,6 +67,13 @@ Agent 编码使构建阶段塌缩到以小时计，而规划、评审/测试、�
 
 起步态是手工逐句提示每一步；终态是闭环——被接受的 intent.md 触发设计、被批准的 spec.md 触发 plan 模式、被合入的 PR 触发流水线、被突破的控制带写下一份 intent.md。各打法模块化、有前置依赖，可从任何无前置的"起点打法"开始改造。对遗留系统（Jira/ServiceNow/Figma/变更委员会），每种制品指定唯一事实来源：仓库为准、遗留系统为准、或互相挂链（记录 ID ↔ commit SHA）。
 
+**SOP 编排与契约驱动的两种工程化路径**（信源 2026-11-20，第 9、10 信源）：
+
+- **LoopForge 的 SOP 编排**（第 9 信源）：腾讯开源团队交付编排工作台，用 SOP（Agent 节点 + Script 节点 + 人工门禁）把需求变成可追溯、可复现、可验收的交付，核心思路"DAG 管主干，Agent 管节点，人管签字"。不需要 AI 的地方不用 AI——构建/测试/lint/压测由 Script 节点承担，AI 只负责节点内分析与编码，关键决策与验收由人（Human gate）签字；门禁失败可打回指定上游步骤，复盘引擎给出健康度评分。腾讯内部实践合入 836 个 MR，一次通过率 54.8%，经门禁打回返工后终态成功率 95.4%。见 [[loopforge|LoopForge]]。
+- **高德 Dev Loop 的契约驱动**（第 10 信源）：不再规定研发的每一步操作，而是先明确任务目标、约束和验收标准，再让 Agent 根据执行结果选择路径。研发契约收敛为目标（Goal）+ 约束（Constraints）+ 验收证据（Acceptance Evidence），按任务风险（轻量修改/常规研发/跨仓高风险）调整上下文深度、治理要求和验证方式。见 [[gaode-ad-linglingqi|广告凌凌漆]] 与 [[acceptance-agent|验收 Agent]]。
+
+两者是"AI 原生 SDLC"中"人守闸门"与"制品链可追溯"的不同工程化路径：LoopForge 用确定性 DAG + 人工门禁锁流程，Dev Loop 用契约约束 Agent 自主选择实现路径。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -87,6 +97,10 @@ Agent 编码使构建阶段塌缩到以小时计，而规划、评审/测试、�
 - 2026-11-04 — 微信公众号方法论长文（第 7 信源）从组织层印证"制品链即唯一事实来源"机制：文档进化为 Spec——连接业务、产品、工程和 Agent 的共同语言，MCP 是当前最可行的连接层；业务决策变更时 Spec 自动同步到所有依赖方包括 Agent。判断标准：不能被 Agent 消费的活上下文就不是 Spec，只是过期文档。这是"How It Works"中遗留系统"每种制品指定唯一事实来源"规则的组织层重述，其治理层评估闭环见 [[agent-evaluation]]。
 - 2026-11-20 — 腾讯云开发者·吴思《AI 10分钟写完代码，你2小时还在验？》（第 8 信源）从工程实现侧印证"瓶颈转移到验证"：OPT 平台需求交付小队在编码之后补后端验收 Agent，五阶段流程（变更接口分析→编译发布与接口验证→Gherkin 测试→TAPD 预测试→验收结果输出）+ L1-L4 多层证据链 + 硬阻塞/软失败二分，验收不通过打回修复重验。作者自报 160+ 次运行、单次验收人工投入 2h→20min（无第三方验证）。为六阶段表中"测试/验证"环节提供了接口级验收回路的实例，验收 Agent 概念见 [[acceptance-agent]]。
 
+- 2026-11-21 — 新增 VoxForge 方案信源（第 9 信源）`raw/sources/ai/2026-11-20-deepseek-harness-loopforge-voice.md`，提供 SOP 编排模式的工程实例：LoopForge 用 Agent/Script/Human gate 节点把需求变成可追溯交付，"DAG 管主干，Agent 管节点，人管签字"，门禁失败打回上游，复盘引擎给健康度评分。见 [[loopforge|LoopForge]]。
+
+- 2026-11-21 — 新增高德广告凌凌漆信源（第 10 信源）`raw/sources/ai/2026-11-20-gaode-ad-linglingqi.md`，提供契约驱动的研发协调（Dev Loop：Goal+Constraints+Acceptance Evidence，先明确目标约束验收再让 Agent 按执行结果选路径）与"自主执行≠自主授权"的边界纪律。
+
 ## Open Questions（开放问题）
 
 - 各打法的先行/滞后指标只有口径、无公开前后对照数据，实际成效待第三方验证。
@@ -103,6 +117,8 @@ Agent 编码使构建阶段塌缩到以小时计，而规划、评审/测试、�
 - Source: `raw/sources/ai/2026-10-31-coding-agent-ai-native-workflow.md`（第 6 信源：个体开发者视角的 AI 原生研发工作流——架构先行、规约工程+上下文工程、五要素模型、Assistant→Agent、验证护城河、人类责任铁律）
 - Source: `raw/sources/enterprise/2026-11-04-ai-native-team-org-reconstruction.md`（第 7 信源：Spec 为唯一真实来源、MCP 连接层、业务决策变更自动同步所有依赖方含 Agent；组织层重述）
 - Source: `raw/sources/ai/2026-11-20-acceptance-agent-opt.md`（第 8 信源：OPT 平台后端验收 Agent——编码后的接口级验收回路、多层证据链、硬阻塞/软失败；验证环节瓶颈的工程实例，数字为作者自报）
+- Source: `raw/sources/ai/2026-11-20-deepseek-harness-loopforge-voice.md`（第 9 信源：LoopForge SOP 编排——Agent/Script/Human gate 节点、DAG 主干、门禁打回、复盘评分）
+- Source: `raw/sources/ai/2026-11-20-gaode-ad-linglingqi.md`（第 10 信源：高德 Dev Loop 契约驱动、自主执行≠自主授权）
 
 ## Related Knowledge（相关知识）
 

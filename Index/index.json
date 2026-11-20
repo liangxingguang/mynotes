@@ -1,62 +1,6 @@
 {
-  "updated_at": "2026-11-21 00:49",
+  "updated_at": "2026-11-21 01:56",
   "notes": [
-    {
-      "id": "inbox-2026-11-20-deepseek-harness-loopforge-voice",
-      "title": "2026-11-20-deepseek-harness-loopforge-voice",
-      "path": "Inbox/2026-11-20-deepseek-harness-loopforge-voice.md",
-      "created": "2026-11-20",
-      "category": "技术",
-      "tags": [
-        "Agent",
-        "AI"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/oJCiADArsydGR9nu9PGrvg",
-      "source_type": "web",
-      "platform": "微信",
-      "summary": "**摘要**：一份用 AI 原生研发范式交付 VoxForge 智能语音平台的完整方案：DeepSeek Harness（dsh）做编码 Agent 执行器（\"一切皆插件\"），腾讯开源 LoopForge 做团队级交付编排（SOP = Agent/Script 节点 + 人签字门禁），核心是\"DAG 管主干，Agent 管节点，人管签字\"。系统分五层：L1 OpenSIPS（SIP 信令边界/负载均衡）→ L2 Asterisk（呼叫应用，PJSIP+ARI）→ L3 AI 语音网关（Python asyncio 状态机，ASR/TTS/LLM/RAG）→ L5 业务与数据层（CRM/CDR/PG/Redis），目标 IVR 自助解决率≥40%、P50 时延≤900ms、200 路并发、99.95% 可用性。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-oJCiADArsydGR9nu9PGrvg.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "inbox-2026-11-20-event-sourcing",
-      "title": "2026-11-20-event-sourcing",
-      "path": "Inbox/2026-11-20-event-sourcing.md",
-      "created": "2026-11-20",
-      "category": "技术",
-      "tags": [
-        "系统设计"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/zLuppepFzQBk-3MK1J1c7A",
-      "source_type": "web",
-      "platform": "微信",
-      "summary": "**摘要**：事件溯源（Event Sourcing）入门科普：不直接存储实体当前状态，而是以追加方式保存导致状态变化的一系列事件（类似银行流水），写入后不可修改删除，当前状态通过按时间顺序回放事件重建。适合审计、追溯要求高的场景，配合快照解决长链路回放效率问题。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-zLuppepFzQBk-3MK1J1c7A.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "inbox-2026-11-20-gaode-ad-linglingqi",
-      "title": "2026-11-20-gaode-ad-linglingqi",
-      "path": "Inbox/2026-11-20-gaode-ad-linglingqi.md",
-      "created": "2026-11-20",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "Agent"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzE5ODQ3MDM4Mw==&mid=2247492867&idx=1&sn=e702e014680c4d100966af3d9e5e1569&chksm=96999a83a1ee139554bee54f36b2b8192db930b6a945b1f81328434fe03404d945c2aa022515",
-      "source_type": "web",
-      "platform": "微信",
-      "summary": "**摘要**：以\"17 项定向测试全通过却仍不能宣布需求完成\"为引，点明 AI 工程的核心是让数字员工持续工作、理解大型工程、并用真实证据交付。广告凌凌漆接入 22 项能力入口（六类：需求研发/代码质量/引擎实验/运维数据/客资计费/知识协同），架构分交互协作、任务控制（Main Agent）、研发执行（Codex Harness）、工程上下文与验收四部分。关键是执行引擎可替换（自主执行≠自主授权）、个人研发环境（Personal Dev，单 Writer 原则）、CodeGraph 影响分析、Knowledge+Mem0 经验治理。研发契约收敛为目标/约束/验收证据，验收结论分开发完成、交付完成、效果确认三层。截至 2026-09-18，台账 362 条任务、办结率 96.4%。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-gaode-ad-linglingqi-4.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "inbox-2026-11-20-gaode-qingzhou-agent",
       "title": "2026-11-20-gaode-qingzhou-agent",
@@ -8291,6 +8235,62 @@
       "summary": "**摘要**：OpenAI 工程师公开 Codex Sandbox 设计细节：模型决定运行什么，操作系统按启动时的规则限制它能访问什么。命令启动时限权（权限配置→本机沙箱规则，子进程继承约束）；本地 stdio MCP 服务默认不走 Shell 沙箱路径，需单独用 `codex sandbox --permission-profile` 限权；域名规则靠代理执行，需 OS 拦截直连+代理判断域名两层配合。macOS/Linux/Windows 三套实现（Seatbelt/bubblewrap+seccomp/MXC），并指出\"文件不继承沙箱限制\"的盲区。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-DcqSSYb3JQgZqpJNBV_kFQ.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-20-deepseek-harness-loopforge-voice",
+      "title": "2026-11-20-deepseek-harness-loopforge-voice",
+      "path": "Archive/2026-11-20-deepseek-harness-loopforge-voice.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "Agent",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/oJCiADArsydGR9nu9PGrvg",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：一份用 AI 原生研发范式交付 VoxForge 智能语音平台的完整方案：DeepSeek Harness（dsh）做编码 Agent 执行器（\"一切皆插件\"），腾讯开源 LoopForge 做团队级交付编排（SOP = Agent/Script 节点 + 人签字门禁），核心是\"DAG 管主干，Agent 管节点，人管签字\"。系统分五层：L1 OpenSIPS（SIP 信令边界/负载均衡）→ L2 Asterisk（呼叫应用，PJSIP+ARI）→ L3 AI 语音网关（Python asyncio 状态机，ASR/TTS/LLM/RAG）→ L5 业务与数据层（CRM/CDR/PG/Redis），目标 IVR 自助解决率≥40%、P50 时延≤900ms、200 路并发、99.95% 可用性。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-oJCiADArsydGR9nu9PGrvg.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-20-event-sourcing",
+      "title": "2026-11-20-event-sourcing",
+      "path": "Archive/2026-11-20-event-sourcing.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "系统设计"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/zLuppepFzQBk-3MK1J1c7A",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：事件溯源（Event Sourcing）入门科普：不直接存储实体当前状态，而是以追加方式保存导致状态变化的一系列事件（类似银行流水），写入后不可修改删除，当前状态通过按时间顺序回放事件重建。适合审计、追溯要求高的场景，配合快照解决长链路回放效率问题。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-zLuppepFzQBk-3MK1J1c7A.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-20-gaode-ad-linglingqi",
+      "title": "2026-11-20-gaode-ad-linglingqi",
+      "path": "Archive/2026-11-20-gaode-ad-linglingqi.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzE5ODQ3MDM4Mw==&mid=2247492867&idx=1&sn=e702e014680c4d100966af3d9e5e1569&chksm=96999a83a1ee139554bee54f36b2b8192db930b6a945b1f81328434fe03404d945c2aa022515",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：以\"17 项定向测试全通过却仍不能宣布需求完成\"为引，点明 AI 工程的核心是让数字员工持续工作、理解大型工程、并用真实证据交付。广告凌凌漆接入 22 项能力入口（六类：需求研发/代码质量/引擎实验/运维数据/客资计费/知识协同），架构分交互协作、任务控制（Main Agent）、研发执行（Codex Harness）、工程上下文与验收四部分。关键是执行引擎可替换（自主执行≠自主授权）、个人研发环境（Personal Dev，单 Writer 原则）、CodeGraph 影响分析、Knowledge+Mem0 经验治理。研发契约收敛为目标/约束/验收证据，验收结论分开发完成、交付完成、效果确认三层。截至 2026-09-18，台账 362 条任务、办结率 96.4%。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-gaode-ad-linglingqi-4.md",
       "wiki_status": "ingested"
     },
     {

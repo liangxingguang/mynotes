@@ -9,7 +9,7 @@ created: 2026-11-20
 category: 技术
 tags: [系统设计]
 asset_ref: Assets/2026-11/wechat-zLuppepFzQBk-3MK1J1c7A.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 > **摘要**：事件溯源（Event Sourcing）入门科普：不直接存储实体当前状态，而是以追加方式保存导致状态变化的一系列事件（类似银行流水），写入后不可修改删除，当前状态通过按时间顺序回放事件重建。适合审计、追溯要求高的场景，配合快照解决长链路回放效率问题。

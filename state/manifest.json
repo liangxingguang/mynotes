@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-11-20",
+  "updated_at": "2026-11-21",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -5240,6 +5240,50 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/DcqSSYb3JQgZqpJNBV_kFQ",
       "asset_ref": "Assets/2026-11/wechat-DcqSSYb3JQgZqpJNBV_kFQ.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-deepseek-harness-loopforge-voice.md",
+      "sha256": "84912a884f424cbc806dee95ef41593ce310fc4e71b4907c95506d3d1f70818d",
+      "registered_at": "2026-11-21",
+      "inbox_ref": "Archive/2026-11-20-deepseek-harness-loopforge-voice.md",
+      "pages": [
+        "wiki/sources/2026-11-20-deepseek-harness-loopforge-voice.md",
+        "wiki/entities/loopforge.md",
+        "wiki/topics/ai-voice-platform-architecture.md",
+        "wiki/entities/deepseek-harness.md",
+        "wiki/concepts/ai-native-sdlc.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/oJCiADArsydGR9nu9PGrvg",
+      "asset_ref": "Assets/2026-11/wechat-oJCiADArsydGR9nu9PGrvg.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-20-event-sourcing.md",
+      "sha256": "8c323ef3f77288305fdedab920b6ed1662a03dace44394555a7e4fe652cb67e3",
+      "registered_at": "2026-11-21",
+      "inbox_ref": "Archive/2026-11-20-event-sourcing.md",
+      "pages": [
+        "wiki/sources/2026-11-20-event-sourcing.md",
+        "wiki/concepts/event-sourcing.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/zLuppepFzQBk-3MK1J1c7A",
+      "asset_ref": "Assets/2026-11/wechat-zLuppepFzQBk-3MK1J1c7A.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-gaode-ad-linglingqi.md",
+      "sha256": "4bd77156e1857cd1978630892b7ba52ae8c4d27ab469abf033e04a82d4de0693",
+      "registered_at": "2026-11-21",
+      "inbox_ref": "Archive/2026-11-20-gaode-ad-linglingqi.md",
+      "pages": [
+        "wiki/sources/2026-11-20-gaode-ad-linglingqi.md",
+        "wiki/entities/gaode-ad-linglingqi.md",
+        "wiki/concepts/personal-dev.md",
+        "wiki/concepts/harness-engineering.md",
+        "wiki/concepts/acceptance-agent.md",
+        "wiki/concepts/ai-coding-evidence-boundary.md",
+        "wiki/concepts/ai-native-sdlc.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzE5ODQ3MDM4Mw==&mid=2247492867&idx=1&sn=e702e014680c4d100966af3d9e5e1569&chksm=96999a83a1ee139554bee54f36b2b8192db930b6a945b1f81328434fe03404d945c2aa022515",
+      "asset_ref": "Assets/2026-11/wechat-gaode-ad-linglingqi-4.md"
     }
   ]
 }

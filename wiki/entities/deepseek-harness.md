@@ -4,7 +4,7 @@ type: entity
 title: DeepSeek Harness
 status: active
 created: 2026-10-20
-updated: 2026-10-29
+updated: 2026-11-21
 confidence: medium
 tags:
   - entity
@@ -17,11 +17,14 @@ sources:
   - raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md
   - raw/sources/ai/2026-11-02-superagent-design.md
   - raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md
+  - raw/sources/ai/2026-11-20-deepseek-harness-loopforge-voice.md
 related:
   - wiki/decisions/harness-selection-deepagents.md
   - wiki/entities/deepagents.md
   - wiki/sources/superagent-design.md
   - wiki/concepts/super-agent.md
+  - wiki/entities/loopforge.md
+  - wiki/topics/ai-voice-platform-architecture.md
 ---
 # DeepSeek Harness
 
@@ -52,6 +55,7 @@ DeepSeek Harness 是调用 DeepSeek 模型的桌面 Agent 客户端（作者称"
 - **dsh-superagent-prototype**（2026-11-02 信源）：验证 Super-agent 技术路线的 GitHub 原型插件，非 DeepSeek 正式产品。拆解文对照版本 `6337fc8`（<https://github.com/deepseek-ai/dsh-superagent-prototype/tree/6337fc823ce20251c8de8085948165c81aaa701e>）；仓库明确说明与内部版本、设计文章并不完全一致，部分方向尚未实现。
 - **对照版本 ce7073d**（2026-11-02 拆解信源）：Super-agent 依托的 Harness 版本 `ce7073d51254c26cd63b22a60835b8f948deb447`，含会话持久化、子 Agent 与实验性 Agent Teams 文档（会话恢复、子 Agent 恢复、持久成员与共享任务板、消息唤醒未加载成员）。
 - **Ticket/Store/Engine 实现**（2026-11-02 拆解信源）：原型以 SQLite `Store` 持久化事件/任务关系/接单决定/待执行动作/消息发送状态；`Engine` 事务先行（任务+授权+派工+待执行动作同笔事务提交后才启动执行器）；`Effects` 队列退避重试 + `Outbox` 记发送状态。
+- **编码执行器角色与版本锁定**（2026-11-20 信源）：在 VoxForge 语音平台方案中作为编码 Agent 执行器，所有"写代码/改配置/跑测试"动作由 dsh 完成；项目知识（Asterisk 拨号方案规范、OpenSIPS 路由规范、SIP 安全基线）以 Skill 形式放 `.dsh/skills/` 下按需加载（社区技能包同路径安装）。启动方式 `npx @deepseek-ai/dsh web`，默认 Web UI `http://127.0.0.1:3080`；提供标准、Code（Code Mode SDK 用 TypeScript 组合多步操作）、极简三模式。因项目处开发者预览、官方提示有不兼容变更，方案将 dsh 版本锁定、关键约束沉淀在 Skills 与 SOP 中，并保留第二执行器（如 Codex/Claude Code）可切换。
 
 ## Products / Projects（产品／项目）
 
@@ -70,10 +74,11 @@ DeepSeek Harness 是调用 DeepSeek 模型的桌面 Agent 客户端（作者称"
 - 2026-10-31 — Pi 与 DSH 复杂度之争采集入库，补充 Cordis 插件架构、可逆组合机制与运行时自我改装视角
 - 2026-11-02 — Super-agent 架构探索文采集入库，补充 Super-agent 内部实例、异步 ReAct Loop（已实现未默认开启）、dsh-superagent-prototype 原型
 - 2026-11-02 — 「架构师」公众号原型拆解采集入库，补充 dsh-superagent-prototype 对照版本 6337fc8、Harness 对照版本 ce7073d（会话持久化/子 Agent/实验性 Agent Teams）、SQLite Store + Engine 事务先行 + Effects/Outbox 实现细节
+- 2026-11-20 — VoxForge 方案文采集入库，补充编码执行器角色（.dsh/skills/ 按需加载、社区技能包同路径）、启动方式与标准/Code/极简三模式、版本锁定 + 约束沉淀 Skills/SOP + 保留第二执行器的实践
 
 ## Current Understanding（当前认知）
 
-Harness 把 Agent 能力组织为"模式预设"，降低新手配置门槛；PTC 模式体现了"以程序代替多轮工具往返"的省 token 思路（解读：与业界 programmatic tool calling 趋势一致）。2026-10-29 新增选型信源：引官方仓库声明基本确立"DeepSeek 官方出品"，此前"是否官方出品"的存疑解除；但其处 developer preview（官方明示将有兼容性破坏变更），生产采用须等稳定版。2026-11-02 新增 Super-agent 架构信源：Harness 不仅是桌面客户端，更是 Super-agent 的承载平台——内部 Super-agent 实例已基于其运行，异步 ReAct Loop 已实现，存算分离与 BYOM 架构思路与其开放架构设计互证。
+Harness 把 Agent 能力组织为"模式预设"，降低新手配置门槛；PTC 模式体现了"以程序代替多轮工具往返"的省 token 思路（解读：与业界 programmatic tool calling 趋势一致）。2026-10-29 新增选型信源：引官方仓库声明基本确立"DeepSeek 官方出品"，此前"是否官方出品"的存疑解除；但其处 developer preview（官方明示将有兼容性破坏变更），生产采用须等稳定版。2026-11-02 新增 Super-agent 架构信源：Harness 不仅是桌面客户端，更是 Super-agent 的承载平台——内部 Super-agent 实例已基于其运行，异步 ReAct Loop 已实现，存算分离与 BYOM 架构思路与其开放架构设计互证。2026-11-20 新增 VoxForge 方案信源：dsh 在真实业务场景中承担编码执行器角色，其"版本锁定 + 关键约束沉淀 Skills/SOP + 保留第二执行器可切换"的实践，是应对 developer preview 不兼容变更、避免任务体系被锁定在某个执行器的工程纪律。
 
 ## Evidence（证据）
 

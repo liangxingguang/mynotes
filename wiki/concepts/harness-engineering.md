@@ -4,7 +4,7 @@ type: concept
 title: Harness Engineering（Agent 执行系统工程）
 status: active
 created: 2026-10-27
-updated: 2026-11-12
+updated: 2026-11-21
 confidence: high
 tags:
   - concept
@@ -19,6 +19,7 @@ sources:
   - raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md
   - raw/sources/ai/2026-10-31-agent-harness-essay-ideal-harness.md
   - raw/sources/ai/2026-11-12-ai-agent-tech-overview.md
+  - raw/sources/ai/2026-11-20-gaode-ad-linglingqi.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/concepts/context-management.md
@@ -36,6 +37,7 @@ related:
   - wiki/concepts/agent-as-memory.md
   - wiki/sources/codex-agent-harness-architecture-6.md
   - wiki/sources/agent-harness-essay-ideal-harness.md
+  - wiki/concepts/personal-dev.md
 ---
 # Harness Engineering（Agent 执行系统工程）
 
@@ -104,6 +106,8 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 
 **从"链"到"Harness"的演进**（信源 2026-11-12，第 8 信源）：2022 年 LangChain 提出"链（Chains）"概念，将多个 LLM 调用串成流水线。但"链"的根本局限是开发者硬编码的固定流程——走哪条路、在哪分叉、在哪循环都写死，一旦需"根据情况动态决定下一步"就力不从心。这催生了从"链"到"Agent"的转变，Agent 需要长期运行、状态管理、安全管控等工程基础设施，即 Harness 工程。
 
+**可替换 Harness 边界**（信源 2026-11-20，第 9 信源）：高德广告凌凌漆把 Harness 收敛为**可替换的执行适配层**，而非把任务体系锁定在某个产品中。分工为：**Harness 负责**代码搜索与阅读、文件修改、命令执行、上下文压缩、基于真实结果的多轮修复（即"怎么做"）；**平台负责**任务身份、仓库与版本、权限、环境、研发契约、验收证据（即"能不能做"）。核心纪律是**自主执行不等于自主授权**——Harness 可自主选择实现路径，但不能自行扩大仓库范围、写入权限或完成标准。这一边界使执行引擎（如 Codex Harness）可替换、任务事实与验收机制不被锁定在某个 Harness 中；配套的稳定研发现场由 [[personal-dev|个人研发环境]] 提供。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -141,6 +145,8 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 
 - 2026-11-12 — 新增 vivo《AI Agent 技术全景解析》信源（第 8 信源）。补上三块此前缺位的维度：①**Middleware 洋葱模型**——Harness 核心扩展机制，内置能力全部以 middleware 形式钩在 ReAct 循环上；②**框架选型对比**——LangChain/LlamaIndex/AgentScope 2.0 在状态管理、多用户隔离、长期运行、生产部署上的差异；③**从"链"到"Harness"的演进叙事**——Chains 的固定流程局限催生了 Agent 的工程基础设施需求。
 
+- 2026-11-21 — 新增高德广告凌凌漆信源（第 9 信源）`raw/sources/ai/2026-11-20-gaode-ad-linglingqi.md`。补上**可替换 Harness 边界**这一工程纪律：Harness 管"怎么做"（搜索/修改/命令/压缩/多轮修复），平台管"能不能做"（任务身份/仓库版本/权限/环境/研发契约/验收证据）；核心纪律"自主执行不等于自主授权"，Harness 不能自行扩大仓库范围、写入权限或完成标准。执行引擎可替换、任务体系不被锁定，与"权限与隔离"观察面及 [[personal-dev|个人研发环境]] 的稳定研发现场互为支撑。
+
 ## Open Questions（开放问题）
 
 - 论文原始统计口径与当前产品能力的时差（快照为历史版本）？
@@ -156,6 +162,7 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 - Source: `raw/sources/ai/2026-10-31-codex-agent-harness-architecture-6.md`（第 6 信源：三控制模块状态所有权、Harness/Infra 边界、三态分离与多身份）
 - Source: `raw/sources/ai/2026-10-31-agent-harness-essay-ideal-harness.md`（第 7 信源：Session 为核心重构、注入式 token 账、UI 审美分歧点论；97% cache read 与 10% 额度差异为社区说法，未经核验）
 - Source: `raw/sources/ai/2026-11-12-ai-agent-tech-overview.md`（第 8 信源：Middleware 洋葱模型、框架选型对比、链→Harness 演进叙事）
+- Source: `raw/sources/ai/2026-11-20-gaode-ad-linglingqi.md`（第 9 信源：可替换 Harness 边界、自主执行≠自主授权、平台与 Harness 职责分工）
 
 ## Related Knowledge（相关知识）
 

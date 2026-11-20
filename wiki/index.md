@@ -414,6 +414,9 @@
 - [[2026-11-20-ai-llm-booklist|AI 工程师必备书单：LLM、Agent、机器学习一次整理（微信公众号）]]（2026-11-20，AI/书单/学习，四梯队分级（Must Read/Solid Book/Good Read/Read Later）+入门与进阶阅读建议，20 本书明细以图片呈现未数字化，微信单信源，置信度低）
 - [[2026-11-20-claude-code-miniprogram|零代码，我用 Claude Code 做小程序（保姆级教学）]]（2026-11-20，AI/教程/小程序，计划模式先方案后开发+同一目录分工+真机调试→上传→备案→审核发布全流程，微信单信源，置信度中）
 - [[2026-11-20-codex-sandbox|Codex Sandbox 完整公开，OpenAI 怎么在本机给 Agent 限权？]]（2026-11-20，AI/Agent 安全/沙箱，命令启动时限权+MCP 服务默认不套沙箱+域名规则两层开关+三平台实现+文件不继承限制盲区，微信单信源，置信度中）
+- [[2026-11-20-deepseek-harness-loopforge-voice|基于 DeepSeek Harness + LoopForge 开发 Asterisk+OpenSIPS 智能语音系统开发方案讨论]]（2026-11-20，AI/语音平台/交付编排，VoxForge 五层语音平台方案蓝图：OpenSIPS+Asterisk+AI 语音网关、dsh 编码执行器+LoopForge SOP 编排、时延预算/G0-G6 门禁/12 周里程碑，作者自述乌托邦模式未经验证，微信单信源，置信度低）
+- [[2026-11-20-event-sourcing|事件溯源：系统如何偷偷记下你的一举一动]]（2026-11-20，架构/系统设计/事件溯源，不存当前状态而追加保存事件、写入不可改删、按时间回放重建状态，快照加速重建，可审计/可调试/灵活 vs 复杂/存储/隐私，码农有道科普单信源，置信度中）
+- [[2026-11-20-gaode-ad-linglingqi|高德广告凌凌漆：研发任务的持续执行与可信验收]]（2026-11-20，AI/Agent/可信验收，17 项测试全过仍不能宣布完成：22 项能力入口/四层架构/可替换 Harness 边界（自主执行≠自主授权）/Personal Dev 单 Writer/Dev Loop 契约/验收三层次，台账 362 条办结率 96.4%，高德技术单信源，置信度中）
 
 ## concept（概念）
 
@@ -668,6 +671,8 @@
 - [[coroutine-scheduling|协程调度（M:N）]]（2026-11-13，调度/并发/Rust，M:N 协程调度：成本两数量级优势、切换本质=换寄存器、四态与栈管理（guard page+trampoline）、两层队列工作窃取调度器（批量取 32）、yield 与唤醒（suspended 表防泄漏）、阻塞调用三解法、Go 可增长栈 vs Rust 固定栈→async/await 无栈路线，与 [[forkjoinpool-internals]] 工作窃取同源、与 [[rust-concurrency]] 路线对照，单信源置信度中）
 - [[motion-md|Motion.md（视频动效制作规范格式）]]（2026-11-20，概念/视频/Agent，Markdown 描述镜头顺序、节奏、转场与可替换素材；Brand Kit + Design 区分工；Motion Package v0.2 草案；参考片复刻四步流程，OpenMotion README 单信源，置信度中）
 - [[neural-lossless-compression|神经网络无损压缩]]（2026-11-20，概念/压缩/Transformer，预测即压缩（交叉熵之和=理想比特数）+算术编码；确定性在线学习免权重传输；离线迁移须自付成本；replay/词表/参数消融三律，与 [[next-token-prediction]] 互链，tufazip 作者长文单信源，置信度中）
+- [[event-sourcing|事件溯源（Event Sourcing）]]（2026-11-21，概念/架构/系统设计，不存当前状态而追加保存事件、写入不可改删、按时间回放重建状态，快照加速重建；可审计/可调试/灵活 vs 复杂/存储/隐私，码农有道科普单信源，置信度中）
+- [[personal-dev|个人研发环境（Personal Dev）]]（2026-11-21，概念/AI Coding/执行环境，逻辑研发环境独立于计算实例：稳定环境身份+持久卷+受控换代+单 Writer（lease/fencing 非代际标识），高德广告凌凌漆实践单信源，置信度中）
 
 ## entity（实体）
 
@@ -716,6 +721,8 @@
 - [[openmotion|OpenMotion]]（2026-11-20，AI/视频创作/Agent 实体，开源全栈 Agent 视频工作室：BYOA 22 款本地 Agent + BYOK 多模态网关（图/视频/音乐/TTS）+ 300+ Motion.md 指南 + Video as Code，Apache 2.0，stars 约 9.5k（2026-11-09 自报），README 单信源，置信度中）
 - [[opt-platform|OPT 平台（One Person Team）]]（2026-11-20，AI/Agent/平台实体，腾讯医疗业务自建人与 Agent 协同研发平台：CodeBuddy 等 CLI 运行时+需求交付小队编排（需求分析→方案规划→编码实现→代码验收）+后端验收 Agent 运行 160+ 次，微信单信源，置信度中）
 - [[tufazip|tufazip]]（2026-11-20，AI/压缩/Transformer 实体，Transformer 唯一预测模型无损压缩：LTCB 第 2（提交时点 2026-09-07），enwik9 10 亿字节 → 105.39 MB，12 层 163M + C2 共享块先验净省 0.56%，作者一手长文单信源，置信度高）
+- [[loopforge|LoopForge]]（2026-11-20，AI/Agent 编排/平台实体，腾讯开源自托管交付编排工作台：SOP=Agent/Script/Human gate 节点、"DAG 管主干，Agent 管节点，人管签字"、门禁失败打回上游、复盘引擎 0~100 健康度评分、腾讯内部 836 MR/一次通过率 54.8%/终态成功率 95.4%、LoopForge Local，单信源待核验，置信度中）
+- [[gaode-ad-linglingqi|广告凌凌漆]]（2026-11-20，AI/Agent/研发平台实体，高德广告研发自主执行 Agent：可替换 Harness 边界（Harness 管怎么做/平台管能不能做、自主执行≠自主授权）、Personal Dev 稳定研发现场（单 Writer+lease/fencing）、CodeGraph+Knowledge+Mem0、Dev Loop 契约（Goal/Constraints/Acceptance Evidence）、四概念分离、验收三层次，362 任务/96.4% 覆盖，单信源，置信度中）
 
 ## topic（主题）
 
@@ -730,6 +737,7 @@
 
 - [[multi-agent-collaboration-architecture|多 Agent 协作架构与控制权下沉]]（2026-11-05，2026-11-12 更新，AI/多 Agent/主题导航，三种协作架构（Master Agent/任务看板/Advisor）+控制权下沉框架+两个设计前提（上下文边界/模型边界）+巡检三模式混用案例+「超级 Agent」术语差异（贬义 vs [[super-agent]] 褒义）+单 Agent 三重瓶颈（上下文污染/工具过载/串行）+四种协作模式（Supervisor/Debate/Pipeline/Handoffs）+Tool/Skill/Subagent 层次关系+Handoffs 落地机制（header+落盘文档+按需加载+反向回执）与 Agent 组网形态（[[pi-xfer]]）+任务看板字段与状态机完整定义+双 Master 架构（Planner 只拆解+Scheduler 只调度巡检），四信源（得物+vivo+知乎×2）置信度中）
 - [[github-open-agent-tools|GitHub 开源 Skill/Agent 工具盘点]]（2026-11-20，AI/Agent 工具/主题导航，双信源：微博盘点 5 个实用工具（[[ffmpeg-skill]] 本地视频剪辑 / [[univer]] 可嵌入 Office SDK / [[firecrawl]] agent 爬虫基础设施 / [[cli-anything]] 任意软件转 CLI / [[minimind]] 从零训练小模型教程）+ 微信 star 排序 30 个 Agent Skills 清单（头部三名断层领先、五组表格、安装三法），均单信源待仓库核验，置信度中）
+- [[ai-voice-platform-architecture|AI 语音平台架构（VoxForge 五层）]]（2026-11-20，AI/语音平台/架构主题导航，VoxForge 五层架构（L1 OpenSIPS→L2 Asterisk→L3 AI 语音网关→L4 AI 能力→L5 业务数据）+时延预算+设计原则+WBS M1-M9+门禁 G0-G6+12 周里程碑+角色分工，未验证方案蓝图，单信源，置信度低）
 
 ## decision（决策）
 

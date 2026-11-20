@@ -4,7 +4,7 @@ type: concept
 title: 验收 Agent（AI 生成代码的验收）
 status: active
 created: 2026-11-20
-updated: 2026-11-20
+updated: 2026-11-21
 confidence: medium
 tags:
   - concept
@@ -13,11 +13,13 @@ tags:
   - acceptance
 sources:
   - raw/sources/ai/2026-11-20-acceptance-agent-opt.md
+  - raw/sources/ai/2026-11-20-gaode-ad-linglingqi.md
 related:
   - wiki/concepts/ai-native-sdlc.md
   - wiki/concepts/artifact-verification-delivery.md
   - wiki/concepts/ai-coding-evidence-boundary.md
   - wiki/entities/opt-platform.md
+  - wiki/entities/gaode-ad-linglingqi.md
 ---
 # 验收 Agent（AI 生成代码的验收）
 
@@ -57,6 +59,12 @@ AI 代码生成速度远大于人工需求验收速度：接口返回 200 只说
 - **证据链判断**：常见「表面成功」四情形——字段含义不符需求、写接口成功但 DB 状态未变、主接口成功但下游失败、异步消息未消费或日志链路显示副作用未发生；多层证据（接口返回、业务状态、链路日志、静态 Review 兜底）联合给出结论。
 - **打回与复验**：验收不通过将问题打回代码实现，修复后重新验收；问题发现前置到开发阶段。
 
+**验收三层次与四概念分离**（信源 2026-11-20，高德广告凌凌漆）：与 OPT 平台的接口级验收互补，高德把研发结果区分为三个层次——**开发完成**（代码差异、必要测试、风险检查达约定标准）≠ **交付完成**（代码评审、发布及相关交付步骤完成）≠ **效果确认**（线上行为、业务指标或约定结果得到验证）。核心纪律：**研发验收通过 ≠ 代码评审完成 ≠ 发布完成 ≠ 线上效果确认**。
+
+为避免 Agent 过早宣布完成，将四个概念分开管理：**Contract**（研发契约，什么条件下算完成）、**Trajectory**（执行轨迹，实际执行了哪些操作）、**Evidence**（验收证据，哪些真实结果支持当前结论）、**EvalResult**（验收结论，依据现有证据最多能宣布到哪一步）。研发契约（Dev Loop）收敛为三要素：目标（Goal）、约束（Constraints）、验收证据（Acceptance Evidence）；按任务类型（轻量修改/常规研发/跨仓高风险）调整上下文深度、治理要求和验证方式。每轮执行应带来新的可验证事实、关闭已知缺口或改变策略；连续多轮无新证据且未改变方向时，应停止自动重试、报告阻塞或请求人工判断。
+
+**真实案例**：广告推荐引擎混合版本配置兼容任务中，17/17 定向及相邻测试 PASS、约定模块 BUILD SUCCESS、任务级研发验收 PASS，但普通 testCompile 未形成通过证据、CR 未创建、发布与线上验证未执行——当前证据最多支持"研发验收通过、具备进入代码评审条件"，不宣布需求全部完成；testCompile 风险需在后续评审/交付检查中保留补证，不被阶段性 PASS 抵消。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -80,6 +88,8 @@ AI 代码生成速度远大于人工需求验收速度：接口返回 200 只说
 
 - 2026-11-20 — 自立。单一信源（腾讯云开发者公众号 · 吴思，OPT 平台实践）：五阶段流程、硬阻塞/软失败二分、Gherkin 人工确认、L1-L4 证据链与提效数据（160+ 次运行、单次人工投入 2h→20min，均为作者自报）。置信度 medium，待其他信源印证。端侧 E2E 验收 Agent（H5/小程序）在文中处于探索阶段。
 
+- 2026-11-21 — 新增高德广告凌凌漆信源 `raw/sources/ai/2026-11-20-gaode-ad-linglingqi.md`，补充验收三层次（开发完成≠交付完成≠效果确认）、四概念分离（Contract/Trajectory/Evidence/EvalResult）、Dev Loop 研发契约（Goal+Constraints+Acceptance Evidence）与真实混合版本配置兼容任务案例（17/17 PASS 但未宣布需求完成），与 OPT 平台的接口级验收互为印证。
+
 ## Open Questions（开放问题）
 
 - L1-L4 四层的具体命名：原文分层拆解在图片中，采集稿仅保留「L4 静态 Review（最后兜底）」；采集层摘要与正文「结合 L1 与 L3 证据」的语境提示四层为接口返回/业务状态/链路日志/静态 Review，但该逐层命名在 raw 中无全文依据，需人工复核。
@@ -90,6 +100,7 @@ AI 代码生成速度远大于人工需求验收速度：接口返回 200 只说
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-11-20-acceptance-agent-opt.md`（§01 痛点、§2.1 五阶段与硬阻塞/软失败、§2.2 交付编排、§03 实践效果、§04 五点体会）
+- Source: `raw/sources/ai/2026-11-20-gaode-ad-linglingqi.md`（验收三层次、四概念分离、Dev Loop 契约、17/17 PASS 但未宣布需求完成的真实案例）
 
 ## Related Knowledge（相关知识）
 

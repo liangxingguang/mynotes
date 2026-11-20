@@ -9,7 +9,7 @@ created: 2026-11-20
 category: 技术
 tags: [AI, Agent]
 asset_ref: Assets/2026-11/wechat-gaode-ad-linglingqi-4.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 > **摘要**：以"17 项定向测试全通过却仍不能宣布需求完成"为引，点明 AI 工程的核心是让数字员工持续工作、理解大型工程、并用真实证据交付。广告凌凌漆接入 22 项能力入口（六类：需求研发/代码质量/引擎实验/运维数据/客资计费/知识协同），架构分交互协作、任务控制（Main Agent）、研发执行（Codex Harness）、工程上下文与验收四部分。关键是执行引擎可替换（自主执行≠自主授权）、个人研发环境（Personal Dev，单 Writer 原则）、CodeGraph 影响分析、Knowledge+Mem0 经验治理。研发契约收敛为目标/约束/验收证据，验收结论分开发完成、交付完成、效果确认三层。截至 2026-09-18，台账 362 条任务、办结率 96.4%。
