@@ -1,6 +1,25 @@
 {
-  "updated_at": "2026-11-20 18:22",
+  "updated_at": "2026-11-20 18:23",
   "notes": [
+    {
+      "id": "inbox-2026-11-20-zte-cosight-harness",
+      "title": "2026-11-20-zte-cosight-harness",
+      "path": "Inbox/2026-11-20-zte-cosight-harness.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/tzBFFAbN-VbrtczsBHSI5Q",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：中兴通讯开源支撑 2000 人研发团队、200+ 步骤生产级工作流的 Agent 底座系统 Co-Sight Harness（Apache 2.0，ZTE-AICloud/Co-Sight）。从业务、执行、资产、证据四层改造，在不换底座模型的前提下把 200 步链路无人干预完成率从 50% 提升到 100%，总耗时压缩 64%，组织级任务成功率从 60% 提到 90%。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-tzBFFAbN-VbrtczsBHSI5Q.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
