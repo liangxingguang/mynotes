@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20 19:06",
+  "updated_at": "2026-11-20 19:08",
   "notes": [
     {
       "id": "inbox-2026-11-20-acceptance-agent-opt",
@@ -222,6 +222,24 @@
       "summary": "**摘要**：消费硬件产品经理 Karen 谈十倍思维：线性思维沿用现有做法加投入（两倍思维），指数思维先定目标再倒推必须改变什么（十倍思维）。十倍比两倍更容易，因为两倍增长 80% 旧+20% 新、越努力越受限，十倍增长只留 20% 有用旧做法、80% 全新——杠杆在于少数工作带来远超其份额的回报。落地个人成长四步：从匮乏到丰盈心态、回望起点找独特才能、定清方向与最低标准、把关键工作排进日历。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-uHUNZJbzLI3QMvYEyeTusQ.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "inbox-2026-11-20-visualization-skills",
+      "title": "2026-11-20-visualization-skills",
+      "path": "Inbox/2026-11-20-visualization-skills.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/SWmBvy39T3y7ZDmZEwwk1w",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：作者分享工作中常用的 5 个\"解释概念\"可视化 Skill：①diagram-design——38 种架构/流程/数据/战略图表，输出自包含 HTML+SVG，可品牌适配加动效；②ian-xiaohei-illustrations——把中文文章里的判断、流程、状态和隐喻转成白底手绘、怪诞但清爽的正文配图，默认视觉 IP\"小黑\"可自定义；③guizang-material-illustrations——归藏素材插画技能，生成带字解释图、图表美化与参考配图，适配 Claude Code/Codex 并可改到其他智能体；④smart-illustrator——三引擎系统（Gemini 创意视觉 + Excalidraw 手绘图表 + Mermaid 结构化图表），按内容类型自动选引擎；⑤concept-infographic-engine——对标 GPT-Image2 Template 库的 Infographic Engine 风格，把内容发给智能体调用即自动提取关键信息投进生成图片。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-SWmBvy39T3y7ZDmZEwwk1w.md",
       "wiki_status": "pending"
     },
     {
