@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20 18:36",
+  "updated_at": "2026-11-20 18:37",
   "notes": [
     {
       "id": "inbox-2026-11-20-agentscope-2",
@@ -92,6 +92,24 @@
       "summary": "**摘要**：基于 CCF ADL174\"大模型与智能体机理与评测\"讲习班的整理。用\"订单/预算/活动配置\"案例贯穿，解释模型答对题目不等于业务可用：表达能力、优化、泛化三层能力的差异，锚点函数与未见组合测试揭示的\"记忆 vs 推理\"之别，以及评测总分掩盖关键任务短板。给出工程验证路径：分层对照测试、能力画像、结果+过程双评测、依据可复核、出错可处置，从\"答对问题\"到\"完成任务\"。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-MqKNcbS1kWPtU80Tacfl6g.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "inbox-2026-11-20-sdd-spec-driven-dev",
+      "title": "2026-11-20-sdd-spec-driven-dev",
+      "path": "Inbox/2026-11-20-sdd-spec-driven-dev.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/9MKGsp0NgxZZNeByCLCEbQ",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：SDD（Specification-Driven Development，规范驱动开发）直播纪要：AI 编码效率高但缺约束时自由发挥，人与人沟通成为项目主要矛盾，破解之道是从\"人工驱动\"转向\"规范驱动\"、从\"人执行\"转向\"人定规范、AI 执行、人兜底\"。三大基线宪法（prd.md/design.md/arch.md）+ 三阶段实例化（prd-A/design-A/arch-A）+ PLAN/CODE 两执行模式，核心要诀：规范先行、人类决策、AI 执行、人类兜底。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-9MKGsp0NgxZZNeByCLCEbQ.md",
       "wiki_status": "pending"
     },
     {
