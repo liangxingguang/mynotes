@@ -5115,6 +5115,18 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/aIdeQfNmqi2HiVJr4OSsDA",
       "asset_ref": "Assets/2026-11/wechat-aIdeQfNmqi2HiVJr4OSsDA.md"
+    },
+    {
+      "path": "raw/sources/products/2026-11-20-b-end-report-design.md",
+      "sha256": "6bea505c977b832d11792a2638945a18e2a6af71052355967d2ce2ecf0465f13",
+      "registered_at": "2026-11-20",
+      "inbox_ref": "Archive/2026-11-20-b-end-report-design.md",
+      "pages": [
+        "wiki/sources/b-end-report-design.md",
+        "wiki/concepts/b-end-report-design.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/JLnvspihR2iJg1deRUm-dQ",
+      "asset_ref": "Assets/2026-11/wechat-JLnvspihR2iJg1deRUm-dQ.md"
     }
   ]
 }

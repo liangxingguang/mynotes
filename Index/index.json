@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20 18:50",
+  "updated_at": "2026-11-20 18:51",
   "notes": [
     {
       "id": "inbox-2026-11-20-agent-skills-top30",
@@ -55,6 +55,24 @@
       "summary": "**摘要**：一份 AI 工程师书单，将书籍按四个梯队分级：🟠 Must Read（必读）、🟡 Solid Book（扎实推荐）、🟨 Good Read（值得一读）、🟢 Read Later（可以稍后读），覆盖 AI 工程、大语言模型、机器学习、Prompt Engineering、Agent、多智能体系统与 AI 对齐。原图来源：Chandrakumar R Pillai（LinkedIn）。",
       "summary_status": "partial",
       "asset_ref": "Assets/2026-11/wechat-Pydv-gVq9aAJOIAbSvKjhg.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "inbox-2026-11-20-claude-code-miniprogram",
+      "title": "2026-11-20-claude-code-miniprogram",
+      "path": "Inbox/2026-11-20-claude-code-miniprogram.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/_9oQXXE13ppUVhdMyqfzDQ",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：保姆级实操教程：用 Claude Code 从零做一个微信小程序\"保质期管家\"（记录物品名称与到期日期，列表按到期排序、标注已过期/今天到期/剩余天数）。全流程：环境准备（安装 Claude Code、注册小程序拿 AppID、装微信开发者工具）→ 开发者工具创建 TS+Sass 基础模板 → 同一项目目录启动 Claude Code → 计划模式先出方案确认再开发 → 编译预览、真机调试、上传、提交审核、发布。核心方法论：先确认 AI 对需求的理解再动手，减少理解偏差返工。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-_9oQXXE13ppUVhdMyqfzDQ.md",
       "wiki_status": "pending"
     },
     {
