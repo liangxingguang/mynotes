@@ -5101,6 +5101,20 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/N_D1fo-S8KomtfaLQG68Gg",
       "asset_ref": "Assets/2026/11/livex-wiki-agent-kb.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-agent-sandbox-mcp-k8s.md",
+      "sha256": "ff853e8a75544b8670e1f7d870201729e4fd2d2e89494bf58e29f78cdc23bb27",
+      "registered_at": "2026-11-20",
+      "inbox_ref": "Archive/2026-11-20-agent-sandbox-mcp-k8s.md",
+      "pages": [
+        "wiki/sources/2026-11-20-agent-sandbox-mcp-k8s.md",
+        "wiki/concepts/agent-sandboxing.md",
+        "wiki/concepts/agent-permission-model.md",
+        "wiki/concepts/mcp.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/aIdeQfNmqi2HiVJr4OSsDA",
+      "asset_ref": "Assets/2026-11/wechat-aIdeQfNmqi2HiVJr4OSsDA.md"
     }
   ]
 }

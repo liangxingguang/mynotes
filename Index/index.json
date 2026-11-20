@@ -1,6 +1,24 @@
 {
-  "updated_at": "2026-11-20 18:26",
+  "updated_at": "2026-11-20 18:29",
   "notes": [
+    {
+      "id": "inbox-2026-11-20-b-end-report-design",
+      "title": "2026-11-20-b-end-report-design",
+      "path": "Inbox/2026-11-20-b-end-report-design.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "产品设计"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/JLnvspihR2iJg1deRUm-dQ",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：B 端报表设计方法论：起点不是可视化而是管理动作。先回答\"给谁看、支撑什么业务动作、数据从哪里来\"，用\"用户-场景-动作-数据\"四步法梳理；指标口径落成指标字典是报表混乱的根源；可视化按\"总览-趋势-结构-明细\"四层分层，首屏给结论、下钻给证据；辅以权限/性能设计，附 PRD 落地清单。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-JLnvspihR2iJg1deRUm-dQ.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "inbox-2026-11-20-llm-agent-eval-gap",
       "title": "2026-11-20-llm-agent-eval-gap",
