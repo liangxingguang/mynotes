@@ -73,6 +73,7 @@
 - [[async-idempotency-local-message-table|异步链路幂等实战：本地消息表配套防重，解决重复扣款与消息重放]]（2026-10-23，架构/幂等）
 - [[async-task-system-design|异步任务系统怎么设计？从提交、排队、执行到幂等和重试]]（2026-10-22，架构/可靠性）
 - [[awesome-design-md|用 DESIGN.md 治 AI 生成的丑 UI：awesome-design-md 仓库]]（2026-10-16，AI/工具）
+- [[b-end-report-design|B端报表这样设计，建议收藏直接抄]]（2026-11-20，产品/B端/报表设计，决策场景先行+指标字典9字段+可视化四层+权限性能+PRD清单，与看板互补，单信源置信度中）
 - [[baidu-live-mcast-message-architecture|百度直播海量用户实时消息系统架构：长连接组播 mcast 实践]]（2026-10-23，IM/直播消息/组播）
 - [[batch-push-sharding-threadpool|第70篇：批量消息推送优化——百万级推送如何避免内存爆炸（分片 + 线程池 + 异步）]]（2026-10-31，Java/批量推送，游标分片+专用线程池+进度追踪+重试死信，代码块被采集器截断，单信源置信度中）
 - [[bend-ai-agent-legacy-integration|B端产品经理实操：AI Agent落地旧系统对接的完整框架]]（2026-11-03，产品/AI-Agent/旧系统对接，盘点九字段+四类对接模式选型+字段映射+灰度五步SOP+旧CRM工单Agent案例（人力降40%/T+1→准实时/RPA写回95%+），单信源置信度中）
@@ -442,6 +443,7 @@
 - [[architecture-design-capabilities|架构设计能力（8 个底层动作）]]（架构 vs 架构描述+八动作链抽象/聚焦/分解/边界/契约/权衡/约束/可演化+Parnas 信息隐藏+隐式契约+二十指标等于零，单信源置信度中）
 - [[architecture-tradeoff-methodology|架构取舍方法论（先定约束，再挑技术）]]（四问前置+演进式架构+三高量化+对症优化+选型看访问路径+稳定性工具箱，单信源置信度中）
 - [[authn-authz-selection-framework|认证与授权选型决策框架（五维模型与 AuthN/AuthZ 分层）]]（认证与授权选型方法论：AuthN/AuthZ+凭证/Token/会话三层+有状态vs无状态权衡+五维模型+三层时间尺度+L1-L5分层+对外必须标准协议+五方案评分矩阵局限+10条场景清单+4类反模式+AuthService接口隔离，认证授权选型系列·上篇信源编译，与 [[sso-oauth2-oidc]] [[rbac-permission-system]] [[permission-refactoring]] 互证，单信源，置信度中）
+- [[b-end-report-design|B端报表设计方法论（Report Design Methodology）]]（2026-11-20，概念/B端/报表设计，决策场景先行+用户-场景-动作-数据四步法+指标字典9字段+可视化四层分层+权限三层+性能前置+PRD 11项清单，与 [[dashboard-metric-tree]] 互补（看板是决策展示子集），单信源置信度中）
 - [[batch-import-design|B端批量导入设计]]（数据治理本质：三层校验模型（字段格式/业务实体/跨单据）+异步六步流水线+6态状态机（部分成功为常态）+错误报告7要素与三档错误级别+部分成功策略+配置化校验规则，与 mysql-bulk-import（DB层吞吐）互补分层，单信源置信度中）
 - [[batch-message-push|批量消息推送（百万级短信推送）]]（内存/性能/可靠性三对矛盾 + 游标分片+专用线程池+Redis 进度+重试死信+断点续跑，单信源置信度中）
 - [[bend-prd-writing-framework|B端PRD写作框架（一图三表一份清单）]]（2026-11-04，产品/B端/PRD/方法论，开发不骂人的三根因+一图三表一份清单框架（主流程图/状态流转表/字段规则表/异常边界表/上线前自检）+四案例（EHR转岗/ERP部分入库/CRM公海/车贷反欺诈）+10业务模块PRD重点速查表，与五件套拆解同构、与 Agent 化 PRD 模板互为底稿与增量，工单PRD（第2篇）与埋点PRD（第23篇）两信源印证，三信源置信度中）
