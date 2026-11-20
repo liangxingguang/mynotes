@@ -1,6 +1,26 @@
 {
-  "updated_at": "2026-11-20 09:20",
+  "updated_at": "2026-11-20 10:42",
   "notes": [
+    {
+      "id": "inbox-20261120-weibo-github-open-skills",
+      "title": "微博盘点：5 个实用的 GitHub 开源 Skill/Agent 工具",
+      "path": "Inbox/2026-11-20-weibo-github-open-skills.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "GitHub",
+        "Agent"
+      ],
+      "source": "微博",
+      "source_url": "https://weibo.com/6604581414/5367112379400413",
+      "source_type": "link",
+      "platform": "微博",
+      "summary": "微博博主翻 GitHub 热榜，盘点了 5 个面向 Claude Code / Cursor / Codex 等 agent 的实用开源工具：本地视频剪辑、可嵌入 Office SDK、agent 爬虫基础设施、任意软件转 CLI、从零训练小模型，均为无云端、可直接上手的项目。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weibo-post-5367112379400413.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
