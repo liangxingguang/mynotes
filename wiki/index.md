@@ -425,6 +425,7 @@
 - [[agent-prd-template|Agent 化 PRD 模板]]（2026-11-04，产品/B端/PRD/多智能体，传统PRD写页面字段流程之外新增五模块（Agent能力卡片/协作时序/护栏机制/评测集/指标），与五步法一一对应，单信源置信度中）
 - [[agent-permission-model|Agent 权限模型（平台授权与本地运行）]]（权限=静态基线+指令临时授权+动态校验；租户划边界/Agent 定上限/指令收范围/MCP 网关兜底；凭证归属发起方用户+校验在调用方侧；网关不可变执行意图+能力票据按次绑定；本地 CLI 五模式+只读证明式放行 Unknown≠Safe；A2A 委派子授权⊆父授权；四信源，置信度中）
 - [[agent-sandboxing|Agent 沙箱隔离]]（能力限制而非行为审查；四条路径收窄可达面；脚本级/命令级/工具级/整体隔离 + 平台级 K8s 隔离基线/双向网络默认拒绝/CAS 一次性调度账本；双信源，置信度中）
+- [[agent-service|Agent Service（Agent 应用后端化）]]（框架+后端组合；多租户/多会话隔离、IM 渠道（飞书/Discord/钉钉）、Agent Team、RAG Service、MCP & Skill Hub、持久化、调度等 SaaS 通用问题在框架层提前解决；AgentScope 2.0 典型实现，单信源，置信度中）
 - [[agent-state-separation|Agent 状态分离（执行状态/操作状态/产物核验）]]（三态分离+多身份+恢复决策顺序+停止非回滚，Codex Harness 实践，单信源置信度中）
 - [[approval-workflow-engine|审批流引擎（含 AI 改造层）]]（六类节点+处理人规则六种+条件分支五要素+边界值卡单教训+十项验收清单；AI 改造层叠加智能填单/风险识别/自动审批/异常预警+三级风险阈值+六步SOP，合并同专辑第 8+15 篇双信源，置信度中）
 - [[aqs-internals|AQS（AbstractQueuedSynchronizer）核心机制]]（volatile state + CLH 变体 FIFO 队列 + acquire/release 模板方法；JUC 锁体系基座，单信源）
@@ -504,6 +505,7 @@
 - [[game-mail-system|游戏邮件系统的分布式设计]]（弱时序+独立队列；公共邮件读裂变+标记撤回；Seq+Ack 与合服 DomainEvent；一切领奖皆邮件 Channel；单信源，置信度中）
 - [[game-quest-system|游戏任务系统设计（Quest/Goal 合一与进度建模）]]（限定单 Goal 组合 Quest；子任务表步骤任务即章节；Git 参照系；Ready 中间态；Progress/Score 分离；前置索引+等级二分；任务侧掉落+公共管理器；单信源，置信度中）
 - [[geohash|Geohash（地理哈希）]]（经纬度降维前缀编码；边界问题+8 邻居、截短扩半径、缓存键归一；邻近索引+地图瓦片双信源）
+- [[graphrag|GraphRAG（图检索增强生成）]]（实体与关系纳入检索，沿关系网络查找；回答"对象之间有什么关系"；仍在回答/检索层，能讲清关系但不一定能统一业务定义、不知实时状态；与 RAG/LLM Wiki/Ontology 分工组合，单信源，置信度中）
 - [[harness-engineering|Harness Engineering（Agent 执行系统工程）]]（Agent ≈ Model + Harness；七观察面+信息三层+安全四层+B0~B5 单变量评测；11 系统源码研究解读；Kiso 内核门禁+Codex 状态所有权+Session 核心重构七信源）
 - [[hashmap-internals|HashMap 核心设计（JDK 8）]]（2 的幂容量+扰动+0.75 负载因子+8/6/64 树化阈值+高低位链扩容拆分；单信源，置信度中）
 - [[hashset-internals|HashSet / LinkedHashSet 去重设计]]（HashMap key 视图+PRESENT 占位；hashCode+equals 双写铁律；dummy 构造换 LinkedHashMap 得插入序；双信源互证，置信度中）
@@ -556,6 +558,7 @@
 - [[tcp-connection-lifecycle|TCP 连接生命周期与状态机]]（四大功能/三次握手/四次挥手/RTO/快重传/拥塞控制/TIME_WAIT 2MSL/状态机排障四场景；发送窗口=min(rwnd,cwnd)；Linux 默认 CUBIC；tcp_tw_recycle 已移除；单信源一手，置信度高）
 - [[notification-system-design|站内消息系统领域模型]]（公告/提醒/私信三分类+提醒四元组；拉（订阅驱动）/推（私信直写）按类选型；免打扰后置读路径，简书上下篇双信源）
 - [[okf-knowledge-format|OKF（面向 AI Agent 的知识包装规范）]]（入库时编译为互链 Markdown 树，运行时只做导航+摘录）
+- [[ontology|Ontology（企业本体／业务本体）]]（统一业务对象、属性、关系与术语语义；不同系统同名记录映射到共同业务对象；关键在业务含义；参考 Palantir Objects/Properties/Links；与 GraphRAG 分工不同，单信源，置信度中）
 - [[oom-troubleshooting|OOM 排查方法论]]（6 类 OOM 速查表 + 五步法 + 生产纪律：禁直接 jmap -dump、90% 代码问题、溢出≠泄漏、GC overhead limit 最危险、GC刑侦三步+时间线交叉验证+静态无界泄漏模板，第五信源（《JVM 内存模型全景》）印证区域路由+补 new Thread 雪崩案例与直接内存空堆被杀口径，五信源，置信度中）
 - [[operational-transformation|Operational Transformation（OT，操作转换）]]（中心定序+变换调整偏移量收敛并发编辑；siteId tie-break 命门+TP1/TP2 验证；文档级 Actor 串行+pending/buffer 客户端，单信源）
 - [[perf-cpu-sampling|perf CPU 采样排查法]]（采集→看热点→追调用者链路，四类前置+符号≠调用栈+Self/Children 读数纪律，demo 742 样本实测，单信源置信度高）
@@ -665,7 +668,7 @@
 - [[aibox|AiBox]]（货拉拉自建 AI Coding Harness/管控面：Rules/Skills/Commands/MCP 下发 + 网关四统一 + 三层度量，千人规模）
 - [[aiengineeringfromscratch|aiengineeringfromscratch.com]]（2026-11-05，AI/学习资源，免费开源 AI 系统学习教程网站，20 章 542 节课 + learning path，单信源未独立验证，置信度低）
 - [[agent-lightning|Agent Lightning]]（微软研究院开源 Agent RL 训练框架，约 3500 行，真实工具链交互训练）
-- [[agentscope|AgentScope]]（2026-11-12，AI/Agent 框架实体，HarnessAgent 持久执行内核：Session 六类对象（Conversation/Entry/Document/Task/Submission/Commit）+Task 六态状态机+原子提交顺序+工具 call-execute 两阶段+自定义任务 allSettled/failFast 汇合，知乎单信源，置信度高）
+- [[agentscope|AgentScope]]（2026-11-12 建 / 2026-11-20 更新，AI/Agent 框架实体，阿里通义 SysML 团队；1.x HarnessAgent 持久执行内核（Session 六类对象/Task 六态/原子提交/工具 call-execute 两阶段）；2.0 转为"框架+Agent 后端"：不预设编排、SDK 八积木、Agent Service、沙箱八后端、Python v2.0.12 + Java 2.1.0-SNAPSHOT 双线，三信源，置信度高）
 - [[agentcore|AgentCore]]（2026-11-12，AI/Agent 平台实体，阿里云云端 Agent 托管平台：Harness 托管+Session Store 五层状态层次+Brain-Hands 分离+Environment+Agent as a Service，知乎单信源，置信度高）
 - [[archunit|ArchUnit]]（Java 架构约束即测试，TNG，当前 1.5.1）
 - [[argo-rollouts|Argo Rollouts]]（K8s 渐进式交付控制器：Rollout CRD + AnalysisTemplate 门禁，blueGreen/canary，单信源）
@@ -730,6 +733,7 @@
 ## comparison（对比）
 
 - [[a2a-vs-mcp|A2A vs MCP]]（横向多 Agent 协作 vs 纵向单 Agent 能力拓展，互补关系）
+- [[agent-knowledge-base-capabilities|Agent 知识库四种能力对照：RAG / GraphRAG / LLM Wiki / Ontology]]（不是单向替代，而是从"找到信息"走向"理解业务上下文"的四种能力；对照矩阵+供应链案例分工+选型适用场景，单信源，置信度中）
 - [[netty-vs-tomcat-vs-undertow|Netty vs Tomcat vs Undertow]]（同机 wrk 横评：QPS/GC/高并发衰减+线程模型/内存/零拷贝/TCP 参数四层归因与选型分档，单信源自测，置信度中）
 - [[ot-vs-crdt|OT vs CRDT]]（中心变换 vs 数据结构天然收敛；取舍点=是否需要端侧完全自治；中心化选 OT、离线/去中心化选 CRDT，单信源）
 - [[forkjoinpool-vs-threadpoolexecutor-comparison|ForkJoinPool vs ThreadPoolExecutor]]（11 维对比矩阵+选型结论「任务能不能拆」，单信源置信度高）

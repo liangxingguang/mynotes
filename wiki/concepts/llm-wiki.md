@@ -15,6 +15,7 @@ sources:
   - raw/sources/ai/2026-10-31-ai-kb-build-workbuddy-ima-wiki.md
   - raw/sources/ai/2026-11-06-weknora-dept-knowledge-base.md
   - raw/sources/ai/2026-11-20-livex-wiki-agent-kb.md
+  - raw/sources/ai/2026-11-20-agent-knowledge-base.md
 related:
   - wiki/concepts/okf-knowledge-format.md
   - wiki/sources/llm-wiki-advanced-four-steps.md
@@ -43,6 +44,7 @@ related:
 5. **结构约定文件**：用说明文件（如本仓库的 AGENTS.md）约定组织方式与操作流程。落地内容可具象为三条维护纪律（第 3 信源）：页面互相写清《完整文件名》、导航里登记入口、双向引用两边都写——"AI 不会自动帮你连，约定才让它连得上"。
 6. **四原则与职责分离**（教程信源）：Raw 是证据、Wiki 是知识、Schema 是规则、Agent 是执行器；不让一个 Agent 拥有所有能力——Ingest（写）/Query（读）/Lint（验）三工作流权限表钉死边界，三者均无权改 raw、无权删知识；inbox ≠ raw，新材料经 inbox 缓冲、Ingest 标准化后才进不可变 raw。
 7. **页面分类型防垃圾场**（教程信源）：source/concept/entity/topic/decision/comparison/synthesis/timeline 八类，source 最基础、其余在其上编译。
+8. **有用性判据不止"像不像维基"**（信源 2026-11-20）：LLM Wiki 不是边界完全统一的标准术语，不同实现可能只是模型自动生成页面，也可能含来源链接、版本更新、冲突处理、人工审核等机制。判断其是否有用，不能只看页面是否像维基百科，还要看知识能否回到可信来源、能否正确更新、错误如何被发现和修正。
 
 ## Structure（结构）
 
@@ -70,6 +72,7 @@ related:
 - 2026-10-31 — 新增 WorkBuddy + ima + Wiki 产品化落地信源（第 3 信源）。补上三块实践细节：①**非技术用户路径**——LLM Wiki 模式可借 WorkBuddy（读取/核对/分析/复盘）+ ima（保存资料/经验/任务结果）+ Wiki 交叉索引的组合低门槛落地，无需自建仓库；②**三文件夹工作区结构**——`01_原始资料`（不可改写的原始层）/ `02_经验档案`（编译层：背景画像、知识库导航、主题档案、方法页、常见问题、固定流程、指标口径）/ `03_任务结果`（按任务归档的报告与复盘），与本页"原始层→编译层"分离同构，报告按任务保存、Wiki 按主题维护；③**维护与体检机制**——七步流程（接 ima→建文件夹→首批资料跑通→生成三份约定文件→干一次活→经验更新回库→月度定时体检），印证"结构约定文件"特征与索引/日志的持续维护职责。其"约定才让 AI 连得上"与"每月体检"分别强化了结构约定与巡检机制两条特征。
 - 2026-11-06 — 新增硬件部门 WeKnora 实战信源（第 4 信源）。印证三点：①**框架与开箱之间的产品化空白**——作者（硬件工程师，非软件团队）明确把 LLM Wiki 归为"框架类"方案（只给骨架、自攒工作量大），与"个人库（Obsidian+AI）不够用"构成两难，落在 WeKnora 这类开箱产品上；②**维护职责缺位是模式级短板**——作者领导之问"文档能在线编辑保证最新吗"戳中 LLM Wiki 式自建库的共同痛点：重心全在解析/检索前半段，维护=删+重传，该信源直接催生 [[knowledge-base-maintenance]] 概念页；③**四层模型与维护纪律的互证**——"未经人工确认的结论不进正式知识库"与本仓库 pending→ingested 队列五态、"没发现异常≠通过"与 lint 巡检同构。
 - 2026-11-20 — 新增淘宝直播互动团队 LiveX Wiki 信源（第 5 信源），首个面向 Coding Agent 的企业级落地案例：LLM Wiki 编纂与 OKF 式轻量表达 + Git 版本治理结合，按"域—场景—知识"三层沉淀跨端跨仓业务经验，层次索引 + Agentic Search 按需消费并回源核验。同批次评测端到端生码得分较无知识库平均相对提升约 39.15%、较 RAG 约 30.1%，印证本模式可支撑业务知识工程化治理而非止于个人/小团队积累；方法论详见 [[coding-agent-knowledge-base]]。
+- 2026-11-20 — 新增 Agent 知识库四种能力对照信源（第 6 信源）`raw/sources/ai/2026-11-20-agent-knowledge-base.md`。在四种能力中定位 LLM Wiki：整理可持续更新的知识，回答"知识如何整理、更新和追溯"，常见对象是主题/摘要/来源/版本；补上"有用性判据不止像不像维基"的核心特征，并明确 LLM Wiki 与 RAG、GraphRAG、Ontology 是分工组合而非单向替代。对照见 [[agent-knowledge-base-capabilities]]。
 
 ## Open Questions（开放问题）
 
@@ -82,6 +85,7 @@ related:
 - Source: `raw/sources/ai/2026-10-31-ai-kb-build-workbuddy-ima-wiki.md`（第 3 信源：WorkBuddy+ima+Wiki 产品化落地、三文件夹工作区、维护约定三纪律、月度体检）
 - Source: `raw/sources/ai/2026-11-06-weknora-dept-knowledge-base.md`（第 4 信源：硬件部门 WeKnora 实战——框架/个人库两难、维护入口缺失、人工确认门禁）
 - Source: `raw/sources/ai/2026-11-20-livex-wiki-agent-kb.md`（第 5 信源：LiveX Wiki——LLM Wiki + OKF + Git 企业级落地、域/场景/知识三层建模、消费五步、量化评测）
+- Source: `raw/sources/ai/2026-11-20-agent-knowledge-base.md`（第 6 信源：LLM Wiki 在四种能力中的定位、"有用性判据不止像不像维基"、与 RAG/GraphRAG/Ontology 的分工组合）
 
 ## Related Knowledge（相关知识）
 

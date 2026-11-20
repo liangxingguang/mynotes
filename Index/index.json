@@ -1,63 +1,6 @@
 {
-  "updated_at": "2026-11-20 19:50",
+  "updated_at": "2026-11-20 21:53",
   "notes": [
-    {
-      "id": "inbox-2026-11-20-agent-knowledge-base",
-      "title": "2026-11-20-agent-knowledge-base",
-      "path": "Inbox/2026-11-20-agent-knowledge-base.md",
-      "created": "2026-11-20",
-      "category": "技术",
-      "tags": [
-        "RAG",
-        "AI"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/cNNPokH3odju9kMGKnJWwg",
-      "source_type": "web",
-      "platform": "微信",
-      "summary": "**摘要**：Agent 知识库四种能力的分工梳理，不是一代替代一代的产品清单，而是从\"找到信息\"逐步走向\"理解业务上下文\"：**RAG 找相关知识，GraphRAG 找关系，LLM Wiki 整理可持续更新的知识，Ontology 定义业务对象、规则和关系语义**。RAG 切文档算向量建索引、检索相似片段作上下文，回答\"哪些资料和这个问题有关\"，但找到的是\"可能相关的内容\"而非业务系统确认的当前状态；GraphRAG 把实体与关系纳入检索，沿关系网络查找，回答\"对象之间有什么关系、问题沿哪些关系传播\"；LLM Wiki 把知识库做成\"可维护的知识空间\"，从资料提取主题/实体/关系/摘要并持续整理更新，回答\"知识如何组织、哪些要更新、结论依据是什么\"，判断其是否有用要看知识能否回到可信来源、能否正确更新、错误如何被发现修正，而非页面像不像维基；Ontology 统一业务对象、属性、关系与术语定义（如 Palantir 的 Objects/Properties/Links），回答\"业务对象是什么、彼此如何关联\"。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-cNNPokH3odju9kMGKnJWwg.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "inbox-2026-11-20-agentscope-2",
-      "title": "2026-11-20-agentscope-2",
-      "path": "Inbox/2026-11-20-agentscope-2.md",
-      "created": "2026-11-20",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "Agent"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/TkqRdyMuhU2Z5LRIkHWFvw",
-      "source_type": "web",
-      "platform": "微信",
-      "summary": "**摘要**：AgentScope 2.0（阿里通义 SysML 团队，36k star、40 万月下载）不是\"又一个 Agent 框架\"，而是\"框架 + Agent 后端\"：不预设编排、把控制权交给模型，SDK 层给 8 块积木（ReAct/Toolkit/Model/Context/Event/Permission/Middleware/Memory/Workspace），并自带多租户、多会话、IM 渠道、RAG、MCP Hub 的 Agent Service。Loop 强、Graph 中、Harness 厚；适合要做 Agent 应用的团队，不适合单机脚本。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-TkqRdyMuhU2Z5LRIkHWFvw.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "inbox-2026-11-20-agentscope-java-source",
-      "title": "2026-11-20-agentscope-java-source",
-      "path": "Inbox/2026-11-20-agentscope-java-source.md",
-      "created": "2026-11-20",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "Agent"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/RiyIJHDAzESiCaFXlzNTfA",
-      "source_type": "web",
-      "platform": "微信",
-      "summary": "**摘要**：AgentScope Java 源码图解指南（对应 2.1.0-SNAPSHOT，Java 17 + Project Reactor，源码分析项目 github.com/liulangjietou/AgentScope-source-analysis）。主线：输入进入会话，模型决定下一步，框架执行工具，结果回到上下文，直到产生终态。ReAct 两动作对应 `reasoning()`（请求模型）与 `acting()`（处理工具调用）；结束判断要求无工具调用且至少一个非空白文本块，`maxIters` 默认 10，达上限进入 `summarizing()` 标记 MAX_ITERATIONS。一次 call 经 AgentBase 生命周期（runInContext→serializeOnKey 同会话串行→runLifecycleBody→executeCallBody）。关键机制：pending 工具恢复（ASKING 确认走 `Msg.METADATA_CONFIRM_RESULTS` 直接从 acting(0) 继续；外部工具补 ToolResultBlock）、权限双层（ReAct 权限门 + Toolkit 执行器，直接调 callTool 不经过权限门）、人工确认跨两次调用（ALLOWED/DENIED，工具级 deny/ask 优先）、会话对象分层（Msg/AgentState/RuntimeContext/RunControl/Native Session）、结束四分支（正常/空结果/失败/中断各有保存路径）、Harness 组装（工作区+上下文预算+VerificationService 用已持久化证据验收）、结构化输出（原生 Schema 或 generate_response 兜底）。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-RiyIJHDAzESiCaFXlzNTfA.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "inbox-2026-11-20-ai-llm-booklist",
       "title": "2026-11-20-ai-llm-booklist",
@@ -8048,6 +7991,25 @@
       "wiki_status": "ingested"
     },
     {
+      "id": "inbox-2026-11-20-agent-knowledge-base",
+      "title": "2026-11-20-agent-knowledge-base",
+      "path": "Archive/2026-11-20-agent-knowledge-base.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "RAG",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/cNNPokH3odju9kMGKnJWwg",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：Agent 知识库四种能力的分工梳理，不是一代替代一代的产品清单，而是从\"找到信息\"逐步走向\"理解业务上下文\"：**RAG 找相关知识，GraphRAG 找关系，LLM Wiki 整理可持续更新的知识，Ontology 定义业务对象、规则和关系语义**。RAG 切文档算向量建索引、检索相似片段作上下文，回答\"哪些资料和这个问题有关\"，但找到的是\"可能相关的内容\"而非业务系统确认的当前状态；GraphRAG 把实体与关系纳入检索，沿关系网络查找，回答\"对象之间有什么关系、问题沿哪些关系传播\"；LLM Wiki 把知识库做成\"可维护的知识空间\"，从资料提取主题/实体/关系/摘要并持续整理更新，回答\"知识如何组织、哪些要更新、结论依据是什么\"，判断其是否有用要看知识能否回到可信来源、能否正确更新、错误如何被发现修正，而非页面像不像维基；Ontology 统一业务对象、属性、关系与术语定义（如 Palantir 的 Objects/Properties/Links），回答\"业务对象是什么、彼此如何关联\"。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-cNNPokH3odju9kMGKnJWwg.md",
+      "wiki_status": "ingested"
+    },
+    {
       "id": "inbox-2026-11-20-agent-sandbox-mcp-k8s",
       "title": "2026-11-20-agent-sandbox-mcp-k8s",
       "path": "Archive/2026-11-20-agent-sandbox-mcp-k8s.md",
@@ -8083,6 +8045,44 @@
       "summary": "**摘要**：按 star 排序的 30 个 Agent Skills 清单（2026-11-03 实测），每条一句\"替你省什么\"加开源地址。头部三名断层领先：Superpowers（31.1 万，TDD 七步方法论）、Matt Pocock Skills（31 万，grill-me/tdd/code-review 日常提效）、ECC（29.6 万，71 agents+314 skills 工程基建）。覆盖代码开发、文档办公、设计多媒体、效率工具、数据五组，Skills 生态已从\"有没有\"进入\"装哪个\"。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-vlZKqsuG5ECeX1_0GoKW1A.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-20-agentscope-2",
+      "title": "2026-11-20-agentscope-2",
+      "path": "Archive/2026-11-20-agentscope-2.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/TkqRdyMuhU2Z5LRIkHWFvw",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：AgentScope 2.0（阿里通义 SysML 团队，36k star、40 万月下载）不是\"又一个 Agent 框架\"，而是\"框架 + Agent 后端\"：不预设编排、把控制权交给模型，SDK 层给 8 块积木（ReAct/Toolkit/Model/Context/Event/Permission/Middleware/Memory/Workspace），并自带多租户、多会话、IM 渠道、RAG、MCP Hub 的 Agent Service。Loop 强、Graph 中、Harness 厚；适合要做 Agent 应用的团队，不适合单机脚本。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-TkqRdyMuhU2Z5LRIkHWFvw.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-20-agentscope-java-source",
+      "title": "2026-11-20-agentscope-java-source",
+      "path": "Archive/2026-11-20-agentscope-java-source.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/RiyIJHDAzESiCaFXlzNTfA",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：AgentScope Java 源码图解指南（对应 2.1.0-SNAPSHOT，Java 17 + Project Reactor，源码分析项目 github.com/liulangjietou/AgentScope-source-analysis）。主线：输入进入会话，模型决定下一步，框架执行工具，结果回到上下文，直到产生终态。ReAct 两动作对应 `reasoning()`（请求模型）与 `acting()`（处理工具调用）；结束判断要求无工具调用且至少一个非空白文本块，`maxIters` 默认 10，达上限进入 `summarizing()` 标记 MAX_ITERATIONS。一次 call 经 AgentBase 生命周期（runInContext→serializeOnKey 同会话串行→runLifecycleBody→executeCallBody）。关键机制：pending 工具恢复（ASKING 确认走 `Msg.METADATA_CONFIRM_RESULTS` 直接从 acting(0) 继续；外部工具补 ToolResultBlock）、权限双层（ReAct 权限门 + Toolkit 执行器，直接调 callTool 不经过权限门）、人工确认跨两次调用（ALLOWED/DENIED，工具级 deny/ask 优先）、会话对象分层（Msg/AgentState/RuntimeContext/RunControl/Native Session）、结束四分支（正常/空结果/失败/中断各有保存路径）、Harness 组装（工作区+上下文预算+VerificationService 用已持久化证据验收）、结构化输出（原生 Schema 或 generate_response 兜底）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-RiyIJHDAzESiCaFXlzNTfA.md",
       "wiki_status": "ingested"
     },
     {

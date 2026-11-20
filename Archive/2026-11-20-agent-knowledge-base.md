@@ -9,7 +9,7 @@ created: 2026-11-20
 category: 技术
 tags: [RAG, AI]
 asset_ref: Assets/2026-11/wechat-cNNPokH3odju9kMGKnJWwg.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 > **摘要**：Agent 知识库四种能力的分工梳理，不是一代替代一代的产品清单，而是从"找到信息"逐步走向"理解业务上下文"：**RAG 找相关知识，GraphRAG 找关系，LLM Wiki 整理可持续更新的知识，Ontology 定义业务对象、规则和关系语义**。RAG 切文档算向量建索引、检索相似片段作上下文，回答"哪些资料和这个问题有关"，但找到的是"可能相关的内容"而非业务系统确认的当前状态；GraphRAG 把实体与关系纳入检索，沿关系网络查找，回答"对象之间有什么关系、问题沿哪些关系传播"；LLM Wiki 把知识库做成"可维护的知识空间"，从资料提取主题/实体/关系/摘要并持续整理更新，回答"知识如何组织、哪些要更新、结论依据是什么"，判断其是否有用要看知识能否回到可信来源、能否正确更新、错误如何被发现修正，而非页面像不像维基；Ontology 统一业务对象、属性、关系与术语定义（如 Palantir 的 Objects/Properties/Links），回答"业务对象是什么、彼此如何关联"。

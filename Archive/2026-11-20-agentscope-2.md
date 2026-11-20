@@ -9,7 +9,7 @@ created: 2026-11-20
 category: 技术
 tags: [AI, Agent]
 asset_ref: Assets/2026-11/wechat-TkqRdyMuhU2Z5LRIkHWFvw.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 > **摘要**：AgentScope 2.0（阿里通义 SysML 团队，36k star、40 万月下载）不是"又一个 Agent 框架"，而是"框架 + Agent 后端"：不预设编排、把控制权交给模型，SDK 层给 8 块积木（ReAct/Toolkit/Model/Context/Event/Permission/Middleware/Memory/Workspace），并自带多租户、多会话、IM 渠道、RAG、MCP Hub 的 Agent Service。Loop 强、Graph 中、Harness 厚；适合要做 Agent 应用的团队，不适合单机脚本。

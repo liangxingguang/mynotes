@@ -12,6 +12,7 @@ tags:
   - llm
 sources:
   - raw/sources/ai/2026-11-12-ai-agent-tech-overview.md
+  - raw/sources/ai/2026-11-20-agent-knowledge-base.md
 related:
   - wiki/concepts/prompt-engineering.md
   - wiki/concepts/context-management.md
@@ -34,6 +35,7 @@ LLM 的训练数据有截止时间，且无法覆盖私有知识（公司制度�
 2. **向量检索为主流实现**：文档切块 → embedding 模型转成向量 → 查询向量与文档向量计算余弦相似度 → 取 Top-K。embedding 将语义相近的文本映射到空间相近的向量，比关键词匹配强——关键词找"字面相同"，向量检索找"意思相近"。
 3. **进阶变体丰富**：朴素 RAG（检索 Top-K 拼入 prompt）之上有混合检索、查询改写、分块策略、多跳检索等变体持续提升效果。
 4. **与 Agent 的关系**：RAG 是 Agent 获取静态领域知识的主要来源（公司制度、产品文档、行业规范），在 [[agent-loop|Agent Loop]] 的"规划"和"执行"环节提供参考。知识库管"静态领域知识"，[[agent-memory-system|记忆系统]] 管"Agent 经历的事实"，两者分工不同。
+5. **找到的是"可能相关"而非"业务确认的当前状态"**（信源 2026-11-20）：RAG 依赖资料本身——制度过期、文档缺失或需跨多份资料复杂关联时，几段相似文本未必足够；且检索到的是"可能相关的内容"，不是经过业务系统确认的当前状态。问"订单现在到哪一步"，往往需查实时业务数据，而非只搜旧文档。
 
 ## Structure（结构）
 
@@ -92,6 +94,8 @@ RAG vs 微调对比（信源 2026-11-12）：
 
 - 2026-11-12 — 新建，信源为 vivo《AI Agent 技术全景解析》。文章系统梳理了 RAG 的核心流程（向量检索）、RAG vs 微调对比、进阶变体（混合检索/查询改写/分块策略/多跳检索）与知识库/记忆/技能三层分工。
 
+- 2026-11-20 — 新增信源 `raw/sources/ai/2026-11-20-agent-knowledge-base.md`。补强 RAG 的边界定位：在四种 Agent 知识库能力中，RAG 找相关知识，回答"哪些资料与问题相关"，常见对象是文档/文本片段/检索结果；明确其局限是依赖资料本身、找到的是"可能相关的内容"而非业务系统确认的当前状态。由此新建对照页 [[agent-knowledge-base-capabilities]] 与 [[graphrag]]、[[ontology]]。
+
 ## Open Questions（开放问题）
 
 - 多跳检索与推理增强（CoT/ToT）的协同：多跳检索本身已含推理，与提示层推理增强如何配合？
@@ -100,6 +104,7 @@ RAG vs 微调对比（信源 2026-11-12）：
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-11-12-ai-agent-tech-overview.md`（vivo Agent 全景综述，2026-11-12，RAG 流程/对比表/进阶变体）
+- Source: `raw/sources/ai/2026-11-20-agent-knowledge-base.md`（2026-11-20，RAG 在四种能力中的定位与"可能相关≠业务确认当前状态"的局限）
 
 ## Related Knowledge（相关知识）
 

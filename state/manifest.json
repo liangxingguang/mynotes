@@ -5154,6 +5154,45 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/k2LwwM4-u0OnPKvQqwlAWw",
       "asset_ref": "Assets/2026-11/wechat-k2LwwM4-u0OnPKvQqwlAWw.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-agent-knowledge-base.md",
+      "sha256": "0ddf8afe4588c7d88f35c007415694bd4b0d06558ddc7fbd17fcdda82427d3e5",
+      "registered_at": "2026-11-20",
+      "inbox_ref": "Archive/2026-11-20-agent-knowledge-base.md",
+      "pages": [
+        "wiki/concepts/graphrag.md",
+        "wiki/concepts/ontology.md",
+        "wiki/comparisons/agent-knowledge-base-capabilities.md",
+        "wiki/concepts/rag.md",
+        "wiki/concepts/llm-wiki.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/cNNPokH3odju9kMGKnJWwg",
+      "asset_ref": "Assets/2026-11/wechat-cNNPokH3odju9kMGKnJWwg.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-agentscope-2.md",
+      "sha256": "fb31113fa40ae6d8a21330eeb51e020be039bdd4cc2bfa26b6c0803e1d9dbe20",
+      "registered_at": "2026-11-20",
+      "inbox_ref": "Archive/2026-11-20-agentscope-2.md",
+      "pages": [
+        "wiki/concepts/agent-service.md",
+        "wiki/entities/agentscope.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/TkqRdyMuhU2Z5LRIkHWFvw",
+      "asset_ref": "Assets/2026-11/wechat-TkqRdyMuhU2Z5LRIkHWFvw.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-agentscope-java-source.md",
+      "sha256": "b7ecc3a0650065c569ad3aefb7e94ce2b6d5717971c4a4b2984e0c201f27defc",
+      "registered_at": "2026-11-20",
+      "inbox_ref": "Archive/2026-11-20-agentscope-java-source.md",
+      "pages": [
+        "wiki/entities/agentscope.md",
+        "wiki/concepts/agent-loop.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/RiyIJHDAzESiCaFXlzNTfA",
+      "asset_ref": "Assets/2026-11/wechat-RiyIJHDAzESiCaFXlzNTfA.md"
     }
   ]
 }

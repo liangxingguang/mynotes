@@ -9,7 +9,7 @@ created: 2026-11-20
 category: 技术
 tags: [AI, Agent]
 asset_ref: Assets/2026-11/wechat-RiyIJHDAzESiCaFXlzNTfA.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 > **摘要**：AgentScope Java 源码图解指南（对应 2.1.0-SNAPSHOT，Java 17 + Project Reactor，源码分析项目 github.com/liulangjietou/AgentScope-source-analysis）。主线：输入进入会话，模型决定下一步，框架执行工具，结果回到上下文，直到产生终态。ReAct 两动作对应 `reasoning()`（请求模型）与 `acting()`（处理工具调用）；结束判断要求无工具调用且至少一个非空白文本块，`maxIters` 默认 10，达上限进入 `summarizing()` 标记 MAX_ITERATIONS。一次 call 经 AgentBase 生命周期（runInContext→serializeOnKey 同会话串行→runLifecycleBody→executeCallBody）。关键机制：pending 工具恢复（ASKING 确认走 `Msg.METADATA_CONFIRM_RESULTS` 直接从 acting(0) 继续；外部工具补 ToolResultBlock）、权限双层（ReAct 权限门 + Toolkit 执行器，直接调 callTool 不经过权限门）、人工确认跨两次调用（ALLOWED/DENIED，工具级 deny/ask 优先）、会话对象分层（Msg/AgentState/RuntimeContext/RunControl/Native Session）、结束四分支（正常/空结果/失败/中断各有保存路径）、Harness 组装（工作区+上下文预算+VerificationService 用已持久化证据验收）、结构化输出（原生 Schema 或 generate_response 兜底）。

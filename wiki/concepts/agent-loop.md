@@ -27,6 +27,7 @@ sources:
   - raw/sources/ai/2026-11-02-superagent-design.md
   - raw/sources/ai/2026-11-06-pi-loop-engineering.md
   - raw/sources/ai/2026-11-12-ai-agent-tech-overview.md
+  - raw/sources/ai/2026-11-20-agentscope-java-source.md
 related:
   - wiki/concepts/harness-engineering.md
   - wiki/entities/pi.md
@@ -111,6 +112,14 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 - **权限闸门**：每次工具执行前走权限检查（允许/询问/拒绝），敏感操作暂停等待人工确认
 - **中断恢复**：支持 `interrupt(userId, sessionId)` 精确中断某个 session，中断后状态自动保存，下次从中断点恢复
 
+**运行机制补强（AgentScope Java 源码，第 18 信源，信源 2026-11-20）**：
+
+- **结束判断的精确条件**：普通文本路径要求无工具调用、且至少有一个非空白文本块——只返回 thinking、正文为空不能当作已回答用户；服务端工具若全部由模型厂商执行、配对结果已随助手消息返回，则无需本地再执行。
+- **迭代上限的准确含义**：`maxIters` 默认 10，达上限进入 `summarizing()`、不再给模型工具、标记 `MAX_ITERATIONS`；迭代上限不等于"整次请求最多发生十次模型调用"。
+- **权限双层**：ReAct 权限门判断本次动作是否放行，Toolkit 执行器管工具查找、激活分组、Schema 与实际执行；直接调用 `Toolkit.callTool()` 不自动经过外层 ReAct 权限门。
+- **恢复协议**：新输入先查历史中未配对的工具调用——无 pending 则开始新推理；停在权限确认（ASKING）须提交 `ConfirmResult` 后直接从 `acting(0)` 继续，不让模型重新生成动作；外部挂起工具须补 `ToolResultBlock`；`enablePendingToolRecovery` 默认关闭，不能借它跳过人工确认。
+- **事件流≠已持久化会话**：面向前端的 AgentEvent 流不能直接当成已持久化的完整会话；区分 turn（可暂停恢复的逻辑交互）与 run（实际执行），恢复须用新运行身份。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -163,6 +172,8 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 
 - 2026-11-12 — 新增 vivo《AI Agent 技术全景解析》信源（第 17 信源）。补上四块此前缺位的细节：①**控制权转移**——Agent 控制流由 LLM 运行时动态决定，开发者写"执行框架"而非"执行逻辑"；②**ReAct 提示格式**——Thought/Action/Observation 循环，每轮可见全部历史；③**核心循环五环节**——目标理解→规划→执行→观察→反思修正；④**运行机制**——maxIters（默认 10）、并发工具调用、权限闸门（允许/询问/拒绝）、中断恢复（userId+sessionId）。
 
+- 2026-11-20 — 新增 AgentScope Java 源码图解信源（第 18 信源）`raw/sources/ai/2026-11-20-agentscope-java-source.md`。把"运行机制"落到方法级：①**结束判断精确条件**——无工具调用且至少一个非空白文本块，只返回 thinking 不算已回答，服务端工具全由厂商执行则无需本地执行；②**maxIters 准确含义**——达上限进 `summarizing()` 标记 `MAX_ITERATIONS`，且迭代上限≠整次请求最多十次模型调用；③**权限双层**——ReAct 权限门判断放行 + Toolkit 执行器管查找/分组/Schema/执行，直接 `callTool` 不经过权限门；④**恢复协议**——`doCallInner` 先查未配对工具调用，ASKING 提交 `ConfirmResult` 后从 `acting(0)` 继续，外部工具补 `ToolResultBlock`，`enablePendingToolRecovery` 默认关闭；⑤**事件流≠已持久化会话**、turn≠run。详见实体页 [[agentscope]]。
+
 ## Open Questions（开放问题）
 
 - 不同框架（LangGraph、AutoGen、各厂商 Agent SDK）对 Runtime/Harness 的划分与本文是否一致？
@@ -187,6 +198,7 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 - Source: `raw/sources/ai/2026-11-02-superagent-design.md`（异步 ReAct Loop：start/stop 全双工、前台后台解耦、已在 DeepSeek Harness 实现未默认开启）
 - Source: `raw/sources/ai/2026-11-06-pi-loop-engineering.md`（双层 run/turn Loop、steering/follow-up 双队列、token 截断整批 fail、工具异常包装回喂）
 - Source: `raw/sources/ai/2026-11-12-ai-agent-tech-overview.md`（第 17 信源：控制权转移、ReAct 提示格式、核心循环五环节、运行机制）
+- Source: `raw/sources/ai/2026-11-20-agentscope-java-source.md`（第 18 信源：结束判断精确条件、maxIters 准确含义、权限双层、恢复协议、事件流≠已持久化会话、turn≠run）
 
 ## Related Knowledge（相关知识）
 
