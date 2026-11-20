@@ -9,7 +9,7 @@ created: 2026-11-20
 category: 技术
 tags: [AI, Agent]
 asset_ref: Assets/2026-11/wechat-gaode-qingzhou-agent-6.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 > **摘要**：轻舟 Agent 把 FDE（前沿部署工程师）模式从"部署工程师"转为"部署工程能力"，将版本/分支/代码/构建/实验/真机验证/发布整条研发链路部署到每个需求现场，产品和设计同学不必逐个平台操作即可拿到可验证、可评审、可发布的交付。一条需求归并为四个主节点：发起任务、Agent Teams 执行、按验证矩阵真机验证、发布上线；压缩的是"人必须跨平台操作"的部分而非工程节点，需求确认/代码评审/测试验收/灰度发布门禁仍保留。核心机制：多实例 Agent Teams（各职能为独立 Claude Code 实例，邮件式通信）、Aone Sandbox 沙盒、AuthX 双令牌无感鉴权与凭证隔离。以 108 模块跨业务样式升级为完整案例。

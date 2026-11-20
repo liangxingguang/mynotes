@@ -9,7 +9,7 @@ created: 2026-11-20
 category: 技术
 tags: [AI, Agent]
 asset_ref: Assets/2026-11/wechat-gaode-starship-10x-2.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 > **摘要**：星舰10X 把成熟 Coding Agent 的执行能力接入团队研发过程，解决"Agent 能写代码、工程师仍要不断补背景/对齐目标/检查覆盖"的问题。核心是知识库与长期记忆（Memory）分工：知识库给业务概念/模块关系/源码入口（渐进式披露四层），Memory 保留工作方法供下次起点。知识分仓库知识库与跨域 KBase，质量检查分脚本机械核对与 Agent 语义审查两条互补路径，经验经会话层→个人层→共享层三层提炼。以双仓缓存默认规则调整为例说明跨仓交付路径；2026 年 4-9 月已核验 1030 项开发任务、至少 676 项形成 MR。

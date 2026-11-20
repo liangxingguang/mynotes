@@ -723,6 +723,9 @@
 - [[tufazip|tufazip]]（2026-11-20，AI/压缩/Transformer 实体，Transformer 唯一预测模型无损压缩：LTCB 第 2（提交时点 2026-09-07），enwik9 10 亿字节 → 105.39 MB，12 层 163M + C2 共享块先验净省 0.56%，作者一手长文单信源，置信度高）
 - [[loopforge|LoopForge]]（2026-11-20，AI/Agent 编排/平台实体，腾讯开源自托管交付编排工作台：SOP=Agent/Script/Human gate 节点、"DAG 管主干，Agent 管节点，人管签字"、门禁失败打回上游、复盘引擎 0~100 健康度评分、腾讯内部 836 MR/一次通过率 54.8%/终态成功率 95.4%、LoopForge Local，单信源待核验，置信度中）
 - [[gaode-ad-linglingqi|广告凌凌漆]]（2026-11-20，AI/Agent/研发平台实体，高德广告研发自主执行 Agent：可替换 Harness 边界（Harness 管怎么做/平台管能不能做、自主执行≠自主授权）、Personal Dev 稳定研发现场（单 Writer+lease/fencing）、CodeGraph+Knowledge+Mem0、Dev Loop 契约（Goal/Constraints/Acceptance Evidence）、四概念分离、验收三层次，362 任务/96.4% 覆盖，单信源，置信度中）
+- [[gaode-search-linglingqi|搜索凌凌漆]]（2026-11-20，AI/Agent/问题归因实体，高德搜索 VOC 问题归因数字员工 Agent（007）：基于 Hermes Agent 基座、按需取证（上百数据源）、自进化四段链路（候选生成→隔离→审核→发布回滚）、经验治理（错误经验比没有更糟）、上万条提问，单信源，置信度中）
+- [[gaode-starship-10x|星舰 10X]]（2026-11-20，AI/Agent/研发交付实体，高德研发交付 Agent：知识库+Memory 分工、渐进式披露四层、知识订正双路径、Memory 三层提炼、跨仓交付，1030 任务/676 MR/65.6%，单信源，置信度中）
+- [[gaode-qingzhou-agent|轻舟 Agent]]（2026-11-20，AI/Agent/FDE/真机验证实体，高德现场篇研发工程化 Agent：FDE→部署工程能力、四主节点归并、Agent Teams 多实例、Aone Sandbox、AuthX 双令牌、真机验证 DOM 核对、108 模块案例，单信源，置信度中）
 
 ## topic（主题）
 

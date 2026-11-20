@@ -15,12 +15,14 @@ sources:
   - raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md
   - raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md
   - raw/sources/ai/2026-11-20-agent-sandbox-mcp-k8s.md
+  - raw/sources/ai/2026-11-20-gaode-qingzhou-agent.md
 related:
   - wiki/concepts/mcp.md
   - wiki/concepts/a2a-protocol.md
   - wiki/concepts/agent-sandboxing.md
   - wiki/concepts/durable-execution.md
   - wiki/concepts/rbac-permission-system.md
+  - wiki/entities/gaode-qingzhou-agent.md
   - wiki/sources/kiso-minimal-agent-framework.md
   - wiki/sources/llm-integration-engineering-hard-parts.md
   - wiki/sources/2026-11-20-agent-sandbox-mcp-k8s.md
@@ -56,6 +58,8 @@ A2A 委派：主管下发子 Instruction 时生成子 InstructionGrant，只能�
 
 本地运行模式维度（Kiso 信源，第 2 信源）：单用户 CLI 场景的权限面与平台授权不同，核心是"运行时能做什么 + 什么必须人批 + 无人值守怎么办"。五种运行模式：`default`（能证明只读的直接放行、副作用进审批）/ `accept-edits`（常规文件修改放行、Shell 等开放副作用仍校验）/ `plan`（纯只读，写入与副作用直接拒绝）/ `dontAsk`（无人值守：所有需人确认的操作直接 deny，模型只能在现有权限内另找路径，不允许任务挂在无人回答的确认框上——是 deny 语义而非 bypass 语义）/ `bypass`（尽量放行正常操作；但凭据与灾难性路径操作仍有底层保护，"放权是运行策略，灾难底线不是可关的 UI 选项"）。Shell 层采用"只有能够证明只读，才自动放行"：read-only-shell 解析命令，存在反引号、`$()`、subshell、后台执行等无法安全证明只读的结构直接 abstain；管道/分号组成的多命令每段分别满足只读条件；访问 `.env`/凭据路径仍进权限链；`git -c` 这类表面是 Git 命令、实际借配置触发外部程序的形式不视为只读——**Unknown 不等于 Safe**（解析器不知道就是不知道，不能默认安全）。环境变量清洗（工具叫 `shell` 而非 `bash`：系统 Shell 执行、工作目录绑定 Workspace、子进程 env 清洗，API Key/Token 不因 `env`/`printenv` 泄漏进 Context）。执行者与裁判者分离的延伸：子 Agent 可被限制修改路径、高风险能力不提供，且父 Session 持独立 acceptance check——子 Agent 自报"完成"不算完成。
 
+**双令牌无感鉴权与凭证隔离**（信源 2026-11-20，高德 AuthX）：Agent 要替用户操作各个内部平台，身份认证的核心难题是 Agent 同时代表两个实体——自身的工作负载身份，以及背后的用户身份，传统单一身份模型无法同时表达两层。AuthX 以 **AIT + APT 双令牌**解决：AIT 回答"你是谁"，把工作负载身份与委托用户身份绑定在同一个令牌里；APT 回答"你确实持有对应私钥"，提供请求级持有证明与防重放保护。**关键是凭证隔离**：长期凭证（私钥、Refresh Token）永远不进入 Agent 运行环境，由沙盒外的 Egress Sidecar 完成签名注入——即使沙盒内执行的代码出现问题，也拿不到用户长期凭证。对用户而言这一切"无感"，不重复登录授权，同时保留原有权限边界：以用户身份执行的平台动作（实验、灰度、发布）不扩大用户原有权限；代码仓库访问由受控公共账号按 Group 范围集中承接，受分支限制、人工 Review 和任务审计约束。该机制与本页"凭证签名（ToolPermissionClaim 防篡改）""能力票据按次绑定"同构——权限不随进程长期存在，校验权在沙盒外，长期凭证不进入不可信执行环境。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -76,6 +80,7 @@ A2A 委派：主管下发子 Instruction 时生成子 InstructionGrant，只能�
 - 2026-10-31 — Kiso 信源（第 2 信源）补上本地运行时维度：五种 CLI 运行模式（含 `dontAsk` 的 deny 语义——无人值守不是"什么都允许"，而是"需人确认的都拒绝"，任务不挂在无人回答的确认框上）、只读证明式命令放行（Unknown≠Safe）、子 Agent 权限受限 + 父会话独立验收。与平台四层防线互补可组合（平台层管授权收窄、本地层管执行证明），页面标题由「四层防线」扩展为「平台授权与本地运行」。
 - 2026-11-01 — 面试深挖 84（第 3 信源）补上**凭证归属与校验位置**视角：工具调用产生的执行凭证是「发起方用户」的权限，不是模型/代理自身的；校验发生在**调用方这一侧**（工具提供方执行时校验），模型只是参数生成者——即使提示词注入伪造指令，也只能生成无权请求。只读工具同样过权限过滤（工具端有自己的授权链，不是免检通道）。与本页四层防线"MCP 网关二次鉴权兜底"同构：校验权在工具侧，不在模型侧；权限模型管"能调什么"，凭证归属管"以谁的身份调"。
 - 2026-11-20 — 平台级沙箱信源（第 4 信源）补上**网关授权入口与能力票据**视角：授权由可信控制面决定（模型、HTTP 头、工具参数只能提供待比对数据，租户取可信会话而非模型参数）、权限按本次执行绑定（短效能力票据，代理验证签名/期限/一次性/范围）、数据服务是最终授权点；Rego 职责边界明确为只判主体/工具/范围、不过滤 SQL，AST 不能替代数据库权限。与本页"MCP 网关二次鉴权兜底"互为印证并补上票据机制细节。
+- 2026-11-21 — 高德 AuthX 信源（第 5 信源）补上**双令牌无感鉴权与凭证隔离**视角：AIT（绑定工作负载身份与委托用户身份）+ APT（请求级持有证明与防重放）双令牌解决 Agent 双层身份难题；长期凭证永不进 Agent 运行环境，由沙盒外 Egress Sidecar 完成签名注入，沙盒内代码出问题也拿不到用户长期凭证；以用户身份执行的平台动作不扩大原有权限，代码仓库访问由受控公共账号按 Group 集中承接。与本页"凭证签名""能力票据按次绑定"同构——权限不随进程长期存在、校验权在沙盒外。
 
 ## Open Questions（开放问题）
 
@@ -90,6 +95,7 @@ A2A 委派：主管下发子 Instruction 时生成子 InstructionGrant，只能�
 - Source: `raw/sources/ai/2026-10-28-kiso-minimal-agent-framework.md`（第 2 信源：五种运行模式、只读证明式放行、环境变量清洗、执行者与裁判者分离）
 - Source: `raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md`（第 3 信源：执行凭证归属发起方用户、校验在调用方侧、模型只是参数生成者、只读也过权限过滤）
 - Source: `raw/sources/ai/2026-11-20-agent-sandbox-mcp-k8s.md`（第 4 信源：网关授权入口与不可变执行意图、能力票据按次绑定、Rego 职责边界、数据服务是最终授权点）
+- Source: `raw/sources/ai/2026-11-20-gaode-qingzhou-agent.md`（第 5 信源：AuthX 双令牌 AIT+APT、凭证隔离、长期凭证留沙盒外由 Egress Sidecar 签名注入、平台动作不扩大用户权限、公共账号按 Group 集中承接）
 
 ## Related Knowledge（相关知识）
 

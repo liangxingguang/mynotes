@@ -9,7 +9,7 @@ created: 2026-11-20
 category: 技术
 tags: [AI, Agent]
 asset_ref: Assets/2026-11/wechat-gaode-search-linglingqi-5.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 > **摘要**：搜索凌凌漆（007）基于 Hermes Agent 基座建设，解决海量 VOC 工单排查提效与经验沉淀。选 Hermes 因其"开箱即用+记忆/技能反哺"机制契合业务，虽存单用户设计、单实例文件读写、SQLite 写入上限三处不匹配，策略是跟随社区演进、仅在框架问题影响业务时才干预。核心是按需取证（接上百数据源，每条证据可回溯请求参数/配置/日志）与自进化飞轮：候选生成→隔离（Git 分支）→审核→发布回滚，审核前不生效。强调错误经验混入知识库比没有经验更糟，人工审核不能沦为橡皮图章。已累计处理上万条用户提问。

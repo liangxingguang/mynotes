@@ -5284,6 +5284,43 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=MzE5ODQ3MDM4Mw==&mid=2247492867&idx=1&sn=e702e014680c4d100966af3d9e5e1569&chksm=96999a83a1ee139554bee54f36b2b8192db930b6a945b1f81328434fe03404d945c2aa022515",
       "asset_ref": "Assets/2026-11/wechat-gaode-ad-linglingqi-4.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-gaode-qingzhou-agent.md",
+      "sha256": "659b26db6498b1484ea6cdab1f7e5fd2b6b82aee549b49fa53882aa9f58816f8",
+      "registered_at": "2026-11-21",
+      "inbox_ref": "Archive/2026-11-20-gaode-qingzhou-agent.md",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzE5ODQ3MDM4Mw==&mid=2247493014&idx=1&sn=3363a6851e992897479323d0e5444bb9&chksm=96999a16a1ee1300d43d345065f7917b06ff58e92ad5b6edfcc759ac1df8ad532705bb5ce750",
+      "asset_ref": "Assets/2026-11/wechat-gaode-qingzhou-agent-6.md",
+      "pages": [
+        "wiki/entities/gaode-qingzhou-agent.md",
+        "wiki/concepts/agent-sandboxing.md",
+        "wiki/concepts/agent-permission-model.md"
+      ]
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-gaode-search-linglingqi.md",
+      "sha256": "3c33c803d9deea1896eb655d7ee68a23e3c3c7e495439360e5ead1b95014d9dd",
+      "registered_at": "2026-11-21",
+      "inbox_ref": "Archive/2026-11-20-gaode-search-linglingqi.md",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzE5ODQ3MDM4Mw==&mid=2247492867&idx=2&sn=6c8abe212726d67376892576fbff6ebf&chksm=96999a83a1ee13958cd042563d5f6ab2bccedbf8cc1109069486da8ad09a070c61725a313055",
+      "asset_ref": "Assets/2026-11/wechat-gaode-search-linglingqi-5.md",
+      "pages": [
+        "wiki/entities/gaode-search-linglingqi.md",
+        "wiki/concepts/agent-memory-system.md"
+      ]
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-gaode-starship-10x.md",
+      "sha256": "89eab5456814385ce530944522d58bc63b2dcf13fa5ed7b5aafb76607a2994c4",
+      "registered_at": "2026-11-21",
+      "inbox_ref": "Archive/2026-11-20-gaode-starship-10x.md",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzE5ODQ3MDM4Mw==&mid=2247492800&idx=1&sn=a330991923d9d7e0d343d1cb8dedb55e&chksm=96999b40a1ee1256f0b25d879f88216f367b3cb725697a269e4d33a4645659c74c02c8dfe18d",
+      "asset_ref": "Assets/2026-11/wechat-gaode-starship-10x-2.md",
+      "pages": [
+        "wiki/entities/gaode-starship-10x.md",
+        "wiki/concepts/agent-memory-system.md"
+      ]
     }
   ]
 }

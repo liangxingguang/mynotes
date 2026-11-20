@@ -14,8 +14,10 @@ sources:
   - raw/sources/ai/2026-10-14-pi-sandbox-two-layer-isolation.md
   - raw/sources/ai/2026-11-20-agent-sandbox-mcp-k8s.md
   - raw/sources/ai/2026-11-20-codex-sandbox.md
+  - raw/sources/ai/2026-11-20-gaode-qingzhou-agent.md
 related:
   - wiki/entities/pi.md
+  - wiki/entities/gaode-qingzhou-agent.md
   - wiki/sources/2026-11-20-agent-sandbox-mcp-k8s.md
   - wiki/sources/2026-11-20-codex-sandbox.md
   - wiki/concepts/agent-permission-model.md
@@ -63,6 +65,12 @@ related:
 - **三平台实现**：macOS `sandbox-exec` + 内核 Seatbelt；Linux bubblewrap（文件系统视图）+ seccomp（系统调用）+ `no_new_privs`（防 setuid 提权），网络走独立命名空间 + 回环中继转代理；Windows 向 Microsoft MXC 迁移（更细路径覆盖、代理模式拦直连放行回环）。通配拒绝规则在每次启动前展开为具体路径，启动后才出现的文件不会被补进本次规则。
 - **盲区：文件不继承沙箱限制**：子进程继承限制，但沙箱内写出的文件（如被写入恶意代码、且被 Git 忽略的 `node_modules` 依赖）之后被沙箱外进程（编辑器）加载执行时不受这套限制；删除目标在可写范围内，沙箱也无法区分必要的清理与误操作。
 
+**生产侧内核级容器隔离（信源 2026-11-20，高德 Aone Sandbox）**：
+
+- **隔离基线**：Agent 的编码、构建与命令执行全部运行在 Aone Sandbox——基于 `runD` 安全容器实现内核级隔离，每个沙盒运行在独立内核空间，与宿主机和其他容器相互隔离。这层隔离**保护的是宿主与执行资源**，不等于 Agent 通过已授权接口对配置、实验或发布产生的影响免疫——后者仍由授权与审批约束。
+- **资源管理**：环境独立可定制（自定义镜像与多容器编排，任务间互不干扰）；通过热备资源池降低环境获取等待，冷启动时间随镜像大小和编排方式变化。
+- **与权限的边界**：沙箱管"代码在哪跑、碰得到什么"，授权与审批管"能调什么、以谁的身份调"——Aone Sandbox 与 AuthX 凭证隔离（见 [[agent-permission-model]]）是两层互补，不互替。
+
 ## How It Works（运作方式）
 
 选型顺序：**先想防谁 → 再想必须暴露什么 → 最后选工具**；能只读别可写，能拷进拷出别直接挂载。常见破口（官方自陈）：读写挂载、挂载代理目录（凭据/设置/会话全交出）、环境变量传入、网络出口；有网络即无法证明 agent 代码从不用网。运行时选型（普通容器 / gVisor / Kata）不预设比例、不宣传固定性能数据，须以目标镜像、节点型号与业务负载的压测决定；隔离有效性最终用攻击与故障演练验证，而不是预写数字。
@@ -79,6 +87,7 @@ related:
 - 2026-10：Pi 官方文档确立"把模型生成的命令和代码当作不可信"立场与隔离方案对照表；示例级命令沙箱经 `@anthropic-ai/sandbox-runtime` 实现。
 - 2026-11-20 — 平台级生产沙箱信源（第 2 信源）补上**多租户 Agent 平台的工程闭环**视角：六层信任边界各自验证的链路观、K8s 隔离基线（RuntimeClass/Pod securityContext/Namespace restricted/配额）与三个常见误判、双向默认拒绝的网络模型、CAS+账本的一次性调度、攻击与故障演练验收。与 Pi 的客户端/进程级隔离互补：一端是平台托管边界，一端是本地运行边界；能力票据的授权细节归入 [[agent-permission-model]]。
 - 2026-11-20 — Codex Sandbox 信源（第 3 信源）补上**本地运行侧的启动时限权**机制：命令启动前把权限配置转成本机沙箱规则、子进程继承约束；本地 stdio MCP 服务默认不套 Shell 沙箱、需 `codex sandbox --permission-profile` 单独限权；域名规则需网络开关+代理两层配合；macOS/Linux/Windows 三平台实现（Seatbelt/bubblewrap+seccomp/MXC）；并明确"文件不继承沙箱限制"的盲区与"禁止的动作被拦下才算限制生效"的核对原则。三份信源共同勾勒从本地进程到平台托管的完整隔离谱系。
+- 2026-11-21 — 高德 Aone Sandbox 信源（第 4 信源）补上**生产侧内核级容器隔离**视角：基于 `runD` 安全容器的内核级隔离（每沙盒独立内核空间）、环境独立可定制与热备资源池降等待；并明确沙箱隔离保护宿主与执行资源，但 Agent 经授权接口对配置/实验/发布的影响仍由授权审批约束，沙箱与权限是两层互补不互替。与前三份信源（Pi 客户端/进程级、平台级 K8s 链路、Codex 本地启动时限权）共同覆盖从本地到生产托管的完整谱系。
 
 ## Open Questions（开放问题）
 
@@ -90,6 +99,7 @@ related:
 - Source: `raw/sources/ai/2026-10-14-pi-sandbox-two-layer-isolation.md`
 - Source: `raw/sources/ai/2026-11-20-agent-sandbox-mcp-k8s.md`（第 2 信源：平台级工程闭环、K8s 隔离基线、双向网络、调度账本、验收演练）
 - Source: `raw/sources/ai/2026-11-20-codex-sandbox.md`（第 3 信源：本地启动时限权、MCP 服务另设权限、代理两层开关、三平台实现、文件不继承限制的盲区）
+- Source: `raw/sources/ai/2026-11-20-gaode-qingzhou-agent.md`（第 4 信源：Aone Sandbox 基于 runD 的内核级容器隔离、热备资源池、沙箱与授权审批两层互补不互替）
 
 ## Related Knowledge（相关知识）
 

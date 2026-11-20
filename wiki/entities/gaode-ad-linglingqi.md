@@ -19,6 +19,9 @@ related:
   - wiki/concepts/acceptance-agent.md
   - wiki/concepts/ai-coding-evidence-boundary.md
   - wiki/concepts/ai-native-sdlc.md
+  - wiki/entities/gaode-search-linglingqi.md
+  - wiki/entities/gaode-starship-10x.md
+  - wiki/entities/gaode-qingzhou-agent.md
   - wiki/sources/2026-11-20-gaode-ad-linglingqi.md
 ---
 # 广告凌凌漆（高德广告 AI 原生生产系统）
@@ -51,7 +54,8 @@ related:
 
 - 广告凌凌漆（广告数字员工生产系统）
 - 小七（数字员工交互入口）
-- 星舰 10X、星舰 Cloud Agent、轻舟（同系列其他 Agent 实践，未立页）
+- 星舰 10X（[[gaode-starship-10x|研发交付 Agent]]）、星舰 Cloud Agent、轻舟（[[gaode-qingzhou-agent|现场篇研发工程化 Agent]]）——同系列其他 Agent 实践，均已立页
+- 搜索凌凌漆（[[gaode-search-linglingqi|搜索问题归因 Agent]]）——数字员工篇搜索版姊妹实践
 
 ## Relationships（关系）
 
