@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20 22:22",
+  "updated_at": "2026-11-20 22:23",
   "notes": [
     {
       "id": "inbox-2026-11-20-ai-coding-engineering",
@@ -111,6 +111,25 @@
       "summary": "**摘要**：以\"17 项定向测试全通过却仍不能宣布需求完成\"为引，点明 AI 工程的核心是让数字员工持续工作、理解大型工程、并用真实证据交付。广告凌凌漆接入 22 项能力入口（六类：需求研发/代码质量/引擎实验/运维数据/客资计费/知识协同），架构分交互协作、任务控制（Main Agent）、研发执行（Codex Harness）、工程上下文与验收四部分。关键是执行引擎可替换（自主执行≠自主授权）、个人研发环境（Personal Dev，单 Writer 原则）、CodeGraph 影响分析、Knowledge+Mem0 经验治理。研发契约收敛为目标/约束/验收证据，验收结论分开发完成、交付完成、效果确认三层。截至 2026-09-18，台账 362 条任务、办结率 96.4%。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-gaode-ad-linglingqi-4.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "inbox-2026-11-20-gaode-qingzhou-agent",
+      "title": "2026-11-20-gaode-qingzhou-agent",
+      "path": "Inbox/2026-11-20-gaode-qingzhou-agent.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzE5ODQ3MDM4Mw==&mid=2247493014&idx=1&sn=3363a6851e992897479323d0e5444bb9&chksm=96999a16a1ee1300d43d345065f7917b06ff58e92ad5b6edfcc759ac1df8ad532705bb5ce750",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：轻舟 Agent 把 FDE（前沿部署工程师）模式从\"部署工程师\"转为\"部署工程能力\"，将版本/分支/代码/构建/实验/真机验证/发布整条研发链路部署到每个需求现场，产品和设计同学不必逐个平台操作即可拿到可验证、可评审、可发布的交付。一条需求归并为四个主节点：发起任务、Agent Teams 执行、按验证矩阵真机验证、发布上线；压缩的是\"人必须跨平台操作\"的部分而非工程节点，需求确认/代码评审/测试验收/灰度发布门禁仍保留。核心机制：多实例 Agent Teams（各职能为独立 Claude Code 实例，邮件式通信）、Aone Sandbox 沙盒、AuthX 双令牌无感鉴权与凭证隔离。以 108 模块跨业务样式升级为完整案例。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-gaode-qingzhou-agent-6.md",
       "wiki_status": "pending"
     },
     {
