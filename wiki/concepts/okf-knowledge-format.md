@@ -4,7 +4,7 @@ type: concept
 title: OKF（面向 AI Agent 的知识包装规范）
 status: active
 created: 2026-10-22
-updated: 2026-10-22
+updated: 2026-11-20
 confidence: medium
 tags:
   - concept
@@ -12,14 +12,16 @@ tags:
   - knowledge-base
 sources:
   - raw/sources/ai/2026-10-14-jd-haibo-ai-knowledge-base.md
+  - raw/sources/ai/2026-11-20-livex-wiki-agent-kb.md
 related:
   - wiki/sources/jd-haibo-ai-knowledge-base.md
+  - wiki/concepts/coding-agent-knowledge-base.md
 ---
 # OKF（面向 AI Agent 的知识包装规范）
 
 ## Definition（定义）
 
-Google Cloud 提出的、面向 AI Agent 消费的知识包装规范（Open Knowledge Format，名称以信源转述为准）：把知识在入库时即编译为结构化互链 Markdown 树，运行时只做"导航+摘录"。（目前仅由京东海博文单一二手信源转述支撑，未读到规范原文。）
+Google Cloud 提出的、面向 AI Agent 消费的知识包装规范（Open Knowledge Format，名称以信源转述为准）：把知识在入库时即编译为结构化互链 Markdown 树，运行时只做"导航+摘录"。（采纳情况获京东海博、淘宝直播互动 LiveX Wiki 两例二手信源印证，规范原文未读到。）
 
 ## Why It Matters（为什么重要）
 
@@ -53,6 +55,7 @@ Google Cloud 提出的、面向 AI Agent 消费的知识包装规范（Open Know
 ## Evolution（演进）
 
 - 2026-10-14 — 京东海博文披露采纳 OKF 建设 AI 知识库，并给出三层架构与 Skill 工具链实现。
+- 2026-11-20 — 第二例采纳：淘宝直播互动团队 LiveX Wiki 借鉴 OKF 的轻量文件思想，用 Markdown 保存业务解释、YAML frontmatter 和引用声明知识身份、来源与依赖，使人可审阅、程序可检查、Agent 按结构读取。两例为不同业务场景下的独立实践，互证 OKF 作为 Agent 知识库表达层格式的可行性（均为二手转述，规范原文仍缺）。
 
 ## Open Questions（开放问题）
 
@@ -66,3 +69,5 @@ Google Cloud 提出的、面向 AI Agent 消费的知识包装规范（Open Know
 
 - [[jd-haibo-ai-knowledge-base]]
 - [[jd-haibo]]
+- [[livex-wiki-agent-kb]]（第二例采纳信源）
+- [[coding-agent-knowledge-base]]（以 OKF 为表达层的 Agent 知识库方法论）

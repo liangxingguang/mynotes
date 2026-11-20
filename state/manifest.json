@@ -5086,6 +5086,21 @@
       ],
       "source_url": "http://t.cn/AXTtWFnP",
       "asset_ref": "Assets/2026-11/tufazip-transformer-compression.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-livex-wiki-agent-kb.md",
+      "sha256": "072a639f296fc314b3278dab99d12f01941bbadaf8ede0d9a93189d22182a00a",
+      "registered_at": "2026-11-20",
+      "inbox_ref": "Archive/2026-11-20-livex-wiki-agent-kb.md",
+      "pages": [
+        "wiki/sources/livex-wiki-agent-kb.md",
+        "wiki/concepts/coding-agent-knowledge-base.md",
+        "wiki/concepts/llm-wiki.md",
+        "wiki/concepts/knowledge-base-maintenance.md",
+        "wiki/concepts/okf-knowledge-format.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/N_D1fo-S8KomtfaLQG68Gg",
+      "asset_ref": "Assets/2026/11/livex-wiki-agent-kb.md"
     }
   ]
 }

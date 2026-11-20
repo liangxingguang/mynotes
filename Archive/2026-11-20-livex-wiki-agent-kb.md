@@ -9,7 +9,7 @@ created: 2026-11-20
 category: 技术
 tags: [AI, Agent, RAG]
 asset_ref: Assets/2026/11/livex-wiki-agent-kb.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 > 淘宝直播互动团队构建了面向 Coding Agent 的 LiveX Wiki：融合 LLM Wiki 编纂、OKF 轻量表达与 Git 版本治理，按"域—场景—知识"三层把跨端跨仓业务经验沉淀为机器可解析的上下文。通过层次索引 + Agentic Search 按需消费、回源核验，由 LLM 与 Git 完成自动更新与工程治理。评测显示端到端生码得分较无知识库提升 39.15%，较 RAG 提升 30.1%，仓库定位准确率从 60% 升至 90%。

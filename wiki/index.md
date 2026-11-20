@@ -194,6 +194,7 @@
 - [[learn-pi-agent-01-llm-to-agent|Learn Pi Agent 01｜大模型如何一步步变成 Agent]]（2026-10-14，AI/教程）
 - [[like-follow-high-concurrency-design|别再上来就堆 Redis！点赞系统从打挂数据库到 18w 写峰值（信源页）]]（2026-10-28，架构/高并发/Redis，作者自述线上落地 2 年，置信度中）
 - [[linked-list-vs-array-cache|链表已死？C++ 之父：O(1) 不一定比 O(N) 快]]（2026-10-21，性能/体系结构）
+- [[livex-wiki-agent-kb|LiveX Wiki：淘宝直播互动团队的 Agent 知识库实践（LLM Wiki + OKF + Git）]]（2026-11-20，AI/知识库/Coding Agent，团队第一方实践，域—场景—知识三层建模+层次索引+Agentic Search+Git 治理，端到端生码较无知识库/RAG 提升 39.15%/30.1%，单信源置信度中）
 - [[llm-from-scratch-primer|三万字长文：大语言模型从零入门]]（2026-10-14，AI/教程）
 - [[llm-rag-agent-series-album|LLM/RAG/Agent 实战合集（172 篇：Pi实战/Harness Engineering/RAG实战/MCP实战/LLM基础/OpenClaw）]]（2026-10-28，AI/资源导航，纯链接目录型，置信度中）
 - [[llm-wiki-advanced-four-steps|LLM Wiki 搭建教程·进阶篇一：四步搭建完整系统（本仓库模式出处）]]（2026-10-14，AI/知识库）
@@ -450,6 +451,7 @@
 - [[class-loading-parent-delegation|类加载与双亲委派]]（五阶段 + 准备阶段默认值/final 特例 + 初始化 6 触发 + 双亲委派意义与 4 破坏场景 SPI/Tomcat/OSGi，单信源，置信度中）
 - [[claude-skills|Claude Skills]]（Markdown 文件即资产：判断/偏好/标准固化、按需加载、一句话唤醒；Skill-Creator 构建 + 2.0 断言评估/A-B/触发词优化；ub-mode 纪律包+ste-zh 行为包+激活式 token 账，四信源，置信度中）
 - [[codemode|Codemode（代码模式工具编排）]]（模型写 JS 沙箱脚本编排工具调用，只回筛选结果；固定开销约减半，单次收益看返回格式）
+- [[coding-agent-knowledge-base|Coding Agent 知识库（域—场景—知识建模方法）]]（四条设计约束+域/场景/共享知识三层建模+渐进披露消费五步+LLM+Git 生命周期治理+知识版本与事实版本分管；据 LiveX Wiki 单信源，置信度中）
 - [[collections-utility-class|Collections 工具类设计]]（算法委托+三类包装器工厂；同步/不可变均为视图，迭代须外部加锁；emptyList 单例零分配；单信源，置信度中）
 - [[complex-system-breakdown|复杂B端系统拆解方法论（五件套）]]（业务对象/单据/状态机/权限/异常五件套+SOP五步顺序；对象三类与核心5-8个；单据四问；状态机四要素；RBAC功能/数据权限+权限矩阵表；异常三类六要素；产出先文档表格后原型，单信源置信度中）
 - [[finance-reconciliation-design|财务对账与异常冲正系统设计]]（三角模型（业务单/内部资金流水/外部渠道流水）+七层架构（数据源→采集→标准化→匹配→差异→处理→报表凭证）+差异三类型（长款/短款/不一致）+差异处理闭环+容差规则（物流<3%且单日<500元）+冲正不删原单/红冲vs蓝冲+冲正四原则（原单不可变/可追溯/幂等/资金保障优先）+7张表+6类接口+三工作台+PM九步SOP+七行业对账重点，四信源互证（第10篇+第26篇+第31篇逐笔对账+第18篇清分对账），置信度中）

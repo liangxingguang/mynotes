@@ -4,15 +4,17 @@ type: concept
 title: 知识库维护：检索之后的另一半
 status: active
 created: 2026-11-06
-updated: 2026-11-06
+updated: 2026-11-20
 confidence: medium
 tags:
   - concept
   - 知识库
 sources:
   - raw/sources/ai/2026-11-06-weknora-dept-knowledge-base.md
+  - raw/sources/ai/2026-11-20-livex-wiki-agent-kb.md
 related:
   - wiki/concepts/llm-wiki.md
+  - wiki/concepts/coding-agent-knowledge-base.md
   - wiki/entities/weknora.md
   - wiki/sources/weknora-dept-knowledge-base.md
 ---
@@ -51,6 +53,7 @@ related:
 ### Related Concepts（相关概念）
 
 - [[llm-wiki|LLM Wiki]]——LLM Wiki 模式用"模型持续编译 + 结构约定 + 索引/日志巡检"补后半段的维护职责；本文是该职责被产品化缺失时的显式命名。
+- [[coding-agent-knowledge-base|Coding Agent 知识库]]——LiveX Wiki 的"LLM 增量更新 + 全量审查 + Git 受控发布"是维护职责工程化治理的具体路径（见本页演进）。
 - 与检索增强生成（RAG）：RAG 只答前半段；见 [[llm-wiki]] 中 RAG 与 LLM Wiki 互补关系的讨论。
 
 ### Distinctions（区分）
@@ -61,19 +64,22 @@ related:
 ## Evolution（演进）
 
 - 2026-11-06：据 WeKnora 部门实战信源立概念页。该文把"检索半 vs 维护半"的二分讲透：检索已商品化、维护是空白；理想形态为知识库系统+在线文档拼接。
+- 2026-11-20 — 新增淘宝直播互动团队 LiveX Wiki 信源，给出"维护路径如何工程化"的一个答案：LLM 增量更新 + 定期全量审查 + Git 受控发布（独立候选分支、变更评审、质量门禁，规则由仓库级 MAINTENANCE.md 承接、能力封装为 Skill）。信源同时明确边界：Git/CI 提供可追溯性与确定性检查，不能保证业务判断正确，知识准确性责任仍落实到维护人——"自动化承担重复调查与一致性检查、业务判断由人兜底"是该路径的前提条件。
 
 ## Open Questions（开放问题）
 
-- 维护入口的产品化路径未收敛：上游补编辑、与在线文档拼接、还是流程约定+巡检补位，信源未给出答案。
-- 维护的成本模型（编辑 vs 删重传 vs 巡检的人力/时间对比）无实测数据（信源明示未验证）。
+- 维护入口的产品化路径正在收敛：WeKnora 信源揭示缺口，LiveX Wiki 信源给出"LLM 编纂 + Git 治理 + Skill 封装"的工程治理路径（以人工负责为前提）；上游补编辑、与在线文档拼接、流程约定+巡检补位三条路线之间尚无对比数据。
+- 维护的成本模型（编辑 vs 删重传 vs 巡检的人力/时间对比）无实测数据（信源明示未验证）；LiveX Wiki 的"人工兜底"成本同样未量化。
 
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-11-06-weknora-dept-knowledge-base.md`（检索半/维护半二分、三条边界、录入激励、HUB 规划、领导之问）
+- Source: `raw/sources/ai/2026-11-20-livex-wiki-agent-kb.md`（LLM 增量更新 + 全量审查 + Git 受控发布的维护治理路径与人工兜底边界）
 
 ## Related Knowledge（相关知识）
 
 - [[weknora|WeKnora]]（维护缺口案例实体）
 - [[weknora-dept-knowledge-base|信源：部门知识库实战实录]]
 - [[llm-wiki|LLM Wiki]]
+- [[coding-agent-knowledge-base|Coding Agent 知识库]]（维护治理路径的来源方法论）
 - [[ai-kb-build-workbuddy-ima-wiki|WorkBuddy+ima+Wiki 落地]]（含月度体检的维护约定，另一维护路径参照）
