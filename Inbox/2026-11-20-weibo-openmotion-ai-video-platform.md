@@ -9,7 +9,9 @@ created: 2026-11-20
 category: 技术
 tags: [AI, GitHub, Agent]
 asset_ref: Assets/2026-11/openmotion-ai-video-platform.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-11-20T04:20:34.206Z"
+ingest_claim_id: 36488-1795148434206-0
 ---
 
 # 微博：OpenMotion——开源 AI 视频创作与剪辑平台

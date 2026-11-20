@@ -9,7 +9,9 @@ created: 2026-11-20
 category: 技术
 tags: [AI, GitHub]
 asset_ref: Assets/2026-11/tufazip-transformer-compression.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-11-20T04:20:41.800Z"
+ingest_claim_id: 4388-1795148441800-0
 ---
 
 # 微博：tufazip——用 Transformer 实现的无损压缩算法
