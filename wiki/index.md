@@ -402,6 +402,8 @@
 - [[springboot-doris-stream-load|SpringBoot+Doris Stream Load 海量数据实时更新方案]]（2026-11-13，Java/Doris/批量导入，@DorisField 注解字段映射+分批并行推送+指数退避重试+LoadResponse 结果监控，宣称较 JDBC 批量更新提升 20-50 倍，正文自 Assets 采集稿逐字收录，微信单信源置信度中）
 - [[2026-11-13-rust-coroutine-scheduler-mn|用 Rust 从零实现协程调度器：M:N 用户态线程是怎么跑的]]（2026-11-13，Rust/调度/微信公众号，从零实现 M:N 调度器：成本两数量级对比/切换=换寄存器/ucontext/四态与栈管理（guard page+trampoline）/两层队列工作窃取/yield 与唤醒（suspended 表）/阻塞调用三解法/栈增长与 Rust 固定栈→async 路线，正文自 Assets 采集稿逐字收录，微信单信源置信度中）
 - [[2026-11-20-weibo-github-open-skills|微博盘点：5 个实用的 GitHub 开源 Skill/Agent 工具]]（2026-11-20，微博/Agent 工具盘点，5 个开源 Skill/Agent 工具：ffmpeg-skill 本地视频剪辑（42 工具+MCP 无云端）/univer 可嵌入 Office SDK（编辑计算协作文件处理，人与 AI 双受众）/firecrawl agent 爬虫基础设施（号称 550+ 数据源未核验）/CLI-Anything 任意软件转 CLI（CLI-Hub 统一入口）/minimind 从零训练 64M 小模型教程（两小时跑通），微博单信源，置信度中）
+- [[2026-11-20-weibo-openmotion-ai-video-platform|微博：OpenMotion——开源 AI 视频创作与剪辑平台]]（2026-11-20，微博/GitHub README，Claude Motion + CapCut 开源替代：BYOA 22 款 Agent + BYOK 多模态网关 + 300+ Motion.md 指南 + Video as Code 全栈，正文自 Assets 采集稿逐字收录，README 自述单信源，置信度中）
+- [[2026-11-20-weibo-tufazip-transformer-compression|微博：tufazip——用 Transformer 实现的无损压缩算法]]（2026-11-20，微博/作者长文，LTCB 第 2（2026-09-07 提交时），enwik9 10 亿字节 → 105.39 MB，免权重传输在线学习 + C2 离线迁移净省 0.59 MB，正文自 Assets 采集稿逐字收录，作者一手单信源，置信度高）
 
 ## concept（概念）
 
@@ -647,6 +649,8 @@
 - [[agent-handoff|Agent 交接（Handoff）]]（2026-11-12，概念/多 Agent 协作，正式交接机制：header（target/kind/summary）+正文落盘 `$TMPDIR`+按需加载+反向回执；与压缩（澄清池子）相对的"不造池子"路径，解决上下文腐坏，知乎单信源，置信度中）
 - [[stream-load|Stream Load（Doris HTTP 批量导入）]]（2026-11-13，Doris/批量导入/HTTP，PUT /api/{db}/{table}/_stream_load+Basic 认证，JSON/CSV/GZIP，LoadResponse 各阶段耗时监控，应用侧流水线字段映射→分批→并行→退避重试，与 MySQL 大批量导入同源思路，单信源置信度中）
 - [[coroutine-scheduling|协程调度（M:N）]]（2026-11-13，调度/并发/Rust，M:N 协程调度：成本两数量级优势、切换本质=换寄存器、四态与栈管理（guard page+trampoline）、两层队列工作窃取调度器（批量取 32）、yield 与唤醒（suspended 表防泄漏）、阻塞调用三解法、Go 可增长栈 vs Rust 固定栈→async/await 无栈路线，与 [[forkjoinpool-internals]] 工作窃取同源、与 [[rust-concurrency]] 路线对照，单信源置信度中）
+- [[motion-md|Motion.md（视频动效制作规范格式）]]（2026-11-20，概念/视频/Agent，Markdown 描述镜头顺序、节奏、转场与可替换素材；Brand Kit + Design 区分工；Motion Package v0.2 草案；参考片复刻四步流程，OpenMotion README 单信源，置信度中）
+- [[neural-lossless-compression|神经网络无损压缩]]（2026-11-20，概念/压缩/Transformer，预测即压缩（交叉熵之和=理想比特数）+算术编码；确定性在线学习免权重传输；离线迁移须自付成本；replay/词表/参数消融三律，与 [[next-token-prediction]] 互链，tufazip 作者长文单信源，置信度中）
 
 ## entity（实体）
 
@@ -692,6 +696,8 @@
 - [[firecrawl|Firecrawl]]（2026-11-20，AI/Agent 爬虫基础设施实体，给 agent 用的网页搜索与爬取基础设施，号称接入 550+ 数据源（博主转述未核验），微博单信源，置信度中）
 - [[cli-anything|CLI-Anything]]（2026-11-20，AI/Agent CLI 工具实体，把任意软件变成 agent 可调用的 CLI，配套 CLI-Hub 统一入口，微博单信源，置信度中）
 - [[minimind|minimind]]（2026-11-20，AI/小模型训练教程实体，从零训练 64M 参数小模型的完整教程与代码，两小时可跑通（博主说法未实测），微博单信源，置信度中）
+- [[openmotion|OpenMotion]]（2026-11-20，AI/视频创作/Agent 实体，开源全栈 Agent 视频工作室：BYOA 22 款本地 Agent + BYOK 多模态网关（图/视频/音乐/TTS）+ 300+ Motion.md 指南 + Video as Code，Apache 2.0，stars 约 9.5k（2026-11-09 自报），README 单信源，置信度中）
+- [[tufazip|tufazip]]（2026-11-20，AI/压缩/Transformer 实体，Transformer 唯一预测模型无损压缩：LTCB 第 2（提交时点 2026-09-07），enwik9 10 亿字节 → 105.39 MB，12 层 163M + C2 共享块先验净省 0.56%，作者一手长文单信源，置信度高）
 
 ## topic（主题）
 

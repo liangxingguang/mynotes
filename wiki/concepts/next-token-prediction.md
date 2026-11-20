@@ -4,13 +4,14 @@ type: concept
 title: 下一 token 预测（Next-Token Prediction）
 status: active
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-11-20
 confidence: high
 tags:
   - concept
   - llm
 sources:
   - raw/sources/ai/2026-10-14-llm-from-scratch-primer.md
+  - raw/sources/ai/2026-11-20-tufazip-transformer-compression.md
 related:
   - wiki/concepts/agent-loop.md
 ---
@@ -57,6 +58,7 @@ related:
 ### Related Concepts（相关概念）
 
 - [[agent-loop|Agent Loop]]：把「模型写工具调用 → 外部执行 → 结果拼回 → 再预测」的多轮循环工程化，正是本概念在 Agent 场景的延伸（信源：「平时说的 Agent，就是让这个循环自动跑很多轮」）。
+- [[neural-lossless-compression|神经网络无损压缩]]：本概念的压缩兑现——对固定分词，交叉熵之和恰为理想压缩比特数，算术编码把预测概率变成压缩流；[[tufazip]] 以 Transformer 唯一预测实现 enwik9 105.39 MB（2026-11-20 补充信源）。
 
 ### Dependencies（依赖项）
 
@@ -70,7 +72,8 @@ related:
 
 ## Evolution（演进）
 
-（当前仅单一教学信源，待后续信源补充。）
+- 2026-11-20 补充信源：[[neural-lossless-compression]]（tufazip）将本概念直接用作无损压缩目标——交叉熵之和即理想压缩比特数，算术编码兑现为压缩流；确定性在线学习使权重免传输，10 亿字节 Wikipedia 压至 105.39 MB。印证本概念第 4 条「压缩与泛化同源」。
+- （此前仅单一教学信源。）
 
 ## Open Questions（开放问题）
 
@@ -81,6 +84,7 @@ related:
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-10-14-llm-from-scratch-primer.md`（教学性二次信源，关键数字均标注一手论文出处：Kaplan 2020 规模定律、Hoffmann 2022 Chinchilla、Ouyang 2022 InstructGPT、Zhou 2023 LIMA、DeepSeek-AI 2025 R1、Kalai et al. 2025 幻觉）
+- Source: `raw/sources/ai/2026-11-20-tufazip-transformer-compression.md`（2026-11-20 补充信源：以无损压缩兑现预测目标的一手工程实例，用于 Evolution 对「压缩与泛化同源」的印证）
 
 ## Related Knowledge（相关知识）
 

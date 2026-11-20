@@ -1,45 +1,6 @@
 {
-  "updated_at": "2026-11-20 12:27",
+  "updated_at": "2026-11-20 12:54",
   "notes": [
-    {
-      "id": "inbox-20261120-weibo-openmotion-ai-video-platform",
-      "title": "微博：OpenMotion——开源 AI 视频创作与剪辑平台",
-      "path": "Inbox/2026-11-20-weibo-openmotion-ai-video-platform.md",
-      "created": "2026-11-20",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "GitHub",
-        "Agent"
-      ],
-      "source": "微博",
-      "source_url": "http://t.cn/AXTt6eQh",
-      "source_type": "link",
-      "platform": "微博",
-      "summary": "博主介绍的 OpenMotion：定位为\"Claude Motion + 剪映（CapCut）\"开源替代的全栈 AI 视频创作平台。上传参考视频或粘贴链接，Agent 即可用自有品牌素材与文案复刻，产出可编辑、可改文案/动效的 MP4。项目以 300+ 动效模板、152+ Brandkit 与 MOTION.md 制作规范沉淀专业经验，并通过 Motion Harness 把创作流程封装为可复用的 Agent 工作流。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/openmotion-ai-video-platform.md",
-      "wiki_status": "ingesting"
-    },
-    {
-      "id": "inbox-20261120-weibo-tufazip-transformer-compression",
-      "title": "微博：tufazip——用 Transformer 实现的无损压缩算法",
-      "path": "Inbox/2026-11-20-weibo-tufazip-transformer-compression.md",
-      "created": "2026-11-20",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "GitHub"
-      ],
-      "source": "微博",
-      "source_url": "http://t.cn/AXTtWFnP",
-      "source_type": "link",
-      "platform": "微博",
-      "summary": "博主分享的 tufazip：以 Transformer 作为唯一预测模型的无损压缩工具，在运行 20 余年的 Large Text Compression Benchmark 上排名第 2（2026-09-07 提交时），是纯神经网络预测模型中的最佳条目。它将 1GB Wikipedia 文本（enwik9）压缩到 105.39 MB，且该成绩尚未到最高——榜首是一个叫 ex-girlfriend 2.0 的条目。文章详解了\"预测即压缩\"的原理、免权重传输的在线学习机制与消融实验。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/tufazip-transformer-compression.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
@@ -7713,6 +7674,45 @@
       "summary": "微博博主翻 GitHub 热榜，盘点了 5 个面向 Claude Code / Cursor / Codex 等 agent 的实用开源工具：本地视频剪辑、可嵌入 Office SDK、agent 爬虫基础设施、任意软件转 CLI、从零训练小模型，均为无云端、可直接上手的项目。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weibo-post-5367112379400413.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-20261120-weibo-openmotion-ai-video-platform",
+      "title": "微博：OpenMotion——开源 AI 视频创作与剪辑平台",
+      "path": "Archive/2026-11-20-weibo-openmotion-ai-video-platform.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "GitHub",
+        "Agent"
+      ],
+      "source": "微博",
+      "source_url": "http://t.cn/AXTt6eQh",
+      "source_type": "link",
+      "platform": "微博",
+      "summary": "博主介绍的 OpenMotion：定位为\"Claude Motion + 剪映（CapCut）\"开源替代的全栈 AI 视频创作平台。上传参考视频或粘贴链接，Agent 即可用自有品牌素材与文案复刻，产出可编辑、可改文案/动效的 MP4。项目以 300+ 动效模板、152+ Brandkit 与 MOTION.md 制作规范沉淀专业经验，并通过 Motion Harness 把创作流程封装为可复用的 Agent 工作流。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/openmotion-ai-video-platform.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-20261120-weibo-tufazip-transformer-compression",
+      "title": "微博：tufazip——用 Transformer 实现的无损压缩算法",
+      "path": "Archive/2026-11-20-weibo-tufazip-transformer-compression.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "GitHub"
+      ],
+      "source": "微博",
+      "source_url": "http://t.cn/AXTtWFnP",
+      "source_type": "link",
+      "platform": "微博",
+      "summary": "博主分享的 tufazip：以 Transformer 作为唯一预测模型的无损压缩工具，在运行 20 余年的 Large Text Compression Benchmark 上排名第 2（2026-09-07 提交时），是纯神经网络预测模型中的最佳条目。它将 1GB Wikipedia 文本（enwik9）压缩到 105.39 MB，且该成绩尚未到最高——榜首是一个叫 ex-girlfriend 2.0 的条目。文章详解了\"预测即压缩\"的原理、免权重传输的在线学习机制与消融实验。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/tufazip-transformer-compression.md",
       "wiki_status": "ingested"
     }
   ]

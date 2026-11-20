@@ -5059,6 +5059,33 @@
       ],
       "source_url": "https://weibo.com/6604581414/5367112379400413",
       "asset_ref": "Assets/2026-11/weibo-post-5367112379400413.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-openmotion-ai-video-platform.md",
+      "sha256": "31d7306206353df354061f2ace24c940171c3347ee3d2abdcd0537a5bea3e042",
+      "registered_at": "2026-11-20",
+      "inbox_ref": "Archive/2026-11-20-weibo-openmotion-ai-video-platform.md",
+      "pages": [
+        "wiki/sources/2026-11-20-weibo-openmotion-ai-video-platform.md",
+        "wiki/entities/openmotion.md",
+        "wiki/concepts/motion-md.md"
+      ],
+      "source_url": "http://t.cn/AXTt6eQh",
+      "asset_ref": "Assets/2026-11/openmotion-ai-video-platform.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-tufazip-transformer-compression.md",
+      "sha256": "a360531b55b8eae9de9c78453312bfef6f87cb793d37eb453c57c55560b216b9",
+      "registered_at": "2026-11-20",
+      "inbox_ref": "Archive/2026-11-20-weibo-tufazip-transformer-compression.md",
+      "pages": [
+        "wiki/sources/2026-11-20-weibo-tufazip-transformer-compression.md",
+        "wiki/entities/tufazip.md",
+        "wiki/concepts/neural-lossless-compression.md",
+        "wiki/concepts/next-token-prediction.md"
+      ],
+      "source_url": "http://t.cn/AXTtWFnP",
+      "asset_ref": "Assets/2026-11/tufazip-transformer-compression.md"
     }
   ]
 }
