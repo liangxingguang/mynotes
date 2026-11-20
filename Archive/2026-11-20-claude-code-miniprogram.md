@@ -9,7 +9,7 @@ created: 2026-11-20
 category: 技术
 tags: [AI]
 asset_ref: Assets/2026-11/wechat-_9oQXXE13ppUVhdMyqfzDQ.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 > **摘要**：保姆级实操教程：用 Claude Code 从零做一个微信小程序"保质期管家"（记录物品名称与到期日期，列表按到期排序、标注已过期/今天到期/剩余天数）。全流程：环境准备（安装 Claude Code、注册小程序拿 AppID、装微信开发者工具）→ 开发者工具创建 TS+Sass 基础模板 → 同一项目目录启动 Claude Code → 计划模式先出方案确认再开发 → 编译预览、真机调试、上传、提交审核、发布。核心方法论：先确认 AI 对需求的理解再动手，减少理解偏差返工。

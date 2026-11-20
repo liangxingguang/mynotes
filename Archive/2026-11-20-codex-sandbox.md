@@ -9,7 +9,7 @@ created: 2026-11-20
 category: 技术
 tags: [Agent, 系统设计]
 asset_ref: Assets/2026-11/wechat-DcqSSYb3JQgZqpJNBV_kFQ.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 > **摘要**：OpenAI 工程师公开 Codex Sandbox 设计细节：模型决定运行什么，操作系统按启动时的规则限制它能访问什么。命令启动时限权（权限配置→本机沙箱规则，子进程继承约束）；本地 stdio MCP 服务默认不走 Shell 沙箱路径，需单独用 `codex sandbox --permission-profile` 限权；域名规则靠代理执行，需 OS 拦截直连+代理判断域名两层配合。macOS/Linux/Windows 三套实现（Seatbelt/bubblewrap+seccomp/MXC），并指出"文件不继承沙箱限制"的盲区。

@@ -5204,6 +5204,42 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/Pydv-gVq9aAJOIAbSvKjhg",
       "asset_ref": "Assets/2026-11/wechat-Pydv-gVq9aAJOIAbSvKjhg.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-ai-coding-team-engineering.md",
+      "sha256": "9df9090f29fb823751dfcafd8dcd8993ea91d7d9e89ec46af31d0a5b6da4d3f1",
+      "registered_at": "2026-11-20",
+      "inbox_ref": "Archive/2026-11-20-ai-coding-engineering.md",
+      "pages": [
+        "wiki/sources/2026-11-20-ai-coding-team.md",
+        "wiki/concepts/ai-coding-delivery-four-stages.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzE5ODQ3MDM4Mw==&mid=2247492726&idx=1&sn=3cc81746dc6c3352610147bc5418f15f&chksm=96999bf6a1ee12e0f5fdff9784d7382de9b85dcaa5e8fcac926dbab0799c99925d95fa33210e",
+      "asset_ref": "Assets/2026-11/wechat-ai-coding-team-1.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-claude-code-miniprogram.md",
+      "sha256": "15b7f85d61331fe9b6003b055f479e2735a21d3e3369d0c4cc44ed309ea88cb9",
+      "registered_at": "2026-11-20",
+      "inbox_ref": "Archive/2026-11-20-claude-code-miniprogram.md",
+      "pages": [
+        "wiki/sources/2026-11-20-claude-code-miniprogram.md",
+        "wiki/concepts/plan-mode.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/_9oQXXE13ppUVhdMyqfzDQ",
+      "asset_ref": "Assets/2026-11/wechat-_9oQXXE13ppUVhdMyqfzDQ.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-codex-sandbox.md",
+      "sha256": "099bcafe69ca854dfd55ef5e01d1522a109749101ae4861757db1236e7c6452a",
+      "registered_at": "2026-11-20",
+      "inbox_ref": "Archive/2026-11-20-codex-sandbox.md",
+      "pages": [
+        "wiki/sources/2026-11-20-codex-sandbox.md",
+        "wiki/concepts/agent-sandboxing.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/DcqSSYb3JQgZqpJNBV_kFQ",
+      "asset_ref": "Assets/2026-11/wechat-DcqSSYb3JQgZqpJNBV_kFQ.md"
     }
   ]
 }

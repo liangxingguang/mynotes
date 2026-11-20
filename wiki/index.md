@@ -259,6 +259,7 @@
 - [[netty-pipeline-handler-order|一条消息的全程：pipeline 和 handler 到底谁先谁后]]（2026-11-02，Java/Netty/Pipeline 排障，公众号科普实操：双向链方向/症状对照表/三大坑/@Sharable 陷阱/EventLoop 阻塞代价/批量写，单信源，置信度高）
 - [[nginx-websocket-million-connections|百万 WebSocket 长连接背后的 Nginx 架构设计与踩坑实录]]（2026-10-22，Nginx/WebSocket 长连接）
 - [[perf-cpu-hotspot-analysis|性能分析 02｜如何使用 perf 排查：定位系统的性能问题]]（2026-10-31，性能/perf/Linux，CPU 采样排查链路+demo 实测，单信源置信度高）
+- [[plan-mode|计划模式（Plan Mode）]]（2026-11-20，AI/AI Coding/交互模式，先读项目出方案不落改动+决策细节逐项确认+Submit answers+批准后开发，微信教程单信源，置信度中）
 - [[pi-6-extensions|从 Claude Code 搬到 Pi：6 个扩展补回熟悉体验]]（2026-10-14，AI/Agent CLI）
 - [[pi-durable-architecture|开源 Pi-durable：把持久化做进协议，架构是如何支持的]]（2026-10-17，AI/Agent 基础设施）
 - [[pi-embedded-sdk-agent-engine|从 Pi SDK 看懂怎样把 Agent 引擎塞进自己的系统]]（2026-10-17，AI/Pi SDK）
@@ -409,7 +410,10 @@
 - [[2026-11-20-acceptance-agent-opt|AI 10分钟写完代码，你2小时还在验？用验收Agent补上最后一公里]]（2026-11-20，AI/Agent/代码验收，腾讯云开发者·吴思：OPT 平台后端验收 Agent，五阶段流程+L1-L4 证据链+硬阻塞/软失败，微信单信源，置信度中）
 - [[2026-11-20-agent-sandbox-mcp-k8s|生产级 AI Agent 执行沙箱实战：从 MCP 授权到 Kubernetes 隔离的工程闭环]]（2026-11-20，AI/Agent 安全/K8s，六层信任边界+六原则+能力票据+K8s 隔离基线+双向网络默认拒绝+CAS 调度账本+验收演练，微信单信源，置信度中）
 - [[2026-11-20-weixin-agent-skills-top30|微信公众号：按 star 排序的 30 个 Agent Skills 挑选清单]]（2026-11-20，微信/GitHub/Agent Skills，头部三名 star 311k/310k/296k（2026-11-03 实测）+五组 30 项挑选+安装三法，作者未全装、star 未独立核验，单信源置信度中）
+- [[2026-11-20-ai-coding-team|AI Coding之后：搜广推团队的研发工程化探索]]（2026-11-20，AI/交付工程，四环节（意图/上下文/评审/评估）+四仓协同/双仓改造/真机验证三案例+四维衡量，高德团队总纲篇，单信源置信度中）
 - [[2026-11-20-ai-llm-booklist|AI 工程师必备书单：LLM、Agent、机器学习一次整理（微信公众号）]]（2026-11-20，AI/书单/学习，四梯队分级（Must Read/Solid Book/Good Read/Read Later）+入门与进阶阅读建议，20 本书明细以图片呈现未数字化，微信单信源，置信度低）
+- [[2026-11-20-claude-code-miniprogram|零代码，我用 Claude Code 做小程序（保姆级教学）]]（2026-11-20，AI/教程/小程序，计划模式先方案后开发+同一目录分工+真机调试→上传→备案→审核发布全流程，微信单信源，置信度中）
+- [[2026-11-20-codex-sandbox|Codex Sandbox 完整公开，OpenAI 怎么在本机给 Agent 限权？]]（2026-11-20，AI/Agent 安全/沙箱，命令启动时限权+MCP 服务默认不套沙箱+域名规则两层开关+三平台实现+文件不继承限制盲区，微信单信源，置信度中）
 
 ## concept（概念）
 
@@ -425,7 +429,7 @@
 - [[agent-management-methodology|智能体管理方法论（WBS·交付约定·Scrum Sprint 三工具闭环）]]（瓶颈在人的管理能力而非模型能力；拆到能独立验收为止+人机分工准则+交付约定六维度+验收准则打勾表+每轮只改 1–2 条规则变量唯一，单信源置信度中）
 - [[agent-prd-template|Agent 化 PRD 模板]]（2026-11-04，产品/B端/PRD/多智能体，传统PRD写页面字段流程之外新增五模块（Agent能力卡片/协作时序/护栏机制/评测集/指标），与五步法一一对应，单信源置信度中）
 - [[agent-permission-model|Agent 权限模型（平台授权与本地运行）]]（权限=静态基线+指令临时授权+动态校验；租户划边界/Agent 定上限/指令收范围/MCP 网关兜底；凭证归属发起方用户+校验在调用方侧；网关不可变执行意图+能力票据按次绑定；本地 CLI 五模式+只读证明式放行 Unknown≠Safe；A2A 委派子授权⊆父授权；四信源，置信度中）
-- [[agent-sandboxing|Agent 沙箱隔离]]（能力限制而非行为审查；四条路径收窄可达面；脚本级/命令级/工具级/整体隔离 + 平台级 K8s 隔离基线/双向网络默认拒绝/CAS 一次性调度账本；双信源，置信度中）
+- [[agent-sandboxing|Agent 沙箱隔离]]（能力限制而非行为审查；四条路径收窄可达面；脚本级/命令级/工具级/整体隔离 + 平台级 K8s 隔离基线/双向网络默认拒绝/CAS 一次性调度账本 + Codex 本地启动时限权/MCP 另设权限/代理两层开关/文件不继承限制盲区；三信源，置信度中）
 - [[agent-service|Agent Service（Agent 应用后端化）]]（框架+后端组合；多租户/多会话隔离、IM 渠道（飞书/Discord/钉钉）、Agent Team、RAG Service、MCP & Skill Hub、持久化、调度等 SaaS 通用问题在框架层提前解决；AgentScope 2.0 典型实现，单信源，置信度中）
 - [[agent-state-separation|Agent 状态分离（执行状态/操作状态/产物核验）]]（三态分离+多身份+恢复决策顺序+停止非回滚，Codex Harness 实践，单信源置信度中）
 - [[approval-workflow-engine|审批流引擎（含 AI 改造层）]]（六类节点+处理人规则六种+条件分支五要素+边界值卡单教训+十项验收清单；AI 改造层叠加智能填单/风险识别/自动审批/异常预警+三级风险阈值+六步SOP，合并同专辑第 8+15 篇双信源，置信度中）
@@ -440,6 +444,7 @@
 - [[ai-assisted-architecture-design|AI 辅助架构设计（方案起草 / 评审预检 / Trade-off 分析 / 接口建模）]]（2026-11-04，AI/架构/方法论，四角色+9维评审预检+量化对比矩阵+约束优先提示词+AI参谋人拍板，与取舍方法论/8动作/规则引擎互证，单信源置信度中）
 - [[ai-assisted-requirements-analysis|AI 辅助需求分析]]（2026-11-05，AI/需求/方法论，四环节（需求拆解与用户故事生成/文档自动撰写/评审智能查漏/变更影响分析）+查漏五维度+拆解提示词结构+副驾驶非自动驾驶+三条落地建议与四项度量，[[demand-review-sop]] 前置增强互链，单信源置信度中）
 - [[ai-assisted-troubleshooting-workflow|AI 辅助排障工作流]]（贴文本模式四环节：现象选命令/读栈/写表达式/结论分叉；三件不交给 AI；脱敏前提；它翻译你判断，双信源）
+- [[ai-coding-delivery-four-stages|AI Coding 交付四环节（意图/上下文/评审/评估）]]（2026-11-20，AI/交付工程，四环节各自关键问题与交付产物+上下文检索覆盖失败案例+四维衡量，高德总纲篇单信源，置信度中）
 - [[ai-coding-evidence-boundary|证据边界驱动的 AI Coding]]（2026-11-05，AI/AI Coding/证据，美团分布式存储实践：三类任务分别定边界（评审按证据四档输出/Debug 假设生成器+候选集合+七类命名/自动化先定目标与验收）+证据四层互补+可证伪与红绿闭环+变绿≠解决+分层授权，与 [[ai-assisted-troubleshooting-workflow]] 和 [[evidence-first-jvm-tuning]] 互证，单信源置信度中）
 - [[ai-native-organization|AI 原生研发组织]]（工具原生→工作流原生→组织原生）
 - [[ai-native-sdlc|AI 原生 SDLC]]（制品提交链驱动的闭环，Anthropic 2026；人守闸门/三层控制模型；货拉拉千人落地+孔明八阶段工作流+OPT 验收 Agent实例，五信源）
