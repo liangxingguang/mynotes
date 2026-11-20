@@ -407,6 +407,7 @@
 - [[2026-11-20-weibo-openmotion-ai-video-platform|微博：OpenMotion——开源 AI 视频创作与剪辑平台]]（2026-11-20，微博/GitHub README，Claude Motion + CapCut 开源替代：BYOA 22 款 Agent + BYOK 多模态网关 + 300+ Motion.md 指南 + Video as Code 全栈，正文自 Assets 采集稿逐字收录，README 自述单信源，置信度中）
 - [[2026-11-20-weibo-tufazip-transformer-compression|微博：tufazip——用 Transformer 实现的无损压缩算法]]（2026-11-20，微博/作者长文，LTCB 第 2（2026-09-07 提交时），enwik9 10 亿字节 → 105.39 MB，免权重传输在线学习 + C2 离线迁移净省 0.59 MB，正文自 Assets 采集稿逐字收录，作者一手单信源，置信度高）
 - [[2026-11-20-agent-sandbox-mcp-k8s|生产级 AI Agent 执行沙箱实战：从 MCP 授权到 Kubernetes 隔离的工程闭环]]（2026-11-20，AI/Agent 安全/K8s，六层信任边界+六原则+能力票据+K8s 隔离基线+双向网络默认拒绝+CAS 调度账本+验收演练，微信单信源，置信度中）
+- [[2026-11-20-weixin-agent-skills-top30|微信公众号：按 star 排序的 30 个 Agent Skills 挑选清单]]（2026-11-20，微信/GitHub/Agent Skills，头部三名 star 311k/310k/296k（2026-11-03 实测）+五组 30 项挑选+安装三法，作者未全装、star 未独立核验，单信源置信度中）
 
 ## concept（概念）
 
@@ -452,7 +453,7 @@
 - [[cap-theorem|CAP 定理与最终一致性取舍]]（CAP 是分区时的选择非永久标签+最终一致性收敛三条件+不一致窗口是选择依据+一致性哈希/Gossip 边界，单信源置信度中）
 - [[cdn-broadcast-fanout|CDN 广播（弹幕下行）]]（千万级在线下行外包 CDN 边缘：推流伪装视频流 vs 静态文件周期拉取，多 CDN 权重轮询融合；网易云信一手）
 - [[class-loading-parent-delegation|类加载与双亲委派]]（五阶段 + 准备阶段默认值/final 特例 + 初始化 6 触发 + 双亲委派意义与 4 破坏场景 SPI/Tomcat/OSGi，单信源，置信度中）
-- [[claude-skills|Claude Skills]]（Markdown 文件即资产：判断/偏好/标准固化、按需加载、一句话唤醒；Skill-Creator 构建 + 2.0 断言评估/A-B/触发词优化；ub-mode 纪律包+ste-zh 行为包+激活式 token 账，四信源，置信度中）
+- [[claude-skills|Claude Skills]]（Markdown 文件即资产：判断/偏好/标准固化、按需加载、一句话唤醒；Skill-Creator 构建 + 2.0 断言评估/A-B/触发词优化；ub-mode 纪律包+ste-zh 行为包+激活式 token 账；2026-11 生态进入"装哪个"阶段、头部项目 30 万 star，五信源，置信度中）
 - [[codemode|Codemode（代码模式工具编排）]]（模型写 JS 沙箱脚本编排工具调用，只回筛选结果；固定开销约减半，单次收益看返回格式）
 - [[coding-agent-knowledge-base|Coding Agent 知识库（域—场景—知识建模方法）]]（四条设计约束+域/场景/共享知识三层建模+渐进披露消费五步+LLM+Git 生命周期治理+知识版本与事实版本分管；据 LiveX Wiki 单信源，置信度中）
 - [[collections-utility-class|Collections 工具类设计]]（算法委托+三类包装器工厂；同步/不可变均为视图，迭代须外部加锁；emptyList 单例零分配；单信源，置信度中）
@@ -716,7 +717,7 @@
 - [[java-to-rust-migration|Java 到 Rust 迁移]]（2026-11-05，Rust/Java/语言迁移，13 维对照+6 心智模型切换+语言特性映射+Spring 风格迁移示例+Java 开发者 18 陷阱+6 风格原则+5 阶段学习路线+16 项提交前清单，单信源置信度中）
 
 - [[multi-agent-collaboration-architecture|多 Agent 协作架构与控制权下沉]]（2026-11-05，2026-11-12 更新，AI/多 Agent/主题导航，三种协作架构（Master Agent/任务看板/Advisor）+控制权下沉框架+两个设计前提（上下文边界/模型边界）+巡检三模式混用案例+「超级 Agent」术语差异（贬义 vs [[super-agent]] 褒义）+单 Agent 三重瓶颈（上下文污染/工具过载/串行）+四种协作模式（Supervisor/Debate/Pipeline/Handoffs）+Tool/Skill/Subagent 层次关系+Handoffs 落地机制（header+落盘文档+按需加载+反向回执）与 Agent 组网形态（[[pi-xfer]]）+任务看板字段与状态机完整定义+双 Master 架构（Planner 只拆解+Scheduler 只调度巡检），四信源（得物+vivo+知乎×2）置信度中）
-- [[github-open-agent-tools|GitHub 开源 Skill/Agent 工具盘点]]（2026-11-20，AI/Agent 工具/主题导航，微博盘点 5 个 GitHub 开源 Skill/Agent 工具：[[ffmpeg-skill]] 本地视频剪辑 / [[univer]] 可嵌入 Office SDK / [[firecrawl]] agent 爬虫基础设施 / [[cli-anything]] 任意软件转 CLI / [[minimind]] 从零训练小模型教程，均微博单信源待仓库核验，置信度中）
+- [[github-open-agent-tools|GitHub 开源 Skill/Agent 工具盘点]]（2026-11-20，AI/Agent 工具/主题导航，双信源：微博盘点 5 个实用工具（[[ffmpeg-skill]] 本地视频剪辑 / [[univer]] 可嵌入 Office SDK / [[firecrawl]] agent 爬虫基础设施 / [[cli-anything]] 任意软件转 CLI / [[minimind]] 从零训练小模型教程）+ 微信 star 排序 30 个 Agent Skills 清单（头部三名断层领先、五组表格、安装三法），均单信源待仓库核验，置信度中）
 
 ## decision（决策）
 

@@ -75,6 +75,7 @@ Claude Skills 是 Anthropic 推出的模块化技能包机制：一个装着指�
 - Source: `raw/sources/ai/2026-10-28-uncle-bob-ub-mode-skill.md`（ub-mode 实测案例，SKILL.md 中文译文未经原作者审校，confidence=medium）
 - Source: `raw/sources/ai/2026-10-28-ste-zh-skill.md`（ste-zh 汇报规范 Skill，微博帖子信息量有限，confidence=medium）
 - Source: `raw/sources/ai/2026-10-31-agent-harness-essay-ideal-harness.md`（第 4 信源：激活式 token 账主张，个人体验随笔，confidence=medium）
+- Source: `raw/sources/ai/2026-11-20-agent-skills-top30.md`（第 5 信源：star 排序生态全景与头部选型建议，star 为作者自测未独立核验，confidence=medium）
 
 ## Related Knowledge（相关知识）
 
@@ -82,5 +83,6 @@ Claude Skills 是 Anthropic 推出的模块化技能包机制：一个装着指�
 - [[uncle-bob-ub-mode-skill|Uncle Bob 给 Agent 写了一份开发 Skill（ub-mode）]]
 - [[ste-zh-skill|ste-zh：借鉴 ASD-STE100 的 AI Agent 中文汇报规范 Skill]]
 - [[ai-coding-workflow-skill-prompt|一位 Agent 开发者的 AI Coding 工作流：轻 Skill、方法论 Prompt 与端到端测试]]
+- [[github-open-agent-tools|GitHub 开源 Skill/Agent 工具盘点]]（含 30 个 Agent Skills 的 star 排序生态全景）
 - [[drawio-skill|drawio-skill]]（具体 Skill 实例）
 - [[agent-harness-essay-ideal-harness|Agent Harness 随笔：我理想中的 Harness（信源页）]]
