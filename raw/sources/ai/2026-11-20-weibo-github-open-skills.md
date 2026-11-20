@@ -1,0 +1,26 @@
+---
+title: 微博盘点：5 个实用的 GitHub 开源 Skill/Agent 工具
+source: 微博博主 6604581414
+source_url: https://weibo.com/6604581414/5367112379400413
+source_type: post
+platform: 微博
+captured: 2026-11-20
+registered_at: 2026-11-20
+inbox_ref: Inbox/2026-11-20-weibo-github-open-skills.md
+asset_ref: Assets/2026-11/weibo-post-5367112379400413.md
+---
+
+# 微博盘点：5 个实用的 GitHub 开源 Skill/Agent 工具
+
+今天又翻了下github热榜的开源项目，很有意思，有各种skill和agent工具，比如视频图像剪辑、爬虫、office等等，相当的实用。
+
+1、ffmpeg-skill：ffmpeg作为视频组件家喻户晓。这是一个本地 FFmpeg 视频编辑 skill：42 个工具 + MCP，给 Claude Code / Cursor / Codex 用，无云端无 API Key。
+
+2、univer：让自己的软件具备office办公能力。这是可嵌入产品的 Office SDK，支持编辑、计算、协作与文件处理，同时面向人与 AI agent。
+
+3、firecrawl：这个爬虫框架超级火。是给 agent 用的网页搜索与爬取基础设施，据说接入了550+ 数据源。
+
+4、CLI-Anything：实用的CLI搭建工具。它能把任意软件变成 agent 可调用的 CLI，配套 CLI-Hub 统一入口。
+
+5、minimind：自己搭小模型必备组件。这个仓库包含了从零训练一个 64M 参数小模型的完整教程与代码，两小时内可跑通。  
+[#ai#](https://m.weibo.cn/search?containerid=231522type%3D1%26t%3D10%26q%3D%23ai%23&isnewpage=1&luicode=20000061&lfid=5367112379400413&launchid=10000360-page_H5)[#科技先锋官#](https://m.weibo.cn/search?containerid=231522type%3D1%26t%3D10%26q%3D%23%E7%A7%91%E6%8A%80%E5%85%88%E9%94%8B%E5%AE%98%23&extparam=%23%E7%A7%91%E6%8A%80%E5%85%88%E9%94%8B%E5%AE%98%23&luicode=20000061&lfid=5367112379400413&launchid=10000360-page_H5)[#how i ai#](https://m.weibo.cn/search?containerid=231522type%3D1%26t%3D10%26q%3D%23how+i+ai%23&extparam=%23how+i+ai%23&luicode=20000061&lfid=5367112379400413&launchid=10000360-page_H5)[#github#](https://m.weibo.cn/search?containerid=231522type%3D1%26t%3D10%26q%3D%23github%23&isnewpage=1&luicode=20000061&lfid=5367112379400413&launchid=10000360-page_H5)
