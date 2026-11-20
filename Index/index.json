@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20 18:58",
+  "updated_at": "2026-11-20 19:01",
   "notes": [
     {
       "id": "inbox-2026-11-20-agent-skills-top30",
@@ -18,7 +18,7 @@
       "summary": "**摘要**：按 star 排序的 30 个 Agent Skills 清单（2026-11-03 实测），每条一句\"替你省什么\"加开源地址。头部三名断层领先：Superpowers（31.1 万，TDD 七步方法论）、Matt Pocock Skills（31 万，grill-me/tdd/code-review 日常提效）、ECC（29.6 万，71 agents+314 skills 工程基建）。覆盖代码开发、文档办公、设计多媒体、效率工具、数据五组，Skills 生态已从\"有没有\"进入\"装哪个\"。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-vlZKqsuG5ECeX1_0GoKW1A.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "inbox-2026-11-20-agentscope-2",
@@ -129,6 +129,25 @@
       "summary": "**摘要**：基于 CCF ADL174\"大模型与智能体机理与评测\"讲习班的整理。用\"订单/预算/活动配置\"案例贯穿，解释模型答对题目不等于业务可用：表达能力、优化、泛化三层能力的差异，锚点函数与未见组合测试揭示的\"记忆 vs 推理\"之别，以及评测总分掩盖关键任务短板。给出工程验证路径：分层对照测试、能力画像、结果+过程双评测、依据可复核、出错可处置，从\"答对问题\"到\"完成任务\"。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-MqKNcbS1kWPtU80Tacfl6g.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "inbox-2026-11-20-rag-necessary",
+      "title": "2026-11-20-rag-necessary",
+      "path": "Inbox/2026-11-20-rag-necessary.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "系统设计"
+      ],
+      "source": "微信公众号（专辑《RAG工程实践》）",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg2NDQzMzcyOQ==&mid=2247484298&idx=1&sn=92d2ffb37835aeb3d1e9c16461732265&chksm=ce6820a4f91fa9b27ce3c28b622f38320b37b2467306e6dd1d374bc2e6fbf47c1b3fe0efd778",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：RAG 系列开篇。以企业内部制度问答为例：通用大模型给出的数字来自公开语料的常见做法，对不上自家条款。要答案贴合私有知识，工程上有四条路——长上下文、微调、Agent 编排、检索增强生成，实际改的变量不同：长上下文改\"一次能读多少\"（成本随语料量线性上升），微调改\"怎么说\"（知识更新须重训、删事实无法定点、过时知识会被复述），Agent 改\"做什么、按什么顺序做\"（事实仍需从别处取回，RAG 是 Agent 的事实来源）。只有 RAG 改\"依据哪些事实说\"，内部制度、客服售前、合规法务、研发运维四类场景（知识私有、更新快、答案要能核）非检索不可。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-rag-necessary-1.md",
       "wiki_status": "pending"
     },
     {
