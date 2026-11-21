@@ -4,7 +4,7 @@ type: concept
 title: Claude Skills
 status: active
 created: 2026-10-30
-updated: 2026-11-20
+updated: 2026-11-22
 confidence: medium
 tags:
   - concept
@@ -16,10 +16,12 @@ sources:
   - raw/sources/ai/2026-10-28-ste-zh-skill.md
   - raw/sources/ai/2026-10-31-agent-harness-essay-ideal-harness.md
   - raw/sources/ai/2026-11-20-agent-skills-top30.md
+  - raw/sources/ai/2026-11-20-visualization-skills.md
 related:
   - wiki/concepts/prompt-injection.md
   - wiki/concepts/pi-customization-layers.md
   - wiki/topics/github-open-agent-tools.md
+  - wiki/concepts/explanation-visualization-skills.md
 ---
 # Claude Skills
 
@@ -64,6 +66,8 @@ Claude Skills 是 Anthropic 推出的模块化技能包机制：一个装着指�
 - 2026-10-31：Harness 随笔（第 4 信源）补上**激活式 token 账**视角——Skill 描述按需加载的特性使其可作为"不激活不付费"的 Session 管理入口，与 MCP 全量注入形成成本对照；作者称其理想形态更接近用户手动激活的斜杠命令（同一主张在 [[context-management|上下文管理]] 第 3 信源同步记录）。
 - 2026-11-03（信源实测日）：**生态进入"装哪个"阶段**——一份按 star 排序的 30 个 Agent Skills 挑选清单显示，头部项目已积累大规模共识：Superpowers 311,254、Matt Pocock Skills 310,242、ECC 295,677 star（2026-11-03 实测，单一微信信源，未经仓库核验），第四名掉到 18 万量级；awesome 类目录仓库（awesome-agent-skills 1000+、ComposioHQ 200 条集成等）成为选型入口，官方出品集中在 Agent 短板场景（审美/文档/测试）。选型口径：方法论选 Superpowers、日常提效选 Matt Pocock、搭基建选 ECC（信源建议，见 [[github-open-agent-tools]]）。
 
+- 2026-11-22 — 新增微信可视化 Skill 分享信源（第 6 信源）`raw/sources/ai/2026-11-20-visualization-skills.md`。Skill 生态在「解释概念」方向出现**视觉表达子类**：自包含图表（HTML+SVG）、手绘正文配图、素材插画、多引擎智能插图（Gemini+Excalidraw+Mermaid 按内容选引擎）、信息图风格五类形态，多数注明可让 AI 适配到其他主流智能体；落成概念页 [[explanation-visualization-skills|解释型可视化 Skill]]。
+
 ## Open Questions（开放问题）
 
 - Skill 与个人指令（custom instructions）、项目知识、MCP 工具的官方分工边界：当前信源未展开。
@@ -76,6 +80,7 @@ Claude Skills 是 Anthropic 推出的模块化技能包机制：一个装着指�
 - Source: `raw/sources/ai/2026-10-28-ste-zh-skill.md`（ste-zh 汇报规范 Skill，微博帖子信息量有限，confidence=medium）
 - Source: `raw/sources/ai/2026-10-31-agent-harness-essay-ideal-harness.md`（第 4 信源：激活式 token 账主张，个人体验随笔，confidence=medium）
 - Source: `raw/sources/ai/2026-11-20-agent-skills-top30.md`（第 5 信源：star 排序生态全景与头部选型建议，star 为作者自测未独立核验，confidence=medium）
+- Source: `raw/sources/ai/2026-11-20-visualization-skills.md`（第 6 信源：解释型可视化 Skill 五形态与宿主适配，短分享未给安装细节，confidence=medium）
 
 ## Related Knowledge（相关知识）
 
@@ -86,3 +91,4 @@ Claude Skills 是 Anthropic 推出的模块化技能包机制：一个装着指�
 - [[github-open-agent-tools|GitHub 开源 Skill/Agent 工具盘点]]（含 30 个 Agent Skills 的 star 排序生态全景）
 - [[drawio-skill|drawio-skill]]（具体 Skill 实例）
 - [[agent-harness-essay-ideal-harness|Agent Harness 随笔：我理想中的 Harness（信源页）]]
+- [[explanation-visualization-skills|解释型可视化 Skill]]

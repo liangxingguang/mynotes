@@ -4,7 +4,7 @@ type: concept
 title: Harness Engineering（Agent 执行系统工程）
 status: active
 created: 2026-10-27
-updated: 2026-11-21
+updated: 2026-11-22
 confidence: high
 tags:
   - concept
@@ -21,6 +21,7 @@ sources:
   - raw/sources/ai/2026-11-12-ai-agent-tech-overview.md
   - raw/sources/ai/2026-11-20-gaode-ad-linglingqi.md
   - raw/sources/ai/2026-11-20-helixharness-ai-coding.md
+  - raw/sources/ai/2026-11-20-zte-cosight-harness.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/concepts/context-management.md
@@ -39,6 +40,7 @@ related:
   - wiki/sources/codex-agent-harness-architecture-6.md
   - wiki/sources/agent-harness-essay-ideal-harness.md
   - wiki/concepts/personal-dev.md
+  - wiki/entities/zte-cosight-harness.md
 ---
 # Harness Engineering（Agent 执行系统工程）
 
@@ -111,6 +113,8 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 
 **HelixHarness 三阶段工作流与证据门禁**（信源 2026-11-21，第 10 信源）：滴滴开源的 HelixHarness 把日常研发组织为 **Propose → Apply → Archive**：①**Propose** 把自然语言需求转为可执行契约（`spec.md` + `tasks.md`，含范围/前置条件/场景/验收条件/交付工件），作为执行与验收的共同依据；②**Apply** 坚持"执行≠完成"——代码生成不说明需求完成、测试跑完不说明测试通过（断言不符、未收集到用例、HTTP 200 但业务状态不对等陷阱），完成判定走证据链（用例生成检查→有效用例收集→覆盖达标→执行达标→证据完整→报告校验）；③**Archive** 核对完成条件并迁移证据，稳定经验经人工确认才沉淀为项目知识，且评审后变更不得在不重新评审的情况下标记为已评审（证据一致性：验证对象必须与交付对象一致）。配套机制：九个对话界面命令（init/propose/apply/archive/bug-fix/ut/update/status/config）与 `--loop` 串联三阶段；工件落盘（specs/knowledge/eval）支撑跨会话任务恢复（见 [[durable-execution|持久执行]]）；三列索引（文件/定位/加载时机）驱动分阶段上下文按需加载（见 [[context-management|上下文管理]]），未登记文件不得绕过索引读取；Platform 以 Base/Candidate 冻结框架版本对比评测**同一 Agent 在不同 Harness 约束下的工程行为变化**，自进化采纳由人决定。实例页见 [[helixharness|HelixHarness]]。
 
+**ZTE Co-Sight 四层架构（企业级长链路实例）**（信源 2026-11-22，第 11 信源）：中兴开源 Co-Sight Harness 在 2000 人研发团队、200+ 步生产级工作流上给出完整的企业级改造样例，核心主张「Prompt → Context → Harness → Loop，长链路稳定性取决于模型外那层 Harness」。①**业务层**按五维（模型难度、自由度、可验收性、检索依赖、专业依赖）给步骤打分分流——易验收环节直接写脚本不耗模型算力，复杂环节拆为 11 个专职子 Agent（Orchestrator/Worker/Review 三层，生成与审查隔离），准确率提升约 10%；`agent-genesis` 把口头需求自动编译为标准控制文件（路线图/执行计划/验收标准/测试用例），新场景接入从 2-4 小时压缩到 5-10 分钟，验证 Agent 在隔离上下文运行、严禁查看设计方案（防「自己改自己的作业」）。②**执行层 Drive** 用声明式工作流+状态机+Hook 固定流程：模型只能改产出、无权改流程状态，控制数据存于上下文外本地文件；按分析/规划/执行/评估/核算五岗位流转，不合格带证据打回，支持断点续跑与按依赖分批并行——不换底座模型，200 步链路无人干预完成率 50%→100%、耗时 440→159 分钟（-64%）。③**资产层**以「运行态检索+生产态构建」双引擎接上业务语言与研发术语的语义断层（先语义对齐再检索、经验自动回写），召回率 56%→91.67%、F1 68%→91.25%（代价为精确率小幅下降 72%→70%）。④**证据层**评测从总分下钻到阶段里程碑再到具体 Step（v1.0 七维度+裁判 LLM → v2.0 审校规则转召回/精确率公式 → v3.0 节点埋点+Golden Set 逐节点比对），回归门禁拦截「修好一步改坏其他」的倒退改动，与 DSPy/GEPA 算法层优化互补。方法论主张：企业级系统发力点是拉高整个团队的交付下限（60%→90%）而非个体提效，团队越大提升下限价值越高。实例落成实体页 [[zte-cosight-harness|中兴 Co-Sight Harness]]。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -152,6 +156,8 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 
 - 2026-11-21 — 新增滴滴 HelixHarness 信源（第 10 信源）`raw/sources/ai/2026-11-20-helixharness-ai-coding.md`。补上**三阶段工作流与证据门禁**的完整实现样例：Propose（需求→Spec/Tasks 契约）→Apply（执行≠完成，证据链判定）→Archive（证据迁移与人工确认沉淀经验，证据一致性纪律）；并补上任务恢复（工件落盘跨会话恢复）、规则驱动的索引式上下文按需加载、Workspace 多仓协调，以及"评测对象是 Harness 本身"的 Base/Candidate 对比评测与自进化的人决策采纳。与"执行循环/质量检查"观察面、[[artifact-verification-delivery|产物核验与独立交付]]、[[durable-execution|持久执行]] 互证，实例落成实体页 [[helixharness|HelixHarness]]。
 
+- 2026-11-22 — 新增中兴 Co-Sight Harness 信源（第 11 信源）`raw/sources/ai/2026-11-20-zte-cosight-harness.md`。补上**企业级长链路的四层改造完整样例**：业务层五维分流+11 子 Agent+agent-genesis 需求自动编译（隔离验证防自改自评）、执行层 Drive（流程固化、五岗位流转、打回重做、断点续跑，50%→100%、440→159 分钟）、资产层语义对齐双引擎（召回 56%→91.67%）、证据层三级指标下钻+Golden Set+回归门禁；并确立「提升团队交付下限而非个体提效」的企业级发力点主张。与"执行循环/上下文与记忆/多 Agent 协调/扩展机制"观察面、[[durable-execution|持久执行]]、[[agent-evaluation|业务 Agent 全生命周期评测]] 互证，实例落成实体页 [[zte-cosight-harness|中兴 Co-Sight Harness]]。
+
 ## Open Questions（开放问题）
 
 - 论文原始统计口径与当前产品能力的时差（快照为历史版本）？
@@ -169,6 +175,7 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 - Source: `raw/sources/ai/2026-11-12-ai-agent-tech-overview.md`（第 8 信源：Middleware 洋葱模型、框架选型对比、链→Harness 演进叙事）
 - Source: `raw/sources/ai/2026-11-20-gaode-ad-linglingqi.md`（第 9 信源：可替换 Harness 边界、自主执行≠自主授权、平台与 Harness 职责分工）
 - Source: `raw/sources/ai/2026-11-20-helixharness-ai-coding.md`（第 10 信源：Propose/Apply/Archive 三阶段工作流、执行≠完成的证据链判定、九命令与 --loop、索引式按需加载、Base/Candidate 评测 Harness 本身）
+- Source: `raw/sources/ai/2026-11-20-zte-cosight-harness.md`（第 11 信源：ZTE 四层架构与量化数据，内部自报、单信源转述，置信度中）
 
 ## Related Knowledge（相关知识）
 
@@ -187,3 +194,5 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 - [[agent-harness-essay-ideal-harness|Agent Harness 随笔：我理想中的 Harness（信源页）]]
 - [[helixharness|HelixHarness]]
 - [[2026-11-20-helixharness-ai-coding|HelixHarness：滴滴开源 AI Coding Harness（信源页）]]
+- [[zte-cosight-harness|中兴 Co-Sight Harness]]
+- [[2026-11-20-zte-cosight-harness|中兴开源企业级 Harness：Co-Sight Harness（信源页）]]

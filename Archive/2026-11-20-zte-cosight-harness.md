@@ -9,7 +9,7 @@ created: 2026-11-20
 category: 技术
 tags: [AI, Agent]
 asset_ref: Assets/2026-11/wechat-tzBFFAbN-VbrtczsBHSI5Q.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 > **摘要**：中兴通讯开源支撑 2000 人研发团队、200+ 步骤生产级工作流的 Agent 底座系统 Co-Sight Harness（Apache 2.0，ZTE-AICloud/Co-Sight）。从业务、执行、资产、证据四层改造，在不换底座模型的前提下把 200 步链路无人干预完成率从 50% 提升到 100%，总耗时压缩 64%，组织级任务成功率从 60% 提到 90%。

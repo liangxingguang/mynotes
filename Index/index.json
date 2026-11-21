@@ -1,61 +1,6 @@
 {
-  "updated_at": "2026-11-21 21:33",
+  "updated_at": "2026-11-22 00:54",
   "notes": [
-    {
-      "id": "inbox-2026-11-20-visualization-skills",
-      "title": "2026-11-20-visualization-skills",
-      "path": "Inbox/2026-11-20-visualization-skills.md",
-      "created": "2026-11-20",
-      "category": "技术",
-      "tags": [
-        "AI"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/SWmBvy39T3y7ZDmZEwwk1w",
-      "source_type": "web",
-      "platform": "微信",
-      "summary": "**摘要**：作者分享工作中常用的 5 个\"解释概念\"可视化 Skill：①diagram-design——38 种架构/流程/数据/战略图表，输出自包含 HTML+SVG，可品牌适配加动效；②ian-xiaohei-illustrations——把中文文章里的判断、流程、状态和隐喻转成白底手绘、怪诞但清爽的正文配图，默认视觉 IP\"小黑\"可自定义；③guizang-material-illustrations——归藏素材插画技能，生成带字解释图、图表美化与参考配图，适配 Claude Code/Codex 并可改到其他智能体；④smart-illustrator——三引擎系统（Gemini 创意视觉 + Excalidraw 手绘图表 + Mermaid 结构化图表），按内容类型自动选引擎；⑤concept-infographic-engine——对标 GPT-Image2 Template 库的 Infographic Engine 风格，把内容发给智能体调用即自动提取关键信息投进生成图片。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-SWmBvy39T3y7ZDmZEwwk1w.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "inbox-2026-11-20-writing-books-3",
-      "title": "2026-11-20-writing-books-3",
-      "path": "Inbox/2026-11-20-writing-books-3.md",
-      "created": "2026-11-20",
-      "category": "学习",
-      "tags": [
-        "自学"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/zYYaylPXbKXfwwpgO8YKFw",
-      "source_type": "web",
-      "platform": "微信",
-      "summary": "**摘要**：写作入门书单三本，构成完整进阶闭环：①《生活，写下来吧》（英国凯西·伦岑布林克）解决\"不敢动笔、缺乏素材\"的焦虑——重塑写作观，写作不是为成为作家而是记录生活、找回自我，\"你若提笔，便是作家\"，用五感捕捉生活细节让素材涌现；②《一本小小的红色写作书》（布兰德·罗伊尔）解决\"逻辑混乱、表达不清\"——20 条写作原则，核心是\"自上而下\"先结论后理由、写前想清读者要看什么（写作是沟通不是自嗨）、写短句少修饰；③《老舍谈写作》解决\"语言干瘪\"——天天拿笔练，反对堆砌辞藻，文字要像说话一样自然生动，写自己真知道的事。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-zYYaylPXbKXfwwpgO8YKFw.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "inbox-2026-11-20-zte-cosight-harness",
-      "title": "2026-11-20-zte-cosight-harness",
-      "path": "Inbox/2026-11-20-zte-cosight-harness.md",
-      "created": "2026-11-20",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "Agent"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/tzBFFAbN-VbrtczsBHSI5Q",
-      "source_type": "web",
-      "platform": "微信",
-      "summary": "**摘要**：中兴通讯开源支撑 2000 人研发团队、200+ 步骤生产级工作流的 Agent 底座系统 Co-Sight Harness（Apache 2.0，ZTE-AICloud/Co-Sight）。从业务、执行、资产、证据四层改造，在不换底座模型的前提下把 200 步链路无人干预完成率从 50% 提升到 100%，总耗时压缩 64%，组织级任务成功率从 60% 提到 90%。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-tzBFFAbN-VbrtczsBHSI5Q.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
@@ -8314,6 +8259,24 @@
       "wiki_status": "ingested"
     },
     {
+      "id": "inbox-2026-11-20-visualization-skills",
+      "title": "2026-11-20-visualization-skills",
+      "path": "Archive/2026-11-20-visualization-skills.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/SWmBvy39T3y7ZDmZEwwk1w",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：作者分享工作中常用的 5 个\"解释概念\"可视化 Skill：①diagram-design——38 种架构/流程/数据/战略图表，输出自包含 HTML+SVG，可品牌适配加动效；②ian-xiaohei-illustrations——把中文文章里的判断、流程、状态和隐喻转成白底手绘、怪诞但清爽的正文配图，默认视觉 IP\"小黑\"可自定义；③guizang-material-illustrations——归藏素材插画技能，生成带字解释图、图表美化与参考配图，适配 Claude Code/Codex 并可改到其他智能体；④smart-illustrator——三引擎系统（Gemini 创意视觉 + Excalidraw 手绘图表 + Mermaid 结构化图表），按内容类型自动选引擎；⑤concept-infographic-engine——对标 GPT-Image2 Template 库的 Infographic Engine 风格，把内容发给智能体调用即自动提取关键信息投进生成图片。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-SWmBvy39T3y7ZDmZEwwk1w.md",
+      "wiki_status": "ingested"
+    },
+    {
       "id": "inbox-20261120-weibo-github-open-skills",
       "title": "微博盘点：5 个实用的 GitHub 开源 Skill/Agent 工具",
       "path": "Archive/2026-11-20-weibo-github-open-skills.md",
@@ -8370,6 +8333,43 @@
       "summary": "博主分享的 tufazip：以 Transformer 作为唯一预测模型的无损压缩工具，在运行 20 余年的 Large Text Compression Benchmark 上排名第 2（2026-09-07 提交时），是纯神经网络预测模型中的最佳条目。它将 1GB Wikipedia 文本（enwik9）压缩到 105.39 MB，且该成绩尚未到最高——榜首是一个叫 ex-girlfriend 2.0 的条目。文章详解了\"预测即压缩\"的原理、免权重传输的在线学习机制与消融实验。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/tufazip-transformer-compression.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-20-writing-books-3",
+      "title": "2026-11-20-writing-books-3",
+      "path": "Archive/2026-11-20-writing-books-3.md",
+      "created": "2026-11-20",
+      "category": "学习",
+      "tags": [
+        "自学"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/zYYaylPXbKXfwwpgO8YKFw",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：写作入门书单三本，构成完整进阶闭环：①《生活，写下来吧》（英国凯西·伦岑布林克）解决\"不敢动笔、缺乏素材\"的焦虑——重塑写作观，写作不是为成为作家而是记录生活、找回自我，\"你若提笔，便是作家\"，用五感捕捉生活细节让素材涌现；②《一本小小的红色写作书》（布兰德·罗伊尔）解决\"逻辑混乱、表达不清\"——20 条写作原则，核心是\"自上而下\"先结论后理由、写前想清读者要看什么（写作是沟通不是自嗨）、写短句少修饰；③《老舍谈写作》解决\"语言干瘪\"——天天拿笔练，反对堆砌辞藻，文字要像说话一样自然生动，写自己真知道的事。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-zYYaylPXbKXfwwpgO8YKFw.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-20-zte-cosight-harness",
+      "title": "2026-11-20-zte-cosight-harness",
+      "path": "Archive/2026-11-20-zte-cosight-harness.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/tzBFFAbN-VbrtczsBHSI5Q",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：中兴通讯开源支撑 2000 人研发团队、200+ 步骤生产级工作流的 Agent 底座系统 Co-Sight Harness（Apache 2.0，ZTE-AICloud/Co-Sight）。从业务、执行、资产、证据四层改造，在不换底座模型的前提下把 200 步链路无人干预完成率从 50% 提升到 100%，总耗时压缩 64%，组织级任务成功率从 60% 提到 90%。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-tzBFFAbN-VbrtczsBHSI5Q.md",
       "wiki_status": "ingested"
     }
   ]

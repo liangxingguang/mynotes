@@ -5498,6 +5498,45 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/uHUNZJbzLI3QMvYEyeTusQ",
       "asset_ref": "Assets/2026-11/wechat-uHUNZJbzLI3QMvYEyeTusQ.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-visualization-skills.md",
+      "sha256": "6a788d24e77c28f13e90e1064f995f8d0765a40cd79518fa6c3af87348fb42be",
+      "registered_at": "2026-11-22",
+      "inbox_ref": "Archive/2026-11-20-visualization-skills.md",
+      "pages": [
+        "wiki/sources/2026-11-20-visualization-skills.md",
+        "wiki/concepts/explanation-visualization-skills.md",
+        "wiki/concepts/claude-skills.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/SWmBvy39T3y7ZDmZEwwk1w",
+      "asset_ref": "Assets/2026-11/wechat-SWmBvy39T3y7ZDmZEwwk1w.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-11-20-writing-books-3.md",
+      "sha256": "b904f30d6910cf8a652ca3a6171d99150353c30b7b197b65249b88f9fe1a9625",
+      "registered_at": "2026-11-22",
+      "inbox_ref": "Archive/2026-11-20-writing-books-3.md",
+      "pages": [
+        "wiki/sources/2026-11-20-writing-books-3.md",
+        "wiki/concepts/writing-skill-progression.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/zYYaylPXbKXfwwpgO8YKFw",
+      "asset_ref": "Assets/2026-11/wechat-zYYaylPXbKXfwwpgO8YKFw.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-zte-cosight-harness.md",
+      "sha256": "b43c338e82f716257948e92e020ffa9190dc6fded875c8ace83e956c1b647a82",
+      "registered_at": "2026-11-22",
+      "inbox_ref": "Archive/2026-11-20-zte-cosight-harness.md",
+      "pages": [
+        "wiki/sources/2026-11-20-zte-cosight-harness.md",
+        "wiki/entities/zte-cosight-harness.md",
+        "wiki/concepts/harness-engineering.md",
+        "wiki/concepts/agent-evaluation.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/tzBFFAbN-VbrtczsBHSI5Q",
+      "asset_ref": "Assets/2026-11/wechat-tzBFFAbN-VbrtczsBHSI5Q.md"
     }
   ]
 }

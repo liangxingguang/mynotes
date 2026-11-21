@@ -429,13 +429,16 @@
 - [[2026-11-20-starship-cloud-agent|星舰Cloud Agent：一项研发任务如何在云端运行]]（2026-11-20，AI/Agent/云端执行，高德技术交付篇：Cloud Agent 云端执行后台服务——四角色边界、任务六阶段、执行结果≠交付完整性、会话/轮次/执行环境三层、中断恢复四情况三粒度、引擎适配层；约束标为设计要求，微信单信源，置信度中）
 - [[2026-11-20-taobao-ai-native-rd|淘宝天猫海外技术的AI Native研发范式升级实践与思考]]（2026-11-20，AI/AI Native/组织，淘海外两阶段升级：SDD 驱动（AI Coding 5%→85% 但编码200%提效仅10%端到端提效）→Agent 驱动（钉群统一界面、AI 执行+人决策、四类AI分身、真人三卡点、双流程），三域验证小需求估时降50%（自报），微信单信源，置信度中）
 - [[2026-11-20-ten-x-thinking|如何成为一个领域的前1%？先学会十倍思维]]（2026-11-20，成长/方法论，消费硬件产品经理 Karen 随笔：线性（两倍）vs 指数（十倍）思维、80/20 杠杆构成、两倍陷阱、带教从增量到变量、个人成长四步，微信单信源，置信度中）
+- [[2026-11-20-visualization-skills|5个能让内容信息更易懂的可视化skill]]（2026-11-20，AI/Skill/可视化，解释概念的 5 个可视化 Skill 五形态（自包含图表/手绘配图/素材插画/多引擎插图/信息图）+宿主适配，微信短分享单信源，置信度中）
+- [[2026-11-20-writing-books-3|想提升写作能力，一定要翻烂这三本书]]（2026-11-20，学习/写作/书单，写作三重瓶颈递进三书：勇气《生活，写下来吧》→骨架《一本小小的红色写作书》→灵魂《老舍谈写作》，微信单信源，置信度中）
+- [[2026-11-20-zte-cosight-harness|中兴开源企业级 Harness：Co-Sight Harness]]（2026-11-20，AI/Agent/Harness，2000 人团队 200+ 步工作流四层改造（业务/执行/资产/证据）：完成率 50%→100%、耗时 -64%、召回 56%→91.67%，Apache 2.0 开源，内部自报单信源，置信度中）
 
 ## concept（概念）
 
 - [[a2a-protocol|A2A 协议]]（Agent↔Agent 横向协作协议，Google 2025）
 - [[acceptance-agent|验收 Agent（AI 生成代码的验收）]]（编码之后真实调接口+多层证据链验收：五阶段流程、硬阻塞/软失败、Gherkin 人工确认、L1-L4 证据、人机协同，OPT 平台实践单信源，置信度中）
 - [[aima-agent-taxonomy|AIMA Agent 分类]]（简单反射/基于模型/基于目标/基于效用/学习五类 + 环境四属性；经典理论单信源）
-- [[agent-evaluation|业务 Agent 全生命周期评测]]（规则+LLM 裁判+人工复核，覆盖准入/门禁/压测/巡检；验收从正确性变成分布、单次对比不作数、回归集标注期望行为；记忆评测五指标（检索质量/任务效果/记忆准确性/运行成本/安全权限）；货拉拉+叶小钗+Codex+面试深挖 84+记忆系统，五信源）
+- [[agent-evaluation|业务 Agent 全生命周期评测]]（规则+LLM 裁判+人工复核，覆盖准入/门禁/压测/巡检；验收从正确性变成分布、单次对比不作数、回归集标注期望行为；记忆评测五指标（检索质量/任务效果/记忆准确性/运行成本/安全权限）；货拉拉+叶小钗+Codex+面试深挖 84+记忆系统+中兴证据层三级下钻与回归门禁，八信源）
 - [[agent-as-memory|Agent as Memory（主 Agent 承担记忆职责）]]（主 Agent 协调子 Session 承担项目进展记忆；用户单点对接；长期记忆 Markdown 文件化+短期记忆主 Agent 化；单信源，置信度中）
 - [[agent-long-term-memory|Agent 长期记忆]]（跨 Session 保留与检索：记忆三分类+Hermes 四层模型+MemoryProvider retain/recall 接口+Hindsight 结构化存储+Extension 接入点，知乎存储接口路线+微信全链路检索写回视角双信源，置信度中）
 - [[agent-memory-system|Agent 记忆系统]]（面向任务的信息管理机制：上下文≠记忆/聊天记录≠记忆五问；七模块双链路+检索10步三路召回+写回四步三态+生命周期+反馈闭环五指标+六阶段落地路线+11字段，微信单信源，置信度中）
@@ -478,7 +481,7 @@
 - [[cap-theorem|CAP 定理与最终一致性取舍]]（CAP 是分区时的选择非永久标签+最终一致性收敛三条件+不一致窗口是选择依据+一致性哈希/Gossip 边界，单信源置信度中）
 - [[cdn-broadcast-fanout|CDN 广播（弹幕下行）]]（千万级在线下行外包 CDN 边缘：推流伪装视频流 vs 静态文件周期拉取，多 CDN 权重轮询融合；网易云信一手）
 - [[class-loading-parent-delegation|类加载与双亲委派]]（五阶段 + 准备阶段默认值/final 特例 + 初始化 6 触发 + 双亲委派意义与 4 破坏场景 SPI/Tomcat/OSGi，单信源，置信度中）
-- [[claude-skills|Claude Skills]]（Markdown 文件即资产：判断/偏好/标准固化、按需加载、一句话唤醒；Skill-Creator 构建 + 2.0 断言评估/A-B/触发词优化；ub-mode 纪律包+ste-zh 行为包+激活式 token 账；2026-11 生态进入"装哪个"阶段、头部项目 30 万 star，五信源，置信度中）
+- [[claude-skills|Claude Skills]]（Markdown 文件即资产：判断/偏好/标准固化、按需加载、一句话唤醒；Skill-Creator 构建 + 2.0 断言评估/A-B/触发词优化；ub-mode 纪律包+ste-zh 行为包+激活式 token 账；2026-11 生态进入"装哪个"阶段、头部项目 30 万 star+解释概念视觉表达 Skill 五形态，六信源，置信度中）
 - [[codemode|Codemode（代码模式工具编排）]]（模型写 JS 沙箱脚本编排工具调用，只回筛选结果；固定开销约减半，单次收益看返回格式）
 - [[coding-agent-knowledge-base|Coding Agent 知识库（域—场景—知识建模方法）]]（四条设计约束+域/场景/共享知识三层建模+渐进披露消费五步+LLM+Git 生命周期治理+知识版本与事实版本分管；据 LiveX Wiki 单信源，置信度中）
 - [[collections-utility-class|Collections 工具类设计]]（算法委托+三类包装器工厂；同步/不可变均为视图，迭代须外部加锁；emptyList 单例零分配；单信源，置信度中）
@@ -528,7 +531,7 @@
 - [[game-quest-system|游戏任务系统设计（Quest/Goal 合一与进度建模）]]（限定单 Goal 组合 Quest；子任务表步骤任务即章节；Git 参照系；Ready 中间态；Progress/Score 分离；前置索引+等级二分；任务侧掉落+公共管理器；单信源，置信度中）
 - [[geohash|Geohash（地理哈希）]]（经纬度降维前缀编码；边界问题+8 邻居、截短扩半径、缓存键归一；邻近索引+地图瓦片双信源）
 - [[graphrag|GraphRAG（图检索增强生成）]]（实体与关系纳入检索，沿关系网络查找；回答"对象之间有什么关系"；仍在回答/检索层，能讲清关系但不一定能统一业务定义、不知实时状态；与 RAG/LLM Wiki/Ontology 分工组合，单信源，置信度中）
-- [[harness-engineering|Harness Engineering（Agent 执行系统工程）]]（Agent ≈ Model + Harness；七观察面+信息三层+安全四层+B0~B5 单变量评测；11 系统源码研究解读；Kiso 内核门禁+Codex 状态所有权+Session 核心重构七信源）
+- [[harness-engineering|Harness Engineering（Agent 执行系统工程）]]（Agent ≈ Model + Harness；七观察面+信息三层+安全四层+B0~B5 单变量评测；11 系统源码研究解读；Kiso 内核门禁+Codex 状态所有权+Session 核心重构+中兴四层架构，十一信源）
 - [[hashmap-internals|HashMap 核心设计（JDK 8）]]（2 的幂容量+扰动+0.75 负载因子+8/6/64 树化阈值+高低位链扩容拆分；单信源，置信度中）
 - [[hashset-internals|HashSet / LinkedHashSet 去重设计]]（HashMap key 视图+PRESENT 占位；hashCode+equals 双写铁律；dummy 构造换 LinkedHashMap 得插入序；双信源互证，置信度中）
 - [[hot-cold-data-separation|冷热分离（Hot/Cold Data Separation）]]（状态+时间双维划分；热/温/冷三层异构存储；先复制后删除分批限速；先归档再决定分片+按账户标识稳定路由；报表走数仓 T+1，双信源）
@@ -692,6 +695,8 @@
 - [[event-sourcing|事件溯源（Event Sourcing）]]（2026-11-21，概念/架构/系统设计，不存当前状态而追加保存事件、写入不可改删、按时间回放重建状态，快照加速重建；可审计/可调试/灵活 vs 复杂/存储/隐私，码农有道科普单信源，置信度中）
 - [[personal-dev|个人研发环境（Personal Dev）]]（2026-11-21，概念/AI Coding/执行环境，逻辑研发环境独立于计算实例：稳定环境身份+持久卷+受控换代+单 Writer（lease/fencing 非代际标识），高德广告凌凌漆实践单信源，置信度中）
 - [[ten-x-thinking|十倍思维（指数思维）]]（2026-11-21，概念/成长/方法论，先定结果再倒推必须改变、回报增长快于投入；两倍=80%旧+20%新 vs 十倍=20%旧+80%新；增量到变量、专注关键20%产生复利；个人成长四步（需要→想要/回望起点/定清标准/排进日历），微信单信源，置信度中）
+- [[explanation-visualization-skills|解释型可视化 Skill]]（2026-11-22，概念/AI/可视化，解释概念的视觉表达 Skill 子类：按输出形态五分类（自包含图表/手绘配图/素材插画/多引擎插图/信息图）+宿主适配；与 Claude Skills、drawio-skill 区分，单信源，置信度中）
+- [[writing-skill-progression|写作能力进阶三阶梯（勇气 → 结构 → 语言）]]（2026-11-22，概念/写作/学习，按写作三重瓶颈递进组织学习资源：敢动笔→写得清楚→写得生动，各阶代表书与核心方法，微信书单单信源，置信度中）
 
 ## entity（实体）
 
@@ -746,6 +751,7 @@
 - [[gaode-starship-10x|星舰 10X]]（2026-11-20，AI/Agent/研发交付实体，高德研发交付 Agent：知识库+Memory 分工、渐进式披露四层、知识订正双路径、Memory 三层提炼、跨仓交付，1030 任务/676 MR/65.6%，单信源，置信度中）
 - [[gaode-qingzhou-agent|轻舟 Agent]]（2026-11-20，AI/Agent/FDE/真机验证实体，高德现场篇研发工程化 Agent：FDE→部署工程能力、四主节点归并、Agent Teams 多实例、Aone Sandbox、AuthX 双令牌、真机验证 DOM 核对、108 模块案例，单信源，置信度中）
 - [[tencentdb-agent-memory|TencentDB Agent Memory]]（2026-11-21，AI/Agent/记忆系统实体，腾讯云数据库团队开源的 Agent 记忆系统，承载四类记忆资产（Chat Memory/Wiki/CodeGraph/Skill）与三层互索引项目图谱；内部 Bug 定位成功率 58%→65%（+7pp）为初步正向结果；开源仓库 github.com/Tencent/TencentDB-Agent-Memory，具体实现细节信源未详述需核验，单信源，置信度中）
+- [[zte-cosight-harness|中兴 Co-Sight Harness]]（2026-11-22，AI/Agent/Harness 实体，中兴开源企业级 Agent 底座：四层架构+agent-genesis+Drive+GoldEval，200 步链路完成率 50%→100%，Apache 2.0，内部自报单信源，置信度中）
 
 ## topic（主题）
 
