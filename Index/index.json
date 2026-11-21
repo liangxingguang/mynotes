@@ -1,24 +1,6 @@
 {
-  "updated_at": "2026-11-21 18:41",
+  "updated_at": "2026-11-21 21:33",
   "notes": [
-    {
-      "id": "inbox-2026-11-20-ten-x-thinking",
-      "title": "2026-11-20-ten-x-thinking",
-      "path": "Inbox/2026-11-20-ten-x-thinking.md",
-      "created": "2026-11-20",
-      "category": "随笔",
-      "tags": [
-        "自学"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/uHUNZJbzLI3QMvYEyeTusQ",
-      "source_type": "web",
-      "platform": "微信",
-      "summary": "**摘要**：消费硬件产品经理 Karen 谈十倍思维：线性思维沿用现有做法加投入（两倍思维），指数思维先定目标再倒推必须改变什么（十倍思维）。十倍比两倍更容易，因为两倍增长 80% 旧+20% 新、越努力越受限，十倍增长只留 20% 有用旧做法、80% 全新——杠杆在于少数工作带来远超其份额的回报。落地个人成长四步：从匮乏到丰盈心态、回望起点找独特才能、定清方向与最低标准、把关键工作排进日历。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-uHUNZJbzLI3QMvYEyeTusQ.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "inbox-2026-11-20-visualization-skills",
       "title": "2026-11-20-visualization-skills",
@@ -8311,6 +8293,24 @@
       "summary": "**摘要**：淘海外技术团队的 AI Native 研发范式升级实践。第一阶段 SDD 驱动：自然语言写清设计规格，规格即指令、代码是规格的产物，六阶段 SOP（项目准备→需求澄清→技术提案→提案执行→测试执行→完结归档），AI Coding 占比从 5% 提至 85%，但业务体感不明显——编码时间只占需求全周期约 20%，编码 200% 提效只带来约 10% 真实提效，瓶颈在\"需求→PRD→实现→验收\"的串行流转。第二阶段 Agent 驱动：以钉群为统一工作界面，\"AI 执行 + 人决策\"，一句话触发、四类 AI 分身自动接力走完澄清→方案→编码→数据全链路，真人只守三个卡点（PRD 人工确认、AI 测试验收、真人终验）。按需求复杂度分两种流程：≤5 人日小需求群内闭环当天上线，>5 人日大需求群内做驾驶舱、编码回归 IDE。已在供给/支付/营销三域验证，小需求研发估时降低 50%。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-s_QU7mNFuOXE2by-oZ4J5Q.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-20-ten-x-thinking",
+      "title": "2026-11-20-ten-x-thinking",
+      "path": "Archive/2026-11-20-ten-x-thinking.md",
+      "created": "2026-11-20",
+      "category": "随笔",
+      "tags": [
+        "自学"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/uHUNZJbzLI3QMvYEyeTusQ",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：消费硬件产品经理 Karen 谈十倍思维：线性思维沿用现有做法加投入（两倍思维），指数思维先定目标再倒推必须改变什么（十倍思维）。十倍比两倍更容易，因为两倍增长 80% 旧+20% 新、越努力越受限，十倍增长只留 20% 有用旧做法、80% 全新——杠杆在于少数工作带来远超其份额的回报。落地个人成长四步：从匮乏到丰盈心态、回望起点找独特才能、定清方向与最低标准、把关键工作排进日历。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-uHUNZJbzLI3QMvYEyeTusQ.md",
       "wiki_status": "ingested"
     },
     {

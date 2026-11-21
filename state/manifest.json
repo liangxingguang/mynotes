@@ -5486,6 +5486,18 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/s_QU7mNFuOXE2by-oZ4J5Q",
       "asset_ref": "Assets/2026-11/wechat-s_QU7mNFuOXE2by-oZ4J5Q.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-11-20-ten-x-thinking.md",
+      "sha256": "e06bd06cb0d0bca0f1c792a40af66f9dae5e05c4ca5f5f22d367fa28d499e1df",
+      "registered_at": "2026-11-21",
+      "inbox_ref": "Archive/2026-11-20-ten-x-thinking.md",
+      "pages": [
+        "wiki/sources/2026-11-20-ten-x-thinking.md",
+        "wiki/concepts/ten-x-thinking.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/uHUNZJbzLI3QMvYEyeTusQ",
+      "asset_ref": "Assets/2026-11/wechat-uHUNZJbzLI3QMvYEyeTusQ.md"
     }
   ]
 }
