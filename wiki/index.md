@@ -425,6 +425,9 @@
 - [[rag-what-is|02 · RAG 是什么]]（2026-11-21，AI/RAG/方法论，《RAG工程实践》系列第2篇：模型答错三情形同根因（参数存统计模式非事实记录）+一次问答链路+四层排查顺序（语料/解析分块/召回/生成）+检索×生成相乘+出处机制+边界与三笔成本，微信单信源，置信度中）
 - [[rag-steps|03 · RAG 分几步]]（2026-11-21，AI/RAG/建库，《RAG工程实践》系列第3篇：建库四步+问答四步八环节全景+改写重排按需其余必需+最小可用=召回加生成+逐环验收标准+嵌入模型一致性硬约束+延迟取舍，微信单信源，置信度中）
 - [[rag-parsing-selection|05 · RAG 解析方案怎么选]]（2026-11-21，AI/RAG/建库，《RAG工程实践》系列第5篇：解析三路线（规则/版面模型/商用API）机制与代价+分层组合+选型顺序（扫描件→出域→来源→成本）+换解析器须全量重建索引，微信单信源，置信度中）
+- [[2026-11-20-sdd-spec-driven-dev|代码都被AI写了，那规范是AI写，还是人来写？]]（2026-11-20，AI/SDLC/规范，直播纪要：SDD 规范驱动开发——从人工驱动→规范驱动、人执行→人定规范AI执行人兜底；全流程四阶段+三大基线宪法（prd/design/arch）+实例化五步骤+PLAN/CODE 两模式，核心要诀规范先行人兜底，微信单信源，置信度中）
+- [[2026-11-20-starship-cloud-agent|星舰Cloud Agent：一项研发任务如何在云端运行]]（2026-11-20，AI/Agent/云端执行，高德技术交付篇：Cloud Agent 云端执行后台服务——四角色边界、任务六阶段、执行结果≠交付完整性、会话/轮次/执行环境三层、中断恢复四情况三粒度、引擎适配层；约束标为设计要求，微信单信源，置信度中）
+- [[2026-11-20-taobao-ai-native-rd|淘宝天猫海外技术的AI Native研发范式升级实践与思考]]（2026-11-20，AI/AI Native/组织，淘海外两阶段升级：SDD 驱动（AI Coding 5%→85% 但编码200%提效仅10%端到端提效）→Agent 驱动（钉群统一界面、AI 执行+人决策、四类AI分身、真人三卡点、双流程），三域验证小需求估时降50%（自报），微信单信源，置信度中）
 
 ## concept（概念）
 
@@ -458,7 +461,8 @@
 - [[ai-coding-delivery-four-stages|AI Coding 交付四环节（意图/上下文/评审/评估）]]（2026-11-20，AI/交付工程，四环节各自关键问题与交付产物+上下文检索覆盖失败案例+四维衡量，高德总纲篇单信源，置信度中）
 - [[ai-coding-evidence-boundary|证据边界驱动的 AI Coding]]（2026-11-05，AI/AI Coding/证据，美团分布式存储实践：三类任务分别定边界（评审按证据四档输出/Debug 假设生成器+候选集合+七类命名/自动化先定目标与验收）+证据四层互补+可证伪与红绿闭环+变绿≠解决+分层授权，与 [[ai-assisted-troubleshooting-workflow]] 和 [[evidence-first-jvm-tuning]] 互证，单信源置信度中）
 - [[ai-native-organization|AI 原生研发组织]]（工具原生→工作流原生→组织原生）
-- [[ai-native-sdlc|AI 原生 SDLC]]（制品提交链驱动的闭环，Anthropic 2026；人守闸门/三层控制模型；货拉拉千人落地+孔明八阶段工作流+OPT 验收 Agent实例，五信源）
+- [[ai-native-sdlc|AI 原生 SDLC]]（制品提交链驱动的闭环，Anthropic 2026；人守闸门/三层控制模型；货拉拉千人落地+孔明八阶段工作流+OPT 验收 Agent+LoopForge SOP+高德 Dev Loop+SDD+淘海外，十二信源）
+- [[spec-driven-development|规范驱动开发（SDD）]]（规范即约束的 AI 时代研发方法；流程人工驱动→规范驱动、执行人执行→人定规范AI执行人兜底；三大基线宪法 prd/design/arch+实例化五步骤+PLAN/CODE 两模式，核心要诀规范先行人兜底）
 - [[ai-ticket-system|AI 工单系统]]（智能分类五能力+置信度阈值+人工纠偏回流；自动派单五因素+五种模式；知识库闭环五要点；目标指标/六项埋点/验收标准/风险对策，电商案例，与 [[ticket-system-design]] 为 AI/传统代际关系，单信源置信度中）
 - [[architecture-description-metamodel|ISO 42010 架构概念元模型]]（左侧人与诉求五要素+右侧视图与设计四要素+四条逻辑线不可颠倒+AD≠架构+车载域控五团队对立+ADR 决策记录，单信源置信度中）
 - [[architecture-design-capabilities|架构设计能力（8 个底层动作）]]（架构 vs 架构描述+八动作链抽象/聚焦/分解/边界/契约/权衡/约束/可演化+Parnas 信息隐藏+隐式契约+二十指标等于零，单信源置信度中）
@@ -503,7 +507,7 @@
 - [[demand-research-sop|B端需求调研SOP]]（2026-11-04，产品/B端/方法论，六环节工作流：先定边界再进场+三类干系人分层采集交叉验证+观察优先于询问+五层提问从目标问到边界+需求带业务价值与来源标注+价值-频率-影响范围三维优先级+五段式调研报告，单信源置信度中）
 - [[demand-review-sop|B端需求评审SOP]]（2026-11-04，产品/B端/方法论，三段式工作流：评审前三张表前置冲突（业务目标范围边界/角色权限异常流程/验收标准回归范围）+评审中先讲场景再讲功能六步顺序+提问三分法（疑问/难度/范围外走变更）+难度先归因再拆MVP+会后24h确认单锁定结论，与 demand-research-sop 上下游衔接、表2异常分支与 complex-system-breakdown 互为表里，单信源置信度中）
 - [[design-patterns-in-netty|Netty 设计模式全景（源码视角的模式识别）]]（十大模式源码落点+16 模式对照表；机制概念页的模式视角索引；单信源，置信度中）
-- [[durable-execution|持久执行（Durable Execution）]]（崩溃后断点精确恢复；效应三明治 + 版本化文档存储，非事件溯源；Kiso 补 Event Log 账本+uncertain 裁决+kill -9 实测路线；重试治理信源补跨 Worker 字段清单，八信源）
+- [[durable-execution|持久执行（Durable Execution）]]（崩溃后断点精确恢复；效应三明治 + 版本化文档存储，非事件溯源；Kiso 补 Event Log 账本+uncertain 裁决+kill -9 实测路线；重试治理信源补跨 Worker 字段清单；高德星舰 Cloud Agent 补云端任务执行管理实例，十三信源）
 - [[dynamic-form-engine|动态表单引擎（B端表单配置引擎）]]（2026-11-04，产品/B端/动态表单，四层能力（动态表单/校验/联动/版本管理）+Schema七项字段配置+校验六类规则三种触发时机+字段联动五型+5层防循环+版本管理三策略（不可变版本号/schema_version渲染/删除只停用），ERP案例交付5→1工作日投入降60%，与 approval-workflow-engine/control-plane-design/expand-migrate-contract 互链，单信源置信度中）
 - [[enterprise-agent-three-stage-transition|企业 Agent 三阶段跃迁（能对话 → 能干活 → 能上岗）]]（2026-11-04，AI/企业落地/成熟度模型，责任边界分界线+四层底座立项拆解线（WorkBuddy/ClawPro/Agent Runtime/TokenHub）+落地三动作（岗位立项/SOP→Skill/先内后外），腾讯白皮书解读单信源，置信度中）
 - [[enummap-enumset-internals|EnumMap / EnumSet 枚举专用集合设计]]（ordinal 直接索引：Object[] 数组下标 / long 位向量，≤64 自动选型 RegularEnumSet；集合运算一条位运算；单信源，置信度中）

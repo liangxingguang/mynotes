@@ -5447,6 +5447,45 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=Mzg2NDQzMzcyOQ==&mid=2247484567&idx=1&sn=6130cbb7582b8e59414bbdef9fb2625a&chksm=ce6827b9f91faeafb91d2f4da2f32090c0d3e63576035c296249fce07c4642324c4db934a9db",
       "asset_ref": "Assets/2026-11/wechat-rag-parsing-selection-5.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-sdd-spec-driven-dev.md",
+      "sha256": "80c1527a24ab22b1dd44f268df74241a7b91fa73bb77243d6a607bb94121911f",
+      "registered_at": "2026-11-21",
+      "inbox_ref": "Archive/2026-11-20-sdd-spec-driven-dev.md",
+      "pages": [
+        "wiki/sources/2026-11-20-sdd-spec-driven-dev.md",
+        "wiki/concepts/spec-driven-development.md",
+        "wiki/concepts/ai-native-sdlc.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/9MKGsp0NgxZZNeByCLCEbQ",
+      "asset_ref": "Assets/2026-11/wechat-9MKGsp0NgxZZNeByCLCEbQ.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-starship-cloud-agent.md",
+      "sha256": "79d3cbc4e2efba111ed04a0729866d3834aa9cfb78f227f13d5bc328c013e35f",
+      "registered_at": "2026-11-21",
+      "inbox_ref": "Archive/2026-11-20-starship-cloud-agent.md",
+      "pages": [
+        "wiki/sources/2026-11-20-starship-cloud-agent.md",
+        "wiki/entities/gaode-starship-10x.md",
+        "wiki/concepts/durable-execution.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzE5ODQ3MDM4Mw==&mid=2247492800&idx=2&sn=b0c77d24d7cfeb22d41df7a8b2700463&chksm=96999b40a1ee12568050551aa6a36cf9be6948e2a015fd67fda629728bc91992b71817f2f6db",
+      "asset_ref": "Assets/2026-11/wechat-starship-cloud-agent-3.md"
+    },
+    {
+      "path": "raw/sources/enterprise/2026-11-20-taobao-ai-native-rd.md",
+      "sha256": "2a6cc25ab6ba6faedf45ee4d772fbc447498c1737af170d32b831542e29d369e",
+      "registered_at": "2026-11-21",
+      "inbox_ref": "Archive/2026-11-20-taobao-ai-native-rd.md",
+      "pages": [
+        "wiki/sources/2026-11-20-taobao-ai-native-rd.md",
+        "wiki/concepts/ai-native-sdlc.md",
+        "wiki/concepts/ai-native-organization.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/s_QU7mNFuOXE2by-oZ4J5Q",
+      "asset_ref": "Assets/2026-11/wechat-s_QU7mNFuOXE2by-oZ4J5Q.md"
     }
   ]
 }

@@ -9,7 +9,7 @@ created: 2026-11-20
 category: 技术
 tags: [AI]
 asset_ref: Assets/2026-11/wechat-9MKGsp0NgxZZNeByCLCEbQ.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 > **摘要**：SDD（Specification-Driven Development，规范驱动开发）直播纪要：AI 编码效率高但缺约束时自由发挥，人与人沟通成为项目主要矛盾，破解之道是从"人工驱动"转向"规范驱动"、从"人执行"转向"人定规范、AI 执行、人兜底"。三大基线宪法（prd.md/design.md/arch.md）+ 三阶段实例化（prd-A/design-A/arch-A）+ PLAN/CODE 两执行模式，核心要诀：规范先行、人类决策、AI 执行、人类兜底。

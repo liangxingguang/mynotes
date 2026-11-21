@@ -22,8 +22,11 @@ sources:
   - raw/sources/ai/2026-11-20-acceptance-agent-opt.md
   - raw/sources/ai/2026-11-20-deepseek-harness-loopforge-voice.md
   - raw/sources/ai/2026-11-20-gaode-ad-linglingqi.md
+  - raw/sources/ai/2026-11-20-sdd-spec-driven-dev.md
+  - raw/sources/enterprise/2026-11-20-taobao-ai-native-rd.md
 related:
   - wiki/concepts/ai-native-organization.md
+  - wiki/concepts/spec-driven-development.md
   - wiki/concepts/mcp.md
   - wiki/concepts/agent-evaluation.md
   - wiki/entities/kongming-ai-dev-platform.md
@@ -101,6 +104,10 @@ Agent 编码使构建阶段塌缩到以小时计，而规划、评审/测试、�
 
 - 2026-11-21 — 新增高德广告凌凌漆信源（第 10 信源）`raw/sources/ai/2026-11-20-gaode-ad-linglingqi.md`，提供契约驱动的研发协调（Dev Loop：Goal+Constraints+Acceptance Evidence，先明确目标约束验收再让 Agent 按执行结果选路径）与"自主执行≠自主授权"的边界纪律。
 
+- 2026-11-21 — 新增 SDD 信源（第 11 信源）`raw/sources/ai/2026-11-20-sdd-spec-driven-dev.md`，提供规范驱动开发的具体工程化路径：三大基线「宪法」（prd.md/design.md/arch.md）+ 实例化五步骤 + PLAN/CODE 两执行模式，核心要诀「规范先行、人类决策、AI 执行、人类兜底」。与本概念「制品提交链驱动闭环」「人守闸门」同向，是 SDD 这一更聚焦规范与执行的落地形态，见 [[spec-driven-development]]。
+
+- 2026-11-21 — 新增淘海外 AI Native 信源（第 12 信源）`raw/sources/enterprise/2026-11-20-taobao-ai-native-rd.md`，以真实团队数据印证「瓶颈转移到编码两侧」与「单点提速≠端到端提速」：AI Coding 占比 5%→85%，但编码时间只占需求全周期约 20%，编码 200% 提效仅带来约 10% 真实提效，瓶颈在「需求→PRD→实现→验收」串行流转；第二阶段转向 Agent 驱动（钉群统一工作界面、AI 执行+人决策、按复杂度双流程），供给域小需求研发估时降低 50%（团队自报口径）。衡量口径从「AI 生码率」转向「端到端交付周期」。
+
 ## Open Questions（开放问题）
 
 - 各打法的先行/滞后指标只有口径、无公开前后对照数据，实际成效待第三方验证。
@@ -119,6 +126,8 @@ Agent 编码使构建阶段塌缩到以小时计，而规划、评审/测试、�
 - Source: `raw/sources/ai/2026-11-20-acceptance-agent-opt.md`（第 8 信源：OPT 平台后端验收 Agent——编码后的接口级验收回路、多层证据链、硬阻塞/软失败；验证环节瓶颈的工程实例，数字为作者自报）
 - Source: `raw/sources/ai/2026-11-20-deepseek-harness-loopforge-voice.md`（第 9 信源：LoopForge SOP 编排——Agent/Script/Human gate 节点、DAG 主干、门禁打回、复盘评分）
 - Source: `raw/sources/ai/2026-11-20-gaode-ad-linglingqi.md`（第 10 信源：高德 Dev Loop 契约驱动、自主执行≠自主授权）
+- Source: `raw/sources/ai/2026-11-20-sdd-spec-driven-dev.md`（第 11 信源：SDD 规范驱动开发——三大基线、实例化五步骤、PLAN/CODE 两模式、规范先行人兜底；见 [[spec-driven-development]]）
+- Source: `raw/sources/enterprise/2026-11-20-taobao-ai-native-rd.md`（第 12 信源：淘海外 AI Native——编码提效≠端到端提效的国内大厂实证、Agent 驱动双流程、估时降低 50% 团队自报口径）
 
 ## Related Knowledge（相关知识）
 
@@ -129,3 +138,6 @@ Agent 编码使构建阶段塌缩到以小时计，而规划、评审/测试、�
 - [[alibaba-ai-native-dev-handbook|阿里巴巴 AI Native 研发实践手册（信源页）]]
 - [[acceptance-agent|验收 Agent（AI 生成代码的验收）]]
 - [[opt-platform|OPT 平台（One Person Team）]]
+- [[spec-driven-development|规范驱动开发（SDD）]]
+- [[2026-11-20-sdd-spec-driven-dev|代码都被AI写了，那规范是AI写，还是人来写？（信源页）]]
+- [[2026-11-20-taobao-ai-native-rd|淘宝天猫海外技术的AI Native研发范式升级实践与思考（信源页）]]

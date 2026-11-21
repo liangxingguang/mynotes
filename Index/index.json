@@ -1,62 +1,6 @@
 {
-  "updated_at": "2026-11-21 15:46",
+  "updated_at": "2026-11-21 18:41",
   "notes": [
-    {
-      "id": "inbox-2026-11-20-sdd-spec-driven-dev",
-      "title": "2026-11-20-sdd-spec-driven-dev",
-      "path": "Inbox/2026-11-20-sdd-spec-driven-dev.md",
-      "created": "2026-11-20",
-      "category": "技术",
-      "tags": [
-        "AI"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/9MKGsp0NgxZZNeByCLCEbQ",
-      "source_type": "web",
-      "platform": "微信",
-      "summary": "**摘要**：SDD（Specification-Driven Development，规范驱动开发）直播纪要：AI 编码效率高但缺约束时自由发挥，人与人沟通成为项目主要矛盾，破解之道是从\"人工驱动\"转向\"规范驱动\"、从\"人执行\"转向\"人定规范、AI 执行、人兜底\"。三大基线宪法（prd.md/design.md/arch.md）+ 三阶段实例化（prd-A/design-A/arch-A）+ PLAN/CODE 两执行模式，核心要诀：规范先行、人类决策、AI 执行、人类兜底。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-9MKGsp0NgxZZNeByCLCEbQ.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "inbox-2026-11-20-starship-cloud-agent",
-      "title": "2026-11-20-starship-cloud-agent",
-      "path": "Inbox/2026-11-20-starship-cloud-agent.md",
-      "created": "2026-11-20",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "Agent"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzE5ODQ3MDM4Mw==&mid=2247492800&idx=2&sn=b0c77d24d7cfeb22d41df7a8b2700463&chksm=96999b40a1ee12568050551aa6a36cf9be6948e2a015fd67fda629728bc91992b71817f2f6db",
-      "source_type": "web",
-      "platform": "微信",
-      "summary": "**摘要**：星舰是用户使用的协作平台，Cloud Agent 是其内部负责云端执行的后台服务——为 Agent 安排远程沙箱、启动并管理执行、收集结果交回星舰展示。本文以\"读取项目生成报告\"任务为例拆解架构：星舰接收要求→Cloud Agent 安排执行→沙箱中 Agent 读项目写报告→Cloud Agent 收集报告→星舰展示。任务生命周期六阶段（登记→找环境→备料→启动 Agent→收回报告→交回结论），强调执行结果与交付完整性分开表达。会话管理区分会话/轮次/执行环境三层，中断恢复分四种情况与三种粒度，更换引擎用适配层统一五类交互。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-starship-cloud-agent-3.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "inbox-2026-11-20-taobao-ai-native-rd",
-      "title": "2026-11-20-taobao-ai-native-rd",
-      "path": "Inbox/2026-11-20-taobao-ai-native-rd.md",
-      "created": "2026-11-20",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "Agent"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/s_QU7mNFuOXE2by-oZ4J5Q",
-      "source_type": "web",
-      "platform": "微信",
-      "summary": "**摘要**：淘海外技术团队的 AI Native 研发范式升级实践。第一阶段 SDD 驱动：自然语言写清设计规格，规格即指令、代码是规格的产物，六阶段 SOP（项目准备→需求澄清→技术提案→提案执行→测试执行→完结归档），AI Coding 占比从 5% 提至 85%，但业务体感不明显——编码时间只占需求全周期约 20%，编码 200% 提效只带来约 10% 真实提效，瓶颈在\"需求→PRD→实现→验收\"的串行流转。第二阶段 Agent 驱动：以钉群为统一工作界面，\"AI 执行 + 人决策\"，一句话触发、四类 AI 分身自动接力走完澄清→方案→编码→数据全链路，真人只守三个卡点（PRD 人工确认、AI 测试验收、真人终验）。按需求复杂度分两种流程：≤5 人日小需求群内闭环当天上线，>5 人日大需求群内做驾驶舱、编码回归 IDE。已在供给/支付/营销三域验证，小需求研发估时降低 50%。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-s_QU7mNFuOXE2by-oZ4J5Q.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "inbox-2026-11-20-ten-x-thinking",
       "title": "2026-11-20-ten-x-thinking",
@@ -8311,6 +8255,62 @@
       "summary": "**摘要**：从\"模型答错的三种情形——编造、知识过期、不知道私有数据\"切入，指出根因相同：参数里存的是训练语料的统计模式，不是可逐条核对的事实记录，所以只调提示词没用。RAG 在生成前插一步检索：索引在提问前就已建好，提问时检索器取候选片段拼成上下文，与问题一起送进模型。**RAG 不提升模型能力上限，它改变的是这次回答依据什么**。检索质量与生成质量是相乘关系，排查按\"语料缺失→解析分块→召回→生成\"四层顺序，换模型是第四层手段、最常被浪费。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-rag-what-2.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-20-sdd-spec-driven-dev",
+      "title": "2026-11-20-sdd-spec-driven-dev",
+      "path": "Archive/2026-11-20-sdd-spec-driven-dev.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/9MKGsp0NgxZZNeByCLCEbQ",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：SDD（Specification-Driven Development，规范驱动开发）直播纪要：AI 编码效率高但缺约束时自由发挥，人与人沟通成为项目主要矛盾，破解之道是从\"人工驱动\"转向\"规范驱动\"、从\"人执行\"转向\"人定规范、AI 执行、人兜底\"。三大基线宪法（prd.md/design.md/arch.md）+ 三阶段实例化（prd-A/design-A/arch-A）+ PLAN/CODE 两执行模式，核心要诀：规范先行、人类决策、AI 执行、人类兜底。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-9MKGsp0NgxZZNeByCLCEbQ.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-20-starship-cloud-agent",
+      "title": "2026-11-20-starship-cloud-agent",
+      "path": "Archive/2026-11-20-starship-cloud-agent.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzE5ODQ3MDM4Mw==&mid=2247492800&idx=2&sn=b0c77d24d7cfeb22d41df7a8b2700463&chksm=96999b40a1ee12568050551aa6a36cf9be6948e2a015fd67fda629728bc91992b71817f2f6db",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：星舰是用户使用的协作平台，Cloud Agent 是其内部负责云端执行的后台服务——为 Agent 安排远程沙箱、启动并管理执行、收集结果交回星舰展示。本文以\"读取项目生成报告\"任务为例拆解架构：星舰接收要求→Cloud Agent 安排执行→沙箱中 Agent 读项目写报告→Cloud Agent 收集报告→星舰展示。任务生命周期六阶段（登记→找环境→备料→启动 Agent→收回报告→交回结论），强调执行结果与交付完整性分开表达。会话管理区分会话/轮次/执行环境三层，中断恢复分四种情况与三种粒度，更换引擎用适配层统一五类交互。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-starship-cloud-agent-3.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-20-taobao-ai-native-rd",
+      "title": "2026-11-20-taobao-ai-native-rd",
+      "path": "Archive/2026-11-20-taobao-ai-native-rd.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/s_QU7mNFuOXE2by-oZ4J5Q",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：淘海外技术团队的 AI Native 研发范式升级实践。第一阶段 SDD 驱动：自然语言写清设计规格，规格即指令、代码是规格的产物，六阶段 SOP（项目准备→需求澄清→技术提案→提案执行→测试执行→完结归档），AI Coding 占比从 5% 提至 85%，但业务体感不明显——编码时间只占需求全周期约 20%，编码 200% 提效只带来约 10% 真实提效，瓶颈在\"需求→PRD→实现→验收\"的串行流转。第二阶段 Agent 驱动：以钉群为统一工作界面，\"AI 执行 + 人决策\"，一句话触发、四类 AI 分身自动接力走完澄清→方案→编码→数据全链路，真人只守三个卡点（PRD 人工确认、AI 测试验收、真人终验）。按需求复杂度分两种流程：≤5 人日小需求群内闭环当天上线，>5 人日大需求群内做驾驶舱、编码回归 IDE。已在供给/支付/营销三域验证，小需求研发估时降低 50%。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-s_QU7mNFuOXE2by-oZ4J5Q.md",
       "wiki_status": "ingested"
     },
     {

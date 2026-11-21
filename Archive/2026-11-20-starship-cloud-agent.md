@@ -9,7 +9,7 @@ created: 2026-11-20
 category: 技术
 tags: [AI, Agent]
 asset_ref: Assets/2026-11/wechat-starship-cloud-agent-3.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 > **摘要**：星舰是用户使用的协作平台，Cloud Agent 是其内部负责云端执行的后台服务——为 Agent 安排远程沙箱、启动并管理执行、收集结果交回星舰展示。本文以"读取项目生成报告"任务为例拆解架构：星舰接收要求→Cloud Agent 安排执行→沙箱中 Agent 读项目写报告→Cloud Agent 收集报告→星舰展示。任务生命周期六阶段（登记→找环境→备料→启动 Agent→收回报告→交回结论），强调执行结果与交付完整性分开表达。会话管理区分会话/轮次/执行环境三层，中断恢复分四种情况与三种粒度，更换引擎用适配层统一五类交互。
