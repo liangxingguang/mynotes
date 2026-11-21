@@ -5411,6 +5411,42 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=Mzg2NDQzMzcyOQ==&mid=2247484569&idx=1&sn=e2752f2531e3b835aae6cd9b1366d0c9&chksm=ce6827b7f91faea19779f1f2ed774da41e9ca34b27f4604e07109d99c6e4a003f346d7b5ae49",
       "asset_ref": "Assets/2026-11/wechat-rag-chunking-6.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-rag-what-is.md",
+      "sha256": "dacca374edd4c281483662d2fc515581ba07ca091ac5c942847ed5b8e91584b7",
+      "registered_at": "2026-11-21",
+      "inbox_ref": "Archive/2026-11-20-rag-what-is.md",
+      "pages": [
+        "wiki/sources/rag-what-is.md",
+        "wiki/concepts/rag.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg2NDQzMzcyOQ==&mid=2247484554&idx=1&sn=03790db4cd8b2c87748ec9cfa29c658e&chksm=ce6827a4f91faeb2de32ecd582c65d644bb0cb2fa9bb559a6541a3a474db7f262544c1aed8c3",
+      "asset_ref": "Assets/2026-11/wechat-rag-what-2.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-rag-steps.md",
+      "sha256": "663a787ca956266cc5682999f314743bac9ded7b2c56226b628888ff36775c2a",
+      "registered_at": "2026-11-21",
+      "inbox_ref": "Archive/2026-11-20-rag-steps.md",
+      "pages": [
+        "wiki/sources/rag-steps.md",
+        "wiki/concepts/rag.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzg2NDQzMzcyOQ==&mid=2247484560&idx=1&sn=ac39e01b159977ca0afb5c18d0ea2409&chksm=ce6827bef91faea8c1c56d6cca07c6d2f4e388820921447194f5ac9d052102946a40ecd97e38",
+      "asset_ref": "Assets/2026-11/wechat-rag-steps-3.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-rag-parsing-selection.md",
+      "sha256": "1b1757905596daef0f1cc0ad589a232194fc85442d54451f9fa3fcad74169c19",
+      "registered_at": "2026-11-21",
+      "inbox_ref": "Archive/2026-11-20-rag-parsing-selection.md",
+      "pages": [
+        "wiki/sources/rag-parsing-selection.md",
+        "wiki/concepts/rag-document-parsing.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzg2NDQzMzcyOQ==&mid=2247484567&idx=1&sn=6130cbb7582b8e59414bbdef9fb2625a&chksm=ce6827b9f91faeafb91d2f4da2f32090c0d3e63576035c296249fce07c4642324c4db934a9db",
+      "asset_ref": "Assets/2026-11/wechat-rag-parsing-selection-5.md"
     }
   ]
 }

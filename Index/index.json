@@ -1,63 +1,6 @@
 {
-  "updated_at": "2026-11-21 12:35",
+  "updated_at": "2026-11-21 15:46",
   "notes": [
-    {
-      "id": "inbox-2026-11-20-rag-parsing-selection",
-      "title": "2026-11-20-rag-parsing-selection",
-      "path": "Inbox/2026-11-20-rag-parsing-selection.md",
-      "created": "2026-11-20",
-      "category": "技术",
-      "tags": [
-        "RAG",
-        "AI"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzg2NDQzMzcyOQ==&mid=2247484567&idx=1&sn=6130cbb7582b8e59414bbdef9fb2625a&chksm=ce6827b9f91faeafb91d2f4da2f32090c0d3e63576035c296249fce07c4642324c4db934a9db",
-      "source_type": "web",
-      "platform": "微信",
-      "summary": "**摘要**：把文档变成结构化文本有三条路线——规则解析（读文件内部排版对象）、版面模型（渲染成图像先检测区域再识别）、商用解析 API（交给服务商）。三者机制不同、适合语料不同。实际系统最常见的不是单选而是分层：规则跑全量、挑异常走模型，或按来源/用途分流。选型按顺序判断：先看有无扫描件（有则必须能处理图像）、再看能否出域（不能则排除商用 API）、再看来源数量、最后算总成本。换解析器意味着文本与分块全变、向量失效，须全量重建索引，选型须在建库前定。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-rag-parsing-selection-5.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "inbox-2026-11-20-rag-steps",
-      "title": "2026-11-20-rag-steps",
-      "path": "Inbox/2026-11-20-rag-steps.md",
-      "created": "2026-11-20",
-      "category": "技术",
-      "tags": [
-        "RAG",
-        "AI"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzg2NDQzMzcyOQ==&mid=2247484560&idx=1&sn=ac39e01b159977ca0afb5c18d0ea2409&chksm=ce6827bef91faea8c1c56d6cca07c6d2f4e388820921447194f5ac9d052102946a40ecd97e38",
-      "source_type": "web",
-      "platform": "微信",
-      "summary": "**摘要**：RAG 服务由两条链路组成：建库侧（解析→分块→嵌入→写入索引，不随请求执行）与问答侧（查询改写→召回→重排→生成，每次提问走一遍）。八环节中改写与重排按需，其余必需，最小可用 RAG 是「召回加生成」。链路长错误会向下游传递，每环须先定独立可验证的通过标准；唯一不报错的约束是嵌入模型——建库与问答必须同模型，维度相同也不行，须把模型名与维度写入索引元数据、启动校验。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-rag-steps-3.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "inbox-2026-11-20-rag-what-is",
-      "title": "2026-11-20-rag-what-is",
-      "path": "Inbox/2026-11-20-rag-what-is.md",
-      "created": "2026-11-20",
-      "category": "技术",
-      "tags": [
-        "RAG",
-        "AI"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg2NDQzMzcyOQ==&mid=2247484554&idx=1&sn=03790db4cd8b2c87748ec9cfa29c658e&chksm=ce6827a4f91faeb2de32ecd582c65d644bb0cb2fa9bb559a6541a3a474db7f262544c1aed8c3",
-      "source_type": "web",
-      "platform": "微信",
-      "summary": "**摘要**：从\"模型答错的三种情形——编造、知识过期、不知道私有数据\"切入，指出根因相同：参数里存的是训练语料的统计模式，不是可逐条核对的事实记录，所以只调提示词没用。RAG 在生成前插一步检索：索引在提问前就已建好，提问时检索器取候选片段拼成上下文，与问题一起送进模型。**RAG 不提升模型能力上限，它改变的是这次回答依据什么**。检索质量与生成质量是相乘关系，排查按\"语料缺失→解析分块→召回→生成\"四层顺序，换模型是第四层手段、最常被浪费。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-rag-what-2.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "inbox-2026-11-20-sdd-spec-driven-dev",
       "title": "2026-11-20-sdd-spec-driven-dev",
@@ -8311,6 +8254,63 @@
       "summary": "**摘要**：RAG 系列开篇。以企业内部制度问答为例：通用大模型给出的数字来自公开语料的常见做法，对不上自家条款。要答案贴合私有知识，工程上有四条路——长上下文、微调、Agent 编排、检索增强生成，实际改的变量不同：长上下文改\"一次能读多少\"（成本随语料量线性上升），微调改\"怎么说\"（知识更新须重训、删事实无法定点、过时知识会被复述），Agent 改\"做什么、按什么顺序做\"（事实仍需从别处取回，RAG 是 Agent 的事实来源）。只有 RAG 改\"依据哪些事实说\"，内部制度、客服售前、合规法务、研发运维四类场景（知识私有、更新快、答案要能核）非检索不可。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-rag-necessary-1.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-20-rag-parsing-selection",
+      "title": "2026-11-20-rag-parsing-selection",
+      "path": "Archive/2026-11-20-rag-parsing-selection.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "RAG",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzg2NDQzMzcyOQ==&mid=2247484567&idx=1&sn=6130cbb7582b8e59414bbdef9fb2625a&chksm=ce6827b9f91faeafb91d2f4da2f32090c0d3e63576035c296249fce07c4642324c4db934a9db",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：把文档变成结构化文本有三条路线——规则解析（读文件内部排版对象）、版面模型（渲染成图像先检测区域再识别）、商用解析 API（交给服务商）。三者机制不同、适合语料不同。实际系统最常见的不是单选而是分层：规则跑全量、挑异常走模型，或按来源/用途分流。选型按顺序判断：先看有无扫描件（有则必须能处理图像）、再看能否出域（不能则排除商用 API）、再看来源数量、最后算总成本。换解析器意味着文本与分块全变、向量失效，须全量重建索引，选型须在建库前定。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-rag-parsing-selection-5.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-20-rag-steps",
+      "title": "2026-11-20-rag-steps",
+      "path": "Archive/2026-11-20-rag-steps.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "RAG",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzg2NDQzMzcyOQ==&mid=2247484560&idx=1&sn=ac39e01b159977ca0afb5c18d0ea2409&chksm=ce6827bef91faea8c1c56d6cca07c6d2f4e388820921447194f5ac9d052102946a40ecd97e38",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：RAG 服务由两条链路组成：建库侧（解析→分块→嵌入→写入索引，不随请求执行）与问答侧（查询改写→召回→重排→生成，每次提问走一遍）。八环节中改写与重排按需，其余必需，最小可用 RAG 是「召回加生成」。链路长错误会向下游传递，每环须先定独立可验证的通过标准；唯一不报错的约束是嵌入模型——建库与问答必须同模型，维度相同也不行，须把模型名与维度写入索引元数据、启动校验。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-rag-steps-3.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-20-rag-what-is",
+      "title": "2026-11-20-rag-what-is",
+      "path": "Archive/2026-11-20-rag-what-is.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "RAG",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg2NDQzMzcyOQ==&mid=2247484554&idx=1&sn=03790db4cd8b2c87748ec9cfa29c658e&chksm=ce6827a4f91faeb2de32ecd582c65d644bb0cb2fa9bb559a6541a3a474db7f262544c1aed8c3",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：从\"模型答错的三种情形——编造、知识过期、不知道私有数据\"切入，指出根因相同：参数里存的是训练语料的统计模式，不是可逐条核对的事实记录，所以只调提示词没用。RAG 在生成前插一步检索：索引在提问前就已建好，提问时检索器取候选片段拼成上下文，与问题一起送进模型。**RAG 不提升模型能力上限，它改变的是这次回答依据什么**。检索质量与生成质量是相乘关系，排查按\"语料缺失→解析分块→召回→生成\"四层顺序，换模型是第四层手段、最常被浪费。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-rag-what-2.md",
       "wiki_status": "ingested"
     },
     {
