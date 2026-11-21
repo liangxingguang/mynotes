@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-11-21T07:01:00Z",
+  "updated_at": "2026-11-21",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -5373,6 +5373,44 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/lCRWmOtILqlTdDpe2kI_bQ",
       "asset_ref": "Assets/2026-11/wechat-lCRWmOtILqlTdDpe2kI_bQ.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-rag-necessary.md",
+      "sha256": "ff9dcc2a6d10e328cedf5233ab04efd4f1899193a7e4fb58061a8c1963904e8d",
+      "registered_at": "2026-11-21",
+      "inbox_ref": "Archive/2026-11-20-rag-necessary.md",
+      "pages": [
+        "wiki/sources/rag-necessity.md",
+        "wiki/concepts/rag.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg2NDQzMzcyOQ==&mid=2247484298&idx=1&sn=92d2ffb37835aeb3d1e9c16461732265&chksm=ce6820a4f91fa9b27ce3c28b622f38320b37b2467306e6dd1d374bc2e6fbf47c1b3fe0efd778",
+      "asset_ref": "Assets/2026-11/wechat-rag-necessary-1.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-rag-document-parsing.md",
+      "sha256": "7269c5fb195a4e06871a9fe223beb4a7d58f3d185ef3c976af8f7f3c0452210d",
+      "registered_at": "2026-11-21",
+      "inbox_ref": "Archive/2026-11-20-rag-document-parsing.md",
+      "pages": [
+        "wiki/sources/rag-document-parsing.md",
+        "wiki/concepts/rag-document-parsing.md",
+        "wiki/concepts/rag.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzg2NDQzMzcyOQ==&mid=2247484564&idx=1&sn=c38d28b1c323db7b4b24e01d625232a2&chksm=ce6827baf91faeacd2c34d9309b4c1d35b1d1e4ed572117ef605ea3cb126897abfe93933c58a",
+      "asset_ref": "Assets/2026-11/wechat-rag-document-parsing-4.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-rag-chunking.md",
+      "sha256": "c071e0b3f6efee8f89b59e9b37f56b253a25fa65d06ebe980f19f2bb16966cc8",
+      "registered_at": "2026-11-21",
+      "inbox_ref": "Archive/2026-11-20-rag-chunking.md",
+      "pages": [
+        "wiki/sources/rag-chunking.md",
+        "wiki/concepts/rag-chunking.md",
+        "wiki/concepts/rag.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzg2NDQzMzcyOQ==&mid=2247484569&idx=1&sn=e2752f2531e3b835aae6cd9b1366d0c9&chksm=ce6827b7f91faea19779f1f2ed774da41e9ca34b27f4604e07109d99c6e4a003f346d7b5ae49",
+      "asset_ref": "Assets/2026-11/wechat-rag-chunking-6.md"
     }
   ]
 }

@@ -13,11 +13,17 @@ tags:
 sources:
   - raw/sources/ai/2026-11-12-ai-agent-tech-overview.md
   - raw/sources/ai/2026-11-20-agent-knowledge-base.md
+  - raw/sources/ai/2026-11-20-rag-necessary.md
+  - raw/sources/ai/2026-11-20-rag-document-parsing.md
+  - raw/sources/ai/2026-11-20-rag-chunking.md
 related:
   - wiki/concepts/prompt-engineering.md
   - wiki/concepts/context-management.md
   - wiki/concepts/agent-loop.md
   - wiki/concepts/harness-engineering.md
+  - wiki/concepts/rag-document-parsing.md
+  - wiki/concepts/rag-chunking.md
+  - wiki/concepts/rag-production-guardrails.md
 ---
 # RAG（检索增强生成）
 
@@ -50,6 +56,17 @@ RAG vs 微调对比（信源 2026-11-12）：
 | 适合 | 改变模型的"风格/能力" | 注入"事实性知识" |
 
 两者不互斥，实际系统常组合使用。
+
+**四条路对比**（信源 2026-11-20，RAG 与其他路线改的变量不同，比优劣前先分清要改什么）：
+
+| 路线 | 改的变量 | 关键代价 / 约束 |
+|---|---|---|
+| 长上下文（全量塞进上下文） | 一次能读多少 | 成本随材料量线性上升：语料 100→10000 篇，单次成本涨 100 倍；检索只与筛出的段数有关，基本不变 |
+| 微调 | 怎么说（输出风格、格式、领域表达） | 知识供给三硬约束：改一次知识要重训一次；删一条事实无法定点完成；训练数据里的过时内容会被继续复述 |
+| Agent 编排 | 做什么、按什么顺序做 | 流程变复杂不会让事实变准确，每一步仍要从某处取回材料；RAG 是 Agent 的事实来源，Agent 是 RAG 的使用者 |
+| RAG | 依据哪些事实说 | 依赖资料本身：制度过期、文档缺失或需跨多份资料复杂关联时，几段相似文本未必足够 |
+
+**必要性判断**（信源 2026-11-20）：四类场景非检索不可——内部制度、客服售前、合规法务、研发运维文档。共同点三条：知识私有（公开语料没有）、更新快、答案要能核。三条同时成立时，检索是唯一能同时满足的做法。判断顺序：缺事实先补事实——事实错了，后面两步都在放大错误。
 
 ## How It Works（运作方式）
 
@@ -88,6 +105,8 @@ RAG vs 微调对比（信源 2026-11-12）：
 ### Distinctions（区分）
 
 - **RAG vs 微调**：微调改变模型"能力"（怎么回答），RAG 改变模型"输入"（基于什么回答）。事实性知识走 RAG，行为模式/领域推理走微调。
+- **RAG vs 长上下文**：长上下文改"一次能读多少"，受成本随语料量线性上升的约束（信源 2026-11-20）；RAG 改"依据哪些事实说"，检索只与筛出的段数有关，成本基本不随语料量增长。
+- **RAG vs Agent**：Agent 改"做什么、按什么顺序做"，流程变复杂不会让事实变准确，事实仍需从别处取回；RAG 是 Agent 的事实来源，Agent 是 RAG 的使用者（信源 2026-11-20）。
 - **知识库 vs 记忆**：知识库是外部静态领域知识（预先准备好的文档），记忆是 Agent 经历的事实（对话中自动提炼）。
 
 ## Evolution（演进）
@@ -95,6 +114,8 @@ RAG vs 微调对比（信源 2026-11-12）：
 - 2026-11-12 — 新建，信源为 vivo《AI Agent 技术全景解析》。文章系统梳理了 RAG 的核心流程（向量检索）、RAG vs 微调对比、进阶变体（混合检索/查询改写/分块策略/多跳检索）与知识库/记忆/技能三层分工。
 
 - 2026-11-20 — 新增信源 `raw/sources/ai/2026-11-20-agent-knowledge-base.md`。补强 RAG 的边界定位：在四种 Agent 知识库能力中，RAG 找相关知识，回答"哪些资料与问题相关"，常见对象是文档/文本片段/检索结果；明确其局限是依赖资料本身、找到的是"可能相关的内容"而非业务系统确认的当前状态。由此新建对照页 [[agent-knowledge-base-capabilities]] 与 [[graphrag]]、[[ontology]]。
+
+- 2026-11-21 — 新增《RAG工程实践》系列三篇信源（`raw/sources/ai/2026-11-20-rag-necessary.md`、`raw/sources/ai/2026-11-20-rag-document-parsing.md`、`raw/sources/ai/2026-11-20-rag-chunking.md`）。Structure 增补"四条路对比"（长上下文/微调/Agent/RAG 改的变量与代价）与"必要性判断"（四类非检索不可场景与三条共同点）；Distinctions 增补 RAG vs 长上下文、RAG vs Agent。建库侧两个环节独立成页：[[rag-document-parsing]]（解析）与 [[rag-chunking]]（分块）。
 
 ## Open Questions（开放问题）
 
@@ -105,10 +126,19 @@ RAG vs 微调对比（信源 2026-11-12）：
 
 - Source: `raw/sources/ai/2026-11-12-ai-agent-tech-overview.md`（vivo Agent 全景综述，2026-11-12，RAG 流程/对比表/进阶变体）
 - Source: `raw/sources/ai/2026-11-20-agent-knowledge-base.md`（2026-11-20，RAG 在四种能力中的定位与"可能相关≠业务确认当前状态"的局限）
+- Source: `raw/sources/ai/2026-11-20-rag-necessary.md`（《RAG工程实践》系列第 1 篇，四条路对比、四类非检索不可场景与必要性判断）
+- Source: `raw/sources/ai/2026-11-20-rag-document-parsing.md`（《RAG工程实践》系列第 4 篇，建库侧第一环解析；支撑 [[rag-document-parsing]]）
+- Source: `raw/sources/ai/2026-11-20-rag-chunking.md`（《RAG工程实践》系列第 6 篇，建库侧第二环分块；支撑 [[rag-chunking]]）
 
 ## Related Knowledge（相关知识）
 
 - [[2026-11-12-ai-agent-tech-overview|AI Agent 技术全景解析（信源页）]]
+- [[rag-necessity|01 · RAG 还有必要吗（信源页）]]
+- [[rag-document-parsing|04 · RAG 文档解析（信源页）]]
+- [[rag-chunking|06 · RAG 分块（信源页）]]
+- [[rag-document-parsing|RAG 文档解析]]
+- [[rag-chunking|RAG 分块]]
+- [[rag-production-guardrails|企业级 RAG 生产护栏]]
 - [[context-management|上下文管理]]
 - [[prompt-engineering|提示工程]]
 - [[agent-loop|Agent Loop]]

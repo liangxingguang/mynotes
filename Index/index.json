@@ -1,63 +1,6 @@
 {
-  "updated_at": "2026-11-21 10:32",
+  "updated_at": "2026-11-21 12:35",
   "notes": [
-    {
-      "id": "inbox-2026-11-20-rag-chunking",
-      "title": "2026-11-20-rag-chunking",
-      "path": "Inbox/2026-11-20-rag-chunking.md",
-      "created": "2026-11-20",
-      "category": "技术",
-      "tags": [
-        "RAG",
-        "AI"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzg2NDQzMzcyOQ==&mid=2247484569&idx=1&sn=e2752f2531e3b835aae6cd9b1366d0c9&chksm=ce6827b7f91faea19779f1f2ed774da41e9ca34b27f4604e07109d99c6e4a003f346d7b5ae49",
-      "source_type": "web",
-      "platform": "微信",
-      "summary": "**摘要**：不能把整篇文档当作一个检索单位，四条约束——模型上下文有限且位置效应使中段利用率下降、嵌入模型输入上限会截断、检索精度随块变大而下降、引用需块小才能指到条款级。分块要回答两个独立问题：切多大（粒度）与在哪断（边界），常见四种——定长硬切、定长加句末对齐、按段落切、按标题层级切，差别不在大小而在块的完整性。重叠是补偿手段非必需，按结构切时可很小甚至不用。表格与问答对须单独处理。定无通用最优值，按结构切、块 300~800 字、标题并入块内、用真实问题测命中率与答案完整度。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-rag-chunking-6.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "inbox-2026-11-20-rag-document-parsing",
-      "title": "2026-11-20-rag-document-parsing",
-      "path": "Inbox/2026-11-20-rag-document-parsing.md",
-      "created": "2026-11-20",
-      "category": "技术",
-      "tags": [
-        "RAG",
-        "AI"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzg2NDQzMzcyOQ==&mid=2247484564&idx=1&sn=c38d28b1c323db7b4b24e01d625232a2&chksm=ce6827baf91faeacd2c34d9309b4c1d35b1d1e4ed572117ef605ea3cb126897abfe93933c58a",
-      "source_type": "web",
-      "platform": "微信",
-      "summary": "**摘要**：解析是文档进系统的第一环，产出文本一路传给分块、嵌入、召回直至模型上下文，这段文本错了后续每环都在错误基础上工作且不报错。解析目标不是\"提取文字\"而是\"连同结构一起提取\"——标题层级、表格行列关系、页码位置。三类难点为文本层缺失（扫描件须走 OCR）、阅读顺序错乱（双栏串读）、表格结构丢失。判断方案够不够用看三条：四类结构是否都保留、抽检 50 页还原率是否达标、失败是否集中在可识别的文档类型。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-rag-document-parsing-4.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "inbox-2026-11-20-rag-necessary",
-      "title": "2026-11-20-rag-necessary",
-      "path": "Inbox/2026-11-20-rag-necessary.md",
-      "created": "2026-11-20",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "系统设计"
-      ],
-      "source": "微信公众号（专辑《RAG工程实践》）",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg2NDQzMzcyOQ==&mid=2247484298&idx=1&sn=92d2ffb37835aeb3d1e9c16461732265&chksm=ce6820a4f91fa9b27ce3c28b622f38320b37b2467306e6dd1d374bc2e6fbf47c1b3fe0efd778",
-      "source_type": "web",
-      "platform": "微信",
-      "summary": "**摘要**：RAG 系列开篇。以企业内部制度问答为例：通用大模型给出的数字来自公开语料的常见做法，对不上自家条款。要答案贴合私有知识，工程上有四条路——长上下文、微调、Agent 编排、检索增强生成，实际改的变量不同：长上下文改\"一次能读多少\"（成本随语料量线性上升），微调改\"怎么说\"（知识更新须重训、删事实无法定点、过时知识会被复述），Agent 改\"做什么、按什么顺序做\"（事实仍需从别处取回，RAG 是 Agent 的事实来源）。只有 RAG 改\"依据哪些事实说\"，内部制度、客服售前、合规法务、研发运维四类场景（知识私有、更新快、答案要能核）非检索不可。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-rag-necessary-1.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "inbox-2026-11-20-rag-parsing-selection",
       "title": "2026-11-20-rag-parsing-selection",
@@ -8311,6 +8254,63 @@
       "summary": "**摘要**：腾讯云数据库团队的思考：让 Coding Agent 越用越懂项目，涉及两个问题——如何表达项目知识（本体/Ontology 从知识工程角度把领域概念、关系、成立条件表达成可共享模型，区别于 Schema/知识图谱/RAG）与如何利用执行反馈让后续任务受益（RSI 递归自我改进：Reflexion 留反馈经验、Agent Workflow Memory 归纳可复用工作流、EvoOntology 让本体根据 Agent 使用反馈演进、Skill∞ 把优化过程本身变成可修改对象）。团队实践：在研发 Loop（设计完成→上线前测试由 Agent 承担）中，用四类记忆资产（Chat Memory、Wiki、CodeGraph、Skill）加**三层互索引项目图谱**——工程事实（静态、函数/字段/跨仓契约关联）、项目语义（LLM 提取的功能职责/业务概念/跨仓映射，本体体现在此层）、错误与经验 bug_fixed（历史 Bug 挂到相关节点，渐进式披露）。Bug 定位成功率从 58% 提升到 65%。核心立场：经验要有归属、能被纠正，本体与 RSI 结合需同时具备\"能关联\"和\"能纠正\"的能力。项目已开源：TencentDB Agent Memory。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-2IUREDltOXzXECO7tWIoPA.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-20-rag-chunking",
+      "title": "2026-11-20-rag-chunking",
+      "path": "Archive/2026-11-20-rag-chunking.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "RAG",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzg2NDQzMzcyOQ==&mid=2247484569&idx=1&sn=e2752f2531e3b835aae6cd9b1366d0c9&chksm=ce6827b7f91faea19779f1f2ed774da41e9ca34b27f4604e07109d99c6e4a003f346d7b5ae49",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：不能把整篇文档当作一个检索单位，四条约束——模型上下文有限且位置效应使中段利用率下降、嵌入模型输入上限会截断、检索精度随块变大而下降、引用需块小才能指到条款级。分块要回答两个独立问题：切多大（粒度）与在哪断（边界），常见四种——定长硬切、定长加句末对齐、按段落切、按标题层级切，差别不在大小而在块的完整性。重叠是补偿手段非必需，按结构切时可很小甚至不用。表格与问答对须单独处理。定无通用最优值，按结构切、块 300~800 字、标题并入块内、用真实问题测命中率与答案完整度。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-rag-chunking-6.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-20-rag-document-parsing",
+      "title": "2026-11-20-rag-document-parsing",
+      "path": "Archive/2026-11-20-rag-document-parsing.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "RAG",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=Mzg2NDQzMzcyOQ==&mid=2247484564&idx=1&sn=c38d28b1c323db7b4b24e01d625232a2&chksm=ce6827baf91faeacd2c34d9309b4c1d35b1d1e4ed572117ef605ea3cb126897abfe93933c58a",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：解析是文档进系统的第一环，产出文本一路传给分块、嵌入、召回直至模型上下文，这段文本错了后续每环都在错误基础上工作且不报错。解析目标不是\"提取文字\"而是\"连同结构一起提取\"——标题层级、表格行列关系、页码位置。三类难点为文本层缺失（扫描件须走 OCR）、阅读顺序错乱（双栏串读）、表格结构丢失。判断方案够不够用看三条：四类结构是否都保留、抽检 50 页还原率是否达标、失败是否集中在可识别的文档类型。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-rag-document-parsing-4.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-20-rag-necessary",
+      "title": "2026-11-20-rag-necessary",
+      "path": "Archive/2026-11-20-rag-necessary.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "系统设计"
+      ],
+      "source": "微信公众号（专辑《RAG工程实践》）",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=Mzg2NDQzMzcyOQ==&mid=2247484298&idx=1&sn=92d2ffb37835aeb3d1e9c16461732265&chksm=ce6820a4f91fa9b27ce3c28b622f38320b37b2467306e6dd1d374bc2e6fbf47c1b3fe0efd778",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：RAG 系列开篇。以企业内部制度问答为例：通用大模型给出的数字来自公开语料的常见做法，对不上自家条款。要答案贴合私有知识，工程上有四条路——长上下文、微调、Agent 编排、检索增强生成，实际改的变量不同：长上下文改\"一次能读多少\"（成本随语料量线性上升），微调改\"怎么说\"（知识更新须重训、删事实无法定点、过时知识会被复述），Agent 改\"做什么、按什么顺序做\"（事实仍需从别处取回，RAG 是 Agent 的事实来源）。只有 RAG 改\"依据哪些事实说\"，内部制度、客服售前、合规法务、研发运维四类场景（知识私有、更新快、答案要能核）非检索不可。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-rag-necessary-1.md",
       "wiki_status": "ingested"
     },
     {
