@@ -418,6 +418,7 @@
 - [[2026-11-20-event-sourcing|事件溯源：系统如何偷偷记下你的一举一动]]（2026-11-20，架构/系统设计/事件溯源，不存当前状态而追加保存事件、写入不可改删、按时间回放重建状态，快照加速重建，可审计/可调试/灵活 vs 复杂/存储/隐私，码农有道科普单信源，置信度中）
 - [[2026-11-20-gaode-ad-linglingqi|高德广告凌凌漆：研发任务的持续执行与可信验收]]（2026-11-20，AI/Agent/可信验收，17 项测试全过仍不能宣布完成：22 项能力入口/四层架构/可替换 Harness 边界（自主执行≠自主授权）/Personal Dev 单 Writer/Dev Loop 契约/验收三层次，台账 362 条办结率 96.4%，高德技术单信源，置信度中）
 - [[ontology-rsi-agent|不只是Memory：Ontology如何让Coding Agent越用越懂项目？]]（2026-11-20，AI/Agent/本体，腾讯云数据库团队：Ontology 区别于 Schema/知识图谱/RAG 强调对象与关系的共同含义与成立条件；RSI 三层次（执行内迭代/跨任务自改进/改进过程自改进）；EvoOntology 让本体根据 Agent 使用反馈演进；三层互索引项目图谱（工程事实/项目语义/bug_fixed）+Bug 定位 58%→65%；本体与 RSI 结合需"能关联"且"能纠正"，单信源，置信度中）
+- [[mysql-6-locks|MySQL的6种锁，你用过几个？]]（2026-11-20，数据库/MySQL/锁，锁粒度三层坐标系+六种锁（表锁/MDL/意向锁/记录锁/间隙锁/临键锁）+InnoDB 锁索引不锁数据+加锁规则速查+无索引 UPDATE 锁全表实验+RR/RC 取舍+间隙锁死锁复现+线上查锁四步，配图 1px 占位正文完整，微信单信源，置信度中）
 
 ## concept（概念）
 
@@ -540,6 +541,7 @@
 - [[mirror-team-architecture|互为镜像式队伍架构]]（Game 服与跨服双队伍服务双向全量同步，冲突以单服队伍为准；限定副本只建单服队伍拿回单线程体验；单信源，置信度中）
 - [[multi-agent-saas-refactoring|多智能体重构 SaaS 业务流]]（2026-11-04，产品/B端/多智能体/方法论，核心转变=把流程判断从人身上剥离交给多Agent协作执行（"人找功能"→"Agent找决策"）+三层架构+五步法（拆业务事件/定义角色边界/协作协议/权限审计人工干预/评测回滚）+四案例，与 Agent 对接旧系统互补，单信源置信度中）
 - [[mysql-bulk-import|MySQL 大批量导入优化（Bulk Import Optimization）]]（攒批+并行+少刷盘；B+ 树算账/rewriteBatchedStatements 灵魂参数/LOAD DATA/先灌后建索引/分片并行/收尾四件套，单信源）
+- [[mysql-locking|MySQL 锁体系（锁粒度与六种锁）]]（全局/表级/行级三层粒度坐标系+六种锁（表锁/MDL/意向锁/记录锁/间隙锁/临键锁）+InnoDB 锁索引不锁数据+加锁规则速查+无索引 UPDATE 锁全表实验+RR/RC 取舍+间隙锁死锁复现与降低手段+线上查锁四步，与 spring-transaction/retry-governance 互链，单信源，置信度中）
 - [[next-token-prediction|下一 token 预测]]（LLM 的统一目标：交叉熵训练、自回归生成，能力与幻觉同根）
 - [[netty-bootstrap|Netty Bootstrap 启动引导]]（initAndRegister 三件套：反射建 Channel→init 组装 Pipeline→注册 Selector；interestOps=0 vs OP_ACCEPT 不对称；ServerBootstrapAcceptor 装配移交 worker；三信源互证，置信度高）
 - [[netty-bytebuf|Netty ByteBuf（数据容器与内存管理）]]（读写双指针免 flip+4MB 阈值扩容+引用计数+类 jemalloc 池化；Heap/Direct/Composite 三形态；释放铁律"谁最后消费谁 release"；三信源，置信度高）

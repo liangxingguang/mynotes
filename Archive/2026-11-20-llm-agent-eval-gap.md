@@ -9,9 +9,7 @@ created: 2026-11-20
 category: 技术
 tags: [AI, Agent]
 asset_ref: Assets/2026-11/wechat-MqKNcbS1kWPtU80Tacfl6g.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-20T22:20:34.403Z"
-ingest_claim_id: 26744-1795213234403-0
+wiki_status: ingested
 ---
 
 > **摘要**：基于 CCF ADL174"大模型与智能体机理与评测"讲习班的整理。用"订单/预算/活动配置"案例贯穿，解释模型答对题目不等于业务可用：表达能力、优化、泛化三层能力的差异，锚点函数与未见组合测试揭示的"记忆 vs 推理"之别，以及评测总分掩盖关键任务短板。给出工程验证路径：分层对照测试、能力画像、结果+过程双评测、依据可复核、出错可处置，从"答对问题"到"完成任务"。

@@ -5336,6 +5336,43 @@
         "wiki/entities/tencentdb-agent-memory.md",
         "wiki/concepts/ontology.md"
       ]
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-helixharness-ai-coding.md",
+      "sha256": "e3d95361a2ee98c31f9a834e70ccc7ddab2461336468811c62cabda47c361ed8",
+      "registered_at": "2026-11-21",
+      "inbox_ref": "Archive/2026-11-20-helixharness-ai-coding.md",
+      "pages": [
+        "wiki/sources/2026-11-20-helixharness-ai-coding.md",
+        "wiki/entities/helixharness.md",
+        "wiki/concepts/harness-engineering.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/y03a6MwhbU0NmLfXO-XjRQ",
+      "asset_ref": "Assets/2026-11/wechat-y03a6MwhbU0NmLfXO-XjRQ.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-20-llm-agent-eval-gap-full.md",
+      "sha256": "82ed4f7e34cacca67ac82c66493af0da8b08f0839124f7b6e18cb602b99e77d2",
+      "registered_at": "2026-11-21",
+      "inbox_ref": "Archive/2026-11-20-llm-agent-eval-gap.md",
+      "pages": [
+        "wiki/sources/llm-agent-eval-gap.md",
+        "wiki/concepts/agent-evaluation.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/MqKNcbS1kWPtU80Tacfl6g",
+      "asset_ref": "Assets/2026-11/wechat-MqKNcbS1kWPtU80Tacfl6g.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-20-mysql-6-locks.md",
+      "sha256": "099fec7e3a80c4b00801f5da9ffee223aa10ead057b41987d296c9a7b6195c7d",
+      "registered_at": "2026-11-21",
+      "inbox_ref": "Archive/2026-11-20-mysql-6-locks.md",
+      "pages": [
+        "wiki/sources/mysql-6-locks.md",
+        "wiki/concepts/mysql-locking.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/lCRWmOtILqlTdDpe2kI_bQ",
+      "asset_ref": "Assets/2026-11/wechat-lCRWmOtILqlTdDpe2kI_bQ.md"
     }
   ]
 }

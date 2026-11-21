@@ -4,7 +4,7 @@ type: concept
 title: 业务 Agent 全生命周期评测
 status: active
 created: 2026-10-22
-updated: 2026-11-05
+updated: 2026-11-21
 confidence: medium
 tags:
   - concept
@@ -18,6 +18,7 @@ sources:
   - raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md
   - raw/sources/enterprise/2026-11-04-ai-native-team-org-reconstruction.md
   - raw/sources/ai/2026-11-07-agent-memory-system-design.md
+  - raw/sources/ai/2026-11-20-llm-agent-eval-gap-full.md
 related:
   - wiki/sources/huolala-agent-eval-platform.md
   - wiki/concepts/agent-memory-system.md
@@ -73,6 +74,8 @@ LLM 概率输出 + 长工具调用链使传统确定性断言失效：单步推�
 
 - 2026-11-07 — 新增微信信源 `raw/sources/ai/2026-11-07-agent-memory-system-design.md`（第 6 信源）。补上**记忆系统五类指标**（检索质量、任务效果、记忆准确性、运行成本、安全与权限）作为本页评测体系的具体子集——记忆准确性（错事实/误把推断当事实/过期未更新）独立占一维，把本页"中间链路评估"细化到记忆维度；另有两条纪律可迁移：①五维须组合评估（单纯提高召回率不保证任务效果——与 [[artifact-verification-delivery]]"分项判定与零容忍发布"同调，不参与平均分补偿）；②反馈适用范围纪律——用户反馈须先判作用于单次任务/某项目/某类场景/长期偏好才能回流记忆更新，与本页"线上失败归因后回流数据集"同族（都防局部结论被错误推广）。记忆系统维度的评审细节落成概念页 [[agent-memory-system]]。
 
+- 2026-11-20 — 新增微信信源 `raw/sources/ai/2026-11-20-llm-agent-eval-gap-full.md`（第 7 信源，CCF ADL174"大模型与智能体机理与评测"整理）。从**模型机理**解释"答对≠做好"：能力分表达/优化/泛化三层，锚点函数实验（f1=x+5/f2=x+1/f3=x-2/f4=x-8，基准 21，留出组合 (3,4)/(4,3)）表明训练全对的模型可能靠记忆样例、对称关系或函数组合三种不同解法，需未见组合测试区分；初始化影响所学解法，业务微调要留出规则组合做分布外验证。评测设计上：三组对照测试（改写表述/改变计算顺序/组合限制条件）排查错误来源；**总分掩盖关键任务短板**（90 查询全对 + 10 预算全错的模型总分 90，反高于预算对 8 的 88），选型须按任务类型分项设验收标准——与货拉拉分项判定、叶小钗分母纪律同调。补强**能力画像**（ADeLe 需求画像 + SCC 以 0.5 答对概率定位能力刻度，为测量定义而非验收阈值）与**构念导向评测**（解释力/预测力/质量保证）作为评测分析深度。确立**结果 + 过程双评测**：过程评测覆盖规划/工具调用/异常处理，"异常处理正确≠任务完成"，完成率以全部任务为分母；评测结果本身需三步验证（复核判分→重测差异→换题推广），与第 4 信源"评测需交叉验证"同族。依据核验拆为三问（来源可信/规则适用/计算正确），试算结果须携带可复核记录（规则版本/输入/判断/traceId）。异常处置按"未执行/结果不明/已执行合规/已执行错误"分类，**超时≠未执行**（靠幂等 + 并发控制），业务约束须落实在工具与服务端而非仅靠审计模型。落地路径：从"查询 + 解释已有结果"切入，三层验证（模型用对信息→流程可靠→使用者受益）+ 三方式对照（现有流程/统一展示/AI 解释）区分收益来源；案例记忆（Memento）消融数据（DeepResearcher F1 66.6→59.9、SimpleQA F1 84.7→81.0）提示借鉴处理方法但不替代本次业务事实核验。学术转工程：理论证明/受控实验/机制分析/黑盒测试四类证据互补不替代上线验证，合成任务结果不外推，辅助指标须服从任务正确性（反例：H 指标全参数微调致 Qwen3-1.7B GSM8K 83.9%→80.7%、回答 Token 300→1419，正确性门控可限无效推理收益）。
+
 ## Open Questions（开放问题）
 
 - Judge 模型自身的幻觉与偏见如何系统性校正（信源只给出采样聚合与转人工策略）。
@@ -86,6 +89,7 @@ LLM 概率输出 + 长工具调用链使传统确定性断言失效：单步推�
 - Source: `raw/sources/ai/2026-10-31-llm-integration-engineering-hard-parts.md`（第 4 信源：回归集标注期望行为而非期望文本、验收从正确性变成分布、可断言/不可断言分开观测、评测交叉验证）
 - Source: `raw/sources/enterprise/2026-11-04-ai-native-team-org-reconstruction.md`（第 5 信源：三平面架构中评估为控制层、ANCHOR 阶段条件化监督、评估基准质量与稳定性；方法论长文口径）
 - Source: `raw/sources/ai/2026-11-07-agent-memory-system-design.md`（第 6 信源：记忆系统五类指标——检索质量/任务效果/记忆准确性/运行成本/安全与权限；五维组合评估；反馈适用范围纪律）
+- Source: `raw/sources/ai/2026-11-20-llm-agent-eval-gap-full.md`（第 7 信源：机理三层能力与锚点函数实验、三组对照测试、总分掩盖关键任务短板、ADeLe 能力画像/SCC、构念导向评测、结果+过程双评测、评测验证三步、依据核验三问、异常处置四类、Memento 消融、三层验证/三方式对照、H 指标反例与正确性门控）
 
 ## Related Knowledge（相关知识）
 
@@ -96,3 +100,4 @@ LLM 概率输出 + 长工具调用链使传统确定性断言失效：单步推�
 - [[llm-integration-engineering-hard-parts|大模型接进业务系统：工程难点在哪（信源页）]]
 - [[weixin-agent-memory-system-design|企业级 Agent 记忆系统设计拆解（信源页）]]
 - [[agent-memory-system|Agent 记忆系统（概念页）]]
+- [[llm-agent-eval-gap|为什么你的模型"答得对，却做不好"（信源页）]]

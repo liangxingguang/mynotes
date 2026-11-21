@@ -9,9 +9,7 @@ created: 2026-11-20
 category: 技术
 tags: [AI, Agent]
 asset_ref: Assets/2026-11/wechat-y03a6MwhbU0NmLfXO-XjRQ.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-20T22:20:28.102Z"
-ingest_claim_id: 41032-1795213228102-0
+wiki_status: ingested
 ---
 
 > **摘要**：滴滴开源 HelixHarness，不是又一个 Coding Agent，而是建在 Codex/Claude Code 之上的项目级 Harness——让 Agent 遵守工程规范、按流程研发、留下可验证结果。区分三层：Agent Runtime（模型调用与会话，如 Codex）、Agent Harness（约束、工作流、质量检查与完成标准，即 HelixHarness）、业务能力层。核心是三阶段工作流 Propose→Apply→Archive：需求转 Spec/Tasks 契约、执行不等于完成（以测试证据判定验收）、核对后归档并沉淀经验。九个命令（init/propose/apply/archive/bug-fix/ut/update/status/config）支持 Codex 与 Claude Code，--loop 可串联三阶段并在人工决策或阻断时暂停。配套平台以 Base/Candidate 对比评测"Harness 版本对工程行为的影响"，自进化由人决策采纳。

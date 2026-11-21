@@ -1,62 +1,6 @@
 {
-  "updated_at": "2026-11-21 07:02",
+  "updated_at": "2026-11-21 10:32",
   "notes": [
-    {
-      "id": "inbox-2026-11-20-helixharness-ai-coding",
-      "title": "2026-11-20-helixharness-ai-coding",
-      "path": "Inbox/2026-11-20-helixharness-ai-coding.md",
-      "created": "2026-11-20",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "Agent"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/y03a6MwhbU0NmLfXO-XjRQ",
-      "source_type": "web",
-      "platform": "微信",
-      "summary": "**摘要**：滴滴开源 HelixHarness，不是又一个 Coding Agent，而是建在 Codex/Claude Code 之上的项目级 Harness——让 Agent 遵守工程规范、按流程研发、留下可验证结果。区分三层：Agent Runtime（模型调用与会话，如 Codex）、Agent Harness（约束、工作流、质量检查与完成标准，即 HelixHarness）、业务能力层。核心是三阶段工作流 Propose→Apply→Archive：需求转 Spec/Tasks 契约、执行不等于完成（以测试证据判定验收）、核对后归档并沉淀经验。九个命令（init/propose/apply/archive/bug-fix/ut/update/status/config）支持 Codex 与 Claude Code，--loop 可串联三阶段并在人工决策或阻断时暂停。配套平台以 Base/Candidate 对比评测\"Harness 版本对工程行为的影响\"，自进化由人决策采纳。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-y03a6MwhbU0NmLfXO-XjRQ.md",
-      "wiki_status": "ingesting"
-    },
-    {
-      "id": "inbox-2026-11-20-llm-agent-eval-gap",
-      "title": "2026-11-20-llm-agent-eval-gap",
-      "path": "Inbox/2026-11-20-llm-agent-eval-gap.md",
-      "created": "2026-11-20",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "Agent"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/MqKNcbS1kWPtU80Tacfl6g",
-      "source_type": "web",
-      "platform": "微信",
-      "summary": "**摘要**：基于 CCF ADL174\"大模型与智能体机理与评测\"讲习班的整理。用\"订单/预算/活动配置\"案例贯穿，解释模型答对题目不等于业务可用：表达能力、优化、泛化三层能力的差异，锚点函数与未见组合测试揭示的\"记忆 vs 推理\"之别，以及评测总分掩盖关键任务短板。给出工程验证路径：分层对照测试、能力画像、结果+过程双评测、依据可复核、出错可处置，从\"答对问题\"到\"完成任务\"。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-MqKNcbS1kWPtU80Tacfl6g.md",
-      "wiki_status": "ingesting"
-    },
-    {
-      "id": "inbox-2026-11-20-mysql-6-locks",
-      "title": "2026-11-20-mysql-6-locks",
-      "path": "Inbox/2026-11-20-mysql-6-locks.md",
-      "created": "2026-11-20",
-      "category": "技术",
-      "tags": [
-        "MySQL"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/lCRWmOtILqlTdDpe2kI_bQ",
-      "source_type": "web",
-      "platform": "微信",
-      "summary": "**摘要**：MySQL 锁体系详解：锁按粒度分三层（全局/表级/行级），粒度越粗开销越小并发越差。本文聚焦日常最常用的 6 种——表锁、元数据锁（MDL）、意向锁、记录锁、间隙锁、临键锁。核心原则：**InnoDB 的行锁加在索引记录上而非数据行上**，因此 WHERE 走不上索引时\"行锁\"退化为全表封锁——这是\"改一行却锁全表\"事故的根源。表级三把锁：全局锁（备份用，业务代码不该出现）、表锁（LOCK TABLES，业务基本不用）、MDL（访问表自动加，事务里持有到提交，长事务持有读锁会让 DDL 卡死整表）、意向锁（标记表内行被锁，IS/IX 自动维护、意向锁之间互不冲突）。行级三把锁：记录锁（锁真实索引记录）、间隙锁（锁不存在的空位、只阻止插入、只在 RR 生效、防幻读）、临键锁（记录锁+前间隙，RR 下默认加锁单位）。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-lCRWmOtILqlTdDpe2kI_bQ.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "inbox-2026-11-20-rag-chunking",
       "title": "2026-11-20-rag-chunking",
@@ -8275,6 +8219,25 @@
       "wiki_status": "ingested"
     },
     {
+      "id": "inbox-2026-11-20-helixharness-ai-coding",
+      "title": "2026-11-20-helixharness-ai-coding",
+      "path": "Archive/2026-11-20-helixharness-ai-coding.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/y03a6MwhbU0NmLfXO-XjRQ",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：滴滴开源 HelixHarness，不是又一个 Coding Agent，而是建在 Codex/Claude Code 之上的项目级 Harness——让 Agent 遵守工程规范、按流程研发、留下可验证结果。区分三层：Agent Runtime（模型调用与会话，如 Codex）、Agent Harness（约束、工作流、质量检查与完成标准，即 HelixHarness）、业务能力层。核心是三阶段工作流 Propose→Apply→Archive：需求转 Spec/Tasks 契约、执行不等于完成（以测试证据判定验收）、核对后归档并沉淀经验。九个命令（init/propose/apply/archive/bug-fix/ut/update/status/config）支持 Codex 与 Claude Code，--loop 可串联三阶段并在人工决策或阻断时暂停。配套平台以 Base/Candidate 对比评测\"Harness 版本对工程行为的影响\"，自进化由人决策采纳。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-y03a6MwhbU0NmLfXO-XjRQ.md",
+      "wiki_status": "ingested"
+    },
+    {
       "id": "2026-11-20-livex-wiki-agent-kb",
       "title": "2026-11-20-livex-wiki-agent-kb",
       "path": "Archive/2026-11-20-livex-wiki-agent-kb.md",
@@ -8292,6 +8255,43 @@
       "summary": "淘宝直播互动团队构建了面向 Coding Agent 的 LiveX Wiki：融合 LLM Wiki 编纂、OKF 轻量表达与 Git 版本治理，按\"域—场景—知识\"三层把跨端跨仓业务经验沉淀为机器可解析的上下文。通过层次索引 + Agentic Search 按需消费、回源核验，由 LLM 与 Git 完成自动更新与工程治理。评测显示端到端生码得分较无知识库提升 39.15%，较 RAG 提升 30.1%，仓库定位准确率从 60% 升至 90%。",
       "summary_status": "",
       "asset_ref": "Assets/2026/11/livex-wiki-agent-kb.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-20-llm-agent-eval-gap",
+      "title": "2026-11-20-llm-agent-eval-gap",
+      "path": "Archive/2026-11-20-llm-agent-eval-gap.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/MqKNcbS1kWPtU80Tacfl6g",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：基于 CCF ADL174\"大模型与智能体机理与评测\"讲习班的整理。用\"订单/预算/活动配置\"案例贯穿，解释模型答对题目不等于业务可用：表达能力、优化、泛化三层能力的差异，锚点函数与未见组合测试揭示的\"记忆 vs 推理\"之别，以及评测总分掩盖关键任务短板。给出工程验证路径：分层对照测试、能力画像、结果+过程双评测、依据可复核、出错可处置，从\"答对问题\"到\"完成任务\"。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-MqKNcbS1kWPtU80Tacfl6g.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-20-mysql-6-locks",
+      "title": "2026-11-20-mysql-6-locks",
+      "path": "Archive/2026-11-20-mysql-6-locks.md",
+      "created": "2026-11-20",
+      "category": "技术",
+      "tags": [
+        "MySQL"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/lCRWmOtILqlTdDpe2kI_bQ",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "**摘要**：MySQL 锁体系详解：锁按粒度分三层（全局/表级/行级），粒度越粗开销越小并发越差。本文聚焦日常最常用的 6 种——表锁、元数据锁（MDL）、意向锁、记录锁、间隙锁、临键锁。核心原则：**InnoDB 的行锁加在索引记录上而非数据行上**，因此 WHERE 走不上索引时\"行锁\"退化为全表封锁——这是\"改一行却锁全表\"事故的根源。表级三把锁：全局锁（备份用，业务代码不该出现）、表锁（LOCK TABLES，业务基本不用）、MDL（访问表自动加，事务里持有到提交，长事务持有读锁会让 DDL 卡死整表）、意向锁（标记表内行被锁，IS/IX 自动维护、意向锁之间互不冲突）。行级三把锁：记录锁（锁真实索引记录）、间隙锁（锁不存在的空位、只阻止插入、只在 RR 生效、防幻读）、临键锁（记录锁+前间隙，RR 下默认加锁单位）。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-lCRWmOtILqlTdDpe2kI_bQ.md",
       "wiki_status": "ingested"
     },
     {
