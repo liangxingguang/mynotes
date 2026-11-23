@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23 18:55",
+  "updated_at": "2026-11-23 19:24",
   "notes": [
     {
       "id": "2026-11-23-coding-to-proposal",
@@ -38,6 +38,26 @@
       "summary": "货拉拉技术总监亓隆基分享 Agent 进入实时交易系统的生产实践：核心判断是\"用 Agent 拓展系统能力边界，而非重做已有系统\"。基于意图交易（AI 下单）、持续撮合（AI 撮合）、策略执行（AI 运营）三个已上线场景，提出 Agent 生产化四层模型——模型决定起点，Harness 决定下限，Dual Loop 决定方向，业务知识决定上限。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-olljy1vd-ai-agent-trading.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-11-23-llm-master-learning-roadmap",
+      "title": "全网硬核大模型应用开发（Agent、RAG）学习路线+配套资源，在 GitHub 开源",
+      "path": "Inbox/2026-11-23-llm-master-learning-roadmap.md",
+      "created": "2026-11-23",
+      "category": "学习",
+      "tags": [
+        "AI",
+        "Agent",
+        "RAG"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/guiPm_5D2xKutVZoEsdR-g",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "作者将多年大模型技术文章整理为开源仓库 `youngyangyang04/llm-master`，定位\"程序员的大模型全栈学习路线\"，含 172 个 Markdown 文件、150+ 篇中文教程，按六阶段组织，每阶段配可交付项目，并连带面试路线，形成知识—项目—简历—面试闭环。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-guiPm_5D2xKutVZoEsdR-g.md",
       "wiki_status": "pending"
     },
     {
