@@ -5601,6 +5601,20 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/Y2sGB5x8mXC5tqFBkioXHA",
       "asset_ref": "Assets/2026-11/weixin-bend-dept-tree.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-23-coding-agent-software-factory.md",
+      "sha256": "932ac41fae2dd5064aa95b16cfdab1ee2a027f0ca1b50efd25f323afb66a1b1",
+      "registered_at": "2026-11-23",
+      "inbox_ref": "Archive/2026-11-23-coding-agent-software-factory.md",
+      "pages": [
+        "wiki/sources/2026-11-23-coding-agent-software-factory.md",
+        "wiki/concepts/software-factory.md",
+        "wiki/concepts/durable-execution.md",
+        "wiki/concepts/ai-native-sdlc.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/nZ1o6ibIozuP-Lbi2zTknw",
+      "asset_ref": "Assets/2026-11/coding-agent-software-factory.md"
     }
   ]
 }

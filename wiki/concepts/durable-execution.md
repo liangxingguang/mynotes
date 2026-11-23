@@ -4,7 +4,7 @@ type: concept
 title: 持久执行（Durable Execution）
 status: active
 created: 2026-10-23
-updated: 2026-11-21
+updated: 2026-11-23
 confidence: high
 tags:
   - concept
@@ -23,6 +23,7 @@ sources:
   - raw/sources/ai/2026-11-12-durable-agent-cloud-long-running.md
   - raw/sources/architecture/2026-11-12-rocketmq-litetopic-session-level-mq.md
   - raw/sources/ai/2026-11-20-starship-cloud-agent.md
+  - raw/sources/ai/2026-11-23-coding-agent-software-factory.md
 related:
   - wiki/entities/pi.md
   - wiki/entities/kiso.md
@@ -42,6 +43,7 @@ related:
   - wiki/sources/codex-agent-harness-architecture-6.md
   - wiki/sources/2026-11-20-starship-cloud-agent.md
   - wiki/entities/gaode-starship-10x.md
+  - wiki/concepts/software-factory.md
 ---
 # 持久执行（Durable Execution）
 
@@ -113,6 +115,8 @@ AgentScope HarnessAgent 实现形态（第 11 信源，知乎专栏）：将模�
 
 - 2026-11-21 — 第十三信源（高德星舰 Cloud Agent，交付篇）从**云端任务执行管理**角度补充：Cloud Agent 把"平台管理"与"Agent 执行"分离——星舰不照看远程进程、Agent 不承担平台资源与结果管理，是"框架管从哪里继续、平台管状态保存在哪与由谁继续"分层在云端任务执行的落地。其任务六阶段（先存记录再安排执行）、会话/轮次/执行环境三层（进程退出≠环境保留≠沙箱回收）、中断恢复四情况与三粒度（区分"连不上"与"已终止"）、"执行结果≠交付完整性"的分层表达，为持久执行在云端 Agent 交付场景提供第六个实现实例，与第 3/8/9/10/11/12 信源的"先写存储、后可见""状态与恢复分层"同族。实体页见 [[gaode-starship-10x]]，信源页见 [[2026-11-20-starship-cloud-agent]]。
 
+- 2026-11-23 — 第十四信源（软件工厂，archdev/Runway 实践综述）从 **Coding Agent 交付流水线** 角度补充：`archdev push` 把提交变成绑定精确 Commit SHA 的持久化 Job，把"已提交"变成持久待办；四类记录（Task/Job/运行/检查）支撑恢复与追踪；领取原子性+租约防旧执行覆盖；按提交验收防"批准后代码又变"。这是持久执行在 Coding Agent 交付场景的第七个实现实例，与第 3/8/9/10/11/12/13 信源的"先写存储、后可见""状态与恢复分层""fencing 限本地不拦远端"同族；其"租约过期≠旧进程已停、远端操作须核对归属"直接印证第 3 信源"fencing 拦不住出网"的边界。概念页见 [[software-factory]]，信源页见 [[2026-11-23-coding-agent-software-factory]]。
+
 ## Open Questions（开放问题）
 
 - 性能开销（Proxy 记录被作者自称"很慢的 hack"）与大规模生产验证：当前信源未确立。
@@ -132,6 +136,7 @@ AgentScope HarnessAgent 实现形态（第 11 信源，知乎专栏）：将模�
 - Source: `raw/sources/ai/2026-11-12-durable-agent-cloud-long-running.md`（第 11 信源：AgentScope Session 六类对象、Task 六态状态机、原子提交顺序、工具 call/execute 两阶段、AgentCore 平台层与 Brain–Hands 分离）
 - Source: `raw/sources/architecture/2026-11-12-rocketmq-litetopic-session-level-mq.md`（第 12 信源：消息基础设施侧承载会话状态/任务交接/故障恢复，消息只传事件与引用、进展权威为 Checkpoint，至少一次+可重放语义）
 - Source: `raw/sources/ai/2026-11-20-starship-cloud-agent.md`（第 13 信源：高德星舰 Cloud Agent 云端任务执行管理——任务六阶段、会话/轮次/执行环境三层、中断恢复四情况三粒度、执行结果≠交付完整性；约束标为设计要求）
+- Source: `raw/sources/ai/2026-11-23-coding-agent-software-factory.md`（第 14 信源：软件工厂——`archdev push` 绑定 SHA 的持久 Job、四类记录、领取原子性+租约、按提交验收；Coding Agent 交付场景的第七个实现实例）
 - 同构印证（未列入 sources）：`raw/sources/architecture/2026-10-20-spring-async-to-task-table.md`（Java 任务表+Worker，业务系统版同一套三要素）
 
 ## Related Knowledge（相关知识）
@@ -153,3 +158,4 @@ AgentScope HarnessAgent 实现形态（第 11 信源，知乎专栏）：将模�
 - [[rocketmq-litetopic-session-level-mq|AI Agent 基础设施的新范式（信源页）]]
 - [[2026-11-20-starship-cloud-agent|星舰Cloud Agent：一项研发任务如何在云端运行（信源页）]]
 - [[gaode-starship-10x|星舰 10X（高德研发交付 Agent）]]
+- [[software-factory|软件工厂（概念页）]]

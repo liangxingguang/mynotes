@@ -9,7 +9,7 @@ created: 2026-11-23
 category: 技术
 tags: [AI, Agent, 系统设计]
 asset_ref: Assets/2026-11/coding-agent-software-factory.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 如何用 Coding Agent 构建自己的软件工厂？

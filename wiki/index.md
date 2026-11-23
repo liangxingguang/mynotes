@@ -437,6 +437,7 @@
 - [[2026-11-20-visualization-skills|5个能让内容信息更易懂的可视化skill]]（2026-11-20，AI/Skill/可视化，解释概念的 5 个可视化 Skill 五形态（自包含图表/手绘配图/素材插画/多引擎插图/信息图）+宿主适配，微信短分享单信源，置信度中）
 - [[2026-11-20-writing-books-3|想提升写作能力，一定要翻烂这三本书]]（2026-11-20，学习/写作/书单，写作三重瓶颈递进三书：勇气《生活，写下来吧》→骨架《一本小小的红色写作书》→灵魂《老舍谈写作》，微信单信源，置信度中）
 - [[2026-11-20-zte-cosight-harness|中兴开源企业级 Harness：Co-Sight Harness]]（2026-11-20，AI/Agent/Harness，2000 人团队 200+ 步工作流四层改造（业务/执行/资产/证据）：完成率 50%→100%、耗时 -64%、召回 56%→91.67%，Apache 2.0 开源，内部自报单信源，置信度中）
+- [[2026-11-23-coding-agent-software-factory|如何用 Coding Agent 构建自己的软件工厂？]]（2026-11-23，AI/Agent/交付工程，软件工厂最小架构：Overseer/Worker/Daemon 三角色、Task/Job/运行/检查四类记录、`archdev push` 绑定 SHA、按提交验收、机制与策略分离、Runway 量化自报，微信单信源，置信度中）
 
 ## concept（概念）
 
@@ -703,6 +704,7 @@
 - [[ten-x-thinking|十倍思维（指数思维）]]（2026-11-21，概念/成长/方法论，先定结果再倒推必须改变、回报增长快于投入；两倍=80%旧+20%新 vs 十倍=20%旧+80%新；增量到变量、专注关键20%产生复利；个人成长四步（需要→想要/回望起点/定清标准/排进日历），微信单信源，置信度中）
 - [[explanation-visualization-skills|解释型可视化 Skill]]（2026-11-22，概念/AI/可视化，解释概念的视觉表达 Skill 子类：按输出形态五分类（自包含图表/手绘配图/素材插画/多引擎插图/信息图）+宿主适配；与 Claude Skills、drawio-skill 区分，单信源，置信度中）
 - [[writing-skill-progression|写作能力进阶三阶梯（勇气 → 结构 → 语言）]]（2026-11-22，概念/写作/学习，按写作三重瓶颈递进组织学习资源：敢动笔→写得清楚→写得生动，各阶代表书与核心方法，微信书单单信源，置信度中）
+- [[software-factory|软件工厂（Software Factory）]]（2026-11-23，AI/Coding Agent/架构，Coding Agent 交付流水线：Overseer/Worker/Daemon 三角色、Task/Job/运行/检查四类记录、领取原子性+租约、按提交验收、机制与策略分离；与 durable-execution/ai-native-sdlc 互链，单信源，置信度中）
 
 ## entity（实体）
 

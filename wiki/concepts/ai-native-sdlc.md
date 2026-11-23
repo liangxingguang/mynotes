@@ -4,7 +4,7 @@ type: concept
 title: AI 原生 SDLC
 status: active
 created: 2026-10-17
-updated: 2026-11-21
+updated: 2026-11-23
 confidence: medium
 tags:
   - concept
@@ -24,6 +24,7 @@ sources:
   - raw/sources/ai/2026-11-20-gaode-ad-linglingqi.md
   - raw/sources/ai/2026-11-20-sdd-spec-driven-dev.md
   - raw/sources/enterprise/2026-11-20-taobao-ai-native-rd.md
+  - raw/sources/ai/2026-11-23-coding-agent-software-factory.md
 related:
   - wiki/concepts/ai-native-organization.md
   - wiki/concepts/spec-driven-development.md
@@ -34,6 +35,7 @@ related:
   - wiki/sources/alibaba-ai-native-dev-handbook.md
   - wiki/sources/coding-agent-ai-native-workflow.md
   - wiki/entities/loopforge.md
+  - wiki/concepts/software-factory.md
 ---
 # AI 原生 SDLC
 
@@ -108,6 +110,8 @@ Agent 编码使构建阶段塌缩到以小时计，而规划、评审/测试、�
 
 - 2026-11-21 — 新增淘海外 AI Native 信源（第 12 信源）`raw/sources/enterprise/2026-11-20-taobao-ai-native-rd.md`，以真实团队数据印证「瓶颈转移到编码两侧」与「单点提速≠端到端提速」：AI Coding 占比 5%→85%，但编码时间只占需求全周期约 20%，编码 200% 提效仅带来约 10% 真实提效，瓶颈在「需求→PRD→实现→验收」串行流转；第二阶段转向 Agent 驱动（钉群统一工作界面、AI 执行+人决策、按复杂度双流程），供给域小需求研发估时降低 50%（团队自报口径）。衡量口径从「AI 生码率」转向「端到端交付周期」。
 
+- 2026-11-23 — 新增软件工厂信源（第 13 信源）`raw/sources/ai/2026-11-23-coding-agent-software-factory.md`，提供 AI 原生 SDLC 在**执行基础设施层**的实现路径：用现有 Coding Agent + 持久任务库 + 执行器 + 仓库现成 CI，把"提交后检查/修复/PR 跟进"由后台执行器持续跟完，人只决定最后合并。其"人守闸门"（合并/部署/凭据/费用留人）、按提交验收（检查与批准绑定具体 commit，新提交后重核）、机制与策略分离（执行程序与提示词/模型/审查规则分版本管理）与本概念制品链闭环、人守闸门、配置享受代码同等待遇同向；是六阶段"构建→测试→部署"各环节的执行层落地，概念页见 [[software-factory]]。
+
 ## Open Questions（开放问题）
 
 - 各打法的先行/滞后指标只有口径、无公开前后对照数据，实际成效待第三方验证。
@@ -128,6 +132,7 @@ Agent 编码使构建阶段塌缩到以小时计，而规划、评审/测试、�
 - Source: `raw/sources/ai/2026-11-20-gaode-ad-linglingqi.md`（第 10 信源：高德 Dev Loop 契约驱动、自主执行≠自主授权）
 - Source: `raw/sources/ai/2026-11-20-sdd-spec-driven-dev.md`（第 11 信源：SDD 规范驱动开发——三大基线、实例化五步骤、PLAN/CODE 两模式、规范先行人兜底；见 [[spec-driven-development]]）
 - Source: `raw/sources/enterprise/2026-11-20-taobao-ai-native-rd.md`（第 12 信源：淘海外 AI Native——编码提效≠端到端提效的国内大厂实证、Agent 驱动双流程、估时降低 50% 团队自报口径）
+- Source: `raw/sources/ai/2026-11-23-coding-agent-software-factory.md`（第 13 信源：软件工厂——Coding Agent 交付流水线的执行基础设施实现、按提交验收、机制与策略分离；AI 原生 SDLC 在执行层的具体落地，见 [[software-factory]]）
 
 ## Related Knowledge（相关知识）
 
@@ -141,3 +146,4 @@ Agent 编码使构建阶段塌缩到以小时计，而规划、评审/测试、�
 - [[spec-driven-development|规范驱动开发（SDD）]]
 - [[2026-11-20-sdd-spec-driven-dev|代码都被AI写了，那规范是AI写，还是人来写？（信源页）]]
 - [[2026-11-20-taobao-ai-native-rd|淘宝天猫海外技术的AI Native研发范式升级实践与思考（信源页）]]
+- [[software-factory|软件工厂（概念页）]]
