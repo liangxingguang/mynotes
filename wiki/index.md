@@ -4,6 +4,7 @@
 
 ## source（信源）
 
+- [[2026-11-23-dan-koe-321-method|如何让自己，在一年内成为某个领域的专家（Dan Koe 321 方法解读）]]（2026-11-23，学习/方法论/自我提升，微信解读文：321 方法三支点（3 小时神圣时间/两项不相干能力缝合/一个核心问题）+复利底层逻辑，微信公众号单信源，置信度中）
 - [[2026-11-23-bisheng-3-office-agent|一个能平替 WorkBuddy 和豆包工作的开源办公 Agent，来了！支持私有化部署]]（2026-11-23，AI/办公Agent/私有化，BISHENG 3.0 开源企业级办公 Agent：DSH Desktop 桌面端+企业平台、Chat/Work 双模式、企业资源管理五模块、外部 Agent 接入与应用托管，微信公众号单信源，置信度中）
 - [[2026-11-23-learn-claude-code-course|8 万星的教学项目：手写一个 mini Claude Code]]（2026-11-23，AI/Agent/Harness/教学，shareAI-lab/learn-claude-code 课程导读：三句主张、17 节三段编排、s01 12 行最小 while True 循环、s17 目标闸门，微信公众号单信源，置信度中）
 - [[im-read-receipt-high-concurrency|【新文导读】详解IM消息已读未读功能的高并发技术实现]]（2026-11-23，IM/架构/高并发，会话级已读游标选型、网关职责解耦、im_conversation+读游标表数据模型、Redis/MySQL/Kafka 分工、Lua 原子幂等推进，52im.net 公众号导读版，全文见 thread-4929，单信源，置信度中）
@@ -444,6 +445,7 @@
 
 ## concept（概念）
 
+- [[321-method|321 方法（Dan Koe 的一年成专家框架）]]（2026-11-23，学习/方法论/概念，三支点：每天 3 小时神圣深度时间+两项不相干能力各前 20% 缝合成前 1%+解决一个核心问题，复利底层逻辑，微信单信源二次解读，置信度中）
 - [[a2a-protocol|A2A 协议]]（Agent↔Agent 横向协作协议，Google 2025）
 - [[acceptance-agent|验收 Agent（AI 生成代码的验收）]]（编码之后真实调接口+多层证据链验收：五阶段流程、硬阻塞/软失败、Gherkin 人工确认、L1-L4 证据、人机协同，OPT 平台实践单信源，置信度中）
 - [[aima-agent-taxonomy|AIMA Agent 分类]]（简单反射/基于模型/基于目标/基于效用/学习五类 + 环境四属性；经典理论单信源）
@@ -724,6 +726,7 @@
 - [[cs2680|CS2680]]（哈佛 2026 秋季新课《Modern AI Systems: Agents and System Optimizations》，Juncheng Yang 主讲/MaDSys 支持；一个 Agent 系统拆到底（Agent Loop→推理服务→GPU）+Mads 五件套递进作业+无考试期末项目+阅读清单论文地图+80 人已满可旁听，公众号单信源，置信度低）
 - [[cs329z|CS329Z]]（斯坦福 AI Agent 自学课程，面向 Python 开发者，含练习+代码架构导读；中文翻译稿 wanghao-SunSky/cs329z-chinese，微博单信源，置信度低）
 - [[namiagent|NamiAgent]]（开源 AI Agent 教程项目+本地可运行 Agent，100 行最小循环教学，读写文件/命令/MCP/长期记忆+网页端可视化，微博单信源，置信度中）
+- [[dan-koe|Dan Koe]]（2026-11-23，学习/创作者/实体，YouTube 创作者，[[321-method]] 提出者，方法提炼自神经科学/进化心理学/商业哲学，动机为拯救两年前迷茫的自己，微信单信源二次解读，置信度中）
 - [[deepseek-harness|DeepSeek Harness]]（DeepSeek 模型的桌面 Agent 客户端，v0.2 预览版）
 - [[deepagents|deepagents]]（LangChain 官方 batteries-included agent harness 库，create_deep_agent 一个函数带齐八件套，LangGraph 底座）
 - [[drawio-skill|drawio-skill]]（代码/配置→可编辑 .drawio 架构图，增量同步 + CI 架构检查）

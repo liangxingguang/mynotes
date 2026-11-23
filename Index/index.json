@@ -1,6 +1,25 @@
 {
-  "updated_at": "2026-11-23 18:50",
+  "updated_at": "2026-11-23 18:54",
   "notes": [
+    {
+      "id": "2026-11-23-coding-to-proposal",
+      "title": "从写代码到写方案：把视角提上去的自我实践方法",
+      "path": "Inbox/2026-11-23-coding-to-proposal.md",
+      "created": "2026-11-23",
+      "category": "学习",
+      "tags": [
+        "自学",
+        "系统设计"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/GiLJEH6N7OupRTaGhpxUFA",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "「冰洋架构」作者以\"一份材料改十几版\"的经历为切入，总结从写代码的细节思维切换到写方案全局视角的自我实践方法。核心是：写方案最难的不是写而是想，五步流程前两步想、第三步才写；要分清显微镜（细节）与地图（全局），用三问想清楚、MECE 拆结构、结论先行+SCQA 组织，交付前用五问自检。源头是《金字塔原理》。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-giljeh6n-proposal-method.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-11-23-dan-koe-321-method",
       "title": "如何让自己，在一年内成为某个领域的专家",
