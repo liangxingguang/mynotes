@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23 18:45",
+  "updated_at": "2026-11-23 18:50",
   "notes": [
     {
       "id": "2026-11-23-dan-koe-321-method",
@@ -18,7 +18,7 @@
       "summary": "介绍油管大神 Dan Koe 的「321 方法」：以每天 3 小时神圣深度时间、两项不相干能力的缝合、一个核心问题为支点，在一年内进入某领域前 1%。方法从神经科学、进化心理学与商业哲学中提炼，核心是摆脱算法控制、用深度工作与差异化组合建立护城河。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-otoiejva-321-method.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-11-23-lala-ai-agent-realtime-trading",
@@ -58,6 +58,24 @@
       "summary": "以图解形式拆解千万级 RAG 的写入链路、存储架构、混合检索与生产保障。当知识库达 1000 万份文档（约 2 亿 Chunks、1024 维向量近 820GB），RAG 复杂度远超向量检索本身，需多引擎协同与完整生产保障。正文以图为主，文字为要点概述。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-udxf9fep-rag-scale.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-11-23-wechat-feed-timeline",
+      "title": "腾讯面试官：微信朋友圈 10 亿人发内容，怎么保证你能看到好友的最新动态？按时间倒序查就行？",
+      "path": "Inbox/2026-11-23-wechat-feed-timeline.md",
+      "created": "2026-11-23",
+      "category": "技术",
+      "tags": [
+        "系统设计"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/yD6bsj9MNbncbarNlXETsA",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "以微信朋友圈时间线设计为切入，对比读扩散（拉模式）与写扩散（推模式）两种 Feed 流方案。核心结论：时间线在数据库里并不存在，须在读时或写时\"造\"出来；写扩散把排序挪到写侧，读侧一次查询即可，但前提是单次扩散复制份数必须有上限——微信好友上限 5000 正是这道成本护栏，再以削峰、合并、只推活人摊平写入。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-yd6bsj9m-feed-timeline.md",
       "wiki_status": "pending"
     },
     {
