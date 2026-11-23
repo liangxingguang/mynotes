@@ -5654,6 +5654,19 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/S9qKe-pMM3130Ha1hN_6UA",
       "asset_ref": "Assets/2026-11/weixin-s9qke-pmm3130ha1hn-6ua.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-11-23-dan-koe-321-method.md",
+      "sha256": "476e86062e23d380c40f8eab7048e7e26a10c57b2961d25fac5dd0dacb064b6b",
+      "registered_at": "2026-11-23",
+      "inbox_ref": "Archive/2026-11-23-dan-koe-321-method.md",
+      "pages": [
+        "wiki/sources/2026-11-23-dan-koe-321-method.md",
+        "wiki/concepts/321-method.md",
+        "wiki/entities/dan-koe.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/OtoIEjvAWr-GgGbCz7fVMQ",
+      "asset_ref": "Assets/2026-11/weixin-otoiejva-321-method.md"
     }
   ]
 }

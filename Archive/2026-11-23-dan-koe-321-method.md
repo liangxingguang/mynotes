@@ -9,9 +9,7 @@ created: 2026-11-23
 category: 学习
 tags: [自学, AI]
 asset_ref: Assets/2026-11/weixin-otoiejva-321-method.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-23T10:45:38.977Z"
-ingest_claim_id: 30804-1795430738977-0
+wiki_status: ingested
 ---
 
 # 如何让自己，在一年内成为某个领域的专家
