@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23 19:30",
+  "updated_at": "2026-11-23 19:33",
   "notes": [
     {
       "id": "2026-11-23-coding-to-proposal",
@@ -135,6 +135,25 @@
       "summary": "RAG 系列开篇综述：从 LLM 的六大缺陷（幻觉、知识滞后、隐私、上下文窗口有限、输入噪声、成本高）切入，讲 RAG 的破局思路与系统组成，辨析\"RAG 已死\"的误区（RAG/长上下文/微调/MCP 是互补而非替代），并给出离线+在线的技术架构、技术演进路线与落地七大误区。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-ob6-qxunmh26oq5gk9m51a.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-11-23-rag-practice-medical",
+      "title": "RAG 技术实战：从微调召回到精排的完整链路",
+      "path": "Inbox/2026-11-23-rag-practice-medical.md",
+      "created": "2026-11-23",
+      "category": "技术",
+      "tags": [
+        "RAG",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/edDGX5yzynwwFgawXnMkkw",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "RAG 系列实战篇：以医疗问答为例走通整套链路——基础问答对架构的召回痛点、用 LLM 把非结构化文本拆成问答对、Bert 微调造样本、DSSM 双塔召回模型、Faiss 写索引、Bert 二分类精排，并对比 RAG 与 SFT、讨论多轮问答的上下文处理。核心结论：召回+排序+大模型归纳三段式，原生模型替换后效果立降。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-eddgx5yzynwwfgawxnmkkw.md",
       "wiki_status": "pending"
     },
     {

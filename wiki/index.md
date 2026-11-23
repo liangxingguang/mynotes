@@ -4,6 +4,7 @@
 
 ## source（信源）
 
+- [[2026-11-23-coding-to-proposal|从写代码到写方案：把视角提上去的自我实践方法]]（2026-11-23，写作/方法论/思维，微信「冰洋架构」：核心论断"写方案最难的不是写而是想"+显微镜与地图隐喻+五步流程（前两步想、第三步才写）+想清楚三问+MECE 结构理顺（按决策链分不按流水账分）+结论先行+SCQA+交付前五问自检与三个跳出来法，源头《金字塔原理》，单信源，置信度中）
 - [[2026-11-23-dan-koe-321-method|如何让自己，在一年内成为某个领域的专家（Dan Koe 321 方法解读）]]（2026-11-23，学习/方法论/自我提升，微信解读文：321 方法三支点（3 小时神圣时间/两项不相干能力缝合/一个核心问题）+复利底层逻辑，微信公众号单信源，置信度中）
 - [[2026-11-23-bisheng-3-office-agent|一个能平替 WorkBuddy 和豆包工作的开源办公 Agent，来了！支持私有化部署]]（2026-11-23，AI/办公Agent/私有化，BISHENG 3.0 开源企业级办公 Agent：DSH Desktop 桌面端+企业平台、Chat/Work 双模式、企业资源管理五模块、外部 Agent 接入与应用托管，微信公众号单信源，置信度中）
 - [[2026-11-23-learn-claude-code-course|8 万星的教学项目：手写一个 mini Claude Code]]（2026-11-23，AI/Agent/Harness/教学，shareAI-lab/learn-claude-code 课程导读：三句主张、17 节三段编排、s01 12 行最小 while True 循环、s17 目标闸门，微信公众号单信源，置信度中）
@@ -711,6 +712,7 @@
 - [[explanation-visualization-skills|解释型可视化 Skill]]（2026-11-22，概念/AI/可视化，解释概念的视觉表达 Skill 子类：按输出形态五分类（自包含图表/手绘配图/素材插画/多引擎插图/信息图）+宿主适配；与 Claude Skills、drawio-skill 区分，单信源，置信度中）
 - [[writing-skill-progression|写作能力进阶三阶梯（勇气 → 结构 → 语言）]]（2026-11-22，概念/写作/学习，按写作三重瓶颈递进组织学习资源：敢动笔→写得清楚→写得生动，各阶代表书与核心方法，微信书单单信源，置信度中）
 - [[software-factory|软件工厂（Software Factory）]]（2026-11-23，AI/Coding Agent/架构，Coding Agent 交付流水线：Overseer/Worker/Daemon 三角色、Task/Job/运行/检查四类记录、领取原子性+租约、按提交验收、机制与策略分离；与 durable-execution/ai-native-sdlc 互链，单信源，置信度中）
+- [[coding-to-proposal-method|从写代码到写方案：视角切换的五步方法]]（2026-11-23，概念/写作/方法论/思维，开发转方案视角切换：显微镜与地图隐喻、五步流程（顺序不可反、前两步想）、想清楚三问、MECE 两条检验与决策链维度、结论先行+SCQA、交付前五问自检+三个跳出来法，源头《金字塔原理》；与 proposal-logic-structures 互补、与 writing-skill-progression/deep-thinking-five-tools 区分，单信源，置信度中）
 
 ## entity（实体）
 
