@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23 19:36",
+  "updated_at": "2026-11-23 19:37",
   "notes": [
     {
       "id": "2026-11-23-deepsearch-rag-comparison",
@@ -58,6 +58,25 @@
       "summary": "作者将多年大模型技术文章整理为开源仓库 `youngyangyang04/llm-master`，定位\"程序员的大模型全栈学习路线\"，含 172 个 Markdown 文件、150+ 篇中文教程，按六阶段组织，每阶段配可交付项目，并连带面试路线，形成知识—项目—简历—面试闭环。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-guiPm_5D2xKutVZoEsdR-g.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-11-23-llm-wiki-knowledge-graph",
+      "title": "LLM-Wiki：基于知识图谱的本地知识库系统",
+      "path": "Inbox/2026-11-23-llm-wiki-knowledge-graph.md",
+      "created": "2026-11-23",
+      "category": "技术",
+      "tags": [
+        "RAG",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/bKHpmZhO-rou0ZE99mUUtg",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "RAG 系列第六篇，提出对 RAG 的补充方案 LLM-Wiki：先指出 RAG 三大先天问题（chunk 粒度难控、向量召回语义鸿沟、信息碎片化丢失时序），再给出 LLM-Wiki 架构——用大模型作\"知识编译器\"把原始资料编译为互相引用的 Wiki（ObsIDian 存储），检索由 Skill 控制、CLI 执行，以图谱遍历方式支撑关联分析与深度推理。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-bkhpmzh-rou0ze99muugtg.md",
       "wiki_status": "pending"
     },
     {
