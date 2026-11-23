@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23 17:40",
+  "updated_at": "2026-11-23 17:42",
   "notes": [
     {
       "id": "2026-11-23-bisheng-3-office-agent",
@@ -38,6 +38,25 @@
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-ga3-pzkomt6lo23qn1wcag.md",
       "wiki_status": "ingesting"
+    },
+    {
+      "id": "2026-11-23-learn-claude-code-course",
+      "title": "8 万星的教学项目：手写一个 mini Claude Code",
+      "path": "Inbox/2026-11-23-learn-claude-code-course.md",
+      "created": "2026-11-23",
+      "category": "学习",
+      "tags": [
+        "AI",
+        "Agent"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/S9qKe-pMM3130Ha1hN_6UA",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "介绍开源课程 shareAI-lab/learn-claude-code（79.6k Star、MIT 协议、主语言 Python）：用 17 节课手写一个 mini Claude Code，副标题 \"Bash is all you need\"。核心主张——Agent 的自主性来自模型而非编排代码，harness = 工具+知识+观察+动作接口+权限，其全部秘密是一个 `while True` 循环；课程按\"能干活→扛复杂→跑长跑久\"三段编排，把 Claude Code 拆成可单独复用的设计零件。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-s9qke-pmm3130ha1hn-6ua.md",
+      "wiki_status": "pending"
     },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
