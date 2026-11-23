@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23 18:41",
+  "updated_at": "2026-11-23 18:45",
   "notes": [
     {
       "id": "2026-11-23-dan-koe-321-method",
@@ -38,6 +38,26 @@
       "summary": "货拉拉技术总监亓隆基分享 Agent 进入实时交易系统的生产实践：核心判断是\"用 Agent 拓展系统能力边界，而非重做已有系统\"。基于意图交易（AI 下单）、持续撮合（AI 撮合）、策略执行（AI 运营）三个已上线场景，提出 Agent 生产化四层模型——模型决定起点，Harness 决定下限，Dual Loop 决定方向，业务知识决定上限。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-olljy1vd-ai-agent-trading.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-11-23-rag-10-million-docs",
+      "title": "1000 万份文档，RAG 系统到底怎么扛？",
+      "path": "Inbox/2026-11-23-rag-10-million-docs.md",
+      "created": "2026-11-23",
+      "category": "技术",
+      "tags": [
+        "RAG",
+        "AI",
+        "系统设计"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/udXF9FEP6SCyeqIxo0YqWA",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "以图解形式拆解千万级 RAG 的写入链路、存储架构、混合检索与生产保障。当知识库达 1000 万份文档（约 2 亿 Chunks、1024 维向量近 820GB），RAG 复杂度远超向量检索本身，需多引擎协同与完整生产保障。正文以图为主，文字为要点概述。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-udxf9fep-rag-scale.md",
       "wiki_status": "pending"
     },
     {
