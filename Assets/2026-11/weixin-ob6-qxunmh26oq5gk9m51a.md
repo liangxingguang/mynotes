@@ -1,0 +1,252 @@
+### 
+
+01LLM的问题，RAG的破局
+
+大模型的缺点：
+
+*   幻觉，在没有答案的时候会提供一些虚假的信息。
+    
+*   新鲜度：模型知识的更新成本、周期、及大模型的通用能力问题。知识新鲜度的更新，模型的训练都有滞后性，用当下模型的时候会有知识的缺失。
+    
+*   数据安全和隐私等问题。
+    
+*   大多数模型的Context Window非常有限，模型无法读取所有内容。
+    
+*   输入太杂乱会影响模型理解。
+    
+*   输入越多，模型推理成本高、推理速度慢。
+    
+
+RAG就是检索增强生成，结合检索系统和生成模型来提高语言生成的准确性和相关性。通过从外部知识库中检索相关信息，并将其作为提示（Prompt）输入给大型语言模型（LLMs），以增强模型处理知识密集型任务的能力，提供更加符合上下文语境的回答。
+
+RAG的优势： 
+
+*   RAG的优势在于它能够在生成响应时引入外部知识，提供更符合上下文语境的回答。
+    
+*   与预训练模型不同，RAG的内部知识可以很容易地修改甚至实时补充。
+    
+*   相比微调技术，RAG具备可观测性、可解释性等优势，还可以有效降低大模型的幻觉问题。
+    
+
+*   知识实时性困境 
+    
+
+*   大模型：大模型训练数据存在时间截断。
+    
+
+*   RAG：RAG通过实时检索最新文档（如科研论文/新闻），动态扩展模型知识边界。
+    
+
+*   事实准确性困境 
+    
+
+*   大模型：纯生成模型易产生“幻觉”（Hallucination），虚构不存在的事实。
+    
+
+*   RAG：RAG先检索相关证据文档，要求模型严格基于检索内容生成，显著降低错误率。
+    
+
+*   领域适配成本问题
+    
+
+*   大模型：微调（Fine-tuning）需要大量标注数据和计算资源。
+    
+
+*   RAG：RAG仅需构建领域文档库，即可让通用模型输出专业内容（如法律/医疗场景）。
+    
+
+Rag具有的特点： 
+
+*   可扩展性：企业知识库以 TB/PB 计，远超长上下文窗口的承载能力
+    
+*   准确性：长上下文模型存在“上下文悬崖”，远未达到理论极限就已性能下降
+    
+*   延迟与效率：全量输入导致响应慢 & 成本高，RAG能精准定位最相关信息
+    
+*   数据隐私：支持基于角色的访问控制，避免将所有数据暴露给基础模型
+    
+*   部署资源受限：显存/算力限制无法支持超长上下文（如 Qwen-14B 在 A100-40G上仅能接收约20k token）
+    
+*   实际案例：即使百万token窗口，也仅相当于1500页文档，远不足以覆盖全库  
+    
+
+RAG系统的组成
+
+RAG是一个系统，不是单一的组件，由多个组件组成的复杂系统，LLM只是其中的一个组件。
+
+RAG系统组件包括：
+
+*   Chunk（切块）：文档如果太大，系统会把它拆成小片段。比如《报销手册》被拆成”机票报销“、”酒店报销“、”差旅补贴“。检索时就能更精准，不需要把整本手册塞进给大模型。
+    
+*   Embedding（向量化）：把文字转成一组数字（向量），相似的句子距离很近，不相关的距离很远。比如”机票报销“和”出差机票费用申请“离得近，而和”量子纠缠“则完全不搭界。
+    
+*   Vector Database（向量数据库）：存放向量的仓库，可以快速找出和问题最相近的几段内容。常见的向量数据库有Milvus、Weaviate、Pinecone等。
+    
+*   Retrieval（检索）：除了把切块转成向量，用户的问题也会转成向量，在向量数据库与其他数据片段比较“距离”（距离越近，代表内容越相关），检索的结果就是找出最相关的几个片段。
+    
+*   Generation（生成）：检索到片段 + 用户问题 → 输入大模型 → 输出自然语言答案。
+    
+
+切块、向量化、向量数据库，这三部分可以理解为是离线部分去做，检索和生成是在线部分做。
+
+RAG已死？ 
+
+我们总会听到一个词叫RAG已死，因为现在大模型有长上下文的能力之后它就可以吃到更多的TOKEN，这样的话是不是RAG就没有用了， 下面是Meta AI的一个Rag原文作者说他当时做Rag的一个初衷
+
+目标：结合参数化记忆（模型本身知识）+ 非参数化记忆（外部检索知识），从而扩展语言模型的知识库。
+
+解决痛点：
+
+*   无法访问私有（企业内部）数据：模型无法访问 私有/专有数据
+    
+*   参数知识过时：无法实时更新，其训练数据截止日期与当前时间之间总会存在差距。
+    
+*   幻觉与归因问题：模型经常编造听起来合理但错误的信息，缺乏可验证来源。
+    
+
+错误的二分法
+
+*   RAG vs 长上下文 vs 微调 vs MCP ≠ 你死我活
+    
+*   正确认识：它们是互补关系
+    
+
+*   RAG → 获取外部知识
+    
+
+*   微调 → 优化处理与应用
+    
+
+*   长上下文 → 承载更多检索信息
+    
+
+*   MCP → 简化工具/Agent集成
+    
+
+*   类比：RAG不是“过时工具”，而像 硬盘与内存，在系统中各司其职
+    
+
+结论：RAG永远不是“过时替代品”，而是AI知识利用的基础设施。真正有价值的方案，必然是 检索 + 长上下文 + 微调 \+ MCP 的组合拳。
+
+传统问答系统 VS 问答对FAQ  VS Rag检索增强生成 
+
+传统问答系统 vs 现代问题系统(RAG)： 
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+问答对（FAQ）vs RAG（检索增强生成）：
+
+基于问答对的问答：
+
+基于问答对的问答就像一个“预设答案库”。系统会提前整理好一系列问题与对应的答案（通常由人工或规则生成），当用户提出问题时，系统通过关键词匹配或语义向量匹配，从库中找出最相似的问答对，直接返回答案。它的核心在于高效匹配，可以不依赖大型语言模型（LLM），实现简单且轻量。特点：
+
+*   数据结构：固定问答对数据库。
+    
+*   匹配方式：关键词或语义匹配。
+    
+*   回答方式：直接返回已有答。
+    
+
+基于文档的问答（RAG）：
+
+RAG是一种更现代的方案。它将文档切分成小块，转化为向量存储在知识库中。当用户提问时，系统先通过向量检索找到与问题最相关的文档片段，再交给大型语言模型（LLM）生成自然语言回答。RAG结合了检索与生成，灵活性更强。特点是：
+
+*   数据结构：文档切分后向量化存储。
+    
+*   匹配方式：向量相似度检索。
+    
+*   回答方式：LLM综合检索结果生成答案。
+    
+*   灵活性：能推理、组合生成新答案。
+    
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+双层知识库问答
+
+第一层：FAQ知识库（人工标注）：这是一个高质量、小而精的知识库，存储着由领域专家撰写和审核的标准问答对。它专门针对那些频繁发生、具有标准问答对的回答。这一层的目标是提供"零偏差"的答案。
+
+第二层：向量知识库（文档语料）：这是一个大规模、广覆盖的知识库，包含了操作手册、行业规范、领域文档等海量非结构化文档。通过文本分割、向量化后存储于向量数据库中。它负责处理FAQ知识库未覆盖的长尾问题和复杂查询。
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+02大模型微调和Rag 
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+大模型微调&RAG的对比
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+03RAG的技术架构
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)RAG的整体技术架构如上图，主要分为离线和在线，离线就是先进行文本切块，再进行分词向量化，得到一个向量库索引库，索引库可以进行文本索引，也可以做一个向量索引。
+
+当用户来进行提问之后，分别做一个文本混合检索和一个向量检索，计算用户的问题与语料库中哪些文本块相似，比较相似高的k个块作为答案。检索完之后，把数据进行重排序，最后返回k个答案文本块给大模型。最后结合提示词工程模板，将检索得到的k个块和用户的问题一起送进大模型，大模型基于给定的文本块来回答用户的问题。
+
+Rag技术演进：
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+最开始的Rag是23年，用户提问后，对这个向量对这些文件进行一个检索，当检索完回来之后，直接组装成提示词送给大模型就回答了，这是最简单的一个方式。更高级点就是在检索做了一个前优化，一个后优化。那前优化就是做了一些查询的改写路由，分配到哪些知识库这种路由，检索完之后，我们进行就是对检索内容，再怎样进行检索，检索完之后了，我们在后在那个检索之后进行一个重排序融合这些操作之后，最后组装成提示词之后给大模型，这是高级进阶的rag。
+
+再之后就相当于把RAG拆成模块化，RAG并不是一个单一的组件，它是多个组件的组合，组件就可以认为进行的模块化，比如检索是一个组件，重排序是一个组件，OCR识别也是一个组件，好处是可扩展在不同场景，有些场景可能不需要重排序，有些场景可能需要查询改写，就可以对组件可以进行一个可插拔的方式，对每个组件单独评估配置，这样也好维护，各组件之间就是松耦合，这个是RAG的一个演进方式。
+
+主流开源框架
+
+①RAGFlow
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+②QAnything
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+RAG开源框架对比
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+RAG自研技术架构
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+04RAG的“天地之间”
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+上图是Rag的天地之间。
+
+天地之间下边的数据细节，每个业务数据都是独一无二的，就会有一些隐私数据。第二点就是在进行RAG调试的时候，数据是非常重要的。Rag的思想很简单就是检索增强生成，我们需要考虑的是如何搭建RAG，把RAG进行普适的推广，一定要进行数据分析，把数据的细节做好。所以这是Rag的一个地，一定要踩这个地才行。
+
+天是它的系统架构，可以认为是一个工程架构。离线、在线怎么做？我们要保证的是系统的整体最优，而不是局部最优。
+
+优化检索、优化大模型，也不一定对整体最优。如果检索的策略效果提升了，但是检索内容会引入一些杂质，需要进行测试才可以，而且一些检索办法不一定完全适配于你的业务，还是需要尝试的。
+
+这是Rag的一个系统架构，中间部分是数据细节和系统架构，是天地之间的内容，是索引构建，检索策略生成，索引构建包括了离线文档解析、知识入库构建向量embedding，还有一些数据库的选型。
+
+检索策略包括全文检索、向量检索，检索之前用一个多轮的query改写，检索之后可以把答案检索内容进行一个整合排序排版，把内容送到大模型中。做完之后，可能会有一些业务适配的情况，需要围绕业务目标去设计流程，去来实现场景化的一个落地。
+
+中间的索引架构、检索策略都是为了满足系统架构能够非常好，可以达到系统架构最优的路径，它不能光考虑局部最优，还要考虑整体。
+
+*   第一数据可能会存在混淆的情况，没法进行很好的问答， 所以数据要进行分库，进行数据筛选**。**
+    
+*   第二过度依赖通用的检索算法，比如用全文检索+向量检索组合的混合检索，如果大部分用户提问都是一些关键词，全文检索就能检索到这部分内容，就不需要向量检索了，全文检索还比较准可靠。向量检索的场景是用户问题提问比较模糊，基本不问关键词，可能全文检索会拉低向量检索的得分，这时就需要分析到底用单一的检索还是混合检索，**这是第二点误区****。**
+    
+*   第三文本拆分的粒度不合理，默认的切分方式为256、512这种，实际上不同文档的切块方式是不一样的。比如法律类的文章，就一大段一大段的，切分256可能有点儿太细了，512的大小是比较符合的。比如说我们有一些文章内容，实际上他没有那么大，可能256。所以就可以把接口开放给用户，让用户去选择256还是512，因为用户更比你更了解业务。
+    
+*   第四将误将检索的召回率等同于检索的效果，检索召回率的时候会有一些指标如NDCG，其实更要关注的是一些精确率、准确率，它只是召回来了，但实际上得看看它的准确率有多少。拿到召回数据可以看看TOP1、TOP3、TOP5、TOP10的一个结果，这样可以确认召回的效果。
+    
+*   第五**生成阶段过度依赖****大模型**，大模型可以承接很多上下文，就很容易把这些内容直接扔给大模型，这样的话会有一些杂质，而且还会存在一种什么，就是说你，比如说你在提示词的时候告诉他基于以上内容进行回答，大模型一看上面内容之后，也不管这内容是否完全跟用户提问相关，就直接回答，所以还得在提示词里做一些约束，严格基于以上内容进行回复，跟用户问题相关。 
+    
+*   第六忽视用户的查询意图，比如用户询问怎么解决手机充电慢的情况，因为他的问题是一个偏口语化的，检索回来可能就是手机充电原理，这种情况就不是完全符合预期。需要增加改写功能，把用户的提问改写成偏标准化的问题，这样就可以解决检索到无关内容的情况，避免检索到无关内容。
+    
+*   第七是查询意图的理解，除了改写之外，还有前置的意图分类。比如有常见问题类，有故障类这种问题，把这两个数据都放在一个数据源里进行一个问答可能回答的不好，因为常见问题会跟故障进行混淆，但是把这两个库分开，在前面做一个意图分发，比如识别的时候，用户的问题是跟常见问题相关，那就在常见问题库里去检索，那它一定是准的，比在全库里更准。当用户进行提问之后，先进行意图分发确定到哪个知识库后。再进行快速改写、检索。
+    
+
+这就是Rag的一个天地之间。

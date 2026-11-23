@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23 19:25",
+  "updated_at": "2026-11-23 19:27",
   "notes": [
     {
       "id": "2026-11-23-coding-to-proposal",
@@ -97,6 +97,25 @@
       "summary": "系统梳理 RAG 技术实现全流程的四大环节：文档解析、知识库构建（分块）、知识库构建（索引）、知识增强。覆盖文档解析工具（DeepDoc/MinerU）、7 种分块策略及选型、向量检索算法（Flat/IVF/HNSW），以及上下文增强、块标题（CCH）、问题生成三类检索增强手段。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-xgivyt-t012py-o3cklrdkg.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-11-23-rag-overview-architecture",
+      "title": "RAG 是什么：RAG 的整体技术架构",
+      "path": "Inbox/2026-11-23-rag-overview-architecture.md",
+      "created": "2026-11-23",
+      "category": "技术",
+      "tags": [
+        "RAG",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/Ob6_qxUNMh26Oq5gk9m51A",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "RAG 系列开篇综述：从 LLM 的六大缺陷（幻觉、知识滞后、隐私、上下文窗口有限、输入噪声、成本高）切入，讲 RAG 的破局思路与系统组成，辨析\"RAG 已死\"的误区（RAG/长上下文/微调/MCP 是互补而非替代），并给出离线+在线的技术架构、技术演进路线与落地七大误区。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-ob6-qxunmh26oq5gk9m51a.md",
       "wiki_status": "pending"
     },
     {
