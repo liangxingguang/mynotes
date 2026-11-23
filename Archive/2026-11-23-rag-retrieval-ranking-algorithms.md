@@ -9,7 +9,7 @@ created: 2026-11-23
 category: 技术
 tags: [RAG, AI]
 asset_ref: Assets/2026-11/weixin-osvrrvvwlvu87rydlwecugg.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # RAG 检索与排序核心算法

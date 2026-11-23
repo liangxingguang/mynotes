@@ -20,6 +20,8 @@
 - [[2026-11-23-rag-doc-parsing-knowledge-base|RAG 文档解析与知识库构建（信源页）]]（2026-11-23，AI/RAG/建库，微信 RAG 全流程教程：解析引擎 DeepDoc/MinerU+三大视觉任务 OCR/DLR/TSR+问答对检索单元+七种分块策略+块大小三档+Small2Big+语义切块阈值三法+知识增强三手段（上下文增强/CCH/问题生成），教程式总览，单信源，置信度中）
 - [[2026-11-23-rag-llm-generation|RAG 中的大模型生成：最后一公里（信源页）]]（2026-11-23，AI/RAG/生成，微信 RAG 系列第 4 篇：生成阶段定位（智能整合器+语言表达器）+Prompt 四原则与温度分档（事实型 0.0-0.3/解释型 0.4-0.7/创意型 0.8-1.0）+Lost in Middle+幻觉抑制三管齐下+上下文构建四原则与流程+长文本 Small2Big+多文档引用增强+表格问答+上下文压缩+答案溯源（n-gram 召回+LLM Rerank），单信源，置信度中）
 - [[2026-11-23-rag-overview-architecture|RAG 是什么：RAG 的整体技术架构（信源页）]]（2026-11-23，AI/RAG/架构综述，微信 RAG 系列开篇篇：LLM 六大缺陷与 RAG 破局+五组件离线/在线架构+「RAG 已死」驳论与 RAG/长上下文/微调/MCP 互补+FAQ vs RAG 与双层知识库+Naive→高级→模块化演进路线+「天地之间」框架与落地七大误区，单信源，置信度中）
+- [[2026-11-23-rag-practice-medical|RAG 技术实战：从微调召回到精排的完整链路（信源页）]]（2026-11-23，AI/RAG/实战，微信 RAG 系列实战篇：召回+排序+归纳三段式（数据准备 Bert 微调造样本/DSSM 双塔召回/Faiss 索引检索/Bert 二分类精排）+OpenAI 效果基准 45%→65%→85%→98%+RAG vs SFT 边界+多轮问答上下文处理，单信源，置信度中）
+- [[2026-11-23-rag-retrieval-ranking-algorithms|RAG 检索与排序核心算法（信源页）]]（2026-11-23，AI/RAG/算法，微信 RAG 系列算法篇：多轮 Query 改写+BM25 四点改进与分词宁细勿粗+双塔表示模型与 Qwen3-Embedding 三阶段训练+混合检索互补机制+RRF/Cross-Encoder/CoIBERT/Qwen3-Reranker 排序+LLM NLI 相关性判断+全链路多路召回，单信源，置信度中）
 - [[15-books-understand-world|看懂世界运转的 15 本书单]]（2026-10-20，书单，置信度低）
 - [[475-claude-opus-demos-repo|微博分享：475 个 Claude Opus 5.5 生成的视频演示仓库]]（2026-10-20，AI/资源，置信度低）
 - [[2026-10-31-xuqiufenxi-01-ruanjian-xiangmu-shibai|软件项目失败，很多时候不是技术问题，而是需求问题]]（2026-10-31，工程实践/需求分析，系列开篇立论：技术问题显性 vs 需求问题隐性+隐形裂缝+动手前想清做什么，公众号单信源，置信度中）

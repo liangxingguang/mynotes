@@ -5798,6 +5798,30 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/Ob6_qxUNMh26Oq5gk9m51A",
       "asset_ref": "Assets/2026-11/weixin-ob6-qxunmh26oq5gk9m51a.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-23-rag-practice-medical.md",
+      "sha256": "65d987fe095217de7c209df77451274033766650382cc4cab7c479fe5dc3f418",
+      "registered_at": "2026-11-24",
+      "inbox_ref": "Archive/2026-11-23-rag-practice-medical.md",
+      "pages": [
+        "wiki/sources/2026-11-23-rag-practice-medical.md",
+        "wiki/concepts/rag.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/edDGX5yzynwwFgawXnMkkw",
+      "asset_ref": "Assets/2026-11/weixin-eddgx5yzynwwfgawxnmkkw.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-23-rag-retrieval-ranking-algorithms.md",
+      "sha256": "20382127aa47843ef0f812a254d4c859c1c71a3743a426f985091e3cbccfc700",
+      "registered_at": "2026-11-24",
+      "inbox_ref": "Archive/2026-11-23-rag-retrieval-ranking-algorithms.md",
+      "pages": [
+        "wiki/sources/2026-11-23-rag-retrieval-ranking-algorithms.md",
+        "wiki/concepts/rag.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/oSvRVvWLvu87RYDLWEcUGg",
+      "asset_ref": "Assets/2026-11/weixin-osvrrvvwlvu87rydlwecugg.md"
     }
   ]
 }

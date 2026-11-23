@@ -22,6 +22,8 @@ sources:
   - raw/sources/ai/2026-11-23-langchain-rag-tutorial.md
   - raw/sources/ai/2026-11-23-rag-llm-generation.md
   - raw/sources/ai/2026-11-23-rag-overview-architecture.md
+  - raw/sources/ai/2026-11-23-rag-practice-medical.md
+  - raw/sources/ai/2026-11-23-rag-retrieval-ranking-algorithms.md
 related:
   - wiki/concepts/prompt-engineering.md
   - wiki/concepts/context-management.md
@@ -131,6 +133,18 @@ RAG vs 微调对比（信源 2026-11-12）：
 
 **生成阶段（最后一公里）**（信源 2026-11-23）：RAG 全流程为「检索→上下文构建→生成→输出」，生成是用户真正接触的环节。大模型在此阶段是**"智能整合器 + 语言表达器"**（理解、整合、生成三项能力），与"纯大模型问答"的区别是**严格锚定检索资料而非依赖自身记忆**。生成质量的提升围绕四个方向：①**信息对齐**（提示词强调"问题-资料-答案"关联，避免答非所问）；②**破解 Lost in Middle**（多资料输入时模型易忽略中间信息，对策为资料排序优化、分段输入、提示词要求全面覆盖）；③**幻觉抑制**（三管齐下：Prompt 工程、上下文构建（重排序/去重/结构化/窗口管理）、溯源与校验——强制标注来源并做答案→证据匹配，无证据退回"无法回答"）；④**回答优化**（分点分层结构、风格适配、长度控制）。生成侧的进阶技术与生成前的上下文准备详见 [[rag-chunking]]（动态分片与 Small2Big）、[[prompt-engineering]]（RAG 场景四原则与温度调参）与 [[context-management]]（TOKEN 预算管理）。
 
+**检索与排序核心算法**（信源 2026-11-23，算法级展开）：
+
+- **多轮 Query 改写**：用 LLM+思维链把用户 query 改写成多个查询，分别检索后取并集融合排序；生成回答时用原始 query+聊天历史，让 LLM 过滤检索杂质，提升容错。
+- **全文检索（BM25）**：基于倒排索引；TFIDF 精确但语义弱，BM25 在其基础上四点改进——TF 非线性饱和、文档长度归一化（k1=1.2、b=0.75）、IDF 惩罚常见词、参数可调。分词宁细勿粗，可用命名实体识别或业务词典补充，切细了可由向量/重排补救，切粗无法补救。
+- **向量检索（双塔模型）**：双塔表示模型 query/document 独立编码、文档向量离线预存；bge-m3 单模型处理非对称检索；Qwen3-Embedding 属 LLM 类，用 EOS 取向量、三阶段训练（弱监督 1.5 亿对→监督微调 1200 万对→球面线性插值融合）。切块长度需匹配向量模型（Bert 类建议 256–512）。
+- **混合检索**：向量 KNN（语义相近、容错、可召回词表外词）+ BM25（精准匹配、短文本、可解释高亮）互补，工业界主流做法——与上方"混合检索"进阶变体的口径一致，此处给出算法层面的互补机制解释。
+- **排序算法**：RRF 倒数融合按排名而非得分合并多路结果（k 为超参）；Cross-Encoder 将 query 与文档拼接交互打分，精度高但慢；延迟交互模型（CoIBERT）兼得双塔效率与交互精度；Qwen3-Reranker 单塔、支持 32K 长文本、指令感知，以 yes/no 概率判相关性。排序是召回的补充，精度与延迟需权衡，非"越复杂越好"。
+- **LLM 相关性判断**：以 NLI（蕴含/无关/矛盾）做检索质量关口，小模型只保留"蕴含"知识，过滤噪声、提升鲁棒性。
+- **全链路多路召回**：BM25+向量并行召回→RRF 粗排→Cross-Encoder 精排→LLM 生成；辅以业务驱动的数据混合与置信度阈值筛选。
+
+**实战链路：召回+排序+归纳三段式**（信源 2026-11-23，医疗问答实战）：从基础问答对架构的召回痛点切入，完整链路为——数据准备（大模型拆非结构化文本为问答对、Bert 微调造正负样本，每病约 3000 正样本、负样本为正样本 2–4 倍、总量过万）→ 双塔召回（DSSM 两塔共享参数、余弦相似度经 sigmoid 转 0–1、温度系数放大、冻结前层只训末层、向量离线预计算）→ 索引检索（768 维向量归一化写入 Faiss 分区索引、LLM 扩写 query 多路召回每路 30 候选）→ 精排（Bert 二分类拼接打分、截取 200 字内、阈值过滤、多路候选按次数/分数累加取 Top）→ 大模型归纳生成。效果基准（OpenAI 数据）：原生模型 45% → 召回 65% → 重排 85% → 归纳 98%，每一环换回原生模型效果立即变差。成本控制靠离线/在线模型分层（离线用大模型如通义 14B、在线用小模型如 ChatGLM 6B）。RAG 与 SFT 的边界：专业问答优先 RAG（动态数据可每日更新、外挂知识、幻觉少、可逐阶段 debug），写作风格用 SFT（影响文风、静态数据更新贵）。多轮问答需判断上下文是否关联（模型二分类自动切分）或用大模型提取摘要，全量拼接历史会因上下文过长忽略本轮问题。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -165,6 +179,10 @@ RAG vs 微调对比（信源 2026-11-12）：
 
 - 2026-11-24 — 新增微信 RAG 系列开篇篇信源（第 11 信源）`raw/sources/ai/2026-11-23-rag-overview-architecture.md`。Why It Matters 增补 LLM 六大缺陷与三大困境对照；Structure 增补"RAG 已死"驳论与含 MCP 的四路互补（硬盘与内存类比）；Distinctions 增补部署资源/上下文悬崖量化支撑；How It Works 增补五组件离线/在线划分与 Naive→高级→模块化技术演进路线；新建对比页 [[faq-vs-rag]] 与主题页 [[rag-implementation-overview]]（"天地之间"框架与落地七大误区）。
 
+- 2026-11-24 — 新增微信 RAG 系列实战篇信源（第 12 信源）`raw/sources/ai/2026-11-23-rag-practice-medical.md`。How It Works 增补"实战链路：召回+排序+归纳三段式"：数据准备（大模型拆问答对、Bert 微调造样本）、DSSM 双塔召回、Faiss 索引检索、Bert 二分类精排、OpenAI 效果基准（45%→65%→85%→98%）；印证专业域需自采数据微调嵌入模型、RAG vs SFT 边界、多轮问答上下文处理。新建信源页 [[2026-11-23-rag-practice-medical]]。
+
+- 2026-11-24 — 新增微信 RAG 系列算法篇信源（第 13 信源）`raw/sources/ai/2026-11-23-rag-retrieval-ranking-algorithms.md`。How It Works 增补"检索与排序核心算法"：多轮 Query 改写、BM25 四点改进与分词宁细勿粗、双塔表示模型与 Qwen3-Embedding 三阶段训练、混合检索互补机制、RRF/Cross-Encoder/CoIBERT/Qwen3-Reranker 排序算法、LLM NLI 相关性判断、全链路多路召回方案。对既有"混合检索/查询改写/重排"进阶变体给出算法级展开。新建信源页 [[2026-11-23-rag-retrieval-ranking-algorithms]]。
+
 ## Open Questions（开放问题）
 
 - 多跳检索与推理增强（CoT/ToT）的协同：多跳检索本身已含推理，与提示层推理增强如何配合？
@@ -183,6 +201,8 @@ RAG vs 微调对比（信源 2026-11-12）：
 - Source: `raw/sources/ai/2026-11-23-langchain-rag-tutorial.md`（第 9 信源：Faiss 候选区域组织思想、result/source_documents 调试区分，教学演示印证，置信度中）
 - Source: `raw/sources/ai/2026-11-23-rag-llm-generation.md`（第 10 信源：生成阶段定位、智能整合器+语言表达器、Lost in Middle、幻觉抑制三管齐下、回答优化，微信 RAG 系列第 4 篇，单信源置信度中）
 - Source: `raw/sources/ai/2026-11-23-rag-overview-architecture.md`（第 11 信源：LLM 六大缺陷、"RAG 已死"驳论与 MCP 互补、五组件离线/在线划分、Naive→高级→模块化演进路线，微信 RAG 系列开篇篇，单信源置信度中；支撑 [[faq-vs-rag]] 与 [[rag-implementation-overview]]）
+- Source: `raw/sources/ai/2026-11-23-rag-practice-medical.md`（第 12 信源：实战链路召回+排序+归纳三段式、DSSM 双塔召回、Faiss 索引、Bert 精排、OpenAI 效果基准 45%→98%、RAG vs SFT 边界、多轮问答上下文处理，微信 RAG 系列实战篇，单信源置信度中；支撑 [[2026-11-23-rag-practice-medical]]）
+- Source: `raw/sources/ai/2026-11-23-rag-retrieval-ranking-algorithms.md`（第 13 信源：多轮 Query 改写、BM25 四点改进、双塔表示模型、混合检索互补、RRF/Cross-Encoder/CoIBERT/Qwen3-Reranker 排序、LLM NLI 相关性判断、全链路多路召回，微信 RAG 系列算法篇，单信源置信度中；支撑 [[2026-11-23-rag-retrieval-ranking-algorithms]]）
 
 ## Related Knowledge（相关知识）
 
@@ -201,6 +221,8 @@ RAG vs 微调对比（信源 2026-11-12）：
 - [[rag-implementation-overview|RAG 落地实施总览（天地框架与七大误区）]]
 - [[2026-11-23-rag-overview-architecture|RAG 是什么：RAG 的整体技术架构（信源页）]]
 - [[deepsearch-rag-comparison|新一代 RAG：DeepSearch 实战与三种 RAG 对比（信源页）]]
+- [[2026-11-23-rag-practice-medical|RAG 技术实战：从微调召回到精排的完整链路（信源页）]]
+- [[2026-11-23-rag-retrieval-ranking-algorithms|RAG 检索与排序核心算法（信源页）]]
 - [[context-management|上下文管理]]
 - [[prompt-engineering|提示工程]]
 - [[agent-loop|Agent Loop]]

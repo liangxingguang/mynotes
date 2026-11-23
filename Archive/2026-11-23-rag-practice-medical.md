@@ -9,7 +9,7 @@ created: 2026-11-23
 category: 技术
 tags: [RAG, AI]
 asset_ref: Assets/2026-11/weixin-eddgx5yzynwwfgawxnmkkw.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # RAG 技术实战：从微调召回到精排的完整链路
