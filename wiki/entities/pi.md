@@ -25,6 +25,7 @@ sources:
   - raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md
   - raw/sources/products/2026-10-31-pi-coding-agent-getting-started-guide.md
   - raw/sources/ai/2026-11-06-pi-loop-engineering.md
+  - raw/sources/ai/2026-11-23-pi-minimal-superagent.md
 related:
   - wiki/concepts/mcp.md
   - wiki/concepts/agent-loop.md
@@ -113,6 +114,7 @@ Pi 是一款极简风格的 Agent CLI：默认只内置 read、write、edit、ba
 - 2026-10-31 — Pi 与 DSH 复杂度之争采集入库，补充"举证责任倒置"复杂度观与设计时控制立场
 - 2026-10-31 — Pi 1.4.0 保姆级教程采集入库，补充 Windows 安装/models.json 接国内模型/界面口诀/四类资源/pi install 六源/-p 模式/委派三判据/五类活提示词/10 坑
 - 2026-11-06 — 知乎「通读 Pi 源码」随笔采集入库：OpenClaw 底层引擎即 Pi（作者口径一周十几万 star），补「递归美学」观察（单一循环原语 + run/turn 双层 + 子 Agent 嵌套）与「循环干净、脏活外移」分层观
+- 2026-11-23 — 知乎专栏「用 Pi 实现极简 Super Agent」采集入库：Pi 作为 Super Agent 的常驻 Router（收指令/理解任务/调度，不亲自编码，派发独立 tmux Session 后台执行），经 Telegram→Gateway→Pi 远程链路与 cron Watchdog 构成完整可运行系统，补 Pi 在 Super Agent 架构中的调度入口角色
 
 ## Current Understanding（当前认知）
 

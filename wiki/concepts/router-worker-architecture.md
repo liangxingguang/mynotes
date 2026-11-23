@@ -4,7 +4,7 @@ type: concept
 title: Router/Worker 双层架构
 status: active
 created: 2026-11-02
-updated: 2026-11-05
+updated: 2026-11-23
 confidence: medium
 tags:
   - concept
@@ -14,6 +14,7 @@ sources:
   - raw/sources/ai/2026-11-02-superagent-design.md
   - raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md
   - raw/sources/ai/2026-11-05-multi-agent-control-shift.md
+  - raw/sources/ai/2026-11-23-pi-minimal-superagent.md
 related:
   - wiki/concepts/super-agent.md
   - wiki/concepts/event-driven-agent.md
@@ -23,6 +24,7 @@ related:
   - wiki/concepts/task-board-coordination.md
   - wiki/concepts/advisor-on-demand-consultation.md
   - wiki/topics/multi-agent-collaboration-architecture.md
+  - wiki/entities/pi.md
 ---
 # Router/Worker 双层架构
 
@@ -40,6 +42,7 @@ related:
 2. **Worker 层上下文隔离**：挂载完整执行工具，专注单一任务，配能力最强的模型；不直接与人类交互，向 Router 汇报状态。
 3. **批处理（Batching）**：Router 上一轮推理期间积压的 Trigger 在下一轮一并处理，Prefill 阶段并行计算，积压越多单个决定分摊推理时间越低。
 4. **与 Agent Team 的区别**：Agent Team 的 Team Lead 深入任务细节、高频协调成员；Router 层只处理任务间高层关联，不介入单任务内部拆解。
+5. **极简实现可落地**（2026-11-23 信源）：Pi 作 Router、Coding CLI 作 Worker、tmux 作持久 Session 载体即可跑通——Router 不亲自编码、派发独立 Session 后台执行，长耗时工具调用不阻塞交互、不同任务上下文互不污染；tmux 只借 Session 与日志作可观察执行载体，本身不提供任务语义、状态管理或依赖关系。
 
 ## Structure（结构）
 
@@ -86,6 +89,7 @@ related:
 - 2026-11-02 — 新建，信源为 DeepSeek Harness 团队架构探索文。
 - 2026-11-02 — 新增「架构师」公众号原型拆解信源（第 2 信源）：补上 WorkerSlots 人跟进额外名额与唤醒优先、observe/auto/明确请求三路径接单、批处理压测细节（批次 1.0→2.8、单请求 2.5s→3.9s，Prefill 并行分摊）、恢复前先查目录/Git/GitHub 再决定是否重做外部操作。
 - 2026-11-05 — 新增得物技术信源（第 3 信源）：印证并补充 Master Agent 模式——中心节点理解目标、拆解、路由、汇总，控制流清楚、权限/预算/超时集中管理；风险是任务变复杂后膨胀成"超级 Agent"（既要理解业务又要维护调度器/状态机/异常处理），且"下一步该叫谁"的判断随并行度上升越来越沉重——这正是双层架构把 Router 层职责限定在任务间高层协调的动机。巡检案例给出规避手段：入口中心只做组件级路由，组件内规划/证据汇总/完整性检查下放 Inspector（详见 [[multi-agent-collaboration-architecture]]）。由此交叉链接 [[task-board-coordination]]、[[advisor-on-demand-consultation]]。
+- 2026-11-23 — 新增知乎专栏「用 Pi 实现极简 Super Agent」信源（第 4 信源）：给出双层架构的可运行极简实现——Pi 常驻为 Router（收指令/理解任务/调度，不亲自编码），Coding CLI（pi-coding-agent / Opencode CLI）作 Worker，tmux 提供持久 Session 承载 Router/Gateway/Worker，任务派发到独立 Session 后台运行。补上远程链路（Telegram Bot → Gateway WebSocket → Pi Router）与 VM 隔离边界（隔离运行环境而非文件，共享 Workspace 下 Worker 读写直接作用于宿主机），以及五个结构化扩展方向（Task Registry / Git Worktree / 确定性检查前置 / 任务结果协议 / 并发与事件路由）。见 Core Characteristics 增补。
 
 ## Open Questions（开放问题）
 
@@ -98,12 +102,14 @@ related:
 - Source: `raw/sources/ai/2026-11-02-superagent-design.md`
 - Source: `raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md`（WorkerSlots/observe-auto/批处理压测/恢复核实）
 - Source: `raw/sources/ai/2026-11-05-multi-agent-control-shift.md`（Master Agent 模式印证：中心膨胀风险与组件级路由规避手段）
+- Source: `raw/sources/ai/2026-11-23-pi-minimal-superagent.md`（极简可运行实现：Pi 作 Router / Coding CLI 作 Worker / tmux 作 Session 载体 + 五个扩展方向）
 
 ## Related Knowledge（相关知识）
 
 - [[superagent-design|Super-agent 设计探索（信源页）]]
 - [[weixin-superagent-architecture-teardown|架构拆解：DeepSeek 刚发布的 Super-agent（信源页）]]
 - [[2026-11-05-weixin-multi-agent-control-shift|多 Agent 架构的三次反转（信源页）]]
+- [[2026-11-23-pi-minimal-superagent|用 Pi 实现极简 Super Agent（信源页）]]
 - [[multi-agent-collaboration-architecture|多 Agent 协作架构与控制权下沉（主题页）]]
 - [[task-board-coordination|任务看板（共享状态协作）]]
 - [[super-agent]]

@@ -4,6 +4,7 @@
 
 ## source（信源）
 
+- [[2026-11-23-pi-minimal-superagent|用 Pi 实现极简 Super Agent]]（2026-11-23，AI/Agent 架构，Pi/tmux/Telegram/cron/VM 五组件极简实现 Router/Worker/Watchdog，知乎专栏单信源，置信度中）
 - [[15-books-understand-world|看懂世界运转的 15 本书单]]（2026-10-20，书单，置信度低）
 - [[475-claude-opus-demos-repo|微博分享：475 个 Claude Opus 5.5 生成的视频演示仓库]]（2026-10-20，AI/资源，置信度低）
 - [[2026-10-31-xuqiufenxi-01-ruanjian-xiangmu-shibai|软件项目失败，很多时候不是技术问题，而是需求问题]]（2026-10-31，工程实践/需求分析，系列开篇立论：技术问题显性 vs 需求问题隐性+隐形裂缝+动手前想清做什么，公众号单信源，置信度中）

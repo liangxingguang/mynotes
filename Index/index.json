@@ -1,6 +1,25 @@
 {
-  "updated_at": "2026-11-23 09:03",
+  "updated_at": "2026-11-23 09:09",
   "notes": [
+    {
+      "id": "2026-11-23-action-game-design-kb",
+      "title": "动作游戏设计知识库（当前共 70 篇）",
+      "path": "Inbox/2026-11-23-action-game-design-kb.md",
+      "created": "2026-11-23",
+      "category": "学习",
+      "tags": [
+        "学习",
+        "AI"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2074199959247836670",
+      "source_type": "网页",
+      "platform": "知乎",
+      "summary": "AI 驱动整理的动作游戏设计知识库索引：把 GDC、CEDEC 等专业会议分享提炼为带「一句话结论」与标签的速览笔记，覆盖战斗、关卡、动画、AI 等主题，共 70 篇，每篇附原始出处与快速跳转链接。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/action-game-design-kb.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-11-23-ai-ecosystem-11-dimensions",
       "title": "AI 生态系统的 11 个维度",

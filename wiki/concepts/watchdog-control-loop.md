@@ -4,7 +4,7 @@ type: concept
 title: Watchdog 外部控制回路
 status: active
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-23
 confidence: medium
 tags:
   - concept
@@ -12,10 +12,12 @@ tags:
   - reliability
 sources:
   - raw/sources/ai/2026-11-02-superagent-design.md
+  - raw/sources/ai/2026-11-23-pi-minimal-superagent.md
 related:
   - wiki/concepts/super-agent.md
   - wiki/concepts/durable-execution.md
   - wiki/concepts/agent-loop.md
+  - wiki/entities/pi.md
 ---
 # Watchdog 外部控制回路
 
@@ -38,6 +40,8 @@ related:
 ## Structure（结构）
 
 Watchdog Session = 独立 Agent Session + 完整工具能力 + 定时消息驱动，构成外部 Control Loop。
+
+极简实现（2026-11-23 信源）：用 cron 每 20 分钟执行检查脚本——记录 tmux 状态快照、确认 Pi 是否正在处理请求，再通过 Gateway Webhook 向 Pi 注入一条检查提醒；Pi 收到提醒后逐个核对 Worker、判断任务是否异常，必要时重新派发并更新每日任务记录。属依赖模型判断的轻量级监督。
 
 ## How It Works（运作方式）
 
@@ -65,6 +69,7 @@ Watchdog Session = 独立 Agent Session + 完整工具能力 + 定时消息驱�
 ## Evolution（演进）
 
 - 2026-11-02 — 新建，信源为 DeepSeek Harness 团队架构探索文。
+- 2026-11-23 — 新增知乎专栏「用 Pi 实现极简 Super Agent」信源（第 2 信源）：给出可运行的轻量 Watchdog 实现——cron 20 分钟触发检查脚本（tmux 快照 + Gateway Webhook 注入提醒），Pi 收到后逐个核对 Worker、必要时重新派发；属依赖模型判断的轻量级监督，距离独立、确定性任务监控仍有距离。并给出确定性检查前置的演进方向：先由脚本做确定性检查（Session 存在/进程退出/超时/日志更新/退出码异常），只把异常交 Pi 做语义判断与恢复决策，减少无效模型调用并降低 Pi 忙碌时错过 Worker 异常的概率。见 Structure 增补。
 
 ## Open Questions（开放问题）
 
@@ -74,8 +79,10 @@ Watchdog Session = 独立 Agent Session + 完整工具能力 + 定时消息驱�
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-11-02-superagent-design.md`
+- Source: `raw/sources/ai/2026-11-23-pi-minimal-superagent.md`（极简实现：cron 20 分钟 + Webhook 注入 + 确定性检查前置演进方向）
 
 ## Related Knowledge（相关知识）
 
 - [[superagent-design|Super-agent 设计探索（信源页）]]
+- [[2026-11-23-pi-minimal-superagent|用 Pi 实现极简 Super Agent（信源页）]]
 - [[super-agent]]
