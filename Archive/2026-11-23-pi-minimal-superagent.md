@@ -9,9 +9,7 @@ created: 2026-11-23
 category: 技术
 tags: [Agent, AI]
 asset_ref: Assets/2026/11/pi-minimal-superagent.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-23T00:57:29.350Z"
-ingest_claim_id: 32024-1795395449350-0
+wiki_status: ingested
 ---
 
 # 用 Pi 实现极简 Super Agent

@@ -135,3 +135,4 @@ Pi 代表了 Agent CLI 的另一种产品哲学：内核极简、能力清单交
 - `raw/sources/ai/2026-10-28-pi-series.md`
 - `raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md`
 - `raw/sources/products/2026-10-31-pi-coding-agent-getting-started-guide.md`
+- `raw/sources/ai/2026-11-23-pi-minimal-superagent.md`（Pi 作 Super Agent 常驻 Router：调度入口角色，不亲自编码、派发独立 Session 后台执行）

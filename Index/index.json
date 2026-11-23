@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23 09:09",
+  "updated_at": "2026-11-23 09:12",
   "notes": [
     {
       "id": "2026-11-23-action-game-design-kb",
@@ -57,25 +57,6 @@
       "summary_status": "",
       "asset_ref": "Assets/2026/11/jvm-zgc-evolution.md",
       "wiki_status": "pending"
-    },
-    {
-      "id": "2026-11-23-pi-minimal-superagent",
-      "title": "用 Pi 实现极简 Super Agent",
-      "path": "Inbox/2026-11-23-pi-minimal-superagent.md",
-      "created": "2026-11-23",
-      "category": "技术",
-      "tags": [
-        "Agent",
-        "AI"
-      ],
-      "source": "知乎专栏",
-      "source_url": "https://zhuanlan.zhihu.com/p/2104976960610906741",
-      "source_type": "网页",
-      "platform": "知乎",
-      "summary": "用 Pi、tmux、Telegram、cron、VM 五个通用组件，搭出 DeepSeek SuperAgent「Router 调度 + Worker 执行 + 异步监督」核心协作的极简可运行实现，并给出五个结构化扩展方向。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/11/pi-minimal-superagent.md",
-      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -8446,6 +8427,25 @@
       "summary": "**摘要**：中兴通讯开源支撑 2000 人研发团队、200+ 步骤生产级工作流的 Agent 底座系统 Co-Sight Harness（Apache 2.0，ZTE-AICloud/Co-Sight）。从业务、执行、资产、证据四层改造，在不换底座模型的前提下把 200 步链路无人干预完成率从 50% 提升到 100%，总耗时压缩 64%，组织级任务成功率从 60% 提到 90%。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-tzBFFAbN-VbrtczsBHSI5Q.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-23-pi-minimal-superagent",
+      "title": "用 Pi 实现极简 Super Agent",
+      "path": "Archive/2026-11-23-pi-minimal-superagent.md",
+      "created": "2026-11-23",
+      "category": "技术",
+      "tags": [
+        "Agent",
+        "AI"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2104976960610906741",
+      "source_type": "网页",
+      "platform": "知乎",
+      "summary": "用 Pi、tmux、Telegram、cron、VM 五个通用组件，搭出 DeepSeek SuperAgent「Router 调度 + Worker 执行 + 异步监督」核心协作的极简可运行实现，并给出五个结构化扩展方向。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/pi-minimal-superagent.md",
       "wiki_status": "ingested"
     }
   ]
