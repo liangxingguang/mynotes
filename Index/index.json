@@ -1,6 +1,25 @@
 {
-  "updated_at": "2026-11-23 09:53",
+  "updated_at": "2026-11-23 12:20",
   "notes": [
+    {
+      "id": "2026-11-23-bend-dept-tree-design",
+      "title": "B端系统部门树怎么设计？一人兼两职、组织大重组，建议收藏",
+      "path": "Inbox/2026-11-23-bend-dept-tree-design.md",
+      "created": "2026-11-23",
+      "category": "技术",
+      "tags": [
+        "产品设计",
+        "系统设计"
+      ],
+      "source": "大皮不皮（微信公众号）",
+      "source_url": "https://mp.weixin.qq.com/s/Y2sGB5x8mXC5tqFBkioXHA",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "部门树不是行政架构图，而是B端系统的组织主数据，直接决定权限边界、流程路由与数据隔离。本文给出部门树设计方法论：行政/业务/虚拟/财务四类组织树拆分、四层主数据模型（员工-任职关系-岗位-组织单元）、8步落地SOP，并用EHR组织重组、财务中台兼岗两个案例演示一人兼两职的完整处理。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-bend-dept-tree.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
