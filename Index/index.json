@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-11-24 01:11",
+  "updated_at": "2026-11-24 01:40",
   "notes": [
-    {
-      "id": "2026-11-23-rag-overview-architecture",
-      "title": "RAG 是什么：RAG 的整体技术架构",
-      "path": "Inbox/2026-11-23-rag-overview-architecture.md",
-      "created": "2026-11-23",
-      "category": "技术",
-      "tags": [
-        "RAG",
-        "AI"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/Ob6_qxUNMh26Oq5gk9m51A",
-      "source_type": "网页",
-      "platform": "微信",
-      "summary": "RAG 系列开篇综述：从 LLM 的六大缺陷（幻觉、知识滞后、隐私、上下文窗口有限、输入噪声、成本高）切入，讲 RAG 的破局思路与系统组成，辨析\"RAG 已死\"的误区（RAG/长上下文/微调/MCP 是互补而非替代），并给出离线+在线的技术架构、技术演进路线与落地七大误区。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/weixin-ob6-qxunmh26oq5gk9m51a.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-11-23-rag-practice-medical",
       "title": "RAG 技术实战：从微调召回到精排的完整链路",
@@ -8810,6 +8791,25 @@
       "summary": "RAG 系列第四篇，讲检索之后的\"最后一公里\"：检索→上下文构建→生成→输出。涵盖 Prompt 工程（角色/限定信息源/格式/兜底四原则、温度值调参）、上下文构建（筛选、去重、窗口管理、结构化）、长文本 Small2Big、多文档问答引用增强、表格问答、上下文压缩与答案溯源，目标是让模型严格锚定证据、抑制幻觉、可溯源。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-nt4byfqxjclsmc43thfw9q.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-23-rag-overview-architecture",
+      "title": "RAG 是什么：RAG 的整体技术架构",
+      "path": "Archive/2026-11-23-rag-overview-architecture.md",
+      "created": "2026-11-23",
+      "category": "技术",
+      "tags": [
+        "RAG",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/Ob6_qxUNMh26Oq5gk9m51A",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "RAG 系列开篇综述：从 LLM 的六大缺陷（幻觉、知识滞后、隐私、上下文窗口有限、输入噪声、成本高）切入，讲 RAG 的破局思路与系统组成，辨析\"RAG 已死\"的误区（RAG/长上下文/微调/MCP 是互补而非替代），并给出离线+在线的技术架构、技术演进路线与落地七大误区。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-ob6-qxunmh26oq5gk9m51a.md",
       "wiki_status": "ingested"
     }
   ]

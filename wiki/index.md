@@ -19,6 +19,7 @@
 - [[2026-11-23-rag-10-million-docs|1000 万份文档，RAG 系统到底怎么扛？（信源页）]]（2026-11-23，AI/RAG/系统设计，微信图解长文：1000 万文档/2 亿 Chunks/820GB 向量规模+Kafka 写入解耦+独立 Worker+S3/Postgres/向量库/OpenSearch/Redis 多引擎存储分工+向量+BM25→RRF→Reranker→LLM 查询链路，图解设计级口径，单信源，置信度中）
 - [[2026-11-23-rag-doc-parsing-knowledge-base|RAG 文档解析与知识库构建（信源页）]]（2026-11-23，AI/RAG/建库，微信 RAG 全流程教程：解析引擎 DeepDoc/MinerU+三大视觉任务 OCR/DLR/TSR+问答对检索单元+七种分块策略+块大小三档+Small2Big+语义切块阈值三法+知识增强三手段（上下文增强/CCH/问题生成），教程式总览，单信源，置信度中）
 - [[2026-11-23-rag-llm-generation|RAG 中的大模型生成：最后一公里（信源页）]]（2026-11-23，AI/RAG/生成，微信 RAG 系列第 4 篇：生成阶段定位（智能整合器+语言表达器）+Prompt 四原则与温度分档（事实型 0.0-0.3/解释型 0.4-0.7/创意型 0.8-1.0）+Lost in Middle+幻觉抑制三管齐下+上下文构建四原则与流程+长文本 Small2Big+多文档引用增强+表格问答+上下文压缩+答案溯源（n-gram 召回+LLM Rerank），单信源，置信度中）
+- [[2026-11-23-rag-overview-architecture|RAG 是什么：RAG 的整体技术架构（信源页）]]（2026-11-23，AI/RAG/架构综述，微信 RAG 系列开篇篇：LLM 六大缺陷与 RAG 破局+五组件离线/在线架构+「RAG 已死」驳论与 RAG/长上下文/微调/MCP 互补+FAQ vs RAG 与双层知识库+Naive→高级→模块化演进路线+「天地之间」框架与落地七大误区，单信源，置信度中）
 - [[15-books-understand-world|看懂世界运转的 15 本书单]]（2026-10-20，书单，置信度低）
 - [[475-claude-opus-demos-repo|微博分享：475 个 Claude Opus 5.5 生成的视频演示仓库]]（2026-10-20，AI/资源，置信度低）
 - [[2026-10-31-xuqiufenxi-01-ruanjian-xiangmu-shibai|软件项目失败，很多时候不是技术问题，而是需求问题]]（2026-10-31，工程实践/需求分析，系列开篇立论：技术问题显性 vs 需求问题隐性+隐形裂缝+动手前想清做什么，公众号单信源，置信度中）
@@ -793,6 +794,7 @@
 - [[jvm-gc|JVM 垃圾回收]]（判定/算法/收集器演进与选型/调优主线枢纽；引用计数 vs 可达性分析+GC Roots 四来源+finalize 演进+四种引用+G1/ZGC 原理 + 证据驱动调优 + 分代模型独立印证 + ZGC 版本对照与选型监控，十信源）
 - [[live-streaming-messaging|直播实时消息分发]]（拉 vs 推路线图谱：读扩散通知拉取 / longpolling / 短轮询 / mcast 组播 / CDN 广播；允许策略性丢消息是与 IM 的根本分界，八信源）
 - [[programmer-overseas-remote-work|程序员出海远程]]（汇率杠杆/价格带定价/卖资产 vs 卖时间；AI 一人公司技术前提；收款/时差/合规三实操；单信源，置信度中）
+- [[rag-implementation-overview|RAG 落地实施总览（天地框架与七大误区）]]（2026-11-24，AI/RAG/实施方法论/主题导航，「天地之间」框架：数据细节为地、系统架构为天、索引构建+检索策略居中，保整体最优而非局部最优+落地七大误区（数据分库/混合检索取舍/切块粒度/评估指标/生成约束/查询改写/意图分发）+技术演进路线挂靠，单信源，置信度中）
 - [[system-design-core-components|系统设计核心组件]]（分布式系统 12 个核心组件清单，组件驱动；另收问题驱动六类框架见 [[accidental-cto-book]]，双信源）
 
 - [[java-to-rust-migration|Java 到 Rust 迁移]]（2026-11-05，Rust/Java/语言迁移，13 维对照+6 心智模型切换+语言特性映射+Spring 风格迁移示例+Java 开发者 18 陷阱+6 风格原则+5 阶段学习路线+16 项提交前清单，单信源置信度中）
@@ -810,6 +812,7 @@
 
 - [[a2a-vs-mcp|A2A vs MCP]]（横向多 Agent 协作 vs 纵向单 Agent 能力拓展，互补关系）
 - [[agent-knowledge-base-capabilities|Agent 知识库四种能力对照：RAG / GraphRAG / LLM Wiki / Ontology]]（不是单向替代，而是从"找到信息"走向"理解业务上下文"的四种能力；对照矩阵+供应链案例分工+选型适用场景，单信源，置信度中）
+- [[faq-vs-rag|FAQ vs RAG（问答对问答 vs 检索增强生成）]]（2026-11-24，AI/RAG/问答形态选型，FAQ 为预设答案库、高效匹配、轻量可脱离 LLM，RAG 为切块向量化+LLM 生成、可推理组合，双层知识库：FAQ 层管高频标准问题求「零偏差」、向量层管长尾复杂查询，单信源，置信度中）
 - [[netty-vs-tomcat-vs-undertow|Netty vs Tomcat vs Undertow]]（同机 wrk 横评：QPS/GC/高并发衰减+线程模型/内存/零拷贝/TCP 参数四层归因与选型分档，单信源自测，置信度中）
 - [[ot-vs-crdt|OT vs CRDT]]（中心变换 vs 数据结构天然收敛；取舍点=是否需要端侧完全自治；中心化选 OT、离线/去中心化选 CRDT，单信源）
 - [[forkjoinpool-vs-threadpoolexecutor-comparison|ForkJoinPool vs ThreadPoolExecutor]]（11 维对比矩阵+选型结论「任务能不能拆」，单信源置信度高）

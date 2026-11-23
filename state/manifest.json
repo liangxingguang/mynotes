@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-11-23",
+  "updated_at": "2026-11-24",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -5784,6 +5784,20 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/nT4byFqXjCLSmc43thFw9Q",
       "asset_ref": "Assets/2026-11/weixin-nt4byfqxjclsmc43thfw9q.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-23-rag-overview-architecture.md",
+      "sha256": "1ec417175b13f6c93e2a62b99d886e3a84f38ae9f1a9e4a87b30bbc761c11a07",
+      "registered_at": "2026-11-24",
+      "inbox_ref": "Archive/2026-11-23-rag-overview-architecture.md",
+      "pages": [
+        "wiki/sources/2026-11-23-rag-overview-architecture.md",
+        "wiki/concepts/rag.md",
+        "wiki/comparisons/faq-vs-rag.md",
+        "wiki/topics/rag-implementation-overview.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/Ob6_qxUNMh26Oq5gk9m51A",
+      "asset_ref": "Assets/2026-11/weixin-ob6-qxunmh26oq5gk9m51a.md"
     }
   ]
 }

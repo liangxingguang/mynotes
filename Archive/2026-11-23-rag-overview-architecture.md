@@ -9,7 +9,7 @@ created: 2026-11-23
 category: 技术
 tags: [RAG, AI]
 asset_ref: Assets/2026-11/weixin-ob6-qxunmh26oq5gk9m51a.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # RAG 是什么：RAG 的整体技术架构
