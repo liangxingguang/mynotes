@@ -5615,6 +5615,18 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/nZ1o6ibIozuP-Lbi2zTknw",
       "asset_ref": "Assets/2026-11/coding-agent-software-factory.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-23-im-read-receipt-high-concurrency.md",
+      "sha256": "e138f30b8e6b13d0def0731d26c1dec60ad2b1edab8126232796d8639bda15bd",
+      "registered_at": "2026-11-23",
+      "inbox_ref": "Archive/2026-11-23-im-read-receipt-high-concurrency.md",
+      "pages": [
+        "wiki/sources/im-read-receipt-high-concurrency.md",
+        "wiki/concepts/im-read-receipt-cursor.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/Ga3_pzKOMT6lo23QN1Wcag",
+      "asset_ref": "Assets/2026-11/weixin-ga3-pzkomt6lo23qn1wcag.md"
     }
   ]
 }

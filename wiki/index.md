@@ -4,6 +4,7 @@
 
 ## source（信源）
 
+- [[im-read-receipt-high-concurrency|【新文导读】详解IM消息已读未读功能的高并发技术实现]]（2026-11-23，IM/架构/高并发，会话级已读游标选型、网关职责解耦、im_conversation+读游标表数据模型、Redis/MySQL/Kafka 分工、Lua 原子幂等推进，52im.net 公众号导读版，全文见 thread-4929，单信源，置信度中）
 - [[2026-11-23-bend-dept-tree-design|B端系统部门树怎么设计？一人兼两职、组织大重组，建议收藏]]（2026-11-23，产品/B端/系统设计，四类组织树拆分+四层主数据模型+8步SOP+EHR重组与财务中台兼岗两案例+自检清单，微信公众号单信源，置信度中）
 - [[2026-11-23-action-game-design-kb|动作游戏设计知识库（当前共 70 篇）]]（2026-11-23，游戏设计/索引导航，AI 整理的 GDC/CEDEC 会议分享速览合集：70 篇一句话结论+标签+原始出处，跨度 1981–2026，知乎单信源，置信度中）
 - [[2026-11-23-ai-ecosystem-11-dimensions|AI 生态系统的 11 个维度]]（2026-11-23，AI/工具栈/索引导航，按「底层模型→能力增强→工程基建→上层应用」拆 11 维度+代表工具清单，知乎想法单信源，置信度中）
@@ -526,6 +527,7 @@
 - [[exchanger-internals|Exchanger 双向交换设计]]（JUC 唯一双向交换；Slot 单槽→Arena 多槽渐进扩容；@Contended+手动填充防伪共享；SPINS=1024 按核数/hash 动态自旋；线程须成对，单信源，置信度中）
 - [[expand-migrate-contract|Expand/Migrate/Contract（Schema 跨版本演进）]]（Expand 只加兼容结构→Migrate 双写限速回填→回退窗口关闭后才 Contract；蓝绿回退的数据前提，单信源）
 - [[idempotency-design|幂等设计]]（重试与幂等共生；同事务铁律+幂等键三要素+分层防护闭环；模型链路幂等键以完整请求为单位+积分幂等键三要素 DB 唯一约束守住+导入幂等键=任务ID+行号/部分成功后仅重试失败行，十三信源互证）
+- [[im-read-receipt-cursor|IM 已读未读：会话级已读游标模型]]（2026-11-23，IM/架构/概念，生产级目标五条、游标语义四优势、网关职责解耦、会话+读游标数据模型、Redis/MySQL/Kafka 分工、Lua 原子幂等推进、未读数缓存修正，52im.net 导读信源，单信源，置信度中）
 - [[interaction-write-path|互动数据写路径治理（Interaction Write Path Governance）]]（缓存扛读、异步削写、原子幂等、最终一致；先更缓存立即返回+三死穴+热点三板斧+落库三层压缩+对账降级；单信源，置信度中）
 - [[exploratory-learning|探索式学习（知识 DAG）]]（目标→节点 DAG，导师写 JS 经沙箱改写文档教学；Unyra 提出）
 - [[fail-fast-modcount|Fail-Fast 迭代器（modCount）]]（结构修改计数器+迭代器快照比对抛 CME；检测单线程编程错误而非线程安全机制；含 fail-safe 对比与 subList 陷阱，同作者六信源）

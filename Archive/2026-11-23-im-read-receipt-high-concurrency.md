@@ -9,9 +9,7 @@ created: 2026-11-23
 category: 技术
 tags: [系统设计, MySQL]
 asset_ref: Assets/2026-11/weixin-ga3-pzkomt6lo23qn1wcag.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-23T09:39:03.206Z"
-ingest_claim_id: 34216-1795426743206-0
+wiki_status: ingested
 ---
 
 # 【新文导读】详解IM消息已读未读功能的高并发技术实现
