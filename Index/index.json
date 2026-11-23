@@ -1,6 +1,25 @@
 {
-  "updated_at": "2026-11-23 17:38",
+  "updated_at": "2026-11-23 17:40",
   "notes": [
+    {
+      "id": "2026-11-23-bisheng-3-office-agent",
+      "title": "一个能平替 WorkBuddy 和豆包工作的开源办公 Agent，来了！支持私有化部署",
+      "path": "Inbox/2026-11-23-bisheng-3-office-agent.md",
+      "created": "2026-11-23",
+      "category": "资讯",
+      "tags": [
+        "AI",
+        "Agent"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/WFh-_4ZW_3BQYdNCswxyvQ",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "Dataelem 团队开源的企业级办公 Agent 平台 BISHENG 3.0：桌面端基于 DeepSeek Harness（DSH）开发，主打私有化部署、数据不出企业边界，定位 WorkBuddy/豆包工作的开源平替。文章以项目汇报（Chat 模式）与销售数据整理（Work 模式）两个真实任务实测全流程，并介绍企业侧的模型/技能/知识权限管理、外部 Agent 接入与员工应用托管能力。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-wfh-4zw-3bqydncswxyvq.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-11-23-im-read-receipt-high-concurrency",
       "title": "【新文导读】详解IM消息已读未读功能的高并发技术实现",
@@ -18,7 +37,7 @@
       "summary": "52im.net 的公众号导读文：已读未读不是\"小红点\"UI 功能，而是横跨长连接、消息顺序、状态一致性、在线路由与高并发存储的系统工程。导读完整拆解生产级单聊已读未读架构：按会话维护已读游标、解耦长连接与状态计算、游标推进替代逐条更新、Lua 保证原子幂等、未读数缓存非事实源、精准投递与容灾收敛。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-ga3-pzkomt6lo23qn1wcag.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
