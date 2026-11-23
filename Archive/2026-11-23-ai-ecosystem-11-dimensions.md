@@ -9,7 +9,7 @@ created: 2026-11-23
 category: 技术
 tags: [AI, RAG]
 asset_ref: Assets/2026/11/ai-ecosystem-11-dimensions.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # AI 生态系统的 11 个维度

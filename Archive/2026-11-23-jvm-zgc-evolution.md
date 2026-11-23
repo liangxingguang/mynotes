@@ -9,7 +9,7 @@ created: 2026-11-23
 category: 技术
 tags: [JVM, java]
 asset_ref: Assets/2026/11/jvm-zgc-evolution.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 【JVM 底层修炼记】从 JDK 8 到 JDK 21：ZGC 与低延迟垃圾回收器的演进

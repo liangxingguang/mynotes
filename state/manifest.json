@@ -5552,6 +5552,43 @@
       ],
       "source_url": "https://zhuanlan.zhihu.com/p/2104976960610906741",
       "asset_ref": "Assets/2026/11/pi-minimal-superagent.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-11-23-action-game-design-kb.md",
+      "sha256": "10791e47a8c2d8f1f028af33bdac31c67ac20404ca9a170b228736be1d028349",
+      "registered_at": "2026-11-23",
+      "inbox_ref": "Archive/2026-11-23-action-game-design-kb.md",
+      "pages": [
+        "wiki/sources/action-game-design-kb.md",
+        "wiki/topics/action-game-design.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2074199959247836670",
+      "asset_ref": "Assets/2026/11/action-game-design-kb.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-23-ai-ecosystem-11-dimensions.md",
+      "sha256": "6ef2430e99a774881afa162e6f7289a8eee117652f5259b748be1655a042f784",
+      "registered_at": "2026-11-23",
+      "inbox_ref": "Archive/2026-11-23-ai-ecosystem-11-dimensions.md",
+      "pages": [
+        "wiki/sources/ai-ecosystem-11-dimensions.md",
+        "wiki/topics/ai-tool-stack-overview.md"
+      ],
+      "source_url": "https://www.zhihu.com/pin/2107452964457681780",
+      "asset_ref": "Assets/2026/11/ai-ecosystem-11-dimensions.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-23-jvm-zgc-evolution.md",
+      "sha256": "0a15afd3ec096f8baef5142d1d5b044fa397050c843d171d3844ea8671b261ad",
+      "registered_at": "2026-11-23",
+      "inbox_ref": "Archive/2026-11-23-jvm-zgc-evolution.md",
+      "pages": [
+        "wiki/sources/jvm-zgc-evolution.md",
+        "wiki/concepts/zgc.md",
+        "wiki/topics/jvm-gc.md"
+      ],
+      "source_url": "https://zhuanlan.zhihu.com/p/2107107419398722384",
+      "asset_ref": "Assets/2026/11/jvm-zgc-evolution.md"
     }
   ]
 }

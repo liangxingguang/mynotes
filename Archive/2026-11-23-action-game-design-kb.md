@@ -9,7 +9,7 @@ created: 2026-11-23
 category: 学习
 tags: [学习, AI]
 asset_ref: Assets/2026/11/action-game-design-kb.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 动作游戏设计知识库（当前共 70 篇）

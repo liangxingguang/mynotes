@@ -4,7 +4,7 @@ type: topic
 title: JVM 垃圾回收
 status: active
 created: 2026-10-27
-updated: 2026-11-12
+updated: 2026-11-23
 confidence: medium
 tags:
   - topic
@@ -21,6 +21,7 @@ sources:
   - raw/sources/architecture/2026-11-03-weixin-full-gc-troubleshooting.md
   - raw/sources/architecture/2026-11-04-jvm-memory-model.md
   - raw/sources/architecture/2026-11-12-jvm-reference-counting-reachability.md
+  - raw/sources/architecture/2026-11-23-jvm-zgc-evolution.md
 ---
 # JVM 垃圾回收
 
@@ -32,8 +33,8 @@ JVM GC 的判定、算法、收集器、原理、选型与调优：对象可回�
 
 - **判定**：Java 用可达性分析（GC Roots：栈局部变量、JNI、static、final static 常量、synchronized 持有对象），解决引用计数的循环引用缺陷；两次标记 + finalize（Java 9 弃用）。第 9 信源（2026-11-12）系统展开判定机制：引用计数法原理/优缺点（无法解决循环引用，Python 等用引用计数+循环垃圾检测结合，Java HotSpot 不依赖简单引用计数）；可达性分析以 GC Roots 为起点向下搜索、关注"能否到达"而非"被引用多少次"；**GC Roots 四类来源**——①活动线程栈帧引用（参数/局部变量，JIT 优化后失效引用提前剔除）②类静态字段引用 ③JNI 引用（Local/Global）④JVM 内部引用，并指出"方法区常量引用是 GC Roots"的说法过于简单（需看是否在根集合或可达路径上）；**finalize() 两次标记**（第一次发现不可达→安排终结→执行 finalize()→重新判断可达性，同一对象只自动调用一次）、对象复活（在 finalize() 中将 this 保存到外部可达位置如静态字段，只能发生一次）、JDK 版本演进（JDK 9 弃用、JDK 18 标记待移除+--finalization=disabled、JDK 25 允许禁用）；**四种引用**——强引用（可达即不回收）、软引用（内存不足时清，适合缓存）、弱引用（不再强/软可达即清，如 WeakHashMap）、虚引用（get() 取不到对象，配合 ReferenceQueue/Cleaner 感知回收），三者不是简单从根集合删除而是由 JVM 按可达性级别管理。核心结论：JVM 判断回收看"能否从 GC Roots 到达"，而非"被引用了多少次"。
 - **算法落地**：新生代标记-复制（Eden:Survivor = 8:1:1，默认 15 次 Minor GC 晋升），老年代标记-清除/整理；依据弱分代假说。本页分代口径（Eden 出生 → Minor GC 存活复制到 S0 → S0/S1 轮流复制 → 年龄超阈值晋升 → 大对象直入老年代）由 2026-11-04 JVM 内存模型信源独立印证。
-- **选型主线**（多信源一致）：JDK 8 默认 Parallel、JDK 9+ 默认 G1；通用场景 2~8GB 用 G1，延迟敏感上 ZGC；CMS 已废弃。
-- **调优主线**：[[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]——先定量化目标与基线、JFR/GC 日志归因，证据指向 JVM 才动收集器与参数；「90% 问题靠选对收集器+合理内存」。
+- **选型主线**（多信源一致）：JDK 8 默认 Parallel、JDK 9+ 默认 G1；通用场景 2~8GB 用 G1，延迟敏感上 ZGC；CMS 已废弃。第三信源补充版本对照：JDK 8 的 G1 自 7u4 起实验性提供、可通过 `-XX:+UseG1GC` 使用（默认仍为 Parallel GC）；JDK 17 默认 G1、ZGC 生产可用但非分代；JDK 21 默认 G1、ZGC 生产可用、分代 ZGC 需 `-XX:+UseZGC -XX:+ZGenerational` 显式开启。ZGC 选型细则（延迟敏感的风控/高频交易/P99/P999 微服务、大内存高分配速率场景优先；小堆且 G1 已满足不必强切；须为并发回收预留堆空间，监控分配速率/Live Set/堆余量/GC CPU/分配停顿/P99/P999，最终压测对比 G1 与 ZGC 再定）见 [[zgc]] 页 Selection。
+- **调优主线**：[[evidence-first-jvm-tuning|证据驱动的 JVM 调优]]——先定量化目标与基线、JFR/GC 日志归因，证据指向 JVM 才动收集器与参数；「90% 问题靠选对收集器+合理内存」。第三信源的总纲与之互证：**监控数据与业务诉求，永远是垃圾回收器选型的第一准则**。
 - **OOM 侧**：6 类 OOM 速查表（heap space/Metaspace/Direct buffer/StackOverflow/native thread/GC overhead limit）与「内存溢出 ≠ 内存泄漏」的概念区分由 [[oom-troubleshooting|OOM 排查方法论]] 承接；GC 侧的直接关联是「GC overhead limit exceeded」——98% 时间 GC 只回收 2%，是比 heap space 更危险的近耗尽信号。Full GC 刑侦三步（GC 日志看现场：回收前后老年代几乎不变=活对象占满；jmap+MAT 做尸检；代码定罪）与「重启只是销毁证据」的判据由 2026-11-05 新信源以完整案例确立（见 [[2026-11-03-weixin-full-gc-troubleshooting|Full GC 排查实录]]）。
 
 ## Key Concepts（关键概念）
@@ -49,7 +50,8 @@ JVM GC 的判定、算法、收集器、原理、选型与调优：对象可回�
 ## Major Developments（重大进展）
 
 - 收集器演进：Serial（JDK 1.3）→ Parallel（1.4）→ CMS（1.5，JDK 9 废弃）→ G1（7u4，JDK 9 默认）→ ZGC（11，15 转正）→ Shenandoah（12，OpenJDK 专属）。
-- JDK 21 起分代 ZGC 进入生产视野（货拉拉实践，见 [[jdk21-migration-huolala]]）。
+- JDK 21 起分代 ZGC 进入生产视野（货拉拉实践，见 [[jdk21-migration-huolala]]）。第三信源补充分代 ZGC 版本线：JDK 21 引入分代（可选实验性）→ JDK 23 分代成默认、非分代弃用 → JDK 24 移除非分代；其原理为弱分代假说下的代际划分 + 写屏障记录跨代引用，收益为降低 GC CPU/堆开销与分配停顿风险。选型细节见 [[zgc]]。
+- 低延迟 GC 的机制演进：ZGC 以染色指针 + 读屏障自愈实现并发整理，把 STW 压缩到极短阶段（设计目标亚毫秒级停顿、不随堆与存活集增长，见 [[zgc]]）。
 
 ## Disagreements（分歧）
 
