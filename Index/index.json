@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23 19:33",
+  "updated_at": "2026-11-23 19:35",
   "notes": [
     {
       "id": "2026-11-23-coding-to-proposal",
@@ -19,6 +19,25 @@
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-giljeh6n-proposal-method.md",
       "wiki_status": "ingesting"
+    },
+    {
+      "id": "2026-11-23-deepsearch-rag-comparison",
+      "title": "新一代 RAG：DeepSearch 实战与三种 RAG 对比",
+      "path": "Inbox/2026-11-23-deepsearch-rag-comparison.md",
+      "created": "2026-11-23",
+      "category": "技术",
+      "tags": [
+        "RAG",
+        "Agent"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/421gHY_4X9lSgbkoIMj9Ug",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "RAG 系列第五篇，讲新一代 RAG——DeepSearch：本质仍是 RAG，但面向综合性、全局性问题（如\"介绍明朝皇帝\"\"对比手机销量前两名\"），通过 query 改写 + 短期记忆库 + 结束判断的循环检索（Agentic RAG）反复补全知识。并对比传统 RAG、GraphRAG、DeepSearch 三种设计模式的取舍。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-421ghy-4x9lsgbkoimj9ug.md",
+      "wiki_status": "pending"
     },
     {
       "id": "2026-11-23-lala-ai-agent-realtime-trading",

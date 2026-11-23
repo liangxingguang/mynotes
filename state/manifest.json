@@ -5667,6 +5667,18 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/OtoIEjvAWr-GgGbCz7fVMQ",
       "asset_ref": "Assets/2026-11/weixin-otoiejva-321-method.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-11-23-coding-to-proposal.md",
+      "sha256": "453ac83993d0c60a29e72a8d35e087e1e7528d7255499c2df9e82e83cb8ae700",
+      "registered_at": "2026-11-23",
+      "inbox_ref": "Inbox/2026-11-23-coding-to-proposal.md",
+      "pages": [
+        "wiki/sources/2026-11-23-coding-to-proposal.md",
+        "wiki/concepts/coding-to-proposal-method.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/GiLJEH6N7OupRTaGhpxUFA",
+      "asset_ref": "Assets/2026-11/weixin-giljeh6n-proposal-method.md"
     }
   ]
 }
