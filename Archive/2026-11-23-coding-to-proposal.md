@@ -9,9 +9,7 @@ created: 2026-11-23
 category: 学习
 tags: [自学, 系统设计]
 asset_ref: Assets/2026-11/weixin-giljeh6n-proposal-method.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-23T11:24:53.103Z"
-ingest_claim_id: 37564-1795433093103-0
+wiki_status: ingested
 ---
 
 # 从写代码到写方案：把视角提上去的自我实践方法

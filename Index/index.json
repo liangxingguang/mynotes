@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-11-23 19:35",
+  "updated_at": "2026-11-23 19:36",
   "notes": [
-    {
-      "id": "2026-11-23-coding-to-proposal",
-      "title": "从写代码到写方案：把视角提上去的自我实践方法",
-      "path": "Inbox/2026-11-23-coding-to-proposal.md",
-      "created": "2026-11-23",
-      "category": "学习",
-      "tags": [
-        "自学",
-        "系统设计"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/GiLJEH6N7OupRTaGhpxUFA",
-      "source_type": "网页",
-      "platform": "微信",
-      "summary": "「冰洋架构」作者以\"一份材料改十几版\"的经历为切入，总结从写代码的细节思维切换到写方案全局视角的自我实践方法。核心是：写方案最难的不是写而是想，五步流程前两步想、第三步才写；要分清显微镜（细节）与地图（全局），用三问想清楚、MECE 拆结构、结论先行+SCQA 组织，交付前用五问自检。源头是《金字塔原理》。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/weixin-giljeh6n-proposal-method.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-11-23-deepsearch-rag-comparison",
       "title": "新一代 RAG：DeepSearch 实战与三种 RAG 对比",
@@ -8677,6 +8658,25 @@
       "summary": "结合 Calvin Grunewald 的 archdev 设计与 Runway 软件工厂复盘，给出用现有 Coding Agent 搭建\"软件工厂\"的最小架构：让任务在提交后由后台执行器持续跟进检查、修复与 PR，直到交出可供人合并的交付物。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/coding-agent-software-factory.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-23-coding-to-proposal",
+      "title": "从写代码到写方案：把视角提上去的自我实践方法",
+      "path": "Archive/2026-11-23-coding-to-proposal.md",
+      "created": "2026-11-23",
+      "category": "学习",
+      "tags": [
+        "自学",
+        "系统设计"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/GiLJEH6N7OupRTaGhpxUFA",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "「冰洋架构」作者以\"一份材料改十几版\"的经历为切入，总结从写代码的细节思维切换到写方案全局视角的自我实践方法。核心是：写方案最难的不是写而是想，五步流程前两步想、第三步才写；要分清显微镜（细节）与地图（全局），用三问想清楚、MECE 拆结构、结论先行+SCQA 组织，交付前用五问自检。源头是《金字塔原理》。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-giljeh6n-proposal-method.md",
       "wiki_status": "ingested"
     },
     {
