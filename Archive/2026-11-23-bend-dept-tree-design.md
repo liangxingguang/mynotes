@@ -9,7 +9,7 @@ created: 2026-11-23
 category: 技术
 tags: [产品设计, 系统设计]
 asset_ref: Assets/2026-11/weixin-bend-dept-tree.md
-wiki_status: pending
+wiki_status: ingested
 album: B端产品经理（专辑，作者 大皮不皮）
 ---
 
