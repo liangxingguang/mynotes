@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23 19:27",
+  "updated_at": "2026-11-23 19:29",
   "notes": [
     {
       "id": "2026-11-23-coding-to-proposal",
@@ -116,6 +116,25 @@
       "summary": "RAG 系列开篇综述：从 LLM 的六大缺陷（幻觉、知识滞后、隐私、上下文窗口有限、输入噪声、成本高）切入，讲 RAG 的破局思路与系统组成，辨析\"RAG 已死\"的误区（RAG/长上下文/微调/MCP 是互补而非替代），并给出离线+在线的技术架构、技术演进路线与落地七大误区。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-ob6-qxunmh26oq5gk9m51a.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-11-23-rag-retrieval-ranking-algorithms",
+      "title": "RAG 检索与排序核心算法",
+      "path": "Inbox/2026-11-23-rag-retrieval-ranking-algorithms.md",
+      "created": "2026-11-23",
+      "category": "技术",
+      "tags": [
+        "RAG",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/oSvRVvWLvu87RYDLWEcUGg",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "RAG 系列第三篇，聚焦检索与排序环节：多轮 Query 改写、全文检索（TFIDF/BM25 与分词策略）、向量检索（双塔表示模型与 LLM 类 Embedding）、混合检索、排序（RRF/Cross-Encoder/延迟交互/Qwen3-Reranker）、基于 LLM 的相关性判断，以及全链路多路召回优化方案。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-osvrrvvwlvu87rydlwecugg.md",
       "wiki_status": "pending"
     },
     {
