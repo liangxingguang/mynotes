@@ -1,6 +1,25 @@
 {
-  "updated_at": "2026-11-23 06:20",
+  "updated_at": "2026-11-23 08:55",
   "notes": [
+    {
+      "id": "2026-11-23-pi-minimal-superagent",
+      "title": "用 Pi 实现极简 Super Agent",
+      "path": "Inbox/2026-11-23-pi-minimal-superagent.md",
+      "created": "2026-11-23",
+      "category": "技术",
+      "tags": [
+        "Agent",
+        "AI"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2104976960610906741",
+      "source_type": "网页",
+      "platform": "知乎",
+      "summary": "用 Pi、tmux、Telegram、cron、VM 五个通用组件，搭出 DeepSeek SuperAgent「Router 调度 + Worker 执行 + 异步监督」核心协作的极简可运行实现，并给出五个结构化扩展方向。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/pi-minimal-superagent.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
