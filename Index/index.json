@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23 19:29",
+  "updated_at": "2026-11-23 19:30",
   "notes": [
     {
       "id": "2026-11-23-coding-to-proposal",
@@ -97,6 +97,25 @@
       "summary": "系统梳理 RAG 技术实现全流程的四大环节：文档解析、知识库构建（分块）、知识库构建（索引）、知识增强。覆盖文档解析工具（DeepDoc/MinerU）、7 种分块策略及选型、向量检索算法（Flat/IVF/HNSW），以及上下文增强、块标题（CCH）、问题生成三类检索增强手段。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-xgivyt-t012py-o3cklrdkg.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-11-23-rag-llm-generation",
+      "title": "RAG 中的大模型生成：最后一公里",
+      "path": "Inbox/2026-11-23-rag-llm-generation.md",
+      "created": "2026-11-23",
+      "category": "技术",
+      "tags": [
+        "RAG",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/nT4byFqXjCLSmc43thFw9Q",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "RAG 系列第四篇，讲检索之后的\"最后一公里\"：检索→上下文构建→生成→输出。涵盖 Prompt 工程（角色/限定信息源/格式/兜底四原则、温度值调参）、上下文构建（筛选、去重、窗口管理、结构化）、长文本 Small2Big、多文档问答引用增强、表格问答、上下文压缩与答案溯源，目标是让模型严格锚定证据、抑制幻觉、可溯源。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-nt4byfqxjclsmc43thfw9q.md",
       "wiki_status": "pending"
     },
     {

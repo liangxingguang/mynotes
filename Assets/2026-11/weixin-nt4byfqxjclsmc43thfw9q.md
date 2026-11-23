@@ -1,0 +1,688 @@
+### rag技术实现全流程
+
+![图片](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
+
+![图片](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
+
+01Prompt工程技巧与幻觉抑制策略
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+RAG中的大模型生成：称为“最后一公里”
+
+RAG整体流程回顾：检索→上下文构建→生成→输出。检索负责找证据，上下文构建把证据准备好，生成把证据变成用户可读答案——生成用户真正接触到的环节。
+
+大模型是RAG中的“智能整合器”与“语言表达器”，它所具备的核心能力：
+
+*   理解能力：看懂用户问题（如 “解释量子力学基本原理”）和检索到的资料（如教材片段、论文摘要）
+    
+*   整合能力：将多份相关资料中的关键信息串联、去重、提炼
+    
+*   生成能力：用符合场景的语言（学术、通俗等）组织答案，保证逻辑连贯
+    
+
+与“纯大模型问答”的区别：生成答案时严格锚定检索资料，而非依赖模型自身 “记忆”，减少幻觉。
+
+提升大模型的生成质量
+
+1.信息对齐：避免“答非所问”或“脱离资料”
+
+*   目标是生成内容与用户问题、检索资料高度匹配
+    
+*   实现方式：通过提示词强调“问题\-资料\-答案”的关联
+    
+
+2.“Lost in Middle”问题破解：避免中间信息被忽略
+
+*   问题：当输入多份检索资料时，大模型容易重点关注开头和结尾内容，遗漏中间关键信息（比如给5段资料解释“光合作用”，模型只用到第1段和第5段内容，漏掉中间核心反应过程描述）。
+    
+    原因是大模型对长序列输入的注意力分配不均衡，中间信息获得的关注权重较低。
+    
+*   解决策略：
+    
+
+*   资料排序优化：将与问题最相关的资料放在最前/最后，或按逻辑顺序（如时间、因果）排列资料
+    
+
+*   分段输入处理：若资料过多拆分多轮小批量输入，让模型逐步整合信息
+    
+
+*   提示词引导：明确要求“全面覆盖所有参考资料的关键信息，不遗漏中间内容”
+    
+
+3.幻觉抑制：解决“编造不存在的信息”问题
+
+*   幻觉易误导用户，违背RAG“基于真实资料”的核心
+    
+*   抑制方法：
+    
+
+*   提示词约束：明确要求“若资料无相关内容，说明‘无法回答’”
+    
+
+*   资料锚定：让大模型在回答中关联具体资料片段（如 “根据资料 1 第 2段，XXX”）
+    
+
+*   来源校验：生成后可增加“答案\-资料”对应校验步骤，排查无依据内容
+    
+
+4.回答优化：提升内容实用性与可读性
+
+*   结构优化：生成分点、分层的答案（如 “原因：1.XXX；2.XXX”）
+    
+*   风格适配：根据场景调整语言（学术场景用专业术语，科普场景用生活化表达）
+    
+*   长度控制：按需求生成简洁摘要或详细论述
+    
+
+总体缓解策略（三管齐下）
+
+*   1.Prompt工程：明确角色、约束与输出格式
+    
+
+*   通过系统/任务提示把模型“限定在证据范围内”，并规定输出结构（如“结论→要点→证据引用”）。
+    
+
+*   2.上下文构建：重排序、去重、结构化、窗口管理
+    
+
+*   挑选最相关的Top-K片段、按相关度/时间/因果排序、合并重复信息并在上下文中标注来源。
+    
+
+*   3.溯源与校验：强制标注来源并做答案→证据匹配校验
+    
+
+*   生成后立刻做“答案片段 ↔ 文本相似度”或LLM-rerank校验，若无对应证据则退回“无法回答”。
+    
+
+*   可以减少虚假引用，满足合规审计需求。
+    
+
+进阶方法
+
+*   长文本问答→Small2Big：小段召回→聚合成父段→章节扩展→最终汇总，保证细节与全局兼得。
+    
+*   多文档问答→文档级融合+多文档引用/冲突检测：按文档聚合、标注边界，若冲突列出差异并提示置信度。
+    
+*   表格问答→表格解析→行列映射→数值校验：先转换表格为句子/要点，再检索与生成。
+    
+
+Prompt工程
+
+*   设计与调优system/user/assistant提示词，使模型在给定上下文下按期望方式生成答案（准确、可验证、可控）。
+    
+
+*   约束模型只用检索到的证据 → 降低幻觉；
+    
+*   指定输出结构与溯源格式→提升可审计性；
+    
+*   不同任务用不同Prompt→提高一致性与效率。
+    
+
+4个核心原则
+
+1.明确角色：告诉模型“你是谁、以何种身份回复”；
+
+2.限定信息源：明确“仅基于以下资料回答”；
+
+3.规定格式：要点/结论优先/引用位置；
+
+4.兜底策略：无证据时要返回“无法回答”而非臆造。
+
+Prompt工程是把模型能力“制度化、可控化、可审计化”的关键：通过明确角色、约束、模板与路由，把检索到的证据转化为可靠、可溯源的答案。能显著降低幻觉、保证合规，并把“海量知识+大模型”转化为可用的产品能力。
+
+Prompt的核心任务就是告诉模型：
+
+*   1.你是谁（角色定位）：例如“你是一个专业的知识助手”，明确模型的身份和职责。
+    
+*   2.你要做什么（任务目标）：比如“基于知识库信息回答用户问题”，让模型知道目标。
+    
+*   3.你有哪些输入（上下文）：用户问题、检索到的文档内容，这些都要清晰传递给模型。
+    
+*   4.你要怎么回答（输出要求） ：直接回答、引用文档、综合分析、保持专业等。
+    
+
+怎么写才有效？
+
+*   结构清晰：把不同元素分区块写清楚，模型更容易理解。
+    
+*   指令具体：不要只说“回答用户”，要说明“引用知识库”“综合多个信息”。
+    
+*   有兜底策略：告诉模型在信息不足时该怎么办，避免胡编乱造。
+    
+
+### 1\. 清晰的角色设定（明确角色）
+
+*   目的：明确模型在特定领域或场景中的身份，引导其生成符合专业语境和风格的答案。
+    
+*   方法：在system prompt明确身份、专业领域、回答格式与禁止行为。
+    
+*   示例：使用指令明确角色，例如：“你是一名网络安全专家，正在分析数据泄露事件…”
+    
+*   价值：快速约束输出风格与可信范围，提升输出专业性，减少通用性敷衍回答。
+    
+
+### 2\. 减少幻觉（限定信息源+兜底策略）
+
+*   目的：强制模型仅基于检索到的上下文回答，禁止编造未提供的信息，保证答案可验证。
+    
+*   方法：在 prompt 中显式声明约束，并设定标准兜底回复。
+    
+*   示例：“仅使用提供的文档回答，若上下文无相关信息，回复‘根据提供文档无法回答’。”
+    
+*   价值：显著降低事实性错误，提升可信度与可审计性，便于人工复核与追责。
+    
+
+### 3\. 答案引用与溯源（规定格式）
+
+*   目的：增强答案来源文章的可信度，允许用户追溯信息来源、便于验证。
+    
+*   方法：
+    
+
+*   ✓ 要求模型在答案中标注文章来源。
+    
+*   ✓ 后处理校验：调用 LLM 进行答案与原文的相关性判断。
+    
+
+*   示例：“**精准引用**：引用知识库中的具体信息时，明确标注原始文档名称，而非文档编号。”
+    
+*   价值：增强可审计性、便于合规检查与人工复核，提升用户信任。
+    
+
+### 4\. 格式化输出（规定格式）
+
+*   目的：让答案更清晰、结构化，便于阅读与理解。
+    
+*   方法：
+    
+
+*   ✓ 使用结构化段落，重点内容加粗或单独列出，保证回答有逻辑层次。
+    
+*   ✓ Markdown 渲染：支持富文本展示（标题、加粗、斜体）。
+    
+
+*   示例：根据内容选择最清晰、易读的呈现格式，要求输出 Markdown 格式。
+    
+*   价值：提高可读性，增强专业性，提升用户体验，支持多场景复用。
+    
+
+Prompt工程核心要素
+
+1.清晰的角色设定
+
+*   目的：明确模型在特定领域或场景中的身份，引导其生成符合专业语境和风格的答案。
+    
+*   方法：在system prompt明确身份、专业领域、回答格式与禁止行为。
+    
+*   示例：使用指令明确角色，例如：“你是一名网络安全专家，正在分析数据泄露事件…”
+    
+*   价值：快速约束输出风格与可信范围，提升输出专业性，减少通用性敷衍回答。
+    
+
+2.减少幻觉（仅从上下文回答）
+
+*   目的：强制模型仅基于检索到的上下文回答，禁止编造未提供的信息，保证答案可验证。
+    
+*   方法：在 prompt中显式声明约束，并设定标准兜底回复。
+    
+*   示例：“仅使用提供的文档回答，若上下文无相关信息，回复“根据提供文档无法回答”。 ”
+    
+*   价值：显著降低事实性错误，提升可信度与可审计性，便于人工复核与追责。
+    
+
+3.答案引用与溯源
+
+*   目的：增强答案来源文章的可信度，允许用户追溯信息来源、便于验证。
+    
+*   方法：要求模型在答案中标注文章来源。
+    
+*   后处理校验：调用LLM进行答案与原文的相关性判断。
+    
+*   示例：“\*\*精准引用\*\*：引用知识库中的具体信息时，明确标注原始文档名称，而非文档编号。”
+    
+*   价值：增强可审计性、便于合规检查与人工复核，提升用户信任。
+    
+
+4.格式化输出
+
+*   目的：让答案更清晰、结构化，便于阅读与理解。通过格式化与渲染提升可用性与专业性。
+    
+*   方法：文本格式化：使用结构化段落，重点内容加粗或单独列出，保证回答有逻辑层次。Markdown渲染：支持富文本展示（标题、加粗、斜体）。
+    
+*   示例：根据内容选择最清晰、易读的呈现格式，要求输出Markdown格式。
+    
+*   价值：提高可读性，增强专业性，提升用户体验，支持多场景复用。
+    
+
+5.动态Prompt模板设计
+
+*   目的：不同查询类型需要不同输出结构与约束，提高场景适配性与准确率。
+    
+*   方法：建立Template Router（分类器/业务规则），预制多套Prompt模板。
+    
+*   示例：if intent == “物理” : template = template\_wuli
+    
+            elif intent == “数学” template = template\_shuxue 。
+    
+*   价值：自动化场景适配、减少手动微调、提升用户体验与业务一致性。
+    
+
+6.大模型温度值（Temperature）
+
+*   目的：控制模型输出的随机性与稳定性。
+    
+*   方法：
+    
+
+*   事实型回答：低温度0.0-0.3（保证确定性与一致性）。
+    
+
+*   解释/策略型回答：中温度0.4-0.7（允许适度生成、保留多样性）。
+    
+
+*   头脑风暴/创意型任务：高温度0.8-1.0（鼓励发散）。
+    
+
+*   价值：在不同业务场景中平衡答案稳定性与生成多样性，让 RAG 既可靠又灵活。
+    
+
+Prompt模板
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+Prompt工程总结 
+
+根据业务特点设计提示词模板
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+02上下文构建
+
+在RAG中，上下文构建是连接“检索”与“生成”的桥梁，决定了模型看到什么、能理解什么。目标是从大量检索结果中，筛选出最有价值的片段，并组织成逻辑清晰、可溯源的上下文输入，供大模型生成答案。如果检索是“找资料”，那么上下文构建就是“挑重点、排版、写读书笔记”，为生成打好“地基”。
+
+RAG系统中，“上下文”就像是大模型的“阅读材料”。它决定了模型看到什么、理解什么、回答什么。
+
+*   检索是“找书”；
+    
+*   上下文构建是“挑选并整理重点”；
+    
+*   生成是“写出答案”。
+    
+
+如果检索到的信息再好，但上下文组织混乱或太多无关内容，模型也可能“看不懂”，从而回答错误。
+
+LLM的三大固有限制
+
+1.上下文窗口有限：模型最多只能读一定长度（如8K、32K、128K）超出部分会被截断。
+
+2.输入杂乱降低理解力：无关或冗余信息会干扰模型注意力，导致“答非所问”。
+
+3.输入越多，推理越慢、成本越高：token成本和生成延迟急剧上升。
+
+因为有这三个问题，一定要保证上下文构建好之后给大模型一个非常整洁的内容。上下文构建的核心任务就是在有限的空间内放最有用的内容，并以最清晰的方式去给呈现。
+
+例子：
+
+“请解释一下财政预算调整的审批流程。”
+
+检索系统找到五段不同文档中的内容：
+
+*   A：介绍预算编制流程；
+    
+*   B：说明预算调整需要财政部门审核；
+    
+*   C：解释部门会签制度；
+    
+*   D：讲预算执行监督；
+    
+*   E：谈预算调整后的备案要求。
+    
+
+上下文构建要做的，就是：
+
+✅挑出真正相关的段落（B、C、E）
+
+✅去掉重复、无关内容（A、D）
+
+✅按照逻辑顺序重新组合（审核 → 会签 → 备案）
+
+最终，大模型就能在“有限的上下文空间”里，看到最有价值、最有逻辑的信息。
+
+关键原则
+
+1.少即是多  
+把“最重要的内容”呈现给模型，比“给模型所有内容”效果更好。
+
+2.上下文\=模型的世界  
+模型回答的依据完全来自上下文；若上下文没写，它就“看不见”。
+
+3.组织结构决定理解力  
+上下文要像写论文一样有结构：
+
+*   先背景（是什么）
+    
+*   再核心（怎么做）
+    
+*   后总结（结论或注意点）
+    
+
+4.上下文的可追溯性  
+要能说明“答案来自哪里”，比如标明段落或文档来源。这在科研、政策、财务等领域尤其重要。
+
+上下文构建流程
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+上下文构建流程：先多路检索，通过原始块和块改写的方式召回更多的片段，目标是提高召回率；初步筛选过滤，通过关键词、重排序、相似度阈值、相关性判别，模型去除噪声。进行一个RRF精排提高相关性。然后进行信息的去重，多路异步的检索，再加上混合检索，可能会有一些重复信息进行去重，把互补信息进行合并，减少冗余。上下文窗口管理，因为大模型上下文窗口是有限的，需要按优先级排序，还有TOKEN预算，knowledge里能放多少个TOKEN，所以需要放最有意义价值的信息。 上下文最关键的是结构化组织，把散落的信息组织成结构化的格式，帮助模型理解形成最终的一个输入。
+
+上下文的进阶构建：
+
+一、长文档问答：Small-to-Big策略
+
+核心思路：先理解局部，再汇总整体
+
+实现方式：从 Small（句/段）→ Merge（父段/小节）→ Big（章节摘要）分层补全
+
+优势：最终只将“最能支撑答案的多层证据”放入 Prompt，提升回答准确性与逻辑一致性
+
+二、多文档问答：跨文档融合与引用，
+
+核心思路：将多篇相关文档视作“协同知识源”
+
+实现方式：先在文档内部整理（去重、摘要），再跨文档融合；输出时明确区分来源并列出冲突
+
+优势：支持多来源信息综合推理，防止知识冲突与冗余
+
+三、表格问答：结构化信息理解
+
+核心思路：将表格内容转化为可理解文本
+
+实现方式：表格解析 → 结构化文本 / 摘要生成 → 转化为可读文本（Markdown）
+
+优势：扩展RAG对非文本数据的处理能力，使问答更贴近真实业务数据场景
+
+四、上下文压缩：让模型“读得更少，想得更多”
+
+核心思路：通过压缩与筛选让模型聚焦关键信息，减少无效输入
+
+实现方式：提取核心句、关键词、摘要要点，去除冗余
+
+优势：大幅减少输入token量（30%~80%），降低推理延迟与算力成本，保持关键信息完整度，提高生成稳定性与效率
+
+03长文本问答
+
+长文本问答-上下文窗口补全
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+传统补救手段
+
+1.增大chunk\_size：  
+400→1000 token，没错，背景完整了，却引入了更多“与问题无关”的内容；Embedding维度固定，噪声比例上升，得分稀释。
+
+2.增加TopK：  
+K=3→K=10，相关信息是捞到了，可是Prompt Length只剩寥寥tokens，开销飙升，LLM依旧“精分”。
+
+3.后置rerank：  
+拉过来rerank虽然聪明，但模型得同时持有所有chunk内容才能比较，依旧受上下文窗口上限约束。
+
+长文本问答的技术方案
+
+1.动态分片策略
+
+*   分片粒度优化：通过性能测试与论文验证，选择平衡点（如chunk size=256），兼顾检索精度与语义丰富性。
+    
+*   层级解析：离线阶段按文档结构（标题/段落）分片并标记层级，保留语义关联。
+    
+*   分片编号：给每个分片记录编号（chunk\_idx）以及总分片数（chunk\_cnt）
+    
+
+2.Small2Big检索生成
+
+*   精准检索：在线阶段用小片段（small chunk）提升召回率，定位核心段落。
+    
+*   语义补全策略：通过规则扩展上下文（big chunk），提供更丰富的语义
+    
+
+3.结构化数据管理
+
+*   入库时存储分片层级信息，支持按需动态聚合长上下文，减少信息丢失。
+    
+
+技术方案
+
+步骤：查询 → 检索（返回命中块 + 前/后 overlap）→ 以原始块为中心做 Small2Big 补全 → 生成给 LLM 的最终窗口。、
+
+Small2Big核心思想：
+
+*   从检索到的小粒度块向外扩展（按原始块顺序合并临近原始块），形成更大且连贯的上下文窗口。
+    
+*   为什么基于原始块：避免重复上下文片段被多次拼接；保证引用可追溯到原文的位置；利于去重与排序。
+    
+
+设计建议：
+
+1.扩展单位：以原始块或段落为单位扩展，优先保留与 query 语义相关的邻近块。
+
+2.最大窗口约束：受限于模型上下文（如 2048/4096 tokens），合并时应做去重/截断策略。
+
+技术优势
+
+*   相关 +完整：中间块的向量最相关，邻居块保证上下文完整。
+    
+*   向量粒度不变（更高的检索精度）：不会引入更长的“搜索单位”，Embedding 精度保持原状。
+    
+*   可弹性调参（灵活性）：想成本低把 num\_neighbors 设 1；想更完整设 2~3。
+    
+*   Prompt更连贯（更丰富的生成上下文）：LLM 读到的上下文不再是“割裂句子”，推理链条更顺滑。
+    
+
+总结：“精准命中靠向量，相对完整靠邻居”。
+
+04多文档问答
+
+单文档问答（Single-Doc QA）在现实场景中经常信息不全，难以应对复杂问题。例如：“财政预算调整流程”往往需同时参考《会计制度》《预算管理办法》《财务条例》。
+
+多文档问答（Multi-Document QA）的目标：跨多个文档整合知识；识别信息关联，冲突与补充；输出统一，可信的综合答案。
+
+核心思路
+
+1.多源检索融合
+
+从多个知识库并行检索 → 混合排序（BM25 + 向量 \+ RRF） → 选出最相关片段。
+
+2.上下文整合构建
+
+将多文档内容拼接为结构化上下文
+
+保留来源标签，便于生成引用。
+
+3.统一生成输出
+
+通过Prompt引导大模型基于多篇文档综合推理、对比并生成连贯答案。
+
+挑战
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+多文档问答
+
+一、检索与上下文构建
+
+*   并行检索：支持多源数据（政策库、制度库、FAQ库等）同时检索。
+    
+*   混合融合：融合全文与向量检索结果，利用RRF/reranker进行加权重排。
+    
+*   结构化上下文：在Prompt中明确文档来源与语义关系——每个文档都用<document X begin> <document X end> 标签包裹住，并分配了独立的文档编号，确保在长上下文中模型能清晰地区分每一个文档。
+    
+
+二、生成阶段：引用增强与可解释生成
+
+*   显式引用输出，答案示例：“预算调整需财务审核与部门会签（见
+    
+
+《会计制度》第5条、《预算管理办法》第12条）。”
+
+*   内联引用（Inline Citation），答案示例：“预算调整需经财务审核
+    
+
+\[1\]@ref 并由部门会签\[12\]@ref。”
+
+三、性能与效果优化
+
+*   上下文压缩与摘要融合：减少冗余内容，降低token占用。
+    
+*   分阶段生成策略：先生成每文档摘要，再执行全局整合。
+    
+*   引用链追踪：支持将回答中每个引用与原文链接，便于验证。
+    
+
+总结：
+
+1.多文档问答让RAG系统从“文档级检索”迈向“知识级理解”。
+
+2.通过多源检索、结构化上下文构建、引用增强生成三步走。
+
+3.模型能输出内容全面、逻辑清晰、来源可追溯的答案。
+
+4.并为后续的Prompt工程与上下文优化策略打下坚实基础。
+
+多文档提示词Prompt模板
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+05表格问答
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+结论：
+
+1\. DeepSeek-32B：综合最强，整体准确率高，各表格类型准确率均优，且推理任务领先。
+
+2\. Qwen2.5-32B：稳定表现，整体准确率较高，水平表格较强。
+
+3\. TableGPT2-7B：由于参数量小，整体表现较差，特别在复杂和嵌套表格中准确率低。
+
+06上下文压缩
+
+上下文压缩是一种在检索到的文档中筛选和精简内容的技术。RAG系统中，大语言模型（LLM）存在三大限制：
+
+*   Context Window有限：无法读取所有检索片段。
+    
+*   输入信息过杂：无关内容会误导模型理解。
+    
+*   推理成本高：输入越多，生成越慢、费用越高。
+    
+
+上下文压缩好处：
+
+*   提高上下文的“信噪比”；
+    
+*   让模型聚焦于真正关键的信息；
+    
+*   减少token成本，提升生成效率。
+    
+
+上下文压缩的核心目标：
+
+目标
+
+描述
+
+信息筛选
+
+移除无关句子，仅保留与问题相关部分
+
+信息浓缩
+
+压缩内容体积，保留语义完整性
+
+提升准确性
+
+降低干扰，减少幻觉风险
+
+提升效率
+
+控制token数量，降低推理延迟与成本
+
+案例： 
+
+原始文本：
+
+“人工智能是计算机科学的一个分支。它旨在让机器模拟人类智能行为。许多AI系统依赖于大数据进行训练。深度学习是一种特殊的机器学习方法。”
+
+问题：“什么是人工智能？”
+
+压缩后：“人工智能是计算机科学的一个分支。它旨在让机器模拟人类智能行为。”
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+07答案溯源
+
+答案溯源，前面有提示词工程，再加上上下文的构建，生成结果之后需要了一个后处理。因为有可能有一种情况是生成的答案里面没生成一些来源，你规定给按来源生成，但是它没有生成怎么办？可能回复的时候还会存在一些幻觉怎么办？
+
+即使要求“仅根据提供文档回答”，模型仍可能调用自身知识，生成不可靠答案。（大模型存在幻觉）
+
+防止大模型生成答案来源会产生虚构或错配的引用。（避免虚假引用）
+
+方便用户可快速验证答案与原文是否一致。（提升可信度）
+
+分离式架构：先生成答案，再独立溯源。解耦问答与溯源功能，便于独立优化，整体响应更快。（解耦架构）
+
+答案溯源本质上是文本匹配+语义匹配任务，核心目标是：快速召回可能来源+精准筛选最相关出处。（策略设计）
+
+两阶段策略：
+
+1.召回阶段（Recall）：基于n-gram进行文本匹配。
+
+流程：
+
+*   计算候选句与答案的相似度
+    
+*   若相似度 \> 阈值 → 直接返回匹配结果
+    
+*   若相似度不足 → 进入下一阶段
+    
+
+2.精选阶段（LLMRerank）：将召回的候选句输入大模型中，进行深层语义理解，判断最相关的来源。
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+08总结
+
+![图片](<data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate\(-249.000000, -126.000000\)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E>)
+
+整套流程里面，先检索完之后进行知识的转换，之后构建上下文，再组装成提示词，用提示词工程，之后提供给大模型。
+
+在这里面有多种不同的进阶方向。
+
+比如通过small to big的方式进行长文本的问答，解决上下文补全的问题，用多文档的边界，提示词的构建，以及文本文件知识的组装，多文档的问答，进行表格的转换，进行表格的问答。
+
+在这里面还可以加入一个内联的引用，既可以显示的引用，又可以内联的引用，通过前端和后端的配合。
+
+再用答案溯源和大模型生成进行解耦，解耦出来之后进行大模型生成的一个置信度匹配，保证生成结果尽量减少幻觉。
+
+还可以用上下文压缩的方式对提示词进行压缩，因为大模型上下文能够吃到很多TOKEN，在进行压缩的时候需要考虑要不要压缩。比如文字达到一定程度不太长就不需要，不是每次都无脑压缩，因为压缩之后可能有一些信息丢失。先看正常不压缩的情况能不能解决问题，如果能解决就不用，有必要的话还是需要进行压缩。
+
+大模型Rag系列文章：
+
+[Rag是什么，Rag的整体技术架构](https://mp.weixin.qq.com/s?__biz=MzUzMjAxNDA5OQ==&mid=2247488433&idx=1&sn=fbad0756a33374c6b45e3a043c6d3b5c&scene=21#wechat_redirect)
+
+[RAG文档解析与知识库构建](https://mp.weixin.qq.com/s?__biz=MzUzMjAxNDA5OQ==&mid=2247488433&idx=1&sn=fbad0756a33374c6b45e3a043c6d3b5c&scene=21#wechat_redirect)
+
+[Rag检索与排序核心算法](https://mp.weixin.qq.com/s?__biz=MzUzMjAxNDA5OQ==&mid=2247488624&idx=1&sn=3d0ffc1bd7044f341062ea5147d77148&scene=21#wechat_redirect)
