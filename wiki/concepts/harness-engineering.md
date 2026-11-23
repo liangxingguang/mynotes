@@ -4,7 +4,7 @@ type: concept
 title: Harness Engineering（Agent 执行系统工程）
 status: active
 created: 2026-10-27
-updated: 2026-11-22
+updated: 2026-11-23
 confidence: high
 tags:
   - concept
@@ -22,6 +22,7 @@ sources:
   - raw/sources/ai/2026-11-20-gaode-ad-linglingqi.md
   - raw/sources/ai/2026-11-20-helixharness-ai-coding.md
   - raw/sources/ai/2026-11-20-zte-cosight-harness.md
+  - raw/sources/ai/2026-11-23-learn-claude-code-course.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/concepts/context-management.md
@@ -41,6 +42,7 @@ related:
   - wiki/sources/agent-harness-essay-ideal-harness.md
   - wiki/concepts/personal-dev.md
   - wiki/entities/zte-cosight-harness.md
+  - wiki/entities/learn-claude-code.md
 ---
 # Harness Engineering（Agent 执行系统工程）
 
@@ -158,6 +160,8 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 
 - 2026-11-22 — 新增中兴 Co-Sight Harness 信源（第 11 信源）`raw/sources/ai/2026-11-20-zte-cosight-harness.md`。补上**企业级长链路的四层改造完整样例**：业务层五维分流+11 子 Agent+agent-genesis 需求自动编译（隔离验证防自改自评）、执行层 Drive（流程固化、五岗位流转、打回重做、断点续跑，50%→100%、440→159 分钟）、资产层语义对齐双引擎（召回 56%→91.67%）、证据层三级指标下钻+Golden Set+回归门禁；并确立「提升团队交付下限而非个体提效」的企业级发力点主张。与"执行循环/上下文与记忆/多 Agent 协调/扩展机制"观察面、[[durable-execution|持久执行]]、[[agent-evaluation|业务 Agent 全生命周期评测]] 互证，实例落成实体页 [[zte-cosight-harness|中兴 Co-Sight Harness]]。
 
+- 2026-11-23 — 新增 learn-claude-code 课程导读信源（第 12 信源）`raw/sources/ai/2026-11-23-learn-claude-code-course.md`。以教学实现印证本页核心主张并补强三处：①**三句主张**——「Agency 来自模型不来自编排代码」「Agent 产品 = 模型 + harness（工具/知识/观察/动作接口/权限五件套）」「harness 全部秘密是一个 while True 循环」，与本页 `Agent ≈ Model + Harness` 定义及"执行循环"观察面直接互证；②**循环不变、挂件万变**的设计纪律——加工具改分发表、加知识改 system 目录、压缩插在 append 后、权限/hooks 包在执行外、子代理起新 messages 再跑循环，是"执行循环/扩展机制"观察面的教学化落地，印证本页"内置能力以挂件接入、不改循环主体"的工程纪律；③**s17 目标闸门**——循环能否停交给独立评估器判断（目标不可达/失败/超限交还用户），"让 agent 自己判断做完了是最危险的一步"，为"执行循环"观察面的停止判据补上外部裁判视角，与 [[agent-evaluation|业务 Agent 全生命周期评测]] 互证。实例落成实体页 [[learn-claude-code|learn-claude-code]]。
+
 ## Open Questions（开放问题）
 
 - 论文原始统计口径与当前产品能力的时差（快照为历史版本）？
@@ -176,6 +180,7 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 - Source: `raw/sources/ai/2026-11-20-gaode-ad-linglingqi.md`（第 9 信源：可替换 Harness 边界、自主执行≠自主授权、平台与 Harness 职责分工）
 - Source: `raw/sources/ai/2026-11-20-helixharness-ai-coding.md`（第 10 信源：Propose/Apply/Archive 三阶段工作流、执行≠完成的证据链判定、九命令与 --loop、索引式按需加载、Base/Candidate 评测 Harness 本身）
 - Source: `raw/sources/ai/2026-11-20-zte-cosight-harness.md`（第 11 信源：ZTE 四层架构与量化数据，内部自报、单信源转述，置信度中）
+- Source: `raw/sources/ai/2026-11-23-learn-claude-code-course.md`（第 12 信源：三句主张互证、循环不变挂件万变的设计纪律、s17 目标闸门外部裁判视角，教学实现单信源，置信度中）
 
 ## Related Knowledge（相关知识）
 
@@ -196,3 +201,5 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 - [[2026-11-20-helixharness-ai-coding|HelixHarness：滴滴开源 AI Coding Harness（信源页）]]
 - [[zte-cosight-harness|中兴 Co-Sight Harness]]
 - [[2026-11-20-zte-cosight-harness|中兴开源企业级 Harness：Co-Sight Harness（信源页）]]
+- [[learn-claude-code|learn-claude-code]]
+- [[2026-11-23-learn-claude-code-course|手写一个 mini Claude Code（信源页）]]

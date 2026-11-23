@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-11-23 18:30",
+  "updated_at": "2026-11-23 18:41",
   "notes": [
-    {
-      "id": "2026-11-23-bisheng-3-office-agent",
-      "title": "一个能平替 WorkBuddy 和豆包工作的开源办公 Agent，来了！支持私有化部署",
-      "path": "Inbox/2026-11-23-bisheng-3-office-agent.md",
-      "created": "2026-11-23",
-      "category": "资讯",
-      "tags": [
-        "AI",
-        "Agent"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/WFh-_4ZW_3BQYdNCswxyvQ",
-      "source_type": "网页",
-      "platform": "微信",
-      "summary": "Dataelem 团队开源的企业级办公 Agent 平台 BISHENG 3.0：桌面端基于 DeepSeek Harness（DSH）开发，主打私有化部署、数据不出企业边界，定位 WorkBuddy/豆包工作的开源平替。文章以项目汇报（Chat 模式）与销售数据整理（Work 模式）两个真实任务实测全流程，并介绍企业侧的模型/技能/知识权限管理、外部 Agent 接入与员工应用托管能力。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/weixin-wfh-4zw-3bqydncswxyvq.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-11-23-dan-koe-321-method",
       "title": "如何让自己，在一年内成为某个领域的专家",
@@ -40,23 +21,24 @@
       "wiki_status": "pending"
     },
     {
-      "id": "2026-11-23-learn-claude-code-course",
-      "title": "8 万星的教学项目：手写一个 mini Claude Code",
-      "path": "Inbox/2026-11-23-learn-claude-code-course.md",
+      "id": "2026-11-23-lala-ai-agent-realtime-trading",
+      "title": "AI Agent 如何进入实时交易系统：货拉拉的三个实践与一套工程方法论",
+      "path": "Inbox/2026-11-23-lala-ai-agent-realtime-trading.md",
       "created": "2026-11-23",
-      "category": "学习",
+      "category": "技术",
       "tags": [
         "AI",
-        "Agent"
+        "Agent",
+        "系统设计"
       ],
       "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/S9qKe-pMM3130Ha1hN_6UA",
+      "source_url": "https://mp.weixin.qq.com/s/OLljY1Vd221YeMmSFnOGrg",
       "source_type": "网页",
       "platform": "微信",
-      "summary": "介绍开源课程 shareAI-lab/learn-claude-code（79.6k Star、MIT 协议、主语言 Python）：用 17 节课手写一个 mini Claude Code，副标题 \"Bash is all you need\"。核心主张——Agent 的自主性来自模型而非编排代码，harness = 工具+知识+观察+动作接口+权限，其全部秘密是一个 `while True` 循环；课程按\"能干活→扛复杂→跑长跑久\"三段编排，把 Claude Code 拆成可单独复用的设计零件。",
+      "summary": "货拉拉技术总监亓隆基分享 Agent 进入实时交易系统的生产实践：核心判断是\"用 Agent 拓展系统能力边界，而非重做已有系统\"。基于意图交易（AI 下单）、持续撮合（AI 撮合）、策略执行（AI 运营）三个已上线场景，提出 Agent 生产化四层模型——模型决定起点，Harness 决定下限，Dual Loop 决定方向，业务知识决定上限。",
       "summary_status": "",
-      "asset_ref": "Assets/2026-11/weixin-s9qke-pmm3130ha1hn-6ua.md",
-      "wiki_status": "ingesting"
+      "asset_ref": "Assets/2026-11/weixin-olljy1vd-ai-agent-trading.md",
+      "wiki_status": "pending"
     },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -8487,6 +8469,25 @@
       "wiki_status": "ingested"
     },
     {
+      "id": "2026-11-23-bisheng-3-office-agent",
+      "title": "一个能平替 WorkBuddy 和豆包工作的开源办公 Agent，来了！支持私有化部署",
+      "path": "Archive/2026-11-23-bisheng-3-office-agent.md",
+      "created": "2026-11-23",
+      "category": "资讯",
+      "tags": [
+        "AI",
+        "Agent"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/WFh-_4ZW_3BQYdNCswxyvQ",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "Dataelem 团队开源的企业级办公 Agent 平台 BISHENG 3.0：桌面端基于 DeepSeek Harness（DSH）开发，主打私有化部署、数据不出企业边界，定位 WorkBuddy/豆包工作的开源平替。文章以项目汇报（Chat 模式）与销售数据整理（Work 模式）两个真实任务实测全流程，并介绍企业侧的模型/技能/知识权限管理、外部 Agent 接入与员工应用托管能力。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-wfh-4zw-3bqydncswxyvq.md",
+      "wiki_status": "ingested"
+    },
+    {
       "id": "2026-11-23-coding-agent-software-factory",
       "title": "如何用 Coding Agent 构建自己的软件工厂？",
       "path": "Archive/2026-11-23-coding-agent-software-factory.md",
@@ -8542,6 +8543,25 @@
       "summary": "ZGC 低停顿的两大核心机制（染色指针 + 读屏障）、从 JDK 11 实验到 JDK 21 分代 ZGC 的版本演进，以及 JDK 8→21 的 GC 选型建议，是《JVM 底层修炼记》系列的收官篇。",
       "summary_status": "",
       "asset_ref": "Assets/2026/11/jvm-zgc-evolution.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-23-learn-claude-code-course",
+      "title": "8 万星的教学项目：手写一个 mini Claude Code",
+      "path": "Archive/2026-11-23-learn-claude-code-course.md",
+      "created": "2026-11-23",
+      "category": "学习",
+      "tags": [
+        "AI",
+        "Agent"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/S9qKe-pMM3130Ha1hN_6UA",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "介绍开源课程 shareAI-lab/learn-claude-code（79.6k Star、MIT 协议、主语言 Python）：用 17 节课手写一个 mini Claude Code，副标题 \"Bash is all you need\"。核心主张——Agent 的自主性来自模型而非编排代码，harness = 工具+知识+观察+动作接口+权限，其全部秘密是一个 `while True` 循环；课程按\"能干活→扛复杂→跑长跑久\"三段编排，把 Claude Code 拆成可单独复用的设计零件。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-s9qke-pmm3130ha1hn-6ua.md",
       "wiki_status": "ingested"
     },
     {

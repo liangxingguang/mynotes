@@ -4,7 +4,7 @@ type: entity
 title: DeepSeek Harness
 status: active
 created: 2026-10-20
-updated: 2026-11-21
+updated: 2026-11-23
 confidence: medium
 tags:
   - entity
@@ -18,6 +18,7 @@ sources:
   - raw/sources/ai/2026-11-02-superagent-design.md
   - raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md
   - raw/sources/ai/2026-11-20-deepseek-harness-loopforge-voice.md
+  - raw/sources/products/2026-11-23-bisheng-3-office-agent.md
 related:
   - wiki/decisions/harness-selection-deepagents.md
   - wiki/entities/deepagents.md
@@ -25,6 +26,7 @@ related:
   - wiki/concepts/super-agent.md
   - wiki/entities/loopforge.md
   - wiki/topics/ai-voice-platform-architecture.md
+  - wiki/entities/bisheng.md
 ---
 # DeepSeek Harness
 
@@ -56,6 +58,7 @@ DeepSeek Harness 是调用 DeepSeek 模型的桌面 Agent 客户端（作者称"
 - **对照版本 ce7073d**（2026-11-02 拆解信源）：Super-agent 依托的 Harness 版本 `ce7073d51254c26cd63b22a60835b8f948deb447`，含会话持久化、子 Agent 与实验性 Agent Teams 文档（会话恢复、子 Agent 恢复、持久成员与共享任务板、消息唤醒未加载成员）。
 - **Ticket/Store/Engine 实现**（2026-11-02 拆解信源）：原型以 SQLite `Store` 持久化事件/任务关系/接单决定/待执行动作/消息发送状态；`Engine` 事务先行（任务+授权+派工+待执行动作同笔事务提交后才启动执行器）；`Effects` 队列退避重试 + `Outbox` 记发送状态。
 - **编码执行器角色与版本锁定**（2026-11-20 信源）：在 VoxForge 语音平台方案中作为编码 Agent 执行器，所有"写代码/改配置/跑测试"动作由 dsh 完成；项目知识（Asterisk 拨号方案规范、OpenSIPS 路由规范、SIP 安全基线）以 Skill 形式放 `.dsh/skills/` 下按需加载（社区技能包同路径安装）。启动方式 `npx @deepseek-ai/dsh web`，默认 Web UI `http://127.0.0.1:3080`；提供标准、Code（Code Mode SDK 用 TypeScript 组合多步操作）、极简三模式。因项目处开发者预览、官方提示有不兼容变更，方案将 dsh 版本锁定、关键约束沉淀在 Skills 与 SOP 中，并保留第二执行器（如 Codex/Claude Code）可切换。
+- **DSH Desktop by Dataelem 第三方桌面客户端**（2026-11-23 信源）：Dataelem 团队在 DSH 发布当晚即开源桌面客户端（DSH Desktop by Dataelem），已有 100 万+下载、20.8K GitHub ⭐；作为 [[bisheng|BISHENG]] 3.0 的桌面端，与企业平台协同，主打私有化部署、数据不出企业边界，是 DSH 在企业办公场景的产品化封装（解读：DSH 生态已出现第三方企业级桌面客户端，将 DSH 的开发者预览定位延伸到企业办公场景）。
 
 ## Products / Projects（产品／项目）
 
@@ -65,6 +68,7 @@ DeepSeek Harness 是调用 DeepSeek 模型的桌面 Agent 客户端（作者称"
 
 - 同类竞品（解读，当前信源未直接对比）：Claude Code、[[pi]] 等 Agent CLI/客户端；Harness 的差异点是桌面端 + 模式预设 + 与 DeepSeek 模型深度绑定。
 - [[deepagents|deepagents]]：harness 库形态的同场选型竞争候选（deepagents 胜出，DSH 因 developer preview 暂缓，见 [[harness-selection-deepagents|选型决策]]）。
+- [[bisheng|BISHENG]]：基于本 Harness 开发桌面端（DSH Desktop by Dataelem）的企业办公 Agent 平台，是 DSH 在企业办公场景的产品化封装。
 
 ## Timeline（时间线）
 
@@ -75,6 +79,7 @@ DeepSeek Harness 是调用 DeepSeek 模型的桌面 Agent 客户端（作者称"
 - 2026-11-02 — Super-agent 架构探索文采集入库，补充 Super-agent 内部实例、异步 ReAct Loop（已实现未默认开启）、dsh-superagent-prototype 原型
 - 2026-11-02 — 「架构师」公众号原型拆解采集入库，补充 dsh-superagent-prototype 对照版本 6337fc8、Harness 对照版本 ce7073d（会话持久化/子 Agent/实验性 Agent Teams）、SQLite Store + Engine 事务先行 + Effects/Outbox 实现细节
 - 2026-11-20 — VoxForge 方案文采集入库，补充编码执行器角色（.dsh/skills/ 按需加载、社区技能包同路径）、启动方式与标准/Code/极简三模式、版本锁定 + 约束沉淀 Skills/SOP + 保留第二执行器的实践
+- 2026-11-23 — BISHENG 3.0 体验文采集入库，补充 DSH Desktop by Dataelem 第三方桌面客户端生态（100 万+下载、20.8K ⭐），及其作为 BISHENG 桌面端在企业办公场景的产品化封装（见 [[bisheng|BISHENG]]）
 
 ## Current Understanding（当前认知）
 
@@ -87,3 +92,4 @@ Harness 把 Agent 能力组织为"模式预设"，降低新手配置门槛；PTC
 - `raw/sources/ai/2026-10-28-pi-dsh-agent-complexity.md`（Cordis 插件架构、可逆组合、运行时自我改装视角）
 - `raw/sources/ai/2026-11-02-superagent-design.md`（Super-agent 内部实例、异步 ReAct Loop 已实现未默认开启、dsh-superagent-prototype 原型、存算分离与 BYOM）
 - `raw/sources/ai/2026-11-02-weixin-superagent-architecture-teardown.md`（原型 6337fc8、Harness 对照版本 ce7073d、SQLite Store + Engine 事务先行 + Effects/Outbox、WorkerSlots、observe/auto 接单）
+- `raw/sources/products/2026-11-23-bisheng-3-office-agent.md`（DSH Desktop by Dataelem 第三方桌面客户端生态、BISHENG 企业办公场景产品化封装）

@@ -4,7 +4,7 @@ type: concept
 title: Agent Loop
 status: active
 created: 2026-10-22
-updated: 2026-11-12
+updated: 2026-11-23
 confidence: high
 tags:
   - concept
@@ -28,6 +28,7 @@ sources:
   - raw/sources/ai/2026-11-06-pi-loop-engineering.md
   - raw/sources/ai/2026-11-12-ai-agent-tech-overview.md
   - raw/sources/ai/2026-11-20-agentscope-java-source.md
+  - raw/sources/ai/2026-11-23-learn-claude-code-course.md
 related:
   - wiki/concepts/harness-engineering.md
   - wiki/entities/pi.md
@@ -46,6 +47,7 @@ related:
   - wiki/sources/namiagent-agent-tutorial.md
   - wiki/sources/superagent-design.md
   - wiki/concepts/super-agent.md
+  - wiki/entities/learn-claude-code.md
 ---
 # Agent Loop
 
@@ -174,6 +176,8 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 
 - 2026-11-20 — 新增 AgentScope Java 源码图解信源（第 18 信源）`raw/sources/ai/2026-11-20-agentscope-java-source.md`。把"运行机制"落到方法级：①**结束判断精确条件**——无工具调用且至少一个非空白文本块，只返回 thinking 不算已回答，服务端工具全由厂商执行则无需本地执行；②**maxIters 准确含义**——达上限进 `summarizing()` 标记 `MAX_ITERATIONS`，且迭代上限≠整次请求最多十次模型调用；③**权限双层**——ReAct 权限门判断放行 + Toolkit 执行器管查找/分组/Schema/执行，直接 `callTool` 不经过权限门；④**恢复协议**——`doCallInner` 先查未配对工具调用，ASKING 提交 `ConfirmResult` 后从 `acting(0)` 继续，外部工具补 `ToolResultBlock`，`enablePendingToolRecovery` 默认关闭；⑤**事件流≠已持久化会话**、turn≠run。详见实体页 [[agentscope]]。
 
+- 2026-11-23 — 新增 learn-claude-code 课程导读信源（第 19 信源）`raw/sources/ai/2026-11-23-learn-claude-code-course.md`。以 s01 的 12 行最小循环印证本页核心机制：①**停止判据的模型侧实现**——看响应有无 `tool_use` 块，没有即 return，"没有任何 `if 任务完成` 的判断"，印证本页"停止信号多源性"中模型自判这一最基础终止条件；②**工具注册而非写死**——按 `block.name` 查 `TOOL_HANDLERS` 分发表执行，`block.input` 直接当关键字参数，印证"模型/宿主边界"与"Tool Call/Tool Result"机制；③**结果回灌对账**——工具结果打包成 `tool_result` 数组以 user 角色追加，每条带 `tool_use_id` 对账，印证本页"用同一 toolCallId 关联"的配对回填纪律；④**自主性不在代码**——"谁决定下一步、谁决定什么时候停，全是模型，代码只做搬运"，印证本页控制权转移与定义。由此新建实体页 [[learn-claude-code|learn-claude-code]]。
+
 ## Open Questions（开放问题）
 
 - 不同框架（LangGraph、AutoGen、各厂商 Agent SDK）对 Runtime/Harness 的划分与本文是否一致？
@@ -199,6 +203,7 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 - Source: `raw/sources/ai/2026-11-06-pi-loop-engineering.md`（双层 run/turn Loop、steering/follow-up 双队列、token 截断整批 fail、工具异常包装回喂）
 - Source: `raw/sources/ai/2026-11-12-ai-agent-tech-overview.md`（第 17 信源：控制权转移、ReAct 提示格式、核心循环五环节、运行机制）
 - Source: `raw/sources/ai/2026-11-20-agentscope-java-source.md`（第 18 信源：结束判断精确条件、maxIters 准确含义、权限双层、恢复协议、事件流≠已持久化会话、turn≠run）
+- Source: `raw/sources/ai/2026-11-23-learn-claude-code-course.md`（第 19 信源：s01 12 行最小循环印证停止判据、工具注册、结果回灌对账、自主性在模型不在代码）
 
 ## Related Knowledge（相关知识）
 
@@ -220,3 +225,5 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 - [[namiagent|NamiAgent]]（100 行最小循环的教学实现）
 - [[namiagent-agent-tutorial|微博推荐：NamiAgent——零基础 AI Agent 本地实战教程（信源页）]]
 - [[pi-loop-engineering-recursive-aesthetics|从 Pi 窥见 Loop Engineering 的递归美学（信源页）]]
+- [[learn-claude-code|learn-claude-code]]
+- [[2026-11-23-learn-claude-code-course|手写一个 mini Claude Code（信源页）]]

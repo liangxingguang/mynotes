@@ -9,9 +9,7 @@ created: 2026-11-23
 category: 资讯
 tags: [AI, Agent]
 asset_ref: Assets/2026-11/weixin-wfh-4zw-3bqydncswxyvq.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-23T10:20:43.333Z"
-ingest_claim_id: 20412-1795429243333-0
+wiki_status: ingested
 ---
 
 # 一个能平替 WorkBuddy 和豆包工作的开源办公 Agent，来了！支持私有化部署

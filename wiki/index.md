@@ -4,6 +4,8 @@
 
 ## source（信源）
 
+- [[2026-11-23-bisheng-3-office-agent|一个能平替 WorkBuddy 和豆包工作的开源办公 Agent，来了！支持私有化部署]]（2026-11-23，AI/办公Agent/私有化，BISHENG 3.0 开源企业级办公 Agent：DSH Desktop 桌面端+企业平台、Chat/Work 双模式、企业资源管理五模块、外部 Agent 接入与应用托管，微信公众号单信源，置信度中）
+- [[2026-11-23-learn-claude-code-course|8 万星的教学项目：手写一个 mini Claude Code]]（2026-11-23，AI/Agent/Harness/教学，shareAI-lab/learn-claude-code 课程导读：三句主张、17 节三段编排、s01 12 行最小 while True 循环、s17 目标闸门，微信公众号单信源，置信度中）
 - [[im-read-receipt-high-concurrency|【新文导读】详解IM消息已读未读功能的高并发技术实现]]（2026-11-23，IM/架构/高并发，会话级已读游标选型、网关职责解耦、im_conversation+读游标表数据模型、Redis/MySQL/Kafka 分工、Lua 原子幂等推进，52im.net 公众号导读版，全文见 thread-4929，单信源，置信度中）
 - [[2026-11-23-bend-dept-tree-design|B端系统部门树怎么设计？一人兼两职、组织大重组，建议收藏]]（2026-11-23，产品/B端/系统设计，四类组织树拆分+四层主数据模型+8步SOP+EHR重组与财务中台兼岗两案例+自检清单，微信公众号单信源，置信度中）
 - [[2026-11-23-action-game-design-kb|动作游戏设计知识库（当前共 70 篇）]]（2026-11-23，游戏设计/索引导航，AI 整理的 GDC/CEDEC 会议分享速览合集：70 篇一句话结论+标签+原始出处，跨度 1981–2026，知乎单信源，置信度中）
@@ -718,6 +720,7 @@
 - [[archunit|ArchUnit]]（Java 架构约束即测试，TNG，当前 1.5.1）
 - [[argo-rollouts|Argo Rollouts]]（K8s 渐进式交付控制器：Rollout CRD + AnalysisTemplate 门禁，blueGreen/canary，单信源）
 - [[arthas|Arthas]]（Java 线上诊断工具，4.3.5 起含实验性 MCP Server；十二信源：专辑目录+MCP 双实测+系列七篇+GC 实战+五场景事故+版本核实/热更新边界）
+- [[bisheng|BISHENG（毕昇）]]（2026-11-23，AI/办公Agent/私有化部署实体，Dataelem 团队开源企业级办公 Agent 平台，桌面端基于 DeepSeek Harness 开发，Chat/Work 双模式+企业资源管理五模块+外部 Agent 接入+应用托管，定位 WorkBuddy/豆包工作开源平替，微信公众号单信源，置信度中）
 - [[cs2680|CS2680]]（哈佛 2026 秋季新课《Modern AI Systems: Agents and System Optimizations》，Juncheng Yang 主讲/MaDSys 支持；一个 Agent 系统拆到底（Agent Loop→推理服务→GPU）+Mads 五件套递进作业+无考试期末项目+阅读清单论文地图+80 人已满可旁听，公众号单信源，置信度低）
 - [[cs329z|CS329Z]]（斯坦福 AI Agent 自学课程，面向 Python 开发者，含练习+代码架构导读；中文翻译稿 wanghao-SunSky/cs329z-chinese，微博单信源，置信度低）
 - [[namiagent|NamiAgent]]（开源 AI Agent 教程项目+本地可运行 Agent，100 行最小循环教学，读写文件/命令/MCP/长期记忆+网页端可视化，微博单信源，置信度中）
@@ -732,6 +735,7 @@
 - [[kongming-ai-dev-platform|孔明（AI 研发平台）]]（某教育产品百人团队自研研发交付 Harness：Fly/Pro/Max/Fast/Flow/Ultra 版本阶梯随组织演进扩张，普及率 9.8%→70.2%；后端八阶段验收工作流+验证快照+脚本核对，双信源）
 - [[langgraph|LangGraph]]（LangChain 生态 Agent 编排状态机；原生非分布式，RedisSaver+MySQL 快照+外部锁补齐，双信源）
 - [[learn-harness-engineering-course|Learn Harness Engineering]]（Walking Labs 开源 Coding Agent 工程课程：14 讲 + 8 递进项目，单一微博推荐信源）
+- [[learn-claude-code|learn-claude-code]]（2026-11-23，AI/Agent/Harness/教学实体，shareAI-lab 开源课程，79.6k Star，17 节手写 mini Claude Code，三句主张+三段编排+s01 最小循环+s17 目标闸门，微信公众号单信源，置信度中）
 - [[netty|Netty]]（Java 异步事件驱动网络框架；Reactor+ByteBuf+零拷贝三支柱+Pipeline/EventLoop/Bootstrap/内存池/Native Transport/流量控制/ChannelFuture 源码机制+RPC 实战/版本演进/调试排障/设计模式全景+生产调优五维度+SCG/Kafka/中间件应用+系列目录，机制+教程+IoT 工程三十五信源）
 - [[pi|Pi]]（极简 Agent CLI/Harness，1.0 起原生 MCP + Code Mode + Pi Durable，5000+ 扩展生态）
 - [[pigeon-message-bus|信鸽（Pigeon）]]（网易云音乐直播活动消息总线；32 台 8U16G 支撑 300w/min，RocketMQ 底座）

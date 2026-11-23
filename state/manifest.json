@@ -5627,6 +5627,33 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/Ga3_pzKOMT6lo23QN1Wcag",
       "asset_ref": "Assets/2026-11/weixin-ga3-pzkomt6lo23qn1wcag.md"
+    },
+    {
+      "path": "raw/sources/products/2026-11-23-bisheng-3-office-agent.md",
+      "sha256": "6d538a91430183c30328ab2fce81567c19f36fb6679107aa542e839f51c741e6",
+      "registered_at": "2026-11-23",
+      "inbox_ref": "Archive/2026-11-23-bisheng-3-office-agent.md",
+      "pages": [
+        "wiki/sources/2026-11-23-bisheng-3-office-agent.md",
+        "wiki/entities/bisheng.md",
+        "wiki/entities/deepseek-harness.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/WFh-_4ZW_3BQYdNCswxyvQ",
+      "asset_ref": "Assets/2026-11/weixin-wfh-4zw-3bqydncswxyvq.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-23-learn-claude-code-course.md",
+      "sha256": "941e5ba022619c3f07ff3df9d153335e586a2345c5b1703ce68d81681acf4568",
+      "registered_at": "2026-11-23",
+      "inbox_ref": "Archive/2026-11-23-learn-claude-code-course.md",
+      "pages": [
+        "wiki/sources/2026-11-23-learn-claude-code-course.md",
+        "wiki/entities/learn-claude-code.md",
+        "wiki/concepts/harness-engineering.md",
+        "wiki/concepts/agent-loop.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/S9qKe-pMM3130Ha1hN_6UA",
+      "asset_ref": "Assets/2026-11/weixin-s9qke-pmm3130ha1hn-6ua.md"
     }
   ]
 }
