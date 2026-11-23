@@ -4,7 +4,7 @@ type: concept
 title: RAG（检索增强生成）
 status: active
 created: 2026-11-12
-updated: 2026-11-23
+updated: 2026-11-24
 confidence: high
 tags:
   - concept
@@ -20,6 +20,7 @@ sources:
   - raw/sources/ai/2026-11-20-rag-steps.md
   - raw/sources/ai/2026-11-23-deepsearch-rag-comparison.md
   - raw/sources/ai/2026-11-23-langchain-rag-tutorial.md
+  - raw/sources/ai/2026-11-23-rag-llm-generation.md
 related:
   - wiki/concepts/prompt-engineering.md
   - wiki/concepts/context-management.md
@@ -119,6 +120,8 @@ RAG vs 微调对比（信源 2026-11-12）：
 
 **向量索引组织与调试**（信源 2026-11-23）：向量多时不能逐一比较，索引侧把大量向量组织成若干候选区域，新点到来后先定位区域再在局部比较，从而排除大量不相关点（Faiss 的思想）——检索速度与完整性存在取舍，只查少量区域更快但可能错过边界近邻，可同时考虑相邻区域；不同向量库的差异主要在"怎么划分区域"，基本原理相同。调试时区分两类返回：`result` 是模型依据上下文生成的自然语言回答（可能经归纳改写），`source_documents` 是检索器召回的原始片段（进入 Prompt 的依据），二者不可混同——**优先检查来源文档**：来源无相关内容，问题在检索之前，反复改回答措辞通常无效；来源正确而答案仍错，才检查上下文是否完整传入与提示词。
 
+**生成阶段（最后一公里）**（信源 2026-11-23）：RAG 全流程为「检索→上下文构建→生成→输出」，生成是用户真正接触的环节。大模型在此阶段是**"智能整合器 + 语言表达器"**（理解、整合、生成三项能力），与"纯大模型问答"的区别是**严格锚定检索资料而非依赖自身记忆**。生成质量的提升围绕四个方向：①**信息对齐**（提示词强调"问题-资料-答案"关联，避免答非所问）；②**破解 Lost in Middle**（多资料输入时模型易忽略中间信息，对策为资料排序优化、分段输入、提示词要求全面覆盖）；③**幻觉抑制**（三管齐下：Prompt 工程、上下文构建（重排序/去重/结构化/窗口管理）、溯源与校验——强制标注来源并做答案→证据匹配，无证据退回"无法回答"）；④**回答优化**（分点分层结构、风格适配、长度控制）。生成侧的进阶技术与生成前的上下文准备详见 [[rag-chunking]]（动态分片与 Small2Big）、[[prompt-engineering]]（RAG 场景四原则与温度调参）与 [[context-management]]（TOKEN 预算管理）。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -149,6 +152,8 @@ RAG vs 微调对比（信源 2026-11-12）：
 
 - 2026-11-23 — 新增 LangChain RAG 教程信源（第 9 信源）`raw/sources/ai/2026-11-23-langchain-rag-tutorial.md`。How It Works 增补"向量索引组织与调试"：Faiss 的候选区域组织思想（先定位区域再局部比较、不同向量库差异在划分区域）与 `result`/`source_documents` 的调试区分（优先查来源文档、来源无内容则改措辞无效）。
 
+- 2026-11-24 — 新增微信 RAG 系列第 4 篇信源（第 10 信源）`raw/sources/ai/2026-11-23-rag-llm-generation.md`。How It Works 增补"生成阶段（最后一公里）"：大模型"智能整合器+语言表达器"定位、与纯问答的区别（严格锚定资料）、信息对齐/Lost in Middle/幻觉抑制三管齐下/回答优化四个提升方向；正文以生成环节视角印证"检索×生成相乘"与"出处可核对"。
+
 ## Open Questions（开放问题）
 
 - 多跳检索与推理增强（CoT/ToT）的协同：多跳检索本身已含推理，与提示层推理增强如何配合？
@@ -165,6 +170,7 @@ RAG vs 微调对比（信源 2026-11-12）：
 - Source: `raw/sources/ai/2026-11-20-rag-steps.md`（《RAG工程实践》系列第 3 篇，八环节链路、逐环验收、嵌入模型硬约束、延迟）
 - Source: `raw/sources/ai/2026-11-23-deepsearch-rag-comparison.md`（微信 RAG 系列第 5 篇，2026-11-23，Agentic RAG/DeepSearch 循环检索链路与三模式对比；支撑 [[deepsearch]]）
 - Source: `raw/sources/ai/2026-11-23-langchain-rag-tutorial.md`（第 9 信源：Faiss 候选区域组织思想、result/source_documents 调试区分，教学演示印证，置信度中）
+- Source: `raw/sources/ai/2026-11-23-rag-llm-generation.md`（第 10 信源：生成阶段定位、智能整合器+语言表达器、Lost in Middle、幻觉抑制三管齐下、回答优化，微信 RAG 系列第 4 篇，单信源置信度中）
 
 ## Related Knowledge（相关知识）
 

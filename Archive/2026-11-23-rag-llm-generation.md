@@ -9,7 +9,7 @@ created: 2026-11-23
 category: 技术
 tags: [RAG, AI]
 asset_ref: Assets/2026-11/weixin-nt4byfqxjclsmc43thfw9q.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # RAG 中的大模型生成：最后一公里

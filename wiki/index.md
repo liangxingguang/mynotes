@@ -18,6 +18,7 @@
 - [[2026-11-23-llm-wiki-knowledge-graph|LLM-Wiki：基于知识图谱的本地知识库系统（信源页）]]（2026-11-23，AI/RAG/LLM Wiki，微信 RAG 系列第 6 篇：RAG 三大先天问题（chunk 粒度/语义鸿沟/信息碎片化）+LLM-Wiki 知识编译器+Obsidian+CLI/三 Skill 协作+采购合同实战+RAG/LLM-Wiki/DeepSearch 三层互补+GraphRAG 计算型 vs LLM-Wiki 文档型，单信源，置信度中）
 - [[2026-11-23-rag-10-million-docs|1000 万份文档，RAG 系统到底怎么扛？（信源页）]]（2026-11-23，AI/RAG/系统设计，微信图解长文：1000 万文档/2 亿 Chunks/820GB 向量规模+Kafka 写入解耦+独立 Worker+S3/Postgres/向量库/OpenSearch/Redis 多引擎存储分工+向量+BM25→RRF→Reranker→LLM 查询链路，图解设计级口径，单信源，置信度中）
 - [[2026-11-23-rag-doc-parsing-knowledge-base|RAG 文档解析与知识库构建（信源页）]]（2026-11-23，AI/RAG/建库，微信 RAG 全流程教程：解析引擎 DeepDoc/MinerU+三大视觉任务 OCR/DLR/TSR+问答对检索单元+七种分块策略+块大小三档+Small2Big+语义切块阈值三法+知识增强三手段（上下文增强/CCH/问题生成），教程式总览，单信源，置信度中）
+- [[2026-11-23-rag-llm-generation|RAG 中的大模型生成：最后一公里（信源页）]]（2026-11-23，AI/RAG/生成，微信 RAG 系列第 4 篇：生成阶段定位（智能整合器+语言表达器）+Prompt 四原则与温度分档（事实型 0.0-0.3/解释型 0.4-0.7/创意型 0.8-1.0）+Lost in Middle+幻觉抑制三管齐下+上下文构建四原则与流程+长文本 Small2Big+多文档引用增强+表格问答+上下文压缩+答案溯源（n-gram 召回+LLM Rerank），单信源，置信度中）
 - [[15-books-understand-world|看懂世界运转的 15 本书单]]（2026-10-20，书单，置信度低）
 - [[475-claude-opus-demos-repo|微博分享：475 个 Claude Opus 5.5 生成的视频演示仓库]]（2026-10-20，AI/资源，置信度低）
 - [[2026-10-31-xuqiufenxi-01-ruanjian-xiangmu-shibai|软件项目失败，很多时候不是技术问题，而是需求问题]]（2026-10-31，工程实践/需求分析，系列开篇立论：技术问题显性 vs 需求问题隐性+隐形裂缝+动手前想清做什么，公众号单信源，置信度中）
@@ -619,7 +620,7 @@
 - [[phaser-internals|Phaser 分阶段同步屏障设计]]（单 volatile long 位编码 unarrived/parties/phase/终止位+一次 CAS 推进；arrive 三变体动态增减；树形分层分散 CAS 竞争；单信源，置信度中）
 - [[priorityqueue-internals|PriorityQueue 二叉堆设计]]（Object[] 数组承载隐式完全二叉堆；siftUp/siftDown 维护堆序；扩容 <64 翻倍+2、≥64 扩 50%；Floyd 建堆 O(n)；双信源，置信度中）
 - [[prompt-injection|提示词注入（Prompt Injection）]]（模型分不清指令与数据且无参数化查询解药；三条注入路径+四环模型；确认闸门拦不住；OWASP LLM01 连续两年榜首，单信源，置信度中）
-- [[prompt-engineering|提示工程（Prompt Engineering）]]（输出配置温度/Top-K/Top-P+11 种技巧梯度从零样本到 APE+最佳实践；Google 官方白皮书为基准信源，置信度高）
+- [[prompt-engineering|提示工程（Prompt Engineering）]]（输出配置温度/Top-K/Top-P+11 种技巧梯度从零样本到 APE+最佳实践+RAG 场景四原则（明确角色/限定信息源/规定格式/兜底策略）与温度分档+动态模板路由；Google 官方白皮书为基准信源，三信源，置信度高）
 - [[task-run-step-event-model|Task/Run/Step/Event 领域模型]]（Agent Runtime 控制平面四元分离；Run 聚合根+状态机守卫+纯函数投影+OCC；replay≠Durable Execution）
 - [[raft-membership-change-barrier|Raft 成员变更的日志 Barrier]]（公共 config 提交当前 term 日志登记 term；joint 无需/单步必需/回退双向必需）
 - [[operation-log-design|B端操作日志设计（审计、溯源、合规的基础设施）]]（留痕三问+五维日志模型+一核三扩表结构+六策略（分层记录/字段级diff/异步落库/哈希链防篡改/加密展示/冷热分层）+金融留存≥5年+7行业案例；与登录日志、业务流水、权限审计日志区分，单信源置信度中）
@@ -627,10 +628,10 @@
 - [[rbac-permission-system|RBAC 权限系统（传统 B 端角色访问控制）]]（用户→角色→权限→资源静态绑定；RBAC0-3 模型层级；权限点编码模块_资源_动作；七大功能模块；权限矩阵表落地；字段权限（列级）层与三张表产出物（第三信源）+多租户租户维度数据权限与 ABAC 适用场景（第四信源），与 [[agent-permission-model]] 互补而非替代，四信源置信度中）
 - [[read-fanout|读扩散（Fan-out on Read）]]（会话队列+syncId 位点同步把 1:N 写压成 1:1；99.99% 非个性化消息前提；阿里混合模式 500ms 端到端，双信源）
 - [[red-dot-tree-system|拉模式红点树系统（游戏 UI 提示徽标）]]（路径树+脏标记冒泡+每帧合批+拉模式，叶子自订阅自计算；先取走脏标记再计算；全树遍历顺带时间驱动红点；五方案对比+完整 C# 实现，单信源一手，置信度高）
-- [[rag|RAG（检索增强生成）]]（生成前检索注入知识；向量检索主流实现；四条路对比（长上下文/微调/Agent/RAG 改的变量）与四类非检索不可场景；一次问答链路+八环节（建库四步+问答四步）+逐环验收+嵌入模型硬约束+四层排查顺序；检索×生成相乘+出处可核对；混合检索/查询改写/分块/多跳；知识库vs记忆vs技能三层，vivo+RAG工程实践七信源，置信度高）
+- [[rag|RAG（检索增强生成）]]（生成前检索注入知识；向量检索主流实现；四条路对比（长上下文/微调/Agent/RAG 改的变量）与四类非检索不可场景；一次问答链路+八环节（建库四步+问答四步）+逐环验收+嵌入模型硬约束+四层排查顺序；检索×生成相乘+出处可核对；生成阶段定位（智能整合器+语言表达器）+幻觉抑制三管齐下（Prompt工程/上下文构建/溯源校验）；混合检索/查询改写/分块/多跳；知识库vs记忆vs技能三层，vivo+RAG工程实践+微信 RAG 系列十信源，置信度高）
 - [[rag-production-guardrails|企业级 RAG 生产护栏]]（容量/证据/权限/恢复四主线；证据门禁前置、发布目录原子切换；混合检索+存储分层+参数热调+重活异步化+影子模式+旁路降级+RRF融合+相关性裁判拒答+SSE契约+MCP工具调用真实用户身份+五层记忆+加权遗忘+pgvector五契约/检索路由分叉/发布CAS/两步删除/RLS双保险/缓存键九段/评测矩阵+千万级规模多引擎协同（1000万文档/2亿Chunks/820GB/Kafka写入/S3+Postgres+向量库+OpenSearch+Redis/向量+BM25→RRF→Reranker→LLM），五信源，置信度中）
 - [[rag-document-parsing|RAG 文档解析]]（2026-11-21，AI/RAG/建库，建库侧第一环：目标=连同结构提取（标题/表格/页码/正文）；三类难点（文本层缺失→OCR/双栏串读/表格结构丢失）；四类结构下游用途；错误上游产生下游放大不报错；抽样对照验收（50页按来源分组）与够用三判；解析方案三路线（规则/版面模型/商用API）+分层组合+选型顺序+换解析器全量重建+DeepDoc/MinerU 解析引擎+问答对检索单元+三大视觉任务 OCR/DLR/TSR，三信源，置信度中）
-- [[rag-chunking|RAG 分块]]（2026-11-21，AI/RAG/建库，建库侧第二环：四条约束；粒度与边界两个独立维度；四种切法（差别在块的完整性）；标题并入块内；重叠为补偿非必需（10%~25%）；表格与问答对单独处理；双指标（命中率/答案完整度）迭代定块（300~800字）+七种分块策略分类+块大小三档权衡+Small2Big上下文补全+语义切块阈值三法+知识增强三手段，三信源，置信度中）
+- [[rag-chunking|RAG 分块]]（2026-11-21，AI/RAG/建库，建库侧第二环：四条约束；粒度与边界两个独立维度；四种切法（差别在块的完整性）；标题并入块内；重叠为补偿非必需（10%~25%）；表格与问答对单独处理；双指标（命中率/答案完整度）迭代定块（300~800字）+七种分块策略分类+块大小三档权衡+Small2Big上下文补全（邻域补全+父块回溯）+语义切块阈值三法+知识增强三手段+长文本动态分片（chunk≈256/层级解析/chunk_idx·chunk_cnt/以原始块为中心扩展邻居/num_neighbors 调参），四信源，置信度中）
 - [[reactive-tracing-context|响应式环境的全链路 traceId 传递]]（Reactor Context 替代 ThreadLocal；doOnEach 同步 MDC、doFinally 清除）
 - [[reactor-thread-model|主从 Reactor 线程模型（Netty 版）]]（Boss accept/Worker CPU×2/Channel 终身绑单 EventLoop 天然无锁；ServerBootstrapAcceptor 移交链路+三形态选型+SCG 双 Group 与中间件应用印证，八信源互证，置信度高）
 - [[redefine-hot-reload-boundaries|redefine 热替换边界：能改什么、不能改什么]]（只能改方法体/执行中方法退出才生效/三个风险+临时止血五步，与 arthas-01、MCP 实测信源互证，单信源方法论，置信度高）

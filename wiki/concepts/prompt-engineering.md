@@ -4,7 +4,7 @@ type: concept
 title: 提示工程（Prompt Engineering）
 status: active
 created: 2026-10-31
-updated: 2026-11-12
+updated: 2026-11-24
 confidence: high
 tags:
   - concept
@@ -13,12 +13,14 @@ tags:
 sources:
   - raw/sources/ai/2026-10-28-google-prompt-engineering-whitepaper.md
   - raw/sources/ai/2026-11-12-ai-agent-tech-overview.md
+  - raw/sources/ai/2026-11-23-rag-llm-generation.md
 related:
   - wiki/concepts/thinking-mode.md
   - wiki/concepts/next-token-prediction.md
   - wiki/concepts/agent-loop.md
   - wiki/concepts/tool-schema-as-prompt.md
   - wiki/concepts/prompt-injection.md
+  - wiki/concepts/rag.md
 ---
 # 提示工程（Prompt Engineering）
 
@@ -84,6 +86,8 @@ related:
 
 **代码提示四场景**：编写（直接描述功能）、解释（给代码让模型分析）、翻译（指定目标语言）、调试审查（把错误回溯连同代码一起给模型效果最好）。
 
+**RAG 场景的提示工程**（信源 2026-11-23）：在 RAG 问答中，提示工程的直接任务是把模型"限定在证据范围内"并规定输出结构，核心是告诉模型四件事：**你是谁**（角色定位）、**你要做什么**（任务目标，如"基于知识库信息回答用户问题"）、**你有哪些输入**（用户问题与检索到的文档内容）、**你要怎么回答**（直接回答/引用文档/综合分析）。四条核心原则：①**明确角色**（system prompt 定身份、专业领域、回答格式与禁止行为）；②**限定信息源**（显式声明"仅使用提供的文档回答"，设标准兜底回复"根据提供文档无法回答"）；③**规定格式**（要点/结论优先、引用位置明确、结构化段落 + Markdown 渲染）；④**兜底策略**（无证据返回"无法回答"而非臆造）。进阶要素：**动态模板路由**（Template Router 按查询类型/意图分派不同 Prompt 模板，减少手动微调）与**温度按任务分档**（事实型 0.0-0.3 保确定性、解释/策略型 0.4-0.7 留适度多样性、头脑风暴/创意型 0.8-1.0 鼓励发散）——与上文"温度 0=贪婪解码、创意 0.9"的一般口径一致，此处为 RAG 任务场景的细化取值。价值：把模型能力"制度化、可控化、可审计化"，显著降低幻觉、保证合规（支撑 [[rag]] 的生成阶段定位）。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -106,6 +110,8 @@ related:
 - 当前：提示工程与 agent harness 工程融合——工具 schema 设计、上下文管理、错误回传策略成为提示工程在 agent 场景的延伸。
 - 2026-11-12 — 新增 vivo《AI Agent 技术全景解析》信源。补上 CoT 的信息论机制解释（拆步降熵）与提示策略横向对比表（Zero-shot/Few-shot/CoT/Self-Consistency 在准确率、成本、延迟上的取舍），并记录"新一代模型将 CoT 内化到训练中"的趋势判断。
 
+- 2026-11-24 — 新增微信 RAG 系列第 4 篇信源（第 3 信源）`raw/sources/ai/2026-11-23-rag-llm-generation.md`。How It Works 增补"RAG 场景的提示工程"：核心任务四问（你是谁/做什么/有哪些输入/怎么回答）、四原则（明确角色/限定信息源/规定格式/兜底策略）、进阶要素（动态模板路由、温度按任务分档 0.0-0.3/0.4-0.7/0.8-1.0）。
+
 ## Open Questions（开放问题）
 
 - 推理模型时代，哪些提示技巧仍然有效？CoT 在推理模型上是否多余？
@@ -116,6 +122,7 @@ related:
 
 - Source: `raw/sources/ai/2026-10-28-google-prompt-engineering-whitepaper.md`（Google 官方白皮书，2024 年 9 月，宝玉译，confidence=high）
 - Source: `raw/sources/ai/2026-11-12-ai-agent-tech-overview.md`（vivo Agent 全景综述，2026-11-12，CoT 信息论机制与提示策略对比表）
+- Source: `raw/sources/ai/2026-11-23-rag-llm-generation.md`（第 3 信源：RAG 场景提示工程四原则、核心任务四问、动态模板路由与温度分档，微信 RAG 系列第 4 篇，单信源置信度中）
 
 ## Related Knowledge（相关知识）
 

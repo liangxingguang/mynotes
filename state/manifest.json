@@ -5770,6 +5770,20 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/xGIVYtT012pY-O3CKlRDKg",
       "asset_ref": "Assets/2026-11/weixin-xgivyt-t012py-o3cklrdkg.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-23-rag-llm-generation.md",
+      "sha256": "73b1898e49c742cef4da5b98485c8f6dccc5618a04560b2004925d2298603e03",
+      "registered_at": "2026-11-24",
+      "inbox_ref": "Archive/2026-11-23-rag-llm-generation.md",
+      "pages": [
+        "wiki/sources/2026-11-23-rag-llm-generation.md",
+        "wiki/concepts/rag.md",
+        "wiki/concepts/prompt-engineering.md",
+        "wiki/concepts/rag-chunking.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/nT4byFqXjCLSmc43thFw9Q",
+      "asset_ref": "Assets/2026-11/weixin-nt4byfqxjclsmc43thfw9q.md"
     }
   ]
 }
