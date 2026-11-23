@@ -9,7 +9,7 @@ created: 2026-11-23
 category: 学习
 tags: [RAG, AI]
 asset_ref: Assets/2026-11/weixin-t350sq54mnp-rh4gvmbx5bw.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 用 LangChain 搞定 RAG：告别大模型幻觉

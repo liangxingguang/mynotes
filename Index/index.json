@@ -1,65 +1,6 @@
 {
-  "updated_at": "2026-11-23 20:02",
+  "updated_at": "2026-11-23 21:53",
   "notes": [
-    {
-      "id": "2026-11-23-lala-ai-agent-realtime-trading",
-      "title": "AI Agent 如何进入实时交易系统：货拉拉的三个实践与一套工程方法论",
-      "path": "Inbox/2026-11-23-lala-ai-agent-realtime-trading.md",
-      "created": "2026-11-23",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "Agent",
-        "系统设计"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/OLljY1Vd221YeMmSFnOGrg",
-      "source_type": "网页",
-      "platform": "微信",
-      "summary": "货拉拉技术总监亓隆基分享 Agent 进入实时交易系统的生产实践：核心判断是\"用 Agent 拓展系统能力边界，而非重做已有系统\"。基于意图交易（AI 下单）、持续撮合（AI 撮合）、策略执行（AI 运营）三个已上线场景，提出 Agent 生产化四层模型——模型决定起点，Harness 决定下限，Dual Loop 决定方向，业务知识决定上限。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/weixin-olljy1vd-ai-agent-trading.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-11-23-langchain-rag-tutorial",
-      "title": "用 LangChain 搞定 RAG：告别大模型幻觉",
-      "path": "Inbox/2026-11-23-langchain-rag-tutorial.md",
-      "created": "2026-11-23",
-      "category": "学习",
-      "tags": [
-        "RAG",
-        "AI"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/T350SQ54mnpRH4GVMBx5bw",
-      "source_type": "网页",
-      "platform": "微信",
-      "summary": "大模型 Agent 系列教程篇：用 LangChain 演示 RAG 完整流程。先讲 RAG 原理（私有数据检索增强、离线/在线分工、六阶段职责），再讲切分重叠、Embedding 余弦相似度、Faiss 索引思想，最后以《天龙八部》文本为例走通 LangChain 代码（Loader→切分→建库→Retriever→RetrievalQA）并解析返回结果与调试方法。作者提醒 LangChain 生产中用得少，重在理解机制而非背接口。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/weixin-t350sq54mnp-rh4gvmbx5bw.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-11-23-llm-master-learning-roadmap",
-      "title": "全网硬核大模型应用开发（Agent、RAG）学习路线+配套资源，在 GitHub 开源",
-      "path": "Inbox/2026-11-23-llm-master-learning-roadmap.md",
-      "created": "2026-11-23",
-      "category": "学习",
-      "tags": [
-        "AI",
-        "Agent",
-        "RAG"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/guiPm_5D2xKutVZoEsdR-g",
-      "source_type": "网页",
-      "platform": "微信",
-      "summary": "作者将多年大模型技术文章整理为开源仓库 `youngyangyang04/llm-master`，定位\"程序员的大模型全栈学习路线\"，含 172 个 Markdown 文件、150+ 篇中文教程，按六阶段组织，每阶段配可交付项目，并连带面试路线，形成知识—项目—简历—面试闭环。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/weixin-guiPm_5D2xKutVZoEsdR-g.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-11-23-llm-wiki-knowledge-graph",
       "title": "LLM-Wiki：基于知识图谱的本地知识库系统",
@@ -8775,6 +8716,45 @@
       "wiki_status": "ingested"
     },
     {
+      "id": "2026-11-23-lala-ai-agent-realtime-trading",
+      "title": "AI Agent 如何进入实时交易系统：货拉拉的三个实践与一套工程方法论",
+      "path": "Archive/2026-11-23-lala-ai-agent-realtime-trading.md",
+      "created": "2026-11-23",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent",
+        "系统设计"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/OLljY1Vd221YeMmSFnOGrg",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "货拉拉技术总监亓隆基分享 Agent 进入实时交易系统的生产实践：核心判断是\"用 Agent 拓展系统能力边界，而非重做已有系统\"。基于意图交易（AI 下单）、持续撮合（AI 撮合）、策略执行（AI 运营）三个已上线场景，提出 Agent 生产化四层模型——模型决定起点，Harness 决定下限，Dual Loop 决定方向，业务知识决定上限。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-olljy1vd-ai-agent-trading.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-23-langchain-rag-tutorial",
+      "title": "用 LangChain 搞定 RAG：告别大模型幻觉",
+      "path": "Archive/2026-11-23-langchain-rag-tutorial.md",
+      "created": "2026-11-23",
+      "category": "学习",
+      "tags": [
+        "RAG",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/T350SQ54mnpRH4GVMBx5bw",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "大模型 Agent 系列教程篇：用 LangChain 演示 RAG 完整流程。先讲 RAG 原理（私有数据检索增强、离线/在线分工、六阶段职责），再讲切分重叠、Embedding 余弦相似度、Faiss 索引思想，最后以《天龙八部》文本为例走通 LangChain 代码（Loader→切分→建库→Retriever→RetrievalQA）并解析返回结果与调试方法。作者提醒 LangChain 生产中用得少，重在理解机制而非背接口。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-t350sq54mnp-rh4gvmbx5bw.md",
+      "wiki_status": "ingested"
+    },
+    {
       "id": "2026-11-23-learn-claude-code-course",
       "title": "8 万星的教学项目：手写一个 mini Claude Code",
       "path": "Archive/2026-11-23-learn-claude-code-course.md",
@@ -8791,6 +8771,26 @@
       "summary": "介绍开源课程 shareAI-lab/learn-claude-code（79.6k Star、MIT 协议、主语言 Python）：用 17 节课手写一个 mini Claude Code，副标题 \"Bash is all you need\"。核心主张——Agent 的自主性来自模型而非编排代码，harness = 工具+知识+观察+动作接口+权限，其全部秘密是一个 `while True` 循环；课程按\"能干活→扛复杂→跑长跑久\"三段编排，把 Claude Code 拆成可单独复用的设计零件。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-s9qke-pmm3130ha1hn-6ua.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-23-llm-master-learning-roadmap",
+      "title": "全网硬核大模型应用开发（Agent、RAG）学习路线+配套资源，在 GitHub 开源",
+      "path": "Archive/2026-11-23-llm-master-learning-roadmap.md",
+      "created": "2026-11-23",
+      "category": "学习",
+      "tags": [
+        "AI",
+        "Agent",
+        "RAG"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/guiPm_5D2xKutVZoEsdR-g",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "作者将多年大模型技术文章整理为开源仓库 `youngyangyang04/llm-master`，定位\"程序员的大模型全栈学习路线\"，含 172 个 Markdown 文件、150+ 篇中文教程，按六阶段组织，每阶段配可交付项目，并连带面试路线，形成知识—项目—简历—面试闭环。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-guiPm_5D2xKutVZoEsdR-g.md",
       "wiki_status": "ingested"
     },
     {

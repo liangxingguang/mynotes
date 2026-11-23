@@ -444,6 +444,9 @@
 - [[2026-11-20-writing-books-3|想提升写作能力，一定要翻烂这三本书]]（2026-11-20，学习/写作/书单，写作三重瓶颈递进三书：勇气《生活，写下来吧》→骨架《一本小小的红色写作书》→灵魂《老舍谈写作》，微信单信源，置信度中）
 - [[2026-11-20-zte-cosight-harness|中兴开源企业级 Harness：Co-Sight Harness]]（2026-11-20，AI/Agent/Harness，2000 人团队 200+ 步工作流四层改造（业务/执行/资产/证据）：完成率 50%→100%、耗时 -64%、召回 56%→91.67%，Apache 2.0 开源，内部自报单信源，置信度中）
 - [[2026-11-23-coding-agent-software-factory|如何用 Coding Agent 构建自己的软件工厂？]]（2026-11-23，AI/Agent/交付工程，软件工厂最小架构：Overseer/Worker/Daemon 三角色、Task/Job/运行/检查四类记录、`archdev push` 绑定 SHA、按提交验收、机制与策略分离、Runway 量化自报，微信单信源，置信度中）
+- [[2026-11-23-lala-agent-realtime-trading|AI Agent 如何进入实时交易系统：货拉拉的三个实践与一套工程方法论]]（2026-11-23，AI/Agent/Harness，货拉拉亓隆基：意图交易/持续撮合/策略执行三场景+Agent 生产化四层模型（模型起点/Harness 下限/Dual Loop 方向/业务知识上限）+帮模型·守业务二分与"假设模型完美"判定法+高代码 Harness 三阶段演进，生产自述自报指标，微信单信源，置信度中）
+- [[2026-11-23-langchain-rag-tutorial|用 LangChain 搞定 RAG：告别大模型幻觉]]（2026-11-23，AI/RAG/LangChain，LangChain 演示 RAG 全流程：六阶段职责+切分重叠（200/20 示例）+Embedding 同模型余弦相似度+Faiss 候选区域思想+RetrievalQA 代码流与 result/source_documents 调试，作者提示生产用得少重在理解机制，微信单信源，置信度中）
+- [[2026-11-23-llm-master-learning-roadmap|全网硬核大模型应用开发（Agent、RAG）学习路线+配套资源，在 GitHub 开源]]（2026-11-23，AI/学习/Agent，youngyangyang04/llm-master 开源仓库：六阶段学习路线（全局认知→模型调用→RAG→Agent→生产工程→原理面试）+172 文件 150+ 教程+专题/全量索引+每阶段可交付项目，作者自报规模，微信单信源，置信度中）
 
 ## concept（概念）
 
@@ -715,6 +718,7 @@
 - [[writing-skill-progression|写作能力进阶三阶梯（勇气 → 结构 → 语言）]]（2026-11-22，概念/写作/学习，按写作三重瓶颈递进组织学习资源：敢动笔→写得清楚→写得生动，各阶代表书与核心方法，微信书单单信源，置信度中）
 - [[software-factory|软件工厂（Software Factory）]]（2026-11-23，AI/Coding Agent/架构，Coding Agent 交付流水线：Overseer/Worker/Daemon 三角色、Task/Job/运行/检查四类记录、领取原子性+租约、按提交验收、机制与策略分离；与 durable-execution/ai-native-sdlc 互链，单信源，置信度中）
 - [[coding-to-proposal-method|从写代码到写方案：视角切换的五步方法]]（2026-11-23，概念/写作/方法论/思维，开发转方案视角切换：显微镜与地图隐喻、五步流程（顺序不可反、前两步想）、想清楚三问、MECE 两条检验与决策链维度、结论先行+SCQA、交付前五问自检+三个跳出来法，源头《金字塔原理》；与 proposal-logic-structures 互补、与 writing-skill-progression/deep-thinking-five-tools 区分，单信源，置信度中）
+- [[agent-production-four-layer-model|Agent 生产化四层模型]]（2026-11-23，概念/AI/Agent/Harness，货拉拉亓隆基提炼的 Agent 生产化方法论：模型决定起点、Harness 决定下限、Dual Loop 决定方向、业务知识决定上限；Harness 帮模型·守业务二分与"假设模型完美"判定法、高代码 Harness 与确定性位置、Dual Loop 内外环、业务知识按确定性分流，与 harness-engineering 互链，单信源置信度中）
 
 ## entity（实体）
 
@@ -773,6 +777,8 @@
 - [[gaode-qingzhou-agent|轻舟 Agent]]（2026-11-20，AI/Agent/FDE/真机验证实体，高德现场篇研发工程化 Agent：FDE→部署工程能力、四主节点归并、Agent Teams 多实例、Aone Sandbox、AuthX 双令牌、真机验证 DOM 核对、108 模块案例，单信源，置信度中）
 - [[tencentdb-agent-memory|TencentDB Agent Memory]]（2026-11-21，AI/Agent/记忆系统实体，腾讯云数据库团队开源的 Agent 记忆系统，承载四类记忆资产（Chat Memory/Wiki/CodeGraph/Skill）与三层互索引项目图谱；内部 Bug 定位成功率 58%→65%（+7pp）为初步正向结果；开源仓库 github.com/Tencent/TencentDB-Agent-Memory，具体实现细节信源未详述需核验，单信源，置信度中）
 - [[zte-cosight-harness|中兴 Co-Sight Harness]]（2026-11-22，AI/Agent/Harness 实体，中兴开源企业级 Agent 底座：四层架构+agent-genesis+Drive+GoldEval，200 步链路完成率 50%→100%，Apache 2.0，内部自报单信源，置信度中）
+- [[langchain|LangChain]]（2026-11-23，AI/RAG/框架实体，LLM 应用开发框架，核心抽象 Chain/Agent，提供 Loader/切分/向量库/Retriever/Prompt 模板/RetrievalQA 等 RAG 基本组件；状态管理与长期运行需自行补齐，作者提示生产用得少、重在理解机制，与 rag/langgraph/harness-engineering 互链，双信源，置信度中）
+- [[llm-master|LLM Master（llm-master 仓库）]]（2026-11-23，AI/学习/Agent 实体，youngyangyang04 开源的大模型应用开发学习路线仓库：六阶段路线（全局认知→模型调用→RAG→Agent→生产工程→原理面试）+172 文件 150+ 教程+专题/全量索引+每阶段可交付项目，作者自报规模，单信源，置信度中）
 
 ## topic（主题）
 

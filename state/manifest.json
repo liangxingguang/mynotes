@@ -5694,6 +5694,45 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/421gHY_4X9lSgbkoIMj9Ug",
       "asset_ref": "Assets/2026-11/weixin-421ghy-4x9lsgbkoimj9ug.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-23-lala-agent-realtime-trading.md",
+      "sha256": "4967c35702b096878d8afc5d9f67a5b0338440de5302d6ddec09cb4730ebfd14",
+      "registered_at": "2026-11-23",
+      "inbox_ref": "Archive/2026-11-23-lala-ai-agent-realtime-trading.md",
+      "pages": [
+        "wiki/sources/2026-11-23-lala-agent-realtime-trading.md",
+        "wiki/concepts/agent-production-four-layer-model.md",
+        "wiki/concepts/harness-engineering.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/OLljY1Vd221YeMmSFnOGrg",
+      "asset_ref": "Assets/2026-11/weixin-olljy1vd-ai-agent-trading.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-23-langchain-rag-tutorial.md",
+      "sha256": "7238d6d680ceb331798886ce30425fbdd85601081071c338855c771a74d0042a",
+      "registered_at": "2026-11-23",
+      "inbox_ref": "Archive/2026-11-23-langchain-rag-tutorial.md",
+      "pages": [
+        "wiki/sources/2026-11-23-langchain-rag-tutorial.md",
+        "wiki/entities/langchain.md",
+        "wiki/concepts/rag-chunking.md",
+        "wiki/concepts/rag.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/T350SQ54mnpRH4GVMBx5bw",
+      "asset_ref": "Assets/2026-11/weixin-t350sq54mnp-rh4gvmbx5bw.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-23-llm-master-learning-roadmap.md",
+      "sha256": "7bfe66d03e1086fe751cfe24e593c5a808a8549277c794c9e2dd764a1cfa8c19",
+      "registered_at": "2026-11-23",
+      "inbox_ref": "Archive/2026-11-23-llm-master-learning-roadmap.md",
+      "pages": [
+        "wiki/sources/2026-11-23-llm-master-learning-roadmap.md",
+        "wiki/entities/llm-master.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/guiPm_5D2xKutVZoEsdR-g",
+      "asset_ref": "Assets/2026-11/weixin-guiPm_5D2xKutVZoEsdR-g.md"
     }
   ]
 }

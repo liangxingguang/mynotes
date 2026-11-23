@@ -23,6 +23,7 @@ sources:
   - raw/sources/ai/2026-11-20-helixharness-ai-coding.md
   - raw/sources/ai/2026-11-20-zte-cosight-harness.md
   - raw/sources/ai/2026-11-23-learn-claude-code-course.md
+  - raw/sources/ai/2026-11-23-lala-agent-realtime-trading.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/concepts/context-management.md
@@ -43,6 +44,8 @@ related:
   - wiki/concepts/personal-dev.md
   - wiki/entities/zte-cosight-harness.md
   - wiki/entities/learn-claude-code.md
+  - wiki/concepts/agent-production-four-layer-model.md
+  - wiki/sources/2026-11-23-lala-agent-realtime-trading.md
 ---
 # Harness Engineering（Agent 执行系统工程）
 
@@ -117,6 +120,10 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 
 **ZTE Co-Sight 四层架构（企业级长链路实例）**（信源 2026-11-22，第 11 信源）：中兴开源 Co-Sight Harness 在 2000 人研发团队、200+ 步生产级工作流上给出完整的企业级改造样例，核心主张「Prompt → Context → Harness → Loop，长链路稳定性取决于模型外那层 Harness」。①**业务层**按五维（模型难度、自由度、可验收性、检索依赖、专业依赖）给步骤打分分流——易验收环节直接写脚本不耗模型算力，复杂环节拆为 11 个专职子 Agent（Orchestrator/Worker/Review 三层，生成与审查隔离），准确率提升约 10%；`agent-genesis` 把口头需求自动编译为标准控制文件（路线图/执行计划/验收标准/测试用例），新场景接入从 2-4 小时压缩到 5-10 分钟，验证 Agent 在隔离上下文运行、严禁查看设计方案（防「自己改自己的作业」）。②**执行层 Drive** 用声明式工作流+状态机+Hook 固定流程：模型只能改产出、无权改流程状态，控制数据存于上下文外本地文件；按分析/规划/执行/评估/核算五岗位流转，不合格带证据打回，支持断点续跑与按依赖分批并行——不换底座模型，200 步链路无人干预完成率 50%→100%、耗时 440→159 分钟（-64%）。③**资产层**以「运行态检索+生产态构建」双引擎接上业务语言与研发术语的语义断层（先语义对齐再检索、经验自动回写），召回率 56%→91.67%、F1 68%→91.25%（代价为精确率小幅下降 72%→70%）。④**证据层**评测从总分下钻到阶段里程碑再到具体 Step（v1.0 七维度+裁判 LLM → v2.0 审校规则转召回/精确率公式 → v3.0 节点埋点+Golden Set 逐节点比对），回归门禁拦截「修好一步改坏其他」的倒退改动，与 DSPy/GEPA 算法层优化互补。方法论主张：企业级系统发力点是拉高整个团队的交付下限（60%→90%）而非个体提效，团队越大提升下限价值越高。实例落成实体页 [[zte-cosight-harness|中兴 Co-Sight Harness]]。
 
+**帮模型 / 守业务二分与"假设模型完美"判定法**（信源 2026-11-23，第 13 信源）：业界对"Harness 会不会消失"有两派，作者认为都对——因为讨论的不是同一种约束。**帮模型的 Harness** 补偿模型当下不足（任务拆解、上下文组装、格式约束、补偿性重试），随模型变强会变薄，必须设计成**可删除**；**守业务的 Harness** 守业务本身（SOP 是否遵循、价格是否交易事实、权限/幂等/审计、人工接管），与模型强弱无关，定义模型与真实业务系统的边界，必须写成代码。判定法很简单：**假设模型已经完美，这个约束是否仍然需要？** 需要即为守业务约束，进代码。三场景落点分别为：下单的地址与车型校验、撮合中承载 SOP 的状态机、运营中标准 Tool 的参数校验/权限/幂等/审计/审批。
+
+**高代码 Harness 与"确定性放在正确位置"**（信源 2026-11-23，第 13 信源）：AI 撮合三阶段演进印证确定性结构的价值——①完全 Agentic（模型自主规划，既难遵循 SOP 也不可度量，无法判断策略是否有效）→②工作流编排大节点 + 状态机约束模型内部状态（流程遵循解决，但节点间上下文重复冗余、无法按需供给）→③高代码 Harness（代码编排大模型节点与状态机，既控 SOP 又能按需组装上下文）。确定性结构的第一价值是**让业务过程可度量**，过程可度量策略才能被优化；故核心业务里**更自主不等于更好**，先让过程可遵循、可度量再谈扩大自主。帮模型的约束若一开始就与守业务约束耦合，模型变强后难以干净移除，"可删除"必须提前设计。这套"起点/下限/方向/上限"的完整框架落成概念页 [[agent-production-four-layer-model|Agent 生产化四层模型]]。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -162,6 +169,8 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 
 - 2026-11-23 — 新增 learn-claude-code 课程导读信源（第 12 信源）`raw/sources/ai/2026-11-23-learn-claude-code-course.md`。以教学实现印证本页核心主张并补强三处：①**三句主张**——「Agency 来自模型不来自编排代码」「Agent 产品 = 模型 + harness（工具/知识/观察/动作接口/权限五件套）」「harness 全部秘密是一个 while True 循环」，与本页 `Agent ≈ Model + Harness` 定义及"执行循环"观察面直接互证；②**循环不变、挂件万变**的设计纪律——加工具改分发表、加知识改 system 目录、压缩插在 append 后、权限/hooks 包在执行外、子代理起新 messages 再跑循环，是"执行循环/扩展机制"观察面的教学化落地，印证本页"内置能力以挂件接入、不改循环主体"的工程纪律；③**s17 目标闸门**——循环能否停交给独立评估器判断（目标不可达/失败/超限交还用户），"让 agent 自己判断做完了是最危险的一步"，为"执行循环"观察面的停止判据补上外部裁判视角，与 [[agent-evaluation|业务 Agent 全生命周期评测]] 互证。实例落成实体页 [[learn-claude-code|learn-claude-code]]。
 
+- 2026-11-23 — 新增货拉拉《AI Agent 如何进入实时交易系统》信源（第 13 信源）`raw/sources/ai/2026-11-23-lala-agent-realtime-trading.md`。补上两块此前缺位的判定与演进：①**帮模型 / 守业务二分 + "假设模型完美"判定法**——把 Harness 约束按"是否随模型变强而消失"区分，守业务约束必须写代码、帮模型约束必须可删除，为"权限与隔离"观察面补上约束归属判据；②**高代码 Harness 与确定性位置**——AI 撮合三阶段演进（完全 Agentic→工作流编排→高代码 Harness）印证"确定性结构第一价值是让过程可度量"与"更自主不等于更好"。完整"起点/下限/方向/上限"框架落成概念页 [[agent-production-four-layer-model|Agent 生产化四层模型]]，信源页见 [[2026-11-23-lala-agent-realtime-trading|货拉拉 AI Agent 实时交易（信源页）]]。
+
 ## Open Questions（开放问题）
 
 - 论文原始统计口径与当前产品能力的时差（快照为历史版本）？
@@ -181,6 +190,7 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 - Source: `raw/sources/ai/2026-11-20-helixharness-ai-coding.md`（第 10 信源：Propose/Apply/Archive 三阶段工作流、执行≠完成的证据链判定、九命令与 --loop、索引式按需加载、Base/Candidate 评测 Harness 本身）
 - Source: `raw/sources/ai/2026-11-20-zte-cosight-harness.md`（第 11 信源：ZTE 四层架构与量化数据，内部自报、单信源转述，置信度中）
 - Source: `raw/sources/ai/2026-11-23-learn-claude-code-course.md`（第 12 信源：三句主张互证、循环不变挂件万变的设计纪律、s17 目标闸门外部裁判视角，教学实现单信源，置信度中）
+- Source: `raw/sources/ai/2026-11-23-lala-agent-realtime-trading.md`（第 13 信源：帮模型/守业务二分 + "假设模型完美"判定法、高代码 Harness 三阶段演进与确定性位置，生产实践自述，置信度中）
 
 ## Related Knowledge（相关知识）
 
@@ -203,3 +213,5 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 - [[2026-11-20-zte-cosight-harness|中兴开源企业级 Harness：Co-Sight Harness（信源页）]]
 - [[learn-claude-code|learn-claude-code]]
 - [[2026-11-23-learn-claude-code-course|手写一个 mini Claude Code（信源页）]]
+- [[agent-production-four-layer-model|Agent 生产化四层模型]]
+- [[2026-11-23-lala-agent-realtime-trading|AI Agent 如何进入实时交易系统（信源页）]]

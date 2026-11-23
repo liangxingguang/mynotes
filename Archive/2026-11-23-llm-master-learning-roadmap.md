@@ -9,7 +9,7 @@ created: 2026-11-23
 category: 学习
 tags: [AI, Agent, RAG]
 asset_ref: Assets/2026-11/weixin-guiPm_5D2xKutVZoEsdR-g.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 全网硬核大模型应用开发（Agent、RAG）学习路线+配套资源，在 GitHub 开源

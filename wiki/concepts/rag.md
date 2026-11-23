@@ -19,6 +19,7 @@ sources:
   - raw/sources/ai/2026-11-20-rag-what-is.md
   - raw/sources/ai/2026-11-20-rag-steps.md
   - raw/sources/ai/2026-11-23-deepsearch-rag-comparison.md
+  - raw/sources/ai/2026-11-23-langchain-rag-tutorial.md
 related:
   - wiki/concepts/prompt-engineering.md
   - wiki/concepts/context-management.md
@@ -116,6 +117,8 @@ RAG vs 微调对比（信源 2026-11-12）：
 | 性质 | 动态积累 | 静态参考 | 流程指导 |
 | 类比 | 个人日记 | 百科全书 | SOP 手册 |
 
+**向量索引组织与调试**（信源 2026-11-23）：向量多时不能逐一比较，索引侧把大量向量组织成若干候选区域，新点到来后先定位区域再在局部比较，从而排除大量不相关点（Faiss 的思想）——检索速度与完整性存在取舍，只查少量区域更快但可能错过边界近邻，可同时考虑相邻区域；不同向量库的差异主要在"怎么划分区域"，基本原理相同。调试时区分两类返回：`result` 是模型依据上下文生成的自然语言回答（可能经归纳改写），`source_documents` 是检索器召回的原始片段（进入 Prompt 的依据），二者不可混同——**优先检查来源文档**：来源无相关内容，问题在检索之前，反复改回答措辞通常无效；来源正确而答案仍错，才检查上下文是否完整传入与提示词。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -144,6 +147,8 @@ RAG vs 微调对比（信源 2026-11-12）：
 
 - 2026-11-23 — 新增信源 `raw/sources/ai/2026-11-23-deepsearch-rag-comparison.md`。Core Characteristics 增补 Agentic RAG（[[deepsearch]]）变体：标准 RAG 之上叠加 query 改写、短期记忆库、结束判断的循环检索，应对单片段无法回答的综合性、全局性问题；新建概念页 [[deepsearch]] 与对比页 [[rag-vs-graphrag-vs-deepsearch]]。注：该信源的分块口径（chunk 256 字符+30 重叠）与 [[rag-chunking]] 的 300~800 字迭代口径为不同实战取值，已在对比页标注为口径差异而非矛盾。
 
+- 2026-11-23 — 新增 LangChain RAG 教程信源（第 9 信源）`raw/sources/ai/2026-11-23-langchain-rag-tutorial.md`。How It Works 增补"向量索引组织与调试"：Faiss 的候选区域组织思想（先定位区域再局部比较、不同向量库差异在划分区域）与 `result`/`source_documents` 的调试区分（优先查来源文档、来源无内容则改措辞无效）。
+
 ## Open Questions（开放问题）
 
 - 多跳检索与推理增强（CoT/ToT）的协同：多跳检索本身已含推理，与提示层推理增强如何配合？
@@ -159,6 +164,7 @@ RAG vs 微调对比（信源 2026-11-12）：
 - Source: `raw/sources/ai/2026-11-20-rag-what-is.md`（《RAG工程实践》系列第 2 篇，RAG 定义、一次问答链路、四层排查、相乘关系、出处机制、边界与成本）
 - Source: `raw/sources/ai/2026-11-20-rag-steps.md`（《RAG工程实践》系列第 3 篇，八环节链路、逐环验收、嵌入模型硬约束、延迟）
 - Source: `raw/sources/ai/2026-11-23-deepsearch-rag-comparison.md`（微信 RAG 系列第 5 篇，2026-11-23，Agentic RAG/DeepSearch 循环检索链路与三模式对比；支撑 [[deepsearch]]）
+- Source: `raw/sources/ai/2026-11-23-langchain-rag-tutorial.md`（第 9 信源：Faiss 候选区域组织思想、result/source_documents 调试区分，教学演示印证，置信度中）
 
 ## Related Knowledge（相关知识）
 

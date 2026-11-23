@@ -12,6 +12,7 @@ tags:
   - ai
 sources:
   - raw/sources/ai/2026-11-20-rag-chunking.md
+  - raw/sources/ai/2026-11-23-langchain-rag-tutorial.md
 related:
   - wiki/concepts/rag.md
   - wiki/concepts/rag-document-parsing.md
@@ -57,6 +58,8 @@ RAG 中把文档切分成检索单元（块）的处理环节，位于解析之�
 
 **默认起步组合**（解读：作者建议的工程起点，非验证结论）：按结构切、块 300~800 字、标题并入块内。
 
+**重叠的具象示例与边界**（信源 2026-11-23）：定长切时相邻块保留重叠的典型取法为每块 200 字、重叠 20（如 chunk1:1–200、chunk2:181–380、chunk3:361–560）。以知识点"员工入职满一年后可享受五天年假"跨边界为例：若不做重叠，前块只到"员工入职满一年后"、后块只从"可享受五天年假"起，两段单独看都不完整；让后块向前重叠，有机会使完整条件出现在至少一个块中。但重叠只是在边界附近复制文本，**不能绝对保证**所有知识点完整——知识点本身很长或分隔符选择不合理时仍可能被拆开；重叠太大反而产生更多重复内容，实际值应结合文档与检索效果调整。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -76,6 +79,7 @@ RAG 中把文档切分成检索单元（块）的处理环节，位于解析之�
 ## Evolution（演进）
 
 - 2026-11-21 — 新建，信源为《RAG工程实践》系列第 6 篇（`raw/sources/ai/2026-11-20-rag-chunking.md`）：四条约束、粒度与边界两个维度、四种切法、标题归属、重叠的代价与适用、表格与问答对单独处理、双指标迭代定块。
+- 2026-11-23 — 新增 LangChain RAG 教程信源（第 2 信源）`raw/sources/ai/2026-11-23-langchain-rag-tutorial.md`。补上重叠的具象示例（每块 200 字、重叠 20）与"年假"跨边界案例，并明确重叠"只降风险不能绝对保证"、过大引入重复的边界。
 
 ## Open Questions（开放问题）
 
@@ -85,6 +89,7 @@ RAG 中把文档切分成检索单元（块）的处理环节，位于解析之�
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-11-20-rag-chunking.md`（2026-11-20，《RAG工程实践》系列第 6 篇，公众号单信源）
+- Source: `raw/sources/ai/2026-11-23-langchain-rag-tutorial.md`（第 2 信源：重叠具象示例与边界，教学演示印证，置信度中）
 
 ## Related Knowledge（相关知识）
 

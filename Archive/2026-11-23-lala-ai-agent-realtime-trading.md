@@ -9,7 +9,7 @@ created: 2026-11-23
 category: 技术
 tags: [AI, Agent, 系统设计]
 asset_ref: Assets/2026-11/weixin-olljy1vd-ai-agent-trading.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # AI Agent 如何进入实时交易系统：货拉拉的三个实践与一套工程方法论
