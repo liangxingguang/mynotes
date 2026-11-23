@@ -9,7 +9,9 @@ created: 2026-11-23
 category: 学习
 tags: [AI, Agent]
 asset_ref: Assets/2026-11/weixin-s9qke-pmm3130ha1hn-6ua.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-11-23T10:20:43.419Z"
+ingest_claim_id: 34188-1795429243419-0
 ---
 
 # 8 万星的教学项目：手写一个 mini Claude Code

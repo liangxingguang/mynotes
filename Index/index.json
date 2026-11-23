@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23 17:53",
+  "updated_at": "2026-11-23 18:30",
   "notes": [
     {
       "id": "2026-11-23-bisheng-3-office-agent",
@@ -18,6 +18,25 @@
       "summary": "Dataelem 团队开源的企业级办公 Agent 平台 BISHENG 3.0：桌面端基于 DeepSeek Harness（DSH）开发，主打私有化部署、数据不出企业边界，定位 WorkBuddy/豆包工作的开源平替。文章以项目汇报（Chat 模式）与销售数据整理（Work 模式）两个真实任务实测全流程，并介绍企业侧的模型/技能/知识权限管理、外部 Agent 接入与员工应用托管能力。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-wfh-4zw-3bqydncswxyvq.md",
+      "wiki_status": "ingesting"
+    },
+    {
+      "id": "2026-11-23-dan-koe-321-method",
+      "title": "如何让自己，在一年内成为某个领域的专家",
+      "path": "Inbox/2026-11-23-dan-koe-321-method.md",
+      "created": "2026-11-23",
+      "category": "学习",
+      "tags": [
+        "自学",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/OtoIEjvAWr-GgGbCz7fVMQ",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "介绍油管大神 Dan Koe 的「321 方法」：以每天 3 小时神圣深度时间、两项不相干能力的缝合、一个核心问题为支点，在一年内进入某领域前 1%。方法从神经科学、进化心理学与商业哲学中提炼，核心是摆脱算法控制、用深度工作与差异化组合建立护城河。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-otoiejva-321-method.md",
       "wiki_status": "pending"
     },
     {
@@ -37,7 +56,7 @@
       "summary": "介绍开源课程 shareAI-lab/learn-claude-code（79.6k Star、MIT 协议、主语言 Python）：用 17 节课手写一个 mini Claude Code，副标题 \"Bash is all you need\"。核心主张——Agent 的自主性来自模型而非编排代码，harness = 工具+知识+观察+动作接口+权限，其全部秘密是一个 `while True` 循环；课程按\"能干活→扛复杂→跑长跑久\"三段编排，把 Claude Code 拆成可单独复用的设计零件。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-s9qke-pmm3130ha1hn-6ua.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
