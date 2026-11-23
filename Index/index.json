@@ -1,6 +1,25 @@
 {
-  "updated_at": "2026-11-23 17:27",
+  "updated_at": "2026-11-23 17:38",
   "notes": [
+    {
+      "id": "2026-11-23-im-read-receipt-high-concurrency",
+      "title": "【新文导读】详解IM消息已读未读功能的高并发技术实现",
+      "path": "Inbox/2026-11-23-im-read-receipt-high-concurrency.md",
+      "created": "2026-11-23",
+      "category": "技术",
+      "tags": [
+        "系统设计",
+        "MySQL"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/Ga3_pzKOMT6lo23QN1Wcag",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "52im.net 的公众号导读文：已读未读不是\"小红点\"UI 功能，而是横跨长连接、消息顺序、状态一致性、在线路由与高并发存储的系统工程。导读完整拆解生产级单聊已读未读架构：按会话维护已读游标、解耦长连接与状态计算、游标推进替代逐条更新、Lua 保证原子幂等、未读数缓存非事实源、精准投递与容灾收敛。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-ga3-pzkomt6lo23qn1wcag.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
