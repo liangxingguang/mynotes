@@ -9,7 +9,9 @@ created: 2026-11-23
 category: 技术
 tags: [RAG, Agent]
 asset_ref: Assets/2026-11/weixin-421ghy-4x9lsgbkoimj9ug.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-11-23T11:38:07.698Z"
+ingest_claim_id: 25136-1795433887698-0
 ---
 
 # 新一代 RAG：DeepSearch 实战与三种 RAG 对比

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23 19:37",
+  "updated_at": "2026-11-23 19:39",
   "notes": [
     {
       "id": "2026-11-23-deepsearch-rag-comparison",
@@ -18,7 +18,7 @@
       "summary": "RAG 系列第五篇，讲新一代 RAG——DeepSearch：本质仍是 RAG，但面向综合性、全局性问题（如\"介绍明朝皇帝\"\"对比手机销量前两名\"），通过 query 改写 + 短期记忆库 + 结束判断的循环检索（Agentic RAG）反复补全知识。并对比传统 RAG、GraphRAG、DeepSearch 三种设计模式的取舍。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-421ghy-4x9lsgbkoimj9ug.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-11-23-lala-ai-agent-realtime-trading",
@@ -38,6 +38,25 @@
       "summary": "货拉拉技术总监亓隆基分享 Agent 进入实时交易系统的生产实践：核心判断是\"用 Agent 拓展系统能力边界，而非重做已有系统\"。基于意图交易（AI 下单）、持续撮合（AI 撮合）、策略执行（AI 运营）三个已上线场景，提出 Agent 生产化四层模型——模型决定起点，Harness 决定下限，Dual Loop 决定方向，业务知识决定上限。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-olljy1vd-ai-agent-trading.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-11-23-langchain-rag-tutorial",
+      "title": "用 LangChain 搞定 RAG：告别大模型幻觉",
+      "path": "Inbox/2026-11-23-langchain-rag-tutorial.md",
+      "created": "2026-11-23",
+      "category": "学习",
+      "tags": [
+        "RAG",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/T350SQ54mnpRH4GVMBx5bw",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "大模型 Agent 系列教程篇：用 LangChain 演示 RAG 完整流程。先讲 RAG 原理（私有数据检索增强、离线/在线分工、六阶段职责），再讲切分重叠、Embedding 余弦相似度、Faiss 索引思想，最后以《天龙八部》文本为例走通 LangChain 代码（Loader→切分→建库→Retriever→RetrievalQA）并解析返回结果与调试方法。作者提醒 LangChain 生产中用得少，重在理解机制而非背接口。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-t350sq54mnp-rh4gvmbx5bw.md",
       "wiki_status": "pending"
     },
     {
