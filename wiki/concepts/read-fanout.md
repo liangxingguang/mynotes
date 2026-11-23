@@ -4,7 +4,7 @@ type: concept
 title: 读扩散（Fan-out on Read）
 status: active
 created: 2026-10-23
-updated: 2026-10-24
+updated: 2026-11-24
 confidence: high
 tags:
   - concept
@@ -17,6 +17,7 @@ sources:
   - raw/sources/architecture/2026-10-23-rongyun-million-online-live-message-distribution.md
   - raw/sources/architecture/2026-10-23-rongyun-live-chatroom-architecture-challenges.md
   - raw/sources/architecture/2026-10-23-wechat-live-chatroom-15m-online.md
+  - raw/sources/architecture/2026-11-23-wechat-feed-timeline.md
 related:
   - wiki/concepts/write-fanout.md
   - wiki/concepts/mcast.md
@@ -25,6 +26,7 @@ related:
   - wiki/sources/alibaba-ecommerce-im-group-live.md
   - wiki/sources/meipai-live-danmu-realtime-push.md
   - wiki/sources/wechat-live-chatroom-15m-online.md
+  - wiki/sources/2026-11-23-wechat-feed-timeline.md
 ---
 # 读扩散（Fan-out on Read）
 
@@ -56,6 +58,8 @@ related:
 
 微信直播聊天室形态（单房间 1500w 在线实践）：选型依据是"同一人同一时间只关注一个聊天室"（与微信标准群聊写扩散分野）。传输层不用 WebSocket 而用 **longpolling**（推可能丢需拉兜底、在线列表难维护、短连客户端简单）；消息列表前架**无状态 cache（recvsvr）**：写后通知→异步拉取、1s 兜底轮询（防通知失效+启动自恢复）、读写表分离原子切换无锁读、sect 化扩容。重要信令不打另一条写通道，而是同表打优先级标记、cache 内分 normal/important 双 seq 先收——读扩散下"保必达"的最小改造样本。
 
+**Feed 流时间线形态（第 6 信源，朋友圈案例）**：读扩散在朋友圈时间线的朴素形态即"按好友列表批量查、按时间倒序取前 20"。其失败根因不在分库分表，而在数据按发布者存、300 个好友的动态天然散在 300 个来源，单次刷新扇出 300 路查询 + 内存归并排序 + 分页；全站量级 100 亿次刷新/天 → 约 3500 万读 QPS 且为持续常态，资源与延迟均不可扛。关键洞察：**时间倒序是正确的排序方式，但手里没有那张排好序的表，"凑"的动作就是全部成本**——这正是写扩散把"造时间线"挪到写侧的动机。读扩散另一形态是写扩散系统内的回补：写扩散"只推活人"对长期沉默账号暂停扩散，用户上线时按离线时间点拉取期间好友动态补齐，**临时退化为一次读扩散**——读扩散在此充当写扩散的离线补齐兜底。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -78,6 +82,7 @@ related:
 - 行业分化（二次信源断言）：钉钉转读扩散 + 多级缓存；微信坚持写扩散；企业微信写扩散 + 硬件堆料。
 - 融云（一手实践）：直播聊天室读扩散 + 通知合并 + 时间戳位点差量拉取；为适配直播"允许丢消息"语义叠加三级丢弃策略（2026-10 收录）。
 - 微信（一手实践）：直播聊天室 1.0（2017）即定读扩散 + longpolling + 无状态 cache；2.0 叠加优先级双 seq 信道与 proxy 柔性控流，支撑单房间 1500w 在线（2026-10 收录）。同一公司群内消息（写扩散必达）与直播聊天室（读扩散）按场景分化，与阿里路径一致。
+- 微信朋友圈时间线（2026-11-24，第 6 信源）：读扩散"按时间倒序查"朴素方案在 10 亿用户、人均 300 好友下因 300 分片扇出与 3500 万读 QPS 不可行，被写扩散取代；同时读扩散以"只推活人"上线回补形态充当写扩散系统的离线补齐兜底——读扩散在 Feed 时间线中既是被否的候选，也是写扩散的补充。
 
 ## Open Questions（开放问题）
 
@@ -91,6 +96,7 @@ related:
 - Source: `raw/sources/architecture/2026-10-23-rongyun-million-online-live-message-distribution.md`（一手实践：通知合并机制、环形队列、拉取流程）
 - Source: `raw/sources/architecture/2026-10-23-rongyun-live-chatroom-architecture-challenges.md`（一手实践：通知拉取流程、时间戳位点、首拉 50 条与退出清库）
 - Source: `raw/sources/architecture/2026-10-23-wechat-live-chatroom-15m-online.md`（一手实践：读扩散选型依据、longpolling 三理由、无状态 cache 五件套、优先级双 seq）
+- Source: `raw/sources/architecture/2026-11-23-wechat-feed-timeline.md`（Feed 时间线题解：读扩散"按时间倒序查"朴素方案 300 分片扇出、3500 万读 QPS 不可行；"只推活人"上线回补临时退化为读扩散。数字为量级假设，单信源）
 
 ## Related Knowledge（相关知识）
 
@@ -99,4 +105,5 @@ related:
 - [[rongyun-million-online-live-message-distribution|融云：百万人在线的直播间实时聊天消息分发技术实践]]
 - [[rongyun-live-chatroom-architecture-challenges|融云：直播间海量聊天消息的架构设计难点实践]]
 - [[wechat-live-chatroom-15m-online|微信直播聊天室单房间1500万在线的消息架构演进之路]]
+- [[2026-11-23-wechat-feed-timeline|腾讯面试官：微信朋友圈 10 亿人发内容，怎么保证你能看到好友的最新动态？（信源页）]]（Feed 时间线读扩散失败与回补）
 - [[live-streaming-messaging|直播实时消息分发]]（主题）

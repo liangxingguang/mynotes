@@ -9,7 +9,7 @@ created: 2026-11-23
 category: 技术
 tags: [系统设计]
 asset_ref: Assets/2026-11/weixin-yd6bsj9m-feed-timeline.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 腾讯面试官：微信朋友圈 10 亿人发内容，怎么保证你能看到好友的最新动态？按时间倒序查就行？

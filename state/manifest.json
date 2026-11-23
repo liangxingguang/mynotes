@@ -5822,6 +5822,19 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/oSvRVvWLvu87RYDLWEcUGg",
       "asset_ref": "Assets/2026-11/weixin-osvrrvvwlvu87rydlwecugg.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-23-wechat-feed-timeline.md",
+      "sha256": "f4912b2106b05586823bd7a2bad178f3b30c67f79f4b22727f4b6651dee7650a",
+      "registered_at": "2026-11-24",
+      "inbox_ref": "Archive/2026-11-23-wechat-feed-timeline.md",
+      "pages": [
+        "wiki/sources/2026-11-23-wechat-feed-timeline.md",
+        "wiki/concepts/write-fanout.md",
+        "wiki/concepts/read-fanout.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/yD6bsj9MNbncbarNlXETsA",
+      "asset_ref": "Assets/2026-11/weixin-yd6bsj9m-feed-timeline.md"
     }
   ]
 }

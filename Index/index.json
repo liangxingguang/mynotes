@@ -1,24 +1,6 @@
 {
-  "updated_at": "2026-11-24 03:38",
+  "updated_at": "2026-11-24 06:32",
   "notes": [
-    {
-      "id": "2026-11-23-wechat-feed-timeline",
-      "title": "腾讯面试官：微信朋友圈 10 亿人发内容，怎么保证你能看到好友的最新动态？按时间倒序查就行？",
-      "path": "Inbox/2026-11-23-wechat-feed-timeline.md",
-      "created": "2026-11-23",
-      "category": "技术",
-      "tags": [
-        "系统设计"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/yD6bsj9MNbncbarNlXETsA",
-      "source_type": "网页",
-      "platform": "微信",
-      "summary": "以微信朋友圈时间线设计为切入，对比读扩散（拉模式）与写扩散（推模式）两种 Feed 流方案。核心结论：时间线在数据库里并不存在，须在读时或写时\"造\"出来；写扩散把排序挪到写侧，读侧一次查询即可，但前提是单次扩散复制份数必须有上限——微信好友上限 5000 正是这道成本护栏，再以削峰、合并、只推活人摊平写入。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/weixin-yd6bsj9m-feed-timeline.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
@@ -8810,6 +8792,24 @@
       "summary": "RAG 系列第三篇，聚焦检索与排序环节：多轮 Query 改写、全文检索（TFIDF/BM25 与分词策略）、向量检索（双塔表示模型与 LLM 类 Embedding）、混合检索、排序（RRF/Cross-Encoder/延迟交互/Qwen3-Reranker）、基于 LLM 的相关性判断，以及全链路多路召回优化方案。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-osvrrvvwlvu87rydlwecugg.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-23-wechat-feed-timeline",
+      "title": "腾讯面试官：微信朋友圈 10 亿人发内容，怎么保证你能看到好友的最新动态？按时间倒序查就行？",
+      "path": "Archive/2026-11-23-wechat-feed-timeline.md",
+      "created": "2026-11-23",
+      "category": "技术",
+      "tags": [
+        "系统设计"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/yD6bsj9MNbncbarNlXETsA",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "以微信朋友圈时间线设计为切入，对比读扩散（拉模式）与写扩散（推模式）两种 Feed 流方案。核心结论：时间线在数据库里并不存在，须在读时或写时\"造\"出来；写扩散把排序挪到写侧，读侧一次查询即可，但前提是单次扩散复制份数必须有上限——微信好友上限 5000 正是这道成本护栏，再以削峰、合并、只推活人摊平写入。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-yd6bsj9m-feed-timeline.md",
       "wiki_status": "ingested"
     }
   ]

@@ -454,6 +454,7 @@
 - [[2026-11-23-lala-agent-realtime-trading|AI Agent 如何进入实时交易系统：货拉拉的三个实践与一套工程方法论]]（2026-11-23，AI/Agent/Harness，货拉拉亓隆基：意图交易/持续撮合/策略执行三场景+Agent 生产化四层模型（模型起点/Harness 下限/Dual Loop 方向/业务知识上限）+帮模型·守业务二分与"假设模型完美"判定法+高代码 Harness 三阶段演进，生产自述自报指标，微信单信源，置信度中）
 - [[2026-11-23-langchain-rag-tutorial|用 LangChain 搞定 RAG：告别大模型幻觉]]（2026-11-23，AI/RAG/LangChain，LangChain 演示 RAG 全流程：六阶段职责+切分重叠（200/20 示例）+Embedding 同模型余弦相似度+Faiss 候选区域思想+RetrievalQA 代码流与 result/source_documents 调试，作者提示生产用得少重在理解机制，微信单信源，置信度中）
 - [[2026-11-23-llm-master-learning-roadmap|全网硬核大模型应用开发（Agent、RAG）学习路线+配套资源，在 GitHub 开源]]（2026-11-23，AI/学习/Agent，youngyangyang04/llm-master 开源仓库：六阶段学习路线（全局认知→模型调用→RAG→Agent→生产工程→原理面试）+172 文件 150+ 教程+专题/全量索引+每阶段可交付项目，作者自报规模，微信单信源，置信度中）
+- [[2026-11-23-wechat-feed-timeline|腾讯面试官：微信朋友圈 10 亿人发内容，怎么保证你能看到好友的最新动态？（信源页）]]（2026-11-24，IM/架构/Feed/写扩散，微信 Feed 流时间线题解：时间线在 DB 不存在、读时或写时造+读扩散 3500 万读 QPS vs 写扩散 35 万写 QPS 差约 100 倍+好友上限 5000 为写扩散成本天花板+削峰/合并/只推活人三手段+Redis ZSet 微秒 score，单信源，置信度中）
 
 ## concept（概念）
 
