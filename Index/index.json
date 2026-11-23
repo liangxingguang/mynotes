@@ -1,6 +1,25 @@
 {
-  "updated_at": "2026-11-23 08:55",
+  "updated_at": "2026-11-23 09:01",
   "notes": [
+    {
+      "id": "2026-11-23-jvm-zgc-evolution",
+      "title": "【JVM 底层修炼记】从 JDK 8 到 JDK 21：ZGC 与低延迟垃圾回收器的演进",
+      "path": "Inbox/2026-11-23-jvm-zgc-evolution.md",
+      "created": "2026-11-23",
+      "category": "技术",
+      "tags": [
+        "JVM",
+        "java"
+      ],
+      "source": "知乎专栏",
+      "source_url": "https://zhuanlan.zhihu.com/p/2107107419398722384",
+      "source_type": "网页",
+      "platform": "知乎",
+      "summary": "ZGC 低停顿的两大核心机制（染色指针 + 读屏障）、从 JDK 11 实验到 JDK 21 分代 ZGC 的版本演进，以及 JDK 8→21 的 GC 选型建议，是《JVM 底层修炼记》系列的收官篇。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/jvm-zgc-evolution.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-11-23-pi-minimal-superagent",
       "title": "用 Pi 实现极简 Super Agent",
@@ -18,7 +37,7 @@
       "summary": "用 Pi、tmux、Telegram、cron、VM 五个通用组件，搭出 DeepSeek SuperAgent「Router 调度 + Worker 执行 + 异步监督」核心协作的极简可运行实现，并给出五个结构化扩展方向。",
       "summary_status": "",
       "asset_ref": "Assets/2026/11/pi-minimal-superagent.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
