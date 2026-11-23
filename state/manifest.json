@@ -5679,6 +5679,21 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/GiLJEH6N7OupRTaGhpxUFA",
       "asset_ref": "Assets/2026-11/weixin-giljeh6n-proposal-method.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-23-deepsearch-rag-comparison.md",
+      "sha256": "610d4cfa476a731c3923e387c927d2eacf5030d17b09fb13e698670e6baed30d",
+      "registered_at": "2026-11-23",
+      "inbox_ref": "Archive/2026-11-23-deepsearch-rag-comparison.md",
+      "pages": [
+        "wiki/sources/deepsearch-rag-comparison.md",
+        "wiki/concepts/deepsearch.md",
+        "wiki/comparisons/rag-vs-graphrag-vs-deepsearch.md",
+        "wiki/concepts/rag.md",
+        "wiki/concepts/graphrag.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/421gHY_4X9lSgbkoIMj9Ug",
+      "asset_ref": "Assets/2026-11/weixin-421ghy-4x9lsgbkoimj9ug.md"
     }
   ]
 }

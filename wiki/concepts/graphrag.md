@@ -4,7 +4,7 @@ type: concept
 title: GraphRAG（图检索增强生成）
 status: active
 created: 2026-11-20
-updated: 2026-11-20
+updated: 2026-11-23
 confidence: medium
 tags:
   - concept
@@ -12,11 +12,14 @@ tags:
   - rag
 sources:
   - raw/sources/ai/2026-11-20-agent-knowledge-base.md
+  - raw/sources/ai/2026-11-23-deepsearch-rag-comparison.md
 related:
   - wiki/concepts/rag.md
   - wiki/concepts/ontology.md
   - wiki/concepts/llm-wiki.md
+  - wiki/concepts/deepsearch.md
   - wiki/comparisons/agent-knowledge-base-capabilities.md
+  - wiki/comparisons/rag-vs-graphrag-vs-deepsearch.md
 ---
 # GraphRAG（图检索增强生成）
 
@@ -52,6 +55,8 @@ GraphRAG 是把实体与它们之间的关系纳入检索过程的检索增强�
 
 组合用法：企业用 RAG 搜索制度和流程文档，用 GraphRAG 分析跨对象的关系，用 [[llm-wiki|LLM Wiki]] 持续整理知识，用 [[ontology|Ontology]] 统一业务对象与术语（信源 2026-11-20）。
 
+**索引期三元组组织与召回代价**（信源 2026-11-23）：实战做法是在建索引阶段对文本抽取三元组（实体为主语、谓语、宾语），作为独立的一路召回通道，便于后续召回与排序。该路的工程收益依赖场景：一个单库问答系统的实战中，图谱召回一路最终弃用——有无它效果差不多，且减慢速度。这说明三元组路径的建索引成本（要求高、速度慢、穷举难全）不一定能在回答质量上得到回报，选型时需结合问题形态权衡，而非默认三元组召回必然加分。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -63,10 +68,13 @@ GraphRAG 是把实体与它们之间的关系纳入检索过程的检索增强�
 ### Distinctions（区分）
 
 - **GraphRAG vs Ontology**：GraphRAG 仍在回答/检索层，能讲清关系但不一定统一业务定义、不知实时状态；Ontology 定义业务对象、规则和关系语义，把不同系统的同名记录映射到共同业务对象（信源 2026-11-20）。
+- **GraphRAG vs DeepSearch**：两者都解决复杂问题，但路线分野是"答案在什么时候被准备"——GraphRAG 在建索引阶段以三元组穷举备好答案（事先准备、问到即答，建索引慢、覆盖难全）；[[deepsearch]] 事前不准备，来什么问题现场循环检索思考（索引与 RAG 一样快、耗时在推理、偏离线）。详见 [[rag-vs-graphrag-vs-deepsearch]]（信源 2026-11-23）。
 
 ## Evolution（演进）
 
 - 2026-11-20 — 新建本页。信源 `raw/sources/ai/2026-11-20-agent-knowledge-base.md` 给出 GraphRAG 的定义、关系链问题定位、与 RAG/LLM Wiki/Ontology 的对照与组合用法，并明确其"仍在回答与检索层工作"的边界。
+
+- 2026-11-23 — 新增信源 `raw/sources/ai/2026-11-23-deepsearch-rag-comparison.md`。How It Works 增补索引期三元组组织与"图谱召回路实战弃用"的工程代价；Distinctions 增补 GraphRAG vs [[deepsearch]] 的路线分野（事先穷举 vs 现场思考）；新建对比页 [[rag-vs-graphrag-vs-deepsearch]]。
 
 ## Open Questions（开放问题）
 
@@ -75,7 +83,11 @@ GraphRAG 是把实体与它们之间的关系纳入检索过程的检索增强�
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-11-20-agent-knowledge-base.md`
+- Source: `raw/sources/ai/2026-11-23-deepsearch-rag-comparison.md`（微信 RAG 系列第 5 篇，2026-11-23，GraphRAG 索引期三元组组织、建索引成本与三模式对比）
 
 ## Related Knowledge（相关知识）
 
 - [[agent-knowledge-base-capabilities|Agent 知识库四种能力对照（RAG / GraphRAG / LLM Wiki / Ontology）]]
+- [[deepsearch|DeepSearch（Agentic 循环检索 RAG）]]
+- [[rag-vs-graphrag-vs-deepsearch|传统 RAG vs GraphRAG vs DeepSearch]]
+- [[deepsearch-rag-comparison|新一代 RAG：DeepSearch 实战与三种 RAG 对比（信源页）]]

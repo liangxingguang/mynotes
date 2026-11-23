@@ -4,7 +4,7 @@ type: concept
 title: RAG（检索增强生成）
 status: active
 created: 2026-11-12
-updated: 2026-11-12
+updated: 2026-11-23
 confidence: high
 tags:
   - concept
@@ -18,6 +18,7 @@ sources:
   - raw/sources/ai/2026-11-20-rag-chunking.md
   - raw/sources/ai/2026-11-20-rag-what-is.md
   - raw/sources/ai/2026-11-20-rag-steps.md
+  - raw/sources/ai/2026-11-23-deepsearch-rag-comparison.md
 related:
   - wiki/concepts/prompt-engineering.md
   - wiki/concepts/context-management.md
@@ -26,6 +27,8 @@ related:
   - wiki/concepts/rag-document-parsing.md
   - wiki/concepts/rag-chunking.md
   - wiki/concepts/rag-production-guardrails.md
+  - wiki/concepts/deepsearch.md
+  - wiki/comparisons/rag-vs-graphrag-vs-deepsearch.md
 ---
 # RAG（检索增强生成）
 
@@ -41,7 +44,7 @@ LLM 的训练数据有截止时间，且无法覆盖私有知识（公司制度�
 
 1. **检索与生成分离**：知识不"融化"在模型权重中，而是存储在外部知识库，按需检索。这是与微调的根本区别——微调改变模型"能力"（怎么回答），RAG 改变模型"输入"（基于什么回答）。
 2. **向量检索为主流实现**：文档切块 → embedding 模型转成向量 → 查询向量与文档向量计算余弦相似度 → 取 Top-K。embedding 将语义相近的文本映射到空间相近的向量，比关键词匹配强——关键词找"字面相同"，向量检索找"意思相近"。
-3. **进阶变体丰富**：朴素 RAG（检索 Top-K 拼入 prompt）之上有混合检索、查询改写、分块策略、多跳检索等变体持续提升效果。
+3. **进阶变体丰富**：朴素 RAG（检索 Top-K 拼入 prompt）之上有混合检索、查询改写、分块策略、多跳检索等变体持续提升效果。更进一步有 **Agentic RAG（[[deepsearch]]）**：在标准检索链路之上叠加 query 改写、短期记忆库与结束判断，以多轮循环检索应对综合性、全局性问题；其索引侧数据组织与标准 RAG 相同，增量集中在推理侧循环，max_num 设为 1 即退化为标准 RAG（信源 2026-11-23）。
 4. **与 Agent 的关系**：RAG 是 Agent 获取静态领域知识的主要来源（公司制度、产品文档、行业规范），在 [[agent-loop|Agent Loop]] 的"规划"和"执行"环节提供参考。知识库管"静态领域知识"，[[agent-memory-system|记忆系统]] 管"Agent 经历的事实"，两者分工不同。
 5. **找到的是"可能相关"而非"业务确认的当前状态"**（信源 2026-11-20）：RAG 依赖资料本身——制度过期、文档缺失或需跨多份资料复杂关联时，几段相似文本未必足够；且检索到的是"可能相关的内容"，不是经过业务系统确认的当前状态。问"订单现在到哪一步"，往往需查实时业务数据，而非只搜旧文档。
 6. **检索×生成相乘**（信源 2026-11-20）：检索质量与生成质量是相乘关系，任一项接近零结果都接近零；能力很强的模型拿到无关条款会写出通顺、自洽但无关的答案，比明显胡说更难发现，故投入重心在解析、分块与召回而非换模型。
@@ -139,6 +142,8 @@ RAG vs 微调对比（信源 2026-11-12）：
 
 - 2026-11-21 — 新增《RAG工程实践》系列第 2 篇（`raw/sources/ai/2026-11-20-rag-what-is.md`）与第 3 篇（`raw/sources/ai/2026-11-20-rag-steps.md`）。Definition 补"RAG 不提升模型能力上限，改变的是这次回答依据什么"；Core Characteristics 增补"检索×生成相乘"与"出处可核对"；How It Works 增补一次问答链路、八环节（建库四步+问答四步）、逐环验收与嵌入模型硬约束、四层排查顺序。
 
+- 2026-11-23 — 新增信源 `raw/sources/ai/2026-11-23-deepsearch-rag-comparison.md`。Core Characteristics 增补 Agentic RAG（[[deepsearch]]）变体：标准 RAG 之上叠加 query 改写、短期记忆库、结束判断的循环检索，应对单片段无法回答的综合性、全局性问题；新建概念页 [[deepsearch]] 与对比页 [[rag-vs-graphrag-vs-deepsearch]]。注：该信源的分块口径（chunk 256 字符+30 重叠）与 [[rag-chunking]] 的 300~800 字迭代口径为不同实战取值，已在对比页标注为口径差异而非矛盾。
+
 ## Open Questions（开放问题）
 
 - 多跳检索与推理增强（CoT/ToT）的协同：多跳检索本身已含推理，与提示层推理增强如何配合？
@@ -153,6 +158,7 @@ RAG vs 微调对比（信源 2026-11-12）：
 - Source: `raw/sources/ai/2026-11-20-rag-chunking.md`（《RAG工程实践》系列第 6 篇，建库侧第二环分块；支撑 [[rag-chunking]]）
 - Source: `raw/sources/ai/2026-11-20-rag-what-is.md`（《RAG工程实践》系列第 2 篇，RAG 定义、一次问答链路、四层排查、相乘关系、出处机制、边界与成本）
 - Source: `raw/sources/ai/2026-11-20-rag-steps.md`（《RAG工程实践》系列第 3 篇，八环节链路、逐环验收、嵌入模型硬约束、延迟）
+- Source: `raw/sources/ai/2026-11-23-deepsearch-rag-comparison.md`（微信 RAG 系列第 5 篇，2026-11-23，Agentic RAG/DeepSearch 循环检索链路与三模式对比；支撑 [[deepsearch]]）
 
 ## Related Knowledge（相关知识）
 
@@ -165,6 +171,9 @@ RAG vs 微调对比（信源 2026-11-12）：
 - [[rag-document-parsing|RAG 文档解析]]
 - [[rag-chunking|RAG 分块]]
 - [[rag-production-guardrails|企业级 RAG 生产护栏]]
+- [[deepsearch|DeepSearch（Agentic 循环检索 RAG）]]
+- [[rag-vs-graphrag-vs-deepsearch|传统 RAG vs GraphRAG vs DeepSearch]]
+- [[deepsearch-rag-comparison|新一代 RAG：DeepSearch 实战与三种 RAG 对比（信源页）]]
 - [[context-management|上下文管理]]
 - [[prompt-engineering|提示工程]]
 - [[agent-loop|Agent Loop]]

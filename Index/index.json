@@ -1,25 +1,6 @@
 {
-  "updated_at": "2026-11-23 19:39",
+  "updated_at": "2026-11-23 20:02",
   "notes": [
-    {
-      "id": "2026-11-23-deepsearch-rag-comparison",
-      "title": "新一代 RAG：DeepSearch 实战与三种 RAG 对比",
-      "path": "Inbox/2026-11-23-deepsearch-rag-comparison.md",
-      "created": "2026-11-23",
-      "category": "技术",
-      "tags": [
-        "RAG",
-        "Agent"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/421gHY_4X9lSgbkoIMj9Ug",
-      "source_type": "网页",
-      "platform": "微信",
-      "summary": "RAG 系列第五篇，讲新一代 RAG——DeepSearch：本质仍是 RAG，但面向综合性、全局性问题（如\"介绍明朝皇帝\"\"对比手机销量前两名\"），通过 query 改写 + 短期记忆库 + 结束判断的循环检索（Agentic RAG）反复补全知识。并对比传统 RAG、GraphRAG、DeepSearch 三种设计模式的取舍。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/weixin-421ghy-4x9lsgbkoimj9ug.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-11-23-lala-ai-agent-realtime-trading",
       "title": "AI Agent 如何进入实时交易系统：货拉拉的三个实践与一套工程方法论",
@@ -8734,6 +8715,25 @@
       "summary": "介绍油管大神 Dan Koe 的「321 方法」：以每天 3 小时神圣深度时间、两项不相干能力的缝合、一个核心问题为支点，在一年内进入某领域前 1%。方法从神经科学、进化心理学与商业哲学中提炼，核心是摆脱算法控制、用深度工作与差异化组合建立护城河。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-otoiejva-321-method.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-23-deepsearch-rag-comparison",
+      "title": "新一代 RAG：DeepSearch 实战与三种 RAG 对比",
+      "path": "Archive/2026-11-23-deepsearch-rag-comparison.md",
+      "created": "2026-11-23",
+      "category": "技术",
+      "tags": [
+        "RAG",
+        "Agent"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/421gHY_4X9lSgbkoIMj9Ug",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "RAG 系列第五篇，讲新一代 RAG——DeepSearch：本质仍是 RAG，但面向综合性、全局性问题（如\"介绍明朝皇帝\"\"对比手机销量前两名\"），通过 query 改写 + 短期记忆库 + 结束判断的循环检索（Agentic RAG）反复补全知识。并对比传统 RAG、GraphRAG、DeepSearch 三种设计模式的取舍。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-421ghy-4x9lsgbkoimj9ug.md",
       "wiki_status": "ingested"
     },
     {
