@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23 19:24",
+  "updated_at": "2026-11-23 19:25",
   "notes": [
     {
       "id": "2026-11-23-coding-to-proposal",
@@ -18,7 +18,7 @@
       "summary": "「冰洋架构」作者以\"一份材料改十几版\"的经历为切入，总结从写代码的细节思维切换到写方案全局视角的自我实践方法。核心是：写方案最难的不是写而是想，五步流程前两步想、第三步才写；要分清显微镜（细节）与地图（全局），用三问想清楚、MECE 拆结构、结论先行+SCQA 组织，交付前用五问自检。源头是《金字塔原理》。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-giljeh6n-proposal-method.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-11-23-lala-ai-agent-realtime-trading",
@@ -78,6 +78,25 @@
       "summary": "以图解形式拆解千万级 RAG 的写入链路、存储架构、混合检索与生产保障。当知识库达 1000 万份文档（约 2 亿 Chunks、1024 维向量近 820GB），RAG 复杂度远超向量检索本身，需多引擎协同与完整生产保障。正文以图为主，文字为要点概述。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-udxf9fep-rag-scale.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-11-23-rag-doc-parsing-knowledge-base",
+      "title": "RAG 文档解析与知识库构建",
+      "path": "Inbox/2026-11-23-rag-doc-parsing-knowledge-base.md",
+      "created": "2026-11-23",
+      "category": "技术",
+      "tags": [
+        "RAG",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/xGIVYtT012pY-O3CKlRDKg",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "系统梳理 RAG 技术实现全流程的四大环节：文档解析、知识库构建（分块）、知识库构建（索引）、知识增强。覆盖文档解析工具（DeepDoc/MinerU）、7 种分块策略及选型、向量检索算法（Flat/IVF/HNSW），以及上下文增强、块标题（CCH）、问题生成三类检索增强手段。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-xgivyt-t012py-o3cklrdkg.md",
       "wiki_status": "pending"
     },
     {
