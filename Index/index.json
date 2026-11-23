@@ -1,6 +1,26 @@
 {
-  "updated_at": "2026-11-23 15:21",
+  "updated_at": "2026-11-23 16:47",
   "notes": [
+    {
+      "id": "2026-11-23-coding-agent-software-factory",
+      "title": "如何用 Coding Agent 构建自己的软件工厂？",
+      "path": "Inbox/2026-11-23-coding-agent-software-factory.md",
+      "created": "2026-11-23",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent",
+        "系统设计"
+      ],
+      "source": "架构师（JiaGouX）（微信公众号）",
+      "source_url": "https://mp.weixin.qq.com/s/nZ1o6ibIozuP-Lbi2zTknw",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "结合 Calvin Grunewald 的 archdev 设计与 Runway 软件工厂复盘，给出用现有 Coding Agent 搭建\"软件工厂\"的最小架构：让任务在提交后由后台执行器持续跟进检查、修复与 PR，直到交出可供人合并的交付物。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/coding-agent-software-factory.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
