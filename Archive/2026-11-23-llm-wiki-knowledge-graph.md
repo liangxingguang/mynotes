@@ -9,7 +9,7 @@ created: 2026-11-23
 category: 技术
 tags: [RAG, AI]
 asset_ref: Assets/2026-11/weixin-bkhpmzh-rou0ze99muugtg.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # LLM-Wiki：基于知识图谱的本地知识库系统

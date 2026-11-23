@@ -4,7 +4,7 @@ type: concept
 title: LLM Wiki
 status: active
 created: 2026-10-23
-updated: 2026-11-20
+updated: 2026-11-24
 confidence: medium
 tags:
   - concept
@@ -16,11 +16,13 @@ sources:
   - raw/sources/ai/2026-11-06-weknora-dept-knowledge-base.md
   - raw/sources/ai/2026-11-20-livex-wiki-agent-kb.md
   - raw/sources/ai/2026-11-20-agent-knowledge-base.md
+  - raw/sources/ai/2026-11-23-llm-wiki-knowledge-graph.md
 related:
   - wiki/concepts/okf-knowledge-format.md
   - wiki/sources/llm-wiki-advanced-four-steps.md
   - wiki/sources/ai-kb-build-workbuddy-ima-wiki.md
   - wiki/sources/weknora-dept-knowledge-base.md
+  - wiki/sources/2026-11-23-llm-wiki-knowledge-graph.md
   - wiki/entities/weknora.md
   - wiki/concepts/knowledge-base-maintenance.md
   - wiki/concepts/coding-agent-knowledge-base.md
@@ -45,6 +47,8 @@ related:
 6. **四原则与职责分离**（教程信源）：Raw 是证据、Wiki 是知识、Schema 是规则、Agent 是执行器；不让一个 Agent 拥有所有能力——Ingest（写）/Query（读）/Lint（验）三工作流权限表钉死边界，三者均无权改 raw、无权删知识；inbox ≠ raw，新材料经 inbox 缓冲、Ingest 标准化后才进不可变 raw。
 7. **页面分类型防垃圾场**（教程信源）：source/concept/entity/topic/decision/comparison/synthesis/timeline 八类，source 最基础、其余在其上编译。
 8. **有用性判据不止"像不像维基"**（信源 2026-11-20）：LLM Wiki 不是边界完全统一的标准术语，不同实现可能只是模型自动生成页面，也可能含来源链接、版本更新、冲突处理、人工审核等机制。判断其是否有用，不能只看页面是否像维基百科，还要看知识能否回到可信来源、能否正确更新、错误如何被发现和修正。
+9. **诞生动机：补齐 RAG 的三大先天问题**（信源 2026-11-23）：LLM-Wiki 作为对 RAG 的**补充**而提出，针对 RAG 的三类先天缺陷——① chunk 切分粒度难控（切太碎丢上下文、切太大带噪声）；② 向量召回语义鸿沟（query 是问题、chunk 是陈述，语义空间不一致）；③ 信息碎片化（丢失时序与整体上下文）。滑动窗口、HyDE、重排、上下文扩充等技巧只是给这三类问题打补丁，LLM-Wiki 是针对整体情况的概念。
+10. **知识编译器 + Obsidian 存储 + CLI/Skill 检索**（信源 2026-11-23）：核心流程为「原始资料 → LLM 知识编译器 → Wiki 知识库（Obsidian 存储）→ 对 Wiki 问答」。Wiki 的本质是知识间通过 `[[双括号]]` 引用互链成图；检索由 **Skill 控制、CLI 执行**——数据如何组织、检索哪些内容由 Skill 决定，复杂检索功能全部在 Obsidian CLI 里，避免把大量内容一次性塞入大模型撑爆上下文。典型三 Skill 协作：Knowledge-Recall（优先级最高，扫 index 命中既有知识直接复用）→ Wiki-Query（未命中时完整检索）→ Knowledge-Capture（回答后沉淀为新文档），越用越聪明、越用越快。
 
 ## Structure（结构）
 
@@ -64,7 +68,8 @@ related:
 ### Distinctions（区分）
 
 - 与传统 Wiki：维护者是模型而非人，页面是编译产物，必须解决来源追溯与冲突裁定。
-- 与知识图谱/GraphRAG：不是前后代关系；图谱记录对象与事实关系，LLM Wiki 沉淀可读的综合页面。
+- 与知识图谱/GraphRAG：不是前后代关系；图谱记录对象与事实关系，LLM Wiki 沉淀可读的综合页面。**两者都用知识图谱但核心定位不同**（信源 2026-11-23）：LLM-Wiki = 用 Wiki 链接模拟图谱关系（**文档型**）；GraphRAG = 用图数据库存图谱关系（**计算型**）。
+- 与 RAG：互补而非替代——RAG 是基础层（向量相似度、事实快答），LLM-Wiki 是增强层（知识图谱遍历、关联分析与深度推理），DeepSearch 是扩展层（多轮搜索+验证、开放域实时查询），三者互补（信源 2026-11-23）。文档量大用 RAG，量少但需深度问答/总结用 Wiki；复杂整体性问题（如"哪些饭店用了预制菜"）传统 RAG 难解，Wiki 擅长。
 
 ## Evolution（演进）
 
@@ -73,6 +78,8 @@ related:
 - 2026-11-06 — 新增硬件部门 WeKnora 实战信源（第 4 信源）。印证三点：①**框架与开箱之间的产品化空白**——作者（硬件工程师，非软件团队）明确把 LLM Wiki 归为"框架类"方案（只给骨架、自攒工作量大），与"个人库（Obsidian+AI）不够用"构成两难，落在 WeKnora 这类开箱产品上；②**维护职责缺位是模式级短板**——作者领导之问"文档能在线编辑保证最新吗"戳中 LLM Wiki 式自建库的共同痛点：重心全在解析/检索前半段，维护=删+重传，该信源直接催生 [[knowledge-base-maintenance]] 概念页；③**四层模型与维护纪律的互证**——"未经人工确认的结论不进正式知识库"与本仓库 pending→ingested 队列五态、"没发现异常≠通过"与 lint 巡检同构。
 - 2026-11-20 — 新增淘宝直播互动团队 LiveX Wiki 信源（第 5 信源），首个面向 Coding Agent 的企业级落地案例：LLM Wiki 编纂与 OKF 式轻量表达 + Git 版本治理结合，按"域—场景—知识"三层沉淀跨端跨仓业务经验，层次索引 + Agentic Search 按需消费并回源核验。同批次评测端到端生码得分较无知识库平均相对提升约 39.15%、较 RAG 约 30.1%，印证本模式可支撑业务知识工程化治理而非止于个人/小团队积累；方法论详见 [[coding-agent-knowledge-base]]。
 - 2026-11-20 — 新增 Agent 知识库四种能力对照信源（第 6 信源）`raw/sources/ai/2026-11-20-agent-knowledge-base.md`。在四种能力中定位 LLM Wiki：整理可持续更新的知识，回答"知识如何整理、更新和追溯"，常见对象是主题/摘要/来源/版本；补上"有用性判据不止像不像维基"的核心特征，并明确 LLM Wiki 与 RAG、GraphRAG、Ontology 是分工组合而非单向替代。对照见 [[agent-knowledge-base-capabilities]]。
+
+- 2026-11-24 — 新增 RAG 系列第 6 篇信源（第 7 信源）`raw/sources/ai/2026-11-23-llm-wiki-knowledge-graph.md`。Core Characteristics 增补第 9、10 条：LLM-Wiki 的诞生动机（补齐 RAG 三大先天问题——chunk 粒度难控/向量召回语义鸿沟/信息碎片化）与"知识编译器 + Obsidian 存储 + CLI/Skill 检索"实现模式（含 Knowledge-Recall/Wiki-Query/Knowledge-Capture 三 Skill 协作）；Distinctions 增补与 RAG 的三层互补关系，并明确 GraphRAG（计算型，图数据库）vs LLM-Wiki（文档型，Wiki 链接模拟图谱）的定位差异。
 
 ## Open Questions（开放问题）
 
@@ -86,6 +93,7 @@ related:
 - Source: `raw/sources/ai/2026-11-06-weknora-dept-knowledge-base.md`（第 4 信源：硬件部门 WeKnora 实战——框架/个人库两难、维护入口缺失、人工确认门禁）
 - Source: `raw/sources/ai/2026-11-20-livex-wiki-agent-kb.md`（第 5 信源：LiveX Wiki——LLM Wiki + OKF + Git 企业级落地、域/场景/知识三层建模、消费五步、量化评测）
 - Source: `raw/sources/ai/2026-11-20-agent-knowledge-base.md`（第 6 信源：LLM Wiki 在四种能力中的定位、"有用性判据不止像不像维基"、与 RAG/GraphRAG/Ontology 的分工组合）
+- Source: `raw/sources/ai/2026-11-23-llm-wiki-knowledge-graph.md`（第 7 信源：RAG 三大先天问题、知识编译器+Obsidian+CLI/三 Skill 实现模式、GraphRAG 计算型 vs LLM-Wiki 文档型、RAG/LLM-Wiki/DeepSearch 三层互补）
 
 ## Related Knowledge（相关知识）
 
@@ -97,3 +105,4 @@ related:
 - [[jd-haibo-ai-knowledge-base|拆解京东海博 AI-Native 落地保障：海博团队 AI 知识库能力建设]]（团队知识库实践参照）
 - [[livex-wiki-agent-kb|信源：LiveX Wiki——淘宝直播互动团队的 Agent 知识库实践]]（企业级落地案例）
 - [[coding-agent-knowledge-base|Coding Agent 知识库]]（据第 5 信源编译的方法论页）
+- [[2026-11-23-llm-wiki-knowledge-graph|LLM-Wiki：基于知识图谱的本地知识库系统（信源页）]]（RAG 系列第 6 篇：RAG 三大先天问题、知识编译器+Obsidian+CLI/三 Skill、GraphRAG 计算型 vs 文档型）

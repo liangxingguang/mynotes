@@ -15,6 +15,9 @@
 - [[2026-11-23-jvm-zgc-evolution|JVM 底层修炼记：从 JDK 8 到 JDK 21 ZGC 演进]]（2026-11-23，Java/JVM/GC，传统 GC 瓶颈+染色指针/读屏障自愈+分代 ZGC 原理与版本线+选型与监控建议，知乎专栏单信源，置信度中）
 - [[2026-11-23-pi-minimal-superagent|用 Pi 实现极简 Super Agent]]（2026-11-23，AI/Agent 架构，Pi/tmux/Telegram/cron/VM 五组件极简实现 Router/Worker/Watchdog，知乎专栏单信源，置信度中）
 - [[deepsearch-rag-comparison|新一代 RAG：DeepSearch 实战与三种 RAG 对比（信源页）]]（2026-11-23，AI/RAG/Agentic RAG，微信 RAG 系列第 5 篇：DeepSearch 循环检索链路（切块 256 字符+30 重叠、五类内容标签、三路召回、BGE 排序+MMR、信息增量法结束判断、query 改写技巧、短期记忆库）+传统 RAG/GraphRAG/DeepSearch 三模式对比，单信源，置信度中）
+- [[2026-11-23-llm-wiki-knowledge-graph|LLM-Wiki：基于知识图谱的本地知识库系统（信源页）]]（2026-11-23，AI/RAG/LLM Wiki，微信 RAG 系列第 6 篇：RAG 三大先天问题（chunk 粒度/语义鸿沟/信息碎片化）+LLM-Wiki 知识编译器+Obsidian+CLI/三 Skill 协作+采购合同实战+RAG/LLM-Wiki/DeepSearch 三层互补+GraphRAG 计算型 vs LLM-Wiki 文档型，单信源，置信度中）
+- [[2026-11-23-rag-10-million-docs|1000 万份文档，RAG 系统到底怎么扛？（信源页）]]（2026-11-23，AI/RAG/系统设计，微信图解长文：1000 万文档/2 亿 Chunks/820GB 向量规模+Kafka 写入解耦+独立 Worker+S3/Postgres/向量库/OpenSearch/Redis 多引擎存储分工+向量+BM25→RRF→Reranker→LLM 查询链路，图解设计级口径，单信源，置信度中）
+- [[2026-11-23-rag-doc-parsing-knowledge-base|RAG 文档解析与知识库构建（信源页）]]（2026-11-23，AI/RAG/建库，微信 RAG 全流程教程：解析引擎 DeepDoc/MinerU+三大视觉任务 OCR/DLR/TSR+问答对检索单元+七种分块策略+块大小三档+Small2Big+语义切块阈值三法+知识增强三手段（上下文增强/CCH/问题生成），教程式总览，单信源，置信度中）
 - [[15-books-understand-world|看懂世界运转的 15 本书单]]（2026-10-20，书单，置信度低）
 - [[475-claude-opus-demos-repo|微博分享：475 个 Claude Opus 5.5 生成的视频演示仓库]]（2026-10-20，AI/资源，置信度低）
 - [[2026-10-31-xuqiufenxi-01-ruanjian-xiangmu-shibai|软件项目失败，很多时候不是技术问题，而是需求问题]]（2026-10-31，工程实践/需求分析，系列开篇立论：技术问题显性 vs 需求问题隐性+隐形裂缝+动手前想清做什么，公众号单信源，置信度中）
@@ -559,7 +562,7 @@
 - [[longadder-internals|LongAdder 分段累加设计（Striped64）]]（base 快速路径+Cell 数组分散 CAS+@Contended 128B 防伪共享+cellsBusy 自旋扩容≤CPU 核数；sum 近似无 addAndGet；LongAccumulator 泛化任意二元聚合；双信源：JDK 源码+点赞系统本地聚合 flush 用法，置信度中）
 - [[linkedhashmap-internals|LinkedHashMap 有序化设计（双链表 + 模板方法钩子）]]（Entry 身兼桶节点+双链节点；三钩子维护插入/访问序；两行核心代码 LRU，单信源，置信度中）
 - [[litetopic|RocketMQ LiteTopic（会话级轻量消息通道）]]（会话级隔离的轻量消息通道模型：Parent Topic+LiteTopic 两层结构/订阅粒度 Group→Client/RocksDB 共享 KV 索引/Ready Set 事件驱动投递/四项业务能力（按需创建/自动过期/差异化订阅/消费挂起），已合入 RocketMQ master，单信源，置信度高）
-- [[llm-wiki|LLM Wiki]]（原始来源不可变 + 模型持续编译互链知识页面，Karpathy 模式；本仓库即实例，三信源：综述+教程+WorkBuddy/ima 落地案例）
+- [[llm-wiki|LLM Wiki]]（原始来源不可变 + 模型持续编译互链知识页面，Karpathy 模式；本仓库即实例，七信源：综述+教程+WorkBuddy/ima 落地+WeKnora 部门实战+LiveX 企业级落地+Agent 知识库四能力对照+RAG 系列第6篇（三大先天问题+知识编译器+三 Skill 协作），置信度中）
 - [[llm-call-protocol|OpenAI 兼容 Chat Completions 调用协议]]（messages 四角色+tool_call_id 配对+finish_reason 续轮判据+SDK 默认 timeout 10min/重试 2；单信源）
 - [[local-message-table|本地消息表（Local Message Table）]]（同事务原子性+重试可靠性+至少一次投递+状态机流转+选型边界+6 条红线；MQ 非发件箱必选项、消费者仍要幂等，四信源互证）
 - [[log4j2-async-logging-thread-blocking|Log4j2 异步日志线程阻塞]]（日志事件入队前触发类加载导致业务线程 Block；三阶段模型+ThrowableProxy 根因+避坑方案，单信源一手，置信度高）
@@ -625,9 +628,9 @@
 - [[read-fanout|读扩散（Fan-out on Read）]]（会话队列+syncId 位点同步把 1:N 写压成 1:1；99.99% 非个性化消息前提；阿里混合模式 500ms 端到端，双信源）
 - [[red-dot-tree-system|拉模式红点树系统（游戏 UI 提示徽标）]]（路径树+脏标记冒泡+每帧合批+拉模式，叶子自订阅自计算；先取走脏标记再计算；全树遍历顺带时间驱动红点；五方案对比+完整 C# 实现，单信源一手，置信度高）
 - [[rag|RAG（检索增强生成）]]（生成前检索注入知识；向量检索主流实现；四条路对比（长上下文/微调/Agent/RAG 改的变量）与四类非检索不可场景；一次问答链路+八环节（建库四步+问答四步）+逐环验收+嵌入模型硬约束+四层排查顺序；检索×生成相乘+出处可核对；混合检索/查询改写/分块/多跳；知识库vs记忆vs技能三层，vivo+RAG工程实践七信源，置信度高）
-- [[rag-production-guardrails|企业级 RAG 生产护栏]]（容量/证据/权限/恢复四主线；证据门禁前置、发布目录原子切换；混合检索+存储分层+参数热调+重活异步化+影子模式+旁路降级+RRF融合+相关性裁判拒答+SSE契约+MCP工具调用真实用户身份+五层记忆+加权遗忘+pgvector五契约/检索路由分叉/发布CAS/两步删除/RLS双保险/缓存键九段/评测矩阵，四信源，置信度中）
-- [[rag-document-parsing|RAG 文档解析]]（2026-11-21，AI/RAG/建库，建库侧第一环：目标=连同结构提取（标题/表格/页码/正文）；三类难点（文本层缺失→OCR/双栏串读/表格结构丢失）；四类结构下游用途；错误上游产生下游放大不报错；抽样对照验收（50页按来源分组）与够用三判；解析方案三路线（规则/版面模型/商用API）+分层组合+选型顺序+换解析器全量重建，双信源，置信度中）
-- [[rag-chunking|RAG 分块]]（2026-11-21，AI/RAG/建库，建库侧第二环：四条约束；粒度与边界两个独立维度；四种切法（差别在块的完整性）；标题并入块内；重叠为补偿非必需（10%~20%）；表格与问答对单独处理；双指标（命中率/答案完整度）迭代定块（300~800字），单信源，置信度中）
+- [[rag-production-guardrails|企业级 RAG 生产护栏]]（容量/证据/权限/恢复四主线；证据门禁前置、发布目录原子切换；混合检索+存储分层+参数热调+重活异步化+影子模式+旁路降级+RRF融合+相关性裁判拒答+SSE契约+MCP工具调用真实用户身份+五层记忆+加权遗忘+pgvector五契约/检索路由分叉/发布CAS/两步删除/RLS双保险/缓存键九段/评测矩阵+千万级规模多引擎协同（1000万文档/2亿Chunks/820GB/Kafka写入/S3+Postgres+向量库+OpenSearch+Redis/向量+BM25→RRF→Reranker→LLM），五信源，置信度中）
+- [[rag-document-parsing|RAG 文档解析]]（2026-11-21，AI/RAG/建库，建库侧第一环：目标=连同结构提取（标题/表格/页码/正文）；三类难点（文本层缺失→OCR/双栏串读/表格结构丢失）；四类结构下游用途；错误上游产生下游放大不报错；抽样对照验收（50页按来源分组）与够用三判；解析方案三路线（规则/版面模型/商用API）+分层组合+选型顺序+换解析器全量重建+DeepDoc/MinerU 解析引擎+问答对检索单元+三大视觉任务 OCR/DLR/TSR，三信源，置信度中）
+- [[rag-chunking|RAG 分块]]（2026-11-21，AI/RAG/建库，建库侧第二环：四条约束；粒度与边界两个独立维度；四种切法（差别在块的完整性）；标题并入块内；重叠为补偿非必需（10%~25%）；表格与问答对单独处理；双指标（命中率/答案完整度）迭代定块（300~800字）+七种分块策略分类+块大小三档权衡+Small2Big上下文补全+语义切块阈值三法+知识增强三手段，三信源，置信度中）
 - [[reactive-tracing-context|响应式环境的全链路 traceId 传递]]（Reactor Context 替代 ThreadLocal；doOnEach 同步 MDC、doFinally 清除）
 - [[reactor-thread-model|主从 Reactor 线程模型（Netty 版）]]（Boss accept/Worker CPU×2/Channel 终身绑单 EventLoop 天然无锁；ServerBootstrapAcceptor 移交链路+三形态选型+SCG 双 Group 与中间件应用印证，八信源互证，置信度高）
 - [[redefine-hot-reload-boundaries|redefine 热替换边界：能改什么、不能改什么]]（只能改方法体/执行中方法退出才生效/三个风险+临时止血五步，与 arthas-01、MCP 实测信源互证，单信源方法论，置信度高）

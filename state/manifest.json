@@ -5733,6 +5733,43 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/guiPm_5D2xKutVZoEsdR-g",
       "asset_ref": "Assets/2026-11/weixin-guiPm_5D2xKutVZoEsdR-g.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-23-llm-wiki-knowledge-graph.md",
+      "sha256": "bf47a3e5df8e5d0660e21f6a9e865b54cce0349dae4a4d99b24ea061d7dfb958",
+      "registered_at": "2026-11-24",
+      "inbox_ref": "Archive/2026-11-23-llm-wiki-knowledge-graph.md",
+      "pages": [
+        "wiki/sources/2026-11-23-llm-wiki-knowledge-graph.md",
+        "wiki/concepts/llm-wiki.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/bKHpmZhO-rou0ZE99mUUtg",
+      "asset_ref": "Assets/2026-11/weixin-bkhpmzh-rou0ze99muugtg.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-23-rag-10-million-docs.md",
+      "sha256": "e4a3db942c4f119287b97d1c45544314bafab00a0cdaee43e56ec060b1b2c834",
+      "registered_at": "2026-11-24",
+      "inbox_ref": "Archive/2026-11-23-rag-10-million-docs.md",
+      "pages": [
+        "wiki/sources/2026-11-23-rag-10-million-docs.md",
+        "wiki/concepts/rag-production-guardrails.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/udXF9FEP6SCyeqIxo0YqWA",
+      "asset_ref": "Assets/2026-11/weixin-udxf9fep-rag-scale.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-23-rag-doc-parsing-knowledge-base.md",
+      "sha256": "cf9f02355e9d14d32877bf57d30192c6f2021528f485e4efa60ba485723e877e",
+      "registered_at": "2026-11-24",
+      "inbox_ref": "Archive/2026-11-23-rag-doc-parsing-knowledge-base.md",
+      "pages": [
+        "wiki/sources/2026-11-23-rag-doc-parsing-knowledge-base.md",
+        "wiki/concepts/rag-document-parsing.md",
+        "wiki/concepts/rag-chunking.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/xGIVYtT012pY-O3CKlRDKg",
+      "asset_ref": "Assets/2026-11/weixin-xgivyt-t012py-o3cklrdkg.md"
     }
   ]
 }

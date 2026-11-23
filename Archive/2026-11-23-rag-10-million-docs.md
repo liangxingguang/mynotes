@@ -9,7 +9,7 @@ created: 2026-11-23
 category: 技术
 tags: [RAG, AI, 系统设计]
 asset_ref: Assets/2026-11/weixin-udxf9fep-rag-scale.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 1000 万份文档，RAG 系统到底怎么扛？

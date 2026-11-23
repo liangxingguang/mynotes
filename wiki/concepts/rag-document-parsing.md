@@ -4,7 +4,7 @@ type: concept
 title: RAG 文档解析
 status: active
 created: 2026-11-21
-updated: 2026-11-21
+updated: 2026-11-24
 confidence: medium
 tags:
   - concept
@@ -13,9 +13,11 @@ tags:
 sources:
   - raw/sources/ai/2026-11-20-rag-document-parsing.md
   - raw/sources/ai/2026-11-20-rag-parsing-selection.md
+  - raw/sources/ai/2026-11-23-rag-doc-parsing-knowledge-base.md
 related:
   - wiki/concepts/rag.md
   - wiki/concepts/rag-chunking.md
+  - wiki/sources/2026-11-23-rag-doc-parsing-knowledge-base.md
 ---
 # RAG 文档解析
 
@@ -35,6 +37,9 @@ RAG 建库流程的第一环：把文档（PDF/Word 等）中的文本**连同�
 4. **错误放大且不报错**：一页被解析成空白的制度，索引里没有对应片段，召回拿不到内容，模型仍会凭先验给出行业常见值——格式完整、语气确定，用户很难分辨是编造还是规定；一条从中间断开的条款，具体数字落在另一个片段，模型只能推断或省略。
 5. **验收靠抽样对照而非通用准确率**：从语料抽 50 页覆盖不同来源与版面，逐页记录四项是否还原（标题层级、表格行列、段落顺序、页码），结论按文档来源分组统计而非给总分。
 6. **解析方案三条路线可分层组合**（信源 2026-11-20）：规则解析（读文件内部排版对象，纯文本 PDF 毫秒级、可复现，但扫描件拿不到内容、双栏按行合并）、版面模型（渲染图像检测区域再识别，扫描件必走，代价是算力/准确性/工程）、商用 API（接入最低，但数据出域、限流成本、能力边界固定）；实际系统常分层（规则跑全量、异常走模型，或按来源/用途分流）。
+7. **解析引擎工具（DeepDoc / MinerU）**（信源 2026-11-23）：DeepDoc 是 RAGFlow 的视觉+语义文档解析引擎，整合 OCR、版面分析、表格结构识别与多格式解析器，将"绘制指令/图像"还原为语义化、可检索的文档单元；**混合策略**——模型负责复杂判断、规则修边界（垃圾文本过滤、合并阈值等），**模块化 Parser** 同一套视觉输出驱动不同格式解析（PDF/Word/Excel/PPT），每个 chunk 保留截图并在前端高亮便于可视化校验；工程上用 onnx 推理、batch 处理、scale factor 缩放、XGBoost/规则融合做 box 合并决策。MinerU 则把所有格式统一转成 md/json，与 DeepDoc"逐类型处理"的取向不同。
+8. **问答对作为可检索单元**（信源 2026-11-23）：除常规分段外，可对文档提取**问答对**（结构化 Q→A 键值对）作为可检索知识单元——普通文本块拆分后是连续的非结构化文本片段，问答对是明确的结构化键值对，存储与检索时可针对性地对"问题"和"答案"分别处理，适合把文档中明确的 Q→A 映射直接提取出来。
+9. **三大视觉任务**（信源 2026-11-23）：解析依赖的视觉能力分三项——**OCR** 提取图片或扫描件中的文字内容；**DLR** 分析文档结构布局（标题、段落、图像等）；**TSR** 识别表格行列、合并单元格并结构化输出。
 
 ## Structure（结构）
 
@@ -94,6 +99,8 @@ RAG 建库流程的第一环：把文档（PDF/Word 等）中的文本**连同�
 
 - 2026-11-21 — 新增同系列第 5 篇（`raw/sources/ai/2026-11-20-rag-parsing-selection.md`）。Core Characteristics 增补"解析方案三条路线可分层组合"；How It Works 增补解析方案选型（规则解析/版面模型/商用 API 的机制与代价）、分层组合、选型顺序、换解析器隐性绑定。
 
+- 2026-11-24 — 新增 RAG 全流程教程信源（第 3 信源）`raw/sources/ai/2026-11-23-rag-doc-parsing-knowledge-base.md`。Core Characteristics 增补第 7、8、9 条：解析引擎工具（DeepDoc 混合策略/模块化 Parser/可视化校验、MinerU 统一转 md/json）、问答对作为结构化可检索单元、三大视觉任务（OCR/DLR/TSR）。
+
 ## Open Questions（开放问题）
 
 - 结构还原的量化验收标准（各结构项的还原率门槛）当前信源未确立，需按语料自行设定。
@@ -103,6 +110,7 @@ RAG 建库流程的第一环：把文档（PDF/Word 等）中的文本**连同�
 
 - Source: `raw/sources/ai/2026-11-20-rag-document-parsing.md`（2026-11-20，《RAG工程实践》系列第 4 篇，公众号单信源）
 - Source: `raw/sources/ai/2026-11-20-rag-parsing-selection.md`（2026-11-20，《RAG工程实践》系列第 5 篇，解析方案三路线、分层组合、选型顺序、换解析器隐性成本）
+- Source: `raw/sources/ai/2026-11-23-rag-doc-parsing-knowledge-base.md`（第 3 信源：DeepDoc/MinerU 解析引擎、问答对检索单元、三大视觉任务 OCR/DLR/TSR，教程式总览，置信度中）
 
 ## Related Knowledge（相关知识）
 

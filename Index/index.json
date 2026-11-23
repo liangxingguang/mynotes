@@ -1,64 +1,6 @@
 {
-  "updated_at": "2026-11-23 21:53",
+  "updated_at": "2026-11-24 00:52",
   "notes": [
-    {
-      "id": "2026-11-23-llm-wiki-knowledge-graph",
-      "title": "LLM-Wiki：基于知识图谱的本地知识库系统",
-      "path": "Inbox/2026-11-23-llm-wiki-knowledge-graph.md",
-      "created": "2026-11-23",
-      "category": "技术",
-      "tags": [
-        "RAG",
-        "AI"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/bKHpmZhO-rou0ZE99mUUtg",
-      "source_type": "网页",
-      "platform": "微信",
-      "summary": "RAG 系列第六篇，提出对 RAG 的补充方案 LLM-Wiki：先指出 RAG 三大先天问题（chunk 粒度难控、向量召回语义鸿沟、信息碎片化丢失时序），再给出 LLM-Wiki 架构——用大模型作\"知识编译器\"把原始资料编译为互相引用的 Wiki（ObsIDian 存储），检索由 Skill 控制、CLI 执行，以图谱遍历方式支撑关联分析与深度推理。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/weixin-bkhpmzh-rou0ze99muugtg.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-11-23-rag-10-million-docs",
-      "title": "1000 万份文档，RAG 系统到底怎么扛？",
-      "path": "Inbox/2026-11-23-rag-10-million-docs.md",
-      "created": "2026-11-23",
-      "category": "技术",
-      "tags": [
-        "RAG",
-        "AI",
-        "系统设计"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/udXF9FEP6SCyeqIxo0YqWA",
-      "source_type": "网页",
-      "platform": "微信",
-      "summary": "以图解形式拆解千万级 RAG 的写入链路、存储架构、混合检索与生产保障。当知识库达 1000 万份文档（约 2 亿 Chunks、1024 维向量近 820GB），RAG 复杂度远超向量检索本身，需多引擎协同与完整生产保障。正文以图为主，文字为要点概述。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/weixin-udxf9fep-rag-scale.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-11-23-rag-doc-parsing-knowledge-base",
-      "title": "RAG 文档解析与知识库构建",
-      "path": "Inbox/2026-11-23-rag-doc-parsing-knowledge-base.md",
-      "created": "2026-11-23",
-      "category": "技术",
-      "tags": [
-        "RAG",
-        "AI"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/xGIVYtT012pY-O3CKlRDKg",
-      "source_type": "网页",
-      "platform": "微信",
-      "summary": "系统梳理 RAG 技术实现全流程的四大环节：文档解析、知识库构建（分块）、知识库构建（索引）、知识增强。覆盖文档解析工具（DeepDoc/MinerU）、7 种分块策略及选型、向量检索算法（Flat/IVF/HNSW），以及上下文增强、块标题（CCH）、问题生成三类检索增强手段。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/weixin-xgivyt-t012py-o3cklrdkg.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-11-23-rag-llm-generation",
       "title": "RAG 中的大模型生成：最后一公里",
@@ -8794,6 +8736,25 @@
       "wiki_status": "ingested"
     },
     {
+      "id": "2026-11-23-llm-wiki-knowledge-graph",
+      "title": "LLM-Wiki：基于知识图谱的本地知识库系统",
+      "path": "Archive/2026-11-23-llm-wiki-knowledge-graph.md",
+      "created": "2026-11-23",
+      "category": "技术",
+      "tags": [
+        "RAG",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/bKHpmZhO-rou0ZE99mUUtg",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "RAG 系列第六篇，提出对 RAG 的补充方案 LLM-Wiki：先指出 RAG 三大先天问题（chunk 粒度难控、向量召回语义鸿沟、信息碎片化丢失时序），再给出 LLM-Wiki 架构——用大模型作\"知识编译器\"把原始资料编译为互相引用的 Wiki（ObsIDian 存储），检索由 Skill 控制、CLI 执行，以图谱遍历方式支撑关联分析与深度推理。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-bkhpmzh-rou0ze99muugtg.md",
+      "wiki_status": "ingested"
+    },
+    {
       "id": "2026-11-23-pi-minimal-superagent",
       "title": "用 Pi 实现极简 Super Agent",
       "path": "Archive/2026-11-23-pi-minimal-superagent.md",
@@ -8810,6 +8771,45 @@
       "summary": "用 Pi、tmux、Telegram、cron、VM 五个通用组件，搭出 DeepSeek SuperAgent「Router 调度 + Worker 执行 + 异步监督」核心协作的极简可运行实现，并给出五个结构化扩展方向。",
       "summary_status": "",
       "asset_ref": "Assets/2026/11/pi-minimal-superagent.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-23-rag-10-million-docs",
+      "title": "1000 万份文档，RAG 系统到底怎么扛？",
+      "path": "Archive/2026-11-23-rag-10-million-docs.md",
+      "created": "2026-11-23",
+      "category": "技术",
+      "tags": [
+        "RAG",
+        "AI",
+        "系统设计"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/udXF9FEP6SCyeqIxo0YqWA",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "以图解形式拆解千万级 RAG 的写入链路、存储架构、混合检索与生产保障。当知识库达 1000 万份文档（约 2 亿 Chunks、1024 维向量近 820GB），RAG 复杂度远超向量检索本身，需多引擎协同与完整生产保障。正文以图为主，文字为要点概述。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-udxf9fep-rag-scale.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-23-rag-doc-parsing-knowledge-base",
+      "title": "RAG 文档解析与知识库构建",
+      "path": "Archive/2026-11-23-rag-doc-parsing-knowledge-base.md",
+      "created": "2026-11-23",
+      "category": "技术",
+      "tags": [
+        "RAG",
+        "AI"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/xGIVYtT012pY-O3CKlRDKg",
+      "source_type": "网页",
+      "platform": "微信",
+      "summary": "系统梳理 RAG 技术实现全流程的四大环节：文档解析、知识库构建（分块）、知识库构建（索引）、知识增强。覆盖文档解析工具（DeepDoc/MinerU）、7 种分块策略及选型、向量检索算法（Flat/IVF/HNSW），以及上下文增强、块标题（CCH）、问题生成三类检索增强手段。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-xgivyt-t012py-o3cklrdkg.md",
       "wiki_status": "ingested"
     }
   ]

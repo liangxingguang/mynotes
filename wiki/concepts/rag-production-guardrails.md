@@ -4,7 +4,7 @@ type: concept
 title: 企业级 RAG 生产护栏
 status: active
 created: 2026-10-23
-updated: 2026-11-05
+updated: 2026-11-24
 confidence: medium
 tags:
   - concept
@@ -15,11 +15,13 @@ sources:
   - raw/sources/ai/2026-10-27-agent-platform-architecture.md
   - raw/sources/ai/2026-11-01-enterprise-rag-platform-langgraph-mcp.md
   - raw/sources/ai/2026-11-04-pgvector-rag-retrieval-engineering.md
+  - raw/sources/ai/2026-11-23-rag-10-million-docs.md
 related:
   - wiki/sources/spring-ai-milvus-rag-production.md
   - wiki/sources/agent-platform-architecture.md
   - wiki/sources/2026-11-01-enterprise-rag-platform-langgraph-mcp.md
   - wiki/sources/2026-11-04-pgvector-rag-retrieval-engineering.md
+  - wiki/sources/2026-11-23-rag-10-million-docs.md
 ---
 # 企业级 RAG 生产护栏
 
@@ -39,6 +41,7 @@ Spring AI/Milvus 等框架只解决集成与检索，不替应用保证：用户
 4. **发布与恢复语义**：版本状态机 + 发布目录原子切换（条件更新/单调序号）；写入 ACK ≠ 全局可见；撤权先禁新请求再异步清理，不等 TTL。
 5. **流式治理**：SSE 事件协议（meta/delta/done/error/revoked）；断连/Deadline/撤权走同一幂等取消路径，许可在流结束才释放。
 6. **候选生成与权威复核分离**：五个正确性契约（租户隔离/授权有效/版本原子性/新鲜度/资源有界）中，向量索引只参与候选生成；权限与版本的最终解释权在关系层（RLS 第二道防线 + active_version 指针 + ACL 复核）；检索路由按合法集合大小分叉——小集合用 MATERIALIZED CTE 固定授权集后精确排序（最便宜路径），大集合才走 HNSW 迭代扫描（iterative_scan/strict_order + 超时预算），过滤后 ANN 返回不足不代表合法内容不存在（pgvector 第 4 信源）。
+7. **千万级规模需多引擎协同与完整生产保障**（信源 2026-11-23）：1000 万份文档、每份切 20 Chunks → 约 2 亿检索单元，1024 维 Float32 向量原始存储近 820GB，复杂度远超向量检索本身。**写入链路**以 Kafka 解耦实时上传与历史回填，独立 Worker 完成 OCR/切块/Embedding/索引构建并支持失败重试、恢复与重新处理；**存储按职责多引擎分工**——S3 保存原始文件、Postgres 管理元数据与权限、向量数据库负责语义召回、OpenSearch 提供 BM25 关键词检索、Redis 降低重复查询开销；**查询链路**向量检索与 BM25 并行召回 → RRF 融合候选 → Reranker 筛选高质量证据 → LLM 生成带来源引用的回答。该口径与本页前四信源的"离线独立 Worker / 混合检索 RRF / 存储分层 / 重活异步化"一致，可作为规模量级与多引擎分工的量化印证（图解设计级描述，未附压测数据）。
 
 ## How It Works（运作方式）
 
@@ -72,6 +75,7 @@ Spring AI/Milvus 等框架只解决集成与检索，不替应用保证：用户
 - Source: `raw/sources/ai/2026-10-27-agent-platform-architecture.md`（第 2 信源：平台侧印证混合检索/存储分层/异步离线链路/参数热调/最终一致，新增 Embedding 独立部署与 Milvus 生产用 HNSW 两条边界）
 - Source: `raw/sources/ai/2026-11-01-enterprise-rag-platform-langgraph-mcp.md`（第 3 信源：六大设计原则、重活异步化、影子模式治理、旁路降级、RRF 融合+gte-rerank、相关性裁判拒答、SSE 事件契约、MCP 工具调用真实用户身份、五层记忆模型+加权遗忘、跨语言契约字段逐字对齐）
 - Source: `raw/sources/ai/2026-11-04-pgvector-rag-retrieval-engineering.md`（第 4 信源：五条正确性契约显式化、模型空间注册、active_version 发布 CAS、两步删除、RLS 双保险、检索路由分叉、RRF 融合、缓存键九段、评测矩阵六类实验与上线门槛、换库信号）
+- Source: `raw/sources/ai/2026-11-23-rag-10-million-docs.md`（第 5 信源：千万级规模数字、Kafka 写入解耦+独立 Worker、多引擎存储分工 S3/Postgres/向量库/OpenSearch/Redis、向量+BM25→RRF→Reranker→LLM 查询链路，图解设计级口径，印证前四信源）
 
 ## Related Knowledge（相关知识）
 
@@ -79,5 +83,6 @@ Spring AI/Milvus 等框架只解决集成与检索，不替应用保证：用户
 - [[agent-platform-architecture|高性能弹性扩展智能体中台架构实践（信源页）]]
 - [[2026-11-01-enterprise-rag-platform-langgraph-mcp|Spring Boot 4 × LangGraph × MCP × Milvus：企业级 RAG 平台（信源页）]]
 - [[2026-11-04-pgvector-rag-retrieval-engineering|别急着换向量库：PostgreSQL + pgvector 的生产级 RAG 检索工程（信源页）]]
+- [[2026-11-23-rag-10-million-docs|1000 万份文档，RAG 系统到底怎么扛？（信源页）]]（千万级规模与多引擎协同的图解印证）
 - [[langchain4j-multimodal-rag|LangChain4j 多模态 RAG 实战]]
 - [[knowledge-base-tech-evolution|知识库的技术演进]]

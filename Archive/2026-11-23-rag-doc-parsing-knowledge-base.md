@@ -9,7 +9,7 @@ created: 2026-11-23
 category: 技术
 tags: [RAG, AI]
 asset_ref: Assets/2026-11/weixin-xgivyt-t012py-o3cklrdkg.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # RAG 文档解析与知识库构建
