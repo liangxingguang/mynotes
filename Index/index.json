@@ -1,6 +1,26 @@
 {
-  "updated_at": "2026-11-24 12:41",
+  "updated_at": "2026-11-24 14:57",
   "notes": [
+    {
+      "id": "inbox-2026-11-24-enterprise-agent-architecture",
+      "title": "企业 Agent 架构怎么搭？AI Coding + Ontology + Harness，从原型到交付",
+      "path": "Inbox/2026-11-24-enterprise-agent-architecture-ai-coding-ontology-harness.md",
+      "created": "2026-11-24",
+      "category": "技术",
+      "tags": [
+        "Agent",
+        "AI",
+        "系统设计"
+      ],
+      "source": "微信公众号 · 架构师(JiaGouX)",
+      "source_url": "https://mp.weixin.qq.com/s/8R60mUjASxtxWCSBbj2T5w",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "用 AI Coding 做原型、Ontology 说清业务含义、Harness 组织执行，让企业 Agent 从\"给建议\"走到\"交结果\"。文章以\"发票异常处理\"为例，给出从任务边界、建模、工具、执行、等待恢复、幂等到评估交付的完整落地路径。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/enterprise-agent-architecture-ai-coding-ontology-harness.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
