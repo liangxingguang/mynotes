@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24 14:57",
+  "updated_at": "2026-11-24 15:24",
   "notes": [
     {
       "id": "inbox-2026-11-24-enterprise-agent-architecture",
@@ -19,7 +19,7 @@
       "summary": "用 AI Coding 做原型、Ontology 说清业务含义、Harness 组织执行，让企业 Agent 从\"给建议\"走到\"交结果\"。文章以\"发票异常处理\"为例，给出从任务边界、建模、工具、执行、等待恢复、幂等到评估交付的完整落地路径。",
       "summary_status": "",
       "asset_ref": "Assets/2026/11/enterprise-agent-architecture-ai-coding-ontology-harness.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",

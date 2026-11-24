@@ -25,6 +25,7 @@ sources:
   - raw/sources/ai/2026-11-23-learn-claude-code-course.md
   - raw/sources/ai/2026-11-23-lala-agent-realtime-trading.md
   - raw/sources/ai/2026-11-24-google-harness2.md
+  - raw/sources/ai/2026-11-24-enterprise-agent-architecture-ai-coding-ontology-harness.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/concepts/context-management.md
@@ -49,6 +50,8 @@ related:
   - wiki/sources/2026-11-23-lala-agent-realtime-trading.md
   - wiki/entities/harness2.md
   - wiki/sources/2026-11-24-google-harness2.md
+  - wiki/topics/enterprise-agent-architecture.md
+  - wiki/sources/2026-11-24-enterprise-agent-architecture.md
 ---
 # Harness Engineering（Agent 执行系统工程）
 
@@ -178,6 +181,8 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 
 - 2026-11-24 — 新增 Google Harness2 信源 `raw/sources/ai/2026-11-24-google-harness2.md`（第 14 信源）。补上**harness 配置自动迭代**这一此前缺位的实现机制：Harness2 把 harness 拆成 4 组 8 块可编辑组件（上下文/工具接口/委派/中间件），以两层递归（单任务行为对比精炼、跨任务持久改进 harness）实现"模型不动、动壳"的自动迭代，且**不需要标准答案**——靠对比候选壳改动的行为差异判断去留，对无打分标准的真实任务更实用，与第 5 信源"自进化需要宪法（验证/回滚/权限/淘汰制度化）"呼应。预算由 `--k`/`--mode` 控制（parallel 往宽探、sequential 往深改），执行器支持 OpenCode/Codex。与"执行循环/扩展机制/复杂度治理"观察面互证，实例落成实体页 [[harness2|Harness2]]。自报跑分为项目最高值、单信源转述，标题"25K+ Star"正文无佐证，均须以论文与仓库实际数据核验。
 
+- 2026-11-24 — 新增企业 Agent 架构信源 `raw/sources/ai/2026-11-24-enterprise-agent-architecture-ai-coding-ontology-harness.md`（第 15 信源）。补上**业务 Agent Harness 与研发 Harness 的区分**这一此前缺位的视角：两套环境都要让 Agent 获得可用工具、上下文和反馈，但研发 Harness 面向代码仓库、测试、PR，线上业务 Agent 的 Harness 面向发票、权限、业务动作，**凭证与可执行操作各自配置**。同时补上 Harness 与 Runtime 的边界口径：Harness 组织当前这一轮，Runtime/任务流程提供执行环境、持久状态和调度、承接暂停恢复与后续跟进；停止条件具体化为最大工具调用次数、本轮时间和费用预算、连续无进展次数，到限保存证据与未完成项并交回流程。主题落成 [[enterprise-agent-architecture|企业 Agent 架构（从原型到交付）]]，信源页见 [[2026-11-24-enterprise-agent-architecture|企业 Agent 架构（信源页）]]。
+
 ## Open Questions（开放问题）
 
 - 论文原始统计口径与当前产品能力的时差（快照为历史版本）？
@@ -199,6 +204,7 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 - Source: `raw/sources/ai/2026-11-23-learn-claude-code-course.md`（第 12 信源：三句主张互证、循环不变挂件万变的设计纪律、s17 目标闸门外部裁判视角，教学实现单信源，置信度中）
 - Source: `raw/sources/ai/2026-11-23-lala-agent-realtime-trading.md`（第 13 信源：帮模型/守业务二分 + "假设模型完美"判定法、高代码 Harness 三阶段演进与确定性位置，生产实践自述，置信度中）
 - Source: `raw/sources/ai/2026-11-24-google-harness2.md`（第 14 信源：Harness2 自进化框架，两层递归行为对比精炼 + 跨任务持久改进 harness、8 块可编辑组件、`--k`/`--mode` 预算、三基准自报跑分，Google 开源 + 公众号解读，置信度中）
+- Source: `raw/sources/ai/2026-11-24-enterprise-agent-architecture-ai-coding-ontology-harness.md`（第 15 信源：业务 Agent Harness vs 研发 Harness 区分、Harness 与 Runtime 边界口径、停止条件具体化，设计示例，置信度中）
 
 ## Related Knowledge（相关知识）
 

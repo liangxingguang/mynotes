@@ -4,6 +4,7 @@
 
 ## source（信源）
 
+- [[2026-11-24-enterprise-agent-architecture|企业 Agent 架构怎么搭？AI Coding + Ontology + Harness（信源页）]]（2026-11-24，AI/Agent/架构/Ontology/Harness，微信「架构师」提出企业业务 Agent 落地架构：AI Coding 做原型+Ontology 说清业务含义+Harness 组织单轮执行+Runtime 承接持久调度+FDE 现场交付，核心原则"调查留给 Agent/动作校验留业务服务/跨轮跟进交持久流程"，发票异常处理贯穿九环节，设计示例，单信源，置信度中）
 - [[2026-11-24-github-c-language-projects|Github上热门 C 语言项目汇总（信源页）]]（2026-11-24，GitHub/C语言/开源项目盘点，微信「嵌入式大杂烩」汇总 17 个热门 C 语言项目：学习入门 4 个（LDD 内核驱动笔记/CNote 入门/Data-Structure 严蔚敏配套/PAT 题解）、基础库与工具（gear-lib/Sanitizer/cJSON/zlog 25 万条/秒）、通信协议（nanomsg/protobuf）、存储数据库（FlashDB/FastDFS/Seafile）、服务器（nginx/mosquitto）、其他（vimcdoc/si78c），每项目仅一段功能概述，单信源，置信度中）
 - [[2026-11-24-system-design-primer-interview|这个GitHub项目，让百万工程师通过了系统设计面试（信源页）]]（2026-11-24，系统设计/面试/开源项目，微信推介 donnemartin/system-design-primer：Markdown 教程+手绘架构图+Anki 闪卡，发文时 274,986 星/16 种语言，14 主题知识体系+8 道经典面试题（四步法）+6 道 OOP 题+3 套闪卡+三档学习路线，附 CAP/可用性/延迟数字速查与同类资源对比，单信源，置信度中）
 - [[2026-11-24-github-yyds-projects|这 4 个 yyds 的 GitHub 项目，有点意思（信源页）]]（2026-11-24，GitHub/开源/工具盘点，微信「逛逛 GitHub」盘点 4 个实用开源项目：TeachYourselfCS-CN 中文 CS 学习指南（9 科一书一课+极简两本路线）、pansou 网盘搜索 API（3K Star/不到 20M/Docker 一行起）、Priospace（Todo+番茄钟+打卡合一/免费本地数据/实时协作）、Drawnix 一体化白板（Markdown 变思维导图/Mermaid 变流程图/插件架构），单信源，置信度中）
@@ -796,6 +797,7 @@
 
 ## topic（主题）
 
+- [[enterprise-agent-architecture|企业 Agent 架构（从原型到交付）]]（2026-11-24，AI/Agent/架构/主题导航，五大角色分工（AI Coding/Ontology/Harness/Runtime/FDE）+核心原则"调查留给 Agent/动作校验留业务服务/跨轮跟进交持久流程"+从原型到交付九环节（任务边界→AI Coding→Ontology 建模→工具→Harness→等待恢复→幂等→评估→FDE）+发票异常处理贯穿案例，连接 [[ontology]] [[harness-engineering]] [[idempotency-design]] [[durable-execution]]，单信源，置信度中）
 - [[action-game-design|动作游戏设计]]（2026-11-23，游戏设计/主题导航，70 篇 GDC/CEDEC 速览的交叉共识：奖惩循环/关卡即节奏/可读性优先/AI 对手「最像」非「最强」/手感来自可比较反馈/难度来自组合；关键概念与实体归纳，单信源置信度中）
 - [[ai-tool-stack-overview|AI 工具栈全景（11 维度）]]（2026-11-23，AI/工具栈/主题导航，按「底层模型→能力增强→工程基建→上层应用」的 11 维度分类框架与代表工具清单，可作为选型与盘点检查清单，单信源置信度中）
 - [[enterprise-systems-map|B端企业系统全景地图（10 大系统）]]（2026-11-04，产品/B端/企业系统主题导航，10 系统四段式速查表+OMS 补充行（第19篇口径）+内部资源→外部协同框架+供应链域选型深水见 [[wms-vs-oms-vs-tms]]，三信源置信度中）

@@ -5882,6 +5882,20 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/DrXMgSvZcU5uJ1HJstAuTw",
       "asset_ref": "Assets/2026/11/weixin-DrXMgSvZcU5uJ1HJstAuTw.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-24-enterprise-agent-architecture-ai-coding-ontology-harness.md",
+      "sha256": "bb0ad30fcdb2572c42b1b9ac1e1ce0b7e23751b313f1d4fd4e210fa4ce1df737",
+      "registered_at": "2026-11-24",
+      "inbox_ref": "Inbox/2026-11-24-enterprise-agent-architecture-ai-coding-ontology-harness.md",
+      "pages": [
+        "wiki/sources/2026-11-24-enterprise-agent-architecture.md",
+        "wiki/topics/enterprise-agent-architecture.md",
+        "wiki/concepts/ontology.md",
+        "wiki/concepts/harness-engineering.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/8R60mUjASxtxWCSBbj2T5w",
+      "asset_ref": "Assets/2026/11/enterprise-agent-architecture-ai-coding-ontology-harness.md"
     }
   ]
 }
