@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24 10:41",
+  "updated_at": "2026-11-24 10:42",
   "notes": [
     {
       "id": "inbox-2026-11-24-github-yyds-projects",
@@ -19,6 +19,26 @@
       "summary": "公众号「逛逛 GitHub」盘点 4 个实用开源项目：中文计算机学习指南、网盘搜索 API、ToDo/番茄钟/打卡合一工具、一体化白板工具。",
       "summary_status": "",
       "asset_ref": "Assets/2026/11/weixin-8fOiy2VPsIKdNF4zZ3Qygg.md",
+      "wiki_status": "ingesting"
+    },
+    {
+      "id": "inbox-2026-11-24-system-design-primer-interview",
+      "title": "这个GitHub项目，让百万工程师通过了系统设计面试",
+      "path": "Inbox/2026-11-24-system-design-primer-interview.md",
+      "created": "2026-11-24",
+      "category": "技术",
+      "tags": [
+        "系统设计",
+        "GitHub",
+        "开源项目"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/DrXMgSvZcU5uJ1HJstAuTw",
+      "source_type": "article",
+      "platform": "微信",
+      "summary": "介绍开源项目 donnemartin/system-design-primer：一份系统设计面试指南，含知识体系、8 道经典面试题、OOP 题、Anki 闪卡与学习路线，GitHub 27.5 万星、16 种语言。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/weixin-DrXMgSvZcU5uJ1HJstAuTw.md",
       "wiki_status": "pending"
     },
     {
