@@ -1,6 +1,26 @@
 {
-  "updated_at": "2026-11-24 09:21",
+  "updated_at": "2026-11-24 09:25",
   "notes": [
+    {
+      "id": "2026-11-24-google-harness2-self-evolution",
+      "title": "谷歌开源 AI Harness 自进化框架 Harness2：一个月狂揽 25K+ Star",
+      "path": "Inbox/2026-11-24-google-harness2-self-evolution.md",
+      "created": "2026-11-24",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent",
+        "GitHub"
+      ],
+      "source": "冰河（微信公众号）",
+      "source_url": "https://mp.weixin.qq.com/s/HCt_zSiOiLYSv-yEjrz70A",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "冰河介绍 Google Research 开源项目 Harness2：一个把\"调 Agent harness\"从手工活变成自动迭代过程的框架。它不训练模型、权重全程锁死，只动模型外层的系统配置。harness 被拆成 8 块可编辑组件，靠两层递归循环——单任务用\"候选 harness 行为对比\"替代标准答案打分来精炼，跨任务把有证据的结论沉淀进持久的改进 harness。项目在 JobBench / LAB / WorkBuddy-Bench 三基准上报告了单步提升，文章还给出 --k 预算参数、本地 demo 与真实跑分步骤，以及成本、网络、官方支持三方面注意事项。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/weixin-hct-zsioilysv-yEjrz70A.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
