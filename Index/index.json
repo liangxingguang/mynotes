@@ -1,6 +1,26 @@
 {
-  "updated_at": "2026-11-24 10:42",
+  "updated_at": "2026-11-24 10:44",
   "notes": [
+    {
+      "id": "inbox-2026-11-24-github-c-language-projects",
+      "title": "Github上热门 C 语言项目汇总",
+      "path": "Inbox/2026-11-24-github-c-language-projects.md",
+      "created": "2026-11-24",
+      "category": "技术",
+      "tags": [
+        "GitHub",
+        "开源项目",
+        "自学"
+      ],
+      "source": "微信公众号·嵌入式大杂烩",
+      "source_url": "https://mp.weixin.qq.com/s/USH1iRGjmG9mRfr_zL3SeQ",
+      "source_type": "article",
+      "platform": "微信",
+      "summary": "汇总 GitHub 上 17 个热门 C 语言项目，涵盖学习笔记、基础库、检测工具、通信库、数据库、服务器、日志库等，适合 C 语言学习与工程实践参考。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/weixin-USH1iRGjmG9mRfr_zL3SeQ.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "inbox-2026-11-24-github-yyds-projects",
       "title": "这 4 个 yyds 的 GitHub 项目，有点意思",
