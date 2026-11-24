@@ -1,6 +1,25 @@
 {
-  "updated_at": "2026-11-24 09:51",
+  "updated_at": "2026-11-24 10:40",
   "notes": [
+    {
+      "id": "inbox-2026-11-24-github-yyds-projects",
+      "title": "这 4 个 yyds 的 GitHub 项目，有点意思",
+      "path": "Inbox/2026-11-24-github-yyds-projects.md",
+      "created": "2026-11-24",
+      "category": "技术",
+      "tags": [
+        "GitHub",
+        "自学"
+      ],
+      "source": "微信公众号·逛逛 GitHub",
+      "source_url": "https://mp.weixin.qq.com/s/8fOiy2VPsIKdNF4zZ3Qygg",
+      "source_type": "article",
+      "platform": "微信",
+      "summary": "公众号「逛逛 GitHub」盘点 4 个实用开源项目：中文计算机学习指南、网盘搜索 API、ToDo/番茄钟/打卡合一工具、一体化白板工具。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/weixin-8fOiy2VPsIKdNF4zZ3Qygg.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
