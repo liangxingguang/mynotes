@@ -12,9 +12,7 @@ tags:
   - AI
   - 系统设计
 asset_ref: Assets/2026/11/enterprise-agent-architecture-ai-coding-ontology-harness.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-24T06:58:36.008Z"
-ingest_claim_id: 9504-1795503516008-0
+wiki_status: ingested
 ---
 
 # 企业 Agent 架构怎么搭？AI Coding + Ontology + Harness，从原型到交付

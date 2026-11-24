@@ -1,26 +1,6 @@
 {
-  "updated_at": "2026-11-24 15:24",
+  "updated_at": "2026-11-24 15:30",
   "notes": [
-    {
-      "id": "inbox-2026-11-24-enterprise-agent-architecture",
-      "title": "企业 Agent 架构怎么搭？AI Coding + Ontology + Harness，从原型到交付",
-      "path": "Inbox/2026-11-24-enterprise-agent-architecture-ai-coding-ontology-harness.md",
-      "created": "2026-11-24",
-      "category": "技术",
-      "tags": [
-        "Agent",
-        "AI",
-        "系统设计"
-      ],
-      "source": "微信公众号 · 架构师(JiaGouX)",
-      "source_url": "https://mp.weixin.qq.com/s/8R60mUjASxtxWCSBbj2T5w",
-      "source_type": "web",
-      "platform": "微信",
-      "summary": "用 AI Coding 做原型、Ontology 说清业务含义、Harness 组织执行，让企业 Agent 从\"给建议\"走到\"交结果\"。文章以\"发票异常处理\"为例，给出从任务边界、建模、工具、执行、等待恢复、幂等到评估交付的完整落地路径。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/11/enterprise-agent-architecture-ai-coding-ontology-harness.md",
-      "wiki_status": "ingesting"
-    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
@@ -8830,6 +8810,26 @@
       "summary": "以微信朋友圈时间线设计为切入，对比读扩散（拉模式）与写扩散（推模式）两种 Feed 流方案。核心结论：时间线在数据库里并不存在，须在读时或写时\"造\"出来；写扩散把排序挪到写侧，读侧一次查询即可，但前提是单次扩散复制份数必须有上限——微信好友上限 5000 正是这道成本护栏，再以削峰、合并、只推活人摊平写入。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-yd6bsj9m-feed-timeline.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-24-enterprise-agent-architecture",
+      "title": "企业 Agent 架构怎么搭？AI Coding + Ontology + Harness，从原型到交付",
+      "path": "Archive/2026-11-24-enterprise-agent-architecture-ai-coding-ontology-harness.md",
+      "created": "2026-11-24",
+      "category": "技术",
+      "tags": [
+        "Agent",
+        "AI",
+        "系统设计"
+      ],
+      "source": "微信公众号 · 架构师(JiaGouX)",
+      "source_url": "https://mp.weixin.qq.com/s/8R60mUjASxtxWCSBbj2T5w",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "用 AI Coding 做原型、Ontology 说清业务含义、Harness 组织执行，让企业 Agent 从\"给建议\"走到\"交结果\"。文章以\"发票异常处理\"为例，给出从任务边界、建模、工具、执行、等待恢复、幂等到评估交付的完整落地路径。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/enterprise-agent-architecture-ai-coding-ontology-harness.md",
       "wiki_status": "ingested"
     },
     {
