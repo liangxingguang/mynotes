@@ -10,6 +10,7 @@ category: 技术
 tags:
   - GitHub
   - 自学
+  - 开源项目
 asset_ref: Assets/2026/11/weixin-8fOiy2VPsIKdNF4zZ3Qygg.md
 wiki_status: pending
 ---
