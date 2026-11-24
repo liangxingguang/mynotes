@@ -5909,6 +5909,30 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/X9ClN0C-HFOq-ZeOs094BQ",
       "asset_ref": "Assets/2026/11/weixin-X9ClN0C-HFOq-ZeOs094BQ.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-24-weixin-fcd-full-cycle-developer.md",
+      "sha256": "b2b746ef8122b4ca9e0cde30861a61cb475bbefba217f5aeeb8c43a362bd1a9e",
+      "registered_at": "2026-11-24",
+      "inbox_ref": "Archive/2026-11-24-ai-full-cycle-developer-workflow.md",
+      "pages": [
+        "wiki/sources/2026-11-24-weixin-fcd-full-cycle-developer.md",
+        "wiki/concepts/full-cycle-developer-workflow.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/oSeeRQikg_J6xA0hSiy8hA",
+      "asset_ref": "Assets/2026/11/weixin-oSeeRQikg_J6xA0hSiy8hA.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-24-weixin-async-priority-queue-preemptive.md",
+      "sha256": "34a48e9cf553d496b516d088c0027afdac8a7c81d4d25d911a34bf51f0508e00",
+      "registered_at": "2026-11-24",
+      "inbox_ref": "Archive/2026-11-24-async-task-priority-queue-preemptive.md",
+      "pages": [
+        "wiki/sources/2026-11-24-weixin-async-priority-queue-preemptive.md",
+        "wiki/concepts/async-task-priority-queue-preemption.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/1sMRD5s2p2XC_ij_yUB9Dw",
+      "asset_ref": "Assets/2026/11/weixin-1sMRD5s2p2XC_ij_yUB9Dw.md"
     }
   ]
 }

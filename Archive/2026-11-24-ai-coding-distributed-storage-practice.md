@@ -11,7 +11,7 @@ tags:
   - AI
   - 系统设计
 asset_ref: Assets/2026/11/weixin-PiBdyyEfsKIO8hJGoQCuUQ.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 如何在"不能出错"的系统里使用AI Coding？分布式存储实践与边界

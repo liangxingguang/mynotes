@@ -11,7 +11,7 @@ tags:
   - AI
   - 系统设计
 asset_ref: Assets/2026/11/weixin-oSeeRQikg_J6xA0hSiy8hA.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 半年用AI写需求，我终于不用给AI当测试了

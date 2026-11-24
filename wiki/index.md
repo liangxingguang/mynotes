@@ -461,6 +461,8 @@
 - [[2026-11-23-llm-master-learning-roadmap|全网硬核大模型应用开发（Agent、RAG）学习路线+配套资源，在 GitHub 开源]]（2026-11-23，AI/学习/Agent，youngyangyang04/llm-master 开源仓库：六阶段学习路线（全局认知→模型调用→RAG→Agent→生产工程→原理面试）+172 文件 150+ 教程+专题/全量索引+每阶段可交付项目，作者自报规模，微信单信源，置信度中）
 - [[2026-11-23-wechat-feed-timeline|腾讯面试官：微信朋友圈 10 亿人发内容，怎么保证你能看到好友的最新动态？（信源页）]]（2026-11-24，IM/架构/Feed/写扩散，微信 Feed 流时间线题解：时间线在 DB 不存在、读时或写时造+读扩散 3500 万读 QPS vs 写扩散 35 万写 QPS 差约 100 倍+好友上限 5000 为写扩散成本天花板+削峰/合并/只推活人三手段+Redis ZSet 微秒 score，单信源，置信度中）
 - [[ecommerce-search-recommendation-practice|电商平台实时商品搜索与个性化推荐实战（信源页）]]（2026-11-24，搜索/推荐/架构/Java，微信「服务端技术精选」教程骨架：multiMatch 多字段加权（name^3/description^2）+completion suggester、协同过滤+内容推荐双路合并去重限 50、事件监听同步 ES+Kafka 死信、商品 30 分钟/热门 10 分钟缓存、ik 分词与 3 分片 1 副本等配置；推荐算法为简化桩，单信源，置信度中）
+- [[2026-11-24-weixin-fcd-full-cycle-developer|半年用AI写需求，我终于不用给AI当测试了（信源页）]]（2026-11-24，AI/AI Coding/工作流/验收，腾讯智能文档团队侯国春第一方实践：fcd 工作流六阶段（环境检查→定 Plan→建测试页→逐点实现→经验沉淀→收尾清理）+每阶段 Gate；TAPD 自报每百条测试用例新引入 bug 2.31→0.49（-79%）、重开 3→0、严重级 4→0；比稿五步（Figma MCP/pixelmatch 70%+SSIM 30%/数值对账）；工程化为 @tencent/fcd-ai；单信源无对照，置信度中）
+- [[2026-11-24-weixin-async-priority-queue-preemptive|异步任务优先级队列 + 抢占式执行（信源页）]]（2026-11-24，架构/Java/系统设计/并发，微信「服务端技术精选」系统设计方案：优先级队列+抢占式执行+优先级调度+资源隔离四层；PriorityTask/PriorityTaskQueueService/PreemptiveTaskExecutorService/InterruptibleTask 完整骨架；提级防饥饿（60s+1 级）、智能抢占阈值（差>8 或差>5 且 10s）；自报 1 万并发下高优响应 5000ms→150ms、P95 10s→300ms、吞吐 2000→1600/s；单信源无复现，置信度中）
 
 ## concept（概念）
 
@@ -733,6 +735,8 @@
 - [[software-factory|软件工厂（Software Factory）]]（2026-11-23，AI/Coding Agent/架构，Coding Agent 交付流水线：Overseer/Worker/Daemon 三角色、Task/Job/运行/检查四类记录、领取原子性+租约、按提交验收、机制与策略分离；与 durable-execution/ai-native-sdlc 互链，单信源，置信度中）
 - [[coding-to-proposal-method|从写代码到写方案：视角切换的五步方法]]（2026-11-23，概念/写作/方法论/思维，开发转方案视角切换：显微镜与地图隐喻、五步流程（顺序不可反、前两步想）、想清楚三问、MECE 两条检验与决策链维度、结论先行+SCQA、交付前五问自检+三个跳出来法，源头《金字塔原理》；与 proposal-logic-structures 互补、与 writing-skill-progression/deep-thinking-five-tools 区分，单信源，置信度中）
 - [[agent-production-four-layer-model|Agent 生产化四层模型]]（2026-11-23，概念/AI/Agent/Harness，货拉拉亓隆基提炼的 Agent 生产化方法论：模型决定起点、Harness 决定下限、Dual Loop 决定方向、业务知识决定上限；Harness 帮模型·守业务二分与"假设模型完美"判定法、高代码 Harness 与确定性位置、Dual Loop 内外环、业务知识按确定性分流，与 harness-engineering 互链，单信源置信度中）
+- [[full-cycle-developer-workflow|Full-Cycle Developer 工作流（fcd）]]（2026-11-24，概念/AI Coding/工作流/验收，fcd 工作流：六阶段+每阶段 Gate、Plan 为唯一基准（零空格铁律/六类任务类型/禁止预读后阶段）、自验收（客观标准+自动化比稿+数值对账）、自返工（先根因不反向偏移）、自沉淀（skill 只记验证过的）；"已完成"不值钱证据才值钱；与 acceptance-agent/ai-native-sdlc/ai-coding-evidence-boundary 互链，单信源，置信度中）
+- [[async-task-priority-queue-preemption|异步任务优先级队列与抢占式执行]]（2026-11-24，概念/Java/系统设计/并发，保障异步任务 SLA 的四层范式：优先级队列（高优先先出、动态调优）、抢占式执行（中断+检查点可续跑）、优先级调度（提升/衰减/继承防饥饿）、资源隔离（按优先级分池）；抢占触发阈值与智能防抖、业务优先级数值化分级；与 priorityblockingqueue-internals/retry-governance/async-task-system-design 互链，单信源，置信度中）
 
 ## entity（实体）
 

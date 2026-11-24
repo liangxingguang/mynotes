@@ -11,7 +11,7 @@ tags:
   - java
   - 系统设计
 asset_ref: Assets/2026/11/weixin-1sMRD5s2p2XC_ij_yUB9Dw.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 异步任务优先级队列 + 抢占式执行：高优先级任务可插队，保障核心业务
