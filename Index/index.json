@@ -1,6 +1,44 @@
 {
-  "updated_at": "2026-11-24 17:09",
+  "updated_at": "2026-11-24 17:12",
   "notes": [
+    {
+      "id": "inbox-2026-11-24-ai-coding-distributed-storage-practice",
+      "title": "如何在\"不能出错\"的系统里使用AI Coding？分布式存储实践与边界",
+      "path": "Inbox/2026-11-24-ai-coding-distributed-storage-practice.md",
+      "created": "2026-11-24",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "系统设计"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/PiBdyyEfsKIO8hJGoQCuUQ",
+      "source_type": "article",
+      "platform": "微信",
+      "summary": "美团基础技术部在分布式存储中用 AI Coding 的实战经验：AI 评审、AI Debug、AI 自动化三个场景各自擅长什么、容易在哪里翻车。核心判断是 AI 把瓶颈从\"写\"移到了\"验证\"，错误多出在代码之外的运维流程、设计决策与团队约定，每个结论都必须可证伪，流畅不是证据、一致不是正确、变绿不是解决。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/weixin-PiBdyyEfsKIO8hJGoQCuUQ.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "inbox-2026-11-24-async-task-priority-queue-preemptive",
+      "title": "异步任务优先级队列 + 抢占式执行：高优先级任务可插队，保障核心业务",
+      "path": "Inbox/2026-11-24-async-task-priority-queue-preemptive.md",
+      "created": "2026-11-24",
+      "category": "技术",
+      "tags": [
+        "java",
+        "系统设计"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/1sMRD5s2p2XC_ij_yUB9Dw",
+      "source_type": "article",
+      "platform": "微信",
+      "summary": "解决异步任务三大痛点：优先级无法区分、资源分配不合理、低优任务占资源导致高优任务无法插队。基于 PriorityBlockingQueue 构建优先级队列，配合线程中断、检查点与状态保存实现抢占式执行，并用定时调度做优先级提升/衰减、资源隔离与监控告警，保障核心业务 SLA。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/weixin-1sMRD5s2p2XC_ij_yUB9Dw.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "inbox-2026-11-24-ecommerce-realtime-search-recommendation",
       "title": "电商平台实时商品搜索与个性化推荐实战",
@@ -18,7 +56,7 @@
       "summary": "用 SpringCloud + Elasticsearch + Redis + Kafka 搭建电商搜索推荐系统：ES 全文搜索与模糊匹配、Kafka 实时数据同步、基于用户行为的协同过滤+内容推荐、Redis 多级缓存与热点加速，解决搜索不准、响应慢、推荐不个性化的痛点。",
       "summary_status": "",
       "asset_ref": "Assets/2026/11/weixin-X9ClN0C-HFOq-ZeOs094BQ.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
