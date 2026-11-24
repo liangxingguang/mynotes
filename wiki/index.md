@@ -4,6 +4,7 @@
 
 ## source（信源）
 
+- [[2026-11-24-weixin-leo-architecture-growth|从需求开发到全栈架构：我主动干遍了所有"不属于我的活"（信源页）]]（2026-11-24，成长/架构/微信，从业 15 年系统架构师 Leo 原创自述：岗位边界是成长天花板+主动承接无人认领的跨系统疑难倒逼跨域学习+「做哪行研究下一层知识」+FMEA/STPA/ASPICE 体系补齐+无人看见时的职业定力，单信源，置信度中）
 - [[2026-11-24-ant-toolgw-agent-tool-gateway|蚂蚁 AI 工具网关 ToolGW：全站统一的 Agent 工具流量入口（信源页）]]（2026-11-24，AI/Agent/网关/MCP，微信「金融级分布式架构」，蚂蚁 ToolGW 负责人一手自述：MCP/CLI 双协议门面共享 ToolEngine、存量 RPC/HTTP 零代码上翻（4000+ Server/20000+ Tool）、双身份向 AgentToken 演进、Tool 粒度两层鉴权、限流/Mock/录制回放治理，峰值 QPM 25w+，单信源，置信度高）
 - [[2026-11-24-enterprise-agent-architecture|企业 Agent 架构怎么搭？AI Coding + Ontology + Harness（信源页）]]（2026-11-24，AI/Agent/架构/Ontology/Harness，微信「架构师」提出企业业务 Agent 落地架构：AI Coding 做原型+Ontology 说清业务含义+Harness 组织单轮执行+Runtime 承接持久调度+FDE 现场交付，核心原则"调查留给 Agent/动作校验留业务服务/跨轮跟进交持久流程"，发票异常处理贯穿九环节，设计示例，单信源，置信度中）
 - [[2026-11-24-github-c-language-projects|Github上热门 C 语言项目汇总（信源页）]]（2026-11-24，GitHub/C语言/开源项目盘点，微信「嵌入式大杂烩」汇总 17 个热门 C 语言项目：学习入门 4 个（LDD 内核驱动笔记/CNote 入门/Data-Structure 严蔚敏配套/PAT 题解）、基础库与工具（gear-lib/Sanitizer/cJSON/zlog 25 万条/秒）、通信协议（nanomsg/protobuf）、存储数据库（FlashDB/FastDFS/Seafile）、服务器（nginx/mosquitto）、其他（vimcdoc/si78c），每项目仅一段功能概述，单信源，置信度中）
@@ -504,6 +505,7 @@
 - [[ai-ticket-system|AI 工单系统]]（智能分类五能力+置信度阈值+人工纠偏回流；自动派单五因素+五种模式；知识库闭环五要点；目标指标/六项埋点/验收标准/风险对策，电商案例，与 [[ticket-system-design]] 为 AI/传统代际关系，单信源置信度中）
 - [[architecture-description-metamodel|ISO 42010 架构概念元模型]]（左侧人与诉求五要素+右侧视图与设计四要素+四条逻辑线不可颠倒+AD≠架构+车载域控五团队对立+ADR 决策记录，单信源置信度中）
 - [[architecture-design-capabilities|架构设计能力（8 个底层动作）]]（架构 vs 架构描述+八动作链抽象/聚焦/分解/边界/契约/权衡/约束/可演化+Parnas 信息隐藏+隐式契约+二十指标等于零，单信源置信度中）
+- [[architecture-growth-path|架构成长路径（从岗位执行到全局架构的主动成长机制）]]（2026-11-24，概念/成长/架构，不靠培养与天赋：主动承接无人认领的跨系统疑难倒逼跨域学习+「做哪行研究下一层知识」+闭环沉淀+体系补齐（FMEA/STPA/ASPICE）+无人看见时的职业定力，架构=看见全貌的能力，微信一手自述单信源，置信度中）
 - [[architecture-tradeoff-methodology|架构取舍方法论（先定约束，再挑技术）]]（四问前置+演进式架构+三高量化+对症优化+选型看访问路径+稳定性工具箱，单信源置信度中）
 - [[authn-authz-selection-framework|认证与授权选型决策框架（五维模型与 AuthN/AuthZ 分层）]]（认证与授权选型方法论：AuthN/AuthZ+凭证/Token/会话三层+有状态vs无状态权衡+五维模型+三层时间尺度+L1-L5分层+对外必须标准协议+五方案评分矩阵局限+10条场景清单+4类反模式+AuthService接口隔离，认证授权选型系列·上篇信源编译，与 [[sso-oauth2-oidc]] [[rbac-permission-system]] [[permission-refactoring]] 互证，单信源，置信度中）
 - [[b-end-report-design|B端报表设计方法论（Report Design Methodology）]]（2026-11-20，概念/B端/报表设计，决策场景先行+用户-场景-动作-数据四步法+指标字典9字段+可视化四层分层+权限三层+性能前置+PRD 11项清单，与 [[dashboard-metric-tree]] 互补（看板是决策展示子集），单信源置信度中）

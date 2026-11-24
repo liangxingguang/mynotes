@@ -5948,6 +5948,18 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/dCMgFycrrm_kyJewi6iB9Q",
       "asset_ref": "Assets/2026/11/ant-toolgw-agent-tool-gateway.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-24-leo-architecture-growth.md",
+      "sha256": "15d13d86c597a46a2757df6a4c892a893cdca66766053bbd1219017f9e9ab15e",
+      "registered_at": "2026-11-24",
+      "inbox_ref": "Archive/2026-11-24-weixin-leo-architecture-growth.md",
+      "pages": [
+        "wiki/sources/2026-11-24-weixin-leo-architecture-growth.md",
+        "wiki/concepts/architecture-growth-path.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/4ZNzycXh4TuVviRdjArRKQ",
+      "asset_ref": "Assets/2026-11/weixin-4znzycxh.md"
     }
   ]
 }
