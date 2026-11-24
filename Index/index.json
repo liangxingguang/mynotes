@@ -1,6 +1,25 @@
 {
-  "updated_at": "2026-11-24 18:44",
+  "updated_at": "2026-11-24 19:18",
   "notes": [
+    {
+      "id": "20261124-weixin-leo-architecture-growth",
+      "title": "2026-11-24-weixin-leo-architecture-growth",
+      "path": "Inbox/2026-11-24-weixin-leo-architecture-growth.md",
+      "created": "2026-11-24",
+      "category": "随笔",
+      "tags": [
+        "系统设计",
+        "自学"
+      ],
+      "source": "微信公众号 · Leo 的架构随笔",
+      "source_url": "https://mp.weixin.qq.com/s/4ZNzycXh4TuVviRdjArRKQ",
+      "source_type": "网页文章",
+      "platform": "微信",
+      "summary": "从业 15 年的系统架构师自述成长路径——不靠培养资源与天赋，而是在职业初期一次次主动承接无人认领的跨系统疑难问题，倒逼自己跨域学习软硬件、功能安全、ASPICE 体系，逐步搭建起全局架构认知闭环。核心观点：真正拉开工程师差距的，是无人要求时仍守住长期职业定力。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/weixin-4znzycxh.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
