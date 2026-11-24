@@ -11,9 +11,7 @@ tags:
   - java
   - 系统设计
 asset_ref: Assets/2026/11/weixin-X9ClN0C-HFOq-ZeOs094BQ.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-24T09:10:23.237Z"
-ingest_claim_id: 29908-1795511423237-0
+wiki_status: ingested
 ---
 
 # 电商平台实时商品搜索与个性化推荐实战

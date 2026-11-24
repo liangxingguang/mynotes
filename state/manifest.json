@@ -5896,6 +5896,19 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/8R60mUjASxtxWCSBbj2T5w",
       "asset_ref": "Assets/2026/11/enterprise-agent-architecture-ai-coding-ontology-harness.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-24-ecommerce-realtime-search-recommendation.md",
+      "sha256": "d894723b5bdc571314215a38c72841f1a6f953dae0d42e9194157a458da5aa32",
+      "registered_at": "2026-11-24",
+      "inbox_ref": "Archive/2026-11-24-ecommerce-realtime-search-recommendation.md",
+      "pages": [
+        "wiki/sources/ecommerce-search-recommendation-practice.md",
+        "wiki/topics/ecommerce-search-recommendation.md",
+        "wiki/sources/ecommerce-search-realtime-personalization.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/X9ClN0C-HFOq-ZeOs094BQ",
+      "asset_ref": "Assets/2026/11/weixin-X9ClN0C-HFOq-ZeOs094BQ.md"
     }
   ]
 }

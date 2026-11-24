@@ -4,7 +4,7 @@ type: source
 title: 搜索即推荐：Spring Cloud + ES + Redis + Kafka 电商搜索与实时个性化
 status: active
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-11-24
 confidence: high
 tags:
   - source
@@ -15,6 +15,8 @@ sources:
   - raw/sources/architecture/2026-10-21-ecommerce-search-realtime-personalization.md
 related:
   - wiki/entities/elasticsearch.md
+  - wiki/sources/ecommerce-search-recommendation-practice.md
+  - wiki/topics/ecommerce-search-recommendation.md
 ---
 # 搜索即推荐：Spring Cloud + ES + Redis + Kafka 电商搜索与实时个性化
 
@@ -61,6 +63,7 @@ related:
 ## Related Knowledge（相关知识）
 
 - [[elasticsearch-interview-deep-dive|ES 面试深拆（信源页）]]、[[elasticsearch-search-tuning-production|ES 生产调优（信源页）]]（同实体三信源）
+- [[ecommerce-search-recommendation-practice|电商平台实时商品搜索与个性化推荐实战（信源页）]]（2026-11-24，同技术栈教程骨架：与本文在同步路径/刷新间隔/画像深度上为路径差异而非事实矛盾，互证对照）、[[ecommerce-search-recommendation|电商搜索与推荐系统（主题页）]]（双信源主题导航与分歧对账）
 
 ## Source（信源）
 

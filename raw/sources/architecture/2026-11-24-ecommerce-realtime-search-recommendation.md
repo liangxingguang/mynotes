@@ -1,0 +1,828 @@
+---
+title: 电商平台实时商品搜索与个性化推荐实战
+source: 微信公众号「服务端技术精选」（作者站 www.jiangyi.space）
+source_url: "https://mp.weixin.qq.com/s/X9ClN0C-HFOq-ZeOs094BQ"
+source_type: article
+platform: 微信
+captured: 2026-11-24
+registered_at: 2026-11-24
+inbox_ref: Inbox/2026-11-24-ecommerce-realtime-search-recommendation.md
+asset_ref: Assets/2026/11/weixin-X9ClN0C-HFOq-ZeOs094BQ.md
+---
+电商平台实时商品搜索与个性化推荐实战
+
+在我们的日常开发工作中，经常会遇到这样的场景：
+
+*   用户搜索"苹果手机"，结果却是各种苹果农产品
+
+*   商品搜索响应时间超过3秒，用户直接离开
+
+*   推荐的商品完全不符合用户兴趣
+
+*   热门商品搜索排名混乱，影响转化率
+
+传统的数据库搜索方式不仅性能差，也无法满足现代电商的个性化需求。今天我们就用SpringCloud + Elasticsearch + Redis + Kafka来解决这些问题。
+
+## 解决方案思路
+
+今天我们要解决的，就是如何构建一个高性能的电商搜索推荐系统。
+
+核心思路是：
+
+1.  **全文搜索**：利用ES实现高效的文本搜索
+
+2.  **实时数据同步**：通过Kafka实现数据实时更新
+
+3.  **个性化推荐**：基于用户行为分析提供个性化推荐
+
+4.  **缓存优化**：使用Redis加速热点数据访问
+
+## 技术选型
+
+*   SpringCloud：微服务架构
+
+*   Elasticsearch：全文搜索和分析
+
+*   Redis：高速缓存和会话存储
+
+*   Kafka：消息队列和数据同步
+
+*   MySQL：主数据存储
+
+## 核心实现思路
+
+### 1\. 商品搜索服务
+
+首先构建商品搜索服务：
+
+`@RestController   @RequestMapping("/api/search")   @Slf4j   publicclass ProductSearchController {     
+      
+   @Autowired
+      
+   private ProductSearchService productSearchService;
+      
+   
+   /**
+       * 商品搜索
+       */
+   @GetMapping("/products")
+   public Result<PageResult<ProductDTO>> searchProducts(
+           
+           @RequestParam String keyword,
+           
+           @RequestParam(defaultValue = "0") int page,
+           
+           @RequestParam(defaultValue = "20") int size,
+           
+           @RequestParam(required = false) String category,
+           
+           @RequestParam(required = false) String sortField,
+           
+           @RequestParam(required = false) String sortOrder,
+            HttpServletRequest request) {
+         
+         
+         // 获取用户ID用于个性化推荐
+        String userId = getCurrentUserId(request);
+         
+        SearchRequest requestParams = SearchRequest.builder()
+                .keyword(keyword)
+                .page(page)
+                .size(size)
+                .category(category)
+                .sortField(sortField)
+                .sortOrder(sortOrder)
+                .userId(userId)
+                .build();
+         
+        PageResult<ProductDTO> result = productSearchService.search(requestParams);
+        return Result.success(result);
+   }
+   
+   /**
+       * 搜索建议
+       */
+   @GetMapping("/suggest")
+   public Result<List<String>> suggest(@RequestParam String keyword) {
+        List<String> suggestions = productSearchService.getSuggestions(keyword);
+        return Result.success(suggestions);
+   }
+   
+   private String getCurrentUserId(HttpServletRequest request) {
+        // 从请求头或Cookie中获取用户ID
+        return request.getHeader("X-User-ID");
+   }
+}   `
+
+### 2\. 搜索服务实现
+
+实现核心的搜索逻辑：
+
+`@Service   @Slf4j   publicclass ProductSearchService {     
+      
+   @Autowired
+      
+   private ElasticsearchRestTemplate elasticsearchTemplate;
+      
+   @Autowired
+      
+   private RedisTemplate<String, Object> redisTemplate;
+      
+   @Autowired
+      
+   private ProductRecommendationService recommendationService;
+      
+   /**
+       * 执行商品搜索
+       */
+   public PageResult<ProductDTO> search(SearchRequest request) {
+         // 构建搜索查询
+        NativeSearchQuery searchQuery = buildSearchQuery(request);
+         
+         // 执行搜索
+        SearchHits<ProductDocument> searchHits =
+                elasticsearchTemplate.search(searchQuery, ProductDocument.class);
+         
+         // 转换结果
+        List<ProductDTO> products = searchHits.getSearchHits().stream()
+                .map(hit -> convertToProductDTO(hit.getContent()))
+                .collect(Collectors.toList());
+         
+         // 应用个性化推荐
+        if(request.getUserId() != null) {
+            products = recommendationService.personalizeProducts(products, request.getUserId());
+        }
+         
+         // 统计搜索结果
+        recordSearchMetrics(request.getKeyword(), products.size());
+         
+        return PageResult.<ProductDTO>builder()
+                .data(products)
+                .total(searchHits.getTotalHits())
+                .page(request.getPage())
+                .size(request.getSize())
+                .build();
+   }
+   
+   /**
+       * 构建搜索查询
+       */
+   private NativeSearchQuery buildSearchQuery(SearchRequest request) {
+        BoolQueryBuilder boolQuery = QueryBuilders.boolQuery();
+         
+         // 关键词搜索
+        if(StringUtils.hasText(request.getKeyword())) {
+            // 多字段搜索：商品名称、描述、品牌等
+            MultiMatchQueryBuilder multiMatchQuery = QueryBuilders.multiMatchQuery(
+                        request.getKeyword(),
+                     "name^3", // 商品名称权重最高
+                     "description^2",
+                     "brand",
+                     "category")
+                    .type(MultiMatchQueryBuilder.Type.BEST_FIELDS)
+                    .fuzziness(Fuzziness.AUTO);  // 支持模糊搜索
+            
+            boolQuery.must(multiMatchQuery);
+        }
+         
+         // 分类过滤
+        if(StringUtils.hasText(request.getCategory())) {
+            boolQuery.filter(QueryBuilders.termQuery("category.keyword", request.getCategory()));
+        }
+         
+         // 构建查询
+        NativeSearchQueryBuilder queryBuilder = new NativeSearchQueryBuilder()
+                .withQuery(boolQuery)
+                .withPageable(PageRequest.of(request.getPage(), request.getSize()));
+         
+         // 排序
+        if(StringUtils.hasText(request.getSortField())) {
+            SortOrder order = "desc".equalsIgnoreCase(request.getSortOrder()) ?
+                         SortOrder.DESC : SortOrder.ASC;
+            queryBuilder.withSort(SortBuilders.fieldSort(request.getSortField()).order(order));
+        } else {
+            // 默认按相关性排序
+            queryBuilder.withSort(SortBuilders.scoreSort().order(SortOrder.DESC));
+        }
+         
+        return queryBuilder.build();
+   }
+   
+   /**
+       * 获取搜索建议
+       */
+   public List<String> getSuggestions(String keyword) {
+        // 使用ES的completion suggester
+        CompletionSuggestionBuilder suggestionBuilder = SuggestBuilders
+                .completionSuggestion("suggest")
+                .prefix(keyword)
+                .size(10);
+            
+        SuggestionBuilderContext context = new SuggestionBuilderContext(suggestionBuilder, null);
+        
+        SuggestBuilder suggestBuilder = new SuggestBuilder().addSuggestion("product_suggest", suggestionBuilder);
+        
+        SearchRequest searchRequest = new SearchRequest("products");
+        searchRequest.source(new SearchSourceBuilder().suggest(suggestBuilder));
+        
+        try {
+            SearchResponse response = elasticsearchTemplate.getElasticsearchRestClient()
+                    .search(searchRequest, RequestOptions.DEFAULT);
+             
+            Suggest suggest = response.getSuggest();
+            Suggestion<? extends Suggestion.Entry<? extends Suggestion.Entry.Option>> suggestion =
+                    suggest.getSuggestion("product_suggest");
+             
+            return suggestion.getEntries().stream()
+                    .flatMap(entry -> entry.getOptions().stream())
+                    .map(option -> option.getText().toString())
+                    .collect(Collectors.toList());
+        } catch (Exception e) {
+            log.error("获取搜索建议失败", e);
+            return Collections.emptyList();
+        }
+   }
+   
+   private ProductDTO convertToProductDTO(ProductDocument doc) {
+        // 转换ES文档到DTO
+        return ProductDTO.builder()
+                .id(doc.getId())
+                .name(doc.getName())
+                .price(doc.getPrice())
+                .imageUrl(doc.getImageUrl())
+                .category(doc.getCategory())
+                .brand(doc.getBrand())
+                .salesVolume(doc.getSalesVolume())
+                .rating(doc.getRating())
+                .build();
+   }
+   
+   private void recordSearchMetrics(String keyword, int resultCount) {
+        // 记录搜索指标，用于分析热门搜索词
+        String key = "search:metrics:" + LocalDate.now();
+        redisTemplate.opsForHash().increment(key, keyword, 1);
+        redisTemplate.expire(key, Duration.ofDays(30));
+   }
+}   `
+
+### 3\. 个性化推荐服务
+
+实现基于用户行为的个性化推荐：
+
+`@Service   @Slf4j   publicclass ProductRecommendationService {     
+      
+   @Autowired
+      
+   private RedisTemplate<String, Object> redisTemplate;
+      
+   @Autowired
+      
+   private ElasticsearchRestTemplate elasticsearchTemplate;
+      
+   /**
+       * 个性化商品推荐
+       */
+   public List<ProductDTO> personalizeProducts(List<ProductDTO> baseProducts, String userId) {
+         // 获取用户行为历史
+        List<UserBehavior> behaviors = getUserBehaviors(userId);
+         
+         // 基于协同过滤的推荐
+        List<String> recommendedProductIds = collaborativeFilteringRecommend(userId, behaviors);
+         
+         // 基于内容的推荐
+        List<String> contentBasedRecommendations = contentBasedRecommend(behaviors);
+         
+         // 合并推荐结果
+        Set<String> allRecommendedIds = new LinkedHashSet<>();
+        allRecommendedIds.addAll(recommendedProductIds);
+        allRecommendedIds.addAll(contentBasedRecommendations);
+         
+         // 获取推荐商品详情
+        List<ProductDTO> recommendations = getProductDetails(new ArrayList<>(allRecommendedIds));
+         
+         // 混合基础搜索结果和推荐结果
+        return blendSearchAndRecommendations(baseProducts, recommendations);
+   }
+   
+   /**
+       * 协同过滤推荐
+       */
+   private List<String> collaborativeFilteringRecommend(String userId, List<UserBehavior> behaviors) {
+         // 获取相似用户
+        List<String> similarUsers = getSimilarUsers(userId, behaviors);
+         
+         // 获取相似用户喜欢的商品
+        Set<String> candidateProducts = new HashSet<>();
+        for(String similarUser : similarUsers) {
+            List<String> userLikedProducts = getUserLikedProducts(similarUser);
+            candidateProducts.addAll(userLikedProducts);
+        }
+         
+         // 过滤掉用户已购买的商品
+        Set<String> purchasedProducts = getUserPurchasedProducts(userId);
+        candidateProducts.removeAll(purchasedProducts);
+         
+         // 按受欢迎程度排序
+        return sortProductsByPopularity(new ArrayList<>(candidateProducts)).subList(0, 10);
+   }
+   
+   /**
+       * 基于内容的推荐
+       */
+   private List<String> contentBasedRecommend(List<UserBehavior> behaviors) {
+        if(behaviors.isEmpty()) {
+            return Collections.emptyList();
+        }
+         
+         // 分析用户偏好
+        Map<String, Integer> categoryPreferences = analyzeCategoryPreferences(behaviors);
+        Map<String, Integer> brandPreferences = analyzeBrandPreferences(behaviors);
+         
+         // 构建推荐查询
+        BoolQueryBuilder boolQuery = QueryBuilders.boolQuery();
+         
+         // 根据用户偏好构建查询条件
+        for(Map.Entry<String, Integer> entry : categoryPreferences.entrySet()) {
+            if(entry.getValue() > 2) { // 用户对该分类有明显偏好
+                boolQuery.should(QueryBuilders.termQuery("category.keyword", entry.getKey()))
+                        .boost(entry.getValue().floatValue());
+            }
+        }
+         
+        for(Map.Entry<String, Integer> entry : brandPreferences.entrySet()) {
+            if(entry.getValue() > 1) {
+                boolQuery.should(QueryBuilders.termQuery("brand.keyword", entry.getKey()))
+                        .boost(entry.getValue().floatValue());
+            }
+        }
+         
+         // 执行查询
+        NativeSearchQuery query = new NativeSearchQueryBuilder()
+                .withQuery(boolQuery)
+                .withPageable(PageRequest.of(0, 20))
+                .build();
+        SearchHits<ProductDocument> hits = elasticsearchTemplate.search(query, ProductDocument.class);
+         
+        return hits.getSearchHits().stream()
+                .map(hit -> hit.getContent().getId())
+                .collect(Collectors.toList());
+   }
+   
+   /**
+       * 获取用户行为历史
+       */
+   private List<UserBehavior> getUserBehaviors(String userId) {
+        String key = "user_behaviors:" + userId;
+        Object behaviors = redisTemplate.opsForValue().get(key);
+        if(behaviors != null) {
+            return (List<UserBehavior>) behaviors;
+        }
+         
+        // 从数据库加载（实际项目中）
+        List<UserBehavior> dbBehaviors = loadUserBehaviorsFromDB(userId);
+         
+        // 缓存到Redis
+        redisTemplate.opsForValue().set(key, dbBehaviors, Duration.ofHours(1));
+         
+        return dbBehaviors;
+   }
+   
+   private List<String> getSimilarUsers(String userId, List<UserBehavior> behaviors) {
+        // 简化的相似用户查找逻辑
+        // 实际项目中可以使用机器学习算法
+        String key = "similar_users:" + userId;
+        Object similarUsers = redisTemplate.opsForValue().get(key);
+        if(similarUsers != null) {
+            return (List<String>) similarUsers;
+        }
+         
+        // 计算相似用户（简化版）
+        List<String> result = calculateSimilarUsers(userId, behaviors);
+         
+        // 缓存结果
+        redisTemplate.opsForValue().set(key, result, Duration.ofMinutes(30));
+         
+        return result;
+   }
+   
+   private List<ProductDTO> getProductDetails(List<String> productIds) {
+        // 批量获取商品详情
+        BoolQueryBuilder query = QueryBuilders.boolQuery();
+        query.filter(QueryBuilders.termsQuery("id", productIds));
+        
+        NativeSearchQuery searchQuery = new NativeSearchQueryBuilder()
+                .withQuery(query)
+                .build();
+        SearchHits<ProductDocument> hits = elasticsearchTemplate.search(searchQuery, ProductDocument.class);
+         
+        return hits.getSearchHits().stream()
+                .map(hit -> convertToProductDTO(hit.getContent()))
+                .collect(Collectors.toList());
+   }
+   
+   private List<ProductDTO> blendSearchAndRecommendations(List<ProductDTO> searchResults, List<ProductDTO> recommendations) {
+        // 混合搜索结果和推荐结果
+        // 可以根据业务需求调整混合策略
+        List<ProductDTO> result = new ArrayList<>();
+         
+        // 添加搜索结果
+        result.addAll(searchResults);
+         
+        // 添加推荐结果（去重）
+        Set<String> existingIds = searchResults.stream()
+                .map(ProductDTO::getId)
+                .collect(Collectors.toSet());
+        for(ProductDTO rec : recommendations) {
+            if(!existingIds.contains(rec.getId())) {
+                result.add(rec);
+            }
+        }
+         
+        return result.subList(0, Math.min(result.size(), 50)); // 限制总数
+   }
+   
+   // 辅助方法的实现...
+   private List<String> getUserLikedProducts(String similarUser) {
+        return Collections.emptyList(); // 简化实现
+   }
+   
+   private Set<String> getUserPurchasedProducts(String userId) {
+        return Collections.emptySet(); // 简化实现
+   }
+   
+   private List<ProductDTO> sortProductsByPopularity(List<String> candidateProducts) {
+        return Collections.emptyList(); // 简化实现
+   }
+   
+   private Map<String, Integer> analyzeCategoryPreferences(List<UserBehavior> behaviors) {
+        return behaviors.stream()
+                .collect(Collectors.groupingBy(
+                        UserBehavior::getCategory,
+                        Collectors.summingInt(b -> 1)
+                 ));
+   }
+   
+   private Map<String, Integer> analyzeBrandPreferences(List<UserBehavior> behaviors) {
+        return behaviors.stream()
+                .collect(Collectors.groupingBy(
+                        UserBehavior::getBrand,
+                        Collectors.summingInt(b -> 1)
+                 ));
+   }
+   
+   private List<UserBehavior> loadUserBehaviorsFromDB(String userId) {
+        return Collections.emptyList(); // 简化实现
+   }
+   
+   private List<String> calculateSimilarUsers(String userId, List<UserBehavior> behaviors) {
+        return Collections.emptyList(); // 简化实现
+   }
+   
+   private ProductDTO convertToProductDTO(ProductDocument doc) {
+        return ProductDTO.builder()
+                .id(doc.getId())
+                .name(doc.getName())
+                .price(doc.getPrice())
+                .imageUrl(doc.getImageUrl())
+                .category(doc.getCategory())
+                .brand(doc.getBrand())
+                .salesVolume(doc.getSalesVolume())
+                .rating(doc.getRating())
+                .build();
+   }
+}   `
+
+### 4\. 实时数据同步
+
+使用Kafka实现商品数据的实时同步：
+
+`@Component   @Slf4j   publicclass ProductSyncService {     
+      
+   @Autowired
+      
+   private ElasticsearchRestTemplate elasticsearchTemplate;
+      
+   @Autowired
+      
+   private KafkaTemplate<String, Object> kafkaTemplate;
+      
+   /**
+       * 处理商品变更事件
+       */
+   @EventListener
+   public void handleProductChangeEvent(ProductChangeEvent event) {
+        switch(event.getEventType()) {
+            case CREATE:
+            case UPDATE:
+                syncProductToES(event.getProduct());
+               break;
+            case DELETE:
+                deleteProductFromES(event.getProductId());
+               break;
+        }
+         
+        // 通知缓存失效
+        invalidateProductCache(event.getProductId());
+   }
+   
+   /**
+       * 同步商品到ES
+       */
+   private void syncProductToES(Product product) {
+        try {
+            ProductDocument doc = convertToDocument(product);
+            elasticsearchTemplate.save(doc);
+            log.info("商品同步到ES成功: {}", product.getId());
+        } catch (Exception e) {
+            log.error("商品同步到ES失败: {}", product.getId(), e);
+             
+            // 发送失败消息到死信队列
+            kafkaTemplate.send("product-sync-failed", product);
+        }
+   }
+   
+   /**
+       * 从ES删除商品
+       */
+   private void deleteProductFromES(String productId) {
+        try {
+            elasticsearchTemplate.delete(productId, ProductDocument.class);
+            log.info("商品从ES删除成功: {}", productId);
+        } catch (Exception e) {
+            log.error("商品从ES删除失败: {}", productId, e);
+        }
+   }
+   
+   /**
+       * 使商品缓存失效
+       */
+   private void invalidateProductCache(String productId) {
+        String cacheKey = "product:" + productId;
+        redisTemplate.delete(cacheKey);
+         
+         // 同时使相关推荐缓存失效
+        String recommendationKey = "recommendations:product:" + productId;
+        redisTemplate.delete(recommendationKey);
+   }
+   
+   private ProductDocument convertToDocument(Product product) {
+        ProductDocument doc = new ProductDocument();
+        doc.setId(product.getId());
+        doc.setName(product.getName());
+        doc.setDescription(product.getDescription());
+        doc.setCategory(product.getCategory());
+        doc.setBrand(product.getBrand());
+        doc.setPrice(product.getPrice());
+        doc.setImageUrl(product.getImageUrl());
+        doc.setSalesVolume(product.getSalesVolume());
+        doc.setRating(product.getRating());
+        doc.setTags(product.getTags());
+        doc.setCreateTime(product.getCreateTime());
+        doc.setUpdateTime(product.getUpdateTime());
+         
+         // 构建搜索建议
+        doc.setSuggest(new Completion(ImmutableMap.of(
+                "input", new String[]{product.getName(), product.getBrand()},
+                "weight", 1
+         )));
+         
+        return doc;
+   }
+}   `
+
+### 5\. 商品数据模型
+
+定义商品文档模型：
+
+`@Document(indexName = "products")   @Data   publicclass ProductDocument {     
+   @Id
+   private String id;
+      
+   @Field(type = FieldType.Text, analyzer = "ik_max_word", searchAnalyzer = "ik_smart")
+   private String name;
+      
+   @Field(type = FieldType.Text, analyzer = "ik_max_word")
+   private String description;
+      
+   @Field(type = FieldType.Keyword)
+   private String category;
+      
+   @Field(type = FieldType.Keyword)
+   private String brand;
+      
+   @Field(type = FieldType.Double)
+   private BigDecimal price;
+      
+   @Field(type = FieldType.Keyword)
+   private String imageUrl;
+      
+   @Field(type = FieldType.Long)
+   private Long salesVolume;
+      
+   @Field(type = FieldType.Float)
+   private Float rating;
+      
+   @Field(type = FieldType.Keyword)
+   private List<String> tags;
+      
+   @Field(type = FieldType.Date)
+   private Date createTime;
+      
+   @Field(type = FieldType.Date)
+   private Date updateTime;
+      
+   @CompletionField
+   private Completion suggest;
+}   `
+
+### 6\. 缓存策略
+
+实现多级缓存策略：
+
+`@Service   @Slf4j   publicclass ProductCacheService {     
+      
+   @Autowired
+      
+   private RedisTemplate<String, Object> redisTemplate;
+      
+   /**
+       * 获取商品详情（带缓存）
+       */
+   public ProductDTO getProductWithCache(String productId) {
+        String cacheKey = "product:" + productId;
+         
+         // 先从缓存获取
+        Object cached = redisTemplate.opsForValue().get(cacheKey);
+        if(cached != null) {
+            log.debug("从缓存获取商品: {}", productId);
+            return (ProductDTO) cached;
+        }
+         
+         // 从ES获取
+        ProductDocument doc = getProductFromES(productId);
+        if(doc == null) {
+            return null;
+        }
+        
+        ProductDTO product = convertToDTO(doc);
+         
+         // 存入缓存
+        redisTemplate.opsForValue().set(cacheKey, product, Duration.ofMinutes(30));
+         
+        return product;
+   }
+   
+   /**
+       * 获取热门商品缓存
+       */
+   public List<ProductDTO> getHotProducts(int count) {
+        String cacheKey = "hot_products:" + count;
+         
+        Object cached = redisTemplate.opsForValue().get(cacheKey);
+        if(cached != null) {
+            return (List<ProductDTO>) cached;
+        }
+         
+         // 从ES查询热门商品
+        List<ProductDTO> hotProducts = queryHotProducts(count);
+         
+         // 缓存结果
+        redisTemplate.opsForValue().set(cacheKey, hotProducts, Duration.ofMinutes(10));
+         
+        return hotProducts;
+   }
+   
+   /**
+       * 更新商品评分（用于缓存预热）
+       */
+   @EventListener
+   public void handleProductRatingUpdated(ProductRatingEvent event) {
+        // 更新商品评分到ES
+        updateProductRatingInES(event.getProductId(), event.getNewRating());
+         
+         // 使相关缓存失效
+        String productKey = "product:" + event.getProductId();
+        redisTemplate.delete(productKey);
+         
+         // 使搜索结果缓存失效
+        String searchCacheKey = "search_results:*";
+        // 注意：这里需要使用更精确的缓存失效策略
+   }
+   
+   private ProductDocument getProductFromES(String productId) {
+        // 从ES获取商品文档
+        return elasticsearchTemplate.findById(productId, ProductDocument.class);
+   }
+   
+   private List<ProductDTO> queryHotProducts(int count) {
+        // 查询热门商品的逻辑
+        BoolQueryBuilder query = QueryBuilders.boolQuery();
+        query.filter(QueryBuilders.rangeQuery("salesVolume").gt(0));
+        
+        NativeSearchQuery searchQuery = new NativeSearchQueryBuilder()
+                .withQuery(query)
+                .withSort(SortBuilders.fieldSort("salesVolume").order(SortOrder.DESC))
+                .withPageable(PageRequest.of(0, count))
+                .build();
+        SearchHits<ProductDocument> hits = elasticsearchTemplate.search(searchQuery, ProductDocument.class);
+         
+        return hits.getSearchHits().stream()
+                .map(hit -> convertToDTO(hit.getContent()))
+                .collect(Collectors.toList());
+   }
+   
+   private void updateProductRatingInES(String productId, Float newRating) {
+        // 更新ES中的商品评分
+        UpdateRequest updateRequest = new UpdateRequest("products", productId);
+        updateRequest.doc("rating", newRating);
+        
+        try {
+            elasticsearchTemplate.getElasticsearchRestClient()
+                    .update(updateRequest, RequestOptions.DEFAULT);
+        } catch (Exception e) {
+            log.error("更新商品评分失败: {}", productId, e);
+        }
+   }
+   
+   private ProductDTO convertToDTO(ProductDocument doc) {
+        return ProductDTO.builder()
+                .id(doc.getId())
+                .name(doc.getName())
+                .price(doc.getPrice())
+                .imageUrl(doc.getImageUrl())
+                .category(doc.getCategory())
+                .brand(doc.getBrand())
+                .salesVolume(doc.getSalesVolume())
+                .rating(doc.getRating())
+                .build();
+   }
+}   `
+
+### 7\. 性能优化配置
+
+配置性能优化参数：
+
+`# application.yml   spring:   data:    
+      
+   elasticsearch:
+        client:
+            reactive:
+                connection-timeout:5s
+                socket-timeout:60s
+   redis:
+        lettuce:
+            pool:
+                max-active:200
+                max-idle:50
+                min-idle:10
+                max-wait:2000ms
+      # ES索引优化配置
+   elasticsearch:
+   index:
+        number-of-shards:3
+        number-of-replicas:1
+        refresh-interval:30s# 增加刷新间隔以提高写入性能
+        merge:
+            policy:
+                segments-per-tier:10
+   search:
+        default-timeout:5s
+        max-result-window:10000   `
+
+## 优势分析
+
+相比传统的数据库搜索方式，这种方案的优势明显：
+
+1.  **高性能**：ES毫秒级响应，Redis缓存加速
+
+2.  **智能搜索**：支持全文搜索、模糊匹配、高亮显示
+
+3.  **个性化推荐**：基于用户行为的智能推荐
+
+4.  **实时同步**：Kafka保证数据实时更新
+
+5.  **高可用性**：分布式架构，支持横向扩展
+
+## 注意事项
+
+1.  **数据一致性**：ES与数据库之间的数据同步
+
+2.  **缓存策略**：合理设置缓存过期时间
+
+3.  **资源消耗**：ES对内存和磁盘要求较高
+
+4.  **安全防护**：防止搜索注入等安全问题
+
+5.  **监控告警**：建立完善的监控体系
+
+## 总结
+
+通过SpringCloud + Elasticsearch + Redis + Kafka的技术组合，我们可以构建一个功能强大、性能优异的电商搜索推荐系统。这不仅能提升用户体验，还能显著提高平台的转化率。
+
+在实际项目中，建议根据具体业务需求调整搜索算法和推荐策略，并建立完善的性能监控体系。
+
+* * *
+
+**服务端技术精选**，专注分享后端开发实战技术，助力你的技术成长！
+
+更多技术文章请访问：www.jiangyi.space

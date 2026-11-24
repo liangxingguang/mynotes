@@ -136,7 +136,7 @@
 - [[deepseek-hyperframes-video-workflow|用 DeepSeek + HyperFrames 做视频：AI 写网页、逐帧渲染成 MP4]]（2026-10-20，AI/视频工作流）
 - [[deepseek-v41-flash-inference-deployment|DeepSeek V4.1 Flash 大规模推理部署实践（DeepInfer 开源）]]（2026-10-20，AI/推理系统）
 - [[design-a-query-system|设计一个查询系统（视频号 · 疯狂的Rust库）]]（2026-10-20，视频无文字稿，置信度低）
-- [[ecommerce-search-realtime-personalization|搜索即推荐：Spring Cloud+ES+Redis+Kafka 电商搜索与实时个性化]]（2026-10-21，搜索/架构）
+- [[ecommerce-search-realtime-personalization|搜索即推荐：Spring Cloud+ES+Redis+Kafka 电商搜索与实时个性化]]（2026-10-21，搜索/架构；与 [[ecommerce-search-recommendation-practice]] 双信源互证，差异见 [[ecommerce-search-recommendation]]）
 - [[elasticsearch-interview-deep-dive|Elasticsearch 面试万字长文：倒排索引/集群/写入/查询/分词/深分页/索引优化]]（2026-10-21，ES/面试）
 - [[elasticsearch-search-tuning-production|从 10s 到 10ms：Elasticsearch 生产级搜索性能调优实战]]（2026-10-21，ES/性能）
 - [[eight-fields-booklist|八大领域通识书单：32 部书]]（2026-10-20，书单，置信度低）
@@ -460,6 +460,7 @@
 - [[2026-11-23-langchain-rag-tutorial|用 LangChain 搞定 RAG：告别大模型幻觉]]（2026-11-23，AI/RAG/LangChain，LangChain 演示 RAG 全流程：六阶段职责+切分重叠（200/20 示例）+Embedding 同模型余弦相似度+Faiss 候选区域思想+RetrievalQA 代码流与 result/source_documents 调试，作者提示生产用得少重在理解机制，微信单信源，置信度中）
 - [[2026-11-23-llm-master-learning-roadmap|全网硬核大模型应用开发（Agent、RAG）学习路线+配套资源，在 GitHub 开源]]（2026-11-23，AI/学习/Agent，youngyangyang04/llm-master 开源仓库：六阶段学习路线（全局认知→模型调用→RAG→Agent→生产工程→原理面试）+172 文件 150+ 教程+专题/全量索引+每阶段可交付项目，作者自报规模，微信单信源，置信度中）
 - [[2026-11-23-wechat-feed-timeline|腾讯面试官：微信朋友圈 10 亿人发内容，怎么保证你能看到好友的最新动态？（信源页）]]（2026-11-24，IM/架构/Feed/写扩散，微信 Feed 流时间线题解：时间线在 DB 不存在、读时或写时造+读扩散 3500 万读 QPS vs 写扩散 35 万写 QPS 差约 100 倍+好友上限 5000 为写扩散成本天花板+削峰/合并/只推活人三手段+Redis ZSet 微秒 score，单信源，置信度中）
+- [[ecommerce-search-recommendation-practice|电商平台实时商品搜索与个性化推荐实战（信源页）]]（2026-11-24，搜索/推荐/架构/Java，微信「服务端技术精选」教程骨架：multiMatch 多字段加权（name^3/description^2）+completion suggester、协同过滤+内容推荐双路合并去重限 50、事件监听同步 ES+Kafka 死信、商品 30 分钟/热门 10 分钟缓存、ik 分词与 3 分片 1 副本等配置；推荐算法为简化桩，单信源，置信度中）
 
 ## concept（概念）
 
@@ -797,6 +798,7 @@
 
 ## topic（主题）
 
+- [[ecommerce-search-recommendation|电商搜索与推荐系统]]（2026-11-24，搜索/推荐/主题导航，双信源（生产级方案+教程骨架）互证与分歧对账：搜索召回/推荐双路/同步缓存四模块共识，Outbox vs 事件监听、refresh 30s vs 2s、画像深度、缓存失效四路路径差异已标注，连接 [[elasticsearch]] [[redis]] [[kafka]]，置信度中）
 - [[enterprise-agent-architecture|企业 Agent 架构（从原型到交付）]]（2026-11-24，AI/Agent/架构/主题导航，五大角色分工（AI Coding/Ontology/Harness/Runtime/FDE）+核心原则"调查留给 Agent/动作校验留业务服务/跨轮跟进交持久流程"+从原型到交付九环节（任务边界→AI Coding→Ontology 建模→工具→Harness→等待恢复→幂等→评估→FDE）+发票异常处理贯穿案例，连接 [[ontology]] [[harness-engineering]] [[idempotency-design]] [[durable-execution]]，单信源，置信度中）
 - [[action-game-design|动作游戏设计]]（2026-11-23，游戏设计/主题导航，70 篇 GDC/CEDEC 速览的交叉共识：奖惩循环/关卡即节奏/可读性优先/AI 对手「最像」非「最强」/手感来自可比较反馈/难度来自组合；关键概念与实体归纳，单信源置信度中）
 - [[ai-tool-stack-overview|AI 工具栈全景（11 维度）]]（2026-11-23，AI/工具栈/主题导航，按「底层模型→能力增强→工程基建→上层应用」的 11 维度分类框架与代表工具清单，可作为选型与盘点检查清单，单信源置信度中）
