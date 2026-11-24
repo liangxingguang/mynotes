@@ -12,7 +12,7 @@ tags:
   - GitHub
   - 开源项目
 asset_ref: Assets/2026/11/weixin-DrXMgSvZcU5uJ1HJstAuTw.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 这个GitHub项目，让百万工程师通过了系统设计面试

@@ -1,46 +1,6 @@
 {
-  "updated_at": "2026-11-24 10:56",
+  "updated_at": "2026-11-24 12:41",
   "notes": [
-    {
-      "id": "inbox-2026-11-24-github-c-language-projects",
-      "title": "Github上热门 C 语言项目汇总",
-      "path": "Inbox/2026-11-24-github-c-language-projects.md",
-      "created": "2026-11-24",
-      "category": "技术",
-      "tags": [
-        "GitHub",
-        "开源项目",
-        "自学"
-      ],
-      "source": "微信公众号·嵌入式大杂烩",
-      "source_url": "https://mp.weixin.qq.com/s/USH1iRGjmG9mRfr_zL3SeQ",
-      "source_type": "article",
-      "platform": "微信",
-      "summary": "汇总 GitHub 上 17 个热门 C 语言项目，涵盖学习笔记、基础库、检测工具、通信库、数据库、服务器、日志库等，适合 C 语言学习与工程实践参考。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/11/weixin-USH1iRGjmG9mRfr_zL3SeQ.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "inbox-2026-11-24-system-design-primer-interview",
-      "title": "这个GitHub项目，让百万工程师通过了系统设计面试",
-      "path": "Inbox/2026-11-24-system-design-primer-interview.md",
-      "created": "2026-11-24",
-      "category": "技术",
-      "tags": [
-        "系统设计",
-        "GitHub",
-        "开源项目"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/DrXMgSvZcU5uJ1HJstAuTw",
-      "source_type": "article",
-      "platform": "微信",
-      "summary": "介绍开源项目 donnemartin/system-design-primer：一份系统设计面试指南，含知识体系、8 道经典面试题、OOP 题、Anki 闪卡与学习路线，GitHub 27.5 万星、16 种语言。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/11/weixin-DrXMgSvZcU5uJ1HJstAuTw.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
@@ -8853,6 +8813,26 @@
       "wiki_status": "ingested"
     },
     {
+      "id": "inbox-2026-11-24-github-c-language-projects",
+      "title": "Github上热门 C 语言项目汇总",
+      "path": "Archive/2026-11-24-github-c-language-projects.md",
+      "created": "2026-11-24",
+      "category": "技术",
+      "tags": [
+        "GitHub",
+        "开源项目",
+        "自学"
+      ],
+      "source": "微信公众号·嵌入式大杂烩",
+      "source_url": "https://mp.weixin.qq.com/s/USH1iRGjmG9mRfr_zL3SeQ",
+      "source_type": "article",
+      "platform": "微信",
+      "summary": "汇总 GitHub 上 17 个热门 C 语言项目，涵盖学习笔记、基础库、检测工具、通信库、数据库、服务器、日志库等，适合 C 语言学习与工程实践参考。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/weixin-USH1iRGjmG9mRfr_zL3SeQ.md",
+      "wiki_status": "ingested"
+    },
+    {
       "id": "inbox-2026-11-24-github-yyds-projects",
       "title": "这 4 个 yyds 的 GitHub 项目，有点意思",
       "path": "Archive/2026-11-24-github-yyds-projects.md",
@@ -8890,6 +8870,26 @@
       "summary": "冰河介绍 Google Research 开源项目 Harness2：一个把\"调 Agent harness\"从手工活变成自动迭代过程的框架。它不训练模型、权重全程锁死，只动模型外层的系统配置。harness 被拆成 8 块可编辑组件，靠两层递归循环——单任务用\"候选 harness 行为对比\"替代标准答案打分来精炼，跨任务把有证据的结论沉淀进持久的改进 harness。项目在 JobBench / LAB / WorkBuddy-Bench 三基准上报告了单步提升，文章还给出 --k 预算参数、本地 demo 与真实跑分步骤，以及成本、网络、官方支持三方面注意事项。",
       "summary_status": "",
       "asset_ref": "Assets/2026/11/weixin-hct-zsioilysv-yEjrz70A.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-24-system-design-primer-interview",
+      "title": "这个GitHub项目，让百万工程师通过了系统设计面试",
+      "path": "Archive/2026-11-24-system-design-primer-interview.md",
+      "created": "2026-11-24",
+      "category": "技术",
+      "tags": [
+        "系统设计",
+        "GitHub",
+        "开源项目"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/DrXMgSvZcU5uJ1HJstAuTw",
+      "source_type": "article",
+      "platform": "微信",
+      "summary": "介绍开源项目 donnemartin/system-design-primer：一份系统设计面试指南，含知识体系、8 道经典面试题、OOP 题、Anki 闪卡与学习路线，GitHub 27.5 万星、16 种语言。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/weixin-DrXMgSvZcU5uJ1HJstAuTw.md",
       "wiki_status": "ingested"
     }
   ]

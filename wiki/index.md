@@ -4,6 +4,8 @@
 
 ## source（信源）
 
+- [[2026-11-24-github-c-language-projects|Github上热门 C 语言项目汇总（信源页）]]（2026-11-24，GitHub/C语言/开源项目盘点，微信「嵌入式大杂烩」汇总 17 个热门 C 语言项目：学习入门 4 个（LDD 内核驱动笔记/CNote 入门/Data-Structure 严蔚敏配套/PAT 题解）、基础库与工具（gear-lib/Sanitizer/cJSON/zlog 25 万条/秒）、通信协议（nanomsg/protobuf）、存储数据库（FlashDB/FastDFS/Seafile）、服务器（nginx/mosquitto）、其他（vimcdoc/si78c），每项目仅一段功能概述，单信源，置信度中）
+- [[2026-11-24-system-design-primer-interview|这个GitHub项目，让百万工程师通过了系统设计面试（信源页）]]（2026-11-24，系统设计/面试/开源项目，微信推介 donnemartin/system-design-primer：Markdown 教程+手绘架构图+Anki 闪卡，发文时 274,986 星/16 种语言，14 主题知识体系+8 道经典面试题（四步法）+6 道 OOP 题+3 套闪卡+三档学习路线，附 CAP/可用性/延迟数字速查与同类资源对比，单信源，置信度中）
 - [[2026-11-24-github-yyds-projects|这 4 个 yyds 的 GitHub 项目，有点意思（信源页）]]（2026-11-24，GitHub/开源/工具盘点，微信「逛逛 GitHub」盘点 4 个实用开源项目：TeachYourselfCS-CN 中文 CS 学习指南（9 科一书一课+极简两本路线）、pansou 网盘搜索 API（3K Star/不到 20M/Docker 一行起）、Priospace（Todo+番茄钟+打卡合一/免费本地数据/实时协作）、Drawnix 一体化白板（Markdown 变思维导图/Mermaid 变流程图/插件架构），单信源，置信度中）
 - [[2026-11-24-google-harness2|谷歌开源 AI Harness 自进化框架 Harness2（信源页）]]（2026-11-24，AI/Agent/Harness/自进化，Google Research 开源 Harness2：权重锁死只动壳、4 组 8 块可编辑组件、两层递归行为对比精炼+跨任务持久改进 harness、--k/--mode 预算、三基准自报跑分，公众号解读单信源，置信度中）
 - [[2026-11-23-coding-to-proposal|从写代码到写方案：把视角提上去的自我实践方法]]（2026-11-23，写作/方法论/思维，微信「冰洋架构」：核心论断"写方案最难的不是写而是想"+显微镜与地图隐喻+五步流程（前两步想、第三步才写）+想清楚三问+MECE 结构理顺（按决策链分不按流水账分）+结论先行+SCQA+交付前五问自检与三个跳出来法，源头《金字塔原理》，单信源，置信度中）
@@ -765,6 +767,7 @@
 - [[rocketmq|Apache RocketMQ]]（高性能分布式 MQ；事务消息+回查保发送、业务幂等保消费，运维+一致性+机制+存储+事务谱系+Netty 网络层六信源）
 - [[rongyun|融云]]（IM 云服务厂商；直播聊天室通知拉取+丢弃策略路线代表，双信源）
 - [[system-design-notes|system-design-notes]]（按 Alex Xu 两卷书体系整理的 28 章开源系统设计笔记，GitHub liquidslr）
+- [[system-design-primer|system-design-primer]]（2026-11-24，系统设计/面试/学习资源实体，donnemartin 开源系统设计面试指南：Markdown+手绘架构图+Anki 闪卡，2017 年创建，发文时 274,986 星/16 种语言，14 主题知识体系+8 题四步法+6 道 OOP 题+3 套闪卡+三档学习路线，最后实质推送 2024-08，微信单信源未独立核验，置信度中）
 - [[systemdesign-io|systemdesign.io]]（2026-11-05，AI/系统设计/学习资源，收集 50+ 架构设计问题的网站，原用于面试准备、作者建议交给 Agent 做架构参考，单信源未独立验证，置信度低）
 - [[cs-systems-design|cs-systems-design]]（2026-11-05，架构/系统知识/学习资源，kejun 的计算机系统知识交互式学习站（GitHub Pages），作者自述「重学」定位、无基础介绍、不适合初学者，附 5 张学习路线图，微博单信源未独立验证，置信度低）
 - [[unyra|归一 Unyra]]（本地优先探索式学习 AI 桌面应用，知识 DAG + 超级导师沙箱改文档，仅 Windows 安装链）

@@ -12,7 +12,7 @@ tags:
   - 开源项目
   - 自学
 asset_ref: Assets/2026/11/weixin-USH1iRGjmG9mRfr_zL3SeQ.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # Github上热门 C 语言项目汇总

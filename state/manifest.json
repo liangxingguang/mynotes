@@ -5859,6 +5859,29 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/8fOiy2VPsIKdNF4zZ3Qygg",
       "asset_ref": "Assets/2026/11/weixin-8fOiy2VPsIKdNF4zZ3Qygg.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-11-24-github-c-language-projects.md",
+      "sha256": "54ffbedbf9a5de19e989ceb86fa43bfbad761487e2ce2a33f95c765b3c0c890c",
+      "registered_at": "2026-11-24",
+      "inbox_ref": "Archive/2026-11-24-github-c-language-projects.md",
+      "pages": [
+        "wiki/sources/2026-11-24-github-c-language-projects.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/USH1iRGjmG9mRfr_zL3SeQ",
+      "asset_ref": "Assets/2026/11/weixin-USH1iRGjmG9mRfr_zL3SeQ.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-24-system-design-primer-interview.md",
+      "sha256": "d9ed0f15f15b9a8c03b7d1b8f78dc9633eff822591ca6a309975e91ac6e4971f",
+      "registered_at": "2026-11-24",
+      "inbox_ref": "Archive/2026-11-24-system-design-primer-interview.md",
+      "pages": [
+        "wiki/sources/2026-11-24-system-design-primer-interview.md",
+        "wiki/entities/system-design-primer.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/DrXMgSvZcU5uJ1HJstAuTw",
+      "asset_ref": "Assets/2026/11/weixin-DrXMgSvZcU5uJ1HJstAuTw.md"
     }
   ]
 }
