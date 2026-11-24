@@ -1,6 +1,25 @@
 {
-  "updated_at": "2026-11-24 15:30",
+  "updated_at": "2026-11-24 17:09",
   "notes": [
+    {
+      "id": "inbox-2026-11-24-ecommerce-realtime-search-recommendation",
+      "title": "电商平台实时商品搜索与个性化推荐实战",
+      "path": "Inbox/2026-11-24-ecommerce-realtime-search-recommendation.md",
+      "created": "2026-11-24",
+      "category": "技术",
+      "tags": [
+        "java",
+        "系统设计"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/X9ClN0C-HFOq-ZeOs094BQ",
+      "source_type": "article",
+      "platform": "微信",
+      "summary": "用 SpringCloud + Elasticsearch + Redis + Kafka 搭建电商搜索推荐系统：ES 全文搜索与模糊匹配、Kafka 实时数据同步、基于用户行为的协同过滤+内容推荐、Redis 多级缓存与热点加速，解决搜索不准、响应慢、推荐不个性化的痛点。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/weixin-X9ClN0C-HFOq-ZeOs094BQ.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
