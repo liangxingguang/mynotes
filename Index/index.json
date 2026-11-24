@@ -1,26 +1,6 @@
 {
-  "updated_at": "2026-11-24 09:26",
+  "updated_at": "2026-11-24 09:51",
   "notes": [
-    {
-      "id": "2026-11-24-google-harness2-self-evolution",
-      "title": "谷歌开源 AI Harness 自进化框架 Harness2：一个月狂揽 25K+ Star",
-      "path": "Inbox/2026-11-24-google-harness2-self-evolution.md",
-      "created": "2026-11-24",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "Agent",
-        "GitHub"
-      ],
-      "source": "冰河（微信公众号）",
-      "source_url": "https://mp.weixin.qq.com/s/HCt_zSiOiLYSv-yEjrz70A",
-      "source_type": "article",
-      "platform": "微信公众号",
-      "summary": "冰河介绍 Google Research 开源项目 Harness2：一个把\"调 Agent harness\"从手工活变成自动迭代过程的框架。它不训练模型、权重全程锁死，只动模型外层的系统配置。harness 被拆成 8 块可编辑组件，靠两层递归循环——单任务用\"候选 harness 行为对比\"替代标准答案打分来精炼，跨任务把有证据的结论沉淀进持久的改进 harness。项目在 JobBench / LAB / WorkBuddy-Bench 三基准上报告了单步提升，文章还给出 --k 预算参数、本地 demo 与真实跑分步骤，以及成本、网络、官方支持三方面注意事项。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/11/weixin-hct-zsioilysv-yEjrz70A.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
@@ -8830,6 +8810,26 @@
       "summary": "以微信朋友圈时间线设计为切入，对比读扩散（拉模式）与写扩散（推模式）两种 Feed 流方案。核心结论：时间线在数据库里并不存在，须在读时或写时\"造\"出来；写扩散把排序挪到写侧，读侧一次查询即可，但前提是单次扩散复制份数必须有上限——微信好友上限 5000 正是这道成本护栏，再以削峰、合并、只推活人摊平写入。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-yd6bsj9m-feed-timeline.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-24-google-harness2-self-evolution",
+      "title": "谷歌开源 AI Harness 自进化框架 Harness2：一个月狂揽 25K+ Star",
+      "path": "Archive/2026-11-24-google-harness2-self-evolution.md",
+      "created": "2026-11-24",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent",
+        "GitHub"
+      ],
+      "source": "冰河（微信公众号）",
+      "source_url": "https://mp.weixin.qq.com/s/HCt_zSiOiLYSv-yEjrz70A",
+      "source_type": "article",
+      "platform": "微信公众号",
+      "summary": "冰河介绍 Google Research 开源项目 Harness2：一个把\"调 Agent harness\"从手工活变成自动迭代过程的框架。它不训练模型、权重全程锁死，只动模型外层的系统配置。harness 被拆成 8 块可编辑组件，靠两层递归循环——单任务用\"候选 harness 行为对比\"替代标准答案打分来精炼，跨任务把有证据的结论沉淀进持久的改进 harness。项目在 JobBench / LAB / WorkBuddy-Bench 三基准上报告了单步提升，文章还给出 --k 预算参数、本地 demo 与真实跑分步骤，以及成本、网络、官方支持三方面注意事项。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/weixin-hct-zsioilysv-yEjrz70A.md",
       "wiki_status": "ingested"
     }
   ]

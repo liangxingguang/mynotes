@@ -4,7 +4,7 @@ type: concept
 title: Harness Engineering（Agent 执行系统工程）
 status: active
 created: 2026-10-27
-updated: 2026-11-23
+updated: 2026-11-24
 confidence: high
 tags:
   - concept
@@ -24,6 +24,7 @@ sources:
   - raw/sources/ai/2026-11-20-zte-cosight-harness.md
   - raw/sources/ai/2026-11-23-learn-claude-code-course.md
   - raw/sources/ai/2026-11-23-lala-agent-realtime-trading.md
+  - raw/sources/ai/2026-11-24-google-harness2.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/concepts/context-management.md
@@ -46,6 +47,8 @@ related:
   - wiki/entities/learn-claude-code.md
   - wiki/concepts/agent-production-four-layer-model.md
   - wiki/sources/2026-11-23-lala-agent-realtime-trading.md
+  - wiki/entities/harness2.md
+  - wiki/sources/2026-11-24-google-harness2.md
 ---
 # Harness Engineering（Agent 执行系统工程）
 
@@ -124,6 +127,8 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 
 **高代码 Harness 与"确定性放在正确位置"**（信源 2026-11-23，第 13 信源）：AI 撮合三阶段演进印证确定性结构的价值——①完全 Agentic（模型自主规划，既难遵循 SOP 也不可度量，无法判断策略是否有效）→②工作流编排大节点 + 状态机约束模型内部状态（流程遵循解决，但节点间上下文重复冗余、无法按需供给）→③高代码 Harness（代码编排大模型节点与状态机，既控 SOP 又能按需组装上下文）。确定性结构的第一价值是**让业务过程可度量**，过程可度量策略才能被优化；故核心业务里**更自主不等于更好**，先让过程可遵循、可度量再谈扩大自主。帮模型的约束若一开始就与守业务约束耦合，模型变强后难以干净移除，"可删除"必须提前设计。这套"起点/下限/方向/上限"的完整框架落成概念页 [[agent-production-four-layer-model|Agent 生产化四层模型]]。
 
+**Harness2 自进化框架：把 harness 配置当作可迭代优化对象**（信源 2026-11-24，第 14 信源）：Google Research 开源的 [[harness2|Harness2]] 补上此前缺位的"harness 配置自动迭代"实现机制。前提与本页定义互证——同模型换 harness 效果差距可远大于模型本身差距，故模型不动、只动壳。核心机制：①harness 拆成 4 组 8 块可编辑组件（上下文：系统提示词/Guardrails/Memory/Skills；工具接口：工具说明/Scripts；委派：Subagents；中间件：Plugins），"改 harness"由此具体到"改哪一块、改成什么样"；②**两层递归**——第一层管当下任务（初始跑 → 编辑器提修改建议 → 候选各跑一遍 → 组合器对比行为差异合成精炼 harness），**不需要标准答案**，靠对比差异判断改动去留，对无打分标准的真实任务更实用；第二层管以后任务，反思把被采纳改动与有证据结论写入持久"改进 harness"，后续任务不必从零开始；③预算由 `--k` 控制（`--k 1` 最省、`--mode parallel` 往宽探、`--mode sequential` 往深改），执行器支持 OpenCode 与 Codex。与本页第 5 信源"自进化需要宪法（验证/回滚/权限/淘汰制度化）"呼应——Harness2 以两层递归提供一种具体自进化路径，但其价值取决于任务分布与多次候选执行成本，且执行器网络默认不受限、正式评测前须配网络隔离（实例见 [[harness2|Harness2]]，信源页见 [[2026-11-24-google-harness2|谷歌开源 Harness2（信源页）]]）。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -171,6 +176,8 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 
 - 2026-11-23 — 新增货拉拉《AI Agent 如何进入实时交易系统》信源（第 13 信源）`raw/sources/ai/2026-11-23-lala-agent-realtime-trading.md`。补上两块此前缺位的判定与演进：①**帮模型 / 守业务二分 + "假设模型完美"判定法**——把 Harness 约束按"是否随模型变强而消失"区分，守业务约束必须写代码、帮模型约束必须可删除，为"权限与隔离"观察面补上约束归属判据；②**高代码 Harness 与确定性位置**——AI 撮合三阶段演进（完全 Agentic→工作流编排→高代码 Harness）印证"确定性结构第一价值是让过程可度量"与"更自主不等于更好"。完整"起点/下限/方向/上限"框架落成概念页 [[agent-production-four-layer-model|Agent 生产化四层模型]]，信源页见 [[2026-11-23-lala-agent-realtime-trading|货拉拉 AI Agent 实时交易（信源页）]]。
 
+- 2026-11-24 — 新增 Google Harness2 信源 `raw/sources/ai/2026-11-24-google-harness2.md`（第 14 信源）。补上**harness 配置自动迭代**这一此前缺位的实现机制：Harness2 把 harness 拆成 4 组 8 块可编辑组件（上下文/工具接口/委派/中间件），以两层递归（单任务行为对比精炼、跨任务持久改进 harness）实现"模型不动、动壳"的自动迭代，且**不需要标准答案**——靠对比候选壳改动的行为差异判断去留，对无打分标准的真实任务更实用，与第 5 信源"自进化需要宪法（验证/回滚/权限/淘汰制度化）"呼应。预算由 `--k`/`--mode` 控制（parallel 往宽探、sequential 往深改），执行器支持 OpenCode/Codex。与"执行循环/扩展机制/复杂度治理"观察面互证，实例落成实体页 [[harness2|Harness2]]。自报跑分为项目最高值、单信源转述，标题"25K+ Star"正文无佐证，均须以论文与仓库实际数据核验。
+
 ## Open Questions（开放问题）
 
 - 论文原始统计口径与当前产品能力的时差（快照为历史版本）？
@@ -191,6 +198,7 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 - Source: `raw/sources/ai/2026-11-20-zte-cosight-harness.md`（第 11 信源：ZTE 四层架构与量化数据，内部自报、单信源转述，置信度中）
 - Source: `raw/sources/ai/2026-11-23-learn-claude-code-course.md`（第 12 信源：三句主张互证、循环不变挂件万变的设计纪律、s17 目标闸门外部裁判视角，教学实现单信源，置信度中）
 - Source: `raw/sources/ai/2026-11-23-lala-agent-realtime-trading.md`（第 13 信源：帮模型/守业务二分 + "假设模型完美"判定法、高代码 Harness 三阶段演进与确定性位置，生产实践自述，置信度中）
+- Source: `raw/sources/ai/2026-11-24-google-harness2.md`（第 14 信源：Harness2 自进化框架，两层递归行为对比精炼 + 跨任务持久改进 harness、8 块可编辑组件、`--k`/`--mode` 预算、三基准自报跑分，Google 开源 + 公众号解读，置信度中）
 
 ## Related Knowledge（相关知识）
 
@@ -215,3 +223,5 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 - [[2026-11-23-learn-claude-code-course|手写一个 mini Claude Code（信源页）]]
 - [[agent-production-four-layer-model|Agent 生产化四层模型]]
 - [[2026-11-23-lala-agent-realtime-trading|AI Agent 如何进入实时交易系统（信源页）]]
+- [[harness2|Harness2]]
+- [[2026-11-24-google-harness2|谷歌开源 Harness2（信源页）]]

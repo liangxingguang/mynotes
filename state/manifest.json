@@ -5835,6 +5835,19 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/yD6bsj9MNbncbarNlXETsA",
       "asset_ref": "Assets/2026-11/weixin-yd6bsj9m-feed-timeline.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-24-google-harness2.md",
+      "sha256": "d13b78e611694946571e4767828bf08b3b35d8de7837f860ef42a8e8b691babc",
+      "registered_at": "2026-11-24",
+      "inbox_ref": "Archive/2026-11-24-google-harness2-self-evolution.md",
+      "pages": [
+        "wiki/sources/2026-11-24-google-harness2.md",
+        "wiki/entities/harness2.md",
+        "wiki/concepts/harness-engineering.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/HCt_zSiOiLYSv-yEjrz70A",
+      "asset_ref": "Assets/2026-11/weixin-hct-zsioilysv-yEjrz70A.md"
     }
   ]
 }

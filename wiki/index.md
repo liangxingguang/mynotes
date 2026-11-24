@@ -4,6 +4,7 @@
 
 ## source（信源）
 
+- [[2026-11-24-google-harness2|谷歌开源 AI Harness 自进化框架 Harness2（信源页）]]（2026-11-24，AI/Agent/Harness/自进化，Google Research 开源 Harness2：权重锁死只动壳、4 组 8 块可编辑组件、两层递归行为对比精炼+跨任务持久改进 harness、--k/--mode 预算、三基准自报跑分，公众号解读单信源，置信度中）
 - [[2026-11-23-coding-to-proposal|从写代码到写方案：把视角提上去的自我实践方法]]（2026-11-23，写作/方法论/思维，微信「冰洋架构」：核心论断"写方案最难的不是写而是想"+显微镜与地图隐喻+五步流程（前两步想、第三步才写）+想清楚三问+MECE 结构理顺（按决策链分不按流水账分）+结论先行+SCQA+交付前五问自检与三个跳出来法，源头《金字塔原理》，单信源，置信度中）
 - [[2026-11-23-dan-koe-321-method|如何让自己，在一年内成为某个领域的专家（Dan Koe 321 方法解读）]]（2026-11-23，学习/方法论/自我提升，微信解读文：321 方法三支点（3 小时神圣时间/两项不相干能力缝合/一个核心问题）+复利底层逻辑，微信公众号单信源，置信度中）
 - [[2026-11-23-bisheng-3-office-agent|一个能平替 WorkBuddy 和豆包工作的开源办公 Agent，来了！支持私有化部署]]（2026-11-23，AI/办公Agent/私有化，BISHENG 3.0 开源企业级办公 Agent：DSH Desktop 桌面端+企业平台、Chat/Work 双模式、企业资源管理五模块、外部 Agent 接入与应用托管，微信公众号单信源，置信度中）
@@ -748,6 +749,7 @@
 - [[drawio-skill|drawio-skill]]（代码/配置→可编辑 .drawio 架构图，增量同步 + CI 架构检查）
 - [[elasticsearch|Elasticsearch]]（Lucene 之上的分布式搜索引擎；读模型定位、生产纪律+Netty 4 传输层，四信源互证）
 - [[ep-harness|EP-Harness]]（得物团队级 Managed Agents 平台，Multica 二开，Prompt→Context→Harness→Loop 四层）
+- [[harness2|Harness2]]（2026-11-24，AI/Agent/Harness 实体，Google Research 开源 Harness 自进化框架：不动模型只迭代 harness 配置、4 组 8 块可编辑组件、两层递归（单任务行为对比精炼+跨任务持久改进 harness，不需标准答案）、--k/--mode 预算、三基准自报跑分，Apache 2.0 非官方支持，微信公众号单信源，置信度中）
 - [[jd-haibo|京东海博]]（京东本地生活即时零售 SaaS，780+ 商家/10 万+ 门店，AI 知识库实践标杆）
 - [[kafka|Apache Kafka]]（高吞吐事件管道；顺序写+PageCache+零拷贝+批量四板斧；2.0 起网络层自研 NIO→Netty，机制+运维+IoT 场景+网络层四信源）
 - [[kiso|Kiso]]（开源极简 Agent 框架/Runtime：Event Log 执行账本+uncertain 裁决、只读证明式 shell、五运行模式、2200 行内核门禁；vs Pi Benchmark 单信源自述，置信度中）

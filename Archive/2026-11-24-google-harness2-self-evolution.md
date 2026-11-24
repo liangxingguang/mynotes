@@ -12,7 +12,7 @@ tags:
   - Agent
   - GitHub
 asset_ref: Assets/2026/11/weixin-hct-zsioilysv-yEjrz70A.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 谷歌开源 AI Harness 自进化框架 Harness2：一个月狂揽 25K+ Star
