@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24 10:44",
+  "updated_at": "2026-11-24 10:56",
   "notes": [
     {
       "id": "inbox-2026-11-24-github-c-language-projects",
@@ -20,26 +20,6 @@
       "summary_status": "",
       "asset_ref": "Assets/2026/11/weixin-USH1iRGjmG9mRfr_zL3SeQ.md",
       "wiki_status": "pending"
-    },
-    {
-      "id": "inbox-2026-11-24-github-yyds-projects",
-      "title": "这 4 个 yyds 的 GitHub 项目，有点意思",
-      "path": "Inbox/2026-11-24-github-yyds-projects.md",
-      "created": "2026-11-24",
-      "category": "技术",
-      "tags": [
-        "GitHub",
-        "自学",
-        "开源项目"
-      ],
-      "source": "微信公众号·逛逛 GitHub",
-      "source_url": "https://mp.weixin.qq.com/s/8fOiy2VPsIKdNF4zZ3Qygg",
-      "source_type": "article",
-      "platform": "微信",
-      "summary": "公众号「逛逛 GitHub」盘点 4 个实用开源项目：中文计算机学习指南、网盘搜索 API、ToDo/番茄钟/打卡合一工具、一体化白板工具。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/11/weixin-8fOiy2VPsIKdNF4zZ3Qygg.md",
-      "wiki_status": "ingesting"
     },
     {
       "id": "inbox-2026-11-24-system-design-primer-interview",
@@ -8870,6 +8850,26 @@
       "summary": "以微信朋友圈时间线设计为切入，对比读扩散（拉模式）与写扩散（推模式）两种 Feed 流方案。核心结论：时间线在数据库里并不存在，须在读时或写时\"造\"出来；写扩散把排序挪到写侧，读侧一次查询即可，但前提是单次扩散复制份数必须有上限——微信好友上限 5000 正是这道成本护栏，再以削峰、合并、只推活人摊平写入。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-yd6bsj9m-feed-timeline.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-24-github-yyds-projects",
+      "title": "这 4 个 yyds 的 GitHub 项目，有点意思",
+      "path": "Archive/2026-11-24-github-yyds-projects.md",
+      "created": "2026-11-24",
+      "category": "技术",
+      "tags": [
+        "GitHub",
+        "自学",
+        "开源项目"
+      ],
+      "source": "微信公众号·逛逛 GitHub",
+      "source_url": "https://mp.weixin.qq.com/s/8fOiy2VPsIKdNF4zZ3Qygg",
+      "source_type": "article",
+      "platform": "微信",
+      "summary": "公众号「逛逛 GitHub」盘点 4 个实用开源项目：中文计算机学习指南、网盘搜索 API、ToDo/番茄钟/打卡合一工具、一体化白板工具。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/weixin-8fOiy2VPsIKdNF4zZ3Qygg.md",
       "wiki_status": "ingested"
     },
     {

@@ -12,9 +12,7 @@ tags:
   - 自学
   - 开源项目
 asset_ref: Assets/2026/11/weixin-8fOiy2VPsIKdNF4zZ3Qygg.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-24T02:41:13.817Z"
-ingest_claim_id: 38048-1795488073817-0
+wiki_status: ingested
 ---
 
 # 这 4 个 yyds 的 GitHub 项目，有点意思
