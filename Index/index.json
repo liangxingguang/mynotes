@@ -1,26 +1,6 @@
 {
-  "updated_at": "2026-11-24 18:37",
+  "updated_at": "2026-11-24 18:44",
   "notes": [
-    {
-      "id": "inbox-2026-11-24-ant-toolgw",
-      "title": "2026-11-24-ant-toolgw-agent-tool-gateway",
-      "path": "Inbox/2026-11-24-ant-toolgw-agent-tool-gateway.md",
-      "created": "2026-11-24T17:30:00+08:00",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "Agent",
-        "系统设计"
-      ],
-      "source": "金融级分布式架构（公众号）",
-      "source_url": "https://mp.weixin.qq.com/s/dCMgFycrrm_kyJewi6iB9Q",
-      "source_type": "web",
-      "platform": "微信公众号",
-      "summary": "ToolGW 是蚂蚁集团面向 Agent 时代的全站统一安全工具流量入口，以 MCP/CLI 双协议门面统一承接全站 RPC、HTTP 工具流量，覆盖身份核验、Tool 粒度权限、零代码上翻、限流与 Mock/录制回放等治理能力。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026/11/ant-toolgw-agent-tool-gateway.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
@@ -8868,6 +8848,26 @@
       "summary": "腾讯智能文档团队的 full-cycle-developer（fcd）工作流 skill：让 AI 把\"写完之后的活\"也自己干完——动手前自己挑需求毛病、做完后自己验收、有问题自己返工、做完一次长一次记性。人只负责拍板与收货。TAPD 数据：每百条测试用例新引入 bug 从 2.31 降到 0.49（-79%），重开 bug 与严重级 bug 归零。",
       "summary_status": "",
       "asset_ref": "Assets/2026/11/weixin-oSeeRQikg_J6xA0hSiy8hA.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "inbox-2026-11-24-ant-toolgw",
+      "title": "2026-11-24-ant-toolgw-agent-tool-gateway",
+      "path": "Archive/2026-11-24-ant-toolgw-agent-tool-gateway.md",
+      "created": "2026-11-24T17:30:00+08:00",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent",
+        "系统设计"
+      ],
+      "source": "金融级分布式架构（公众号）",
+      "source_url": "https://mp.weixin.qq.com/s/dCMgFycrrm_kyJewi6iB9Q",
+      "source_type": "web",
+      "platform": "微信公众号",
+      "summary": "ToolGW 是蚂蚁集团面向 Agent 时代的全站统一安全工具流量入口，以 MCP/CLI 双协议门面统一承接全站 RPC、HTTP 工具流量，覆盖身份核验、Tool 粒度权限、零代码上翻、限流与 Mock/录制回放等治理能力。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026/11/ant-toolgw-agent-tool-gateway.md",
       "wiki_status": "ingested"
     },
     {

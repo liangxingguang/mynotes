@@ -4,7 +4,7 @@ type: concept
 title: Agent 对接旧系统（Legacy System Integration）
 status: active
 created: 2026-11-03
-updated: 2026-11-03
+updated: 2026-11-24
 confidence: medium
 tags:
   - concept
@@ -86,6 +86,7 @@ PM 三个核心动作（信源）：把业务目标翻译成系统能力要求�
 ## Evolution（演进）
 
 - 2026-11-03：建页。首信源：B 端 PM 视角的旧系统对接五步框架（盘点/选型/映射/灰度/复盘）+ 四类对接模式 + 连锁零售旧 CRM 工单 Agent 案例。单信源，置信度中。
+- 2026-11-24 — 新增生产级实例佐证：蚂蚁 ToolGW 的**零代码上翻**（虚拟 Server 集群 + 协议转换 + 响应模板，存量 RPC/HTTP 不改后端代码即变标准 MCP Server，规模达 4000+ MCP Server / 20000+ Tool）是四类对接模式中「中间件/消息网关」的大规模落地——统一对接层由网关承担协议翻译与治理，旧服务团队零改造接入（详见 [[agent-tool-gateway]]、[[ant-toolgw]]）。
 
 ## Open Questions（开放问题）
 

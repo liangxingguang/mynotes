@@ -4,7 +4,7 @@ type: concept
 title: MCP
 status: active
 created: 2026-10-16
-updated: 2026-11-12
+updated: 2026-11-24
 confidence: medium
 tags:
   - concept
@@ -19,6 +19,7 @@ sources:
   - raw/sources/ai/2026-10-28-agent-permission-model-design.md
   - raw/sources/ai/2026-11-12-ai-agent-tech-overview.md
   - raw/sources/ai/2026-11-20-agent-sandbox-mcp-k8s.md
+  - raw/sources/ai/2026-11-24-ant-toolgw-agent-tool-gateway.md
 related:
   - wiki/concepts/a2a-protocol.md
   - wiki/comparisons/a2a-vs-mcp.md
@@ -27,6 +28,7 @@ related:
   - wiki/concepts/codemode.md
   - wiki/concepts/agent-permission-model.md
   - wiki/concepts/agent-sandboxing.md
+  - wiki/concepts/agent-tool-gateway.md
   - wiki/sources/2026-11-20-agent-sandbox-mcp-k8s.md
 ---
 # MCP
@@ -86,6 +88,7 @@ MCP server 启动后暴露工具列表，客户端（Agent 框架）连接后自
 - 2026-10-30：[[agent-permission-model|Agent 权限模型]]信源确认「MCP 协议标准没有内置复杂权限，要在接入层补齐」，并给出两种落地：MCP 网关统一收口（校验签名 claim/授权记录/租户隔离/限流/审计，原生服务零改动，生产首选）vs 服务内置鉴权中间件（适合少量自建工具）；明确不推荐静态 Token（无法绑定 session/指令细粒度回收）。部分回答了下方工具级权限分级的开放问题。
 - 2026-11-12 — 新增 vivo《AI Agent 技术全景解析》信源。补上**三种连接方式**（STDIO/SSE/Streamable HTTP）对比表、MCP server 的"服务注册与发现"机制与微服务类比，回应此前"规范细节未确立"的开放问题（传输方式部分）。
 - 2026-11-20 — 平台级沙箱信源（第 8 信源）确立**部署模型边界**：MCP 是交互协议、不是沙箱或授权系统；远程 MCP Server 与沙箱内 runner 是两类不同的安全边界，各自控制点不同；同时补上网关逐次授权与能力票据的落地视角（详见 [[agent-permission-model]]）。MCP Tasks 扩展仍为 Draft（规范版本 2026-07-28），未协商能力时不能把 `202 Accepted + task_id` 伪装成通用 `tools/call` 响应。
+- 2026-11-24 — 蚂蚁 ToolGW 信源（第 9 信源）补充**大规模生产接入**视角：MCP 与 CLI 流量共享同一网关调用内核（ToolEngine），协议层只做适配；存量 RPC/HTTP 经网关**零代码上翻**为标准 MCP Server（虚拟 Server 集群 + 协议转换 + 响应模板），解决"几万存量能力逐个重开发 MCP"的供给问题；Tool 粒度两层鉴权 + 血缘自动管理由网关与统一权限平台协同落地，印证"MCP 协议不内置工具级权限、由接入层网关补齐"的既有判断；场景化工具分组（工具懒加载）缓解 MCP 上下文膨胀（业内实测 3 个 MCP Server 工具定义吃掉 200K 上下文七成）。详见 [[agent-tool-gateway]]。
 
 ## Open Questions（开放问题）
 
@@ -103,6 +106,7 @@ MCP server 启动后暴露工具列表，客户端（Agent 框架）连接后自
 - Source: `raw/sources/ai/2026-10-28-agent-permission-model-design.md`
 - Source: `raw/sources/ai/2026-11-12-ai-agent-tech-overview.md`（三种连接方式表、服务注册与发现机制、微服务类比）
 - Source: `raw/sources/ai/2026-11-20-agent-sandbox-mcp-k8s.md`（第 8 信源：部署模型边界——远程 MCP Server 与沙箱内 runner 两类安全边界；MCP 是交互协议而非沙箱/授权系统；MCP Tasks 扩展 Draft）
+- Source: `raw/sources/ai/2026-11-24-ant-toolgw-agent-tool-gateway.md`（第 9 信源：MCP/CLI 共享网关调用内核、存量服务零代码上翻、Tool 粒度两层鉴权、场景化分组缓解上下文膨胀）
 
 ## Related Knowledge（相关知识）
 
@@ -111,3 +115,4 @@ MCP server 启动后暴露工具列表，客户端（Agent 框架）连接后自
 - [[arthas-mcp-ai-troubleshooting|让 AI 调 Arthas，Java 排障会快多少？（信源页）]]
 - [[2026-11-20-agent-sandbox-mcp-k8s|生产级 AI Agent 执行沙箱实战（信源页）]]
 - [[agent-sandboxing|Agent 沙箱隔离]]
+- [[agent-tool-gateway|Agent 工具网关（统一工具流量入口）]]

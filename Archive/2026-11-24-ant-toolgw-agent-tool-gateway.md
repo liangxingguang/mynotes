@@ -12,7 +12,7 @@ tags:
   - Agent
   - 系统设计
 asset_ref: Assets/2026/11/ant-toolgw-agent-tool-gateway.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 > ToolGW 是蚂蚁集团面向 Agent 时代的全站统一安全工具流量入口，以 MCP/CLI 双协议门面统一承接全站 RPC、HTTP 工具流量，覆盖身份核验、Tool 粒度权限、零代码上翻、限流与 Mock/录制回放等治理能力。

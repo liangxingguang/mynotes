@@ -4,6 +4,7 @@
 
 ## source（信源）
 
+- [[2026-11-24-ant-toolgw-agent-tool-gateway|蚂蚁 AI 工具网关 ToolGW：全站统一的 Agent 工具流量入口（信源页）]]（2026-11-24，AI/Agent/网关/MCP，微信「金融级分布式架构」，蚂蚁 ToolGW 负责人一手自述：MCP/CLI 双协议门面共享 ToolEngine、存量 RPC/HTTP 零代码上翻（4000+ Server/20000+ Tool）、双身份向 AgentToken 演进、Tool 粒度两层鉴权、限流/Mock/录制回放治理，峰值 QPM 25w+，单信源，置信度高）
 - [[2026-11-24-enterprise-agent-architecture|企业 Agent 架构怎么搭？AI Coding + Ontology + Harness（信源页）]]（2026-11-24，AI/Agent/架构/Ontology/Harness，微信「架构师」提出企业业务 Agent 落地架构：AI Coding 做原型+Ontology 说清业务含义+Harness 组织单轮执行+Runtime 承接持久调度+FDE 现场交付，核心原则"调查留给 Agent/动作校验留业务服务/跨轮跟进交持久流程"，发票异常处理贯穿九环节，设计示例，单信源，置信度中）
 - [[2026-11-24-github-c-language-projects|Github上热门 C 语言项目汇总（信源页）]]（2026-11-24，GitHub/C语言/开源项目盘点，微信「嵌入式大杂烩」汇总 17 个热门 C 语言项目：学习入门 4 个（LDD 内核驱动笔记/CNote 入门/Data-Structure 严蔚敏配套/PAT 题解）、基础库与工具（gear-lib/Sanitizer/cJSON/zlog 25 万条/秒）、通信协议（nanomsg/protobuf）、存储数据库（FlashDB/FastDFS/Seafile）、服务器（nginx/mosquitto）、其他（vimcdoc/si78c），每项目仅一段功能概述，单信源，置信度中）
 - [[2026-11-24-system-design-primer-interview|这个GitHub项目，让百万工程师通过了系统设计面试（信源页）]]（2026-11-24，系统设计/面试/开源项目，微信推介 donnemartin/system-design-primer：Markdown 教程+手绘架构图+Anki 闪卡，发文时 274,986 星/16 种语言，14 主题知识体系+8 道经典面试题（四步法）+6 道 OOP 题+3 套闪卡+三档学习路线，附 CAP/可用性/延迟数字速查与同类资源对比，单信源，置信度中）
@@ -482,6 +483,7 @@
 - [[agent-sandboxing|Agent 沙箱隔离]]（能力限制而非行为审查；四条路径收窄可达面；脚本级/命令级/工具级/整体隔离 + 平台级 K8s 隔离基线/双向网络默认拒绝/CAS 一次性调度账本 + Codex 本地启动时限权/MCP 另设权限/代理两层开关/文件不继承限制盲区；三信源，置信度中）
 - [[agent-service|Agent Service（Agent 应用后端化）]]（框架+后端组合；多租户/多会话隔离、IM 渠道（飞书/Discord/钉钉）、Agent Team、RAG Service、MCP & Skill Hub、持久化、调度等 SaaS 通用问题在框架层提前解决；AgentScope 2.0 典型实现，单信源，置信度中）
 - [[agent-state-separation|Agent 状态分离（执行状态/操作状态/产物核验）]]（三态分离+多身份+恢复决策顺序+停止非回滚，Codex Harness 实践，单信源置信度中）
+- [[agent-tool-gateway|Agent 工具网关（统一工具流量入口）]]（2026-11-24，AI/Agent/网关/概念，Agent 与存量工具间的统一流量入口：直连四困境、多协议门面共享调用内核、协议转换零代码上翻、安全治理内置链路、全站路由一张网、Mock/录制回放测试基座；蚂蚁 ToolGW 生产实例，单信源，置信度中）
 - [[approval-workflow-engine|审批流引擎（含 AI 改造层）]]（六类节点+处理人规则六种+条件分支五要素+边界值卡单教训+十项验收清单；AI 改造层叠加智能填单/风险识别/自动审批/异常预警+三级风险阈值+六步SOP，合并同专辑第 8+15 篇双信源，置信度中）
 - [[aqs-internals|AQS（AbstractQueuedSynchronizer）核心机制]]（volatile state + CLH 变体 FIFO 队列 + acquire/release 模板方法；JUC 锁体系基座，单信源）
 - [[arraylist-vs-linkedlist|ArrayList vs LinkedList 选型]]（动态数组 vs 双向链表复杂度与选型表+O(n²) 遍历坑+ArrayDeque 替代，JDK 源码阅读系列三信源互证，置信度高）
@@ -742,6 +744,7 @@
 
 - [[aibox|AiBox]]（货拉拉自建 AI Coding Harness/管控面：Rules/Skills/Commands/MCP 下发 + 网关四统一 + 三层度量，千人规模）
 - [[aiengineeringfromscratch|aiengineeringfromscratch.com]]（2026-11-05，AI/学习资源，免费开源 AI 系统学习教程网站，20 章 542 节课 + learning path，单信源未独立验证，置信度低）
+- [[ant-toolgw|ToolGW（蚂蚁 AI 工具网关）]]（2026-11-24，AI/Agent/网关/实体，蚂蚁全站统一 Agent 工具流量入口：ATC+管控面+ToolGw 三层、纯 Go 基于 SOFA、MCP/CLI 双协议共享 ToolEngine、零代码上翻、双身份向 AgentToken 演进、Tool 粒度两层鉴权、限流/Mock/录制回放，MCP 接入 10000+/峰值 QPM 25w+，单信源，置信度高）
 - [[agent-lightning|Agent Lightning]]（微软研究院开源 Agent RL 训练框架，约 3500 行，真实工具链交互训练）
 - [[agentscope|AgentScope]]（2026-11-12 建 / 2026-11-20 更新，AI/Agent 框架实体，阿里通义 SysML 团队；1.x HarnessAgent 持久执行内核（Session 六类对象/Task 六态/原子提交/工具 call-execute 两阶段）；2.0 转为"框架+Agent 后端"：不预设编排、SDK 八积木、Agent Service、沙箱八后端、Python v2.0.12 + Java 2.1.0-SNAPSHOT 双线，三信源，置信度高）
 - [[agentcore|AgentCore]]（2026-11-12，AI/Agent 平台实体，阿里云云端 Agent 托管平台：Harness 托管+Session Store 五层状态层次+Brain-Hands 分离+Environment+Agent as a Service，知乎单信源，置信度高）

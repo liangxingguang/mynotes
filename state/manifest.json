@@ -5933,6 +5933,21 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/1sMRD5s2p2XC_ij_yUB9Dw",
       "asset_ref": "Assets/2026/11/weixin-1sMRD5s2p2XC_ij_yUB9Dw.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-24-ant-toolgw-agent-tool-gateway.md",
+      "sha256": "0d04202d3fee7d2ec42676256619085ddf117deda898658fadf76c417bab300b",
+      "registered_at": "2026-11-24",
+      "inbox_ref": "Archive/2026-11-24-ant-toolgw-agent-tool-gateway.md",
+      "pages": [
+        "wiki/sources/2026-11-24-ant-toolgw-agent-tool-gateway.md",
+        "wiki/entities/ant-toolgw.md",
+        "wiki/concepts/agent-tool-gateway.md",
+        "wiki/concepts/mcp.md",
+        "wiki/concepts/agent-legacy-system-integration.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/dCMgFycrrm_kyJewi6iB9Q",
+      "asset_ref": "Assets/2026/11/ant-toolgw-agent-tool-gateway.md"
     }
   ]
 }
