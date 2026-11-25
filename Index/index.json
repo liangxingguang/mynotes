@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25 12:41",
+  "updated_at": "2026-11-25 12:46",
   "notes": [
     {
       "id": "2026-11-25-agent-architecture-harness-runtime-orchestrator",
@@ -134,6 +134,25 @@
       "summary": "Agent 一律走最强模型会同时烧掉 API 账单与延迟两份钱。文章对比规则路由、模型路由、混合路由三种思路，给出路由模型的数据来源、评分器优于分类器、保守冷启动、离线评估等工程建议，并指出级联降级只适合成本极度敏感、可容忍延迟的场景。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-impOZ2AONfQDJwCEe-QjWA.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-11-25-lsm-tree-disk",
+      "title": "写穿硬盘的秘密：LSM-Tree 如何把随机写变成顺序写的艺术",
+      "path": "Inbox/2026-11-25-lsm-tree-disk.md",
+      "created": "2026-11-25",
+      "category": "技术",
+      "tags": [
+        "MySQL",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzI2MDA5MDM0MA==&mid=2650603211&idx=1&sn=44c338195a5be5882896e2f24b47326d",
+      "source_type": "article",
+      "platform": "wechat",
+      "summary": "LSM-Tree（日志结构合并树）通过\"先写内存、后台归并、顺序刷盘\"，放弃原地更新、改为追加写入，把随机写变成顺序写，成为现代分布式存储基石（BigTable、RocksDB、HBase、Cassandra、MyRocks 均采用）。文章详解核心组件、读写删与归并流程、Compaction 策略对比、三大放大问题与权衡，并给出完整 Java 实现与 MyRocks 实战。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-lsm-tree-disk.md",
       "wiki_status": "pending"
     },
     {
