@@ -1,6 +1,26 @@
 {
-  "updated_at": "2026-11-25 12:33",
+  "updated_at": "2026-11-25 12:34",
   "notes": [
+    {
+      "id": "2026-11-25-ai-native-engineering",
+      "title": "AI-Native Engineering：AI 时代，我们应该重新思考软件研发流程",
+      "path": "Inbox/2026-11-25-ai-native-engineering.md",
+      "created": "2026-11-25",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent",
+        "系统设计"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/Hh0I_3sU8TI-2i2-x4pAEA",
+      "source_type": "article",
+      "platform": "wechat",
+      "summary": "AI Coding Agent 已能理解项目、修改代码、执行测试，作者提出 AI-Native Engineering 理念：AI 时代真正要改的不是编码方式，而是整个软件研发体系。核心是六个 First 原则——文本、命令行、结构化、可执行、可验证、版本管理优先，并给出贯穿研发生命周期的落地实践与三阶段建设路径。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-Hh0I_3sU8TI-2i2-x4pAEA.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-11-25-how-we-learn-ten-keywords",
       "title": "如何有效学习？颠覆传统认知的发现——《How We Learn》读书笔记",
