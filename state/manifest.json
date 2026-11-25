@@ -6058,6 +6058,41 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/4Hh7XaCg5iInfrt4Yhdy1A",
       "asset_ref": "Assets/2026-11/wechat-4Hh7XaCg5iInfrt4Yhdy1A.md"
+    },
+    {
+      "path": "raw/sources/misc/2026-11-25-impromptu-speech-9-formulas.md",
+      "sha256": "04e0e08f3c1173939c6dfc950053f2efd4016bd3031ebd80950ea85dc8bf6e23",
+      "registered_at": "2026-11-25",
+      "inbox_ref": "Archive/2026-11-25-impromptu-speech-9-formulas.md",
+      "pages": [
+        "wiki/sources/2026-11-25-impromptu-speech-9-formulas.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/BV_p9mxxUUSlBImCWI9R7A",
+      "asset_ref": "Assets/2026-11/wechat-BV_p9mxxUUSlBImCWI9R7A.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-25-llm-agent-hybrid-routing.md",
+      "sha256": "80c2f083b0c780b7d0701aa93cdf16c69bf4cc66899a553528fec066840331f7",
+      "registered_at": "2026-11-25",
+      "inbox_ref": "Archive/2026-11-25-llm-agent-hybrid-routing.md",
+      "pages": [
+        "wiki/sources/2026-11-25-llm-agent-hybrid-routing.md",
+        "wiki/concepts/llm-agent-hybrid-routing.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/impOZ2AONfQDJwCEe-QjWA",
+      "asset_ref": "Assets/2026-11/wechat-impOZ2AONfQDJwCEe-QjWA.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-25-lsm-tree-disk.md",
+      "sha256": "7045f3889dd324f954d51525a0d4b633701451f10bc2ce92de0f710edba51bd7",
+      "registered_at": "2026-11-25",
+      "inbox_ref": "Archive/2026-11-25-lsm-tree-disk.md",
+      "pages": [
+        "wiki/sources/2026-11-25-lsm-tree-disk.md",
+        "wiki/concepts/lsm-tree.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzI2MDA5MDM0MA==&mid=2650603211&idx=1&sn=44c338195a5be5882896e2f24b47326d",
+      "asset_ref": "Assets/2026-11/wechat-lsm-tree-disk.md"
     }
   ]
 }

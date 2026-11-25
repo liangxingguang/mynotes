@@ -12,6 +12,9 @@
 - 2026-10-14 21:00 | ingest | raw/sources/misc/2026-10-14-example.md | wiki/sources/example.md, wiki/concepts/demo.md
 - 2026-10-14 21:05 | lint | wiki | findings=2 fixed=1 needs_human=1
 -->
+- 2026-11-25 10:31 | ingest | raw/sources/misc/2026-11-25-impromptu-speech-9-formulas.md | wiki/sources/2026-11-25-impromptu-speech-9-formulas.md
+- 2026-11-25 10:31 | ingest | raw/sources/ai/2026-11-25-llm-agent-hybrid-routing.md | wiki/sources/2026-11-25-llm-agent-hybrid-routing.md, wiki/concepts/llm-agent-hybrid-routing.md
+- 2026-11-25 10:31 | ingest | raw/sources/architecture/2026-11-25-lsm-tree-disk.md | wiki/sources/2026-11-25-lsm-tree-disk.md, wiki/concepts/lsm-tree.md
 
 - 2026-11-01 05:20 | ingest | raw/sources/misc/2026-10-31-xuqiufenxi-01-ruanjian-xiangmu-shibai.md | wiki/sources/2026-10-31-xuqiufenxi-01-ruanjian-xiangmu-shibai.md
 

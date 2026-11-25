@@ -9,7 +9,7 @@ created: 2026-11-25
 category: 技术
 tags: [AI, Agent, 系统设计]
 asset_ref: Assets/2026-11/wechat-impOZ2AONfQDJwCEe-QjWA.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 大模型 Agent 混合路由详解：规则路由、模型路由、级联降级一篇讲透

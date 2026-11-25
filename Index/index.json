@@ -1,63 +1,6 @@
 {
-  "updated_at": "2026-11-25 16:05",
+  "updated_at": "2026-11-25 18:32",
   "notes": [
-    {
-      "id": "2026-11-25-impromptu-speech-9-formulas",
-      "title": "提高自己即兴讲话的９个万能公式",
-      "path": "Inbox/2026-11-25-impromptu-speech-9-formulas.md",
-      "created": "2026-11-25",
-      "category": "生活",
-      "tags": [
-        "自学"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/BV_p9mxxUUSlBImCWI9R7A",
-      "source_type": "article",
-      "platform": "wechat",
-      "summary": "针对即兴讲话\"脑袋空白、跑题、逻辑乱、无感染力\"的痛点，文章把九个常见场景提炼成可直接套用的说话公式，照说如按剧本，3 秒组织语言。**注意：九个公式的具体内容以图片形式承载，采集后仅剩占位符，本文仅能归纳场景与思路，公式原文需查看原文图片。**",
-      "summary_status": "partial",
-      "asset_ref": "Assets/2026-11/wechat-BV_p9mxxUUSlBImCWI9R7A.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-11-25-llm-agent-hybrid-routing",
-      "title": "大模型 Agent 混合路由详解：规则路由、模型路由、级联降级一篇讲透",
-      "path": "Inbox/2026-11-25-llm-agent-hybrid-routing.md",
-      "created": "2026-11-25",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "Agent",
-        "系统设计"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/impOZ2AONfQDJwCEe-QjWA",
-      "source_type": "article",
-      "platform": "wechat",
-      "summary": "Agent 一律走最强模型会同时烧掉 API 账单与延迟两份钱。文章对比规则路由、模型路由、混合路由三种思路，给出路由模型的数据来源、评分器优于分类器、保守冷启动、离线评估等工程建议，并指出级联降级只适合成本极度敏感、可容忍延迟的场景。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-impOZ2AONfQDJwCEe-QjWA.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-11-25-lsm-tree-disk",
-      "title": "写穿硬盘的秘密：LSM-Tree 如何把随机写变成顺序写的艺术",
-      "path": "Inbox/2026-11-25-lsm-tree-disk.md",
-      "created": "2026-11-25",
-      "category": "技术",
-      "tags": [
-        "MySQL",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzI2MDA5MDM0MA==&mid=2650603211&idx=1&sn=44c338195a5be5882896e2f24b47326d",
-      "source_type": "article",
-      "platform": "wechat",
-      "summary": "LSM-Tree（日志结构合并树）通过\"先写内存、后台归并、顺序刷盘\"，放弃原地更新、改为追加写入，把随机写变成顺序写，成为现代分布式存储基石（BigTable、RocksDB、HBase、Cassandra、MyRocks 均采用）。文章详解核心组件、读写删与归并流程、Compaction 策略对比、三大放大问题与权衡，并给出完整 Java 实现与 MyRocks 实战。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-lsm-tree-disk.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-11-25-microsoft-ai-agents-for-beginners",
       "title": "微软开源了一个 AI Agent 学习项目，18 节课从原理讲到实战",
@@ -76,7 +19,7 @@
       "summary": "微软在 GitHub 开源的 AI Agents for Beginners 是一套入门课程（截至 2026 年 9 月约 7.6 万 Star），18 节课覆盖 Agent 基本概念、设计模式、工具调用、RAG、多 Agent 协作、MCP、上下文工程、记忆管理与生产部署，每课配文字教程、短视频与 Python 代码示例，为从大模型应用走向 Agent 系统开发提供清晰路径。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-puITWgiaibrR2MlhdK_-oA.md",
-      "wiki_status": "pending"
+      "wiki_status": "ingesting"
     },
     {
       "id": "2026-11-25-mysql-sql-execution-journey",
@@ -9275,6 +9218,63 @@
       "summary": "本文是 Benedict Carey《How We Learn》的导读，该书汇总跨越 20 世纪的脑科学学习研究。全书十章对应十个关键词：故事、遗忘、环境、间断、无知、分心、渗透、混合、感知、睡眠，看似不全是正面词，却都对学习有益；核心结论是学习不宜与人生割裂，高效学习靠细水长流而非突击。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-PdYN3x6A0DqDT2A1CTD9IA.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-25-impromptu-speech-9-formulas",
+      "title": "提高自己即兴讲话的９个万能公式",
+      "path": "Archive/2026-11-25-impromptu-speech-9-formulas.md",
+      "created": "2026-11-25",
+      "category": "生活",
+      "tags": [
+        "自学"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/BV_p9mxxUUSlBImCWI9R7A",
+      "source_type": "article",
+      "platform": "wechat",
+      "summary": "针对即兴讲话\"脑袋空白、跑题、逻辑乱、无感染力\"的痛点，文章把九个常见场景提炼成可直接套用的说话公式，照说如按剧本，3 秒组织语言。**注意：九个公式的具体内容以图片形式承载，采集后仅剩占位符，本文仅能归纳场景与思路，公式原文需查看原文图片。**",
+      "summary_status": "partial",
+      "asset_ref": "Assets/2026-11/wechat-BV_p9mxxUUSlBImCWI9R7A.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-25-llm-agent-hybrid-routing",
+      "title": "大模型 Agent 混合路由详解：规则路由、模型路由、级联降级一篇讲透",
+      "path": "Archive/2026-11-25-llm-agent-hybrid-routing.md",
+      "created": "2026-11-25",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent",
+        "系统设计"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/impOZ2AONfQDJwCEe-QjWA",
+      "source_type": "article",
+      "platform": "wechat",
+      "summary": "Agent 一律走最强模型会同时烧掉 API 账单与延迟两份钱。文章对比规则路由、模型路由、混合路由三种思路，给出路由模型的数据来源、评分器优于分类器、保守冷启动、离线评估等工程建议，并指出级联降级只适合成本极度敏感、可容忍延迟的场景。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-impOZ2AONfQDJwCEe-QjWA.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-25-lsm-tree-disk",
+      "title": "写穿硬盘的秘密：LSM-Tree 如何把随机写变成顺序写的艺术",
+      "path": "Archive/2026-11-25-lsm-tree-disk.md",
+      "created": "2026-11-25",
+      "category": "技术",
+      "tags": [
+        "MySQL",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzI2MDA5MDM0MA==&mid=2650603211&idx=1&sn=44c338195a5be5882896e2f24b47326d",
+      "source_type": "article",
+      "platform": "wechat",
+      "summary": "LSM-Tree（日志结构合并树）通过\"先写内存、后台归并、顺序刷盘\"，放弃原地更新、改为追加写入，把随机写变成顺序写，成为现代分布式存储基石（BigTable、RocksDB、HBase、Cassandra、MyRocks 均采用）。文章详解核心组件、读写删与归并流程、Compaction 策略对比、三大放大问题与权衡，并给出完整 Java 实现与 MyRocks 实战。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-lsm-tree-disk.md",
       "wiki_status": "ingested"
     }
   ]

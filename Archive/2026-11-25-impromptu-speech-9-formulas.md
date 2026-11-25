@@ -9,7 +9,7 @@ created: 2026-11-25
 category: 生活
 tags: [自学]
 asset_ref: Assets/2026-11/wechat-BV_p9mxxUUSlBImCWI9R7A.md
-wiki_status: pending
+wiki_status: ingested
 summary_status: partial
 ---
 

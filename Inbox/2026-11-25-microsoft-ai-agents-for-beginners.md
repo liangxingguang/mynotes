@@ -9,7 +9,9 @@ created: 2026-11-25
 category: 技术
 tags: [AI, Agent, 自学]
 asset_ref: Assets/2026-11/wechat-puITWgiaibrR2MlhdK_-oA.md
-wiki_status: pending
+wiki_status: ingesting
+ingest_claimed_at: "2026-11-25T10:32:06.267Z"
+ingest_claim_id: 7292-1795602726267-0
 ---
 
 # 微软开源了一个 AI Agent 学习项目，18 节课从原理讲到实战

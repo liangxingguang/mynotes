@@ -472,6 +472,9 @@
 - [[2026-11-25-architect-when-not-to-design|架构师最重要的能力，不是设计系统，而是知道什么时候不该设计（信源页）]]（2026-11-25，架构/方法论，技术复杂度须随业务真实需要而非技术热情增长；微服务拆分、微信登录、首页慢上 Redis 三个反例论证敢于拒绝技术方案；整体成本六项合算；编译 [[over-design]]，印证 [[architecture-tradeoff-methodology]]，单信源置信度中）
 - [[2026-11-25-db-zero-downtime-migration|数据库迁移零停机：从理论到实战的完美演进方案（信源页）]]（2026-11-25，数据库/迁移，作者支付系统 5000 万条交易记录 72 小时零停机实战；双写+同步+校验+切换原理；五阶段迁移法（准备/初始化同步/双写/校验/切换收尾）+工具选型+三类常见问题；编译 [[database-zero-downtime-migration]]，印证 [[table-sharding-migration]]，代码块采集退化，单信源置信度中）
 - [[2026-11-25-elasticsearch-interview-questions|面试：Elasticsearch 面试题（38 题）（信源页）]]（2026-11-25，ES/面试，38 题六板块（基础/分词 Mapping/写入可靠性/查询分页/集群扩容/同步排障）+最容易答错的十句话；纠正旧信源两处表述（写入顺序、flush 阈值版本差异），矛盾记录见 [[elasticsearch]]，单信源置信度中）
+- [[2026-11-25-impromptu-speech-9-formulas|提高自己即兴讲话的９个万能公式（信源页）]]（2026-11-25，生活/沟通表达，九个工作场景说话公式训练：化被动为主动/跨部门/下属问题/同事矛盾/任务布置/坏消息汇报/表彰发言/组织语言/整改承诺；公式原文以图片承载未入采集稿，仅归纳场景与思路，单信源置信度低）
+- [[2026-11-25-llm-agent-hybrid-routing|大模型 Agent 混合路由详解（信源页）]]（2026-11-25，AI/Agent/路由，规则/模型/混合路由三思路对比+混合路由三层结构（规则兜底→模型打分→大模型兜底）+路由器训练三件事（数据来源/评分器优于分类器/保守冷启动）+级联降级成本测算（70/30 分布下比理想路由多花 25%）与三大坑；编译 [[llm-agent-hybrid-routing]]，印证 [[thinking-mode]] [[llm-inference-cost-governance]]，单信源置信度中）
+- [[2026-11-25-lsm-tree-disk|写穿硬盘的秘密：LSM-Tree 如何把随机写变成顺序写的艺术（信源页）]]（2026-11-25，数据库/存储/Java，LSM-Tree 核心组件（WAL/MemTable/SSTable/Compaction）+五大流程+Compaction 两流派（Leveled vs Tiered）对比+三大放大与不可能三角+LevelDB/RocksDB/HBase/Cassandra/MyRocks 工业谱系+Java 实现与 MyRocks 实战；编译 [[lsm-tree]]，单信源置信度中）
 
 ## concept（概念）
 
@@ -757,6 +760,8 @@
 - [[agent-production-four-layer-model|Agent 生产化四层模型]]（2026-11-23，概念/AI/Agent/Harness，货拉拉亓隆基提炼的 Agent 生产化方法论：模型决定起点、Harness 决定下限、Dual Loop 决定方向、业务知识决定上限；Harness 帮模型·守业务二分与"假设模型完美"判定法、高代码 Harness 与确定性位置、Dual Loop 内外环、业务知识按确定性分流，与 harness-engineering 互链，单信源置信度中）
 - [[full-cycle-developer-workflow|Full-Cycle Developer 工作流（fcd）]]（2026-11-24，概念/AI Coding/工作流/验收，fcd 工作流：六阶段+每阶段 Gate、Plan 为唯一基准（零空格铁律/六类任务类型/禁止预读后阶段）、自验收（客观标准+自动化比稿+数值对账）、自返工（先根因不反向偏移）、自沉淀（skill 只记验证过的）；"已完成"不值钱证据才值钱；与 acceptance-agent/ai-native-sdlc/ai-coding-evidence-boundary 互链，单信源，置信度中）
 - [[async-task-priority-queue-preemption|异步任务优先级队列与抢占式执行]]（2026-11-24，概念/Java/系统设计/并发，保障异步任务 SLA 的四层范式：优先级队列（高优先先出、动态调优）、抢占式执行（中断+检查点可续跑）、优先级调度（提升/衰减/继承防饥饿）、资源隔离（按优先级分池）；抢占触发阈值与智能防抖、业务优先级数值化分级；与 priorityblockingqueue-internals/retry-governance/async-task-system-design 互链，单信源，置信度中）
+- [[llm-agent-hybrid-routing|LLM Agent 混合路由]]（2026-11-25，概念/AI/Agent/系统设计，请求难度判断与模型档位分流：混合路由三层（规则兜底→模型打分→大模型兜底，每层只处理有把握的、没把握的往下传）+路由器训练三件事（数据来源/评分器优于分类器/保守冷启动 >0.95 渐进放行）+离线评估错分红线+级联降级成本测算与三大坑（适合成本极其敏感、可容忍延迟场景）；与 [[thinking-mode]] [[llm-inference-cost-governance]] 互补不矛盾，单信源，置信度中）
+- [[lsm-tree|LSM-Tree（日志结构合并树）]]（2026-11-25，概念/数据库/存储，放弃原地更新转追加写入：核心组件 WAL/MemTable（跳表）/SSTable/Compaction+读写删刷盘归并五流程+Leveled vs Tiered 两流派（写放大 10-30 vs 4-10 倍）+三大放大与不可能三角+LevelDB/RocksDB/HBase/Cassandra/MyRocks 工业谱系与 MyRocks 实战调优；与 [[hot-cold-data-separation]] 交汇，单信源，置信度中）
 
 ## entity（实体）
 

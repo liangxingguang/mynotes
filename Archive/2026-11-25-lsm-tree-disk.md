@@ -9,7 +9,7 @@ created: 2026-11-25
 category: 技术
 tags: [MySQL, Java]
 asset_ref: Assets/2026-11/wechat-lsm-tree-disk.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 写穿硬盘的秘密：LSM-Tree 如何把随机写变成顺序写的艺术
