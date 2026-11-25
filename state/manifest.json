@@ -5960,6 +5960,22 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/4ZNzycXh4TuVviRdjArRKQ",
       "asset_ref": "Assets/2026-11/weixin-4znzycxh.md"
+    },
+    {
+      "path": "raw/sources/research/2026-11-25-how-we-learn.md",
+      "sha256": "3417f65380c2a4af30fa3ed435953ffcb3241d53425caf8a10cefb181567398a",
+      "registered_at": "2026-11-25",
+      "inbox_ref": "Archive/2026-11-25-how-we-learn-ten-keywords.md",
+      "pages": [
+        "wiki/sources/how-we-learn.md",
+        "wiki/concepts/spaced-learning.md",
+        "wiki/concepts/sleep-memory-consolidation.md",
+        "wiki/concepts/fluency-illusion.md",
+        "wiki/concepts/percolation-incubation.md",
+        "wiki/concepts/context-dependent-memory.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/PdYN3x6A0DqDT2A1CTD9IA",
+      "asset_ref": "Assets/2026-11/wechat-PdYN3x6A0DqDT2A1CTD9IA.md"
     }
   ]
 }

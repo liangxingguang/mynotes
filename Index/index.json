@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25 12:38",
+  "updated_at": "2026-11-25 12:40",
   "notes": [
     {
       "id": "2026-11-25-agent-architecture-harness-runtime-orchestrator",
@@ -60,23 +60,24 @@
       "wiki_status": "pending"
     },
     {
-      "id": "2026-11-25-how-we-learn-ten-keywords",
-      "title": "如何有效学习？颠覆传统认知的发现——《How We Learn》读书笔记",
-      "path": "Inbox/2026-11-25-how-we-learn-ten-keywords.md",
+      "id": "2026-11-25-enterprise-ai-agent-fullstack",
+      "title": "从 0 到 1 构建企业级 AI Agent：AI Coding + Ontology + Harness + FDE，全链路技术实战",
+      "path": "Inbox/2026-11-25-enterprise-ai-agent-fullstack.md",
       "created": "2026-11-25",
-      "category": "学习",
+      "category": "技术",
       "tags": [
-        "学习",
-        "自学"
+        "AI",
+        "Agent",
+        "系统设计"
       ],
       "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/PdYN3x6A0DqDT2A1CTD9IA",
+      "source_url": "https://mp.weixin.qq.com/s/4Hh7XaCg5iInfrt4Yhdy1A",
       "source_type": "article",
       "platform": "wechat",
-      "summary": "本文是 Benedict Carey《How We Learn》的导读，该书汇总跨越 20 世纪的脑科学学习研究。全书十章对应十个关键词：故事、遗忘、环境、间断、无知、分心、渗透、混合、感知、睡眠，看似不全是正面词，却都对学习有益；核心结论是学习不宜与人生割裂，高效学习靠细水长流而非突击。",
+      "summary": "企业级 Agent 的分水岭不在能不能回答问题，而在能不能把一句话安全地做成一笔真实业务操作。文章以电商智能售后 Agent 为贯穿案例，分三段展开：AI Coding 从 0 搭出 Agent、Ontology 建模让 Agent 看懂业务关系、FDE 工程交付（Agent Runtime + Harness Engineering + Evaluation）把 Agent 送进生产，并给出完整参考架构与交付物清单。",
       "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-PdYN3x6A0DqDT2A1CTD9IA.md",
-      "wiki_status": "ingesting"
+      "asset_ref": "Assets/2026-11/wechat-4Hh7XaCg5iInfrt4Yhdy1A.md",
+      "wiki_status": "pending"
     },
     {
       "id": "2026-11-25-impromptu-speech-9-formulas",
@@ -9160,6 +9161,25 @@
       "summary": "从业 15 年的系统架构师自述成长路径——不靠培养资源与天赋，而是在职业初期一次次主动承接无人认领的跨系统疑难问题，倒逼自己跨域学习软硬件、功能安全、ASPICE 体系，逐步搭建起全局架构认知闭环。核心观点：真正拉开工程师差距的，是无人要求时仍守住长期职业定力。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/weixin-4znzycxh.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-25-how-we-learn-ten-keywords",
+      "title": "如何有效学习？颠覆传统认知的发现——《How We Learn》读书笔记",
+      "path": "Archive/2026-11-25-how-we-learn-ten-keywords.md",
+      "created": "2026-11-25",
+      "category": "学习",
+      "tags": [
+        "学习",
+        "自学"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/PdYN3x6A0DqDT2A1CTD9IA",
+      "source_type": "article",
+      "platform": "wechat",
+      "summary": "本文是 Benedict Carey《How We Learn》的导读，该书汇总跨越 20 世纪的脑科学学习研究。全书十章对应十个关键词：故事、遗忘、环境、间断、无知、分心、渗透、混合、感知、睡眠，看似不全是正面词，却都对学习有益；核心结论是学习不宜与人生割裂，高效学习靠细水长流而非突击。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-PdYN3x6A0DqDT2A1CTD9IA.md",
       "wiki_status": "ingested"
     }
   ]

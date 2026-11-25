@@ -9,9 +9,7 @@ created: 2026-11-25
 category: 学习
 tags: [学习, 自学]
 asset_ref: Assets/2026-11/wechat-PdYN3x6A0DqDT2A1CTD9IA.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-25T04:33:23.921Z"
-ingest_claim_id: 31888-1795581203921-0
+wiki_status: ingested
 ---
 
 # 如何有效学习？颠覆传统认知的发现——《How We Learn》读书笔记

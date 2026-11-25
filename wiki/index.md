@@ -4,6 +4,7 @@
 
 ## source（信源）
 
+- [[how-we-learn|《How We Learn》导读：有效学习的十个关键词（信源页）]]（2026-11-25，学习/方法论，微信公众号对 Benedict Carey《How We Learn》的导读：跨越 20 世纪的脑科学学习研究，十章对应故事/遗忘/环境/间断/无知/分心/渗透/混合/感知/睡眠十个关键词+间隔排布/睡眠巩固/流利错觉/以教代测/分心渗透/多环境学习等技巧，单信源，置信度中）
 - [[2026-11-24-weixin-leo-architecture-growth|从需求开发到全栈架构：我主动干遍了所有"不属于我的活"（信源页）]]（2026-11-24，成长/架构/微信，从业 15 年系统架构师 Leo 原创自述：岗位边界是成长天花板+主动承接无人认领的跨系统疑难倒逼跨域学习+「做哪行研究下一层知识」+FMEA/STPA/ASPICE 体系补齐+无人看见时的职业定力，单信源，置信度中）
 - [[2026-11-24-ant-toolgw-agent-tool-gateway|蚂蚁 AI 工具网关 ToolGW：全站统一的 Agent 工具流量入口（信源页）]]（2026-11-24，AI/Agent/网关/MCP，微信「金融级分布式架构」，蚂蚁 ToolGW 负责人一手自述：MCP/CLI 双协议门面共享 ToolEngine、存量 RPC/HTTP 零代码上翻（4000+ Server/20000+ Tool）、双身份向 AgentToken 演进、Tool 粒度两层鉴权、限流/Mock/录制回放治理，峰值 QPM 25w+，单信源，置信度高）
 - [[2026-11-24-enterprise-agent-architecture|企业 Agent 架构怎么搭？AI Coding + Ontology + Harness（信源页）]]（2026-11-24，AI/Agent/架构/Ontology/Harness，微信「架构师」提出企业业务 Agent 落地架构：AI Coding 做原型+Ontology 说清业务含义+Harness 组织单轮执行+Runtime 承接持久调度+FDE 现场交付，核心原则"调查留给 Agent/动作校验留业务服务/跨轮跟进交持久流程"，发票异常处理贯穿九环节，设计示例，单信源，置信度中）
@@ -526,6 +527,7 @@
 - [[legacy-system-rebuild|存量B端系统重构方法论（三层地图）]]（权限门/流程行/数据列三层地图+三笔账（认知/依赖/风险）+Day1权限三清册+Day2抓核心5条流程画实际发生的状态机+Day3三张表（字段血缘/口径差异/主数据治理）+7跨系统案例；与五件套（从0拆解）互补而非重复（存量重构先盘现状），单信源置信度中）
 - [[contract-lifecycle-management|合同全生命周期管理（CLM，B端）]]（起草→审批→签署→履约→归档五阶段链路，只做审批流的漏损；起草模板库/智能填充、审批动态路由、签署电子签、履约里程碑预警（易忽略价值高）、归档非终点（检索/审计/借阅）；PM六步SOP+AI提效五场景+装备制造案例指标，单信源置信度中）
 - [[concept-boundary-definition|概念边界界定（内涵/外延与三问）]]（内涵外延反变关系+界定范围三问+人为认知切片+按目的三种切法，单信源方法论，置信度中）
+- [[context-dependent-memory|情境依赖记忆（环境解耦）]]（2026-11-25，学习/认知心理/概念，特定环境写入的信息易在相近环境被记起、背景信息与主体信息纠缠；解耦手段是在不同环境反复学习同一内容，「毛泽东闹市读书」引例，《How We Learn》导读单信源，置信度中）
 - [[context-management|上下文管理（Context Management）]]（messages 全量重发下的体积工程：裁剪/压缩/隔离三手段+成对保留与磁盘全量两铁律；Claude Code 分层裁剪实证；Kiso 投影观+缓存经济学；注入式 token 账+预算六类分配与输出预留；记忆系统三路召回为上下文组装供料；vivo 压缩阈值实操纪律；pi-xfer 上下文腐坏与 handoff 路径，十三信源）
 - [[concurrenthashmap-internals|ConcurrentHashMap 并发设计（JDK 8+）]]（读无锁+CAS 空桶插+synchronized 桶头+sizeCtl 三态+协作扩容；单信源，置信度中）
 - [[concurrency-qps-rt|并发与 QPS 换算（并发 = QPS × RT）]]（2026-11-11，架构/容量规划/并发，并发快照≠QPS 速率、吞吐上限=并发路数÷RT、各层天花板实测量级表、三档 QPS 代价阶梯、三边界条件、五坑，与压测容量规划/秒杀信源互证，微信单信源，置信度中）
@@ -561,6 +563,7 @@
 - [[interaction-write-path|互动数据写路径治理（Interaction Write Path Governance）]]（缓存扛读、异步削写、原子幂等、最终一致；先更缓存立即返回+三死穴+热点三板斧+落库三层压缩+对账降级；单信源，置信度中）
 - [[exploratory-learning|探索式学习（知识 DAG）]]（目标→节点 DAG，导师写 JS 经沙箱改写文档教学；Unyra 提出）
 - [[fail-fast-modcount|Fail-Fast 迭代器（modCount）]]（结构修改计数器+迭代器快照比对抛 CME；检测单线程编程错误而非线程安全机制；含 fail-safe 对比与 subList 陷阱，同作者六信源）
+- [[fluency-illusion|流利错觉（fluency illusion）]]（2026-11-25，学习/认知心理/概念，只掌握知识体系僵化切片就自以为学会、考试能过但无法灵活应用；测试的意义在于暴露缺漏而非划分等级，最有效的测试是教课，《How We Learn》导读单信源，置信度中）
 - [[forkjoinpool-internals|ForkJoinPool 核心设计（每线程双端队列 + 工作窃取 + join 不空等）]]（每线程 WorkQueue 双端队列+主人 LIFO/小偷 FIFO+CAS 窃取+fork 认当前池+join 偷活不空等+阻塞假死+ManagedBlocker 补偿+无拒绝策略+commonPool CPU-1，单信源置信度高）
 - [[framework-first-migration|框架先行的规模化运行时迁移]]（BOM 收口+框架分代并行+AI 批量改造+检查单收敛，货拉拉 JDK 21 实践）
 - [[futuretask-internals|FutureTask 内部设计（单向状态机 + CAS + Treiber 等待栈）]]（七态单向递增+CAS 推进+WaitNode 无锁栈 park/unpark；cancel 仅设中断标志；异常包装 ExecutionException；单信源，置信度中）
@@ -628,6 +631,7 @@
 - [[three-layer-project-graph|三层互索引项目图谱]]（2026-11-21，AI/Agent/知识图谱，腾讯云数据库团队研发 Loop 实践：工程事实（静态，函数/字段/跨仓契约，跨仓边须经 API/消息/Schema 契约核对）/项目语义（LLM 提取职责/概念/跨仓映射与约束，本体体现层，候选关系不能仅凭语言流畅升级为事实）/bug_fixed（历史 Bug 挂前两层节点，区分"一次事件"与"可复用经验"，渐进式披露）；三层双向互索引可从任意层进入，与四类记忆资产是两个维度非一一对应，单信源，置信度中）
 - [[oom-troubleshooting|OOM 排查方法论]]（6 类 OOM 速查表 + 五步法 + 生产纪律：禁直接 jmap -dump、90% 代码问题、溢出≠泄漏、GC overhead limit 最危险、GC刑侦三步+时间线交叉验证+静态无界泄漏模板，第五信源（《JVM 内存模型全景》）印证区域路由+补 new Thread 雪崩案例与直接内存空堆被杀口径，五信源，置信度中）
 - [[operational-transformation|Operational Transformation（OT，操作转换）]]（中心定序+变换调整偏移量收敛并发编辑；siteId tie-break 命门+TP1/TP2 验证；文档级 Actor 串行+pending/buffer 客户端，单信源）
+- [[percolation-incubation|渗透（percolation）与酝酿效应]]（2026-11-25，学习/创造力/概念，遇障时换做别的事大脑在后台继续运转并整合新信息，灵光乍现（凯库勒苯环）多源于此；渗透即「润物细无声、积跬步以成千里」，老舍《骆驼祥子》自述为实例，《How We Learn》导读单信源，置信度中）
 - [[perf-cpu-sampling|perf CPU 采样排查法]]（采集→看热点→追调用者链路，四类前置+符号≠调用栈+Self/Children 读数纪律，demo 742 样本实测，单信源置信度高）
 - [[pi-customization-layers|Pi 五层定制模型]]（Prompt 模板→AGENTS.md→Skill→Extension→SDK，官方扩展点成本阶梯）
 - [[pm-decision-frameworks|产品决策四框架]]（3步止损/反向假设/杠杆率排序/信号噪音过滤；单一自媒体信源，置信度低）
@@ -661,6 +665,8 @@
 - [[rle-inverted-index|RLE 倒排索引（Run-Length Encoding Inverted Index）]]（Index Sorting 使 Doc ID 连续+RLE 编码 [start,length]+SparseRoaringDocIdSet 消除空置 bucket，合并 O(K×M)→O(M log M)，倒排链合并 TP99 -96%，全链路 TP99 -84%，美团一手）
 - [[saas-multi-tenancy|SaaS 多租户（Multi-Tenancy）]]（2026-11-04，产品/B端/SaaS/多租户，隔离三模式/租户识别后端强制/权限双轨拆分/计费配额中心/生命周期状态机/配置化三层/六步SOP，与 rbac-permission-system（第四信源）互链，单信源置信度中）
 - [[scheduledthreadpoolexecutor-internals|ScheduledThreadPoolExecutor 调度设计]]（DelayedWorkQueue 数组最小堆+Leader-Follower 等待；period 正负号编码 fixedRate/fixedDelay；周期任务异常静默取消，单信源，置信度中）
+- [[sleep-memory-consolidation|睡眠记忆巩固]]（2026-11-25，学习/认知心理/概念，REM 平复情绪并巩固模式识别与归纳演绎、二阶段睡眠巩固运动机能、深睡眠巩固记忆；睡眠后期两阶段交替，睡眠不足尤其损害识别与运动能力巩固，熬夜复习得不偿失，《How We Learn》导读单信源，置信度中）
+- [[spaced-learning|间隔学习（分散排布学习时间）]]（2026-11-25，学习/方法论/概念，同一批学习时间分散到多天优于考前突击，截止时与长期记忆双优；M 天如何分配 N 小时仍为未解之题，《How We Learn》导读单信源，置信度中）
 - [[sso-oauth2-oidc|单点登录 SSO（OAuth2 Authorization Code + OIDC）]]（共享认证服务器 Session；两条安全链+OIDC Discovery+oidc(withDefaults())；客户端一行 issuer-uri 自动配置；生产优先 Keycloak；Spring Authorization Server Demo，单信源一手，置信度高）
 - [[synchronousqueue-internals|SynchronousQueue 直接交接设计]]（零容量不存储+单 transfer 双角色；TransferStack Treiber 栈 FULFILLING 配对/TransferQueue FIFO；先自旋后 park；newCachedThreadPool 之选，单信源，置信度中）
 - [[scene-quest-orchestration|场景任务流程编排（SceneQuest）]]（任务即流程编排器：目标+进度+结果处理；生命周期 FSM 硬编码与流程数据驱动分离；事件立即更新数据心跳再切状态；单信源，置信度中）
