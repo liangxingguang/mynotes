@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25 12:37",
+  "updated_at": "2026-11-25 12:38",
   "notes": [
     {
       "id": "2026-11-25-agent-architecture-harness-runtime-orchestrator",
@@ -114,6 +114,26 @@
       "summary": "Agent 一律走最强模型会同时烧掉 API 账单与延迟两份钱。文章对比规则路由、模型路由、混合路由三种思路，给出路由模型的数据来源、评分器优于分类器、保守冷启动、离线评估等工程建议，并指出级联降级只适合成本极度敏感、可容忍延迟的场景。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-impOZ2AONfQDJwCEe-QjWA.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-11-25-microsoft-ai-agents-for-beginners",
+      "title": "微软开源了一个 AI Agent 学习项目，18 节课从原理讲到实战",
+      "path": "Inbox/2026-11-25-microsoft-ai-agents-for-beginners.md",
+      "created": "2026-11-25",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent",
+        "自学"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/puITWgiaibrR2MlhdK_-oA",
+      "source_type": "article",
+      "platform": "wechat",
+      "summary": "微软在 GitHub 开源的 AI Agents for Beginners 是一套入门课程（截至 2026 年 9 月约 7.6 万 Star），18 节课覆盖 Agent 基本概念、设计模式、工具调用、RAG、多 Agent 协作、MCP、上下文工程、记忆管理与生产部署，每课配文字教程、短视频与 Python 代码示例，为从大模型应用走向 Agent 系统开发提供清晰路径。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-puITWgiaibrR2MlhdK_-oA.md",
       "wiki_status": "pending"
     },
     {
