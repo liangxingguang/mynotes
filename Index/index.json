@@ -1,6 +1,26 @@
 {
-  "updated_at": "2026-11-25 12:20",
+  "updated_at": "2026-11-25 12:32",
   "notes": [
+    {
+      "id": "2026-11-25-llm-agent-hybrid-routing",
+      "title": "大模型 Agent 混合路由详解：规则路由、模型路由、级联降级一篇讲透",
+      "path": "Inbox/2026-11-25-llm-agent-hybrid-routing.md",
+      "created": "2026-11-25",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent",
+        "系统设计"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/impOZ2AONfQDJwCEe-QjWA",
+      "source_type": "article",
+      "platform": "wechat",
+      "summary": "Agent 一律走最强模型会同时烧掉 API 账单与延迟两份钱。文章对比规则路由、模型路由、混合路由三种思路，给出路由模型的数据来源、评分器优于分类器、保守冷启动、离线评估等工程建议，并指出级联降级只适合成本极度敏感、可容忍延迟的场景。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-impOZ2AONfQDJwCEe-QjWA.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
