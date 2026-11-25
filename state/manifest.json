@@ -5976,6 +5976,19 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/PdYN3x6A0DqDT2A1CTD9IA",
       "asset_ref": "Assets/2026-11/wechat-PdYN3x6A0DqDT2A1CTD9IA.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-25-agent-architecture-harness-runtime-orchestrator.md",
+      "sha256": "d4b44a243d839e0d7eacff00390338ab1d4b8e3b62f7f19a30836de9eec6d053",
+      "registered_at": "2026-11-25",
+      "inbox_ref": "Archive/2026-11-25-agent-architecture-harness-runtime-orchestrator.md",
+      "pages": [
+        "wiki/sources/2026-11-25-agent-architecture-harness-runtime-orchestrator.md",
+        "wiki/concepts/harness-engineering.md",
+        "wiki/concepts/agent-loop.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/Tce5C6XrCapOhwq7K0U39w",
+      "asset_ref": "Assets/2026-11/wechat-Tce5C6XrCapOhwq7K0U39w.md"
     }
   ]
 }

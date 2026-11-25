@@ -4,7 +4,7 @@ type: concept
 title: Harness Engineering（Agent 执行系统工程）
 status: active
 created: 2026-10-27
-updated: 2026-11-24
+updated: 2026-11-25
 confidence: high
 tags:
   - concept
@@ -26,6 +26,7 @@ sources:
   - raw/sources/ai/2026-11-23-lala-agent-realtime-trading.md
   - raw/sources/ai/2026-11-24-google-harness2.md
   - raw/sources/ai/2026-11-24-enterprise-agent-architecture-ai-coding-ontology-harness.md
+  - raw/sources/ai/2026-11-25-agent-architecture-harness-runtime-orchestrator.md
 related:
   - wiki/concepts/agent-loop.md
   - wiki/concepts/context-management.md
@@ -52,12 +53,13 @@ related:
   - wiki/sources/2026-11-24-google-harness2.md
   - wiki/topics/enterprise-agent-architecture.md
   - wiki/sources/2026-11-24-enterprise-agent-architecture.md
+  - wiki/sources/2026-11-25-agent-architecture-harness-runtime-orchestrator.md
 ---
 # Harness Engineering（Agent 执行系统工程）
 
 ## Definition（定义）
 
-Harness Engineering 关心的是：如何让模型在真实的软件环境里持续行动、获得反馈、遵守边界、并把结果交付出来。可用 `Agent ≈ Model + Harness` 理解分工（不是性能公式）：模型提出计划和动作；Harness 组织上下文、调用模型、执行工具、控制权限、维护状态，并向用户报告结果。
+Harness Engineering 关心的是：如何让模型在真实的软件环境里持续行动、获得反馈、遵守边界、并把结果交付出来。可用 `Agent ≈ Model + Harness` 理解分工（不是性能公式）：模型提出计划和动作；Harness 组织上下文、调用模型、执行工具、控制权限、维护状态，并向用户报告结果。第 16 信源把该公式展开为五组件：`Agent = Model + Harness + Tools + Memory + Environment`——Model 提出判断与行动建议，Tools 提供可调用能力，Memory 保存跨步骤/跨会话信息，Environment 提供运行空间与资源边界，Harness 把这些组织成受控的可运行任务过程（作者自述为便于理解的工程模型，并非业界统一定义）。
 
 ## Why It Matters（为什么重要）
 
@@ -132,6 +134,8 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 
 **Harness2 自进化框架：把 harness 配置当作可迭代优化对象**（信源 2026-11-24，第 14 信源）：Google Research 开源的 [[harness2|Harness2]] 补上此前缺位的"harness 配置自动迭代"实现机制。前提与本页定义互证——同模型换 harness 效果差距可远大于模型本身差距，故模型不动、只动壳。核心机制：①harness 拆成 4 组 8 块可编辑组件（上下文：系统提示词/Guardrails/Memory/Skills；工具接口：工具说明/Scripts；委派：Subagents；中间件：Plugins），"改 harness"由此具体到"改哪一块、改成什么样"；②**两层递归**——第一层管当下任务（初始跑 → 编辑器提修改建议 → 候选各跑一遍 → 组合器对比行为差异合成精炼 harness），**不需要标准答案**，靠对比差异判断改动去留，对无打分标准的真实任务更实用；第二层管以后任务，反思把被采纳改动与有证据结论写入持久"改进 harness"，后续任务不必从零开始；③预算由 `--k` 控制（`--k 1` 最省、`--mode parallel` 往宽探、`--mode sequential` 往深改），执行器支持 OpenCode 与 Codex。与本页第 5 信源"自进化需要宪法（验证/回滚/权限/淘汰制度化）"呼应——Harness2 以两层递归提供一种具体自进化路径，但其价值取决于任务分布与多次候选执行成本，且执行器网络默认不受限、正式评测前须配网络隔离（实例见 [[harness2|Harness2]]，信源页见 [[2026-11-24-google-harness2|谷歌开源 Harness2（信源页）]]）。
 
+**五组件公式、Harness 七职责与四概念对照（信源 2026-11-25，第 16 信源）**：科普文给出教学化划分，与本页观察面一一对应。①**五组件公式** `Agent = Model + Harness + Tools + Memory + Environment`（Model 理解输入/推理/提出行动建议；Harness 组织模型与执行过程、管理反馈/状态/权限/验证；Tools 提供行动或读取能力；Memory 保存任务状态或后续可能需要的信息；Environment 提供运行空间与资源边界）。②**Harness 七项职责**与本页观察面对齐：上下文构建（并非越长越好，需检索/筛选/摘要/补充查询）、「执行循环」面的 Agent Loop（准备上下文→调用模型→判断行动→执行工具→接收反馈，但 Loop 本身不保证正确、也不提供权限/持久化/验证）、工具路由与执行（校验参数、处理超时报错；读操作与写操作风险不同，高风险需审批）、状态与 Memory（长任务需持久化关键状态，避免中断丢失或重复执行）、「权限与隔离」面的权限与环境控制（最小权限/沙箱/凭证隔离；**提示词无法强制阻止 API 调用，限制须由执行系统落实**）、结果观察与验证（依据应来自实际执行结果或权威系统而非模型自述）、失败处理与停止条件（区分失败类型，副作用操作不能无限重试、需幂等键；**达到验收条件才能报告完成**）。③**Runtime 视角**：Runtime 关注 Agent 在哪里运行与生命周期（会话/进程创建调度销毁、隔离环境、工具/模型/凭证接入、检查点恢复、资源限制/并发/日志），与 Harness 可能交叠甚至同属一个服务，但角度不同（Runtime=环境与生命周期，Harness=模型如何用工具和反馈推进任务）。④**四概念对照**：Harness 回答"当前 Agent 怎样在约束下执行并验证任务"；Runtime 回答"在哪里运行、如何管理运行状态和生命周期"；Orchestrator 回答"多个步骤、任务或 Agent 如何协作"（拆分任务、路由、依赖、并发、审批节点、结果汇总）；Framework/SDK 回答"开发者用什么接口构建"。四者非互斥，选型应检查实际功能而非产品名。⑤**构建 Harness 的五件事**：可靠性（状态可恢复、副作用幂等）、安全性（最小权限+审批）、可观测性（步骤/调用/错误可追踪）、可评估性（真实样例+验收标准）、可运营性（失败监控、人工接管、可暂停回滚）；收尾给出"会行动→能交付"判断标准：在明确权限规则内执行、根据真实结果更新状态、能处理失败、用可检查的证据确认完成。信源页见 [[2026-11-25-agent-architecture-harness-runtime-orchestrator|一文搞懂 Agent 技术架构（信源页）]]。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -183,6 +187,8 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 
 - 2026-11-24 — 新增企业 Agent 架构信源 `raw/sources/ai/2026-11-24-enterprise-agent-architecture-ai-coding-ontology-harness.md`（第 15 信源）。补上**业务 Agent Harness 与研发 Harness 的区分**这一此前缺位的视角：两套环境都要让 Agent 获得可用工具、上下文和反馈，但研发 Harness 面向代码仓库、测试、PR，线上业务 Agent 的 Harness 面向发票、权限、业务动作，**凭证与可执行操作各自配置**。同时补上 Harness 与 Runtime 的边界口径：Harness 组织当前这一轮，Runtime/任务流程提供执行环境、持久状态和调度、承接暂停恢复与后续跟进；停止条件具体化为最大工具调用次数、本轮时间和费用预算、连续无进展次数，到限保存证据与未完成项并交回流程。主题落成 [[enterprise-agent-architecture|企业 Agent 架构（从原型到交付）]]，信源页见 [[2026-11-24-enterprise-agent-architecture|企业 Agent 架构（信源页）]]。
 
+- 2026-11-25 — 新增 Agent 技术架构科普信源 `raw/sources/ai/2026-11-25-agent-architecture-harness-runtime-orchestrator.md`（第 16 信源）。以五组件公式 `Agent = Model + Harness + Tools + Memory + Environment` 与 Harness 七职责清单对本页观察面做教学化对照，补上三块此前未集中表述的内容：①Runtime 能力清单（会话/进程、隔离环境、凭证接入、检查点恢复、资源限制）与 Harness/Runtime/Orchestrator/Framework 四概念"各回答什么问题"的区分口径；②Orchestrator ≠ Agent Loop 的划界（Loop 是单 Agent 内部循环，Orchestrator 是跨步骤/跨执行者调度）；③构建 Harness 的五项基础能力与"会行动→能交付"判断标准。与本页定义及 [[agent-loop|Agent Loop]] 既有口径互证，无矛盾；概念性科普、无实测数据，置信度中。详见 How It Works 第 16 信源段，信源页见 [[2026-11-25-agent-architecture-harness-runtime-orchestrator|一文搞懂 Agent 技术架构（信源页）]]。
+
 ## Open Questions（开放问题）
 
 - 论文原始统计口径与当前产品能力的时差（快照为历史版本）？
@@ -205,6 +211,7 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 - Source: `raw/sources/ai/2026-11-23-lala-agent-realtime-trading.md`（第 13 信源：帮模型/守业务二分 + "假设模型完美"判定法、高代码 Harness 三阶段演进与确定性位置，生产实践自述，置信度中）
 - Source: `raw/sources/ai/2026-11-24-google-harness2.md`（第 14 信源：Harness2 自进化框架，两层递归行为对比精炼 + 跨任务持久改进 harness、8 块可编辑组件、`--k`/`--mode` 预算、三基准自报跑分，Google 开源 + 公众号解读，置信度中）
 - Source: `raw/sources/ai/2026-11-24-enterprise-agent-architecture-ai-coding-ontology-harness.md`（第 15 信源：业务 Agent Harness vs 研发 Harness 区分、Harness 与 Runtime 边界口径、停止条件具体化，设计示例，置信度中）
+- Source: `raw/sources/ai/2026-11-25-agent-architecture-harness-runtime-orchestrator.md`（第 16 信源：五组件公式、Harness 七职责、Runtime 能力清单、四概念对照、Orchestrator≠Loop、构建五能力与交付判断标准，科普文，置信度中）
 
 ## Related Knowledge（相关知识）
 
@@ -231,3 +238,4 @@ Harness Engineering 关心的是：如何让模型在真实的软件环境里持
 - [[2026-11-23-lala-agent-realtime-trading|AI Agent 如何进入实时交易系统（信源页）]]
 - [[harness2|Harness2]]
 - [[2026-11-24-google-harness2|谷歌开源 Harness2（信源页）]]
+- [[2026-11-25-agent-architecture-harness-runtime-orchestrator|一文搞懂 Agent 技术架构（信源页）]]

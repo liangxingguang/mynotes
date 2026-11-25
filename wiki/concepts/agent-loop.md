@@ -4,7 +4,7 @@ type: concept
 title: Agent Loop
 status: active
 created: 2026-10-22
-updated: 2026-11-23
+updated: 2026-11-25
 confidence: high
 tags:
   - concept
@@ -29,6 +29,7 @@ sources:
   - raw/sources/ai/2026-11-12-ai-agent-tech-overview.md
   - raw/sources/ai/2026-11-20-agentscope-java-source.md
   - raw/sources/ai/2026-11-23-learn-claude-code-course.md
+  - raw/sources/ai/2026-11-25-agent-architecture-harness-runtime-orchestrator.md
 related:
   - wiki/concepts/harness-engineering.md
   - wiki/entities/pi.md
@@ -48,6 +49,7 @@ related:
   - wiki/sources/superagent-design.md
   - wiki/concepts/super-agent.md
   - wiki/entities/learn-claude-code.md
+  - wiki/sources/2026-11-25-agent-architecture-harness-runtime-orchestrator.md
 ---
 # Agent Loop
 
@@ -122,6 +124,8 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 - **恢复协议**：新输入先查历史中未配对的工具调用——无 pending 则开始新推理；停在权限确认（ASKING）须提交 `ConfirmResult` 后直接从 `acting(0)` 继续，不让模型重新生成动作；外部挂起工具须补 `ToolResultBlock`；`enablePendingToolRecovery` 默认关闭，不能借它跳过人工确认。
 - **事件流≠已持久化会话**：面向前端的 AgentEvent 流不能直接当成已持久化的完整会话；区分 turn（可暂停恢复的逻辑交互）与 run（实际执行），恢复须用新运行身份。
 
+**Execution Loop 七步拆解（信源 2026-11-25，第 20 信源）**：科普文把执行循环拆成便于检查链条缺口的七个阶段——①**Context** 准备任务上下文（目标、约束、相关资料、任务状态、可用工具；关键事实缺失先查询或向用户询问）；②**Reason** 推理下一步（复杂任务不必一次生成完整计划，先做有依据的动作再按真实反馈调整）；③**Act** 检查并执行（Harness 检查工具可用、参数有效、权限范围内与审批需求，通过后由 Runtime 在合适环境中执行）；④**Observe** 读取反馈（区分成功、失败、超时与不确定状态，不仅确认"工具被调用了"，还检查返回内容是否满足下一步需要）；⑤**Update** 更新任务状态（记录已完成步骤、关键结果、未解决问题与下一步条件，长任务持久化关键状态以支持暂停、恢复与交接）；⑥**Verify / Recover** 验证并处理失败（按任务类型检查结果；验证失败则决定重试、修正输入、重新规划、回滚或转交人工，副作用调用的恢复策略必须考虑重复执行）；⑦**Finish** 按完成条件结束（达到预先定义的验收条件才结束并报告；只完成部分步骤时明确说明已完成内容与剩余阻塞）。作者强调这不是要求实现成七个独立模块，而是检查执行链条有没有缺口的分析框架；并点明分工：Runtime 可能承载环境与状态管理，Harness 可能控制整个循环，Orchestrator 则负责多个步骤或 Agent 之间的衔接。该七步与本页"可靠 Loop 五条边界"互为印证：Act 的检查对应宿主校验，Observe 对应响应完整性检查，Update 对应状态推进，Verify/Recover 与 Finish 对应停止信号多源性与验收条件。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -139,6 +143,7 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 - **Runtime vs Harness**：Runtime 是宿主程序中推动 Agent Loop 的控制核心（备 Context、调模型、校验分发 Tool Call、写回结果、处理取消/错误/限制、决定续轮或返回）；Harness 是工程上的完整运行层 = 模型连接 + Runtime + Context 准备 + 工具 + Session + 运行规则 + 执行环境与界面。Harness 不是消息协议。
 - **Message vs Context vs State vs Session**：见 Structure 一节。
 - **`stopReason` vs 运行结束**：`stopReason` 只说明本次模型生成为何停止；整段 Agent 运行的结束由 Runtime 结合响应内容与运行规则判定。
+- **Orchestrator vs Agent Loop**：Loop 描述单个 Agent 内部"推理—行动—反馈"的反复过程；Orchestrator 更常处理任务步骤或多个执行者之间的调度（拆分任务、路由、依赖、并发、审批节点、结果汇总）。简单任务可能只需一个 Loop；跨服务、跨 Agent 或带审批的长任务才更需要明确的编排机制（信源 2026-11-25，第 20 信源）。
 
 ## Evolution（演进）
 
@@ -178,6 +183,8 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 
 - 2026-11-23 — 新增 learn-claude-code 课程导读信源（第 19 信源）`raw/sources/ai/2026-11-23-learn-claude-code-course.md`。以 s01 的 12 行最小循环印证本页核心机制：①**停止判据的模型侧实现**——看响应有无 `tool_use` 块，没有即 return，"没有任何 `if 任务完成` 的判断"，印证本页"停止信号多源性"中模型自判这一最基础终止条件；②**工具注册而非写死**——按 `block.name` 查 `TOOL_HANDLERS` 分发表执行，`block.input` 直接当关键字参数，印证"模型/宿主边界"与"Tool Call/Tool Result"机制；③**结果回灌对账**——工具结果打包成 `tool_result` 数组以 user 角色追加，每条带 `tool_use_id` 对账，印证本页"用同一 toolCallId 关联"的配对回填纪律；④**自主性不在代码**——"谁决定下一步、谁决定什么时候停，全是模型，代码只做搬运"，印证本页控制权转移与定义。由此新建实体页 [[learn-claude-code|learn-claude-code]]。
 
+- 2026-11-25 — 新增 Agent 技术架构科普信源（第 20 信源）`raw/sources/ai/2026-11-25-agent-architecture-harness-runtime-orchestrator.md`。补上两块此前未集中表述的内容：①**Execution Loop 七步拆解**（Context→Reason→Act→Observe→Update→Verify/Recover→Finish）——作为检查执行链条缺口的分析框架，与本页"可靠 Loop 五条边界"逐条互证（Act 检查=宿主校验、Observe=响应完整性检查、Verify/Recover 与 Finish=停止信号多源性与验收条件）；②**Orchestrator vs Agent Loop 划界**——Loop 是单 Agent 内部"推理—行动—反馈"的反复过程，Orchestrator 处理任务步骤或多执行者之间的调度，已收进 Distinctions。与本页既有口径互证无矛盾；概念性科普、无实测数据，置信度中。信源页见 [[2026-11-25-agent-architecture-harness-runtime-orchestrator|一文搞懂 Agent 技术架构（信源页）]]。
+
 ## Open Questions（开放问题）
 
 - 不同框架（LangGraph、AutoGen、各厂商 Agent SDK）对 Runtime/Harness 的划分与本文是否一致？
@@ -204,6 +211,7 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 - Source: `raw/sources/ai/2026-11-12-ai-agent-tech-overview.md`（第 17 信源：控制权转移、ReAct 提示格式、核心循环五环节、运行机制）
 - Source: `raw/sources/ai/2026-11-20-agentscope-java-source.md`（第 18 信源：结束判断精确条件、maxIters 准确含义、权限双层、恢复协议、事件流≠已持久化会话、turn≠run）
 - Source: `raw/sources/ai/2026-11-23-learn-claude-code-course.md`（第 19 信源：s01 12 行最小循环印证停止判据、工具注册、结果回灌对账、自主性在模型不在代码）
+- Source: `raw/sources/ai/2026-11-25-agent-architecture-harness-runtime-orchestrator.md`（第 20 信源：Execution Loop 七步拆解、Orchestrator vs Agent Loop 划界、Loop 不保证正确须由 Harness 管理每轮后果，科普文，置信度中）
 
 ## Related Knowledge（相关知识）
 
@@ -227,3 +235,4 @@ Loop 推进规则（信源第 5、6 节的教学代码与停止处理）：
 - [[pi-loop-engineering-recursive-aesthetics|从 Pi 窥见 Loop Engineering 的递归美学（信源页）]]
 - [[learn-claude-code|learn-claude-code]]
 - [[2026-11-23-learn-claude-code-course|手写一个 mini Claude Code（信源页）]]
+- [[2026-11-25-agent-architecture-harness-runtime-orchestrator|一文搞懂 Agent 技术架构（信源页）]]

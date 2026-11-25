@@ -4,6 +4,7 @@
 
 ## source（信源）
 
+- [[2026-11-25-agent-architecture-harness-runtime-orchestrator|一文搞懂 Agent 技术架构：Harness、Runtime、Orchestrator、Framework 的区别（信源页）]]（2026-11-25，AI/Agent/Harness/架构，微信概念科普文：五组件公式 Agent = Model + Harness + Tools + Memory + Environment、Harness 七项职责、Runtime 生命周期、Execution Loop 七步拆解、Harness/Runtime/Orchestrator/Framework 四概念"各回答什么问题"对照、Orchestrator ≠ Agent Loop、构建 Harness 五项基础能力与"会行动→能交付"判断标准，概念性科普无实测数据，单信源，置信度中）
 - [[how-we-learn|《How We Learn》导读：有效学习的十个关键词（信源页）]]（2026-11-25，学习/方法论，微信公众号对 Benedict Carey《How We Learn》的导读：跨越 20 世纪的脑科学学习研究，十章对应故事/遗忘/环境/间断/无知/分心/渗透/混合/感知/睡眠十个关键词+间隔排布/睡眠巩固/流利错觉/以教代测/分心渗透/多环境学习等技巧，单信源，置信度中）
 - [[2026-11-24-weixin-leo-architecture-growth|从需求开发到全栈架构：我主动干遍了所有"不属于我的活"（信源页）]]（2026-11-24，成长/架构/微信，从业 15 年系统架构师 Leo 原创自述：岗位边界是成长天花板+主动承接无人认领的跨系统疑难倒逼跨域学习+「做哪行研究下一层知识」+FMEA/STPA/ASPICE 体系补齐+无人看见时的职业定力，单信源，置信度中）
 - [[2026-11-24-ant-toolgw-agent-tool-gateway|蚂蚁 AI 工具网关 ToolGW：全站统一的 Agent 工具流量入口（信源页）]]（2026-11-24，AI/Agent/网关/MCP，微信「金融级分布式架构」，蚂蚁 ToolGW 负责人一手自述：MCP/CLI 双协议门面共享 ToolEngine、存量 RPC/HTTP 零代码上翻（4000+ Server/20000+ Tool）、双身份向 AgentToken 演进、Tool 粒度两层鉴权、限流/Mock/录制回放治理，峰值 QPM 25w+，单信源，置信度高）
@@ -477,7 +478,7 @@
 - [[agent-as-memory|Agent as Memory（主 Agent 承担记忆职责）]]（主 Agent 协调子 Session 承担项目进展记忆；用户单点对接；长期记忆 Markdown 文件化+短期记忆主 Agent 化；单信源，置信度中）
 - [[agent-long-term-memory|Agent 长期记忆]]（跨 Session 保留与检索：记忆三分类+Hermes 四层模型+MemoryProvider retain/recall 接口+Hindsight 结构化存储+Extension 接入点，知乎存储接口路线+微信全链路检索写回视角双信源，置信度中）
 - [[agent-memory-system|Agent 记忆系统]]（面向任务的信息管理机制：上下文≠记忆/聊天记录≠记忆五问；七模块双链路+检索10步三路召回+写回四步三态+生命周期+反馈闭环五指标+六阶段落地路线+11字段，微信单信源，置信度中）
-- [[agent-loop|Agent Loop]]（Runtime 驱动的模型-工具循环；Tool Call/Result、Message/Context/State/Session、Runtime vs Harness）
+- [[agent-loop|Agent Loop]]（Runtime 驱动的模型-工具循环；Tool Call/Result、Message/Context/State/Session、Runtime vs Harness、Execution Loop 七步拆解、Orchestrator vs Loop 区分，二十信源）
 - [[agent-legacy-system-integration|Agent 对接旧系统（Legacy System Integration）]]（盘点九字段+四类对接模式（API/只读+事件表/RPA/网关）选型五维度+字段映射四件套+灰度先只读后写+中间表人工确认安全边界+连锁零售旧CRM工单Agent案例，单信源置信度中）
 - [[agent-management-methodology|智能体管理方法论（WBS·交付约定·Scrum Sprint 三工具闭环）]]（瓶颈在人的管理能力而非模型能力；拆到能独立验收为止+人机分工准则+交付约定六维度+验收准则打勾表+每轮只改 1–2 条规则变量唯一，单信源置信度中）
 - [[agent-prd-template|Agent 化 PRD 模板]]（2026-11-04，产品/B端/PRD/多智能体，传统PRD写页面字段流程之外新增五模块（Agent能力卡片/协作时序/护栏机制/评测集/指标），与五步法一一对应，单信源置信度中）
@@ -573,7 +574,7 @@
 - [[game-quest-system|游戏任务系统设计（Quest/Goal 合一与进度建模）]]（限定单 Goal 组合 Quest；子任务表步骤任务即章节；Git 参照系；Ready 中间态；Progress/Score 分离；前置索引+等级二分；任务侧掉落+公共管理器；单信源，置信度中）
 - [[geohash|Geohash（地理哈希）]]（经纬度降维前缀编码；边界问题+8 邻居、截短扩半径、缓存键归一；邻近索引+地图瓦片双信源）
 - [[graphrag|GraphRAG（图检索增强生成）]]（实体与关系纳入检索，沿关系网络查找；回答"对象之间有什么关系"；仍在回答/检索层，能讲清关系但不一定能统一业务定义、不知实时状态；与 RAG/LLM Wiki/Ontology 分工组合，单信源，置信度中）
-- [[harness-engineering|Harness Engineering（Agent 执行系统工程）]]（Agent ≈ Model + Harness；七观察面+信息三层+安全四层+B0~B5 单变量评测；11 系统源码研究解读；Kiso 内核门禁+Codex 状态所有权+Session 核心重构+中兴四层架构，十一信源）
+- [[harness-engineering|Harness Engineering（Agent 执行系统工程）]]（Agent ≈ Model + Harness，第 16 信源扩展为五组件公式 Model + Harness + Tools + Memory + Environment；七观察面+信息三层+安全四层+B0~B5 单变量评测；11 系统源码研究+Harness 七职责+四概念对照+构建五能力，十六信源）
 - [[hashmap-internals|HashMap 核心设计（JDK 8）]]（2 的幂容量+扰动+0.75 负载因子+8/6/64 树化阈值+高低位链扩容拆分；单信源，置信度中）
 - [[hashset-internals|HashSet / LinkedHashSet 去重设计]]（HashMap key 视图+PRESENT 占位；hashCode+equals 双写铁律；dummy 构造换 LinkedHashMap 得插入序；双信源互证，置信度中）
 - [[hot-cold-data-separation|冷热分离（Hot/Cold Data Separation）]]（状态+时间双维划分；热/温/冷三层异构存储；先复制后删除分批限速；先归档再决定分片+按账户标识稳定路由；报表走数仓 T+1，双信源）

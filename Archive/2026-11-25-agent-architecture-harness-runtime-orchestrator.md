@@ -9,7 +9,7 @@ created: 2026-11-25
 category: 技术
 tags: [AI, Agent, 系统设计]
 asset_ref: Assets/2026-11/wechat-Tce5C6XrCapOhwq7K0U39w.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 一文搞懂 Agent 技术架构：Harness、Runtime、Orchestrator、Framework，到底有什么区别？
