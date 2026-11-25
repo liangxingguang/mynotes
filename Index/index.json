@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25 12:40",
+  "updated_at": "2026-11-25 12:41",
   "notes": [
     {
       "id": "2026-11-25-agent-architecture-harness-runtime-orchestrator",
@@ -57,6 +57,25 @@
       "summary": "成熟架构师的价值不在设计更复杂先进的系统，而在技术诱惑面前保持克制：不是所有问题都要微服务，不是所有数据都要缓存，不是所有未来需求都值得提前设计。架构不是提前解决未来所有问题，而是让未来解决问题的成本足够低。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-LQTez4G_ICtjvlmmEJIbbA.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-11-25-elasticsearch-interview-questions",
+      "title": "面试：Elasticsearch 面试题",
+      "path": "Inbox/2026-11-25-elasticsearch-interview-questions.md",
+      "created": "2026-11-25",
+      "category": "技术",
+      "tags": [
+        "MySQL",
+        "自学"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/5CB5mt9-AXXweYjZJCsiOw",
+      "source_type": "article",
+      "platform": "wechat",
+      "summary": "以现代 Elasticsearch 为主的 38 道面试题（含常见追问），覆盖基础概念与倒排索引、分词与 Mapping、写入与数据可靠性、查询排序分页、集群分片扩容、数据同步与排障六大板块，每题先给可直接回答的版本再补追问，文末附\"最容易答错的十句话\"纠正常见误区。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-5CB5mt9-AXXweYjZJCsiOw.md",
       "wiki_status": "pending"
     },
     {
