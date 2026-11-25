@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25 12:35",
+  "updated_at": "2026-11-25 12:36",
   "notes": [
     {
       "id": "2026-11-25-agent-architecture-harness-runtime-orchestrator",
@@ -39,6 +39,24 @@
       "summary": "AI Coding Agent 已能理解项目、修改代码、执行测试，作者提出 AI-Native Engineering 理念：AI 时代真正要改的不是编码方式，而是整个软件研发体系。核心是六个 First 原则——文本、命令行、结构化、可执行、可验证、版本管理优先，并给出贯穿研发生命周期的落地实践与三阶段建设路径。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-Hh0I_3sU8TI-2i2-x4pAEA.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-11-25-architect-when-not-to-design",
+      "title": "架构师最重要的能力，不是设计系统，而是知道什么时候不该设计",
+      "path": "Inbox/2026-11-25-architect-when-not-to-design.md",
+      "created": "2026-11-25",
+      "category": "技术",
+      "tags": [
+        "系统设计"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/LQTez4G_ICtjvlmmEJIbbA",
+      "source_type": "article",
+      "platform": "wechat",
+      "summary": "成熟架构师的价值不在设计更复杂先进的系统，而在技术诱惑面前保持克制：不是所有问题都要微服务，不是所有数据都要缓存，不是所有未来需求都值得提前设计。架构不是提前解决未来所有问题，而是让未来解决问题的成本足够低。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-LQTez4G_ICtjvlmmEJIbbA.md",
       "wiki_status": "pending"
     },
     {
