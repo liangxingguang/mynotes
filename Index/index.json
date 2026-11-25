@@ -1,6 +1,25 @@
 {
-  "updated_at": "2026-11-25 12:32",
+  "updated_at": "2026-11-25 12:33",
   "notes": [
+    {
+      "id": "2026-11-25-how-we-learn-ten-keywords",
+      "title": "如何有效学习？颠覆传统认知的发现——《How We Learn》读书笔记",
+      "path": "Inbox/2026-11-25-how-we-learn-ten-keywords.md",
+      "created": "2026-11-25",
+      "category": "学习",
+      "tags": [
+        "学习",
+        "自学"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/PdYN3x6A0DqDT2A1CTD9IA",
+      "source_type": "article",
+      "platform": "wechat",
+      "summary": "本文是 Benedict Carey《How We Learn》的导读，该书汇总跨越 20 世纪的脑科学学习研究。全书十章对应十个关键词：故事、遗忘、环境、间断、无知、分心、渗透、混合、感知、睡眠，看似不全是正面词，却都对学习有益；核心结论是学习不宜与人生割裂，高效学习靠细水长流而非突击。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-PdYN3x6A0DqDT2A1CTD9IA.md",
+      "wiki_status": "ingesting"
+    },
     {
       "id": "2026-11-25-llm-agent-hybrid-routing",
       "title": "大模型 Agent 混合路由详解：规则路由、模型路由、级联降级一篇讲透",
