@@ -4,7 +4,7 @@ type: concept
 title: 规范驱动开发（SDD）
 status: active
 created: 2026-11-21
-updated: 2026-11-21
+updated: 2026-11-25
 confidence: medium
 tags:
   - concept
@@ -13,9 +13,11 @@ tags:
   - specification
 sources:
   - raw/sources/ai/2026-11-20-sdd-spec-driven-dev.md
+  - raw/sources/ai/2026-11-25-ai-native-engineering.md
 related:
   - wiki/concepts/ai-native-sdlc.md
   - wiki/concepts/ai-native-organization.md
+  - wiki/concepts/ai-native-engineering.md
 ---
 # 规范驱动开发（SDD）
 
@@ -80,6 +82,7 @@ AI 编码效率极高，但 AI 的知识太广、幻觉太多，在缺乏约束�
 ## Evolution（演进）
 
 - 2026-11-20：直播《AI 驱动 SDD 企业级开发全流程》纪要系统给出 SDD 的四阶段全流程、三大基线、实例化五步骤与 PLAN/CODE 两执行模式，并给出无基线公司的落地路径（建基线→跑通流程→找不足→持续迭代）。本页首次立概念。
+- 2026-11-25：微信公众号 AI-Native Engineering 信源印证 SDD 在 AI 原生研发体系中的定位——其三阶段路径第二阶段即 Spec-Driven Development（建立需求规格、架构决策、接口契约、DSL 与 Schema，让需求驱动开发任务与测试用例），与本概念"规范先行、AI 执行、人兜底"及 Executable First（Spec 驱动执行）同向；见 [[ai-native-engineering]]。
 
 ## Open Questions（开放问题）
 
@@ -90,6 +93,7 @@ AI 编码效率极高，但 AI 的知识太广、幻觉太多，在缺乏约束�
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-11-20-sdd-spec-driven-dev.md`（直播纪要：问题背景、SDD 定义、四阶段、三大基线、实例化五步骤、人的价值、效率来源、落地路径、核心要诀）
+- Source: `raw/sources/ai/2026-11-25-ai-native-engineering.md`（印证：SDD 为 AI-Native Engineering 三阶段路径第二阶段，需求规格/接口契约/DSL/Schema 驱动任务与测试；见 [[ai-native-engineering]]）
 
 ## Related Knowledge（相关知识）
 

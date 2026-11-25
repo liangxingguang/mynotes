@@ -5989,6 +5989,20 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/Tce5C6XrCapOhwq7K0U39w",
       "asset_ref": "Assets/2026-11/wechat-Tce5C6XrCapOhwq7K0U39w.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-25-ai-native-engineering.md",
+      "sha256": "1391ccfa1e1043dc002a8c4f7bcd18c8ce16af496175cb615a81aa0eba7c18bb",
+      "registered_at": "2026-11-25",
+      "inbox_ref": "Archive/2026-11-25-ai-native-engineering.md",
+      "pages": [
+        "wiki/sources/2026-11-25-ai-native-engineering.md",
+        "wiki/concepts/ai-native-engineering.md",
+        "wiki/concepts/ai-native-sdlc.md",
+        "wiki/concepts/spec-driven-development.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/Hh0I_3sU8TI-2i2-x4pAEA",
+      "asset_ref": "Assets/2026-11/wechat-Hh0I_3sU8TI-2i2-x4pAEA.md"
     }
   ]
 }

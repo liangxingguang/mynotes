@@ -4,6 +4,7 @@
 
 ## source（信源）
 
+- [[2026-11-25-ai-native-engineering|AI-Native Engineering：AI 时代，我们应该重新思考软件研发流程（信源页）]]（2026-11-25，AI/Agent/研发体系，微信公众号方法论文章：AI Coding Agent 能力演进立论"改变整个软件研发体系"+六个 First 原则及理由+研发各阶段 AI-Native 实践对照+四个特别关注+三阶段建设路径与研发范式转向，单信源无实证，置信度中）
 - [[2026-11-25-agent-architecture-harness-runtime-orchestrator|一文搞懂 Agent 技术架构：Harness、Runtime、Orchestrator、Framework 的区别（信源页）]]（2026-11-25，AI/Agent/Harness/架构，微信概念科普文：五组件公式 Agent = Model + Harness + Tools + Memory + Environment、Harness 七项职责、Runtime 生命周期、Execution Loop 七步拆解、Harness/Runtime/Orchestrator/Framework 四概念"各回答什么问题"对照、Orchestrator ≠ Agent Loop、构建 Harness 五项基础能力与"会行动→能交付"判断标准，概念性科普无实测数据，单信源，置信度中）
 - [[how-we-learn|《How We Learn》导读：有效学习的十个关键词（信源页）]]（2026-11-25，学习/方法论，微信公众号对 Benedict Carey《How We Learn》的导读：跨越 20 世纪的脑科学学习研究，十章对应故事/遗忘/环境/间断/无知/分心/渗透/混合/感知/睡眠十个关键词+间隔排布/睡眠巩固/流利错觉/以教代测/分心渗透/多环境学习等技巧，单信源，置信度中）
 - [[2026-11-24-weixin-leo-architecture-growth|从需求开发到全栈架构：我主动干遍了所有"不属于我的活"（信源页）]]（2026-11-24，成长/架构/微信，从业 15 年系统架构师 Leo 原创自述：岗位边界是成长天花板+主动承接无人认领的跨系统疑难倒逼跨域学习+「做哪行研究下一层知识」+FMEA/STPA/ASPICE 体系补齐+无人看见时的职业定力，单信源，置信度中）
@@ -501,8 +502,9 @@
 - [[ai-assisted-troubleshooting-workflow|AI 辅助排障工作流]]（贴文本模式四环节：现象选命令/读栈/写表达式/结论分叉；三件不交给 AI；脱敏前提；它翻译你判断，双信源）
 - [[ai-coding-delivery-four-stages|AI Coding 交付四环节（意图/上下文/评审/评估）]]（2026-11-20，AI/交付工程，四环节各自关键问题与交付产物+上下文检索覆盖失败案例+四维衡量，高德总纲篇单信源，置信度中）
 - [[ai-coding-evidence-boundary|证据边界驱动的 AI Coding]]（2026-11-05，AI/AI Coding/证据，美团分布式存储实践：三类任务分别定边界（评审按证据四档输出/Debug 假设生成器+候选集合+七类命名/自动化先定目标与验收）+证据四层互补+可证伪与红绿闭环+变绿≠解决+分层授权，与 [[ai-assisted-troubleshooting-workflow]] 和 [[evidence-first-jvm-tuning]] 互证，单信源置信度中）
+- [[ai-native-engineering|AI-Native Engineering（AI 原生软件研发）]]（2026-11-25，概念/AI/研发体系，围绕 AI Agent 重构软件研发体系的方法论：六个 First 原则（Text/CLI/Structured/Executable/Verifiable/Git）+全生命周期实践对照+四个特别关注（Context Engineering/IaC/Security & Governance/Traceability）+三阶段路径（基础规范→SDD→Agentic Engineering），单信源方法论无实证，置信度中）
 - [[ai-native-organization|AI 原生研发组织]]（工具原生→工作流原生→组织原生）
-- [[ai-native-sdlc|AI 原生 SDLC]]（制品提交链驱动的闭环，Anthropic 2026；人守闸门/三层控制模型；货拉拉千人落地+孔明八阶段工作流+OPT 验收 Agent+LoopForge SOP+高德 Dev Loop+SDD+淘海外，十二信源）
+- [[ai-native-sdlc|AI 原生 SDLC]]（制品提交链驱动的闭环，Anthropic 2026；人守闸门/三层控制模型；货拉拉千人落地+孔明八阶段工作流+OPT 验收 Agent+LoopForge SOP+高德 Dev Loop+SDD+淘海外+AI-Native Engineering，十四信源）
 - [[spec-driven-development|规范驱动开发（SDD）]]（规范即约束的 AI 时代研发方法；流程人工驱动→规范驱动、执行人执行→人定规范AI执行人兜底；三大基线宪法 prd/design/arch+实例化五步骤+PLAN/CODE 两模式，核心要诀规范先行人兜底）
 - [[ai-ticket-system|AI 工单系统]]（智能分类五能力+置信度阈值+人工纠偏回流；自动派单五因素+五种模式；知识库闭环五要点；目标指标/六项埋点/验收标准/风险对策，电商案例，与 [[ticket-system-design]] 为 AI/传统代际关系，单信源置信度中）
 - [[architecture-description-metamodel|ISO 42010 架构概念元模型]]（左侧人与诉求五要素+右侧视图与设计四要素+四条逻辑线不可颠倒+AD≠架构+车载域控五团队对立+ADR 决策记录，单信源置信度中）

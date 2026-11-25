@@ -1,26 +1,6 @@
 {
-  "updated_at": "2026-11-25 13:39",
+  "updated_at": "2026-11-25 13:47",
   "notes": [
-    {
-      "id": "2026-11-25-ai-native-engineering",
-      "title": "AI-Native Engineering：AI 时代，我们应该重新思考软件研发流程",
-      "path": "Inbox/2026-11-25-ai-native-engineering.md",
-      "created": "2026-11-25",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "Agent",
-        "系统设计"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/Hh0I_3sU8TI-2i2-x4pAEA",
-      "source_type": "article",
-      "platform": "wechat",
-      "summary": "AI Coding Agent 已能理解项目、修改代码、执行测试，作者提出 AI-Native Engineering 理念：AI 时代真正要改的不是编码方式，而是整个软件研发体系。核心是六个 First 原则——文本、命令行、结构化、可执行、可验证、版本管理优先，并给出贯穿研发生命周期的落地实践与三阶段建设路径。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-Hh0I_3sU8TI-2i2-x4pAEA.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-11-25-architect-when-not-to-design",
       "title": "架构师最重要的能力，不是设计系统，而是知道什么时候不该设计",
@@ -9256,6 +9236,26 @@
       "summary": "模型负责理解与推理，但要让 Agent 在真实环境把任务做完，还需要工具、状态、运行环境和执行控制。文章给出工程模型式划分：Agent = Model + Harness + Tools + Memory + Environment，拆解 Harness 的七项职责，并厘清 Harness、Runtime、Orchestrator、Framework 四个常混用概念各自回答的问题，最后以客服投诉案例串起整套架构。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-Tce5C6XrCapOhwq7K0U39w.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-25-ai-native-engineering",
+      "title": "AI-Native Engineering：AI 时代，我们应该重新思考软件研发流程",
+      "path": "Archive/2026-11-25-ai-native-engineering.md",
+      "created": "2026-11-25",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent",
+        "系统设计"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/Hh0I_3sU8TI-2i2-x4pAEA",
+      "source_type": "article",
+      "platform": "wechat",
+      "summary": "AI Coding Agent 已能理解项目、修改代码、执行测试，作者提出 AI-Native Engineering 理念：AI 时代真正要改的不是编码方式，而是整个软件研发体系。核心是六个 First 原则——文本、命令行、结构化、可执行、可验证、版本管理优先，并给出贯穿研发生命周期的落地实践与三阶段建设路径。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-Hh0I_3sU8TI-2i2-x4pAEA.md",
       "wiki_status": "ingested"
     },
     {

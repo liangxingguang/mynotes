@@ -4,7 +4,7 @@ type: concept
 title: AI 原生 SDLC
 status: active
 created: 2026-10-17
-updated: 2026-11-23
+updated: 2026-11-25
 confidence: medium
 tags:
   - concept
@@ -25,6 +25,7 @@ sources:
   - raw/sources/ai/2026-11-20-sdd-spec-driven-dev.md
   - raw/sources/enterprise/2026-11-20-taobao-ai-native-rd.md
   - raw/sources/ai/2026-11-23-coding-agent-software-factory.md
+  - raw/sources/ai/2026-11-25-ai-native-engineering.md
 related:
   - wiki/concepts/ai-native-organization.md
   - wiki/concepts/spec-driven-development.md
@@ -36,6 +37,7 @@ related:
   - wiki/sources/coding-agent-ai-native-workflow.md
   - wiki/entities/loopforge.md
   - wiki/concepts/software-factory.md
+  - wiki/concepts/ai-native-engineering.md
 ---
 # AI 原生 SDLC
 
@@ -112,6 +114,8 @@ Agent 编码使构建阶段塌缩到以小时计，而规划、评审/测试、�
 
 - 2026-11-23 — 新增软件工厂信源（第 13 信源）`raw/sources/ai/2026-11-23-coding-agent-software-factory.md`，提供 AI 原生 SDLC 在**执行基础设施层**的实现路径：用现有 Coding Agent + 持久任务库 + 执行器 + 仓库现成 CI，把"提交后检查/修复/PR 跟进"由后台执行器持续跟完，人只决定最后合并。其"人守闸门"（合并/部署/凭据/费用留人）、按提交验收（检查与批准绑定具体 commit，新提交后重核）、机制与策略分离（执行程序与提示词/模型/审查规则分版本管理）与本概念制品链闭环、人守闸门、配置享受代码同等待遇同向；是六阶段"构建→测试→部署"各环节的执行层落地，概念页见 [[software-factory]]。
 
+- 2026-11-25 — 新增 AI-Native Engineering 信源（第 14 信源）`raw/sources/ai/2026-11-25-ai-native-engineering.md`，从**研发体系与资产层**印证本概念：六个 First 原则中，Verifiable First（AI 产出须自动化验证体系校验、需求-实现-测试不得同一 AI 自我闭环）直接呼应"瓶颈转移到验证"与"人守闸门"；Executable First（Spec 驱动生成代码/测试/部署）与 Spec-Driven 印证制品链"规范驱动执行"；Git First（需求/ADR/DSL/测试规格纳入版本管理）为"制品提交链即审计轨迹"提供基础设施表述。概念页见 [[ai-native-engineering]]。
+
 ## Open Questions（开放问题）
 
 - 各打法的先行/滞后指标只有口径、无公开前后对照数据，实际成效待第三方验证。
@@ -133,6 +137,7 @@ Agent 编码使构建阶段塌缩到以小时计，而规划、评审/测试、�
 - Source: `raw/sources/ai/2026-11-20-sdd-spec-driven-dev.md`（第 11 信源：SDD 规范驱动开发——三大基线、实例化五步骤、PLAN/CODE 两模式、规范先行人兜底；见 [[spec-driven-development]]）
 - Source: `raw/sources/enterprise/2026-11-20-taobao-ai-native-rd.md`（第 12 信源：淘海外 AI Native——编码提效≠端到端提效的国内大厂实证、Agent 驱动双流程、估时降低 50% 团队自报口径）
 - Source: `raw/sources/ai/2026-11-23-coding-agent-software-factory.md`（第 13 信源：软件工厂——Coding Agent 交付流水线的执行基础设施实现、按提交验收、机制与策略分离；AI 原生 SDLC 在执行层的具体落地，见 [[software-factory]]）
+- Source: `raw/sources/ai/2026-11-25-ai-native-engineering.md`（第 14 信源：AI-Native Engineering 六个 First 原则——Verifiable First 印证瓶颈转移到验证、Executable First/Git First 印证规范驱动执行与制品链可追溯；见 [[ai-native-engineering]]）
 
 ## Related Knowledge（相关知识）
 

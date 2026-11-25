@@ -9,7 +9,7 @@ created: 2026-11-25
 category: 技术
 tags: [AI, Agent, 系统设计]
 asset_ref: Assets/2026-11/wechat-Hh0I_3sU8TI-2i2-x4pAEA.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # AI-Native Engineering：AI 时代，我们应该重新思考软件研发流程
