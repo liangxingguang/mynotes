@@ -9,7 +9,7 @@ created: 2026-11-25
 category: 技术
 tags: [MySQL, Java]
 asset_ref: Assets/2026-11/wechat-db-zero-downtime-migration.md
-wiki_status: pending
+wiki_status: ingested
 summary_status: partial
 ---
 

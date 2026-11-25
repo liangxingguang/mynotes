@@ -12,10 +12,12 @@ tags:
   - sharding
 sources:
   - raw/sources/architecture/2026-10-16-db-table-sharding-practice.md
+  - raw/sources/architecture/2026-11-25-db-zero-downtime-migration.md
 related:
   - wiki/sources/db-table-sharding-practice.md
   - wiki/concepts/hot-cold-data-separation.md
   - wiki/concepts/mysql-bulk-import.md
+  - wiki/concepts/database-zero-downtime-migration.md
 ---
 # 分表平滑迁移策略
 
@@ -54,6 +56,7 @@ related:
 - 大表治理组合拳：分库分表、表分区、冷热分离、索引优化、读写分离（信源口径，本概念覆盖其中"分库分表"的迁移环节）。
 - [[hot-cold-data-separation|冷热分离]]：组合拳的姊妹手段，解决时间维度的数据温度，与本概念（横向拆分）互补。
 - [[mysql-bulk-import|MySQL 大批量导入优化]]：本概念讲"已有大表→分表"的双写双读迁移，该概念讲"海量新数据→分表"的批量灌入；分库分表是两者的共同前提。
+- [[database-zero-downtime-migration|数据库零停机迁移]]：本概念是零停机迁移框架在"分库分表"场景下的特例，其双写双读策略矩阵补充了通用框架的读路径灰度细节。
 
 ### Distinctions（区分）
 
@@ -61,7 +64,8 @@ related:
 
 ## Evolution（演进）
 
-（当前仅单一信源，待补充。）
+- 2026-10-23：本页由单一信源（京东零售技术《大表治理之分表实践》）建立。
+- 2026-11-25：新信源《数据库迁移零停机：从理论到实战的完美演进方案》（[[2026-11-25-db-zero-downtime-migration]]）印证本页的双写/双读阶段推进逻辑——其"双写→校验→切换"五阶段框架与本页"双写读旧（新表回填追平）→双写读新（校验）→单写读新（完成）"一致，并补充了通用迁移语境：双写阶段用 CDC（Debezium 基于 binlog）做增量同步、源成功目标失败用本地消息表重试、切换先切读流量观察再切写流量。该信源把本页的分表场景置于更广的零停机迁移框架中，编译为 [[database-zero-downtime-migration]]。
 
 ## Open Questions（开放问题）
 
@@ -70,8 +74,10 @@ related:
 
 ## Evidence（证据）
 
-- Source: `raw/sources/architecture/2026-10-16-db-table-sharding-practice.md`
+- Source: `raw/sources/architecture/2026-10-16-db-table-sharding-practice.md`（五种读写策略、双写/双读 SQL 机制、京东库存流水表案例）
+- Source: `raw/sources/architecture/2026-11-25-db-zero-downtime-migration.md`（2026-11-25 补充：双写阶段增量同步、校验与切换次序的印证）
 
 ## Related Knowledge（相关知识）
 
 - [[db-table-sharding-practice|大表治理之分表实践：手搓一个简单的数据库分表组件]]
+- [[database-zero-downtime-migration|数据库零停机迁移（概念页）]]

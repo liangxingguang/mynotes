@@ -9,7 +9,7 @@ created: 2026-11-25
 category: 技术
 tags: [MySQL, 自学]
 asset_ref: Assets/2026-11/wechat-5CB5mt9-AXXweYjZJCsiOw.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 面试：Elasticsearch 面试题

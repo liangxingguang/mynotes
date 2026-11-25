@@ -6003,6 +6003,44 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/Hh0I_3sU8TI-2i2-x4pAEA",
       "asset_ref": "Assets/2026-11/wechat-Hh0I_3sU8TI-2i2-x4pAEA.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-25-architect-when-not-to-design.md",
+      "sha256": "7262987eb356b0f7b1d00908b9c4b85487e6537d843d858d361c2f62e6113eda",
+      "registered_at": "2026-11-25",
+      "inbox_ref": "Archive/2026-11-25-architect-when-not-to-design.md",
+      "pages": [
+        "wiki/sources/2026-11-25-architect-when-not-to-design.md",
+        "wiki/concepts/over-design.md",
+        "wiki/concepts/architecture-tradeoff-methodology.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/LQTez4G_ICtjvlmmEJIbbA",
+      "asset_ref": "Assets/2026-11/wechat-LQTez4G_ICtjvlmmEJIbbA.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-25-db-zero-downtime-migration.md",
+      "sha256": "35fc7742ea19459994582cb68edb5c0f16454e7250c8cc0c0bc1ee2a58aa1b02",
+      "registered_at": "2026-11-25",
+      "inbox_ref": "Archive/2026-11-25-db-zero-downtime-migration.md",
+      "pages": [
+        "wiki/sources/2026-11-25-db-zero-downtime-migration.md",
+        "wiki/concepts/database-zero-downtime-migration.md",
+        "wiki/concepts/table-sharding-migration.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzI2MDA5MDM0MA==&mid=2650595140&idx=1&sn=6b2617838fdd1382d8c1de73023263ee&chksm=f2668fcfc51106d9292bc3b2477d25f7d0eaaef5afcca41cd0824a613cc998672a555d08a32a",
+      "asset_ref": "Assets/2026-11/wechat-db-zero-downtime-migration.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-25-elasticsearch-interview-questions.md",
+      "sha256": "d80fe1b5d29432933c9bc3e3d2c5e38549c5618064d9182a05674a9fbf23d66d",
+      "registered_at": "2026-11-25",
+      "inbox_ref": "Archive/2026-11-25-elasticsearch-interview-questions.md",
+      "pages": [
+        "wiki/sources/2026-11-25-elasticsearch-interview-questions.md",
+        "wiki/entities/elasticsearch.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/5CB5mt9-AXXweYjZJCsiOw",
+      "asset_ref": "Assets/2026-11/wechat-5CB5mt9-AXXweYjZJCsiOw.md"
     }
   ]
 }

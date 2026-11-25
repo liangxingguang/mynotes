@@ -468,6 +468,9 @@
 - [[ecommerce-search-recommendation-practice|电商平台实时商品搜索与个性化推荐实战（信源页）]]（2026-11-24，搜索/推荐/架构/Java，微信「服务端技术精选」教程骨架：multiMatch 多字段加权（name^3/description^2）+completion suggester、协同过滤+内容推荐双路合并去重限 50、事件监听同步 ES+Kafka 死信、商品 30 分钟/热门 10 分钟缓存、ik 分词与 3 分片 1 副本等配置；推荐算法为简化桩，单信源，置信度中）
 - [[2026-11-24-weixin-fcd-full-cycle-developer|半年用AI写需求，我终于不用给AI当测试了（信源页）]]（2026-11-24，AI/AI Coding/工作流/验收，腾讯智能文档团队侯国春第一方实践：fcd 工作流六阶段（环境检查→定 Plan→建测试页→逐点实现→经验沉淀→收尾清理）+每阶段 Gate；TAPD 自报每百条测试用例新引入 bug 2.31→0.49（-79%）、重开 3→0、严重级 4→0；比稿五步（Figma MCP/pixelmatch 70%+SSIM 30%/数值对账）；工程化为 @tencent/fcd-ai；单信源无对照，置信度中）
 - [[2026-11-24-weixin-async-priority-queue-preemptive|异步任务优先级队列 + 抢占式执行（信源页）]]（2026-11-24，架构/Java/系统设计/并发，微信「服务端技术精选」系统设计方案：优先级队列+抢占式执行+优先级调度+资源隔离四层；PriorityTask/PriorityTaskQueueService/PreemptiveTaskExecutorService/InterruptibleTask 完整骨架；提级防饥饿（60s+1 级）、智能抢占阈值（差>8 或差>5 且 10s）；自报 1 万并发下高优响应 5000ms→150ms、P95 10s→300ms、吞吐 2000→1600/s；单信源无复现，置信度中）
+- [[2026-11-25-architect-when-not-to-design|架构师最重要的能力，不是设计系统，而是知道什么时候不该设计（信源页）]]（2026-11-25，架构/方法论，技术复杂度须随业务真实需要而非技术热情增长；微服务拆分、微信登录、首页慢上 Redis 三个反例论证敢于拒绝技术方案；整体成本六项合算；编译 [[over-design]]，印证 [[architecture-tradeoff-methodology]]，单信源置信度中）
+- [[2026-11-25-db-zero-downtime-migration|数据库迁移零停机：从理论到实战的完美演进方案（信源页）]]（2026-11-25，数据库/迁移，作者支付系统 5000 万条交易记录 72 小时零停机实战；双写+同步+校验+切换原理；五阶段迁移法（准备/初始化同步/双写/校验/切换收尾）+工具选型+三类常见问题；编译 [[database-zero-downtime-migration]]，印证 [[table-sharding-migration]]，代码块采集退化，单信源置信度中）
+- [[2026-11-25-elasticsearch-interview-questions|面试：Elasticsearch 面试题（38 题）（信源页）]]（2026-11-25，ES/面试，38 题六板块（基础/分词 Mapping/写入可靠性/查询分页/集群扩容/同步排障）+最容易答错的十句话；纠正旧信源两处表述（写入顺序、flush 阈值版本差异），矛盾记录见 [[elasticsearch]]，单信源置信度中）
 
 ## concept（概念）
 
@@ -510,7 +513,8 @@
 - [[architecture-description-metamodel|ISO 42010 架构概念元模型]]（左侧人与诉求五要素+右侧视图与设计四要素+四条逻辑线不可颠倒+AD≠架构+车载域控五团队对立+ADR 决策记录，单信源置信度中）
 - [[architecture-design-capabilities|架构设计能力（8 个底层动作）]]（架构 vs 架构描述+八动作链抽象/聚焦/分解/边界/契约/权衡/约束/可演化+Parnas 信息隐藏+隐式契约+二十指标等于零，单信源置信度中）
 - [[architecture-growth-path|架构成长路径（从岗位执行到全局架构的主动成长机制）]]（2026-11-24，概念/成长/架构，不靠培养与天赋：主动承接无人认领的跨系统疑难倒逼跨域学习+「做哪行研究下一层知识」+闭环沉淀+体系补齐（FMEA/STPA/ASPICE）+无人看见时的职业定力，架构=看见全貌的能力，微信一手自述单信源，置信度中）
-- [[architecture-tradeoff-methodology|架构取舍方法论（先定约束，再挑技术）]]（四问前置+演进式架构+三高量化+对症优化+选型看访问路径+稳定性工具箱，单信源置信度中）
+- [[architecture-tradeoff-methodology|架构取舍方法论（先定约束，再挑技术）]]（四问前置+演进式架构+三高量化+对症优化+选型看访问路径+稳定性工具箱，单信源置信度中；2026-11-25 增补：复杂度随业务需要增长、提前设计成本 vs 改造成本判据，[[over-design]] 印证）
+- [[over-design|过度设计（Over-Design）]]（2026-11-25，概念/架构/方法论，为应对尚未确定的需求引入确定存在的复杂度；抽象应来自已出现的变化而非想象；判据=提前设计成本<未来改造成本，例外是明确规划的核心能力；微信登录反例+整体成本观，与 [[architecture-tradeoff-methodology]] [[accidental-vs-essential-complexity]] 互证，单信源置信度中）
 - [[authn-authz-selection-framework|认证与授权选型决策框架（五维模型与 AuthN/AuthZ 分层）]]（认证与授权选型方法论：AuthN/AuthZ+凭证/Token/会话三层+有状态vs无状态权衡+五维模型+三层时间尺度+L1-L5分层+对外必须标准协议+五方案评分矩阵局限+10条场景清单+4类反模式+AuthService接口隔离，认证授权选型系列·上篇信源编译，与 [[sso-oauth2-oidc]] [[rbac-permission-system]] [[permission-refactoring]] 互证，单信源，置信度中）
 - [[b-end-report-design|B端报表设计方法论（Report Design Methodology）]]（2026-11-20，概念/B端/报表设计，决策场景先行+用户-场景-动作-数据四步法+指标字典9字段+可视化四层分层+权限三层+性能前置+PRD 11项清单，与 [[dashboard-metric-tree]] 互补（看板是决策展示子集），单信源置信度中）
 - [[batch-import-design|B端批量导入设计]]（数据治理本质：三层校验模型（字段格式/业务实体/跨单据）+异步六步流水线+6态状态机（部分成功为常态）+错误报告7要素与三档错误级别+部分成功策略+配置化校验规则，与 mysql-bulk-import（DB层吞吐）互补分层，单信源置信度中）
@@ -676,7 +680,8 @@
 - [[scopedvalue|ScopedValue（作用域值）]]（JDK 25 正式：作用域共享不可变快照，终结 VT 下 ThreadLocal 内存膨胀/泄漏/脏值，Old Gen -61% 实测）
 - [[startup-ideas-framework|创业点子生成与评估框架（YC）]]（四错误避坑+十问评估+七配方生成；YC 前 100 公司 70% 点子自然注意到；演讲整理稿单信源）
 - [[supply-chain-finance|供应链金融（Supply Chain Finance）]]（2026-11-04，产品/B端/供应链金融，信用流转本质/四方角色对齐/六中心架构/状态机为骨架每状态四件事/六项硬指标前置/PM七步避坑，与 complex-system-breakdown 互证，单信源置信度中）
-- [[table-sharding-migration|分表平滑迁移策略]]（五种读写策略矩阵 + 双写双读 SQL 重写，京东大表治理实践）
+- [[table-sharding-migration|分表平滑迁移策略]]（五种读写策略矩阵 + 双写双读 SQL 重写，京东大表治理实践；2026-11-25 增补信源印证，见 [[database-zero-downtime-migration]]）
+- [[database-zero-downtime-migration|数据库零停机迁移（Zero-Downtime Database Migration）]]（2026-11-25，概念/数据库/迁移，双写+同步+校验+切换四步原理；五阶段迁移法（准备/初始化同步/双写/校验/切换收尾）每阶段目标与交付物；工具选型（replication/Debezium/MyDumper）；先切读后切写；与 [[table-sharding-migration]]（分表特例） [[cap-theorem]] [[blue-green-deployment]] [[local-message-table]] 互证，单信源置信度中）
 - [[thinking-mode|思考模式（Thinking Mode）与模型路由]]（通用 vs 推理已制度化为 thinking 开关两态；reasoning_content 回传 400 规则+参数坑+reasoning_tokens 计费；两行规则表最小路由，单信源）
 - [[third-party-api-integration|第三方接口对接（Third-Party API Integration）]]（2026-11-04，产品/B端/接口对接，五阶段九要素/字段映射表三方契约/未知状态码待人工确认/逐笔对账四类差异/熔断降级/退出机制，与 remote-call-governance 区分（PM 外部供应商对接 vs 服务间治理），单信源置信度中）
 - [[thread-stack-reading|线程栈读法]]（三种「卡」先分类：RUNNABLE 在算/BLOCKED 等锁/RUNNABLE 等外部响应；读栈顺序 状态→自己的包→卡在等什么；线程池耗尽看分布；RUNNABLE 但 CPU 不高多半在等 IO；隔时二次采样，三信源）
@@ -770,7 +775,7 @@
 - [[deepseek-harness|DeepSeek Harness]]（DeepSeek 模型的桌面 Agent 客户端，v0.2 预览版）
 - [[deepagents|deepagents]]（LangChain 官方 batteries-included agent harness 库，create_deep_agent 一个函数带齐八件套，LangGraph 底座）
 - [[drawio-skill|drawio-skill]]（代码/配置→可编辑 .drawio 架构图，增量同步 + CI 架构检查）
-- [[elasticsearch|Elasticsearch]]（Lucene 之上的分布式搜索引擎；读模型定位、生产纪律+Netty 4 传输层，四信源互证）
+- [[elasticsearch|Elasticsearch]]（Lucene 之上的分布式搜索引擎；读模型定位、生产纪律+Netty 4 传输层，五信源互证；2026-11-25 增补 38 题信源并记录两处与旧面试信源的矛盾：写入顺序、flush 阈值版本差异）
 - [[ep-harness|EP-Harness]]（得物团队级 Managed Agents 平台，Multica 二开，Prompt→Context→Harness→Loop 四层）
 - [[harness2|Harness2]]（2026-11-24，AI/Agent/Harness 实体，Google Research 开源 Harness 自进化框架：不动模型只迭代 harness 配置、4 组 8 块可编辑组件、两层递归（单任务行为对比精炼+跨任务持久改进 harness，不需标准答案）、--k/--mode 预算、三基准自报跑分，Apache 2.0 非官方支持，微信公众号单信源，置信度中）
 - [[jd-haibo|京东海博]]（京东本地生活即时零售 SaaS，780+ 商家/10 万+ 门店，AI 知识库实践标杆）

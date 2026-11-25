@@ -1,62 +1,6 @@
 {
-  "updated_at": "2026-11-25 13:47",
+  "updated_at": "2026-11-25 15:41",
   "notes": [
-    {
-      "id": "2026-11-25-architect-when-not-to-design",
-      "title": "架构师最重要的能力，不是设计系统，而是知道什么时候不该设计",
-      "path": "Inbox/2026-11-25-architect-when-not-to-design.md",
-      "created": "2026-11-25",
-      "category": "技术",
-      "tags": [
-        "系统设计"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/LQTez4G_ICtjvlmmEJIbbA",
-      "source_type": "article",
-      "platform": "wechat",
-      "summary": "成熟架构师的价值不在设计更复杂先进的系统，而在技术诱惑面前保持克制：不是所有问题都要微服务，不是所有数据都要缓存，不是所有未来需求都值得提前设计。架构不是提前解决未来所有问题，而是让未来解决问题的成本足够低。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-LQTez4G_ICtjvlmmEJIbbA.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-11-25-db-zero-downtime-migration",
-      "title": "数据库迁移零停机：从理论到实战的完美演进方案",
-      "path": "Inbox/2026-11-25-db-zero-downtime-migration.md",
-      "created": "2026-11-25",
-      "category": "技术",
-      "tags": [
-        "MySQL",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzI2MDA5MDM0MA==&mid=2650595140&idx=1&sn=6b2617838fdd1382d8c1de73023263ee&chksm=f2668fcfc51106d9292bc3b2477d25f7d0eaaef5afcca41cd0824a613cc998672a555d08a32a#rd",
-      "source_type": "article",
-      "platform": "wechat",
-      "summary": "基于作者 5000 万条交易记录零停机迁移实战，系统讲解零停机迁移的原理与落地：以\"双写 + 同步 + 校验 + 切换\"为核心，按五阶段迁移法（准备→初始化同步→双写→校验→切换→收尾）逐步展开，配套 Spring Boot 双写切面、Debezium 增量同步、数据校验与动态切换的完整方案，并给出同步延迟、大表迁移、类型不兼容等常见问题的解法。注：原文代码块在采集中折叠为空壳，代码细节缺失。",
-      "summary_status": "partial",
-      "asset_ref": "Assets/2026-11/wechat-db-zero-downtime-migration.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-11-25-elasticsearch-interview-questions",
-      "title": "面试：Elasticsearch 面试题",
-      "path": "Inbox/2026-11-25-elasticsearch-interview-questions.md",
-      "created": "2026-11-25",
-      "category": "技术",
-      "tags": [
-        "MySQL",
-        "自学"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/5CB5mt9-AXXweYjZJCsiOw",
-      "source_type": "article",
-      "platform": "wechat",
-      "summary": "以现代 Elasticsearch 为主的 38 道面试题（含常见追问），覆盖基础概念与倒排索引、分词与 Mapping、写入与数据可靠性、查询排序分页、集群分片扩容、数据同步与排障六大板块，每题先给可直接回答的版本再补追问，文末附\"最容易答错的十句话\"纠正常见误区。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-5CB5mt9-AXXweYjZJCsiOw.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-11-25-enterprise-ai-agent-fullstack",
       "title": "从 0 到 1 构建企业级 AI Agent：AI Coding + Ontology + Harness + FDE，全链路技术实战",
@@ -9256,6 +9200,62 @@
       "summary": "AI Coding Agent 已能理解项目、修改代码、执行测试，作者提出 AI-Native Engineering 理念：AI 时代真正要改的不是编码方式，而是整个软件研发体系。核心是六个 First 原则——文本、命令行、结构化、可执行、可验证、版本管理优先，并给出贯穿研发生命周期的落地实践与三阶段建设路径。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-Hh0I_3sU8TI-2i2-x4pAEA.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-25-architect-when-not-to-design",
+      "title": "架构师最重要的能力，不是设计系统，而是知道什么时候不该设计",
+      "path": "Archive/2026-11-25-architect-when-not-to-design.md",
+      "created": "2026-11-25",
+      "category": "技术",
+      "tags": [
+        "系统设计"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/LQTez4G_ICtjvlmmEJIbbA",
+      "source_type": "article",
+      "platform": "wechat",
+      "summary": "成熟架构师的价值不在设计更复杂先进的系统，而在技术诱惑面前保持克制：不是所有问题都要微服务，不是所有数据都要缓存，不是所有未来需求都值得提前设计。架构不是提前解决未来所有问题，而是让未来解决问题的成本足够低。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-LQTez4G_ICtjvlmmEJIbbA.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-25-db-zero-downtime-migration",
+      "title": "数据库迁移零停机：从理论到实战的完美演进方案",
+      "path": "Archive/2026-11-25-db-zero-downtime-migration.md",
+      "created": "2026-11-25",
+      "category": "技术",
+      "tags": [
+        "MySQL",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzI2MDA5MDM0MA==&mid=2650595140&idx=1&sn=6b2617838fdd1382d8c1de73023263ee&chksm=f2668fcfc51106d9292bc3b2477d25f7d0eaaef5afcca41cd0824a613cc998672a555d08a32a#rd",
+      "source_type": "article",
+      "platform": "wechat",
+      "summary": "基于作者 5000 万条交易记录零停机迁移实战，系统讲解零停机迁移的原理与落地：以\"双写 + 同步 + 校验 + 切换\"为核心，按五阶段迁移法（准备→初始化同步→双写→校验→切换→收尾）逐步展开，配套 Spring Boot 双写切面、Debezium 增量同步、数据校验与动态切换的完整方案，并给出同步延迟、大表迁移、类型不兼容等常见问题的解法。注：原文代码块在采集中折叠为空壳，代码细节缺失。",
+      "summary_status": "partial",
+      "asset_ref": "Assets/2026-11/wechat-db-zero-downtime-migration.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-25-elasticsearch-interview-questions",
+      "title": "面试：Elasticsearch 面试题",
+      "path": "Archive/2026-11-25-elasticsearch-interview-questions.md",
+      "created": "2026-11-25",
+      "category": "技术",
+      "tags": [
+        "MySQL",
+        "自学"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/5CB5mt9-AXXweYjZJCsiOw",
+      "source_type": "article",
+      "platform": "wechat",
+      "summary": "以现代 Elasticsearch 为主的 38 道面试题（含常见追问），覆盖基础概念与倒排索引、分词与 Mapping、写入与数据可靠性、查询排序分页、集群分片扩容、数据同步与排障六大板块，每题先给可直接回答的版本再补追问，文末附\"最容易答错的十句话\"纠正常见误区。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-5CB5mt9-AXXweYjZJCsiOw.md",
       "wiki_status": "ingested"
     },
     {

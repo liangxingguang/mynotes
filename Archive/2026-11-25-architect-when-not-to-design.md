@@ -9,7 +9,7 @@ created: 2026-11-25
 category: 技术
 tags: [系统设计]
 asset_ref: Assets/2026-11/wechat-LQTez4G_ICtjvlmmEJIbbA.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 架构师最重要的能力，不是设计系统，而是知道什么时候不该设计

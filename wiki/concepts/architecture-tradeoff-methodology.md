@@ -12,11 +12,13 @@ tags:
   - methodology
 sources:
   - raw/sources/architecture/2026-10-31-architecture-science-and-art-42-rules.md
+  - raw/sources/architecture/2026-11-25-architect-when-not-to-design.md
 related:
   - wiki/concepts/retry-governance.md
   - wiki/concepts/idempotency-design.md
   - wiki/concepts/cap-theorem.md
   - wiki/concepts/ai-assisted-architecture-design.md
+  - wiki/concepts/over-design.md
   - wiki/sources/architecture-science-and-art-42-rules.md
 ---
 # 架构取舍方法论（先定约束，再挑技术）
@@ -72,6 +74,7 @@ related:
 - 2026-10-31：本页由单一信源（architecture-science-and-art-42-rules，微信公众号方法论长文）建立。confidence: medium——单一二次信源、作者身份未标注；内容为原则性判断，未给量化阈值（除可用性换算）。
 - 2026-11-04：新信源《AI辅助架构设计》（[[2026-11-03-weixin-ai-architecture-design|设计篇]]）直接印证"没有完美的架构，只有特定约束下的最优解"与"先定约束再选型"主张，并提供取舍方法的实操实例——量化对比矩阵（7 维度打分）+ "AI 给建议、架构师拍板"的决策权归属；编译为 [[ai-assisted-architecture-design]]。
 - 2026-11-11：新信源《QPS 1 万、RT 100ms》（[[weixin-high-concurrency-qps-rt-thinking]]）给出"一致性按业务容忍度取舍"的可操作实例——"一致性、成本、复杂度只能保住两条"：库存扣减 DB 行锁事务 ~1000 TPS 强一致 vs Redis 扣减+MQ 异步落库 ~2 万 TPS（可能超卖），作者按 SKU 热度分流（90% 撞不上走 Redis，10% 热门走强一致），并明确"这不是技术选型，是业务判断"。同源还提供"三高量化"的实测量级（并发=QPS×RT 换算与各层天花板），编译为 [[concurrency-qps-rt]]。
+- 2026-11-25：新信源《架构师最重要的能力，不是设计系统，而是知道什么时候不该设计》（[[2026-11-25-architect-when-not-to-design]]）印证"演进式架构"与"约束决定选型"，并补强两个可操作判据——①技术复杂度必须随业务真实需要而非技术热情增长；②抽象应来自已经出现的变化，提前设计的成本是否低于未来改造的成本是裁决标准（例外：产品明确规划的核心能力）。"架构是管理整体成本（开发/部署/运维/排障/学习/维护六项合算）"与本文"没有普适正确、只有约束下的最优"互证。相关概念编译为 [[over-design]]；拒绝技术方案的根因定位案例（首页慢的根因是第三方接口 800ms 而非 DB 30ms）补充了"对症优化"的实操姿态。
 
 ## Open Questions（开放问题）
 
@@ -81,6 +84,7 @@ related:
 ## Evidence（证据）
 
 - Source: `raw/sources/architecture/2026-10-31-architecture-science-and-art-42-rules.md`（四问前置、演进式架构、三高量化数字、对症优化、数据放置 8 条、服务拆分 4 条、稳定性 7 条、一致性 2 条、厨师比喻、结语「法则是地图不是答案」）
+- Source: `raw/sources/architecture/2026-11-25-architect-when-not-to-design.md`（2026-11-25 补充：复杂度随业务需要增长、抽象来自已出现变化、提前设计成本 vs 改造成本判据、整体成本六项合算）
 
 ## Related Knowledge（相关知识）
 
