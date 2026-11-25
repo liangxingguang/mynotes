@@ -4,7 +4,7 @@ type: concept
 title: Ontology（企业本体／业务本体）
 status: active
 created: 2026-11-20
-updated: 2026-11-24
+updated: 2026-11-25
 confidence: medium
 tags:
   - concept
@@ -14,6 +14,7 @@ sources:
   - raw/sources/ai/2026-11-20-agent-knowledge-base.md
   - raw/sources/ai/2026-11-20-ontology-rsi-coding-agent.md
   - raw/sources/ai/2026-11-24-enterprise-agent-architecture-ai-coding-ontology-harness.md
+  - raw/sources/ai/2026-11-25-enterprise-ai-agent-fullstack.md
 related:
   - wiki/concepts/rag.md
   - wiki/concepts/graphrag.md
@@ -21,9 +22,11 @@ related:
   - wiki/comparisons/agent-knowledge-base-capabilities.md
   - wiki/concepts/recursive-self-improvement.md
   - wiki/concepts/three-layer-project-graph.md
+  - wiki/concepts/forward-deployed-engineer.md
   - wiki/sources/ontology-rsi-agent.md
   - wiki/topics/enterprise-agent-architecture.md
   - wiki/sources/2026-11-24-enterprise-agent-architecture.md
+  - wiki/sources/2026-11-25-enterprise-ai-agent-fullstack.md
 ---
 # Ontology（企业本体／业务本体）
 
@@ -61,6 +64,8 @@ Ontology（企业本体或业务本体）是把企业业务世界中的业务对
 
 **业务建模的落地实践**（信源 2026-11-24，发票异常处理案例）：先围绕一项业务任务整理小范围业务模型，不必一开始覆盖整个企业。第一版须说清核心对象的字段（如发票的所属法人、供应商、金额与币种、有效状态、关联采购单；采购单的明细、数量、计价口径、变更版本），对象通过**稳定编号**关联；执行动作时落到主数据标识及其系统映射，两个名字相似的供应商不能靠模型觉得"应该是同一家"就合并。关系也须具体：核对数量时要知道计量单位是否一致，金额比较要明确含税还是未税、币种是否相同，无法直接比较的返回人工确认。可用几个业务问题检查模型是否够用（这张发票关联哪些单据？当前缺少什么？谁能补齐？补齐后允许发起哪个动作？）。AI 可根据接口文档提出对象、字段映射和规则草案，但**业务负责人须结合样本确认**——模型建议"已完成等于可付款"正好暴露需核对的口径，它不能自己批准这条映射。实现上定义可先落在数据库视图、带类型的对象结构和领域服务里；需跨来源交换形式化语义或逻辑推理时再评估 RDF、OWL，第一版能沿对象关系找到数据、按明确条件发起动作即已可验证（信源 2026-11-24）。
 
+**电商本体落地实例**（信源 2026-11-25，电商智能售后案例）：跨系统数据语义割裂（商品中心用 `sku_code`、订单系统用 `sku_id`、库存系统自有编码）正是 Ontology 要解决的典型问题。定义 Customer、Product、SKU、Order、OrderItem、Payment、Inventory、Shipment、Return、Refund 十个核心对象及关系（Customer 拥有 Order，Order 含 OrderItem、关联 Payment/Shipment/Return，OrderItem 对应 SKU，SKU 关联 Inventory，Return 关联 Refund 等）。**形式化技术栈分工**：RDF 用三元组（主语-谓语-宾语）描述业务事实（适合跨系统业务事实、同一对象出现在多三元组连成图），OWL 2（W3C 本体描述语言）定义 Class/Property/Individual 与逻辑语义（**静态**概念与约束），SPARQL 沿 RDF 图关系查询（动态业务判断如退款期限、金额上限仍靠规则引擎或应用程序，**两类规则分开设计**）。**AI 辅助建模五步**：明确业务问题→识别业务对象→建立对象关系→映射真实数据（重点解决跨系统 ID 对齐，靠业务主键/映射表/数据治理规则建立统一身份，**不能凭名称相同当同一实体**）→用 Competency Questions（业务能力问题，如「订单 A1024 含哪些商品」「该 SKU 对应哪个商品」「订单是否已签收」）验证本体覆盖。工具上可先用 Python RDFLib 操作 RDF，数据规模与查询需求增长后再评估 Apache Jena、Fuseki 等图数据平台；AI 可参与模型草拟、字段映射与关系检查，但业务定义须业务人员拍板（信源 2026-11-25）。实际建模还要处理订单拆分、部分发货、部分退款、多包裹、多仓库等，不能简单假定一单对应一个 SKU/一条物流/一笔退款。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -78,6 +83,7 @@ Ontology（企业本体或业务本体）是把企业业务世界中的业务对
 - 2026-11-20 — 新建本页。信源 `raw/sources/ai/2026-11-20-agent-knowledge-base.md` 给出 Ontology 的定义、Palantir Objects/Properties/Links 参考、与 GraphRAG 的边界及企业评估问题清单。
 - 2026-11-21 — 第二信源 `raw/sources/ai/2026-11-20-ontology-rsi-coding-agent.md` 补充 AI 时代 Ontology 的 Agent 视角：本体开始更直接地参与 Agent 的检索、判断和行动，并需随业务与执行反馈持续维护；EvoOntology 让本体根据 Agent 使用反馈演进（Content/Schema/Tool 三部分、browse/resolve 两类访问）；在研发 Loop 中，本体不必成为第四层，体现在三层项目图谱的第二层（项目语义）的概念与约束表达中。
 - 2026-11-24 — 第三信源 `raw/sources/ai/2026-11-24-enterprise-agent-architecture-ai-coding-ontology-harness.md` 补上**业务建模落地实践**：围绕一项业务任务先做小范围模型，核心对象须说清字段并经稳定编号关联；同字段跨系统语义不同（如采购与仓储的"已完成"）不能靠模型臆断合并；AI 提的映射草案须业务负责人确认，模型不能自批口径；实现先落数据库视图/带类型对象结构/领域服务，形式化语义需求再评估 RDF/OWL。案例见 [[enterprise-agent-architecture|企业 Agent 架构（从原型到交付）]]。
+- 2026-11-25 — 第四信源 `raw/sources/ai/2026-11-25-enterprise-ai-agent-fullstack.md` 补上**电商本体实例与形式化技术栈分工**：跨系统 ID 割裂（sku_code/sku_id/库存编码）的典型场景；十个核心对象及关系；RDF 三元组/OWL 2/SPARQL 三者分工（RDF 描述事实、OWL 静态语义、SPARQL 查询，动态判断靠规则引擎、两类规则分开设计）；AI 辅助建模五步与 Competency Questions 验证；跨系统 ID 对齐不能凭名称相同当同一实体。案例见 [[2026-11-25-enterprise-ai-agent-fullstack|从 0 到 1 构建企业级 AI Agent（信源页）]]。
 
 ## Open Questions（开放问题）
 
@@ -88,6 +94,7 @@ Ontology（企业本体或业务本体）是把企业业务世界中的业务对
 - Source: `raw/sources/ai/2026-11-20-agent-knowledge-base.md`
 - Source: `raw/sources/ai/2026-11-20-ontology-rsi-coding-agent.md`
 - Source: `raw/sources/ai/2026-11-24-enterprise-agent-architecture-ai-coding-ontology-harness.md`（业务建模落地实践：对象字段与稳定编号、跨系统语义差异、AI 映射草案须业务确认、RDF/OWL 按需评估）
+- Source: `raw/sources/ai/2026-11-25-enterprise-ai-agent-fullstack.md`（电商本体实例：十大核心对象及关系、RDF/OWL/SPARQL 分工、AI 辅助建模五步与 Competency Questions、跨系统 ID 对齐纪律）
 
 ## Related Knowledge（相关知识）
 

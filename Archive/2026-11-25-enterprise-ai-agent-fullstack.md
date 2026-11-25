@@ -9,7 +9,7 @@ created: 2026-11-25
 category: 技术
 tags: [AI, Agent, 系统设计]
 asset_ref: Assets/2026-11/wechat-4Hh7XaCg5iInfrt4Yhdy1A.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 从 0 到 1 构建企业级 AI Agent：AI Coding + Ontology + Harness + FDE，全链路技术实战

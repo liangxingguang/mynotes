@@ -4,7 +4,7 @@ type: concept
 title: 业务 Agent 全生命周期评测
 status: active
 created: 2026-10-22
-updated: 2026-11-22
+updated: 2026-11-25
 confidence: medium
 tags:
   - concept
@@ -20,6 +20,7 @@ sources:
   - raw/sources/ai/2026-11-07-agent-memory-system-design.md
   - raw/sources/ai/2026-11-20-llm-agent-eval-gap-full.md
   - raw/sources/ai/2026-11-20-zte-cosight-harness.md
+  - raw/sources/ai/2026-11-25-enterprise-ai-agent-fullstack.md
 related:
   - wiki/sources/huolala-agent-eval-platform.md
   - wiki/concepts/agent-memory-system.md
@@ -28,6 +29,8 @@ related:
   - wiki/concepts/ai-native-organization.md
   - wiki/sources/llm-integration-engineering-hard-parts.md
   - wiki/sources/ai-native-team-org-reconstruction.md
+  - wiki/concepts/forward-deployed-engineer.md
+  - wiki/sources/2026-11-25-enterprise-ai-agent-fullstack.md
 ---
 # 业务 Agent 全生命周期评测
 
@@ -55,6 +58,8 @@ LLM 概率输出 + 长工具调用链使传统确定性断言失效：单步推�
 
 评测计划按能力项设目标分与权重发起；平台经拦截器动态注入参数调用被测 Agent，规则引擎毫秒级校验硬事实，Judge Prompt 按平台-Agent-用例三维动态组合评分，专家复核样本沉淀为黄金集反哺裁判 Prompt；准出时全量基准比对目标分，不达标阻断发布。
 
+**业务指标 + 系统指标双重评估框架**（信源 2026-11-25，第 9 信源，电商售后案例）：把 Agent 上线前的评估明确分为两类指标——**业务指标**（AI 独立解决率、订单查询准确率、退货规则准确率、退款处理准确率、人工接管率，衡量用户问题是否被正确、独立地解决）与**系统指标**（Tool Calling 成功率、端到端成功率、P95 延迟、异常恢复率、权限拦截准确率，衡量执行链路的可靠性）。该信源特别强调**端到端成功率**：Agent 成功调了订单查询与物流查询接口，但最终没把用户要的退货申请办成，任务照样算失败——**评估的对象是最终业务结果**，而非单步调用成功。测试集须覆盖边界条件（正常订单、异常订单、重复申请、特殊商品、权限不足、接口超时），只有盖住边界条件，评估结果才有参考价值。与货拉拉「准出基准比对」、叶小钗「证据导向/分母纪律」、Codex「分项判定」互证，无矛盾；方法论建议，置信度中。信源页见 [[2026-11-25-enterprise-ai-agent-fullstack|从 0 到 1 构建企业级 AI Agent（信源页）]]。
+
 ## Relationships（关系）
 
 ### Related Concepts（相关概念）
@@ -79,6 +84,8 @@ LLM 概率输出 + 长工具调用链使传统确定性断言失效：单步推�
 
 - 2026-11-22 — 新增中兴 Co-Sight Harness 信源（第 8 信源）`raw/sources/ai/2026-11-20-zte-cosight-harness.md`。补上**长链路评测的三级指标下钻与回归门禁**实例：①评测演进——v1.0 七个通用维度+裁判大模型打分（粗粒度总分无法定位 200+ 步链路中的具体偏差）→v2.0 把老专家审校规则转为固定召回率/精确率公式（可计算可复现）→v3.0 在活动节点埋点、中间产物与 Golden Set 逐节点比对（当场定位偏差步骤）；②防倒退纪律——长链路调优中「修好当前步骤、改坏其他环节」真实发生（召回率 45%→43%），以回归测试硬门禁+审批+一键回滚拦住倒退改动，召回率随后稳步提升至 93%；③与算法层优化互补——DSPy 自动改提示词冲分，证据层提供底层可靠的评测标准。与货拉拉黄金集反哺裁判、叶小钗分母纪律、Codex 分项判定互证。
 
+- 2026-11-25 — 新增企业级 AI Agent 全链路信源 `raw/sources/ai/2026-11-25-enterprise-ai-agent-fullstack.md`（第 9 信源）。补上**业务指标 + 系统指标双重评估框架**的清晰分类（业务指标：AI 独立解决率/查询准确率/规则准确率/退款准确率/人工接管率；系统指标：Tool Calling 成功率/端到端成功率/P95 延迟/异常恢复率/权限拦截准确率），并确立**端到端成功率**与「评估对象是最终业务结果」的纪律——单步调用成功不等于任务完成，测试集须覆盖边界条件。与货拉拉「准出基准比对」、叶小钗「证据导向/分母纪律」、Codex「分项判定」互证，无矛盾；方法论建议，置信度中。信源页见 [[2026-11-25-enterprise-ai-agent-fullstack|从 0 到 1 构建企业级 AI Agent（信源页）]]。
+
 ## Open Questions（开放问题）
 
 - Judge 模型自身的幻觉与偏见如何系统性校正（信源只给出采样聚合与转人工策略）。
@@ -94,6 +101,7 @@ LLM 概率输出 + 长工具调用链使传统确定性断言失效：单步推�
 - Source: `raw/sources/ai/2026-11-07-agent-memory-system-design.md`（第 6 信源：记忆系统五类指标——检索质量/任务效果/记忆准确性/运行成本/安全与权限；五维组合评估；反馈适用范围纪律）
 - Source: `raw/sources/ai/2026-11-20-llm-agent-eval-gap-full.md`（第 7 信源：机理三层能力与锚点函数实验、三组对照测试、总分掩盖关键任务短板、ADeLe 能力画像/SCC、构念导向评测、结果+过程双评测、评测验证三步、依据核验三问、异常处置四类、Memento 消融、三层验证/三方式对照、H 指标反例与正确性门控）
 - Source: `raw/sources/ai/2026-11-20-zte-cosight-harness.md`（第 8 信源：三级指标下钻、Golden Set 逐节点比对、回归门禁防倒退、与 DSPy/GEPA 互补；内部自报数据，置信度中）
+- Source: `raw/sources/ai/2026-11-25-enterprise-ai-agent-fullstack.md`（第 9 信源：业务指标 + 系统指标双重评估框架、端到端成功率与"评估对象是最终业务结果"纪律、测试集覆盖边界条件；方法论建议，置信度中）
 
 ## Related Knowledge（相关知识）
 

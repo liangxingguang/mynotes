@@ -1,26 +1,6 @@
 {
-  "updated_at": "2026-11-25 15:41",
+  "updated_at": "2026-11-25 16:05",
   "notes": [
-    {
-      "id": "2026-11-25-enterprise-ai-agent-fullstack",
-      "title": "从 0 到 1 构建企业级 AI Agent：AI Coding + Ontology + Harness + FDE，全链路技术实战",
-      "path": "Inbox/2026-11-25-enterprise-ai-agent-fullstack.md",
-      "created": "2026-11-25",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "Agent",
-        "系统设计"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/4Hh7XaCg5iInfrt4Yhdy1A",
-      "source_type": "article",
-      "platform": "wechat",
-      "summary": "企业级 Agent 的分水岭不在能不能回答问题，而在能不能把一句话安全地做成一笔真实业务操作。文章以电商智能售后 Agent 为贯穿案例，分三段展开：AI Coding 从 0 搭出 Agent、Ontology 建模让 Agent 看懂业务关系、FDE 工程交付（Agent Runtime + Harness Engineering + Evaluation）把 Agent 送进生产，并给出完整参考架构与交付物清单。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-4Hh7XaCg5iInfrt4Yhdy1A.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-11-25-impromptu-speech-9-formulas",
       "title": "提高自己即兴讲话的９个万能公式",
@@ -9256,6 +9236,26 @@
       "summary": "以现代 Elasticsearch 为主的 38 道面试题（含常见追问），覆盖基础概念与倒排索引、分词与 Mapping、写入与数据可靠性、查询排序分页、集群分片扩容、数据同步与排障六大板块，每题先给可直接回答的版本再补追问，文末附\"最容易答错的十句话\"纠正常见误区。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-5CB5mt9-AXXweYjZJCsiOw.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-25-enterprise-ai-agent-fullstack",
+      "title": "从 0 到 1 构建企业级 AI Agent：AI Coding + Ontology + Harness + FDE，全链路技术实战",
+      "path": "Archive/2026-11-25-enterprise-ai-agent-fullstack.md",
+      "created": "2026-11-25",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent",
+        "系统设计"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/4Hh7XaCg5iInfrt4Yhdy1A",
+      "source_type": "article",
+      "platform": "wechat",
+      "summary": "企业级 Agent 的分水岭不在能不能回答问题，而在能不能把一句话安全地做成一笔真实业务操作。文章以电商智能售后 Agent 为贯穿案例，分三段展开：AI Coding 从 0 搭出 Agent、Ontology 建模让 Agent 看懂业务关系、FDE 工程交付（Agent Runtime + Harness Engineering + Evaluation）把 Agent 送进生产，并给出完整参考架构与交付物清单。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-4Hh7XaCg5iInfrt4Yhdy1A.md",
       "wiki_status": "ingested"
     },
     {

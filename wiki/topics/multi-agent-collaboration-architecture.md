@@ -4,7 +4,7 @@ type: topic
 title: 多 Agent 协作架构与控制权下沉
 status: active
 created: 2026-11-05
-updated: 2026-11-12
+updated: 2026-11-25
 confidence: medium
 tags:
   - topic
@@ -16,6 +16,7 @@ sources:
   - raw/sources/ai/2026-11-12-ai-agent-tech-overview.md
   - raw/sources/ai/2026-11-12-pi-xfer-handoff-network.md
   - raw/sources/ai/2026-11-12-multi-agent-task-board-architecture.md
+  - raw/sources/ai/2026-11-25-enterprise-ai-agent-fullstack.md
 ---
 # 多 Agent 协作架构与控制权下沉
 
@@ -72,6 +73,8 @@ sources:
 - 2026-11-12 — 新增知乎信源 `raw/sources/ai/2026-11-12-pi-xfer-handoff-network.md`（第 3 信源）。补上 **Handoffs 协作模式的落地机制与 Agent 组网形态**：handoff 不是聊天记录复制粘贴，而是"header（target/kind/summary）+ 正文落盘文档 + 按需加载 + 反向回执"的正式交接，解决一个窗口混多任务导致的上下文腐坏；同一套消息协议可多形态接入——本地 unix socket（装上即互通）、异构 Agent host（adapterd 收件箱）、浏览器（人以选择器灌数据）、跨机（SSH Link 隧道 / RivetKit actor 架构 Mesh，支持持久队列与休眠节点）。并附相关工具 pi-intercom、Reason Network。handoff 机制详见概念页 [[agent-handoff]]，实现实体见 [[pi-xfer]]。
 
 - 2026-11-12 — 新增知乎信源 `raw/sources/ai/2026-11-12-multi-agent-task-board-architecture.md`（第 4 信源）。补上**任务看板的完整任务字段、双 Master 架构与 LangGraph 实现**：①任务看板字段含 task_id/capability/lease_owner/retry_count/max_retry/dependencies/lease_expire_at/priority，状态机 `PENDING→CLAIMED→RUNNING→SUCCEEDED/FAILED/RETRYING` 完整定义；②**双 Master 架构**——Planner Master 只拆解（禁止回收租约/改状态/判结束）+ Scheduler Master 只调度巡检（租约超时回收、依赖校验、重试熔断、全局进度判断、优先级排序，禁止创建新任务），各司其职、禁止越界；③拆分原则重申"划分上下文边界和信息压缩边界"而非贴职业标签，"大模型+小模型"混合（小管快、大管深）；④核心判断：任务看板架构已成为工业落地中重要核心架构之一，核心架构正从 Orchestrator-Workers 过渡到任务看板。与第 1 信源"三次反转"框架同调，双 Master 是任务看板的工程改进。详见概念页 [[task-board-coordination]]。
+
+- 2026-11-25 — 新增企业级 AI Agent 全链路信源 `raw/sources/ai/2026-11-25-enterprise-ai-agent-fullstack.md`（第 5 信源，电商售后案例）。以电商智能运营系统印证**Supervisor + 专业 Agent 分工**的落地形态：Supervisor Agent 拆任务，商品/营销/库存/订单/物流/售后六个专业 Agent 各守明确业务职责与工具权限（商品 Agent 不需退款权限、库存 Agent 不碰支付），统一 SKU 标识让多 Agent 确认说的是同一规格；并重申拆分判据——该不该拆取决于任务复杂度，Agent 一多协调成本也涨。该信源的「按业务领域分工 + 工具权限隔离 + 统一标识」与既有「上下文边界」原则（按看见什么/产出什么切分）及得物「组件级路由」互证，属 Supervisor 架构的电商实例，无矛盾。信源页见 [[2026-11-25-enterprise-ai-agent-fullstack|从 0 到 1 构建企业级 AI Agent（信源页）]]。
 
 ## Disagreements（分歧）
 

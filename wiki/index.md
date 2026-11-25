@@ -7,6 +7,7 @@
 - [[2026-11-25-ai-native-engineering|AI-Native Engineering：AI 时代，我们应该重新思考软件研发流程（信源页）]]（2026-11-25，AI/Agent/研发体系，微信公众号方法论文章：AI Coding Agent 能力演进立论"改变整个软件研发体系"+六个 First 原则及理由+研发各阶段 AI-Native 实践对照+四个特别关注+三阶段建设路径与研发范式转向，单信源无实证，置信度中）
 - [[2026-11-25-agent-architecture-harness-runtime-orchestrator|一文搞懂 Agent 技术架构：Harness、Runtime、Orchestrator、Framework 的区别（信源页）]]（2026-11-25，AI/Agent/Harness/架构，微信概念科普文：五组件公式 Agent = Model + Harness + Tools + Memory + Environment、Harness 七项职责、Runtime 生命周期、Execution Loop 七步拆解、Harness/Runtime/Orchestrator/Framework 四概念"各回答什么问题"对照、Orchestrator ≠ Agent Loop、构建 Harness 五项基础能力与"会行动→能交付"判断标准，概念性科普无实测数据，单信源，置信度中）
 - [[how-we-learn|《How We Learn》导读：有效学习的十个关键词（信源页）]]（2026-11-25，学习/方法论，微信公众号对 Benedict Carey《How We Learn》的导读：跨越 20 世纪的脑科学学习研究，十章对应故事/遗忘/环境/间断/无知/分心/渗透/混合/感知/睡眠十个关键词+间隔排布/睡眠巩固/流利错觉/以教代测/分心渗透/多环境学习等技巧，单信源，置信度中）
+- [[2026-11-25-enterprise-ai-agent-fullstack|从 0 到 1 构建企业级 AI Agent：AI Coding + Ontology + Harness + FDE（信源页）]]（2026-11-25，AI/Agent/架构/Ontology/Harness，微信方法论文章：以电商智能售后为贯穿案例，AI Coding 搭 Agent（六工具+参考栈+分阶段跑测试）+Ontology 建模（十大对象+RDF/OWL/SPARQL+AI 辅助五步+Competency Questions）+FDE 工程交付（Harness 十模块+Runtime+四阶段交付+双重评估+金丝雀发布），参考架构公式 Model+Context+Tools+Ontology+Harness+Runtime+Evaluation（作者自述非标准定义），单信源无实证，置信度中）
 - [[2026-11-24-weixin-leo-architecture-growth|从需求开发到全栈架构：我主动干遍了所有"不属于我的活"（信源页）]]（2026-11-24，成长/架构/微信，从业 15 年系统架构师 Leo 原创自述：岗位边界是成长天花板+主动承接无人认领的跨系统疑难倒逼跨域学习+「做哪行研究下一层知识」+FMEA/STPA/ASPICE 体系补齐+无人看见时的职业定力，单信源，置信度中）
 - [[2026-11-24-ant-toolgw-agent-tool-gateway|蚂蚁 AI 工具网关 ToolGW：全站统一的 Agent 工具流量入口（信源页）]]（2026-11-24，AI/Agent/网关/MCP，微信「金融级分布式架构」，蚂蚁 ToolGW 负责人一手自述：MCP/CLI 双协议门面共享 ToolEngine、存量 RPC/HTTP 零代码上翻（4000+ Server/20000+ Tool）、双身份向 AgentToken 演进、Tool 粒度两层鉴权、限流/Mock/录制回放治理，峰值 QPM 25w+，单信源，置信度高）
 - [[2026-11-24-enterprise-agent-architecture|企业 Agent 架构怎么搭？AI Coding + Ontology + Harness（信源页）]]（2026-11-24，AI/Agent/架构/Ontology/Harness，微信「架构师」提出企业业务 Agent 落地架构：AI Coding 做原型+Ontology 说清业务含义+Harness 组织单轮执行+Runtime 承接持久调度+FDE 现场交付，核心原则"调查留给 Agent/动作校验留业务服务/跨轮跟进交持久流程"，发票异常处理贯穿九环节，设计示例，单信源，置信度中）
@@ -572,6 +573,7 @@
 - [[fail-fast-modcount|Fail-Fast 迭代器（modCount）]]（结构修改计数器+迭代器快照比对抛 CME；检测单线程编程错误而非线程安全机制；含 fail-safe 对比与 subList 陷阱，同作者六信源）
 - [[fluency-illusion|流利错觉（fluency illusion）]]（2026-11-25，学习/认知心理/概念，只掌握知识体系僵化切片就自以为学会、考试能过但无法灵活应用；测试的意义在于暴露缺漏而非划分等级，最有效的测试是教课，《How We Learn》导读单信源，置信度中）
 - [[forkjoinpool-internals|ForkJoinPool 核心设计（每线程双端队列 + 工作窃取 + join 不空等）]]（每线程 WorkQueue 双端队列+主人 LIFO/小偷 FIFO+CAS 窃取+fork 认当前池+join 偷活不空等+阻塞假死+ManagedBlocker 补偿+无拒绝策略+commonPool CPU-1，单信源置信度高）
+- [[forward-deployed-engineer|FDE（前线部署工程师 / Forward Deployed Engineer）]]（2026-11-25，AI/Agent/交付/工程，源自 Palantir 实践、贴着业务结果走从调研管到交付的工程角色，七阶段工作 + 四阶段交付流程，与 AI Coding 关系，双信源，置信度中）
 - [[framework-first-migration|框架先行的规模化运行时迁移]]（BOM 收口+框架分代并行+AI 批量改造+检查单收敛，货拉拉 JDK 21 实践）
 - [[futuretask-internals|FutureTask 内部设计（单向状态机 + CAS + Treiber 等待栈）]]（七态单向递增+CAS 推进+WaitNode 无锁栈 park/unpark；cancel 仅设中断标志；异常包装 ExecutionException；单信源，置信度中）
 - [[g1-gc|G1 垃圾收集器]]（Region 分区+RSet+SATB+Mixed GC，可预测停顿，JDK 9+ 默认；单信源）

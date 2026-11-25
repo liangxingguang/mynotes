@@ -6041,6 +6041,23 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/5CB5mt9-AXXweYjZJCsiOw",
       "asset_ref": "Assets/2026-11/wechat-5CB5mt9-AXXweYjZJCsiOw.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-25-enterprise-ai-agent-fullstack.md",
+      "sha256": "8552876fd3f60213978e80501a024d87751961214de933bcb588419f3cf42965",
+      "registered_at": "2026-11-25",
+      "inbox_ref": "Archive/2026-11-25-enterprise-ai-agent-fullstack.md",
+      "pages": [
+        "wiki/sources/2026-11-25-enterprise-ai-agent-fullstack.md",
+        "wiki/concepts/forward-deployed-engineer.md",
+        "wiki/topics/enterprise-agent-architecture.md",
+        "wiki/concepts/ontology.md",
+        "wiki/concepts/harness-engineering.md",
+        "wiki/concepts/agent-evaluation.md",
+        "wiki/topics/multi-agent-collaboration-architecture.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/4Hh7XaCg5iInfrt4Yhdy1A",
+      "asset_ref": "Assets/2026-11/wechat-4Hh7XaCg5iInfrt4Yhdy1A.md"
     }
   ]
 }

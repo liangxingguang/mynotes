@@ -4,7 +4,7 @@ type: topic
 title: 企业 Agent 架构（从原型到交付）
 status: active
 created: 2026-11-24
-updated: 2026-11-24
+updated: 2026-11-25
 confidence: medium
 tags:
   - topic
@@ -13,6 +13,7 @@ tags:
   - architecture
 sources:
   - raw/sources/ai/2026-11-24-enterprise-agent-architecture-ai-coding-ontology-harness.md
+  - raw/sources/ai/2026-11-25-enterprise-ai-agent-fullstack.md
 related:
   - wiki/concepts/ontology.md
   - wiki/concepts/harness-engineering.md
@@ -20,7 +21,9 @@ related:
   - wiki/concepts/durable-execution.md
   - wiki/concepts/agent-evaluation.md
   - wiki/concepts/agent-production-four-layer-model.md
+  - wiki/concepts/forward-deployed-engineer.md
   - wiki/sources/2026-11-24-enterprise-agent-architecture.md
+  - wiki/sources/2026-11-25-enterprise-ai-agent-fullstack.md
 ---
 # 企业 Agent 架构（从原型到交付）
 
@@ -44,6 +47,8 @@ related:
 
 **建设顺序**（信源 2026-11-24）：从一条能验收的业务路径起步——先约定完成条件、做只读原型，用真实数据校准对象和工具，再接入等待、审批与写操作；评估和现场反馈贯穿，每增加一种执行能力就增加相应验收样本。
 
+**第二信源印证与扩展**（信源 2026-11-25，电商智能售后 Agent 为贯穿案例）：独立印证上述五大角色分工与「调查留给 Agent、动作校验留业务服务」的承重原则，并以电商退货退款场景给出更具体的落地细节。该信源给出参考架构公式（作者个人归纳，非标准定义）：`Enterprise AI Agent = Model + Context + Tools + Ontology + Harness + Runtime + Evaluation`——模型决定智能能力，Ontology 帮 Agent 理解业务，Tools 提供操作外部系统的能力，Harness 与 Runtime 管住执行过程，Evaluation 检查最终结果，FDE 负责把这些技术攒成能解决实际问题的应用。FDE 的完整定义与四阶段交付流程落成独立概念页 [[forward-deployed-engineer|FDE（前线部署工程师）]]。**解读**：两信源案例不同（发票异常 vs 电商售后）但架构口径一致，互为印证，说明该分工是跨业务场景的稳定工程模式，而非单案例设计。
+
 **解读**：这一路径把「能对话」到「能上岗」之间的工程缺口拆成可逐步验收的环节，与 [[enterprise-agent-three-stage-transition|企业 Agent 三阶段跃迁]] 的成熟度视角互补——后者给阶段划分，本文给每阶段内的具体建设动作。
 
 ## Key Concepts（关键概念）
@@ -60,7 +65,7 @@ related:
 - [[ontology|Ontology]]：Palantir Foundry 实现参考，含对象/属性/关系/动作/函数/动态安全机制。
 - [[harness-engineering|Harness]]：OpenAI《Harness Engineering》概念，本文用作业务 Agent 单轮执行的组织层。
 - LangGraph：用 checkpointer 保存图状态，`interrupt()` 恢复从所在节点开头重跑。
-- FDE（Forward Deployed Engineer）：前线部署工程师，负责现场打通与交接。
+- FDE（Forward Deployed Engineer）：[[forward-deployed-engineer|FDE（前线部署工程师）]]，负责现场打通与交接，并对最终业务结果负责。
 
 ## Important Decisions（重要决策）
 
@@ -72,6 +77,7 @@ related:
 ## Major Developments（重大进展）
 
 - 2026-11-24 — 信源《企业 Agent 架构怎么搭？AI Coding + Ontology + Harness，从原型到交付》给出五大角色分工、核心原则与九环节落地路径，以发票异常处理为贯穿案例。落成主题页本页，信源页见 [[2026-11-24-enterprise-agent-architecture|企业 Agent 架构（信源页）]]。
+- 2026-11-25 — 信源《从 0 到 1 构建企业级 AI Agent：AI Coding + Ontology + Harness + FDE，全链路技术实战》以电商智能售后为案例独立印证五大角色分工与承重原则，并扩展参考架构公式、Harness 十模块、FDE 四阶段交付流程与双重评估指标。FDE 升格为独立概念页 [[forward-deployed-engineer|FDE（前线部署工程师）]]，信源页见 [[2026-11-25-enterprise-ai-agent-fullstack|从 0 到 1 构建企业级 AI Agent（信源页）]]。两信源案例不同、架构口径一致，互为印证。
 
 ## Disagreements（分歧）
 
