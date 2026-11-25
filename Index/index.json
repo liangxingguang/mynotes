@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25 12:36",
+  "updated_at": "2026-11-25 12:37",
   "notes": [
     {
       "id": "2026-11-25-agent-architecture-harness-runtime-orchestrator",
@@ -77,6 +77,24 @@
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-PdYN3x6A0DqDT2A1CTD9IA.md",
       "wiki_status": "ingesting"
+    },
+    {
+      "id": "2026-11-25-impromptu-speech-9-formulas",
+      "title": "提高自己即兴讲话的９个万能公式",
+      "path": "Inbox/2026-11-25-impromptu-speech-9-formulas.md",
+      "created": "2026-11-25",
+      "category": "生活",
+      "tags": [
+        "自学"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/BV_p9mxxUUSlBImCWI9R7A",
+      "source_type": "article",
+      "platform": "wechat",
+      "summary": "针对即兴讲话\"脑袋空白、跑题、逻辑乱、无感染力\"的痛点，文章把九个常见场景提炼成可直接套用的说话公式，照说如按剧本，3 秒组织语言。**注意：九个公式的具体内容以图片形式承载，采集后仅剩占位符，本文仅能归纳场景与思路，公式原文需查看原文图片。**",
+      "summary_status": "partial",
+      "asset_ref": "Assets/2026-11/wechat-BV_p9mxxUUSlBImCWI9R7A.md",
+      "wiki_status": "pending"
     },
     {
       "id": "2026-11-25-llm-agent-hybrid-routing",
