@@ -6093,6 +6093,41 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=MzI2MDA5MDM0MA==&mid=2650603211&idx=1&sn=44c338195a5be5882896e2f24b47326d",
       "asset_ref": "Assets/2026-11/wechat-lsm-tree-disk.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-25-microsoft-ai-agents-for-beginners.md",
+      "sha256": "b5edcf5049fb90726a8191446e028e4ace039a0e937545d2fafc350e97086eb4",
+      "registered_at": "2026-11-25",
+      "inbox_ref": "Archive/2026-11-25-microsoft-ai-agents-for-beginners.md",
+      "pages": [
+        "wiki/sources/2026-11-25-microsoft-ai-agents-for-beginners.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/puITWgiaibrR2MlhdK_-oA",
+      "asset_ref": "Assets/2026-11/wechat-puITWgiaibrR2MlhdK_-oA.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-25-mysql-sql-execution-journey.md",
+      "sha256": "5e9c1200e3ca48ccb6d2058a2d40286d0815c6196db1ebbf2dc37bde68682344",
+      "registered_at": "2026-11-25",
+      "inbox_ref": "Archive/2026-11-25-mysql-sql-execution-journey.md",
+      "pages": [
+        "wiki/sources/2026-11-25-mysql-sql-execution-journey.md",
+        "wiki/concepts/mysql-sql-execution-pipeline.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzI2MDA5MDM0MA==&mid=2650594614&idx=1&sn=70f9de6ea2fed91fde4a388cfd9c451c&chksm=f2668dbdc51104aba4f0c3630c1e3f831b9e27fc97804cbc45b0d70d95c43a59ee9c883324c5",
+      "asset_ref": "Assets/2026-11/wechat-mysql-sql-execution-journey.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-25-pg-vs-mysql-java.md",
+      "sha256": "0487443e28095123a24014d9dd5e0a0063acd047524b5e616b473e117cb5b531",
+      "registered_at": "2026-11-25",
+      "inbox_ref": "Archive/2026-11-25-pg-vs-mysql-java.md",
+      "pages": [
+        "wiki/sources/2026-11-25-pg-vs-mysql-java.md",
+        "wiki/comparisons/postgresql-vs-mysql.md"
+      ],
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzI2MDA5MDM0MA==&mid=2650602748&idx=1&sn=35b606b59c9e8b3bab8217ae6913fa67&chksm=f266ac77c51125614c8f535810e5917df2c0e220edc566e2b2d048f9a274dea23bf657d68b1f",
+      "asset_ref": "Assets/2026-11/wechat-pg-vs-mysql-java.md"
     }
   ]
 }

@@ -1,64 +1,6 @@
 {
-  "updated_at": "2026-11-25 18:32",
+  "updated_at": "2026-11-25 21:45",
   "notes": [
-    {
-      "id": "2026-11-25-microsoft-ai-agents-for-beginners",
-      "title": "微软开源了一个 AI Agent 学习项目，18 节课从原理讲到实战",
-      "path": "Inbox/2026-11-25-microsoft-ai-agents-for-beginners.md",
-      "created": "2026-11-25",
-      "category": "技术",
-      "tags": [
-        "AI",
-        "Agent",
-        "自学"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/puITWgiaibrR2MlhdK_-oA",
-      "source_type": "article",
-      "platform": "wechat",
-      "summary": "微软在 GitHub 开源的 AI Agents for Beginners 是一套入门课程（截至 2026 年 9 月约 7.6 万 Star），18 节课覆盖 Agent 基本概念、设计模式、工具调用、RAG、多 Agent 协作、MCP、上下文工程、记忆管理与生产部署，每课配文字教程、短视频与 Python 代码示例，为从大模型应用走向 Agent 系统开发提供清晰路径。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-puITWgiaibrR2MlhdK_-oA.md",
-      "wiki_status": "ingesting"
-    },
-    {
-      "id": "2026-11-25-mysql-sql-execution-journey",
-      "title": "深入剖析 MySQL：一条 SQL 语句的执行之旅",
-      "path": "Inbox/2026-11-25-mysql-sql-execution-journey.md",
-      "created": "2026-11-25",
-      "category": "技术",
-      "tags": [
-        "MySQL",
-        "系统设计"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzI2MDA5MDM0MA==&mid=2650594614&idx=1&sn=70f9de6ea2fed91fde4a388cfd9c451c&chksm=f2668dbdc51104aba4f0c3630c1e3f831b9e27fc97804cbc45b0d70d95c43a59ee9c883324c5#rd",
-      "source_type": "article",
-      "platform": "wechat",
-      "summary": "以一条 SQL 从发出到返回的完整旅程为线索，梳理 MySQL 三层体系结构（连接层/服务层/存储引擎层），逐阶段讲解准备（建立连接、查询缓存）、解析（词法/语法/语义分析）、优化（查询优化器生成执行计划、索引选择）、执行（执行器调用存储引擎接口）、结果返回五个环节，并以电商订单查询案例走通全流程。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-mysql-sql-execution-journey.md",
-      "wiki_status": "pending"
-    },
-    {
-      "id": "2026-11-25-pg-vs-mysql-java",
-      "title": "PostgreSQL vs MySQL：Java 选型指南与实战避坑",
-      "path": "Inbox/2026-11-25-pg-vs-mysql-java.md",
-      "created": "2026-11-25",
-      "category": "技术",
-      "tags": [
-        "MySQL",
-        "Java"
-      ],
-      "source": "微信公众号",
-      "source_url": "http://mp.weixin.qq.com/s?__biz=MzI2MDA5MDM0MA==&mid=2650602748&idx=1&sn=35b606b59c9e8b3bab8217ae6913fa67&chksm=f266ac77c51125614c8f535810e5917df2c0e220edc566e2b2d048f9a274dea23bf657d68b1f#rd",
-      "source_type": "article",
-      "platform": "wechat",
-      "summary": "从底层架构、数据类型、事务并发、索引原理到 Java 开发实践与性能基准，全维度对比 PostgreSQL 与 MySQL，给出五大业务场景的选型决策、双向迁移与双写共存方案，以及双方最佳实践和间隙锁、表膨胀、深度分页、大事务四大避坑要点。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/wechat-pg-vs-mysql-java.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
@@ -9275,6 +9217,64 @@
       "summary": "LSM-Tree（日志结构合并树）通过\"先写内存、后台归并、顺序刷盘\"，放弃原地更新、改为追加写入，把随机写变成顺序写，成为现代分布式存储基石（BigTable、RocksDB、HBase、Cassandra、MyRocks 均采用）。文章详解核心组件、读写删与归并流程、Compaction 策略对比、三大放大问题与权衡，并给出完整 Java 实现与 MyRocks 实战。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/wechat-lsm-tree-disk.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-25-microsoft-ai-agents-for-beginners",
+      "title": "微软开源了一个 AI Agent 学习项目，18 节课从原理讲到实战",
+      "path": "Archive/2026-11-25-microsoft-ai-agents-for-beginners.md",
+      "created": "2026-11-25",
+      "category": "技术",
+      "tags": [
+        "AI",
+        "Agent",
+        "自学"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/puITWgiaibrR2MlhdK_-oA",
+      "source_type": "article",
+      "platform": "wechat",
+      "summary": "微软在 GitHub 开源的 AI Agents for Beginners 是一套入门课程（截至 2026 年 9 月约 7.6 万 Star），18 节课覆盖 Agent 基本概念、设计模式、工具调用、RAG、多 Agent 协作、MCP、上下文工程、记忆管理与生产部署，每课配文字教程、短视频与 Python 代码示例，为从大模型应用走向 Agent 系统开发提供清晰路径。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-puITWgiaibrR2MlhdK_-oA.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-25-mysql-sql-execution-journey",
+      "title": "深入剖析 MySQL：一条 SQL 语句的执行之旅",
+      "path": "Archive/2026-11-25-mysql-sql-execution-journey.md",
+      "created": "2026-11-25",
+      "category": "技术",
+      "tags": [
+        "MySQL",
+        "系统设计"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzI2MDA5MDM0MA==&mid=2650594614&idx=1&sn=70f9de6ea2fed91fde4a388cfd9c451c&chksm=f2668dbdc51104aba4f0c3630c1e3f831b9e27fc97804cbc45b0d70d95c43a59ee9c883324c5#rd",
+      "source_type": "article",
+      "platform": "wechat",
+      "summary": "以一条 SQL 从发出到返回的完整旅程为线索，梳理 MySQL 三层体系结构（连接层/服务层/存储引擎层），逐阶段讲解准备（建立连接、查询缓存）、解析（词法/语法/语义分析）、优化（查询优化器生成执行计划、索引选择）、执行（执行器调用存储引擎接口）、结果返回五个环节，并以电商订单查询案例走通全流程。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-mysql-sql-execution-journey.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-25-pg-vs-mysql-java",
+      "title": "PostgreSQL vs MySQL：Java 选型指南与实战避坑",
+      "path": "Archive/2026-11-25-pg-vs-mysql-java.md",
+      "created": "2026-11-25",
+      "category": "技术",
+      "tags": [
+        "MySQL",
+        "Java"
+      ],
+      "source": "微信公众号",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzI2MDA5MDM0MA==&mid=2650602748&idx=1&sn=35b606b59c9e8b3bab8217ae6913fa67&chksm=f266ac77c51125614c8f535810e5917df2c0e220edc566e2b2d048f9a274dea23bf657d68b1f#rd",
+      "source_type": "article",
+      "platform": "wechat",
+      "summary": "从底层架构、数据类型、事务并发、索引原理到 Java 开发实践与性能基准，全维度对比 PostgreSQL 与 MySQL，给出五大业务场景的选型决策、双向迁移与双写共存方案，以及双方最佳实践和间隙锁、表膨胀、深度分页、大事务四大避坑要点。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/wechat-pg-vs-mysql-java.md",
       "wiki_status": "ingested"
     }
   ]

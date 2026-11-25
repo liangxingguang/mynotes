@@ -9,7 +9,7 @@ created: 2026-11-25
 category: 技术
 tags: [MySQL, 系统设计]
 asset_ref: Assets/2026-11/wechat-mysql-sql-execution-journey.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 深入剖析 MySQL：一条 SQL 语句的执行之旅

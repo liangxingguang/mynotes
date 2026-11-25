@@ -475,6 +475,9 @@
 - [[2026-11-25-impromptu-speech-9-formulas|提高自己即兴讲话的９个万能公式（信源页）]]（2026-11-25，生活/沟通表达，九个工作场景说话公式训练：化被动为主动/跨部门/下属问题/同事矛盾/任务布置/坏消息汇报/表彰发言/组织语言/整改承诺；公式原文以图片承载未入采集稿，仅归纳场景与思路，单信源置信度低）
 - [[2026-11-25-llm-agent-hybrid-routing|大模型 Agent 混合路由详解（信源页）]]（2026-11-25，AI/Agent/路由，规则/模型/混合路由三思路对比+混合路由三层结构（规则兜底→模型打分→大模型兜底）+路由器训练三件事（数据来源/评分器优于分类器/保守冷启动）+级联降级成本测算（70/30 分布下比理想路由多花 25%）与三大坑；编译 [[llm-agent-hybrid-routing]]，印证 [[thinking-mode]] [[llm-inference-cost-governance]]，单信源置信度中）
 - [[2026-11-25-lsm-tree-disk|写穿硬盘的秘密：LSM-Tree 如何把随机写变成顺序写的艺术（信源页）]]（2026-11-25，数据库/存储/Java，LSM-Tree 核心组件（WAL/MemTable/SSTable/Compaction）+五大流程+Compaction 两流派（Leveled vs Tiered）对比+三大放大与不可能三角+LevelDB/RocksDB/HBase/Cassandra/MyRocks 工业谱系+Java 实现与 MyRocks 实战；编译 [[lsm-tree]]，单信源置信度中）
+- [[2026-11-25-microsoft-ai-agents-for-beginners|微软开源了一个 AI Agent 学习项目，18 节课从原理讲到实战（信源页）]]（2026-11-25，AI/Agent/课程，微软 GitHub 开源 AI Agents for Beginners 课程解读：18 课覆盖 Agent 概念/设计模式/工具调用/Agentic RAG/多 Agent/MCP·A2A·NLWeb/上下文工程/记忆/CUA/生产部署，每课配文字+视频+Python 代码；概念映射至 agent-loop/harness-engineering/context-management/agent-long-term-memory/mcp，微信单信源，置信度高）
+- [[2026-11-25-mysql-sql-execution-journey|深入剖析 MySQL：一条 SQL 语句的执行之旅（信源页）]]（2026-11-25，数据库/MySQL/SQL，MySQL 三层体系（连接/服务/存储引擎）+SQL 执行五阶段（准备/解析/优化/执行/结果返回）逐段详解+查询缓存局限与 8.0 移除+词法/语法/语义分析+优化器按成本选计划+电商订单案例走通全流程；编译 [[mysql-sql-execution-pipeline]]，印证 [[mysql-locking]]，语法树图采集乱码，微信单信源，置信度高）
+- [[2026-11-25-pg-vs-mysql-java|PostgreSQL vs MySQL：Java 选型指南与实战避坑（信源页）]]（2026-11-25，数据库/MySQL/PostgreSQL，插件式 vs 一体化架构、聚簇索引 vs 堆表、类型/事务/MVCC/索引全维对比+Spring Boot+MyBatis-Plus Java 实践+JMeter 基准（MySQL CRUD 快、PG 二级索引/范围查询快）+五大场景选型+双向迁移与双写共存+四大避坑；编译 [[postgresql-vs-mysql]]，代码块采集折叠，微信单信源，置信度中）
 
 ## concept（概念）
 
@@ -610,6 +613,7 @@
 - [[multi-agent-saas-refactoring|多智能体重构 SaaS 业务流]]（2026-11-04，产品/B端/多智能体/方法论，核心转变=把流程判断从人身上剥离交给多Agent协作执行（"人找功能"→"Agent找决策"）+三层架构+五步法（拆业务事件/定义角色边界/协作协议/权限审计人工干预/评测回滚）+四案例，与 Agent 对接旧系统互补，单信源置信度中）
 - [[mysql-bulk-import|MySQL 大批量导入优化（Bulk Import Optimization）]]（攒批+并行+少刷盘；B+ 树算账/rewriteBatchedStatements 灵魂参数/LOAD DATA/先灌后建索引/分片并行/收尾四件套，单信源）
 - [[mysql-locking|MySQL 锁体系（锁粒度与六种锁）]]（全局/表级/行级三层粒度坐标系+六种锁（表锁/MDL/意向锁/记录锁/间隙锁/临键锁）+InnoDB 锁索引不锁数据+加锁规则速查+无索引 UPDATE 锁全表实验+RR/RC 取舍+间隙锁死锁复现与降低手段+线上查锁四步，与 spring-transaction/retry-governance 互链，单信源，置信度中）
+- [[mysql-sql-execution-pipeline|MySQL SQL 执行管线（五阶段）]]（连接→准备（缓存）→解析（词法/语法/语义）→优化（按成本选计划）→执行（调引擎保 ACID）→结果返回的五阶段管线；三层体系结构载体；查询缓存 8.0 移除；优化器按成本与覆盖条件选索引；与 mysql-locking 并发维度互补，单信源，置信度高）
 - [[next-token-prediction|下一 token 预测]]（LLM 的统一目标：交叉熵训练、自回归生成，能力与幻觉同根）
 - [[netty-bootstrap|Netty Bootstrap 启动引导]]（initAndRegister 三件套：反射建 Channel→init 组装 Pipeline→注册 Selector；interestOps=0 vs OP_ACCEPT 不对称；ServerBootstrapAcceptor 装配移交 worker；三信源互证，置信度高）
 - [[netty-bytebuf|Netty ByteBuf（数据容器与内存管理）]]（读写双指针免 flip+4MB 阈值扩容+引用计数+类 jemalloc 池化；Heap/Direct/Composite 三形态；释放铁律"谁最后消费谁 release"；三信源，置信度高）
@@ -858,6 +862,7 @@
 - [[faq-vs-rag|FAQ vs RAG（问答对问答 vs 检索增强生成）]]（2026-11-24，AI/RAG/问答形态选型，FAQ 为预设答案库、高效匹配、轻量可脱离 LLM，RAG 为切块向量化+LLM 生成、可推理组合，双层知识库：FAQ 层管高频标准问题求「零偏差」、向量层管长尾复杂查询，单信源，置信度中）
 - [[netty-vs-tomcat-vs-undertow|Netty vs Tomcat vs Undertow]]（同机 wrk 横评：QPS/GC/高并发衰减+线程模型/内存/零拷贝/TCP 参数四层归因与选型分档，单信源自测，置信度中）
 - [[ot-vs-crdt|OT vs CRDT]]（中心变换 vs 数据结构天然收敛；取舍点=是否需要端侧完全自治；中心化选 OT、离线/去中心化选 CRDT，单信源）
+- [[postgresql-vs-mysql|PostgreSQL vs MySQL]]（插件式 vs 一体化架构、聚簇索引 vs 堆表回表镜像对称；默认隔离级别 RR(间隙锁) vs RC(无锁)+MVCC 回滚段 vs VACUUM；索引类型/覆盖索引/INCLUDE 对比；JMeter 基准 CRUD vs 二级索引/范围查询各擅胜场；五大场景选型+双向迁移+四大避坑；与 mysql-sql-execution-pipeline/mysql-locking 互链，单信源，置信度中）
 - [[forkjoinpool-vs-threadpoolexecutor-comparison|ForkJoinPool vs ThreadPoolExecutor]]（11 维对比矩阵+选型结论「任务能不能拆」，单信源置信度高）
 - [[sse-vs-websocket|SSE vs WebSocket]]（通信方向/数据形式/浏览器支持/常见场景四维矩阵+部署注意事项+百万连接说法，单信源置信度中）
 - [[dynamic-form-vs-workflow-vs-rule-engine|动态表单 vs 流程引擎 vs 规则引擎]]（2026-11-04，产品/B端/引擎选型，三列对比矩阵（本质边界/核心作用/配置对象/输出结果/变化频率/典型系统/优劣）+三案例（车贷/ERP采购/CRM）+选型三步+三误区+PM执行SOP，与第13篇 ERP 5000元阈值互证、第11篇决策表与规则链印证+ML组合范式补充，三信源置信度中）

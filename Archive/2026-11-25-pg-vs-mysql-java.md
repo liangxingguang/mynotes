@@ -9,7 +9,7 @@ created: 2026-11-25
 category: 技术
 tags: [MySQL, Java]
 asset_ref: Assets/2026-11/wechat-pg-vs-mysql-java.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # PostgreSQL vs MySQL：Java 选型指南与实战避坑
