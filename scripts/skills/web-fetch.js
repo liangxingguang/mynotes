@@ -172,8 +172,9 @@ try {
   // 环境变量/系统代理均不可用时，兜底本地代理端口（Clash 7890）
   const proxy = await resolveProxy() || 'http://127.0.0.1:7890'
 
-  // 直连失败且有可用代理时，经代理重试
+  // 直连失败且有可用代理时，经代理重试；FORCE_PROXY=1 时跳过直连直接走代理
   async function fetchWithFallback(fn) {
+    if (process.env.FORCE_PROXY) return fn(url, proxy)
     try {
       return await fn(url, null)
     } catch (e) {
