@@ -9,7 +9,7 @@ created: 2026-11-26
 category: 技术
 tags: [Agent, AI, 系统设计]
 asset_ref: Assets/2026-11/mp-weixin-48g2lczO1_aevPDUPhZtPg.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 用 Device Agent 为 ESP32 接入智能体：从硬件控制到语音交互

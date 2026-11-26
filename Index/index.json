@@ -1,26 +1,6 @@
 {
-  "updated_at": "2026-11-26 19:39",
+  "updated_at": "2026-11-26 21:25",
   "notes": [
-    {
-      "id": "2026-11-26-esp32-device-agent",
-      "title": "用 Device Agent 为 ESP32 接入智能体：从硬件控制到语音交互",
-      "path": "Inbox/2026-11-26-esp32-device-agent.md",
-      "created": "2026-11-26",
-      "category": "技术",
-      "tags": [
-        "Agent",
-        "AI",
-        "系统设计"
-      ],
-      "source": "微信公众号",
-      "source_url": "https://mp.weixin.qq.com/s/48g2lczO1_aevPDUPhZtPg",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "EMQ 的 Device Agent 把 ESP32 的硬件能力组织为「属性、命令、事件」的设备模型，让智能体通过自然语言调用设备：以共享仪器室为例，ESP32-S3 终端完成使用状态标识（改门口屏、亮指示灯）、仪器移动记录查询、环境照度读取与阈值提示音，经 MQTT 传数据/控制、WebSocket 走语音收发，实现从语音请求到硬件动作的闭环。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/mp-weixin-48g2lczO1_aevPDUPhZtPg.md",
-      "wiki_status": "pending"
-    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
@@ -9315,6 +9295,26 @@
       "summary": "承接\"代码审查退场\"的讨论，文章回应两个尖锐反问：热路径里的隐蔽坑不审代码怎么防、线上出事人背锅没底气怎么办。结论：code review 只是手段，缺陷必然逃逸，质量底座应转向架构隔离与线上闭环——收缩输入边界、隔离爆炸半径、影子流量对比、持续巡检、秒级回滚，像工厂质检与神经网络保命机制那样兜底。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/mp-weixin-AlRQlQD7lIw8vtQEL9dM5Q.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-26-esp32-device-agent",
+      "title": "用 Device Agent 为 ESP32 接入智能体：从硬件控制到语音交互",
+      "path": "Archive/2026-11-26-esp32-device-agent.md",
+      "created": "2026-11-26",
+      "category": "技术",
+      "tags": [
+        "Agent",
+        "AI",
+        "系统设计"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/48g2lczO1_aevPDUPhZtPg",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "EMQ 的 Device Agent 把 ESP32 的硬件能力组织为「属性、命令、事件」的设备模型，让智能体通过自然语言调用设备：以共享仪器室为例，ESP32-S3 终端完成使用状态标识（改门口屏、亮指示灯）、仪器移动记录查询、环境照度读取与阈值提示音，经 MQTT 传数据/控制、WebSocket 走语音收发，实现从语音请求到硬件动作的闭环。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/mp-weixin-48g2lczO1_aevPDUPhZtPg.md",
       "wiki_status": "ingested"
     },
     {

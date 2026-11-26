@@ -6169,6 +6169,18 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/fTZestADHg4FLPxjtZyG4w",
       "asset_ref": "Assets/2026-11/mp-weixin-fTZestADHg4FLPxjtZyG4w.md"
+    },
+    {
+      "path": "raw/sources/products/2026-11-26-emq-device-agent-esp32.md",
+      "sha256": "3b9b81f05d7d636429f968a2757a944bba140991a01976dc65cca6a6ab4a59cf",
+      "registered_at": "2026-11-26",
+      "inbox_ref": "Archive/2026-11-26-esp32-device-agent.md",
+      "pages": [
+        "wiki/sources/2026-11-26-emq-device-agent-esp32.md",
+        "wiki/concepts/device-agent.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/48g2lczO1_aevPDUPhZtPg",
+      "asset_ref": "Assets/2026-11/mp-weixin-48g2lczO1_aevPDUPhZtPg.md"
     }
   ]
 }
