@@ -9,9 +9,7 @@ created: 2026-11-26
 category: 技术
 tags: [nginx, 系统设计, Java]
 asset_ref: Assets/2026-11/mp-weixin-fTZestADHg4FLPxjtZyG4w.md
-wiki_status: ingesting
-ingest_claimed_at: "2026-11-26T11:32:30.059Z"
-ingest_claim_id: 40060-1795692750059-0
+wiki_status: ingested
 ---
 
 # 百万并发架构设计：LVS + Keepalived + Nginx 架构详解

@@ -6154,6 +6154,21 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/AlRQlQD7lIw8vtQEL9dM5Q",
       "asset_ref": "Assets/2026-11/mp-weixin-AlRQlQD7lIw8vtQEL9dM5Q.md"
+    },
+    {
+      "path": "raw/sources/architecture/2026-11-26-lvs-keepalived-nginx.md",
+      "sha256": "e27cb50e283eed5fb9ea5d2e959bfb9f6cf7cf499fa9d593a43e85b0179ebe09",
+      "registered_at": "2026-11-26",
+      "inbox_ref": "Archive/2026-11-26-lvs-keepalived-nginx.md",
+      "pages": [
+        "wiki/sources/lvs-keepalived-nginx.md",
+        "wiki/concepts/lvs.md",
+        "wiki/concepts/keepalived.md",
+        "wiki/topics/system-design-core-components.md",
+        "wiki/concepts/nginx-gateway-production-design.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/fTZestADHg4FLPxjtZyG4w",
+      "asset_ref": "Assets/2026-11/mp-weixin-fTZestADHg4FLPxjtZyG4w.md"
     }
   ]
 }

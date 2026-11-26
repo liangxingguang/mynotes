@@ -4,6 +4,7 @@
 
 ## source（信源）
 
+- [[lvs-keepalived-nginx|百万并发架构设计：LVS + Keepalived + Nginx 架构详解（信源页）]]（2026-11-26，架构/高并发/负载均衡，微信公众号「mikechen的互联网架构」科普文：百万并发必须分层（LVS→应用集群→数据层）、LVS 四层内核级转发（章文嵩主导、不解析应用层、低 CPU）、Keepalived VRRP 主备切换+健康检查、工作流程与电商/支付/直播/游戏后端前端网关适用场景，单信源，置信度中）
 - [[2026-11-26-ai-code-review-fallback|不审代码，靠什么兜底（信源页）]]（2026-11-26，AI/SDLC/质量，微信公众号方法论文，《代码审查退场》续篇：code review 只是手段、缺陷必然逃逸，质量底座转向架构隔离与线上闭环——收缩输入边界/隔离爆炸半径/影子流量对比/持续巡检/秒级回滚，四件事落地+工厂三招（N-sigma 抽检/安灯停线/蟑螂法则沉淀）+新老团队分层演进，单信源作者论断，置信度中）
 - [[2026-11-26-end-to-end-business-requirement-agent|如何搭建一个端到端业务需求专家 Agent（信源页）]]（2026-11-26，AI/Agent/研发体系，微信团队自述：AI 写代码非主要瓶颈、贵在代码之外串联成本+四层架构（上下文输入/业务专家编排/工具执行/反馈学习）+纵向八阶段闭环（进入→澄清→方案→实现→CR→验收→发布观察→结项蒸馏）+三道质量门（需求澄清/技术方案/内部质量，TDD+pre-push hook 硬卡）+三仓库上下文设计（项目记忆 feature 分支+长期 wiki master、结项蒸馏回写）+独立环境 HSF/SLS/监控证据验收+Agent Team 规划，单信源无实证，置信度中）
 - [[2026-11-25-ai-native-engineering|AI-Native Engineering：AI 时代，我们应该重新思考软件研发流程（信源页）]]（2026-11-25，AI/Agent/研发体系，微信公众号方法论文章：AI Coding Agent 能力演进立论"改变整个软件研发体系"+六个 First 原则及理由+研发各阶段 AI-Native 实践对照+四个特别关注+三阶段建设路径与研发范式转向，单信源无实证，置信度中）
@@ -219,6 +220,7 @@
 - [[kafka-consumer-lag-backlog-guide|Kafka 消费积压实战：Lag 从 0 飙到百万——扩容、批量、多线程消费的正确姿势]]（2026-10-31，Kafka/消费治理，置信度中）
 - [[kafka-fast-four-mechanisms|Kafka 为什么这么快？——顺序写+页缓存+零拷贝+批量四板斧]]（2026-10-21，Kafka/性能）
 - [[kafka-ops-tools-five-essentials|Kafka 运维必备工具清单：5 个工具让排障快 10 倍]]（2026-10-21，Kafka/运维）
+- [[keepalived|Keepalived（VRRP 主备与健康检查）]]（2026-11-26，架构/负载均衡/高可用，概念页：解决 LVS 单点故障的组件，两大职责——主备切换（VIP 漂移，VRRP 心跳）+健康检查（探测 RealServer 自动摘除故障节点），工作流程五步、主备优先级示例、与 LVS 职责区分，单信源，置信度中）
 - [[kiso-minimal-agent-framework|Kiso：极简 Agent 框架（信源页）]]（2026-10-28，AI/Agent 框架/Runtime，作者自述+自报 Benchmark，置信度中）
 - [[knowledge-base-tech-evolution|一文搞懂知识库的技术演进：从关键词检索、向量 RAG 到 GraphRAG、LLM Wiki、本体论与 Agent]]（2026-10-16，AI/知识库）
 - [[langchain4j-multimodal-rag|LangChain4j 多模态 RAG：图片+表格检索实战]]（2026-10-17，AI/RAG）
@@ -234,6 +236,7 @@
 - [[log4j2-thread-block-pitfalls|日志导致线程Block的这些坑，你不得不防]]（2026-10-31，Java/日志/线程阻塞，置信度高）
 - [[logical-thinking-models|分析问题的逻辑思考方法（14个模型）]]（2026-10-23，思维方法论，置信度中）
 - [[lovart-2-arti-design-agent|Lovart 2.0 发布：设计 Personal Agent Arti 上手体验]]（2026-10-21，AI/产品，置信度低）
+- [[lvs|LVS（Linux Virtual Server）]]（2026-11-26，架构/负载均衡/高并发，概念页：Linux 内核层四层负载均衡框架（章文嵩主导），仅按目标 IP+端口在 TCP/UDP 层转发、不解析应用层、低 CPU 高吞吐，经内核 IP 层转发至 Real Server，与 Keepalived 组合承担前端流量分发，单信源，置信度中）
 - [[meipai-live-danmu-realtime-push|百万在线的美拍直播弹幕系统实时推送技术实践]]（2026-10-23，IM/直播弹幕/Redis+长连接）
 - [[meituan-waimai-search-elasticsearch-rle|美团外卖搜索基于Elasticsearch的优化实践]]（2026-10-31，ES/搜索/倒排索引/性能）
 - [[mica-voice|告别云语音 API！Java 离线语音 SDK，一行 Maven 依赖，7 大音频能力本地运行]]（2026-11-03，Java/离线语音/SDK，mica-voice 纯 Java 包装 sherpa-onnx 离线七大能力，四模块+3 步接入+模型家族+注意事项，单信源置信度中）

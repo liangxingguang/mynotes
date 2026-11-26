@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26 19:33",
+  "updated_at": "2026-11-26 19:39",
   "notes": [
     {
       "id": "2026-11-26-esp32-device-agent",
@@ -20,26 +20,6 @@
       "summary_status": "",
       "asset_ref": "Assets/2026-11/mp-weixin-48g2lczO1_aevPDUPhZtPg.md",
       "wiki_status": "pending"
-    },
-    {
-      "id": "2026-11-26-lvs-keepalived-nginx",
-      "title": "百万并发架构设计：LVS + Keepalived + Nginx 架构详解",
-      "path": "Inbox/2026-11-26-lvs-keepalived-nginx.md",
-      "created": "2026-11-26",
-      "category": "技术",
-      "tags": [
-        "nginx",
-        "系统设计",
-        "Java"
-      ],
-      "source": "微信公众号「mikechen的互联网架构」",
-      "source_url": "https://mp.weixin.qq.com/s/fTZestADHg4FLPxjtZyG4w",
-      "source_type": "link",
-      "platform": "微信",
-      "summary": "百万并发需分层架构：用户请求 → 负载均衡层（LVS）→ 应用集群（Nginx/Tomcat）→ 数据层。LVS 负责四层流量分发（高性能高并发），Keepalived 通过 VRRP 心跳实现主备切换与健康检查（高可用），二者是电商、支付、直播、游戏后端前端网关的常见组合。",
-      "summary_status": "",
-      "asset_ref": "Assets/2026-11/mp-weixin-fTZestADHg4FLPxjtZyG4w.md",
-      "wiki_status": "ingesting"
     },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
@@ -9355,6 +9335,26 @@
       "summary": "一套已在真实业务跑通的端到端需求研发 Agent 闭环。核心观点：AI 写代码不再是主要瓶颈，贵的是代码之外的串联成本。系统用四层架构（上下文输入、业务专家编排、工具执行、反馈学习）加三道质量门（需求澄清、技术方案、内部质量），把需求从进入、澄清、方案、实现、CR、验收、发布到结项组织成自动化流程，人只在关键节点确认，结项时将过程经验蒸馏回长期 wiki，形成自我成长闭环。",
       "summary_status": "",
       "asset_ref": "Assets/2026-11/how-to-build-end-to-end-business-requirement-agent.md",
+      "wiki_status": "ingested"
+    },
+    {
+      "id": "2026-11-26-lvs-keepalived-nginx",
+      "title": "百万并发架构设计：LVS + Keepalived + Nginx 架构详解",
+      "path": "Archive/2026-11-26-lvs-keepalived-nginx.md",
+      "created": "2026-11-26",
+      "category": "技术",
+      "tags": [
+        "nginx",
+        "系统设计",
+        "Java"
+      ],
+      "source": "微信公众号「mikechen的互联网架构」",
+      "source_url": "https://mp.weixin.qq.com/s/fTZestADHg4FLPxjtZyG4w",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "百万并发需分层架构：用户请求 → 负载均衡层（LVS）→ 应用集群（Nginx/Tomcat）→ 数据层。LVS 负责四层流量分发（高性能高并发），Keepalived 通过 VRRP 心跳实现主备切换与健康检查（高可用），二者是电商、支付、直播、游戏后端前端网关的常见组合。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/mp-weixin-fTZestADHg4FLPxjtZyG4w.md",
       "wiki_status": "ingested"
     }
   ]

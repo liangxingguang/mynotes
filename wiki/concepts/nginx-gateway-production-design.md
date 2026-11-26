@@ -4,7 +4,7 @@ type: concept
 title: 生产级 Nginx 网关设计
 status: active
 created: 2026-11-05
-updated: 2026-11-06
+updated: 2026-11-26
 confidence: medium
 tags:
   - concept
@@ -14,11 +14,14 @@ tags:
 sources:
   - raw/sources/architecture/2026-11-04-nginx-gateway-production.md
   - raw/sources/architecture/2026-11-06-nginx-rate-limiting-practice.md
+  - raw/sources/architecture/2026-11-26-lvs-keepalived-nginx.md
 related:
   - wiki/sources/nginx-gateway-production.md
   - wiki/sources/nginx-websocket-load-balancing.md
   - wiki/concepts/nginx-rate-limiting.md
   - wiki/concepts/harness-engineering.md
+  - wiki/concepts/lvs.md
+  - wiki/concepts/keepalived.md
 ---
 # 生产级 Nginx 网关设计
 
@@ -80,6 +83,7 @@ master 收 HUP → 校验配置 → 启新 worker → 旧 worker 优雅退出。
 
 - [[harness-engineering]]：Harness 工程能力是模型之外的竞争力，Nginx 网关的生产化设计同理——机制理解 + 变更流程 + 可观测 > 配置本身。
 - [[nginx-gateway-production-design]] 与 [[nginx-websocket-load-balancing]]、[[nginx-websocket-million-connections]] 互补：本文是通用网关框架，另两篇是 WebSocket 专项。
+- [[lvs]] + [[keepalived]]：四层负载均衡 + 节点高可用层。典型大规模部署中，LVS+Keepalived 在 Nginx 之前承担流量分发与 VIP 高可用（见 [[lvs-keepalived-nginx]]），Nginx 在其上承担七层路由、TLS、限流等应用层职责；两层职责不同、分工互补。
 
 ### Dependencies（依赖项）
 
@@ -112,6 +116,7 @@ master 收 HUP → 校验配置 → 启新 worker → 旧 worker 优雅退出。
 
 - Source: `raw/sources/architecture/2026-11-04-nginx-gateway-production.md`（机制优先于配置、变更流程、版本要点）
 - Source: `raw/sources/architecture/2026-11-06-nginx-rate-limiting-practice.md`（限流四步链路互证）
+- Source: `raw/sources/architecture/2026-11-26-lvs-keepalived-nginx.md`（LVS+Keepalived 四层负载均衡+高可用层与本页七层网关的前后分层关系）
 
 ## Related Knowledge（相关知识）
 
