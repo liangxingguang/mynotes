@@ -4,7 +4,7 @@ type: concept
 title: AI 原生 SDLC
 status: active
 created: 2026-10-17
-updated: 2026-11-25
+updated: 2026-11-26
 confidence: medium
 tags:
   - concept
@@ -26,11 +26,13 @@ sources:
   - raw/sources/enterprise/2026-11-20-taobao-ai-native-rd.md
   - raw/sources/ai/2026-11-23-coding-agent-software-factory.md
   - raw/sources/ai/2026-11-25-ai-native-engineering.md
+  - raw/sources/ai/2026-11-26-end-to-end-business-requirement-agent.md
 related:
   - wiki/concepts/ai-native-organization.md
   - wiki/concepts/spec-driven-development.md
   - wiki/concepts/mcp.md
   - wiki/concepts/agent-evaluation.md
+  - wiki/concepts/business-requirement-agent.md
   - wiki/entities/kongming-ai-dev-platform.md
   - wiki/sources/ai-native-team-org-reconstruction.md
   - wiki/sources/alibaba-ai-native-dev-handbook.md
@@ -116,6 +118,8 @@ Agent 编码使构建阶段塌缩到以小时计，而规划、评审/测试、�
 
 - 2026-11-25 — 新增 AI-Native Engineering 信源（第 14 信源）`raw/sources/ai/2026-11-25-ai-native-engineering.md`，从**研发体系与资产层**印证本概念：六个 First 原则中，Verifiable First（AI 产出须自动化验证体系校验、需求-实现-测试不得同一 AI 自我闭环）直接呼应"瓶颈转移到验证"与"人守闸门"；Executable First（Spec 驱动生成代码/测试/部署）与 Spec-Driven 印证制品链"规范驱动执行"；Git First（需求/ADR/DSL/测试规格纳入版本管理）为"制品提交链即审计轨迹"提供基础设施表述。概念页见 [[ai-native-engineering]]。
 
+- 2026-11-26 — 新增业务需求专家 Agent 信源（第 15 信源）`raw/sources/ai/2026-11-26-end-to-end-business-requirement-agent.md`，提供**完整八阶段需求研发闭环**的一手实践样本：需求进入→澄清（门 1）→方案（门 2）→实现与内部质量（门 3，TDD+pre-push hook 硬卡）→CR 协同→独立环境验收→发布观察→结项蒸馏。其制品链（requirements→plan→diff+测试→CR→验收证据→结项沉淀）、人只在关键节点确认的闸门分布、「上线不是终点、观察期无异常才结项」的收尾纪律与本概念同向；双层记忆（项目记忆 feature 分支 + 长期 wiki master、结项蒸馏回写）是"知识当缓存、受控写回"的工程实例。概念页见 [[business-requirement-agent]]。
+
 ## Open Questions（开放问题）
 
 - 各打法的先行/滞后指标只有口径、无公开前后对照数据，实际成效待第三方验证。
@@ -138,6 +142,7 @@ Agent 编码使构建阶段塌缩到以小时计，而规划、评审/测试、�
 - Source: `raw/sources/enterprise/2026-11-20-taobao-ai-native-rd.md`（第 12 信源：淘海外 AI Native——编码提效≠端到端提效的国内大厂实证、Agent 驱动双流程、估时降低 50% 团队自报口径）
 - Source: `raw/sources/ai/2026-11-23-coding-agent-software-factory.md`（第 13 信源：软件工厂——Coding Agent 交付流水线的执行基础设施实现、按提交验收、机制与策略分离；AI 原生 SDLC 在执行层的具体落地，见 [[software-factory]]）
 - Source: `raw/sources/ai/2026-11-25-ai-native-engineering.md`（第 14 信源：AI-Native Engineering 六个 First 原则——Verifiable First 印证瓶颈转移到验证、Executable First/Git First 印证规范驱动执行与制品链可追溯；见 [[ai-native-engineering]]）
+- Source: `raw/sources/ai/2026-11-26-end-to-end-business-requirement-agent.md`（第 15 信源：业务需求专家 Agent 八阶段闭环——三道质量门、TDD+pre-push hook 硬门禁、双层记忆与结项蒸馏、独立环境验收与发布后观察；见 [[business-requirement-agent]]）
 
 ## Related Knowledge（相关知识）
 

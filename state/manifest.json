@@ -6128,6 +6128,18 @@
       ],
       "source_url": "http://mp.weixin.qq.com/s?__biz=MzI2MDA5MDM0MA==&mid=2650602748&idx=1&sn=35b606b59c9e8b3bab8217ae6913fa67&chksm=f266ac77c51125614c8f535810e5917df2c0e220edc566e2b2d048f9a274dea23bf657d68b1f",
       "asset_ref": "Assets/2026-11/wechat-pg-vs-mysql-java.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-26-end-to-end-business-requirement-agent.md",
+      "sha256": "6990119d8e416476e397ba5b9c972fccd3036192ef19a676bfd4ce71c1826170",
+      "registered_at": "2026-11-26",
+      "inbox_ref": "Archive/2026-11-26-how-to-build-end-to-end-business-requirement-agent.md",
+      "pages": [
+        "wiki/sources/2026-11-26-end-to-end-business-requirement-agent.md",
+        "wiki/concepts/business-requirement-agent.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/9-KVLH2D5VYmyAzbI9nFmA",
+      "asset_ref": "Assets/2026-11/how-to-build-end-to-end-business-requirement-agent.md"
     }
   ]
 }

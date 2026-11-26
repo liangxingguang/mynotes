@@ -4,6 +4,7 @@
 
 ## source（信源）
 
+- [[2026-11-26-end-to-end-business-requirement-agent|如何搭建一个端到端业务需求专家 Agent（信源页）]]（2026-11-26，AI/Agent/研发体系，微信团队自述：AI 写代码非主要瓶颈、贵在代码之外串联成本+四层架构（上下文输入/业务专家编排/工具执行/反馈学习）+纵向八阶段闭环（进入→澄清→方案→实现→CR→验收→发布观察→结项蒸馏）+三道质量门（需求澄清/技术方案/内部质量，TDD+pre-push hook 硬卡）+三仓库上下文设计（项目记忆 feature 分支+长期 wiki master、结项蒸馏回写）+独立环境 HSF/SLS/监控证据验收+Agent Team 规划，单信源无实证，置信度中）
 - [[2026-11-25-ai-native-engineering|AI-Native Engineering：AI 时代，我们应该重新思考软件研发流程（信源页）]]（2026-11-25，AI/Agent/研发体系，微信公众号方法论文章：AI Coding Agent 能力演进立论"改变整个软件研发体系"+六个 First 原则及理由+研发各阶段 AI-Native 实践对照+四个特别关注+三阶段建设路径与研发范式转向，单信源无实证，置信度中）
 - [[2026-11-25-agent-architecture-harness-runtime-orchestrator|一文搞懂 Agent 技术架构：Harness、Runtime、Orchestrator、Framework 的区别（信源页）]]（2026-11-25，AI/Agent/Harness/架构，微信概念科普文：五组件公式 Agent = Model + Harness + Tools + Memory + Environment、Harness 七项职责、Runtime 生命周期、Execution Loop 七步拆解、Harness/Runtime/Orchestrator/Framework 四概念"各回答什么问题"对照、Orchestrator ≠ Agent Loop、构建 Harness 五项基础能力与"会行动→能交付"判断标准，概念性科普无实测数据，单信源，置信度中）
 - [[how-we-learn|《How We Learn》导读：有效学习的十个关键词（信源页）]]（2026-11-25，学习/方法论，微信公众号对 Benedict Carey《How We Learn》的导读：跨越 20 世纪的脑科学学习研究，十章对应故事/遗忘/环境/间断/无知/分心/渗透/混合/感知/睡眠十个关键词+间隔排布/睡眠巩固/流利错觉/以教代测/分心渗透/多环境学习等技巧，单信源，置信度中）
@@ -526,6 +527,7 @@
 - [[b-end-report-design|B端报表设计方法论（Report Design Methodology）]]（2026-11-20，概念/B端/报表设计，决策场景先行+用户-场景-动作-数据四步法+指标字典9字段+可视化四层分层+权限三层+性能前置+PRD 11项清单，与 [[dashboard-metric-tree]] 互补（看板是决策展示子集），单信源置信度中）
 - [[batch-import-design|B端批量导入设计]]（数据治理本质：三层校验模型（字段格式/业务实体/跨单据）+异步六步流水线+6态状态机（部分成功为常态）+错误报告7要素与三档错误级别+部分成功策略+配置化校验规则，与 mysql-bulk-import（DB层吞吐）互补分层，单信源置信度中）
 - [[batch-message-push|批量消息推送（百万级短信推送）]]（内存/性能/可靠性三对矛盾 + 游标分片+专用线程池+Redis 进度+重试死信+断点续跑，单信源置信度中）
+- [[business-requirement-agent|业务需求专家 Agent（端到端需求研发闭环）]]（2026-11-26，概念/AI/Agent/研发体系，不是更聪明的代码生成器而是需求研发闭环系统：三个工程化问题（上下文组织/工具串联/反馈复利）+四层架构+三道质量门+质量门禁工程化硬卡（pre-push hook 不通过拒绝 push）+双层记忆（项目记忆/长期 wiki 分流+结项蒸馏）+反馈留痕+真实证据验收与发布后观察+Agent Team 规划（共享长期 wiki、各自维护视角），微信单信源团队自述，置信度中）
 - [[bend-prd-writing-framework|B端PRD写作框架（一图三表一份清单）]]（2026-11-04，产品/B端/PRD/方法论，开发不骂人的三根因+一图三表一份清单框架（主流程图/状态流转表/字段规则表/异常边界表/上线前自检）+四案例（EHR转岗/ERP部分入库/CRM公海/车贷反欺诈）+10业务模块PRD重点速查表，与五件套拆解同构、与 Agent 化 PRD 模板互为底稿与增量，工单PRD（第2篇）与埋点PRD（第23篇）两信源印证，三信源置信度中）
 - [[blue-green-deployment|蓝绿发布（Blue-Green Deployment）]]（Preview+全量切换+自动观察回退；selector 只影响新连接；四层门禁先过样本量；蓝绿实战单信源）
 - [[cache-line-and-false-sharing|CPU 缓存行效应：局部性与伪共享]]（64 字节行为失效粒度；数组胜链表、Disruptor Sequence 填充、LinkedList Node 32B 三倍内存、AtomicLong/LongAdder Cell/Exchanger Node 伪共享与 @Contended，六信源）

@@ -12,7 +12,7 @@ tags:
   - AI
   - 系统设计
 asset_ref: Assets/2026-11/how-to-build-end-to-end-business-requirement-agent.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 如何搭建一个端到端业务需求专家 Agent

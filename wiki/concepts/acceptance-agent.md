@@ -4,7 +4,7 @@ type: concept
 title: 验收 Agent（AI 生成代码的验收）
 status: active
 created: 2026-11-20
-updated: 2026-11-21
+updated: 2026-11-26
 confidence: medium
 tags:
   - concept
@@ -14,10 +14,12 @@ tags:
 sources:
   - raw/sources/ai/2026-11-20-acceptance-agent-opt.md
   - raw/sources/ai/2026-11-20-gaode-ad-linglingqi.md
+  - raw/sources/ai/2026-11-26-end-to-end-business-requirement-agent.md
 related:
   - wiki/concepts/ai-native-sdlc.md
   - wiki/concepts/artifact-verification-delivery.md
   - wiki/concepts/ai-coding-evidence-boundary.md
+  - wiki/concepts/business-requirement-agent.md
   - wiki/entities/opt-platform.md
   - wiki/entities/gaode-ad-linglingqi.md
 ---
@@ -90,6 +92,8 @@ AI 代码生成速度远大于人工需求验收速度：接口返回 200 只说
 
 - 2026-11-21 — 新增高德广告凌凌漆信源 `raw/sources/ai/2026-11-20-gaode-ad-linglingqi.md`，补充验收三层次（开发完成≠交付完成≠效果确认）、四概念分离（Contract/Trajectory/Evidence/EvalResult）、Dev Loop 研发契约（Goal+Constraints+Acceptance Evidence）与真实混合版本配置兼容任务案例（17/17 PASS 但未宣布需求完成），与 OPT 平台的接口级验收互为印证。
 
+- 2026-11-26 — 新增业务需求专家 Agent 信源 `raw/sources/ai/2026-11-26-end-to-end-business-requirement-agent.md`（第 3 信源），印证「独立环境真实证据验收」：独立项目环境部署 feature 分支后，用 HSF 泛化调用验证业务行为、SLS 查询验证日志输出、监控/Sunfire 核对运行时指标，覆盖正例/反例/回归三类，验收证据写入 progress/verification 文件可回读；并印证「验收通过≠发布完成」——独立环境验收通过后进入主预发或线上发布仍需人工确认，Agent 不自动执行部署发布。见 [[business-requirement-agent]]。
+
 ## Open Questions（开放问题）
 
 - L1-L4 四层的具体命名：原文分层拆解在图片中，采集稿仅保留「L4 静态 Review（最后兜底）」；采集层摘要与正文「结合 L1 与 L3 证据」的语境提示四层为接口返回/业务状态/链路日志/静态 Review，但该逐层命名在 raw 中无全文依据，需人工复核。
@@ -101,6 +105,7 @@ AI 代码生成速度远大于人工需求验收速度：接口返回 200 只说
 
 - Source: `raw/sources/ai/2026-11-20-acceptance-agent-opt.md`（§01 痛点、§2.1 五阶段与硬阻塞/软失败、§2.2 交付编排、§03 实践效果、§04 五点体会）
 - Source: `raw/sources/ai/2026-11-20-gaode-ad-linglingqi.md`（验收三层次、四概念分离、Dev Loop 契约、17/17 PASS 但未宣布需求完成的真实案例）
+- Source: `raw/sources/ai/2026-11-26-end-to-end-business-requirement-agent.md`（独立项目环境 HSF/SLS/监控三路证据验收、正例/反例/回归三类覆盖、验收证据可回读、发布前人工确认边界）
 
 ## Related Knowledge（相关知识）
 
