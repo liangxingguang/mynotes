@@ -1,6 +1,26 @@
 {
-  "updated_at": "2026-11-26 06:20",
+  "updated_at": "2026-11-26 08:55",
   "notes": [
+    {
+      "id": "inbox-2026-11-26-01",
+      "title": "如何搭建一个端到端业务需求专家 Agent",
+      "path": "Inbox/2026-11-26-how-to-build-end-to-end-business-requirement-agent.md",
+      "created": "2026-11-26",
+      "category": "技术",
+      "tags": [
+        "Agent",
+        "AI",
+        "系统设计"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/9-KVLH2D5VYmyAzbI9nFmA",
+      "source_type": "web",
+      "platform": "微信",
+      "summary": "一套已在真实业务跑通的端到端需求研发 Agent 闭环。核心观点：AI 写代码不再是主要瓶颈，贵的是代码之外的串联成本。系统用四层架构（上下文输入、业务专家编排、工具执行、反馈学习）加三道质量门（需求澄清、技术方案、内部质量），把需求从进入、澄清、方案、实现、CR、验收、发布到结项组织成自动化流程，人只在关键节点确认，结项时将过程经验蒸馏回长期 wiki，形成自我成长闭环。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/how-to-build-end-to-end-business-requirement-agent.md",
+      "wiki_status": "pending"
+    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
