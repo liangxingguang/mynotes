@@ -1,6 +1,46 @@
 {
-  "updated_at": "2026-11-26 19:30",
+  "updated_at": "2026-11-26 19:33",
   "notes": [
+    {
+      "id": "2026-11-26-esp32-device-agent",
+      "title": "用 Device Agent 为 ESP32 接入智能体：从硬件控制到语音交互",
+      "path": "Inbox/2026-11-26-esp32-device-agent.md",
+      "created": "2026-11-26",
+      "category": "技术",
+      "tags": [
+        "Agent",
+        "AI",
+        "系统设计"
+      ],
+      "source": "微信公众号",
+      "source_url": "https://mp.weixin.qq.com/s/48g2lczO1_aevPDUPhZtPg",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "EMQ 的 Device Agent 把 ESP32 的硬件能力组织为「属性、命令、事件」的设备模型，让智能体通过自然语言调用设备：以共享仪器室为例，ESP32-S3 终端完成使用状态标识（改门口屏、亮指示灯）、仪器移动记录查询、环境照度读取与阈值提示音，经 MQTT 传数据/控制、WebSocket 走语音收发，实现从语音请求到硬件动作的闭环。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/mp-weixin-48g2lczO1_aevPDUPhZtPg.md",
+      "wiki_status": "pending"
+    },
+    {
+      "id": "2026-11-26-lvs-keepalived-nginx",
+      "title": "百万并发架构设计：LVS + Keepalived + Nginx 架构详解",
+      "path": "Inbox/2026-11-26-lvs-keepalived-nginx.md",
+      "created": "2026-11-26",
+      "category": "技术",
+      "tags": [
+        "nginx",
+        "系统设计",
+        "Java"
+      ],
+      "source": "微信公众号「mikechen的互联网架构」",
+      "source_url": "https://mp.weixin.qq.com/s/fTZestADHg4FLPxjtZyG4w",
+      "source_type": "link",
+      "platform": "微信",
+      "summary": "百万并发需分层架构：用户请求 → 负载均衡层（LVS）→ 应用集群（Nginx/Tomcat）→ 数据层。LVS 负责四层流量分发（高性能高并发），Keepalived 通过 VRRP 心跳实现主备切换与健康检查（高可用），二者是电商、支付、直播、游戏后端前端网关的常见组合。",
+      "summary_status": "",
+      "asset_ref": "Assets/2026-11/mp-weixin-fTZestADHg4FLPxjtZyG4w.md",
+      "wiki_status": "ingesting"
+    },
     {
       "id": "2026-10-13-a2a-multi-agent-langgraph",
       "title": "A2A 实战：从零搭建工业级多 Agent 协作系统",
