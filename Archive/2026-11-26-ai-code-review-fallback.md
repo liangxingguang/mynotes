@@ -9,7 +9,7 @@ created: 2026-11-26
 category: 技术
 tags: [AI, Agent, 系统设计]
 asset_ref: Assets/2026-11/mp-weixin-AlRQlQD7lIw8vtQEL9dM5Q.md
-wiki_status: pending
+wiki_status: ingested
 ---
 
 # 不审代码，靠什么兜底

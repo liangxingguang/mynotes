@@ -1,7 +1,7 @@
 {
   "_comment": "由 wiki-ingest 维护的摄入台账；每条记录含 raw 文件 sha256，供 wiki-lint 的确定性检查校验 raw 未被改动（AGENTS.md 13.1 / Source_Schema.md 第 4 节）",
   "schema_version": 1,
-  "updated_at": "2026-11-25",
+  "updated_at": "2026-11-26",
   "entries": [
     {
       "path": "raw/sources/ai/2026-10-13-a2a-multi-agent-langgraph.md",
@@ -6140,6 +6140,20 @@
       ],
       "source_url": "https://mp.weixin.qq.com/s/9-KVLH2D5VYmyAzbI9nFmA",
       "asset_ref": "Assets/2026-11/how-to-build-end-to-end-business-requirement-agent.md"
+    },
+    {
+      "path": "raw/sources/ai/2026-11-26-ai-code-review-fallback.md",
+      "sha256": "312b4065720ef4245062c04731a41ea56f318989c0821aa183d3e9ea52926048",
+      "registered_at": "2026-11-26",
+      "inbox_ref": "Archive/2026-11-26-ai-code-review-fallback.md",
+      "pages": [
+        "wiki/sources/2026-11-26-ai-code-review-fallback.md",
+        "wiki/concepts/quality-fallback-strategy.md",
+        "wiki/concepts/software-factory.md",
+        "wiki/concepts/ai-native-sdlc.md"
+      ],
+      "source_url": "https://mp.weixin.qq.com/s/AlRQlQD7lIw8vtQEL9dM5Q",
+      "asset_ref": "Assets/2026-11/mp-weixin-AlRQlQD7lIw8vtQEL9dM5Q.md"
     }
   ]
 }

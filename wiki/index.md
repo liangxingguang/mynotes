@@ -4,6 +4,7 @@
 
 ## source（信源）
 
+- [[2026-11-26-ai-code-review-fallback|不审代码，靠什么兜底（信源页）]]（2026-11-26，AI/SDLC/质量，微信公众号方法论文，《代码审查退场》续篇：code review 只是手段、缺陷必然逃逸，质量底座转向架构隔离与线上闭环——收缩输入边界/隔离爆炸半径/影子流量对比/持续巡检/秒级回滚，四件事落地+工厂三招（N-sigma 抽检/安灯停线/蟑螂法则沉淀）+新老团队分层演进，单信源作者论断，置信度中）
 - [[2026-11-26-end-to-end-business-requirement-agent|如何搭建一个端到端业务需求专家 Agent（信源页）]]（2026-11-26，AI/Agent/研发体系，微信团队自述：AI 写代码非主要瓶颈、贵在代码之外串联成本+四层架构（上下文输入/业务专家编排/工具执行/反馈学习）+纵向八阶段闭环（进入→澄清→方案→实现→CR→验收→发布观察→结项蒸馏）+三道质量门（需求澄清/技术方案/内部质量，TDD+pre-push hook 硬卡）+三仓库上下文设计（项目记忆 feature 分支+长期 wiki master、结项蒸馏回写）+独立环境 HSF/SLS/监控证据验收+Agent Team 规划，单信源无实证，置信度中）
 - [[2026-11-25-ai-native-engineering|AI-Native Engineering：AI 时代，我们应该重新思考软件研发流程（信源页）]]（2026-11-25，AI/Agent/研发体系，微信公众号方法论文章：AI Coding Agent 能力演进立论"改变整个软件研发体系"+六个 First 原则及理由+研发各阶段 AI-Native 实践对照+四个特别关注+三阶段建设路径与研发范式转向，单信源无实证，置信度中）
 - [[2026-11-25-agent-architecture-harness-runtime-orchestrator|一文搞懂 Agent 技术架构：Harness、Runtime、Orchestrator、Framework 的区别（信源页）]]（2026-11-25，AI/Agent/Harness/架构，微信概念科普文：五组件公式 Agent = Model + Harness + Tools + Memory + Environment、Harness 七项职责、Runtime 生命周期、Execution Loop 七步拆解、Harness/Runtime/Orchestrator/Framework 四概念"各回答什么问题"对照、Orchestrator ≠ Agent Loop、构建 Harness 五项基础能力与"会行动→能交付"判断标准，概念性科普无实测数据，单信源，置信度中）
@@ -645,6 +646,7 @@
 - [[notification-system-design|站内消息系统领域模型]]（公告/提醒/私信三分类+提醒四元组；拉（订阅驱动）/推（私信直写）按类选型；免打扰后置读路径，简书上下篇双信源）
 - [[okf-knowledge-format|OKF（面向 AI Agent 的知识包装规范）]]（入库时编译为互链 Markdown 树，运行时只做导航+摘录）
 - [[ontology|Ontology（企业本体／业务本体）]]（统一业务对象、属性、关系与术语语义；不同系统同名记录映射到共同业务对象；关键在业务含义；参考 Palantir Objects/Properties/Links；与 GraphRAG 分工不同；AI 时代参与 Agent 检索/判断/行动并随反馈持续维护，EvoOntology 让本体根据 Agent 使用反馈演进，本体体现在三层图谱第二层，双信源，置信度中）
+- [[quality-fallback-strategy|质量兜底策略（默认缺陷逃逸 + 架构隔离 + 线上闭环）]]（2026-11-26，概念/AI/SDLC/质量，放弃「合并前人眼审透」幻想、默认缺陷必然逃逸，质量底座转向事前硬约束（语言子集/依赖白名单/静态检查）+事中隔离（边界配额/影子流量）+事后巡检（账单指标智能体）+秒级回滚闭环，工厂三招迁移，与 AI 原生 SDLC「人守闸门」路线存在分歧，单信源作者论断，置信度中）
 - [[recursive-self-improvement|递归自我改进（Recursive Self-Improvement / RSI）]]（2026-11-21，AI/Agent/自改进，系统改变自身改善后续表现，递归性体现在改进过程本身也能成为改进对象；三层改进层次（执行内迭代/跨任务自改进/改进过程自改进）；保存≠学会、复用≠改进；Reflexion/Agent Workflow Memory/Darwin Gödel Machine/Skill∞ 演进路线；与本体结合需"能关联"且"能纠正"，单信源，置信度中）
 - [[three-layer-project-graph|三层互索引项目图谱]]（2026-11-21，AI/Agent/知识图谱，腾讯云数据库团队研发 Loop 实践：工程事实（静态，函数/字段/跨仓契约，跨仓边须经 API/消息/Schema 契约核对）/项目语义（LLM 提取职责/概念/跨仓映射与约束，本体体现层，候选关系不能仅凭语言流畅升级为事实）/bug_fixed（历史 Bug 挂前两层节点，区分"一次事件"与"可复用经验"，渐进式披露）；三层双向互索引可从任意层进入，与四类记忆资产是两个维度非一一对应，单信源，置信度中）
 - [[oom-troubleshooting|OOM 排查方法论]]（6 类 OOM 速查表 + 五步法 + 生产纪律：禁直接 jmap -dump、90% 代码问题、溢出≠泄漏、GC overhead limit 最危险、GC刑侦三步+时间线交叉验证+静态无界泄漏模板，第五信源（《JVM 内存模型全景》）印证区域路由+补 new Thread 雪崩案例与直接内存空堆被杀口径，五信源，置信度中）

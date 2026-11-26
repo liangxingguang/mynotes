@@ -13,6 +13,7 @@ tags:
   - ai-native
 sources:
   - raw/sources/ai/2026-11-23-coding-agent-software-factory.md
+  - raw/sources/ai/2026-11-26-ai-code-review-fallback.md
 related:
   - wiki/concepts/durable-execution.md
   - wiki/concepts/ai-native-sdlc.md
@@ -22,6 +23,7 @@ related:
   - wiki/concepts/acceptance-agent.md
   - wiki/concepts/spec-driven-development.md
   - wiki/concepts/harness-engineering.md
+  - wiki/concepts/quality-fallback-strategy.md
 ---
 # 软件工厂（Software Factory）
 
@@ -101,6 +103,8 @@ Coding Agent 写代码的环节已成熟，但"提交之后"的工作——读 C
 
 - 2026-11-23：据 Calvin Grunewald 公开的 archdev 软件工厂设计与 Runway 软件工厂工程复盘，整理用现有 Coding Agent 搭建软件工厂的最小架构。核心机制：`archdev push` 把提交变成绑定 SHA 的持久 Job；四类记录支撑恢复追踪；领取原子性+租约防旧执行覆盖；按提交验收防"批准后代码又变"；机制与策略分离支持回放比较。Runway 量化：11 月上半月抽查 100 个已合并 PR 中 78 个无人工提交，首次批准等待中位从 9 月 2.3 小时降至 11 月中旬约 5 分钟，10 月合并 PR 中 38% 由云端 Agent 推进（官方自报口径，未经第三方验证）。Kun Chen 合批实践使每日 PR 从约 200 降至约 30，交付反而更多（个人实践口径）。当前为单信源综述，confidence: medium。
 
+- 2026-11-26 — 新增《不审代码，靠什么兜底》信源（第 2 信源）`raw/sources/ai/2026-11-26-ai-code-review-fallback.md`，补入**工厂式质量控制三招**：N-sigma 统计抽检（资深工程师当质检员校准流水线健康度、察觉智能体系统性偷懒或漂移）、安灯拉绳停线（线上事故时按影响范围停掉相关智能体合码、稳住现场锁状态）、蟑螂法则（单点 bug 触发全库同类扫描，沉淀为编译器规则/Linter/性能回归测试）。三招与本页「机制与策略分离」「按提交验收」互补，属流水线质量管理层，概念层见 [[quality-fallback-strategy]]。
+
 ## Open Questions（开放问题）
 
 - 多执行器下租约续租的完整协议与远端操作去重机制：Calvin 提到云端任务租约但未展开，需自行补齐。
@@ -111,6 +115,7 @@ Coding Agent 写代码的环节已成熟，但"提交之后"的工作——读 C
 ## Evidence（证据）
 
 - Source: `raw/sources/ai/2026-11-23-coding-agent-software-factory.md`（全文：最小架构、三角色分工、四类记录、领取与恢复、按提交验收、策略回放、人工介入、并发扩容；综合 archdev 与 Runway 两份实践）
+- Source: `raw/sources/ai/2026-11-26-ai-code-review-fallback.md`（第 2 信源：工厂质量控制三招——N-sigma 统计抽检、安灯拉绳停线、蟑螂法则沉淀为 Linter/回归测试；质量管理层补充）
 
 ## Related Knowledge（相关知识）
 

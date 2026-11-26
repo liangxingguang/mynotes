@@ -27,12 +27,14 @@ sources:
   - raw/sources/ai/2026-11-23-coding-agent-software-factory.md
   - raw/sources/ai/2026-11-25-ai-native-engineering.md
   - raw/sources/ai/2026-11-26-end-to-end-business-requirement-agent.md
+  - raw/sources/ai/2026-11-26-ai-code-review-fallback.md
 related:
   - wiki/concepts/ai-native-organization.md
   - wiki/concepts/spec-driven-development.md
   - wiki/concepts/mcp.md
   - wiki/concepts/agent-evaluation.md
   - wiki/concepts/business-requirement-agent.md
+  - wiki/concepts/quality-fallback-strategy.md
   - wiki/entities/kongming-ai-dev-platform.md
   - wiki/sources/ai-native-team-org-reconstruction.md
   - wiki/sources/alibaba-ai-native-dev-handbook.md
@@ -120,6 +122,8 @@ Agent 编码使构建阶段塌缩到以小时计，而规划、评审/测试、�
 
 - 2026-11-26 — 新增业务需求专家 Agent 信源（第 15 信源）`raw/sources/ai/2026-11-26-end-to-end-business-requirement-agent.md`，提供**完整八阶段需求研发闭环**的一手实践样本：需求进入→澄清（门 1）→方案（门 2）→实现与内部质量（门 3，TDD+pre-push hook 硬卡）→CR 协同→独立环境验收→发布观察→结项蒸馏。其制品链（requirements→plan→diff+测试→CR→验收证据→结项沉淀）、人只在关键节点确认的闸门分布、「上线不是终点、观察期无异常才结项」的收尾纪律与本概念同向；双层记忆（项目记忆 feature 分支 + 长期 wiki master、结项蒸馏回写）是"知识当缓存、受控写回"的工程实例。概念页见 [[business-requirement-agent]]。
 
+- 2026-11-26 — 新增《不审代码，靠什么兜底》信源（第 16 信源）`raw/sources/ai/2026-11-26-ai-code-review-fallback.md`，提供「代码审查退场」一方的**完整立论**：code review 只是手段、缺陷必然逃逸，质量底座应从合并前人工评审转向架构隔离与线上闭环（收缩输入边界、隔离爆炸半径、影子流量对比、持续巡检、秒级回滚），并主张分层演进（新团队重造流水线、老团队先补护栏再撤人工审查）。该立场与本文已有信源中「人守闸门」「评审=Agent 一审+人复审」（货拉拉主从双 Agent 评审）等渐进路线构成**路线分歧**：一方主张质量保障上移到架构与线上机制、默认缺陷逃逸，一方保留合并前人工/Agent 评审闸门。分歧暂未裁决，见 [[quality-fallback-strategy]] 与 Open Questions。
+
 ## Open Questions（开放问题）
 
 - 各打法的先行/滞后指标只有口径、无公开前后对照数据，实际成效待第三方验证。
@@ -143,6 +147,7 @@ Agent 编码使构建阶段塌缩到以小时计，而规划、评审/测试、�
 - Source: `raw/sources/ai/2026-11-23-coding-agent-software-factory.md`（第 13 信源：软件工厂——Coding Agent 交付流水线的执行基础设施实现、按提交验收、机制与策略分离；AI 原生 SDLC 在执行层的具体落地，见 [[software-factory]]）
 - Source: `raw/sources/ai/2026-11-25-ai-native-engineering.md`（第 14 信源：AI-Native Engineering 六个 First 原则——Verifiable First 印证瓶颈转移到验证、Executable First/Git First 印证规范驱动执行与制品链可追溯；见 [[ai-native-engineering]]）
 - Source: `raw/sources/ai/2026-11-26-end-to-end-business-requirement-agent.md`（第 15 信源：业务需求专家 Agent 八阶段闭环——三道质量门、TDD+pre-push hook 硬门禁、双层记忆与结项蒸馏、独立环境验收与发布后观察；见 [[business-requirement-agent]]）
+- Source: `raw/sources/ai/2026-11-26-ai-code-review-fallback.md`（第 16 信源：「代码审查退场」立论——质量底座转向架构隔离与线上闭环、默认缺陷逃逸、分层演进；与「人守闸门」渐进路线构成分歧，见 [[quality-fallback-strategy]]）
 
 ## Related Knowledge（相关知识）
 
